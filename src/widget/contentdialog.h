@@ -69,10 +69,8 @@ public:
     static ContentDialog* getFriendDialog(int friendId);
     static ContentDialog* getGroupDialog(int groupId);
 
-#ifdef Q_OS_MAC
 signals:
     void activated();
-#endif
 
 public slots:
     void updateTitleAndStatusIcon(const QString& username);
