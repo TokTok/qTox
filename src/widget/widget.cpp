@@ -1520,7 +1520,7 @@ void Widget::onGroupInviteReceived(int32_t friendId, uint8_t type, QByteArray in
 {
     updateFriendActivity(FriendList::findFriend(friendId));
 
-    if (type == TOX_GROUPCHAT_TYPE_TEXT || type == TOX_GROUPCHAT_TYPE_AV)
+    if (type == TOX_CONFERENCE_TYPE_TEXT || type == TOX_CONFERENCE_TYPE_AV)
     {
         ++unreadGroupInvites;
         groupInvitesUpdate();
