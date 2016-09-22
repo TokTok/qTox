@@ -1573,8 +1573,8 @@ void Widget::onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t Cha
     }
 
 
-    TOX_CHAT_CHANGE change = static_cast<TOX_CHAT_CHANGE>(Change);
-    if (change == TOX_CHAT_CHANGE_PEER_ADD)
+    TOX_CONFERENCE_STATE_CHANGE change = static_cast<TOX_CONFERENCE_STATE_CHANGE>(Change);
+    if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_JOIN)
     {
         // g->addPeer(peernumber,name);
         g->regeneratePeerList();
@@ -1582,13 +1582,13 @@ void Widget::onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t Cha
         // we can't display these messages until irungentoo fixes peernumbers
         // https://github.com/irungentoo/toxcore/issues/1128
     }
-    else if (change == TOX_CHAT_CHANGE_PEER_DEL)
+    else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_EXIT)
     {
         // g->removePeer(peernumber);
         g->regeneratePeerList();
         // g->getChatForm()->addSystemInfoMessage(tr("%1 has left the chat").arg(name), "white", QDateTime::currentDateTime());
     }
-    else if (change == TOX_CHAT_CHANGE_PEER_NAME) // core overwrites old name before telling us it changed...
+    else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_NAME_CHANGE) // core overwrites old name before telling us it changed...
     {
         QString name = Nexus::getCore()->getGroupPeerName(groupnumber, peernumber);
         if (name.isEmpty())
