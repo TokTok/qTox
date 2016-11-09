@@ -2,6 +2,45 @@ sudo: true
 dist: trusty
 language: cpp
 
+addons:
+  apt:
+    sources:
+      - mc3man/trusty-media
+      - chris-lea/libsodium
+    packages:
+      - ffmpeg
+      - libasound-dev
+      - libass-dev
+      - libfdk-aac-dev
+      - libgtk2.0-dev
+      - libmp3lame-dev
+      - libogg-dev
+      - libopenal-dev
+      - libopencore-amrnb-dev
+      - libopencore-amrwb-dev
+      - libopus-dev
+      - libqrencode-dev
+      - libqt5svg5-dev
+      - libsdl1.2-dev
+      - libsdl2-dev
+      - libsodium-dev
+      - libsoxr-dev
+      - libspeex-dev
+      - libsqlcipher-dev
+      - libswscale-dev
+      - libva-dev
+      - libvdpau-dev
+      - libvidstab-dev
+      - libvorbis-dev
+      - libvpx-dev
+      - libwavpack-dev
+      - libx264-dev
+      - libx265-dev
+      - libxv-dev
+      - libxvidcore-dev
+      - qttools5-dev
+      - qttools5-dev-tools
+
 matrix:
   include:
     - os: linux
