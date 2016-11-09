@@ -1,11 +1,11 @@
 #!/bin/sh
 
-# Don't display the commands executed.
-set -eu +x
-
 if [ -z "$GIT_TOKEN" ]; then
   exit 0
 fi
+
+# Don't display the commands executed.
+set -eu +x
 
 DEPLOY_DIR=toktok.github.io/client/$ENV
 

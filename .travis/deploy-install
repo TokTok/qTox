@@ -1,8 +1,8 @@
 #!/bin/sh
 
-git clone --depth=1 https://github.com/TokTok/toxcore
+git clone --depth=1 https://github.com/TokTok/c-toxcore
 
-RUN $CMAKE -Btoxcore/$BUILD_DIR -Htoxcore -DBOOTSTRAP_DAEMON=OFF -DASSOC_DHT=ON -DDEBUG=ON -DSTRICT_ABI=ON -DCMAKE_INSTALL_PREFIX:PATH=$CURDIR/libs
-RUN $MAKE -C toxcore/$BUILD_DIR -j$NPROC -k install
+RUN $CMAKE -Bc-toxcore/$BUILD_DIR -Hc-toxcore -DBOOTSTRAP_DAEMON=OFF -DDEBUG=ON -DSTRICT_ABI=ON -DWARNINGS=OFF -DCMAKE_INSTALL_PREFIX:PATH=$CURDIR/libs
+RUN $MAKE -C c-toxcore/$BUILD_DIR -j$NPROC -k install
 
-rm -rf toxcore
+rm -rf c-toxcore
