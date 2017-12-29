@@ -108,13 +108,9 @@ search_dependency(VPX                 PACKAGE vpx)
 
 # Try to find cmake toxcore libraries
 search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL)
-search_dependency(TOXAV               PACKAGE toxav            OPTIONAL)
-search_dependency(TOXENCRYPTSAVE      PACKAGE toxencryptsave   OPTIONAL)
 
 # If not found, use automake toxcore libraries
-if (NOT TOXCORE_FOUND OR
-        NOT TOXAV_FOUND OR
-        NOT TOXENCRYPTSAVE_FOUND)
+if (NOT TOXCORE_FOUND)
     search_dependency(TOXCORE         PACKAGE libtoxcore)
     search_dependency(TOXAV           PACKAGE libtoxav)
 endif()
