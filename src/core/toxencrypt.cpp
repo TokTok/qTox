@@ -155,11 +155,11 @@ QByteArray ToxEncrypt::decryptPass(const QString& password, const QByteArray& ci
  */
 std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password)
 {
-    Tox_Pass_Key* passKey = tox_pass_key_new();
     QByteArray pass = password.toUtf8();
     TOX_ERR_KEY_DERIVATION error;
-    tox_pass_key_derive(passKey, reinterpret_cast<const uint8_t*>(pass.constData()),
-                        static_cast<size_t>(pass.length()), &error);
+    Tox_Pass_Key* passKey = tox_pass_key_derive(
+        reinterpret_cast<const uint8_t*>(pass.constData()),
+        static_cast<size_t>(pass.length()), &error);
 
     if (error != TOX_ERR_KEY_DERIVATION_OK) {
         tox_pass_key_free(passKey);
@@ -195,11 +195,11 @@ std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password, 
         return std::unique_ptr<ToxEncrypt>{};
     }
 
-    Tox_Pass_Key* passKey = tox_pass_key_new();
     QByteArray pass = password.toUtf8();
     TOX_ERR_KEY_DERIVATION keyError;
-    tox_pass_key_derive_with_salt(passKey, reinterpret_cast<const uint8_t*>(pass.constData()),
-                                  static_cast<size_t>(pass.length()), salt, &keyError);
+    Tox_Pass_Key* passKey = tox_pass_key_derive_with_salt(
+        reinterpret_cast<const uint8_t*>(pass.constData()),
+        static_cast<size_t>(pass.length()), salt, &keyError);
 
     if (keyError != TOX_ERR_KEY_DERIVATION_OK) {
         tox_pass_key_free(passKey);
