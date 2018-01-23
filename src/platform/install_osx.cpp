@@ -29,6 +29,8 @@
 
 #include <unistd.h>
 
+#ifdef Q_OS_OSX
+
 void osx::moveToAppFolder()
 {
     if (qApp->applicationDirPath() != "/Applications/qtox.app/Contents/MacOS") {
@@ -120,3 +122,5 @@ void osx::migrateProfiles()
     }
 }
 // End migrateProfiles() compatibility code
+
+#endif // Q_OS_OSX
