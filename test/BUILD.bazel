@@ -1,0 +1,7 @@
+load("//third_party/qt:build_defs.bzl", "qt_test")
+
+[qt_test(
+    name = src[src.rindex("/") + 1:-4],
+    src = src,
+    deps = ["//qtox:qtox_lib"],
+) for src in glob(["*/*_test.cpp"])]
