@@ -9,193 +9,57 @@ branches:
     - master
     - /^v(\d+\.){2}\d+$/
 
-matrix:
-  fast_finish: true
-  include:
-    - stage: Linux
-      os: linux
-      env: JOB=verify-commit-format
-    - stage: Linux
-      os: linux
-      env: JOB=build-docs DOXYGEN_CONFIG_FILE=doxygen.conf
-    - stage: Linux
-      os: linux
-      env: JOB=build-gitstats GITSTATS_DIR=gitstats
-      addons:
-        apt:
-          packages:
-            - gitstats
-    # the actual compilin'
-    - stage: Linux
-      os: linux
-      env: JOB=build-ubuntu-14-04
-    - stage: "Windows Stage 1: Dependencies (OpenSSL, Qt)"
-      os: linux
-      # Makes the cache this job creates avaiable only to jobs with WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=i686,
-      # making sure that i686 and x86_64 caches don't overwrite each other
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=i686
-      script: ./.travis/build-windows.sh i686 release /opt/build-windows/i686 stage1
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/i686
-    - stage: "Windows Stage 1: Dependencies (OpenSSL, Qt)"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=x86_64
-      script: ./.travis/build-windows.sh x86_64 release /opt/build-windows/x86_64 stage1
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/x86_64
-    - stage: "Windows Stage 2: Dependencies (other)"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=i686
-      script: ./.travis/build-windows.sh i686 release /opt/build-windows/i686 stage2
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/i686
-    - stage: "Windows Stage 2: Dependencies (other)"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=x86_64
-      script: ./.travis/build-windows.sh x86_64 release /opt/build-windows/x86_64 stage2
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/x86_64
-    - stage: "Windows Stage 3: qTox"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=i686
-      script: ./.travis/build-windows.sh i686 release /opt/build-windows/i686 stage3
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/i686
-    - stage: "Windows Stage 3: qTox"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=x86_64
-      script: ./.travis/build-windows.sh x86_64 release /opt/build-windows/x86_64 stage3
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/x86_64
-    - stage: "Windows Stage 3: qTox"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=i686
-      script: ./.travis/build-windows.sh i686 debug /opt/build-windows/i686 stage3
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/i686
-    - stage: "Windows Stage 3: qTox"
-      os: linux
-      env: WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE=x86_64
-      script: ./.travis/build-windows.sh x86_64 debug /opt/build-windows/x86_64 stage3
-      services:
-        - docker
-      cache:
-        directories:
-          - /opt/build-windows/x86_64
-    - stage: "macOS, AppImage and Flatpak"
-      os: osx
-      osx_image: xcode7.3
-      env: JOB=build-osx
-    - stage: "macOS, AppImage and Flatpak"
-      os: linux
-      env: JOB=APPIMAGE
-      script: ./appimage/build-appimage.sh
-      services:
-        - docker
-    - stage: "macOS, AppImage and Flatpak"
-      os: linux
-      env: JOB=FLATPAK
-      script: ./flatpak/build-flatpak.sh
-      services:
-        - docker
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:mc3man/trusty-media'
+    - sourceline: 'ppa:chris-lea/libsodium'
+    - sourceline: 'ppa:beineri/opt-qt551-trusty'
+    packages:
+    # qt
+    - qt55tools
+    - qt55svg
+    # others
+    - ffmpeg
+    - libasound-dev
+    - libass-dev
+    - libfdk-aac-dev
+    - libgtk2.0-dev
+    - libmp3lame-dev
+    - libogg-dev
+    - libopenal-dev
+    - libopencore-amrnb-dev
+    - libopencore-amrwb-dev
+    - libopus-dev
+    - libqrencode-dev
+    - libsdl1.2-dev
+    - libsdl2-dev
+    - libsodium-dev
+    - libsoxr-dev
+    - libspeex-dev
+    - libsqlcipher-dev
+    - libswscale-dev
+    - libtheora-dev
+    - libva-dev
+    - libvdpau-dev
+    - libvidstab-dev
+    - libvorbis-dev
+    - libvpx-dev
+    - libwavpack-dev
+    - libx264-dev
+    - libx265-dev
+    - libxv-dev
+    - libxvidcore-dev
 
-script: "./.travis/$JOB.sh"
+install:
+- source /opt/qt55/bin/qt55-env.sh
+- git clone --depth=1 https://github.com/TokTok/c-toxcore
+- (cd c-toxcore && cmake . && make -j$(nproc) && sudo make install)
+- git clone --depth=1 https://github.com/sekrit-twc/zimg
+- (cd zimg && autoreconf -fi && ./configure && make -j$(nproc) && sudo make install)
 
-deploy:
-  # Linux AppImage
-  - provider: releases
-    api_key:
-      secure: "BRbzTWRvadALRQSTihMKruOj64ydxusMUS9FQR//qFlS345ZYfYta43W//4LcWWDKtj6IvA6DRqNdabgWnpbpxpnm9gVftGUdOKlU3niPZhwsMkB2M12QHUnAP6DVOfGPvdciBV+6mu73SSxniEcrYjZ1CrRX7mknmehPpVKxNk="
-    file_glob: true
-    file: ./output/*
-    on:
-      condition: $JOB == APPIMAGE
-      repo: qTox/qTox
-      tags: true
-    skip_cleanup: true
-
-  # Linux Flatpak
-  - provider: releases
-    api_key:
-      secure: "BRbzTWRvadALRQSTihMKruOj64ydxusMUS9FQR//qFlS345ZYfYta43W//4LcWWDKtj6IvA6DRqNdabgWnpbpxpnm9gVftGUdOKlU3niPZhwsMkB2M12QHUnAP6DVOfGPvdciBV+6mu73SSxniEcrYjZ1CrRX7mknmehPpVKxNk="
-    file_glob: true
-    file: ./output/*
-    on:
-      condition: $JOB == FLATPAK
-      repo: qTox/qTox
-      tags: true
-    skip_cleanup: true
-
-  # osx binary
-  - provider: releases
-    api_key:
-      secure: "BRbzTWRvadALRQSTihMKruOj64ydxusMUS9FQR//qFlS345ZYfYta43W//4LcWWDKtj6IvA6DRqNdabgWnpbpxpnm9gVftGUdOKlU3niPZhwsMkB2M12QHUnAP6DVOfGPvdciBV+6mu73SSxniEcrYjZ1CrRX7mknmehPpVKxNk="
-    file: "./qTox.dmg"
-    on:
-      condition: $TRAVIS_OS_NAME == osx
-      repo: qTox/qTox
-      tags: true
-    skip_cleanup: true
-
-  # Windows Installer 64Bit
-  - provider: releases
-    api_key:
-      secure: "BRbzTWRvadALRQSTihMKruOj64ydxusMUS9FQR//qFlS345ZYfYta43W//4LcWWDKtj6IvA6DRqNdabgWnpbpxpnm9gVftGUdOKlU3niPZhwsMkB2M12QHUnAP6DVOfGPvdciBV+6mu73SSxniEcrYjZ1CrRX7mknmehPpVKxNk="
-    file: "./workspace/x86_64/qtox/release/setup-qtox-x86_64-release.exe"
-    on:
-      condition: $WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE == x86_64 && -f /home/travis/build/qTox/qTox/stage3 && -f /home/travis/build/qTox/qTox/release
-      repo: qTox/qTox
-      tags: true
-    skip_cleanup: true
-
-  # Windows Installer 32Bit
-  - provider: releases
-    api_key:
-      secure: "BRbzTWRvadALRQSTihMKruOj64ydxusMUS9FQR//qFlS345ZYfYta43W//4LcWWDKtj6IvA6DRqNdabgWnpbpxpnm9gVftGUdOKlU3niPZhwsMkB2M12QHUnAP6DVOfGPvdciBV+6mu73SSxniEcrYjZ1CrRX7mknmehPpVKxNk="
-    file: "./workspace/i686/qtox/release/setup-qtox-i686-release.exe"
-    on:
-      condition: $WINDOWS_BUILD_ARCH_CACHE_TRICK_VARIABLE == i686 && -f /home/travis/build/qTox/qTox/stage3 && -f /home/travis/build/qTox/qTox/release
-      repo: qTox/qTox
-      tags: true
-    skip_cleanup: true
-
-  # branch for windows jenkins build
-  - provider: script
-    script: .travis/deploy-jenkins-branch.sh
-    on:
-      tags: true
-    skip_cleanup: true
-
-
-after_success:
-  - >
-    test $TRAVIS_PULL_REQUEST == "false"
-    && test $TRAVIS_BRANCH == "master"
-    && test $JOB == "build-docs"
-    && bash ./.travis/deploy-docs.sh
-  - >
-    test $TRAVIS_PULL_REQUEST == "false"
-    && test $TRAVIS_BRANCH == "master"
-    && test $JOB == "build-gitstats"
-    && bash ./.travis/deploy-gitstats.sh
+script:
+- cmake .
+- make -j$(nproc)
+- make test
+- sudo make install
