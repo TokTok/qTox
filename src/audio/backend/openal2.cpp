@@ -63,6 +63,9 @@ extern "C" {
  * the context MUST exit with alProxyContext as active context and MUST not be
  * interrupted. For this to work, all functions of the base class modifying the
  * context have to be overriden.
+ *
+ * @var PROXY_BUFFER_COUNT
+ * @brief Number of buffers to use per audio source
  */
 
 static const unsigned int PROXY_BUFFER_COUNT = 4;
