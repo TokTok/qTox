@@ -1741,18 +1741,8 @@ void Widget::onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t Cha
     }
 
     TOX_CONFERENCE_STATE_CHANGE change = static_cast<TOX_CONFERENCE_STATE_CHANGE>(Change);
-    if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_JOIN) {
-        // g->addPeer(peernumber,name);
+    if (change == TOX_CONFERENCE_STATE_CHANGE_LIST_CHANGED) {
         g->regeneratePeerList();
-        // g->getChatForm()->addSystemInfoMessage(tr("%1 has joined the chat").arg(name), "white",
-        // QDateTime::currentDateTime());
-        // we can't display these messages until toxcore fixes peernumbers
-        // https://github.com/irungentoo/toxcore/issues/1128
-    } else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_EXIT) {
-        // g->removePeer(peernumber);
-        g->regeneratePeerList();
-        // g->getChatForm()->addSystemInfoMessage(tr("%1 has left the chat").arg(name), "white",
-        // QDateTime::currentDateTime());
     } else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_NAME_CHANGE) // core overwrites old name
                                                                        // before telling us it
                                                                        // changed...

@@ -1,4 +1,4 @@
-load("//tools:qt.bzl", "qt_moc")
+load("//third_party/qt:build_defs.bzl", "qt_moc")
 
 SRCS = glob(["*/*_test.cpp"])
 
