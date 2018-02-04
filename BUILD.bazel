@@ -1,4 +1,4 @@
-load("//tools:qt.bzl", "qt_moc", "qt_rcc", "qt_ui_library")
+load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_ui_library")
 
 # User interface headers
 # =========================================================
