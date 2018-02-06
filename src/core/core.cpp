@@ -515,9 +515,10 @@ void Core::onConnectionStatusChanged(Tox*, uint32_t friendId, TOX_CONNECTION sta
     }
 }
 
-void Core::onGroupInvite(Tox*tox, uint32_t friendId, TOX_CONFERENCE_TYPE type, const uint8_t* cookie,
+void Core::onGroupInvite(Tox* tox, uint32_t friendId, TOX_CONFERENCE_TYPE type, const uint8_t* cookie,
                          size_t length, void* vCore)
 {
+    printf("tox_callback_conference_invite(%p, %d, %d, %p[%zd], %p)\n", tox, friendId, type, cookie, length, vCore);
     Core* core = static_cast<Core*>(vCore);
     // static_cast is used twice to replace using unsafe reinterpret_cast
     const QByteArray data(static_cast<const char*>(static_cast<const void*>(cookie)), length);
@@ -549,18 +550,20 @@ void Core::onGroupInvite(Tox*tox, uint32_t friendId, TOX_CONFERENCE_TYPE type, c
     }
 }
 
-void Core::onGroupMessage(Tox*, uint32_t groupId, uint32_t peerId, TOX_MESSAGE_TYPE type,
+void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, TOX_MESSAGE_TYPE type,
                           const uint8_t* cMessage, size_t length, void* vCore)
 {
+    printf("tox_callback_conference_message(%p, %d, %d, %d, %p[%zd], %p)\n", tox, groupId, peerId, type, cMessage, length, vCore);
     Core* core = static_cast<Core*>(vCore);
     bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
     QString message = ToxString(cMessage, length).getQString();
     emit core->groupMessageReceived(groupId, peerId, message, isAction);
 }
 
-void Core::onGroupNamelistChange(Tox*, uint32_t groupId, uint32_t peerId,
+void Core::onGroupNamelistChange(Tox* tox, uint32_t groupId, uint32_t peerId,
                                  TOX_CONFERENCE_STATE_CHANGE change, void* core)
 {
+    printf("tox_callback_conference_namelist_change(%p, %d, %d, %d, %p)\n", tox, groupId, peerId, change, core);
     CoreAV* coreAv = static_cast<Core*>(core)->getAv();
     if (change == TOX_CONFERENCE_STATE_CHANGE_LIST_CHANGED && coreAv->isGroupAvEnabled(groupId)) {
         CoreAV::invalidateGroupCallPeerSource(groupId, peerId);
@@ -570,9 +573,10 @@ void Core::onGroupNamelistChange(Tox*, uint32_t groupId, uint32_t peerId,
     emit static_cast<Core*>(core)->groupNamelistChanged(groupId, peerId, change);
 }
 
-void Core::onGroupTitleChange(Tox*, uint32_t groupId, uint32_t peerId, const uint8_t* cTitle,
+void Core::onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId, const uint8_t* cTitle,
                               size_t length, void* vCore)
 {
+    printf("tox_callback_conference_title(%p, %d, %d, %p[%zd], %p)\n", tox, groupId, peerId, cTitle, length, vCore);
     Core* core = static_cast<Core*>(vCore);
     QString author = core->getGroupPeerName(groupId, peerId);
     emit core->groupTitleChanged(groupId, author, ToxString(cTitle, length).getQString());
