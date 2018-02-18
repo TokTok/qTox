@@ -1,4 +1,7 @@
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_ui_library")
+load("//tools:project.bzl", "project")
+
+project("qtox")
 
 # User interface headers
 # =========================================================
