@@ -52,6 +52,7 @@ class FriendListWidget;
 class FriendWidget;
 class GenericChatroomWidget;
 class Group;
+class GroupChatForm;
 class GroupInvite;
 class GroupInviteForm;
 class GroupWidget;
@@ -217,8 +218,7 @@ private slots:
     void outgoingNotification();
     void incomingNotification(uint32_t friendId);
     void onRejectCall(uint32_t friendId);
-    void onAcceptCall(uint32_t friendId);
-    void onCallEnd(uint32_t friendId);
+    void onStopNotification();
 
 private:
     // QMainWindow overrides
@@ -303,6 +303,7 @@ private:
     QMap<uint32_t, GroupWidget*> groupWidgets;
     QMap<uint32_t, FriendWidget*> friendWidgets;
     QMap<uint32_t, ChatForm*> chatForms;
+    QMap<uint32_t, GroupChatForm*> groupChatForms;
 
 #ifdef Q_OS_MAC
     QAction* fileMenu;

@@ -34,6 +34,7 @@ class QSplitter;
 class QVBoxLayout;
 class ContentDialog;
 class ContentLayout;
+class GenericChatForm;
 class GenericChatroomWidget;
 class FriendWidget;
 class GroupWidget;
@@ -50,8 +51,8 @@ public:
     explicit ContentDialog(QWidget* parent = nullptr);
     ~ContentDialog() override;
 
-    FriendWidget* addFriend(const Friend* f);
-    GroupWidget* addGroup(int groupId, const QString& name);
+    FriendWidget* addFriend(const Friend* f, GenericChatForm* form);
+    GroupWidget* addGroup(const Group* g, GenericChatForm* form);
     void removeFriend(int friendId);
     void removeGroup(int groupId);
     bool hasFriendWidget(int friendId, const GenericChatroomWidget* chatroomWidget) const;
@@ -132,6 +133,8 @@ private:
     static ContentDialog* currentDialog;
     static QHash<int, ContactInfo> friendList;
     static QHash<int, ContactInfo> groupList;
+    QHash<int, GenericChatForm*> friendChatForms;
+    QHash<int, GenericChatForm*> groupChatForms;
 };
 
 #endif // CONTENTDIALOG_H

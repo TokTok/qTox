@@ -258,21 +258,27 @@ QString SmileyPack::smileyfied(const QString& msg)
 {
     QMutexLocker locker(&loadingMutex);
     QString result(msg);
-    QRegularExpression exp("\\S+");
-    QRegularExpressionMatchIterator iter = exp.globalMatch(result);
-    int replaceDiff = 0;
-    while (iter.hasNext()) {
-        QRegularExpressionMatch match = iter.next();
-        QString key = match.captured();
-        int startPos = match.capturedStart();
-        int keyLength = key.length();
-        if (emoticonToPath.find(key) != emoticonToPath.end()) {
-            QString imgRichText = getAsRichText(key);
+    for ( auto r = emoticonToPath.begin(); r != emoticonToPath.end(); ++r) {
+        QRegularExpression exp;
+        if (r.key().toUcs4().length() == 1) {
+            // UTF-8 emoji
+            exp.setPattern(r.key());
+        }
+        else {
+            // patterns like ":)" or ":smile:", don't match inside a word or else will hit punctuation and html tags
+            exp.setPattern(QStringLiteral(R"((?<=^|\s))") + QRegularExpression::escape(r.key()) + QStringLiteral(R"((?=$|\s))"));
+        }
+        int replaceDiff = 0;
+        QRegularExpressionMatchIterator iter = exp.globalMatch(result);
+        while (iter.hasNext()) {
+            QRegularExpressionMatch match = iter.next();
+            int startPos = match.capturedStart();
+            int keyLength = r.key().length();
+            QString imgRichText = getAsRichText(r.key());
             result.replace(startPos + replaceDiff, keyLength, imgRichText);
             replaceDiff += imgRichText.length() - keyLength;
         }
     }
-
     return result;
 }
 

@@ -159,12 +159,13 @@ ContentDialog::~ContentDialog()
     Translator::unregister(this);
 }
 
-FriendWidget* ContentDialog::addFriend(const Friend* frnd)
+FriendWidget* ContentDialog::addFriend(const Friend* frnd, GenericChatForm* form)
 {
     bool compact = Settings::getInstance().getCompactLayout();
     uint32_t friendId = frnd->getId();
     FriendWidget* friendWidget = new FriendWidget(frnd, compact);
     friendLayout->addFriendWidget(friendWidget, frnd->getStatus());
+    friendChatForms[friendId] = form;
 
     connect(frnd, &Friend::aliasChanged, this, &ContentDialog::updateFriendWidget);
     connect(friendWidget, &FriendWidget::chatroomWidgetClicked, this, &ContentDialog::activate);
@@ -182,11 +183,14 @@ FriendWidget* ContentDialog::addFriend(const Friend* frnd)
     return friendWidget;
 }
 
-GroupWidget* ContentDialog::addGroup(int groupId, const QString& name)
+GroupWidget* ContentDialog::addGroup(const Group* g, GenericChatForm* form)
 {
-    bool compact = Settings::getInstance().getCompactLayout();
+    const auto groupId = g->getId();
+    const auto name = g->getName();
+    const auto compact = Settings::getInstance().getCompactLayout();
     GroupWidget* groupWidget = new GroupWidget(groupId, name, compact);
     groupLayout.addSortedWidget(groupWidget);
+    groupChatForms[groupId] = form;
 
     connect(groupWidget, &GroupWidget::chatroomWidgetClicked, this, &ContentDialog::activate);
     connect(groupWidget, &FriendWidget::newWindowOpened, this, &ContentDialog::openNewDialog);
@@ -716,11 +720,18 @@ void ContentDialog::activate(GenericChatroomWidget* widget)
 
     activeChatroomWidget = widget;
 
-    widget->setChatForm(contentLayout);
+    const FriendWidget* const friendWidget = qobject_cast<FriendWidget*>(widget);
+    if (friendWidget) {
+        auto friendId = friendWidget->getFriend()->getId();
+        friendChatForms[friendId]->show(contentLayout);
+    } else {
+        auto groupId = widget->getGroup()->getId();
+        groupChatForms[groupId]->show(contentLayout);
+    }
+
     widget->setAsActiveChatroom();
     widget->resetEventFlags();
     widget->updateStatusLight();
-
     updateTitleAndStatusIcon();
 }
 
