@@ -32,7 +32,6 @@ public:
     void setAsActiveChatroom() override final;
     void setAsInactiveChatroom() override final;
     void updateStatusLight() override final;
-    void setChatForm(ContentLayout* contentLayout) override final;
     void resetEventFlags() override final;
     QString getStatusString() const override final;
     const Friend* getFriend() const override final;
@@ -55,6 +54,16 @@ protected:
     virtual void mousePressEvent(QMouseEvent* ev) override;
     virtual void mouseMoveEvent(QMouseEvent* ev) override;
     void setFriendAlias();
+
+private slots:
+    void removeChatWindow();
+    void moveToNewGroup();
+    void inviteFriend(uint32_t friendId, const Group* group);
+    void moveToNewCircle();
+    void removeFromCircle();
+    void moveToCircle(int circleId);
+    void changeAutoAccept(bool enable);
+    void showDetails();
 
 public:
     const Friend* frnd;

@@ -39,23 +39,6 @@ Friend::Friend(uint32_t friendId, const ToxPk& friendPk, const QString& userAlia
     }
 }
 
-Friend::~Friend()
-{
-    delete chatForm;
-}
-
-/**
- * @brief Loads the friend's chat history if enabled
- */
-void Friend::loadHistory()
-{
-    if (Nexus::getProfile()->isHistoryEnabled()) {
-        chatForm->loadHistory(QDateTime::currentDateTime().addDays(-7), true);
-    }
-
-    emit loadChatHistory();
-}
-
 void Friend::setName(const QString& _name)
 {
     QString name = _name;
@@ -135,14 +118,4 @@ void Friend::setStatus(Status s)
 Status Friend::getStatus() const
 {
     return friendStatus;
-}
-
-ChatForm* Friend::getChatForm() const
-{
-    return chatForm;
-}
-
-void Friend::setChatForm(ChatForm* form)
-{
-    chatForm = form;
 }

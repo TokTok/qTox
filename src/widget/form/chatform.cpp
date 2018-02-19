@@ -18,8 +18,6 @@
 */
 
 #include "chatform.h"
-
-#include "src/audio/audio.h"
 #include "src/chatlog/chatlinecontentproxy.h"
 #include "src/chatlog/chatlog.h"
 #include "src/chatlog/chatmessage.h"
@@ -28,7 +26,9 @@
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/model/friend.h"
+#include "src/nexus.h"
 #include "src/persistence/offlinemsgengine.h"
+#include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/history.h"
 #include "src/video/netcamview.h"
@@ -52,6 +52,15 @@
 #include <QStringBuilder>
 
 #include <cassert>
+
+/**
+ * @brief ChatForm::incomingNotification Notify that we are called by someone.
+ * @param friendId Friend that is calling us.
+ *
+ * @brief ChatForm::outgoingNotification Notify that we are calling someone.
+ *
+ * @brief stopNotification Tell others to stop notification of a call.
+ */
 
 static const int CHAT_WIDGET_MIN_HEIGHT = 50;
 static const int DELIVER_OFFLINE_MESSAGES_DELAY = 250;
@@ -194,6 +203,10 @@ ChatForm::ChatForm(Friend* chatFriend, History* history)
     connect(headWidget, &ChatFormHeader::callRejected, this, &ChatForm::onRejectCallTriggered);
 
     updateCallButtons();
+    if (Nexus::getProfile()->isHistoryEnabled()) {
+        loadHistory(QDateTime::currentDateTime().addDays(-7), true);
+    }
+
     setAcceptDrops(true);
     retranslateUi();
     Translator::registerHandler(std::bind(&ChatForm::retranslateUi, this), this);
@@ -368,7 +381,7 @@ void ChatForm::onAvStart(uint32_t friendId, bool video)
         hideNetcam();
     }
 
-    Audio::getInstance().stopLoop();
+    emit stopNotification();
     updateCallButtons();
     startCounter();
 }
@@ -385,6 +398,7 @@ void ChatForm::onAvEnd(uint32_t friendId, bool error)
         netcam->showNormal();
     }
 
+    emit stopNotification();
     updateCallButtons();
     stopCounter(error);
     hideNetcam();
@@ -403,6 +417,7 @@ void ChatForm::onAnswerCallTriggered(bool video)
 {
     headWidget->removeCallConfirm();
     uint32_t friendId = f->getId();
+    emit stopNotification();
     emit acceptCall(friendId);
 
     updateCallButtons();
