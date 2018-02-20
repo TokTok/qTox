@@ -1736,7 +1736,7 @@ void Widget::onGroupMessageReceived(int groupnumber, int peernumber, const QStri
     newGroupMessageAlert(groupId, targeted || Settings::getInstance().getGroupAlwaysNotify());
 }
 
-void Widget::onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t Change)
+void Widget::onGroupPeerName(int groupnumber, int peernumber, QString name)
 {
     Group* g = GroupList::findGroup(groupnumber);
     if (!g) {
@@ -1747,29 +1747,25 @@ void Widget::onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t Cha
         }
     }
 
-    TOX_CONFERENCE_STATE_CHANGE change = static_cast<TOX_CONFERENCE_STATE_CHANGE>(Change);
-    if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_JOIN) {
-        // g->addPeer(peernumber,name);
-        g->regeneratePeerList();
-        // g->getChatForm()->addSystemInfoMessage(tr("%1 has joined the chat").arg(name), "white",
-        // QDateTime::currentDateTime());
-        // we can't display these messages until toxcore fixes peernumbers
-        // https://github.com/irungentoo/toxcore/issues/1128
-    } else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_EXIT) {
-        // g->removePeer(peernumber);
-        g->regeneratePeerList();
-        // g->getChatForm()->addSystemInfoMessage(tr("%1 has left the chat").arg(name), "white",
-        // QDateTime::currentDateTime());
-    } else if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_NAME_CHANGE) // core overwrites old name
-                                                                       // before telling us it
-                                                                       // changed...
-    {
-        QString name = Nexus::getCore()->getGroupPeerName(groupnumber, peernumber);
-        if (name.isEmpty())
-            name = tr("<Empty>", "Placeholder when someone's name in a group chat is empty");
+    // core overwrites old name before telling us it changed...
+    if (name.isEmpty())
+        name = tr("<Empty>", "Placeholder when someone's name in a group chat is empty");
 
-        g->updatePeer(peernumber, name);
+    g->updatePeer(peernumber, name);
+}
+
+void Widget::onGroupPeerListChanged(int groupnumber)
+{
+    Group* g = GroupList::findGroup(groupnumber);
+    if (!g) {
+        qDebug() << "onGroupNamelistChanged: Group " << groupnumber << " not found, creating it";
+        g = createGroup(groupnumber);
+        if (!g) {
+            return;
+        }
     }
+
+    g->regeneratePeerList();
 }
 
 void Widget::onGroupTitleChanged(int groupnumber, const QString& author, const QString& title)

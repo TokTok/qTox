@@ -145,7 +145,8 @@ signals:
     void emptyGroupCreated(int groupnumber);
     void groupInviteReceived(const GroupInvite& inviteInfo);
     void groupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction);
-    void groupNamelistChanged(int groupnumber, int peernumber, uint8_t change);
+    void groupPeerName(int groupnumber, int peernumber, const QString& name);
+    void groupPeerListChanged(int groupnumber);
     void groupTitleChanged(int groupnumber, const QString& author, const QString& title);
     void groupPeerAudioPlaying(int groupnumber, int peernumber);
 
@@ -203,8 +204,9 @@ private:
                               const uint8_t* cookie, size_t length, void* vCore);
     static void onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, TOX_MESSAGE_TYPE type,
                                const uint8_t* cMessage, size_t length, void* vCore);
-    static void onGroupNamelistChange(Tox* tox, uint32_t groupId, uint32_t peerId,
-                                      TOX_CONFERENCE_STATE_CHANGE change, void* core);
+    static void onGroupPeerName(Tox* tox, uint32_t groupId, uint32_t peerId,
+                                const uint8_t* cName, size_t length, void* vCore);
+    static void onGroupPeerListChanged(Tox* tox, uint32_t groupId, void* core);
     static void onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId,
                                    const uint8_t* cTitle, size_t length, void* vCore);
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);

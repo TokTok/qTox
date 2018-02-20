@@ -77,7 +77,7 @@ public:
     void toggleMuteCallInput(const Friend* f);
     void toggleMuteCallOutput(const Friend* f);
 
-    static void groupCallCallback(void* tox, int group, int peer, const int16_t* data, unsigned samples,
+    static void groupCallCallback(void* tox, uint32_t group, uint32_t peer, const int16_t* data, unsigned samples,
                                   uint8_t channels, unsigned sample_rate, void* core);
     static void invalidateGroupCallPeerSource(int group, int peer);
 

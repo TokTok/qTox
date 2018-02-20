@@ -168,7 +168,8 @@ public slots:
     void onGroupInviteReceived(const GroupInvite& inviteInfo);
     void onGroupInviteAccepted(const GroupInvite& inviteInfo);
     void onGroupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction);
-    void onGroupNamelistChanged(int groupnumber, int peernumber, uint8_t change);
+    void onGroupPeerName(int groupnumber, int peernumber, QString name);
+    void onGroupPeerListChanged(int groupnumber);
     void onGroupTitleChanged(int groupnumber, const QString& author, const QString& title);
     void onGroupPeerAudioPlaying(int groupnumber, int peernumber);
     void onGroupSendFailed(int groupId);

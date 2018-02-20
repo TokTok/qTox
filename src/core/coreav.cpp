@@ -461,7 +461,7 @@ void CoreAV::toggleMuteCallOutput(const Friend* f)
  * @param[in] sample_rate  the audio sample rate
  * @param[in] core         the qTox Core class
  */
-void CoreAV::groupCallCallback(void* tox, int group, int peer, const int16_t* data,
+void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const int16_t* data,
                                unsigned samples, uint8_t channels, unsigned sample_rate, void* core)
 {
     Q_UNUSED(tox);

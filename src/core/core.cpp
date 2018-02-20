@@ -320,7 +320,8 @@ void Core::start(const QByteArray& savedata)
     tox_callback_friend_read_receipt(tox, onReadReceiptCallback);
     tox_callback_conference_invite(tox, onGroupInvite);
     tox_callback_conference_message(tox, onGroupMessage);
-    tox_callback_conference_namelist_change(tox, onGroupNamelistChange);
+    tox_callback_conference_peer_name(tox, onGroupPeerName);
+    tox_callback_conference_peer_list_changed(tox, onGroupPeerListChanged);
     tox_callback_conference_title(tox, onGroupTitleChange);
     tox_callback_file_chunk_request(tox, CoreFile::onFileDataCallback);
     tox_callback_file_recv(tox, CoreFile::onFileReceiveCallback);
@@ -535,16 +536,26 @@ void Core::onGroupMessage(Tox*, uint32_t groupId, uint32_t peerId, TOX_MESSAGE_T
     emit core->groupMessageReceived(groupId, peerId, message, isAction);
 }
 
-void Core::onGroupNamelistChange(Tox*, uint32_t groupId, uint32_t peerId,
-                                 TOX_CONFERENCE_STATE_CHANGE change, void* core)
+void Core::onGroupPeerName(Tox*, uint32_t groupId, uint32_t peerId, const uint8_t* cName,
+                           size_t length, void* core)
 {
+    const QString name = ToxString(cName, length).getQString();
+    emit static_cast<Core*>(core)->groupPeerName(groupId, peerId, name);
+}
+
+void Core::onGroupPeerListChanged(Tox*, uint32_t groupId, void* core)
+{
+#if 0
     CoreAV* coreAv = static_cast<Core*>(core)->getAv();
     if (change == TOX_CONFERENCE_STATE_CHANGE_PEER_EXIT && coreAv->isGroupAvEnabled(groupId)) {
+        // TODO: this should only run on EXIT, but we no longer know whether it was
+        // an exit or join event.
         CoreAV::invalidateGroupCallPeerSource(groupId, peerId);
     }
+#endif
 
-    qDebug() << QString("Group namelist change %1:%2 %3").arg(groupId).arg(peerId).arg(change);
-    emit static_cast<Core*>(core)->groupNamelistChanged(groupId, peerId, change);
+    qDebug() << QString("Group namelist change %1").arg(groupId);
+    emit static_cast<Core*>(core)->groupPeerListChanged(groupId);
 }
 
 void Core::onGroupTitleChange(Tox*, uint32_t groupId, uint32_t peerId, const uint8_t* cTitle,
