@@ -1,4 +1,5 @@
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_ui_library")
+load("//tools:no_undefined.bzl", "cc_library")
 load("//tools:project.bzl", "project")
 
 project("qtox")
@@ -110,10 +111,10 @@ MOC_HDRS = [
     "src/widget/widget.h",
 ]
 
-MOC_SRCS = [hdr[hdr.rindex("/") + 1:-2] for hdr in MOC_HDRS]
+MOC_SRCS = [hdr[hdr.rindex("/") + 1:-2] + "_moc" for hdr in MOC_HDRS]
 
 [qt_moc(
-    name = hdr[hdr.rindex("/") + 1:-2],
+    name = hdr[hdr.rindex("/") + 1:-2] + "_moc",
     src = hdr,
     srcs = glob(["src/**/*.h"]),
     mocopts = ["-Iqtox"],
@@ -143,11 +144,148 @@ qt_rcc(
 # =========================================================
 
 cc_library(
+    name = "toxpk",
+    srcs = ["src/core/toxpk.cpp"],
+    hdrs = ["src/core/toxpk.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = ["@qt//:qt_core"],
+)
+
+cc_library(
+    name = "toxstring",
+    srcs = ["src/core/toxstring.cpp"],
+    hdrs = ["src/core/toxstring.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = ["@qt//:qt_core"],
+)
+
+cc_library(
+    name = "toxencrypt",
+    srcs = ["src/core/toxencrypt.cpp"],
+    hdrs = ["src/core/toxencrypt.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = [
+        "//c-toxcore",
+        "@qt//:qt_core",
+    ],
+)
+
+cc_library(
+    name = "dhtserver",
+    srcs = ["src/core/dhtserver.cpp"],
+    hdrs = ["src/core/dhtserver.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = ["@qt//:qt_core"],
+)
+
+cc_library(
+    name = "toxfile",
+    srcs = ["src/core/toxfile.cpp"],
+    hdrs = ["src/core/toxfile.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = ["@qt//:qt_core"],
+)
+
+cc_library(
+    name = "toxid",
+    srcs = ["src/core/toxid.cpp"],
+    hdrs = ["src/core/toxid.h"],
+    defines = ["QTOX_PLATFORM_EXT"],
+    includes = ["."],
+    deps = [":toxpk"],
+)
+
+#cc_library(
+#    name = "core",
+#    srcs = [
+#    ":core_moc",
+#        "src/core/toxid.cpp",
+#        "src/core/core.cpp",
+#        #"src/core/toxfile.cpp",
+#        #"src/core/corefile.cpp",
+#        #"src/core/toxcall.cpp",
+#        "src/core/coreav.cpp",
+#        #"src/audio/audio.cpp",
+#        #"src/persistence/settings.cpp",
+#    ],
+#    hdrs = [
+#        "src/persistence/profile.h",
+#        "src/core/toxencrypt.h",
+#        "src/core/toxstring.h",
+#        "src/persistence/ifriendsettings.h",
+#        "src/persistence/history.h",
+#        "src/nexus.h",
+#        "src/persistence/db/rawdatabase.h",
+#        "src/video/ivideosettings.h",
+#        "src/model/groupinvite.h",
+#        "src/persistence/settings.h",
+#        "src/model/interface.h",
+#        "src/audio/iaudiosettings.h",
+#        "src/core/dhtserver.h",
+#        "src/audio/backend/openal.h",
+#        "src/audio/audio.h",
+#        "src/core/icoresettings.h",
+#        "src/core/toxcall.h",
+#        "src/core/coreav.h",
+#        "src/core/corefile.h",
+#        "src/core/toxid.h",
+#        "src/core/toxfile.h",
+#        "src/persistence/profilelocker.h",
+#        "src/persistence/settingsserializer.h",
+#        "src/model/friend.h",
+#        "src/model/contact.h",
+#        "src/video/camerasource.h",
+#        "src/model/group.h",
+#        "src/video/videomode.h",
+#        "src/video/videosource.h",
+#        "src/video/corevideosource.h",
+#        "src/widget/gui.h",
+#        "src/persistence/smileypack.h",
+#        "src/widget/style.h",
+#        "src/video/videoframe.h",
+#        "src/core/core.h",
+#    ],
+#    defines = [
+#        #"GIT_DESCRIBE='\"master\"'",
+#        #"GIT_VERSION='\"master\"'",
+#        #"TIMESTAMP='\"2018\"'",
+#        "QTOX_PLATFORM_EXT",
+#    ],
+#    includes = ["."],
+#    linkopts = [
+#        #"-lopenal",
+#        #"-lsqlite3",
+#        #"-lX11",
+#        #"-lXss",
+#    ],
+#    visibility = ["//qtox:__subpackages__"],
+#    deps = [
+#    ":toxpk",
+#    ":toxstring",
+#        "//c-toxcore",
+#        #"@ffmpeg",
+#        #"@filter_audio",
+#        #"@libexif",
+#        #"@libqrencode",
+#        "@qt//:qt_concurrent",
+#        #"@qt//:qt_core",
+#        "@qt//:qt_gui",
+#        "@qt//:qt_network",
+#        #"@qt//:qt_svg",
+#        #"@qt//:qt_widgets",
+#        #"@qt//:qt_xml",
+#    ],
+#)
+
+cc_library(
     name = "qtox_lib",
     srcs = MOC_SRCS + glob(
-        [
-            "src/**/*.cpp",
-        ],
+        ["src/**/*.cpp"],
         exclude = ["src/main.cpp"],
     ),
     hdrs = glob([
