@@ -42,6 +42,7 @@ Group::Group(int groupId, const QString& name, bool isAvGroupchat, const QString
     // on naming is appropriate
     hasNewMessages = 0;
     userWasMentioned = 0;
+    regeneratePeerList();
 }
 
 void Group::updatePeer(int peerId, QString name)
@@ -52,7 +53,8 @@ void Group::updatePeer(int peerId, QString name)
     toxids[peerPk] = name;
 
     Friend* f = FriendList::findFriend(peerKey);
-    if (f != nullptr && f->hasAlias()) {
+    if (f != nullptr) {
+        // use the displayed name from the friends list
         peers[peerId] = f->getDisplayedName();
         toxids[peerPk] = f->getDisplayedName();
     } else {

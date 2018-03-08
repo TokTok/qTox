@@ -70,9 +70,12 @@ FriendWidget::FriendWidget(const Friend* f, bool compact)
     avatar->setPixmap(QPixmap(":/img/contact.svg"));
     statusPic.setPixmap(QPixmap(":/img/status/offline.svg"));
     statusPic.setMargin(3);
-    nameLabel->setText(f->getDisplayedName());
+    setName(f->getDisplayedName());
     nameLabel->setTextFormat(Qt::PlainText);
-    connect(nameLabel, &CroppingLabel::editFinished, this, &FriendWidget::setAlias);
+    // update on changes of the displayed name
+    connect(f, &Friend::displayedNameChanged, this, &FriendWidget::setName);
+    // update alias when edited
+    connect(nameLabel, &CroppingLabel::editFinished, f, &Friend::setAlias);
     statusMessageLabel->setTextFormat(Qt::PlainText);
 }
 
@@ -189,7 +192,8 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     if (!contentDialog || !contentDialog->hasFriendWidget(friendId, this)) {
         const auto removeAction = menu.addAction(
                     tr("Remove friend", "Menu to remove the friend from our friendlist"));
-        connect(removeAction, &QAction::triggered, [=]() { emit removeFriend(friendId); });
+        connect(removeAction, &QAction::triggered, this, [=]() { emit removeFriend(friendId); },
+            Qt::QueuedConnection);
     }
 
     menu.addSeparator();
@@ -462,12 +466,4 @@ void FriendWidget::mouseMoveEvent(QMouseEvent* ev)
         drag->setPixmap(avatar->getPixmap());
         drag->exec(Qt::CopyAction | Qt::MoveAction);
     }
-}
-
-void FriendWidget::setAlias(const QString& _alias)
-{
-    QString alias = _alias.left(tox_max_name_length());
-    // Hack to avoid edit const Friend. TODO: Repalce on emit
-    Friend* f = FriendList::findFriend(frnd->getId());
-    f->setAlias(alias);
 }
