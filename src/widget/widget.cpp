@@ -2240,8 +2240,11 @@ void Widget::onEventIconTick()
     }
 }
 
+#define XX_UBUNTU1604_XX 1
+
 void Widget::onTryCreateTrayIcon()
 {
+#ifndef XX_UBUNTU1604_XX
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -2276,12 +2279,15 @@ void Widget::onTryCreateTrayIcon()
             show();
         }
     } else {
+#endif
         disconnect(timer, &QTimer::timeout, this, &Widget::onTryCreateTrayIcon);
         if (!icon) {
             qWarning() << "No system tray detected!";
             show();
         }
+#ifndef XX_UBUNTU1604_XX
     }
+#endif
 }
 
 void Widget::setStatusOnline()
