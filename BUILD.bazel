@@ -1,7 +1,7 @@
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_uic")
-load("//tools:project.bzl", "project")
+load("//tools/project:build_defs.bzl", "project")
 
-project("qtox")
+project()
 
 # MOC headers
 # =========================================================

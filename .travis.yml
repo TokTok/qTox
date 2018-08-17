@@ -1,65 +1,60 @@
+---
 sudo: required
 dist: trusty
 language: cpp
 cache: ccache
 
-# regex is for release tags
-branches:
-  only:
-    - master
-    - /^v(\d+\.){2}\d+$/
-
 addons:
   apt:
     sources:
-    - sourceline: 'ppa:mc3man/trusty-media'
-    - sourceline: 'ppa:chris-lea/libsodium'
-    - sourceline: 'ppa:beineri/opt-qt551-trusty'
+      - sourceline: 'ppa:mc3man/trusty-media'
+      - sourceline: 'ppa:chris-lea/libsodium'
+      - sourceline: 'ppa:beineri/opt-qt551-trusty'
     packages:
-    # qt
-    - qt55tools
-    - qt55svg
-    # others
-    - ffmpeg
-    - libasound-dev
-    - libass-dev
-    - libfdk-aac-dev
-    - libgtk2.0-dev
-    - libmp3lame-dev
-    - libogg-dev
-    - libopenal-dev
-    - libopencore-amrnb-dev
-    - libopencore-amrwb-dev
-    - libopus-dev
-    - libqrencode-dev
-    - libsdl1.2-dev
-    - libsdl2-dev
-    - libsodium-dev
-    - libsoxr-dev
-    - libspeex-dev
-    - libsqlcipher-dev
-    - libswscale-dev
-    - libtheora-dev
-    - libva-dev
-    - libvdpau-dev
-    - libvidstab-dev
-    - libvorbis-dev
-    - libvpx-dev
-    - libwavpack-dev
-    - libx264-dev
-    - libx265-dev
-    - libxv-dev
-    - libxvidcore-dev
+      # qt
+      - qt55tools
+      - qt55svg
+      # others
+      - ffmpeg
+      - libasound-dev
+      - libass-dev
+      - libfdk-aac-dev
+      - libgtk2.0-dev
+      - libmp3lame-dev
+      - libogg-dev
+      - libopenal-dev
+      - libopencore-amrnb-dev
+      - libopencore-amrwb-dev
+      - libopus-dev
+      - libqrencode-dev
+      - libsdl1.2-dev
+      - libsdl2-dev
+      - libsodium-dev
+      - libsoxr-dev
+      - libspeex-dev
+      - libsqlcipher-dev
+      - libswscale-dev
+      - libtheora-dev
+      - libva-dev
+      - libvdpau-dev
+      - libvidstab-dev
+      - libvorbis-dev
+      - libvpx-dev
+      - libwavpack-dev
+      - libx264-dev
+      - libx265-dev
+      - libxv-dev
+      - libxvidcore-dev
 
 install:
-- source /opt/qt55/bin/qt55-env.sh
-- git clone --depth=1 https://github.com/TokTok/c-toxcore
-- (cd c-toxcore && cmake . && make -j$(nproc) && sudo make install)
-- git clone --depth=1 https://github.com/sekrit-twc/zimg
-- (cd zimg && autoreconf -fi && ./configure && make -j$(nproc) && sudo make install)
+  - source /opt/qt55/bin/qt55-env.sh
+  - git clone --depth=1 https://github.com/TokTok/c-toxcore
+  - (cd c-toxcore && cmake . && make -j$(nproc) && sudo make install)
+  - git clone --depth=1 https://github.com/sekrit-twc/zimg
+  - (cd zimg && autoreconf -fi && ./configure && make -j$(nproc) && sudo make install)
 
 script:
-- cmake .
-- make -j$(nproc)
-- make test
-- sudo make install
+  - cmake .
+  - make -j$(nproc)
+  - make test
+  - sudo make install
