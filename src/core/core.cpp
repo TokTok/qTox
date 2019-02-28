@@ -1025,7 +1025,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
                                ReceiptNum& receipt)
 {
     int size = message.toUtf8().size();
-    auto maxSize = tox_max_message_length();
+    int maxSize = tox_max_message_length();
     if (size > maxSize) {
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
                     << "when max is:" << maxSize << ". Ignoring.";
@@ -1069,8 +1069,8 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 {
     QMutexLocker ml{&coreLoopLock};
 
-    int size = message.toUtf8().size();
-    auto maxSize = tox_max_message_length();
+    size_t size = message.toUtf8().size();
+    size_t maxSize = tox_max_message_length();
     if (size > maxSize) {
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
                     << "when max is:" << maxSize << ". Ignoring.";
@@ -1449,7 +1449,7 @@ QString Core::getGroupPeerName(int groupId, int peerId) const
     QMutexLocker ml{&coreLoopLock};
 
     // from tox.h: "If peer_number == UINT32_MAX, then author is unknown (e.g. initial joining the conference)."
-    if (peerId != std::numeric_limits<uint32_t>::max()) {
+    if (peerId != static_cast<int>(std::numeric_limits<uint32_t>::max())) {
         return {};
     }
 
@@ -1519,7 +1519,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
         }
     }
 
-    assert(names.size() == nPeers);
+    assert(static_cast<uint32_t>(names.size()) == nPeers);
 
     return names;
 }
@@ -1646,7 +1646,7 @@ bool Core::hasFriendWithPublicKey(const ToxPk& publicKey) const
     }
 
     Tox_Err_Friend_By_Public_Key error;
-    uint32_t friendId = tox_friend_by_public_key(tox.get(), publicKey.getData(), &error);
+    (void)tox_friend_by_public_key(tox.get(), publicKey.getData(), &error);
     return PARSE_ERR(error);
 }
 
@@ -1704,7 +1704,7 @@ QStringList Core::splitMessage(const QString& message)
      *
      * (uint32_t tox_max_message_length(void); declared in tox.h, unable to see explicit definition)
      */
-    const auto maxLen = tox_max_message_length() - 50;
+    const int maxLen = tox_max_message_length() - 50;
 
     while (ba_message.size() > maxLen) {
         int splitPos = ba_message.lastIndexOf('\n', maxLen - 1);

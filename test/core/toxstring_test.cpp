@@ -85,7 +85,7 @@ void TestToxString::QStringTest()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
+    for (size_t i = 0; i <= lengthUINT8; i++)
     {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
@@ -112,7 +112,7 @@ void TestToxString::QByteArrayTest()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
+    for (size_t i = 0; i <= lengthUINT8; i++)
     {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
@@ -139,7 +139,7 @@ void TestToxString::uint8_tTest()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
+    for (size_t i = 0; i <= lengthUINT8; i++)
     {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
@@ -166,7 +166,7 @@ void TestToxString::emptyQStrTest()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
+    for (size_t i = 0; i <= emptyLength; i++)
     {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
@@ -193,7 +193,7 @@ void TestToxString::emptyQByteTest()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
+    for (size_t i = 0; i <= emptyLength; i++)
     {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
@@ -220,7 +220,7 @@ void TestToxString::emptyUINT8Test()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
+    for (size_t i = 0; i <= emptyLength; i++)
     {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
@@ -247,7 +247,7 @@ void TestToxString::nullptrUINT8Test()
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
+    for (size_t i = 0; i <= emptyLength; i++)
     {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }

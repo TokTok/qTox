@@ -104,7 +104,6 @@ AVForm::AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
 
     eventsInit();
 
-    QDesktopWidget* desktop = QApplication::desktop();
     for (QScreen* qScreen : QGuiApplication::screens()) {
         connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
     }

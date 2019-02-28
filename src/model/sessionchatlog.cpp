@@ -152,7 +152,7 @@ SearchResult SessionChatLog::searchForward(SearchPos startPos, const QString& ph
 
         auto match = regexp.globalMatch(content.message.content, 0);
 
-        auto numMatches = 0;
+        size_t numMatches = 0;
         QRegularExpressionMatch lastMatch;
         while (match.isValid() && numMatches <= currentPos.numMatches && match.hasNext()) {
             lastMatch = match.next();
@@ -214,7 +214,7 @@ SearchResult SessionChatLog::searchBackward(SearchPos startPos, const QString& p
         auto match = regexp.globalMatch(content.message.content, 0);
 
         auto totalMatches = 0;
-        auto numMatchesBeforePos = 0;
+        size_t numMatchesBeforePos = 0;
         QRegularExpressionMatch lastMatch;
         while (match.isValid() && match.hasNext()) {
             auto currentMatch = match.next();
@@ -281,7 +281,7 @@ std::vector<IChatLog::DateChatLogIdxPair> SessionChatLog::getDateIdxs(const QDat
         ret.push_back(std::move(pair));
 
         dateIt = dateIt.addDays(1);
-        if (startDate.daysTo(dateIt) > maxDates && maxDates != 0) {
+        if (static_cast<size_t>(startDate.daysTo(dateIt)) > maxDates && maxDates != 0) {
             break;
         }
     }

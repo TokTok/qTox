@@ -26,14 +26,14 @@
 
 #include "genericsettings.h"
 #include "ui_avform.h"
+#include "src/audio/iaudiosink.h"
+#include "src/audio/iaudiosource.h"
 #include "src/video/videomode.h"
 
 #include <memory>
 
 class IAudioControl;
 class IAudioSettings;
-class IAudioSink;
-class IAudioSource;
 class CameraSource;
 class CoreAV;
 class IVideoSettings;

@@ -764,7 +764,7 @@ void OpenAL::cleanupBuffers(uint sourceId)
     std::vector<ALuint> bufids;
     // should never be out of range, just to be sure
     assert(processed >= 0);
-    assert(processed <= SIZE_MAX);
+    assert(static_cast<size_t>(processed) <= SIZE_MAX);
     bufids.resize(processed);
     alSourceUnqueueBuffers(sourceId, processed, bufids.data());
     // delete all buffers

@@ -1396,7 +1396,6 @@ void Widget::onReceiptReceived(int friendId, ReceiptNum receipt)
 
 void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 {
-    uint32_t friendId = frnd->getId();
     const ToxPk& friendPk = frnd->getPublicKey();
     ContentDialog* contentDialog = ContentDialogManager::getInstance()->getFriendDialog(friendPk);
     bool isSeparate = settings.getSeparateWindow();

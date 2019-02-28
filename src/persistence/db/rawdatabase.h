@@ -42,7 +42,7 @@
 #include <sqlite3.h>
 
 using RowId = NamedType<int64_t, struct RowIdTag, Orderable>;
-Q_DECLARE_METATYPE(RowId);
+Q_DECLARE_METATYPE(RowId)
 
 class RawDatabase : QObject
 {
