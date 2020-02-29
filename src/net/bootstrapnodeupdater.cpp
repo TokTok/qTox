@@ -44,8 +44,6 @@ const QLatin1String ipv6{"ipv6"};
 const QLatin1String public_key{"public_key"};
 const QLatin1String port{"port"};
 const QLatin1String maintainer{"maintainer"};
-// TODO(sudden6): make use of this field once we differentiate between TCP nodes, and bootstrap nodes
-const QLatin1String tcp_ports{"tcp_ports"};
 const QStringList neededFields{status_udp, status_tcp, ipv4, ipv6, public_key, port, maintainer};
 } // namespace NodeFields
 

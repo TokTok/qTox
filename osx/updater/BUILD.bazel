@@ -5,7 +5,7 @@ go_library(
     srcs = ["updater.go"],
     importpath = "github.com/TokTok/qtox/osx/updater",
     visibility = ["//visibility:private"],
-    deps = ["@org_bitbucket_kardianos_osext//:go_default_library"],
+    deps = ["@com_github_kardianos_osext//:go_default_library"],
 )
 
 go_binary(
