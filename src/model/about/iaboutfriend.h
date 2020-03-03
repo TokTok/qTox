@@ -28,6 +28,8 @@
 class IAboutFriend
 {
 public:
+    virtual ~IAboutFriend() {}
+
     virtual QString getName() const = 0;
     virtual QString getStatusMessage() const = 0;
     virtual ToxPk getPublicKey() const = 0;

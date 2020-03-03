@@ -1,19 +1,18 @@
 ---
-sudo: required
-dist: trusty
 language: cpp
+os: linux
 cache: ccache
 
 addons:
   apt:
     sources:
-      - sourceline: 'ppa:mc3man/trusty-media'
-      - sourceline: 'ppa:chris-lea/libsodium'
-      - sourceline: 'ppa:beineri/opt-qt551-trusty'
+      - sourceline: 'ppa:mc3man/xerus-media'
     packages:
       # qt
-      - qt55tools
-      - qt55svg
+      - libqt5svg5-dev
+      - libqt5opengl5-dev
+      - qttools5-dev
+      - qt5-default
       # others
       - ffmpeg
       - libasound-dev
@@ -47,7 +46,6 @@ addons:
       - libxvidcore-dev
 
 install:
-  - source /opt/qt55/bin/qt55-env.sh
   - git clone --depth=1 https://github.com/TokTok/c-toxcore
   - (cd c-toxcore && cmake . && make -j$(nproc) && sudo make install)
   - git clone --depth=1 https://github.com/sekrit-twc/zimg
