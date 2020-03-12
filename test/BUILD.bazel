@@ -1,4 +1,4 @@
-load("//third_party/qt:build_defs.bzl", "qt_test")
+#load("//third_party/qt:build_defs.bzl", "qt_test")
 
 #qt_test(
 #    name = "core_test",

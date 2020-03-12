@@ -1,3 +1,4 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
 load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_uic")
 load("//tools/project:build_defs.bzl", "project")
 
@@ -9,12 +10,12 @@ project()
 qt_moc(
     name = "qtox_moc",
     srcs = [
-        "src/audio/iaudiocontrol.h",
-        "src/audio/iaudiosource.h",
         "src/audio/backend/alsink.h",
         "src/audio/backend/alsource.h",
         "src/audio/backend/openal.h",
         "src/audio/backend/openal2.h",
+        "src/audio/iaudiocontrol.h",
+        "src/audio/iaudiosource.h",
         "src/chatlog/chatlinecontent.h",
         "src/chatlog/chatlinecontentproxy.h",
         "src/chatlog/chatlog.h",
@@ -40,9 +41,9 @@ qt_moc(
         "src/model/group.h",
         "src/model/groupmessagedispatcher.h",
         "src/model/ichatlog.h",
-        "src/model/sessionchatlog.h",
         "src/model/imessagedispatcher.h",
         "src/model/profile/profileinfo.h",
+        "src/model/sessionchatlog.h",
         "src/net/bootstrapnodeupdater.h",
         "src/net/toxuri.h",
         "src/net/updatecheck.h",
@@ -142,8 +143,8 @@ qt_rcc(
 cc_library(
     name = "qtox_resources_lib",
     srcs = [":qtox_resources"],
-    alwayslink = True,
     visibility = ["//qtox/test:__pkg__"],
+    alwayslink = True,
 )
 
 # User interface headers
