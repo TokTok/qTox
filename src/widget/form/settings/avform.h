@@ -26,14 +26,14 @@
 
 #include "genericsettings.h"
 #include "ui_avform.h"
-#include "src/audio/iaudiosink.h"
-#include "src/audio/iaudiosource.h"
 #include "src/video/videomode.h"
 
 #include <memory>
 
 class IAudioControl;
 class IAudioSettings;
+class IAudioSink;
+class IAudioSource;
 class CameraSource;
 class CoreAV;
 class IVideoSettings;
@@ -104,8 +104,8 @@ private:
     IVideoSettings* videoSettings;
 
     bool subscribedToAudioIn;
-    std::unique_ptr<IAudioSink> audioSink = nullptr;
-    std::unique_ptr<IAudioSource> audioSrc = nullptr;
+    std::unique_ptr<IAudioSink> audioSink;
+    std::unique_ptr<IAudioSource> audioSrc;
     VideoSurface* camVideoSurface;
     CameraSource& camera;
     QVector<QPair<QString, QString>> videoDeviceList;
