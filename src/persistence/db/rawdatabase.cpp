@@ -736,7 +736,14 @@ void RawDatabase::process()
                 }
                 for (int i = 0; i < nParams; ++i) {
                     const QByteArray& blob = query.blobs[curParam + i];
-                    if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), SQLITE_STATIC)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wold-style-cast"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+                    // SQLITE_STATIC uses old-style cast and 0 as null pointer butcomes from system headers, so can't
+                    // be fixed by us
+                    auto sqliteDataType = SQLITE_STATIC;
+#pragma GCC diagnostic pop
+                    if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
                         != SQLITE_OK) {
                         qWarning() << "Failed to bind param" << curParam + i << "to query"
                                    << anonymizeQuery(query.query);

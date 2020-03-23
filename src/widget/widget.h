@@ -329,7 +329,7 @@ private:
     int icon_size;
 
     IAudioControl& audio;
-    std::unique_ptr<IAudioSink> audioNotification = nullptr;
+    std::unique_ptr<IAudioSink> audioNotification;
     Settings& settings;
 
     QMap<ToxPk, FriendWidget*> friendWidgets;

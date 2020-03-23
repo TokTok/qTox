@@ -34,6 +34,9 @@
 #include "src/util/strongtype.h"
 
 #include <QCoreApplication>
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+#include <QRandomGenerator>
+#endif
 #include <QRegularExpression>
 #include <QString>
 #include <QStringBuilder>
@@ -472,7 +475,6 @@ bool parseErr(Tox_Err_Conference_Delete error, int line)
 
 Core::Core(QThread* coreThread)
     : tox(nullptr)
-    , av(nullptr)
     , toxTimer{new QTimer{this}}
     , coreThread(coreThread)
 {
@@ -792,7 +794,11 @@ void Core::bootstrapDht()
     }
 
     int i = 0;
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
+    static int j = QRandomGenerator::global()->generate() % listSize;
+#else
     static int j = qrand() % listSize;
+#endif
     // i think the more we bootstrap, the more we jitter because the more we overwrite nodes
     while (i < 2) {
         const DhtServer& dhtServer = bootstrapNodes[j % listSize];
@@ -941,7 +947,11 @@ void Core::onGroupTitleChange(Tox*, uint32_t groupId, uint32_t peerId, const uin
                               size_t length, void* vCore)
 {
     Core* core = static_cast<Core*>(vCore);
-    QString author = core->getGroupPeerName(groupId, peerId);
+    QString author;
+    // from tox.h: "If peer_number == UINT32_MAX, then author is unknown (e.g. initial joining the conference)."
+    if (peerId != std::numeric_limits<uint32_t>::max()) {
+        author = core->getGroupPeerName(groupId, peerId);
+    }
     emit core->saveRequest();
     emit core->groupTitleChanged(groupId, author, ToxString(cTitle, length).getQString());
 }
@@ -1025,7 +1035,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
                                ReceiptNum& receipt)
 {
     int size = message.toUtf8().size();
-    int maxSize = tox_max_message_length();
+    auto maxSize = static_cast<int>(tox_max_message_length());
     if (size > maxSize) {
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
                     << "when max is:" << maxSize << ". Ignoring.";
@@ -1069,8 +1079,8 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 {
     QMutexLocker ml{&coreLoopLock};
 
-    size_t size = message.toUtf8().size();
-    size_t maxSize = tox_max_message_length();
+    int size = message.toUtf8().size();
+    auto maxSize = static_cast<int>(tox_max_message_length());
     if (size > maxSize) {
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
                     << "when max is:" << maxSize << ". Ignoring.";
@@ -1311,7 +1321,7 @@ QByteArray Core::getToxSaveData()
     uint32_t fileSize = tox_get_savedata_size(tox.get());
     QByteArray data;
     data.resize(fileSize);
-    tox_get_savedata(tox.get(), (uint8_t*)data.data());
+    tox_get_savedata(tox.get(), reinterpret_cast<uint8_t*>(data.data()));
     return data;
 }
 
@@ -1448,11 +1458,6 @@ QString Core::getGroupPeerName(int groupId, int peerId) const
 {
     QMutexLocker ml{&coreLoopLock};
 
-    // from tox.h: "If peer_number == UINT32_MAX, then author is unknown (e.g. initial joining the conference)."
-    if (peerId != static_cast<int>(std::numeric_limits<uint32_t>::max())) {
-        return {};
-    }
-
     Tox_Err_Conference_Peer_Query error;
     size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, peerId, &error);
     if (!PARSE_ERR(error) || !length) {
@@ -1501,7 +1506,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
     }
 
     QStringList names;
-    for (uint32_t i = 0; i < nPeers; ++i) {
+    for (int i = 0; i < static_cast<int>(nPeers); ++i) {
         Tox_Err_Conference_Peer_Query error;
         size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
 
@@ -1519,7 +1524,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
         }
     }
 
-    assert(static_cast<uint32_t>(names.size()) == nPeers);
+    assert(names.size() == static_cast<int>(nPeers));
 
     return names;
 }
@@ -1704,7 +1709,7 @@ QStringList Core::splitMessage(const QString& message)
      *
      * (uint32_t tox_max_message_length(void); declared in tox.h, unable to see explicit definition)
      */
-    const int maxLen = tox_max_message_length() - 50;
+    const auto maxLen = static_cast<int>(tox_max_message_length()) - 50;
 
     while (ba_message.size() > maxLen) {
         int splitPos = ba_message.lastIndexOf('\n', maxLen - 1);
