@@ -1,12 +1,11 @@
 ---
 language: cpp
+compiler: clang
+dist: xenial
 os: linux
-cache: ccache
 
 addons:
   apt:
-    sources:
-      - sourceline: 'ppa:mc3man/xerus-media'
     packages:
       # qt
       - libqt5svg5-dev
@@ -14,45 +13,26 @@ addons:
       - qttools5-dev
       - qt5-default
       # others
-      - ffmpeg
       - libasound-dev
-      - libass-dev
-      - libfdk-aac-dev
-      - libgtk2.0-dev
-      - libmp3lame-dev
-      - libogg-dev
       - libopenal-dev
-      - libopencore-amrnb-dev
-      - libopencore-amrwb-dev
-      - libopus-dev
-      - libqrencode-dev
-      - libsdl1.2-dev
-      - libsdl2-dev
-      - libsodium-dev
-      - libsoxr-dev
-      - libspeex-dev
-      - libsqlcipher-dev
-      - libswscale-dev
-      - libtheora-dev
-      - libva-dev
-      - libvdpau-dev
-      - libvidstab-dev
-      - libvorbis-dev
-      - libvpx-dev
-      - libwavpack-dev
-      - libx264-dev
-      - libx265-dev
-      - libxv-dev
-      - libxvidcore-dev
 
 install:
-  - git clone --depth=1 https://github.com/TokTok/c-toxcore
-  - (cd c-toxcore && cmake . && make -j$(nproc) && sudo make install)
-  - git clone --depth=1 https://github.com/sekrit-twc/zimg
-  - (cd zimg && autoreconf -fi && ./configure && make -j$(nproc) && sudo make install)
+  - cd ..
+  - git clone --branch=update-repos --depth=1 https://github.com/iphydf/toktok-stack
+  - rmdir toktok-stack/qtox
+  - mv qTox toktok-stack/qtox
+  - cd toktok-stack
+  - git submodule update --init --depth=1 c-toxcore
+  - ln -s /usr/lib/x86_64-linux-gnu/qt5/bin third_party/qt/bin
+  - ln -s /usr/include/x86_64-linux-gnu/qt5 third_party/qt/include
+  - ln -s /usr/lib/x86_64-linux-gnu third_party/qt/lib
+  - tools/setup-ci
+  # Download bazel.
+  - wget https://github.com/bazelbuild/bazel/releases/download/2.2.0/bazel-2.2.0-installer-linux-x86_64.sh
+  - sha256sum -c tools/bazel-2.2.0-installer-linux-x86_64.sh.sha256
+  - chmod +x bazel-2.2.0-installer-linux-x86_64.sh
+  - ./bazel-2.2.0-installer-linux-x86_64.sh --user
+  - export PATH=$HOME/bin:$PATH
 
 script:
-  - cmake .
-  - make -j$(nproc)
-  - make test
-  - sudo make install
+  - bazel test //qtox/... -k
