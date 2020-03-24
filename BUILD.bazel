@@ -125,7 +125,7 @@ qt_moc(
 # =========================================================
 
 qt_rcc(
-    name = "qtox_resources",
+    name = "res",
     srcs = [
         "res.qrc",
         "smileys/emojione.qrc",
@@ -141,8 +141,8 @@ qt_rcc(
 )
 
 cc_library(
-    name = "qtox_resources_lib",
-    srcs = [":qtox_resources"],
+    name = "res_lib",
+    srcs = [":res"],
     visibility = ["//qtox/test:__pkg__"],
     alwayslink = True,
 )
@@ -194,7 +194,7 @@ cc_library(
     includes = ["."],
     visibility = ["//qtox:__subpackages__"],
     deps = [
-        ":qtox_resources_lib",
+        ":res_lib",
         "//c-toxcore",
         "@ffmpeg",
         "@filter_audio",

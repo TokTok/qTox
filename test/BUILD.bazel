@@ -1,25 +1,20 @@
-#load("//third_party/qt:build_defs.bzl", "qt_test")
+load("//third_party/qt:build_defs.bzl", "qt_test")
 
-#qt_test(
-#    name = "core_test",
-#    size = "small",
-#    src = "core/core_test.cpp",
-#    copts = select({
-#        "//tools/config:freebsd": [],
-#        "//tools/config:linux": ["-fPIC"],
-#        "//tools/config:osx": [],
-#    }),
-#    deps = ["//qtox:qtox_lib", "//qtox:qtox_resources_lib"],
-#)
-
-#[qt_test(
-#    name = src[src.rindex("/") + 1:-4],
-#    size = "small",
-#    src = src,
-#    copts = select({
-#        "//tools/config:freebsd": [],
-#        "//tools/config:linux": ["-fPIC"],
-#        "//tools/config:osx": [],
-#    }),
-#    deps = ["//qtox:qtox_lib", "//qtox:qtox_resources_lib"],
-#) for src in glob(["*/*_test.cpp"])]
+[qt_test(
+    name = src[src.rindex("/") + 1:-4],
+    size = "small",
+    src = src,
+    copts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+    }),
+    mocopts = ["-Iqtox"],
+    deps = [
+        "//qtox:qtox_lib",
+        "//qtox:res_lib",
+    ],
+) for src in glob(
+    ["*/*_test.cpp"],
+    exclude = ["persistence/dbschema_test.cpp"],
+)]
