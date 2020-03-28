@@ -215,7 +215,12 @@ cc_library(
         ],
     ) + select({
         "//tools/config:freebsd": ["src/platform/camera/v4l2.cpp"],
-        "//tools/config:linux": ["src/platform/camera/v4l2.cpp"],
+        "//tools/config:linux": [
+            "src/platform/capslock_x11.cpp",
+            "src/platform/camera/v4l2.cpp",
+            "src/platform/timer_x11.cpp",
+            "src/platform/x11_display.cpp",
+        ],
         "//tools/config:osx": [
             "src/platform/capslock_osx.cpp",
             "src/platform/install_osx.cpp",
