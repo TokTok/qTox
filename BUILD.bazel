@@ -1,6 +1,8 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
-load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_uic")
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "objc_library")
+load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_moc", "qt_rcc", "qt_uic")
 load("//tools/project:build_defs.bzl", "project")
+
+VERSION = "1.16.3"
 
 project()
 
@@ -54,6 +56,7 @@ qt_moc(
         "src/persistence/profile.h",
         "src/persistence/settings.h",
         "src/persistence/smileypack.h",
+        "src/platform/desktop_notifications/desktopnotify.h",
         "src/platform/posixsignalnotifier.h",
         "src/video/camerasource.h",
         "src/video/corevideosource.h",
@@ -121,6 +124,14 @@ qt_moc(
     deps = ["@qt//:qt_widgets"],
 )
 
+# Translations
+# =========================================================
+
+qt_lconvert(
+    name = "qtox_qms",
+    srcs = glob(["translations/*.ts"]),
+)
+
 # Resources
 # =========================================================
 
@@ -130,8 +141,9 @@ qt_rcc(
         "res.qrc",
         "smileys/emojione.qrc",
         "smileys/smileys.qrc",
+        #"translations/translations.qrc",
     ],
-    data = glob([
+    data = [":qtox_qms"] + glob([
         "audio/**/*",
         "img/**/*",
         "res/**/*",
@@ -158,11 +170,36 @@ qt_uic(
 # Main binary
 # =========================================================
 
+objc_library(
+    name = "avfoundation",
+    hdrs = [
+        "src/platform/camera/avfoundation.h",
+        "src/video/videomode.h",
+    ],
+    copts = ["-Wno-vla-extension"],
+    includes = ["."],
+    non_arc_srcs = ["src/platform/camera/avfoundation.mm"],
+    sdk_frameworks = ["AVFoundation"],
+    tags = ["manual"],
+    deps = ["@qt//:qt_core"],
+)
+
+genrule(
+    name = "version",
+    outs = ["src/version.h"],
+    cmd = """cat <<EOF > $@
+#define GIT_DESCRIBE "v%s"
+#define GIT_VERSION "master"
+#define TIMESTAMP "redacted"
+EOF""" % VERSION,
+)
+
 cc_library(
     name = "qtox_lib",
     srcs = [
         ":qtox_moc",
         ":qtox_ui",
+        ":version",
     ] + glob(
         [
             "src/**/*.cpp",
@@ -173,11 +210,17 @@ cc_library(
             "src/platform/camera/directshow.cpp",
             "src/platform/*_osx.cpp",
             "src/platform/*_win.cpp",
+            "src/platform/*_x11.cpp",
+            "src/platform/x11_*.cpp",
         ],
     ) + select({
         "//tools/config:freebsd": ["src/platform/camera/v4l2.cpp"],
         "//tools/config:linux": ["src/platform/camera/v4l2.cpp"],
-        "//tools/config:osx": ["src/platform/install_osx.cpp"],
+        "//tools/config:osx": [
+            "src/platform/capslock_osx.cpp",
+            "src/platform/install_osx.cpp",
+            "src/platform/timer_osx.cpp",
+        ],
     }),
     hdrs = glob(["src/**/*.h"]),
     copts = select({
@@ -186,12 +229,19 @@ cc_library(
         "//tools/config:osx": [],
     }),
     defines = [
-        "GIT_DESCRIBE='\"master\"'",
-        "GIT_VERSION='\"master\"'",
-        "TIMESTAMP='\"redacted\"'",
+        "DEBUG",
+        #"DESKTOP_NOTIFICATIONS",
         "QTOX_PLATFORM_EXT",
+        "QT_MESSAGELOGCONTEXT",
+        "UPDATE_CHECK_ENABLED",
+        "USE_FILTERAUDIO",
     ],
     includes = ["."],
+    linkopts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": [],
+        "//tools/config:osx": ["-framework IOKit"],
+    }),
     visibility = ["//qtox:__subpackages__"],
     deps = [
         ":res_lib",
@@ -208,14 +258,20 @@ cc_library(
         "@qt//:qt_svg",
         "@qt//:qt_widgets",
         "@qt//:qt_xml",
+        #"@sqlcipher",
         "@sqlite3",
-        "@x11",
-        "@xss",
-    ],
+    ] + select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": [
+            "@x11",
+            "@xss",
+        ],
+        "//tools/config:osx": [":avfoundation"],
+    }),
 )
 
-cc_binary(
-    name = "qtox",
+cc_library(
+    name = "qtox_main",
     srcs = ["src/main.cpp"],
     copts = select({
         "//tools/config:freebsd": [],
@@ -223,4 +279,10 @@ cc_binary(
         "//tools/config:osx": [],
     }),
     deps = [":qtox_lib"],
+    visibility = ["//qtox:__subpackages__"],
+)
+
+cc_binary(
+    name = "qtox",
+    deps = [":qtox_main"],
 )

@@ -1,0 +1,30 @@
+load("@build_bazel_rules_apple//apple:macos.bzl", "macos_application")
+
+macos_application(
+    name = "qtox",
+    app_icons = glob(["qtox.icns.xcassets/**"]),
+    bundle_id = "chat.tox.qtox",
+    infoplists = [":info.plist"],
+    minimum_os_version = "10.11",
+    tags = ["manual"],
+    deps = ["//qtox:qtox_main"],
+)
+
+genrule(
+    name = "qtox_deploy",
+    srcs = [":qtox"],
+    outs = ["qtox_deploy.tar.gz"],
+    cmd = """
+    unzip -q $<
+    $(location @qt//:bin/macdeployqt) qtox.app
+    $(location deduplicate) qtox.app
+    $(location macfixrpath) qtox.app
+    tar zcf $@ qtox.app
+    """,
+    tags = ["manual"],
+    tools = [
+        "deduplicate",
+        "macfixrpath",
+        "@qt//:bin/macdeployqt",
+    ],
+)

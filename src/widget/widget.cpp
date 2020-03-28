@@ -361,7 +361,7 @@ void Widget::init()
 
     fileMenu->menu()->addSeparator();
     logoutAction = fileMenu->menu()->addAction(QString());
-    connect(logoutAction, &QAction::triggered, [this]() { Nexus::getInstance().showLogin(); });
+    connect(logoutAction, &QAction::triggered, []() { Nexus::getInstance().showLogin(); });
 
     editMenu = globalMenu->insertMenu(viewMenu, new QMenu(this));
     editMenu->menu()->addSeparator();
@@ -2238,7 +2238,7 @@ void Widget::onEventIconTick()
     }
 }
 
-#define XX_UBUNTU1604_XX 1
+//#define XX_UBUNTU1604_XX 1
 
 void Widget::onTryCreateTrayIcon()
 {
