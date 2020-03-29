@@ -216,8 +216,8 @@ cc_library(
     ) + select({
         "//tools/config:freebsd": ["src/platform/camera/v4l2.cpp"],
         "//tools/config:linux": [
-            "src/platform/capslock_x11.cpp",
             "src/platform/camera/v4l2.cpp",
+            "src/platform/capslock_x11.cpp",
             "src/platform/timer_x11.cpp",
             "src/platform/x11_display.cpp",
         ],
@@ -226,12 +226,19 @@ cc_library(
             "src/platform/install_osx.cpp",
             "src/platform/timer_osx.cpp",
         ],
+        "//tools/config:windows": [
+            "src/platform/autorun_win.cpp",
+            "src/platform/camera/directshow.cpp",
+            "src/platform/capslock_win.cpp",
+            "src/platform/timer_win.cpp",
+        ],
     }),
     hdrs = glob(["src/**/*.h"]),
     copts = select({
         "//tools/config:freebsd": [],
         "//tools/config:linux": ["-fPIC"],
         "//tools/config:osx": [],
+        "//tools/config:windows": [],
     }),
     defines = [
         "DEBUG",
@@ -246,6 +253,7 @@ cc_library(
         "//tools/config:freebsd": [],
         "//tools/config:linux": [],
         "//tools/config:osx": ["-framework IOKit"],
+        "//tools/config:windows": [],
     }),
     visibility = ["//qtox:__subpackages__"],
     deps = [
@@ -263,8 +271,7 @@ cc_library(
         "@qt//:qt_svg",
         "@qt//:qt_widgets",
         "@qt//:qt_xml",
-        #"@sqlcipher",
-        "@sqlite3",
+        "@sqlcipher",
     ] + select({
         "//tools/config:freebsd": [],
         "//tools/config:linux": [
@@ -272,6 +279,7 @@ cc_library(
             "@xss",
         ],
         "//tools/config:osx": [":avfoundation"],
+        "//tools/config:windows": [],
     }),
 )
 
@@ -282,6 +290,7 @@ cc_library(
         "//tools/config:freebsd": [],
         "//tools/config:linux": ["-fPIC"],
         "//tools/config:osx": [],
+        "//tools/config:windows": [],
     }),
     deps = [":qtox_lib"],
     visibility = ["//qtox:__subpackages__"],
