@@ -134,7 +134,7 @@ void Settings::loadGlobal()
         translation = s.value("translation", "en").toString();
         showSystemTray = s.value("showSystemTray", true).toBool();
         autostartInTray = s.value("autostartInTray", false).toBool();
-        closeToTray = s.value("closeToTray", false).toBool();
+        closeToTray = s.value("closeToTray", true).toBool();
         if (currentProfile.isEmpty()) {
             currentProfile = s.value("currentProfile", "").toString();
             currentProfileId = makeProfileId(currentProfile);

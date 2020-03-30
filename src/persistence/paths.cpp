@@ -35,15 +35,6 @@ const QLatin1String themeFolder{"themes"};
 const QLatin1String avatarsFolder{"avatars"};
 const QLatin1String transfersFolder{"transfers"};
 const QLatin1String screenshotsFolder{"screenshots"};
-
-// NOTE(sudden6): currently unused, but reflects the TCS at 2018-11
-#ifdef Q_OS_WIN
-const QLatin1String TCSToxFileFolder{"%APPDATA%/tox/"};
-#elif defined(Q_OS_OSX)
-const QLatin1String TCSToxFileFolder{"~/Library/Application Support/Tox"};
-#else
-const QLatin1String TCSToxFileFolder{"~/.config/tox/"};
-#endif
 } // namespace
 
 /**

@@ -1651,7 +1651,7 @@ bool Core::hasFriendWithPublicKey(const ToxPk& publicKey) const
     }
 
     Tox_Err_Friend_By_Public_Key error;
-    uint32_t friendId = tox_friend_by_public_key(tox.get(), publicKey.getData(), &error);
+    (void)tox_friend_by_public_key(tox.get(), publicKey.getData(), &error);
     return PARSE_ERR(error);
 }
 

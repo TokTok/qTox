@@ -361,7 +361,7 @@ void Widget::init()
 
     fileMenu->menu()->addSeparator();
     logoutAction = fileMenu->menu()->addAction(QString());
-    connect(logoutAction, &QAction::triggered, [this]() { Nexus::getInstance().showLogin(); });
+    connect(logoutAction, &QAction::triggered, []() { Nexus::getInstance().showLogin(); });
 
     editMenu = globalMenu->insertMenu(viewMenu, new QMenu(this));
     editMenu->menu()->addSeparator();
@@ -1395,7 +1395,6 @@ void Widget::onReceiptReceived(int friendId, ReceiptNum receipt)
 
 void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 {
-    uint32_t friendId = frnd->getId();
     const ToxPk& friendPk = frnd->getPublicKey();
     ContentDialog* contentDialog = ContentDialogManager::getInstance()->getFriendDialog(friendPk);
     bool isSeparate = settings.getSeparateWindow();
@@ -2239,8 +2238,11 @@ void Widget::onEventIconTick()
     }
 }
 
+//#define XX_UBUNTU1604_XX 1
+
 void Widget::onTryCreateTrayIcon()
 {
+#ifndef XX_UBUNTU1604_XX
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -2275,12 +2277,15 @@ void Widget::onTryCreateTrayIcon()
             show();
         }
     } else {
+#endif
         disconnect(timer, &QTimer::timeout, this, &Widget::onTryCreateTrayIcon);
         if (!icon) {
             qWarning() << "No system tray detected!";
             show();
         }
+#ifndef XX_UBUNTU1604_XX
     }
+#endif
 }
 
 void Widget::setStatusOnline()

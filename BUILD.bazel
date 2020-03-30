@@ -1,0 +1,299 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "objc_library")
+load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_moc", "qt_rcc", "qt_uic")
+load("//tools/project:build_defs.bzl", "project")
+
+VERSION = "1.16.3"
+
+project()
+
+# MOC headers
+# =========================================================
+
+qt_moc(
+    name = "qtox_moc",
+    srcs = [
+        "src/audio/backend/alsink.h",
+        "src/audio/backend/alsource.h",
+        "src/audio/backend/openal.h",
+        "src/audio/iaudiocontrol.h",
+        "src/audio/iaudiosource.h",
+        "src/chatlog/chatlinecontent.h",
+        "src/chatlog/chatlinecontentproxy.h",
+        "src/chatlog/chatlog.h",
+        "src/chatlog/content/broken.h",
+        "src/chatlog/content/filetransferwidget.h",
+        "src/chatlog/content/notificationicon.h",
+        "src/chatlog/content/spinner.h",
+        "src/chatlog/content/text.h",
+        "src/chatlog/content/timestamp.h",
+        "src/chatlog/customtextdocument.h",
+        "src/core/core.h",
+        "src/core/coreav.h",
+        "src/core/corefile.h",
+        "src/core/toxcall.h",
+        "src/ipc.h",
+        "src/model/about/aboutfriend.h",
+        "src/model/chathistory.h",
+        "src/model/chatroom/friendchatroom.h",
+        "src/model/chatroom/groupchatroom.h",
+        "src/model/contact.h",
+        "src/model/friend.h",
+        "src/model/friendmessagedispatcher.h",
+        "src/model/group.h",
+        "src/model/groupmessagedispatcher.h",
+        "src/model/ichatlog.h",
+        "src/model/imessagedispatcher.h",
+        "src/model/profile/profileinfo.h",
+        "src/model/sessionchatlog.h",
+        "src/net/bootstrapnodeupdater.h",
+        "src/net/toxuri.h",
+        "src/net/updatecheck.h",
+        "src/nexus.h",
+        "src/persistence/db/rawdatabase.h",
+        "src/persistence/history.h",
+        "src/persistence/offlinemsgengine.h",
+        "src/persistence/profile.h",
+        "src/persistence/settings.h",
+        "src/persistence/smileypack.h",
+        "src/platform/desktop_notifications/desktopnotify.h",
+        "src/platform/posixsignalnotifier.h",
+        "src/video/camerasource.h",
+        "src/video/corevideosource.h",
+        "src/video/netcamview.h",
+        "src/video/videosource.h",
+        "src/video/videosurface.h",
+        "src/widget/about/aboutfriendform.h",
+        "src/widget/categorywidget.h",
+        "src/widget/chatformheader.h",
+        "src/widget/circlewidget.h",
+        "src/widget/contentdialog.h",
+        "src/widget/contentdialogmanager.h",
+        "src/widget/emoticonswidget.h",
+        "src/widget/form/addfriendform.h",
+        "src/widget/form/chatform.h",
+        "src/widget/form/filesform.h",
+        "src/widget/form/genericchatform.h",
+        "src/widget/form/groupchatform.h",
+        "src/widget/form/groupinviteform.h",
+        "src/widget/form/groupinvitewidget.h",
+        "src/widget/form/loadhistorydialog.h",
+        "src/widget/form/profileform.h",
+        "src/widget/form/searchsettingsform.h",
+        "src/widget/form/setpassworddialog.h",
+        "src/widget/form/settings/aboutform.h",
+        "src/widget/form/settings/advancedform.h",
+        "src/widget/form/settings/avform.h",
+        "src/widget/form/settings/generalform.h",
+        "src/widget/form/settings/genericsettings.h",
+        "src/widget/form/settings/privacyform.h",
+        "src/widget/form/settings/userinterfaceform.h",
+        "src/widget/form/settings/verticalonlyscroller.h",
+        "src/widget/form/settingswidget.h",
+        "src/widget/form/tabcompleter.h",
+        "src/widget/friendlistlayout.h",
+        "src/widget/friendlistwidget.h",
+        "src/widget/friendwidget.h",
+        "src/widget/genericchatitemwidget.h",
+        "src/widget/genericchatroomwidget.h",
+        "src/widget/groupwidget.h",
+        "src/widget/gui.h",
+        "src/widget/loginscreen.h",
+        "src/widget/maskablepixmapwidget.h",
+        "src/widget/notificationedgewidget.h",
+        "src/widget/passwordedit.h",
+        "src/widget/qrwidget.h",
+        "src/widget/searchform.h",
+        "src/widget/tool/activatedialog.h",
+        "src/widget/tool/adjustingscrollarea.h",
+        "src/widget/tool/callconfirmwidget.h",
+        "src/widget/tool/chattextedit.h",
+        "src/widget/tool/croppinglabel.h",
+        "src/widget/tool/flyoutoverlaywidget.h",
+        "src/widget/tool/friendrequestdialog.h",
+        "src/widget/tool/profileimporter.h",
+        "src/widget/tool/removefrienddialog.h",
+        "src/widget/tool/screengrabberchooserrectitem.h",
+        "src/widget/tool/screengrabberoverlayitem.h",
+        "src/widget/tool/screenshotgrabber.h",
+        "src/widget/tool/toolboxgraphicsitem.h",
+        "src/widget/widget.h",
+    ],
+    hdrs = glob(["src/**/*.h"]),
+    mocopts = ["-Iqtox"],
+    deps = ["@qt//:qt_widgets"],
+)
+
+# Translations
+# =========================================================
+
+qt_lconvert(
+    name = "qtox_qms",
+    srcs = glob(["translations/*.ts"]),
+)
+
+# Resources
+# =========================================================
+
+qt_rcc(
+    name = "res",
+    srcs = [
+        "res.qrc",
+        "smileys/emojione.qrc",
+        "smileys/smileys.qrc",
+        #"translations/translations.qrc",
+    ],
+    data = [":qtox_qms"] + glob([
+        "audio/**/*",
+        "img/**/*",
+        "res/**/*",
+        "smileys/*/*",
+        "themes/**/*",
+    ]),
+)
+
+cc_library(
+    name = "res_lib",
+    srcs = [":res"],
+    visibility = ["//qtox/test:__pkg__"],
+    alwayslink = True,
+)
+
+# User interface headers
+# =========================================================
+
+qt_uic(
+    name = "qtox_ui",
+    srcs = glob(["src/**/*.ui"]),
+)
+
+# Main binary
+# =========================================================
+
+objc_library(
+    name = "avfoundation",
+    hdrs = [
+        "src/platform/camera/avfoundation.h",
+        "src/video/videomode.h",
+    ],
+    copts = ["-Wno-vla-extension"],
+    includes = ["."],
+    non_arc_srcs = ["src/platform/camera/avfoundation.mm"],
+    sdk_frameworks = ["AVFoundation"],
+    tags = ["manual"],
+    deps = ["@qt//:qt_core"],
+)
+
+genrule(
+    name = "version",
+    outs = ["src/version.h"],
+    cmd = """cat <<EOF > $@
+#define GIT_DESCRIBE "v%s"
+#define GIT_VERSION "master"
+#define TIMESTAMP "redacted"
+EOF""" % VERSION,
+)
+
+cc_library(
+    name = "qtox_lib",
+    srcs = [
+        ":qtox_moc",
+        ":qtox_ui",
+        ":version",
+    ] + glob(
+        [
+            "src/**/*.cpp",
+        ],
+        exclude = [
+            "src/main.cpp",
+            "src/platform/camera/v4l2.cpp",
+            "src/platform/camera/directshow.cpp",
+            "src/platform/*_osx.cpp",
+            "src/platform/*_win.cpp",
+            "src/platform/*_x11.cpp",
+            "src/platform/x11_*.cpp",
+        ],
+    ) + select({
+        "//tools/config:freebsd": ["src/platform/camera/v4l2.cpp"],
+        "//tools/config:linux": [
+            "src/platform/camera/v4l2.cpp",
+            "src/platform/capslock_x11.cpp",
+            "src/platform/timer_x11.cpp",
+            "src/platform/x11_display.cpp",
+        ],
+        "//tools/config:osx": [
+            "src/platform/capslock_osx.cpp",
+            "src/platform/install_osx.cpp",
+            "src/platform/timer_osx.cpp",
+        ],
+        "//tools/config:windows": [
+            "src/platform/autorun_win.cpp",
+            "src/platform/camera/directshow.cpp",
+            "src/platform/capslock_win.cpp",
+            "src/platform/timer_win.cpp",
+        ],
+    }),
+    hdrs = glob(["src/**/*.h"]),
+    copts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+        "//tools/config:windows": [],
+    }),
+    defines = [
+        "DEBUG",
+        #"DESKTOP_NOTIFICATIONS",
+        "QTOX_PLATFORM_EXT",
+        "QT_MESSAGELOGCONTEXT",
+        "UPDATE_CHECK_ENABLED",
+    ],
+    includes = ["."],
+    linkopts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": [],
+        "//tools/config:osx": ["-framework IOKit"],
+        "//tools/config:windows": [],
+    }),
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        ":res_lib",
+        "//c-toxcore",
+        "@ffmpeg",
+        "@libexif",
+        "@libqrencode",
+        "@openal",
+        "@qt//:qt_concurrent",
+        "@qt//:qt_core",
+        "@qt//:qt_gui",
+        "@qt//:qt_network",
+        "@qt//:qt_svg",
+        "@qt//:qt_widgets",
+        "@qt//:qt_xml",
+        "@sqlcipher",
+    ] + select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": [
+            "@x11",
+            "@xss",
+        ],
+        "//tools/config:osx": [":avfoundation"],
+        "//tools/config:windows": [],
+    }),
+)
+
+cc_library(
+    name = "qtox_main",
+    srcs = ["src/main.cpp"],
+    copts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+        "//tools/config:windows": [],
+    }),
+    deps = [":qtox_lib"],
+    visibility = ["//qtox:__subpackages__"],
+)
+
+cc_binary(
+    name = "qtox",
+    deps = [":qtox_main"],
+)

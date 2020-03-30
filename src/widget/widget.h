@@ -26,6 +26,7 @@
 #include <QMainWindow>
 #include <QPointer>
 #include <QSystemTrayIcon>
+#include <QUrl>
 
 #include "genericchatitemwidget.h"
 

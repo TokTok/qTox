@@ -18,6 +18,7 @@
 */
 #include "src/net/updatecheck.h"
 #include "src/persistence/settings.h"
+#include "src/version.h"
 
 #include <QNetworkAccessManager>
 #include <QDebug>

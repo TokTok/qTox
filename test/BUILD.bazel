@@ -1,0 +1,20 @@
+load("//third_party/qt:build_defs.bzl", "qt_test")
+
+[qt_test(
+    name = src[src.rindex("/") + 1:-4],
+    size = "small",
+    src = src,
+    copts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+    }),
+    mocopts = ["-Iqtox"],
+    deps = [
+        "//qtox:qtox_lib",
+        "//qtox:res_lib",
+    ],
+) for src in glob(
+    ["*/*_test.cpp"],
+    exclude = ["persistence/dbschema_test.cpp"],
+)]

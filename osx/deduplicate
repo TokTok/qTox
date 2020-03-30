@@ -1,0 +1,86 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings FATAL => 'all';
+use File::Find;
+use Data::Dumper;
+
+local $Data::Dumper::Sortkeys = 1;
+local $Data::Dumper::Terse = 1;
+local $Data::Dumper::Indent = 1;
+
+my $BUNDLE_PATH = $ARGV[0] or die "Usage: deduplicate <BUNDLE_PATH>\n";
+
+my %files;
+find sub {
+   return unless -f;
+   push @{$files{$_}}, $File::Find::name;
+}, $BUNDLE_PATH;
+
+sub make_relative {
+   my ($canon, $dupe) = @_;
+   die "internal error: $canon has multiple directory entries"
+      if $canon eq $dupe;
+
+   my (@canon) = split /\//, $canon;
+   my (@dupe) = split /\//, $dupe;
+
+   while ($canon[0] eq $dupe[0]) {
+      shift @canon;
+      shift @dupe;
+   }
+
+   my @relative = map { ".." } @dupe;
+   pop @relative;
+   push @relative, @canon;
+
+   join "/", @relative
+}
+
+sub slurp {
+   local $/;
+   open my $fh, "<", $_[0]
+      or die "$_[0]: $!";
+   <$fh>
+}
+
+# Filter out files that have the same name but are different.
+# This includes for example Info.plist. Also filter out items
+# that have no dupes.
+for my $basename (sort keys %files) {
+   my ($canonical, @dupes) = sort @{$files{$basename}};
+   if (not @dupes) {
+      delete $files{$basename};
+      next;
+   }
+   my $a = slurp $canonical;
+   for my $dupe (@dupes) {
+      my $b = slurp $dupe;
+      if ($a ne $b) {
+         delete $files{$basename};
+         last;
+      }
+   }
+}
+
+sub select_canon {
+   my ($versioned) = grep { m/Versions\/\d/ } @_;
+   if ($versioned) {
+      $versioned, grep { $_ ne $versioned } @_;
+   } else {
+      @_
+   }
+}
+
+for my $basename (sort keys %files) {
+   my ($canon, @dupes) = select_canon @{$files{$basename}};
+   my %dupes = map { $_ => make_relative $canon, $_ } @dupes;
+   $files{$basename} = [$canon, \%dupes];
+}
+
+for my $insns (values %files) {
+   my $links = $insns->[1];
+   for my $dupe (keys %$links) {
+      system "ln", "-sf", $links->{$dupe}, $dupe;
+   }
+}

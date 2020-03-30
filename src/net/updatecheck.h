@@ -19,6 +19,7 @@
 #include <QNetworkAccessManager>
 #include <QObject>
 #include <QTimer>
+#include <QUrl>
 
 #include <memory>
 
