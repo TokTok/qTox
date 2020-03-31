@@ -805,7 +805,7 @@ void Core::bootstrapDht()
         QString dhtServerAddress = dhtServer.address.toLatin1();
         QString port = QString::number(dhtServer.port);
         QString name = dhtServer.name;
-        qDebug() << QString("Connecting to a bootstrap node...");
+        qDebug("Connecting to bootstrap node %d", j % listSize);
         QByteArray address = dhtServer.address.toLatin1();
         // TODO: constucting the pk via ToxId is a workaround
         ToxPk pk = ToxId{dhtServer.userId}.getPublicKey();
