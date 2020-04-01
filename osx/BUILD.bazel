@@ -5,7 +5,7 @@ macos_application(
     app_icons = glob(["qtox.icns.xcassets/**"]),
     bundle_id = "chat.tox.qtox",
     infoplists = [":info.plist"],
-    minimum_os_version = "10.11",
+    minimum_os_version = "10.14",
     tags = ["manual"],
     deps = ["//qtox:qtox_main"],
 )

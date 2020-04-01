@@ -343,6 +343,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 
     devices.append({"none", QObject::tr("None", "No camera device set")});
 
+    qDebug() << "XXX: getting device list";
     if (!getDefaultInputFormat())
         return devices;
 
@@ -357,14 +358,18 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
         devices += v4l2::getDeviceList();
 #endif
 #ifdef Q_OS_OSX
-    else if (iformat->name == QString("avfoundation"))
+    else if (iformat->name == QString("avfoundation")) {
+        qDebug() << "XXX: getting device list from avfoundation";
         devices += avfoundation::getDeviceList();
+    }
 #endif
     else
         devices += getRawDeviceListGeneric();
 
     if (idesktopFormat) {
+        qDebug() << "XXX: desktop capture?";
         if (idesktopFormat->name == QString("x11grab")) {
+            qDebug() << "XXX: desktop capture x11";
             QString dev = "x11grab#";
             QByteArray display = qgetenv("DISPLAY");
 
@@ -377,11 +382,13 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
                 dev, QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
         }
         if (idesktopFormat->name == QString("gdigrab"))
+            qDebug() << "XXX: desktop capture gdi";
             devices.push_back(QPair<QString, QString>{
                 "gdigrab#desktop",
                 QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
     }
 
+    qDebug() << "XXX: got devices:" << devices;
     return devices;
 }
 
@@ -508,8 +515,10 @@ bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
 bool CameraDevice::getDefaultInputFormat()
 {
     QMutexLocker locker(&iformatLock);
-    if (iformat)
+    if (iformat) {
+        qDebug() << "XXX: input format already done";
         return true;
+    }
 
     avdevice_register_all();
 
@@ -535,6 +544,7 @@ bool CameraDevice::getDefaultInputFormat()
 #endif
 
 #ifdef Q_OS_OSX
+    qDebug() << "XXX: checking for input format";
     if ((iformat = av_find_input_format("avfoundation")))
         return true;
     if ((iformat = av_find_input_format("qtkit")))

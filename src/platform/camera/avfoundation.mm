@@ -19,6 +19,7 @@
 */
 
 #include "avfoundation.h"
+#include <QDebug>
 #include <QObject>
 
 #import <AVFoundation/AVFoundation.h>
@@ -26,6 +27,27 @@
 QVector<QPair<QString, QString> > avfoundation::getDeviceList()
 {
     QVector<QPair<QString, QString> > result;
+    qDebug() << "!!!!!!!!!!!!!!!!!!!!!! Getting the device list from AVFoundation. !!!!!!!!!!!!!!!!!!!!!!";
+
+    const AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    if (authStatus != AVAuthorizationStatusDenied && authStatus != AVAuthorizationStatusNotDetermined) {
+        qDebug() << "We already have access to the camera.";
+    } else {
+        qDebug() << "We don't have access to the camera yet; asking user for permission.";
+        QMutex mutex;
+        QMutex *mutexPtr = &mutex;
+        __block BOOL isGranted = false;
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            isGranted = granted;
+            mutexPtr->unlock();
+        }];
+        mutex.lock();
+        if (isGranted) {
+            qInfo() << "We now have access to the camera.";
+        } else {
+            qInfo() << "User did not grant us permission to access the camera.";
+        }
+    }
 
     NSArray* devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     for (AVCaptureDevice* device in devices) {
@@ -42,6 +64,8 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
         }
     }
 
+    qDebug() << "XXX: got devices from avfoundation" << devices;
+    qDebug() << "XXX: got devices from avfoundation" << result;
     return result;
 }
 
