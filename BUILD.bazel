@@ -139,6 +139,7 @@ qt_rcc(
     srcs = [
         "res.qrc",
         "smileys/emojione.qrc",
+        "smileys/noto.qrc",
         "smileys/smileys.qrc",
         #"translations/translations.qrc",
     ],
