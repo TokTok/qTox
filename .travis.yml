@@ -23,9 +23,6 @@ install:
   - mv qTox toktok-stack/qtox
   - cd toktok-stack
   - git submodule update --init --depth=1 c-toxcore
-  - ln -s /usr/lib/x86_64-linux-gnu/qt5/bin third_party/qt/bin
-  - ln -s /usr/include/x86_64-linux-gnu/qt5 third_party/qt/include
-  - ln -s /usr/lib/x86_64-linux-gnu third_party/qt/lib
   - tools/setup-ci
   # Download bazel.
   - wget https://github.com/bazelbuild/bazel/releases/download/2.2.0/bazel-2.2.0-installer-linux-x86_64.sh
