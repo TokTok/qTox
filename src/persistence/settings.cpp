@@ -185,7 +185,7 @@ void Settings::loadGlobal()
         dontGroupWindows = s.value("dontGroupWindows", false).toBool();
         showIdenticons = s.value("showIdenticons", true).toBool();
 
-        const QString DEFAULT_SMILEYS = ":/smileys/noto/emoticons.xml";
+        const QString DEFAULT_SMILEYS = ":/smileys/emojione/emoticons.xml";
         smileyPack = s.value("smileyPack", DEFAULT_SMILEYS).toString();
         if (!QFile::exists(smileyPack)) {
             smileyPack = DEFAULT_SMILEYS;
