@@ -5,7 +5,8 @@ macos_application(
     app_icons = glob(["qtox.icns.xcassets/**"]),
     bundle_id = "chat.tox.qtox",
     infoplists = [":info.plist"],
-    minimum_os_version = "10.14",
+    # 10.9 is the lowest we can go and still get libstdc++.
+    minimum_os_version = "10.9",
     tags = ["manual"],
     deps = ["//qtox:qtox_main"],
 )

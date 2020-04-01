@@ -29,6 +29,7 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
     QVector<QPair<QString, QString> > result;
     qDebug() << "!!!!!!!!!!!!!!!!!!!!!! Getting the device list from AVFoundation. !!!!!!!!!!!!!!!!!!!!!!";
 
+#if __MAC_OS_X_VERSION_MIN_REQUIRED >= 101400
     const AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus != AVAuthorizationStatusDenied && authStatus != AVAuthorizationStatusNotDetermined) {
         qDebug() << "We already have access to the camera.";
@@ -48,6 +49,7 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
             qInfo() << "User did not grant us permission to access the camera.";
         }
     }
+#endif
 
     NSArray* devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
     for (AVCaptureDevice* device in devices) {
