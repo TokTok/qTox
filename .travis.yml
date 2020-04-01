@@ -18,7 +18,7 @@ addons:
 
 install:
   - cd ..
-  - git clone --branch=update-repos --depth=1 https://github.com/iphydf/toktok-stack
+  - git clone --depth=1 https://github.com/TokTok/toktok-stack
   - rmdir toktok-stack/qtox
   - mv qTox toktok-stack/qtox
   - cd toktok-stack
