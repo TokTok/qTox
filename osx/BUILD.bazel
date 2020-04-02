@@ -17,7 +17,7 @@ genrule(
     outs = ["qtox_deploy.tar.gz"],
     cmd = """
     unzip -q $<
-    $(location @qt//:bin/macdeployqt) qtox.app
+    $(location @qt//:macdeployqt) qtox.app
     $(location deduplicate) qtox.app
     $(location macfixrpath) qtox.app
     tar zcf $@ qtox.app
@@ -26,6 +26,6 @@ genrule(
     tools = [
         "deduplicate",
         "macfixrpath",
-        "@qt//:bin/macdeployqt",
+        "@qt//:macdeployqt",
     ],
 )

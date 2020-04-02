@@ -207,22 +207,28 @@ cc_library(
             "src/main.cpp",
             "src/platform/camera/v4l2.cpp",
             "src/platform/camera/directshow.cpp",
+            "src/platform/posixsignalnotifier.cpp",
             "src/platform/*_osx.cpp",
             "src/platform/*_win.cpp",
             "src/platform/*_x11.cpp",
             "src/platform/x11_*.cpp",
         ],
     ) + select({
-        "//tools/config:freebsd": ["src/platform/camera/v4l2.cpp"],
+        "//tools/config:freebsd": [
+            "src/platform/camera/v4l2.cpp",
+            "src/platform/posixsignalnotifier.cpp",
+        ],
         "//tools/config:linux": [
             "src/platform/camera/v4l2.cpp",
             "src/platform/capslock_x11.cpp",
+            "src/platform/posixsignalnotifier.cpp",
             "src/platform/timer_x11.cpp",
             "src/platform/x11_display.cpp",
         ],
         "//tools/config:osx": [
             "src/platform/capslock_osx.cpp",
             "src/platform/install_osx.cpp",
+            "src/platform/posixsignalnotifier.cpp",
             "src/platform/timer_osx.cpp",
         ],
         "//tools/config:windows": [
@@ -296,4 +302,5 @@ cc_library(
 cc_binary(
     name = "qtox",
     deps = [":qtox_main"],
+    visibility = ["//qtox:__subpackages__"],
 )

@@ -23,7 +23,9 @@
 #include <QThread>
 #include <ctime>
 #include <random>
+#ifndef Q_OS_WINDOWS
 #include <unistd.h>
+#endif
 
 /**
  * @var time_t IPC::lastEvent

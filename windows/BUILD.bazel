@@ -1,0 +1,24 @@
+genrule(
+    name = "qtox_deploy",
+    srcs = ["//qtox"],
+    outs = [
+        "qtox.tar.gz",
+        "windeployqt.log",
+    ],
+    cmd = " ".join([
+        "mkdir -p $$$$/qtox;",
+        "cp $(location //qtox) $$$$/qtox;",
+        "$(location @qt//:windeployqt) $$$$/qtox > $(location windeployqt.log);",
+        "tar zcf $(location qtox.tar.gz) --strip-components=1 $$$$/qtox",
+    ]),
+    tags = ["manual"],
+    tools = ["@qt//:windeployqt"],
+)
+
+sh_binary(
+    name = "qtox",
+    srcs = ["qtox.sh"],
+    args = ["$(location qtox.tar.gz)"],
+    data = ["qtox.tar.gz"],
+    tags = ["manual"],
+)
