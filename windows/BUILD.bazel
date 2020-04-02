@@ -7,7 +7,8 @@ genrule(
     ],
     cmd = " ".join([
         "mkdir -p $$$$/qtox;",
-        "cp $(location //qtox) $$$$/qtox;",
+        "cp $(location //qtox) $$$$/qtox/;",
+        "cp `dirname $(location //qtox)`/qtox.pdb $$$$/qtox/;",
         "$(location @qt//:windeployqt) $$$$/qtox > $(location windeployqt.log);",
         "tar zcf $(location qtox.tar.gz) --strip-components=1 $$$$/qtox",
     ]),
