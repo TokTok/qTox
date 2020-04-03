@@ -11,6 +11,7 @@ addons:
       - libqt5svg5-dev
       - libqt5opengl5-dev
       - qttools5-dev
+      - qttools5-dev-tools
       - qt5-default
       # others
       - libasound-dev
