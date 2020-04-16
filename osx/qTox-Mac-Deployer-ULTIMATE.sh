@@ -32,10 +32,10 @@ then
     QTOX_DIR="${MAIN_DIR}"
 else
     # the directory which qTox is cloned in, wherever that is
-    MAIN_DIR="$(dirname $(greadlink -f $0))/../.."
+    MAIN_DIR="$(dirname $(readlink -f $0))/../.."
     QTOX_DIR="${MAIN_DIR}/qTox${SUBGIT}"
 fi
-QT_DIR="/usr/local/Cellar/qt" # Folder name of QT install
+QT_DIR="/usr/local/Cellar/qt5" # Folder name of QT install
 # Figure out latest version
 QT_VER=($(ls ${QT_DIR} | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p'))
 QT_DIR_VER="${QT_DIR}/${QT_VER[1]}"

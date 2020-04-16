@@ -1,31 +1,8 @@
-load("@build_bazel_rules_apple//apple:macos.bzl", "macos_application")
+load("//third_party/qt:build_defs.bzl", "qt_mac_deploy")
 
-macos_application(
+qt_mac_deploy(
     name = "qtox",
     app_icons = glob(["qtox.icns.xcassets/**"]),
     bundle_id = "chat.tox.qtox",
-    infoplists = [":info.plist"],
-    # 10.9 is the lowest we can go and still get libstdc++.
-    minimum_os_version = "10.9",
-    tags = ["manual"],
     deps = ["//qtox:qtox_main"],
-)
-
-genrule(
-    name = "qtox_deploy",
-    srcs = [":qtox"],
-    outs = ["qtox_deploy.tar.gz"],
-    cmd = """
-    unzip -q $<
-    $(location @qt//:macdeployqt) qtox.app
-    $(location deduplicate) qtox.app
-    $(location macfixrpath) qtox.app
-    tar zcf $@ qtox.app
-    """,
-    tags = ["manual"],
-    tools = [
-        "deduplicate",
-        "macfixrpath",
-        "@qt//:macdeployqt",
-    ],
 )

@@ -2,38 +2,36 @@
 # This script used in `CMakeList.txt`. It's not required to run manually
 
 use strict;
-use warnings FATAL => 'all';
 use File::Find;
 use Data::Dumper;
 
 local $Data::Dumper::Terse = 1;
 local $Data::Dumper::Indent = 1;
 
-my $BUNDLE_PATH = $ARGV[0] or die "Usage: macfixrpath <BUNDLE_PATH>\n";
+my $BUNDLE_PATH = @ARGV[0] or die "Usage: macfixrpath <BUNDLE_PATH>\n";
 
-my @binaries;
+my $prefix = `brew --prefix`;
+chomp $prefix;
+$prefix .= "/Cellar/";
+
+my @libs = <$BUNDLE_PATH/Contents/Frameworks/*.framework/Versions/5/Qt*>;
 find sub {
-   my $type = `file $_`;
-   return unless $type =~ m/: Mach-O /;
-   push @binaries, $File::Find::name;
+   /\.dylib$/ or return;
+   push @libs, $File::Find::name;
 }, $BUNDLE_PATH;
 
 my %deps;
-for (@binaries) {
-   my @deps =
-      grep { m!^/.*\.framework/! and not m!^/System/! }
-      map { m!^\t((?:.+)/(?:[^/]+)) \(.+\)$! }
-      split /\n/, `otool -L $_`;
-   my %mapping;
-   for my $dep (@deps) {
-      $mapping{$dep} = $dep =~ s!.*/([^/]+\.framework/)!\@executable_path/../Frameworks/$1!r;
-   }
-   $deps{$_} = \%mapping;
+for (@libs) {
+   my @deps = grep { @$_ } map { [m!^\t($prefix.+)/([^/]+) \(.+\)$!] } grep { /^\t/ } split /\n/, `otool -L $_`;
+   my @resolved = map { my $dep = $_; [@$dep, grep { m!/$dep->[1]$! } @libs] } @deps;
+   $_->[2] =~ s|\Q$BUNDLE_PATH\E/Contents/|\@executable_path/../| for @resolved;
+   $deps{$_} = \@resolved if  @deps;
 }
 
 for my $lib (sort keys %deps) {
-   for my $dep (sort keys %{$deps{$lib}}) {
-      my $dest = $deps{$lib}{$dep};
-      system "install_name_tool", "-change", $dep, $dest, $lib;
+   my $count = @{$deps{$lib}};
+   for my $dep (@{$deps{$lib}}) {
+      my ($path, $name, $dest) = @$dep;
+      system "install_name_tool", "-change", "$path/$name", $dest, $lib;
    }
 }
