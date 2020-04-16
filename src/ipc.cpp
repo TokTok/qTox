@@ -21,11 +21,39 @@
 #include <QCoreApplication>
 #include <QDebug>
 #include <QThread>
+
 #include <ctime>
 #include <random>
+#include <stdlib.h>
 #ifndef Q_OS_WINDOWS
 #include <unistd.h>
 #endif
+
+namespace
+{
+#ifdef Q_OS_WIN
+    const char* getCurUsername()
+    {
+        return getenv("USERNAME");
+    }
+#else
+    const char* getCurUsername()
+    {
+        return getenv("USER");
+    }
+#endif
+
+    QString getIpcKey()
+    {
+        auto* user = getCurUsername();
+        if (!user)
+        {
+            qWarning() << "Failed to get current username. Will use a global IPC.";
+            user = "";
+        }
+        return QString("qtox-" IPC_PROTOCOL_VERSION "-") + user;
+    }
+} // namespace
 
 /**
  * @var time_t IPC::lastEvent
@@ -42,7 +70,7 @@
 
 IPC::IPC(uint32_t profileId)
     : profileId{profileId}
-    , globalMemory{"qtox-" IPC_PROTOCOL_VERSION}
+    , globalMemory{getIpcKey()}
 {
     qRegisterMetaType<IPCEventHandler>("IPCEventHandler");
 
