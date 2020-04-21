@@ -15,7 +15,6 @@ addons:
       - qt5-default
       # others
       - libasound-dev
-      - libopenal-dev
       - libsqlcipher-dev
 
 install:
@@ -25,13 +24,9 @@ install:
   - mv qTox toktok-stack/qtox
   - cd toktok-stack
   - git submodule update --init --depth=1 c-toxcore
-  - tools/setup-ci
   # Download bazel.
-  - wget https://github.com/bazelbuild/bazel/releases/download/2.2.0/bazel-2.2.0-installer-linux-x86_64.sh
-  - sha256sum -c tools/bazel-2.2.0-installer-linux-x86_64.sh.sha256
-  - chmod +x bazel-2.2.0-installer-linux-x86_64.sh
-  - ./bazel-2.2.0-installer-linux-x86_64.sh --user
-  - export PATH=$HOME/bin:$PATH
+  - source tools/setup-bazel
+  - tools/setup-ci
 
 script:
   - bazel test //qtox/... -k
