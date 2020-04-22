@@ -25,7 +25,7 @@
 #include <ctime>
 #include <random>
 #include <stdlib.h>
-#ifndef Q_OS_WINDOWS
+#ifndef _MSC_VER
 #include <unistd.h>
 #endif
 

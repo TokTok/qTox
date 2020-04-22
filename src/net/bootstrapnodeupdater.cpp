@@ -183,7 +183,7 @@ QList<DhtServer> BootstrapNodeUpdater::jsonToNodeList(const QJsonDocument& nodeL
         return result;
     }
     QJsonArray nodes = rootObj[jsonNodeArrayName].toArray();
-    for (QJsonValueRef const node : nodes) {
+    for (const QJsonValueRef node : nodes) {
         if (node.isObject()) {
             jsonNodeToDhtServer(node.toObject(), result);
         }
