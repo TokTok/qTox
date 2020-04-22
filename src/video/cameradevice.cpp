@@ -229,7 +229,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
 #endif
     else if (mode) {
         qWarning().nospace() << "No known options for " << iformat->name << ", using defaults.";
-        Q_UNUSED(mode);
+        Q_UNUSED(mode)
     }
 
     CameraDevice* dev = open(devName, &options);
@@ -454,7 +454,7 @@ QVector<VideoMode> CameraDevice::getScreenModes()
  */
 QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
 {
-    Q_UNUSED(devName);
+    Q_UNUSED(devName)
 
     if (!iformat)
         ;
