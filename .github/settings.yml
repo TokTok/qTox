@@ -1,0 +1,9 @@
+---
+_extends: template
+
+repository:
+  name: qTox
+  description: Powerful Tox chat client that follows the Tox design guidelines.
+  homepage: https://qtox.github.io/
+  topics: tox, chat
+  has_issues: true
