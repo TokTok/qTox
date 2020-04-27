@@ -1,13 +1,11 @@
 # Hardening qTox with AppArmor
 
 qTox can be confined with AppArmor on Linux to reduce attack vectors in case
-remote code execution exploit is being used. Please note that [MAC's] (of
-course) does not guarantee perfect security, but it will:
-- Deny access to your `~/.bashrc`, `~/.ssh/*`
-  `~/.config/path/to/your/password/manager/file`, etc.
-- Deny creating autostart entries (in `~/.config/autostart`, etc).
-- Deny launching random executables (like `sudo`, `su`, etc...).
-- And more.
+remote code execution exploit is being used. Please note that [MAC's](of course)
+does not guarantee perfect security, but it will: - Deny access to your
+`~/.bashrc`, `~/.ssh/*` `~/.config/path/to/your/password/manager/file`, etc. -
+Deny creating autostart entries (in `~/.config/autostart`, etc). - Deny
+launching random executables (like `sudo`, `su`, etc...). - And more.
 
 Consider using additional security measures like [Firejail] to improve security
 even more.
@@ -29,38 +27,31 @@ Select AppArmor profile from appropriate `security/apparmor/X` subdirectory
 depending on what AppArmor version is available for your Linux distribution
 release:
 
-- 2.13.3
-  - Debian 11 (bullseye) (or newer)
-  - Ubuntu 19.10 (or newer)
-  - openSUSE Tumbleweed
-- 2.13.2
-  - Debian 10 (buster)
-  - Ubuntu 19.04 (Disco Dingo)
-- 2.12.1
-  - Debian 9 (stretch) or older
-  - Ubuntu 18.10 or older
+-   2.13.3
+    -   Debian 11 (bullseye) (or newer)
+    -   Ubuntu 19.10 (or newer)
+    -   openSUSE Tumbleweed
+-   2.13.2
+    -   Debian 10 (buster)
+    -   Ubuntu 19.04 (Disco Dingo)
+-   2.12.1
+    -   Debian 9 (stretch) or older
+    -   Ubuntu 18.10 or older
 
 To enable AppArmor profile on your system, run prepared install script:
 
 ```
 sudo security/apparmor/x.y.z/install.sh
 ```
+
 Restart `qTox` if it was already running before enabling AppArmor profile.
 
 ## Checking if qTox is actually confined
 
 Run `aa-status` command line utility and check if `qTox` is listed within `X
-processes are in enforced mode.` list:
-```
-sudo aa-status
-   ...
-21 processes are in enforce mode.
-   /usr/lib/ipsec/charon (2421)            
-   /usr/sbin/cups-browsed (839)
-   ...
-   /usr/bin/qtox (16315) qtox
-   ...
-```
+processes are in enforced mode.` list: `sudo aa-status ... 21 processes are in
+enforce mode. /usr/lib/ipsec/charon (2421) /usr/sbin/cups-browsed (839) ...
+/usr/bin/qtox (16315) qtox ...`
 
 Alternatively, use `ps` and `grep`:
 
@@ -84,16 +75,13 @@ On Debian/Ubuntu:
 sudo fgrep DENIED /var/log/syslog
 ```
 
-On openSUSE, OR if you have `auditd` daemon installed:
-```
-sudo fgrep DENIED /var/log/audit/audit.log
-```
+On openSUSE, OR if you have `auditd` daemon installed: `sudo fgrep DENIED
+/var/log/audit/audit.log`
 
-You will see messages like this:
-```
-type=AVC msg=audit(1549793273.269:149): apparmor="DENIED" operation="open" profile="qtox" name="/home/vincas/.config/klanguageove
-rridesrc" pid=3037 comm="qtox" requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000
-```
+You will see messages like this: `type=AVC msg=audit(1549793273.269:149):
+apparmor="DENIED" operation="open" profile="qtox"
+name="/home/vincas/.config/klanguageove rridesrc" pid=3037 comm="qtox"
+requested_mask="r" denied_mask="r" fsuid=1000 ouid=1000`
 
 This means that `r`ead access was denied to the file
 `/home/vincas/.config/klanguageoverridesrc`, owned by you (ouid 1000), by
@@ -123,10 +111,7 @@ Rule example for reading only, recursively (note the comma!):
 /path/to/directory/** r,
 ```
 
-For reading and writing, recursively:
-```
-/path/to/directory/** rw,
-```
+For reading and writing, recursively: `/path/to/directory/** rw,`
 
 Restart AppArmor to reload profiles after modifications:
 
@@ -142,11 +127,11 @@ sudo apparmor_parser -r /etc/apparmor.d/usr.bin.qtox
 ```
 
 For custom installations, when `qTox` executable is not `/usr/bin/qtox` or
-`/usr/local/bin/qtox`:
-1. create `/etc/apparmor.d/tunables/usr.bin.qtox.d/local`, adding
-   `@{qtox_prefix} += /path/to/your/custom/install/prefix` line.
-2. modify `/etc/apparmor.d/usr.bin.qtox` profile attachement path: `profile qtox
-   /{usr{,local}/bin/qtox,path/to/your/qtox_executable} {`
+`/usr/local/bin/qtox`: 1. create
+`/etc/apparmor.d/tunables/usr.bin.qtox.d/local`, adding `@{qtox_prefix} +=
+/path/to/your/custom/install/prefix` line. 2. modify
+`/etc/apparmor.d/usr.bin.qtox` profile attachement path: `profile qtox
+/{usr{,local}/bin/qtox,path/to/your/qtox_executable} {`
 
 Restart AppArmor and [check](#checking-if-qtox-is-actually-confined) if `qTox`
 process under custom path is actually confined.

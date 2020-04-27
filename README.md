@@ -4,7 +4,7 @@
 <img src="https://qtox.github.io/assets/imgs/logo_head.png" alt="qTox" />
 </p>
 
----
+--------------------------------------------------------------------------------
 
 <p align="center">
 <a href="https://github.com/qTox/qTox/blob/master/LICENSE">
@@ -26,28 +26,33 @@ title="Week of Merges: population of Merges increases!
 Week of Testing: Your mana regenerates!" />
 </a></p>
 
----
+--------------------------------------------------------------------------------
 
 <p align="center"><b>
 qTox is a chat, voice, video, and file transfer instant messaging client using
 the encrypted peer-to-peer Tox protocol.
 </b></p>
 
- **[User Manual] |**
- **[Install/Build] |**
- **[Roadmap] |**
- **[Report bugs] |**
- **[Jenkins builds] |**
- **[Mailing list] |**
- **IRC:** [#qtox@freenode]
+**[User Manual] |** **[Install/Build] |** **[Roadmap] |** **[Report bugs] |**
+**[Jenkins builds] |** **[Mailing list] |** **IRC:** [#qtox@freenode]
 
----
+--------------------------------------------------------------------------------
 
-Windows | Linux | OS X | FreeBSD
---------|-------|------|--------
-**[64 bit release]**| **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest release]**  | **[Package & Port]**
-[32 bit release]|**[AppImage]**, [Flatpak] | [Building instructions] |
-[64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly], [AppImage nightly] | [Latest nightly] |
+| Windows          | Linux           | OS X             | FreeBSD              |
+| ---------------- | --------------- | ---------------- | -------------------- |
+| **[64 bit        | **[Arch]**,     | **[Latest        | **[Package & Port]** |
+: release]**       : **[Debian]**,   : release]**       :                      :
+:                  : **[Fedora]**,   :                  :                      :
+:                  : **[Gentoo]**,   :                  :                      :
+:                  : **[openSUSE]**, :                  :                      :
+:                  : **[Ubuntu]**    :                  :                      :
+| [32 bit release] | **[AppImage]**, | [Building        |                      |
+:                  : [Flatpak]       : instructions]    :                      :
+| [64              | [From Source],  | [Latest nightly] |                      |
+: bit][64nightly], : [Flatpak        :                  :                      :
+: [32              : nightly],       :                  :                      :
+: bit][32nightly]  : [AppImage       :                  :                      :
+: nightly          : nightly]        :                  :                      :
 
 _**Bold** options are recommended._
 
@@ -57,20 +62,20 @@ qTox.
 
 ### Help us
 
-If you're wondering how could you help, fear not, there are plenty of ways
-:smile:
+If you're wondering how could you help, fear not, there are plenty of
+ways :smile:
 
 Some of them are:
 
-* Spread the good word about qTox to make it more popular :smile:
-* Have an opinion? Make sure to [voice it in the issues that need it] :wink:
-* Fixing [easy issues] or [issues that need help]. Make sure to read
-  [Contributing] first though :wink:
-* [Testing] and [reporting bugs]
-* [Translating, it's easy]
-* [Reviewing and testing pull requests] – you don't need to be able to code to
-  do that :wink:
-* Take a task from our Roadmap below
+*   Spread the good word about qTox to make it more popular :smile:
+*   Have an opinion? Make sure to [voice it in the issues that need it] :wink:
+*   Fixing [easy issues] or [issues that need help]. Make sure to read
+    [Contributing] first though :wink:
+*   [Testing] and [reporting bugs]
+*   [Translating, it's easy]
+*   [Reviewing and testing pull requests] – you don't need to be able to code to
+    do that :wink:
+*   Take a task from our Roadmap below
 
 ### Roadmap
 
@@ -79,49 +84,44 @@ During this time we want to prepare qTox for upcoming new features of toxcore.
 
 The next steps are:
 
-
-* move all toxcore abstractions into their own subproject
-* write basic tests for this Core
-* format the code base
-* rework our TravisCI setup for faster PR checks
-* rethink our Issue tracker
+*   move all toxcore abstractions into their own subproject
+*   write basic tests for this Core
+*   format the code base
+*   rework our TravisCI setup for faster PR checks
+*   rethink our Issue tracker
 
 The current state is tracked in the [Code cleanup] project.
 
-
-
 ### Screenshots
+
 Note: The screenshots may not always be up to date, but they should give a good
 idea of the general look and features.
-
 
 ![Screenshot 01](https://i.imgur.com/olb89CN.png)
 ![Screenshot 02](https://i.imgur.com/tmX8z9s.png)
 
-
 ### Features
 
-- One to one chat with friends
-- Group chats
-- File transfers, with previewing of images
-- Audio calls, including group calls
-- Video calls
-- ToxMe and Tox URI support
-- Translations in over 30 languages
-- Avatars
-- Faux offline messages
-- History
-- Screenshots
-- Emoticons
-- Auto-updates on Windows and packages on Linux
-- And many more options!
-
+-   One to one chat with friends
+-   Group chats
+-   File transfers, with previewing of images
+-   Audio calls, including group calls
+-   Video calls
+-   ToxMe and Tox URI support
+-   Translations in over 30 languages
+-   Avatars
+-   Faux offline messages
+-   History
+-   Screenshots
+-   Emoticons
+-   Auto-updates on Windows and packages on Linux
+-   And many more options!
 
 ### Organizational stuff
 
-Happens in both IRC channel [#qtox@freenode] and on [qTox-dev mailing list].
-If you are interested in participating, **join the channel** and **subscribe to
-the mailing list**.
+Happens in both IRC channel [#qtox@freenode] and on [qTox-dev mailing list]. If
+you are interested in participating, **join the channel** and **subscribe to the
+mailing list**.
 
 There are [IRC logs] available.
 
