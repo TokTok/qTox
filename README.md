@@ -33,21 +33,21 @@ qTox is a chat, voice, video, and file transfer instant messaging client using
 the encrypted peer-to-peer Tox protocol.
 </b></p>
 
- **[User Manual] |**
- **[Install/Build] |**
- **[Roadmap] |**
- **[Report bugs] |**
- **[Jenkins builds] |**
- **[Mailing list] |**
- **IRC:** [#qtox@freenode]
+**[User Manual] |**
+**[Install/Build] |**
+**[Roadmap] |**
+**[Report bugs] |**
+**[Jenkins builds] |**
+**[Mailing list] |**
+**IRC:** [#qtox@freenode]
 
 ---
 
-Windows | Linux | OS X | FreeBSD
---------|-------|------|--------
-**[64 bit release]**| **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest release]**  | **[Package & Port]**
-[32 bit release]|**[AppImage]**, [Flatpak] | [Building instructions] |
-[64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly], [AppImage nightly] | [Latest nightly] |
+| Windows                                          | Linux                                                                              | OS X                    | FreeBSD              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------- | -------------------- |
+| **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest release]**    | **[Package & Port]** |
+| [32 bit release]                                 | **[AppImage]**, [Flatpak]                                                          | [Building instructions] |
+| [64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly], [AppImage nightly]                               | [Latest nightly]        |
 
 _**Bold** options are recommended._
 
@@ -62,15 +62,15 @@ If you're wondering how could you help, fear not, there are plenty of ways
 
 Some of them are:
 
-* Spread the good word about qTox to make it more popular :smile:
-* Have an opinion? Make sure to [voice it in the issues that need it] :wink:
-* Fixing [easy issues] or [issues that need help]. Make sure to read
+- Spread the good word about qTox to make it more popular :smile:
+- Have an opinion? Make sure to [voice it in the issues that need it] :wink:
+- Fixing [easy issues] or [issues that need help]. Make sure to read
   [Contributing] first though :wink:
-* [Testing] and [reporting bugs]
-* [Translating, it's easy]
-* [Reviewing and testing pull requests] – you don't need to be able to code to
+- [Testing] and [reporting bugs]
+- [Translating, it's easy]
+- [Reviewing and testing pull requests] – you don't need to be able to code to
   do that :wink:
-* Take a task from our Roadmap below
+- Take a task from our Roadmap below
 
 ### Roadmap
 
@@ -79,25 +79,21 @@ During this time we want to prepare qTox for upcoming new features of toxcore.
 
 The next steps are:
 
-
-* move all toxcore abstractions into their own subproject
-* write basic tests for this Core
-* format the code base
-* rework our TravisCI setup for faster PR checks
-* rethink our Issue tracker
+- move all toxcore abstractions into their own subproject
+- write basic tests for this Core
+- format the code base
+- rework our TravisCI setup for faster PR checks
+- rethink our Issue tracker
 
 The current state is tracked in the [Code cleanup] project.
 
-
-
 ### Screenshots
+
 Note: The screenshots may not always be up to date, but they should give a good
 idea of the general look and features.
 
-
 ![Screenshot 01](https://i.imgur.com/olb89CN.png)
 ![Screenshot 02](https://i.imgur.com/tmX8z9s.png)
-
 
 ### Features
 
@@ -115,7 +111,6 @@ idea of the general look and features.
 - Emoticons
 - Auto-updates on Windows and packages on Linux
 - And many more options!
-
 
 ### Organizational stuff
 
@@ -162,35 +157,35 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 [32 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.2/setup-qtox-i686-release.exe
 [32nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/setup-qtox-i686-release.exe
 [64nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/setup-qtox-x86_64-release.exe
-[Flatpak]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.flatpak
-[Flatpak nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qtox.flatpak
-[AppImage]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.AppImage
-[AppImage nightly]: https://github.com/qTox/qTox-nightly-releases/releases/tag/ci-master-latest
-[Arch]: /INSTALL.md#arch
-[Building instructions]: /INSTALL.md#os-x
-[Contributing]: /CONTRIBUTING.md#how-to-start-contributing
-[Debian]: https://packages.debian.org/search?keywords=qtox
+[flatpak]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.flatpak
+[flatpak nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qtox.flatpak
+[appimage]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.AppImage
+[appimage nightly]: https://github.com/qTox/qTox-nightly-releases/releases/tag/ci-master-latest
+[arch]: /INSTALL.md#arch
+[building instructions]: /INSTALL.md#os-x
+[contributing]: /CONTRIBUTING.md#how-to-start-contributing
+[debian]: https://packages.debian.org/search?keywords=qtox
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
-[Latest release]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox.dmg
-[Latest nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qTox.dmg
-[Fedora]: /INSTALL.md#fedora
-[Gentoo]: /INSTALL.md#gentoo
-[openSUSE]: /INSTALL.md#opensuse
-[Install/Build]: /INSTALL.md
-[IRC logs]: https://github.com/qTox/qtox-irc-logs
+[latest release]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox.dmg
+[latest nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qTox.dmg
+[fedora]: /INSTALL.md#fedora
+[gentoo]: /INSTALL.md#gentoo
+[opensuse]: /INSTALL.md#opensuse
+[install/build]: /INSTALL.md
+[irc logs]: https://github.com/qTox/qtox-irc-logs
 [issues that need help]: https://github.com/qTox/qTox/labels/help%20wanted
-[Jenkins builds]: https://build.tox.chat/
-[Mailing list]: https://lists.tox.chat
-[From Source]: /INSTALL.md#linux
-[qTox-dev mailing list]: https://lists.tox.chat/listinfo/qtox-dev
-[Package & Port]: /INSTALL.md#freebsd-easy
-[Report bugs]: https://github.com/qTox/qTox/wiki/Writing-Useful-Bug-Reports
+[jenkins builds]: https://build.tox.chat/
+[mailing list]: https://lists.tox.chat
+[from source]: /INSTALL.md#linux
+[qtox-dev mailing list]: https://lists.tox.chat/listinfo/qtox-dev
+[package & port]: /INSTALL.md#freebsd-easy
+[report bugs]: https://github.com/qTox/qTox/wiki/Writing-Useful-Bug-Reports
 [reporting bugs]: https://github.com/qTox/qTox/wiki/Writing-Useful-Bug-Reports
-[Reviewing and testing pull requests]: /CONTRIBUTING.md#reviews
-[Roadmap]: https://github.com/qTox/qTox/milestones
-[Testing]: https://github.com/qTox/qTox/wiki/Testing
-[Translating, it's easy]: /translations/README.md
-[User Manual]: /doc/user_manual_en.md
-[Ubuntu]: https://packages.ubuntu.com/search?keywords=qtox
+[reviewing and testing pull requests]: /CONTRIBUTING.md#reviews
+[roadmap]: https://github.com/qTox/qTox/milestones
+[testing]: https://github.com/qTox/qTox/wiki/Testing
+[translating, it's easy]: /translations/README.md
+[user manual]: /doc/user_manual_en.md
+[ubuntu]: https://packages.ubuntu.com/search?keywords=qtox
 [voice it in the issues that need it]: https://github.com/qTox/qTox/labels/I-feedback-wanted
-[Code cleanup]: https://github.com/qTox/qTox/projects/3?fullscreen=true
+[code cleanup]: https://github.com/qTox/qTox/projects/3?fullscreen=true

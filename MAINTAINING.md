@@ -1,6 +1,6 @@
 **Guidelines, overview of maintenance process, etc.**
 
-*“Thou shall GPG-sign.”*
+_“Thou shall GPG-sign.”_
 
 # Git config
 
@@ -12,7 +12,6 @@ required** to use GPG to sign commits & merges.
 If you don't have GPG signing set up yet, now is the moment to do it.
 
 [Config, etc.](/CONTRIBUTING.md#git-config)
-
 
 ## SSH
 
@@ -38,7 +37,7 @@ git config --global alias.logs 'log --show-signature'
   Yes, there might be a situation where something has to be fixed "right now"
   on master..
 
-  Perhaps a security fix, who knows what future holds. If it's not *that*
+  Perhaps a security fix, who knows what future holds. If it's not _that_
   important, you're still better off making a PR. Even when you'll just
   fast-forward commits from PR onto the `master` branch.
 
@@ -58,6 +57,7 @@ git config --global alias.logs 'log --show-signature'
   merge-commit **must** be signed. To simplify the process, and ensure that
   things are done "right", it's preferable to use the [`merge-pr.sh`] script,
   which does that for you automatically.
+
 - **use** [`merge-pr.sh`] script to merge PRs. First checkout the target
   branch, usually either `master` or a release dev branch e.g. `v1.17-dev`,
   make sure it's up to date with qTox/qTox, then e.g. `./merge-pr.sh 1234`.
@@ -67,6 +67,7 @@ git config --global alias.logs 'log --show-signature'
   indlucing merge messages.
 
   Risk, that can be avoided when one doesn't type manually merge message :wink:
+
 - **might want** to use [`test-pr.sh`].
 - give a PR some "breathing space" right after it's created – i.e. merging
   something right away can lead to bugs & regressions suddenly popping up, thus
@@ -93,11 +94,11 @@ on any job failure, so all need to be rebuilt.
 ## Tagging Issues
 
 - When you request more info to be provided in the issue, tag it with
-    `O-need-info`. Remove tag once the needed info has been provided.
-    - If the needed information is not provided after 30 days, add the `O-stale`
-      tag and a comment requesting the information again.
-      - If the `O-stale` tag is present for more than 30 day, the issue should
-        be closed.
+  `O-need-info`. Remove tag once the needed info has been provided.
+  - If the needed information is not provided after 30 days, add the `O-stale`
+    tag and a comment requesting the information again.
+    - If the `O-stale` tag is present for more than 30 day, the issue should
+      be closed.
 - If you're going to fix the issue, assign yourself to it.
 - when closing an issue, preferably state the reason why it was closed, unless
   it was closed automatically by commit message.
@@ -114,12 +115,14 @@ impact and how hard it is to fix the issue.
 We have two labels to rate user impact `U-high` and `U-low`.
 
 Use `U-high` if
+
 - Many users have reported this issue
 - The problem is triggered often during typical use of qTox
 - The problem causes data loss
 - There is no workaround
 
 Use `U-low` if
+
 - Few users reported this problem
 - The problem occurs very sporadically
 - The problem needs a very specific set of conditions to appear
@@ -131,12 +134,14 @@ Use `U-low` if
 We have two labels to estimate the difficulty of a fix, `D-easy` and `D-hard`.
 
 Use `D-easy` if you think that:
+
 - The issue is well described
 - The issue can be consistently reproduced
 - The issue needs no specific equipment to fix, e.g. specific OS, webcam,...
 - The code that causes the problem is known
 
 Use `D-hard` if you think that:
+
 - The issue is described only vaguely
 - The exact way to reproduce the issue is not known
 - The issue happens only on a specifc OS
@@ -147,8 +152,8 @@ Use `D-hard` if you think that:
 After assesing the user impact and the difficulty to fix the issue you look up
 the initial priority for the issue in the following table:
 
-|          |  `U-high`  | `U-low`    |
-|----------|------------|------------|
+|          | `U-high`   | `U-low`    |
+| -------- | ---------- | ---------- |
 | `E-easy` | `P-high`   | `P-medium` |
 | `E-hard` | `P-medium` | `P-low`    |
 
@@ -171,13 +176,13 @@ To get translations into qTox:
 3. To update translated strings from Weblate, in the root of the qTox
    repository execute the script `tools/update-weblate.sh`
 4. If a new translation language has been added, update the following files:
-    - `CMakeLists.txt`
-    - `src/widget/form/settings/generalform.cpp`
-    - `translations/README.md`
-    - `translations/i18n.pri`
-    - `translations/translations.qrc`
+   - `CMakeLists.txt`
+   - `src/widget/form/settings/generalform.cpp`
+   - `translations/README.md`
+   - `translations/i18n.pri`
+   - `translations/translations.qrc`
 5. To update translatable strings from qTox for Weblate, run
-    `./tools/update-translation-files.sh ALL`
+   `./tools/update-translation-files.sh ALL`
 6. Checkout a new branch with e.g. `git checkout -b update_weblate` and open
    a Pull Request for it on Github.
 7. After the Pull Request has been merged, `reset` Weblate to master and
@@ -201,7 +206,7 @@ To get translations into qTox:
     something more than just bugfixes, bump `MAJOR` or `MINOR` version
     accordingly.
 - bumping a higher-level version "resets" lower-version numbers, e.g.
-  `v1.7.1 → v2.0.0`
+  `v1.7.1 → v2.0.0`
 
 ## Steps for release
 
@@ -209,8 +214,7 @@ To get translations into qTox:
 
 - Format all code using the [`./tools/format-code.sh`] script
 - Update version number for windows/osx packages using the
-  [`./tools/update-versions.sh`] script, e.g. `./tools/update-versions.sh
-  1.11.0`
+  [`./tools/update-versions.sh`] script, e.g. `./tools/update-versions.sh 1.11.0`
 - Update toxcore version number to the latest tag. Currently this needs to be
   done manually by `grep`ing for the current tag.
 - Update the bootstrap nodelist at `./res/nodes.json` from https://nodes.tox.chat/json.
@@ -242,7 +246,6 @@ To get translations into qTox:
   [the Flathub build bot], merge the PR into the master branch of our
   [Flathub repository].
 
-
 # How to become a maintainer?
 
 Contribute, review & test pull requests, be active, oh and don't forget to
@@ -254,9 +257,8 @@ this file.
 Once you're confident about your knowledge and you've been around the project
 helping for a while, ask to be added to the `qTox` organization on GitHub.
 
-
 [commit message format]: /CONTRIBUTING.md#commit-message-format
-[`CONTRIBUTING.md`]: /CONTRIBUTING.md
+[`contributing.md`]: /CONTRIBUTING.md
 [`merge-pr.sh`]: /merge-pr.sh
 [`test-pr.sh`]: /test-pr.sh
 [`./tools/deweblate-translation-file.sh`]: /tools/deweblate-translation-file.sh
@@ -264,7 +266,7 @@ helping for a while, ask to be added to the `qTox` organization on GitHub.
 [`./tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`./tools/update-versions.sh`]: /tools/update-versions.sh
 [`./tools/format-code.sh`]: /tools/format-code.sh
-[Flathub repository]: https://github.com/flathub/io.github.qtox.qTox
-[`./flatpak/io.github.qtox.qTox.json`]: flatpak/io.github.qtox.qTox.json
-[the Flathub build bot]: https://flathub.org/builds/#/
-[qTox-nightly-release]: https://github.com/qTox/qTox-nightly-releases
+[flathub repository]: https://github.com/flathub/io.github.qtox.qTox
+[`./flatpak/io.github.qtox.qtox.json`]: flatpak/io.github.qtox.qTox.json
+[the flathub build bot]: https://flathub.org/builds/#/
+[qtox-nightly-release]: https://github.com/qTox/qTox-nightly-releases
