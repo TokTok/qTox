@@ -229,9 +229,9 @@ store_apt_cache()
 # OpenSSL
 
 OPENSSL_PREFIX_DIR="$DEP_DIR/libopenssl"
-OPENSSL_VERSION=1.1.1d
+OPENSSL_VERSION=1.1.1f
 # hash from https://www.openssl.org/source/
-OPENSSL_HASH="1e3a91bc1f9dfce01af26026f856e064eab4c8ee0a8f457b5ae30b40b8b711f2"
+OPENSSL_HASH="186c6bfe6ecfba7a5b48c47f8a1673d0f3b0e5ba2e25602dd23b629975da3f35"
 OPENSSL_FILENAME="openssl-$OPENSSL_VERSION.tar.gz"
 if [ ! -f "$OPENSSL_PREFIX_DIR/done" ]
 then
@@ -272,10 +272,10 @@ fi
 QT_PREFIX_DIR="$DEP_DIR/libqt5"
 QT_MAJOR=5
 QT_MINOR=12
-QT_PATCH=7
+QT_PATCH=8
 QT_VERSION=$QT_MAJOR.$QT_MINOR.$QT_PATCH
-# hash from https://download.qt.io/archive/qt/5.12/5.12.7/single/qt-everywhere-src-5.12.7.tar.xz.mirrorlist
-QT_HASH="873783a0302129d98a8f63de9afe4520fb5f8d5316be8ad7b760c59875cd8a8d"
+# hash from https://download.qt.io/archive/qt/5.12/5.12.8/single/qt-everywhere-src-5.12.8.tar.xz.mirrorlist
+QT_HASH="9142300dfbd641ebdea853546511a352e4bd547c4c7f25d61a40cd997af1f0cf"
 QT_FILENAME="qt-everywhere-src-$QT_VERSION.tar.xz"
 if [ ! -f "$QT_PREFIX_DIR/done" ]
 then
@@ -977,6 +977,7 @@ then
         -DCMAKE_BUILD_TYPE=Release \
         -DSPELL_CHECK=OFF \
         -DUPDATE_CHECK=ON \
+        -DSTRICT_OPTIONS=ON \
         ..
 elif [[ "$BUILD_TYPE" == "debug" ]]
 then
@@ -984,6 +985,7 @@ then
         -DCMAKE_BUILD_TYPE=Debug \
         -DSPELL_CHECK=OFF \
         -DUPDATE_CHECK=ON \
+        -DSTRICT_OPTIONS=ON \
         ..
 fi
 
