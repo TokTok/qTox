@@ -10,6 +10,7 @@ addons:
       # qt
       - libqt5svg5-dev
       - libqt5opengl5-dev
+      - qtmultimedia5-dev
       - qttools5-dev
       - qttools5-dev-tools
       - qt5-default
