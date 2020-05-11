@@ -28,16 +28,8 @@
       "add-ld-path": "."
     }
   },
-  "cleanup-commands": [
-    "mkdir -p /app/lib/ffmpeg"
-  ],
-  "cleanup": [
-    "/include",
-    "/lib/pkgconfig",
-    "/share/man",
-    "*.la",
-    "*.a"
-  ],
+  "cleanup-commands": ["mkdir -p /app/lib/ffmpeg"],
+  "cleanup": ["/include", "/lib/pkgconfig", "/share/man", "*.la", "*.a"],
   "modules": [
     {
       "name": "tcl",
@@ -45,11 +37,7 @@
       "build-options": {
         "no-debuginfo": true
       },
-      "cleanup": [
-        "/bin",
-        "/lib",
-        "/man"
-      ],
+      "cleanup": ["/bin", "/lib", "/man"],
       "sources": [
         {
           "type": "archive",
@@ -60,13 +48,8 @@
     },
     {
       "name": "sqlcipher",
-      "cleanup": [
-        "/bin"
-      ],
-      "config-opts": [
-        "--enable-tempstore=yes",
-        "--disable-tcl"
-      ],
+      "cleanup": ["/bin"],
+      "config-opts": ["--enable-tempstore=yes", "--disable-tcl"],
       "build-options": {
         "cflags": "-DSQLITE_HAS_CODEC",
         "ldflags": "-lcrypto"
@@ -107,9 +90,7 @@
     {
       "name": "c-toxcore",
       "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DBOOTSTRAP_DAEMON=OFF"
-      ],
+      "config-opts": ["-DBOOTSTRAP_DAEMON=OFF"],
       "sources": [
         {
           "type": "git",
@@ -122,10 +103,7 @@
     {
       "name": "qTox",
       "buildsystem": "cmake-ninja",
-      "config-opts": [
-        "-DSVGZ_ICON=OFF",
-        "-DSTRICT_OPTIONS=ON"
-      ],
+      "config-opts": ["-DSVGZ_ICON=OFF", "-DSTRICT_OPTIONS=ON"],
       "sources": [
         {
           "type": "dir",
