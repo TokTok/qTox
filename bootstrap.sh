@@ -39,13 +39,13 @@ set -eu -o pipefail
 
 ################ parameters ################
 # directory where the script is located
-readonly SCRIPT_DIR=$( cd $(dirname $0); pwd -P)
+readonly SCRIPT_DIR="$( cd "$(dirname "$0")"; pwd -P)"
 
 # directory where dependencies will be installed
 readonly INSTALL_DIR=libs
 
 # just for convenience
-readonly BASE_DIR="${SCRIPT_DIR}/${INSTALL_DIR}"
+readonly BASE_DIR="$SCRIPT_DIR/$INSTALL_DIR"
 
 # versions of libs to checkout
 readonly TOXCORE_VERSION="v0.2.12"
@@ -80,7 +80,7 @@ print_help() {
     echo "    --with-sqlcipher       : install/update sqlcipher"
     echo "    --without-sqlcipher    : do not install/update sqlcipher"
     echo "    -h|--help              : displays this help"
-    echo "    -l|--local             : install packages into ${INSTALL_DIR}"
+    echo "    -l|--local             : install packages into $INSTALL_DIR"
     echo "    -k|--keep              : keep build files after installation/update"
     echo ""
     echo "example usages:"
@@ -89,37 +89,37 @@ print_help() {
 
 ############ print debug output ############
 print_debug_output() {
-    echo "with tox                    : ${INSTALL_TOX}"
-    echo "with sqlcipher              : ${INSTALL_SQLCIPHER}"
-    echo "install system-wide         : ${SYSTEM_WIDE}"
-    echo "keep build files            : ${KEEP_BUILD_FILES}"
+    echo "with tox                    : $INSTALL_TOX"
+    echo "with sqlcipher              : $INSTALL_SQLCIPHER"
+    echo "install system-wide         : $SYSTEM_WIDE"
+    echo "keep build files            : $KEEP_BUILD_FILES"
 }
 
 # remove not needed dirs
 remove_build_dirs() {
-    rm -rf "${BASE_DIR}/${TOXCORE_DIR}"
-    rm -rf "${BASE_DIR}/${SQLCIPHER_DIR}"
+    rm -rf "$BASE_DIR/$TOXCORE_DIR"
+    rm -rf "$BASE_DIR/$SQLCIPHER_DIR"
 }
 
 install_toxcore() {
     if [[ $INSTALL_TOX = "true" ]]
     then
         git clone https://github.com/toktok/c-toxcore.git \
-            --branch $TOXCORE_VERSION \
+            --branch "$TOXCORE_VERSION" \
             --depth 1 \
-            "${BASE_DIR}/${TOXCORE_DIR}"
+            "$BASE_DIR/$TOXCORE_DIR"
 
-        pushd ${BASE_DIR}/${TOXCORE_DIR}
+        pushd "$BASE_DIR/$TOXCORE_DIR"
 
         # compile and install
         if [[ $SYSTEM_WIDE = "false" ]]
         then
-            cmake . -DCMAKE_INSTALL_PREFIX=${BASE_DIR} -DBOOTSTRAP_DAEMON=OFF
-            make -j $(nproc)
+            cmake . -DCMAKE_INSTALL_PREFIX="$BASE_DIR" -DBOOTSTRAP_DAEMON=OFF
+            make -j "$(nproc)"
             make install
         else
             cmake . -DBOOTSTRAP_DAEMON=OFF
-            make -j $(nproc)
+            make -j "$(nproc)"
             sudo make install
             sudo ldconfig
         fi
@@ -133,19 +133,19 @@ install_sqlcipher() {
     if [[ $INSTALL_SQLCIPHER = "true" ]]
     then
         git clone https://github.com/sqlcipher/sqlcipher.git \
-            "${BASE_DIR}/${SQLCIPHER_DIR}" \
-            --branch $SQLCIPHER_VERSION \
+            "$BASE_DIR/$SQLCIPHER_DIR" \
+            --branch "$SQLCIPHER_VERSION" \
             --depth 1
 
-        pushd "${BASE_DIR}/${SQLCIPHER_DIR}"
+        pushd "$BASE_DIR/$SQLCIPHER_DIR"
         autoreconf -if
 
         if [[ $SYSTEM_WIDE = "false" ]]
         then
-            ./configure --prefix="${BASE_DIR}" \
+            ./configure --prefix="$BASE_DIR" \
                 --enable-tempstore=yes \
                 CFLAGS="-DSQLITE_HAS_CODEC"
-            make -j$(nproc)
+            make -j"$(nproc)"
             make install || \
                 echo "" && \
                 echo "Sqlcipher failed to install locally." && \
@@ -156,7 +156,7 @@ install_sqlcipher() {
             ./configure \
                 --enable-tempstore=yes \
                 CFLAGS="-DSQLITE_HAS_CODEC"
-            make -j$(nproc)
+            make -j"$(nproc)"
             sudo make install
             sudo ldconfig
         fi
@@ -170,32 +170,32 @@ main() {
     ########## parse input parameters ##########
     while [ $# -ge 1 ]
     do
-        if [ ${1} = "--with-tox" ]
+        if [ "${1}" = "--with-tox" ]
         then
             INSTALL_TOX=true
             shift
-        elif [ ${1} = "--without-tox" ]
+        elif [ "${1}" = "--without-tox" ]
         then
             INSTALL_TOX=false
             shift
-        elif [ ${1} = "--with-sqlcipher" ]
+        elif [ "${1}" = "--with-sqlcipher" ]
         then
             INSTALL_SQLCIPHER=true
             shift
-        elif [ ${1} = "--without-sqlcipher" ]
+        elif [ "${1}" = "--without-sqlcipher" ]
         then
             INSTALL_SQLCIPHER=false
             shift
-        elif [ ${1} = "-l" -o ${1} = "--local" ]
+        elif [ "${1}" = "-l" -o "${1}" = "--local" ]
         then
             SYSTEM_WIDE=false
             shift
-        elif [ ${1} = "-k" -o ${1} = "--keep" ]
+        elif [ "${1}" = "-k" -o "${1}" = "--keep" ]
         then
             KEEP_BUILD_FILES=true
             shift
         else
-            if [ ${1} != "-h" -a ${1} != "--help" ]
+            if [ "${1}" != "-h" -a "${1}" != "--help" ]
             then
                 echo "[ERROR] Unknown parameter \"${1}\""
                 echo ""
@@ -212,7 +212,7 @@ main() {
 
     ############### prepare step ###############
     # create BASE_DIR directory if necessary
-    mkdir -p "${BASE_DIR}"
+    mkdir -p "$BASE_DIR"
 
     # maybe an earlier run of this script failed
     # thus we should remove the cloned repositories
@@ -230,4 +230,4 @@ main() {
         remove_build_dirs
     fi
 }
-main $@
+main "$@"

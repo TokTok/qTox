@@ -28,27 +28,27 @@ SUBGIT="" #Change this to define a 'sub' git folder e.g. "-Patch"
 
 if [[ $TRAVIS = true ]]
 then
-    MAIN_DIR="${TRAVIS_BUILD_DIR}"
-    QTOX_DIR="${MAIN_DIR}"
+    MAIN_DIR="$TRAVIS_BUILD_DIR"
+    QTOX_DIR="$MAIN_DIR"
 else
     # the directory which qTox is cloned in, wherever that is
-    MAIN_DIR="$(dirname $(readlink -f $0))/../.."
-    QTOX_DIR="${MAIN_DIR}/qTox${SUBGIT}"
+    MAIN_DIR="$(dirname "$(readlink -f "$0")")/../.."
+    QTOX_DIR="$MAIN_DIR/qTox$SUBGIT"
 fi
 QT_DIR="/usr/local/Cellar/qt5" # Folder name of QT install
 # Figure out latest version
-QT_VER=($(ls ${QT_DIR} | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p'))
-QT_DIR_VER="${QT_DIR}/${QT_VER[1]}"
+QT_VER=("$(ls "$QT_DIR" | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p')")
+QT_DIR_VER="$QT_DIR/${QT_VER[1]}"
 
-TOXCORE_DIR="${MAIN_DIR}/toxcore" # Change to Git location
+TOXCORE_DIR="$MAIN_DIR/toxcore" # Change to Git location
 
-LIB_INSTALL_PREFIX="${QTOX_DIR}/libs"
+LIB_INSTALL_PREFIX="$QTOX_DIR/libs"
 
 [[ ! -e "${LIB_INSTALL_PREFIX}" ]] \
-&& mkdir -p "${LIB_INSTALL_PREFIX}"
+&& mkdir -p "$LIB_INSTALL_PREFIX"
 
-BUILD_DIR="${MAIN_DIR}/qTox-Mac_Build${SUBGIT}"
-DEPLOY_DIR="${MAIN_DIR}/qTox-Mac_Deployed${SUBGIT}"
+BUILD_DIR="$MAIN_DIR/qTox-Mac_Build$SUBGIT"
+DEPLOY_DIR="$MAIN_DIR/qTox-Mac_Deployed$SUBGIT"
 
 # helper function to "pretty-print"
 fcho() {
@@ -58,13 +58,13 @@ fcho() {
 
 build_toxcore() {
     echo "Starting Toxcore build and install"
-    cd $TOXCORE_DIR
-    echo "Now working in: ${PWD}"
+    cd "$TOXCORE_DIR"
+    echo "Now working in: $PWD"
 
     local LS_DIR="/usr/local/Cellar/libsodium/"
     #Figure out latest version
-    local LS_VER=($(ls ${LS_DIR} | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p'))
-    local LS_DIR_VER="${LS_DIR}/${LS_VER[1]}"
+    local LS_VER=("$(ls "$LS_DIR" | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p')")
+    local LS_DIR_VER="$LS_DIR/${LS_VER[1]}"
 
     [[ $TRAVIS != true ]] \
     && sleep 3
@@ -72,7 +72,7 @@ build_toxcore() {
     mkdir _build && cd _build
     fcho "Starting cmake ..."
     #Make sure the correct version of libsodium is used
-    cmake -DBOOTSTRAP_DAEMON=OFF -DLIBSODIUM_CFLAGS="-I${LS_DIR_VER}/include/" -DLIBSODIUM_LDFLAGS="L${LS_DIR_VER}/lib/" -DCMAKE_INSTALL_PREFIX="${LIB_INSTALL_PREFIX}" ..
+    cmake -DBOOTSTRAP_DAEMON=OFF -DLIBSODIUM_CFLAGS="-I$LS_DIR_VER/include/" -DLIBSODIUM_LDFLAGS="L$LS_DIR_VER/lib/" -DCMAKE_INSTALL_PREFIX="$LIB_INSTALL_PREFIX" ..
     make clean &> /dev/null
     fcho "Compiling toxcore."
     make > /dev/null || exit 1
@@ -95,16 +95,16 @@ install() {
     NEEDED_DEP_DIR="/usr/local/sbin"
     if [[ $TRAVIS = true ]]
     then
-        sudo mkdir -p $NEEDED_DEP_DIR
-        sudo chown -R $(whoami) $NEEDED_DEP_DIR
+        sudo mkdir -p "$NEEDED_DEP_DIR"
+        sudo chown -R "$(whoami)" "$NEEDED_DEP_DIR"
     elif [[ ! -d $NEEDED_DEP_DIR ]]
     then
         fcho "The direcory $NEEDED_DEP_DIR must exist for some development packages."
         read -r -p "Would you like to create it now, and set the owner to $(whoami)? [y/N] " response
         if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
         then
-            sudo mkdir $NEEDED_DEP_DIR
-            sudo chown -R $(whoami) $NEEDED_DEP_DIR
+            sudo mkdir "$NEEDED_DEP_DIR"
+            sudo chown -R "$(whoami)" "$NEEDED_DEP_DIR"
         else
             fcho "Cannot proceed without $NEEDED_DEP_DIR. Exiting."
             exit 0
@@ -141,7 +141,7 @@ install() {
     if [[ -e $TOX_DIR/.git/index ]]
     then
         fcho "Toxcore git repo already in place !"
-        cd $TOX_DIR
+        cd "$TOX_DIR"
         git pull
     else
         fcho "Cloning Toxcore git ... "
@@ -155,7 +155,7 @@ install() {
         if [[ -e $QTOX_DIR/.git/index ]]
         then
             fcho "qTox git repo already in place !"
-            cd $QTOX_DIR
+            cd "$QTOX_DIR"
             git pull
         else
             fcho "Cloning qTox git ... "
@@ -204,14 +204,14 @@ install() {
     brew install ffmpeg libexif qrencode qt5 sqlcipher openal-soft #kf5-sonnet
     if [[ $TRAVIS = true ]]
     then
-        kill $DOT_PID
+        kill "$DOT_PID"
     fi
 
-    QT_VER=($(ls ${QT_DIR} | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p'))
-    QT_DIR_VER="${QT_DIR}/${QT_VER[1]}"
+    QT_VER=("$(ls "$QT_DIR" | sed -n -e 's/^\([0-9]*\.([0-9]*\.([0-9]*\).*/\1/' -e '1p;$p')")
+    QT_DIR_VER="$QT_DIR/${QT_VER[1]}"
 
     # put required by qTox libs/headers in `libs/`
-    cd "${QTOX_DIR}"
+    cd "$QTOX_DIR"
     sudo ./bootstrap-osx.sh
 }
 
@@ -219,8 +219,8 @@ update() {
     fcho "------------------------------"
     fcho "Starting update process ..."
     #First update Toxcore from git
-    cd $TOXCORE_DIR
-    fcho "Now in ${PWD}"
+    cd "$TOXCORE_DIR"
+    fcho "Now in $PWD"
     fcho "Pulling ..."
     # make sure that pull can be applied, i.e. clean up files from any
     # changes that could have been applied to them
@@ -235,8 +235,8 @@ update() {
     fi
 
     #Now let's update qTox!
-    cd $QTOX_DIR
-    fcho "Now in ${PWD}"
+    cd "$QTOX_DIR"
+    fcho "Now in $PWD"
     fcho "Pulling ..."
     # make sure that pull can be applied, i.e. clean up files from any
     # changes that could have been applied to them
@@ -255,13 +255,13 @@ update() {
 build() {
     fcho "------------------------------"
     fcho "Starting build process ..."
-    rm -rf $BUILD_DIR
-    rm -rf $DEPLOY_DIR
-    mkdir $BUILD_DIR
-    cd $BUILD_DIR
-    fcho "Now working in ${PWD}"
+    rm -rf "$BUILD_DIR"
+    rm -rf "$DEPLOY_DIR"
+    mkdir "$BUILD_DIR"
+    cd "$BUILD_DIR"
+    fcho "Now working in $PWD"
     fcho "Starting cmake ..."
-    export CMAKE_PREFIX_PATH=$(brew --prefix qt5)
+    export CMAKE_PREFIX_PATH="$(brew --prefix qt5)"
 
     if [[ $TRAVIS = true ]]
     then
@@ -269,22 +269,22 @@ build() {
     else
         STRICT_OPTIONS="OFF"
     fi
-    cmake -H$QTOX_DIR -B. -DUPDATE_CHECK=ON -DSPELL_CHECK=OFF -DSTRICT_OPTIONS="${STRICT_OPTIONS}"
-    make -j$(sysctl -n hw.ncpu)
+    cmake -H"$QTOX_DIR" -B. -DUPDATE_CHECK=ON -DSPELL_CHECK=OFF -DSTRICT_OPTIONS="$STRICT_OPTIONS"
+    make -j"$(sysctl -n hw.ncpu)"
 }
 
 deploy() {
     fcho "------------------------------"
     fcho "starting deployment process ..."
-    cd $BUILD_DIR
-    if [ ! -d $BUILD_DIR ]
+    cd "$BUILD_DIR"
+    if [ ! -d "$BUILD_DIR" ]
     then
         fcho "Error: Build directory not detected, please run -ubd, or -b before deploying"
         exit 0
     fi
-    mkdir $DEPLOY_DIR
+    mkdir "$DEPLOY_DIR"
     make install
-    cp -r $BUILD_DIR/qTox.app $DEPLOY_DIR/qTox.app
+    cp -r "$BUILD_DIR"/qTox.app "$DEPLOY_DIR"/qTox.app
 }
 
 bootstrap() {
@@ -295,15 +295,15 @@ bootstrap() {
     build_toxcore
 
     #Boot Strap
-    fcho "Running: sudo ${QTOX_DIR_VER}/bootstrap-osx.sh"
-    cd $QTOX_DIR
+    fcho "Running: sudo $QTOX_DIR_VER/bootstrap-osx.sh"
+    cd "$QTOX_DIR"
     sudo ./bootstrap-osx.sh
 }
 
 dmgmake() {
     fcho "------------------------------"
     fcho "Starting DMG creation"
-    cp $BUILD_DIR/qTox.dmg $QTOX_DIR/
+    cp "$BUILD_DIR"/qTox.dmg "$QTOX_DIR"/
 }
 
 helpme() {
@@ -312,8 +312,8 @@ helpme() {
     echo "-h  | --help      -- This help text."
     echo "-i  | --install   -- A slightly automated process for getting an OSX machine ready to build Toxcore and qTox."
     echo "-u  | --update    -- Check for updates and build Toxcore from git & update qTox from git."
-    echo "-b  | --build     -- Builds qTox in: ${BUILD_DIR}"
-    echo "-d  | --deploy    -- Makes a distributable qTox.app file in: ${DEPLOY_DIR}"
+    echo "-b  | --build     -- Builds qTox in: $BUILD_DIR"
+    echo "-d  | --deploy    -- Makes a distributable qTox.app file in: $DEPLOY_DIR"
     echo "-bs | --bootstrap -- Performs bootstrap steps."
     fcho "Issues with Toxcore or qTox should be reported to their respective repos: https://github.com/toktok/c-toxcore | https://github.com/qTox/qTox"
     exit 0
