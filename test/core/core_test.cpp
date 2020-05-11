@@ -18,17 +18,17 @@
 */
 
 #include "src/core/core.h"
-#include "src/core/toxoptions.h"
 #include "src/core/icoresettings.h"
-#include "src/net/bootstrapnodeupdater.h"
+#include "src/core/toxoptions.h"
 #include "src/model/ibootstraplistgenerator.h"
+#include "src/net/bootstrapnodeupdater.h"
 
-#include <QtTest/QtTest>
-#include <QtGlobal>
-#include <limits>
 #include <QSignalSpy>
-#include <src/persistence/settings.h>
+#include <QtGlobal>
+#include <QtTest/QtTest>
 #include <iostream>
+#include <limits>
+#include <src/persistence/settings.h>
 
 Q_DECLARE_METATYPE(QList<DhtServer>)
 
@@ -36,48 +36,59 @@ class MockSettings : public QObject, public ICoreSettings
 {
     Q_OBJECT
 public:
-    MockSettings() {
+    MockSettings()
+    {
         Q_INIT_RESOURCE(res);
         qRegisterMetaType<QList<DhtServer>>("QList<DhtServer>");
     }
 
-    bool getEnableIPv6() const override {
+    bool getEnableIPv6() const override
+    {
         return false;
     }
-    void setEnableIPv6(bool) override { }
+    void setEnableIPv6(bool) override {}
 
-    bool getForceTCP() const override {
+    bool getForceTCP() const override
+    {
         return false;
     }
-    void setForceTCP(bool) override { }
+    void setForceTCP(bool) override {}
 
-    bool getEnableLanDiscovery() const override {
+    bool getEnableLanDiscovery() const override
+    {
         return false;
     }
-    void setEnableLanDiscovery(bool) override { }
+    void setEnableLanDiscovery(bool) override {}
 
-    QString getProxyAddr() const override {
+    QString getProxyAddr() const override
+    {
         return Addr;
     }
-    void setProxyAddr(const QString &Addr) override {
+    void setProxyAddr(const QString& Addr) override
+    {
         this->Addr = Addr;
     }
 
-    ProxyType getProxyType() const override {
+    ProxyType getProxyType() const override
+    {
         return type;
     }
-    void setProxyType(ProxyType type) override {
+    void setProxyType(ProxyType type) override
+    {
         this->type = type;
     }
 
-    quint16 getProxyPort() const override {
+    quint16 getProxyPort() const override
+    {
         return port;
     }
-    void setProxyPort(quint16 port) override {
+    void setProxyPort(quint16 port) override
+    {
         this->port = port;
     }
 
-    QNetworkProxy getProxy() const override {
+    QNetworkProxy getProxy() const override
+    {
         return QNetworkProxy(QNetworkProxy::ProxyType::NoProxy);
     }
 
@@ -97,7 +108,8 @@ private:
 
 class MockNodeListGenerator : public IBootstrapListGenerator
 {
-    QList<DhtServer> getBootstrapnodes() {
+    QList<DhtServer> getBootstrapnodes()
+    {
         return BootstrapNodeUpdater::loadDefaultBootstrapNodes();
     }
 };
@@ -119,7 +131,7 @@ private:
 
 
 namespace {
-const int timeout = 90000; //90 seconds timeout allowed for test
+const int timeout = 90000; // 90 seconds timeout allowed for test
 }
 
 void TestCore::startup_without_proxy()
@@ -144,7 +156,7 @@ void TestCore::startup_without_proxy()
 
     test_core->start();
 
-    QVERIFY(spyCore.wait(timeout)); //wait 90seconds
+    QVERIFY(spyCore.wait(timeout)); // wait 90seconds
 
     QCOMPARE(spyCore.count(), 1); // make sure the signal was emitted exactly one time
 }

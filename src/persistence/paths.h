@@ -27,10 +27,11 @@
 class Paths
 {
 public:
-    enum class Portable {
-        Auto,           /** Auto detect if portable or non-portable */
-        Portable,       /** Force portable mode */
-        NonPortable     /** Force non-portable mode */
+    enum class Portable
+    {
+        Auto,       /** Auto detect if portable or non-portable */
+        Portable,   /** Force portable mode */
+        NonPortable /** Force non-portable mode */
     };
 
     static Paths* makePaths(Portable mode = Portable::Auto);
@@ -54,7 +55,7 @@ public:
 
 
 private:
-    Paths(const QString &basePath, bool portable);
+    Paths(const QString& basePath, bool portable);
 
 private:
     QString basePath{};

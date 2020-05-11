@@ -25,6 +25,6 @@
 namespace Platform {
 bool setAutorun(bool on);
 bool getAutorun();
-}
+} // namespace Platform
 
 #endif // QTOX_PLATFORM_EXT

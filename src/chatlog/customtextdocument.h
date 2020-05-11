@@ -19,8 +19,8 @@
 
 #pragma once
 
-#include <QTextDocument>
 #include <QList>
+#include <QTextDocument>
 
 #include <memory>
 

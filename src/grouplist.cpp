@@ -25,8 +25,8 @@
 
 QHash<const GroupId, Group*> GroupList::groupList;
 QHash<uint32_t, GroupId> GroupList::id2key;
-Group* GroupList::addGroup(Core& core, int groupNum, const GroupId& groupId, const QString& name, bool isAvGroupchat,
-                           const QString& selfName)
+Group* GroupList::addGroup(Core& core, int groupNum, const GroupId& groupId, const QString& name,
+                           bool isAvGroupchat, const QString& selfName)
 {
     auto checker = groupList.find(groupId);
     if (checker != groupList.end()) {

@@ -28,8 +28,8 @@ namespace Platform {
 namespace X11Display {
 Display* lock();
 void unlock();
-}
+} // namespace X11Display
 
-}
+} // namespace Platform
 
 #endif // QTOX_PLATFORM_EXT

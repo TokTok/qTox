@@ -20,9 +20,9 @@
 #pragma once
 
 #include <QByteArray>
+#include <QHash>
 #include <QString>
 #include <cstdint>
-#include <QHash>
 #include <memory>
 
 class ContactId

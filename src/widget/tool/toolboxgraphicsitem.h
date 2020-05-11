@@ -31,8 +31,7 @@ public:
     ToolBoxGraphicsItem();
     ~ToolBoxGraphicsItem();
 
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
-               QWidget* widget) final;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) final;
 
 protected:
     void hoverEnterEvent(QGraphicsSceneHoverEvent* event) final;

@@ -19,8 +19,8 @@
 
 #pragma once
 
-#include <QWidget>
 #include "src/widget/searchtypes.h"
+#include <QWidget>
 
 namespace Ui {
 class SearchSettingsForm;
@@ -31,14 +31,14 @@ class SearchSettingsForm : public QWidget
     Q_OBJECT
 
 public:
-    explicit SearchSettingsForm(QWidget *parent = nullptr);
+    explicit SearchSettingsForm(QWidget* parent = nullptr);
     ~SearchSettingsForm();
 
     ParameterSearch getParameterSearch();
     void reloadTheme();
 
 private:
-    Ui::SearchSettingsForm *ui;
+    Ui::SearchSettingsForm* ui;
     QDateTime startTime;
     bool isUpdate{false};
 

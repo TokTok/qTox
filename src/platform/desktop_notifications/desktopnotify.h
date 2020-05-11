@@ -31,7 +31,8 @@ class DesktopNotify : public QObject
 public:
     DesktopNotify();
 
-    enum class MessageType {
+    enum class MessageType
+    {
         FRIEND,
         FRIEND_FILE,
         FRIEND_REQUEST,

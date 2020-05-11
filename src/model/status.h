@@ -17,13 +17,12 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <QString>
 #include <QPixmap>
+#include <QString>
 
 #pragma once
 
-namespace Status
-{
+namespace Status {
 // Status::Status is weird, but Status is a fitting name for both the namespace and enum class..
 enum class Status
 {
@@ -38,4 +37,4 @@ QString getIconPath(Status status, bool event = false);
 QString getTitle(Status status);
 QString getAssetSuffix(Status status);
 bool isOnline(Status status);
-}
+} // namespace Status

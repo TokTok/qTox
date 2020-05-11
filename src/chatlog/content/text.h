@@ -19,8 +19,8 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
 #include "src/widget/style.h"
+#include "../chatlinecontent.h"
 
 #include <QFont>
 #include <QTextCursor>
@@ -40,7 +40,8 @@ public:
     };
 
     Text(const QString& txt = "", const QFont& font = QFont(), bool enableElide = false,
-         const QString& rawText = QString(), const TextType& type = NORMAL, const QColor& custom = Style::getColor(Style::MainText));
+         const QString& rawText = QString(), const TextType& type = NORMAL,
+         const QColor& custom = Style::getColor(Style::MainText));
     virtual ~Text();
 
     void setText(const QString& txt);

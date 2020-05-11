@@ -30,8 +30,8 @@
 #include "src/model/imessagedispatcher.h"
 #include "src/model/status.h"
 #include "src/persistence/history.h"
-#include "src/widget/tool/screenshotgrabber.h"
 #include "src/video/netcamview.h"
+#include "src/widget/tool/screenshotgrabber.h"
 
 class CallConfirmWidget;
 class FileTransferInstance;
@@ -46,7 +46,8 @@ class ChatForm : public GenericChatForm
 {
     Q_OBJECT
 public:
-    ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog, IMessageDispatcher& messageDispatcher);
+    ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog,
+             IMessageDispatcher& messageDispatcher);
     ~ChatForm() override;
     void setStatusMessage(const QString& newMessage);
 

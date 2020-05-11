@@ -32,4 +32,4 @@ const QString CAPTURE_SCREEN{"Capture screen"};
 
 QVector<VideoMode> getDeviceModes(QString devName);
 QVector<QPair<QString, QString>> getDeviceList();
-}
+} // namespace avfoundation

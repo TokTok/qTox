@@ -23,7 +23,8 @@
 
 #include <QString>
 
-class IAudioSettings {
+class IAudioSettings
+{
 public:
     virtual ~IAudioSettings() = default;
 

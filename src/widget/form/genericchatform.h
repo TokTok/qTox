@@ -135,10 +135,13 @@ private:
     void removeFirstsMessages(const int num);
     void removeLastsMessages(const int num);
 
-    void renderItem(const ChatLogItem &item, bool hideName, bool colorizeNames, ChatMessage::Ptr &chatMessage);
+    void renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames,
+                    ChatMessage::Ptr& chatMessage);
+
 protected:
     ChatMessage::Ptr createMessage(const ToxPk& author, const QString& message,
-                                   const QDateTime& datetime, bool isAction, bool isSent, bool colorizeName = false);
+                                   const QDateTime& datetime, bool isAction, bool isSent,
+                                   bool colorizeName = false);
     bool needsToHideName(ChatLogIdx idx) const;
     virtual void insertChatMessage(ChatMessage::Ptr msg);
     void adjustFileMenuPosition();
@@ -149,8 +152,11 @@ protected:
     bool eventFilter(QObject* object, QEvent* event) final;
     void disableSearchText();
     void enableSearchText();
-    bool searchInText(const QString& phrase, const ParameterSearch& parameter, SearchDirection direction);
-    std::pair<int, int> indexForSearchInLine(const QString& txt, const QString& phrase, const ParameterSearch& parameter, SearchDirection direction);
+    bool searchInText(const QString& phrase, const ParameterSearch& parameter,
+                      SearchDirection direction);
+    std::pair<int, int> indexForSearchInLine(const QString& txt, const QString& phrase,
+                                             const ParameterSearch& parameter,
+                                             SearchDirection direction);
 
 protected:
     const Core& core;
@@ -177,12 +183,12 @@ protected:
 
     ChatFormHeader* headWidget;
 
-    SearchForm *searchForm;
-    QLabel *dateInfo;
+    SearchForm* searchForm;
+    QLabel* dateInfo;
     ChatLog* chatWidget;
     ChatTextEdit* msgEdit;
 #ifdef SPELL_CHECKING
-    Sonnet::SpellCheckDecorator* decorator {nullptr};
+    Sonnet::SpellCheckDecorator* decorator{nullptr};
 #endif
     FlyoutOverlayWidget* fileFlyout;
     Widget* parent;

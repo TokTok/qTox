@@ -67,7 +67,8 @@ public:
         Dark
     };
 
-    struct ThemeNameColor {
+    struct ThemeNameColor
+    {
         MainTheme type;
         QString name;
         QColor color;

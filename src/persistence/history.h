@@ -117,8 +117,8 @@ class History : public QObject, public std::enable_shared_from_this<History>
 public:
     struct HistMessage
     {
-        HistMessage(RowId id, MessageState state, QDateTime timestamp, QString chat, QString dispName,
-                    QString sender, QString message)
+        HistMessage(RowId id, MessageState state, QDateTime timestamp, QString chat,
+                    QString dispName, QString sender, QString message)
             : chat{chat}
             , sender{sender}
             , dispName{dispName}
@@ -128,8 +128,8 @@ public:
             , content(std::move(message))
         {}
 
-        HistMessage(RowId id, MessageState state, QDateTime timestamp, QString chat, QString dispName,
-                    QString sender, ToxFile file)
+        HistMessage(RowId id, MessageState state, QDateTime timestamp, QString chat,
+                    QString dispName, QString sender, ToxFile file)
             : chat{chat}
             , sender{sender}
             , dispName{dispName}
@@ -169,11 +169,12 @@ public:
                        const QDateTime& time, bool isDelivered, QString dispName,
                        const std::function<void(RowId)>& insertIdCallback = {});
 
-    void addNewFileMessage(const ToxPk& friendPk, const QString& fileId,
-                           const QString& fileName, const QString& filePath, int64_t size,
-                           const ToxPk& sender, const QDateTime& time, QString const& dispName);
+    void addNewFileMessage(const ToxPk& friendPk, const QString& fileId, const QString& fileName,
+                           const QString& filePath, int64_t size, const ToxPk& sender,
+                           const QDateTime& time, QString const& dispName);
 
-    void setFileFinished(const QString& fileId, bool success, const QString& filePath, const QByteArray& fileHash);
+    void setFileFinished(const QString& fileId, bool success, const QString& filePath,
+                         const QByteArray& fileHash);
     size_t getNumMessagesForFriend(const ToxPk& friendPk);
     size_t getNumMessagesForFriendBeforeDate(const ToxPk& friendPk, const QDateTime& date);
     QList<HistMessage> getMessagesForFriend(const ToxPk& friendPk, size_t firstIdx, size_t lastIdx);
@@ -181,15 +182,15 @@ public:
     QDateTime getDateWhereFindPhrase(const ToxPk& friendPk, const QDateTime& from, QString phrase,
                                      const ParameterSearch& parameter);
     QList<DateIdx> getNumMessagesForFriendBeforeDateBoundaries(const ToxPk& friendPk,
-            const QDate& from, size_t maxNum);
+                                                               const QDate& from, size_t maxNum);
 
     void markAsDelivered(RowId messageId);
 
 protected:
     QVector<RawDatabase::Query>
-    generateNewMessageQueries(const ToxPk& friendPk, const QString& message,
-                              const ToxPk& sender, const QDateTime& time, bool isDelivered,
-                              QString dispName, std::function<void(RowId)> insertIdCallback = {});
+    generateNewMessageQueries(const ToxPk& friendPk, const QString& message, const ToxPk& sender,
+                              const QDateTime& time, bool isDelivered, QString dispName,
+                              std::function<void(RowId)> insertIdCallback = {});
 
 signals:
     void fileInsertionReady(FileDbInsertionData data);
@@ -201,8 +202,8 @@ private slots:
 
 private:
     bool historyAccessBlocked();
-    static RawDatabase::Query generateFileFinished(RowId fileId, bool success,
-            const QString& filePath, const QByteArray& fileHash);
+    static RawDatabase::Query generateFileFinished(RowId fileId, bool success, const QString& filePath,
+                                                   const QByteArray& fileHash);
     std::shared_ptr<RawDatabase> db;
 
 

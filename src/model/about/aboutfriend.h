@@ -20,8 +20,8 @@
 #pragma once
 
 #include "iaboutfriend.h"
-#include "util/interface.h"
 #include "src/persistence/ifriendsettings.h"
+#include "util/interface.h"
 
 #include <QObject>
 

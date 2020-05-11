@@ -22,8 +22,8 @@
 #include <QMutex>
 #include <QObject>
 
-#include "util/interface.h"
 #include "audio/iaudiosink.h"
+#include "util/interface.h"
 
 class OpenAL;
 class QMutex;
@@ -38,7 +38,8 @@ public:
     AlSink& operator=(AlSink&& other) = delete;
     ~AlSink();
 
-    void playAudioBuffer(const int16_t* data, int samples, unsigned channels, int sampleRate) const override;
+    void playAudioBuffer(const int16_t* data, int samples, unsigned channels,
+                         int sampleRate) const override;
     void playMono16Sound(const IAudioSink::Sound& sound) override;
     void startLoop() override;
     void stopLoop() override;

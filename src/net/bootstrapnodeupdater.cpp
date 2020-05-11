@@ -190,8 +190,8 @@ QList<DhtServer> BootstrapNodeUpdater::getBootstrapnodes()
     auto userFilePath = paths.getUserNodesFilePath();
     if (!QFile(userFilePath).exists()) {
         qInfo() << "Bootstrap node list not found, creating one with default nodes.";
-        // deserialize and reserialize instead of just copying to strip out any unnecessary json, making it easier for
-        // users to edit
+        // deserialize and reserialize instead of just copying to strip out any unnecessary json,
+        // making it easier for users to edit
         auto buildInNodes = loadNodesFile(builtinNodesFile);
         auto serializedNodes = serialize(buildInNodes);
 

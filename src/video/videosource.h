@@ -38,8 +38,7 @@ public:
 public:
     VideoSource()
         : id(sourceIDs++)
-    {
-    }
+    {}
 
     virtual ~VideoSource() = default;
     /**

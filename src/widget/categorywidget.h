@@ -64,15 +64,9 @@ protected:
     void emitChatroomWidget(QLayout* layout, int index);
 
 private:
-    virtual void onSetName()
-    {
-    }
-    virtual void onExpand()
-    {
-    }
-    virtual void onAddFriendWidget(FriendWidget*)
-    {
-    }
+    virtual void onSetName() {}
+    virtual void onExpand() {}
+    virtual void onAddFriendWidget(FriendWidget*) {}
 
     QWidget* listWidget;
     FriendListLayout* listLayout;

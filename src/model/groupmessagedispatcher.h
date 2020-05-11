@@ -41,7 +41,7 @@ public:
                            const IGroupSettings& groupSettings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
-            QString const& content) override;
+                                                                    QString const& content) override;
     void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content);
 
 private:

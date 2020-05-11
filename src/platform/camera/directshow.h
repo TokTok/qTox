@@ -32,4 +32,4 @@
 namespace DirectShow {
 QVector<QPair<QString, QString>> getDeviceList();
 QVector<VideoMode> getDeviceModes(QString devName);
-}
+} // namespace DirectShow

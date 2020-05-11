@@ -19,6 +19,7 @@
 
 
 #include "nexus.h"
+#include "audio/audio.h"
 #include "persistence/settings.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
@@ -35,7 +36,6 @@
 #include <QDesktopWidget>
 #include <QThread>
 #include <cassert>
-#include "audio/audio.h"
 #include <vpx/vpx_image.h>
 
 #ifdef Q_OS_MAC

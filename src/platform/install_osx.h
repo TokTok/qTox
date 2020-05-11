@@ -31,4 +31,4 @@ static constexpr int EXIT_UPDATE_MACX_FAIL = 216;
 
 void moveToAppFolder();
 void migrateProfiles();
-}
+} // namespace osx

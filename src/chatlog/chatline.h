@@ -45,15 +45,12 @@ struct ColumnFormat
         Right,
     };
 
-    ColumnFormat()
-    {
-    }
+    ColumnFormat() {}
     ColumnFormat(qreal s, Policy p, Align halign = Left)
         : size(s)
         , policy(p)
         , hAlign(halign)
-    {
-    }
+    {}
 
     qreal size = 1.0;
     Policy policy = VariableSize;

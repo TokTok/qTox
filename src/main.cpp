@@ -86,7 +86,7 @@ void cleanup()
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
         logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
 #else
-        logFileFile.store(nullptr); // atomically disable logging to file
+        logFileFile.store(nullptr);        // atomically disable logging to file
 #endif
     }
 #endif
@@ -96,7 +96,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 {
     // Silence qWarning spam due to bug in QTextBrowser (trying to open a file for base64 images)
     if (ctxt.function == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
-            && msg == QString("QFSFileEngine::open: No file name specified"))
+        && msg == QString("QFSFileEngine::open: No file name specified"))
         return;
 
     QString file = ctxt.file;
@@ -225,29 +225,29 @@ int main(int argc, char* argv[])
     parser.addPositionalArgument("uri", QObject::tr("Tox URI to parse"));
     parser.addOption(
         QCommandLineOption(QStringList() << "p"
-                           << "profile",
+                                         << "profile",
                            QObject::tr("Starts new instance and loads specified profile."),
                            QObject::tr("profile")));
     parser.addOption(
         QCommandLineOption(QStringList() << "l"
-                           << "login",
+                                         << "login",
                            QObject::tr("Starts new instance and opens the login screen.")));
     parser.addOption(QCommandLineOption(QStringList() << "I"
-                                        << "IPv6",
+                                                      << "IPv6",
                                         QObject::tr("Sets IPv6 <on>/<off>. Default is ON."),
                                         QObject::tr("on/off")));
     parser.addOption(QCommandLineOption(QStringList() << "U"
-                                        << "UDP",
+                                                      << "UDP",
                                         QObject::tr("Sets UDP <on>/<off>. Default is ON."),
                                         QObject::tr("on/off")));
     parser.addOption(
         QCommandLineOption(QStringList() << "L"
-                           << "LAN",
+                                         << "LAN",
                            QObject::tr(
                                "Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
                            QObject::tr("on/off")));
     parser.addOption(QCommandLineOption(QStringList() << "P"
-                                        << "proxy",
+                                                      << "proxy",
                                         QObject::tr("Sets proxy settings. Default is NONE."),
                                         QObject::tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
     parser.process(*a);
@@ -257,7 +257,8 @@ int main(int argc, char* argv[])
     if (ipc.isAttached()) {
         QObject::connect(&settings, &Settings::currentProfileIdChanged, &ipc, &IPC::setProfileId);
     } else {
-        qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client functionality.";
+        qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client "
+                      "functionality.";
     }
 
     // For the auto-updater
@@ -302,7 +303,7 @@ int main(int argc, char* argv[])
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
     logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
 #else
-    logFileFile.store(mainLogFilePtr); // atomically set the logFile
+    logFileFile.store(mainLogFilePtr);     // atomically set the logFile
 #endif
 #endif
 
@@ -359,9 +360,9 @@ int main(int argc, char* argv[])
         if (ipc.waitUntilAccepted(event, 2)) {
             if (eventType == "activate") {
                 qDebug()
-                        << "Another qTox instance is already running. If you want to start a second "
-                        "instance, please open login screen (qtox -l) or start with a profile (qtox "
-                        "-p <profile name>).";
+                    << "Another qTox instance is already running. If you want to start a second "
+                       "instance, please open login screen (qtox -l) or start with a profile (qtox "
+                       "-p <profile name>).";
             } else {
                 qDebug() << "Event" << eventType << "was handled by other client.";
             }

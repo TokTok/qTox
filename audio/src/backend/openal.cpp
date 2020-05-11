@@ -279,7 +279,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     sinks.insert(sink);
     qDebug() << "Audio source" << sid << "created. Sources active:" << sinks.size();
 
-    return std::unique_ptr<IAudioSink> {sink};
+    return std::unique_ptr<IAudioSink>{sink};
 }
 
 /**
@@ -338,7 +338,7 @@ std::unique_ptr<IAudioSource> OpenAL::makeSource()
 
     qDebug() << "Subscribed to audio input device [" << sources.size() << "subscriptions ]";
 
-    return std::unique_ptr<IAudioSource> {source};
+    return std::unique_ptr<IAudioSource>{source};
 }
 
 /**
@@ -724,8 +724,8 @@ QStringList OpenAL::outDeviceNames()
 {
     QStringList list;
     const ALchar* pDeviceList = (alcIsExtensionPresent(nullptr, "ALC_ENUMERATE_ALL_EXT") != AL_FALSE)
-                                ? alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER)
-                                : alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
+                                    ? alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER)
+                                    : alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
 
     if (pDeviceList) {
         while (*pDeviceList) {

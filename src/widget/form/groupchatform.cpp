@@ -20,14 +20,15 @@
 #include "groupchatform.h"
 
 #include "tabcompleter.h"
+#include "src/chatlog/chatlog.h"
+#include "src/chatlog/content/text.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/core/groupid.h"
-#include "src/chatlog/chatlog.h"
-#include "src/chatlog/content/text.h"
-#include "src/model/friend.h"
 #include "src/friendlist.h"
+#include "src/model/friend.h"
 #include "src/model/group.h"
+#include "src/persistence/settings.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/flowlayout.h"
 #include "src/widget/form/chatform.h"
@@ -36,23 +37,21 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/croppinglabel.h"
 #include "src/widget/translator.h"
-#include "src/persistence/settings.h"
 
 #include <QDragEnterEvent>
 #include <QMimeData>
+#include <QPushButton>
 #include <QRegularExpression>
 #include <QTimer>
 #include <QToolButton>
-#include <QPushButton>
 
-namespace
-{
+namespace {
 const auto LABEL_PEER_TYPE_OUR = QVariant(QStringLiteral("our"));
 const auto LABEL_PEER_TYPE_MUTED = QVariant(QStringLiteral("muted"));
 const auto LABEL_PEER_PLAYING_AUDIO = QVariant(QStringLiteral("true"));
 const auto LABEL_PEER_NOT_PLAYING_AUDIO = QVariant(QStringLiteral("false"));
 const auto PEER_LABEL_STYLE_SHEET_PATH = QStringLiteral("chatArea/chatHead.css");
-}
+} // namespace
 
 /**
  * @brief Edit name for correct representation if it is needed
@@ -82,7 +81,8 @@ QString editName(const QString& name)
  * @brief Timeout = peer stopped sending audio.
  */
 
-GroupChatForm::GroupChatForm(Core& _core, Group* chatGroup, IChatLog& chatLog, IMessageDispatcher& messageDispatcher)
+GroupChatForm::GroupChatForm(Core& _core, Group* chatGroup, IChatLog& chatLog,
+                             IMessageDispatcher& messageDispatcher)
     : GenericChatForm(_core, chatGroup, chatLog, messageDispatcher)
     , core{_core}
     , group(chatGroup)
@@ -116,7 +116,7 @@ GroupChatForm::GroupChatForm(Core& _core, Group* chatGroup, IChatLog& chatLog, I
     headWidget->addLayout(namesListLayout);
     headWidget->addStretch();
 
-    //nameLabel->setMinimumHeight(12);
+    // nameLabel->setMinimumHeight(12);
     nusersLabel->setMinimumHeight(12);
 
     connect(msgEdit, &ChatTextEdit::tabPressed, tabber, &TabCompleter::complete);
@@ -130,7 +130,8 @@ GroupChatForm::GroupChatForm(Core& _core, Group* chatGroup, IChatLog& chatLog, I
     connect(group, &Group::userLeft, this, &GroupChatForm::onUserLeft);
     connect(group, &Group::peerNameChanged, this, &GroupChatForm::onPeerNameChanged);
     connect(group, &Group::numPeersChanged, this, &GroupChatForm::updateUserCount);
-    connect(&Settings::getInstance(), &Settings::blackListChanged, this, &GroupChatForm::updateUserNames);
+    connect(&Settings::getInstance(), &Settings::blackListChanged, this,
+            &GroupChatForm::updateUserNames);
 
     updateUserNames();
     setAcceptDrops(true);
@@ -200,7 +201,8 @@ void GroupChatForm::updateUserNames()
         label->setContextMenuPolicy(Qt::CustomContextMenu);
 
         const Settings& s = Settings::getInstance();
-        connect(label, &QLabel::customContextMenuRequested, this, &GroupChatForm::onLabelContextMenuRequested);
+        connect(label, &QLabel::customContextMenuRequested, this,
+                &GroupChatForm::onLabelContextMenuRequested);
 
         if (peerPk == selfPk) {
             label->setProperty("peerType", LABEL_PEER_TYPE_OUR);
@@ -215,8 +217,7 @@ void GroupChatForm::updateUserNames()
     // add the labels in alphabetical order into the layout
     auto nickLabelList = peerLabels.values();
 
-    std::sort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b)
-    {
+    std::sort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b) {
         return a->text().toLower() < b->text().toLower();
     });
 
@@ -232,19 +233,22 @@ void GroupChatForm::updateUserNames()
 
 void GroupChatForm::onUserJoined(const ToxPk& user, const QString& name)
 {
-    addSystemInfoMessage(tr("%1 has joined the group").arg(name), ChatMessage::INFO, QDateTime::currentDateTime());
+    addSystemInfoMessage(tr("%1 has joined the group").arg(name), ChatMessage::INFO,
+                         QDateTime::currentDateTime());
     updateUserNames();
 }
 
 void GroupChatForm::onUserLeft(const ToxPk& user, const QString& name)
 {
-    addSystemInfoMessage(tr("%1 has left the group").arg(name), ChatMessage::INFO, QDateTime::currentDateTime());
+    addSystemInfoMessage(tr("%1 has left the group").arg(name), ChatMessage::INFO,
+                         QDateTime::currentDateTime());
     updateUserNames();
 }
 
 void GroupChatForm::onPeerNameChanged(const ToxPk& peer, const QString& oldName, const QString& newName)
 {
-    addSystemInfoMessage(tr("%1 is now known as %2").arg(oldName, newName), ChatMessage::INFO, QDateTime::currentDateTime());
+    addSystemInfoMessage(tr("%1 is now known as %2").arg(oldName, newName), ChatMessage::INFO,
+                         QDateTime::currentDateTime());
     updateUserNames();
 }
 

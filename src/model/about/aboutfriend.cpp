@@ -21,8 +21,8 @@
 
 #include "src/model/friend.h"
 #include "src/nexus.h"
-#include "src/persistence/profile.h"
 #include "src/persistence/ifriendsettings.h"
+#include "src/persistence/profile.h"
 
 AboutFriend::AboutFriend(const Friend* f, IFriendSettings* const s)
     : f{f}
@@ -31,8 +31,8 @@ AboutFriend::AboutFriend(const Friend* f, IFriendSettings* const s)
     s->connectTo_contactNoteChanged(this, [=](const ToxPk& pk, const QString& note) {
         emit noteChanged(note);
     });
-    s->connectTo_autoAcceptCallChanged(this,
-    [=](const ToxPk& pk, IFriendSettings::AutoAcceptCallFlags flag) {
+    s->connectTo_autoAcceptCallChanged(this, [=](const ToxPk& pk,
+                                                 IFriendSettings::AutoAcceptCallFlags flag) {
         emit autoAcceptCallChanged(flag);
     });
     s->connectTo_autoAcceptDirChanged(this, [=](const ToxPk& pk, const QString& dir) {
@@ -62,8 +62,7 @@ QPixmap AboutFriend::getAvatar() const
 {
     const ToxPk pk = f->getPublicKey();
     const QPixmap avatar = Nexus::getProfile()->loadAvatar(pk);
-    return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg"))
-           : avatar;
+    return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg")) : avatar;
 }
 
 QString AboutFriend::getNote() const

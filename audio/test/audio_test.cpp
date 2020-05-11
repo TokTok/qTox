@@ -19,9 +19,9 @@
 
 #include "audio/audio.h"
 
-#include <memory>
-#include <QtTest/QtTest>
 #include <QtGlobal>
+#include <QtTest/QtTest>
+#include <memory>
 
 #include "audio/iaudiocontrol.h"
 #include "audio/iaudiosettings.h"
@@ -30,54 +30,64 @@ class MockSettings : public QObject, public IAudioSettings
 {
     Q_OBJECT
 public:
-
-    QString getInDev() const override {
+    QString getInDev() const override
+    {
         return "";
     }
     void setInDev(const QString& deviceSpecifier) override {}
 
-    bool getAudioInDevEnabled() const override {
+    bool getAudioInDevEnabled() const override
+    {
         return false;
     }
     void setAudioInDevEnabled(bool enabled) override {}
 
-    QString getOutDev() const override {
+    QString getOutDev() const override
+    {
         return "";
     }
     void setOutDev(const QString& deviceSpecifier) override {}
 
-    bool getAudioOutDevEnabled() const override {
+    bool getAudioOutDevEnabled() const override
+    {
         return false;
     }
     void setAudioOutDevEnabled(bool enabled) override {}
 
-    qreal getAudioInGainDecibel() const override {
+    qreal getAudioInGainDecibel() const override
+    {
         return 0.0;
     }
     void setAudioInGainDecibel(qreal dB) override {}
 
-    qreal getAudioThreshold() const override {
+    qreal getAudioThreshold() const override
+    {
         return 0.0;
     }
     void setAudioThreshold(qreal percent) override {}
 
-    int getOutVolume() const override {
+    int getOutVolume() const override
+    {
         return 0;
     }
-    int getOutVolumeMin() const override {
+    int getOutVolumeMin() const override
+    {
         return 0;
     }
-    int getOutVolumeMax() const override {
+    int getOutVolumeMax() const override
+    {
         return 0;
     }
     void setOutVolume(int volume) override {}
 
-    int getAudioBitrate() const override {
+    int getAudioBitrate() const override
+    {
         return 0;
     }
     void setAudioBitrate(int bitrate) override {}
 
-    bool getEnableTestSound() const override {
+    bool getEnableTestSound() const override
+    {
         return false;
     }
     void setEnableTestSound(bool newValue) override {}

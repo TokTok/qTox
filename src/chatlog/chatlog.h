@@ -115,7 +115,7 @@ protected:
     void showEvent(QShowEvent*) final;
     void focusInEvent(QFocusEvent* ev) final;
     void focusOutEvent(QFocusEvent* ev) final;
-    void wheelEvent(QWheelEvent *event) final;
+    void wheelEvent(QWheelEvent* event) final;
 
     void updateMultiSelectionRect();
     void updateTypingNotification();

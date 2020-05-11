@@ -21,8 +21,8 @@
 
 #include "genericchatroomwidget.h"
 
-#include "src/model/chatroom/groupchatroom.h"
 #include "src/core/groupid.h"
+#include "src/model/chatroom/groupchatroom.h"
 
 #include <memory>
 

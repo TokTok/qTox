@@ -96,8 +96,8 @@ ChatHistory::ChatHistory(Friend& f_, History* history_, const ICoreIdHandler& co
     // state of the message has to be marked according to our dispatch state
     constexpr auto defaultNumMessagesToLoad = 100;
     auto firstChatLogIdx = sessionChatLog.getFirstIdx().get() < defaultNumMessagesToLoad
-                           ? ChatLogIdx(0)
-                           : sessionChatLog.getFirstIdx() - defaultNumMessagesToLoad;
+                               ? ChatLogIdx(0)
+                               : sessionChatLog.getFirstIdx() - defaultNumMessagesToLoad;
 
     if (canUseHistory()) {
         loadHistoryIntoSessionChatLog(firstChatLogIdx);
@@ -134,7 +134,7 @@ SearchResult ChatHistory::searchForward(SearchPos startIdx, const QString& phras
 }
 
 SearchResult ChatHistory::searchBackward(SearchPos startIdx, const QString& phrase,
-        const ParameterSearch& parameter) const
+                                         const ParameterSearch& parameter) const
 {
     auto res = sessionChatLog.searchBackward(startIdx, phrase, parameter);
 
@@ -146,8 +146,8 @@ SearchResult ChatHistory::searchBackward(SearchPos startIdx, const QString& phra
 
     auto earliestMessageDate =
         (earliestMessage == ChatLogIdx(-1))
-        ? QDateTime::currentDateTime()
-        : sessionChatLog.at(earliestMessage).getContentAsMessage().message.timestamp;
+            ? QDateTime::currentDateTime()
+            : sessionChatLog.at(earliestMessage).getContentAsMessage().message.timestamp;
 
     // Roundabout way of getting the first idx but I don't want to have to
     // deal with re-implementing so we'll just piece what we want together...
@@ -155,11 +155,11 @@ SearchResult ChatHistory::searchBackward(SearchPos startIdx, const QString& phra
     // If the double disk access is real bad we can optimize this by adding
     // another function to history
     auto dateWherePhraseFound =
-        history->getDateWhereFindPhrase(f.getPublicKey(), earliestMessageDate, phrase,
-                                        parameter);
+        history->getDateWhereFindPhrase(f.getPublicKey(), earliestMessageDate, phrase, parameter);
 
     if (dateWherePhraseFound.isValid()) {
-        auto loadIdx = history->getNumMessagesForFriendBeforeDate(f.getPublicKey(), dateWherePhraseFound);
+        auto loadIdx =
+            history->getNumMessagesForFriendBeforeDate(f.getPublicKey(), dateWherePhraseFound);
         loadHistoryIntoSessionChatLog(ChatLogIdx(loadIdx));
 
         // Reset search pos to the message we just loaded to avoid a double search
@@ -188,20 +188,20 @@ ChatLogIdx ChatHistory::getNextIdx() const
 }
 
 std::vector<IChatLog::DateChatLogIdxPair> ChatHistory::getDateIdxs(const QDate& startDate,
-        size_t maxDates) const
+                                                                   size_t maxDates) const
 {
     if (canUseHistory()) {
         auto counts = history->getNumMessagesForFriendBeforeDateBoundaries(f.getPublicKey(),
-                      startDate, maxDates);
+                                                                           startDate, maxDates);
 
         std::vector<IChatLog::DateChatLogIdxPair> ret;
         std::transform(counts.begin(), counts.end(), std::back_inserter(ret),
-        [&](const History::DateIdx& historyDateIdx) {
-            DateChatLogIdxPair pair;
-            pair.date = historyDateIdx.date;
-            pair.idx.get() = historyDateIdx.numMessagesIn;
-            return pair;
-        });
+                       [&](const History::DateIdx& historyDateIdx) {
+                           DateChatLogIdxPair pair;
+                           pair.date = historyDateIdx.date;
+                           pair.idx.get() = historyDateIdx.numMessagesIn;
+                           return pair;
+                       });
 
         // Do not re-search in the session chat log. If we have history the query to the history should have been sufficient
         return ret;
@@ -243,7 +243,7 @@ void ChatHistory::onFileUpdated(const ToxPk& sender, const ToxFile& file)
 }
 
 void ChatHistory::onFileTransferRemotePausedUnpaused(const ToxPk& sender, const ToxFile& file,
-        bool paused)
+                                                     bool paused)
 {
     sessionChatLog.onFileTransferRemotePausedUnpaused(sender, file, paused);
 }
@@ -282,9 +282,7 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
 
         auto username = coreIdHandler.getUsername();
 
-        auto onInsertion = [this, id](RowId historyId) {
-            handleDispatchedMessage(id, historyId);
-        };
+        auto onInsertion = [this, id](RowId historyId) { handleDispatchedMessage(id, historyId); };
 
         history->addNewMessage(friendPk, content, selfPk, message.timestamp, false, username,
                                onInsertion);
@@ -369,22 +367,22 @@ void ChatHistory::loadHistoryIntoSessionChatLog(ChatLogIdx start) const
 
             auto dispatchedMessageIt =
                 std::find_if(dispatchedMessageRowIdMap.begin(), dispatchedMessageRowIdMap.end(),
-            [&](RowId dispatchedId) {
-                return dispatchedId == message.id;
-            });
+                             [&](RowId dispatchedId) { return dispatchedId == message.id; });
 
-            assert((message.state != MessageState::pending && dispatchedMessageIt == dispatchedMessageRowIdMap.end()) ||
-                   (message.state == MessageState::pending && dispatchedMessageIt != dispatchedMessageRowIdMap.end()));
+            assert((message.state != MessageState::pending
+                    && dispatchedMessageIt == dispatchedMessageRowIdMap.end())
+                   || (message.state == MessageState::pending
+                       && dispatchedMessageIt != dispatchedMessageRowIdMap.end()));
 
             auto chatLogMessage = ChatLogMessage{message.state, processedMessage};
             switch (message.state) {
             case MessageState::complete:
                 sessionChatLog.insertCompleteMessageAtIdx(currentIdx, sender, message.dispName,
-                        chatLogMessage);
+                                                          chatLogMessage);
                 break;
             case MessageState::pending:
                 sessionChatLog.insertIncompleteMessageAtIdx(currentIdx, sender, message.dispName,
-                        chatLogMessage, dispatchedMessageIt.key());
+                                                            chatLogMessage, dispatchedMessageIt.key());
                 break;
             case MessageState::broken:
                 sessionChatLog.insertBrokenMessageAtIdx(currentIdx, sender, message.dispName,

@@ -21,9 +21,9 @@
 
 #include <ctime>
 
-#include <QtTest/QtTest>
-#include <QString>
 #include <QStandardPaths>
+#include <QString>
+#include <QtTest/QtTest>
 
 
 class TestPaths : public QObject
@@ -38,7 +38,8 @@ private slots:
     void checkPathsPortable();
 #endif
 private:
-    static void verifyqToxPath(const QString& testPath, const QString& basePath, const QString& subPath);
+    static void verifyqToxPath(const QString& testPath, const QString& basePath,
+                               const QString& subPath);
 };
 
 namespace {
@@ -49,14 +50,14 @@ const QLatin1String avatarsFolder{"avatars"};
 const QLatin1String transfersFolder{"transfers"};
 const QLatin1String screenshotsFolder{"screenshots"};
 const QString sep{QDir::separator()};
-}
+} // namespace
 
 /**
  * @brief Verifies construction in auto mode
  */
 void TestPaths::constructAuto()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Auto);
+    Paths* paths = Paths::makePaths(Paths::Portable::Auto);
     // auto detection should succeed
     QVERIFY(paths != nullptr);
     // the test environment should not provide a `qtox.ini`
@@ -68,7 +69,7 @@ void TestPaths::constructAuto()
  */
 void TestPaths::constructPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Portable);
+    Paths* paths = Paths::makePaths(Paths::Portable::Portable);
     // portable construction should succeed even though qtox.ini doesn't exist
     QVERIFY(paths != nullptr);
     QVERIFY(paths->isPortable() == true);
@@ -79,7 +80,7 @@ void TestPaths::constructPortable()
  */
 void TestPaths::constructNonPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::NonPortable);
+    Paths* paths = Paths::makePaths(Paths::Portable::NonPortable);
     // Non portable should succeed
     QVERIFY(paths != nullptr);
     // the test environment should not provide a `qtox.ini`
@@ -101,7 +102,7 @@ void TestPaths::verifyqToxPath(const QString& testPath, const QString& basePath,
  */
 void TestPaths::checkPathsNonPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::NonPortable);
+    Paths* paths = Paths::makePaths(Paths::Portable::NonPortable);
     QVERIFY(paths != nullptr);
     // Need non-portable environment to match our test cases
     QVERIFY(paths->isPortable() == false);
@@ -138,7 +139,7 @@ void TestPaths::checkPathsNonPortable()
  */
 void TestPaths::checkPathsPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Portable);
+    Paths* paths = Paths::makePaths(Paths::Portable::Portable);
     QVERIFY(paths != nullptr);
     // Need portable environment to match our test cases
     QVERIFY(paths->isPortable() == true);

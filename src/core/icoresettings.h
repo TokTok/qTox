@@ -25,7 +25,8 @@
 #include <QNetworkProxy>
 #include <QString>
 
-class ICoreSettings {
+class ICoreSettings
+{
 public:
     enum class ProxyType
     {

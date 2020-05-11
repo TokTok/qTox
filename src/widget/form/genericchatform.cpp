@@ -68,7 +68,7 @@ static const QSize FILE_FLYOUT_SIZE{24, 24};
 static const short FOOT_BUTTONS_SPACING = 2;
 static const short MESSAGE_EDIT_HEIGHT = 50;
 static const short MAIN_FOOT_LAYOUT_SPACING = 5;
-static const QString FONT_STYLE[] {"normal", "italic", "oblique"};
+static const QString FONT_STYLE[]{"normal", "italic", "oblique"};
 
 /**
  * @brief Creates CSS style string for needed class with specified font
@@ -110,13 +110,11 @@ QString GenericChatForm::resolveToxPk(const ToxPk& pk)
     return pk.toString();
 }
 
-namespace
-{
+namespace {
 const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
 }
 
-namespace
-{
+namespace {
 
 template <class T, class Fun>
 QPushButton* createButton(const QString& name, T* self, Fun onClickSlot)
@@ -165,13 +163,13 @@ ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool col
                                const ChatLogMessage& chatLogMessage)
 {
     auto messageType = chatLogMessage.message.isAction ? ChatMessage::MessageType::ACTION
-                       : ChatMessage::MessageType::NORMAL;
+                                                       : ChatMessage::MessageType::NORMAL;
 
     const bool bSelfMentioned =
         std::any_of(chatLogMessage.message.metadata.begin(), chatLogMessage.message.metadata.end(),
-    [](const MessageMetadata& metadata) {
-        return metadata.type == MessageMetadataType::selfMention;
-    });
+                    [](const MessageMetadata& metadata) {
+                        return metadata.type == MessageMetadataType::selfMention;
+                    });
 
     if (bSelfMentioned) {
         messageType = ChatMessage::MessageType::ALERT;
@@ -318,9 +316,9 @@ GenericChatForm::GenericChatForm(const Core& _core, const Contact* contact, ICha
     menu.addActions(chatWidget->actions());
     menu.addSeparator();
 
-    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
-                                 this, SLOT(clearChatArea()),
-                                 QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
+    clearAction =
+        menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this, SLOT(clearChatArea()),
+                       QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_L));
     addAction(clearAction);
 
     copyLinkAction = menu.addAction(QIcon(), QString(), this, SLOT(copyLink()));
@@ -360,7 +358,9 @@ GenericChatForm::GenericChatForm(const Core& _core, const Contact* contact, ICha
     connect(contact, &Contact::displayedNameChanged, this, &GenericChatForm::setName);
 
     auto chatLogIdxRange = chatLog.getNextIdx() - chatLog.getFirstIdx();
-    auto firstChatLogIdx = (chatLogIdxRange < DEF_NUM_MSG_TO_LOAD) ? chatLog.getFirstIdx() : chatLog.getNextIdx() - DEF_NUM_MSG_TO_LOAD;
+    auto firstChatLogIdx = (chatLogIdxRange < DEF_NUM_MSG_TO_LOAD)
+                               ? chatLog.getFirstIdx()
+                               : chatLog.getNextIdx() - DEF_NUM_MSG_TO_LOAD;
 
     renderMessages(firstChatLogIdx, chatLog.getNextIdx());
 }
@@ -433,8 +433,8 @@ void GenericChatForm::show(ContentLayout* contentLayout)
     headWidget->show();
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 12, 4) && QT_VERSION > QT_VERSION_CHECK(5, 11, 0)
-    // HACK: switching order happens to avoid a Qt bug causing segfault, present between these versions.
-    // this could cause flickering if our form is shown before added to the layout
+    // HACK: switching order happens to avoid a Qt bug causing segfault, present between these
+    // versions. this could cause flickering if our form is shown before added to the layout
     // https://github.com/qTox/qTox/issues/5570
     QWidget::show();
     contentLayout->mainContent->layout()->addWidget(this);
@@ -456,7 +456,7 @@ bool GenericChatForm::event(QEvent* e)
     if (e->type() == QEvent::KeyPress) {
         QKeyEvent* ke = static_cast<QKeyEvent*>(e);
         if ((ke->modifiers() == Qt::NoModifier || ke->modifiers() == Qt::ShiftModifier)
-                && !ke->text().isEmpty()) {
+            && !ke->text().isEmpty()) {
             if (searchForm->isHidden()) {
                 msgEdit->sendKeyEvent(ke);
                 msgEdit->setFocus();
@@ -528,7 +528,7 @@ bool GenericChatForm::needsToHideName(ChatLogIdx idx) const
 
     // Always show the * in the name field for action messages
     if (currentItem.getContentType() == ChatLogItem::ContentType::message
-            && currentItem.getContentAsMessage().message.isAction) {
+        && currentItem.getContentAsMessage().message.isAction) {
         return false;
     }
 
@@ -581,8 +581,7 @@ void GenericChatForm::onChatMessageFontChanged(const QFont& font)
     chatWidget->fontChanged(font);
     chatWidget->forceRelayout();
     // message editor
-    msgEdit->setStyleSheet(Style::getStylesheet("msgEdit/msgEdit.css")
-                           + fontToCss(font, "QTextEdit"));
+    msgEdit->setStyleSheet(Style::getStylesheet("msgEdit/msgEdit.css") + fontToCss(font, "QTextEdit"));
 }
 
 void GenericChatForm::setColorizedNames(bool enable)
@@ -591,7 +590,7 @@ void GenericChatForm::setColorizedNames(bool enable)
 }
 
 void GenericChatForm::addSystemInfoMessage(const QString& message, ChatMessage::SystemMessageType type,
-        const QDateTime& datetime)
+                                           const QDateTime& datetime)
 {
     insertChatMessage(ChatMessage::createChatInfoMessage(message, type, datetime));
 }
@@ -604,7 +603,7 @@ void GenericChatForm::addSystemDateMessage(const QDate& date)
     insertChatMessage(ChatMessage::createChatInfoMessage(dateText, ChatMessage::INFO, QDateTime()));
 }
 
-QDateTime GenericChatForm::getTime(const ChatLine::Ptr &chatLine) const
+QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
 {
     if (chatLine) {
         Timestamp* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
@@ -624,7 +623,7 @@ QDateTime GenericChatForm::getTime(const ChatLine::Ptr &chatLine) const
  * @param time start date
  * @param type indicates the direction of loading history
  */
-void GenericChatForm::loadHistory(const QDateTime &time, const LoadHistoryDialog::LoadType type)
+void GenericChatForm::loadHistory(const QDateTime& time, const LoadHistoryDialog::LoadType type)
 {
     chatWidget->clear();
     messages.clear();
@@ -643,7 +642,7 @@ void GenericChatForm::loadHistory(const QDateTime &time, const LoadHistoryDialog
  * @brief GenericChatForm::loadHistoryTo load history before to date "time" or before the first "messages" item
  * @param time start date
  */
-void GenericChatForm::loadHistoryTo(const QDateTime &time)
+void GenericChatForm::loadHistoryTo(const QDateTime& time)
 {
     chatWidget->setScroll(false);
     auto end = chatLog.getFirstIdx();
@@ -660,7 +659,7 @@ void GenericChatForm::loadHistoryTo(const QDateTime &time)
 
     if (begin != end) {
         if (searchResult.found == true && searchResult.pos.logIdx == end) {
-            renderMessages(begin, end, [this] {enableSearchText();});
+            renderMessages(begin, end, [this] { enableSearchText(); });
         } else {
             renderMessages(begin, end);
         }
@@ -674,7 +673,7 @@ void GenericChatForm::loadHistoryTo(const QDateTime &time)
  * @param time start date
  * @return true if function loaded history else false
  */
-bool GenericChatForm::loadHistoryFrom(const QDateTime &time)
+bool GenericChatForm::loadHistoryFrom(const QDateTime& time)
 {
     chatWidget->setScroll(false);
     auto begin = chatLog.getFirstIdx();
@@ -684,9 +683,8 @@ bool GenericChatForm::loadHistoryFrom(const QDateTime &time)
         begin = firstItemAfterDate(time.date(), chatLog);
     }
 
-    const auto end = chatLog.getNextIdx() < begin + DEF_NUM_MSG_TO_LOAD
-                     ? chatLog.getNextIdx()
-                     : begin + DEF_NUM_MSG_TO_LOAD;
+    const auto end = chatLog.getNextIdx() < begin + DEF_NUM_MSG_TO_LOAD ? chatLog.getNextIdx()
+                                                                        : begin + DEF_NUM_MSG_TO_LOAD;
 
     // The chatLog.getNextIdx() is usually 1 more than the idx on last "messages" item
     // so if we have nothing to load, "add" is equal 1
@@ -1037,8 +1035,8 @@ void GenericChatForm::handleSearchResult(SearchResult result, SearchDirection di
         }
     }
 
-    if (!messages.empty() && (firstRenderedIdx < messages.begin()->first
-                              || endRenderedIdx > messages.rbegin()->first)) {
+    if (!messages.empty()
+        && (firstRenderedIdx < messages.begin()->first || endRenderedIdx > messages.rbegin()->first)) {
         chatWidget->clear();
         messages.clear();
 
@@ -1047,10 +1045,11 @@ void GenericChatForm::handleSearchResult(SearchResult result, SearchDirection di
         firstRenderedIdx = mediator;
     }
 
-    renderMessages(endRenderedIdx, firstRenderedIdx, [this] {enableSearchText();});
+    renderMessages(endRenderedIdx, firstRenderedIdx, [this] { enableSearchText(); });
 }
 
-void GenericChatForm::renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames, ChatMessage::Ptr& chatMessage)
+void GenericChatForm::renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames,
+                                 ChatMessage::Ptr& chatMessage)
 {
     const auto& sender = item.getSender();
 
@@ -1120,10 +1119,10 @@ void GenericChatForm::renderMessages(ChatLogIdx begin, ChatLogIdx end,
         if (onCompletion) {
             auto connection = std::make_shared<QMetaObject::Connection>();
             *connection = connect(chatWidget, &ChatLog::workerTimeoutFinished,
-            [this, onCompletion, connection] {
-                onCompletion();
-                this->disconnect(*connection);
-            });
+                                  [this, onCompletion, connection] {
+                                      onCompletion();
+                                      this->disconnect(*connection);
+                                  });
         }
 
         chatWidget->insertChatlinesOnTop(beforeLines);
@@ -1173,13 +1172,13 @@ void GenericChatForm::updateShowDateInfo(const ChatLine::Ptr& prevLine, const Ch
 {
     // If the dateInfo is visible we need to pretend the top line is the one
     // covered by the date to prevent oscillations
-    const auto effectiveTopLine = (dateInfo->isVisible() && prevLine)
-                                  ? prevLine : topLine;
+    const auto effectiveTopLine = (dateInfo->isVisible() && prevLine) ? prevLine : topLine;
 
     const auto date = getTime(effectiveTopLine);
 
     if (date.isValid() && date.date() != QDate::currentDate()) {
-        const auto dateText = QStringLiteral("<b>%1<\b>").arg(date.toString(Settings::getInstance().getDateFormat()));
+        const auto dateText =
+            QStringLiteral("<b>%1<\b>").arg(date.toString(Settings::getInstance().getDateFormat()));
         dateInfo->setText(dateText);
         dateInfo->setVisible(true);
     } else {

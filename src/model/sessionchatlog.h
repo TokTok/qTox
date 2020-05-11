@@ -51,7 +51,8 @@ public:
                                       const ChatLogMessage& message, DispatchedMessageId dispatchId);
     void insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName,
                                   const ChatLogMessage& message);
-    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName, const ChatLogFile& file);
+    void insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, const QString& senderName,
+                         const ChatLogFile& file);
 
 public slots:
     void onMessageReceived(const ToxPk& sender, const Message& message);

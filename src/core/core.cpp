@@ -27,8 +27,8 @@
 #include "src/core/toxoptions.h"
 #include "src/core/toxstring.h"
 #include "src/model/groupinvite.h"
-#include "src/model/status.h"
 #include "src/model/ibootstraplistgenerator.h"
+#include "src/model/status.h"
 #include "src/nexus.h"
 #include "src/persistence/profile.h"
 #include "util/strongtype.h"
@@ -141,7 +141,8 @@ bool parseErr(Tox_Err_Conference_Send_Message error, int line)
         return false;
 
     default:
-        qCritical() << line << "Unknown Tox_Err_Conference_Send_Message  error:" << static_cast<int>(error);
+        qCritical() << line
+                    << "Unknown Tox_Err_Conference_Send_Message  error:" << static_cast<int>(error);
         return false;
     }
 }
@@ -284,7 +285,7 @@ bool parseErr(Tox_Err_Friend_By_Public_Key error, int line)
 
 bool parseErr(Tox_Err_Bootstrap error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_BOOTSTRAP_OK:
         return true;
 
@@ -308,7 +309,7 @@ bool parseErr(Tox_Err_Bootstrap error, int line)
 
 bool parseErr(Tox_Err_Friend_Add error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_FRIEND_ADD_OK:
         return true;
 
@@ -341,19 +342,19 @@ bool parseErr(Tox_Err_Friend_Add error, int line)
         return false;
 
     case TOX_ERR_FRIEND_ADD_MALLOC:
-        qCritical() << line << "A memory allocation failed when trying to increase the friend list size.";
+        qCritical() << line
+                    << "A memory allocation failed when trying to increase the friend list size.";
         return false;
 
     default:
         qCritical() << line << "Unknown Tox_Err_Friend_Add error code:" << error;
         return false;
-
     }
 }
 
 bool parseErr(Tox_Err_Friend_Delete error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_FRIEND_DELETE_OK:
         return true;
 
@@ -476,8 +477,8 @@ bool parseErr(Tox_Err_Conference_Delete error, int line)
 Core::Core(QThread* coreThread, IBootstrapListGenerator& _bootstrapNodes)
     : tox(nullptr)
     , toxTimer{new QTimer{this}}
-, coreThread(coreThread)
-, bootstrapNodes(_bootstrapNodes)
+    , coreThread(coreThread)
+    , bootstrapNodes(_bootstrapNodes)
 {
     assert(toxTimer);
     toxTimer->setSingleShot(true);
@@ -572,7 +573,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings* co
             core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
             if (tox_err == TOX_ERR_NEW_OK) {
                 qWarning() << "Core failed to start with IPv6, falling back to IPv4. LAN discovery "
-                           "may not work properly.";
+                              "may not work properly.";
                 break;
             }
         }
@@ -1053,7 +1054,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     ToxString cMessage(message);
     Tox_Err_Friend_Send_Message error;
     receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
-                         cMessage.size(), &error)};
+                                                 cMessage.size(), &error)};
     if (PARSE_ERR(error)) {
         return true;
     }
@@ -1358,7 +1359,8 @@ void Core::loadFriends()
         if (PARSE_ERR(queryError) && statusMessageSize) {
             std::vector<uint8_t> messageData(statusMessageSize);
             tox_friend_get_status_message(tox.get(), ids[i], messageData.data(), &queryError);
-            QString friendStatusMessage = ToxString(messageData.data(), statusMessageSize).getQString();
+            QString friendStatusMessage =
+                ToxString(messageData.data(), statusMessageSize).getQString();
             emit friendStatusMessageChanged(ids[i], friendStatusMessage);
         }
         checkLastOnline(ids[i]);
@@ -1433,8 +1435,7 @@ GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
     QMutexLocker ml{&coreLoopLock};
 
     std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
-    if (tox_conference_get_id(tox.get(), groupNumber,
-                              idBuff.data())) {
+    if (tox_conference_get_id(tox.get(), groupNumber, idBuff.data())) {
         return GroupId{idBuff.data()};
     } else {
         qCritical() << "Failed to get conference ID of group" << groupNumber;
@@ -1618,8 +1619,8 @@ int Core::createGroup(uint8_t type)
             return std::numeric_limits<uint32_t>::max();
         }
     } else if (type == TOX_CONFERENCE_TYPE_AV) {
-        // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1 group number is our
-        // only indication of an error
+        // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
+        // group number is our only indication of an error
         int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
         if (groupId != -1) {
             emit saveRequest();

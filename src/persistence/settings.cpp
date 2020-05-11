@@ -150,8 +150,8 @@ void Settings::loadGlobal()
         autoSaveEnabled = s.value("autoSaveEnabled", false).toBool();
         globalAutoAcceptDir = s.value("globalAutoAcceptDir",
                                       QStandardPaths::locate(QStandardPaths::HomeLocation, QString(),
-                                              QStandardPaths::LocateDirectory))
-                              .toString();
+                                                             QStandardPaths::LocateDirectory))
+                                  .toString();
         autoAcceptMaxSize =
             static_cast<size_t>(s.value("autoAcceptMaxSize", 20 << 20 /*20 MB*/).toLongLong());
         stylePreference = static_cast<StyleType>(s.value("stylePreference", 1).toInt());
@@ -462,7 +462,7 @@ bool Settings::applyCommandLineOptions(const QCommandLineParser& parser)
 
         if (shouldEnableLAN && proxyType != ICoreSettings::ProxyType::ptNone) {
             qDebug()
-                    << "Cannot use LAN discovery with proxy; disable proxy explicitly with '-P none'.";
+                << "Cannot use LAN discovery with proxy; disable proxy explicitly with '-P none'.";
         } else if (shouldEnableLAN && forceTCP) {
             qDebug() << "Cannot use LAN discovery without UDP; enable UDP explicitly with '-U on'.";
         } else {
@@ -547,7 +547,7 @@ void Settings::loadPersonal(QString profileName, const ToxEncrypt* passKey)
     {
         compactLayout = ps.value("compactLayout", true).toBool();
         sortingMode = static_cast<FriendListSortingMode>(
-                          ps.value("friendSortingMethod", static_cast<int>(FriendListSortingMode::Name)).toInt());
+            ps.value("friendSortingMethod", static_cast<int>(FriendListSortingMode::Name)).toInt());
     }
     ps.endGroup();
 
@@ -915,7 +915,7 @@ bool Settings::getAutorun() const
 void Settings::setAutorun(bool newValue)
 {
 #ifdef QTOX_PLATFORM_EXT
-    QMutexLocker locker {&bigLock};
+    QMutexLocker locker{&bigLock};
 
     bool autorun = Platform::getAutorun();
 

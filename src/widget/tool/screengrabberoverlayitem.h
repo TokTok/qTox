@@ -34,8 +34,7 @@ public:
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent* event) final;
-    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
-               QWidget* widget) final;
+    void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) final;
 
 private:
     ScreenshotGrabber* screnshootGrabber;

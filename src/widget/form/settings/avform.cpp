@@ -67,14 +67,14 @@ AVForm::AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
     playbackSlider->setTracking(false);
     playbackSlider->setMaximum(totalSliderSteps);
     playbackSlider->setValue(getStepsFromValue(audioSettings->getOutVolume(),
-                             audioSettings->getOutVolumeMin(),
-                             audioSettings->getOutVolumeMax()));
+                                               audioSettings->getOutVolumeMin(),
+                                               audioSettings->getOutVolumeMax()));
     playbackSlider->installEventFilter(this);
 
     microphoneSlider->setToolTip(tr("Use slider to set the gain of your input device ranging"
                                     " from %1dB to %2dB.")
-                                 .arg(audio.minInputGain())
-                                 .arg(audio.maxInputGain()));
+                                     .arg(audio.minInputGain())
+                                     .arg(audio.maxInputGain()));
     microphoneSlider->setMaximum(totalSliderSteps);
     microphoneSlider->setTickPosition(QSlider::TicksBothSides);
     static const int numTicks = 4;
@@ -88,8 +88,8 @@ AVForm::AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
                                         " input device."));
     audioThresholdSlider->setMaximum(totalSliderSteps);
     audioThresholdSlider->setValue(getStepsFromValue(audioSettings->getAudioThreshold(),
-                                   audio.minInputThreshold(),
-                                   audio.maxInputThreshold()));
+                                                     audio.minInputThreshold(),
+                                                     audio.maxInputThreshold()));
     audioThresholdSlider->setTracking(false);
     audioThresholdSlider->installEventFilter(this);
 
@@ -102,8 +102,8 @@ AVForm::AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
     for (QScreen* qScreen : QGuiApplication::screens()) {
         connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
     }
-    auto* qGUIApp = qobject_cast<QGuiApplication *>(qApp);
-    assert (qGUIApp);
+    auto* qGUIApp = qobject_cast<QGuiApplication*>(qApp);
+    assert(qGUIApp);
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::trackNewScreenGeometry);
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::rescanDevices);
     connect(qGUIApp, &QGuiApplication::screenRemoved, this, &AVForm::rescanDevices);
@@ -157,7 +157,8 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
     camera.setupDevice(devName, mode);
 }
 
-void AVForm::trackNewScreenGeometry(QScreen* qScreen) {
+void AVForm::trackNewScreenGeometry(QScreen* qScreen)
+{
     connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
 }
 
@@ -287,9 +288,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
         } else {
             int size = getModeSize(mode);
             auto result = std::find_if(newVideoModes.cbegin(), newVideoModes.cend(),
-            [size](VideoMode mode) {
-                return getModeSize(mode) == size;
-            });
+                                       [size](VideoMode mode) { return getModeSize(mode) == size; });
 
             if (result == newVideoModes.end())
                 newVideoModes.push_back(mode);
@@ -335,7 +334,7 @@ int AVForm::searchPreferredIndex()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         if (mode.width == prefRes.width() && mode.height == prefRes.height()
-                && (qAbs(mode.FPS - prefFPS) < 0.0001f)) {
+            && (qAbs(mode.FPS - prefFPS) < 0.0001f)) {
             return i;
         }
     }
@@ -574,7 +573,7 @@ void AVForm::on_outDevCombobox_currentIndexChanged(int deviceIndex)
 void AVForm::on_playbackSlider_valueChanged(int sliderSteps)
 {
     const int settingsVolume = getValueFromSteps(sliderSteps, audioSettings->getOutVolumeMin(),
-                               audioSettings->getOutVolumeMax());
+                                                 audioSettings->getOutVolumeMax());
     audioSettings->setOutVolume(settingsVolume);
 
     if (audio.isOutputReady()) {

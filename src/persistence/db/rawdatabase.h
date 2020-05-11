@@ -25,11 +25,11 @@
 #include <QMutex>
 #include <QPair>
 #include <QQueue>
+#include <QRegularExpression>
 #include <QString>
 #include <QThread>
 #include <QVariant>
 #include <QVector>
-#include <QRegularExpression>
 
 #include <atomic>
 #include <cassert>
@@ -62,18 +62,15 @@ public:
             : query{query.toUtf8()}
             , blobs{blobs}
             , insertCallback{insertCallback}
-        {
-        }
+        {}
         Query(QString query, const std::function<void(RowId)>& insertCallback)
             : query{query.toUtf8()}
             , insertCallback{insertCallback}
-        {
-        }
+        {}
         Query(QString query, const std::function<void(const QVector<QVariant>&)>& rowCallback)
             : query{query.toUtf8()}
             , rowCallback{rowCallback}
-        {
-        }
+        {}
         Query() = default;
 
     private:
@@ -87,7 +84,8 @@ public:
     };
 
 public:
-    enum class SqlCipherParams {
+    enum class SqlCipherParams
+    {
         // keep these sorted in upgrade order
         p3_0, // SQLCipher 3.0 default encryption params
         // SQLCipher 4.0 default params where SQLCipher 3.0 supports them, but 3.0 params where not possible.
@@ -113,8 +111,7 @@ public:
 
     static QString toString(SqlCipherParams params)
     {
-        switch (params)
-        {
+        switch (params) {
         case SqlCipherParams::p3_0:
             return "3.0 default";
         case SqlCipherParams::halfUpgradedTo4:
@@ -158,7 +155,8 @@ protected:
     static void regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
 
 private:
-    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv, const QRegularExpression::PatternOptions cs);
+    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
+                       const QRegularExpression::PatternOptions cs);
 
     struct Transaction
     {

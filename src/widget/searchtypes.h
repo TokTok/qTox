@@ -22,7 +22,8 @@
 #include <QDate>
 #include <QRegularExpression>
 
-enum class FilterSearch {
+enum class FilterSearch
+{
     None,
     Register,
     WordsOnly,
@@ -31,7 +32,8 @@ enum class FilterSearch {
     RegisterAndRegular
 };
 
-enum class PeriodSearch {
+enum class PeriodSearch
+{
     None,
     WithTheEnd,
     WithTheFirst,
@@ -39,37 +41,41 @@ enum class PeriodSearch {
     BeforeDate
 };
 
-enum class SearchDirection {
+enum class SearchDirection
+{
     Up,
     Down
 };
 
-struct ParameterSearch {
+struct ParameterSearch
+{
     FilterSearch filter{FilterSearch::None};
     PeriodSearch period{PeriodSearch::None};
     QDateTime time;
     bool isUpdate{false};
 
-    bool operator ==(const ParameterSearch& other) {
-        return filter == other.filter &&
-               period == other.period &&
-               time == other.time;
+    bool operator==(const ParameterSearch& other)
+    {
+        return filter == other.filter && period == other.period && time == other.time;
     }
 
-    bool operator !=(const ParameterSearch& other) {
+    bool operator!=(const ParameterSearch& other)
+    {
         return !(*this == other);
     }
 };
 
-class SearchExtraFunctions {
+class SearchExtraFunctions
+{
 public:
     /**
-     * @brief generateFilterWordsOnly generate string for filter "Whole words only" for correct search phrase
-     * containing symbols "\[]/^$.|?*+(){}"
+     * @brief generateFilterWordsOnly generate string for filter "Whole words only" for correct
+     * search phrase containing symbols "\[]/^$.|?*+(){}"
      * @param phrase for search
      * @return new phrase for search
      */
-    static QString generateFilterWordsOnly(const QString &phrase) {
+    static QString generateFilterWordsOnly(const QString& phrase)
+    {
         QString filter = QRegularExpression::escape(phrase);
 
         const QString symbols = QStringLiteral("\\[]/^$.|?*+(){}");

@@ -275,7 +275,7 @@ private:
     void openDialog(GenericChatroomWidget* widget, bool newWindow);
     void playNotificationSound(IAudioSink::Sound sound, bool loop = false);
     void cleanupNotificationSound();
-    void acceptFileTransfer(const ToxFile &file, const QString &path);
+    void acceptFileTransfer(const ToxFile& file, const QString& path);
 
 private:
     Profile& profile;

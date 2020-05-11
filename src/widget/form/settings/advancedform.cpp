@@ -67,19 +67,20 @@ AdvancedForm::AdvancedForm()
     bodyUI->cbEnableLanDiscovery->setChecked(s.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
 
-    QString warningBody = tr("Unless you %1 know what you are doing, "
-                             "please do %2 change anything here. Changes "
-                             "made here may lead to problems with qTox, and even "
-                             "to loss of your data, e.g. history."
-                             "%3")
-                          .arg(QString("<b>%1</b>").arg(tr("really")))
-                          .arg(QString("<b>%1</b>").arg(tr("not")))
-                          .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
+    QString warningBody =
+        tr("Unless you %1 know what you are doing, "
+           "please do %2 change anything here. Changes "
+           "made here may lead to problems with qTox, and even "
+           "to loss of your data, e.g. history."
+           "%3")
+            .arg(QString("<b>%1</b>").arg(tr("really")))
+            .arg(QString("<b>%1</b>").arg(tr("not")))
+            .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
 
     QString warning = QString("<div style=\"color:#ff0000;\">"
                               "<p><b>%1</b></p><p>%2</p></div>")
-                      .arg(tr("IMPORTANT NOTE"))
-                      .arg(warningBody);
+                          .arg(tr("IMPORTANT NOTE"))
+                          .arg(warningBody);
 
     bodyUI->warningLabel->setText(warning);
 

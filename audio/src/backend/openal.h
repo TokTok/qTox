@@ -20,9 +20,9 @@
 
 #pragma once
 
-#include "audio/iaudiocontrol.h"
 #include "alsink.h"
 #include "alsource.h"
+#include "audio/iaudiocontrol.h"
 
 #include <memory>
 #include <unordered_set>

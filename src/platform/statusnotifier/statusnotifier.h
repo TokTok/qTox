@@ -60,7 +60,8 @@ GType status_notifier_get_type(void) G_GNUC_CONST;
  * Errors that can occur while trying to register the item. Note that errors
  * other the #StatusNotifierError might be returned.
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_ERROR_NO_CONNECTION = 0,
     STATUS_NOTIFIER_ERROR_NO_NAME,
     STATUS_NOTIFIER_ERROR_NO_WATCHER,
@@ -83,7 +84,8 @@ typedef enum {
  * State in which a #StatusNotifier item can be. See status_notifier_register()
  * for more
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_STATE_NOT_REGISTERED = 0,
     STATUS_NOTIFIER_STATE_REGISTERING,
     STATUS_NOTIFIER_STATE_REGISTERED,
@@ -105,7 +107,8 @@ typedef enum {
  *
  * Possible icons that can be used on a status notifier item.
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_ICON = 0,
     STATUS_NOTIFIER_ATTENTION_ICON,
     STATUS_NOTIFIER_OVERLAY_ICON,
@@ -133,7 +136,8 @@ typedef enum {
  *
  * The category of the status notifier item.
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_CATEGORY_APPLICATION_STATUS = 0,
     STATUS_NOTIFIER_CATEGORY_COMMUNICATIONS,
     STATUS_NOTIFIER_CATEGORY_SYSTEM_SERVICES,
@@ -154,7 +158,8 @@ typedef enum {
  *
  * The status of the status notifier item or its associated application.
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_STATUS_PASSIVE = 0,
     STATUS_NOTIFIER_STATUS_ACTIVE,
     STATUS_NOTIFIER_STATUS_NEEDS_ATTENTION
@@ -169,7 +174,8 @@ typedef enum {
  * The orientation of a scroll request performed on the representation of the
  * item in the visualization.
  */
-typedef enum {
+typedef enum
+{
     STATUS_NOTIFIER_SCROLL_ORIENTATION_HORIZONTAL = 0,
     STATUS_NOTIFIER_SCROLL_ORIENTATION_VERTICAL
 } StatusNotifierScrollOrientation;
@@ -214,9 +220,9 @@ struct _StatusNotifierClass
 };
 
 StatusNotifier* status_notifier_new_from_pixbuf(const gchar* id, StatusNotifierCategory category,
-        GdkPixbuf* pixbuf);
+                                                GdkPixbuf* pixbuf);
 StatusNotifier* status_notifier_new_from_icon_name(const gchar* id, StatusNotifierCategory category,
-        const gchar* icon_name);
+                                                   const gchar* icon_name);
 const gchar* status_notifier_get_id(StatusNotifier* sn);
 StatusNotifierCategory status_notifier_get_category(StatusNotifier* sn);
 void status_notifier_set_from_pixbuf(StatusNotifier* sn, StatusNotifierIcon icon, GdkPixbuf* pixbuf);

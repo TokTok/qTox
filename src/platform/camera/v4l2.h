@@ -32,4 +32,4 @@ QVector<VideoMode> getDeviceModes(QString devName);
 QVector<QPair<QString, QString>> getDeviceList();
 QString getPixelFormatString(uint32_t pixel_format);
 bool betterPixelFormat(uint32_t a, uint32_t b);
-}
+} // namespace v4l2

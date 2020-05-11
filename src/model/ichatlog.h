@@ -29,8 +29,8 @@
 #include "src/model/friend.h"
 #include "src/model/group.h"
 #include "src/persistence/history.h"
-#include "util/strongtype.h"
 #include "src/widget/searchtypes.h"
+#include "util/strongtype.h"
 
 #include <cassert>
 
@@ -135,7 +135,7 @@ public:
      * @param[in] maxDates maximum number of dates to be returned
      */
     virtual std::vector<DateChatLogIdxPair> getDateIdxs(const QDate& startDate,
-            size_t maxDates) const = 0;
+                                                        size_t maxDates) const = 0;
 
 signals:
     void itemUpdated(ChatLogIdx idx);

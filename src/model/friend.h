@@ -20,9 +20,9 @@
 #pragma once
 
 #include "contact.h"
+#include "src/core/contactid.h"
 #include "src/core/core.h"
 #include "src/core/toxid.h"
-#include "src/core/contactid.h"
 #include "src/model/status.h"
 #include <QObject>
 #include <QString>
@@ -31,7 +31,8 @@ class Friend : public Contact
 {
     Q_OBJECT
 public:
-    Friend(uint32_t friendId, const ToxPk& friendPk, const QString& userAlias = {}, const QString &userName = {});
+    Friend(uint32_t friendId, const ToxPk& friendPk, const QString& userAlias = {},
+           const QString& userName = {});
     Friend(const Friend& other) = delete;
     Friend& operator=(const Friend& other) = delete;
 

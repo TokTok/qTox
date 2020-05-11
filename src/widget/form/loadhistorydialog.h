@@ -33,12 +33,14 @@ class LoadHistoryDialog : public QDialog
     Q_OBJECT
 
 public:
-    enum LoadType {
+    enum LoadType
+    {
         from,
         to
     };
 
-    enum Mode {
+    enum Mode
+    {
         common,
         search
     };

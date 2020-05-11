@@ -21,8 +21,8 @@
 #pragma once
 
 #include "src/core/toxcall.h"
-#include <QObject>
 #include <QMutex>
+#include <QObject>
 #include <QReadWriteLock>
 #include <atomic>
 #include <memory>
@@ -112,7 +112,7 @@ private:
         }
     };
 
-    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> tox, QMutex &toxCoreLock);
+    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> tox, QMutex& toxCoreLock);
     void connectCallbacks(ToxAV& toxav);
 
     void process();

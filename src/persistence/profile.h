@@ -26,8 +26,8 @@
 
 #include "src/net/avatarbroadcaster.h"
 
-#include "src/persistence/history.h"
 #include "src/net/bootstrapnodeupdater.h"
+#include "src/persistence/history.h"
 
 #include <QByteArray>
 #include <QObject>
@@ -104,7 +104,8 @@ private slots:
     void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash);
 
 private:
-    Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey, Paths& paths);
+    Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey,
+            Paths& paths);
     static QStringList getFilesByExt(QString extension);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);

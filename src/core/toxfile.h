@@ -21,9 +21,9 @@
 
 #include "src/core/toxfilepause.h"
 
+#include <QCryptographicHash>
 #include <QString>
 #include <memory>
-#include <QCryptographicHash>
 
 class QFile;
 class QTimer;
@@ -72,6 +72,7 @@ struct ToxFile
     FileDirection direction;
     QByteArray avatarData;
     QByteArray resumeFileId;
-    std::shared_ptr<QCryptographicHash> hashGenerator = std::make_shared<QCryptographicHash>(QCryptographicHash::Sha256);
+    std::shared_ptr<QCryptographicHash> hashGenerator =
+        std::make_shared<QCryptographicHash>(QCryptographicHash::Sha256);
     ToxFilePause pauseStatus;
 };

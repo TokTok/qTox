@@ -112,7 +112,9 @@ void PrivacyForm::on_randomNosapamButton_clicked()
     uint32_t newNospam{0};
     for (int i = 0; i < 4; ++i)
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-        newNospam = (newNospam << 8) + (QRandomGenerator::global()->generate() % 256); // Generate byte by byte. For some reason.
+        newNospam = (newNospam << 8)
+                    + (QRandomGenerator::global()->generate()
+                       % 256); // Generate byte by byte. For some reason.
 #else
         newNospam = (newNospam << 8) + (qrand() % 256); // Generate byte by byte. For some reason.
 #endif

@@ -24,9 +24,9 @@
 #include "src/core/icoresettings.h"
 #include "src/core/toxencrypt.h"
 #include "src/core/toxfile.h"
-#include "src/persistence/paths.h"
 #include "src/persistence/ifriendsettings.h"
 #include "src/persistence/igroupsettings.h"
+#include "src/persistence/paths.h"
 #include "src/video/ivideosettings.h"
 
 #include <QDateTime>
@@ -46,11 +46,11 @@ enum class syncType;
 }
 
 class Settings : public QObject,
-    public ICoreSettings,
-    public IFriendSettings,
-    public IGroupSettings,
-    public IAudioSettings,
-    public IVideoSettings
+                 public ICoreSettings,
+                 public IFriendSettings,
+                 public IGroupSettings,
+                 public IAudioSettings,
+                 public IVideoSettings
 {
     Q_OBJECT
 
@@ -62,60 +62,60 @@ class Settings : public QObject,
 
     // GUI
     Q_PROPERTY(bool separateWindow READ getSeparateWindow WRITE setSeparateWindow NOTIFY
-               separateWindowChanged FINAL)
+                   separateWindowChanged FINAL)
     Q_PROPERTY(QString smileyPack READ getSmileyPack WRITE setSmileyPack NOTIFY smileyPackChanged FINAL)
     Q_PROPERTY(int emojiFontPointSize READ getEmojiFontPointSize WRITE setEmojiFontPointSize NOTIFY
-               emojiFontPointSizeChanged FINAL)
+                   emojiFontPointSizeChanged FINAL)
     Q_PROPERTY(bool minimizeOnClose READ getMinimizeOnClose WRITE setMinimizeOnClose NOTIFY
-               minimizeOnCloseChanged FINAL)
+                   minimizeOnCloseChanged FINAL)
     Q_PROPERTY(QByteArray windowGeometry READ getWindowGeometry WRITE setWindowGeometry NOTIFY
-               windowGeometryChanged FINAL)
+                   windowGeometryChanged FINAL)
     Q_PROPERTY(QByteArray windowState READ getWindowState WRITE setWindowState NOTIFY windowStateChanged FINAL)
     Q_PROPERTY(QByteArray splitterState READ getSplitterState WRITE setSplitterState NOTIFY
-               splitterStateChanged FINAL)
+                   splitterStateChanged FINAL)
     Q_PROPERTY(QByteArray dialogGeometry READ getDialogGeometry WRITE setDialogGeometry NOTIFY
-               dialogGeometryChanged FINAL)
+                   dialogGeometryChanged FINAL)
     Q_PROPERTY(QByteArray dialogSplitterState READ getDialogSplitterState WRITE
-               setDialogSplitterState NOTIFY dialogSplitterStateChanged FINAL)
+                   setDialogSplitterState NOTIFY dialogSplitterStateChanged FINAL)
     Q_PROPERTY(QByteArray dialogSettingsGeometry READ getDialogSettingsGeometry WRITE
-               setDialogSettingsGeometry NOTIFY dialogSettingsGeometryChanged FINAL)
+                   setDialogSettingsGeometry NOTIFY dialogSettingsGeometryChanged FINAL)
     Q_PROPERTY(QString style READ getStyle WRITE setStyle NOTIFY styleChanged FINAL)
     Q_PROPERTY(bool showSystemTray READ getShowSystemTray WRITE setShowSystemTray NOTIFY
-               showSystemTrayChanged FINAL)
+                   showSystemTrayChanged FINAL)
     Q_PROPERTY(bool showIdenticons READ getShowIdenticons WRITE setShowIdenticons NOTIFY
-               showIdenticonsChanged FINAL)
+                   showIdenticonsChanged FINAL)
 
     // ChatView
     Q_PROPERTY(bool groupchatPosition READ getGroupchatPosition WRITE setGroupchatPosition NOTIFY
-               groupchatPositionChanged FINAL)
+                   groupchatPositionChanged FINAL)
     Q_PROPERTY(QFont chatMessageFont READ getChatMessageFont WRITE setChatMessageFont NOTIFY
-               chatMessageFontChanged FINAL)
+                   chatMessageFontChanged FINAL)
     Q_PROPERTY(StyleType stylePreference READ getStylePreference WRITE setStylePreference NOTIFY
-               stylePreferenceChanged FINAL)
+                   stylePreferenceChanged FINAL)
     Q_PROPERTY(QString timestampFormat READ getTimestampFormat WRITE setTimestampFormat NOTIFY
-               timestampFormatChanged FINAL)
+                   timestampFormatChanged FINAL)
     Q_PROPERTY(QString dateFormat READ getDateFormat WRITE setDateFormat NOTIFY dateFormatChanged FINAL)
     Q_PROPERTY(bool statusChangeNotificationEnabled READ getStatusChangeNotificationEnabled WRITE
-               setStatusChangeNotificationEnabled NOTIFY statusChangeNotificationEnabledChanged FINAL)
+                   setStatusChangeNotificationEnabled NOTIFY statusChangeNotificationEnabledChanged FINAL)
     Q_PROPERTY(bool spellCheckingEnabled READ getSpellCheckingEnabled WRITE setSpellCheckingEnabled
-               NOTIFY spellCheckingEnabledChanged FINAL)
+                   NOTIFY spellCheckingEnabledChanged FINAL)
 
     // Privacy
     Q_PROPERTY(bool typingNotification READ getTypingNotification WRITE setTypingNotification NOTIFY
-               typingNotificationChanged FINAL)
+                   typingNotificationChanged FINAL)
     Q_PROPERTY(QStringList blackList READ getBlackList WRITE setBlackList NOTIFY blackListChanged FINAL)
 
     // Audio
     Q_PROPERTY(QString inDev READ getInDev WRITE setInDev NOTIFY inDevChanged FINAL)
     Q_PROPERTY(bool audioInDevEnabled READ getAudioInDevEnabled WRITE setAudioInDevEnabled NOTIFY
-               audioInDevEnabledChanged FINAL)
+                   audioInDevEnabledChanged FINAL)
     Q_PROPERTY(qreal audioInGainDecibel READ getAudioInGainDecibel WRITE setAudioInGainDecibel
-               NOTIFY audioInGainDecibelChanged FINAL)
+                   NOTIFY audioInGainDecibelChanged FINAL)
     Q_PROPERTY(qreal audioThreshold READ getAudioThreshold WRITE setAudioThreshold NOTIFY
-               audioThresholdChanged FINAL)
+                   audioThresholdChanged FINAL)
     Q_PROPERTY(QString outDev READ getOutDev WRITE setOutDev NOTIFY outDevChanged FINAL)
     Q_PROPERTY(bool audioOutDevEnabled READ getAudioOutDevEnabled WRITE setAudioOutDevEnabled NOTIFY
-               audioOutDevEnabledChanged FINAL)
+                   audioOutDevEnabledChanged FINAL)
     Q_PROPERTY(int outVolume READ getOutVolume WRITE setOutVolume NOTIFY outVolumeChanged FINAL)
     Q_PROPERTY(int audioBitrate READ getAudioBitrate WRITE setAudioBitrate NOTIFY audioBitrateChanged FINAL)
 

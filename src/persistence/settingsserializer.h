@@ -67,16 +67,14 @@ private:
             , arrayIndex{-2}
             , key{QString()}
             , value{}
-        {
-        }
+        {}
         Value(qint64 group, qint64 array, int arrayIndex, QString key, QVariant value)
             : group{group}
             , array{array}
             , arrayIndex{arrayIndex}
             , key{key}
             , value{value}
-        {
-        }
+        {}
         qint64 group;
         qint64 array;
         int arrayIndex;

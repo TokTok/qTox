@@ -50,62 +50,43 @@
 #include <QWindow>
 
 static const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
-    {   IProfileInfo::SetAvatarResult::CanNotOpen,
-        ProfileForm::tr("Unable to open this file.")
-    },
-    {   IProfileInfo::SetAvatarResult::CanNotRead,
-        ProfileForm::tr("Unable to read this image.")
-    },
-    {   IProfileInfo::SetAvatarResult::TooLarge,
-        ProfileForm::tr("The supplied image is too large.\nPlease use another image.")
-    },
-    {   IProfileInfo::SetAvatarResult::EmptyPath,
-        ProfileForm::tr("Empty path is unavaliable")
-    },
+    {IProfileInfo::SetAvatarResult::CanNotOpen, ProfileForm::tr("Unable to open this file.")},
+    {IProfileInfo::SetAvatarResult::CanNotRead, ProfileForm::tr("Unable to read this image.")},
+    {IProfileInfo::SetAvatarResult::TooLarge,
+     ProfileForm::tr("The supplied image is too large.\nPlease use another image.")},
+    {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("Empty path is unavaliable")},
 };
 
 static const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
-    {   IProfileInfo::RenameResult::Error,
-        {   ProfileForm::tr("Failed to rename"),
-            ProfileForm::tr("Couldn't rename the profile to \"%1\"")
-        }
-    },
-    {   IProfileInfo::RenameResult::ProfileAlreadyExists,
-        {   ProfileForm::tr("Profile already exists"),
-            ProfileForm::tr("A profile named \"%1\" already exists.")
-        }
-    },
-    {   IProfileInfo::RenameResult::EmptyName,
-        {   ProfileForm::tr("Empty name"),
-            ProfileForm::tr("Empty name is unavaliable")
-        }
-    },
+    {IProfileInfo::RenameResult::Error,
+     {ProfileForm::tr("Failed to rename"),
+      ProfileForm::tr("Couldn't rename the profile to \"%1\"")}},
+    {IProfileInfo::RenameResult::ProfileAlreadyExists,
+     {ProfileForm::tr("Profile already exists"),
+      ProfileForm::tr("A profile named \"%1\" already exists.")}},
+    {IProfileInfo::RenameResult::EmptyName,
+     {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavaliable")}},
 };
 
 static const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
-    {   IProfileInfo::SaveResult::NoWritePermission,
-        {   ProfileForm::tr("Location not writable", "Title of permissions popup"),
-            ProfileForm::tr("You do not have permission to write to that location. Choose "
-                            "another, or cancel the save dialog.", "text of permissions popup")
-        },
+    {
+        IProfileInfo::SaveResult::NoWritePermission,
+        {ProfileForm::tr("Location not writable", "Title of permissions popup"),
+         ProfileForm::tr("You do not have permission to write to that location. Choose "
+                         "another, or cancel the save dialog.",
+                         "text of permissions popup")},
     },
-    {   IProfileInfo::SaveResult::Error,
-        {   ProfileForm::tr("Failed to save file"),
-            ProfileForm::tr("The file you chose could not be saved.")
-        }
-    },
-    {   IProfileInfo::SaveResult::EmptyPath,
-        {   ProfileForm::tr("Empty path"),
-            ProfileForm::tr("Empty path is unavaliable.")
-        }
-    },
+    {IProfileInfo::SaveResult::Error,
+     {ProfileForm::tr("Failed to save file"),
+      ProfileForm::tr("The file you chose could not be saved.")}},
+    {IProfileInfo::SaveResult::EmptyPath,
+     {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavaliable.")}},
 };
 
-static const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD = {
-    ProfileForm::tr("Couldn't change password"),
-    ProfileForm::tr("Couldn't change database password, "
-                    "it may be corrupted or use the old password.")
-};
+static const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD =
+    {ProfileForm::tr("Couldn't change password"),
+     ProfileForm::tr("Couldn't change database password, "
+                     "it may be corrupted or use the old password.")};
 
 ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
     : QWidget{parent}
@@ -141,8 +122,8 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
     profilePicture->setAccessibleDescription("Set a profile avatar shown to all contacts");
     profilePicture->setStyleSheet(Style::getStylesheet("window/profile.css"));
     connect(profilePicture, &MaskablePixmapWidget::clicked, this, &ProfileForm::onAvatarClicked);
-    connect(profilePicture, &MaskablePixmapWidget::customContextMenuRequested,
-            this, &ProfileForm::showProfilePictureContextMenu);
+    connect(profilePicture, &MaskablePixmapWidget::customContextMenuRequested, this,
+            &ProfileForm::showProfilePictureContextMenu);
 
     QHBoxLayout* publicGrouplayout = qobject_cast<QHBoxLayout*>(bodyUI->publicGroup->layout());
     publicGrouplayout->insertWidget(0, profilePicture);
@@ -157,35 +138,27 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
 
     connect(bodyUI->toxIdLabel, &CroppingLabel::clicked, this, &ProfileForm::copyIdClicked);
     connect(toxId, &ClickableTE::clicked, this, &ProfileForm::copyIdClicked);
-    profileInfo->connectTo_idChanged(this, [=](const ToxId& id) {
-        setToxId(id);
-    });
+    profileInfo->connectTo_idChanged(this, [=](const ToxId& id) { setToxId(id); });
     connect(bodyUI->userName, &QLineEdit::editingFinished, this, &ProfileForm::onUserNameEdited);
-    connect(bodyUI->statusMessage, &QLineEdit::editingFinished,
-            this, &ProfileForm::onStatusMessageEdited);
+    connect(bodyUI->statusMessage, &QLineEdit::editingFinished, this,
+            &ProfileForm::onStatusMessageEdited);
     connect(bodyUI->renameButton, &QPushButton::clicked, this, &ProfileForm::onRenameClicked);
     connect(bodyUI->exportButton, &QPushButton::clicked, this, &ProfileForm::onExportClicked);
     connect(bodyUI->deleteButton, &QPushButton::clicked, this, &ProfileForm::onDeleteClicked);
     connect(bodyUI->logoutButton, &QPushButton::clicked, this, &ProfileForm::onLogoutClicked);
-    connect(bodyUI->deletePassButton, &QPushButton::clicked,
-            this, &ProfileForm::onDeletePassClicked);
-    connect(bodyUI->changePassButton, &QPushButton::clicked,
-            this, &ProfileForm::onChangePassClicked);
-    connect(bodyUI->deletePassButton, &QPushButton::clicked,
-            this, &ProfileForm::setPasswordButtonsText);
-    connect(bodyUI->changePassButton, &QPushButton::clicked,
-            this, &ProfileForm::setPasswordButtonsText);
+    connect(bodyUI->deletePassButton, &QPushButton::clicked, this, &ProfileForm::onDeletePassClicked);
+    connect(bodyUI->changePassButton, &QPushButton::clicked, this, &ProfileForm::onChangePassClicked);
+    connect(bodyUI->deletePassButton, &QPushButton::clicked, this,
+            &ProfileForm::setPasswordButtonsText);
+    connect(bodyUI->changePassButton, &QPushButton::clicked, this,
+            &ProfileForm::setPasswordButtonsText);
     connect(bodyUI->saveQr, &QPushButton::clicked, this, &ProfileForm::onSaveQrClicked);
     connect(bodyUI->copyQr, &QPushButton::clicked, this, &ProfileForm::onCopyQrClicked);
 
-    profileInfo->connectTo_usernameChanged(
-        this,
-    [=](const QString& val) {
+    profileInfo->connectTo_usernameChanged(this, [=](const QString& val) {
         bodyUI->userName->setText(val);
     });
-    profileInfo->connectTo_statusMessageChanged(
-        this,
-    [=](const QString& val) {
+    profileInfo->connectTo_statusMessageChanged(this, [=](const QString& val) {
         bodyUI->statusMessage->setText(val);
     });
 
@@ -227,7 +200,8 @@ void ProfileForm::show(ContentLayout* contentLayout)
     QWidget::show();
     prFileLabelUpdate();
     bool portable = Settings::getInstance().getMakeToxPortable();
-    QString defaultPath = QDir(Settings::getInstance().getPaths().getSettingsDirPath()).path().trimmed();
+    QString defaultPath =
+        QDir(Settings::getInstance().getPaths().getSettingsDirPath()).path().trimmed();
     QString appPath = QApplication::applicationDirPath();
     QString dirPath = portable ? appPath : defaultPath;
 
@@ -296,12 +270,10 @@ void ProfileForm::setToxId(const ToxId& id)
 {
     QString idString = id.toString();
     static const QString ToxIdColor = QStringLiteral("%1"
-                                      "<span style='color:blue'>%2</span>"
-                                      "<span style='color:gray'>%3</span>");
-    toxId->setText(ToxIdColor
-                   .arg(idString.mid(0, 64))
-                   .arg(idString.mid(64, 8))
-                   .arg(idString.mid(72, 4)));
+                                                     "<span style='color:blue'>%2</span>"
+                                                     "<span style='color:gray'>%3</span>");
+    toxId->setText(
+        ToxIdColor.arg(idString.mid(0, 64)).arg(idString.mid(64, 8)).arg(idString.mid(72, 4)));
 
     delete qr;
     qr = new QRWidget();
@@ -323,7 +295,7 @@ void ProfileForm::onAvatarClicked()
 {
     const QString filter = getSupportedImageFilter();
     const QString path = QFileDialog::getOpenFileName(Q_NULLPTR, tr("Choose a profile picture"),
-                         QDir::homePath(), filter, nullptr);
+                                                      QDir::homePath(), filter, nullptr);
 
     if (path.isEmpty()) {
         return;
@@ -360,8 +332,8 @@ void ProfileForm::onExportClicked()
     const QString current = profileInfo->getProfileName() + Core::TOX_EXT;
     //:save dialog title
     const QString path = QFileDialog::getSaveFileName(Q_NULLPTR, tr("Export profile"), current,
-                         //: save dialog filter
-                         tr("Tox save file (*.tox)"));
+                                                      //: save dialog filter
+                                                      tr("Tox save file (*.tox)"));
     if (path.isEmpty()) {
         return;
     }
@@ -378,8 +350,8 @@ void ProfileForm::onExportClicked()
 void ProfileForm::onDeleteClicked()
 {
     const QString title = tr("Delete profile", "deletion confirmation title");
-    const QString question = tr("Are you sure you want to delete this profile?",
-                                "deletion confirmation text");
+    const QString question =
+        tr("Are you sure you want to delete this profile?", "deletion confirmation text");
     if (!GUI::askQuestion(title, question)) {
         return;
     }
@@ -425,9 +397,9 @@ void ProfileForm::onCopyQrClicked()
 void ProfileForm::onSaveQrClicked()
 {
     const QString current = profileInfo->getProfileName() + ".png";
-    const QString path = QFileDialog::getSaveFileName(
-                             Q_NULLPTR, tr("Save", "save qr image"), current,
-                             tr("Save QrCode (*.png)", "save dialog filter"));
+    const QString path =
+        QFileDialog::getSaveFileName(Q_NULLPTR, tr("Save", "save qr image"), current,
+                                     tr("Save QrCode (*.png)", "save dialog filter"));
     if (path.isEmpty()) {
         return;
     }
@@ -480,7 +452,8 @@ void ProfileForm::retranslateUi()
     setPasswordButtonsText();
     // We have to add the toxId tooltip here and not in the .ui or Qt won't know how to translate it
     // dynamically
-    toxId->setToolTip(tr("This ID allows other Tox users to add and contact you.\n"
-                         "Share it with your friends to begin chatting.\n\n"
-                         "This ID includes the NoSpam code (in blue), and the checksum (in gray)."));
+    toxId->setToolTip(
+        tr("This ID allows other Tox users to add and contact you.\n"
+           "Share it with your friends to begin chatting.\n\n"
+           "This ID includes the NoSpam code (in blue), and the checksum (in gray)."));
 }

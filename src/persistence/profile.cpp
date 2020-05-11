@@ -132,7 +132,7 @@ fail:
  * @return Pointer to the tox encryption key.
  */
 std::unique_ptr<ToxEncrypt> createToxData(const QString& name, const QString& password,
-        const QString& filePath, CreateToxDataError& error)
+                                          const QString& filePath, CreateToxDataError& error)
 {
     std::unique_ptr<ToxEncrypt> newKey;
     if (!password.isEmpty()) {
@@ -279,7 +279,8 @@ void Profile::initCore(const QByteArray& toxsave, const ICoreSettings& s, bool i
     avatarBroadcaster = std::unique_ptr<AvatarBroadcaster>(new AvatarBroadcaster(*core));
 }
 
-Profile::Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey, Paths& paths)
+Profile::Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey,
+                 Paths& paths)
     : name{name}
     , passkey{std::move(passkey)}
     , isRemoved{false}
@@ -525,12 +526,14 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
     static_assert(hashSize >= crypto_generichash_BYTES_MIN && hashSize <= crypto_generichash_BYTES_MAX,
                   "Hash size not supported by libsodium");
     static_assert(hashSize >= crypto_generichash_KEYBYTES_MIN
-                  && hashSize <= crypto_generichash_KEYBYTES_MAX,
+                      && hashSize <= crypto_generichash_KEYBYTES_MAX,
                   "Key size not supported by libsodium");
     QByteArray hash(hashSize, 0);
-    crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize, reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
+    crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize,
+                       reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
                        reinterpret_cast<uint8_t*>(pubkeyData.data()), pubkeyData.size());
-    return Settings::getInstance().getPaths().getSettingsDirPath() + "avatars/" + hash.toHex().toUpper() + ".png";
+    return Settings::getInstance().getPaths().getSettingsDirPath() + "avatars/"
+           + hash.toHex().toUpper() + ".png";
 }
 
 /**
@@ -732,7 +735,8 @@ QByteArray Profile::getAvatarHash(const ToxPk& owner)
 {
     QByteArray pic = loadAvatarData(owner);
     QByteArray avatarHash(TOX_HASH_LENGTH, 0);
-    tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()), pic.size());
+    tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()),
+             pic.size());
     return avatarHash;
 }
 
@@ -924,9 +928,9 @@ QString Profile::setPassword(const QString& newPassword)
         std::unique_ptr<ToxEncrypt> newpasskey = ToxEncrypt::makeToxEncrypt(newPassword);
         if (!newpasskey) {
             qCritical()
-                    << "Failed to derive key from password, the profile won't use the new password";
+                << "Failed to derive key from password, the profile won't use the new password";
             return tr(
-                       "Failed to derive key from password, the profile won't use the new password.");
+                "Failed to derive key from password, the profile won't use the new password.");
         }
         // apply change
         passkey = std::move(newpasskey);

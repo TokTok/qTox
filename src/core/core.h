@@ -30,8 +30,8 @@
 #include "toxid.h"
 #include "toxpk.h"
 
-#include "util/strongtype.h"
 #include "src/model/status.h"
+#include "util/strongtype.h"
 #include <tox/tox.h>
 
 #include <QMutex>
@@ -54,10 +54,10 @@ class IBootstrapListGenerator;
 using ToxCorePtr = std::unique_ptr<Core>;
 
 class Core : public QObject,
-    public ICoreFriendMessageSender,
-    public ICoreIdHandler,
-    public ICoreGroupMessageSender,
-    public ICoreGroupQuery
+             public ICoreFriendMessageSender,
+             public ICoreIdHandler,
+             public ICoreGroupMessageSender,
+             public ICoreGroupQuery
 {
     Q_OBJECT
 public:
@@ -70,7 +70,8 @@ public:
     };
 
     static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings* const settings,
-                                  IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err = nullptr);
+                                  IBootstrapListGenerator& bootstrapNodes,
+                                  ToxCoreErrors* err = nullptr);
     static Core* getInstance();
     const CoreAV* getAv() const;
     CoreAV* getAv();
@@ -216,7 +217,8 @@ private:
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type);
-    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type, ReceiptNum& receipt);
+    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
+                             ReceiptNum& receipt);
     bool checkConnection();
 
     void makeTox(QByteArray savedata, ICoreSettings* s);

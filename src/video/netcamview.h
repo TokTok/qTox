@@ -80,8 +80,8 @@ private:
     void toggleVideoPreview();
     void toggleButtonState(QPushButton* btn);
     void updateButtonState(QPushButton* btn, bool active);
-    void keyPressEvent(QKeyEvent *event);
-    void closeEvent(QCloseEvent *event);
+    void keyPressEvent(QKeyEvent* event);
+    void closeEvent(QCloseEvent* event);
     VideoSurface* selfVideoSurface;
     MovableWidget* selfFrame;
     ToxPk friendPk;
