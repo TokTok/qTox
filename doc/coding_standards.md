@@ -4,23 +4,22 @@ This document defines the qTox coding standards and style, all code
 contributions are expected to adhere to the rules described below.
 
 Most stylistic features described below are described as clang-format rules
-present in the root of the repository, as such most code formatting rules can
-be applied by simply running clang-format over the source code in question.
+present in the root of the repository, as such most code formatting rules can be
+applied by simply running clang-format over the source code in question.
 
-You can run [`tools/format-code.sh`] to format all C++ files tracked by
-git.
+You can run [`tools/format-code.sh`] to format all C++ files tracked by git.
 
 In case something is not specified in the following paragraphs, the
 [CppCoreGuidelines] apply.
 
 ## Coding Standard
 
-qTox is written under **[ISO/IEC 14882:2011 (C++11)][ISO/IEC/C++11]** without
+qTox is written under **[ISO/IEC 14882:2011 (C++11)][iso/iec/c++11]** without
 GNU/GCC specific extensions (i.e. qTox should compile with `CXXFLAGS` set to
-`-std=c++11`, regardless of if `-std=gnu+11` is being used during compile
-time). Source code must be able to be compiled under multiple different
-compilers and operating systems including but not limited to GCC and Clang on
-Microsoft Windows, Apple OS X and GNU/Linux-based derivatives.
+`-std=c++11`, regardless of if `-std=gnu+11` is being used during compile time).
+Source code must be able to be compiled under multiple different compilers and
+operating systems including but not limited to GCC and Clang on Microsoft
+Windows, Apple OS X and GNU/Linux-based derivatives.
 
 In addition to the base language, the following additional restrictions are
 imposed:
@@ -34,11 +33,11 @@ be optional and be disabled when compiling/running in a Qt 5.5 environment.
 
 ### No Exceptions
 
-qTox is compiled without support for [C++11 exceptions][Exceptions], meaning
-that any code contribution or dependency cannot throw a C++ exception at
-runtime or else the application will crash. For code present in the qTox
-repository, this is enforced by the use of the `-fno-exceptions` flag in the
-CMake configuration.
+qTox is compiled without support for [C++11 exceptions][exceptions], meaning
+that any code contribution or dependency cannot throw a C++ exception at runtime
+or else the application will crash. For code present in the qTox repository,
+this is enforced by the use of the `-fno-exceptions` flag in the CMake
+configuration.
 
 Note: This restriction prohibits the use of external libraries that may throw
 unhandled exceptions to qTox code. External libraries using exceptions, but
@@ -47,12 +46,12 @@ never require qTox code to handle them directly, will work fine.
 ### No RTTI
 
 qTox is compiled without support for [RTTI], as such code contributions using
-`dynamic_cast()` or `std::dynamic_pointer_cast()` may fail to compile and may
-be rejected on this basis. The implications of this are that the signature of
-all polymorphic types must be known at compile time or stored in an
-implementation-specific way. In essence, if a substitution from
-`dynamic_cast()` to `static_cast()` can be performed without affecting program
-correctness, the construct in question is valid.
+`dynamic_cast()` or `std::dynamic_pointer_cast()` may fail to compile and may be
+rejected on this basis. The implications of this are that the signature of all
+polymorphic types must be known at compile time or stored in an
+implementation-specific way. In essence, if a substitution from `dynamic_cast()`
+to `static_cast()` can be performed without affecting program correctness, the
+construct in question is valid.
 
 **Note: no usage of `dynamic_cast()` or `std::dynamic_pointer_cast()` is
 permitted, even if the code compiles**. An optimizing compiler may be silently
@@ -100,9 +99,9 @@ public:
 
 ### Spacing
 
-Spaces are to be added before the opening parenthesis of all control
-statements. No spaces should be present preceeding or trailing in argument
-lists, template specification, array indexing or between any set of brackets.
+Spaces are to be added before the opening parenthesis of all control statements.
+No spaces should be present preceeding or trailing in argument lists, template
+specification, array indexing or between any set of brackets.
 
 Spaces should additionally be present in between all binary, ternary and
 assignment operators, but should **not** be present in unary operators between
@@ -149,9 +148,9 @@ void bar(T a)
 
 ### Alignment
 
-If an argument list is to be split into multiple lines, the subsequent
-arguments must be aligned with the opening brace of the argument list.
-Alignment should also be performed on multiline binary or ternary operations.
+If an argument list is to be split into multiple lines, the subsequent arguments
+must be aligned with the opening brace of the argument list. Alignment should
+also be performed on multiline binary or ternary operations.
 
 If multiple trailing inline comments are used, they should all be aligned
 together.
@@ -178,9 +177,9 @@ void bar(int a, int b, int c, int d, int e, int f)
 
 The line length limit is set to around 100 characters. This means that most
 expressions approaching 100 characters should be broken into multiline
-statements. Clang-format will attempt to target this limit, going over the
-limit slightly if there are tokens that should not be split. Comments should
-wrap around unless they include elements that cannot be split (e.g. URLs).
+statements. Clang-format will attempt to target this limit, going over the limit
+slightly if there are tokens that should not be split. Comments should wrap
+around unless they include elements that cannot be split (e.g. URLs).
 
 Line breaks should be added before braces on enum, function, record definitions
 and after all template specializations except for the `extern "C"` specifier.
@@ -196,8 +195,8 @@ contain a single line.
 must manually ensure all braces are present before formatting via
 clang-format.**
 
-The following example demonstrates well formatted code under the braces and
-line break rules:
+The following example demonstrates well formatted code under the braces and line
+break rules:
 
 ```c++
 extern "C" {
@@ -263,9 +262,9 @@ auto compareAndUpdate = [](const int expect, int& actual, int& newVal) -> int {
 Pointers, references and rvalue references should be be aligned left, combining
 with the type **when it is possible to do so**. What this means that in a
 regular pointer declaration of variable `x` pointing to a type `T` should be
-declared as `T* x;` where the \* glyph is placed next to the type `T` without any
-spaces separating them. A space should be present between pointer type and the
-variable name except in the special cases described below.
+declared as `T* x;` where the \* glyph is placed next to the type `T` without
+any spaces separating them. A space should be present between pointer type and
+the variable name except in the special cases described below.
 
 Special cases exist when the pointer glyph and the variable needs to put in
 parentheses such as when declaring pointers to C-style arrays and pointers to
@@ -359,26 +358,27 @@ header lean.
 
 Include directives should include header files in the following order:
 
-| Order |    Header Type   | Description                                                                                                                  |
-| :---: | :--------------: | :--------------------------------------------------------------------------------------------------------------------------- |
-|   1   | Main             | The main header corresponding to a source (e.g. a source file `foo.cpp` includes `foo.h` as it's main header).               |
-|   2   | Local/Module     | Headers in the same folder as the current file. These headers should be included directly, without specifying the full path. |
-|   3   | Project          | Headers belonging to the qTox project. These should be specified using full header paths starting within "src/".             |
-|   4\* | Qt               | Headers for Qt objects and functions.                                                                                        |
-|   5\* | Other            | Headers for any other dependencies (external libraries, tox, C/C++ STL, system headers, etc.                                 |
+| Order | Header Type  | Description                                                                                                                  |
+| :---: | :----------: | :--------------------------------------------------------------------------------------------------------------------------- |
+|   1   |     Main     | The main header corresponding to a source (e.g. a source file `foo.cpp` includes `foo.h` as it's main header).               |
+|   2   | Local/Module | Headers in the same folder as the current file. These headers should be included directly, without specifying the full path. |
+|   3   |   Project    | Headers belonging to the qTox project. These should be specified using full header paths starting within "src/".             |
+|  4\*  |      Qt      | Headers for Qt objects and functions.                                                                                        |
+|  5\*  |    Other     | Headers for any other dependencies (external libraries, tox, C/C++ STL, system headers, etc.                                 |
 
 \* These headers should be included with angle bracket (e.g.
 `#include <cstdint>`).
 
 For better header sorting, consider additionally sorting headers in the "other"
-category (category 5) in the following order: Tox, external libraries, C/C++
-STL and system headers for a smaller include profile (this is not mandatory).
+category (category 5) in the following order: Tox, external libraries, C/C++ STL
+and system headers for a smaller include profile (this is not mandatory).
 
 Newlines can be present between includes to indicate logical grouping, however
 be wary that clang-format does not sort includes properly this way, electing to
 sort each group individually according to the criteria defined above.
 
-Use `#pragma once` rather than include guards in header files. It reduces duplication and avoids a potential cause of bugs.
+Use `#pragma once` rather than include guards in header files. It reduces
+duplication and avoids a potential cause of bugs.
 
 The following example demonstrates the above include rules:
 
@@ -415,14 +415,14 @@ extern "C" {
 
 ### Singletons
 
-Do not introduce new singleton classes. Prefer to move code in the direction
-of fewer singleton classes over time.
+Do not introduce new singleton classes. Prefer to move code in the direction of
+fewer singleton classes over time.
 
 Singletons complicate destruction, complicate making multiple instances of
 something in the future, i.e. having two Tox profiles loaded at once is
 difficult to implement in qTox because both Settings and Profile are singleton.
-Singleton's also make unit testing and reasoning more difficult by more
-tightly coupling classes.
+Singleton's also make unit testing and reasoning more difficult by more tightly
+coupling classes.
 
 ## Documentation
 
@@ -430,14 +430,14 @@ When adding new code to qTox also add doxygen style comments before the
 implementation. If an old function is changed, make sure the existing
 documentation is updated to reflect the changes or if none exists, add it.
 
-Always attempt to put the documentation at the point of implementation (i.e.
-put as much in the source `.cpp` files as possible and minimize clutter in `.h`
+Always attempt to put the documentation at the point of implementation (i.e. put
+as much in the source `.cpp` files as possible and minimize clutter in `.h`
 files.)
 
 The documentation style mandates the use of `/**` to start a doxygen style
-comment, and having ` *` (space asterisk) on all lines following the starting
-line. Doxygen keywords like `@brief`, `@param` and `@return` should be used
-such that doxygen can intelligently generate the appropriate documentation.
+comment, and having `*` (space asterisk) on all lines following the starting
+line. Doxygen keywords like `@brief`, `@param` and `@return` should be used such
+that doxygen can intelligently generate the appropriate documentation.
 
 On all updates to master, doxygen comments are automatically generated for the
 source code, available at https://qtox.github.io/doxygen.
@@ -502,19 +502,21 @@ someWidget->setTooltip(QStringLiteral("<html><!-- some HTML text -->") + tr("Tra
 
 ## Strings
 
-* Use `QStringLiteral` macro when creating new string.
+- Use `QStringLiteral` macro when creating new string.
 
 In this example, string is not intended to be modified or copied (like
 appending) into other string:
+
 ```
     QApplication a(argc, argv);
     a.setApplicationName(QStringLiteral("qTox"));
 ```
 
-* Use `QLatin1String` when specialized overload exists.
+- Use `QLatin1String` when specialized overload exists.
 
 Overload such as `QString::operator==(QLatin1String)` helps to avoid creating
 temporary QString and thus avoids malloc:
+
 ```
    if (eventType == QLatin1String("uri"))
         handleToxURI(firstParam.toUtf8());
@@ -522,14 +524,14 @@ temporary QString and thus avoids malloc:
         handleToxSave(firstParam.toUtf8());
 ```
 
-* Use `QStringBuilder` and `QLatin1String` when joining strings (and chars)
-together.
+- Use `QStringBuilder` and `QLatin1String` when joining strings (and chars)
+  together.
 
 `QLatin1String` is literal type and knows string length at compile time
-(compared to `QString(const char*)` run-time cost with plain C++
-string literal). Also, copying 8-bit latin string requires less memory
-bandwith compared to 16-bit `QStringLiteral` mentioned earlier, and
-copying here is unavoidable (and thus `QStringLiteral` loses it's purpose).
+(compared to `QString(const char*)` run-time cost with plain C++ string
+literal). Also, copying 8-bit latin string requires less memory bandwith
+compared to 16-bit `QStringLiteral` mentioned earlier, and copying here is
+unavoidable (and thus `QStringLiteral` loses it's purpose).
 
 Include `<QStringBuilder>` and use `%` operator for optimized single-pass
 concatenation with help of expression template's lazy evaluation:
@@ -539,6 +541,7 @@ concatenation with help of expression template's lazy evaluation:
                         logFileDir % QLatin1String("qtox.log.1")))
             qCritical() << "Unable to move logs";
 ```
+
 ```
     QCommandLineParser parser;
     parser.setApplicationDescription(QLatin1String("qTox, version: ")
@@ -546,31 +549,34 @@ concatenation with help of expression template's lazy evaluation:
     % QLatin1String(__TIME__) % QLatin1Char(' ') % QLatin1String(__DATE__));
 ```
 
-* Use `QLatin1Char` to avoid UTF-16-char handling (same as in previous
-example):
+- Use `QLatin1Char` to avoid UTF-16-char handling (same as in previous example):
+
 ```
     QString path = QString(__FILE__);
     path = path.left(path.lastIndexOf(QLatin1Char('/')) + 1);
 ```
 
-* Use `QLatin1String` and `QLatin1Char` _only_ for Latin-1 strings and chars.
+- Use `QLatin1String` and `QLatin1Char` _only_ for Latin-1 strings and chars.
 
-[Latin-1][Latin-1] is ASCII-based standard character encoding, use
+[Latin-1][latin-1] is ASCII-based standard character encoding, use
 `QStringLiteral` for Unicode instead.
 
 For more info, see:
 
-* [Using QString Effectively]
-* [QStringLiteral explained]
-* [String concatenation with QStringBuilder]
+- [Using QString Effectively]
+- [QStringLiteral explained]
+- [String concatenation with QStringBuilder]
 
 <!-- Markdown links -->
-[ISO/IEC/C++11]: http://www.iso.org/iso/catalogue_detail.htm?csnumber=50372
-[Exceptions]: https://en.wikipedia.org/wiki/C%2B%2B#Exception_handling
-[RTTI]: https://en.wikipedia.org/wiki/Run-time_type_information
+
+[iso/iec/c++11]: http://www.iso.org/iso/catalogue_detail.htm?csnumber=50372
+[exceptions]: https://en.wikipedia.org/wiki/C%2B%2B#Exception_handling
+[rtti]: https://en.wikipedia.org/wiki/Run-time_type_information
 [`tools/format-code.sh`]: /tools/format-code.sh
-[Using QString Effectively]: https://wiki.qt.io/Using_QString_Effectively
-[QStringLiteral explained]: https://woboq.com/blog/qstringliteral.html
-[String concatenation with QStringBuilder]: https://blog.qt.io/blog/2011/06/13/string-concatenation-with-qstringbuilder/
-[Latin-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1
-[CppCoreGuidelines]: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main
+[using qstring effectively]: https://wiki.qt.io/Using_QString_Effectively
+[qstringliteral explained]: https://woboq.com/blog/qstringliteral.html
+[string concatenation with qstringbuilder]:
+  https://blog.qt.io/blog/2011/06/13/string-concatenation-with-qstringbuilder/
+[latin-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1
+[cppcoreguidelines]:
+  https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main
