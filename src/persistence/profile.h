@@ -18,14 +18,16 @@
 */
 
 
-#ifndef PROFILE_H
-#define PROFILE_H
+#pragma once
 
 #include "src/core/core.h"
 #include "src/core/toxencrypt.h"
 #include "src/core/toxid.h"
 
+#include "src/net/avatarbroadcaster.h"
+
 #include "src/persistence/history.h"
+#include "src/net/bootstrapnodeupdater.h"
 
 #include <QByteArray>
 #include <QObject>
@@ -48,7 +50,7 @@ public:
                                   const QCommandLineParser* parser);
     ~Profile();
 
-    Core* getCore();
+    Core& getCore() const;
     QString getName() const;
 
     void startCore();
@@ -102,13 +104,14 @@ private slots:
     void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash);
 
 private:
-    Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey);
+    Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey, Paths& paths);
     static QStringList getFilesByExt(QString extension);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
     void initCore(const QByteArray& toxsave, const ICoreSettings& s, bool isNewProfile);
 
 private:
+    std::unique_ptr<AvatarBroadcaster> avatarBroadcaster;
     std::unique_ptr<Core> core;
     QString name;
     std::unique_ptr<ToxEncrypt> passkey;
@@ -117,6 +120,5 @@ private:
     bool isRemoved;
     bool encrypted = false;
     static QStringList profiles;
+    BootstrapNodeUpdater bootstrapNodes;
 };
-
-#endif // PROFILE_H

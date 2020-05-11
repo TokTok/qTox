@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHATFORM_H
-#define CHATFORM_H
+#pragma once
 
 #include <QElapsedTimer>
 #include <QLabel>
@@ -47,8 +46,8 @@ class ChatForm : public GenericChatForm
 {
     Q_OBJECT
 public:
-    ChatForm(Friend* chatFriend, IChatLog& chatLog, IMessageDispatcher& messageDispatcher);
-    ~ChatForm();
+    ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog, IMessageDispatcher& messageDispatcher);
+    ~ChatForm() override;
     void setStatusMessage(const QString& newMessage);
 
     void setFriendTyping(bool isTyping);
@@ -122,6 +121,7 @@ protected:
     void showEvent(QShowEvent* event) final;
 
 private:
+    Core& core;
     Friend* f;
     CroppingLabel* statusMessageLabel;
     QMenu statusMessageMenu;
@@ -134,5 +134,3 @@ private:
     bool lastCallIsVideo;
     std::unique_ptr<NetCamView> netcam;
 };
-
-#endif // CHATFORM_H

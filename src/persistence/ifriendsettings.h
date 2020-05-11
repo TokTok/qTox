@@ -17,10 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef I_FRIEND_SETTINGS_H
-#define I_FRIEND_SETTINGS_H
+#pragma once
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 
 #include <QObject>
 #include <QFlag>
@@ -73,4 +72,3 @@ signals:
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(IFriendSettings::AutoAcceptCallFlags)
-#endif // I_FRIEND_SETTINGS_H

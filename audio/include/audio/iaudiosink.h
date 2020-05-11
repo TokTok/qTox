@@ -17,14 +17,13 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IAUDIOSINK_H
-#define IAUDIOSINK_H
+#pragma once
 
 #include <cassert>
 
 #include <QObject>
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 
 /**
  * @brief The IAudioSink class represents an interface to devices that can play audio.
@@ -110,5 +109,3 @@ signals:
     DECLARE_SIGNAL(finishedPlaying, void);
     DECLARE_SIGNAL(invalidated, void);
 };
-
-#endif // IAUDIOSINK_H

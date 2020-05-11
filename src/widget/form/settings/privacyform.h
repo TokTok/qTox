@@ -17,10 +17,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PRIVACYFORM_H
-#define PRIVACYFORM_H
+#pragma once
 
 #include "genericsettings.h"
+
+class Core;
 
 namespace Ui {
 class PrivacySettings;
@@ -30,7 +31,7 @@ class PrivacyForm : public GenericForm
 {
     Q_OBJECT
 public:
-    PrivacyForm();
+    PrivacyForm(Core* _core);
     ~PrivacyForm();
     QString getFormName() final
     {
@@ -54,6 +55,5 @@ private:
 
 private:
     Ui::PrivacySettings* bodyUI;
+    Core* core;
 };
-
-#endif

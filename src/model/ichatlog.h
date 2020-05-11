@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICHAT_LOG_H
-#define ICHAT_LOG_H
+#pragma once
 
 #include "message.h"
 #include "src/core/core.h"
@@ -30,7 +29,7 @@
 #include "src/model/friend.h"
 #include "src/model/group.h"
 #include "src/persistence/history.h"
-#include "src/util/strongtype.h"
+#include "util/strongtype.h"
 #include "src/widget/searchtypes.h"
 
 #include <cassert>
@@ -141,5 +140,3 @@ public:
 signals:
     void itemUpdated(ChatLogIdx idx);
 };
-
-#endif /*ICHAT_LOG_H*/
