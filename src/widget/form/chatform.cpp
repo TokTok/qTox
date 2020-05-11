@@ -159,12 +159,12 @@ ChatForm::ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog, IMes
     connect(msgEdit, &ChatTextEdit::textChanged, this, &ChatForm::onTextEditChanged);
     connect(msgEdit, &ChatTextEdit::pasteImage, this, &ChatForm::sendImage);
     connect(statusMessageLabel, &CroppingLabel::customContextMenuRequested, this,
-            [&](const QPoint& pos) {
-                if (!statusMessageLabel->text().isEmpty()) {
-                    QWidget* sender = static_cast<QWidget*>(this->sender());
-                    statusMessageMenu.exec(sender->mapToGlobal(pos));
-                }
-            });
+    [&](const QPoint& pos) {
+        if (!statusMessageLabel->text().isEmpty()) {
+            QWidget* sender = static_cast<QWidget*>(this->sender());
+            statusMessageMenu.exec(sender->mapToGlobal(pos));
+        }
+    });
 
     connect(&typingTimer, &QTimer::timeout, this, [&] {
         core.sendTyping(f->getId(), false);
@@ -173,7 +173,9 @@ ChatForm::ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog, IMes
 
     // reflect name changes in the header
     connect(headWidget, &ChatFormHeader::nameChanged, this,
-            [=](const QString& newName) { f->setAlias(newName); });
+    [=](const QString& newName) {
+        f->setAlias(newName);
+    });
     connect(headWidget, &ChatFormHeader::callAccepted, this,
             [this] { onAnswerCallTriggered(lastCallIsVideo); });
     connect(headWidget, &ChatFormHeader::callRejected, this, &ChatForm::onRejectCallTriggered);
@@ -247,7 +249,7 @@ void ChatForm::onTextEditChanged()
 void ChatForm::onAttachClicked()
 {
     QStringList paths = QFileDialog::getOpenFileNames(Q_NULLPTR, tr("Send a file"),
-                                                      QDir::homePath(), nullptr, nullptr);
+                        QDir::homePath(), nullptr, nullptr);
 
     if (paths.isEmpty()) {
         return;
@@ -283,8 +285,8 @@ void ChatForm::onAvInvite(uint32_t friendId, bool video)
 
     QString displayedName = f->getDisplayedName();
     insertChatMessage(ChatMessage::createChatInfoMessage(tr("%1 calling").arg(displayedName),
-                                                         ChatMessage::INFO,
-                                                         QDateTime::currentDateTime()));
+                      ChatMessage::INFO,
+                      QDateTime::currentDateTime()));
 
     auto testedFlag = video ? Settings::AutoAcceptCall::Video : Settings::AutoAcceptCall::Audio;
     // AutoAcceptCall is set for this friend
@@ -440,8 +442,8 @@ void ChatForm::onFriendStatusChanged(uint32_t friendId, Status::Status status)
     if (Settings::getInstance().getStatusChangeNotificationEnabled()) {
         QString fStatus = Status::getTitle(status);
         addSystemInfoMessage(tr("%1 is now %2", "e.g. \"Dubslow is now online\"")
-                                 .arg(f->getDisplayedName())
-                                 .arg(fStatus),
+                             .arg(f->getDisplayedName())
+                             .arg(fStatus),
                              ChatMessage::INFO, QDateTime::currentDateTime());
     }
 }
@@ -509,7 +511,7 @@ void ChatForm::dropEvent(QDropEvent* ev)
 
         QString urlString = url.toString();
         if (url.isValid() && !url.isLocalFile()
-            && urlString.length() < static_cast<int>(tox_max_message_length())) {
+                && urlString.length() < static_cast<int>(tox_max_message_length())) {
             messageDispatcher.sendMessage(false, urlString);
 
             continue;
@@ -569,9 +571,9 @@ void ChatForm::sendImage(const QPixmap& pixmap)
     // Windows has to be supported, thus filename can't have `:` in it :/
     // Format should be: `qTox_Screenshot_yyyy-MM-dd HH-mm-ss.zzz.png`
     QString filepath = QString("%1images%2qTox_Image_%3.png")
-                           .arg(Settings::getInstance().getPaths().getAppDataDirPath())
-                           .arg(QDir::separator())
-                           .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss.zzz"));
+                       .arg(Settings::getInstance().getPaths().getAppDataDirPath())
+                       .arg(QDir::separator())
+                       .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss.zzz"));
     QFile file(filepath);
 
     if (file.open(QFile::ReadWrite)) {

@@ -113,7 +113,7 @@ bool ProfileImporter::importProfile(const QString& path)
         QString message = tr("A profile named \"%1\" already exists. "
                              "Do you want to erase it?",
                              "import confirm text")
-                              .arg(profile);
+                          .arg(profile);
         bool erase = askQuestion(title, message);
 
         if (!erase)

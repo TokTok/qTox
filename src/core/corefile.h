@@ -50,7 +50,7 @@ public:
     static CoreFilePtr makeCoreFile(Core* core, Tox* tox, QMutex& coreLoopLock);
 
     void sendFile(uint32_t friendId, QString filename, QString filePath,
-                         long long filesize);
+                  long long filesize);
     void sendAvatarFile(uint32_t friendId, const QByteArray& data);
     void pauseResumeFile(uint32_t friendId, uint32_t fileId);
     void cancelFileSend(uint32_t friendId, uint32_t fileId);

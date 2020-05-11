@@ -476,8 +476,8 @@ bool parseErr(Tox_Err_Conference_Delete error, int line)
 Core::Core(QThread* coreThread, IBootstrapListGenerator& _bootstrapNodes)
     : tox(nullptr)
     , toxTimer{new QTimer{this}}
-    , coreThread(coreThread)
-    , bootstrapNodes(_bootstrapNodes)
+, coreThread(coreThread)
+, bootstrapNodes(_bootstrapNodes)
 {
     assert(toxTimer);
     toxTimer->setSingleShot(true);
@@ -572,7 +572,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings* co
             core->tox = ToxPtr(tox_new(*toxOptions, &tox_err));
             if (tox_err == TOX_ERR_NEW_OK) {
                 qWarning() << "Core failed to start with IPv6, falling back to IPv4. LAN discovery "
-                              "may not work properly.";
+                           "may not work properly.";
                 break;
             }
         }
@@ -1053,7 +1053,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     ToxString cMessage(message);
     Tox_Err_Friend_Send_Message error;
     receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
-                                                 cMessage.size(), &error)};
+                         cMessage.size(), &error)};
     if (PARSE_ERR(error)) {
         return true;
     }

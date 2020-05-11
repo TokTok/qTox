@@ -32,7 +32,7 @@ AboutFriend::AboutFriend(const Friend* f, IFriendSettings* const s)
         emit noteChanged(note);
     });
     s->connectTo_autoAcceptCallChanged(this,
-            [=](const ToxPk& pk, IFriendSettings::AutoAcceptCallFlags flag) {
+    [=](const ToxPk& pk, IFriendSettings::AutoAcceptCallFlags flag) {
         emit autoAcceptCallChanged(flag);
     });
     s->connectTo_autoAcceptDirChanged(this, [=](const ToxPk& pk, const QString& dir) {
@@ -63,7 +63,7 @@ QPixmap AboutFriend::getAvatar() const
     const ToxPk pk = f->getPublicKey();
     const QPixmap avatar = Nexus::getProfile()->loadAvatar(pk);
     return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg"))
-                           : avatar;
+           : avatar;
 }
 
 QString AboutFriend::getNote() const

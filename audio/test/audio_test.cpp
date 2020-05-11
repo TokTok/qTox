@@ -31,33 +31,55 @@ class MockSettings : public QObject, public IAudioSettings
     Q_OBJECT
 public:
 
-    QString getInDev() const override { return ""; }
+    QString getInDev() const override {
+        return "";
+    }
     void setInDev(const QString& deviceSpecifier) override {}
 
-    bool getAudioInDevEnabled() const override { return false; }
+    bool getAudioInDevEnabled() const override {
+        return false;
+    }
     void setAudioInDevEnabled(bool enabled) override {}
 
-    QString getOutDev() const override { return ""; }
+    QString getOutDev() const override {
+        return "";
+    }
     void setOutDev(const QString& deviceSpecifier) override {}
 
-    bool getAudioOutDevEnabled() const override { return false; }
+    bool getAudioOutDevEnabled() const override {
+        return false;
+    }
     void setAudioOutDevEnabled(bool enabled) override {}
 
-    qreal getAudioInGainDecibel() const override { return 0.0; }
+    qreal getAudioInGainDecibel() const override {
+        return 0.0;
+    }
     void setAudioInGainDecibel(qreal dB) override {}
 
-    qreal getAudioThreshold() const override { return 0.0; }
+    qreal getAudioThreshold() const override {
+        return 0.0;
+    }
     void setAudioThreshold(qreal percent) override {}
 
-    int getOutVolume() const override { return 0; }
-    int getOutVolumeMin() const override { return 0; }
-    int getOutVolumeMax() const override { return 0; }
+    int getOutVolume() const override {
+        return 0;
+    }
+    int getOutVolumeMin() const override {
+        return 0;
+    }
+    int getOutVolumeMax() const override {
+        return 0;
+    }
     void setOutVolume(int volume) override {}
 
-    int getAudioBitrate() const override { return 0; }
+    int getAudioBitrate() const override {
+        return 0;
+    }
     void setAudioBitrate(int bitrate) override {}
 
-    bool getEnableTestSound() const override { return false; }
+    bool getEnableTestSound() const override {
+        return false;
+    }
     void setEnableTestSound(bool newValue) override {}
 
     SIGNAL_IMPL(MockSettings, inDevChanged, const QString& device);

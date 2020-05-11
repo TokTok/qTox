@@ -40,7 +40,7 @@ public:
     static QByteArray decryptPass(const QString& password, const QByteArray& ciphertext);
     static std::unique_ptr<ToxEncrypt> makeToxEncrypt(const QString& password);
     static std::unique_ptr<ToxEncrypt> makeToxEncrypt(const QString& password,
-                                                      const QByteArray& toxSave);
+            const QByteArray& toxSave);
     QByteArray encrypt(const QByteArray& plaintext) const;
     QByteArray decrypt(const QByteArray& ciphertext) const;
 

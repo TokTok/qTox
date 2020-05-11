@@ -24,7 +24,9 @@
 template <typename T>
 struct Addable
 {
-    T operator+(T const& other) const { return static_cast<T const&>(*this).get() + other.get(); };
+    T operator+(T const& other) const {
+        return static_cast<T const&>(*this).get() + other.get();
+    };
 };
 
 template <typename T, typename Underlying>
@@ -72,7 +74,9 @@ struct Incrementable
 template <typename T, typename>
 struct EqualityComparible
 {
-    bool operator==(const T& other) const { return static_cast<T const&>(*this).get() == other.get(); };
+    bool operator==(const T& other) const {
+        return static_cast<T const&>(*this).get() == other.get();
+    };
     bool operator!=(const T& other) const
     {
         return static_cast<T const&>(*this).get() != other.get();
@@ -91,10 +95,18 @@ struct Hashable
 template <typename T, typename Underlying>
 struct Orderable : EqualityComparible<T, Underlying>
 {
-    bool operator<(const T& rhs) const { return static_cast<T const&>(*this).get() < rhs.get(); }
-    bool operator>(const T& rhs) const { return static_cast<T const&>(*this).get() > rhs.get(); }
-    bool operator>=(const T& rhs) const { return static_cast<T const&>(*this).get() >= rhs.get(); }
-    bool operator<=(const T& rhs) const { return static_cast<T const&>(*this).get() <= rhs.get(); }
+    bool operator<(const T& rhs) const {
+        return static_cast<T const&>(*this).get() < rhs.get();
+    }
+    bool operator>(const T& rhs) const {
+        return static_cast<T const&>(*this).get() > rhs.get();
+    }
+    bool operator>=(const T& rhs) const {
+        return static_cast<T const&>(*this).get() >= rhs.get();
+    }
+    bool operator<=(const T& rhs) const {
+        return static_cast<T const&>(*this).get() <= rhs.get();
+    }
 };
 
 
@@ -117,8 +129,12 @@ public:
 
     NamedType() {}
     explicit NamedType(T const& value) : value_(value) {}
-    T& get() { return value_; }
-    T const& get() const {return value_; }
+    T& get() {
+        return value_;
+    }
+    T const& get() const {
+        return value_;
+    }
 private:
     T value_;
 };

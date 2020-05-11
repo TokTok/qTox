@@ -182,7 +182,7 @@ protected:
     ChatLog* chatWidget;
     ChatTextEdit* msgEdit;
 #ifdef SPELL_CHECKING
-    Sonnet::SpellCheckDecorator* decorator{nullptr};
+    Sonnet::SpellCheckDecorator* decorator {nullptr};
 #endif
     FlyoutOverlayWidget* fileFlyout;
     Widget* parent;

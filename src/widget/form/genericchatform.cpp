@@ -68,7 +68,7 @@ static const QSize FILE_FLYOUT_SIZE{24, 24};
 static const short FOOT_BUTTONS_SPACING = 2;
 static const short MESSAGE_EDIT_HEIGHT = 50;
 static const short MAIN_FOOT_LAYOUT_SPACING = 5;
-static const QString FONT_STYLE[]{"normal", "italic", "oblique"};
+static const QString FONT_STYLE[] {"normal", "italic", "oblique"};
 
 /**
  * @brief Creates CSS style string for needed class with specified font
@@ -165,13 +165,13 @@ ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool col
                                const ChatLogMessage& chatLogMessage)
 {
     auto messageType = chatLogMessage.message.isAction ? ChatMessage::MessageType::ACTION
-                                                       : ChatMessage::MessageType::NORMAL;
+                       : ChatMessage::MessageType::NORMAL;
 
     const bool bSelfMentioned =
         std::any_of(chatLogMessage.message.metadata.begin(), chatLogMessage.message.metadata.end(),
-                    [](const MessageMetadata& metadata) {
-                        return metadata.type == MessageMetadataType::selfMention;
-                    });
+    [](const MessageMetadata& metadata) {
+        return metadata.type == MessageMetadataType::selfMention;
+    });
 
     if (bSelfMentioned) {
         messageType = ChatMessage::MessageType::ALERT;
@@ -183,7 +183,7 @@ ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool col
 }
 
 void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeNames,
-                   const ChatLogMessage& chatLogMessage, ChatMessage::Ptr& chatMessage)
+                      const ChatLogMessage& chatLogMessage, ChatMessage::Ptr& chatMessage)
 {
 
     if (chatMessage) {
@@ -304,7 +304,7 @@ GenericChatForm::GenericChatForm(const Core& _core, const Contact* contact, ICha
     menu.addSeparator();
 
     goCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()),
-                                  QKeySequence(Qt::CTRL + Qt::Key_G));
+                                         QKeySequence(Qt::CTRL + Qt::Key_G));
     addAction(goCurrentDateAction);
 
     menu.addSeparator();
@@ -528,7 +528,7 @@ bool GenericChatForm::needsToHideName(ChatLogIdx idx) const
 
     // Always show the * in the name field for action messages
     if (currentItem.getContentType() == ChatLogItem::ContentType::message
-        && currentItem.getContentAsMessage().message.isAction) {
+            && currentItem.getContentAsMessage().message.isAction) {
         return false;
     }
 
@@ -591,7 +591,7 @@ void GenericChatForm::setColorizedNames(bool enable)
 }
 
 void GenericChatForm::addSystemInfoMessage(const QString& message, ChatMessage::SystemMessageType type,
-                                           const QDateTime& datetime)
+        const QDateTime& datetime)
 {
     insertChatMessage(ChatMessage::createChatInfoMessage(message, type, datetime));
 }
@@ -660,7 +660,7 @@ void GenericChatForm::loadHistoryTo(const QDateTime &time)
 
     if (begin != end) {
         if (searchResult.found == true && searchResult.pos.logIdx == end) {
-            renderMessages(begin, end, [this]{enableSearchText();});
+            renderMessages(begin, end, [this] {enableSearchText();});
         } else {
             renderMessages(begin, end);
         }
@@ -685,8 +685,8 @@ bool GenericChatForm::loadHistoryFrom(const QDateTime &time)
     }
 
     const auto end = chatLog.getNextIdx() < begin + DEF_NUM_MSG_TO_LOAD
-        ? chatLog.getNextIdx()
-        : begin + DEF_NUM_MSG_TO_LOAD;
+                     ? chatLog.getNextIdx()
+                     : begin + DEF_NUM_MSG_TO_LOAD;
 
     // The chatLog.getNextIdx() is usually 1 more than the idx on last "messages" item
     // so if we have nothing to load, "add" is equal 1
@@ -747,9 +747,9 @@ void GenericChatForm::clearChatArea(bool confirm, bool inform)
 {
     if (confirm) {
         QMessageBox::StandardButton mboxResult =
-                QMessageBox::question(this, tr("Confirmation"),
-                                      tr("Are you sure that you want to clear all displayed messages?"),
-                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            QMessageBox::question(this, tr("Confirmation"),
+                                  tr("Are you sure that you want to clear all displayed messages?"),
+                                  QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         if (mboxResult == QMessageBox::No) {
             return;
         }
@@ -1047,7 +1047,7 @@ void GenericChatForm::handleSearchResult(SearchResult result, SearchDirection di
         firstRenderedIdx = mediator;
     }
 
-    renderMessages(endRenderedIdx, firstRenderedIdx, [this]{enableSearchText();});
+    renderMessages(endRenderedIdx, firstRenderedIdx, [this] {enableSearchText();});
 }
 
 void GenericChatForm::renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames, ChatMessage::Ptr& chatMessage)
@@ -1120,10 +1120,10 @@ void GenericChatForm::renderMessages(ChatLogIdx begin, ChatLogIdx end,
         if (onCompletion) {
             auto connection = std::make_shared<QMetaObject::Connection>();
             *connection = connect(chatWidget, &ChatLog::workerTimeoutFinished,
-                                  [this, onCompletion, connection] {
-                                      onCompletion();
-                                      this->disconnect(*connection);
-                                  });
+            [this, onCompletion, connection] {
+                onCompletion();
+                this->disconnect(*connection);
+            });
         }
 
         chatWidget->insertChatlinesOnTop(beforeLines);
@@ -1174,7 +1174,7 @@ void GenericChatForm::updateShowDateInfo(const ChatLine::Ptr& prevLine, const Ch
     // If the dateInfo is visible we need to pretend the top line is the one
     // covered by the date to prevent oscillations
     const auto effectiveTopLine = (dateInfo->isVisible() && prevLine)
-        ? prevLine : topLine;
+                                  ? prevLine : topLine;
 
     const auto date = getTime(effectiveTopLine);
 

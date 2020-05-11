@@ -144,7 +144,7 @@ private:
 
     // Main framebuffer store
     std::unordered_map<FrameBufferKey, AVFrame*, std::function<decltype(FrameBufferKey::hash)>>
-        frameBuffer{3, FrameBufferKey::hash};
+    frameBuffer{3, FrameBufferKey::hash};
 
     // Source frame
     const QRect sourceDimensions;

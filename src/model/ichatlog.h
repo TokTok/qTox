@@ -135,7 +135,7 @@ public:
      * @param[in] maxDates maximum number of dates to be returned
      */
     virtual std::vector<DateChatLogIdxPair> getDateIdxs(const QDate& startDate,
-                                                        size_t maxDates) const = 0;
+            size_t maxDates) const = 0;
 
 signals:
     void itemUpdated(ChatLogIdx idx);

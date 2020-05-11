@@ -52,8 +52,8 @@ struct ParameterSearch {
 
     bool operator ==(const ParameterSearch& other) {
         return filter == other.filter &&
-            period == other.period &&
-            time == other.time;
+               period == other.period &&
+               time == other.time;
     }
 
     bool operator !=(const ParameterSearch& other) {

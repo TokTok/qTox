@@ -279,7 +279,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
     sinks.insert(sink);
     qDebug() << "Audio source" << sid << "created. Sources active:" << sinks.size();
 
-    return std::unique_ptr<IAudioSink>{sink};
+    return std::unique_ptr<IAudioSink> {sink};
 }
 
 /**
@@ -338,7 +338,7 @@ std::unique_ptr<IAudioSource> OpenAL::makeSource()
 
     qDebug() << "Subscribed to audio input device [" << sources.size() << "subscriptions ]";
 
-    return std::unique_ptr<IAudioSource>{source};
+    return std::unique_ptr<IAudioSource> {source};
 }
 
 /**
@@ -404,7 +404,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
     int stereoFlag = channels == 1 ? AL_FORMAT_MONO16 : AL_FORMAT_STEREO16;
     const int bytesPerSample = 2;
     const int safetyFactor = 2; // internal OpenAL ring buffer. must be larger than our inputBuffer
-                                // to avoid the ring from overwriting itself between captures.
+    // to avoid the ring from overwriting itself between captures.
     AUDIO_FRAME_SAMPLE_COUNT_TOTAL = AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL * channels;
     const ALCsizei ringBufSize = AUDIO_FRAME_SAMPLE_COUNT_TOTAL * bytesPerSample * safetyFactor;
 
@@ -724,8 +724,8 @@ QStringList OpenAL::outDeviceNames()
 {
     QStringList list;
     const ALchar* pDeviceList = (alcIsExtensionPresent(nullptr, "ALC_ENUMERATE_ALL_EXT") != AL_FALSE)
-                                    ? alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER)
-                                    : alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
+                                ? alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER)
+                                : alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
 
     if (pDeviceList) {
         while (*pDeviceList) {

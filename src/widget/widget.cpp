@@ -119,9 +119,9 @@ void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
 
     do {
         filepath = QString("%1/%2%3.%4")
-                       .arg(path, base,
-                            number > 0 ? QString(" (%1)").arg(QString::number(number)) : QString(),
-                            suffix);
+                   .arg(path, base,
+                        number > 0 ? QString(" (%1)").arg(QString::number(number)) : QString(),
+                        suffix);
         ++number;
     } while (QFileInfo(filepath).exists());
 
@@ -219,8 +219,8 @@ void Widget::init()
     filterDisplayGroup->addAction(filterDisplayActivity);
     filterMenu->addAction(filterDisplayActivity);
     settings.getFriendSortingMode() == FriendListWidget::SortingMode::Name
-        ? filterDisplayName->setChecked(true)
-        : filterDisplayActivity->setChecked(true);
+    ? filterDisplayName->setChecked(true)
+    : filterDisplayActivity->setChecked(true);
     filterMenu->addSeparator();
 
     filterAllAction = new QAction(this);
@@ -364,7 +364,9 @@ void Widget::init()
 
     fileMenu->menu()->addSeparator();
     logoutAction = fileMenu->menu()->addAction(QString());
-    connect(logoutAction, &QAction::triggered, []() { Nexus::getInstance().showLogin(); });
+    connect(logoutAction, &QAction::triggered, []() {
+        Nexus::getInstance().showLogin();
+    });
 
     editMenu = globalMenu->insertMenu(viewMenu, new QMenu(this));
     editMenu->menu()->addSeparator();
@@ -533,7 +535,7 @@ void Widget::updateIcons()
 
         if (hasThemeIconBug) {
             qDebug()
-                << "Detected buggy QIcon::hasThemeIcon. Icon overrides from theme will be ignored.";
+                    << "Detected buggy QIcon::hasThemeIcon. Icon overrides from theme will be ignored.";
         }
     }
 
@@ -713,7 +715,7 @@ void Widget::onFailedToStartCore()
 {
     QMessageBox critical(this);
     critical.setText(tr(
-        "Toxcore failed to start, the application will terminate after you close this message."));
+                         "Toxcore failed to start, the application will terminate after you close this message."));
     critical.setIcon(QMessageBox::Critical);
     critical.exec();
     qApp->exit(EXIT_FAILURE);
@@ -882,7 +884,8 @@ void Widget::confirmExecutableOpen(const QFileInfo& file)
                                                     "pif",  "ps1",     "ps1xml", "ps2",  "ps2xml",
                                                     "psc1", "psc2",    "py",     "reg",  "scf",
                                                     "sh",   "src",     "vb",     "vbe",  "vbs",
-                                                    "ws",   "wsc",     "wsf",    "wsh"};
+                                                    "ws",   "wsc",     "wsf",    "wsh"
+                                                   };
 
     if (dangerousExtensions.contains(file.suffix())) {
         bool answer = GUI::askQuestion(tr("Executable file", "popup title"),
@@ -897,8 +900,8 @@ void Widget::confirmExecutableOpen(const QFileInfo& file)
 
         // The user wants to run this file, so make it executable and run it
         QFile(file.filePath())
-            .setPermissions(file.permissions() | QFile::ExeOwner | QFile::ExeUser | QFile::ExeGroup
-                            | QFile::ExeOther);
+        .setPermissions(file.permissions() | QFile::ExeOwner | QFile::ExeUser | QFile::ExeGroup
+                        | QFile::ExeOther);
     }
 
     QDesktopServices::openUrl(QUrl::fromLocalFile(file.filePath()));
@@ -1023,7 +1026,9 @@ void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
         }
     }
 
-    audioNotification->connectTo_finishedPlaying(this, [this](){ cleanupNotificationSound(); });
+    audioNotification->connectTo_finishedPlaying(this, [this]() {
+        cleanupNotificationSound();
+    });
 
     audioNotification->playMono16Sound(sound);
 
@@ -1421,7 +1426,9 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 #endif
     connect(friendWidget, &FriendWidget::removeFriend, this, widgetRemoveFriend);
     connect(friendWidget, &FriendWidget::middleMouseClicked, dialog,
-            [=]() { dialog->removeFriend(friendPk); });
+    [=]() {
+        dialog->removeFriend(friendPk);
+    });
     connect(friendWidget, &FriendWidget::copyFriendIdToClipboard, this,
             &Widget::copyFriendIdToClipboard);
     connect(friendWidget, &FriendWidget::newWindowOpened, this, &Widget::openNewDialog);
@@ -1430,7 +1437,9 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
     // ContentDialog) to the `widget` (which shown in main widget)
     // FIXME: emit should be removed
     connect(friendWidget, &FriendWidget::contextMenuCalled, widget,
-            [=](QContextMenuEvent* event) { emit widget->contextMenuCalled(event); });
+    [=](QContextMenuEvent* event) {
+        emit widget->contextMenuCalled(event);
+    });
 
     connect(friendWidget, &FriendWidget::chatroomWidgetClicked, [=](GenericChatroomWidget* w) {
         Q_UNUSED(w)
@@ -1477,7 +1486,9 @@ void Widget::addGroupDialog(Group* group, ContentDialog* dialog)
     connect(groupWidget, &GroupWidget::removeGroup, this, removeGroup);
     connect(groupWidget, &GroupWidget::chatroomWidgetClicked, chatForm, &GroupChatForm::focusInput);
     connect(groupWidget, &GroupWidget::middleMouseClicked, dialog,
-            [=]() { dialog->removeGroup(groupId); });
+    [=]() {
+        dialog->removeGroup(groupId);
+    });
     connect(groupWidget, &GroupWidget::chatroomWidgetClicked, chatForm, &ChatForm::focusInput);
     connect(groupWidget, &GroupWidget::newWindowOpened, this, &Widget::openNewDialog);
 
@@ -1537,7 +1548,7 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
 #if DESKTOP_NOTIFICATIONS
         if (settings.getNotifyHide()) {
             notifier.notifyMessageSimple(file ? DesktopNotify::MessageType::FRIEND_FILE
-                                              : DesktopNotify::MessageType::FRIEND);
+                                         : DesktopNotify::MessageType::FRIEND);
         } else {
             QString title = f->getDisplayedName();
             if (file) {
@@ -1687,7 +1698,7 @@ void Widget::onFileReceiveRequested(const ToxFile& file)
     const ToxPk& friendPk = FriendList::id2Key(file.friendId);
     newFriendMessageAlert(friendPk,
                           file.fileName + " ("
-                              + FileTransferWidget::getHumanReadableSize(file.filesize) + ")",
+                          + FileTransferWidget::getHumanReadableSize(file.filesize) + ")",
                           true, true);
 }
 
@@ -2088,7 +2099,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto messageProcessor = MessageProcessor(sharedMessageProcessorParams);
     auto messageDispatcher =
         std::make_shared<GroupMessageDispatcher>(*newgroup, std::move(messageProcessor), *core,
-                                                 *core, Settings::getInstance());
+                *core, Settings::getInstance());
     auto groupChatLog = std::make_shared<SessionChatLog>(*core);
 
     connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, groupChatLog.get(),
@@ -2100,9 +2111,9 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
 
     auto notifyReceivedCallback = [this, groupId](const ToxPk& author, const Message& message) {
         auto isTargeted = std::any_of(message.metadata.begin(), message.metadata.end(),
-                                      [](MessageMetadata metadata) {
-                                          return metadata.type == MessageMetadataType::selfMention;
-                                      });
+        [](MessageMetadata metadata) {
+            return metadata.type == MessageMetadataType::selfMention;
+        });
         newGroupMessageAlert(groupId, author, message.content,
                              isTargeted || settings.getGroupAlwaysNotify());
     };
@@ -2133,7 +2144,9 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto widgetRemoveGroup = static_cast<void (Widget::*)(const GroupId&)>(&Widget::removeGroup);
 #endif
     connect(widget, &GroupWidget::removeGroup, this, widgetRemoveGroup);
-    connect(widget, &GroupWidget::middleMouseClicked, this, [=]() { removeGroup(groupId); });
+    connect(widget, &GroupWidget::middleMouseClicked, this, [=]() {
+        removeGroup(groupId);
+    });
     connect(widget, &GroupWidget::chatroomWidgetClicked, form, &ChatForm::focusInput);
     connect(newgroup, &Group::titleChangedByUser, this, &Widget::titleChangedByUser);
     connect(core, &Core::usernameSet, newgroup, &Group::setSelfName);

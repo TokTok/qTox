@@ -32,7 +32,7 @@ class GroupWidget final : public GenericChatroomWidget
 public:
     GroupWidget(std::shared_ptr<GroupChatroom> chatroom, bool compact);
     ~GroupWidget();
-   void setAsInactiveChatroom() final;
+    void setAsInactiveChatroom() final;
     void setAsActiveChatroom() final;
     void updateStatusLight() final;
     void resetEventFlags() final;

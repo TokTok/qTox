@@ -34,32 +34,52 @@ Q_DECLARE_METATYPE(QList<DhtServer>)
 
 class MockSettings : public QObject, public ICoreSettings
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     MockSettings() {
         Q_INIT_RESOURCE(res);
         qRegisterMetaType<QList<DhtServer>>("QList<DhtServer>");
     }
 
-    bool getEnableIPv6() const override { return false; }
+    bool getEnableIPv6() const override {
+        return false;
+    }
     void setEnableIPv6(bool) override { }
 
-    bool getForceTCP() const override { return false; }
+    bool getForceTCP() const override {
+        return false;
+    }
     void setForceTCP(bool) override { }
 
-    bool getEnableLanDiscovery() const override { return false; }
+    bool getEnableLanDiscovery() const override {
+        return false;
+    }
     void setEnableLanDiscovery(bool) override { }
 
-    QString getProxyAddr() const override { return Addr; }
-    void setProxyAddr(const QString &Addr) override { this->Addr = Addr; }
+    QString getProxyAddr() const override {
+        return Addr;
+    }
+    void setProxyAddr(const QString &Addr) override {
+        this->Addr = Addr;
+    }
 
-    ProxyType getProxyType() const override { return type; }
-    void setProxyType(ProxyType type) override { this->type = type; }
+    ProxyType getProxyType() const override {
+        return type;
+    }
+    void setProxyType(ProxyType type) override {
+        this->type = type;
+    }
 
-    quint16 getProxyPort() const override { return port; }
-    void setProxyPort(quint16 port) override { this->port = port; }
+    quint16 getProxyPort() const override {
+        return port;
+    }
+    void setProxyPort(quint16 port) override {
+        this->port = port;
+    }
 
-    QNetworkProxy getProxy() const override { return QNetworkProxy(QNetworkProxy::ProxyType::NoProxy); }
+    QNetworkProxy getProxy() const override {
+        return QNetworkProxy(QNetworkProxy::ProxyType::NoProxy);
+    }
 
     SIGNAL_IMPL(MockSettings, enableIPv6Changed, bool enabled)
     SIGNAL_IMPL(MockSettings, forceTCPChanged, bool enabled)
@@ -84,7 +104,7 @@ class MockNodeListGenerator : public IBootstrapListGenerator
 
 class TestCore : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 private slots:
     void startup_without_proxy();
     void startup_with_invalid_proxy();
@@ -99,7 +119,7 @@ private:
 
 
 namespace {
-    const int timeout = 90000; //90 seconds timeout allowed for test
+const int timeout = 90000; //90 seconds timeout allowed for test
 }
 
 void TestCore::startup_without_proxy()

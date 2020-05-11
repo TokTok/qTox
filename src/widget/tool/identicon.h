@@ -39,7 +39,7 @@ private:
     static constexpr int ACTIVE_COLS = (IDENTICON_ROWS + 1) / 2;
     static constexpr int IDENTICON_COLOR_BYTES = 6;
     static constexpr int HASH_MIN_LEN = ACTIVE_COLS * IDENTICON_ROWS
-                                      + COLORS * IDENTICON_COLOR_BYTES;
+                                        + COLORS * IDENTICON_COLOR_BYTES;
 
     uint8_t identiconColors[IDENTICON_ROWS][ACTIVE_COLS];
     QColor colors[COLORS];

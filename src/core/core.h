@@ -54,10 +54,10 @@ class IBootstrapListGenerator;
 using ToxCorePtr = std::unique_ptr<Core>;
 
 class Core : public QObject,
-             public ICoreFriendMessageSender,
-             public ICoreIdHandler,
-             public ICoreGroupMessageSender,
-             public ICoreGroupQuery
+    public ICoreFriendMessageSender,
+    public ICoreIdHandler,
+    public ICoreGroupMessageSender,
+    public ICoreGroupQuery
 {
     Q_OBJECT
 public:

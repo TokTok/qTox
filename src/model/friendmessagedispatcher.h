@@ -38,7 +38,7 @@ public:
                             ICoreFriendMessageSender& messageSender);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
-                                                                    const QString& content) override;
+            const QString& content) override;
     void onMessageReceived(bool isAction, const QString& content);
     void onReceiptReceived(ReceiptNum receipt);
     void clearOutgoingMessages();

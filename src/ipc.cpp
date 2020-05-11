@@ -33,27 +33,27 @@
 namespace
 {
 #ifdef Q_OS_WIN
-    const char* getCurUsername()
-    {
-        return getenv("USERNAME");
-    }
+const char* getCurUsername()
+{
+    return getenv("USERNAME");
+}
 #else
-    const char* getCurUsername()
-    {
-        return getenv("USER");
-    }
+const char* getCurUsername()
+{
+    return getenv("USER");
+}
 #endif
 
-    QString getIpcKey()
+QString getIpcKey()
+{
+    auto* user = getCurUsername();
+    if (!user)
     {
-        auto* user = getCurUsername();
-        if (!user)
-        {
-            qWarning() << "Failed to get current username. Will use a global IPC.";
-            user = "";
-        }
-        return QString("qtox-" IPC_PROTOCOL_VERSION "-") + user;
+        qWarning() << "Failed to get current username. Will use a global IPC.";
+        user = "";
     }
+    return QString("qtox-" IPC_PROTOCOL_VERSION "-") + user;
+}
 } // namespace
 
 /**
@@ -256,12 +256,12 @@ IPC::IPCEvent* IPC::fetchEvent()
         // and events that were processed and EVENT_GC_TIMEOUT passed after
         // so sending instance has time to react to those events.
         if ((evt->processed && difftime(time(nullptr), evt->processed) > EVENT_GC_TIMEOUT)
-            || (!evt->processed && difftime(time(nullptr), evt->posted) > EVENT_GC_TIMEOUT)) {
+                || (!evt->processed && difftime(time(nullptr), evt->posted) > EVENT_GC_TIMEOUT)) {
             memset(evt, 0, sizeof(IPCEvent));
         }
 
         if (evt->posted && !evt->processed && evt->sender != getpid()
-            && (evt->dest == profileId || (evt->dest == 0 && isCurrentOwnerNoLock()))) {
+                && (evt->dest == profileId || (evt->dest == 0 && isCurrentOwnerNoLock()))) {
             return evt;
         }
     }

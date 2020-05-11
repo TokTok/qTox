@@ -181,7 +181,7 @@ public:
     QDateTime getDateWhereFindPhrase(const ToxPk& friendPk, const QDateTime& from, QString phrase,
                                      const ParameterSearch& parameter);
     QList<DateIdx> getNumMessagesForFriendBeforeDateBoundaries(const ToxPk& friendPk,
-                                                               const QDate& from, size_t maxNum);
+            const QDate& from, size_t maxNum);
 
     void markAsDelivered(RowId messageId);
 
@@ -202,7 +202,7 @@ private slots:
 private:
     bool historyAccessBlocked();
     static RawDatabase::Query generateFileFinished(RowId fileId, bool success,
-                                                   const QString& filePath, const QByteArray& fileHash);
+            const QString& filePath, const QByteArray& fileHash);
     std::shared_ptr<RawDatabase> db;
 
 

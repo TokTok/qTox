@@ -132,7 +132,7 @@ fail:
  * @return Pointer to the tox encryption key.
  */
 std::unique_ptr<ToxEncrypt> createToxData(const QString& name, const QString& password,
-                                          const QString& filePath, CreateToxDataError& error)
+        const QString& filePath, CreateToxDataError& error)
 {
     std::unique_ptr<ToxEncrypt> newKey;
     if (!password.isEmpty()) {
@@ -525,7 +525,7 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
     static_assert(hashSize >= crypto_generichash_BYTES_MIN && hashSize <= crypto_generichash_BYTES_MAX,
                   "Hash size not supported by libsodium");
     static_assert(hashSize >= crypto_generichash_KEYBYTES_MIN
-                      && hashSize <= crypto_generichash_KEYBYTES_MAX,
+                  && hashSize <= crypto_generichash_KEYBYTES_MAX,
                   "Key size not supported by libsodium");
     QByteArray hash(hashSize, 0);
     crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize, reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
@@ -924,9 +924,9 @@ QString Profile::setPassword(const QString& newPassword)
         std::unique_ptr<ToxEncrypt> newpasskey = ToxEncrypt::makeToxEncrypt(newPassword);
         if (!newpasskey) {
             qCritical()
-                << "Failed to derive key from password, the profile won't use the new password";
+                    << "Failed to derive key from password, the profile won't use the new password";
             return tr(
-                "Failed to derive key from password, the profile won't use the new password.");
+                       "Failed to derive key from password, the profile won't use the new password.");
         }
         // apply change
         passkey = std::move(newpasskey);

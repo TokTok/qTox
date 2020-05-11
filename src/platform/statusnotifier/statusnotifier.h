@@ -214,9 +214,9 @@ struct _StatusNotifierClass
 };
 
 StatusNotifier* status_notifier_new_from_pixbuf(const gchar* id, StatusNotifierCategory category,
-                                                GdkPixbuf* pixbuf);
+        GdkPixbuf* pixbuf);
 StatusNotifier* status_notifier_new_from_icon_name(const gchar* id, StatusNotifierCategory category,
-                                                   const gchar* icon_name);
+        const gchar* icon_name);
 const gchar* status_notifier_get_id(StatusNotifier* sn);
 StatusNotifierCategory status_notifier_get_category(StatusNotifier* sn);
 void status_notifier_set_from_pixbuf(StatusNotifier* sn, StatusNotifierIcon icon, GdkPixbuf* pixbuf);

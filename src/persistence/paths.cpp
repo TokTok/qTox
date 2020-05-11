@@ -165,8 +165,8 @@ QString Paths::getToxSaveDir() const
         return basePath % QDir::separator() % profileFolder % QDir::separator();
     }
 
-        // GenericDataLocation would be a better solution, but we keep this code for backward
-        // compatibility
+    // GenericDataLocation would be a better solution, but we keep this code for backward
+    // compatibility
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845
 #ifdef Q_OS_WIN
