@@ -180,9 +180,9 @@ QByteArray serialize(QList<DhtServer> nodes)
  * @param proxy Proxy to use for the lookup, must outlive this object
  */
 BootstrapNodeUpdater::BootstrapNodeUpdater(const QNetworkProxy& proxy, Paths& _paths, QObject* parent)
-    : proxy{proxy}
+    : QObject{parent}
+    , proxy{proxy}
     , paths{_paths}
-    , QObject{parent}
 {}
 
 QList<DhtServer> BootstrapNodeUpdater::getBootstrapnodes()

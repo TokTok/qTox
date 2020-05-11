@@ -1,0 +1,10 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "util",
+    srcs = glob(["**/*.cpp"]),
+    hdrs = glob(["include/**/*.h"]),
+    includes = ["include"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = ["@qt//:qt_core"],
+)

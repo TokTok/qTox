@@ -58,5 +58,5 @@ private:
 
 private:
     QString basePath{};
-    const bool portable = false;
+    const bool portable;
 };

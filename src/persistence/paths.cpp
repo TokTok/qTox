@@ -30,11 +30,13 @@
 
 namespace {
 const QLatin1String globalSettingsFile{"qtox.ini"};
+#if PATHS_VERSION_TCS_COMPLIANT
 const QLatin1String profileFolder{"profiles"};
 const QLatin1String themeFolder{"themes"};
 const QLatin1String avatarsFolder{"avatars"};
 const QLatin1String transfersFolder{"transfers"};
 const QLatin1String screenshotsFolder{"screenshots"};
+#endif
 } // namespace
 
 /**
@@ -130,7 +132,7 @@ QString Paths::getGlobalSettingsPath() const
 {
     QString path;
 
-    if (portable) {
+    if (isPortable()) {
         path = basePath;
     } else {
         path = QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation);
@@ -255,7 +257,7 @@ QStringList Paths::getThemeDirs() const
  */
 QString Paths::getSettingsDirPath() const
 {
-    if (portable)
+    if (isPortable())
         return qApp->applicationDirPath() + QDir::separator();
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845
@@ -283,7 +285,7 @@ QString Paths::getSettingsDirPath() const
  */
 QString Paths::getAppDataDirPath() const
 {
-    if (portable)
+    if (isPortable())
         return qApp->applicationDirPath() + QDir::separator();
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845
@@ -315,7 +317,7 @@ QString Paths::getAppDataDirPath() const
  */
 QString Paths::getAppCacheDirPath() const
 {
-    if (portable)
+    if (isPortable())
         return qApp->applicationDirPath() + QDir::separator();
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845

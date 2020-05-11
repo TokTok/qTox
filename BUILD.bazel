@@ -12,11 +12,6 @@ project()
 qt_moc(
     name = "qtox_moc",
     srcs = [
-        "src/audio/backend/alsink.h",
-        "src/audio/backend/alsource.h",
-        "src/audio/backend/openal.h",
-        "src/audio/iaudiocontrol.h",
-        "src/audio/iaudiosource.h",
         "src/chatlog/chatlinecontent.h",
         "src/chatlog/chatlinecontentproxy.h",
         "src/chatlog/chatlog.h",
@@ -45,6 +40,7 @@ qt_moc(
         "src/model/imessagedispatcher.h",
         "src/model/profile/profileinfo.h",
         "src/model/sessionchatlog.h",
+        "src/net/avatarbroadcaster.h",
         "src/net/bootstrapnodeupdater.h",
         "src/net/toxuri.h",
         "src/net/updatecheck.h",
@@ -120,7 +116,10 @@ qt_moc(
     ],
     hdrs = glob(["src/**/*.h"]),
     mocopts = ["-Iqtox"],
-    deps = ["@qt//:qt_widgets"],
+    deps = [
+        "//qtox/audio",
+        "@qt//:qt_widgets",
+    ],
 )
 
 # Translations
@@ -143,7 +142,6 @@ qt_rcc(
         #"translations/translations.qrc",
     ],
     data = [":qtox_qms"] + glob([
-        "audio/**/*",
         "img/**/*",
         "res/**/*",
         "smileys/*/*",
@@ -155,6 +153,7 @@ cc_library(
     name = "res_lib",
     srcs = [":res"],
     visibility = ["//qtox/test:__pkg__"],
+    deps = ["//qtox/audio:audio_res_lib"],
     alwayslink = True,
 )
 
@@ -261,6 +260,7 @@ cc_library(
     visibility = ["//qtox:__subpackages__"],
     deps = [
         ":res_lib",
+        "//qtox/audio",
         "//c-toxcore",
         "@ffmpeg",
         "@libexif",
