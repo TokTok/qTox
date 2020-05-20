@@ -1,5 +1,5 @@
 /*
-    Copyright © 2019 by The qTox Project Contributors
+    Copyright © 2014-2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -17,33 +17,18 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ALSOURCE_H
-#define ALSOURCE_H
+#include <memory>
 
-#include "src/audio/iaudiosource.h"
-#include <QMutex>
-#include <QObject>
+#include "audio/audio.h"
+#include "audio/iaudiosettings.h"
+#include "backend/openal.h"
 
-class OpenAL;
-class AlSource : public IAudioSource
+/**
+ * @brief Select the audio backend
+ * @param settings Audio settings to use
+ * @return Audio backend selection based on settings
+ */
+std::unique_ptr<IAudioControl> Audio::makeAudio(IAudioSettings& settings)
 {
-    Q_OBJECT
-public:
-    AlSource(OpenAL& al);
-    AlSource(AlSource& src) = delete;
-    AlSource& operator=(const AlSource&) = delete;
-    AlSource(AlSource&& other) = delete;
-    AlSource& operator=(AlSource&& other) = delete;
-    ~AlSource();
-
-    operator bool() const;
-
-    void kill();
-
-private:
-    OpenAL& audio;
-    bool killed = false;
-    mutable QMutex killLock;
-};
-
-#endif // ALSOURCE_H
+    return std::unique_ptr<IAudioControl>(new OpenAL(settings));
+}

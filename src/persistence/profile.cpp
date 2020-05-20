@@ -35,6 +35,7 @@
 #include "src/core/coreav.h"
 #include "src/core/corefile.h"
 #include "src/net/avatarbroadcaster.h"
+#include "src/net/bootstrapnodeupdater.h"
 #include "src/nexus.h"
 #include "src/widget/gui.h"
 #include "src/widget/tool/identicon.h"
@@ -244,7 +245,7 @@ void Profile::initCore(const QByteArray& toxsave, const ICoreSettings& s, bool i
     }
 
     Core::ToxCoreErrors err;
-    core = Core::makeToxCore(toxsave, &s, &err);
+    core = Core::makeToxCore(toxsave, &s, bootstrapNodes, &err);
     if (!core) {
         switch (err) {
         case Core::ToxCoreErrors::BAD_PROXY:
@@ -274,13 +275,16 @@ void Profile::initCore(const QByteArray& toxsave, const ICoreSettings& s, bool i
     connect(core.get(), &Core::friendAvatarChanged, this, &Profile::setFriendAvatar);
     connect(core.get(), &Core::fileAvatarOfferReceived, this, &Profile::onAvatarOfferReceived,
             Qt::ConnectionType::QueuedConnection);
+    // broadcast our own avatar
+    avatarBroadcaster = std::unique_ptr<AvatarBroadcaster>(new AvatarBroadcaster(*core));
 }
 
-Profile::Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey)
+Profile::Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey, Paths& paths)
     : name{name}
     , passkey{std::move(passkey)}
     , isRemoved{false}
     , encrypted{this->passkey != nullptr}
+    , bootstrapNodes(Settings::getInstance().getProxy(), paths)
 {}
 
 /**
@@ -306,14 +310,14 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
 
     LoadToxDataError error;
     QByteArray toxsave = QByteArray();
-    QString path = settings.getSettingsDirPath() + name + ".tox";
+    QString path = settings.getPaths().getSettingsDirPath() + name + ".tox";
     std::unique_ptr<ToxEncrypt> tmpKey = loadToxData(password, path, toxsave, error);
     if (logLoadToxDataError(error, path)) {
         ProfileLocker::unlock();
         return nullptr;
     }
 
-    Profile* p = new Profile(name, password, std::move(tmpKey));
+    Profile* p = new Profile(name, password, std::move(tmpKey), settings.getPaths());
 
     // Core settings are saved per profile, need to load them before starting Core
     settings.updateProfileData(p, parser);
@@ -336,7 +340,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
                                 const QCommandLineParser* parser)
 {
     CreateToxDataError error;
-    QString path = Settings::getInstance().getSettingsDirPath() + name + ".tox";
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name + ".tox";
     std::unique_ptr<ToxEncrypt> tmpKey = createToxData(name, password, path, error);
 
     if (logCreateToxDataError(error, name)) {
@@ -344,7 +348,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
     }
 
     settings.createPersonal(name);
-    Profile* p = new Profile(name, password, std::move(tmpKey));
+    Profile* p = new Profile(name, password, std::move(tmpKey), settings.getPaths());
     settings.updateProfileData(p, parser);
 
     p->initCore(QByteArray(), settings, /*isNewProfile*/ true);
@@ -373,7 +377,7 @@ Profile::~Profile()
  */
 QStringList Profile::getFilesByExt(QString extension)
 {
-    QDir dir(Settings::getInstance().getSettingsDirPath());
+    QDir dir(Settings::getInstance().getPaths().getSettingsDirPath());
     QStringList out;
     dir.setFilter(QDir::Files | QDir::NoDotAndDotDot);
     dir.setNameFilters(QStringList("*." + extension));
@@ -404,10 +408,11 @@ const QStringList Profile::getAllProfileNames()
     return profiles;
 }
 
-Core* Profile::getCore()
+Core& Profile::getCore() const
 {
-    // TODO(sudden6): this is evil
-    return core.get();
+    Core* c = core.get();
+    assert(c != nullptr);
+    return *c;
 }
 
 QString Profile::getName() const
@@ -469,7 +474,7 @@ bool Profile::saveToxSave(QByteArray data)
     ProfileLocker::assertLock();
     assert(ProfileLocker::getCurLockName() == name);
 
-    QString path = Settings::getInstance().getSettingsDirPath() + name + ".tox";
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name + ".tox";
     qDebug() << "Saving tox save to " << path;
     QSaveFile saveFile(path);
     if (!saveFile.open(QIODevice::WriteOnly)) {
@@ -511,7 +516,7 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
 {
     const QString ownerStr = owner.toString();
     if (!encrypted || forceUnencrypted) {
-        return Settings::getInstance().getSettingsDirPath() + "avatars/" + ownerStr + ".png";
+        return Settings::getInstance().getPaths().getSettingsDirPath() + "avatars/" + ownerStr + ".png";
     }
 
     QByteArray idData = ownerStr.toUtf8();
@@ -525,7 +530,7 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
     QByteArray hash(hashSize, 0);
     crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize, reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
                        reinterpret_cast<uint8_t*>(pubkeyData.data()), pubkeyData.size());
-    return Settings::getInstance().getSettingsDirPath() + "avatars/" + hash.toHex().toUpper() + ".png";
+    return Settings::getInstance().getPaths().getSettingsDirPath() + "avatars/" + hash.toHex().toUpper() + ".png";
 }
 
 /**
@@ -645,8 +650,8 @@ void Profile::setAvatar(QByteArray pic)
     saveAvatar(selfPk, avatarData);
 
     emit selfAvatarChanged(pixmap);
-    AvatarBroadcaster::setAvatar(avatarData);
-    AvatarBroadcaster::enableAutoBroadcast();
+    avatarBroadcaster->setAvatar(avatarData);
+    avatarBroadcaster->enableAutoBroadcast();
 }
 
 
@@ -686,12 +691,11 @@ void Profile::onRequestSent(const ToxPk& friendPk, const QString& message)
         return;
     }
 
-    const QString pkStr = friendPk.toString();
     const QString inviteStr = Core::tr("/me offers friendship, \"%1\"").arg(message);
-    const QString selfStr = core->getSelfPublicKey().toString();
+    const ToxPk selfPk = core->getSelfPublicKey();
     const QDateTime datetime = QDateTime::currentDateTime();
     const QString name = core->getUsername();
-    history->addNewMessage(pkStr, inviteStr, selfStr, datetime, true, name);
+    history->addNewMessage(friendPk, inviteStr, selfPk, datetime, true, name);
 }
 
 /**
@@ -705,7 +709,7 @@ void Profile::saveAvatar(const ToxPk& owner, const QByteArray& avatar)
     const QByteArray& pic = needEncrypt ? passkey->encrypt(avatar) : avatar;
 
     QString path = avatarPath(owner);
-    QDir(Settings::getInstance().getSettingsDirPath()).mkdir("avatars");
+    QDir(Settings::getInstance().getPaths().getSettingsDirPath()).mkdir("avatars");
     if (pic.isEmpty()) {
         QFile::remove(path);
     } else {
@@ -783,7 +787,7 @@ void Profile::removeAvatar(const ToxPk& owner)
 
 bool Profile::exists(QString name)
 {
-    QString path = Settings::getInstance().getSettingsDirPath() + name;
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name;
     return QFile::exists(path + ".tox");
 }
 
@@ -805,7 +809,7 @@ bool Profile::isEncrypted() const
 bool Profile::isEncrypted(QString name)
 {
     uint8_t data[TOX_PASS_ENCRYPTION_EXTRA_LENGTH] = {0};
-    QString path = Settings::getInstance().getSettingsDirPath() + name + ".tox";
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name + ".tox";
     QFile saveFile(path);
     if (!saveFile.open(QIODevice::ReadOnly)) {
         qWarning() << "Couldn't open tox save " << path;
@@ -839,7 +843,7 @@ QStringList Profile::remove()
             i--;
         }
     }
-    QString path = Settings::getInstance().getSettingsDirPath() + name;
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name;
     ProfileLocker::unlock();
 
     QFile profileMain{path + ".tox"};
@@ -875,8 +879,8 @@ QStringList Profile::remove()
  */
 bool Profile::rename(QString newName)
 {
-    QString path = Settings::getInstance().getSettingsDirPath() + name,
-            newPath = Settings::getInstance().getSettingsDirPath() + newName;
+    QString path = Settings::getInstance().getPaths().getSettingsDirPath() + name,
+            newPath = Settings::getInstance().getPaths().getSettingsDirPath() + newName;
 
     if (!ProfileLocker::lock(newName)) {
         return false;
@@ -964,5 +968,5 @@ QString Profile::setPassword(const QString& newPassword)
  */
 QString Profile::getDbPath(const QString& profileName)
 {
-    return Settings::getInstance().getSettingsDirPath() + profileName + ".db";
+    return Settings::getInstance().getPaths().getSettingsDirPath() + profileName + ".db";
 }

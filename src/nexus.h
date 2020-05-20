@@ -18,12 +18,11 @@
 */
 
 
-#ifndef NEXUS_H
-#define NEXUS_H
+#pragma once
 
 #include <QObject>
 
-#include "src/audio/iaudiocontrol.h"
+#include "audio/iaudiocontrol.h"
 
 class Widget;
 class Profile;
@@ -106,5 +105,3 @@ private:
     std::unique_ptr<IAudioControl> audioControl;
     QCommandLineParser* parser = nullptr;
 };
-
-#endif // NEXUS_H

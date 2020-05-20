@@ -17,11 +17,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUPLIST_H
-#define GROUPLIST_H
+#pragma once
 
 #include "src/core/groupid.h"
 
+class Core;
 template <class A, class B>
 class QHash;
 template <class T>
@@ -32,7 +32,7 @@ class QString;
 class GroupList
 {
 public:
-    static Group* addGroup(int groupId, const GroupId& persistentGroupId, const QString& name, bool isAvGroupchat, const QString& selfName);
+    static Group* addGroup(Core& core, int groupId, const GroupId& persistentGroupId, const QString& name, bool isAvGroupchat, const QString& selfName);
     static Group* findGroup(const GroupId& groupId);
     static const GroupId& id2Key(uint32_t groupNum);
     static void removeGroup(const GroupId& groupId, bool fake = false);
@@ -43,5 +43,3 @@ private:
     static QHash<const GroupId, Group*> groupList;
     static QHash<uint32_t, GroupId> id2key;
 };
-
-#endif // GROUPLIST_H

@@ -17,20 +17,20 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DHT_SERVER_H
-#define DHT_SERVER_H
+#pragma once
 
 #include <QString>
 
 struct DhtServer
 {
-    QString name;
+    bool statusUdp;
+    bool statusTcp;
+    QString ipv4;
+    QString ipv6;
+    QString maintainer;
     QString userId;
-    QString address;
     quint16 port;
 
     bool operator==(const DhtServer& other) const;
     bool operator!=(const DhtServer& other) const;
 };
-
-#endif // DHT_SERVER_H

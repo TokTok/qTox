@@ -1,0 +1,81 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_rcc", "qt_test")
+
+# MOC headers
+# =========================================================
+
+qt_moc(
+    name = "audio_moc",
+    srcs = [
+        "include/audio/iaudiocontrol.h",
+        "include/audio/iaudiosink.h",
+        "include/audio/iaudiosource.h",
+        "src/backend/alsink.h",
+        "src/backend/alsource.h",
+        "src/backend/openal.h",
+    ],
+    hdrs = glob(["include/**/*.h"]),
+    mocopts = [
+        "-Iqtox",
+        "-Iqtox/audio/include",
+    ],
+    deps = [
+        "//qtox/util",
+        "@qt//:qt_core",
+    ],
+)
+
+# Resources
+# =========================================================
+
+qt_rcc(
+    name = "audio_res",
+    srcs = ["resources/res.qrc"],
+    data = glob(
+        ["resources/**/*"],
+        exclude = ["resources/res.qrc"],
+    ),
+)
+
+cc_library(
+    name = "audio_res_lib",
+    srcs = [":audio_res"],
+    visibility = ["//qtox:__pkg__"],
+    alwayslink = True,
+)
+
+# Main library
+# =========================================================
+
+cc_library(
+    name = "audio",
+    srcs = [
+        ":audio_moc",
+        ":audio_res",
+    ] + glob([
+        "src/**/*.cpp",
+        "src/**/*.h",
+    ]),
+    hdrs = glob(["include/**/*.h"]),
+    copts = ["-Iqtox"],
+    includes = ["include"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        "//qtox/util",
+        "@openal",
+        "@qt//:qt_core",
+    ],
+)
+
+# Unit tests
+# =========================================================
+
+qt_test(
+    name = "audio_test",
+    size = "small",
+    src = "test/audio_test.cpp",
+    mocopts = ["-Iqtox"],
+    deps = [
+        ":audio",
+    ],
+)

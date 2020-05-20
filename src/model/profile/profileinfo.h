@@ -17,8 +17,10 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
+
 #include <QObject>
-#include "src/model/interface.h"
+#include "util/interface.h"
 #include "src/core/toxpk.h"
 #include "iprofileinfo.h"
 

@@ -17,7 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "src/audio/audio.h"
+#include "audio/audio.h"
 #include "src/ipc.h"
 #include "src/net/toxuri.h"
 #include "src/nexus.h"
@@ -267,7 +267,7 @@ int main(int argc, char* argv[])
     }
 
 #ifdef LOG_TO_FILE
-    QString logFileDir = settings.getAppCacheDirPath();
+    QString logFileDir = settings.getPaths().getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
 
     QString logfile = logFileDir + "qtox.log";

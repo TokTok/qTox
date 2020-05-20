@@ -1,5 +1,5 @@
 /*
-    Copyright © 2014-2019 by The qTox Project Contributors
+    Copyright © 2019 by The qTox Project Contributors
 
     This file is part of qTox, a Qt-based graphical interface for Tox.
 
@@ -17,18 +17,30 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
 
-#ifndef AUDIO_H
-#define AUDIO_H
+#include "audio/iaudiosource.h"
+#include <QMutex>
+#include <QObject>
 
-#include <memory>
-
-class IAudioControl;
-class IAudioSettings;
-class Audio
+class OpenAL;
+class AlSource : public IAudioSource
 {
+    Q_OBJECT
 public:
-    static std::unique_ptr<IAudioControl> makeAudio(IAudioSettings& settings);
-};
+    AlSource(OpenAL& al);
+    AlSource(AlSource& src) = delete;
+    AlSource& operator=(const AlSource&) = delete;
+    AlSource(AlSource&& other) = delete;
+    AlSource& operator=(AlSource&& other) = delete;
+    ~AlSource();
 
-#endif // AUDIO_H
+    operator bool() const;
+
+    void kill();
+
+private:
+    OpenAL& audio;
+    bool killed = false;
+    mutable QMutex killLock;
+};

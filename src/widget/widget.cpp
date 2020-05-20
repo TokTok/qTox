@@ -38,6 +38,7 @@
 #include <QWindow>
 #endif
 
+#include "audio/audio.h"
 #include "circlewidget.h"
 #include "contentdialog.h"
 #include "contentlayout.h"
@@ -47,7 +48,6 @@
 #include "maskablepixmapwidget.h"
 #include "splitterrestorer.h"
 #include "form/groupchatform.h"
-#include "src/audio/audio.h"
 #include "src/chatlog/content/filetransferwidget.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
@@ -107,8 +107,9 @@ bool tryRemoveFile(const QString& filepath)
     tmp.remove();
     return writable;
 }
+} // namespace
 
-void acceptFileTransfer(const ToxFile& file, const QString& path)
+void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
 {
     QString filepath;
     int number = 0;
@@ -127,18 +128,18 @@ void acceptFileTransfer(const ToxFile& file, const QString& path)
     // Do not automatically accept the file-transfer if the path is not writable.
     // The user can still accept it manually.
     if (tryRemoveFile(filepath)) {
-        CoreFile* coreFile = Core::getInstance()->getCoreFile();
+        CoreFile* coreFile = core->getCoreFile();
         coreFile->acceptFileRecvRequest(file.friendId, file.fileNum, filepath);
     } else {
         qWarning() << "Cannot write to " << filepath;
     }
 }
-} // namespace
 
 Widget* Widget::instance{nullptr};
 
-Widget::Widget(IAudioControl& audio, QWidget* parent)
+Widget::Widget(Profile &_profile, IAudioControl& audio, QWidget* parent)
     : QMainWindow(parent)
+    , profile{_profile}
     , trayMenu{nullptr}
     , ui(new Ui::MainWindow)
     , activeChatroomWidget{nullptr}
@@ -276,16 +277,18 @@ void Widget::init()
     filesForm = new FilesForm();
     addFriendForm = new AddFriendForm;
     groupInviteForm = new GroupInviteForm;
+
+    core = &profile.getCore();
+
 #if UPDATE_CHECK_ENABLED
     updateCheck = std::unique_ptr<UpdateCheck>(new UpdateCheck(settings));
     connect(updateCheck.get(), &UpdateCheck::updateAvailable, this, &Widget::onUpdateAvailable);
 #endif
-    settingsWidget = new SettingsWidget(updateCheck.get(), audio, this);
+    settingsWidget = new SettingsWidget(updateCheck.get(), audio, core, this);
 #if UPDATE_CHECK_ENABLED
     updateCheck->checkForUpdate();
 #endif
 
-    core = Nexus::getCore();
     CoreFile* coreFile = core->getCoreFile();
     Profile* profile = Nexus::getProfile();
     profileInfo = new ProfileInfo(core, profile);
@@ -1077,7 +1080,7 @@ void Widget::dispatchFile(ToxFile file)
 
     if (file.status == ToxFile::INITIALIZING && file.direction == ToxFile::RECEIVING) {
         auto sender =
-            (file.direction == ToxFile::SENDING) ? Core::getInstance()->getSelfPublicKey() : pk;
+            (file.direction == ToxFile::SENDING) ? core->getSelfPublicKey() : pk;
 
         const Settings& settings = Settings::getInstance();
         QString autoAcceptDir = settings.getAutoAcceptDir(f->getPublicKey());
@@ -1144,7 +1147,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     auto chatHistory =
         std::make_shared<ChatHistory>(*newfriend, history, *core, Settings::getInstance(),
                                       *friendMessageDispatcher);
-    auto friendForm = new ChatForm(newfriend, *chatHistory, *friendMessageDispatcher);
+    auto friendForm = new ChatForm(profile, newfriend, *chatHistory, *friendMessageDispatcher);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;
@@ -1710,7 +1713,7 @@ void Widget::removeFriend(Friend* f, bool fake)
         }
 
         if (ask.removeHistory()) {
-            Nexus::getProfile()->getHistory()->removeFriendHistory(f->getPublicKey().toString());
+            Nexus::getProfile()->getHistory()->removeFriendHistory(f->getPublicKey());
         }
     }
 
@@ -2075,7 +2078,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     const auto groupName = tr("Groupchat #%1").arg(groupnumber);
     const bool enabled = core->getGroupAvEnabled(groupnumber);
     Group* newgroup =
-        GroupList::addGroup(groupnumber, groupId, groupName, enabled, core->getUsername());
+        GroupList::addGroup(*core, groupnumber, groupId, groupName, enabled, core->getUsername());
     auto dialogManager = ContentDialogManager::getInstance();
     auto rawChatroom = new GroupChatroom(newgroup, dialogManager);
     std::shared_ptr<GroupChatroom> chatroom(rawChatroom);
@@ -2108,7 +2111,8 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
         connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, notifyReceivedCallback);
     groupAlertConnections.insert(groupId, notifyReceivedConnection);
 
-    auto form = new GroupChatForm(newgroup, *groupChatLog, *messageDispatcher);
+    assert(core != nullptr);
+    auto form = new GroupChatForm(*core, newgroup, *groupChatLog, *messageDispatcher);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableGroupChatsColor());
     groupMessageDispatchers[groupId] = messageDispatcher;

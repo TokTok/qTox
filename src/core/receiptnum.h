@@ -17,15 +17,12 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef RECEIPT_NUM_H
-#define RECEIPT_NUM_H
+#pragma once
 
-#include "src/util/strongtype.h"
+#include "util/strongtype.h"
 
 #include <QMetaType>
 #include <cstdint>
 
 using ReceiptNum = NamedType<uint32_t, struct ReceiptNumTag, Orderable>;
 Q_DECLARE_METATYPE(ReceiptNum)
-
-#endif /* RECEIPT_NUM_H */

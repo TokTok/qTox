@@ -19,7 +19,7 @@
 
 #include "settingswidget.h"
 
-#include "src/audio/audio.h"
+#include "audio/audio.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/net/updatecheck.h"
@@ -41,10 +41,10 @@
 
 #include <memory>
 
-SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Widget* parent)
+SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core* core, Widget* parent)
     : QWidget(parent, Qt::Window)
 {
-    CoreAV* coreAV = Core::getInstance()->getAv();
+    CoreAV* coreAV = core->getAv();
     IAudioSettings* audioSettings = &Settings::getInstance();
     IVideoSettings* videoSettings = &Settings::getInstance();
     CameraSource& camera = CameraSource::getInstance();
@@ -61,7 +61,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, W
     connect(gfrm.get(), &GeneralForm::updateIcons, parent, &Widget::updateIcons);
 
     std::unique_ptr<UserInterfaceForm> uifrm(new UserInterfaceForm(this));
-    std::unique_ptr<PrivacyForm> pfrm(new PrivacyForm());
+    std::unique_ptr<PrivacyForm> pfrm(new PrivacyForm(core));
     connect(pfrm.get(), &PrivacyForm::clearAllReceipts, parent, &Widget::clearAllReceipts);
 
     AVForm* rawAvfrm = new AVForm(audio, coreAV, camera, audioSettings, videoSettings);

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SETTINGSWIDGET_H
-#define SETTINGSWIDGET_H
+#pragma once
 
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -28,6 +27,7 @@
 #include <memory>
 
 class Camera;
+class Core;
 class GenericForm;
 class GeneralForm;
 class IAudioControl;
@@ -43,7 +43,7 @@ class SettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
-    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Widget* parent = nullptr);
+    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core *core, Widget* parent = nullptr);
     ~SettingsWidget();
 
     bool isShown() const;
@@ -67,5 +67,3 @@ private:
     std::array<std::unique_ptr<GenericForm>, 6> cfgForms;
     int currentIndex;
 };
-
-#endif // SETTINGSWIDGET_H

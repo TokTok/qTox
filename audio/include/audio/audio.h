@@ -17,18 +17,15 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+
+#pragma once
+
 #include <memory>
 
-#include "src/audio/audio.h"
-#include "src/audio/iaudiosettings.h"
-#include "src/audio/backend/openal.h"
-
-/**
- * @brief Select the audio backend
- * @param settings Audio settings to use
- * @return Audio backend selection based on settings
- */
-std::unique_ptr<IAudioControl> Audio::makeAudio(IAudioSettings& settings)
+class IAudioControl;
+class IAudioSettings;
+class Audio
 {
-    return std::unique_ptr<IAudioControl>(new OpenAL());
-}
+public:
+    static std::unique_ptr<IAudioControl> makeAudio(IAudioSettings& settings);
+};

@@ -17,10 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef RAWDATABASE_H
-#define RAWDATABASE_H
+#pragma once
 
-#include "src/util/strongtype.h"
+#include "util/strongtype.h"
 
 #include <QByteArray>
 #include <QMutex>
@@ -177,5 +176,3 @@ private:
     QByteArray currentSalt;
     QString currentHexKey;
 };
-
-#endif // RAWDATABASE_H
