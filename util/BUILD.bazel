@@ -1,0 +1,33 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+package(features = ["layering_check"])
+
+cc_library(
+    name = "util",
+    srcs = glob(
+        [
+            "src/**/*.h",
+            "src/**/*.cpp",
+        ],
+    ),
+    hdrs = glob(["include/**/*.h"]),
+    copts = select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+        "//tools/config:windows": [],
+    }),
+    defines = [
+        "DEBUG",
+        #"DESKTOP_NOTIFICATIONS",
+        "QTOX_PLATFORM_EXT",
+        "QT_MESSAGELOGCONTEXT",
+        "UPDATE_CHECK_ENABLED",
+    ],
+    includes = ["include"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        "//c-toxcore",
+        "@qt//:qt_core",
+    ],
+)

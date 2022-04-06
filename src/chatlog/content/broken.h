@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef BROKEN_H
-#define BROKEN_H
+#pragma once
 
 #include "../chatlinecontent.h"
 
@@ -29,17 +28,14 @@ class Broken : public ChatLineContent
 {
     Q_OBJECT
 public:
-    Broken(const QString& img, QSize size);
+    Broken(const QString& img, QSize size_);
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
                        QWidget* widget) override;
-    void setWidth(qreal width) override;
-    void visibilityChanged(bool visible) override;
+    void setWidth(float width) override;
     qreal getAscent() const override;
 
 private:
     QPixmap pmap;
     QSize size;
 };
-
-#endif // BROKEN_H

@@ -21,6 +21,7 @@
 
 #include "src/core/icoresettings.h"
 #include "src/core/toxlogger.h"
+#include "util/toxcoreerrorparser.h"
 
 #include <tox/tox.h>
 
@@ -33,9 +34,9 @@
  *        are correctly deleted.
  */
 
-ToxOptions::ToxOptions(Tox_Options* options, const QByteArray& proxyAddrData)
-    : options(options)
-    , proxyAddrData(proxyAddrData)
+ToxOptions::ToxOptions(Tox_Options* options_, const QByteArray& proxyAddrData_)
+    : options(options_)
+    , proxyAddrData(proxyAddrData_)
 {}
 
 ToxOptions::~ToxOptions()
@@ -67,17 +68,18 @@ ToxOptions::operator Tox_Options*()
  * @return ToxOptions instance initialized to create Tox instance
  */
 std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedata,
-                                                       const ICoreSettings* s)
+                                                       const ICoreSettings& s)
 {
-    Tox_Options* tox_opts = tox_options_new(nullptr);
+    Tox_Err_Options_New err;
+    Tox_Options* tox_opts = tox_options_new(&err);
 
-    if (!tox_opts) {
+    if (!PARSE_ERR(err) || !tox_opts) {
         qWarning() << "Failed to create Tox_Options";
         return {};
     }
 
     // need to init proxyAddr here, because we need it to construct ToxOptions
-    const QString proxyAddr = s == nullptr ? QString{} : s->getProxyAddr();
+    const QString proxyAddr = s.getProxyAddr();
 
     auto toxOptions = std::unique_ptr<ToxOptions>(new ToxOptions(tox_opts, proxyAddr.toUtf8()));
     // register log first, to get messages as early as possible
@@ -89,19 +91,14 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     tox_options_set_savedata_data(*toxOptions, reinterpret_cast<const uint8_t*>(savedata.data()),
                                   savedata.size());
 
-    if(s == nullptr) {
-        qDebug() << "Using Tox default settings";
-        return toxOptions;
-    }
-
     // IPv6 needed for LAN discovery, but can crash some weird routers. On by default, can be
     // disabled in options.
-    const bool enableIPv6 = s->getEnableIPv6();
-    bool forceTCP = s->getForceTCP();
+    const bool enableIPv6 = s.getEnableIPv6();
+    bool forceTCP = s.getForceTCP();
     // LAN requiring UDP is a toxcore limitation, ideally wouldn't be related
-    const bool enableLanDiscovery = s->getEnableLanDiscovery() && !forceTCP;
-    ICoreSettings::ProxyType proxyType = s->getProxyType();
-    quint16 proxyPort = s->getProxyPort();
+    const bool enableLanDiscovery = s.getEnableLanDiscovery() && !forceTCP;
+    ICoreSettings::ProxyType proxyType = s.getProxyType();
+    quint16 proxyPort = s.getProxyPort();
 
     if (!enableLanDiscovery) {
         qWarning() << "Core starting without LAN discovery. Peers can only be found through DHT.";

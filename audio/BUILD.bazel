@@ -1,0 +1,64 @@
+load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library", "objc_library")
+load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_moc", "qt_rcc", "qt_uic")
+
+package(features = ["layering_check"])
+
+qt_moc(
+    name = "audio_moc",
+    srcs = [
+        "include/audio/iaudiocontrol.h",
+        "include/audio/iaudiosource.h",
+        "src/backend/alsink.h",
+        "src/backend/alsource.h",
+        "src/backend/openal.h",
+    ],
+    hdrs = glob(["**/*.h"]),
+    mocopts = ["-Iqtox/audio/include"],
+    deps = ["//qtox/util"],
+)
+
+qt_rcc(
+    name = "audio_res",
+    srcs = ["resources/audio_res.qrc"],
+    data = glob(["resources/*.pcm"]),
+)
+
+cc_library(
+    name = "audio_res_lib",
+    srcs = [":audio_res"],
+    visibility = ["//qtox:__subpackages__"],
+    alwayslink = True,
+)
+
+cc_library(
+    name = "audio",
+    srcs = [
+        ":audio_moc",
+    ] + glob(
+        [
+            "src/**/*.cpp",
+        ],
+    ),
+    hdrs = glob(["**/*.h"]),
+    copts = ["-Iqtox"] + select({
+        "//tools/config:freebsd": [],
+        "//tools/config:linux": ["-fPIC"],
+        "//tools/config:osx": [],
+        "//tools/config:windows": [],
+    }),
+    defines = [
+        "DEBUG",
+        #"DESKTOP_NOTIFICATIONS",
+        "QTOX_PLATFORM_EXT",
+        "QT_MESSAGELOGCONTEXT",
+        "UPDATE_CHECK_ENABLED",
+    ],
+    includes = ["include"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        ":audio_res_lib",
+        "//qtox/util",
+        "@openal",
+        "@qt//:qt_core",
+    ],
+)

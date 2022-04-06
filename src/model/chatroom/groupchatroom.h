@@ -17,24 +17,26 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUP_CHATROOM_H
-#define GROUP_CHATROOM_H
+#pragma once
 
 #include "chatroom.h"
 
 #include <QObject>
 
+class Core;
 class IDialogsManager;
 class Group;
 class ToxPk;
+class FriendList;
 
 class GroupChatroom : public QObject, public Chatroom
 {
     Q_OBJECT
 public:
-    GroupChatroom(Group* group, IDialogsManager* dialogsManager);
+    GroupChatroom(Group* group_, IDialogsManager* dialogsManager_, Core& core_,
+        FriendList& friendList);
 
-    Contact* getContact() override;
+    Chat* getChat() override;
 
     Group* getGroup();
 
@@ -51,6 +53,6 @@ public:
 private:
     Group* group{nullptr};
     IDialogsManager* dialogsManager{nullptr};
+    Core& core;
+    FriendList& friendList;
 };
-
-#endif /* GROUP_CHATROOM_H */

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ADDFRIENDFORM_H
-#define ADDFRIENDFORM_H
+#pragma once
 
 #include "src/core/toxid.h"
 
@@ -34,6 +33,10 @@
 class QTabWidget;
 
 class ContentLayout;
+class Settings;
+class Style;
+class IMessageBoxManager;
+class Core;
 
 class AddFriendForm : public QObject
 {
@@ -46,7 +49,8 @@ public:
         FriendRequest = 2
     };
 
-    AddFriendForm();
+    AddFriendForm(ToxId ownId_, Settings& settings, Style& style,
+        IMessageBoxManager& messageBoxManager, Core& core);
     AddFriendForm(const AddFriendForm&) = delete;
     AddFriendForm& operator=(const AddFriendForm&) = delete;
     ~AddFriendForm();
@@ -55,7 +59,7 @@ public:
     void show(ContentLayout* contentLayout);
     void setMode(Mode mode);
 
-    bool addFriendRequest(const QString& friendAddress, const QString& message);
+    bool addFriendRequest(const QString& friendAddress, const QString& message_);
 
 signals:
     void friendRequested(const ToxId& friendAddress, const QString& message);
@@ -77,11 +81,11 @@ private slots:
 private:
     void addFriend(const QString& idText);
     void retranslateUi();
-    void addFriendRequestWidget(const QString& friendAddress, const QString& message);
+    void addFriendRequestWidget(const QString& friendAddress_, const QString& message_);
     void removeFriendRequestWidget(QWidget* friendWidget);
     void retranslateAcceptButton(QPushButton* acceptButton);
     void retranslateRejectButton(QPushButton* rejectButton);
-    void deleteFriendRequest(const ToxId& toxId);
+    void deleteFriendRequest(const ToxId& toxId_);
     void setIdFromClipboard();
     QString getMessage() const;
     QString getImportMessage() const;
@@ -112,6 +116,10 @@ private:
     QList<QPushButton*> acceptButtons;
     QList<QPushButton*> rejectButtons;
     QList<QString> contactsToImport;
-};
 
-#endif // ADDFRIENDFORM_H
+    ToxId ownId;
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
+    Core& core;
+};

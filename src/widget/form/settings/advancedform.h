@@ -17,12 +17,14 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ADVANCEDFORM_H
-#define ADVANCEDFORM_H
+#pragma once
 
 #include "genericsettings.h"
 
 class Core;
+class Settings;
+class Style;
+class IMessageBoxManager;
 
 namespace Ui {
 class AdvancedSettings;
@@ -32,7 +34,7 @@ class AdvancedForm : public GenericForm
 {
     Q_OBJECT
 public:
-    AdvancedForm();
+    AdvancedForm(Settings& settings, Style& style, IMessageBoxManager& messageBoxManager);
     ~AdvancedForm();
     QString getFormName() final
     {
@@ -59,6 +61,6 @@ private:
 
 private:
     Ui::AdvancedSettings* bodyUI;
+    Settings& settings;
+    IMessageBoxManager& messageBoxManager;
 };
-
-#endif // ADVANCEDFORM_H

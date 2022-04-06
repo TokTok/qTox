@@ -17,22 +17,26 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GENERICFORM_H
-#define GENERICFORM_H
+#pragma once
 
 #include <QWidget>
+
+class Style;
 
 class GenericForm : public QWidget
 {
     Q_OBJECT
 public:
-    explicit GenericForm(const QPixmap& icon);
+    GenericForm(const QPixmap& icon, Style& style);
     virtual ~GenericForm()
     {
     }
 
     virtual QString getFormName() = 0;
     QPixmap getFormIcon();
+
+public slots:
+    virtual void reloadTheme() {}
 
 protected:
     bool eventFilter(QObject* o, QEvent* e) final;
@@ -41,5 +45,3 @@ protected:
 protected:
     QPixmap formIcon;
 };
-
-#endif

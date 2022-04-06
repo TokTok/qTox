@@ -17,17 +17,20 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICORE_GROUP_MESSAGE_SENDER_H
-#define ICORE_GROUP_MESSAGE_SENDER_H
+#pragma once
 
 #include <QString>
 
 class ICoreGroupMessageSender
 {
 public:
-    virtual ~ICoreGroupMessageSender() = default;
+    ICoreGroupMessageSender() = default;
+    virtual ~ICoreGroupMessageSender();
+    ICoreGroupMessageSender(const ICoreGroupMessageSender&) = default;
+    ICoreGroupMessageSender& operator=(const ICoreGroupMessageSender&) = default;
+    ICoreGroupMessageSender(ICoreGroupMessageSender&&) = default;
+    ICoreGroupMessageSender& operator=(ICoreGroupMessageSender&&) = default;
+
     virtual void sendGroupAction(int groupId, const QString& message) = 0;
     virtual void sendGroupMessage(int groupId, const QString& message) = 0;
 };
-
-#endif /*ICORE_GROUP_MESSAGE_SENDER_H*/

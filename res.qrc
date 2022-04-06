@@ -6,10 +6,6 @@
         <file alias="DejaVuSans.ttf">res/font/DejaVuSans.ttf</file>
     </qresource>
     <qresource prefix="/">
-        <file>audio/notification.s16le.pcm</file>
-        <file>audio/ToxIncomingCall.s16le.pcm</file>
-        <file>audio/ToxOutgoingCall.s16le.pcm</file>
-        <file>audio/ToxEndCall.s16le.pcm</file>
         <file>img/add.svg</file>
         <file>img/avatar_mask.svg</file>
         <file>img/contact.svg</file>
@@ -26,10 +22,15 @@
         <file>img/status/away_notification.svg</file>
         <file>img/status/busy.svg</file>
         <file>img/status/busy_notification.svg</file>
+        <file>img/status/negotiating.svg</file>
+        <file>img/status/negotiating_notification.svg</file>
         <file>img/status/offline.svg</file>
         <file>img/status/offline_notification.svg</file>
         <file>img/status/online.svg</file>
         <file>img/status/online_notification.svg</file>
+        <file>img/status/extensions_available.svg</file>
+        <file>img/status/extensions_partial.svg</file>
+        <file>img/status/extensions_unavailable.svg</file>
         <file>img/taskbar/dark/taskbar_online.svg</file>
         <file>img/taskbar/dark/taskbar_online_event.svg</file>
         <file>img/taskbar/dark/taskbar_away.svg</file>
@@ -83,6 +84,7 @@
         <file>themes/dark/emoticonWidget/dot_page_hover.svg</file>
         <file>themes/dark/emoticonWidget/emoticonWidget.css</file>
         <file>themes/dark/friendList/friendList.css</file>
+	<file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.css</file>
         <file>themes/dark/msgEdit/msgEdit.css</file>
         <file>themes/dark/settings/mainHead.css</file>
         <file>themes/dark/settings/checkboxChecked.svg</file>
@@ -98,10 +100,13 @@
         <file>themes/dark/chatArea/typing.svg</file>
         <file>themes/dark/chatArea/error.svg</file>
         <file>themes/dark/fileTransferInstance/no.svg</file>
+        <file>themes/dark/fileTransferInstance/no_dark.svg</file>
         <file>themes/dark/fileTransferInstance/pause.svg</file>
+        <file>themes/dark/fileTransferInstance/pause_dark.svg</file>
         <file>themes/dark/fileTransferInstance/yes.svg</file>
         <file>themes/dark/fileTransferInstance/dir.svg</file>
         <file>themes/dark/fileTransferInstance/arrow_white.svg</file>
+        <file>themes/dark/fileTransferInstance/arrow_black.svg</file>
         <file>themes/dark/fileTransferInstance/browse.svg</file>
         <file>themes/dark/fileTransferInstance/filetransferWidget.css</file>
         <file>themes/dark/genericChatForm/genericChatForm.css</file>
@@ -148,6 +153,7 @@
         <file>themes/default/emoticonWidget/dot_page_hover.svg</file>
         <file>themes/default/emoticonWidget/emoticonWidget.css</file>
         <file>themes/default/friendList/friendList.css</file>
+	<file>themes/default/genericChatRoomWidget/genericChatRoomWidget.css</file>
         <file>themes/default/msgEdit/msgEdit.css</file>
         <file>themes/default/settings/mainHead.css</file>
         <file>themes/default/statusButton/statusButton.css</file>
@@ -161,10 +167,13 @@
         <file>themes/default/chatArea/typing.svg</file>
         <file>themes/default/chatArea/error.svg</file>
         <file>themes/default/fileTransferInstance/no.svg</file>
+        <file>themes/default/fileTransferInstance/no_dark.svg</file>
         <file>themes/default/fileTransferInstance/pause.svg</file>
+        <file>themes/default/fileTransferInstance/pause_dark.svg</file>
         <file>themes/default/fileTransferInstance/yes.svg</file>
         <file>themes/default/fileTransferInstance/dir.svg</file>
         <file>themes/default/fileTransferInstance/arrow_white.svg</file>
+        <file>themes/default/fileTransferInstance/arrow_black.svg</file>
         <file>themes/default/fileTransferInstance/browse.svg</file>
         <file>themes/default/fileTransferInstance/filetransferWidget.css</file>
         <file>themes/default/genericChatForm/genericChatForm.css</file>

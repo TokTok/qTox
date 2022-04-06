@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHATLINECONTENTPROXY_H
-#define CHATLINECONTENTPROXY_H
+#pragma once
 
 #include "chatlinecontent.h"
 #include <QGraphicsProxyWidget>
@@ -41,7 +40,7 @@ public:
     ChatLineContentProxy(FileTransferWidget* widget, int minWidth, float widthInPercent = 1.0f);
 
     QRectF boundingRect() const override;
-    void setWidth(qreal width) override;
+    void setWidth(float width) override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) override;
     qreal getAscent() const override;
 
@@ -58,5 +57,3 @@ private:
     int widthMin;
     const ChatLineContentProxyType widgetType;
 };
-
-#endif // CHATLINECONTENTPROXY_H

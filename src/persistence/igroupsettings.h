@@ -17,19 +17,28 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IGROUP_SETTINGS_H
-#define IGROUP_SETTINGS_H
+#pragma once
+
+#include "util/interface.h"
 
 #include <QStringList>
 
 class IGroupSettings
 {
 public:
-    virtual ~IGroupSettings() = default;
+    IGroupSettings() = default;
+    virtual ~IGroupSettings();
+    IGroupSettings(const IGroupSettings&) = default;
+    IGroupSettings& operator=(const IGroupSettings&) = default;
+    IGroupSettings(IGroupSettings&&) = default;
+    IGroupSettings& operator=(IGroupSettings&&) = default;
+
     virtual QStringList getBlackList() const = 0;
     virtual void setBlackList(const QStringList& blist) = 0;
-    virtual bool getGroupAlwaysNotify() const = 0;
-    virtual void setGroupAlwaysNotify(bool newValue) = 0;
-};
 
-#endif /*IGROUP_SETTINGS_H*/
+    virtual bool getShowGroupJoinLeaveMessages() const = 0;
+    virtual void setShowGroupJoinLeaveMessages(bool newValue) = 0;
+
+    DECLARE_SIGNAL(blackListChanged, QStringList const& blist);
+    DECLARE_SIGNAL(showGroupJoinLeaveMessagesChanged, bool show);
+};

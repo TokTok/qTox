@@ -17,11 +17,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FRIENDWIDGET_H
-#define FRIENDWIDGET_H
+#pragma once
 
 #include "genericchatroomwidget.h"
 #include "src/core/toxpk.h"
+#include "src/model/friendlist/ifriendlistitem.h"
 
 #include <memory>
 
@@ -29,12 +29,18 @@ class FriendChatroom;
 class QPixmap;
 class MaskablePixmapWidget;
 class CircleWidget;
+class Settings;
+class Style;
+class IMessageBoxManager;
+class Profile;
 
-class FriendWidget : public GenericChatroomWidget
+class FriendWidget : public GenericChatroomWidget, public IFriendListItem
 {
     Q_OBJECT
 public:
-    FriendWidget(std::shared_ptr<FriendChatroom> chatform, bool compact);
+    FriendWidget(std::shared_ptr<FriendChatroom> chatroom, bool compact_,
+        Settings& settings, Style& style, IMessageBoxManager& messageBoxManager,
+        Profile& profile);
 
     void contextMenuEvent(QContextMenuEvent* event) final;
     void setAsActiveChatroom() final;
@@ -43,9 +49,17 @@ public:
     void resetEventFlags() final;
     QString getStatusString() const final;
     const Friend* getFriend() const final;
-    const Contact* getContact() const final;
+    const Chat* getChat() const final;
 
-    void search(const QString& searchString, bool hide = false);
+    bool isFriend() const final;
+    bool isGroup() const final;
+    bool isOnline() const final;
+    bool widgetIsVisible() const final;
+    QString getNameItem() const final;
+    QDateTime getLastActivity() const final;
+    int getCircleId() const final;
+    QWidget* getWidget() final;
+    void setWidgetVisible(bool visible) final;
 
 signals:
     void friendWidgetClicked(FriendWidget* widget);
@@ -53,15 +67,13 @@ signals:
     void copyFriendIdToClipboard(const ToxPk& friendPk);
     void contextMenuCalled(QContextMenuEvent* event);
     void friendHistoryRemoved();
-    void friendWidgetRenamed(FriendWidget* friendWidget);
-    void searchCircle(CircleWidget& circleWidget);
     void updateFriendActivity(Friend& frnd);
 
 public slots:
     void onAvatarSet(const ToxPk& friendPk, const QPixmap& pic);
     void onAvatarRemoved(const ToxPk& friendPk);
     void onContextMenuCalled(QContextMenuEvent* event);
-    void setActive(bool active);
+    void setActive(bool active_);
 
 protected:
     void mousePressEvent(QMouseEvent* ev) override;
@@ -79,6 +91,8 @@ private slots:
 public:
     std::shared_ptr<FriendChatroom> chatroom;
     bool isDefaultAvatar;
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
+    Profile& profile;
 };
-
-#endif // FRIENDWIDGET_H

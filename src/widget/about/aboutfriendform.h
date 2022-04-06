@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ABOUT_USER_FORM_H
-#define ABOUT_USER_FORM_H
+#pragma once
 
 #include "src/model/about/iaboutfriend.h"
 
@@ -31,20 +30,31 @@ namespace Ui {
 class AboutFriendForm;
 }
 
+class Settings;
+class Style;
+class IMessageBoxManager;
+
 class AboutFriendForm : public QDialog
 {
     Q_OBJECT
 
 public:
-    AboutFriendForm(std::unique_ptr<IAboutFriend> about, QWidget* parent = nullptr);
+    AboutFriendForm(std::unique_ptr<IAboutFriend> about, Settings& settings,
+        Style& style, IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
     ~AboutFriendForm();
 
 private:
     Ui::AboutFriendForm* ui;
     const std::unique_ptr<IAboutFriend> about;
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
 
 signals:
     void histroyRemoved();
+
+public slots:
+    void reloadTheme();
 
 private slots:
     void onAutoAcceptDirChanged(const QString& path);
@@ -55,5 +65,3 @@ private slots:
     void onSelectDirClicked();
     void onRemoveHistoryClicked();
 };
-
-#endif // ABOUT_USER_FORM_H

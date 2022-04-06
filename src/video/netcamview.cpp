@@ -47,10 +47,15 @@ const int BTN_PANEL_WIDTH = 250;
 const auto BTN_STYLE_SHEET_PATH = QStringLiteral("chatForm/fullScreenButtons.css");
 }
 
-NetCamView::NetCamView(ToxPk friendPk, QWidget* parent)
-    : selfFrame{nullptr}
-    , friendPk{friendPk}
+NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_,
+    Settings& settings_, Style& style_, Profile& profile, QWidget* parent)
+    : QWidget(parent)
+    , selfFrame{nullptr}
+    , friendPk{friendPk_}
     , e(false)
+    , cameraSource{cameraSource_}
+    , settings{settings_}
+    , style{style_}
 {
     verLayout = new QVBoxLayout(this);
     setWindowTitle(tr("Tox video"));
@@ -75,7 +80,7 @@ NetCamView::NetCamView(ToxPk friendPk, QWidget* parent)
 
     setStyleSheet("NetCamView { background-color: #c1c1c1; }");
     buttonPanel = new QFrame(this);
-    buttonPanel->setStyleSheet(Style::getStylesheet(BTN_STYLE_SHEET_PATH));
+    buttonPanel->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
     buttonPanel->setGeometry(0, 0, BTN_PANEL_WIDTH, BTN_PANEL_HEIGHT);
 
     QHBoxLayout* buttonPanelLayout = new QHBoxLayout(buttonPanel);
@@ -110,12 +115,12 @@ NetCamView::NetCamView(ToxPk friendPk, QWidget* parent)
     buttonPanelLayout->addWidget(exitFullScreenButton);
     buttonPanelLayout->addStretch();
 
-    videoSurface = new VideoSurface(Nexus::getProfile()->loadAvatar(friendPk), this);
+    videoSurface = new VideoSurface(profile.loadAvatar(friendPk), this);
     videoSurface->setMinimumHeight(256);
 
     verLayout->insertWidget(0, videoSurface, 1);
 
-    selfVideoSurface = new VideoSurface(Nexus::getProfile()->loadAvatar(), this, true);
+    selfVideoSurface = new VideoSurface(profile.loadAvatar(), this, true);
     selfVideoSurface->setObjectName(QStringLiteral("CamVideoSurface"));
     selfVideoSurface->setMouseTracking(true);
     selfVideoSurface->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -144,16 +149,16 @@ NetCamView::NetCamView(ToxPk friendPk, QWidget* parent)
         selfFrame->resetBoundary(boundingRect);
     });
 
-    connections += connect(Nexus::getProfile(), &Profile::selfAvatarChanged,
+    connections += connect(&profile, &Profile::selfAvatarChanged,
                            [this](const QPixmap& pixmap) { selfVideoSurface->setAvatar(pixmap); });
 
-    connections += connect(Nexus::getProfile(), &Profile::friendAvatarChanged,
-                           [this](ToxPk friendPk, const QPixmap& pixmap) {
-                               if (this->friendPk == friendPk)
+    connections += connect(&profile, &Profile::friendAvatarChanged,
+                           [this](ToxPk friendPkArg, const QPixmap& pixmap) {
+                               if (friendPk == friendPkArg)
                                    videoSurface->setAvatar(pixmap);
                            });
 
-    QRect videoSize = Settings::getInstance().getCamVideoRes();
+    QRect videoSize = settings.getCamVideoRes();
     qDebug() << "SIZER" << videoSize;
 }
 
@@ -166,7 +171,7 @@ NetCamView::~NetCamView()
 void NetCamView::show(VideoSource* source, const QString& title)
 {
     setSource(source);
-    selfVideoSurface->setSource(&CameraSource::getInstance());
+    selfVideoSurface->setSource(&cameraSource);
 
     setTitle(title);
     QWidget::show();
@@ -197,7 +202,7 @@ void NetCamView::setTitle(const QString& title)
 
 void NetCamView::showEvent(QShowEvent* event)
 {
-    Q_UNUSED(event)
+    std::ignore = event;
     selfFrame->resetBoundary(videoSurface->getBoundingRect());
 }
 
@@ -237,7 +242,7 @@ void NetCamView::setShowMessages(bool show, bool notify)
     toggleMessagesButton->setText(tr("Show messages"));
 
     if (notify) {
-        toggleMessagesButton->setIcon(QIcon(Style::getImagePath("chatArea/info.svg")));
+        toggleMessagesButton->setIcon(QIcon(style.getImagePath("chatArea/info.svg", settings)));
     }
 }
 
@@ -257,7 +262,7 @@ void NetCamView::enterFullScreen()
     enterFullScreenButton->hide();
     toggleMessagesButton->hide();
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
-    const auto screenSize = QGuiApplication::screenAt(this->pos())->geometry();
+    const auto screenSize = QGuiApplication::screenAt(pos())->geometry();
 #else
     const QRect screenSize = QApplication::desktop()->screenGeometry(this);
 #endif
@@ -299,7 +304,7 @@ QPushButton* NetCamView::createButton(const QString& name, const QString& state)
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setProperty("state", QVariant(state));
-    btn->setStyleSheet(Style::getStylesheet(BTN_STYLE_SHEET_PATH));
+    btn->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
 
     return btn;
 }
@@ -322,7 +327,7 @@ void NetCamView::toggleButtonState(QPushButton* btn)
         btn->setProperty("state", BTN_STATE_RED);
     }
 
-    btn->setStyleSheet(Style::getStylesheet(BTN_STYLE_SHEET_PATH));
+    btn->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
 }
 
 void NetCamView::updateButtonState(QPushButton* btn, bool active)
@@ -333,7 +338,7 @@ void NetCamView::updateButtonState(QPushButton* btn, bool active)
         btn->setProperty("state", BTN_STATE_RED);
     }
 
-    btn->setStyleSheet(Style::getStylesheet(BTN_STYLE_SHEET_PATH));
+    btn->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
 }
 
 void NetCamView::keyPressEvent(QKeyEvent *event)

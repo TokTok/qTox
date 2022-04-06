@@ -2,7 +2,7 @@
     "app-id": "io.github.qtox.qTox",
     "runtime": "org.kde.Platform",
     "sdk": "org.kde.Sdk",
-    "runtime-version": "5.14",
+    "runtime-version": "5.15",
     "command": "qtox",
     "rename-icon": "qtox",
     "finish-args": [
@@ -24,7 +24,7 @@
     "add-extensions": {
         "org.freedesktop.Platform.ffmpeg-full": {
             "directory": "lib/ffmpeg",
-            "version": "19.08",
+            "version": "20.08",
             "add-ld-path": "."
         }
     },
@@ -45,11 +45,7 @@
             "build-options": {
                 "no-debuginfo": true
             },
-            "cleanup": [
-                "/bin",
-                "/lib",
-                "/man"
-            ],
+            "cleanup": [ "*" ],
             "sources": [
                 {
                     "type": "archive",
@@ -73,23 +69,8 @@
             },
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/sqlcipher/sqlcipher",
-                    "tag": "v4.3.0",
-                    "commit": "ece66fdcbb6b43876d25e8e6308991a097fa8661",
-                    "disable-fsckobjects" : true
-                }
-            ]
-        },
-        {
-            "name": "snorenotify",
-            "buildsystem": "cmake-ninja",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/KDE/snorenotify",
-                    "tag": "v0.7.0",
-                    "commit": "9124e016f4f7615af5e8fca962994f7ed85de3cc"
+                    "type": "dir",
+                    "path": "/src/sqlcipher"
                 }
             ]
         },
@@ -97,23 +78,65 @@
             "name": "libsodium",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/jedisct1/libsodium",
-                    "tag": "1.0.18",
-                    "commit": "4f5e89fa84ce1d178a6765b8b46f2b6f91216677"
+                    "type": "dir",
+                    "path": "/src/libsodium"
+                }
+            ]
+        },
+        {
+            "name": "msgpack",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DMSGPACK_BUILD_EXAMPLES=OFF",
+                "-DMSGPACK_BUILD_TESTS=OFF"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "/src/msgpack"
                 }
             ]
         },
         {
             "name": "c-toxcore",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DBOOTSTRAP_DAEMON=OFF"],
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
+                "-DDHT_BOOTSTRAP=OFF",
+                "-DBOOTSTRAP_DAEMON=OFF",
+                "-DENABLE_STATIC=OFF"
+            ],
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/toktok/c-toxcore",
-                    "tag": "v0.2.11",
-                    "commit": "30b9369b01859e7c57687129ba2a481aa2bc48b8"
+                    "type": "dir",
+                    "path": "/src/toxcore"
+                }
+            ]
+        },
+        {
+            "name": "toxext",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "/src/toxext"
+                }
+            ]
+        },
+        {
+            "name": "tox_extension_messages",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "/src/toxext_messages"
                 }
             ]
         },
@@ -121,13 +144,14 @@
             "name": "qTox",
             "buildsystem": "cmake-ninja",
             "config-opts": [
+                "-DCMAKE_BUILD_TYPE=Release",
                 "-DSVGZ_ICON=OFF",
                 "-DSTRICT_OPTIONS=ON"
             ],
             "sources": [
                 {
                     "type": "dir",
-                    "path": "/build/qtox/"
+                    "path": "/qtox/"
                 }
             ]
         }

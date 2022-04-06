@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef VIDEOFRAME_H
-#define VIDEOFRAME_H
+#pragma once
 
 #include <QImage>
 #include <QMutex>
@@ -61,9 +60,9 @@ public:
     using AtomicIDType = std::atomic_uint_fast64_t;
 
 public:
-    VideoFrame(IDType sourceID, AVFrame* sourceFrame, QRect dimensions, int pixFmt,
-               bool freeSourceFrame = false);
-    VideoFrame(IDType sourceID, AVFrame* sourceFrame, bool freeSourceFrame = false);
+    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, QRect dimensions, int pixFmt,
+               bool freeSourceFrame_ = false);
+    VideoFrame(IDType sourceID_, AVFrame* sourceFrame, bool freeSourceFrame_ = false);
 
     ~VideoFrame();
 
@@ -163,5 +162,3 @@ private:
     QReadWriteLock frameLock{};
     static QReadWriteLock refsLock;
 };
-
-#endif // VIDEOFRAME_H

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ro" sourcelanguage="en_US">
+<TS version="2.1" language="ro" sourcelanguage="en_US">
 <context>
     <name>AVForm</name>
     <message>
@@ -34,10 +34,6 @@
     <message>
         <source>Playback device</source>
         <translation>Dispozitiv de redare</translation>
-    </message>
-    <message>
-        <source>Use slider to set volume of your speakers.</source>
-        <translation>Utilizați cursorul pentru a seta volumul difuzoarelor.</translation>
     </message>
     <message>
         <source>Capture device</source>
@@ -80,20 +76,8 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Testați sunetul</translation>
     </message>
     <message>
-        <source>Enables the experimental audio backend with echo cancelling support, needs qTox restart to take effect.</source>
-        <translation>Permite backend-ul audio experimental cu suport de anulare a ecoului, are nevoie de repornirea qTox pentru a avea efect.</translation>
-    </message>
-    <message>
-        <source>Enable experimental audio backend</source>
-        <translation>Activați backend-ul audio experimental</translation>
-    </message>
-    <message>
         <source>Audio quality</source>
         <translation>Calitate audio</translation>
-    </message>
-    <message>
-        <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to lower the internet usage.</source>
-        <translation>Calitate audio transmisă. Reduceți această setare dacă lățimea de bandă nu este suficient de mare sau dacă doriți să reduceți utilizarea internetului.</translation>
     </message>
     <message>
         <source>High (64 kbps)</source>
@@ -114,6 +98,38 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Threshold</source>
         <translation>Prag</translation>
+    </message>
+    <message>
+        <source>Use slider to set the volume of your speakers.</source>
+        <translation>Folosiți glisorul pentru a seta volumul difuzoarelor.</translation>
+    </message>
+    <message>
+        <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
+        <translation>Calitate audio transmisă. Reduceți această setare dacă lățimea de bandă nu este suficient de mare sau dacă doriți să reduceți utilizarea lățimii de bandă.</translation>
+    </message>
+    <message>
+        <source>Set resolution of your camera.
+The higher values, the better video quality your friends may get.
+Note that with better video quality, you use more bandwidth.
+Sometimes your connection may not be good enough to handle higher video quality,
+which may lead to problems with video calls.</source>
+        <translation>Setați rezoluția camerei dvs.
+Cu cât valorile sunt mai ridicate, cu atât prietenii tăi pot obține o calitate video mai bună.
+Rețineți că, cu o calitate video mai bună, utilizați mai multă lățime de bandă.
+Uneori, conexiunea dvs. poate să nu fie suficient de bună pentru a gestiona o calitate video superioară,
+ceea ce poate duce la probleme cu apelurile video.</translation>
+    </message>
+    <message>
+        <source>Play a test sound while changing the output volume.</source>
+        <translation>Redați un sunet de test în timp ce modificați volumul de ieșire.</translation>
+    </message>
+    <message>
+        <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
+        <translation>Utilizați glisorul pentru a seta câștigul dispozitivului de intrare, de la %1dB to %2dB.</translation>
+    </message>
+    <message>
+        <source>Use slider to set the activation volume for your input device.</source>
+        <translation>Utilizați glisorul pentru a seta volumul de activare pentru dispozitivul de intrare.</translation>
     </message>
 </context>
 <context>
@@ -159,17 +175,17 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message>
         <source>bug-tracker</source>
-        <comment>Replaces `%1` in the `A list of all knownâ¦`</comment>
-        <translation>urmărire probleme</translation>
+        <comment>Replaces `%1` in the `A list of all known…`</comment>
+        <translation>urmăritor de erori</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
-        <comment>Replaces `%2` in the `A list of all knownâ¦`</comment>
+        <comment>Replaces `%2` in the `A list of all known…`</comment>
         <translation>Se scriu rapoarte utile de erori</translation>
     </message>
     <message>
         <source>contributors</source>
-        <comment>Replaces `%1` in `See a full list ofâ¦`</comment>
+        <comment>Replaces `%1` in `See a full list of…`</comment>
         <translation>contribuitori</translation>
     </message>
 </context>
@@ -200,20 +216,8 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Acceptă automat fișiere din contact dacă este setat</translation>
     </message>
     <message>
-        <source>Auto accept files</source>
-        <translation>Acceptare automată de fișiere</translation>
-    </message>
-    <message>
         <source>Default directory to save files:</source>
         <translation>Directorul implicit pentru salvarea fișierelor:</translation>
-    </message>
-    <message>
-        <source>Auto accept for this contact is disabled</source>
-        <translation>Acceptare automată pentru acest contact dezactivat</translation>
-    </message>
-    <message>
-        <source>Auto accept call:</source>
-        <translation>Auto-acceptare apel:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -232,10 +236,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Acceptați automat invitațiile discuției de grup de la acest contact dacă este setat.</translation>
     </message>
     <message>
-        <source>Auto accept group invites</source>
-        <translation>Acceptați automat invitații de grup</translation>
-    </message>
-    <message>
         <source>Remove history (operation can not be undone!)</source>
         <translation>Eliminați istoricul (operațiunea nu poate fi anulată!)</translation>
     </message>
@@ -248,17 +248,8 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Câmp de introducere pentru note despre contact</translation>
     </message>
     <message>
-        <source>You can save comment about this contact here.</source>
-        <translation>Puteți să salvați comentariul despre acest contact aici.</translation>
-    </message>
-    <message>
         <source>History removed</source>
         <translation>Istorie eliminată</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Alegeți un director de acceptare automată</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -279,6 +270,31 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Failed to remove chat history with %1!</source>
         <translation>Nu s-a reușit eliminarea istoricului conversațiilor cu %1!</translation>
+    </message>
+    <message>
+        <source>Auto-accept files</source>
+        <translation>Acceptarea automată fișiere</translation>
+    </message>
+    <message>
+        <source>Auto-accept for this contact is disabled</source>
+        <translation>Acceptarea automată pentru acest contact este dezactivată</translation>
+    </message>
+    <message>
+        <source>Auto-accept call:</source>
+        <translation>Acceptare automată apel:</translation>
+    </message>
+    <message>
+        <source>Auto-accept group invites</source>
+        <translation>Acceptați automat invitațiile de grup</translation>
+    </message>
+    <message>
+        <source>You can save comments about this contact here.</source>
+        <translation>Puteți salva comentarii despre acest contact aici.</translation>
+    </message>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <extracomment>popup title</extracomment>
+        <translation>Alegeți un director de acceptare automată</translation>
     </message>
 </context>
 <context>
@@ -307,9 +323,13 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>Update available</source>
         <translation>Actualizare disponibilă</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>qTox is up to date ✓</source>
         <translation>qTox este actualizat ✓</translation>
+    </message>
+    <message>
+        <source>Currently running an untested/unstable version of qTox</source>
+        <translation>În prezent rulează o versiune netestată / instabilă a qTox</translation>
     </message>
 </context>
 <context>
@@ -347,10 +367,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Nu s-a putut adăuga un prieten</translation>
     </message>
     <message>
-        <source>Tox ID, either 76 hexadecimal characters or name@example.com</source>
-        <translation>Tox ID, fie 76 caractere hexazecimale ori nume@exemplu.com</translation>
-    </message>
-    <message>
         <source>Type in Tox ID of your friend</source>
         <translation>Introduceți Tox ID-ul prietenului dvs</translation>
     </message>
@@ -361,11 +377,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
         <translation>Introduceți mesajul pe care doriți să-l trimiteți cu solicitarea prietenului sau lăsați gol pentru a trimite un mesaj implicit</translation>
-    </message>
-    <message>
-        <source>%1 Tox ID is invalid or does not exist</source>
-        <comment>Toxme error</comment>
-        <translation>%1 Tox ID este nevalid sau nu există</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -399,11 +410,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Tox ID</translation>
     </message>
     <message>
-        <source>either 76 hexadecimal characters or name@example.com</source>
-        <extracomment>Tox ID format description</extracomment>
-        <translation>Fie 76 de caractere hexazecimale ori nume@exemplu.com</translation>
-    </message>
-    <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
         <translation>Mesaj</translation>
@@ -428,7 +434,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
-        <extracomment>Shows the number of contacts we&apos;re about to import from a file (at least one)</extracomment>
         <translation>
             <numerusform>Gata de importare %n contact(e), dați clic de trimitere pentru a confirma</numerusform>
             <numerusform>Gata de importare %n contacte, dați clic de trimitere pentru a confirma</numerusform>
@@ -439,16 +444,26 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>Import contacts</source>
         <translation>Importați contacte</translation>
     </message>
+    <message>
+        <source>Tox ID, 76 hexadecimal characters</source>
+        <translation>Tox ID, 76 de caractere hexazecimale</translation>
+    </message>
+    <message>
+        <source>%1 Tox ID is invalid</source>
+        <comment>Tox address error</comment>
+        <translation>%1 ID-ul Tox este nevalid</translation>
+    </message>
+    <message>
+        <source>76 hexadecimal characters</source>
+        <extracomment>Tox ID format description</extracomment>
+        <translation>76 de caractere hexazecimale</translation>
+    </message>
 </context>
 <context>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
         <translation>Avansat</translation>
-    </message>
-    <message>
-        <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.</source>
-        <translation>Numai dacă %1 știți ce faceți, vă rog %2 schimbați ceva aici. Modificările efectuate aici pot duce la probleme cu qTox, și chiar la pierderea datelor dvs., de ex. istorie.</translation>
     </message>
     <message>
         <source>really</source>
@@ -479,22 +494,20 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Nu</translation>
     </message>
     <message>
-        <source>Call active</source>
-        <comment>popup title</comment>
-        <translation>Apelați activ</translation>
-    </message>
-    <message>
-        <source>You can&apos;t disconnect while a call is active!</source>
-        <comment>popup text</comment>
-        <translation>Nu vă puteți deconecta în timp ce un apel este activ!</translation>
-    </message>
-    <message>
-        <source>Save File</source>
-        <translation>Salvează fișierul</translation>
-    </message>
-    <message>
         <source>Logs (*.log)</source>
         <translation>Log-uri (*.log)</translation>
+    </message>
+    <message>
+        <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
+        <translation>Afară de cazul când %1 știți ce faceți vă rog, faceți %2 orice schimbare aici. Modificările făcute aici pot duce la probleme cu qTox și chiar la pierderea datelor dvs., de ex. istorie.%3</translation>
+    </message>
+    <message>
+        <source>Changes here are applied only after restarting qTox.</source>
+        <translation>Modificările de aici sunt aplicate numai după repornirea qTox.</translation>
+    </message>
+    <message>
+        <source>Save file</source>
+        <translation>Salvați fișierul</translation>
     </message>
 </context>
 <context>
@@ -517,18 +530,9 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Portabil</translation>
     </message>
     <message>
-        <source>Connection Settings</source>
-        <translation>Setări de conexiune</translation>
-    </message>
-    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Activați IPv6 (recomandat)</translation>
-    </message>
-    <message>
-        <source>Disabling this allows, e.g., toxing over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
-        <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>Dezactivarea acestui lucru permite, de exemplu, folosirea tox prin Tor. Se adaugă sarcină rețelei Tox cu toate acestea, astfel debifați numai când este necesar.</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
@@ -562,11 +566,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>HTTP</translation>
     </message>
     <message>
-        <source>Reconnect</source>
-        <comment>reconnect button</comment>
-        <translation>Reconectați-vă</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
@@ -581,6 +580,15 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Enable LAN discovery</source>
         <translation>Activare descoperire LAN</translation>
+    </message>
+    <message>
+        <source>Connection settings</source>
+        <translation>Setări de conectare</translation>
+    </message>
+    <message>
+        <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
+        <extracomment>force tcp checkbox tooltip</extracomment>
+        <translation>Dezactivarea acestei funcții permite, de exemplu, Tox sub Tor. Cu toate acestea, adaugă încărcare rețelei Tox, deci debifați numai atunci când este necesar.</translation>
     </message>
 </context>
 <context>
@@ -602,14 +610,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Rea idee</translation>
     </message>
     <message>
-        <source>%1 calling</source>
-        <translation>%1 apelează</translation>
-    </message>
-    <message>
-        <source>Calling %1</source>
-        <translation>Apelare %1</translation>
-    </message>
-    <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
         <translation>Eșec la deschiderea fișierului temporar</translation>
@@ -620,16 +620,8 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>qTox nu a reușit să salveze captura de ecran</translation>
     </message>
     <message>
-        <source>Call with %1 ended. %2</source>
-        <translation>Apelați cu %1 încheiat. %2</translation>
-    </message>
-    <message>
         <source>Call duration: </source>
         <translation>Durata apelului: </translation>
-    </message>
-    <message>
-        <source>%1 is typing</source>
-        <translation>%1 scrie</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -640,22 +632,13 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Încercați să trimiteți un fișier secvențial, care nu va funcționa!</translation>
     </message>
     <message>
-        <source>%1 is now %2</source>
-        <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 este acum %2</translation>
-    </message>
-    <message>
-        <source>Call with %1 ended unexpectedly. %2</source>
-        <translation>Apelarea cu %1 sa încheiat neașteptat. %2</translation>
-    </message>
-    <message>
         <source>Filename contained illegal characters</source>
         <translation>Denumirea fișierului conține caractere neconforme</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _ 
-so you can save the file on windows.</source>
-        <translation>Caracterele neconforme au fost schimbate în _ 
+so you can save the file on Windows.</source>
+        <translation>Caracterele ilegale au fost schimbate în _ 
 astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
@@ -727,25 +710,29 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ChatLog</name>
-    <message>
-        <source>Copy</source>
-        <translation>Copiere</translation>
-    </message>
-    <message>
-        <source>Select all</source>
-        <translation>Selectează tot</translation>
-    </message>
-    <message>
-        <source>pending</source>
-        <translation>în așteptare</translation>
-    </message>
-</context>
-<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
         <translation>Scrieți mesajul aici...</translation>
+    </message>
+</context>
+<context>
+    <name>ChatWidget</name>
+    <message>
+        <source>pending</source>
+        <translation type="unfinished">în așteptare</translation>
+    </message>
+    <message>
+        <source>%1 is typing</source>
+        <translation type="unfinished">%1 scrie</translation>
+    </message>
+    <message>
+        <source>Copy</source>
+        <translation type="unfinished">Copiere</translation>
+    </message>
+    <message>
+        <source>Select all</source>
+        <translation type="unfinished">Selectează tot</translation>
     </message>
 </context>
 <context>
@@ -772,51 +759,47 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>/Mi-a oferit prietenie, &quot;%1&quot;</translation>
     </message>
     <message>
+        <source>Groupchat %1</source>
+        <translation>Discuții de grup</translation>
+    </message>
+    <message>
         <source>Invalid Tox ID</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Tox ID-ul este invalid</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Trebuie să scrieți un mesaj cu cererea dvs</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Mesajul dvs. este prea lung!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Prietenul a fost deja adăugat</translation>
-    </message>
-    <message>
-        <source>Groupchat %1</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>DesktopNotify</name>
+    <name>ExtensionStatus</name>
     <message>
-        <source>New message</source>
-        <translation type="unfinished">Mesaj nou</translation>
+        <source>All extensions supported</source>
+        <translation>Toate extensiile acceptate</translation>
     </message>
     <message>
-        <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <source>No extensions supported</source>
+        <translation>Nu sunt acceptate extensii</translation>
     </message>
     <message>
-        <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <source>Not all extensions supported</source>
+        <translation>Nu toate extensiile sunt acceptate</translation>
     </message>
     <message>
-        <source>New group message</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group invite received</source>
-        <translation type="unfinished"></translation>
+        <source>Multipart Messages: </source>
+        <translation>Mesaje multipart: </translation>
     </message>
 </context>
 <context>
@@ -906,18 +889,13 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>Salvează un fișier</translation>
     </message>
     <message>
-        <source>Remote Paused</source>
+        <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation>Întrerupt la distanță</translation>
+        <translation>Telecomandă întreruptă</translation>
     </message>
 </context>
 <context>
     <name>FilesForm</name>
-    <message>
-        <source>Transferred Files</source>
-        <comment>&quot;Headline&quot; of the window</comment>
-        <translation>Fișiere transferate</translation>
-    </message>
     <message>
         <source>Downloads</source>
         <translation>Descărcări</translation>
@@ -925,6 +903,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <message>
         <source>Uploads</source>
         <translation>Încărcări</translation>
+    </message>
+    <message>
+        <source>Transferred files</source>
+        <comment>&quot;Headline&quot; of the window</comment>
+        <translation>Fișiere transferate</translation>
     </message>
 </context>
 <context>
@@ -946,42 +929,12 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>Luna aceasta</translation>
     </message>
     <message>
-        <source>Older than 6 Months</source>
-        <translation>Mai vechi de 6 luni</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation>Niciodată</translation>
     </message>
-</context>
-<context>
-    <name>FriendRequestDialog</name>
     <message>
-        <source>Friend request</source>
-        <comment>Title of the window to aceept/deny a friend request</comment>
-        <translation>Cerere de prietenie</translation>
-    </message>
-    <message>
-        <source>Someone wants to make friends with you</source>
-        <translation>Cineva vrea să se împrietenească cu tine</translation>
-    </message>
-    <message>
-        <source>User ID:</source>
-        <translation>Nume utilizator:</translation>
-    </message>
-    <message>
-        <source>Friend request message:</source>
-        <translation>Mesajul cererii de prietenie:</translation>
-    </message>
-    <message>
-        <source>Accept</source>
-        <comment>Accept a friend request</comment>
-        <translation>Acceptare</translation>
-    </message>
-    <message>
-        <source>Reject</source>
-        <comment>Reject a friend request</comment>
-        <translation>Respingere</translation>
+        <source>Older than 6 months</source>
+        <translation>Mai vechi de 6 luni</translation>
     </message>
 </context>
 <context>
@@ -1003,10 +956,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
         <translation>Eliminați din cerc &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>Move  to circle &quot;%1&quot;</source>
-        <translation>Mută în cerc &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1032,11 +981,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
         <translation>Acceptare automată de fișiere de la acest prieten</translation>
-    </message>
-    <message>
-        <source>Remove friend</source>
-        <comment>Menu to remove the friend from our friendlist</comment>
-        <translation>Șterge prieten</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1067,6 +1011,23 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
         <translation>Deconectat</translation>
+    </message>
+    <message>
+        <source>Move to circle &quot;%1&quot;</source>
+        <translation>Mutați în cerc &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Remove friend</source>
+        <comment>Menu to remove the friend from the friend list</comment>
+        <translation>Ștergeți prieten</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>Blocat</translation>
+    </message>
+    <message>
+        <source>Negotiating</source>
+        <translation>Negociere</translation>
     </message>
 </context>
 <context>
@@ -1102,7 +1063,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Activează pictograma luminoasă în zona de notificare</translation>
+        <translation>Activează pictograma luminoasă în tavă.</translation>
     </message>
     <message>
         <source>Light icon</source>
@@ -1118,22 +1079,8 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>Pornire în zona de notificare</translation>
     </message>
     <message>
-        <source>After pressing close (X) qTox will minimize to tray,
-instead of closing itself.</source>
-        <comment>toolTip for close to tray setting</comment>
-        <translation>După apăsarea butonului de închidere (X) qTox se va minimiza în zona de notificare,
-în loc să se închidă.</translation>
-    </message>
-    <message>
         <source>Close to tray</source>
         <translation>Închidere în zona de notificare</translation>
-    </message>
-    <message>
-        <source>After pressing minimize (_) qTox will minimize itself to tray,
-instead of system taskbar.</source>
-        <comment>toolTip for minimize to tray setting</comment>
-        <translation>După ce apăsați minimizre (_) qTox se va minimiza în zona notificare,
-în loc de bara de activități a sistemului.</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
@@ -1146,11 +1093,6 @@ instead of system taskbar.</source>
     <message>
         <source>Set where files will be saved.</source>
         <translation>Setați unde vor fi salvate fișierele.</translation>
-    </message>
-    <message>
-        <source>You can set this on a per-friend basis by right clicking them.</source>
-        <comment>autoaccept cb tooltip</comment>
-        <translation>Puteți seta asta per-prieten în funcție de drept dând clic pe ele.</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
@@ -1196,6 +1138,29 @@ instead of system taskbar.</source>
         <source> MB</source>
         <translation> MB</translation>
     </message>
+    <message>
+        <source>After pressing minimize (_) qTox will minimize to tray,
+instead of system taskbar.</source>
+        <comment>toolTip for minimize to tray setting</comment>
+        <translation>După apăsarea minimizării (_) qTox se va minimiza la tava
+în loc de bara de activități a sistemului.</translation>
+    </message>
+    <message>
+        <source>After pressing close (X) qTox will close to tray,
+instead of closing entirely.</source>
+        <comment>toolTip for close to tray setting</comment>
+        <translation>După apăsarea închidere (X) qTox se va închide în tavă,
+în loc să se închidă complet.</translation>
+    </message>
+    <message>
+        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <comment>autoaccept cb tooltip</comment>
+        <translation>Puteți seta acest lucru pe bază de prieten, făcând clic dreapta pe prieteni individuali.</translation>
+    </message>
+    <message>
+        <source>Add a chat message when a user joins or leaves a group</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -1224,10 +1189,6 @@ instead of system taskbar.</source>
         <translation>Ștergeți mesajele afișate</translation>
     </message>
     <message>
-        <source>Cleared</source>
-        <translation>Curățat</translation>
-    </message>
-    <message>
         <source>Quote selected text</source>
         <translation>Citați textul selectat</translation>
     </message>
@@ -1240,83 +1201,28 @@ instead of system taskbar.</source>
         <translation>Confirmare</translation>
     </message>
     <message>
-        <source>You are sure that you want to clear all displayed messages?</source>
-        <translation>Sunteți sigur că doriți să ștergeți toate mesajele afișate?</translation>
-    </message>
-    <message>
         <source>Search in text</source>
         <translation>Căutați în text</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation>Accesați data curentă</translation>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">Încărcați istoricul discuțiilor...</translation>
+        <translation>Încărcați istoricul discuțiilor...</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">Exportați în fișier</translation>
-    </message>
-</context>
-<context>
-    <name>GenericNetCamView</name>
-    <message>
-        <source>Tox video</source>
-        <translation>Tox video</translation>
+        <translation>Exportați în fișier</translation>
     </message>
     <message>
-        <source>Show Messages</source>
-        <translation>Afișare mesaje</translation>
-    </message>
-    <message>
-        <source>Hide Messages</source>
-        <translation>Ascundere mesaje</translation>
-    </message>
-    <message>
-        <source>Full Screen</source>
-        <translation>Ecran complet</translation>
-    </message>
-    <message>
-        <source>Toggle video preview</source>
-        <translation>Comutați previzualizarea video</translation>
-    </message>
-    <message>
-        <source>Mute audio</source>
-        <translation>Dezactivare sunet</translation>
-    </message>
-    <message>
-        <source>Mute microphone</source>
-        <translation>Dezactivare microfon</translation>
-    </message>
-    <message>
-        <source>End video call</source>
-        <translation>Terminați apelul video</translation>
-    </message>
-    <message>
-        <source>Exit full screen</source>
-        <translation>Ieșire ecran complet</translation>
+        <source>Are you sure that you want to clear all displayed messages?</source>
+        <translation>Sigur doriți să ștergeți toate mesajele afișate?</translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
-    <message>
-        <source>%1 has set the title to %2</source>
-        <translation>%1 a fost setat titlul la %2</translation>
-    </message>
-    <message>
-        <source>%1 has joined the group</source>
-        <translation>%1 sa alăturat grupului</translation>
-    </message>
-    <message>
-        <source>%1 is now known as %2</source>
-        <translation>%1 este acum cunoscut ca %2</translation>
-    </message>
-    <message>
-        <source>%1 has left the group</source>
-        <translation>%1 a părăsit grupul</translation>
-    </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1413,13 +1319,6 @@ instead of system taskbar.</source>
         <translation>Tox ID</translation>
     </message>
     <message>
-        <source>This bunch of characters tells other Tox clients how to contact you.
-Share it with your friends to communicate.</source>
-        <comment>Tox ID tooltip</comment>
-        <translation>Această grămadă de caractere îi spune altor clienți Tox cum să vă contacteze.
-Împărtășește cu prietenii tăi pentru a comunica.</translation>
-    </message>
-    <message>
         <source>Your Tox ID (click to copy)</source>
         <translation>ID-ul dvs. de Tox (dați clic pentru a copia)</translation>
     </message>
@@ -1490,54 +1389,6 @@ Profilul nu conține istoricul dvs.</translation>
         <translation>Ștergeți</translation>
     </message>
     <message>
-        <source>Server</source>
-        <translation>Server</translation>
-    </message>
-    <message>
-        <source>Hide my name from the public list</source>
-        <translation>Ascunde numele meu din lista publică</translation>
-    </message>
-    <message>
-        <source>Register</source>
-        <translation>Înregistrare</translation>
-    </message>
-    <message>
-        <source>Your password</source>
-        <translation>Parola dvs</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <translation>Actualizare</translation>
-    </message>
-    <message>
-        <source>Register on ToxMe</source>
-        <translation>Înregistrare pe ToxMe</translation>
-    </message>
-    <message>
-        <source>Name for the ToxMe service.</source>
-        <comment>Tooltip for the `Username` ToxMe field.</comment>
-        <translation>Nume pentru serviciul ToxMe.</translation>
-    </message>
-    <message>
-        <source>Optional. Something about you. Or your cat.</source>
-        <comment>Tooltip for the Biography text.</comment>
-        <translation>Opțional. Ceva despre tine. Sau pisica ta.</translation>
-    </message>
-    <message>
-        <source>Optional. Something about you. Or your cat.</source>
-        <comment>Tooltip for the Biography field.</comment>
-        <translation>Opțional. Ceva despre tine. Sau pisica ta.</translation>
-    </message>
-    <message>
-        <source>ToxMe service to register on.</source>
-        <translation>Serviciul ToxMe pentru a vă înregistra pe.</translation>
-    </message>
-    <message>
-        <source>If not set, ToxMe entries are publicly visible.</source>
-        <comment>Tooltip for the `Hide my name from public list` ToxMe checkbox.</comment>
-        <translation>Dacă nu este setat, înregistrările ToxMe sunt vizibile public.</translation>
-    </message>
-    <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
         <translation>Eliminați parola și criptarea din profilul dvs.</translation>
@@ -1571,30 +1422,6 @@ Profilul nu conține istoricul dvs.</translation>
         <translation>Copiați imaginea QR în clipboard</translation>
     </message>
     <message>
-        <source>ToxMe username to be shown on ToxMe</source>
-        <translation>Numele de utilizator ToxMe care va fi afișat pe ToxMe</translation>
-    </message>
-    <message>
-        <source>Optional ToxMe biography to be shown on ToxMe</source>
-        <translation>Biografia opțională ToxMe va fi afișată pe ToxMe</translation>
-    </message>
-    <message>
-        <source>ToxMe service address</source>
-        <translation>Adresa de serviciu ToxMe</translation>
-    </message>
-    <message>
-        <source>Visibility on the ToxMe service</source>
-        <translation>Vizibilitate pe serviciul ToxMe</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Parolă</translation>
-    </message>
-    <message>
-        <source>Update ToxMe entry</source>
-        <translation>Actualizați intrarea ToxMe</translation>
-    </message>
-    <message>
         <source>Rename profile.</source>
         <translation>Redenumiți profilul.</translation>
     </message>
@@ -1623,47 +1450,26 @@ Profilul nu conține istoricul dvs.</translation>
         <translation>Starea mea:</translation>
     </message>
     <message>
-        <source>My username</source>
-        <translation>Numele meu de utilizator</translation>
-    </message>
-    <message>
-        <source>My biography</source>
-        <translation>Biografia mea</translation>
-    </message>
-    <message>
         <source>My profile</source>
         <translation>Profilul meu</translation>
+    </message>
+    <message>
+        <source>This ID allows other Tox users to add and contact you.
+Share it with your friends to begin chatting.</source>
+        <comment>Tox ID tooltip</comment>
+        <translation>Acest ID permite altor utilizatori Tox să vă adauge și să vă contacteze.
+Distribuiți-l prietenilor dvs. pentru a începe să conversați.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
-        <source>Load History Dialog</source>
-        <translation>Încărcați istoric dialog</translation>
+        <source>Load history dialog</source>
+        <translation>Încarcă dialogul istoric</translation>
     </message>
     <message>
-        <source>Load history</source>
+        <source>Load history from:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>from</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>(about 100 messages are loaded)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Select Date Dialog</source>
-        <translation type="unfinished">Selectare dialog dată</translation>
-    </message>
-    <message>
-        <source>Select a date</source>
-        <translation type="unfinished">Selectați o dată</translation>
     </message>
 </context>
 <context>
@@ -1719,12 +1525,6 @@ Profilul nu conține istoricul dvs.</translation>
     <message>
         <source>The password must be at least 6 characters long.</source>
         <translation>Parola trebuie să aibă cel puțin 6 caractere.</translation>
-    </message>
-    <message>
-        <source>The passwords you&apos;ve entered are different.
-Please make sure to enter same password twice.</source>
-        <translation>Parolele pe care le-ați introdus sunt diferite.
-Asigurați-vă că introduceți aceeași parolă de două ori.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
@@ -1809,6 +1609,12 @@ Poate doriți să creați unul.</translation>
     <message>
         <source>Loading existing profile page</source>
         <translation>Încărcarea paginii profilului existent</translation>
+    </message>
+    <message>
+        <source>The passwords you&apos;ve entered are different.
+Please make sure to enter the same password twice.</source>
+        <translation>Parolele introduse sunt diferite.
+Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</translation>
     </message>
 </context>
 <context>
@@ -1916,6 +1722,58 @@ Poate doriți să creați unul.</translation>
     </message>
 </context>
 <context>
+    <name>MessageBoxManager</name>
+    <message>
+        <source>Executable file</source>
+        <comment>popup title</comment>
+        <translation type="unfinished">Fișier executabil</translation>
+    </message>
+    <message>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <comment>popup text</comment>
+        <translation type="unfinished">Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
+    </message>
+</context>
+<context>
+    <name>NetCamView</name>
+    <message>
+        <source>Tox video</source>
+        <translation>Tox video</translation>
+    </message>
+    <message>
+        <source>Full Screen</source>
+        <translation>Ecran complet</translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation>Comutați previzualizarea video</translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation>Dezactivare sunet</translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation>Microfon mut</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation>Terminați apelul video</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation>Ieșire ecran complet</translation>
+    </message>
+    <message>
+        <source>Hide messages</source>
+        <translation>Ascundeți mesaje</translation>
+    </message>
+    <message>
+        <source>Show messages</source>
+        <translation>Afișați mesaje</translation>
+    </message>
+</context>
+<context>
     <name>Nexus</name>
     <message>
         <source>View</source>
@@ -1955,6 +1813,42 @@ Poate doriți să creați unul.</translation>
             <numerusform>Mesaje necitite</numerusform>
             <numerusform>Mesaje necitite</numerusform>
         </translation>
+    </message>
+</context>
+<context>
+    <name>NotificationGenerator</name>
+    <message>
+        <source>New message</source>
+        <translation>Mesaj nou</translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation>Mesaj de grup nou</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation>Venire transfer de fișiere</translation>
+    </message>
+    <message>
+        <source>%1 - file transfer</source>
+        <extracomment>e.g. Bob - file transfer</extracomment>
+        <translation>%1 - transfer de fișier</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation>Invitație de grup primită</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation>%1 vă invită să vă alăturați unui grup.</translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation>Cerere de prietenie primită</translation>
+    </message>
+    <message>
+        <source>Friend request received from %1</source>
+        <translation>Cerere de prietenie primită de la %1</translation>
     </message>
 </context>
 <context>
@@ -2005,7 +1899,7 @@ Oamenii nu vă vor putea adăuga ID-ul vechi, dar vă veți păstra prietenii ac
     </message>
     <message>
         <source>NoSpam</source>
-        <translation>NoSpam</translation>
+        <translation>No Spam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
@@ -2033,8 +1927,8 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
         <translation>Listă neagră</translation>
     </message>
     <message>
-        <source>Filter group message by group member&apos;s public key. Put public key here, one per line.</source>
-        <translation>Filtrați mesajul grupului după cheia publică a membrilor grupului. Puneți cheia publică aici, una pe linie.</translation>
+        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <translation>Filtrează mesajele de grup după cheile publice ale membrilor grupului. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
     </message>
 </context>
 <context>
@@ -2044,12 +1938,12 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
         <translation>Nu s-a putut obține o cheie din parolă, profilul nu va utiliza noua parolă.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
-        <translation>Nu s-a putut modifica parola în baza de date, s-ar putea să fie deteriorată sau să se folosească parola veche.</translation>
-    </message>
-    <message>
         <source>Toxing on qTox</source>
         <translation>Folosiți Tox în qTox</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translation>Nu s-a putut modifica parola bazei de date, este posibil să fie coruptă sau să folosească parola veche.</translation>
     </message>
 </context>
 <context>
@@ -2099,35 +1993,12 @@ Utilizați o altă imagine.</translation>
         <translation>Locația nu poate fi scrisă</translation>
     </message>
     <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>Nu aveți permisiunea de a scrie acea locație. Alegeți altceva, sau anulați dialogul de salvare.</translation>
-    </message>
-    <message>
-        <source>Failed to copy file</source>
-        <translation>Copierea fișierului a eșuat</translation>
-    </message>
-    <message>
-        <source>The file you chose could not be written to.</source>
-        <translation>Dosarul pe care l-ați ales nu a putut fi scris.</translation>
-    </message>
-    <message>
-        <source>Really delete profile?</source>
-        <comment>deletion confirmation title</comment>
-        <translation>Ștergeți într-adevăr profilul?</translation>
-    </message>
-    <message>
         <source>Nothing to remove</source>
         <translation>Nimic de eliminat</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
         <translation>Profilul dvs. nu are o parolă!</translation>
-    </message>
-    <message>
-        <source>Really delete password?</source>
-        <comment>deletion confirmation title</comment>
-        <translation>Sigur ștergeți parola?</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2154,38 +2025,6 @@ Utilizați o altă imagine.</translation>
         <translation>Fișierele nu au putut fi șterse!</translation>
     </message>
     <message>
-        <source>Register (processing)</source>
-        <translation>Înregistrare (în curs)</translation>
-    </message>
-    <message>
-        <source>Update (processing)</source>
-        <translation>Actualizare (în curs)</translation>
-    </message>
-    <message>
-        <source>Done!</source>
-        <translation>Terminat!</translation>
-    </message>
-    <message>
-        <source>Account %1@%2 updated successfully</source>
-        <translation>Cont %1@%2 actualizat cu succes</translation>
-    </message>
-    <message>
-        <source>Successfully added %1@%2 to the database. Save your password</source>
-        <translation>Adăugat cu succes %1@%2 la baza de date. Salvați parola</translation>
-    </message>
-    <message>
-        <source>Toxme error</source>
-        <translation>Eroare toxme</translation>
-    </message>
-    <message>
-        <source>Register</source>
-        <translation>Înregistrare</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <translation>Actualizați</translation>
-    </message>
-    <message>
         <source>Change password</source>
         <comment>button text</comment>
         <translation>Schimbați parola</translation>
@@ -2202,16 +2041,6 @@ Utilizați o altă imagine.</translation>
     <message>
         <source>Couldn&apos;t change password</source>
         <translation>Nu s-a putut modifica parola</translation>
-    </message>
-    <message>
-        <source>This bunch of characters tells other Tox clients how to contact you.
-Share it with your friends to communicate.
-
-This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>Această grămadă de caractere spune altor clienți Tox cum să vă contacteze.
-Împărtășiți prietenilor pentru a comunica.
-
-Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</translation>
     </message>
     <message>
         <source>Empty path is unavaliable</source>
@@ -2242,10 +2071,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Cale goală</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
-        <translation>Nu s-a putut modifica parola în baza de date, s-ar putea să fie deteriorată sau să se folosească parola veche.</translation>
-    </message>
-    <message>
         <source>Export profile</source>
         <translation>Exportați profil</translation>
     </message>
@@ -2265,14 +2090,59 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Vă rugăm să le eliminați manual.</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete your password?</source>
-        <extracomment>deletion confirmation text</extracomment>
-        <translation>Sigur doriți să vă ștergeți parola?</translation>
-    </message>
-    <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Imagini (%1)</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation>Nu aveți permisiunea de a scrie în acea locație. Alegeți alta sau anulați dialogul de salvare.</translation>
+    </message>
+    <message>
+        <source>Failed to save file</source>
+        <translation>Salvarea fișierului nu a reușit</translation>
+    </message>
+    <message>
+        <source>The file you chose could not be saved.</source>
+        <translation>Fișierul pe care l-ați ales nu a putut fi salvat.</translation>
+    </message>
+    <message>
+        <source>Empty path is unavaliable.</source>
+        <translation>Calea goală nu este disponibilă.</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translation>Nu s-a putut modifica parola bazei de date, este posibil să fie coruptă sau să folosească parola veche.</translation>
+    </message>
+    <message>
+        <source>Tox user names cannot exceed %1 characters.</source>
+        <translation>Numele utilizatorilor Tox nu pot depăși %1 caractere.</translation>
+    </message>
+    <message>
+        <source>Delete profile</source>
+        <comment>deletion confirmation title</comment>
+        <translation>Ștergeți profilul</translation>
+    </message>
+    <message>
+        <source>Remove password</source>
+        <comment>deletion confirmation title</comment>
+        <translation>Eliminați parola</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove your password?</source>
+        <extracomment>deletion confirmation text</extracomment>
+        <translation>Sigur doriți să vă eliminați parola?</translation>
+    </message>
+    <message>
+        <source>This ID allows other Tox users to add and contact you.
+Share it with your friends to begin chatting.
+
+This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
+        <translation>Acest ID permite altor utilizatori Tox să vă adauge și să vă contacteze.
+Distribuiți-l prietenilor dvs. pentru a începe să conversați.
+
+Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</translation>
     </message>
 </context>
 <context>
@@ -2355,13 +2225,13 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Nu s-a putut adăuga un prieten</translation>
     </message>
     <message>
-        <source>%1 is not a valid Toxme address.</source>
-        <translation>%1 nu este validă adresa Toxme.</translation>
-    </message>
-    <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
         <translation>Nu te poți adăuga ca prieten!</translation>
+    </message>
+    <message>
+        <source>%1 is not a valid Tox address.</source>
+        <translation>%1 nu este o adresă Tox validă.</translation>
     </message>
 </context>
 <context>
@@ -2396,7 +2266,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Violet</source>
-        <translation>Violet</translation>
+        <translation>Mov</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2418,64 +2288,12 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Birou</translation>
     </message>
     <message>
-        <source>Server doesn&apos;t support Toxme</source>
-        <translation>Serverul nu acceptă Toxme</translation>
-    </message>
-    <message>
-        <source>You&apos;re making too many requests. Wait an hour and try again</source>
-        <translation>Faceți prea multe cereri. Așteptați o oră și încercați din nou</translation>
-    </message>
-    <message>
-        <source>This name is already in use</source>
-        <translation>Acest nume este deja folosit</translation>
-    </message>
-    <message>
-        <source>This Tox ID is already registered under another name</source>
-        <translation>Acest ID Tox este deja înregistrat sub alt nume</translation>
-    </message>
-    <message>
-        <source>Please don&apos;t use a space in your name</source>
-        <translation>Nu utilizați un spațiu în numele dvs</translation>
-    </message>
-    <message>
-        <source>Password incorrect</source>
-        <translation>Parola incorecta</translation>
-    </message>
-    <message>
-        <source>You can&apos;t use this name</source>
-        <translation>Nu puteți folosi acest nume</translation>
-    </message>
-    <message>
-        <source>Name not found</source>
-        <translation>Numele nu a fost găsit</translation>
-    </message>
-    <message>
-        <source>Tox ID not sent</source>
-        <translation>Tox ID netrimis</translation>
-    </message>
-    <message>
-        <source>That user does not exist</source>
-        <translation>Acest utilizator nu există</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Eroare</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
         <translation>qTox nu au putut deschide jurnalele de discuții, vor fi dezactivate.</translation>
-    </message>
-    <message>
-        <source>Problem with HTTPS connection</source>
-        <translation>Problemă cu conexiunea HTTPS</translation>
-    </message>
-    <message>
-        <source>Internal ToxMe error</source>
-        <translation>Eroare internă ToxMe</translation>
-    </message>
-    <message>
-        <source>Reformatting text in progress..</source>
-        <translation>Reformarea textului în desfășurare..</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
@@ -2503,55 +2321,212 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nu s-a putut încărca automat profilul.</translation>
     </message>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished">conectat</translation>
+        <translation>conectat</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">departe</translation>
+        <translation>departe</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished">ocupat</translation>
+        <translation>ocupat</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">deconectat</translation>
+        <translation>deconectat</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished">blocat</translation>
+        <translation>blocat</translation>
+    </message>
+    <message>
+        <source>Reformatting text...</source>
+        <comment>Waiting for text to be reformatted</comment>
+        <translation>Se reformatează textul...</translation>
+    </message>
+    <message>
+        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translation>Setați IPv6 &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
+    </message>
+    <message>
+        <source>on/off</source>
+        <translation>pornit/oprit</translation>
+    </message>
+    <message>
+        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translation>Setați UDP &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
+    </message>
+    <message>
+        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <translation>Setați descoperire LAN &lt;pornit&gt;/&lt;oprit&gt;. UDP suprascriere oprita. Implicit este PORNIT.</translation>
+    </message>
+    <message>
+        <source>Sets proxy settings. Default is NONE.</source>
+        <translation>Setează setările proxy. Valoarea implicită este NIMIC.</translation>
+    </message>
+    <message>
+        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
+        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
+    </message>
+    <message>
+        <source>%1 message(s) from %2 chats</source>
+        <extracomment>e.g. 3 messages from 2 chats</extracomment>
+        <translation>%1 mesaj(e) de la %2 discuții</translation>
+    </message>
+    <message>
+        <source>%1 message(s) from %2</source>
+        <extracomment>e.g. 2 messages from Bob</extracomment>
+        <translation>%1 mesaj(e) de la %2</translation>
+    </message>
+    <message>
+        <source>negotitating</source>
+        <comment>contact status</comment>
+        <translation>negociere</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation type="unfinished">Eșec la trimiterea fișierului &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation type="unfinished">%1 sa alăturat grupului</translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation type="unfinished">%1 a părăsit grupul</translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation type="unfinished">%1 este acum cunoscut ca %2</translation>
+    </message>
+    <message>
+        <source>%1 has set the title to %2</source>
+        <translation type="unfinished">%1 a fost setat titlul la %2</translation>
+    </message>
+    <message>
+        <source>Cleared</source>
+        <translation type="unfinished">Curățat</translation>
+    </message>
+    <message>
+        <source>Call with %1 ended unexpectedly. %2</source>
+        <translation type="unfinished">Apelarea cu %1 sa încheiat neașteptat. %2</translation>
+    </message>
+    <message>
+        <source>Call with %1 ended. %2</source>
+        <translation type="unfinished">Apelați cu %1 încheiat. %2</translation>
+    </message>
+    <message>
+        <source>%1 is now %2</source>
+        <comment>e.g. &quot;Dubslow is now online&quot;</comment>
+        <translation type="unfinished">%1 este acum %2</translation>
+    </message>
+    <message>
+        <source>Calling %1</source>
+        <translation type="unfinished">Apelare %1</translation>
+    </message>
+    <message>
+        <source>%1 calling</source>
+        <translation type="unfinished">%1 apelează</translation>
+    </message>
+    <message>
+        <source>Message failed to send</source>
+        <translation type="unfinished">Mesajul nu a putut fi trimis</translation>
+    </message>
+    <message>
+        <source>Initializing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Transmitting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Broken</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Canceled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation type="unfinished">În pauză</translation>
+    </message>
+    <message>
+        <source>Remote paused</source>
+        <translation type="unfinished">Telecomandă întreruptă</translation>
+    </message>
+    <message>
+        <source>File Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Speed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">Stare</translation>
+    </message>
+    <message>
+        <source>Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have joined the group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You have left the group</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>RemoveFriendDialog</name>
+    <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation>Ștergeți prieten</translation>
-    </message>
-    <message>
-        <source>Also remove chat history</source>
-        <translation>De asemenea, eliminați istoricul discuțiilor</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Eliminați</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation>Sunteți sigur că vreți să eliminați %1 Din lista persoanelor de contact?</translation>
+        <translation type="unfinished">Ștergeți prieten</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Eliminați tot istoricul discuțiilor cu prietenul dacă este setat</translation>
+        <translation type="unfinished">Eliminați tot istoricul discuțiilor cu prietenul dacă este setat</translation>
+    </message>
+    <message>
+        <source>Also remove chat history</source>
+        <translation type="unfinished">De asemenea, eliminați istoricul discuțiilor</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove %1 from your contacts list?</source>
+        <translation type="unfinished">Sunteți sigur că vreți să eliminați %1 Din lista persoanelor de contact?</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished">Eliminați</translation>
     </message>
 </context>
 <context>
@@ -2635,6 +2610,14 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>Use regular expressions</source>
         <translation>Utilizare expresii regulate</translation>
     </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select a date</source>
+        <translation type="unfinished">Selectați o dată</translation>
+    </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
@@ -2653,10 +2636,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <message>
         <source>Password strength: %p%</source>
         <translation>Puterea parolei: %p%</translation>
-    </message>
-    <message>
-        <source>The password is too short</source>
-        <translation>Parola este prea scurtă</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -2678,12 +2657,28 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>Password input field, minimum 6 characters long</source>
         <translation>Câmp de introducere a parolei, cu lungimea minimă de 6 caractere</translation>
     </message>
+    <message>
+        <source>The password is too short.</source>
+        <translation>Parola este prea scurtă.</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
         <translation>Cerc #%1</translation>
+    </message>
+    <message>
+        <source>Failed to load personal settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to load global settings</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2787,11 +2782,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Listă de contacte</translation>
     </message>
     <message>
-        <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
-        <translation>Dacă este bifat, discuțiile de grup vor fi plasate în partea de sus a listei de prieteni, altfel vor fi plasate sub prietenii online.</translation>
-    </message>
-    <message>
         <source>Place groupchats at top of friend list</source>
         <translation>Puneți grupurile de discuții deasupra listei de prieteni</translation>
     </message>
@@ -2819,11 +2809,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <message>
         <source>Use emoticons</source>
         <translation>Utilizați emoticoane</translation>
-    </message>
-    <message>
-        <source>Smiley Pack:</source>
-        <extracomment>Text on smiley pack label</extracomment>
-        <translation>Pachet zâmbete:</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
@@ -2854,17 +2839,8 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Formatul datei:</translation>
     </message>
     <message>
-        <source>If enabled every contact without an avatar set will have a generated avatar based on their Tox ID instead of a default picture. Requires restart to apply.</source>
-        <comment>toolTip for show identicons</comment>
-        <translation>Dacă este activată orice persoană de contact fără un avatar setat se va genera un avatar pe baza Tox ID-ului în locul unei imagini implicite. Necesită repornire pentru a aplica.</translation>
-    </message>
-    <message>
         <source>Use identicons instead of empty avatars</source>
         <translation>Utilizați icon de identificare în loc de avatare goale</translation>
-    </message>
-    <message>
-        <source>Use colored nicknames in chats</source>
-        <translation>Utilizați porecle colorate în conversații</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message and the window is not selected.</source>
@@ -2874,11 +2850,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     <message>
         <source>Notify</source>
         <translation>Notificare</translation>
-    </message>
-    <message>
-        <source>Onlys notify about new messages in groupchats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
-        <translation>Notificați numai despre mesajele noi în conversațiile de grup atunci când sunt menționate.</translation>
     </message>
     <message>
         <source>Group chats only notify when mentioned</source>
@@ -2898,7 +2869,31 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation>Ascundeți expeditor de mesaj și conținut</translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in group chats</source>
+        <translation>Utilizați porecle colorate în discuțiile de grup</translation>
+    </message>
+    <message>
+        <source>Only notify about new messages in group chats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation>Numai notificări despre mesaje noi din discuțiile de grup când este menționat.</translation>
+    </message>
+    <message>
+        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for groupchat positioning</comment>
+        <translation>Dacă este bifat, discuțiile de grup vor fi plasate în partea de sus a listei de prieteni, în caz contrar, vor fi plasate sub prietenii online.</translation>
+    </message>
+    <message>
+        <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
+        <comment>toolTip for show identicons</comment>
+        <translation>Dacă este activat, fiecare contact fără avatar va avea o pictogramă generată pe baza ID-ului Tox în locul imaginii implicite. Necesită repornire pentru a aplica.</translation>
+    </message>
+    <message>
+        <source>Smiley pack:</source>
+        <extracomment>Text on smiley pack label</extracomment>
+        <translation>Pachet de zâmbete:</translation>
     </message>
 </context>
 <context>
@@ -2919,29 +2914,8 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Ocupat</translation>
     </message>
     <message>
-        <source>toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation>toxcore nu a reușit să pornească, aplicația se va închide după închiderea acestui mesaj.</translation>
-    </message>
-    <message>
-        <source>toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
-        <comment>popup text</comment>
-        <translation>toxcore nu a reușit să pornească cu setările proxy. qTox nu poate rula; Modificați setările și reporniți.</translation>
-    </message>
-    <message>
         <source>File</source>
         <translation>Fişier</translation>
-    </message>
-    <message>
-        <source>Edit Profile</source>
-        <translation>Editați profilul</translation>
-    </message>
-    <message>
-        <source>Change Status</source>
-        <translation>Schimbați starea</translation>
-    </message>
-    <message>
-        <source>Log out</source>
-        <translation>Deconectați-vă</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -2953,43 +2927,12 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Deconectați-vă</translation>
     </message>
     <message>
-        <source>Exit</source>
-        <comment>Tray action menu to exit tox</comment>
-        <translation>Ieșire</translation>
-    </message>
-    <message>
         <source>Filter...</source>
         <translation>Filtru...</translation>
     </message>
     <message>
         <source>Contacts</source>
         <translation>Contacte</translation>
-    </message>
-    <message>
-        <source>Add Contact...</source>
-        <translation>Adaugați contact...</translation>
-    </message>
-    <message>
-        <source>Next Conversation</source>
-        <translation>Următoarea conversație</translation>
-    </message>
-    <message>
-        <source>Previous Conversation</source>
-        <translation>Conversație anterioară</translation>
-    </message>
-    <message>
-        <source>Executable file</source>
-        <comment>popup title</comment>
-        <translation>Fișier executabil</translation>
-    </message>
-    <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
-        <comment>popup text</comment>
-        <translation>Sunteți întrebat de qTox pentru deschiderea unui fișier executabil. Fișierele executabile pot deteriora computerul. Sigur doriți să deschideți acest fișier?</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t request friendship</source>
-        <translation>Nu se poate cere prietenie</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3000,32 +2943,12 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Numele dvs</translation>
     </message>
     <message>
-        <source>Message failed to send</source>
-        <translation>Mesajul nu a putut fi trimis</translation>
-    </message>
-    <message>
         <source>Create new group...</source>
         <translation>Creați un grup nou...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
         <translation>Adăugați un cerc nou...</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n New Friend Request(s)</source>
-        <translation>
-            <numerusform>%n Cerere nouă de prietenie</numerusform>
-            <numerusform>%n Cereri noi de prietenie</numerusform>
-            <numerusform>%n Cereri noi de prietenie</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <source>%n New Group Invite(s)</source>
-        <translation>
-            <numerusform>%n Invitație nouă în grup</numerusform>
-            <numerusform>%n Invitații noi în grup</numerusform>
-            <numerusform>%n Invitații noi în grup</numerusform>
-        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3095,20 +3018,62 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Profilul meu</translation>
     </message>
     <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Eșec la trimiterea fișierului &quot;%1&quot;</translation>
+        <source>Toxcore failed to start, the application will terminate after you close this message.</source>
+        <translation>Toxcore nu a reușit să pornească, aplicația se va încheia după ce închideți acest mesaj.</translation>
     </message>
     <message>
-        <source>File sent</source>
-        <translation type="unfinished"></translation>
+        <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
+        <comment>popup text</comment>
+        <translation>Toxcore nu a reușit să înceapă cu setările proxy. qTox nu poate rula; vă rugăm să modificați setările și să reporniți.</translation>
     </message>
     <message>
-        <source> sent you a friend request.</source>
-        <translation type="unfinished"></translation>
+        <source>Couldn&apos;t send friend request</source>
+        <translation>Nu s-a putut trimite cererea de prietenie</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new friend request(s)</source>
+        <translation>
+            <numerusform>%n cerere de prietenie noua</numerusform>
+            <numerusform>%n noi cereri de prietenie</numerusform>
+            <numerusform>%n noi cereri de prietenie</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation>
+            <numerusform>%n invitație de grup nouă</numerusform>
+            <numerusform>%n invitații de grup noi</numerusform>
+            <numerusform>%n invitații de grup noi</numerusform>
+        </translation>
     </message>
     <message>
-        <source> invites you to join a group.</source>
-        <translation type="unfinished"></translation>
+        <source>Exit</source>
+        <comment>Tray action menu to exit Tox</comment>
+        <translation>Ieșire</translation>
+    </message>
+    <message>
+        <source>Change status</source>
+        <translation>Schimbați starea</translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation>Editați profil</translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation>Deconectați-vă</translation>
+    </message>
+    <message>
+        <source>Add contact...</source>
+        <translation>Adăugați contact...</translation>
+    </message>
+    <message>
+        <source>Next conversation</source>
+        <translation>Următoarea conversație</translation>
+    </message>
+    <message>
+        <source>Previous conversation</source>
+        <translation>Conversația anterioară</translation>
     </message>
 </context>
 </TS>

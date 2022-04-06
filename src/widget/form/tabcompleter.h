@@ -20,8 +20,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TABCOMPLETER_H
-#define TABCOMPLETER_H
+#pragma once
 
 #include "src/model/group.h"
 #include "src/widget/tool/chattextedit.h"
@@ -32,7 +31,7 @@ class TabCompleter : public QObject
 {
     Q_OBJECT
 public:
-    TabCompleter(ChatTextEdit* msgEdit, Group* group);
+    TabCompleter(ChatTextEdit* msgEdit_, Group* group_);
 
 public slots:
     void complete();
@@ -60,6 +59,3 @@ private:
 
     void buildCompletionList();
 };
-
-
-#endif

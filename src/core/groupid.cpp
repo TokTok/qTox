@@ -18,7 +18,6 @@
 */
 
 #include "groupid.h"
-#include <tox/tox.h>
 
 #include <QByteArray>
 #include <QString>
@@ -34,27 +33,18 @@
  * @brief The default constructor. Creates an empty Tox group ID.
  */
 GroupId::GroupId()
-    : ContactId()
-{
-}
-
-/**
- * @brief The copy constructor.
- * @param other GroupId to copy
- */
-GroupId::GroupId(const GroupId& other)
-    : ContactId(other.id)
+    : ChatId()
 {
 }
 
 /**
  * @brief Constructs a GroupId from bytes.
  * @param rawId The bytes to construct the GroupId from. The lenght must be exactly
- *              TOX_CONFERENCE_UID_SIZE, else the GroupId will be empty.
+ *              GroupId::size, else the GroupId will be empty.
  */
 GroupId::GroupId(const QByteArray& rawId)
-    : ContactId([rawId](){
-        assert(rawId.length() == TOX_CONFERENCE_UID_SIZE);
+    : ChatId([rawId](){
+        assert(rawId.length() == size);
         return rawId;}())
 {
 }
@@ -62,10 +52,10 @@ GroupId::GroupId(const QByteArray& rawId)
 /**
  * @brief Constructs a GroupId from bytes.
  * @param rawId The bytes to construct the GroupId from, will read exactly
- * TOX_CONFERENCE_UID_SIZE from the specified buffer.
+ * GroupId::size from the specified buffer.
  */
 GroupId::GroupId(const uint8_t* rawId)
-    : ContactId(QByteArray(reinterpret_cast<const char*>(rawId), TOX_CONFERENCE_UID_SIZE))
+    : ChatId(QByteArray(reinterpret_cast<const char*>(rawId), size))
 {
 }
 
@@ -75,5 +65,10 @@ GroupId::GroupId(const uint8_t* rawId)
  */
 int GroupId::getSize() const
 {
-    return TOX_CONFERENCE_UID_SIZE;
+    return size;
+}
+
+std::unique_ptr<ChatId> GroupId::clone() const
+{
+    return std::unique_ptr<ChatId>(new GroupId(*this));
 }

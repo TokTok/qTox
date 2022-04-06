@@ -17,12 +17,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TOXCALL_H
-#define TOXCALL_H
+#pragma once
 
-#include "src/audio/iaudiocontrol.h"
-#include "src/audio/iaudiosink.h"
-#include "src/audio/iaudiosource.h"
+#include "audio/iaudiocontrol.h"
+#include "audio/iaudiosink.h"
+#include "audio/iaudiosource.h"
 #include <src/core/toxpk.h>
 #include <tox/toxav.h>
 
@@ -38,6 +37,7 @@ class AudioFilterer;
 class CoreVideoSource;
 class CoreAV;
 class Group;
+class CameraSource;
 
 class ToxCall : public QObject
 {
@@ -92,7 +92,7 @@ class ToxFriendCall : public ToxCall
     Q_OBJECT
 public:
     ToxFriendCall() = delete;
-    ToxFriendCall(uint32_t friendId, bool VideoEnabled, CoreAV& av, IAudioControl& audio);
+    ToxFriendCall(uint32_t friendNum, bool VideoEnabled, CoreAV& av_, IAudioControl& audio_, CameraSource& cameraSource);
     ToxFriendCall(ToxFriendCall&& other) = delete;
     ToxFriendCall& operator=(ToxFriendCall&& other) = delete;
     ~ToxFriendCall();
@@ -111,6 +111,7 @@ private:
     TOXAV_FRIEND_CALL_STATE state{TOXAV_FRIEND_CALL_STATE_NONE};
     std::unique_ptr<IAudioSink> sink;
     uint32_t friendId;
+    CameraSource& cameraSource;
 };
 
 class ToxGroupCall : public ToxCall
@@ -118,7 +119,7 @@ class ToxGroupCall : public ToxCall
     Q_OBJECT
 public:
     ToxGroupCall() = delete;
-    ToxGroupCall(const Group& group, CoreAV& av, IAudioControl& audio);
+    ToxGroupCall(const Group& group_, CoreAV& av_, IAudioControl& audio_);
     ToxGroupCall(ToxGroupCall&& other) = delete;
     ~ToxGroupCall();
 
@@ -141,5 +142,3 @@ private slots:
     void onAudioSourceInvalidated();
     void onAudioSinkInvalidated(ToxPk peerId);
 };
-
-#endif // TOXCALL_H

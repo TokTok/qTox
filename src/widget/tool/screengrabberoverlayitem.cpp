@@ -51,11 +51,13 @@ void ScreenGrabberOverlayItem::setChosenRect(QRect rect)
 void ScreenGrabberOverlayItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton)
-        this->screnshootGrabber->beginRectChooser(event);
+        screnshootGrabber->beginRectChooser(event);
 }
 
-void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphicsItem*, QWidget*)
+void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
+    std::ignore = option;
+    std::ignore = widget;
     painter->setBrush(brush());
     painter->setPen(pen());
 

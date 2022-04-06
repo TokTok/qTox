@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SETPASSWORDDIALOG_H
-#define SETPASSWORDDIALOG_H
+#pragma once
 
 #include <QDialog>
 
@@ -37,7 +36,7 @@ public:
         Accepted = QDialog::Accepted,
         Tertiary
     };
-    explicit SetPasswordDialog(QString body, QString extraButton, QWidget* parent = nullptr);
+    explicit SetPasswordDialog(QString body_, QString extraButton, QWidget* parent = nullptr);
     ~SetPasswordDialog();
     QString getPassword();
     static int getPasswordStrength(QString pass);
@@ -50,5 +49,3 @@ private:
     QString body;
     static const double reasonablePasswordLength;
 };
-
-#endif // SETPASSWORDDIALOG_H

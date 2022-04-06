@@ -41,10 +41,11 @@
 #include "src/widget/widget.h"
 #include "tool/croppinglabel.h"
 
-GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom, bool compact)
-    : GenericChatroomWidget(compact)
-    , groupId{chatroom->getGroup()->getPersistentId()}
-    , chatroom{chatroom}
+GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_,
+    Settings& settings_, Style& style_)
+    : GenericChatroomWidget(compact_, settings_, style_)
+    , groupId{chatroom_->getGroup()->getPersistentId()}
+    , chatroom{chatroom_}
 {
     avatar->setPixmap(Style::scaleSvgImage(":img/group.svg", avatar->width(), avatar->height()));
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Online)));
@@ -69,7 +70,7 @@ GroupWidget::~GroupWidget()
 
 void GroupWidget::updateTitle(const QString& author, const QString& newName)
 {
-    Q_UNUSED(author)
+    std::ignore = author;
     nameLabel->setText(newName);
 }
 
@@ -189,13 +190,53 @@ void GroupWidget::editName()
     nameLabel->editBegin();
 }
 
+bool GroupWidget::isFriend() const
+{
+    return false;
+}
+
+bool GroupWidget::isGroup() const
+{
+    return true;
+}
+
+QString GroupWidget::getNameItem() const
+{
+    return nameLabel->fullText();
+}
+
+bool GroupWidget::isOnline() const
+{
+    return true;
+}
+
+bool GroupWidget::widgetIsVisible() const
+{
+    return isVisible();
+}
+
+QDateTime GroupWidget::getLastActivity() const
+{
+    return QDateTime::currentDateTime();
+}
+
+QWidget *GroupWidget::getWidget()
+{
+    return this;
+}
+
+void GroupWidget::setWidgetVisible(bool visible)
+{
+    setVisible(visible);
+}
+
 // TODO: Remove
 Group* GroupWidget::getGroup() const
 {
     return chatroom->getGroup();
 }
 
-const Contact* GroupWidget::getContact() const
+const Chat* GroupWidget::getChat() const
 {
     return getGroup();
 }
@@ -220,8 +261,9 @@ void GroupWidget::dragEnterEvent(QDragEnterEvent* ev)
     }
 }
 
-void GroupWidget::dragLeaveEvent(QDragLeaveEvent*)
+void GroupWidget::dragLeaveEvent(QDragLeaveEvent* event)
 {
+    std::ignore = event;
     if (!active) {
         setBackgroundRole(QPalette::Window);
     }

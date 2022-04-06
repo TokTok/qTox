@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef EMOTICONSWIDGET_H
-#define EMOTICONSWIDGET_H
+#pragma once
 
 #include <QMenu>
 #include <QStackedWidget>
@@ -28,12 +27,16 @@
 #include <memory>
 
 class QIcon;
+class SmileyPack;
+class Settings;
+class Style;
 
 class EmoticonsWidget : public QMenu
 {
     Q_OBJECT
 public:
-    explicit EmoticonsWidget(QWidget* parent = nullptr);
+    EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Style& style,
+        QWidget* parent = nullptr);
 
 signals:
     void insertEmoticon(QString str);
@@ -57,5 +60,3 @@ private:
 public:
     QSize sizeHint() const override;
 };
-
-#endif // EMOTICONSWIDGET_H

@@ -30,32 +30,33 @@
 #include <QLabel>
 #include <QPainter>
 
-/**
- * @var std::atomic_bool VideoSurface::frameLock
- * @brief Fast lock for lastFrame.
- */
-
+namespace {
 float getSizeRatio(const QSize size)
 {
     return size.width() / static_cast<float>(size.height());
 }
+} // namespace
 
-VideoSurface::VideoSurface(const QPixmap& avatar, QWidget* parent, bool expanding)
+/**
+ * @var std::atomic_bool VideoSurface::frameLock
+ * @brief Fast lock for lastFrame.
+ */
+VideoSurface::VideoSurface(const QPixmap& avatar_, QWidget* parent, bool expanding_)
     : QWidget{parent}
     , source{nullptr}
     , frameLock{false}
     , hasSubscribed{0}
-    , avatar{avatar}
+    , avatar{avatar_}
     , ratio{1.0f}
-    , expanding{expanding}
+    , expanding{expanding_}
 {
     recalulateBounds();
 }
 
-VideoSurface::VideoSurface(const QPixmap& avatar, VideoSource* source, QWidget* parent)
-    : VideoSurface(avatar, parent)
+VideoSurface::VideoSurface(const QPixmap& avatar_, VideoSource* source_, QWidget* parent)
+    : VideoSurface(avatar_, parent)
 {
-    setSource(source);
+    setSource(source_);
 }
 
 VideoSurface::~VideoSurface()
@@ -167,8 +168,9 @@ void VideoSurface::onSourceStopped()
     update();
 }
 
-void VideoSurface::paintEvent(QPaintEvent*)
+void VideoSurface::paintEvent(QPaintEvent* event)
 {
+    std::ignore = event;
     lock();
 
     QPainter painter(this);
@@ -201,7 +203,7 @@ void VideoSurface::resizeEvent(QResizeEvent* event)
 
 void VideoSurface::showEvent(QShowEvent* e)
 {
-    Q_UNUSED(e)
+    std::ignore = e;
     // emit ratioChanged();
 }
 

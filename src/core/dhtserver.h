@@ -17,20 +17,24 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DHT_SERVER_H
-#define DHT_SERVER_H
+#pragma once
+
+#include "toxpk.h"
 
 #include <QString>
+#include <vector>
 
 struct DhtServer
 {
-    QString name;
-    QString userId;
-    QString address;
-    quint16 port;
+    bool statusUdp;
+    bool statusTcp;
+    QString ipv4;
+    QString ipv6;
+    QString maintainer;
+    ToxPk publicKey;
+    quint16 udpPort;
+    std::vector<uint16_t> tcpPorts;
 
     bool operator==(const DhtServer& other) const;
     bool operator!=(const DhtServer& other) const;
 };
-
-#endif // DHT_SERVER_H

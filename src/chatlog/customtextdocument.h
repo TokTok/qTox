@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CUSTOMTEXTDOCUMENT_H
-#define CUSTOMTEXTDOCUMENT_H
+#pragma once
 
 #include <QTextDocument>
 #include <QList>
@@ -26,18 +25,20 @@
 #include <memory>
 
 class QIcon;
+class SmileyPack;
+class Settings;
 
 class CustomTextDocument : public QTextDocument
 {
     Q_OBJECT
 public:
-    explicit CustomTextDocument(QObject* parent = nullptr);
+    CustomTextDocument(SmileyPack& smileyPack, Settings& settings, QObject* parent = nullptr);
 
 protected:
     virtual QVariant loadResource(int type, const QUrl& name);
 
 private:
     QList<std::shared_ptr<QIcon>> emoticonIcons;
+    SmileyPack& smileyPack;
+    Settings& settings;
 };
-
-#endif // CUSTOMTEXTDOCUMENT_H

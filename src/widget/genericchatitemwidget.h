@@ -17,13 +17,13 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GENERICCHATITEMWIDGET_H
-#define GENERICCHATITEMWIDGET_H
+#pragma once
 
 #include <QFrame>
 #include <QLabel>
 
 class CroppingLabel;
+class Style;
 
 class GenericChatItemWidget : public QFrame
 {
@@ -36,16 +36,19 @@ public:
         FriendOnlineItem
     };
 
-    explicit GenericChatItemWidget(bool compact, QWidget* parent = nullptr);
+    GenericChatItemWidget(bool compact_, Style& style, QWidget* parent = nullptr);
 
     bool isCompact() const;
-    void setCompact(bool compact);
+    void setCompact(bool compact_);
 
     QString getName() const;
 
     void searchName(const QString& searchString, bool hideAll);
 
     Q_PROPERTY(bool compact READ isCompact WRITE setCompact)
+
+public slots:
+    virtual void reloadTheme() {}
 
 protected:
     CroppingLabel* nameLabel;
@@ -54,5 +57,3 @@ protected:
 private:
     bool compact;
 };
-
-#endif // GENERICCHATITEMWIDGET_H

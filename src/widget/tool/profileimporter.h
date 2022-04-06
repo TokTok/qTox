@@ -17,22 +17,21 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef PROFILEIMPORTER_H
-#define PROFILEIMPORTER_H
+#pragma once
 
 #include <QWidget>
+class Settings;
 
 class ProfileImporter : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit ProfileImporter(QWidget* parent = nullptr);
+    explicit ProfileImporter(Settings& settings, QWidget* parent = nullptr);
     bool importProfile(const QString& path);
     bool importProfile();
 
 private:
     bool askQuestion(QString title, QString message);
+    Settings& settings;
 };
-
-#endif // PROFILEIMPORTER_H

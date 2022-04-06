@@ -40,7 +40,8 @@
  * stdout and is not part of the public API for some reason.
  */
 
-static char* wcharToUtf8(wchar_t* w)
+namespace {
+char* wcharToUtf8(wchar_t* w)
 {
     int l = WideCharToMultiByte(CP_UTF8, 0, w, -1, nullptr, 0, nullptr, nullptr);
     char* s = new char[l];
@@ -48,6 +49,7 @@ static char* wcharToUtf8(wchar_t* w)
         WideCharToMultiByte(CP_UTF8, 0, w, -1, s, l, nullptr, nullptr);
     return s;
 }
+} // namespace
 
 QVector<QPair<QString, QString>> DirectShow::getDeviceList()
 {
@@ -97,7 +99,7 @@ QVector<QPair<QString, QString>> DirectShow::getDeviceList()
             goto fail;
         devHumanName = wcharToUtf8(var.bstrVal);
 
-        devices += {QString("video=") + devIdString, devHumanName};
+        devices += {QString("video=") + QString::fromUtf8(devIdString), QString::fromUtf8(devHumanName)};
 
     fail:
         if (olestr && coMalloc)
@@ -138,7 +140,7 @@ static IBaseFilter* getDevFilter(QString devName)
         LPMALLOC coMalloc = nullptr;
         IBindCtx* bindCtx = nullptr;
         LPOLESTR olestr = nullptr;
-        char* devIdString;
+        char* devIdString = nullptr;
 
         if (CoGetMalloc(1, &coMalloc) != S_OK)
             goto fail;
@@ -154,7 +156,7 @@ static IBaseFilter* getDevFilter(QString devName)
             if (devIdString[i] == ':')
                 devIdString[i] = '_';
 
-        if (devName != devIdString)
+        if (devName.toUtf8().constData() != devIdString)
             goto fail;
 
         if (m->BindToObject(nullptr, nullptr, IID_IBaseFilter, reinterpret_cast<void**>(&devFilter)) != S_OK)

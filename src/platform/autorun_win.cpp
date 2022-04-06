@@ -23,6 +23,7 @@
 #include <string>
 #include <windows.h>
 
+namespace {
 #ifdef UNICODE
 /**
  * tstring is either std::wstring or std::string, depending on whether the user
@@ -30,32 +31,33 @@
  * easier to reuse and compatible with both setups.
  */
 using tstring = std::wstring;
-static inline tstring toTString(QString s)
+inline tstring toTString(QString s)
 {
     return s.toStdWString();
 }
 #else
 using tstring = std::string;
-static inline tstring toTString(QString s)
+inline tstring toTString(QString s)
 {
     return s.toStdString();
 }
 #endif
+} // namespace
 
 namespace Platform {
-inline tstring currentCommandLine()
+inline tstring currentCommandLine(const Settings& settings)
 {
     return toTString("\"" + QApplication::applicationFilePath().replace('/', '\\') + "\" -p \""
-                     + Settings::getInstance().getCurrentProfile() + "\"");
+                     + settings.getCurrentProfile() + "\"");
 }
 
-inline tstring currentRegistryKeyName()
+inline tstring currentRegistryKeyName(const Settings& settings)
 {
-    return toTString("qTox - " + Settings::getInstance().getCurrentProfile());
+    return toTString("qTox - " + settings.getCurrentProfile());
 }
 }
 
-bool Platform::setAutorun(bool on)
+bool Platform::setAutorun(const Settings& settings, bool on)
 {
     HKEY key = nullptr;
     if (RegOpenKeyEx(HKEY_CURRENT_USER, TEXT("Software\\Microsoft\\Windows\\CurrentVersion\\Run"),
@@ -64,10 +66,10 @@ bool Platform::setAutorun(bool on)
         return false;
 
     bool result = false;
-    tstring keyName = currentRegistryKeyName();
+    tstring keyName = currentRegistryKeyName(settings);
 
     if (on) {
-        tstring path = currentCommandLine();
+        tstring path = currentCommandLine(settings);
         result = RegSetValueEx(key, keyName.c_str(), 0, REG_SZ, const_cast<PBYTE>(reinterpret_cast<const unsigned char*>(path.c_str())),
                                path.length() * sizeof(TCHAR))
                  == ERROR_SUCCESS;
@@ -78,7 +80,7 @@ bool Platform::setAutorun(bool on)
     return result;
 }
 
-bool Platform::getAutorun()
+bool Platform::getAutorun(const Settings& settings)
 {
     HKEY key = nullptr;
     if (RegOpenKeyEx(HKEY_CURRENT_USER, TEXT("Software\\Microsoft\\Windows\\CurrentVersion\\Run"),
@@ -86,7 +88,7 @@ bool Platform::getAutorun()
         != ERROR_SUCCESS)
         return false;
 
-    tstring keyName = currentRegistryKeyName();
+    tstring keyName = currentRegistryKeyName(settings);
 
     TCHAR path[MAX_PATH] = {0};
     DWORD length = sizeof(path);

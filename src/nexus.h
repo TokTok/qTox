@@ -18,12 +18,13 @@
 */
 
 
-#ifndef NEXUS_H
-#define NEXUS_H
+#pragma once
+
+#include "audio/iaudiocontrol.h"
 
 #include <QObject>
 
-#include "src/audio/iaudiocontrol.h"
+#include <memory>
 
 class Widget;
 class Profile;
@@ -31,6 +32,9 @@ class Settings;
 class LoginScreen;
 class Core;
 class QCommandLineParser;
+class CameraSource;
+class Style;
+class IMessageBoxManager;
 
 #ifdef Q_OS_MAC
 class QMenuBar;
@@ -47,13 +51,14 @@ class Nexus : public QObject
 public:
     void start();
     void showMainGUI();
-    void setSettings(Settings* settings);
-    void setParser(QCommandLineParser* parser);
+    void setSettings(Settings* settings_);
+    void setMessageBoxManager(IMessageBoxManager* messageBoxManager);
+    void setParser(QCommandLineParser* parser_);
     static Nexus& getInstance();
     static void destroyInstance();
-    static Core* getCore();
-    static Profile* getProfile();
+    Profile* getProfile();
     static Widget* getDesktopGUI();
+    static CameraSource& getCameraSource();
 
 
 #ifdef Q_OS_MAC
@@ -105,6 +110,7 @@ private:
     Widget* widget;
     std::unique_ptr<IAudioControl> audioControl;
     QCommandLineParser* parser = nullptr;
+    std::unique_ptr<CameraSource> cameraSource;
+    std::unique_ptr<Style> style;
+    IMessageBoxManager* messageBoxManager = nullptr;
 };
-
-#endif // NEXUS_H

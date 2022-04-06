@@ -23,9 +23,9 @@
 
 class QStyleOptionGraphicsItem;
 
-Broken::Broken(const QString& img, QSize size)
-    : pmap{PixmapCache::getInstance().get(img, size)}
-    , size{size}
+Broken::Broken(const QString& img, QSize size_)
+    : pmap{PixmapCache::getInstance().get(img, size_)}
+    , size{size_}
 {
 }
 
@@ -40,19 +40,14 @@ void Broken::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
     painter->drawPixmap(0, 0, pmap);
 
-    Q_UNUSED(option)
-    Q_UNUSED(widget)
+    std::ignore = option;
+    std::ignore = widget;
 
 }
 
-void Broken::setWidth(qreal width)
+void Broken::setWidth(float width)
 {
-    Q_UNUSED(width)
-}
-
-void Broken::visibilityChanged(bool visible)
-{
-    Q_UNUSED(visible)
+    std::ignore = width;
 }
 
 qreal Broken::getAscent() const

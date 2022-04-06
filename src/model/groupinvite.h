@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUPINVITE_H
-#define GROUPINVITE_H
+#pragma once
 
 #include <QByteArray>
 #include <QDateTime>
@@ -28,7 +27,7 @@ class GroupInvite
 {
 public:
     GroupInvite() = default;
-    GroupInvite(uint32_t friendId, uint8_t inviteType, const QByteArray& data);
+    GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data);
     bool operator==(const GroupInvite& other) const;
 
     uint32_t getFriendId() const;
@@ -42,5 +41,3 @@ private:
     QByteArray invite;
     QDateTime date;
 };
-
-#endif // GROUPINVITE_H

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICORE_ID_HANDLER_H
-#define ICORE_ID_HANDLER_H
+#pragma once
 
 #include "toxid.h"
 #include "toxpk.h"
@@ -27,11 +26,14 @@ class ICoreIdHandler
 {
 
 public:
-    virtual ~ICoreIdHandler() = default;
+    ICoreIdHandler() = default;
+    virtual ~ICoreIdHandler();
+    ICoreIdHandler(const ICoreIdHandler&) = default;
+    ICoreIdHandler& operator=(const ICoreIdHandler&) = default;
+    ICoreIdHandler(ICoreIdHandler&&) = default;
+    ICoreIdHandler& operator=(ICoreIdHandler&&) = default;
+
     virtual ToxId getSelfId() const = 0;
     virtual ToxPk getSelfPublicKey() const = 0;
     virtual QString getUsername() const = 0;
 };
-
-
-#endif /*ICORE_ID_HANDLER_H*/

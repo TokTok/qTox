@@ -22,6 +22,7 @@
 #include <QDebug>
 #include <QThread>
 
+#include <chrono>
 #include <ctime>
 #include <random>
 #include <stdlib.h>
@@ -51,7 +52,7 @@ namespace
             qWarning() << "Failed to get current username. Will use a global IPC.";
             user = "";
         }
-        return QString("qtox-" IPC_PROTOCOL_VERSION "-") + user;
+        return QString("qtox-" IPC_PROTOCOL_VERSION "-") + QString::fromUtf8(user);
     }
 } // namespace
 
@@ -68,8 +69,8 @@ namespace
  * @brief Inter-process communication
  */
 
-IPC::IPC(uint32_t profileId)
-    : profileId{profileId}
+IPC::IPC(uint32_t profileId_)
+    : profileId{profileId_}
     , globalMemory{getIpcKey()}
 {
     qRegisterMetaType<IPCEventHandler>("IPCEventHandler");
@@ -85,9 +86,11 @@ IPC::IPC(uint32_t profileId)
     // If the owner exits normally, it can set the timestamp to 0 first to immediately give
     // ownership
 
-    std::default_random_engine randEngine((std::random_device())());
+    // use the clock rather than std::random_device because std::random_device may return constant values, and does
+    // under mingw on Windows. We don't actually need cryptographic guarantees, so using the clock in all cases.
+    static std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     std::uniform_int_distribution<uint64_t> distribution;
-    globalId = distribution(randEngine);
+    globalId = distribution(rng);
     qDebug() << "Our global IPC ID is " << globalId;
     if (globalMemory.create(sizeof(IPCMemory))) {
         if (globalMemory.lock()) {
@@ -186,9 +189,9 @@ bool IPC::isCurrentOwner()
  * @brief Register a handler for an IPC event
  * @param handler The handler callback. Should not block for more than a second, at worst
  */
-void IPC::registerEventHandler(const QString& name, IPCEventHandler handler)
+void IPC::registerEventHandler(const QString& name, IPCEventHandler handler, void* userData)
 {
-    eventHandlers[name] = handler;
+    eventHandlers[name] = {handler, userData};
 }
 
 bool IPC::isEventAccepted(time_t time)
@@ -234,9 +237,9 @@ bool IPC::isAttached() const
     return globalMemory.isAttached();
 }
 
-void IPC::setProfileId(uint32_t profileId)
+void IPC::setProfileId(uint32_t profileId_)
 {
-    this->profileId = profileId;
+    profileId = profileId_;
 }
 
 /**
@@ -266,11 +269,11 @@ IPC::IPCEvent* IPC::fetchEvent()
     return nullptr;
 }
 
-bool IPC::runEventHandler(IPCEventHandler handler, const QByteArray& arg)
+bool IPC::runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* userData)
 {
     bool result = false;
     if (QThread::currentThread() == qApp->thread()) {
-        result = handler(arg);
+        result = handler(arg, userData);
     } else {
         QMetaObject::invokeMethod(this, "runEventHandler", Qt::BlockingQueuedConnection,
                                   Q_RETURN_ARG(bool, result), Q_ARG(IPCEventHandler, handler),
@@ -310,7 +313,7 @@ void IPC::processEvents()
         QString name = QString::fromUtf8(evt->name);
         auto it = eventHandlers.find(name);
         if (it != eventHandlers.end()) {
-            evt->accepted = runEventHandler(it.value(), evt->data);
+            evt->accepted = runEventHandler(it.value().handler, evt->data, it.value().userData);
             qDebug() << "Processed event:" << name << "posted:" << evt->posted
                      << "accepted:" << evt->accepted;
             if (evt->dest == 0) {

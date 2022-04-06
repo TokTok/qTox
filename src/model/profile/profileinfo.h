@@ -17,21 +17,24 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
+
 #include <QObject>
-#include "src/model/interface.h"
-#include "src/core/toxpk.h"
 #include "iprofileinfo.h"
+#include "src/core/toxpk.h"
+#include "util/interface.h"
 
 class Core;
 class QFile;
 class QPoint;
 class Profile;
+class Settings;
 
 class ProfileInfo : public QObject, public IProfileInfo
 {
     Q_OBJECT
 public:
-    ProfileInfo(Core* core, Profile* profile);
+    ProfileInfo(Core* core_, Profile* profile_, Settings& settings);
 
     bool setPassword(const QString& password) override;
     bool deletePassword() override;
@@ -64,4 +67,5 @@ private:
     IProfileInfo::SetAvatarResult scalePngToAvatar(QByteArray& avatar);
     Profile* const profile;
     Core* const core;
+    Settings& settings;
 };

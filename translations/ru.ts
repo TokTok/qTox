@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru_RU">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AVForm</name>
     <message>
         <source>Default resolution</source>
-        <translation>Разрешение по умолчанию</translation>
+        <translation>Стандартное разрешение</translation>
     </message>
     <message>
         <source>Audio/Video</source>
@@ -34,10 +34,6 @@
     <message>
         <source>Playback device</source>
         <translation>Устройство воспроизведения</translation>
-    </message>
-    <message>
-        <source>Use slider to set volume of your speakers.</source>
-        <translation>Используйте ползунок для установки громкости динамиков.</translation>
     </message>
     <message>
         <source>Capture device</source>
@@ -80,20 +76,8 @@ which may lead to problems with video calls.</source>
         <translation>Проверка звука</translation>
     </message>
     <message>
-        <source>Enables the experimental audio backend with echo cancelling support, needs qTox restart to take effect.</source>
-        <translation>Включает экспериментальную звуковую систему с поддержкой эхоподавления, требует перезагрузки qTox.</translation>
-    </message>
-    <message>
-        <source>Enable experimental audio backend</source>
-        <translation>Экспериментальная звуковая система</translation>
-    </message>
-    <message>
         <source>Audio quality</source>
         <translation>Качество звука</translation>
-    </message>
-    <message>
-        <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to lower the internet usage.</source>
-        <translation>Качество передаваемого звука. Уменьшите значение, если ваше соединение не достаточно быстрое или если хотите сократить расходы трафика.</translation>
     </message>
     <message>
         <source>High (64 kbps)</source>
@@ -114,6 +98,38 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Threshold</source>
         <translation>Порог</translation>
+    </message>
+    <message>
+        <source>Use slider to set the volume of your speakers.</source>
+        <translation>Используйте ползунок, чтобы выставить громкость ваших динамиков.</translation>
+    </message>
+    <message>
+        <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
+        <translation>Качество передающегося звука. Понизьте эту настройку, если у вас низкая пропускная способность интернета, или вы хотите снизить нагрузку на неё.</translation>
+    </message>
+    <message>
+        <source>Set resolution of your camera.
+The higher values, the better video quality your friends may get.
+Note that with better video quality, you use more bandwidth.
+Sometimes your connection may not be good enough to handle higher video quality,
+which may lead to problems with video calls.</source>
+        <translation>Установите разрешение вашей камеры.
+Чем выше значения, тем лучшее качество видео увидят ваши друзья.
+Имейте ввиду, что с более лучшим качеством видео, нагрузка на пропускную способность интернета вырастет.
+Иногда ваше подключение может быть недостаточно хорошим, чтобы обеспечивать передачу видео в высоком качестве,
+что может привести к проблемам с видеозвонками.</translation>
+    </message>
+    <message>
+        <source>Play a test sound while changing the output volume.</source>
+        <translation>Воспроизводить тестовый звук во время изменения выходной громкости.</translation>
+    </message>
+    <message>
+        <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
+        <translation>Используйте ползунок, чтобы установить усиление вашего устройства ввода в пределах от %1dB до %2dB.</translation>
+    </message>
+    <message>
+        <source>Use slider to set the activation volume for your input device.</source>
+        <translation>Используйте ползунок, чтобы установить громкость активации для вашего устройства ввода.</translation>
     </message>
 </context>
 <context>
@@ -159,18 +175,18 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>bug-tracker</source>
-        <comment>Replaces `%1` in the `A list of all knownâ¦`</comment>
-        <translation>баг-трекерe</translation>
+        <comment>Replaces `%1` in the `A list of all known…`</comment>
+        <translation>баг-трекер</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
-        <comment>Replaces `%2` in the `A list of all knownâ¦`</comment>
-        <translation>Написание полезных отчетов об ошибках</translation>
+        <comment>Replaces `%2` in the `A list of all known…`</comment>
+        <translation>Написание полезных отчётов об ошибках</translation>
     </message>
     <message>
         <source>contributors</source>
-        <comment>Replaces `%1` in `See a full list ofâ¦`</comment>
-        <translation>разработчиков</translation>
+        <comment>Replaces `%1` in `See a full list of…`</comment>
+        <translation>соавторы</translation>
     </message>
 </context>
 <context>
@@ -200,20 +216,8 @@ which may lead to problems with video calls.</source>
         <translation>Автоматически принимать файлы от контактов если установленo</translation>
     </message>
     <message>
-        <source>Auto accept files</source>
-        <translation>Автоматически принимать файлы</translation>
-    </message>
-    <message>
         <source>Default directory to save files:</source>
         <translation>Стандартная папка сохранения файлов:</translation>
-    </message>
-    <message>
-        <source>Auto accept for this contact is disabled</source>
-        <translation>Автоматический прием файлов от этого контакта отключен</translation>
-    </message>
-    <message>
-        <source>Auto accept call:</source>
-        <translation>Автоматический прием звонка:</translation>
     </message>
     <message>
         <source>Manual</source>
@@ -232,10 +236,6 @@ which may lead to problems with video calls.</source>
         <translation>Автоматически принимать приглашения в групповой чат от этого контакта.</translation>
     </message>
     <message>
-        <source>Auto accept group invites</source>
-        <translation>Автоматически принимать приглашения в группы</translation>
-    </message>
-    <message>
         <source>Remove history (operation can not be undone!)</source>
         <translation>Удалить историю переписки (операцию нельзя отменить)</translation>
     </message>
@@ -248,17 +248,8 @@ which may lead to problems with video calls.</source>
         <translation>Поле ввода для заметок о контакте</translation>
     </message>
     <message>
-        <source>You can save comment about this contact here.</source>
-        <translation>Здесь вы можете сохранить заметки об этом контакте.</translation>
-    </message>
-    <message>
         <source>History removed</source>
         <translation>История переписки удалена</translation>
-    </message>
-    <message>
-        <source>Choose an auto accept directory</source>
-        <extracomment>popup title</extracomment>
-        <translation>Выбрать папку для автоматического приема</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -279,6 +270,31 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Failed to remove chat history with %1!</source>
         <translation>Не удалось удалить историю чата с %1!</translation>
+    </message>
+    <message>
+        <source>Auto-accept files</source>
+        <translation>Автоматический приём файлов</translation>
+    </message>
+    <message>
+        <source>Auto-accept for this contact is disabled</source>
+        <translation>Автоматический приём файлов для этого контакта отключён</translation>
+    </message>
+    <message>
+        <source>Auto-accept call:</source>
+        <translation>Автоматическое принятие звонков:</translation>
+    </message>
+    <message>
+        <source>Auto-accept group invites</source>
+        <translation>Автоматическое принятие приглашений в группы</translation>
+    </message>
+    <message>
+        <source>You can save comments about this contact here.</source>
+        <translation>Вы можете сохранять заметки об этом контакте здесь.</translation>
+    </message>
+    <message>
+        <source>Choose an auto-accept directory</source>
+        <extracomment>popup title</extracomment>
+        <translation>Выберите папку для автоматического приёма файлов</translation>
     </message>
 </context>
 <context>
@@ -307,9 +323,13 @@ which may lead to problems with video calls.</source>
         <source>Update available</source>
         <translation>Доступно обновление</translation>
     </message>
-    <message utf8="true">
+    <message>
         <source>qTox is up to date ✓</source>
         <translation>qTox обновлен ✓</translation>
+    </message>
+    <message>
+        <source>Currently running an untested/unstable version of qTox</source>
+        <translation>Сейчас запущена не протестированная/нестабильная версия qTox</translation>
     </message>
 </context>
 <context>
@@ -348,10 +368,6 @@ which may lead to problems with video calls.</source>
         <translation>Неправильный формат Tox ID</translation>
     </message>
     <message>
-        <source>Tox ID, either 76 hexadecimal characters or name@example.com</source>
-        <translation>Tox ID, или 76 шестнадцатиричных символов или name@example.com</translation>
-    </message>
-    <message>
         <source>Type in Tox ID of your friend</source>
         <translation>Введите Tox ID вашего друга</translation>
     </message>
@@ -362,11 +378,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
         <translation>Введите сообщение, чтобы отправить с запросом на добавление в друзья или оставьте поле пустым, чтобы отправить сообщение по-умолчанию</translation>
-    </message>
-    <message>
-        <source>%1 Tox ID is invalid or does not exist</source>
-        <comment>Toxme error</comment>
-        <translation>%1 Tox ID является недопустимым или не существует</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -392,17 +403,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Не удается найти каких-либо контактов для импорта в этом файле!</translation>
+        <translation>Не удалось найти в этом файле какие-либо контакты для импорта!</translation>
     </message>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translation>Tox ID</translation>
-    </message>
-    <message>
-        <source>either 76 hexadecimal characters or name@example.com</source>
-        <extracomment>Tox ID format description</extracomment>
-        <translation>76-ти значный шестнадцатеричный ключ или name@example.com</translation>
     </message>
     <message>
         <source>Message</source>
@@ -416,7 +422,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Отправить запрос на добавление</translation>
+        <translation>Отправить запросы в друзья</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -429,7 +435,6 @@ which may lead to problems with video calls.</source>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
-        <extracomment>Shows the number of contacts we&apos;re about to import from a file (at least one)</extracomment>
         <translation>
             <numerusform>Можно импортировать %n контакт, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
             <numerusform>Можно импортировать %n контактов, нажмите &quot;Отправить&quot; для подтверждения</numerusform>
@@ -440,16 +445,26 @@ which may lead to problems with video calls.</source>
         <source>Import contacts</source>
         <translation>Импорт списка контактов</translation>
     </message>
+    <message>
+        <source>Tox ID, 76 hexadecimal characters</source>
+        <translation>Tox ID, 76 HEX-символов</translation>
+    </message>
+    <message>
+        <source>%1 Tox ID is invalid</source>
+        <comment>Tox address error</comment>
+        <translation>%1 неверный Tox ID</translation>
+    </message>
+    <message>
+        <source>76 hexadecimal characters</source>
+        <extracomment>Tox ID format description</extracomment>
+        <translation>76 HEX-символов</translation>
+    </message>
 </context>
 <context>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
         <translation>Расширенные</translation>
-    </message>
-    <message>
-        <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.</source>
-        <translation>Если вы %1 в том, что вы делаете, пожалуйста ничего %2 меняйте. Изменения могут привести к проблемам в работе qTox и даже потере данных (например, истории сообщений).</translation>
     </message>
     <message>
         <source>really</source>
@@ -480,22 +495,20 @@ which may lead to problems with video calls.</source>
         <translation>Нет</translation>
     </message>
     <message>
-        <source>Call active</source>
-        <comment>popup title</comment>
-        <translation>Идет звонок</translation>
-    </message>
-    <message>
-        <source>You can&apos;t disconnect while a call is active!</source>
-        <comment>popup text</comment>
-        <translation>Вы не можете отключиться во время звонка!</translation>
-    </message>
-    <message>
-        <source>Save File</source>
-        <translation>Сохранить файл</translation>
-    </message>
-    <message>
         <source>Logs (*.log)</source>
         <translation>журнал (*.log)</translation>
+    </message>
+    <message>
+        <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
+        <translation>Если вы %1 что знаете, что вы делаете, пожалуйста, %2 меняйте здесь что-либо. Изменения сделанные здесь могут привести к проблемам с qTox, и даже к потере ваших данных, например, истории чатов.%3</translation>
+    </message>
+    <message>
+        <source>Changes here are applied only after restarting qTox.</source>
+        <translation>Изменения здесь применяются только после перезапуска qTox.</translation>
+    </message>
+    <message>
+        <source>Save file</source>
+        <translation>Файл сохранения</translation>
     </message>
 </context>
 <context>
@@ -518,18 +531,9 @@ which may lead to problems with video calls.</source>
         <translation>Портативность</translation>
     </message>
     <message>
-        <source>Connection Settings</source>
-        <translation>Настройки соединения</translation>
-    </message>
-    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Включить IPv6 (реком.)</translation>
-    </message>
-    <message>
-        <source>Disabling this allows, e.g., toxing over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
-        <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>Отключение позволяет, например, использовать Tox поверх Tor. Однако это добавляет нагрузку на сеть Tox, так что отключайте только в случае необходимости.</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
@@ -563,11 +567,6 @@ which may lead to problems with video calls.</source>
         <translation>HTTP</translation>
     </message>
     <message>
-        <source>Reconnect</source>
-        <comment>reconnect button</comment>
-        <translation>Переподключиться</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Отладка</translation>
     </message>
@@ -582,6 +581,15 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Enable LAN discovery</source>
         <translation>Включить обнаружение локальной сети (LAN)</translation>
+    </message>
+    <message>
+        <source>Connection settings</source>
+        <translation>Настройки соединения</translation>
+    </message>
+    <message>
+        <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
+        <extracomment>force tcp checkbox tooltip</extracomment>
+        <translation>Отключение этой функции позволяет, например, использовать Tox через Tor. Тем не менее, это добавляет нагрузку на сеть Tox, поэтому убирайте галочку, только если это необходимо.</translation>
     </message>
 </context>
 <context>
@@ -604,14 +612,6 @@ which may lead to problems with video calls.</source>
         <translation>Плохая идея</translation>
     </message>
     <message>
-        <source>%1 calling</source>
-        <translation>Входящий звонок от %1</translation>
-    </message>
-    <message>
-        <source>Calling %1</source>
-        <translation>Вызов %1</translation>
-    </message>
-    <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
         <translation>Не удалось открыть временный файл</translation>
@@ -621,16 +621,8 @@ which may lead to problems with video calls.</source>
         <translation>qTox не смог сохранить снимок экрана</translation>
     </message>
     <message>
-        <source>Call with %1 ended. %2</source>
-        <translation>Разговор с %1 завершился. %2</translation>
-    </message>
-    <message>
         <source>Call duration: </source>
-        <translation>Длительность разговора: </translation>
-    </message>
-    <message>
-        <source>%1 is typing</source>
-        <translation>%1 набирает сообщение</translation>
+        <translation>Длительность звонка: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -641,23 +633,14 @@ which may lead to problems with video calls.</source>
         <translation>Вы пытаетесь отправить последовательный файл, что не сработает!</translation>
     </message>
     <message>
-        <source>%1 is now %2</source>
-        <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 сейчас %2</translation>
-    </message>
-    <message>
-        <source>Call with %1 ended unexpectedly. %2</source>
-        <translation>Разговор с %1  неожиданно прервался. %2</translation>
-    </message>
-    <message>
         <source>Filename contained illegal characters</source>
         <translation>Имя файла содержит недопустимые символы</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _ 
-so you can save the file on windows.</source>
-        <translation>Некорректные символы были изменены на _ 
-так что вы можете сохранить файл в Windows.</translation>
+so you can save the file on Windows.</source>
+        <translation>Недопустимые символы изменены на _ 
+чтобы вы смогли сохранить файл в Windows.</translation>
     </message>
 </context>
 <context>
@@ -728,7 +711,22 @@ so you can save the file on windows.</source>
     </message>
 </context>
 <context>
-    <name>ChatLog</name>
+    <name>ChatTextEdit</name>
+    <message>
+        <source>Type your message here...</source>
+        <translation>Введите ваше сообщение здесь...</translation>
+    </message>
+</context>
+<context>
+    <name>ChatWidget</name>
+    <message>
+        <source>pending</source>
+        <translation>в ожидании</translation>
+    </message>
+    <message>
+        <source>%1 is typing</source>
+        <translation>%1 печатает</translation>
+    </message>
     <message>
         <source>Copy</source>
         <translation>Копировать</translation>
@@ -736,17 +734,6 @@ so you can save the file on windows.</source>
     <message>
         <source>Select all</source>
         <translation>Выбрать все</translation>
-    </message>
-    <message>
-        <source>pending</source>
-        <translation>в ожидании</translation>
-    </message>
-</context>
-<context>
-    <name>ChatTextEdit</name>
-    <message>
-        <source>Type your message here...</source>
-        <translation>Введите ваше сообщение здесь...</translation>
     </message>
 </context>
 <context>
@@ -773,51 +760,47 @@ so you can save the file on windows.</source>
         <translation>/me предлагает дружбу, &quot;%1&quot;</translation>
     </message>
     <message>
+        <source>Groupchat %1</source>
+        <translation>Групповой чат %1</translation>
+    </message>
+    <message>
         <source>Invalid Tox ID</source>
-        <comment>Error while sending friendship request</comment>
-        <translation>Некорректный Tox ID</translation>
+        <comment>Error while sending friend request</comment>
+        <translation>Неверный Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Вам нужно написать сообщение с текстом запроса</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Ваше сообщение слишком длинное!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
-        <comment>Error while sending friendship request</comment>
+        <comment>Error while sending friend request</comment>
         <translation>Друг уже добавлен</translation>
-    </message>
-    <message>
-        <source>Groupchat %1</source>
-        <translation>Групповой чат %1</translation>
     </message>
 </context>
 <context>
-    <name>DesktopNotify</name>
+    <name>ExtensionStatus</name>
     <message>
-        <source>New message</source>
-        <translation>Новое сообщение</translation>
+        <source>All extensions supported</source>
+        <translation>Поддерживаются все расширения</translation>
     </message>
     <message>
-        <source>Incoming file transfer</source>
-        <translation>Передача входящего файла</translation>
+        <source>No extensions supported</source>
+        <translation>Ни одно расширение не поддерживается</translation>
     </message>
     <message>
-        <source>Friend request received</source>
-        <translation>Получен запрос на дружбу</translation>
+        <source>Not all extensions supported</source>
+        <translation>Не все расширения поддерживаются</translation>
     </message>
     <message>
-        <source>New group message</source>
-        <translation>Новое групповое сообщение</translation>
-    </message>
-    <message>
-        <source>Group invite received</source>
-        <translation>Получено приглашение в группу</translation>
+        <source>Multipart Messages: </source>
+        <translation>Мультипликативные Сообщения: </translation>
     </message>
 </context>
 <context>
@@ -902,18 +885,13 @@ so you can save the file on windows.</source>
         <translation>Сохранить файл</translation>
     </message>
     <message>
-        <source>Remote Paused</source>
+        <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation>Удаленная пауза</translation>
+        <translation>Приостановлено дистанционно</translation>
     </message>
 </context>
 <context>
     <name>FilesForm</name>
-    <message>
-        <source>Transferred Files</source>
-        <comment>&quot;Headline&quot; of the window</comment>
-        <translation>Переданные файлы</translation>
-    </message>
     <message>
         <source>Downloads</source>
         <translation>Принятые</translation>
@@ -921,6 +899,11 @@ so you can save the file on windows.</source>
     <message>
         <source>Uploads</source>
         <translation>Отправленные</translation>
+    </message>
+    <message>
+        <source>Transferred files</source>
+        <comment>&quot;Headline&quot; of the window</comment>
+        <translation>Переданные файлы</translation>
     </message>
 </context>
 <context>
@@ -942,43 +925,12 @@ so you can save the file on windows.</source>
         <translation>За этот месяц</translation>
     </message>
     <message>
-        <source>Older than 6 Months</source>
-        <translation>За 6 месяцев</translation>
-    </message>
-    <message>
         <source>Never</source>
         <translation>Никогда</translation>
     </message>
-</context>
-<context>
-    <name>FriendRequestDialog</name>
     <message>
-        <source>Friend request</source>
-        <comment>Title of the window to aceept/deny a friend request</comment>
-        <translatorcomment>Мне не нравится, но другого не придумал, и фейсбук использует это</translatorcomment>
-        <translation>Запрос на добавление в друзья</translation>
-    </message>
-    <message>
-        <source>Someone wants to make friends with you</source>
-        <translation>Кто-то хочет добавить вас в друзья</translation>
-    </message>
-    <message>
-        <source>User ID:</source>
-        <translation>ID пользователя:</translation>
-    </message>
-    <message>
-        <source>Friend request message:</source>
-        <translation>Текст запроса:</translation>
-    </message>
-    <message>
-        <source>Accept</source>
-        <comment>Accept a friend request</comment>
-        <translation>Принять</translation>
-    </message>
-    <message>
-        <source>Reject</source>
-        <comment>Reject a friend request</comment>
-        <translation>Отклонить</translation>
+        <source>Older than 6 months</source>
+        <translation>Старше чем 6 месяцев</translation>
     </message>
 </context>
 <context>
@@ -1023,18 +975,9 @@ so you can save the file on windows.</source>
         <translation>Переместить из списка &apos;%1&apos;</translation>
     </message>
     <message>
-        <source>Move  to circle &quot;%1&quot;</source>
-        <translation>Поместить в список &quot;%1&quot;</translation>
-    </message>
-    <message>
         <source>Set alias...</source>
         <translatorcomment>Может &quot;отображаемое имя&quot;?; Можно даже &apos;элиас&apos; :)</translatorcomment>
         <translation>Установить псевдоним...</translation>
-    </message>
-    <message>
-        <source>Remove friend</source>
-        <comment>Menu to remove the friend from our friendlist</comment>
-        <translation>Удалить друга</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1064,6 +1007,23 @@ so you can save the file on windows.</source>
     <message>
         <source>Offline</source>
         <translation>Не в сети</translation>
+    </message>
+    <message>
+        <source>Move to circle &quot;%1&quot;</source>
+        <translation>Переместить к кругу &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>Remove friend</source>
+        <comment>Menu to remove the friend from the friend list</comment>
+        <translation>Удалить друга</translation>
+    </message>
+    <message>
+        <source>Blocked</source>
+        <translation>Заблокировано</translation>
+    </message>
+    <message>
+        <source>Negotiating</source>
+        <translation>Переговоры</translation>
     </message>
 </context>
 <context>
@@ -1113,11 +1073,6 @@ so you can save the file on windows.</source>
         <translation>Укажите 0, чтобы отключить</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking them.</source>
-        <comment>autoaccept cb tooltip</comment>
-        <translation>Можно настроить отдельно для каждого друга (щелкнув правой кнопкой мыши по другу и выбрав соответствующий пункт меню).</translation>
-    </message>
-    <message>
         <source>Language:</source>
         <translation>Язык:</translation>
     </message>
@@ -1130,20 +1085,6 @@ so you can save the file on windows.</source>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translation>qTox будет запускаться свернутым в трей.</translation>
-    </message>
-    <message>
-        <source>After pressing close (X) qTox will minimize to tray,
-instead of closing itself.</source>
-        <comment>toolTip for close to tray setting</comment>
-        <translation>После закрытия окна (Х) qTox свернется в трей,
-вместо закрытия.</translation>
-    </message>
-    <message>
-        <source>After pressing minimize (_) qTox will minimize itself to tray,
-instead of system taskbar.</source>
-        <comment>toolTip for minimize to tray setting</comment>
-        <translation>После сворачивания окна (_) qTox свернется в трей,
-а не в панель задач.</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1193,6 +1134,29 @@ instead of system taskbar.</source>
         <source> MB</source>
         <translation> МБ</translation>
     </message>
+    <message>
+        <source>After pressing minimize (_) qTox will minimize to tray,
+instead of system taskbar.</source>
+        <comment>toolTip for minimize to tray setting</comment>
+        <translation>После нажатия свернуть (_) qTox будет свёрнут в трей,
+вместо системной панели задач.</translation>
+    </message>
+    <message>
+        <source>After pressing close (X) qTox will close to tray,
+instead of closing entirely.</source>
+        <comment>toolTip for close to tray setting</comment>
+        <translation>После нажатия закрыть (X) qTox свернётся в трей,
+вместо того, чтобы закрыться совсем.</translation>
+    </message>
+    <message>
+        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <comment>autoaccept cb tooltip</comment>
+        <translation>Вы можете установить это для каждого друга, нажатием правой кнопки на каждом из них.</translation>
+    </message>
+    <message>
+        <source>Add a chat message when a user joins or leaves a group</source>
+        <translation>Отправлять сообщение в чат, когда пользователь вступает в группу, или покидает её</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -1225,20 +1189,12 @@ instead of system taskbar.</source>
         <translation>Цитировать выделенное</translation>
     </message>
     <message>
-        <source>Cleared</source>
-        <translation>Очищено</translation>
-    </message>
-    <message>
         <source>Copy link address</source>
         <translation>Копировать адрес ссылки</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>Подтверждение</translation>
-    </message>
-    <message>
-        <source>You are sure that you want to clear all displayed messages?</source>
-        <translation>Вы уверены, что хотите удалить все отображаемые сообщения?</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1256,64 +1212,13 @@ instead of system taskbar.</source>
         <source>Export to file</source>
         <translation>Экспорт в файл</translation>
     </message>
-</context>
-<context>
-    <name>GenericNetCamView</name>
     <message>
-        <source>Tox video</source>
-        <translation>Видео</translation>
-    </message>
-    <message>
-        <source>Show Messages</source>
-        <translation>Показать сообщения</translation>
-    </message>
-    <message>
-        <source>Hide Messages</source>
-        <translation>Скрыть сообщения</translation>
-    </message>
-    <message>
-        <source>Full Screen</source>
-        <translation>На весь экран</translation>
-    </message>
-    <message>
-        <source>Toggle video preview</source>
-        <translation>Переключить предварительный просмотр видео</translation>
-    </message>
-    <message>
-        <source>Mute audio</source>
-        <translation>Выключить звук</translation>
-    </message>
-    <message>
-        <source>Mute microphone</source>
-        <translation>Выключить микрофон</translation>
-    </message>
-    <message>
-        <source>End video call</source>
-        <translation>Завершить видеозвонок</translation>
-    </message>
-    <message>
-        <source>Exit full screen</source>
-        <translation>Выход из полноэкранного режима</translation>
+        <source>Are you sure that you want to clear all displayed messages?</source>
+        <translation>Вы уверены, что вы хотите очистить все отображаемые сообщения?</translation>
     </message>
 </context>
 <context>
     <name>GroupChatForm</name>
-    <message>
-        <source>%1 has set the title to %2</source>
-        <translation>%1 сменил заголовок на %2</translation>
-    </message>
-    <message>
-        <source>%1 has joined the group</source>
-        <translation>%1 присоединился к группе</translation>
-    </message>
-    <message>
-        <source>%1 is now known as %2</source>
-        <translation>%1 в настоящее время известен как %2</translation>
-    </message>
-    <message>
-        <source>%1 has left the group</source>
-        <translation>%1 покинул группу</translation>
-    </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1351,7 +1256,7 @@ instead of system taskbar.</source>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Приглашен %1 в %2 на %3.</translation>
+        <translation>Приглашён %1 %2 в %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1410,13 +1315,6 @@ instead of system taskbar.</source>
         <translation>Tox ID</translation>
     </message>
     <message>
-        <source>This bunch of characters tells other Tox clients how to contact you.
-Share it with your friends to communicate.</source>
-        <comment>Tox ID tooltip</comment>
-        <translation>Этот набор символов говорит другим пользователям Tox как связаться с вами.
-Отправте его своим друзьям для связи.</translation>
-    </message>
-    <message>
         <source>Your Tox ID (click to copy)</source>
         <translation>Ваш Tox ID (нажмите на него, чтобы скопировать)</translation>
     </message>
@@ -1462,7 +1360,7 @@ Share it with your friends to communicate.</source>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Сменить пароль</translation>
+        <translation>Изменить пароль</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1485,54 +1383,6 @@ Profile does not contain your history.</source>
         <source>Delete</source>
         <comment>delete profile button</comment>
         <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Server</source>
-        <translation>Сервер</translation>
-    </message>
-    <message>
-        <source>Hide my name from the public list</source>
-        <translation>Не отображать меня в публичном списке</translation>
-    </message>
-    <message>
-        <source>Register</source>
-        <translation>Регистрация</translation>
-    </message>
-    <message>
-        <source>Your password</source>
-        <translation>Ваш пароль</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <translation>Обновление</translation>
-    </message>
-    <message>
-        <source>Register on ToxMe</source>
-        <translation>Зарегистрироваться на ToxMe</translation>
-    </message>
-    <message>
-        <source>Name for the ToxMe service.</source>
-        <comment>Tooltip for the `Username` ToxMe field.</comment>
-        <translation>Имя для сервиса ToxMe.</translation>
-    </message>
-    <message>
-        <source>Optional. Something about you. Or your cat.</source>
-        <comment>Tooltip for the Biography text.</comment>
-        <translation>Необязательно. Что-нибудь о вас. Или о вашей кошке :)</translation>
-    </message>
-    <message>
-        <source>Optional. Something about you. Or your cat.</source>
-        <comment>Tooltip for the Biography field.</comment>
-        <translation>Необязательно. Что-нибудь о вас. Или о вашей кошке :)</translation>
-    </message>
-    <message>
-        <source>ToxMe service to register on.</source>
-        <translation>Сервис ToxMe для регистрации.</translation>
-    </message>
-    <message>
-        <source>If not set, ToxMe entries are publicly visible.</source>
-        <comment>Tooltip for the `Hide my name from public list` ToxMe checkbox.</comment>
-        <translation>Если не установлен, записи ToxMe видны всем.</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
@@ -1568,30 +1418,6 @@ Profile does not contain your history.</source>
         <translation>Скопировать QR-изображение в буфер обмена</translation>
     </message>
     <message>
-        <source>ToxMe username to be shown on ToxMe</source>
-        <translation>Имя пользователя ToxMe для отображения на ToxMe</translation>
-    </message>
-    <message>
-        <source>Optional ToxMe biography to be shown on ToxMe</source>
-        <translation>Необязательная ToxMe биография для отображения на ToxMe</translation>
-    </message>
-    <message>
-        <source>ToxMe service address</source>
-        <translation>Адрес сервиса ToxMe</translation>
-    </message>
-    <message>
-        <source>Visibility on the ToxMe service</source>
-        <translation>Видимость на сервисе ToxMe</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation>Пароль</translation>
-    </message>
-    <message>
-        <source>Update ToxMe entry</source>
-        <translation>Обновить запись ToxMe</translation>
-    </message>
-    <message>
         <source>Rename profile.</source>
         <translation>Переименовать профиль.</translation>
     </message>
@@ -1620,47 +1446,26 @@ Profile does not contain your history.</source>
         <translation>Мой статус:</translation>
     </message>
     <message>
-        <source>My username</source>
-        <translation>Мое имя пользователя</translation>
-    </message>
-    <message>
-        <source>My biography</source>
-        <translation>Моя биография</translation>
-    </message>
-    <message>
         <source>My profile</source>
         <translation>Мой профиль</translation>
+    </message>
+    <message>
+        <source>This ID allows other Tox users to add and contact you.
+Share it with your friends to begin chatting.</source>
+        <comment>Tox ID tooltip</comment>
+        <translation>Этот ID позволяет другим пользователям Tox добавлять вас и общаться с вами.
+Поделитесь им с вашими друзьями, чтобы начать общаться.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
-        <source>Load History Dialog</source>
-        <translation>Диалог загрузки истории</translation>
+        <source>Load history dialog</source>
+        <translation>Загрузить историю диалога</translation>
     </message>
     <message>
-        <source>Load history</source>
-        <translation>Загрузить историю</translation>
-    </message>
-    <message>
-        <source>from</source>
-        <translation>от</translation>
-    </message>
-    <message>
-        <source>to</source>
-        <translation>кому</translation>
-    </message>
-    <message>
-        <source>(about 100 messages are loaded)</source>
-        <translation>(загружено около 100 сообщений)</translation>
-    </message>
-    <message>
-        <source>Select Date Dialog</source>
-        <translation>Диалог выбора даты</translation>
-    </message>
-    <message>
-        <source>Select a date</source>
-        <translation>Выберите дату</translation>
+        <source>Load history from:</source>
+        <translation>Загрузить историю из:</translation>
     </message>
 </context>
 <context>
@@ -1716,12 +1521,6 @@ Profile does not contain your history.</source>
     <message>
         <source>The password must be at least 6 characters long.</source>
         <translation>Пароль должен быть длиной не менее 6 символов.</translation>
-    </message>
-    <message>
-        <source>The passwords you&apos;ve entered are different.
-Please make sure to enter same password twice.</source>
-        <translation>Введенные пароли не совпадают.
-Пожалуйста, проверьте что введенные пароли идентичны.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
@@ -1806,6 +1605,12 @@ You may want to create one.</source>
     <message>
         <source>Loading existing profile page</source>
         <translation>Страница загрузки существующего профиля</translation>
+    </message>
+    <message>
+        <source>The passwords you&apos;ve entered are different.
+Please make sure to enter the same password twice.</source>
+        <translation>Введёные вами пароли отличаются друг от друга.
+Пожалуйста, убедитесь что вы ввели одинаковый пароль дважды.</translation>
     </message>
 </context>
 <context>
@@ -1912,6 +1717,58 @@ You may want to create one.</source>
     </message>
 </context>
 <context>
+    <name>MessageBoxManager</name>
+    <message>
+        <source>Executable file</source>
+        <comment>popup title</comment>
+        <translation>Исполняемый файл</translation>
+    </message>
+    <message>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <comment>popup text</comment>
+        <translation>Вы просите qTox открыть исполняемый файл. Исполняемые файлы могут нанести вред вашему компьютеру. Вы уверены, что хотите открыть этот файл?</translation>
+    </message>
+</context>
+<context>
+    <name>NetCamView</name>
+    <message>
+        <source>Tox video</source>
+        <translation>Tox видео</translation>
+    </message>
+    <message>
+        <source>Full Screen</source>
+        <translation>На весь экран</translation>
+    </message>
+    <message>
+        <source>Toggle video preview</source>
+        <translation>Переключить предварительный просмотр видео</translation>
+    </message>
+    <message>
+        <source>Mute audio</source>
+        <translation>Выключить звук</translation>
+    </message>
+    <message>
+        <source>Mute microphone</source>
+        <translation>Выключить микрофон</translation>
+    </message>
+    <message>
+        <source>End video call</source>
+        <translation>Завершить видеозвонок</translation>
+    </message>
+    <message>
+        <source>Exit full screen</source>
+        <translation>Выйти из полноэкранного режима</translation>
+    </message>
+    <message>
+        <source>Hide messages</source>
+        <translation>Скрыть сообщения</translation>
+    </message>
+    <message>
+        <source>Show messages</source>
+        <translation>Показать сообщения</translation>
+    </message>
+</context>
+<context>
     <name>Nexus</name>
     <message>
         <source>View</source>
@@ -1951,6 +1808,42 @@ You may want to create one.</source>
             <numerusform>%n непрочитанных сообщения</numerusform>
             <numerusform>%n непрочитанных сообщений</numerusform>
         </translation>
+    </message>
+</context>
+<context>
+    <name>NotificationGenerator</name>
+    <message>
+        <source>New message</source>
+        <translation>Новое сообщение</translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation>Новое групповое сообщение</translation>
+    </message>
+    <message>
+        <source>Incoming file transfer</source>
+        <translation>Входящая передача файла</translation>
+    </message>
+    <message>
+        <source>%1 - file transfer</source>
+        <extracomment>e.g. Bob - file transfer</extracomment>
+        <translation>%1 - передача файла</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation>Получено приглашение в группу</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation>%1 приглашает вас вступить в группу.</translation>
+    </message>
+    <message>
+        <source>Friend request received</source>
+        <translation>Получен запрос на добавление в друзья</translation>
+    </message>
+    <message>
+        <source>Friend request received from %1</source>
+        <translation>Получен запрос в друзья от %1</translation>
     </message>
 </context>
 <context>
@@ -2026,11 +1919,11 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>BlackList</source>
-        <translation>Черный список</translation>
+        <translation>Список заблокированных</translation>
     </message>
     <message>
-        <source>Filter group message by group member&apos;s public key. Put public key here, one per line.</source>
-        <translation>Фильтровать групповые сообщения по открытому ключу. Укажите публичные ключи, по одному на каждой строке.</translation>
+        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <translation>Фильтруйте групповые сообщения через публичные ключи участников группы. Добавьте публичные ключи сюда, один на каждую строку.</translation>
     </message>
 </context>
 <context>
@@ -2040,12 +1933,12 @@ Save format changes are possible, which may result in data loss.</source>
         <translation>Ошибка извлечения ключа из пароля, новый пароль на профиль не установлен.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
-        <translation>Невозможно изменить пароль в базе данных, должно быть база повреждена или вы используете старый пароль.</translation>
-    </message>
-    <message>
         <source>Toxing on qTox</source>
         <translation>Общайтесь в qTox</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translation>Не удалось сменить пароль базы данных, она может быть повреждена, или был использован старый пароль.</translation>
     </message>
 </context>
 <context>
@@ -2095,16 +1988,6 @@ Please use another image.</source>
         <translation>Путь недоступен для записи</translation>
     </message>
     <message>
-        <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
-        <comment>text of permissions popup</comment>
-        <translation>У вас нет прав для записи в эту директорию. Выберете другую, или отмените диалог сохранения.</translation>
-    </message>
-    <message>
-        <source>Really delete profile?</source>
-        <comment>deletion confirmation title</comment>
-        <translation>Вы действительно хотите удалить профиль?</translation>
-    </message>
-    <message>
         <source>Save</source>
         <comment>save qr image</comment>
         <translation>Сохранить</translation>
@@ -2123,21 +2006,8 @@ Please use another image.</source>
         <translation>У вашего профиля нет пароля!</translation>
     </message>
     <message>
-        <source>Really delete password?</source>
-        <comment>deletion confirmation title</comment>
-        <translation>Действительно удалить пароль?</translation>
-    </message>
-    <message>
         <source>Please enter a new password.</source>
         <translation>Пожалуйста, введите новый пароль.</translation>
-    </message>
-    <message>
-        <source>Failed to copy file</source>
-        <translation>Не удалось скопировать файл</translation>
-    </message>
-    <message>
-        <source>The file you chose could not be written to.</source>
-        <translation>Запись в выбранный вами файл невозможна.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
@@ -2150,41 +2020,9 @@ Please use another image.</source>
         <translation>Файлы не могут быть удалены!</translation>
     </message>
     <message>
-        <source>Register (processing)</source>
-        <translation>Регистрация (в процессе)</translation>
-    </message>
-    <message>
-        <source>Update (processing)</source>
-        <translation>Обновление (в процессе)</translation>
-    </message>
-    <message>
-        <source>Done!</source>
-        <translation>Выполнено!</translation>
-    </message>
-    <message>
-        <source>Account %1@%2 updated successfully</source>
-        <translation>Аккаунт %1@%2 обновлен успешно</translation>
-    </message>
-    <message>
-        <source>Successfully added %1@%2 to the database. Save your password</source>
-        <translation>%1@%2 успешно внесен в базу данных. Сохраните ваш пароль</translation>
-    </message>
-    <message>
-        <source>Toxme error</source>
-        <translation>Ошибка Toxme</translation>
-    </message>
-    <message>
-        <source>Register</source>
-        <translation>Регистрация</translation>
-    </message>
-    <message>
-        <source>Update</source>
-        <translation>Обновить</translation>
-    </message>
-    <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation>Сменить пароль</translation>
+        <translation>Изменить пароль</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2198,16 +2036,6 @@ Please use another image.</source>
     <message>
         <source>Couldn&apos;t change password</source>
         <translation>Невозможно изменить пароль</translation>
-    </message>
-    <message>
-        <source>This bunch of characters tells other Tox clients how to contact you.
-Share it with your friends to communicate.
-
-This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>Этот набор символов позволит другим Tox клиентам связаться с вами.
-Поделитесь им со своими друзьями, чтобы начать общаться.
-
-Этот ID включает NoSpam код (синий), и контрольную сумму (серый).</translation>
     </message>
     <message>
         <source>Empty path is unavaliable</source>
@@ -2238,10 +2066,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Путь не задан</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change password on the database, it might be corrupted or use the old password.</source>
-        <translation>Невозможно изменить пароль в базе данных, должно быть база повреждена или вы используете старый пароль.</translation>
-    </message>
-    <message>
         <source>Export profile</source>
         <translation>Экспортировать профиль</translation>
     </message>
@@ -2261,14 +2085,59 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Пожалуйста, удалите их вручную.</translation>
     </message>
     <message>
-        <source>Are you sure you want to delete your password?</source>
-        <extracomment>deletion confirmation text</extracomment>
-        <translation>Вы уверены, что хотите удалить свой пароль?</translation>
-    </message>
-    <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
         <translation>Изображения (%1)</translation>
+    </message>
+    <message>
+        <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
+        <comment>text of permissions popup</comment>
+        <translation>У вас нет разрешения чтобы записывать в эту папку. Выберите другую, или отмените сохранение диалога.</translation>
+    </message>
+    <message>
+        <source>Failed to save file</source>
+        <translation>Сохранение файла не удалось</translation>
+    </message>
+    <message>
+        <source>The file you chose could not be saved.</source>
+        <translation>Файл, который вы выбрали не может быть сохранён.</translation>
+    </message>
+    <message>
+        <source>Empty path is unavaliable.</source>
+        <translation>Пустой путь недопустим.</translation>
+    </message>
+    <message>
+        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <translation>Не удалось изменить пароль базы данных, он может быть повреждён или был использован старый пароль.</translation>
+    </message>
+    <message>
+        <source>Tox user names cannot exceed %1 characters.</source>
+        <translation>Имена пользователей Tox не могут превышать %1 символов.</translation>
+    </message>
+    <message>
+        <source>Delete profile</source>
+        <comment>deletion confirmation title</comment>
+        <translation>Удалить профиль</translation>
+    </message>
+    <message>
+        <source>Remove password</source>
+        <comment>deletion confirmation title</comment>
+        <translation>Удалить пароль</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove your password?</source>
+        <extracomment>deletion confirmation text</extracomment>
+        <translation>Вы уверены, что вы хотите удалить ваш пароль?</translation>
+    </message>
+    <message>
+        <source>This ID allows other Tox users to add and contact you.
+Share it with your friends to begin chatting.
+
+This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
+        <translation>Этот ID позволяет другим пользователям Tox добавлять вас и общаться с вами.
+Поделитесь им с вашими друзьями, чтобы начать общаться.
+
+Этот ID включает в себя АнтиСпам код (голубой) и контрольную сумму (серую).</translation>
     </message>
 </context>
 <context>
@@ -2324,7 +2193,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation>OK</translation>
+        <translation>Принять</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2351,13 +2220,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Не удалось добавить друга</translation>
     </message>
     <message>
-        <source>%1 is not a valid Toxme address.</source>
-        <translation>%1 - не корректный адрес Toxme.</translation>
-    </message>
-    <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
         <translation>Вы не можете добавить себя в друзья!</translation>
+    </message>
+    <message>
+        <source>%1 is not a valid Tox address.</source>
+        <translation>%1 это недопустимый Tox адрес.</translation>
     </message>
 </context>
 <context>
@@ -2379,7 +2248,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Default</source>
-        <translation>По-умолчанию</translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <source>Blue</source>
@@ -2417,64 +2286,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Рабочий стол</translation>
     </message>
     <message>
-        <source>Server doesn&apos;t support Toxme</source>
-        <translation>Сервер не поддерживает Toxme</translation>
-    </message>
-    <message>
-        <source>You&apos;re making too many requests. Wait an hour and try again</source>
-        <translation>Вы делаете слишком много запросов. Подождите один час и повторите попытку</translation>
-    </message>
-    <message>
-        <source>This name is already in use</source>
-        <translation>Это имя уже используется</translation>
-    </message>
-    <message>
-        <source>This Tox ID is already registered under another name</source>
-        <translation>Этот Tox ID уже зарегистрирован под другим именем</translation>
-    </message>
-    <message>
-        <source>Please don&apos;t use a space in your name</source>
-        <translation>Пожалуйста, не используйте пробелы в вашем имени</translation>
-    </message>
-    <message>
-        <source>Password incorrect</source>
-        <translation>Неверный пароль</translation>
-    </message>
-    <message>
-        <source>You can&apos;t use this name</source>
-        <translation>Нельзя использовать это имя</translation>
-    </message>
-    <message>
-        <source>Name not found</source>
-        <translation>Имя не найдено</translation>
-    </message>
-    <message>
-        <source>Tox ID not sent</source>
-        <translation>Tox ID не отправлен</translation>
-    </message>
-    <message>
-        <source>That user does not exist</source>
-        <translation>Этот пользователь не существует</translation>
-    </message>
-    <message>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
         <translation>qTox не может загрузить историю переписки, она будет отключена.</translation>
-    </message>
-    <message>
-        <source>Problem with HTTPS connection</source>
-        <translation>Проблема с HTTPS соединением</translation>
-    </message>
-    <message>
-        <source>Internal ToxMe error</source>
-        <translation>Внутренняя ошибка ToxMe</translation>
-    </message>
-    <message>
-        <source>Reformatting text in progress..</source>
-        <translation>Переформатирование текста..</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
@@ -2529,28 +2346,185 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translation>заблокирован</translation>
     </message>
+    <message>
+        <source>Reformatting text...</source>
+        <comment>Waiting for text to be reformatted</comment>
+        <translation>Переформатирование текста...</translation>
+    </message>
+    <message>
+        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translation>Устанавливает IPv6 &lt;включённым&gt;/&lt;выключенным&gt;. По стандарту он ВКЛЮЧЁН.</translation>
+    </message>
+    <message>
+        <source>on/off</source>
+        <translation>включить/выключить</translation>
+    </message>
+    <message>
+        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
+        <translation>Устанавливает UDP &lt;включённым&gt;/&lt;выключенным&gt;. По стандарту он ВКЛЮЧЁН.</translation>
+    </message>
+    <message>
+        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
+        <translation>Устанавливает обнаружение LAN &lt;включённым&gt;/&lt;выключенным&gt;. Перезаписывает отключённый UDP. По стандарту оно ВКЛЮЧЕНО.</translation>
+    </message>
+    <message>
+        <source>Sets proxy settings. Default is NONE.</source>
+        <translation>Устанавливает настройки прокси. По стандарту они ОТСУТСТВУЮТ.</translation>
+    </message>
+    <message>
+        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
+        <translation>(SOCKS5/HTTP/ОТСУТСТВУЕТ):(АДРЕС):(ПОРТ)</translation>
+    </message>
+    <message>
+        <source>%1 message(s) from %2 chats</source>
+        <extracomment>e.g. 3 messages from 2 chats</extracomment>
+        <translation>%1 сообщения(ий) из %2 чатов</translation>
+    </message>
+    <message>
+        <source>%1 message(s) from %2</source>
+        <extracomment>e.g. 2 messages from Bob</extracomment>
+        <translation>%1 сообщения(ий) от %2</translation>
+    </message>
+    <message>
+        <source>negotitating</source>
+        <comment>contact status</comment>
+        <translation>переговаривается</translation>
+    </message>
+    <message>
+        <source>Failed to send file &quot;%1&quot;</source>
+        <translation>Не удалось отправить файл &quot;%1&quot;</translation>
+    </message>
+    <message>
+        <source>%1 has joined the group</source>
+        <translation>%1 присоединился к группе</translation>
+    </message>
+    <message>
+        <source>%1 has left the group</source>
+        <translation>%1 покинул группу</translation>
+    </message>
+    <message>
+        <source>%1 is now known as %2</source>
+        <translation>%1 теперь известен как %2</translation>
+    </message>
+    <message>
+        <source>%1 has set the title to %2</source>
+        <translation>%1 сменил заголовок на %2</translation>
+    </message>
+    <message>
+        <source>Cleared</source>
+        <translation>Очищено</translation>
+    </message>
+    <message>
+        <source>Call with %1 ended unexpectedly. %2</source>
+        <translation>Разговор с %1 неожиданно прервался. %2</translation>
+    </message>
+    <message>
+        <source>Call with %1 ended. %2</source>
+        <translation>Разговор с %1 завершился. %2</translation>
+    </message>
+    <message>
+        <source>%1 is now %2</source>
+        <comment>e.g. &quot;Dubslow is now online&quot;</comment>
+        <translation>%1 теперь %2</translation>
+    </message>
+    <message>
+        <source>Calling %1</source>
+        <translation>Вызов %1</translation>
+    </message>
+    <message>
+        <source>%1 calling</source>
+        <translation>Входящий звонок от %1</translation>
+    </message>
+    <message>
+        <source>Message failed to send</source>
+        <translation>Не удалось отправить сообщение</translation>
+    </message>
+    <message>
+        <source>Initializing</source>
+        <translation>Подготовка</translation>
+    </message>
+    <message>
+        <source>Transmitting</source>
+        <translation>Передача</translation>
+    </message>
+    <message>
+        <source>Finished</source>
+        <translation>Завершено</translation>
+    </message>
+    <message>
+        <source>Broken</source>
+        <translation>Не удалось</translation>
+    </message>
+    <message>
+        <source>Canceled</source>
+        <translation>Отменено</translation>
+    </message>
+    <message>
+        <source>Paused</source>
+        <translation>Приостановлено</translation>
+    </message>
+    <message>
+        <source>Remote paused</source>
+        <translation>Приостановлено дистанционно</translation>
+    </message>
+    <message>
+        <source>File Name</source>
+        <translation>Имя файла</translation>
+    </message>
+    <message>
+        <source>Contact</source>
+        <translation>Контакт</translation>
+    </message>
+    <message>
+        <source>Progress</source>
+        <translation>Прогресс</translation>
+    </message>
+    <message>
+        <source>Size</source>
+        <translation>Размер</translation>
+    </message>
+    <message>
+        <source>Speed</source>
+        <translation>Скорость</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Статус</translation>
+    </message>
+    <message>
+        <source>Control</source>
+        <translation>Управление</translation>
+    </message>
+    <message>
+        <source>You have joined the group</source>
+        <translation>Вы вступили в группу</translation>
+    </message>
+    <message>
+        <source>You have left the group</source>
+        <translation>Вы покинули группу</translation>
+    </message>
 </context>
 <context>
-    <name>RemoveFriendDialog</name>
+    <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation>Удалить друга</translation>
-    </message>
-    <message>
-        <source>Also remove chat history</source>
-        <translation>Также удалить историю переписки</translation>
-    </message>
-    <message>
-        <source>Remove</source>
-        <translation>Удалить</translation>
-    </message>
-    <message>
-        <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation>Вы уверены, что хотите удалить %1 из вашего списка контактов?</translation>
+        <translation type="unfinished">Удалить друга</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Удаляет всю историю переписки с другом если установлен</translation>
+        <translation type="unfinished">Удаляет всю историю переписки с другом если установлен</translation>
+    </message>
+    <message>
+        <source>Also remove chat history</source>
+        <translation type="unfinished">Также удалить историю переписки</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to remove %1 from your contacts list?</source>
+        <translation type="unfinished">Вы уверены, что хотите удалить %1 из вашего списка контактов?</translation>
+    </message>
+    <message>
+        <source>Remove</source>
+        <translation type="unfinished">Удалить</translation>
     </message>
 </context>
 <context>
@@ -2634,6 +2608,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Use regular expressions</source>
         <translation>Использовать регулярные выражения</translation>
     </message>
+    <message>
+        <source>Select Date Dialog</source>
+        <translation>Окно выбора даты</translation>
+    </message>
+    <message>
+        <source>Select a date</source>
+        <translation>Выберите дату</translation>
+    </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
@@ -2652,10 +2634,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Password strength: %p%</source>
         <translation>Сложность пароля: %p%</translation>
-    </message>
-    <message>
-        <source>The password is too short</source>
-        <translation>Пароль слишком короткий</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -2677,12 +2655,28 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Password input field, minimum 6 characters long</source>
         <translation>Поле ввода пароля, длиной минимум 6 символов</translation>
     </message>
+    <message>
+        <source>The password is too short.</source>
+        <translation>Пароль слишком короткий.</translation>
+    </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
         <translation>Список #%1</translation>
+    </message>
+    <message>
+        <source>Failed to load personal settings</source>
+        <translation>Не удалось загрузить персональные настройки</translation>
+    </message>
+    <message>
+        <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
+        <translation>Невозможно обновить настройки с версии %1 на версию %2. Запуск qTox невозможен.</translation>
+    </message>
+    <message>
+        <source>Failed to load global settings</source>
+        <translation>Невозможно загрузить глобальные настройки</translation>
     </message>
 </context>
 <context>
@@ -2786,11 +2780,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Список контактов</translation>
     </message>
     <message>
-        <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
-        <translation>Если выбрано, групповые чаты будут размещаться вверху списка контактов, иначе размещение будет под списком активных контактов.</translation>
-    </message>
-    <message>
         <source>Place groupchats at top of friend list</source>
         <translation>Поместить групповые чаты вверху контакт-листа</translation>
     </message>
@@ -2818,11 +2807,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Use emoticons</source>
         <translation>Использовать смайлики</translation>
-    </message>
-    <message>
-        <source>Smiley Pack:</source>
-        <extracomment>Text on smiley pack label</extracomment>
-        <translation>Набор смайликов:</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
@@ -2853,17 +2837,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Формат даты:</translation>
     </message>
     <message>
-        <source>If enabled every contact without an avatar set will have a generated avatar based on their Tox ID instead of a default picture. Requires restart to apply.</source>
-        <comment>toolTip for show identicons</comment>
-        <translation>Если включено, каждый контакт без аватара будет иметь сгенерированный аватар, основываясь на своем Tox ID, вместо картинки по умолчанию. Требуется перезагрузка для применения.</translation>
-    </message>
-    <message>
         <source>Use identicons instead of empty avatars</source>
         <translation>Использовать картинки вместо пустых аватаров</translation>
-    </message>
-    <message>
-        <source>Use colored nicknames in chats</source>
-        <translation>Использовать красочные никнеймы в чатах</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message and the window is not selected.</source>
@@ -2873,11 +2848,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Notify</source>
         <translation>Уведомлять</translation>
-    </message>
-    <message>
-        <source>Onlys notify about new messages in groupchats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
-        <translation>Уведомлять о новых сообщениях в групповых чатах только когда вас упоминают.</translation>
     </message>
     <message>
         <source>Group chats only notify when mentioned</source>
@@ -2898,6 +2868,30 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Hide message sender and contents</source>
         <translation>Скрыть отправителя сообщения и его содержимое</translation>
+    </message>
+    <message>
+        <source>Use colored nicknames in group chats</source>
+        <translation>Использовать цветные имена пользователей в групповых чатах</translation>
+    </message>
+    <message>
+        <source>Only notify about new messages in group chats when mentioned.</source>
+        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <translation>Уведомлять о новых сообщениях из групповых чатов только при упоминаниях.</translation>
+    </message>
+    <message>
+        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for groupchat positioning</comment>
+        <translation>Если отмечено, групповые чаты будут помещены на верх списка друзей, в противном случае, они будут помещены под друзьями находящимися в сети.</translation>
+    </message>
+    <message>
+        <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
+        <comment>toolTip for show identicons</comment>
+        <translation>Если включено, каждый контакт без аватара будет иметь сгенерированную иконку, основанную на их Tox ID, вместо стандартной картинки. Необходим перезапуск для применения.</translation>
+    </message>
+    <message>
+        <source>Smiley pack:</source>
+        <extracomment>Text on smiley pack label</extracomment>
+        <translation>Набор смайликов:</translation>
     </message>
 </context>
 <context>
@@ -2923,11 +2917,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Занят</translation>
     </message>
     <message>
-        <source>toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
-        <comment>popup text</comment>
-        <translation>Не удалось запустить toxcore с вашими настройками прокси, qTox не может работать; измените ваши настройки и перезапустите его.</translation>
-    </message>
-    <message>
         <source>Your name</source>
         <translation>Ваше имя</translation>
     </message>
@@ -2938,22 +2927,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add new circle...</source>
         <translation>Добавить новый список...</translation>
-    </message>
-    <message numerus="yes">
-        <source>%n New Friend Request(s)</source>
-        <translation>
-            <numerusform>%n новый запрос в друзья</numerusform>
-            <numerusform>%n новых запроса в друзья</numerusform>
-            <numerusform>%n новых запросов в друзья</numerusform>
-        </translation>
-    </message>
-    <message numerus="yes">
-        <source>%n New Group Invite(s)</source>
-        <translation>
-            <numerusform>%n новое приглашение в группу</numerusform>
-            <numerusform>%n новых приглашения в группы</numerusform>
-            <numerusform>%n новых приглашений в группы</numerusform>
-        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -2988,18 +2961,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Файл</translation>
     </message>
     <message>
-        <source>Edit Profile</source>
-        <translation>Изменить профиль</translation>
-    </message>
-    <message>
-        <source>Change Status</source>
-        <translation>Изменить статус</translation>
-    </message>
-    <message>
-        <source>Log out</source>
-        <translation>Выйти</translation>
-    </message>
-    <message>
         <source>Edit</source>
         <translation>Изменить</translation>
     </message>
@@ -3007,11 +2968,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
         <translation>Сменить аккаунт</translation>
-    </message>
-    <message>
-        <source>Exit</source>
-        <comment>Tray action menu to exit tox</comment>
-        <translation>Выход</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3022,42 +2978,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Контакты</translation>
     </message>
     <message>
-        <source>Add Contact...</source>
-        <translation>Добавить контакт...</translation>
-    </message>
-    <message>
-        <source>Next Conversation</source>
-        <translation>Следующая беседа</translation>
-    </message>
-    <message>
-        <source>Previous Conversation</source>
-        <translation>Предыдущая беседа</translation>
-    </message>
-    <message>
-        <source>toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation>Не удалось запустить toxcore, приложение будет завершено после того как вы закроете это сообщение.</translation>
-    </message>
-    <message>
-        <source>Executable file</source>
-        <comment>popup title</comment>
-        <translation>Исполняемый файл</translation>
-    </message>
-    <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
-        <comment>popup text</comment>
-        <translation>Вы просите qTox открыть исполняемый файл. Исполняемые файлы могут нанести вред вашему компьютеру. Вы уверены, что хотите открыть этот файл?</translation>
-    </message>
-    <message>
-        <source>Couldn&apos;t request friendship</source>
-        <translation>Не удалось запросить добавление в друзья</translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation>Статус</translation>
-    </message>
-    <message>
-        <source>Message failed to send</source>
-        <translation>Не удалось отправить сообщение</translation>
     </message>
     <message>
         <source>Groupchat #%1</source>
@@ -3094,20 +3016,62 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Мой профиль</translation>
     </message>
     <message>
-        <source>Failed to send file &quot;%1&quot;</source>
-        <translation>Не удалось отправить файл &quot;%1&quot;</translation>
+        <source>Toxcore failed to start, the application will terminate after you close this message.</source>
+        <translation>Toxcore не удалось запуститься, программа будет закрыта после того, как вы закроете это сообщение.</translation>
     </message>
     <message>
-        <source>File sent</source>
-        <translation>Файл отправлен</translation>
+        <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
+        <comment>popup text</comment>
+        <translation>Toxcore не удалось запуститься с вашими настройками прокси. qTox не может запуститься; пожалуйста, исправьте ваши настройки и перезапустите программу.</translation>
     </message>
     <message>
-        <source> sent you a friend request.</source>
-        <translation> отправил вам запрос на добавление в друзья.</translation>
+        <source>Couldn&apos;t send friend request</source>
+        <translation>Не удалось отправить запрос в друзья</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new friend request(s)</source>
+        <translation>
+            <numerusform>%n новый запрос в друзья</numerusform>
+            <numerusform>%n новых запросов в друзья</numerusform>
+            <numerusform>%n новых запросов в друзья</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation>
+            <numerusform>%n новое приглашение в группу</numerusform>
+            <numerusform>%n новых приглашений в группы</numerusform>
+            <numerusform>%n новых приглашений в группы</numerusform>
+        </translation>
     </message>
     <message>
-        <source> invites you to join a group.</source>
-        <translation> приглашает вас присоединиться к группе.</translation>
+        <source>Exit</source>
+        <comment>Tray action menu to exit Tox</comment>
+        <translation>Выход</translation>
+    </message>
+    <message>
+        <source>Change status</source>
+        <translation>Изменить статус</translation>
+    </message>
+    <message>
+        <source>Edit profile</source>
+        <translation>Редактировать профиль</translation>
+    </message>
+    <message>
+        <source>Logout</source>
+        <translation>Выйти из профиля</translation>
+    </message>
+    <message>
+        <source>Add contact...</source>
+        <translation>Добавить контакт...</translation>
+    </message>
+    <message>
+        <source>Next conversation</source>
+        <translation>Следующая беседа</translation>
+    </message>
+    <message>
+        <source>Previous conversation</source>
+        <translation>Предыдущая беседа</translation>
     </message>
 </context>
 </TS>

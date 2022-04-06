@@ -90,9 +90,7 @@ extern "C" {
  * @brief Remember how many times we subscribed for RAII
  */
 
-CameraSource* CameraSource::instance{nullptr};
-
-CameraSource::CameraSource()
+CameraSource::CameraSource(Settings& settings_)
     : deviceThread{new QThread}
     , deviceName{"none"}
     , device{nullptr}
@@ -103,8 +101,9 @@ CameraSource::CameraSource()
     , cctxOrig{nullptr}
 #endif
     , videoStreamIndex{-1}
-    , _isNone{true}
+    , isNone_{true}
     , subscriptions{0}
+    , settings{settings_}
 {
     qRegisterMetaType<VideoMode>("VideoMode");
     deviceThread->setObjectName("Device thread");
@@ -123,53 +122,37 @@ CameraSource::CameraSource()
 // clang-format on
 
 /**
- * @brief Returns the singleton instance.
- */
-CameraSource& CameraSource::getInstance()
-{
-    if (!instance)
-        instance = new CameraSource();
-    return *instance;
-}
-
-void CameraSource::destroyInstance()
-{
-    delete instance;
-    instance = nullptr;
-}
-
-/**
  * @brief Setup default device
  * @note If a device is already open, the source will seamlessly switch to the new device.
  */
 void CameraSource::setupDefault()
 {
-    QString deviceName = CameraDevice::getDefaultDeviceName();
-    bool isScreen = CameraDevice::isScreen(deviceName);
-    VideoMode mode = VideoMode(Settings::getInstance().getScreenRegion());
+    QString deviceName_ = CameraDevice::getDefaultDeviceName(settings);
+    bool isScreen = CameraDevice::isScreen(deviceName_);
+    VideoMode mode_ = VideoMode(settings.getScreenRegion());
     if (!isScreen) {
-        mode = VideoMode(Settings::getInstance().getCamVideoRes());
-        mode.FPS = Settings::getInstance().getCamVideoFPS();
+        mode_ = VideoMode(settings.getCamVideoRes());
+        mode_.FPS = settings.getCamVideoFPS();
     }
 
-    setupDevice(deviceName, mode);
+    setupDevice(deviceName_, mode_);
 }
 
 /**
  * @brief Change the device and mode.
  * @note If a device is already open, the source will seamlessly switch to the new device.
  */
-void CameraSource::setupDevice(const QString& DeviceName, const VideoMode& Mode)
+void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode_)
 {
     if (QThread::currentThread() != deviceThread) {
-        QMetaObject::invokeMethod(this, "setupDevice", Q_ARG(const QString&, DeviceName),
-                                  Q_ARG(const VideoMode&, Mode));
+        QMetaObject::invokeMethod(this, "setupDevice", Q_ARG(const QString&, deviceName_),
+                                  Q_ARG(const VideoMode&, mode_));
         return;
     }
 
     QWriteLocker locker{&deviceMutex};
 
-    if (DeviceName == deviceName && Mode == mode) {
+    if (deviceName_ == deviceName && mode_ == mode) {
         return;
     }
 
@@ -181,18 +164,18 @@ void CameraSource::setupDevice(const QString& DeviceName, const VideoMode& Mode)
         subscriptions = subs;
     }
 
-    deviceName = DeviceName;
-    mode = Mode;
-    _isNone = (deviceName == "none");
+    deviceName = deviceName_;
+    mode = mode_;
+    isNone_ = (deviceName == "none");
 
-    if (subscriptions && !_isNone) {
+    if (subscriptions && !isNone_) {
         openDevice();
     }
 }
 
 bool CameraSource::isNone() const
 {
-    return _isNone;
+    return isNone_;
 }
 
 CameraSource::~CameraSource()
@@ -205,7 +188,7 @@ CameraSource::~CameraSource()
     deviceThread->wait();
     delete deviceThread;
 
-    if (_isNone) {
+    if (isNone_) {
         return;
     }
 
@@ -278,7 +261,6 @@ void CameraSource::openDevice()
     }
 
     // We need to create a new CameraDevice
-    AVCodec* codec;
     device = CameraDevice::open(deviceName, mode);
 
     if (!device) {
@@ -322,7 +304,7 @@ void CameraSource::openDevice()
     AVCodecParameters* cparams = device->context->streams[videoStreamIndex]->codecpar;
     codecId = cparams->codec_id;
 #endif
-    codec = avcodec_find_decoder(codecId);
+    const AVCodec* codec = avcodec_find_decoder(codecId);
     if (!codec) {
         qWarning() << "Codec not found";
         emit openFailed();

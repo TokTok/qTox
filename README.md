@@ -10,9 +10,6 @@
 <a href="https://github.com/qTox/qTox/blob/master/LICENSE">
 <img src="https://img.shields.io/badge/license-GPLv3%2B-blue.svg" alt="GPLv3+" />
 </a>
-<a href="https://travis-ci.org/qTox/qTox">
-<img src="https://travis-ci.org/qTox/qTox.svg?branch=master" alt="Travis CI" />
-</a>
 <a href="https://hosted.weblate.org/engage/tox/?utm_source=widget">
 <img src="https://hosted.weblate.org/widgets/tox/-/svg-badge.svg"
      alt="Translate on Weblate" />
@@ -39,7 +36,7 @@ the encrypted peer-to-peer Tox protocol.
  **[Report bugs] |**
  **[Jenkins builds] |**
  **[Mailing list] |**
- **IRC:** [#qtox@freenode]
+ **IRC:** [#qtox@libera.chat]
 
 ---
 
@@ -83,7 +80,6 @@ The next steps are:
 * move all toxcore abstractions into their own subproject
 * write basic tests for this Core
 * format the code base
-* rework our TravisCI setup for faster PR checks
 * rethink our Issue tracker
 
 The current state is tracked in the [Code cleanup] project.
@@ -119,7 +115,7 @@ idea of the general look and features.
 
 ### Organizational stuff
 
-Happens in both IRC channel [#qtox@freenode] and on [qTox-dev mailing list].
+Happens in both IRC channel [#qtox@libera.chat] and on [qTox-dev mailing list].
 If you are interested in participating, **join the channel** and **subscribe to
 the mailing list**.
 
@@ -157,22 +153,22 @@ Windows updates, managed by `tux3`:
 AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 ```
 
-[#qtox@freenode]: https://webchat.freenode.net/?channels=qtox
-[64 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.2/setup-qtox-x86_64-release.exe
-[32 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.2/setup-qtox-i686-release.exe
-[32nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/setup-qtox-i686-release.exe
-[64nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/setup-qtox-x86_64-release.exe
-[Flatpak]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.flatpak
-[Flatpak nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qtox.flatpak
-[AppImage]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox-v1.17.2.x86_64.AppImage
-[AppImage nightly]: https://github.com/qTox/qTox-nightly-releases/releases/tag/ci-master-latest
+[#qtox@libera.chat]: https://web.libera.chat/#qtox
+[64 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.6/setup-qtox-x86_64-release.exe
+[32 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.6/setup-qtox-i686-release.exe
+[32nightly]: https://github.com/qTox/qTox/releases/download/nightly/qtox-nightly-i686-release.exe
+[64nightly]: https://github.com/qTox/qTox/releases/download/nightly/qtox-nightly-x86_64-release.exe
+[Flatpak]: https://github.com/qTox/qTox/releases/download/v1.17.6/qTox-v1.17.6.x86_64.flatpak
+[Flatpak nightly]: https://github.com/qTox/qTox/releases/download/nightly/qTox-nightly.flatpak
+[AppImage]: https://github.com/qTox/qTox/releases/download/v1.17.6/qTox-v1.17.6.x86_64.AppImage
+[AppImage nightly]: https://github.com/qTox/qTox/releases/download/nightly/qTox-nightly.x86_64.AppImage
 [Arch]: /INSTALL.md#arch
 [Building instructions]: /INSTALL.md#os-x
 [Contributing]: /CONTRIBUTING.md#how-to-start-contributing
 [Debian]: https://packages.debian.org/search?keywords=qtox
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
-[Latest release]: https://github.com/qTox/qTox/releases/download/v1.17.2/qTox.dmg
-[Latest nightly]: https://github.com/qTox/qTox-nightly-releases/releases/download/ci-master-latest/qTox.dmg
+[Latest release]: https://github.com/qTox/qTox/releases/download/v1.17.6/qTox.dmg
+[Latest nightly]: https://github.com/qTox/qTox/releases/download/nightly/qTox-nightly.dmg
 [Fedora]: /INSTALL.md#fedora
 [Gentoo]: /INSTALL.md#gentoo
 [openSUSE]: /INSTALL.md#opensuse

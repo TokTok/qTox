@@ -17,42 +17,39 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DESKTOPNOTIFY_H
-#define DESKTOPNOTIFY_H
+#pragma once
 
-#if DESKTOP_NOTIFICATIONS
+#include "src/model/notificationdata.h"
+
 #include <libsnore/snore.h>
 
 #include <QObject>
+
 #include <memory>
+#include <unordered_set>
+
+class Settings;
 
 class DesktopNotify : public QObject
 {
     Q_OBJECT
 public:
-    DesktopNotify();
-
-    enum class MessageType {
-        FRIEND,
-        FRIEND_FILE,
-        FRIEND_REQUEST,
-        GROUP,
-        GROUP_INVITE
-    };
+    explicit DesktopNotify(Settings& settings);
 
 public slots:
-    void notifyMessage(const QString& title, const QString& message);
-    void notifyMessagePixmap(const QString& title, const QString& message, QPixmap avatar);
-    void notifyMessageSimple(const MessageType type);
+    void notifyMessage(const NotificationData& notificationData);
 
-private:
-    void createNotification(const QString& title, const QString& text, Snore::Icon& icon);
+signals:
+    void notificationClosed();
+
+private slots:
+    void onNotificationClose(Snore::Notification notification);
 
 private:
     Snore::SnoreCore& notifyCore;
     Snore::Application snoreApp;
     Snore::Icon snoreIcon;
+    Snore::Notification lastNotification;
+    uint latestId;
+    Settings& settings;
 };
-#endif // DESKTOP_NOTIFICATIONS
-
-#endif // DESKTOPNOTIFY_H

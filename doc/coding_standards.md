@@ -316,7 +316,7 @@ foo& g();
 
 void f()
 {
-   foo::bar(); // OK: no object necessary             
+   foo::bar(); // OK: no object necessary
    g().bar(); // Not OK: g() can cause side effects
 }
 ```
@@ -378,6 +378,8 @@ Newlines can be present between includes to indicate logical grouping, however
 be wary that clang-format does not sort includes properly this way, electing to
 sort each group individually according to the criteria defined above.
 
+Use `#pragma once` rather than include guards in header files. It reduces duplication and avoids a potential cause of bugs.
+
 The following example demonstrates the above include rules:
 
 ```c++
@@ -393,7 +395,6 @@ The following example demonstrates the above include rules:
 #include "persistence/profile.h"
 #include "persistence/profilelocker.h"
 #include "persistence/settings.h"
-#include "widget/gui.h"
 
 #include <QCoreApplication>
 #include <QThread>
@@ -572,4 +573,3 @@ For more info, see:
 [String concatenation with QStringBuilder]: https://blog.qt.io/blog/2011/06/13/string-concatenation-with-qstringbuilder/
 [Latin-1]: https://en.wikipedia.org/wiki/ISO/IEC_8859-1
 [CppCoreGuidelines]: https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#main
-

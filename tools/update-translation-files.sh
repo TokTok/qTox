@@ -27,18 +27,15 @@
 
 set -eu -o pipefail
 
-readonly COMMIT_MSG="chore(i18n): update translation files for Weblate"
-readonly LUPDATE_CMD="lupdate src -no-obsolete -locations none -ts"
+readonly LUPDATE_CMD="lupdate src -no-obsolete -locations none"
 
 if [[ "$@" = "ALL" ]]
 then
     for translation in translations/*.ts
     do
-        $LUPDATE_CMD "$translation"
+        $LUPDATE_CMD -ts "$translation"
     done
-
-    git add translations/*.ts
-    git commit -m "$COMMIT_MSG"
+    $LUPDATE_CMD -pluralonly -ts translations/en.ts
 else
     $LUPDATE_CMD "$@"
 fi

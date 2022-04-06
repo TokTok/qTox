@@ -17,19 +17,25 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHAT_FORM_HEADER
-#define CHAT_FORM_HEADER
+#pragma once
 
 #include <QWidget>
+
+#include "src/core/extension.h"
 
 #include <memory>
 
 class MaskablePixmapWidget;
 class QVBoxLayout;
+class QHBoxLayout;
 class CroppingLabel;
 class QPushButton;
 class QToolButton;
 class CallConfirmWidget;
+class QLabel;
+class ExtensionStatus;
+class Settings;
+class Style;
 
 class ChatFormHeader : public QWidget
 {
@@ -54,17 +60,18 @@ public:
         AV = Audio | Video
     };
 
-    ChatFormHeader(QWidget* parent = nullptr);
+    ChatFormHeader(Settings& settings, Style& style, QWidget* parent = nullptr);
     ~ChatFormHeader();
 
     void setName(const QString& newName);
-    void setMode(Mode mode);
+    void setMode(Mode mode_);
 
     void showOutgoingCall(bool video);
     void createCallConfirm(bool video);
     void showCallConfirm();
     void removeCallConfirm();
 
+    void updateExtensionSupport(ExtensionSet extensions);
     void updateCallButtons(bool online, bool audio, bool video = false);
     void updateMuteMicButton(bool active, bool inputMuted);
     void updateMuteVolButton(bool active, bool outputMuted);
@@ -72,12 +79,13 @@ public:
     void setAvatar(const QPixmap& img);
     QSize getAvatarSize() const;
 
-    void reloadTheme();
-
     // TODO: Remove
     void addWidget(QWidget* widget, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
     void addLayout(QLayout* layout);
     void addStretch();
+
+public slots:
+    void reloadTheme();
 
 signals:
     void callTriggered();
@@ -98,6 +106,8 @@ private:
     Mode mode;
     MaskablePixmapWidget* avatar;
     QVBoxLayout* headTextLayout;
+    QHBoxLayout* nameLine;
+    ExtensionStatus* extensionStatus;
     CroppingLabel* nameLabel;
 
     QPushButton* callButton;
@@ -111,6 +121,6 @@ private:
     ToolButtonState micState;
 
     std::unique_ptr<CallConfirmWidget> callConfirm;
+    Settings& settings;
+    Style& style;
 };
-
-#endif // CHAT_FORM_HEADER

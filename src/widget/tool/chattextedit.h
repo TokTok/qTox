@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHATTEXTEDIT_H
-#define CHATTEXTEDIT_H
+#pragma once
 
 #include <QTextEdit>
 
@@ -33,6 +32,7 @@ public:
 
 signals:
     void enterPressed();
+    void escapePressed();
     void tabPressed();
     void keyPressed();
     void pasteImage(const QPixmap& pixmap);
@@ -47,5 +47,3 @@ private:
 private:
     QString lastMessage;
 };
-
-#endif // CHATTEXTEDIT_H

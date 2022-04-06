@@ -3,44 +3,52 @@
 TRANSLATIONS = \
     translations/ar.ts \
     translations/be.ts \
+    translations/ber.ts \
     translations/bg.ts \
     translations/cs.ts \
     translations/da.ts \
     translations/de.ts \
     translations/el.ts \
+    translations/en.ts \
     translations/eo.ts \
     translations/es.ts \
     translations/et.ts \
     translations/fa.ts \
     translations/fi.ts \
     translations/fr.ts \
+    translations/gl.ts \
     translations/he.ts \
     translations/hr.ts \
     translations/hu.ts \
+    translations/is.ts \
     translations/it.ts \
     translations/ja.ts \
     translations/jbo.ts \
+    translations/kn.ts \
     translations/ko.ts \
+    translations/lt.ts \
     translations/mk.ts \
     translations/nl.ts \
     translations/no_nb.ts \
-    translations/lt.ts \
     translations/pl.ts \
     translations/pr.ts \
-    translations/pt.ts \
     translations/pt_BR.ts \
+    translations/pt.ts \
     translations/ro.ts \
     translations/ru.ts \
+    translations/si.ts \
     translations/sk.ts \
     translations/sl.ts \
-    translations/sr.ts \
+    translations/sq.ts \
     translations/sr_Latn.ts \
+    translations/sr.ts \
     translations/sv.ts \
     translations/sw.ts \
     translations/ta.ts \
     translations/tr.ts \
     translations/ug.ts \
     translations/uk.ts \
+    translations/ur.ts \
     translations/zh_CN.ts \
     translations/zh_TW.ts
 

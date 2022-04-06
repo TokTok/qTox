@@ -38,8 +38,11 @@ void CategoryWidget::emitChatroomWidget(QLayout* layout, int index)
     }
 }
 
-CategoryWidget::CategoryWidget(bool compact, QWidget* parent)
-    : GenericChatItemWidget(compact, parent)
+CategoryWidget::CategoryWidget(bool compact_, Settings& settings_, Style& style_,
+    QWidget* parent)
+    : GenericChatItemWidget(compact_, style_, parent)
+    , settings{settings_}
+    , style{style_}
 {
     container = new QWidget(this);
     container->setObjectName("circleWidgetContainer");
@@ -49,7 +52,7 @@ CategoryWidget::CategoryWidget(bool compact, QWidget* parent)
     statusLabel->setObjectName("status");
     statusLabel->setTextFormat(Qt::PlainText);
 
-    statusPic.setPixmap(QPixmap(Style::getImagePath("chatArea/scrollBarRightArrow.svg")));
+    statusPic.setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarRightArrow.svg", settings)));
 
     fullLayout = new QVBoxLayout(this);
     fullLayout->setSpacing(0);
@@ -87,19 +90,19 @@ void CategoryWidget::setExpanded(bool isExpanded, bool save)
     }
     expanded = isExpanded;
     setMouseTracking(true);
+
+    // The listWidget will recieve a enterEvent for some reason if now visible.
+    // Using the following, we prevent that.
+    listWidget->setAttribute(Qt::WA_TransparentForMouseEvents, true);
     listWidget->setVisible(isExpanded);
+    listWidget->setAttribute(Qt::WA_TransparentForMouseEvents, false);
 
     QString pixmapPath;
     if (isExpanded)
-        pixmapPath = Style::getImagePath("chatArea/scrollBarDownArrow.svg");
+        pixmapPath = style.getImagePath("chatArea/scrollBarDownArrow.svg", settings);
     else
-        pixmapPath = Style::getImagePath("chatArea/scrollBarRightArrow.svg");
+        pixmapPath = style.getImagePath("chatArea/scrollBarRightArrow.svg", settings);
     statusPic.setPixmap(QPixmap(pixmapPath));
-    // The listWidget will recieve a enterEvent for some reason if now visible.
-    // Using the following, we prevent that.
-    QApplication::processEvents(QEventLoop::ExcludeSocketNotifiers);
-    container->hide();
-    container->show();
 
     if (save)
         onExpand();
@@ -164,7 +167,7 @@ void CategoryWidget::search(const QString& searchString, bool updateAll, bool hi
     setVisible(inCategory || listLayout->hasChatrooms());
 }
 
-bool CategoryWidget::cycleContacts(bool forward)
+bool CategoryWidget::cycleChats(bool forward)
 {
     if (listLayout->friendTotalCount() == 0) {
         return false;
@@ -195,7 +198,7 @@ bool CategoryWidget::cycleContacts(bool forward)
     return false;
 }
 
-bool CategoryWidget::cycleContacts(FriendWidget* activeChatroomWidget, bool forward)
+bool CategoryWidget::cycleChats(FriendWidget* activeChatroomWidget, bool forward)
 {
     int index = -1;
     QLayout* currentLayout = nullptr;
@@ -251,7 +254,7 @@ void CategoryWidget::onCompactChanged(bool _compact)
     topLayout->setSpacing(0);
     topLayout->setMargin(0);
 
-    Q_UNUSED(_compact)
+    std::ignore = _compact;
     setCompact(true);
 
     nameLabel->minimizeMaximumWidth();

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef MASKABLEPIXMAPWIDGET_H
-#define MASKABLEPIXMAPWIDGET_H
+#pragma once
 
 #include <QLabel>
 
@@ -26,10 +25,10 @@ class MaskablePixmapWidget final : public QLabel
 {
     Q_OBJECT
 public:
-    MaskablePixmapWidget(QWidget* parent, QSize size, QString maskName = QString());
+    MaskablePixmapWidget(QWidget* parent, QSize size, QString maskName_ = QString());
     ~MaskablePixmapWidget() override;
     void autopickBackground();
-    void setClickable(bool clickable);
+    void setClickable(bool clickable_);
     void setPixmap(const QPixmap& pmap);
     QPixmap getPixmap() const;
     void setSize(QSize size);
@@ -38,7 +37,7 @@ signals:
     void clicked();
 
 protected:
-    void mousePressEvent(QMouseEvent*) final;
+    void mousePressEvent(QMouseEvent* event) final;
 
 private:
     void updatePixmap();
@@ -49,5 +48,3 @@ private:
     QString maskName;
     bool clickable;
 };
-
-#endif // MASKABLEPIXMAPWIDGET_H

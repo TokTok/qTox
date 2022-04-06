@@ -84,9 +84,9 @@
  * @param password If empty, the database will be opened unencrypted.
  * Otherwise we will use toxencryptsave to derive a key and encrypt the database.
  */
-RawDatabase::RawDatabase(const QString& path, const QString& password, const QByteArray& salt)
+RawDatabase::RawDatabase(const QString& path_, const QString& password, const QByteArray& salt)
     : workerThread{new QThread}
-    , path{path}
+    , path{path_}
     , currentSalt{salt} // we need the salt later if a new password should be set
     , currentHexKey{deriveKey(password, salt)}
 {
@@ -140,25 +140,25 @@ RawDatabase::~RawDatabase()
  * @param hexKey Hex representation of the key in string.
  * @return True if success, false otherwise.
  */
-bool RawDatabase::open(const QString& path, const QString& hexKey)
+bool RawDatabase::open(const QString& path_, const QString& hexKey)
 {
     if (QThread::currentThread() != workerThread.get()) {
         bool ret;
         QMetaObject::invokeMethod(this, "open", Qt::BlockingQueuedConnection, Q_RETURN_ARG(bool, ret),
-                                  Q_ARG(const QString&, path), Q_ARG(const QString&, hexKey));
+                                  Q_ARG(const QString&, path_), Q_ARG(const QString&, hexKey));
         return ret;
     }
 
-    if (!QFile::exists(path) && QFile::exists(path + ".tmp")) {
+    if (!QFile::exists(path_) && QFile::exists(path_ + ".tmp")) {
         qWarning() << "Restoring database from temporary export file! Did we crash while changing "
                       "the password or upgrading?";
-        QFile::rename(path + ".tmp", path);
+        QFile::rename(path_ + ".tmp", path_);
     }
 
-    if (sqlite3_open_v2(path.toUtf8().data(), &sqlite,
+    if (sqlite3_open_v2(path_.toUtf8().data(), &sqlite,
                         SQLITE_OPEN_READWRITE | SQLITE_OPEN_CREATE | SQLITE_OPEN_NOMUTEX, nullptr)
         != SQLITE_OK) {
-        qWarning() << "Failed to open database" << path << "with error:" << sqlite3_errmsg(sqlite);
+        qWarning() << "Failed to open database" << path_ << "with error:" << sqlite3_errmsg(sqlite);
         return false;
     }
 
@@ -271,7 +271,8 @@ bool RawDatabase::setCipherParameters(SqlCipherParams params, const QString& dat
     const QString default4_xParams{"PRAGMA database.cipher_page_size = 4096;"
                    "PRAGMA database.kdf_iter = 256000;"
                    "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA512;"
-                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA512;"};
+                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA512;"
+                   "PRAGMA database.cipher_memory_security = ON;"}; // got disabled by default in 4.5.0, so manually enable it
 
     QString defaultParams;
     switch(params) {
@@ -695,7 +696,7 @@ QString RawDatabase::deriveKey(const QString& password)
     const std::unique_ptr<Tox_Pass_Key, PassKeyDeleter> key(tox_pass_key_derive_with_salt(
         reinterpret_cast<const uint8_t*>(passData.data()),
         static_cast<std::size_t>(passData.size()), expandConstant, nullptr));
-    return QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex();
+    return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
 /**
@@ -723,7 +724,7 @@ QString RawDatabase::deriveKey(const QString& password, const QByteArray& salt)
         reinterpret_cast<const uint8_t*>(passData.data()),
         static_cast<std::size_t>(passData.size()),
         reinterpret_cast<const uint8_t*>(salt.constData()), nullptr));
-    return QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex();
+    return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
 /**
@@ -875,7 +876,7 @@ void RawDatabase::process()
  */
 QString RawDatabase::anonymizeQuery(const QByteArray& query)
 {
-    QString queryString(query);
+    QString queryString = QString::fromUtf8(query);
     queryString.replace(QRegularExpression("chat.public_key='[A-F0-9]{64}'"),
                         "char.public_key='<HERE IS PUBLIC KEY>'");
     queryString.replace(QRegularExpression("timestamp BETWEEN \\d{5,} AND \\d{5,}"),
@@ -904,7 +905,7 @@ QVariant RawDatabase::extractData(sqlite3_stmt* stmt, int col)
     } else {
         const char* data = reinterpret_cast<const char*>(sqlite3_column_blob(stmt, col));
         int len = sqlite3_column_bytes(stmt, col);
-        return QByteArray::fromRawData(data, len);
+        return QByteArray(data, len);
     }
 }
 
@@ -932,9 +933,10 @@ void RawDatabase::regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value*
 
 void RawDatabase::regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv, const QRegularExpression::PatternOptions cs)
 {
+    std::ignore = argc;
     QRegularExpression regex;
-    const QString str1(reinterpret_cast<const char*>(sqlite3_value_text(argv[0])));
-    const QString str2(reinterpret_cast<const char*>(sqlite3_value_text(argv[1])));
+    const QString str1 = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_value_text(argv[0])));
+    const QString str2 = QString::fromUtf8(reinterpret_cast<const char*>(sqlite3_value_text(argv[1])));
 
     regex.setPattern(str1);
     regex.setPatternOptions(cs);

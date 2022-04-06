@@ -23,7 +23,7 @@
 #include <QDir>
 #include <QProcessEnvironment>
 
-namespace Platform {
+namespace {
 QString getAutostartDirPath()
 {
     QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
@@ -33,22 +33,34 @@ QString getAutostartDirPath()
     return config + "/autostart";
 }
 
-QString getAutostartFilePath(QString dir)
+QString getAutostartFilePath(const Settings& settings, QString dir)
 {
-    return dir + "/qTox - " + Settings::getInstance().getCurrentProfile() + ".desktop";
+    return dir + "/qTox - " + settings.getCurrentProfile() + ".desktop";
 }
 
-inline QString currentCommandLine()
+QString currentBinPath()
 {
-    return "\"" + QApplication::applicationFilePath() + "\" -p \""
-           + Settings::getInstance().getCurrentProfile() + "\"";
-}
+    const auto env = QProcessEnvironment::systemEnvironment();
+    const auto appImageEnvKey = QStringLiteral("APPIMAGE");
+
+    if (env.contains(appImageEnvKey)) {
+        return env.value(appImageEnvKey);
+    } else {
+        return QApplication::applicationFilePath();
+    }
 }
 
-bool Platform::setAutorun(bool on)
+inline QString profileRunCommand(const Settings& settings)
+{
+    return "\"" + currentBinPath() + "\" -p \""
+           + settings.getCurrentProfile() + "\"";
+}
+} // namespace
+
+bool Platform::setAutorun(const Settings& settings, bool on)
 {
     QString dirPath = getAutostartDirPath();
-    QFile desktop(getAutostartFilePath(dirPath));
+    QFile desktop(getAutostartFilePath(settings, dirPath));
     if (on) {
         if (!QDir().mkpath(dirPath) || !desktop.open(QFile::WriteOnly | QFile::Truncate))
             return false;
@@ -56,7 +68,7 @@ bool Platform::setAutorun(bool on)
         desktop.write("Type=Application\n");
         desktop.write("Name=qTox\n");
         desktop.write("Exec=");
-        desktop.write(currentCommandLine().toUtf8());
+        desktop.write(profileRunCommand(settings).toUtf8());
         desktop.write("\n");
         desktop.close();
         return true;
@@ -64,7 +76,7 @@ bool Platform::setAutorun(bool on)
         return desktop.remove();
 }
 
-bool Platform::getAutorun()
+bool Platform::getAutorun(const Settings& settings)
 {
-    return QFile(getAutostartFilePath(getAutostartDirPath())).exists();
+    return QFile(getAutostartFilePath(settings, getAutostartDirPath())).exists();
 }

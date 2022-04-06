@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef IMAGE_H
-#define IMAGE_H
+#pragma once
 
 #include "../chatlinecontent.h"
 
@@ -32,12 +31,10 @@ public:
     QRectF boundingRect() const override;
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
                        QWidget* widget) override;
-    void setWidth(qreal width) override;
+    void setWidth(float width) override;
     qreal getAscent() const override;
 
 private:
     QSize size;
     QPixmap pmap;
 };
-
-#endif // IMAGE_H

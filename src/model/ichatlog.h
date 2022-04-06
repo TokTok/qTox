@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICHAT_LOG_H
-#define ICHAT_LOG_H
+#pragma once
 
 #include "message.h"
 #include "src/core/core.h"
@@ -29,9 +28,9 @@
 #include "src/model/chatlogitem.h"
 #include "src/model/friend.h"
 #include "src/model/group.h"
-#include "src/persistence/history.h"
-#include "src/util/strongtype.h"
+#include "src/model/systemmessage.h"
 #include "src/widget/searchtypes.h"
+#include "util/strongtype.h"
 
 #include <cassert>
 
@@ -70,7 +69,7 @@ struct SearchPos
 
 struct SearchResult
 {
-    bool found{false};
+    bool found;
     SearchPos pos;
     size_t start;
     size_t len;
@@ -138,8 +137,12 @@ public:
     virtual std::vector<DateChatLogIdxPair> getDateIdxs(const QDate& startDate,
                                                         size_t maxDates) const = 0;
 
+    /**
+     * @brief Inserts a system message at the end of the chat
+     * @param[in] message systemMessage to insert
+     */
+    virtual void addSystemMessage(const SystemMessage& message) = 0;
+
 signals:
     void itemUpdated(ChatLogIdx idx);
 };
-
-#endif /*ICHAT_LOG_H*/

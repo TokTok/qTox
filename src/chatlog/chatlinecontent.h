@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHATLINECONTENT_H
-#define CHATLINECONTENT_H
+#pragma once
 
 #include <QGraphicsItem>
 
@@ -36,9 +35,8 @@ public:
     };
 
     int getColumn() const;
-    int getRow() const;
 
-    virtual void setWidth(qreal width) = 0;
+    virtual void setWidth(float width) = 0;
     int type() const final;
 
     virtual void selectionMouseMove(QPointF scenePos);
@@ -69,5 +67,3 @@ private:
     int row = -1;
     int col = -1;
 };
-
-#endif // CHATLINECONTENT_H

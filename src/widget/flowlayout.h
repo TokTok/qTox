@@ -38,8 +38,7 @@
 **
 ****************************************************************************/
 
-#ifndef FLOWLAYOUT_H
-#define FLOWLAYOUT_H
+#pragma once
 
 #include <QLayout>
 #include <QRect>
@@ -56,7 +55,7 @@ public:
     int verticalSpacing() const;
     Qt::Orientations expandingDirections() const;
     bool hasHeightForWidth() const;
-    int heightForWidth(int) const;
+    int heightForWidth(int width) const;
     int count() const;
     QLayoutItem* itemAt(int index) const;
     QSize minimumSize() const;
@@ -72,5 +71,3 @@ private:
     int m_hSpace;
     int m_vSpace;
 };
-
-#endif // FLOWLAYOUT_H

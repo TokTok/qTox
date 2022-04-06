@@ -18,26 +18,32 @@
 */
 
 
-#ifndef TOXURI_H
-#define TOXURI_H
+#pragma once
 
 #include <QDialog>
 
-bool handleToxURI(const QString& toxURI);
-
+class Core;
 // Internals
 class QByteArray;
+class QLabel;
+class QLineEdit;
 class QPlainTextEdit;
-bool toxURIEventHandler(const QByteArray& eventData);
+class IMessageBoxManager;
 class ToxURIDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit ToxURIDialog(QWidget* parent, const QString& userId, const QString& message);
+    ToxURIDialog(QWidget* parent, Core& core, IMessageBoxManager& messageBoxManager);
     QString getRequestMessage();
+    bool handleToxURI(const QString& toxURI);
+
+private:
+    void setUserId(const QString& userId);
 
 private:
     QPlainTextEdit* messageEdit;
+    QLabel* friendsLabel;
+    QLineEdit* userIdEdit;
+    Core& core;
+    IMessageBoxManager& messageBoxManager;
 };
-
-#endif // TOXURI_H

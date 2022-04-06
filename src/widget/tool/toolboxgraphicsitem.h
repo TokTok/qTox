@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TOOLBOXGRAPHICSITEM_HPP
-#define TOOLBOXGRAPHICSITEM_HPP
+#pragma once
 
 #include <QGraphicsItemGroup>
 #include <QObject>
@@ -43,9 +42,7 @@ private:
     void startAnimation(QAbstractAnimation::Direction direction);
 
     QPropertyAnimation* opacityAnimation;
-    qreal idleOpacity = 0.0f;
-    qreal activeOpacity = 1.0f;
+    qreal idleOpacity = 0.0;
+    qreal activeOpacity = 1.0;
     int fadeTimeMs = 300;
 };
-
-#endif // TOOLBOXGRAPHICSITEM_HPP

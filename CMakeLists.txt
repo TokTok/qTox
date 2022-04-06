@@ -20,7 +20,7 @@
 #
 ################################################################################
 
-cmake_minimum_required(VERSION 2.8.11)
+cmake_minimum_required(VERSION 3.7.2)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 option(PLATFORM_EXTENSIONS "Enable platform specific extensions, requires extra dependencies" ON)
@@ -29,8 +29,9 @@ option(USE_CCACHE "Use ccache when available" ON)
 option(SPELL_CHECK "Enable spell cheching support" ON)
 option(SVGZ_ICON "Compress the SVG icon of qTox" ON)
 option(ASAN "Compile with AddressSanitizer" OFF)
+option(TSAN "Compile with ThreadSanitizer" OFF)
 option(DESKTOP_NOTIFICATIONS "Use snorenotify for desktop notifications" OFF)
-option(STRICT_OPTIONS "Enable strict compile options, used by CI" OFF)
+option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
 
 # process generated files if cmake >= 3.10
 if(POLICY CMP0071)
@@ -46,6 +47,11 @@ if(ASAN)
     set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
 endif()
 
+if(TSAN)
+    set (CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=thread")
+    set (CMAKE_LINKER_FLAGS_DEBUG "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=thread")
+endif()
+
 set(ENV{PKG_CONFIG_PATH}
   ${CMAKE_SOURCE_DIR}/libs/lib/pkgconfig:/opt/ffmpeg/lib/pkgconfig:$ENV{PKG_CONFIG_PATH})
 
@@ -56,25 +62,28 @@ if(APPLE)
 endif()
 
 execute_process(
-  COMMAND brew --prefix qt5
+  COMMAND brew --prefix qt@5
   OUTPUT_VARIABLE QT_PREFIX_PATH
   OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-execute_process(
-  COMMAND xcode-select -p
-  OUTPUT_VARIABLE CMAKE_OSX_SYSROOT
-  OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-set(CMAKE_OSX_DEPLOYMENT_TARGET 10.12)
-set(CMAKE_OSX_SYSROOT
-  ${CMAKE_OSX_SYSROOT}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX${CMAKE_OSX_DEPLOYMENT_TARGET}.sdk)
 
 project(qtox)
 
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
+# Run resource compilation automatically
+set(CMAKE_AUTORCC ON)
+# Enable maximum compression
+set(AUTORCC_OPTIONS -compress 9 -threshold 0)
 
-set(RCC_OPTIONS -compress 9 -threshold 0)
+
+if(NOT Qt5Widgets_VERSION VERSION_LESS "5.9")
+  # Drop the file modification time of source files from generated files
+  # to help with reproducible builds. We do not use QFileInfo.lastModified
+  # so this has no unwanted side effects. This mtime started appearing in
+  # Qt 5.8. The option to force the old file format without mtime was
+  # added in Qt 5.9. See https://bugreports.qt.io/browse/QTBUG-58769
+  set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
+endif()
 
 # Use C++11.
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
@@ -83,27 +92,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
 
 # Hardening flags (ASLR, warnings, etc)
 set(POSITION_INDEPENDENT_CODE True)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstrict-overflow")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstrict-aliasing")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wold-style-cast")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wsign-compare")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wunknown-pragmas")
 
-# Extra-strict compile options that we don't want to subject all users to by default
-if (STRICT_OPTIONS)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
-endif()
-
-# avoid timestamps in binary for reproducible builds, not added until GCC 4.9
-include(CheckCXXCompilerFlag)
-CHECK_CXX_COMPILER_FLAG(-Wdate-time COMPILER_SUPPORTS_WDATE_TIME)
-if (COMPILER_SUPPORTS_WDATE_TIME)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdate-time")
-endif()
-
-if (NOT WIN32)
+if (NOT WIN32 AND NOT HAIKU)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fstack-protector-all")
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wstack-protector")
 endif()
 
 if (UNIX AND NOT APPLE)
@@ -111,8 +102,11 @@ if (UNIX AND NOT APPLE)
   set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -Wl,-z,relro")
 endif()
 
-include(CheckAtomic)
+add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
+add_definitions(-DQT_NO_CAST_TO_ASCII)
+add_definitions(-DQT_RESTRICTED_CAST_FROM_ASCII)
 
+include(CheckAtomic)
 
 # Use ccache when available to speed up builds.
 if (USE_CCACHE)
@@ -133,14 +127,6 @@ include_directories(${CMAKE_SOURCE_DIR})
 
 include(Dependencies)
 
-if(NOT Qt5Widgets_VERSION VERSION_LESS "5.9")
-  # Drop the file modification time of source files from generated files
-  # to help with reproducible builds. We do not use QFileInfo.lastModified
-  # so this has no unwanted side effects. This mtime started appearing in
-  # Qt 5.8. The option to force the old file format without mtime was
-  # added in Qt 5.9. See https://bugreports.qt.io/browse/QTBUG-58769
-  set(RCC_OPTIONS ${RCC_OPTIONS} -format-version 1)
-endif()
 
 ################################################################################
 #
@@ -155,7 +141,7 @@ qt5_wrap_ui(${PROJECT_NAME}_FORMS
   src/widget/about/aboutfriendform.ui
   src/widget/form/loadhistorydialog.ui
   src/widget/form/profileform.ui
-  src/widget/form/removefrienddialog.ui
+  src/widget/form/removechatdialog.ui
   src/widget/form/searchsettingsform.ui
   src/widget/form/setpassworddialog.ui
   src/widget/form/settings/aboutsettings.ui
@@ -165,118 +151,36 @@ qt5_wrap_ui(${PROJECT_NAME}_FORMS
   src/widget/form/settings/privacysettings.ui
   src/widget/form/settings/userinterfacesettings.ui)
 
-qt5_add_translation(${PROJECT_NAME}_QM_FILES
-  translations/ar.ts
-  translations/be.ts
-  translations/bg.ts
-  translations/cs.ts
-  translations/da.ts
-  translations/de.ts
-  translations/el.ts
-  translations/eo.ts
-  translations/es.ts
-  translations/et.ts
-  translations/fa.ts
-  translations/fi.ts
-  translations/fr.ts
-  translations/he.ts
-  translations/hr.ts
-  translations/hu.ts
-  translations/it.ts
-  translations/ja.ts
-  translations/jbo.ts
-  translations/ko.ts
-  translations/lt.ts
-  translations/mk.ts
-  translations/nl.ts
-  translations/no_nb.ts
-  translations/pl.ts
-  translations/pr.ts
-  translations/pt.ts
-  translations/pt_BR.ts
-  translations/ro.ts
-  translations/ru.ts
-  translations/sk.ts
-  translations/sl.ts
-  translations/sr.ts
-  translations/sr_Latn.ts
-  translations/sv.ts
-  translations/sw.ts
-  translations/ta.ts
-  translations/tr.ts
-  translations/ug.ts
-  translations/uk.ts
-  translations/zh_CN.ts
-  translations/zh_TW.ts
-)
-
-qt5_add_resources(
-  ${PROJECT_NAME}_RESOURCES
-  res.qrc
-  ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc
-  DEPENDS ${${PROJECT_NAME}_QM_FILES}
-  OPTIONS ${RCC_OPTIONS}
+set(${PROJECT_NAME}_RESOURCES
+    res.qrc
 )
 
 if(NOT SMILEYS)
   set(SMILEYS "")
 endif()
 
+set(SMILEY_RESOURCES "")
 if(NOT "${SMILEYS}" STREQUAL "DISABLED")
-  qt5_add_resources(
-          ${PROJECT_NAME}_RESOURCES
-          smileys/emojione.qrc
-          OPTIONS ${RCC_OPTIONS})
+  set(SMILEY_RESOURCES smileys/emojione.qrc)
 
   if(NOT "${SMILEYS}" STREQUAL "MIN")
-    qt5_add_resources(
-            ${PROJECT_NAME}_RESOURCES
-            smileys/smileys.qrc
-            OPTIONS ${RCC_OPTIONS})
+      set(SMILEY_RESOURCES
+            ${SMILEY_RESOURCES}
+            smileys/smileys.qrc)
   endif()
-
 endif()
 
-file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
-"<!DOCTYPE RCC>
-<RCC version=\"1.0\">
-  <qresource prefix=\"/translations\">
-")
-foreach(qm ${${PROJECT_NAME}_QM_FILES})
-  get_filename_component(qm_name ${qm} NAME)
-  file(APPEND "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
-    "    <file alias=\"${qm_name}\">${qm}</file>\n")
-endforeach(qm)
-file(APPEND "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
-"  </qresource>
-</RCC>
-")
-
-execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different
-  ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in
-  ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc)
-
 set(${PROJECT_NAME}_SOURCES
-  src/audio/audio.cpp
-  src/audio/audio.h
-  src/audio/backend/alsink.cpp
-  src/audio/backend/alsink.h
-  src/audio/backend/alsource.cpp
-  src/audio/backend/alsource.h
-  src/audio/backend/openal.cpp
-  src/audio/backend/openal.h
-  src/audio/iaudiosettings.h
-  src/audio/iaudiocontrol.h
-  src/audio/iaudiosink.h
-  src/audio/iaudiosource.h
   src/chatlog/chatlinecontent.cpp
   src/chatlog/chatlinecontent.h
   src/chatlog/chatlinecontentproxy.cpp
   src/chatlog/chatlinecontentproxy.h
   src/chatlog/chatline.cpp
   src/chatlog/chatline.h
-  src/chatlog/chatlog.cpp
-  src/chatlog/chatlog.h
+  src/chatlog/chatlinestorage.cpp
+  src/chatlog/chatlinestorage.h
+  src/chatlog/chatwidget.cpp
+  src/chatlog/chatwidget.h
   src/chatlog/chatmessage.cpp
   src/chatlog/chatmessage.h
   src/chatlog/content/filetransferwidget.cpp
@@ -299,19 +203,32 @@ set(${PROJECT_NAME}_SOURCES
   src/chatlog/documentcache.h
   src/chatlog/pixmapcache.cpp
   src/chatlog/pixmapcache.h
-  src/chatlog/toxfileprogress.cpp
-  src/chatlog/toxfileprogress.h
+  src/core/toxfileprogress.cpp
+  src/core/toxfileprogress.h
   src/chatlog/textformatter.cpp
   src/chatlog/textformatter.h
   src/core/coreav.cpp
   src/core/coreav.h
+  src/core/coreext.cpp
+  src/core/coreext.h
   src/core/core.cpp
   src/core/corefile.cpp
   src/core/corefile.h
   src/core/core.h
   src/core/dhtserver.cpp
   src/core/dhtserver.h
+  src/core/icoreextpacket.cpp
+  src/core/icoreextpacket.h
+  src/core/icoresettings.cpp
   src/core/icoresettings.h
+  src/core/icorefriendmessagesender.cpp
+  src/core/icorefriendmessagesender.h
+  src/core/icoregroupmessagesender.cpp
+  src/core/icoregroupmessagesender.h
+  src/core/icoregroupquery.cpp
+  src/core/icoregroupquery.h
+  src/core/icoreidhandler.cpp
+  src/core/icoreidhandler.h
   src/core/toxcall.cpp
   src/core/toxcall.h
   src/core/toxencrypt.cpp
@@ -329,8 +246,8 @@ set(${PROJECT_NAME}_SOURCES
   src/core/toxoptions.h
   src/core/toxpk.cpp
   src/core/toxpk.h
-  src/core/contactid.cpp
-  src/core/contactid.h
+  src/core/chatid.cpp
+  src/core/chatid.h
   src/core/toxstring.cpp
   src/core/toxstring.h
   src/friendlist.cpp
@@ -341,43 +258,56 @@ set(${PROJECT_NAME}_SOURCES
   src/ipc.h
   src/model/about/aboutfriend.cpp
   src/model/about/aboutfriend.h
+  src/model/about/iaboutfriend.cpp
   src/model/about/iaboutfriend.h
+  src/model/chathistory.cpp
+  src/model/chathistory.h
+  src/model/chatlogitem.cpp
+  src/model/chatlogitem.h
+  src/model/chatroom/chatroom.cpp
   src/model/chatroom/chatroom.h
   src/model/chatroom/friendchatroom.cpp
   src/model/chatroom/friendchatroom.h
   src/model/chatroom/groupchatroom.cpp
   src/model/chatroom/groupchatroom.h
-  src/model/contact.cpp
-  src/model/contact.h
-  src/model/chatlogitem.cpp
-  src/model/chatlogitem.h
+  src/model/chat.cpp
+  src/model/chat.h
+  src/model/dialogs/idialogs.cpp
+  src/model/dialogs/idialogs.h
+  src/model/dialogs/idialogsmanager.h
+  src/model/dialogs/idialogsmanager.cpp
+  src/model/exiftransform.cpp
+  src/model/exiftransform.h
+  src/model/friendlist/friendlistmanager.cpp
+  src/model/friendlist/friendlistmanager.h
+  src/model/friendlist/ifriendlistitem.cpp
+  src/model/friendlist/ifriendlistitem.h
+  src/model/friendmessagedispatcher.cpp
+  src/model/friendmessagedispatcher.h
   src/model/friend.cpp
   src/model/friend.h
-  src/model/message.h
-  src/model/message.cpp
-  src/model/imessagedispatcher.h
-  src/model/friendmessagedispatcher.h
-  src/model/friendmessagedispatcher.cpp
-  src/model/groupmessagedispatcher.h
-  src/model/groupmessagedispatcher.cpp
-  src/model/message.h
-  src/model/message.cpp
   src/model/groupinvite.cpp
   src/model/groupinvite.h
+  src/model/groupmessagedispatcher.cpp
+  src/model/groupmessagedispatcher.h
   src/model/group.cpp
   src/model/group.h
-  src/model/status.cpp
-  src/model/status.h
-  src/model/interface.h
+  src/model/ibootstraplistgenerator.cpp
+  src/model/ibootstraplistgenerator.h
+  src/model/ichatlog.h
+  src/model/imessagedispatcher.h
+  src/model/message.cpp
+  src/model/message.h
+  src/model/notificationgenerator.cpp
+  src/model/notificationgenerator.h
+  src/model/profile/iprofileinfo.cpp
   src/model/profile/iprofileinfo.h
   src/model/profile/profileinfo.cpp
   src/model/profile/profileinfo.h
-  src/model/dialogs/idialogs.h
-  src/model/ichatlog.h
-  src/model/sessionchatlog.h
   src/model/sessionchatlog.cpp
-  src/model/chathistory.h
-  src/model/chathistory.cpp
+  src/model/sessionchatlog.h
+  src/model/status.cpp
+  src/model/status.h
   src/model/toxclientstandards.h
   src/net/bootstrapnodeupdater.cpp
   src/net/bootstrapnodeupdater.h
@@ -389,9 +319,20 @@ set(${PROJECT_NAME}_SOURCES
   src/nexus.h
   src/persistence/db/rawdatabase.cpp
   src/persistence/db/rawdatabase.h
+  src/persistence/db/upgrades/dbupgrader.cpp
+  src/persistence/db/upgrades/dbupgrader.h
+  src/persistence/db/upgrades/dbto11.h
+  src/persistence/db/upgrades/dbto11.cpp
   src/persistence/history.cpp
   src/persistence/history.h
+  src/persistence/ifriendsettings.cpp
   src/persistence/ifriendsettings.h
+  src/persistence/igroupsettings.cpp
+  src/persistence/igroupsettings.h
+  src/persistence/inotificationsettings.cpp
+  src/persistence/inotificationsettings.h
+  src/persistence/ismileysettings.cpp
+  src/persistence/ismileysettings.h
   src/persistence/offlinemsgengine.cpp
   src/persistence/offlinemsgengine.h
   src/persistence/paths.cpp
@@ -406,6 +347,10 @@ set(${PROJECT_NAME}_SOURCES
   src/persistence/settings.h
   src/persistence/settingsserializer.cpp
   src/persistence/settingsserializer.h
+  src/persistence/globalsettingsupgrader.cpp
+  src/persistence/globalsettingsupgrader.h
+  src/persistence/personalsettingsupgrader.cpp
+  src/persistence/personalsettingsupgrader.h
   src/persistence/smileypack.cpp
   src/persistence/smileypack.h
   src/persistence/toxsave.cpp
@@ -416,6 +361,7 @@ set(${PROJECT_NAME}_SOURCES
   src/video/camerasource.h
   src/video/corevideosource.cpp
   src/video/corevideosource.h
+  src/video/ivideosettings.cpp
   src/video/ivideosettings.h
   src/video/netcamview.cpp
   src/video/netcamview.h
@@ -443,8 +389,12 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/contentlayout.h
   src/widget/emoticonswidget.cpp
   src/widget/emoticonswidget.h
+  src/widget/extensionstatus.cpp
+  src/widget/extensionstatus.h
   src/widget/flowlayout.cpp
   src/widget/flowlayout.h
+  src/widget/imagepreviewwidget.h
+  src/widget/imagepreviewwidget.cpp
   src/widget/searchform.cpp
   src/widget/searchform.h
   src/widget/searchtypes.h
@@ -504,8 +454,6 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/genericchatroomwidget.h
   src/widget/groupwidget.cpp
   src/widget/groupwidget.h
-  src/widget/gui.cpp
-  src/widget/gui.h
   src/widget/loginscreen.cpp
   src/widget/loginscreen.h
   src/widget/maskablepixmapwidget.cpp
@@ -526,6 +474,10 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/tool/activatedialog.h
   src/widget/tool/adjustingscrollarea.cpp
   src/widget/tool/adjustingscrollarea.h
+  src/widget/tool/imessageboxmanager.h
+  src/widget/tool/imessageboxmanager.cpp
+  src/widget/tool/messageboxmanager.cpp
+  src/widget/tool/messageboxmanager.h
   src/widget/tool/callconfirmwidget.cpp
   src/widget/tool/callconfirmwidget.h
   src/widget/tool/chattextedit.cpp
@@ -534,8 +486,6 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/tool/croppinglabel.h
   src/widget/tool/flyoutoverlaywidget.cpp
   src/widget/tool/flyoutoverlaywidget.h
-  src/widget/tool/friendrequestdialog.cpp
-  src/widget/tool/friendrequestdialog.h
   src/widget/tool/identicon.cpp
   src/widget/tool/identicon.h
   src/widget/tool/movablewidget.cpp
@@ -544,8 +494,8 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/tool/profileimporter.h
   src/widget/tool/recursivesignalblocker.cpp
   src/widget/tool/recursivesignalblocker.h
-  src/widget/tool/removefrienddialog.cpp
-  src/widget/tool/removefrienddialog.h
+  src/widget/tool/removechatdialog.cpp
+  src/widget/tool/removechatdialog.h
   src/widget/tool/screengrabberchooserrectitem.cpp
   src/widget/tool/screengrabberchooserrectitem.h
   src/widget/tool/screengrabberoverlayitem.cpp
@@ -565,6 +515,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     src/platform/camera/directshow.cpp
     src/platform/camera/directshow.h
   )
+
   set(${PROJECT_NAME}_RESOURCES ${${PROJECT_NAME}_RESOURCES}
     windows/qtox.rc
   )
@@ -572,11 +523,6 @@ elseif (${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "Fr
   set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES}
     src/platform/camera/v4l2.cpp
     src/platform/camera/v4l2.h
-  )
-elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-  set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES}
-    src/platform/install_osx.cpp
-    src/platform/install_osx.h
   )
 endif()
 
@@ -658,20 +604,44 @@ MESSAGE( STATUS "CMAKE_C_FLAGS: " ${CMAKE_C_FLAGS} )
 # the compiler flags for compiling C++ sources
 MESSAGE( STATUS "CMAKE_CXX_FLAGS: " ${CMAKE_CXX_FLAGS} )
 
+# Interface library to propagate code coverage flags if enabled
+add_library(coverage_config INTERFACE)
+option(CODE_COVERAGE "Enable coverage reporting" OFF)
+if (CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  target_compile_options(coverage_config INTERFACE -O0 -g --coverage)
+  if(CMAKE_VERSION VERSION_GREATER_EQUAL 3.13)
+    target_link_options(coverage_config INTERFACE --coverage)
+  else()
+    target_link_libraries(coverage_config INTERFACE --coverage)
+  endif()
+endif()
+
+link_libraries(coverage_config)
+
+add_subdirectory(util)
+add_subdirectory(audio)
+add_subdirectory(translations)
+add_subdirectory(cmake/warnings)
+
 add_library(${PROJECT_NAME}_static
   STATIC
   ${${PROJECT_NAME}_FORMS}
-  ${${PROJECT_NAME}_SOURCES}
-  ${${PROJECT_NAME}_QM_FILES}
-  ${${PROJECT_NAME}_RESOURCES})
+  ${${PROJECT_NAME}_SOURCES})
 target_link_libraries(${PROJECT_NAME}_static
   ${CMAKE_REQUIRED_LIBRARIES}
-  ${ALL_LIBRARIES})
+  ${ALL_LIBRARIES}
+  coverage_config)
+
+target_link_libraries(${PROJECT_NAME}_static qtox::warnings)
+target_link_libraries(${PROJECT_NAME}_static util_library)
+target_link_libraries(${PROJECT_NAME}_static audio_library)
+target_link_libraries(${PROJECT_NAME}_static translations_library)
 
 add_executable(${PROJECT_NAME}
   WIN32
   MACOSX_BUNDLE
   ${${PROJECT_NAME}_RESOURCES}
+  ${SMILEY_RESOURCES}
   src/main.cpp)
 target_link_libraries(${PROJECT_NAME}
   ${PROJECT_NAME}_static

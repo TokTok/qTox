@@ -17,13 +17,13 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TEXTFORMATTER_H
-#define TEXTFORMATTER_H
+#pragma once
 
 #include <QString>
 
-QString highlightURI(const QString& message);
+namespace TextFormatter
+{
+    QString highlightURI(const QString& message);
 
-QString applyMarkdown(const QString& message, bool showFormattingSymbols);
-
-#endif // TEXTFORMATTER_H
+    QString applyMarkdown(const QString& message, bool showFormattingSymbols);
+} // namespace TextFormatter

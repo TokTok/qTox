@@ -18,8 +18,7 @@
 */
 
 
-#ifndef IPC_H
-#define IPC_H
+#pragma once
 
 #include <QMap>
 #include <QObject>
@@ -28,7 +27,7 @@
 #include <ctime>
 #include <functional>
 
-using IPCEventHandler = std::function<bool(const QByteArray&)>;
+using IPCEventHandler = std::function<bool(const QByteArray&, void*)>;
 
 #define IPC_PROTOCOL_VERSION "2"
 
@@ -43,7 +42,7 @@ protected:
     static const int OWNERSHIP_TIMEOUT_S = 5;
 
 public:
-    IPC(uint32_t profileId);
+    IPC(uint32_t profileId_);
     ~IPC();
 
     struct IPCEvent
@@ -69,27 +68,30 @@ public:
 
     time_t postEvent(const QString& name, const QByteArray& data = QByteArray(), uint32_t dest = 0);
     bool isCurrentOwner();
-    void registerEventHandler(const QString& name, IPCEventHandler handler);
+    void registerEventHandler(const QString& name, IPCEventHandler handler, void* userData);
     bool isEventAccepted(time_t time);
     bool waitUntilAccepted(time_t time, int32_t timeout = -1);
     bool isAttached() const;
 
 public slots:
-    void setProfileId(uint32_t profileId);
+    void setProfileId(uint32_t profileId_);
 
 private:
     IPCMemory* global();
-    bool runEventHandler(IPCEventHandler handler, const QByteArray& arg);
+    bool runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* userData);
     IPCEvent* fetchEvent();
     void processEvents();
     bool isCurrentOwnerNoLock();
 
 private:
+    struct Callback
+    {
+        IPCEventHandler handler;
+        void* userData;
+    };
     QTimer timer;
     uint64_t globalId;
     uint32_t profileId;
     QSharedMemory globalMemory;
-    QMap<QString, IPCEventHandler> eventHandlers;
+    QMap<QString, Callback> eventHandlers;
 };
-
-#endif // IPC_H

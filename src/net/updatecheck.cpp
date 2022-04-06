@@ -32,6 +32,7 @@
 
 namespace {
 const QString versionUrl{QStringLiteral("https://api.github.com/repos/qTox/qTox/releases/latest")};
+const QString versionRegexString{QStringLiteral("v([0-9]+)\\.([0-9]+)\\.([0-9]+)")};
 
 struct Version {
     int major;
@@ -42,7 +43,7 @@ struct Version {
 Version tagToVersion(QString tagName)
 {
     // capture tag name to avoid showing update available on dev builds which include hash as part of describe
-    QRegularExpression versionFormat{QStringLiteral("v([0-9]+)\\.([0-9]+)\\.([0-9]+)")};
+    QRegularExpression versionFormat(versionRegexString);
     auto matches = versionFormat.match(tagName);
     assert(matches.lastCapturedIndex() == 3);
 
@@ -86,11 +87,23 @@ bool isUpdateAvailable(Version current, Version available)
     return false;
 }
 
+bool isCurrentVersionStable()
+{
+  QRegularExpression versionRegex(versionRegexString);
+  auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
+  if (currentVer.hasMatch()){
+    return true;
+  } else {
+    return false;
+  }
+}
+
 } // namespace
 
-UpdateCheck::UpdateCheck(const Settings& settings)
-    : settings(settings)
+UpdateCheck::UpdateCheck(const Settings& settings_)
+    : settings(settings_)
 {
+    qInfo() << "qTox is running version:" << GIT_DESCRIBE;
     updateTimer.start(1000 * 60 * 60 * 24 /* 1 day */);
     connect(&updateTimer, &QTimer::timeout, this, &UpdateCheck::checkForUpdate);
     connect(&manager, &QNetworkAccessManager::finished, this, &UpdateCheck::handleResponse);
@@ -102,6 +115,13 @@ void UpdateCheck::checkForUpdate()
         // still run the timer to check periodically incase setting changes
         return;
     }
+
+    if (isCurrentVersionStable() == false) {
+        qWarning() << "Currently running an untested/unstable version of qTox";
+        emit versionIsUnstable();
+        return;
+    }
+
     manager.setProxy(settings.getProxy());
     QNetworkRequest request{versionUrl};
     manager.get(request);
@@ -144,5 +164,6 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         qInfo() << "qTox is up to date";
         emit upToDate();
     }
+
     reply->deleteLater();
 }

@@ -18,14 +18,15 @@
 */
 
 
-#ifndef LOGINSCREEN_H
-#define LOGINSCREEN_H
+#pragma once
 
 #include <QDialog>
 #include <QShortcut>
 #include <QToolButton>
 
 class Profile;
+class Settings;
+class Style;
 
 namespace Ui {
 class LoginScreen;
@@ -36,7 +37,8 @@ class LoginScreen : public QDialog
     Q_OBJECT
 
 public:
-    LoginScreen(const QString& initialProfileName = QString(), QWidget* parent = nullptr);
+    LoginScreen(Settings& settings, Style& style, const QString& initialProfileName = QString(),
+        QWidget* parent = nullptr);
     ~LoginScreen();
     bool event(QEvent* event) final;
 
@@ -74,6 +76,5 @@ private:
 private:
     Ui::LoginScreen* ui;
     QShortcut quitShortcut;
+    Settings& settings;
 };
-
-#endif // LOGINSCREEN_H

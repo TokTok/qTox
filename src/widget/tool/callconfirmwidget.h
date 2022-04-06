@@ -18,8 +18,7 @@
 */
 
 
-#ifndef CALLCONFIRMWIDGET_H
-#define CALLCONFIRMWIDGET_H
+#pragma once
 
 #include <QBrush>
 #include <QPolygon>
@@ -28,12 +27,14 @@
 
 class QPaintEvent;
 class QShowEvent;
+class Settings;
+class Style;
 
 class CallConfirmWidget final : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CallConfirmWidget(const QWidget* anchor);
+    CallConfirmWidget(Settings& settings, Style& style, const QWidget* anchor_);
 
 signals:
     void accepted();
@@ -46,7 +47,7 @@ protected:
     void paintEvent(QPaintEvent* event) final;
     void showEvent(QShowEvent* event) final;
     void hideEvent(QHideEvent* event) final;
-    bool eventFilter(QObject*, QEvent* event) final;
+    bool eventFilter(QObject* object, QEvent* event) final;
 
 private:
     const QWidget* anchor;
@@ -60,5 +61,3 @@ private:
     const int roundedFactor;
     const qreal rectRatio;
 };
-
-#endif // CALLCONFIRMWIDGET_H

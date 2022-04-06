@@ -17,17 +17,21 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef I_VIDEO_SETTINGS_H
-#define I_VIDEO_SETTINGS_H
+#pragma once
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 
 #include <QString>
 #include <QRect>
 
 class IVideoSettings {
 public:
-    virtual ~IVideoSettings() = default;
+    IVideoSettings() = default;
+    virtual ~IVideoSettings();
+    IVideoSettings(const IVideoSettings&) = default;
+    IVideoSettings& operator=(const IVideoSettings&) = default;
+    IVideoSettings(IVideoSettings&&) = default;
+    IVideoSettings& operator=(IVideoSettings&&) = default;
 
     virtual QString getVideoDev() const = 0;
     virtual void setVideoDev(const QString& deviceSpecifier) = 0;
@@ -50,5 +54,3 @@ public:
     DECLARE_SIGNAL(camVideoResChanged, const QRect& region);
     DECLARE_SIGNAL(camVideoFPSChanged, unsigned short fps);
 };
-
-#endif // I_VIDEO_SETTINGS_H

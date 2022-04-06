@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SEARCHSETTINGSFORM_H
-#define SEARCHSETTINGSFORM_H
+#pragma once
 
 #include <QWidget>
 #include "src/widget/searchtypes.h"
@@ -26,13 +25,15 @@
 namespace Ui {
 class SearchSettingsForm;
 }
+class Settings;
+class Style;
 
 class SearchSettingsForm : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit SearchSettingsForm(QWidget *parent = nullptr);
+    SearchSettingsForm(Settings& settings, Style& style, QWidget *parent = nullptr);
     ~SearchSettingsForm();
 
     ParameterSearch getParameterSearch();
@@ -40,11 +41,13 @@ public:
 
 private:
     Ui::SearchSettingsForm *ui;
-    QDateTime startTime;
+    QDate startDate;
     bool isUpdate{false};
+    Settings& settings;
+    Style& style;
 
     void updateStartDateLabel();
-    void setUpdate(const bool isUpdate);
+    void setUpdate(const bool isUpdate_);
 
 private slots:
     void onStartSearchSelected(const int index);
@@ -56,5 +59,3 @@ private slots:
 signals:
     void updateSettings(const bool isUpdate);
 };
-
-#endif // SEARCHSETTINGSFORM_H

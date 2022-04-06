@@ -22,6 +22,12 @@
 #include "src/model/groupmessagedispatcher.h"
 #include "src/model/message.h"
 #include "src/persistence/settings.h"
+#include "src/persistence/igroupsettings.h"
+#include "src/friendlist.h"
+#include "util/interface.h"
+
+#include "mock/mockcoreidhandler.h"
+#include "mock/mockgroupquery.h"
 
 #include <QObject>
 #include <QtTest/QtTest>
@@ -33,122 +39,54 @@
 class MockGroupMessageSender : public ICoreGroupMessageSender
 {
 public:
-    void sendGroupAction(int groupId, const QString& action) override
-    {
-        numSentActions++;
-    }
+    void sendGroupAction(int groupId, const QString& action) override;
 
-    void sendGroupMessage(int groupId, const QString& message) override
-    {
-        numSentMessages++;
-    }
+    void sendGroupMessage(int groupId, const QString& message) override;
 
     size_t numSentActions = 0;
     size_t numSentMessages = 0;
 };
 
-/**
- * Mock 1 peer at group number 0
- */
-class MockGroupQuery : public ICoreGroupQuery
+void MockGroupMessageSender::sendGroupAction(int groupId, const QString& action)
 {
-public:
-    GroupId getGroupPersistentId(uint32_t groupNumber) const override
-    {
-        return GroupId();
-    }
+    std::ignore = groupId;
+    std::ignore = action;
+    numSentActions++;
+}
 
-    uint32_t getGroupNumberPeers(int groupId) const override
-    {
-        if (emptyGroup) {
-            return 1;
-        }
-
-        return 2;
-    }
-
-    QString getGroupPeerName(int groupId, int peerId) const override
-    {
-        return QString("peer") + peerId;
-    }
-
-    ToxPk getGroupPeerPk(int groupId, int peerId) const override
-    {
-        uint8_t id[TOX_PUBLIC_KEY_SIZE] = {static_cast<uint8_t>(peerId)};
-        return ToxPk(id);
-    }
-
-    QStringList getGroupPeerNames(int groupId) const override
-    {
-        if (emptyGroup) {
-            return QStringList({QString("me")});
-        }
-        return QStringList({QString("me"), QString("other")});
-    }
-
-    bool getGroupAvEnabled(int groupId) const override
-    {
-        return false;
-    }
-
-    void setAsEmptyGroup()
-    {
-        emptyGroup = true;
-    }
-
-    void setAsFunctionalGroup()
-    {
-        emptyGroup = false;
-    }
-
-private:
-    bool emptyGroup = false;
-};
-
-class MockCoreIdHandler : public ICoreIdHandler
+void MockGroupMessageSender::sendGroupMessage(int groupId, const QString& message)
 {
-public:
-    ToxId getSelfId() const override
-    {
-        std::terminate();
-        return ToxId();
-    }
+    std::ignore = groupId;
+    std::ignore = message;
+    numSentMessages++;
+}
 
-    ToxPk getSelfPublicKey() const override
-    {
-        static uint8_t id[TOX_PUBLIC_KEY_SIZE] = {0};
-        return ToxPk(id);
-    }
-
-    QString getUsername() const override
-    {
-        return "me";
-    }
-};
-
-class MockGroupSettings : public IGroupSettings
+class MockGroupSettings : public QObject, public IGroupSettings
 {
+    Q_OBJECT
+
 public:
-    QStringList getBlackList() const override
-    {
-        return blacklist;
-    }
+    QStringList getBlackList() const override;
+    void setBlackList(const QStringList& blist) override;
+    SIGNAL_IMPL(MockGroupSettings, blackListChanged, QStringList const& blist)
 
-    void setBlackList(const QStringList& blist) override
-    {
-        blacklist = blist;
-    }
-
-    bool getGroupAlwaysNotify() const override
-    {
-        return false;
-    }
-
-    void setGroupAlwaysNotify(bool newValue) override {}
+    bool getShowGroupJoinLeaveMessages() const override { return true; }
+    void setShowGroupJoinLeaveMessages(bool newValue) override { std::ignore = newValue; }
+    SIGNAL_IMPL(MockGroupSettings, showGroupJoinLeaveMessagesChanged, bool show)
 
 private:
     QStringList blacklist;
 };
+
+QStringList MockGroupSettings::getBlackList() const
+{
+    return blacklist;
+}
+
+void MockGroupSettings::setBlackList(const QStringList& blist)
+{
+    blacklist = blist;
+}
 
 class TestGroupMessageDispatcher : public QObject
 {
@@ -182,6 +120,7 @@ private slots:
 
     void onMessageReceived(const ToxPk& sender, Message message)
     {
+        std::ignore = sender;
         receivedMessages.push_back(std::move(message));
     }
 
@@ -198,6 +137,7 @@ private:
     std::set<DispatchedMessageId> outgoingMessages;
     std::deque<Message> sentMessages;
     std::deque<Message> receivedMessages;
+    std::unique_ptr<FriendList> friendList;
 };
 
 TestGroupMessageDispatcher::TestGroupMessageDispatcher() {}
@@ -207,14 +147,16 @@ TestGroupMessageDispatcher::TestGroupMessageDispatcher() {}
  */
 void TestGroupMessageDispatcher::init()
 {
+    friendList = std::unique_ptr<FriendList>(new FriendList());
     groupSettings = std::unique_ptr<MockGroupSettings>(new MockGroupSettings());
     groupQuery = std::unique_ptr<MockGroupQuery>(new MockGroupQuery());
     coreIdHandler = std::unique_ptr<MockCoreIdHandler>(new MockCoreIdHandler());
     g = std::unique_ptr<Group>(
-        new Group(0, GroupId(), "TestGroup", false, "me", *groupQuery, *coreIdHandler));
+        new Group(0, GroupId(), "TestGroup", false, "me", *groupQuery, *coreIdHandler,
+            *friendList));
     messageSender = std::unique_ptr<MockGroupMessageSender>(new MockGroupMessageSender());
     sharedProcessorParams =
-        std::unique_ptr<MessageProcessor::SharedParams>(new MessageProcessor::SharedParams());
+        std::unique_ptr<MessageProcessor::SharedParams>(new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
     messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
     groupMessageDispatcher = std::unique_ptr<GroupMessageDispatcher>(
         new GroupMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,
@@ -291,11 +233,11 @@ void TestGroupMessageDispatcher::testEmptyGroup()
  */
 void TestGroupMessageDispatcher::testSelfReceive()
 {
-    uint8_t selfId[TOX_PUBLIC_KEY_SIZE] = {0};
+    uint8_t selfId[ToxPk::size] = {0};
     groupMessageDispatcher->onMessageReceived(ToxPk(selfId), false, "Test");
     QVERIFY(receivedMessages.size() == 0);
 
-    uint8_t id[TOX_PUBLIC_KEY_SIZE] = {1};
+    uint8_t id[ToxPk::size] = {1};
     groupMessageDispatcher->onMessageReceived(ToxPk(id), false, "Test");
     QVERIFY(receivedMessages.size() == 1);
 }
@@ -305,7 +247,7 @@ void TestGroupMessageDispatcher::testSelfReceive()
  */
 void TestGroupMessageDispatcher::testBlacklist()
 {
-    uint8_t id[TOX_PUBLIC_KEY_SIZE] = {1};
+    uint8_t id[ToxPk::size] = {1};
     auto otherPk = ToxPk(id);
     groupMessageDispatcher->onMessageReceived(otherPk, false, "Test");
     QVERIFY(receivedMessages.size() == 1);

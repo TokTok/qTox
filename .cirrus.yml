@@ -1,0 +1,12 @@
+---
+bazel-opt_task:
+  container:
+    image: toxchat/toktok-stack:latest-release
+    cpu: 2
+    memory: 6G
+  configure_script:
+    - /src/workspace/tools/inject-repo qtox
+  test_all_script:
+    - cd /src/workspace && bazel test -k
+        --remote_http_cache=http://$CIRRUS_HTTP_CACHE_HOST
+        //qtox/...

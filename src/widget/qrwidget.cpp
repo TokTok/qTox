@@ -25,7 +25,7 @@
 #include <QPainter>
 #include <qrencode.h>
 
-#ifdef Q_OS_WIN32
+#if defined(Q_OS_WIN32) || defined(Q_OS_HAIKU)
 #include <errno.h>
 #else
 #include <sys/errno.h>
@@ -53,9 +53,9 @@ QRWidget::~QRWidget()
     delete image;
 }
 
-void QRWidget::setQRData(const QString& data)
+void QRWidget::setQRData(const QString& data_)
 {
-    this->data = data;
+    data = data_;
     paintImage();
 }
 

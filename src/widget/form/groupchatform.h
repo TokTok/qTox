@@ -17,11 +17,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUPCHATFORM_H
-#define GROUPCHATFORM_H
+#pragma once
 
 #include "genericchatform.h"
 #include "src/core/toxpk.h"
+#include "src/persistence/igroupsettings.h"
 #include <QMap>
 
 namespace Ui {
@@ -34,12 +34,23 @@ class QTimer;
 class GroupId;
 class IMessageDispatcher;
 struct Message;
+class Settings;
+class DocumentCache;
+class SmileyPack;
+class Style;
+class IMessageBoxManager;
+class FriendList;
+class GroupList;
 
 class GroupChatForm : public GenericChatForm
 {
     Q_OBJECT
 public:
-    explicit GroupChatForm(Group* chatGroup, IChatLog& chatLog, IMessageDispatcher& messageDispatcher);
+    GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
+        IMessageDispatcher& messageDispatcher_, Settings& settings_,
+        DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
+            IMessageBoxManager& messageBoxManager, FriendList& friendList,
+            GroupList& groupList);
     ~GroupChatForm();
 
     void peerAudioPlaying(ToxPk peerPk);
@@ -71,6 +82,7 @@ private:
     void leaveGroupCall();
 
 private:
+    Core& core;
     Group* group;
     QMap<ToxPk, QLabel*> peerLabels;
     QMap<ToxPk, QTimer*> peerAudioTimers;
@@ -78,6 +90,7 @@ private:
     QLabel* nusersLabel;
     TabCompleter* tabber;
     bool inCall;
+    Settings& settings;
+    Style& style;
+    FriendList& friendList;
 };
-
-#endif // GROUPCHATFORM_H

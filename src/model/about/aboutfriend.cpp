@@ -24,21 +24,26 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/ifriendsettings.h"
 
-AboutFriend::AboutFriend(const Friend* f, IFriendSettings* const s)
-    : f{f}
-    , settings{s}
+AboutFriend::AboutFriend(const Friend* f_, IFriendSettings* const settings_, Profile& profile_)
+    : f{f_}
+    , settings{settings_}
+    , profile{profile_}
 {
-    s->connectTo_contactNoteChanged(this, [=](const ToxPk& pk, const QString& note) {
+    settings->connectTo_contactNoteChanged(this, [=](const ToxPk& pk, const QString& note) {
+        std::ignore = pk;
         emit noteChanged(note);
     });
-    s->connectTo_autoAcceptCallChanged(this,
+    settings->connectTo_autoAcceptCallChanged(this,
             [=](const ToxPk& pk, IFriendSettings::AutoAcceptCallFlags flag) {
+        std::ignore = pk;
         emit autoAcceptCallChanged(flag);
     });
-    s->connectTo_autoAcceptDirChanged(this, [=](const ToxPk& pk, const QString& dir) {
+    settings->connectTo_autoAcceptDirChanged(this, [=](const ToxPk& pk, const QString& dir) {
+        std::ignore = pk;
         emit autoAcceptDirChanged(dir);
     });
-    s->connectTo_autoGroupInviteChanged(this, [=](const ToxPk& pk, bool enable) {
+    settings->connectTo_autoGroupInviteChanged(this, [=](const ToxPk& pk, bool enable) {
+        std::ignore = pk;
         emit autoGroupInviteChanged(enable);
     });
 }
@@ -61,7 +66,7 @@ ToxPk AboutFriend::getPublicKey() const
 QPixmap AboutFriend::getAvatar() const
 {
     const ToxPk pk = f->getPublicKey();
-    const QPixmap avatar = Nexus::getProfile()->loadAvatar(pk);
+    const QPixmap avatar = profile.loadAvatar(pk);
     return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg"))
                            : avatar;
 }
@@ -121,9 +126,9 @@ void AboutFriend::setAutoGroupInvite(bool enabled)
 bool AboutFriend::clearHistory()
 {
     const ToxPk pk = f->getPublicKey();
-    History* const history = Nexus::getProfile()->getHistory();
+    History* const history = profile.getHistory();
     if (history) {
-        history->removeFriendHistory(pk.toString());
+        history->removeChatHistory(pk);
         return true;
     }
 
@@ -132,7 +137,7 @@ bool AboutFriend::clearHistory()
 
 bool AboutFriend::isHistoryExistence()
 {
-    History* const history = Nexus::getProfile()->getHistory();
+    History* const history = profile.getHistory();
     if (history) {
         const ToxPk pk = f->getPublicKey();
         return history->historyExists(pk);

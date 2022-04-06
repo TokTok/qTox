@@ -30,6 +30,62 @@
 #include <QFile>
 #include <QImageReader>
 
+namespace {
+/**
+* @brief Convert QImage to png image.
+* @param pic Picture to convert.
+* @return Byte array with png image.
+*/
+QByteArray picToPng(const QImage& pic)
+{
+    QByteArray bytes;
+    QBuffer buffer(&bytes);
+    buffer.open(QIODevice::WriteOnly);
+    pic.save(&buffer, "PNG");
+    buffer.close();
+    return bytes;
+}
+/**
+ * @brief Remove characters not supported for profile name from string.
+ * @param src Source string.
+ * @return Sanitized string.
+ */
+QString sanitize(const QString& src)
+{
+    QString name = src;
+    // these are pretty much Windows banned filename characters
+    QList<QChar> banned{'/', '\\', ':', '<', '>', '"', '|', '?', '*'};
+    for (QChar c : banned) {
+        name.replace(c, '_');
+    }
+
+    // also remove leading and trailing periods
+    if (name[0] == '.') {
+        name[0] = '_';
+    }
+
+    if (name.endsWith('.')) {
+        name[name.length() - 1] = '_';
+    }
+
+    return name;
+}
+
+// TODO: Find out what is dangerous?
+/**
+ * @brief Dangerous way to find out if a path is writable.
+ * @param filepath Path to file which should be deleted.
+ * @return True, if file writeable, false otherwise.
+ */
+bool tryRemoveFile(const QString& filepath)
+{
+    QFile tmp(filepath);
+    bool writable = tmp.open(QIODevice::WriteOnly);
+    tmp.remove();
+    return writable;
+}
+} // namespace
+
 /**
  * @class ProfileInfo
  * @brief Implement interface, that provides invormation about self profile.
@@ -43,13 +99,14 @@
  * @param profile Pointer to Profile.
  * @note All pointers parameters shouldn't be null.
  */
-ProfileInfo::ProfileInfo(Core* core, Profile* profile)
-    : profile{profile}
-    , core{core}
+ProfileInfo::ProfileInfo(Core* core_, Profile* profile_, Settings& settings_)
+    : profile{profile_}
+    , core{core_}
+    , settings{settings_}
 {
-    connect(core, &Core::idSet, this, &ProfileInfo::idChanged);
-    connect(core, &Core::usernameSet, this, &ProfileInfo::usernameChanged);
-    connect(core, &Core::statusMessageSet, this, &ProfileInfo::statusMessageChanged);
+    connect(core_, &Core::idSet, this, &ProfileInfo::idChanged);
+    connect(core_, &Core::usernameSet, this, &ProfileInfo::usernameChanged);
+    connect(core_, &Core::statusMessageSet, this, &ProfileInfo::statusMessageChanged);
 }
 
 /**
@@ -124,32 +181,6 @@ QString ProfileInfo::getProfileName() const
 }
 
 /**
- * @brief Remove characters not supported for profile name from string.
- * @param src Source string.
- * @return Sanitized string.
- */
-static QString sanitize(const QString& src)
-{
-    QString name = src;
-    // these are pretty much Windows banned filename characters
-    QList<QChar> banned{'/', '\\', ':', '<', '>', '"', '|', '?', '*'};
-    for (QChar c : banned) {
-        name.replace(c, '_');
-    }
-
-    // also remove leading and trailing periods
-    if (name[0] == '.') {
-        name[0] = '_';
-    }
-
-    if (name.endsWith('.')) {
-        name[name.length() - 1] = '_';
-    }
-
-    return name;
-}
-
-/**
  * @brief Rename profile file.
  * @param name New profile name.
  * @return Result code of rename operation.
@@ -163,7 +194,7 @@ IProfileInfo::RenameResult ProfileInfo::renameProfile(const QString& name)
 
     QString newName = sanitize(name);
 
-    if (Profile::exists(newName)) {
+    if (Profile::exists(newName, settings.getPaths())) {
         return RenameResult::ProfileAlreadyExists;
     }
 
@@ -172,20 +203,6 @@ IProfileInfo::RenameResult ProfileInfo::renameProfile(const QString& name)
     }
 
     return RenameResult::OK;
-}
-
-// TODO: Find out what is dangerous?
-/**
- * @brief Dangerous way to find out if a path is writable.
- * @param filepath Path to file which should be deleted.
- * @return True, if file writeable, false otherwise.
- */
-static bool tryRemoveFile(const QString& filepath)
-{
-    QFile tmp(filepath);
-    bool writable = tmp.open(QIODevice::WriteOnly);
-    tmp.remove();
-    return writable;
 }
 
 /**
@@ -204,7 +221,7 @@ IProfileInfo::SaveResult ProfileInfo::exportProfile(const QString& path) const
         return SaveResult::NoWritePermission;
     }
 
-    if (!QFile::copy(Settings::getInstance().getSettingsDirPath() + current, path)) {
+    if (!QFile::copy(settings.getPaths().getSettingsDirPath() + current, path)) {
         return SaveResult::Error;
     }
 
@@ -228,9 +245,9 @@ QStringList ProfileInfo::removeProfile()
 void ProfileInfo::logout()
 {
     // TODO(kriby): Refactor all of these invokeMethod calls with connect() properly when possible
-    Settings::getInstance().saveGlobal();
+    settings.saveGlobal();
     QMetaObject::invokeMethod(&Nexus::getInstance(), "showLogin",
-                              Q_ARG(QString, Settings::getInstance().getCurrentProfile()));
+                              Q_ARG(QString, settings.getCurrentProfile()));
 }
 
 /**
@@ -266,21 +283,6 @@ IProfileInfo::SaveResult ProfileInfo::saveQr(const QImage& image, const QString&
     }
 
     return SaveResult::OK;
-}
-
-/**
- * @brief Convert QImage to png image.
- * @param pic Picture to convert.
- * @return Byte array with png image.
- */
-QByteArray picToPng(const QImage& pic)
-{
-    QByteArray bytes;
-    QBuffer buffer(&bytes);
-    buffer.open(QIODevice::WriteOnly);
-    pic.save(&buffer, "PNG");
-    buffer.close();
-    return bytes;
 }
 
 /**

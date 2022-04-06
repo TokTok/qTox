@@ -17,10 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef I_CORE_SETTINGS_H
-#define I_CORE_SETTINGS_H
+#pragma once
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 
 #include <QList>
 #include <QNetworkProxy>
@@ -35,7 +34,12 @@ public:
         ptSOCKS5 = 1,
         ptHTTP = 2
     };
-    virtual ~ICoreSettings() = default;
+    ICoreSettings() = default;
+    virtual ~ICoreSettings();
+    ICoreSettings(const ICoreSettings&) = default;
+    ICoreSettings& operator=(const ICoreSettings&) = default;
+    ICoreSettings(ICoreSettings&&) = default;
+    ICoreSettings& operator=(ICoreSettings&&) = default;
 
     virtual bool getEnableIPv6() const = 0;
     virtual void setEnableIPv6(bool enable) = 0;
@@ -64,5 +68,3 @@ public:
     DECLARE_SIGNAL(proxyAddressChanged, const QString& address);
     DECLARE_SIGNAL(proxyPortChanged, quint16 port);
 };
-
-#endif // I_CORE_SETTINGS_H

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ABOUTFORM_H
-#define ABOUTFORM_H
+#pragma once
 
 #include "genericsettings.h"
 
@@ -30,6 +29,7 @@ class QTimer;
 class QString;
 class UpdateCheck;
 class QLayoutItem;
+class Style;
 
 namespace Ui {
 class AboutSettings;
@@ -39,7 +39,7 @@ class AboutForm : public GenericForm
 {
     Q_OBJECT
 public:
-    AboutForm(UpdateCheck* updateCheck);
+    AboutForm(UpdateCheck* updateCheck_, Style& style_);
     ~AboutForm();
     QString getFormName() final
     {
@@ -50,6 +50,8 @@ public slots:
     void onUpdateAvailable(QString latestVersion, QUrl link);
     void onUpToDate();
     void onUpdateCheckFailed();
+    void reloadTheme() override;
+    void onUnstableVersion();
 
 private:
     void retranslateUi();
@@ -61,6 +63,5 @@ private:
     QTimer* progressTimer;
     UpdateCheck* updateCheck;
     QMetaObject::Connection linkConnection;
+    Style& style;
 };
-
-#endif // ABOUTFORM_H

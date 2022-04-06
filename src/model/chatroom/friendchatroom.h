@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FRIEND_CHATROOM_H
-#define FRIEND_CHATROOM_H
+#pragma once
 
 #include "chatroom.h"
 
@@ -26,9 +25,12 @@
 #include <QString>
 #include <QVector>
 
+class Core;
 class IDialogsManager;
 class Friend;
 class Group;
+class Settings;
+class GroupList;
 
 struct GroupToDisplay
 {
@@ -46,9 +48,10 @@ class FriendChatroom : public QObject, public Chatroom
 {
     Q_OBJECT
 public:
-    FriendChatroom(Friend* frnd, IDialogsManager* dialogsManager);
+    FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
+        Settings& settings_, GroupList& groupList);
 
-    Contact* getContact() override;
+    Chat* getChat() override;
 
 public slots:
 
@@ -86,6 +89,7 @@ private:
     bool active{false};
     Friend* frnd{nullptr};
     IDialogsManager* dialogsManager{nullptr};
+    Core& core;
+    Settings& settings;
+    GroupList& groupList;
 };
-
-#endif // FRIEND_H

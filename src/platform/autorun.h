@@ -17,17 +17,14 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#pragma once
+
 #ifdef QTOX_PLATFORM_EXT
 
-#ifndef PLATFORM_AUTORUN_H
-#define PLATFORM_AUTORUN_H
-
-
+class Settings;
 namespace Platform {
-bool setAutorun(bool on);
-bool getAutorun();
+bool setAutorun(const Settings& settings, bool on);
+bool getAutorun(const Settings& settings);
 }
-
-#endif // PLATFORM_AUTORUN_H
 
 #endif // QTOX_PLATFORM_EXT

@@ -53,7 +53,10 @@ void TestPosixSignalNotifier::checkUsrSignalHandling()
     QCOMPARE(args.first().toInt(), SIGUSR1);
 }
 
-void sighandler(int) {
+namespace {
+void sighandler(int sig) {
+    std::ignore = sig;
+}
 }
 
 void TestPosixSignalNotifier::checkIgnoreExtraSignals()

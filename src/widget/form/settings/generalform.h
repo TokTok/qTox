@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GENERALFORM_H
-#define GENERALFORM_H
+#pragma once
 
 #include "genericsettings.h"
 
@@ -27,12 +26,14 @@ class GeneralSettings;
 }
 
 class SettingsWidget;
+class Settings;
+class Style;
 
 class GeneralForm : public GenericForm
 {
     Q_OBJECT
 public:
-    explicit GeneralForm(SettingsWidget* parent);
+    GeneralForm(SettingsWidget* parent, Settings& settings, Style& style);
     ~GeneralForm();
     QString getFormName() final
     {
@@ -52,6 +53,7 @@ private slots:
     void on_autoAwaySpinBox_editingFinished();
     void on_minimizeToTray_stateChanged();
     void on_statusChanges_stateChanged();
+    void on_groupJoinLeaveMessages_stateChanged();
     void on_autoacceptFiles_stateChanged();
     void on_maxAutoAcceptSizeMB_editingFinished();
     void on_autoSaveFilesDir_clicked();
@@ -63,6 +65,5 @@ private:
 private:
     Ui::GeneralSettings* bodyUI;
     SettingsWidget* parent;
+    Settings& settings;
 };
-
-#endif

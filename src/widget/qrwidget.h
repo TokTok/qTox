@@ -18,8 +18,7 @@
 */
 
 
-#ifndef QRWIDGET_H
-#define QRWIDGET_H
+#pragma once
 
 #include <QWidget>
 
@@ -30,7 +29,7 @@ class QRWidget : public QWidget
 public:
     explicit QRWidget(QWidget* parent = nullptr);
     ~QRWidget();
-    void setQRData(const QString& data);
+    void setQRData(const QString& data_);
     QImage* getImage();
     bool saveImage(QString path);
 
@@ -40,5 +39,3 @@ private:
     QImage* image;
     QSize size;
 };
-
-#endif // QRWIDGET_H

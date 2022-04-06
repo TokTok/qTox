@@ -18,8 +18,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICORE_GROUP_QUERY_H
-#define ICORE_GROUP_QUERY_H
+#pragma once
 
 #include "groupid.h"
 #include "toxpk.h"
@@ -32,7 +31,13 @@
 class ICoreGroupQuery
 {
 public:
-    virtual ~ICoreGroupQuery() = default;
+    ICoreGroupQuery() = default;
+    virtual ~ICoreGroupQuery();
+    ICoreGroupQuery(const ICoreGroupQuery&) = default;
+    ICoreGroupQuery& operator=(const ICoreGroupQuery&) = default;
+    ICoreGroupQuery(ICoreGroupQuery&&) = default;
+    ICoreGroupQuery& operator=(ICoreGroupQuery&&) = default;
+
     virtual GroupId getGroupPersistentId(uint32_t groupNumber) const = 0;
     virtual uint32_t getGroupNumberPeers(int groupId) const = 0;
     virtual QString getGroupPeerName(int groupId, int peerId) const = 0;
@@ -40,5 +45,3 @@ public:
     virtual QStringList getGroupPeerNames(int groupId) const = 0;
     virtual bool getGroupAvEnabled(int groupId) const = 0;
 };
-
-#endif /*ICORE_GROUP_QUERY_H*/

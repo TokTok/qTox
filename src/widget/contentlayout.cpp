@@ -23,14 +23,18 @@
 #include <QFrame>
 #include <QStyleFactory>
 
-ContentLayout::ContentLayout()
+ContentLayout::ContentLayout(Settings& settings_, Style& style_)
     : QVBoxLayout()
+    , settings{settings_}
+    , style{style_}
 {
     init();
 }
 
-ContentLayout::ContentLayout(QWidget* parent)
+ContentLayout::ContentLayout(Settings& settings_, Style& style_, QWidget* parent)
     : QVBoxLayout(parent)
+    , settings{settings_}
+    , style{style_}
 {
     init();
 
@@ -69,8 +73,8 @@ ContentLayout::~ContentLayout()
 void ContentLayout::reloadTheme()
 {
 #ifndef Q_OS_MAC
-    mainHead->setStyleSheet(Style::getStylesheet("settings/mainHead.css"));
-    mainContent->setStyleSheet(Style::getStylesheet("window/general.css"));
+    mainHead->setStyleSheet(style.getStylesheet("settings/mainHead.css", settings));
+    mainContent->setStyleSheet(style.getStylesheet("window/general.css", settings));
 #endif
 }
 
@@ -112,11 +116,13 @@ void ContentLayout::init()
     mainContent->setLayout(new QVBoxLayout);
     mainContent->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    if (QStyleFactory::keys().contains(Settings::getInstance().getStyle())
-        && Settings::getInstance().getStyle() != "None") {
-        mainHead->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
-        mainContent->setStyle(QStyleFactory::create(Settings::getInstance().getStyle()));
+    if (QStyleFactory::keys().contains(settings.getStyle())
+        && settings.getStyle() != "None") {
+        mainHead->setStyle(QStyleFactory::create(settings.getStyle()));
+        mainContent->setStyle(QStyleFactory::create(settings.getStyle()));
     }
+
+    connect(&style, &Style::themeReload, this, &ContentLayout::reloadTheme);
 
     reloadTheme();
 

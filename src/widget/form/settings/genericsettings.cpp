@@ -18,6 +18,7 @@
 */
 
 #include "genericsettings.h"
+#include "src/widget/style.h"
 
 #include <QCheckBox>
 #include <QComboBox>
@@ -31,9 +32,10 @@
  * It provides correct behaviour of controls for settings forms.
  */
 
-GenericForm::GenericForm(const QPixmap& icon)
+GenericForm::GenericForm(const QPixmap& icon, Style& style)
     : formIcon(icon)
 {
+    connect(&style, &Style::themeReload, this, &GenericForm::reloadTheme);
 }
 
 QPixmap GenericForm::getFormIcon()

@@ -17,16 +17,15 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FILETRANSFERWIDGET_H
-#define FILETRANSFERWIDGET_H
+#pragma once
 
 #include <QTime>
 #include <QWidget>
 
 #include "src/chatlog/chatlinecontent.h"
-#include "src/chatlog/toxfileprogress.h"
 #include "src/core/toxfile.h"
 
+class CoreFile;
 
 namespace Ui {
 class FileTransferWidget;
@@ -34,17 +33,19 @@ class FileTransferWidget;
 
 class QVariantAnimation;
 class QPushButton;
+class Settings;
+class Style;
+class IMessageBoxManager;
 
 class FileTransferWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit FileTransferWidget(QWidget* parent, ToxFile file);
+    FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file,
+        Settings& settings, Style& style, IMessageBoxManager& messageBoxManager);
     virtual ~FileTransferWidget();
     bool isActive() const;
-    static QString getHumanReadableSize(qint64 size);
-
     void onFileTransferUpdate(ToxFile file);
 
 protected:
@@ -62,7 +63,10 @@ protected:
 
     bool drawButtonAreaNeeded() const;
 
-    void paintEvent(QPaintEvent*) final;
+    void paintEvent(QPaintEvent* event) final;
+
+public slots:
+    void reloadTheme();
 
 private slots:
     void onLeftButtonClicked();
@@ -70,16 +74,14 @@ private slots:
     void onPreviewButtonClicked();
 
 private:
-    static QPixmap scaleCropIntoSquare(const QPixmap& source, int targetSize);
-    static int getExifOrientation(const char* data, const int size);
-    static void applyTransformation(const int oritentation, QImage& image);
     static bool tryRemoveFile(const QString &filepath);
 
     void updateWidget(ToxFile const& file);
+    void updateBackgroundColor(const ToxFile::FileStatus status);
 
 private:
+    CoreFile& coreFile;
     Ui::FileTransferWidget* ui;
-    ToxFileProgress fileProgress;
     ToxFile fileInfo;
     QVariantAnimation* backgroundColorAnimation = nullptr;
     QVariantAnimation* buttonColorAnimation = nullptr;
@@ -88,26 +90,9 @@ private:
     QColor buttonBackgroundColor;
 
     bool active;
+    QTime lastTransmissionUpdate;
     ToxFile::FileStatus lastStatus = ToxFile::INITIALIZING;
-
-    enum class ExifOrientation
-    {
-        /* do not change values, this is exif spec
-         *
-         * name corresponds to where the 0 row and 0 column is in form row-column
-         * i.e. entry 5 here means that the 0'th row corresponds to the left side of the scene and
-         * the 0'th column corresponds to the top of the captured scene. This means that the image
-         * needs to be mirrored and rotated to be displayed.
-         */
-        TopLeft = 1,
-        TopRight = 2,
-        BottomRight = 3,
-        BottomLeft = 4,
-        LeftTop = 5,
-        RightTop = 6,
-        RightBottom = 7,
-        LeftBottom = 8
-    };
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
 };
-
-#endif // FILETRANSFERWIDGET_H

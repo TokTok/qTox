@@ -52,15 +52,16 @@
  * @brief Contains all directories where smileys could be found
  */
 
+namespace {
 QStringList loadDefaultPaths();
 
-static const QStringList DEFAULT_PATHS = loadDefaultPaths();
+const QStringList DEFAULT_PATHS = loadDefaultPaths();
 
-static const QString RICH_TEXT_PATTERN = QStringLiteral("<img title=\"%1\" src=\"key:%1\"\\>");
+const QString RICH_TEXT_PATTERN = QStringLiteral("<img title=\"%1\" src=\"key:%1\"\\>");
 
-static const QString EMOTICONS_FILE_NAME = QStringLiteral("emoticons.xml");
+const QString EMOTICONS_FILE_NAME = QStringLiteral("emoticons.xml");
 
-static constexpr int CLEANUP_TIMEOUT = 5 * 60 * 1000; // 5 minutes
+constexpr int CLEANUP_TIMEOUT = 5 * 60 * 1000; // 5 minutes
 
 /**
  * @brief Construct list of standard directories with "emoticons" sub dir, whether these directories
@@ -95,23 +96,23 @@ QStringList loadDefaultPaths()
     return paths;
 }
 
-/**
- * @brief Wraps passed string into smiley HTML image reference
- * @param key Describes which smiley is needed
- * @return Key that wrapped into image ref
- */
-QString getAsRichText(const QString& key)
+bool isAscii(const QString& string)
 {
-    return RICH_TEXT_PATTERN.arg(key);
+    constexpr auto asciiExtMask = 0x80;
+
+    return (string.toUtf8()[0] & asciiExtMask) == 0;
 }
 
-SmileyPack::SmileyPack()
+} // namespace
+
+SmileyPack::SmileyPack(ISmileySettings& settings_)
     : cleanupTimer{new QTimer(this)}
+    , settings{settings_}
 {
     loadingMutex.lock();
-    QtConcurrent::run(this, &SmileyPack::load, Settings::getInstance().getSmileyPack());
-    connect(&Settings::getInstance(), &Settings::smileyPackChanged, this,
-            &SmileyPack::onSmileyPackChanged);
+    QtConcurrent::run(this, &SmileyPack::load, settings.getSmileyPack());
+    settings.connectTo_smileyPackChanged(this,
+        [&](const QString&) { onSmileyPackChanged(); });
     connect(cleanupTimer, &QTimer::timeout, this, &SmileyPack::cleanupIconsCache);
     cleanupTimer->start(CLEANUP_TIMEOUT);
 }
@@ -119,6 +120,16 @@ SmileyPack::SmileyPack()
 SmileyPack::~SmileyPack()
 {
     delete cleanupTimer;
+}
+
+/**
+ * @brief Wraps passed string into smiley HTML image reference
+ * @param key Describes which smiley is needed
+ * @return Key that wrapped into image ref
+ */
+QString SmileyPack::getAsRichText(const QString& key)
+{
+    return RICH_TEXT_PATTERN.arg(key);
 }
 
 void SmileyPack::cleanupIconsCache()
@@ -132,15 +143,6 @@ void SmileyPack::cleanupIconsCache()
             ++it;
         }
     }
-}
-
-/**
- * @brief Returns the singleton instance.
- */
-SmileyPack& SmileyPack::getInstance()
-{
-    static SmileyPack smileyPack;
-    return smileyPack;
 }
 
 /**
@@ -257,19 +259,30 @@ bool SmileyPack::load(const QString& filename)
 void SmileyPack::constructRegex()
 {
     QString allPattern = QStringLiteral("(");
+    QString regularPatterns;
+    QString multiCharacterEmojiPatterns;
 
     // construct one big regex that matches on every emoticon
     for (const QString& emote : emoticonToPath.keys()) {
-        if (emote.toUcs4().length() == 1) {
-            // UTF-8 emoji
-            allPattern = allPattern % emote;
+        if (!isAscii(emote)) {
+            if (emote.toUcs4().length() == 1) {
+                regularPatterns.append(emote);
+                regularPatterns.append(QStringLiteral("|"));
+            }
+            else {
+                multiCharacterEmojiPatterns.append(emote);
+                multiCharacterEmojiPatterns.append(QStringLiteral("|"));
+            }
         } else {
             // patterns like ":)" or ":smile:", don't match inside a word or else will hit punctuation and html tags
-            allPattern = allPattern % QStringLiteral(R"((?<=^|\s))") % QRegularExpression::escape(emote) % QStringLiteral(R"((?=$|\s))");
+            regularPatterns.append(QStringLiteral(R"((?<=^|\s))") % QRegularExpression::escape(emote) % QStringLiteral(R"((?=$|\s))"));
+            regularPatterns.append(QStringLiteral("|"));
         }
-        allPattern = allPattern % QStringLiteral("|");
     }
 
+    // Regexps are evaluated from left to right, insert multichar emojis first so they are evaluated first
+    allPattern.append(multiCharacterEmojiPatterns);
+    allPattern.append(regularPatterns);
     allPattern[allPattern.size() - 1] = QChar(')');
 
     // compile and optimize regex
@@ -293,10 +306,11 @@ QString SmileyPack::smileyfied(const QString& msg)
         QRegularExpressionMatch match = iter.next();
         int startPos = match.capturedStart();
         int keyLength = match.capturedLength();
-        QString imgRichText = getAsRichText(match.captured());
+        QString imgRichText = SmileyPack::getAsRichText(match.captured());
         result.replace(startPos + replaceDiff, keyLength, imgRichText);
         replaceDiff += imgRichText.length() - keyLength;
     }
+
     return result;
 }
 
@@ -335,5 +349,5 @@ std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 void SmileyPack::onSmileyPackChanged()
 {
     loadingMutex.lock();
-    QtConcurrent::run(this, &SmileyPack::load, Settings::getInstance().getSmileyPack());
+    QtConcurrent::run(this, &SmileyPack::load, settings.getSmileyPack());
 }

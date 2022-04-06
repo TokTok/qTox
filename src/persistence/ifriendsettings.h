@@ -17,10 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef I_FRIEND_SETTINGS_H
-#define I_FRIEND_SETTINGS_H
+#pragma once
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 
 #include <QObject>
 #include <QFlag>
@@ -39,7 +38,12 @@ public:
     };
     Q_DECLARE_FLAGS(AutoAcceptCallFlags, AutoAcceptCall)
 
-    virtual ~IFriendSettings() = default;
+    IFriendSettings() = default;
+    virtual ~IFriendSettings();
+    IFriendSettings(const IFriendSettings&) = default;
+    IFriendSettings& operator=(const IFriendSettings&) = default;
+    IFriendSettings(IFriendSettings&&) = default;
+    IFriendSettings& operator=(IFriendSettings&&) = default;
 
     virtual QString getContactNote(const ToxPk& pk) const = 0;
     virtual void setContactNote(const ToxPk& pk, const QString& note) = 0;
@@ -73,4 +77,3 @@ signals:
 };
 
 Q_DECLARE_OPERATORS_FOR_FLAGS(IFriendSettings::AutoAcceptCallFlags)
-#endif // I_FRIEND_SETTINGS_H

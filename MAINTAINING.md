@@ -63,7 +63,7 @@ git config --global alias.logs 'log --show-signature'
   make sure it's up to date with qTox/qTox, then e.g. `./merge-pr.sh 1234`.
 
   You don't have to use it, but then you're running into risk of breaking
-  travis build of master & other PRs, since it verifies all commit messages,
+  CI build of master & other PRs, since it verifies all commit messages,
   indlucing merge messages.
 
   Risk, that can be avoided when one doesn't type manually merge message :wink:
@@ -83,10 +83,8 @@ git config --global alias.logs 'log --show-signature'
 
 # Continous Integration
 
-qTox nightly builds can be found in [qTox-nightly-release]. Should one build
-fail, it is important to restart the whole Travis CI build and not just a
-single job. The tool managing the nightly builds deletes all build artifacts
-on any job failure, so all need to be rebuilt.
+All CI is done through GitHub actions. Nightly builds are published to
+qTox/qTox releases.
 
 # Issues
 
@@ -158,30 +156,22 @@ apply the normal rating process.
 
 # Translations from Weblate
 
-Weblate provides an easy way for people to translate qTox. On one hand, it does
-require a bit more attention & regular checking whether there are new
-translations, on the other, it lessened problems that were happening with
-"manual" way of providing translations.
+Weblate provides an easy way for people to translate qTox.
 
-To get translations into qTox:
+New translable strings need to be generated into a form Weblate can consume
+using `./tools/update-translation-files.sh ALL` and commiting the result. This
+should be done as soon as strings are available since weblate follows our
+branch, so is checked for in CI.
 
-1. Go to `https://hosted.weblate.org/projects/tox/qtox/#repository` and lock
-   the repository for translations.
-2. Make sure you have git setup to automatically gpg sign commits.
-3. To update translated strings from Weblate, in the root of the qTox
-   repository execute the script `tools/update-weblate.sh`
-4. If a new translation language has been added, update the following files:
-    - `CMakeLists.txt`
-    - `src/widget/form/settings/generalform.cpp`
-    - `translations/README.md`
-    - `translations/i18n.pri`
-    - `translations/translations.qrc`
-5. To update translatable strings from qTox for Weblate, run
-    `./tools/update-translation-files.sh ALL`
-6. Checkout a new branch with e.g. `git checkout -b update_weblate` and open
-   a Pull Request for it on Github.
-7. After the Pull Request has been merged, `reset` Weblate to master and
-   unlock it.
+To get translations into qTox, fast-forward merge from
+https://hosted.weblate.org/git/tox/qtox/.
+
+If a new translation language has been added, update the following files:
+  - `translations/CMakeLists.txt`
+  - `src/widget/form/settings/generalform.cpp`
+  - `translations/README.md`
+  - `translations/i18n.pri`
+  - `translations/translations.qrc`
 
 # Releases
 
@@ -208,11 +198,13 @@ To get translations into qTox:
 ### Before tagging
 
 - Format all code using the [`./tools/format-code.sh`] script
+- Update the Flatpak manifest of our [Flathub repository] with the script in flatpak/update_flathub_descriptor_dependencies.py
+  - Make sure to check if new dependencies need to be added, add them if necessary
 - Update version number for windows/osx packages using the
   [`./tools/update-versions.sh`] script, e.g. `./tools/update-versions.sh
   1.11.0`
-- Update toxcore version number to the latest tag. Currently this needs to be
-  done manually by `grep`ing for the current tag.
+- Update toxcore version number to the latest tag in [`./buildscripts/download/download_toxcore.sh]
+- Pull in latest translations from Weblate.
 - Update the bootstrap nodelist at `./res/nodes.json` from https://nodes.tox.chat/json.
   This can be done by running [`./tools/update-nodes.sh`]
 - Generate changelog with `clog`.
@@ -230,18 +222,20 @@ To get translations into qTox:
 
 - Create and GPG-sign the tar.lz and tar.gz archives using
   [`./tools/create-tarballs.sh`] script, and upload both archives plus both
-  signature files to the github release that was created by a Travis OSX
-  release job.
+  signature files to the github draft release that was created by CI.
+- Download the binaries that are part of the draft release, sign them in
+  in detached and ascii armored mode, e.g. `gpg -a -b <artifact>`, and upload
+  the signatures to the draft release.
+- Add a title and description to the draft release, then publish the release.
 - Update download links on https://tox.chat to point to the new release.
 - Write a short blog post for https://github.com/qTox/blog/ and advertise the
   post on Tox IRC channels, popular Tox groups, reddit, or whatever other platforms.
-- Open a PR to update the Flatpak manifest of our [Flathub repository] with the
-  changes from [`./flatpak/io.github.qtox.qTox.json`].
-- Comment to the PR with `bot, build` to execute a test build
+- Merge [`./flatpak/io.github.qtox.qTox.json`] into the manifest of our
+  [Flathub repository]. Keep the [Flathub repository]'s version of "sources" for
+  qTox.
 - After the build passed for qTox on all architectures on
   [the Flathub build bot], merge the PR into the master branch of our
   [Flathub repository].
-
 
 # How to become a maintainer?
 
@@ -259,7 +253,6 @@ helping for a while, ask to be added to the `qTox` organization on GitHub.
 [`CONTRIBUTING.md`]: /CONTRIBUTING.md
 [`merge-pr.sh`]: /merge-pr.sh
 [`test-pr.sh`]: /test-pr.sh
-[`./tools/deweblate-translation-file.sh`]: /tools/deweblate-translation-file.sh
 [`./tools/create-tarball.sh`]: /tools/create-tarball.sh
 [`./tools/update-nodes.sh`]: /tools/update-nodes.sh
 [`./tools/update-versions.sh`]: /tools/update-versions.sh

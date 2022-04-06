@@ -1,5 +1,7 @@
 load("//third_party/qt:build_defs.bzl", "qt_mac_deploy")
 
+package(features = ["layering_check"])
+
 qt_mac_deploy(
     name = "qtox",
     app_icons = glob(["qtox.icns.xcassets/**"]),

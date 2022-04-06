@@ -29,7 +29,7 @@
 #include <tuple>
 
 namespace {
-void removeDialog(ContentDialog* dialog, QHash<const ContactId&, ContentDialog*>& dialogs)
+void removeDialog(ContentDialog* dialog, QHash<const ChatId&, ContentDialog*>& dialogs)
 {
     for (auto it = dialogs.begin(); it != dialogs.end();) {
         if (*it == dialog) {
@@ -41,21 +41,24 @@ void removeDialog(ContentDialog* dialog, QHash<const ContactId&, ContentDialog*>
 }
 } // namespace
 
-ContentDialogManager* ContentDialogManager::instance;
+ContentDialogManager::ContentDialogManager(FriendList& friendList_)
+    : friendList{friendList_}
+{
+}
 
 ContentDialog* ContentDialogManager::current()
 {
     return currentDialog;
 }
 
-bool ContentDialogManager::contactWidgetExists(const ContactId& contactId)
+bool ContentDialogManager::chatWidgetExists(const ChatId& chatId)
 {
-    const auto dialog = contactDialogs.value(contactId, nullptr);
+    const auto dialog = chatDialogs.value(chatId, nullptr);
     if (dialog == nullptr) {
         return false;
     }
 
-    return dialog->hasContact(contactId);
+    return dialog->hasChat(chatId);
 }
 
 FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
@@ -70,7 +73,7 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
         lastDialog->removeFriend(friendPk);
     }
 
-    contactDialogs[friendPk] = dialog;
+    chatDialogs[friendPk] = dialog;
     return friendWidget;
 }
 
@@ -86,15 +89,15 @@ GroupWidget* ContentDialogManager::addGroupToDialog(ContentDialog* dialog,
         lastDialog->removeGroup(groupId);
     }
 
-    contactDialogs[groupId] = dialog;
+    chatDialogs[groupId] = dialog;
     return groupWidget;
 }
 
-void ContentDialogManager::focusContact(const ContactId& contactId)
+void ContentDialogManager::focusChat(const ChatId& chatId)
 {
-    auto dialog = focusDialog(contactId, contactDialogs);
+    auto dialog = focusDialog(chatId, chatDialogs);
     if (dialog != nullptr) {
-        dialog->focusContact(contactId);
+        dialog->focusChat(chatId);
     }
 }
 
@@ -104,8 +107,8 @@ void ContentDialogManager::focusContact(const ContactId& contactId)
  * @param list List with dialogs
  * @return ContentDialog if found, nullptr otherwise
  */
-ContentDialog* ContentDialogManager::focusDialog(const ContactId& id,
-                                                 const QHash<const ContactId&, ContentDialog*>& list)
+ContentDialog* ContentDialogManager::focusDialog(const ChatId& id,
+                                                 const QHash<const ChatId&, ContentDialog*>& list)
 {
     auto iter = list.find(id);
     if (iter == list.end()) {
@@ -124,60 +127,51 @@ ContentDialog* ContentDialogManager::focusDialog(const ContactId& id,
 
 void ContentDialogManager::updateFriendStatus(const ToxPk& friendPk)
 {
-    auto dialog = contactDialogs.value(friendPk);
+    auto dialog = chatDialogs.value(friendPk);
     if (dialog == nullptr) {
         return;
     }
 
-    dialog->updateContactStatusLight(friendPk);
-    if (dialog->isContactActive(friendPk)) {
+    dialog->updateChatStatusLight(friendPk);
+    if (dialog->isChatActive(friendPk)) {
         dialog->updateTitleAndStatusIcon();
     }
 
-    Friend* f = FriendList::findFriend(friendPk);
+    Friend* f = friendList.findFriend(friendPk);
     dialog->updateFriendStatus(friendPk, f->getStatus());
 }
 
 void ContentDialogManager::updateGroupStatus(const GroupId& groupId)
 {
-    auto dialog = contactDialogs.value(groupId);
+    auto dialog = chatDialogs.value(groupId);
     if (dialog == nullptr) {
         return;
     }
 
-    dialog->updateContactStatusLight(groupId);
-    if (dialog->isContactActive(groupId)) {
+    dialog->updateChatStatusLight(groupId);
+    if (dialog->isChatActive(groupId)) {
         dialog->updateTitleAndStatusIcon();
     }
 }
 
-bool ContentDialogManager::isContactActive(const ContactId& contactId)
+bool ContentDialogManager::isChatActive(const ChatId& chatId)
 {
-    const auto dialog = contactDialogs.value(contactId);
+    const auto dialog = chatDialogs.value(chatId);
     if (dialog == nullptr) {
         return false;
     }
 
-    return dialog->isContactActive(contactId);
+    return dialog->isChatActive(chatId);
 }
 
 ContentDialog* ContentDialogManager::getFriendDialog(const ToxPk& friendPk) const
 {
-    return contactDialogs.value(friendPk);
+    return chatDialogs.value(friendPk);
 }
 
 ContentDialog* ContentDialogManager::getGroupDialog(const GroupId& groupId) const
 {
-    return contactDialogs.value(groupId);
-}
-
-ContentDialogManager* ContentDialogManager::getInstance()
-{
-    if (instance == nullptr) {
-        instance = new ContentDialogManager();
-    }
-
-    return instance;
+    return chatDialogs.value(groupId);
 }
 
 void ContentDialogManager::addContentDialog(ContentDialog& dialog)
@@ -200,7 +194,7 @@ void ContentDialogManager::onDialogClose()
         currentDialog = nullptr;
     }
 
-    removeDialog(dialog, contactDialogs);
+    removeDialog(dialog, chatDialogs);
 }
 
 IDialogs* ContentDialogManager::getFriendDialogs(const ToxPk& friendPk) const

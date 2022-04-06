@@ -17,21 +17,19 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUPID_H
-#define GROUPID_H
+#pragma once
 
-#include "src/core/contactid.h"
+#include "src/core/chatid.h"
 #include <QByteArray>
 #include <cstdint>
 
-class GroupId : public ContactId
+class GroupId : public ChatId
 {
 public:
+    static constexpr int size = 32;
     GroupId();
-    GroupId(const GroupId& other);
     explicit GroupId(const QByteArray& rawId);
     explicit GroupId(const uint8_t* rawId);
     int getSize() const override;
+    std::unique_ptr<ChatId> clone() const override;
 };
-
-#endif // GROUPID_H

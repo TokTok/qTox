@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SPLITTERRESTORER_H
-#define SPLITTERRESTORER_H
+#pragma once
 
 class QSize;
 class QSplitter;
@@ -27,11 +26,9 @@ class QByteArray;
 class SplitterRestorer
 {
 public:
-    explicit SplitterRestorer(QSplitter* splitter);
+    explicit SplitterRestorer(QSplitter* splitter_);
     void restore(const QByteArray& state, const QSize& windowSize);
 
 private:
     QSplitter* splitter;
 };
-
-#endif // SPLITTERRESTORER_H

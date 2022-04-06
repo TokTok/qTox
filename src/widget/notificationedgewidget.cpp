@@ -19,16 +19,18 @@
 
 #include "notificationedgewidget.h"
 #include "style.h"
+#include "src/persistence/settings.h"
 #include <QBoxLayout>
 #include <QLabel>
 
 #include <QDebug>
 
-NotificationEdgeWidget::NotificationEdgeWidget(Position position, QWidget* parent)
+NotificationEdgeWidget::NotificationEdgeWidget(Position position, Settings& settings,
+    Style& style, QWidget* parent)
     : QWidget(parent)
 {
     setAttribute(Qt::WA_StyledBackground); // Show background.
-    setStyleSheet(Style::getStylesheet("notificationEdge/notificationEdge.css"));
+    setStyleSheet(style.getStylesheet("notificationEdge/notificationEdge.css", settings));
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->addStretch();
 
@@ -39,9 +41,9 @@ NotificationEdgeWidget::NotificationEdgeWidget(Position position, QWidget* paren
     QLabel* arrowLabel = new QLabel(this);
 
     if (position == Top)
-        arrowLabel->setPixmap(QPixmap(Style::getImagePath("chatArea/scrollBarUpArrow.svg")));
+        arrowLabel->setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarUpArrow.svg", settings)));
     else
-        arrowLabel->setPixmap(QPixmap(Style::getImagePath("chatArea/scrollBarDownArrow.svg")));
+        arrowLabel->setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarDownArrow.svg", settings)));
 
     layout->addWidget(arrowLabel);
     layout->addStretch();

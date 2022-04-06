@@ -18,8 +18,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FLYOUTOVERLAYWIDGET_HPP
-#define FLYOUTOVERLAYWIDGET_HPP
+#pragma once
 
 #include <QWidget>
 
@@ -56,8 +55,6 @@ private:
 
     QWidget* container;
     QPropertyAnimation* animation;
-    qreal percent = 1.0f;
+    qreal percent = 1.0;
     QPoint startPos;
 };
-
-#endif // FLYOUTOVERLAYWIDGET_HPP

@@ -18,8 +18,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CORE_HPP
-#define CORE_HPP
+#pragma once
 
 #include "groupid.h"
 #include "icorefriendmessagesender.h"
@@ -31,7 +30,8 @@
 #include "toxid.h"
 #include "toxpk.h"
 
-#include "src/util/strongtype.h"
+#include "util/strongtype.h"
+#include "util/compatiblerecursivemutex.h"
 #include "src/model/status.h"
 #include <tox/tox.h>
 
@@ -45,11 +45,14 @@
 
 class CoreAV;
 class CoreFile;
+class CoreExt;
 class IAudioControl;
 class ICoreSettings;
 class GroupInvite;
 class Profile;
 class Core;
+class IBootstrapListGenerator;
+struct DhtServer;
 
 using ToxCorePtr = std::unique_ptr<Core>;
 
@@ -69,16 +72,22 @@ public:
         ERROR_ALLOC
     };
 
-    static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings* const settings,
-                                  ToxCoreErrors* err = nullptr);
-    static Core* getInstance();
+    static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
+                                  IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err = nullptr);
     const CoreAV* getAv() const;
     CoreAV* getAv();
+    void setAv(CoreAV* coreAv);
+
     CoreFile* getCoreFile() const;
+    Tox* getTox() const;
+    CompatibleRecursiveMutex& getCoreLoopLock() const;
+
+    const CoreExt* getExt() const;
+    CoreExt* getExt();
     ~Core();
 
     static const QString TOX_EXT;
-    static QStringList splitMessage(const QString& message);
+    uint64_t getMaxMessageSize() const;
     QString getPeerName(const ToxPk& id) const;
     QVector<uint32_t> getFriendList() const;
     GroupId getGroupPersistentId(uint32_t groupNumber) const override;
@@ -102,7 +111,8 @@ public:
     ToxPk getSelfPublicKey() const override;
     QPair<QByteArray, QByteArray> getKeypair() const;
 
-    void sendFile(uint32_t friendId, QString filename, QString filePath, long long filesize);
+    QByteArray getSelfDhtId() const;
+    int getSelfUdpPort() const;
 
 public slots:
     void start();
@@ -110,7 +120,7 @@ public slots:
     QByteArray getToxSaveData();
 
     void acceptFriendRequest(const ToxPk& friendPk);
-    void requestFriendship(const ToxId& friendAddress, const QString& message);
+    void requestFriendship(const ToxId& friendId, const QString& message);
     void groupInviteFriend(uint32_t friendId, int groupId);
     int createGroup(uint8_t type = TOX_CONFERENCE_TYPE_AV);
 
@@ -151,15 +161,13 @@ signals:
     void failedToSetStatus(Status::Status status);
     void failedToSetTyping(bool typing);
 
-    void avReady();
-
     void saveRequest();
 
     /**
      * @deprecated prefer signals using ToxPk
      */
 
-    void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash);
+    void fileAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
 
     void friendMessageReceived(uint32_t friendId, const QString& message, bool isAction);
     void friendAdded(uint32_t friendId, const ToxPk& friendPk);
@@ -189,9 +197,9 @@ signals:
     void failedToRemoveFriend(uint32_t friendId);
 
 private:
-    Core(QThread* coreThread);
+    Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, const ICoreSettings& settings_);
 
-    static void onFriendRequest(Tox* tox, const uint8_t* cUserId, const uint8_t* cMessage,
+    static void onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cMessage,
                                 size_t cMessageSize, void* core);
     static void onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
                                 const uint8_t* cMessage, size_t cMessageSize, void* core);
@@ -208,11 +216,14 @@ private:
                               const uint8_t* cookie, size_t length, void* vCore);
     static void onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
                                const uint8_t* cMessage, size_t length, void* vCore);
-    static void onGroupPeerListChange(Tox*, uint32_t groupId, void* core);
-    static void onGroupPeerNameChange(Tox*, uint32_t groupId, uint32_t peerId, const uint8_t* name,
+    static void onGroupPeerListChange(Tox* tox, uint32_t groupId, void* core);
+    static void onGroupPeerNameChange(Tox* tox, uint32_t groupId, uint32_t peerId, const uint8_t* name,
                                       size_t length, void* core);
     static void onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId,
                                    const uint8_t* cTitle, size_t length, void* vCore);
+
+    static void onLosslessPacket(Tox* tox, uint32_t friendId,
+                                   const uint8_t* data, size_t length, void* core);
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type);
@@ -236,22 +247,33 @@ private slots:
 private:
     struct ToxDeleter
     {
-        void operator()(Tox* tox)
+        void operator()(Tox* tox_)
         {
-            tox_kill(tox);
+            tox_kill(tox_);
         }
     };
+    /* Using the now commented out statements in checkConnection(), I watched how
+    * many ticks disconnects-after-initial-connect lasted. Out of roughly 15 trials,
+    * 5 disconnected; 4 were DCd for less than 20 ticks, while the 5th was ~50 ticks.
+    * So I set the tolerance here at 25, and initial DCs should be very rare now.
+    * This should be able to go to 50 or 100 without affecting legitimate disconnects'
+    * downtime, but lets be conservative for now. Edit: now ~~40~~ 30.
+    */
+    #define CORE_DISCONNECT_TOLERANCE 30
 
     using ToxPtr = std::unique_ptr<Tox, ToxDeleter>;
     ToxPtr tox;
 
     std::unique_ptr<CoreFile> file;
-    std::unique_ptr<CoreAV> av;
+    CoreAV* av = nullptr;
+    std::unique_ptr<CoreExt> ext;
     QTimer* toxTimer = nullptr;
     // recursive, since we might call our own functions
-    mutable QMutex coreLoopLock{QMutex::Recursive};
+    mutable CompatibleRecursiveMutex coreLoopLock;
 
     std::unique_ptr<QThread> coreThread;
+    const IBootstrapListGenerator& bootstrapListGenerator;
+    const ICoreSettings& settings;
+    bool isConnected = false;
+    int tolerance = CORE_DISCONNECT_TOLERANCE;
 };
-
-#endif // CORE_HPP

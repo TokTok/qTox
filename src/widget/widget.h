@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef WIDGET_H
-#define WIDGET_H
+#pragma once
 
 #include "ui_mainwindow.h"
 
@@ -30,8 +29,8 @@
 
 #include "genericchatitemwidget.h"
 
-#include "src/audio/iaudiocontrol.h"
-#include "src/audio/iaudiosink.h"
+#include "audio/iaudiocontrol.h"
+#include "audio/iaudiosink.h"
 #include "src/core/core.h"
 #include "src/core/groupid.h"
 #include "src/core/toxfile.h"
@@ -40,6 +39,7 @@
 #include "src/model/friendmessagedispatcher.h"
 #include "src/model/groupmessagedispatcher.h"
 #if DESKTOP_NOTIFICATIONS
+#include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
 #endif
 
@@ -84,6 +84,13 @@ class UpdateCheck;
 class Settings;
 class IChatLog;
 class ChatHistory;
+class SmileyPack;
+class CameraSource;
+class Style;
+class IMessageBoxManager;
+class ContentDialogManager;
+class FriendList;
+class GroupList;
 
 class Widget final : public QMainWindow
 {
@@ -118,7 +125,8 @@ private:
     };
 
 public:
-    explicit Widget(IAudioControl& audio, QWidget* parent = nullptr);
+    Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource,
+        Settings& settings, Style& style, QWidget* parent = nullptr);
     ~Widget() override;
     void init();
     void setCentralWidget(QWidget* widget, const QString& widgetName);
@@ -127,9 +135,9 @@ public:
     static Widget* getInstance(IAudioControl* audio = nullptr);
     void showUpdateDownloadProgress();
     void addFriendDialog(const Friend* frnd, ContentDialog* dialog);
-    void addGroupDialog(Group* group, ContentDialog* dialog);
+    void addGroupDialog(const Group* group, ContentDialog* dialog);
     bool newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound = true,
-                               bool file = false);
+                               QString filename = QString(), size_t filesize = 0);
     bool newGroupMessageAlert(const GroupId& groupId, const ToxPk& authorPk, const QString& message,
                               bool notify);
     bool getIsWindowMinimized();
@@ -139,11 +147,8 @@ public:
     ContentDialog* createContentDialog() const;
     ContentLayout* createContentDialog(DialogType type) const;
 
-    static void confirmExecutableOpen(const QFileInfo& file);
-
     void clearAllReceipts();
 
-    void reloadTheme();
     static inline QIcon prepareIcon(QString path, int w = 0, int h = 0);
 
     bool groupsVisible() const;
@@ -151,6 +156,7 @@ public:
     void resetIcon();
 
 public slots:
+    void reloadTheme();
     void onShowSettings();
     void onSeparateWindowClicked(bool separate);
     void onSeparateWindowChanged(bool separate, bool clicked);
@@ -166,13 +172,17 @@ public slots:
     void setStatusMessage(const QString& statusMessage);
     void addFriend(uint32_t friendId, const ToxPk& friendPk);
     void addFriendFailed(const ToxPk& userId, const QString& errorInfo = QString());
-    void onFriendStatusChanged(int friendId, Status::Status status);
+    void onCoreFriendStatusChanged(int friendId, Status::Status status);
+    void onFriendStatusChanged(const ToxPk& friendPk, Status::Status status);
     void onFriendStatusMessageChanged(int friendId, const QString& message);
     void onFriendDisplayedNameChanged(const QString& displayed);
     void onFriendUsernameChanged(int friendId, const QString& username);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
     void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
     void onReceiptReceived(int friendId, ReceiptNum receipt);
+    void onExtendedMessageSupport(uint32_t friendNumber, bool supported);
+    void onFriendExtMessageReceived(uint32_t friendNumber, const QString& message);
+    void onExtReceiptReceived(uint32_t friendNumber, uint64_t receiptId);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
     void onEmptyGroupCreated(uint32_t groupnumber, const GroupId& groupId, const QString& title);
@@ -187,8 +197,8 @@ public slots:
     void onGroupPeerAudioPlaying(int groupnumber, ToxPk peerPk);
     void onGroupSendFailed(uint32_t groupnumber);
     void onFriendTypingChanged(uint32_t friendnumber, bool isTyping);
-    void nextContact();
-    void previousContact();
+    void nextChat();
+    void previousChat();
     void onFriendDialogShown(const Friend* f);
     void onGroupDialogShown(Group* g);
     void toggleFullscreen();
@@ -221,7 +231,7 @@ private slots:
     void setStatusOnline();
     void setStatusAway();
     void setStatusBusy();
-    void onIconClick(QSystemTrayIcon::ActivationReason);
+    void onIconClick(QSystemTrayIcon::ActivationReason reason);
     void onUserAwayCheck();
     void onEventIconTick();
     void onTryCreateTrayIcon();
@@ -234,11 +244,11 @@ private slots:
     void onDialogShown(GenericChatroomWidget* widget);
     void outgoingNotification();
     void onCallEnd();
-    void incomingNotification(uint32_t friendId);
+    void incomingNotification(uint32_t friendNum);
     void onRejectCall(uint32_t friendId);
     void onStopNotification();
     void dispatchFile(ToxFile file);
-    void dispatchFileWithBool(ToxFile file, bool);
+    void dispatchFileWithBool(ToxFile file, bool pausedOrBroken);
     void dispatchFileSendFailed(uint32_t friendId, const QString& fileName);
     void connectCircleWidget(CircleWidget& circleWidget);
     void connectFriendWidget(FriendWidget& friendWidget);
@@ -263,8 +273,8 @@ private:
     void removeGroup(Group* g, bool fake = false);
     void saveWindowGeometry();
     void saveSplitterGeometry();
-    void cycleContacts(bool forward);
-    void searchContacts();
+    void cycleChats(bool forward);
+    void searchChats();
     void changeDisplayMode();
     void updateFilterText();
     FilterCriteria getFilterCriteria() const;
@@ -276,8 +286,12 @@ private:
     void openDialog(GenericChatroomWidget* widget, bool newWindow);
     void playNotificationSound(IAudioSink::Sound sound, bool loop = false);
     void cleanupNotificationSound();
+    void acceptFileTransfer(const ToxFile &file, const QString &path);
+    void formatWindowTitle(const QString& content);
+    void removeChatHistory(Chat& chat);
 
 private:
+    Profile& profile;
     std::unique_ptr<QSystemTrayIcon> icon;
     QMenu* trayMenu;
     QAction* statusOnline;
@@ -315,7 +329,7 @@ private:
     FilesForm* filesForm;
     static Widget* instance;
     GenericChatroomWidget* activeChatroomWidget;
-    FriendListWidget* contactListWidget;
+    FriendListWidget* chatListWidget;
     MaskablePixmapWidget* profilePicture;
     bool notify(QObject* receiver, QEvent* event);
     bool autoAwayActive = false;
@@ -343,6 +357,7 @@ private:
     QMap<ToxPk, std::shared_ptr<ChatHistory>> friendChatLogs;
     QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatrooms;
     QMap<ToxPk, ChatForm*> chatForms;
+    std::map<ToxPk, std::unique_ptr<QTimer>> negotiateTimers;
 
     QMap<GroupId, GroupWidget*> groupWidgets;
     QMap<GroupId, std::shared_ptr<GroupMessageDispatcher>> groupMessageDispatchers;
@@ -358,8 +373,9 @@ private:
     Core* core = nullptr;
 
 
-    MessageProcessor::SharedParams sharedMessageProcessorParams;
+    std::unique_ptr<MessageProcessor::SharedParams> sharedMessageProcessorParams;
 #if DESKTOP_NOTIFICATIONS
+    std::unique_ptr<NotificationGenerator> notificationGenerator;
     DesktopNotify notifier;
 #endif
 
@@ -374,8 +390,14 @@ private:
     QAction* nextConversationAction;
     QAction* previousConversationAction;
 #endif
+    std::unique_ptr<SmileyPack> smileyPack;
+    std::unique_ptr<DocumentCache> documentCache;
+    CameraSource& cameraSource;
+    Style& style;
+    IMessageBoxManager* messageBoxManager = nullptr; // freed by Qt on destruction
+    std::unique_ptr<FriendList> friendList;
+    std::unique_ptr<GroupList> groupList;
+    std::unique_ptr<ContentDialogManager> contentDialogManager;
 };
 
-bool toxActivateEventHandler(const QByteArray& data);
-
-#endif // WIDGET_H
+bool toxActivateEventHandler(const QByteArray& data, void* userData);

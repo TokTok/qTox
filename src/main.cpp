@@ -17,7 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "src/audio/audio.h"
+#include "audio/audio.h"
 #include "src/ipc.h"
 #include "src/net/toxuri.h"
 #include "src/nexus.h"
@@ -28,6 +28,7 @@
 #include "src/video/camerasource.h"
 #include "src/widget/loginscreen.h"
 #include "src/widget/translator.h"
+#include "src/widget/tool/messageboxmanager.h"
 #include "widget/widget.h"
 #include <QApplication>
 #include <QCommandLineParser>
@@ -41,23 +42,23 @@
 
 #include <QtWidgets/QMessageBox>
 #include <ctime>
-#include <sodium.h>
 #include <stdio.h>
-
-#if defined(Q_OS_OSX)
-#include "platform/install_osx.h"
-#endif
 
 #if defined(Q_OS_UNIX)
 #include "platform/posixsignalnotifier.h"
 #endif
 
+namespace {
 #ifdef LOG_TO_FILE
-static QAtomicPointer<FILE> logFileFile = nullptr;
-static QList<QByteArray>* logBuffer =
+QAtomicPointer<FILE> logFileFile = nullptr;
+QList<QByteArray>* logBuffer =
     new QList<QByteArray>(); // Store log messages until log file opened
 QMutex* logBufferMutex = new QMutex();
 #endif
+
+std::unique_ptr<Settings> settings;
+std::unique_ptr<ToxSave> toxSave;
+std::unique_ptr<MessageBoxManager> messageBoxManager;
 
 void cleanup()
 {
@@ -65,14 +66,14 @@ void cleanup()
     // close qTox before cleanup() is finished if logging out or shutting down,
     // once the top level window has exited, which occurs in ~Widget within
     // ~Nexus. Re-ordering Nexus destruction is not trivial.
-    auto& s = Settings::getInstance();
-    s.saveGlobal();
-    s.savePersonal();
-    s.sync();
+    if (settings) {
+        settings->saveGlobal();
+        settings->savePersonal();
+        settings->sync();
+    }
 
     Nexus::destroyInstance();
-    CameraSource::destroyInstance();
-    Settings::destroyInstance();
+    settings.reset();
     qDebug() << "Cleanup success";
 
 #ifdef LOG_TO_FILE
@@ -95,11 +96,31 @@ void cleanup()
 void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QString& msg)
 {
     // Silence qWarning spam due to bug in QTextBrowser (trying to open a file for base64 images)
-    if (ctxt.function == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
-        && msg == QString("QFSFileEngine::open: No file name specified"))
+    if (QString::fromUtf8(ctxt.function) == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
+        && msg == QString("QFSFileEngine::open: No file name specified")) {
         return;
+    }
+    if (msg.startsWith("Unable to find any suggestion for")) {
+        // Prevent sonnet's complaints from leaking user chat messages to logs
+        return;
+    }
 
-    QString file = ctxt.file;
+    if (msg == QString("attempted to send message with network family 10 (probably IPv6) on IPv4 socket")) {
+        // non-stop c-toxcore spam for IPv4 users: https://github.com/TokTok/c-toxcore/issues/1432
+        return;
+    }
+
+    QRegExp snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
+    if (type == QtWarningMsg
+        && msg.contains(snoreFilter))
+    {
+        // snorenotify logs this when we call requestCloseNotification correctly. The behaviour still works, so we'll
+        // just mask the warning for now. The issue has been reported upstream:
+        // https://github.com/qTox/qTox/pull/6073#pullrequestreview-420748519
+        return;
+    }
+
+    QString file = QString::fromUtf8(ctxt.file);
     // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
     // nullptr in release builds.
     QString path = QString(__FILE__);
@@ -152,8 +173,8 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         logBufferMutex->lock();
         if (logBuffer) {
             // empty logBuffer to file
-            foreach (QByteArray msg, *logBuffer)
-                fwrite(msg.constData(), 1, msg.size(), logFilePtr);
+            foreach (QByteArray bufferedMsg, *logBuffer)
+                fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
 
             delete logBuffer; // no longer needed
             logBuffer = nullptr;
@@ -166,6 +187,25 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 #endif
 }
 
+std::unique_ptr<ToxURIDialog> uriDialog;
+
+bool toxURIEventHandler(const QByteArray& eventData, void* userData)
+{
+    std::ignore = userData;
+    if (!eventData.startsWith("tox:")) {
+        return false;
+    }
+
+    if (!uriDialog) {
+        return false;
+    }
+
+    uriDialog->handleToxURI(QString::fromUtf8(eventData));
+    return true;
+}
+
+} // namespace
+
 int main(int argc, char* argv[])
 {
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))
@@ -174,11 +214,6 @@ int main(int argc, char* argv[])
 #endif
 
     qInstallMessageHandler(logMessageHandler);
-
-    // initialize random number generator
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-    qsrand(time(nullptr));
-#endif
 
     std::unique_ptr<QApplication> a(new QApplication(argc, argv));
 
@@ -203,18 +238,14 @@ int main(int argc, char* argv[])
         qWarning() << "Couldn't load font";
     }
 
+    messageBoxManager = std::unique_ptr<MessageBoxManager>(new MessageBoxManager(nullptr));
+    settings = std::unique_ptr<Settings>(new Settings(*messageBoxManager));
 
-#if defined(Q_OS_OSX)
-    // TODO: Add setting to enable this feature.
-    // osx::moveToAppFolder();
-    osx::migrateProfiles();
-#endif
-
-#if (QT_VERSION < QT_VERSION_CHECK(5, 15, 0))
-    qsrand(time(nullptr));
-#endif
-    Settings& settings = Settings::getInstance();
-    QString locale = settings.getTranslation();
+    QString locale = settings->getTranslation();
+    // We need to init the resources in the translations_library explicitely.
+    // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
+    Q_INIT_RESOURCE(res);
+    // Q_INIT_RESOURCE(translations);
     Translator::translate(locale);
 
     // Process arguments
@@ -252,22 +283,16 @@ int main(int argc, char* argv[])
                                         QObject::tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
     parser.process(*a);
 
-    uint32_t profileId = settings.getCurrentProfileId();
+    uint32_t profileId = settings->getCurrentProfileId();
     IPC ipc(profileId);
     if (ipc.isAttached()) {
-        QObject::connect(&settings, &Settings::currentProfileIdChanged, &ipc, &IPC::setProfileId);
+        QObject::connect(settings.get(), &Settings::currentProfileIdChanged, &ipc, &IPC::setProfileId);
     } else {
         qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client functionality.";
     }
 
-    // For the auto-updater
-    if (sodium_init() < 0) {
-        qCritical() << "Can't init libsodium";
-        return EXIT_FAILURE;
-    }
-
 #ifdef LOG_TO_FILE
-    QString logFileDir = settings.getAppCacheDirPath();
+    QString logFileDir = settings->getPaths().getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
 
     QString logfile = logFileDir + "qtox.log";
@@ -313,14 +338,14 @@ int main(int argc, char* argv[])
     qDebug() << "commit: " << GIT_VERSION;
 
     QString profileName;
-    bool autoLogin = settings.getAutoLogin();
+    bool autoLogin = settings->getAutoLogin();
 
     uint32_t ipcDest = 0;
     bool doIpc = ipc.isAttached();
     QString eventType, firstParam;
     if (parser.isSet("p")) {
         profileName = parser.value("p");
-        if (!Profile::exists(profileName)) {
+        if (!Profile::exists(profileName, settings->getPaths())) {
             qWarning() << "-p profile" << profileName + ".tox"
                        << "doesn't exist, opening login screen";
             doIpc = false;
@@ -333,7 +358,7 @@ int main(int argc, char* argv[])
         doIpc = false;
         autoLogin = false;
     } else {
-        profileName = settings.getCurrentProfile();
+        profileName = settings->getCurrentProfile();
     }
 
     if (parser.positionalArguments().empty()) {
@@ -378,14 +403,15 @@ int main(int argc, char* argv[])
     // TODO(kriby): Consider moving application initializing variables into a globalSettings object
     //  note: Because Settings is shouldering global settings as well as model specific ones it
     //  cannot be integrated into a central model object yet
-    nexus.setSettings(&settings);
-
+    nexus.setSettings(settings.get());
+    nexus.setMessageBoxManager(messageBoxManager.get());
+    auto& cameraSource = Nexus::getCameraSource();
     // Autologin
     // TODO (kriby): Shift responsibility of linking views to model objects from nexus
     // Further: generate view instances separately (loginScreen, mainGUI, audio)
     Profile* profile = nullptr;
-    if (autoLogin && Profile::exists(profileName) && !Profile::isEncrypted(profileName)) {
-        profile = Profile::loadProfile(profileName, QString(), settings, &parser);
+    if (autoLogin && Profile::exists(profileName, settings->getPaths()) && !Profile::isEncrypted(profileName, settings->getPaths())) {
+        profile = Profile::loadProfile(profileName, QString(), *settings, &parser, cameraSource, *messageBoxManager);
         if (!profile) {
             QMessageBox::information(nullptr, QObject::tr("Error"),
                                      QObject::tr("Failed to load profile automatically."));
@@ -399,20 +425,25 @@ int main(int argc, char* argv[])
         if (returnval == QDialog::Rejected) {
             return -1;
         }
+        profile = nexus.getProfile();
     }
+
+    uriDialog = std::unique_ptr<ToxURIDialog>(new ToxURIDialog(nullptr, profile->getCore(), *messageBoxManager));
+    toxSave = std::unique_ptr<ToxSave>(new ToxSave{*settings});
 
     if (ipc.isAttached()) {
         // Start to accept Inter-process communication
-        ipc.registerEventHandler("uri", &toxURIEventHandler);
-        ipc.registerEventHandler("save", &toxSaveEventHandler);
-        ipc.registerEventHandler("activate", &toxActivateEventHandler);
+        ipc.registerEventHandler("uri", &toxURIEventHandler, uriDialog.get());
+        ipc.registerEventHandler("save", &ToxSave::toxSaveEventHandler, toxSave.get());
+        ipc.registerEventHandler("activate", &toxActivateEventHandler, nullptr);
     }
 
     // Event was not handled by already running instance therefore we handle it ourselves
-    if (eventType == "uri")
-        handleToxURI(firstParam.toUtf8());
-    else if (eventType == "save")
-        handleToxSave(firstParam.toUtf8());
+    if (eventType == "uri") {
+        uriDialog->handleToxURI(firstParam);
+    } else if (eventType == "save") {
+        toxSave->handleToxSave(firstParam);
+    }
 
     QObject::connect(a.get(), &QApplication::aboutToQuit, cleanup);
 

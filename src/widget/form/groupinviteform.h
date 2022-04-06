@@ -17,10 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUPINVITEFORM_H
-#define GROUPINVITEFORM_H
-
-#include "src/widget/gui.h"
+#pragma once
 
 #include <QWidget>
 
@@ -33,6 +30,8 @@ class QLabel;
 class QPushButton;
 class QScrollArea;
 class QSignalMapper;
+class Settings;
+class Core;
 
 namespace Ui {
 class MainWindow;
@@ -42,7 +41,7 @@ class GroupInviteForm : public QWidget
 {
     Q_OBJECT
 public:
-    GroupInviteForm();
+    GroupInviteForm(Settings& settings, Core& core);
     ~GroupInviteForm();
 
     void show(ContentLayout* contentLayout);
@@ -68,6 +67,6 @@ private:
     QGroupBox* inviteBox;
     QList<GroupInviteWidget*> invites;
     QScrollArea* scroll;
+    Settings& settings;
+    Core& core;
 };
-
-#endif // GROUPINVITEFORM_H

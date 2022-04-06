@@ -31,14 +31,18 @@
 #include <QTextBlock>
 #include <QTextFragment>
 
-Text::Text(const QString& txt, const QFont& font, bool enableElide, const QString& rwText,
-           const TextType& type, const QColor& custom)
-    : rawText(rwText)
+Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_,
+    const QColor& custom, const QString& txt, const QFont& font, bool enableElide,
+    const QString& rawText_, const TextType& type)
+    : rawText(rawText_)
     , elide(enableElide)
     , defFont(font)
-    , defStyleSheet(Style::getStylesheet(QStringLiteral("chatArea/innerStyle.css"), font))
     , textType(type)
     , customColor(custom)
+    , documentCache(documentCache_)
+    , settings{settings_}
+    , defStyleSheet(style_.getStylesheet(QStringLiteral("chatArea/innerStyle.css"), settings_, font))
+    , style{style_}
 {
     color = textColor();
     setText(txt);
@@ -46,10 +50,18 @@ Text::Text(const QString& txt, const QFont& font, bool enableElide, const QStrin
     setAcceptHoverEvents(true);
 }
 
+Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_,
+    const QString& txt, const QFont& font, bool enableElide, const QString& rawText_,
+    const TextType& type)
+    : Text(documentCache_, settings_, style_, style_.getColor(Style::ColorPalette::MainText),
+        txt, font, enableElide, rawText_, type)
+{
+}
+
 Text::~Text()
 {
     if (doc)
-        DocumentCache::getInstance().push(doc);
+        documentCache.push(doc);
 }
 
 void Text::setText(const QString& txt)
@@ -66,11 +78,9 @@ void Text::selectText(const QString& txt, const std::pair<int, int>& point)
         return;
     }
 
-    selectCursor = doc->find(txt, point.first);
-    selectPoint = point;
+    auto cursor = doc->find(txt, point.first);
 
-    regenerate();
-    update();
+    selectText(cursor, point);
 }
 
 void Text::selectText(const QRegularExpression &exp, const std::pair<int, int>& point)
@@ -81,27 +91,21 @@ void Text::selectText(const QRegularExpression &exp, const std::pair<int, int>& 
         return;
     }
 
-    selectCursor = doc->find(exp, point.first);
-    selectPoint = point;
+    auto cursor = doc->find(exp, point.first);
 
-    regenerate();
-    update();
+    selectText(cursor, point);
 }
 
 void Text::deselectText()
 {
     dirty = true;
-
-    selectCursor = QTextCursor();
-    selectPoint = {0, 0};
-
     regenerate();
     update();
 }
 
-void Text::setWidth(qreal w)
+void Text::setWidth(float w)
 {
-    width = w;
+    width = static_cast<qreal>(w);
     dirty = true;
 
     regenerate();
@@ -218,8 +222,8 @@ QRectF Text::boundingRect() const
 
 void Text::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
-    Q_UNUSED(option)
-    Q_UNUSED(widget)
+    std::ignore = option;
+    std::ignore = widget;
 
     if (!doc)
         return;
@@ -236,7 +240,7 @@ void Text::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
         sel.cursor.setPosition(getSelectionEnd(), QTextCursor::KeepAnchor);
     }
 
-    const QColor selectionColor = Style::getColor(Style::SelectText);
+    const QColor selectionColor = style.getColor(Style::ColorPalette::SelectText);
     sel.format.setBackground(selectionColor.lighter(selectionHasFocus ? 100 : 160));
     sel.format.setForeground(selectionHasFocus ? Qt::white : Qt::black);
 
@@ -257,7 +261,7 @@ void Text::visibilityChanged(bool visible)
 
 void Text::reloadTheme()
 {
-    defStyleSheet = Style::getStylesheet(QStringLiteral("chatArea/innerStyle.css"), defFont);
+    defStyleSheet = style.getStylesheet(QStringLiteral("chatArea/innerStyle.css"), settings, defFont);
     color = textColor();
     dirty = true;
     regenerate();
@@ -323,7 +327,7 @@ QString Text::getLinkAt(QPointF scenePos) const
 void Text::regenerate()
 {
     if (!doc) {
-        doc = DocumentCache::getInstance().pop();
+        doc = documentCache.pop();
         dirty = true;
     }
 
@@ -363,10 +367,6 @@ void Text::regenerate()
         dirty = false;
     }
 
-    if (!selectCursor.isNull()) {
-        selectText(selectCursor, selectPoint);
-    }
-
     // if we are not visible -> free mem
     if (!keepInMemory)
         freeResources();
@@ -374,7 +374,7 @@ void Text::regenerate()
 
 void Text::freeResources()
 {
-    DocumentCache::getInstance().push(doc);
+    documentCache.push(doc);
     doc = nullptr;
 }
 
@@ -472,16 +472,19 @@ void Text::selectText(QTextCursor& cursor, const std::pair<int, int>& point)
         cursor.endEditBlock();
 
         QTextCharFormat format;
-        format.setBackground(QBrush(Style::getColor(Style::SearchHighlighted)));
+        format.setBackground(QBrush(style.getColor(Style::ColorPalette::SearchHighlighted)));
         cursor.mergeCharFormat(format);
+
+        regenerate();
+        update();
     }
 }
 
 QColor Text::textColor() const
 {
-    QColor c = Style::getColor(Style::MainText);
+    QColor c = style.getColor(Style::ColorPalette::MainText);
     if (textType == ACTION) {
-        c = Style::getColor(Style::Action);
+        c = style.getColor(Style::ColorPalette::Action);
     } else if (textType == CUSTOM) {
         c = customColor;
     }

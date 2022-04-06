@@ -17,21 +17,21 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TOXPK_H
-#define TOXPK_H
+#pragma once
 
-#include "src/core/contactid.h"
+#include "src/core/chatid.h"
 #include <QByteArray>
 #include <cstdint>
 
-class ToxPk : public ContactId
+class ToxPk : public ChatId
 {
 public:
+    static constexpr int size = 32;
+    static constexpr int numHexChars = 64;
     ToxPk();
-    ToxPk(const ToxPk& other);
     explicit ToxPk(const QByteArray& rawId);
     explicit ToxPk(const uint8_t* rawId);
+    explicit ToxPk(const QString& pk);
     int getSize() const override;
+    std::unique_ptr<ChatId> clone() const override;
 };
-
-#endif // TOXPK_H

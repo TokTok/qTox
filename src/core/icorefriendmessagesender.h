@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ICORE_FRIEND_MESSAGE_SENDER_H
-#define ICORE_FRIEND_MESSAGE_SENDER_H
+#pragma once
 
 #include "receiptnum.h"
 
@@ -28,10 +27,12 @@
 class ICoreFriendMessageSender
 {
 public:
-    virtual ~ICoreFriendMessageSender() = default;
+    ICoreFriendMessageSender() = default;
+    virtual ~ICoreFriendMessageSender();
+    ICoreFriendMessageSender(const ICoreFriendMessageSender&) = default;
+    ICoreFriendMessageSender& operator=(const ICoreFriendMessageSender&) = default;
+    ICoreFriendMessageSender(ICoreFriendMessageSender&&) = default;
+    ICoreFriendMessageSender& operator=(ICoreFriendMessageSender&&) = default;
     virtual bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) = 0;
     virtual bool sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt) = 0;
 };
-
-
-#endif /* ICORE_FRIEND_MESSAGE_SENDER_H */

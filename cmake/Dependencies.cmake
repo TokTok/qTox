@@ -33,6 +33,9 @@ find_package(Qt5Test          REQUIRED)
 find_package(Qt5Widgets       REQUIRED)
 find_package(Qt5Xml           REQUIRED)
 
+find_package(ToxExt                         REQUIRED)
+find_package(ToxExtensionMessages           REQUIRED)
+
 function(add_dependency)
   set(ALL_LIBRARIES ${ALL_LIBRARIES} ${ARGN} PARENT_SCOPE)
 endfunction()
@@ -47,8 +50,11 @@ add_dependency(
   Qt5::Widgets
   Qt5::Xml)
 
+add_dependency(
+  ToxExt::ToxExt
+  ToxExtensionMessages::ToxExtensionMessages)
+
 include(CMakeParseArguments)
-include(Qt5CorePatches)
 
 function(search_dependency pkg)
   set(options OPTIONAL STATIC_PACKAGE)
@@ -213,6 +219,24 @@ endif()
 
 add_definitions(
   -DGIT_VERSION="${GIT_VERSION}"
+)
+
+if (NOT GIT_DESCRIBE_EXACT)
+  execute_process(
+    COMMAND git describe --exact-match --tags HEAD
+    WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_DESCRIBE_EXACT
+    ERROR_QUIET
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+
+  if(NOT GIT_DESCRIBE_EXACT)
+    set(GIT_DESCRIBE_EXACT "Nightly")
+  endif()
+endif()
+
+add_definitions(
+  -DGIT_DESCRIBE_EXACT="${GIT_DESCRIBE_EXACT}"
 )
 
 set(APPLE_EXT False)

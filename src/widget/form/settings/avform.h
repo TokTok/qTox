@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef AVFORM_H
-#define AVFORM_H
+#pragma once
 
 #include <QList>
 #include <QObject>
@@ -38,12 +37,13 @@ class CameraSource;
 class CoreAV;
 class IVideoSettings;
 class VideoSurface;
+class Style;
 class AVForm : public GenericForm, private Ui::AVForm
 {
     Q_OBJECT
 public:
-    AVForm(IAudioControl& audio, CoreAV* coreAV, CameraSource& camera,
-           IAudioSettings* audioSettings, IVideoSettings* videoSettings);
+    AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
+           IAudioSettings* audioSettings_, IVideoSettings* videoSettings_, Style& style);
     ~AVForm() override;
     QString getFormName() final
     {
@@ -82,7 +82,7 @@ private slots:
     void on_videoModescomboBox_currentIndexChanged(int index);
 
     void rescanDevices();
-    void setVolume(float value);
+    void setVolume(qreal value);
 
 protected:
     void updateVideoModes(int curIndex);
@@ -111,5 +111,3 @@ private:
     uint alSource;
     const uint totalSliderSteps = 100; // arbitrary number of steps to give slider a good "feel"
 };
-
-#endif

@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GENERICCHATROOMWIDGET_H
-#define GENERICCHATROOMWIDGET_H
+#pragma once
 
 #include "genericchatitemwidget.h"
 
@@ -29,12 +28,16 @@ class QHBoxLayout;
 class ContentLayout;
 class Friend;
 class Group;
-class Contact;
+class Settings;
+class Chat;
+class Style;
+
 class GenericChatroomWidget : public GenericChatItemWidget
 {
     Q_OBJECT
 public:
-    explicit GenericChatroomWidget(bool compact, QWidget* parent = nullptr);
+    GenericChatroomWidget(bool compact, Settings&  settings, Style& style,
+        QWidget* parent = nullptr);
 
 public slots:
     virtual void setAsActiveChatroom() = 0;
@@ -42,7 +45,7 @@ public slots:
     virtual void updateStatusLight() = 0;
     virtual void resetEventFlags() = 0;
     virtual QString getStatusString() const = 0;
-    virtual const Contact* getContact() const = 0;
+    virtual const Chat* getChat() const = 0;
     virtual const Friend* getFriend() const
     {
         return nullptr;
@@ -52,7 +55,7 @@ public slots:
         return nullptr;
     }
 
-    bool eventFilter(QObject*, QEvent*) final;
+    bool eventFilter(QObject* object, QEvent* event) final;
 
     bool isActive();
 
@@ -61,10 +64,9 @@ public slots:
     QString getStatusMsg() const;
     QString getTitle() const;
 
-    void reloadTheme();
-
     void activate();
     void compactChange(bool compact);
+    void reloadTheme() override;
 
 signals:
     void chatroomWidgetClicked(GenericChatroomWidget* widget);
@@ -85,6 +87,6 @@ protected:
     MaskablePixmapWidget* avatar;
     CroppingLabel* statusMessageLabel;
     bool active;
+    Settings& settings;
+    Style& style;
 };
-
-#endif // GENERICCHATROOMWIDGET_H

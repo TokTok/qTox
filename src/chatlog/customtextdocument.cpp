@@ -26,8 +26,11 @@
 #include <QIcon>
 #include <QUrl>
 
-CustomTextDocument::CustomTextDocument(QObject* parent)
+CustomTextDocument::CustomTextDocument(SmileyPack& smileyPack_,
+    Settings& settings_, QObject* parent)
     : QTextDocument(parent)
+    , smileyPack(smileyPack_)
+    , settings(settings_)
 {
     setUndoRedoEnabled(false);
     setUseDesignMetrics(false);
@@ -36,11 +39,11 @@ CustomTextDocument::CustomTextDocument(QObject* parent)
 QVariant CustomTextDocument::loadResource(int type, const QUrl& name)
 {
     if (type == QTextDocument::ImageResource && name.scheme() == "key") {
-        QSize size = QSize(Settings::getInstance().getEmojiFontPointSize(),
-                           Settings::getInstance().getEmojiFontPointSize());
+        QSize size = QSize(settings.getEmojiFontPointSize(),
+                           settings.getEmojiFontPointSize());
         QString fileName = QUrl::fromPercentEncoding(name.toEncoded()).mid(4).toHtmlEscaped();
 
-        std::shared_ptr<QIcon> icon = SmileyPack::getInstance().getAsIcon(fileName);
+        std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(fileName);
         emoticonIcons.append(icon);
         return icon->pixmap(size);
     }

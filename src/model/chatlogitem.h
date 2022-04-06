@@ -17,12 +17,12 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CHAT_LOG_ITEM_H
-#define CHAT_LOG_ITEM_H
+#pragma once
 
 #include "src/core/toxfile.h"
 #include "src/core/toxpk.h"
 #include "src/model/message.h"
+#include "src/model/systemmessage.h"
 #include "src/persistence/history.h"
 
 #include <memory>
@@ -49,22 +49,26 @@ public:
     {
         message,
         fileTransfer,
+        systemMessage,
     };
 
-    ChatLogItem(ToxPk sender, ChatLogFile file);
-    ChatLogItem(ToxPk sender, ChatLogMessage message);
+    ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogFile file_);
+    ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogMessage message_);
+    ChatLogItem(SystemMessage message);
     const ToxPk& getSender() const;
     ContentType getContentType() const;
     ChatLogFile& getContentAsFile();
     const ChatLogFile& getContentAsFile() const;
     ChatLogMessage& getContentAsMessage();
     const ChatLogMessage& getContentAsMessage() const;
+    SystemMessage& getContentAsSystemMessage();
+    const SystemMessage& getContentAsSystemMessage() const;
     QDateTime getTimestamp() const;
     void setDisplayName(QString name);
     const QString& getDisplayName() const;
 
 private:
-    ChatLogItem(ToxPk sender, ContentType contentType, ContentPtr content);
+    ChatLogItem(ToxPk sender, const QString &displayName_, ContentType contentType, ContentPtr content);
 
     ToxPk sender;
     QString displayName;
@@ -72,5 +76,3 @@ private:
 
     ContentPtr content;
 };
-
-#endif /*CHAT_LOG_ITEM_H*/

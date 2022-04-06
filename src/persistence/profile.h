@@ -18,14 +18,15 @@
 */
 
 
-#ifndef PROFILE_H
-#define PROFILE_H
+#pragma once
 
 #include "src/core/core.h"
 #include "src/core/toxencrypt.h"
-#include "src/core/toxid.h"
+
+#include "src/net/avatarbroadcaster.h"
 
 #include "src/persistence/history.h"
+#include "src/net/bootstrapnodeupdater.h"
 
 #include <QByteArray>
 #include <QObject>
@@ -36,6 +37,9 @@
 
 class Settings;
 class QCommandLineParser;
+class ToxPk;
+class CameraSource;
+class IMessageBoxManager;
 
 class Profile : public QObject
 {
@@ -43,12 +47,13 @@ class Profile : public QObject
 
 public:
     static Profile* loadProfile(const QString& name, const QString& password, Settings& settings,
-                                const QCommandLineParser* parser);
+                                const QCommandLineParser* parser, CameraSource& cameraSource,
+                                    IMessageBoxManager& messageBoxManager);
     static Profile* createProfile(const QString& name, const QString& password, Settings& settings,
-                                  const QCommandLineParser* parser);
+                                  const QCommandLineParser* parser, CameraSource& cameraSource, IMessageBoxManager& messageBoxManager);
     ~Profile();
 
-    Core* getCore();
+    Core& getCore() const;
     QString getName() const;
 
     void startCore();
@@ -71,11 +76,11 @@ public:
 
     bool rename(QString newName);
 
-    static const QStringList getAllProfileNames();
+    static const QStringList getAllProfileNames(Settings& settings);
 
-    static bool exists(QString name);
-    static bool isEncrypted(QString name);
-    static QString getDbPath(const QString& profileName);
+    static bool exists(QString name, Paths& paths);
+    static bool isEncrypted(QString name, Paths& paths);
+    static QString getDbPath(const QString& profileName, Paths& paths);
 
 signals:
     void selfAvatarChanged(const QPixmap& pixmap);
@@ -94,22 +99,25 @@ public slots:
     void onRequestSent(const ToxPk& friendPk, const QString& message);
 
 private slots:
-    void loadDatabase(QString password);
+    void loadDatabase(QString password, IMessageBoxManager& messageBoxManager);
     void saveAvatar(const ToxPk& owner, const QByteArray& avatar);
     void removeAvatar(const ToxPk& owner);
     void onSaveToxSave();
     // TODO(sudden6): use ToxPk instead of friendId
-    void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash);
+    void onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize);
 
 private:
-    Profile(const QString& name, const QString& password, std::unique_ptr<ToxEncrypt> passkey);
-    static QStringList getFilesByExt(QString extension);
+    Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
+        Settings &settings_);
+    static QStringList getFilesByExt(QString extension, Settings& settings);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
-    void initCore(const QByteArray& toxsave, const ICoreSettings& s, bool isNewProfile);
+    void initCore(const QByteArray& toxsave, Settings &s, bool isNewProfile, CameraSource& cameraSource);
 
 private:
+    std::unique_ptr<AvatarBroadcaster> avatarBroadcaster;
     std::unique_ptr<Core> core;
+    std::unique_ptr<CoreAV> coreAv;
     QString name;
     std::unique_ptr<ToxEncrypt> passkey;
     std::shared_ptr<RawDatabase> database;
@@ -117,6 +125,7 @@ private:
     bool isRemoved;
     bool encrypted = false;
     static QStringList profiles;
+    std::unique_ptr<BootstrapNodeUpdater> bootstrapNodes;
+    Paths& paths;
+    Settings& settings;
 };
-
-#endif // PROFILE_H

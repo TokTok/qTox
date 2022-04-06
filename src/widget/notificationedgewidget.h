@@ -17,12 +17,13 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef NOTIFICATIONEDGEWIDGET_H
-#define NOTIFICATIONEDGEWIDGET_H
+#pragma once
 
 #include <QWidget>
 
 class QLabel;
+class Settings;
+class Style;
 
 class NotificationEdgeWidget final : public QWidget
 {
@@ -34,7 +35,8 @@ public:
         Bottom
     };
 
-    explicit NotificationEdgeWidget(Position position, QWidget* parent = nullptr);
+    NotificationEdgeWidget(Position position, Settings& settings, Style& style,
+        QWidget* parent = nullptr);
     void updateNotificationCount(int count);
 
 signals:
@@ -46,5 +48,3 @@ protected:
 private:
     QLabel* textLabel;
 };
-
-#endif // NOTIFICATIONEDGEWIDGET_H

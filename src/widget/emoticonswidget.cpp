@@ -31,10 +31,11 @@
 
 #include <math.h>
 
-EmoticonsWidget::EmoticonsWidget(QWidget* parent)
+EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings,
+    Style& style, QWidget* parent)
     : QMenu(parent)
 {
-    setStyleSheet(Style::getStylesheet("emoticonWidget/emoticonWidget.css"));
+    setStyleSheet(style.getStylesheet("emoticonWidget/emoticonWidget.css", settings));
     setLayout(&layout);
     layout.addWidget(&stack);
 
@@ -48,7 +49,7 @@ EmoticonsWidget::EmoticonsWidget(QWidget* parent)
     const int maxRows = 8;
     const int itemsPerPage = maxRows * maxCols;
 
-    const QList<QStringList>& emoticons = SmileyPack::getInstance().getEmoticons();
+    const QList<QStringList>& emoticons = smileyPack.getEmoticons();
     int itemCount = emoticons.size();
     int pageCount = ceil(float(itemCount) / float(itemsPerPage));
     int currPage = 0;
@@ -57,7 +58,7 @@ EmoticonsWidget::EmoticonsWidget(QWidget* parent)
     int col = 0;
 
     // respect configured emoticon size
-    const int px = Settings::getInstance().getEmojiFontPointSize();
+    const int px = settings.getEmojiFontPointSize();
     const QSize size(px, px);
 
     // create pages
@@ -86,7 +87,6 @@ EmoticonsWidget::EmoticonsWidget(QWidget* parent)
     }
     buttonLayout->addStretch();
 
-    SmileyPack& smileyPack = SmileyPack::getInstance();
     for (const QStringList& set : emoticons) {
         QPushButton* button = new QPushButton;
         std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(set[0]);
@@ -155,8 +155,9 @@ void EmoticonsWidget::mouseReleaseEvent(QMouseEvent* ev)
         hide();
 }
 
-void EmoticonsWidget::mousePressEvent(QMouseEvent*)
+void EmoticonsWidget::mousePressEvent(QMouseEvent* event)
 {
+    std::ignore = event;
 }
 
 void EmoticonsWidget::wheelEvent(QWheelEvent* e)
@@ -181,7 +182,7 @@ void EmoticonsWidget::wheelEvent(QWheelEvent* e)
 
 void EmoticonsWidget::PageButtonsUpdate()
 {
-    QList<QRadioButton*> pageButtons = this->findChildren<QRadioButton*>(QString());
+    QList<QRadioButton*> pageButtons = findChildren<QRadioButton*>(QString());
     foreach (QRadioButton* t_pageButton, pageButtons) {
         if (t_pageButton->property("pageIndex").toInt() == stack.currentIndex())
             t_pageButton->setChecked(true);
@@ -192,6 +193,6 @@ void EmoticonsWidget::PageButtonsUpdate()
 
 void EmoticonsWidget::keyPressEvent(QKeyEvent* e)
 {
-    Q_UNUSED(e)
+    std::ignore = e;
     hide();
 }

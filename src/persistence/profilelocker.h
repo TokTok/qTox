@@ -18,11 +18,12 @@
 */
 
 
-#ifndef PROFILELOCKER_H
-#define PROFILELOCKER_H
+#pragma once
 
 #include <QLockFile>
 #include <memory>
+
+class Paths;
 
 class ProfileLocker
 {
@@ -30,20 +31,18 @@ private:
     ProfileLocker() = delete;
 
 public:
-    static bool isLockable(QString profile);
-    static bool lock(QString profile);
+    static bool isLockable(QString profile, Paths& paths);
+    static bool lock(QString profile, Paths& paths);
     static void unlock();
     static bool hasLock();
     static QString getCurLockName();
-    static void assertLock();
+    static void assertLock(Paths& paths);
 
 private:
-    static QString lockPathFromName(const QString& name);
+    static QString lockPathFromName(const QString& name, const Paths& paths);
     static void deathByBrokenLock();
 
 private:
     static std::unique_ptr<QLockFile> lockfile;
     static QString curLockName;
 };
-
-#endif // PROFILELOCKER_H

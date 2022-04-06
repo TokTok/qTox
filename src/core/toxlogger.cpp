@@ -33,7 +33,7 @@ QByteArray cleanPath(const char *file)
 {
     // for privacy, make the path relative to the c-toxcore source directory
     const QRegularExpression pathCleaner(QLatin1String{"[\\s|\\S]*c-toxcore."});
-    QByteArray cleanedPath = QString{file}.remove(pathCleaner).toUtf8();
+    QByteArray cleanedPath = QString::fromUtf8(file).remove(pathCleaner).toUtf8();
     cleanedPath.append('\0');
     return cleanedPath;
 }
@@ -47,6 +47,8 @@ QByteArray cleanPath(const char *file)
 void onLogMessage(Tox *tox, Tox_Log_Level level, const char *file, uint32_t line,
                   const char *func, const char *message, void *user_data)
 {
+    std::ignore = tox;
+    std::ignore = user_data;
     const QByteArray cleanedPath = cleanPath(file);
 
     switch (level) {

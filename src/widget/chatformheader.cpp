@@ -18,6 +18,9 @@
 */
 
 #include "chatformheader.h"
+#include "extensionstatus.h"
+
+#include "src/model/status.h"
 
 #include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
@@ -32,12 +35,12 @@
 #include <QTextDocument>
 #include <QToolButton>
 
-static const QSize AVATAR_SIZE{40, 40};
-static const short HEAD_LAYOUT_SPACING = 5;
-static const short MIC_BUTTONS_LAYOUT_SPACING = 4;
-static const short BUTTONS_LAYOUT_HOR_SPACING = 4;
-
 namespace {
+const QSize AVATAR_SIZE{40, 40};
+const short HEAD_LAYOUT_SPACING = 5;
+const short MIC_BUTTONS_LAYOUT_SPACING = 4;
+const short BUTTONS_LAYOUT_HOR_SPACING = 4;
+
 const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
 
 const QString STATE_NAME[] = {
@@ -77,12 +80,13 @@ const QString MIC_TOOL_TIP[] = {
 };
 
 template <class T, class Fun>
-QPushButton* createButton(const QString& name, T* self, Fun onClickSlot)
+QPushButton* createButton(const QString& name, T* self, Fun onClickSlot,
+    Settings& settings, Style& style)
 {
     QPushButton* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
-    btn->setStyleSheet(Style::getStylesheet(STYLE_PATH));
+    btn->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
     QObject::connect(btn, &QPushButton::clicked, self, onClickSlot);
     return btn;
 }
@@ -104,34 +108,44 @@ void setStateName(QAbstractButton* btn, State state)
 
 }
 
-ChatFormHeader::ChatFormHeader(QWidget* parent)
+ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* parent)
     : QWidget(parent)
     , mode{Mode::AV}
     , callState{CallButtonState::Disabled}
     , videoState{CallButtonState::Disabled}
     , volState{ToolButtonState::Disabled}
     , micState{ToolButtonState::Disabled}
+    , settings{settings_}
+    , style{style_}
 {
     QHBoxLayout* headLayout = new QHBoxLayout();
     avatar = new MaskablePixmapWidget(this, AVATAR_SIZE, ":/img/avatar_mask.svg");
     avatar->setObjectName("avatar");
 
+    nameLine = new QHBoxLayout();
+    nameLine->setSpacing(3);
+
+    extensionStatus = new ExtensionStatus();
+
     nameLabel = new CroppingLabel();
     nameLabel->setObjectName("nameLabel");
-    nameLabel->setMinimumHeight(Style::getFont(Style::Medium).pixelSize());
+    nameLabel->setMinimumHeight(Style::getFont(Style::Font::Medium).pixelSize());
     nameLabel->setEditable(true);
     nameLabel->setTextFormat(Qt::PlainText);
     connect(nameLabel, &CroppingLabel::editFinished, this, &ChatFormHeader::nameChanged);
 
+    nameLine->addWidget(extensionStatus);
+    nameLine->addWidget(nameLabel);
+
     headTextLayout = new QVBoxLayout();
     headTextLayout->addStretch();
-    headTextLayout->addWidget(nameLabel);
+    headTextLayout->addLayout(nameLine);
     headTextLayout->addStretch();
 
-    micButton = createButton("micButton", this, &ChatFormHeader::micMuteToggle);
-    volButton = createButton("volButton", this, &ChatFormHeader::volMuteToggle);
-    callButton = createButton("callButton", this, &ChatFormHeader::callTriggered);
-    videoButton = createButton("videoButton", this, &ChatFormHeader::videoCallTriggered);
+    micButton = createButton("micButton", this, &ChatFormHeader::micMuteToggle, settings, style);
+    volButton = createButton("volButton", this, &ChatFormHeader::volMuteToggle, settings, style);
+    callButton = createButton("callButton", this, &ChatFormHeader::callTriggered, settings, style);
+    videoButton = createButton("videoButton", this, &ChatFormHeader::videoCallTriggered, settings, style);
 
     QVBoxLayout* micButtonsLayout = new QVBoxLayout();
     micButtonsLayout->setSpacing(MIC_BUTTONS_LAYOUT_SPACING);
@@ -154,6 +168,8 @@ ChatFormHeader::ChatFormHeader(QWidget* parent)
 
     updateButtonsView();
     Translator::registerHandler(std::bind(&ChatFormHeader::retranslateUi, this), this);
+
+    connect(&style, &Style::themeReload, this, &ChatFormHeader::reloadTheme);
 }
 
 ChatFormHeader::~ChatFormHeader() = default;
@@ -165,9 +181,9 @@ void ChatFormHeader::setName(const QString& newName)
     nameLabel->setToolTip(Qt::convertFromPlainText(newName, Qt::WhiteSpaceNormal));
 }
 
-void ChatFormHeader::setMode(ChatFormHeader::Mode mode)
+void ChatFormHeader::setMode(ChatFormHeader::Mode mode_)
 {
-    this->mode = mode;
+    mode = mode_;
     if (mode == Mode::None) {
         callButton->hide();
         videoButton->hide();
@@ -204,7 +220,7 @@ void ChatFormHeader::showOutgoingCall(bool video)
 void ChatFormHeader::createCallConfirm(bool video)
 {
     QWidget* btn = video ? videoButton : callButton;
-    callConfirm = std::unique_ptr<CallConfirmWidget>(new CallConfirmWidget(btn));
+    callConfirm = std::unique_ptr<CallConfirmWidget>(new CallConfirmWidget(settings, style, btn));
     connect(callConfirm.get(), &CallConfirmWidget::accepted, this, &ChatFormHeader::callAccepted);
     connect(callConfirm.get(), &CallConfirmWidget::rejected, this, &ChatFormHeader::callRejected);
 }
@@ -218,6 +234,11 @@ void ChatFormHeader::showCallConfirm()
 void ChatFormHeader::removeCallConfirm()
 {
     callConfirm.reset(nullptr);
+}
+
+void ChatFormHeader::updateExtensionSupport(ExtensionSet extensions)
+{
+    extensionStatus->onExtensionSetUpdate(extensions);
 }
 
 void ChatFormHeader::updateCallButtons(bool online, bool audio, bool video)
@@ -283,10 +304,11 @@ QSize ChatFormHeader::getAvatarSize() const
 
 void ChatFormHeader::reloadTheme()
 {
-    callButton->setStyleSheet(Style::getStylesheet(STYLE_PATH));
-    videoButton->setStyleSheet(Style::getStylesheet(STYLE_PATH));
-    volButton->setStyleSheet(Style::getStylesheet(STYLE_PATH));
-    micButton->setStyleSheet(Style::getStylesheet(STYLE_PATH));
+    setStyleSheet(style.getStylesheet("chatArea/chatHead.css", settings));
+    callButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
+    videoButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
+    volButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
+    micButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
 }
 
 void ChatFormHeader::addWidget(QWidget* widget, int stretch, Qt::Alignment alignment)

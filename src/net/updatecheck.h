@@ -16,6 +16,9 @@
     You should have received a copy of the GNU General Public License
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
+
+#pragma once
+
 #include <QNetworkAccessManager>
 #include <QObject>
 #include <QTimer>
@@ -32,13 +35,14 @@ class UpdateCheck : public QObject
     Q_OBJECT
 
 public:
-    UpdateCheck(const Settings& settings);
+    UpdateCheck(const Settings& settings_);
     void checkForUpdate();
 
 signals:
     void updateAvailable(QString latestVersion, QUrl link);
     void upToDate();
     void updateCheckFailed();
+    void versionIsUnstable();
 
 private slots:
     void handleResponse(QNetworkReply* reply);

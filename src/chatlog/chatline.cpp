@@ -37,14 +37,6 @@ ChatLine::~ChatLine()
     }
 }
 
-void ChatLine::setRow(int idx)
-{
-    row = idx;
-
-    for (int c = 0; c < static_cast<int>(content.size()); ++c)
-        content[c]->setIndex(row, c);
-}
-
 void ChatLine::visibilityChanged(bool visible)
 {
     if (isVisible != visible) {
@@ -55,14 +47,9 @@ void ChatLine::visibilityChanged(bool visible)
     isVisible = visible;
 }
 
-int ChatLine::getRow() const
-{
-    return row;
-}
-
 ChatLineContent* ChatLine::getContent(int col) const
 {
-    if (col < static_cast<int>(content.size()) && col >= 0)
+    if (col < content.size() && col >= 0)
         return content[col];
 
     return nullptr;
@@ -153,11 +140,12 @@ void ChatLine::addColumn(ChatLineContent* item, ColumnFormat fmt)
 
     format.push_back(fmt);
     content.push_back(item);
+    item->setIndex(0, content.size() -1 );
 }
 
 void ChatLine::replaceContent(int col, ChatLineContent* lineContent)
 {
-    if (col >= 0 && col < static_cast<int>(content.size()) && lineContent) {
+    if (col >= 0 && col < content.size() && lineContent) {
         QGraphicsScene* scene = content[col]->scene();
         delete content[col];
 
@@ -202,14 +190,14 @@ void ChatLine::layout(qreal w, QPointF scenePos)
 
     for (int i = 0; i < content.size(); ++i) {
         // calculate the effective width of the current column
-        qreal width;
+        qreal contentWidth;
         if (format[i].policy == ColumnFormat::FixedSize)
-            width = format[i].size;
+            contentWidth = format[i].size;
         else
-            width = format[i].size / varWidth * leftover;
+            contentWidth = format[i].size / varWidth * leftover;
 
         // set the width of the current column
-        content[i]->setWidth(width);
+        content[i]->setWidth(contentWidth);
 
         // calculate horizontal alignment
         qreal xAlign = 0.0;
@@ -218,17 +206,17 @@ void ChatLine::layout(qreal w, QPointF scenePos)
         case ColumnFormat::Left:
             break;
         case ColumnFormat::Right:
-            xAlign = width - content[i]->boundingRect().width();
+            xAlign = contentWidth - content[i]->boundingRect().width();
             break;
         case ColumnFormat::Center:
-            xAlign = (width - content[i]->boundingRect().width()) / 2.0;
+            xAlign = (contentWidth - content[i]->boundingRect().width()) / 2.0;
             break;
         }
 
         // reposition
         xPos[i] = scenePos.x() + xOffset + xAlign;
 
-        xOffset += width + columnSpacing;
+        xOffset += contentWidth + columnSpacing;
         maxVOffset = qMax(maxVOffset, content[i]->getAscent());
     }
 
@@ -261,9 +249,4 @@ bool ChatLine::lessThanBSRectTop(const ChatLine::Ptr& lhs, const qreal& rhs)
 bool ChatLine::lessThanBSRectBottom(const ChatLine::Ptr& lhs, const qreal& rhs)
 {
     return lhs->sceneBoundingRect().bottom() < rhs;
-}
-
-bool ChatLine::lessThanRowIndex(const ChatLine::Ptr& lhs, const ChatLine::Ptr& rhs)
-{
-    return lhs->getRow() < rhs->getRow();
 }

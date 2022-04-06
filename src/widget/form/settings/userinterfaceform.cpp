@@ -54,8 +54,12 @@
  *
  * Restores all controls from the settings.
  */
-UserInterfaceForm::UserInterfaceForm(SettingsWidget* myParent)
-    : GenericForm(QPixmap(":/img/settings/general.png"))
+UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings_,
+    Style& style_, SettingsWidget* myParent)
+    : GenericForm(QPixmap(":/img/settings/general.png"), style_)
+    , smileyPack{smileyPack_}
+    , settings{settings_}
+    , style{style_}
 {
     parent = myParent;
 
@@ -65,46 +69,45 @@ UserInterfaceForm::UserInterfaceForm(SettingsWidget* myParent)
     // block all child signals during initialization
     const RecursiveSignalBlocker signalBlocker(this);
 
-    Settings& s = Settings::getInstance();
-    const QFont chatBaseFont = s.getChatMessageFont();
+    const QFont chatBaseFont = settings.getChatMessageFont();
     bodyUI->txtChatFontSize->setValue(QFontInfo(chatBaseFont).pixelSize());
     bodyUI->txtChatFont->setCurrentFont(chatBaseFont);
-    int index = static_cast<int>(s.getStylePreference());
+    int index = static_cast<int>(settings.getStylePreference());
     bodyUI->textStyleComboBox->setCurrentIndex(index);
-    bodyUI->useNameColors->setChecked(s.getEnableGroupChatsColor());
+    bodyUI->useNameColors->setChecked(settings.getEnableGroupChatsColor());
 
-    bodyUI->notify->setChecked(s.getNotify());
+    bodyUI->notify->setChecked(settings.getNotify());
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    bodyUI->groupOnlyNotfiyWhenMentioned->setChecked(!s.getGroupAlwaysNotify());
-    bodyUI->groupOnlyNotfiyWhenMentioned->setEnabled(s.getNotify());
-    bodyUI->notifySound->setChecked(s.getNotifySound());
-    bodyUI->notifyHide->setChecked(s.getNotifyHide());
-    bodyUI->notifySound->setEnabled(s.getNotify());
-    bodyUI->busySound->setChecked(s.getBusySound());
-    bodyUI->busySound->setEnabled(s.getNotifySound() && s.getNotify());
+    bodyUI->groupOnlyNotfiyWhenMentioned->setChecked(!settings.getGroupAlwaysNotify());
+    bodyUI->groupOnlyNotfiyWhenMentioned->setEnabled(settings.getNotify());
+    bodyUI->notifySound->setChecked(settings.getNotifySound());
+    bodyUI->notifyHide->setChecked(settings.getNotifyHide());
+    bodyUI->notifySound->setEnabled(settings.getNotify());
+    bodyUI->busySound->setChecked(settings.getBusySound());
+    bodyUI->busySound->setEnabled(settings.getNotifySound() && settings.getNotify());
 #if DESKTOP_NOTIFICATIONS
-    bodyUI->desktopNotify->setChecked(s.getDesktopNotify());
-    bodyUI->desktopNotify->setEnabled(s.getNotify());
+    bodyUI->desktopNotify->setChecked(settings.getDesktopNotify());
+    bodyUI->desktopNotify->setEnabled(settings.getNotify());
 #else
     bodyUI->desktopNotify->hide();
 #endif
 
-    bodyUI->showWindow->setChecked(s.getShowWindow());
+    bodyUI->showWindow->setChecked(settings.getShowWindow());
 
-    bodyUI->cbGroupchatPosition->setChecked(s.getGroupchatPosition());
-    bodyUI->cbCompactLayout->setChecked(s.getCompactLayout());
-    bodyUI->cbSeparateWindow->setChecked(s.getSeparateWindow());
-    bodyUI->cbDontGroupWindows->setChecked(s.getDontGroupWindows());
-    bodyUI->cbDontGroupWindows->setEnabled(s.getSeparateWindow());
-    bodyUI->cbShowIdenticons->setChecked(s.getShowIdenticons());
+    bodyUI->cbGroupchatPosition->setChecked(settings.getGroupchatPosition());
+    bodyUI->cbCompactLayout->setChecked(settings.getCompactLayout());
+    bodyUI->cbSeparateWindow->setChecked(settings.getSeparateWindow());
+    bodyUI->cbDontGroupWindows->setChecked(settings.getDontGroupWindows());
+    bodyUI->cbDontGroupWindows->setEnabled(settings.getSeparateWindow());
+    bodyUI->cbShowIdenticons->setChecked(settings.getShowIdenticons());
 
-    bodyUI->useEmoticons->setChecked(s.getUseEmoticons());
+    bodyUI->useEmoticons->setChecked(settings.getUseEmoticons());
     for (auto entry : SmileyPack::listSmileyPacks())
         bodyUI->smileyPackBrowser->addItem(entry.first, entry.second);
 
     smileLabels = {bodyUI->smile1, bodyUI->smile2, bodyUI->smile3, bodyUI->smile4, bodyUI->smile5};
 
-    int currentPack = bodyUI->smileyPackBrowser->findData(s.getSmileyPack());
+    int currentPack = bodyUI->smileyPackBrowser->findData(settings.getSmileyPack());
     bodyUI->smileyPackBrowser->setCurrentIndex(currentPack);
     reloadSmileys();
     bodyUI->smileyPackBrowser->setEnabled(bodyUI->useEmoticons->isChecked());
@@ -112,19 +115,19 @@ UserInterfaceForm::UserInterfaceForm(SettingsWidget* myParent)
     bodyUI->styleBrowser->addItem(tr("None"));
     bodyUI->styleBrowser->addItems(QStyleFactory::keys());
 
-    QString style;
-    if (QStyleFactory::keys().contains(s.getStyle()))
-        style = s.getStyle();
+    QString textStyle;
+    if (QStyleFactory::keys().contains(settings.getStyle()))
+        textStyle = settings.getStyle();
     else
-        style = tr("None");
+        textStyle = tr("None");
 
-    bodyUI->styleBrowser->setCurrentText(style);
+    bodyUI->styleBrowser->setCurrentText(textStyle);
 
     for (QString color : Style::getThemeColorNames())
         bodyUI->themeColorCBox->addItem(color);
 
-    bodyUI->themeColorCBox->setCurrentIndex(s.getThemeColor());
-    bodyUI->emoticonSize->setValue(s.getEmojiFontPointSize());
+    bodyUI->themeColorCBox->setCurrentIndex(settings.getThemeColor());
+    bodyUI->emoticonSize->setValue(settings.getEmojiFontPointSize());
 
     QLocale ql;
     QStringList timeFormats;
@@ -137,7 +140,7 @@ UserInterfaceForm::UserInterfaceForm(SettingsWidget* myParent)
 
     QRegularExpression re(QString("^[^\\n]{0,%0}$").arg(MAX_FORMAT_LENGTH));
     QRegularExpressionValidator* validator = new QRegularExpressionValidator(re, this);
-    QString timeFormat = s.getTimestampFormat();
+    QString timeFormat = settings.getTimestampFormat();
 
     if (!re.match(timeFormat).hasMatch())
         timeFormat = timeFormats[0];
@@ -158,7 +161,7 @@ UserInterfaceForm::UserInterfaceForm(SettingsWidget* myParent)
     dateFormats.removeDuplicates();
     bodyUI->dateFormats->addItems(dateFormats);
 
-    QString dateFormat = s.getDateFormat();
+    QString dateFormat = settings.getDateFormat();
     if (!re.match(dateFormat).hasMatch())
         dateFormat = dateFormats[0];
 
@@ -176,20 +179,20 @@ UserInterfaceForm::~UserInterfaceForm()
     delete bodyUI;
 }
 
-void UserInterfaceForm::on_styleBrowser_currentIndexChanged(QString style)
+void UserInterfaceForm::on_styleBrowser_currentIndexChanged(QString textStyle)
 {
     if (bodyUI->styleBrowser->currentIndex() == 0)
-        Settings::getInstance().setStyle("None");
+        settings.setStyle("None");
     else
-        Settings::getInstance().setStyle(style);
+        settings.setStyle(textStyle);
 
-    this->setStyle(QStyleFactory::create(style));
-    parent->setBodyHeadStyle(style);
+    setStyle(QStyleFactory::create(textStyle));
+    parent->setBodyHeadStyle(textStyle);
 }
 
 void UserInterfaceForm::on_emoticonSize_editingFinished()
 {
-    Settings::getInstance().setEmojiFontPointSize(bodyUI->emoticonSize->value());
+    settings.setEmojiFontPointSize(bodyUI->emoticonSize->value());
 }
 
 void UserInterfaceForm::on_timestamp_editTextChanged(const QString& format)
@@ -197,8 +200,8 @@ void UserInterfaceForm::on_timestamp_editTextChanged(const QString& format)
     QString timeExample = QTime::currentTime().toString(format);
     bodyUI->timeExample->setText(timeExample);
 
-    Settings::getInstance().setTimestampFormat(format);
-    QString locale = Settings::getInstance().getTranslation();
+    settings.setTimestampFormat(format);
+    QString locale = settings.getTranslation();
     Translator::translate(locale);
 }
 
@@ -207,14 +210,14 @@ void UserInterfaceForm::on_dateFormats_editTextChanged(const QString& format)
     QString dateExample = QDate::currentDate().toString(format);
     bodyUI->dateExample->setText(dateExample);
 
-    Settings::getInstance().setDateFormat(format);
-    QString locale = Settings::getInstance().getTranslation();
+    settings.setDateFormat(format);
+    QString locale = settings.getTranslation();
     Translator::translate(locale);
 }
 
 void UserInterfaceForm::on_useEmoticons_stateChanged()
 {
-    Settings::getInstance().setUseEmoticons(bodyUI->useEmoticons->isChecked());
+    settings.setUseEmoticons(bodyUI->useEmoticons->isChecked());
     bodyUI->smileyPackBrowser->setEnabled(bodyUI->useEmoticons->isChecked());
 }
 
@@ -222,13 +225,13 @@ void UserInterfaceForm::on_textStyleComboBox_currentTextChanged()
 {
     Settings::StyleType styleType =
         static_cast<Settings::StyleType>(bodyUI->textStyleComboBox->currentIndex());
-    Settings::getInstance().setStylePreference(styleType);
+    settings.setStylePreference(styleType);
 }
 
 void UserInterfaceForm::on_smileyPackBrowser_currentIndexChanged(int index)
 {
     QString filename = bodyUI->smileyPackBrowser->itemData(index).toString();
-    Settings::getInstance().setSmileyPack(filename);
+    settings.setSmileyPack(filename);
     reloadSmileys();
 }
 
@@ -237,7 +240,7 @@ void UserInterfaceForm::on_smileyPackBrowser_currentIndexChanged(int index)
  */
 void UserInterfaceForm::reloadSmileys()
 {
-    QList<QStringList> emoticons = SmileyPack::getInstance().getEmoticons();
+    QList<QStringList> emoticons = smileyPack.getEmoticons();
 
     // sometimes there are no emoticons available, don't crash in this case
     if (emoticons.isEmpty()) {
@@ -252,7 +255,7 @@ void UserInterfaceForm::reloadSmileys()
     emoticonsIcons.clear();
     const QSize size(18, 18);
     for (int i = 0; i < smileLabels.size(); ++i) {
-        std::shared_ptr<QIcon> icon = SmileyPack::getInstance().getAsIcon(smileys[i]);
+        std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(smileys[i]);
         emoticonsIcons.append(icon);
         smileLabels[i]->setPixmap(icon->pixmap(size));
         smileLabels[i]->setToolTip(smileys[i]);
@@ -272,7 +275,7 @@ void UserInterfaceForm::reloadSmileys()
 void UserInterfaceForm::on_notify_stateChanged()
 {
     const bool notify = bodyUI->notify->isChecked();
-    Settings::getInstance().setNotify(notify);
+    settings.setNotify(notify);
     bodyUI->groupOnlyNotfiyWhenMentioned->setEnabled(notify);
     bodyUI->notifySound->setEnabled(notify);
     bodyUI->busySound->setEnabled(notify && bodyUI->notifySound->isChecked());
@@ -282,65 +285,64 @@ void UserInterfaceForm::on_notify_stateChanged()
 void UserInterfaceForm::on_notifySound_stateChanged()
 {
     const bool notify = bodyUI->notifySound->isChecked();
-    Settings::getInstance().setNotifySound(notify);
+    settings.setNotifySound(notify);
     bodyUI->busySound->setEnabled(notify);
 }
 
 void UserInterfaceForm::on_desktopNotify_stateChanged()
 {
     const bool notify = bodyUI->desktopNotify->isChecked();
-    Settings::getInstance().setDesktopNotify(notify);
+    settings.setDesktopNotify(notify);
 }
 
 void UserInterfaceForm::on_busySound_stateChanged()
 {
-    Settings::getInstance().setBusySound(bodyUI->busySound->isChecked());
+    settings.setBusySound(bodyUI->busySound->isChecked());
 }
 
 void UserInterfaceForm::on_showWindow_stateChanged()
 {
-    Settings::getInstance().setShowWindow(bodyUI->showWindow->isChecked());
+    settings.setShowWindow(bodyUI->showWindow->isChecked());
 }
 
 void UserInterfaceForm::on_groupOnlyNotfiyWhenMentioned_stateChanged()
 {
     // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
-    Settings::getInstance().setGroupAlwaysNotify(!bodyUI->groupOnlyNotfiyWhenMentioned->isChecked());
+    settings.setGroupAlwaysNotify(!bodyUI->groupOnlyNotfiyWhenMentioned->isChecked());
 }
 
 void UserInterfaceForm::on_cbCompactLayout_stateChanged()
 {
-    Settings::getInstance().setCompactLayout(bodyUI->cbCompactLayout->isChecked());
+    settings.setCompactLayout(bodyUI->cbCompactLayout->isChecked());
 }
 
 void UserInterfaceForm::on_cbSeparateWindow_stateChanged()
 {
     bool checked = bodyUI->cbSeparateWindow->isChecked();
     bodyUI->cbDontGroupWindows->setEnabled(checked);
-    Settings::getInstance().setSeparateWindow(checked);
+    settings.setSeparateWindow(checked);
 }
 
 void UserInterfaceForm::on_cbDontGroupWindows_stateChanged()
 {
-    Settings::getInstance().setDontGroupWindows(bodyUI->cbDontGroupWindows->isChecked());
+    settings.setDontGroupWindows(bodyUI->cbDontGroupWindows->isChecked());
 }
 
 void UserInterfaceForm::on_cbGroupchatPosition_stateChanged()
 {
-    Settings::getInstance().setGroupchatPosition(bodyUI->cbGroupchatPosition->isChecked());
+    settings.setGroupchatPosition(bodyUI->cbGroupchatPosition->isChecked());
 }
 
 void UserInterfaceForm::on_cbShowIdenticons_stateChanged()
 {
-    Settings::getInstance().setShowIdenticons(bodyUI->cbShowIdenticons->isChecked());
+    settings.setShowIdenticons(bodyUI->cbShowIdenticons->isChecked());
 }
 
-void UserInterfaceForm::on_themeColorCBox_currentIndexChanged(int)
+void UserInterfaceForm::on_themeColorCBox_currentIndexChanged(int index)
 {
-    int index = bodyUI->themeColorCBox->currentIndex();
-    Settings::getInstance().setThemeColor(index);
-    Style::setThemeColor(index);
-    Style::applyTheme();
+    settings.setThemeColor(index);
+    style.setThemeColor(settings, index);
+    style.applyTheme();
 }
 
 /**
@@ -355,7 +357,7 @@ void UserInterfaceForm::retranslateUi()
 
     // Restore text style index once translation is complete
     bodyUI->textStyleComboBox->setCurrentIndex(
-        static_cast<int>(Settings::getInstance().getStylePreference()));
+        static_cast<int>(settings.getStylePreference()));
 
     QStringList colorThemes(Style::getThemeColorNames());
     for (int i = 0; i < colorThemes.size(); ++i) {
@@ -373,12 +375,12 @@ void UserInterfaceForm::on_txtChatFont_currentFontChanged(const QFont& f)
     if (QFontInfo(tmpFont).pixelSize() != px)
         tmpFont.setPixelSize(px);
 
-    Settings::getInstance().setChatMessageFont(tmpFont);
+    settings.setChatMessageFont(tmpFont);
 }
 
 void UserInterfaceForm::on_txtChatFontSize_valueChanged(int px)
 {
-    Settings& s = Settings::getInstance();
+    Settings& s = settings;
     QFont tmpFont = s.getChatMessageFont();
     const int fontSize = QFontInfo(tmpFont).pixelSize();
 
@@ -390,11 +392,10 @@ void UserInterfaceForm::on_txtChatFontSize_valueChanged(int px)
 
 void UserInterfaceForm::on_useNameColors_stateChanged(int value)
 {
-    Settings::getInstance().setEnableGroupChatsColor(value);
+    settings.setEnableGroupChatsColor(value);
 }
 
 void UserInterfaceForm::on_notifyHide_stateChanged(int value)
 {
-    Settings::getInstance().setNotifyHide(value);
+    settings.setNotifyHide(value);
 }
-

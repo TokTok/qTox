@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SEARCHTYPES_H
-#define SEARCHTYPES_H
+#pragma once
 
 #include <QDate>
 #include <QRegularExpression>
@@ -48,13 +47,13 @@ enum class SearchDirection {
 struct ParameterSearch {
     FilterSearch filter{FilterSearch::None};
     PeriodSearch period{PeriodSearch::None};
-    QDateTime time;
+    QDate date;
     bool isUpdate{false};
 
     bool operator ==(const ParameterSearch& other) {
         return filter == other.filter &&
             period == other.period &&
-            time == other.time;
+            date == other.date;
     }
 
     bool operator !=(const ParameterSearch& other) {
@@ -93,5 +92,3 @@ public:
         return filter;
     }
 };
-
-#endif //SEARCHTYPES_H

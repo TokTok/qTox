@@ -17,18 +17,26 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CIRCLEWIDGET_H
-#define CIRCLEWIDGET_H
+#pragma once
 
 #include "categorywidget.h"
 
 class ContentDialog;
+class Core;
+class Settings;
+class Style;
+class IMessageBoxManager;
+class FriendList;
+class GroupList;
+class Profile;
 
 class CircleWidget final : public CategoryWidget
 {
     Q_OBJECT
 public:
-    explicit CircleWidget(FriendListWidget* parent, int id);
+    CircleWidget(const Core& core_, FriendListWidget* parent, int id_, Settings& settings,
+        Style& style, IMessageBoxManager& messageboxManager, FriendList& friendList,
+        GroupList& groupList, Profile& profile);
     ~CircleWidget();
 
     void editName();
@@ -36,7 +44,6 @@ public:
 
 signals:
     void renameRequested(CircleWidget* circleWidget, const QString& newName);
-    void searchCircle(CircleWidget& circletWidget);
     void newContentDialog(ContentDialog& contentDialog);
 
 protected:
@@ -53,6 +60,12 @@ private:
 
     static QHash<int, CircleWidget*> circleList;
     int id;
-};
 
-#endif // CIRCLEWIDGET_H
+    const Core& core;
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
+    FriendList& friendList;
+    GroupList& groupList;
+    Profile& profile;
+};

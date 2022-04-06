@@ -17,29 +17,26 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef DOCUMENTCACHE_H
-#define DOCUMENTCACHE_H
+#pragma once
 
 #include <QStack>
 
 class QTextDocument;
+class SmileyPack;
+class Settings;
 
 class DocumentCache
 {
 public:
-    static DocumentCache& getInstance();
-
-    QTextDocument* pop();
-    void push(QTextDocument* doc);
-
-private:
-    DocumentCache() = default;
+    DocumentCache(SmileyPack& smileyPack, Settings& settings);
     ~DocumentCache();
     DocumentCache(DocumentCache&) = delete;
     DocumentCache& operator=(const DocumentCache&) = delete;
 
+    QTextDocument* pop();
+    void push(QTextDocument* doc);
 private:
     QStack<QTextDocument*> documents;
+    SmileyPack& smileyPack;
+    Settings& settings;
 };
-
-#endif // DOCUMENTCACHE_H

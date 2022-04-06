@@ -17,13 +17,13 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef FRIENDLISTWIDGET_H
-#define FRIENDLISTWIDGET_H
+#pragma once
 
 #include "genericchatitemlayout.h"
 #include "src/core/core.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
+
 #include <QWidget>
 
 class QVBoxLayout;
@@ -33,23 +33,32 @@ class Widget;
 class FriendWidget;
 class GroupWidget;
 class CircleWidget;
-class FriendListLayout;
+class FriendListManager;
 class GenericChatroomWidget;
 class CategoryWidget;
 class Friend;
+class IFriendListItem;
+class Settings;
+class Style;
+class IMessageBoxManager;
+class FriendList;
+class GroupList;
+class Profile;
 
 class FriendListWidget : public QWidget
 {
     Q_OBJECT
 public:
     using SortingMode = Settings::FriendListSortingMode;
-    explicit FriendListWidget(Widget* parent, bool groupsOnTop = true);
+    FriendListWidget(const Core& core, Widget* parent, Settings& settings, Style& style,
+        IMessageBoxManager& messageBoxManager, FriendList& friendList, GroupList& groupList,
+        Profile& profile, bool groupsOnTop = true);
     ~FriendListWidget();
     void setMode(SortingMode mode);
     SortingMode getMode() const;
 
     void addGroupWidget(GroupWidget* widget);
-    void addFriendWidget(FriendWidget* w, Status::Status s, int circleIndex);
+    void addFriendWidget(FriendWidget* w);
     void removeGroupWidget(GroupWidget* w);
     void removeFriendWidget(FriendWidget* w);
     void addCircleWidget(int id);
@@ -58,10 +67,9 @@ public:
     void searchChatrooms(const QString& searchString, bool hideOnline = false,
                          bool hideOffline = false, bool hideGroups = false);
 
-    void cycleContacts(GenericChatroomWidget* activeChatroomWidget, bool forward);
+    void cycleChats(GenericChatroomWidget* activeChatroomWidget, bool forward);
 
-    void updateActivityTime(const QDateTime& date);
-    void reDraw();
+    void updateActivityTime(const QDateTime& time);
 
 signals:
     void onCompactChanged(bool compact);
@@ -71,9 +79,9 @@ signals:
 public slots:
     void renameGroupWidget(GroupWidget* groupWidget, const QString& newName);
     void renameCircleWidget(CircleWidget* circleWidget, const QString& newName);
-    void onFriendWidgetRenamed(FriendWidget* friendWidget);
     void onGroupchatPositionChanged(bool top);
     void moveWidget(FriendWidget* w, Status::Status s, bool add = false);
+    void itemsChanged();
 
 protected:
     void dragEnterEvent(QDragEnterEvent* event) override;
@@ -84,18 +92,23 @@ private slots:
 
 private:
     CircleWidget* createCircleWidget(int id = -1);
-    QLayout* nextLayout(QLayout* layout, bool forward) const;
-    void moveFriends(QLayout* layout);
     CategoryWidget* getTimeCategoryWidget(const Friend* frd) const;
-    void sortByMode(SortingMode mode);
+    void sortByMode();
+    void cleanMainLayout();
+    QWidget* getNextWidgetForName(IFriendListItem* currentPos, bool forward) const;
+    QVector<std::shared_ptr<IFriendListItem> > getItemsFromCircle(CircleWidget* circle) const;
 
     SortingMode mode;
-    bool groupsOnTop;
-    FriendListLayout* listLayout;
-    GenericChatItemLayout* circleLayout = nullptr;
-    GenericChatItemLayout groupLayout;
+    QVBoxLayout* listLayout = nullptr;
     QVBoxLayout* activityLayout = nullptr;
     QTimer* dayTimer;
-};
+    FriendListManager* manager;
 
-#endif // FRIENDLISTWIDGET_H
+    const Core& core;
+    Settings& settings;
+    Style& style;
+    IMessageBoxManager& messageBoxManager;
+    FriendList& friendList;
+    GroupList& groupList;
+    Profile& profile;
+};

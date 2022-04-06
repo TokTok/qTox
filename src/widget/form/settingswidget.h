@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SETTINGSWIDGET_H
-#define SETTINGSWIDGET_H
+#pragma once
 
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -28,6 +27,7 @@
 #include <memory>
 
 class Camera;
+class Core;
 class GenericForm;
 class GeneralForm;
 class IAudioControl;
@@ -38,12 +38,21 @@ class QTabWidget;
 class ContentLayout;
 class UpdateCheck;
 class Widget;
+class SmileyPack;
+class CameraSource;
+class Settings;
+class Style;
+class IMessageBoxManager;
+class Profile;
 
 class SettingsWidget : public QWidget
 {
     Q_OBJECT
 public:
-    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Widget* parent = nullptr);
+    SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core *core,
+        SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings,
+        Style& style, IMessageBoxManager& messageBoxManager, Profile& profile,
+        Widget* parent = nullptr);
     ~SettingsWidget();
 
     bool isShown() const;
@@ -56,7 +65,7 @@ public slots:
     void onUpdateAvailable(void);
 
 private slots:
-    void onTabChanged(int);
+    void onTabChanged(int index);
 
 private:
     void retranslateUi();
@@ -67,5 +76,3 @@ private:
     std::array<std::unique_ptr<GenericForm>, 6> cfgForms;
     int currentIndex;
 };
-
-#endif // SETTINGSWIDGET_H

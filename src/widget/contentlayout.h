@@ -17,29 +17,33 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef CONTENTLAYOUT_H
-#define CONTENTLAYOUT_H
+#pragma once
 
 #include <QBoxLayout>
 #include <QFrame>
 
+class Settings;
+class Style;
+
 class ContentLayout : public QVBoxLayout
 {
 public:
-    ContentLayout();
-    explicit ContentLayout(QWidget* parent);
+    ContentLayout(Settings& settings, Style& style);
+    explicit ContentLayout(Settings& settings, Style& style, QWidget* parent);
     ~ContentLayout();
 
-    void reloadTheme();
     void clear();
 
     QFrame mainHLine;
     QHBoxLayout mainHLineLayout;
     QWidget* mainContent;
     QWidget* mainHead;
+    Settings& settings;
+    Style& style;
+
+public slots:
+    void reloadTheme();
 
 private:
     void init();
 };
-
-#endif // CONTENTLAYOUT_H

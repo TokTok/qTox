@@ -17,8 +17,7 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef GROUP_MESSAGE_DISPATCHER_H
-#define GROUP_MESSAGE_DISPATCHER_H
+#pragma once
 
 #include "src/core/icoregroupmessagesender.h"
 #include "src/core/icoreidhandler.h"
@@ -37,12 +36,15 @@ class GroupMessageDispatcher : public IMessageDispatcher
 {
     Q_OBJECT
 public:
-    GroupMessageDispatcher(Group& group, MessageProcessor processor, ICoreIdHandler& idHandler,
+    GroupMessageDispatcher(Group& g_, MessageProcessor processor, ICoreIdHandler& idHandler,
                            ICoreGroupMessageSender& messageSender,
                            const IGroupSettings& groupSettings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
                                                                     QString const& content) override;
+
+    std::pair<DispatchedMessageId, DispatchedMessageId> sendExtendedMessage(const QString& content,
+                            ExtensionSet extensions) override;
     void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content);
 
 private:
@@ -53,6 +55,3 @@ private:
     const IGroupSettings& groupSettings;
     DispatchedMessageId nextMessageId{0};
 };
-
-
-#endif /* IMESSAGE_DISPATCHER_H */

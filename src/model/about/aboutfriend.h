@@ -17,24 +17,24 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ABOUT_FRIEND_H
-#define ABOUT_FRIEND_H
+#pragma once
 
 #include "iaboutfriend.h"
-#include "src/model/interface.h"
+#include "util/interface.h"
 #include "src/persistence/ifriendsettings.h"
 
 #include <QObject>
 
 class Friend;
 class IFriendSettings;
+class Profile;
 
 class AboutFriend : public QObject, public IAboutFriend
 {
     Q_OBJECT
 
 public:
-    AboutFriend(const Friend* f, IFriendSettings* const settings);
+    AboutFriend(const Friend* f_, IFriendSettings* const settings, Profile& profile);
 
     QString getName() const override;
     QString getStatusMessage() const override;
@@ -71,6 +71,5 @@ public:
 private:
     const Friend* const f;
     IFriendSettings* const settings;
+    Profile& profile;
 };
-
-#endif // ABOUT_FRIEND_H

@@ -18,6 +18,7 @@
 */
 
 #include "src/net/bootstrapnodeupdater.h"
+#include "src/persistence/paths.h"
 
 #include <QNetworkProxy>
 #include <QSignalSpy>
@@ -47,7 +48,9 @@ TestBootstrapNodesUpdater::TestBootstrapNodesUpdater()
 void TestBootstrapNodesUpdater::testOnline()
 {
     QNetworkProxy proxy{QNetworkProxy::ProxyType::NoProxy};
-    BootstrapNodeUpdater updater{proxy};
+    Paths paths{Paths::Portable::NonPortable};
+
+    BootstrapNodeUpdater updater{proxy, paths};
     QSignalSpy spy(&updater, &BootstrapNodeUpdater::availableBootstrapNodes);
 
     updater.requestBootstrapNodes();

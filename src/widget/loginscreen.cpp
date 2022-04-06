@@ -27,21 +27,24 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/profileimporter.h"
 #include "src/widget/translator.h"
+#include "src/persistence/settings.h"
 #include <QDebug>
 #include <QDialog>
 #include <QMessageBox>
 #include <QToolButton>
 
-LoginScreen::LoginScreen(const QString& initialProfileName, QWidget* parent)
+LoginScreen::LoginScreen(Settings& settings_, Style& style,
+    const QString& initialProfileName, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::LoginScreen)
     , quitShortcut{QKeySequence(Qt::CTRL + Qt::Key_Q), this}
+    , settings{settings_}
 {
     ui->setupUi(this);
 
     // permanently disables maximize button https://github.com/qTox/qTox/issues/1973
-    this->setWindowFlags(windowFlags() & ~Qt::WindowMaximizeButtonHint);
-    this->setFixedSize(this->size());
+    setWindowFlags(windowFlags() & ~Qt::WindowMaximizeButtonHint);
+    setFixedSize(size());
 
     connect(&quitShortcut, &QShortcut::activated, this, &LoginScreen::close);
     connect(ui->newProfilePgbtn, &QPushButton::clicked, this, &LoginScreen::onNewProfilePageClicked);
@@ -60,7 +63,7 @@ LoginScreen::LoginScreen(const QString& initialProfileName, QWidget* parent)
     connect(ui->importButton, &QPushButton::clicked, this, &LoginScreen::onImportProfile);
 
     reset(initialProfileName);
-    this->setStyleSheet(Style::getStylesheet("loginScreen/loginScreen.css"));
+    setStyleSheet(style.getStylesheet("loginScreen/loginScreen.css", settings));
 
     retranslateUi();
     Translator::registerHandler(std::bind(&LoginScreen::retranslateUi, this), this);
@@ -83,7 +86,7 @@ void LoginScreen::reset(const QString& initialProfileName)
     ui->loginPassword->clear();
     ui->loginUsernames->clear();
 
-    QStringList allProfileNames = Profile::getAllProfileNames();
+    QStringList allProfileNames = Profile::getAllProfileNames(settings);
 
     if (allProfileNames.isEmpty()) {
         ui->stackedWidget->setCurrentIndex(0);
@@ -166,7 +169,7 @@ void LoginScreen::onCreateNewProfile()
         return;
     }
 
-    if (Profile::exists(name)) {
+    if (Profile::exists(name, settings.getPaths())) {
         QMessageBox::critical(this, tr("Couldn't create a new profile"),
                               tr("A profile with this name already exists."));
         return;
@@ -181,7 +184,7 @@ void LoginScreen::onLoginUsernameSelected(const QString& name)
         return;
 
     ui->loginPassword->clear();
-    if (Profile::isEncrypted(name)) {
+    if (Profile::isEncrypted(name, settings.getPaths())) {
         ui->loginPasswordLabel->show();
         ui->loginPassword->show();
         // there is no way to do autologin if profile is encrypted, and
@@ -210,7 +213,7 @@ void LoginScreen::onLogin()
         return;
     }
 
-    if (!ProfileLocker::isLockable(name)) {
+    if (!ProfileLocker::isLockable(name, settings.getPaths())) {
         QMessageBox::critical(this, tr("Couldn't load this profile"),
                               tr("This profile is already in use."));
         return;
@@ -237,7 +240,7 @@ void LoginScreen::retranslateUi()
 
 void LoginScreen::onImportProfile()
 {
-    ProfileImporter pi(this);
+    ProfileImporter pi(settings, this);
     if (pi.importProfile()) {
         reset();
     }

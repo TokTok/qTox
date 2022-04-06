@@ -17,20 +17,23 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TIMESTAMP_H
-#define TIMESTAMP_H
+#pragma once
 
 #include "text.h"
 #include <QDateTime>
 #include <QTextDocument>
 
 class QTextDocument;
+class DocumentCache;
+class Settings;
+class Style;
 
 class Timestamp : public Text
 {
     Q_OBJECT
 public:
-    Timestamp(const QDateTime& time, const QString& format, const QFont& font);
+    Timestamp(const QDateTime& time_, const QString& format, const QFont& font,
+        DocumentCache& documentCache, Settings& settings, Style& style);
     QDateTime getTime();
 
 protected:
@@ -39,5 +42,3 @@ protected:
 private:
     QDateTime time;
 };
-
-#endif // TIMESTAMP_H

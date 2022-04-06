@@ -18,16 +18,20 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef SETTINGS_HPP
-#define SETTINGS_HPP
+#pragma once
 
-#include "src/audio/iaudiosettings.h"
+#include "audio/iaudiosettings.h"
 #include "src/core/icoresettings.h"
 #include "src/core/toxencrypt.h"
 #include "src/core/toxfile.h"
+#include "src/persistence/paths.h"
 #include "src/persistence/ifriendsettings.h"
 #include "src/persistence/igroupsettings.h"
+#include "src/persistence/inotificationsettings.h"
+#include "src/persistence/ismileysettings.h"
 #include "src/video/ivideosettings.h"
+
+#include "util/compatiblerecursivemutex.h"
 
 #include <QDateTime>
 #include <QFlags>
@@ -40,6 +44,7 @@
 
 class Profile;
 class QCommandLineParser;
+class IMessageBoxManager;
 
 namespace Db {
 enum class syncType;
@@ -50,7 +55,9 @@ class Settings : public QObject,
                  public IFriendSettings,
                  public IGroupSettings,
                  public IAudioSettings,
-                 public IVideoSettings
+                 public IVideoSettings,
+                 public INotificationSettings,
+                 public ISmileySettings
 {
     Q_OBJECT
 
@@ -141,20 +148,19 @@ public:
     };
 
 public:
-    static Settings& getInstance();
-    static void destroyInstance();
-    QString getSettingsDirPath() const;
-    QString getAppDataDirPath() const;
-    QString getAppCacheDirPath() const;
+    explicit Settings(IMessageBoxManager& messageBoxManager);
+    ~Settings();
+    Settings(Settings& settings) = delete;
+    Settings& operator=(const Settings&) = delete;
 
+    Paths& getPaths();
     void createSettingsDir();
     void createPersonal(const QString& basename) const;
 
     void savePersonal();
 
     void loadGlobal();
-    bool isToxPortable();
-    void loadPersonal(QString profileName, const ToxEncrypt* passKey);
+    void loadPersonal(const Profile& profile, bool newProfile);
 
     void resetToDefault();
 
@@ -169,7 +175,7 @@ public slots:
     void saveGlobal();
     void sync();
     void setAutoLogin(bool state);
-    void updateProfileData(Profile* profile, const QCommandLineParser* parser);
+    void updateProfileData(Profile* profile, const QCommandLineParser* parser, bool newProfile);
 
 signals:
     // General
@@ -216,7 +222,6 @@ signals:
 
     // ChatView
     void useEmoticonsChanged(bool enabled);
-    void smileyPackChanged(const QString& name);
     void emojiFontPointSizeChanged(int size);
     void dontGroupWindowsChanged(bool enabled);
     void groupchatPositionChanged(bool enabled);
@@ -230,7 +235,6 @@ signals:
     // Privacy
     void typingNotificationChanged(bool enabled);
     void dbSyncTypeChanged(Db::syncType type);
-    void blackListChanged(QStringList& blist);
 
 public:
     bool applyCommandLineOptions(const QCommandLineParser& parser);
@@ -255,7 +259,7 @@ public:
     void setLightTrayIcon(bool newValue);
 
     QString getStyle() const;
-    void setStyle(const QString& newValue);
+    void setStyle(const QString& newStyle);
 
     bool getShowSystemTray() const;
     void setShowSystemTray(bool newValue);
@@ -287,7 +291,7 @@ public:
     void setProxyAddr(const QString& address) override;
 
     ICoreSettings::ProxyType getProxyType() const override;
-    void setProxyType(ICoreSettings::ProxyType type) override;
+    void setProxyType(ICoreSettings::ProxyType newValue) override;
 
     quint16 getProxyPort() const override;
     void setProxyPort(quint16 port) override;
@@ -313,23 +317,23 @@ public:
     bool getCheckUpdates() const;
     void setCheckUpdates(bool newValue);
 
-    bool getNotify() const;
-    void setNotify(bool newValue);
+    bool getNotify() const override;
+    void setNotify(bool newValue) override;
 
-    bool getShowWindow() const;
-    void setShowWindow(bool newValue);
+    bool getShowWindow() const override;
+    void setShowWindow(bool newValue) override;
 
-    bool getDesktopNotify() const;
-    void setDesktopNotify(bool enabled);
+    bool getDesktopNotify() const override;
+    void setDesktopNotify(bool enabled) override;
 
-    bool getNotifySound() const;
-    void setNotifySound(bool newValue);
+    bool getNotifySound() const override;
+    void setNotifySound(bool newValue) override;
 
-    bool getNotifyHide() const;
-    void setNotifyHide(bool newValue);
+    bool getNotifyHide() const override;
+    void setNotifyHide(bool newValue) override;
 
-    bool getBusySound() const;
-    void setBusySound(bool newValue);
+    bool getBusySound() const override;
+    void setBusySound(bool newValue) override;
 
     bool getGroupAlwaysNotify() const override;
     void setGroupAlwaysNotify(bool newValue) override;
@@ -405,8 +409,9 @@ public:
     bool isAnimationEnabled() const;
     void setAnimationEnabled(bool newValue);
 
-    QString getSmileyPack() const;
+    QString getSmileyPack() const override;
     void setSmileyPack(const QString& value);
+    SIGNAL_IMPL(Settings, smileyPackChanged, const QString& name)
 
     int getThemeColor() const;
     void setThemeColor(int value);
@@ -430,7 +435,7 @@ public:
     void setAutoAcceptCall(const ToxPk& id, AutoAcceptCallFlags accept) override;
 
     QString getGlobalAutoAcceptDir() const;
-    void setGlobalAutoAcceptDir(const QString& dir);
+    void setGlobalAutoAcceptDir(const QString& newValue);
 
     size_t getMaxAutoAcceptSize() const;
     void setMaxAutoAcceptSize(size_t size);
@@ -460,8 +465,14 @@ public:
     // Privacy
     bool getTypingNotification() const;
     void setTypingNotification(bool enabled);
+
     QStringList getBlackList() const override;
     void setBlackList(const QStringList& blist) override;
+    SIGNAL_IMPL(Settings, blackListChanged, QStringList const& blist)
+
+    bool getShowGroupJoinLeaveMessages() const override;
+    void setShowGroupJoinLeaveMessages(bool newValue) override;
+    SIGNAL_IMPL(Settings, showGroupJoinLeaveMessagesChanged, bool show)
 
     // State
     QByteArray getWindowGeometry() const;
@@ -482,7 +493,6 @@ public:
     QByteArray getDialogSettingsGeometry() const;
     void setDialogSettingsGeometry(const QByteArray& value);
 
-    QString getFriendAddress(const QString& publicKey) const;
     void updateFriendAddress(const QString& newAddr);
 
     QString getFriendAlias(const ToxPk& id) const override;
@@ -492,7 +502,7 @@ public:
     void setFriendCircleID(const ToxPk& id, int circleID) override;
 
     QDateTime getFriendActivity(const ToxPk& id) const override;
-    void setFriendActivity(const ToxPk& id, const QDateTime& date) override;
+    void setFriendActivity(const ToxPk& id, const QDateTime& activity) override;
 
     void saveFriendSettings(const ToxPk& id) override;
     void removeFriendSettings(const ToxPk& id) override;
@@ -504,7 +514,7 @@ public:
     SIGNAL_IMPL(Settings, contactNoteChanged, const ToxPk& id, const QString& note)
 
     bool getCompactLayout() const;
-    void setCompactLayout(bool compact);
+    void setCompactLayout(bool value);
 
     FriendListSortingMode getFriendSortingMode() const;
     void setFriendSortingMode(FriendListSortingMode mode);
@@ -563,17 +573,14 @@ public:
 
 private:
     struct friendProp;
-
-    Settings();
-    ~Settings();
-    Settings(Settings& settings) = delete;
-    Settings& operator=(const Settings&) = delete;
-    void savePersonal(QString profileName, const ToxEncrypt* passkey);
     friendProp& getOrInsertFriendPropRef(const ToxPk& id);
-    ICoreSettings::ProxyType fixInvalidProxyType(ICoreSettings::ProxyType proxyType);
+    static ICoreSettings::ProxyType fixInvalidProxyType(ICoreSettings::ProxyType proxyType);
 
-public slots:
-    void savePersonal(Profile* profile);
+    template <typename T>
+    bool setVal(T& savedVal, T newVal);
+
+private slots:
+    void savePersonal(QString profileName, const ToxEncrypt* passkey);
 
 private:
     bool loaded;
@@ -591,7 +598,6 @@ private:
     bool showIdenticons;
     bool enableIPv6;
     QString translation;
-    bool makeToxPortable;
     bool autostartInTray;
     bool closeToTray;
     bool minimizeToTray;
@@ -650,6 +656,7 @@ private:
     QString timestampFormat;
     QString dateFormat;
     bool statusChangeNotificationEnabled;
+    bool showGroupJoinLeaveMessages;
     bool spellCheckingEnabled;
 
     // Privacy
@@ -678,8 +685,8 @@ private:
     struct friendProp
     {
         friendProp() = delete;
-        friendProp(QString addr)
-            : addr(addr)
+        friendProp(QString addr_)
+            : addr(addr_)
         {}
         QString alias = "";
         QString addr = "";
@@ -703,10 +710,12 @@ private:
 
     int themeColor;
 
-    static QMutex bigLock;
-    static Settings* settings;
+    static CompatibleRecursiveMutex bigLock;
     static const QString globalSettingsFile;
     static QThread* settingsThread;
+    Paths paths;
+    int globalSettingsVersion = 0;
+    int personalSettingsVersion = 0;
+    IMessageBoxManager& messageBoxManager;
+    const Profile* loadedProfile = nullptr;
 };
-
-#endif // SETTINGS_HPP

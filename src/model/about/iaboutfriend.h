@@ -17,10 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef I_ABOUT_FRIEND_H
-#define I_ABOUT_FRIEND_H
+#pragma once
 
-#include "src/model/interface.h"
+#include "util/interface.h"
 #include "src/persistence/ifriendsettings.h"
 
 #include <QObject>
@@ -28,7 +27,13 @@
 class IAboutFriend
 {
 public:
-    virtual ~IAboutFriend() = default;
+    IAboutFriend() = default;
+    virtual ~IAboutFriend();
+    IAboutFriend(const IAboutFriend&) = default;
+    IAboutFriend& operator=(const IAboutFriend&) = default;
+    IAboutFriend(IAboutFriend&&) = default;
+    IAboutFriend& operator=(IAboutFriend&&) = default;
+
     virtual QString getName() const = 0;
     virtual QString getStatusMessage() const = 0;
     virtual ToxPk getPublicKey() const = 0;
@@ -62,5 +67,3 @@ public:
     DECLARE_SIGNAL(autoAcceptCallChanged, IFriendSettings::AutoAcceptCallFlags);
     DECLARE_SIGNAL(autoGroupInviteChanged, bool);
 };
-
-#endif // I_ABOUT_FRIEND_H

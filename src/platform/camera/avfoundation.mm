@@ -51,7 +51,11 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
     }
 #endif
 
-    NSArray* devices = [AVCaptureDevice devicesWithMediaType:AVMediaTypeVideo];
+    AVCaptureDevice* device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    id objects[] = {device};
+    NSUInteger count = sizeof(objects) / sizeof(id);
+    NSArray* devices = [NSArray arrayWithObjects:objects count:count];
+
     for (AVCaptureDevice* device in devices) {
         result.append({ QString::fromNSString([device uniqueID]), QString::fromNSString([device localizedName]) });
     }
@@ -79,7 +83,7 @@ QVector<VideoMode> avfoundation::getDeviceModes(QString devName)
         return result;
     }
     else {
-        NSString* deviceName = [NSString stringWithCString:devName.toUtf8() encoding:NSUTF8StringEncoding];
+        NSString* deviceName = [NSString stringWithCString:devName.toUtf8().constData() encoding:NSUTF8StringEncoding];
         AVCaptureDevice* device = [AVCaptureDevice deviceWithUniqueID:deviceName];
 
         if (device == nil) {

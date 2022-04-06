@@ -20,6 +20,11 @@
 #include "documentcache.h"
 #include "customtextdocument.h"
 
+DocumentCache::DocumentCache(SmileyPack& smileyPack_, Settings& settings_)
+    : smileyPack{smileyPack_}
+    , settings{settings_}
+{
+}
 DocumentCache::~DocumentCache()
 {
     while (!documents.isEmpty())
@@ -29,7 +34,7 @@ DocumentCache::~DocumentCache()
 QTextDocument* DocumentCache::pop()
 {
     if (documents.empty())
-        documents.push(new CustomTextDocument);
+        documents.push(new CustomTextDocument(smileyPack, settings));
 
     return documents.pop();
 }
@@ -40,13 +45,4 @@ void DocumentCache::push(QTextDocument* doc)
         doc->clear();
         documents.push(doc);
     }
-}
-
-/**
- * @brief Returns the singleton instance.
- */
-DocumentCache& DocumentCache::getInstance()
-{
-    static DocumentCache instance;
-    return instance;
 }

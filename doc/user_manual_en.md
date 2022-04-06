@@ -12,6 +12,8 @@
 * [Keyboard Shortcuts](#keyboard-shortcuts)
 * [Commandline Options](#commandline-options)
 * [Emoji Packs](#emoji-packs)
+* [Bootstrap Nodes](#bootstrap-nodes)
+* [Avoiding Censorship](#avoiding-censorship)
 
 
 ## Profile corner
@@ -427,7 +429,7 @@ The following shortcuts are currently supported:
 
 ## Push to talk
 
-In audio group chat microphone mute state will be changed while `Ctrl` + 
+In audio group chat microphone mute state will be changed while `Ctrl` +
 `p` pressed and reverted on release.
 
 ## Commandline Options
@@ -458,7 +460,41 @@ files have to be in a subfolder also containing `emoticon.xml`, see the
 structure of https://github.com/qTox/qTox/tree/v1.5.2/smileys for further
 information.
 
+## Bootstrap Nodes
+
+qTox uses bootstrap nodes to find its way in to the DHT. The list of nodes is
+stored in `~/.config/tox/` on Linux, `%APPDATA%\Roaming\tox` on Windows, and
+`~/Library/Application Support/Tox` on macOS. `bootstrapNodes.example.json`
+stores the default list. If a new list is placed at `bootstrapNodes.json`, it
+will be used instead.
+
+## Avoiding Censorship
+
+Although Tox is distributed, to initially connect to the network
+[public bootstrap nodes](https://nodes.tox.chat) are used. After first run,
+other nodes will also be saved and reused on next start. We have seen multiple
+reports of Tox bootstrap nodes being blocked in China. We haven't seen reports
+of Tox connections in general being blocked, though Tox makes no effort to
+disguise its connections. There are multiple options available to help avoid
+blocking of bootstrap nodes:
+
+* Tox can be used with a VPN.
+* Tox can be used with a proxy, including with Tor
+  * This can be done at [startup](#commandline-proxy-options) or
+  * By setting [connection settings](#connection-settings).
+* [Custom bootstrap nodes](#bootstrap-nodes) can be set. Note that these
+require the DHT key of the node, which is different from the longterm Tox
+public key, and which changes on every start of a client, so it's best to use a
+[bootstrap daemon](https://github.com/TokTok/c-toxcore/tree/master/other/bootstrap_daemon).
 
 [ToxMe service]: #register-on-toxme
 [user profile]: #user-profile
 [profile corner]: #profile-corner
+
+# Extensions
+
+qTox supports extra features through the use of extensions to the tox protocol. Not all contacts are going to support these extensions.
+
+For most cases you won't have to do anything, but you may wonder why behavior of chats is different for some friends. There is a puzzle piece icon to the left of your contact's name in the top of a chat. If it's green that means that they support all the features qTox cares about. If it's yellow it means some of the features are supported. If it's red it means that they don't support any extensions.
+
+You can hover over the icon to see which extensions they support. qTox should dynamically enable/disable features based on the extension set of your friend.

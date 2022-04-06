@@ -33,19 +33,23 @@ private slots:
     void constructAuto();
     void constructPortable();
     void constructNonPortable();
+#if PATHS_VERSION_TCS_COMPLIANT
     void checkPathsNonPortable();
     void checkPathsPortable();
+#endif
 private:
     static void verifyqToxPath(const QString& testPath, const QString& basePath, const QString& subPath);
 };
 
 namespace {
+#if PATHS_VERSION_TCS_COMPLIANT
 const QLatin1String globalSettingsFile{"qtox.ini"};
 const QLatin1String profileFolder{"profiles"};
 const QLatin1String themeFolder{"themes"};
 const QLatin1String avatarsFolder{"avatars"};
 const QLatin1String transfersFolder{"transfers"};
 const QLatin1String screenshotsFolder{"screenshots"};
+#endif // PATHS_VERSION_TCS_COMPLIANT
 const QString sep{QDir::separator()};
 }
 
@@ -54,11 +58,10 @@ const QString sep{QDir::separator()};
  */
 void TestPaths::constructAuto()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Auto);
+    Paths paths{Paths::Portable::Auto};
     // auto detection should succeed
-    QVERIFY(paths != nullptr);
     // the test environment should not provide a `qtox.ini`
-    QVERIFY(paths->isPortable() == false);
+    QVERIFY(paths.isPortable() == false);
 }
 
 /**
@@ -66,10 +69,9 @@ void TestPaths::constructAuto()
  */
 void TestPaths::constructPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Portable);
+    Paths paths{Paths::Portable::Portable};
     // portable construction should succeed even though qtox.ini doesn't exist
-    QVERIFY(paths != nullptr);
-    QVERIFY(paths->isPortable() == true);
+    QVERIFY(paths.isPortable() == true);
 }
 
 /**
@@ -77,22 +79,22 @@ void TestPaths::constructPortable()
  */
 void TestPaths::constructNonPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::NonPortable);
+    Paths paths{Paths::Portable::NonPortable};
     // Non portable should succeed
-    QVERIFY(paths != nullptr);
     // the test environment should not provide a `qtox.ini`
-    QVERIFY(paths->isPortable() == false);
+    QVERIFY(paths.isPortable() == false);
 }
 
 /**
  * @brief Helper to verify qTox specific paths
  */
 void TestPaths::verifyqToxPath(const QString& testPath, const QString& basePath, const QString& subPath)
- {
+{
     const QString expectPath = basePath % sep % subPath;
     QVERIFY(testPath == expectPath);
 }
 
+#if PATHS_VERSION_TCS_COMPLIANT
 /**
  * @brief Check generated paths against expected values in non-portable mode
  */
@@ -162,7 +164,7 @@ void TestPaths::checkPathsPortable()
 
     QVERIFY(paths->getThemeDirs() == themeFolders);
 }
-
+#endif
 
 QTEST_GUILESS_MAIN(TestPaths)
 #include "paths_test.moc"

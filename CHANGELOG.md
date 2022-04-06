@@ -1,3 +1,69 @@
+<a name="v1.17.6"></a>
+## v1.17.6 (2022-03-06)
+
+
+#### Bug Fixes
+
+* **Windows:**  Correct Program Files directory for 32-bit Windows ([47406e74](https://github.com/qTox/qTox/commit/47406e742297b167a0a6c606ddd9a20823959a06))
+* **macos:**  update deprecated AVFoundation API ([484ea7ce](https://github.com/qTox/qTox/commit/484ea7ce9be971266a890c9bb76b4e23d0c8a622))
+
+
+
+<a name="v1.17.5"></a>
+## v1.17.5 (2022-03-05)
+
+
+#### Bug Fixes
+
+*   Update video API usage for newer libavcodec ([f5fabc2f](https://github.com/qTox/qTox/commit/f5fabc2fe24b6f01e47a527b982395a5305d31f6))
+* **Windows:**
+  *  Restrict non-default install directory permissions ([553bd47e](https://github.com/qTox/qTox/commit/553bd47e8171fd4f15e062e4faf734e32002f6fb))
+  *  Build NSIS installer in Unicode mode ([9f84184b](https://github.com/qTox/qTox/commit/9f84184ba815bfc892691fa611c6756721ba1333))
+  *  Define installer language before trying to access it ([1353fc93](https://github.com/qTox/qTox/commit/1353fc934ed70e9bfab3e50e42dba5eb139cd59e))
+
+#### Features
+
+* **Settings:**  Add setting for hiding group join and leave system messages ([916e797c](https://github.com/qTox/qTox/commit/916e797c10d10ba556e9a3339353f1bd97663d15))
+* **UI:**  Add UI For controlling group join and leave system messages setting ([423049db](https://github.com/qTox/qTox/commit/423049db50ffea14ec222e1a83ee976029a6afaf))
+* **chatlog:**  Disable join and leave system messages based on setting ([ee0334ac](https://github.com/qTox/qTox/commit/ee0334acc55215ed8e94bae8fa4ff8976834af20))
+
+
+
+<a name="v1.17.4"></a>
+## v1.17.14 (2021-12-14)
+
+This release only updates dependency versions including toktok/c-toxcore to v0.2.13 to address CVE-2021-44847. No code changes.
+
+
+<a name="v1.17.3"></a>
+## v1.17.3  (2020-11-22)
+
+
+#### Features
+
+* **osx:**  Add support for macOS 10.16, remove support for macOS 10.13 ([238b2478](https://github.com/qTox/qTox/commit/238b24787e4f53a79086344050cb55edf2287e08))
+* **windows:**
+  *  Build our own gdb ([3092107a](https://github.com/qTox/qTox/commit/3092107a134a772b93b36ba57a9c58ad8d0ea18b))
+  *  Make sure no dlls are missing ([3e6bc9b1](https://github.com/qTox/qTox/commit/3e6bc9b146fd5cecac062dbd3b6b18b4c1323156))
+  *  Link all Windows deps dynamically ([5219ebc1](https://github.com/qTox/qTox/commit/5219ebc1fb30486196d91959fb9c5898742a874b))
+
+#### Bug Fixes
+
+* **build:**  cache debug deps during 2nd stage ([2712bc68](https://github.com/qTox/qTox/commit/2712bc68a54f3756d41c6164f72425f82fd1bc97))
+* **osx:**
+  *  Allow rebuild using build script ([b5538c3f](https://github.com/qTox/qTox/commit/b5538c3f46a32e299c0bcc985ae9e703a1568344))
+  *  Fix missing variables in macOS build script ([f741ac99](https://github.com/qTox/qTox/commit/f741ac99e65efb453a5c437502ae280bf637dd47))
+  *  Update deprecated QDateTime and QProcess APIs ([08abedb6](https://github.com/qTox/qTox/commit/08abedb65513f88699244951889771573a8db588))
+  *  don't tap kde-mac/kde since it us deprecated and unused ([b42ac760](https://github.com/qTox/qTox/commit/b42ac76011d9e65b10b6b9c27998f35df90b3dfa))
+* **tools:**
+  *  Add Windows to toxcore version update script ([3ff53e8f](https://github.com/qTox/qTox/commit/3ff53e8ff685f67087f40cda4dfc26f49b91cc09))
+  *  Use correct hash when automatically updating flatpak version ([9fb96b08](https://github.com/qTox/qTox/commit/9fb96b08c368e3b7bb6052d6d490a8c66e46877d))
+  *  use a subdirectory for release source archives ([533f25e2](https://github.com/qTox/qTox/commit/533f25e25a37fc9c348c8dc03f1c6c9249a8d8b5))
+* **travis:**  Install virtualenv for nightly build upload script ([bd5bdf18](https://github.com/qTox/qTox/commit/bd5bdf183159f8bcbc02ae1e9023c3655c52efa1))
+* **windows:**  iconengines not being installed ([399c0231](https://github.com/qTox/qTox/commit/399c023131415b515e7390aa945c9c7ec0fbd9e5))
+
+
+
 <a name=""></a>
 ## v1.17.2  (2020-04-26)
 

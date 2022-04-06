@@ -17,9 +17,8 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include "chatid.h"
 #include "toxpk.h"
-
-#include <tox/tox.h>
 
 #include <QByteArray>
 #include <QString>
@@ -35,27 +34,18 @@
  * @brief The default constructor. Creates an empty Tox key.
  */
 ToxPk::ToxPk()
-    : ContactId()
-{
-}
-
-/**
- * @brief The copy constructor.
- * @param other ToxPk to copy
- */
-ToxPk::ToxPk(const ToxPk& other)
-    : ContactId(other.id)
+    : ChatId()
 {
 }
 
 /**
  * @brief Constructs a ToxPk from bytes.
  * @param rawId The bytes to construct the ToxPk from. The lenght must be exactly
- *              TOX_PUBLIC_KEY_SIZE, else the ToxPk will be empty.
+ *              ToxPk::size, else the ToxPk will be empty.
  */
 ToxPk::ToxPk(const QByteArray& rawId)
-    : ContactId([rawId](){
-        assert(rawId.length() == TOX_PUBLIC_KEY_SIZE);
+    : ChatId([&rawId](){
+        assert(rawId.length() == size);
         return rawId;}())
 {
 }
@@ -63,10 +53,29 @@ ToxPk::ToxPk(const QByteArray& rawId)
 /**
  * @brief Constructs a ToxPk from bytes.
  * @param rawId The bytes to construct the ToxPk from, will read exactly
- * TOX_PUBLIC_KEY_SIZE from the specified buffer.
+ * ToxPk::size from the specified buffer.
  */
 ToxPk::ToxPk(const uint8_t* rawId)
-    : ContactId(QByteArray(reinterpret_cast<const char*>(rawId), TOX_PUBLIC_KEY_SIZE))
+    : ChatId(QByteArray(reinterpret_cast<const char*>(rawId), size))
+{
+}
+
+/**
+ * @brief Constructs a ToxPk from a QString.
+ *
+  * If the given pk isn't a valid Public Key a ToxPk with all zero bytes is created.
+ *
+ * @param pk Tox Pk string to convert to ToxPk object
+ */
+ToxPk::ToxPk(const QString& pk)
+    : ChatId([&pk](){
+    if (pk.length() == numHexChars) {
+        return QByteArray::fromHex(pk.toLatin1());
+    } else {
+        assert(!"ToxPk constructed with invalid length string");
+        return QByteArray(); // invalid pk string
+    }
+    }())
 {
 }
 
@@ -76,5 +85,10 @@ ToxPk::ToxPk(const uint8_t* rawId)
  */
 int ToxPk::getSize() const
 {
-    return TOX_PUBLIC_KEY_SIZE;
+    return size;
+}
+
+std::unique_ptr<ChatId> ToxPk::clone() const
+{
+    return std::unique_ptr<ChatId>(new ToxPk(*this));
 }

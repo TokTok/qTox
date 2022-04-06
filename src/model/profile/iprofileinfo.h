@@ -17,7 +17,9 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "src/model/interface.h"
+#pragma once
+
+#include "util/interface.h"
 
 #include <QObject>
 
@@ -37,7 +39,13 @@ public:
     enum class SetAvatarResult {
         OK, EmptyPath, CanNotOpen, CanNotRead, TooLarge
     };
-    virtual ~IProfileInfo() = default;
+
+    IProfileInfo() = default;
+    virtual ~IProfileInfo();
+    IProfileInfo(const IProfileInfo&) = default;
+    IProfileInfo& operator=(const IProfileInfo&) = default;
+    IProfileInfo(IProfileInfo&&) = default;
+    IProfileInfo& operator=(IProfileInfo&&) = default;
 
     virtual bool setPassword(const QString& password) = 0;
     virtual bool deletePassword() = 0;

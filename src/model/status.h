@@ -20,8 +20,7 @@
 #include <QString>
 #include <QPixmap>
 
-#ifndef STATUS_H
-#define STATUS_H
+#pragma once
 
 namespace Status
 {
@@ -32,7 +31,8 @@ namespace Status
         Away,
         Busy,
         Offline,
-        Blocked
+        Blocked,
+        Negotiating,
     };
 
     QString getIconPath(Status status, bool event = false);
@@ -40,5 +40,3 @@ namespace Status
     QString getAssetSuffix(Status status);
     bool isOnline(Status status);
 }
-
-#endif // STATUS_H

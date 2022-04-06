@@ -18,10 +18,11 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef COREAV_H
-#define COREAV_H
+#pragma once
 
 #include "src/core/toxcall.h"
+#include "util/compatiblerecursivemutex.h"
+
 #include <QObject>
 #include <QMutex>
 #include <QReadWriteLock>
@@ -32,6 +33,8 @@
 class Friend;
 class Group;
 class IAudioControl;
+class IAudioSettings;
+class IGroupSettings;
 class QThread;
 class QTimer;
 class CoreVideoSource;
@@ -47,7 +50,9 @@ class CoreAV : public QObject
 
 public:
     using CoreAVPtr = std::unique_ptr<CoreAV>;
-    static CoreAVPtr makeCoreAV(Tox* core, QMutex& coreLock);
+    static CoreAVPtr makeCoreAV(Tox* core, CompatibleRecursiveMutex& toxCoreLock,
+                                IAudioSettings& audioSettings, IGroupSettings& groupSettings,
+                                CameraSource& cameraSource);
 
     void setAudio(IAudioControl& newAudio);
     IAudioControl* getAudio();
@@ -55,17 +60,17 @@ public:
     ~CoreAV();
 
     bool isCallStarted(const Friend* f) const;
-    bool isCallStarted(const Group* f) const;
+    bool isCallStarted(const Group* g) const;
     bool isCallActive(const Friend* f) const;
     bool isCallActive(const Group* g) const;
     bool isCallVideoEnabled(const Friend* f) const;
-    bool sendCallAudio(uint32_t friendNum, const int16_t* pcm, size_t samples, uint8_t chans,
+    bool sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                        uint32_t rate) const;
-    void sendCallVideo(uint32_t friendNum, std::shared_ptr<VideoFrame> frame);
+    void sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> frame);
     bool sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples, uint8_t chans,
                             uint32_t rate) const;
 
-    VideoSource* getVideoSourceFromCall(int callNumber) const;
+    VideoSource* getVideoSourceFromCall(int friendNum) const;
     void sendNoVideo();
 
     void joinGroupCall(const Group& group);
@@ -82,7 +87,7 @@ public:
     static void groupCallCallback(void* tox, uint32_t group, uint32_t peer, const int16_t* data,
                                   unsigned samples, uint8_t channels, uint32_t sample_rate,
                                   void* core);
-    void invalidateGroupCallPeerSource(int group, ToxPk peerPk);
+    void invalidateGroupCallPeerSource(const Group& group, ToxPk peerPk);
 
 public slots:
     bool startCall(uint32_t friendNum, bool video);
@@ -98,7 +103,7 @@ signals:
 
 private slots:
     static void callCallback(ToxAV* toxAV, uint32_t friendNum, bool audio, bool video, void* self);
-    static void stateCallback(ToxAV*, uint32_t friendNum, uint32_t state, void* self);
+    static void stateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t state, void* self);
     static void bitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t arate, uint32_t vrate,
                                 void* self);
     static void audioBitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t rate, void* self);
@@ -113,8 +118,9 @@ private:
         }
     };
 
-    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> tox, QMutex &toxCoreLock);
-    void connectCallbacks(ToxAV& toxav);
+    CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex &toxCoreLock,
+           IAudioSettings& audioSettings_, IGroupSettings& groupSettings_, CameraSource& cameraSource);
+    void connectCallbacks();
 
     void process();
     static void audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t* pcm,
@@ -156,7 +162,9 @@ private:
      *        must not execute at the same time as tox_iterate()
      * @note This must be a recursive mutex as we're going to lock it in callbacks
      */
-    QMutex& coreLock;
-};
+    CompatibleRecursiveMutex& coreLock;
 
-#endif // COREAV_H
+    IAudioSettings& audioSettings;
+    IGroupSettings& groupSettings;
+    CameraSource& cameraSource;
+};

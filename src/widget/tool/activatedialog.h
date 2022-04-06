@@ -17,24 +17,26 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ACTIVATEDIALOG_H
-#define ACTIVATEDIALOG_H
+#pragma once
 
 #include <QDialog>
+
+class Style;
 
 class ActivateDialog : public QDialog
 {
     Q_OBJECT
 public:
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 15, 0))
-    ActivateDialog(QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
+    ActivateDialog(Style& style, QWidget* parent = nullptr, Qt::WindowFlags f = Qt::WindowFlags());
 #else
-    ActivateDialog(QWidget* parent = nullptr, Qt::WindowFlags f = nullptr);
+    ActivateDialog(Style& style, QWidget* parent = nullptr, Qt::WindowFlags f = nullptr);
 #endif
     bool event(QEvent* event) override;
+
+public slots:
+    virtual void reloadTheme() {}
 
 signals:
     void windowStateChanged(Qt::WindowStates state);
 };
-
-#endif // ACTIVATEDIALOG_H

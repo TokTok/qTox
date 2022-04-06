@@ -18,7 +18,7 @@
 */
 
 #include "aboutfriendform.h"
-#include "src/widget/gui.h"
+#include "src/widget/tool/imessageboxmanager.h"
 #include "ui_aboutfriendform.h"
 #include "src/core/core.h"
 #include "src/widget/style.h"
@@ -26,10 +26,24 @@
 #include <QFileDialog>
 #include <QMessageBox>
 
-AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> _about, QWidget* parent)
+namespace {
+QString getAutoAcceptDir(const QString& dir)
+{
+    //: popup title
+    const QString title = AboutFriendForm::tr("Choose an auto-accept directory");
+    return QFileDialog::getExistingDirectory(Q_NULLPTR, title, dir);
+}
+
+} // namespace
+
+AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_,
+    Settings& settings_, Style& style_, IMessageBoxManager& messageBoxManager_, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::AboutFriendForm)
-    , about{std::move(_about)}
+    , about{std::move(about_)}
+    , settings{settings_}
+    , style{style_}
+    , messageBoxManager{messageBoxManager_}
 {
     ui->setupUi(this);
     ui->label_4->hide();
@@ -67,14 +81,9 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> _about, QWidget* 
     ui->statusMessage->setText(about->getStatusMessage());
     ui->avatar->setPixmap(about->getAvatar());
 
-    setStyleSheet(Style::getStylesheet("window/general.css"));
-}
+    connect(&style, &Style::themeReload, this, &AboutFriendForm::reloadTheme);
 
-static QString getAutoAcceptDir(const QString& dir)
-{
-    //: popup title
-    const QString title = AboutFriendForm::tr("Choose an auto-accept directory");
-    return QFileDialog::getExistingDirectory(Q_NULLPTR, title, dir);
+    reloadTheme();
 }
 
 void AboutFriendForm::onAutoAcceptDirClicked()
@@ -88,6 +97,11 @@ void AboutFriendForm::onAutoAcceptDirClicked()
     }();
 
     about->setAutoAcceptDir(dir);
+}
+
+void AboutFriendForm::reloadTheme()
+{
+    setStyleSheet(style.getStylesheet("window/general.css", settings));
 }
 
 void AboutFriendForm::onAutoAcceptDirChanged(const QString& path)
@@ -130,7 +144,7 @@ void AboutFriendForm::onAcceptedClicked()
 
 void AboutFriendForm::onRemoveHistoryClicked()
 {
-   const bool retYes = GUI::askQuestion(tr("Confirmation"),
+   const bool retYes = messageBoxManager.askQuestion(tr("Confirmation"),
                                    tr("Are you sure to remove %1 chat history?").arg(about->getName()),
                                    /* defaultAns = */ false, /* warning = */ true, /* yesno = */ true);
     if (!retYes) {
@@ -140,7 +154,7 @@ void AboutFriendForm::onRemoveHistoryClicked()
    const bool result = about->clearHistory();
 
     if (!result) {
-        GUI::showWarning(tr("History removed"),
+        messageBoxManager.showWarning(tr("History removed"),
                          tr("Failed to remove chat history with %1!").arg(about->getName()).toHtmlEscaped());
         return;
     }

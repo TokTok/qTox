@@ -27,12 +27,12 @@
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/setpassworddialog.h"
 #include "src/widget/form/settingswidget.h"
-#include "src/widget/gui.h"
 #include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/croppinglabel.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+#include "src/widget/tool/imessageboxmanager.h"
 #include <QApplication>
 #include <QBuffer>
 #include <QClipboard>
@@ -49,7 +49,8 @@
 #include <QMouseEvent>
 #include <QWindow>
 
-static const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
+namespace {
+const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
     { IProfileInfo::SetAvatarResult::CanNotOpen,
       ProfileForm::tr("Unable to open this file.") },
     { IProfileInfo::SetAvatarResult::CanNotRead,
@@ -60,7 +61,7 @@ static const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
       ProfileForm::tr("Empty path is unavaliable") },
 };
 
-static const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
+const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
     { IProfileInfo::RenameResult::Error,
       { ProfileForm::tr("Failed to rename"),
         ProfileForm::tr("Couldn't rename the profile to \"%1\"") }
@@ -75,7 +76,7 @@ static const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ER
     },
 };
 
-static const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
+const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
     { IProfileInfo::SaveResult::NoWritePermission,
       { ProfileForm::tr("Location not writable", "Title of permissions popup"),
         ProfileForm::tr("You do not have permission to write to that location. Choose "
@@ -91,16 +92,20 @@ static const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR 
     },
 };
 
-static const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD = {
+const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD = {
     ProfileForm::tr("Couldn't change password"),
     ProfileForm::tr("Couldn't change database password, "
     "it may be corrupted or use the old password.")
 };
+} // namespace
 
-ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
+ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_,
+    Style& style, IMessageBoxManager& messageBoxManager_, QWidget* parent)
     : QWidget{parent}
     , qr{nullptr}
-    , profileInfo{profileInfo}
+    , profileInfo{profileInfo_}
+    , settings{settings_}
+    , messageBoxManager{messageBoxManager_}
 {
     bodyUI = new Ui::IdentitySettings;
     bodyUI->setupUi(this);
@@ -112,7 +117,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
 
     // tox
     toxId = new ClickableTE();
-    toxId->setFont(Style::getFont(Style::Small));
+    toxId->setFont(Style::getFont(Style::Font::Small));
     toxId->setToolTip(bodyUI->toxId->toolTip());
 
     QVBoxLayout* toxIdGroup = qobject_cast<QVBoxLayout*>(bodyUI->toxGroup->layout());
@@ -129,7 +134,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
     profilePicture->installEventFilter(this);
     profilePicture->setAccessibleName("Profile avatar");
     profilePicture->setAccessibleDescription("Set a profile avatar shown to all contacts");
-    profilePicture->setStyleSheet(Style::getStylesheet("window/profile.css"));
+    profilePicture->setStyleSheet(style.getStylesheet("window/profile.css", settings));
     connect(profilePicture, &MaskablePixmapWidget::clicked, this, &ProfileForm::onAvatarClicked);
     connect(profilePicture, &MaskablePixmapWidget::customContextMenuRequested,
             this, &ProfileForm::showProfilePictureContextMenu);
@@ -147,7 +152,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
 
     connect(bodyUI->toxIdLabel, &CroppingLabel::clicked, this, &ProfileForm::copyIdClicked);
     connect(toxId, &ClickableTE::clicked, this, &ProfileForm::copyIdClicked);
-    profileInfo->connectTo_idChanged(this, [=](const ToxId& id) { setToxId(id); });
+    profileInfo_->connectTo_idChanged(this, [=](const ToxId& id) { setToxId(id); });
     connect(bodyUI->userName, &QLineEdit::editingFinished, this, &ProfileForm::onUserNameEdited);
     connect(bodyUI->statusMessage, &QLineEdit::editingFinished,
             this, &ProfileForm::onStatusMessageEdited);
@@ -166,10 +171,10 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo, QWidget* parent)
     connect(bodyUI->saveQr, &QPushButton::clicked, this, &ProfileForm::onSaveQrClicked);
     connect(bodyUI->copyQr, &QPushButton::clicked, this, &ProfileForm::onCopyQrClicked);
 
-    profileInfo->connectTo_usernameChanged(
+    profileInfo_->connectTo_usernameChanged(
             this,
             [=](const QString& val) { bodyUI->userName->setText(val); });
-    profileInfo->connectTo_statusMessageChanged(
+    profileInfo_->connectTo_statusMessageChanged(
             this,
             [=](const QString& val) { bodyUI->statusMessage->setText(val); });
 
@@ -210,8 +215,8 @@ void ProfileForm::show(ContentLayout* contentLayout)
     contentLayout->mainContent->layout()->addWidget(this);
     QWidget::show();
     prFileLabelUpdate();
-    bool portable = Settings::getInstance().getMakeToxPortable();
-    QString defaultPath = QDir(Settings::getInstance().getSettingsDirPath()).path().trimmed();
+    bool portable = settings.getMakeToxPortable();
+    QString defaultPath = QDir(settings.getPaths().getSettingsDirPath()).path().trimmed();
     QString appPath = QApplication::applicationDirPath();
     QString dirPath = portable ? appPath : defaultPath;
 
@@ -297,7 +302,7 @@ QString ProfileForm::getSupportedImageFilter()
 {
     QString res;
     for (auto type : QImageReader::supportedImageFormats()) {
-        res += QString("*.%1 ").arg(QString(type));
+        res += QString("*.%1 ").arg(QString::fromUtf8(type));
     }
 
     return tr("Images (%1)", "filetype filter").arg(res.left(res.size() - 1));
@@ -317,7 +322,7 @@ void ProfileForm::onAvatarClicked()
         return;
     }
 
-    GUI::showError(tr("Error"), SET_AVATAR_ERROR[result]);
+    messageBoxManager.showError(tr("Error"), SET_AVATAR_ERROR[result]);
 }
 
 void ProfileForm::onRenameClicked()
@@ -335,7 +340,7 @@ void ProfileForm::onRenameClicked()
     }
 
     const QPair<QString, QString> error = RENAME_ERROR[result];
-    GUI::showError(error.first, error.second.arg(name));
+    messageBoxManager.showError(error.first, error.second.arg(name));
     prFileLabelUpdate();
 }
 
@@ -356,7 +361,7 @@ void ProfileForm::onExportClicked()
     }
 
     const QPair<QString, QString> error = SAVE_ERROR[result];
-    GUI::showWarning(error.first, error.second);
+    messageBoxManager.showWarning(error.first, error.second);
 }
 
 void ProfileForm::onDeleteClicked()
@@ -364,7 +369,7 @@ void ProfileForm::onDeleteClicked()
     const QString title = tr("Delete profile", "deletion confirmation title");
     const QString question = tr("Are you sure you want to delete this profile?",
                             "deletion confirmation text");
-    if (!GUI::askQuestion(title, question)) {
+    if (!messageBoxManager.askQuestion(title, question)) {
         return;
     }
 
@@ -382,7 +387,7 @@ void ProfileForm::onDeleteClicked()
     //: deletion failed text part 2
     message += "\n" + tr("Please manually remove them.");
 
-    GUI::showError(tr("Files could not be deleted!", "deletion failed title"), message);
+    messageBoxManager.showError(tr("Files could not be deleted!", "deletion failed title"), message);
 }
 
 void ProfileForm::onLogoutClicked()
@@ -422,25 +427,25 @@ void ProfileForm::onSaveQrClicked()
     }
 
     const QPair<QString, QString> error = SAVE_ERROR[result];
-    GUI::showWarning(error.first, error.second);
+    messageBoxManager.showWarning(error.first, error.second);
 }
 
 void ProfileForm::onDeletePassClicked()
 {
     if (!profileInfo->isEncrypted()) {
-        GUI::showInfo(tr("Nothing to remove"), tr("Your profile does not have a password!"));
+        messageBoxManager.showInfo(tr("Nothing to remove"), tr("Your profile does not have a password!"));
         return;
     }
 
     const QString title = tr("Remove password", "deletion confirmation title");
     //: deletion confirmation text
     const QString body = tr("Are you sure you want to remove your password?");
-    if (!GUI::askQuestion(title, body)) {
+    if (!messageBoxManager.askQuestion(title, body)) {
         return;
     }
 
     if (!profileInfo->deletePassword()) {
-        GUI::showInfo(CAN_NOT_CHANGE_PASSWORD.first, CAN_NOT_CHANGE_PASSWORD.second);
+        messageBoxManager.showInfo(CAN_NOT_CHANGE_PASSWORD.first, CAN_NOT_CHANGE_PASSWORD.second);
     }
 }
 
@@ -454,7 +459,7 @@ void ProfileForm::onChangePassClicked()
 
     QString newPass = dialog->getPassword();
     if (!profileInfo->setPassword(newPass)) {
-        GUI::showInfo(CAN_NOT_CHANGE_PASSWORD.first, CAN_NOT_CHANGE_PASSWORD.second);
+        messageBoxManager.showInfo(CAN_NOT_CHANGE_PASSWORD.first, CAN_NOT_CHANGE_PASSWORD.second);
     }
 }
 

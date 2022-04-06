@@ -17,14 +17,15 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef NOTIFICATIONSCROLLAREA_H
-#define NOTIFICATIONSCROLLAREA_H
+#pragma once
 
 #include "tool/adjustingscrollarea.h"
 #include <QHash>
 
 class GenericChatroomWidget;
 class NotificationEdgeWidget;
+class Settings;
+class Style;
 
 class NotificationScrollArea final : public AdjustingScrollArea
 {
@@ -32,7 +33,7 @@ public:
     explicit NotificationScrollArea(QWidget* parent = nullptr);
 
 public slots:
-    void trackWidget(GenericChatroomWidget* widget);
+    void trackWidget(Settings& settings, Style& style, GenericChatroomWidget* widget);
     void updateVisualTracking();
     void updateTracking(GenericChatroomWidget* widget);
 
@@ -60,5 +61,3 @@ private:
     size_t referencesAbove = 0;
     size_t referencesBelow = 0;
 };
-
-#endif // NOTIFICATIONSCROLLAREA_H

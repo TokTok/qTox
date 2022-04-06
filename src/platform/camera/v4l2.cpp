@@ -37,7 +37,8 @@
  * stdout and is not part of the public API for some reason.
  */
 
-static std::map<uint32_t, uint8_t> createPixFmtToQuality()
+namespace {
+std::map<uint32_t, uint8_t> createPixFmtToQuality()
 {
     std::map<uint32_t, uint8_t> m;
     m[V4L2_PIX_FMT_H264] = 3;
@@ -48,7 +49,7 @@ static std::map<uint32_t, uint8_t> createPixFmtToQuality()
 }
 const std::map<uint32_t, uint8_t> pixFmtToQuality = createPixFmtToQuality();
 
-static std::map<uint32_t, QString> createPixFmtToName()
+std::map<uint32_t, QString> createPixFmtToName()
 {
     std::map<uint32_t, QString> m;
     m[V4L2_PIX_FMT_H264] = QString("h264");
@@ -59,7 +60,7 @@ static std::map<uint32_t, QString> createPixFmtToName()
 }
 const std::map<uint32_t, QString> pixFmtToName = createPixFmtToName();
 
-static int deviceOpen(QString devName, int* error)
+int deviceOpen(QString devName, int* error)
 {
     struct v4l2_capability cap;
     int fd;
@@ -93,7 +94,7 @@ fail:
     return -1;
 }
 
-static QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h,
+QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h,
                                                        uint32_t pixelFormat)
 {
     QVector<float> rates;
@@ -121,6 +122,7 @@ static QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h,
 
     return rates;
 }
+} // namespace
 
 QVector<VideoMode> v4l2::getDeviceModes(QString devName)
 {
@@ -177,6 +179,7 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
         }
     }
 
+    close(fd);
     return modes;
 }
 
@@ -192,7 +195,7 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
     dirent* e;
     while ((e = readdir(dir)))
         if (!strncmp(e->d_name, "video", 5) || !strncmp(e->d_name, "vbi", 3))
-            deviceFiles += QString("/dev/") + e->d_name;
+            deviceFiles += QString("/dev/") + QString::fromUtf8(e->d_name);
     closedir(dir);
 
     for (QString file : deviceFiles) {
@@ -206,7 +209,8 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
         ioctl(fd, VIDIOC_QUERYCAP, &caps);
         close(fd);
 
-        devices += {file, reinterpret_cast<const char*>(caps.card)};
+        if (caps.device_caps & V4L2_CAP_VIDEO_CAPTURE)
+            devices += {file, QString::fromUtf8(reinterpret_cast<const char*>(caps.card))};
     }
     return devices;
 }

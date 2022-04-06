@@ -17,15 +17,19 @@
     along with qTox.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef TOXSAVE_H
-#define TOXSAVE_H
+#pragma once
 
 class QString;
 class QByteArray;
+class Settings;
 
-bool handleToxSave(const QString& path);
+class ToxSave
+{
+public:
+    explicit ToxSave(Settings& settings);
+    bool handleToxSave(const QString& path);
+    static bool toxSaveEventHandler(const QByteArray& eventData, void* userData);
 
-// Internals
-bool toxSaveEventHandler(const QByteArray& eventData);
-
-#endif
+private:
+    Settings& settings;
+};

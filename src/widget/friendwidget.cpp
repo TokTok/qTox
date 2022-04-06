@@ -41,7 +41,6 @@
 #include <QApplication>
 #include <QBitmap>
 #include <QContextMenuEvent>
-#include <QDebug>
 #include <QDrag>
 #include <QFileDialog>
 #include <QInputDialog>
@@ -57,10 +56,16 @@
  * For example, used on friend list.
  * When you click should open the chat with friend. Widget has a context menu.
  */
-FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom, bool compact)
-    : GenericChatroomWidget(compact)
-    , chatroom{chatroom}
+FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compact_,
+    Settings& settings_, Style& style_, IMessageBoxManager& messageBoxManager_,
+    Profile& profile_)
+    : GenericChatroomWidget(compact_, settings_, style_)
+    , chatroom{chatroom_}
     , isDefaultAvatar{true}
+    , settings{settings_}
+    , style{style_}
+    , messageBoxManager{messageBoxManager_}
+    , profile{profile_}
 {
     avatar->setPixmap(QPixmap(":/img/contact.svg"));
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Offline)));
@@ -72,8 +77,6 @@ FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom, bool compac
     connect(nameLabel, &CroppingLabel::editFinished, frnd, &Friend::setAlias);
     // update on changes of the displayed name
     connect(frnd, &Friend::displayedNameChanged, nameLabel, &CroppingLabel::setText);
-    connect(frnd, &Friend::displayedNameChanged, this,
-            [this](const QString /* &newName */) { emit friendWidgetRenamed(this); });
     connect(chatroom.get(), &FriendChatroom::activeChanged, this, &FriendWidget::setActive);
     statusMessageLabel->setTextFormat(Qt::PlainText);
 }
@@ -191,10 +194,11 @@ void FriendWidget::removeChatWindow()
 
 namespace {
 
-std::tuple<CircleWidget*, FriendListWidget*> getCircleAndFriendList(const Friend* frnd, FriendWidget* fw)
+std::tuple<CircleWidget*, FriendListWidget*> getCircleAndFriendList(const Friend* frnd,
+    FriendWidget* fw, Settings& settings)
 {
     const auto pk = frnd->getPublicKey();
-    const auto circleId = Settings::getInstance().getFriendCircleID(pk);
+    const auto circleId = settings.getFriendCircleID(pk);
     auto circleWidget = CircleWidget::getFromID(circleId);
     auto w = circleWidget ? static_cast<QWidget*>(circleWidget) : static_cast<QWidget*>(fw);
     auto friendList = qobject_cast<FriendListWidget*>(w->parentWidget());
@@ -208,7 +212,7 @@ void FriendWidget::moveToNewCircle()
     const auto frnd = chatroom->getFriend();
     CircleWidget* circleWidget;
     FriendListWidget* friendList;
-    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this);
+    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
 
     if (circleWidget != nullptr) {
         circleWidget->updateStatus();
@@ -218,7 +222,7 @@ void FriendWidget::moveToNewCircle()
         friendList->addCircleWidget(this);
     } else {
         const auto pk = frnd->getPublicKey();
-        auto& s = Settings::getInstance();
+        auto& s = settings;
         auto circleId = s.addCircle();
         s.setFriendCircleID(pk, circleId);
     }
@@ -229,19 +233,18 @@ void FriendWidget::removeFromCircle()
     const auto frnd = chatroom->getFriend();
     CircleWidget* circleWidget;
     FriendListWidget* friendList;
-    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this);
+    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
 
     if (friendList != nullptr) {
         friendList->moveWidget(this, frnd->getStatus(), true);
     } else {
         const auto pk = frnd->getPublicKey();
-        auto& s = Settings::getInstance();
+        auto& s = settings;
         s.setFriendCircleID(pk, -1);
     }
 
     if (circleWidget != nullptr) {
         circleWidget->updateStatus();
-        emit searchCircle(*circleWidget);
     }
 }
 
@@ -249,15 +252,14 @@ void FriendWidget::moveToCircle(int newCircleId)
 {
     const auto frnd = chatroom->getFriend();
     const auto pk = frnd->getPublicKey();
-    const auto oldCircleId = Settings::getInstance().getFriendCircleID(pk);
-    auto& s = Settings::getInstance();
+    const auto oldCircleId = settings.getFriendCircleID(pk);
+    auto& s = settings;
     auto oldCircleWidget = CircleWidget::getFromID(oldCircleId);
     auto newCircleWidget = CircleWidget::getFromID(newCircleId);
 
     if (newCircleWidget) {
         newCircleWidget->addFriendWidget(this, frnd->getStatus());
         newCircleWidget->setExpanded(true);
-        emit searchCircle(*newCircleWidget);
         s.savePersonal();
     } else {
         s.setFriendCircleID(pk, newCircleId);
@@ -265,7 +267,6 @@ void FriendWidget::moveToCircle(int newCircleId)
 
     if (oldCircleWidget) {
         oldCircleWidget->updateStatus();
-        emit searchCircle(*oldCircleWidget);
     }
 }
 
@@ -285,9 +286,10 @@ void FriendWidget::changeAutoAccept(bool enable)
 void FriendWidget::showDetails()
 {
     const auto frnd = chatroom->getFriend();
-    const auto iabout = new AboutFriend(frnd, &Settings::getInstance());
+    const auto iabout = new AboutFriend(frnd, &settings, profile);
     std::unique_ptr<IAboutFriend> about = std::unique_ptr<IAboutFriend>(iabout);
-    const auto aboutUser = new AboutFriendForm(std::move(about), this);
+    const auto aboutUser = new AboutFriendForm(std::move(about), settings, style,
+        messageBoxManager, this);
     connect(aboutUser, &AboutFriendForm::histroyRemoved, this, &FriendWidget::friendHistoryRemoved);
     aboutUser->show();
 }
@@ -302,9 +304,9 @@ void FriendWidget::setAsInactiveChatroom()
     setActive(false);
 }
 
-void FriendWidget::setActive(bool active)
+void FriendWidget::setActive(bool active_)
 {
-    GenericChatroomWidget::setActive(active);
+    GenericChatroomWidget::setActive(active_);
     if (isDefaultAvatar) {
         const auto uri =
             active ? QStringLiteral(":img/contact_dark.svg") : QStringLiteral(":img/contact.svg");
@@ -319,7 +321,7 @@ void FriendWidget::updateStatusLight()
     statusPic.setPixmap(QPixmap(Status::getIconPath(frnd->getStatus(), event)));
 
     if (event) {
-        const Settings& s = Settings::getInstance();
+        const Settings& s = settings;
         const uint32_t circleId = s.getFriendCircleID(frnd->getPublicKey());
         CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
         if (circleWidget) {
@@ -343,6 +345,8 @@ QString FriendWidget::getStatusString() const
         tr("Away"),
         tr("Busy"),
         tr("Offline"),
+        tr("Blocked"),
+        tr("Negotiating")
     };
 
     return event ? tr("New message") : names.value(status);
@@ -353,21 +357,56 @@ const Friend* FriendWidget::getFriend() const
     return chatroom->getFriend();
 }
 
-const Contact* FriendWidget::getContact() const
+const Chat* FriendWidget::getChat() const
 {
     return getFriend();
 }
 
-void FriendWidget::search(const QString& searchString, bool hide)
+bool FriendWidget::isFriend() const
+{
+    return true;
+}
+
+bool FriendWidget::isGroup() const
+{
+    return false;
+}
+
+bool FriendWidget::isOnline() const
+{
+    const auto frnd = getFriend();
+    return Status::isOnline(frnd->getStatus());
+}
+
+bool FriendWidget::widgetIsVisible() const
+{
+    return isVisible();
+}
+
+QString FriendWidget::getNameItem() const
+{
+    return nameLabel->fullText();
+}
+
+QDateTime FriendWidget::getLastActivity() const
 {
     const auto frnd = chatroom->getFriend();
-    searchName(searchString, hide);
-    const Settings& s = Settings::getInstance();
-    const uint32_t circleId = s.getFriendCircleID(frnd->getPublicKey());
-    CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
-    if (circleWidget) {
-        circleWidget->search(searchString);
-    }
+    return settings.getFriendActivity(frnd->getPublicKey());
+}
+
+QWidget *FriendWidget::getWidget()
+{
+    return this;
+}
+
+void FriendWidget::setWidgetVisible(bool visible)
+{
+    setVisible(visible);
+}
+
+int FriendWidget::getCircleId() const
+{
+    return chatroom->getCircleId();
 }
 
 void FriendWidget::resetEventFlags()
@@ -395,7 +434,7 @@ void FriendWidget::onAvatarRemoved(const ToxPk& friendPk)
 
     isDefaultAvatar = true;
 
-    const QString path = QString(":/img/contact%1.svg").arg(isActive() ? "_dark" : "");
+    const QString path = QString(":/img/contact%1.svg").arg(isActive() ? QStringLiteral("_dark") : QString());
     avatar->setPixmap(QPixmap(path));
 }
 
