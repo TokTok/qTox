@@ -1,5 +1,5 @@
 name: Build, test, and deploy
-on: [pull_request, push]
+#on: [pull_request, push]
 jobs:
   update-nightly-tag:
     name: Update nightly release tag

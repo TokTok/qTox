@@ -1,5 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
-load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_moc", "qt_rcc", "qt_uic")
+load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_rcc")
 load("//tools/project:build_defs.bzl", "project")
 
 package(features = ["layering_check"])
