@@ -156,6 +156,10 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Conference_Join error, int line)
     case TOX_ERR_CONFERENCE_JOIN_WRONG_TYPE:
         qCritical() << line << "Wrong conference type";
         return false;
+
+    case TOX_ERR_CONFERENCE_JOIN_NULL:
+        qCritical() << line << "Null argument";
+        return false;
     }
     qCritical() << line << "Unknown Tox_Err_Conference_Join error code:" << error;
     return false;
