@@ -1,5 +1,6 @@
 ---
 bazel-opt_task:
+  timeout_in: 10m
   container:
     image: toxchat/toktok-stack:latest-release
     cpu: 2
