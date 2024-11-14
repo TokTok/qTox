@@ -2,9 +2,6 @@
 restylers:
   - astyle:
       enabled: false
-  - clang-format:
-      # TODO(iphydf): enable
-      enabled: false
   - shellcheck:
       # TODO(iphydf): enable
       enabled: false
