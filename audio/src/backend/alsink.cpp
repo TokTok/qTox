@@ -87,7 +87,8 @@ void AlSink::kill()
 AlSink::AlSink(OpenAL& al, uint sourceId_)
     : audio(al)
     , sourceId{sourceId_}
-{}
+{
+}
 
 AlSink::operator bool() const
 {

@@ -49,7 +49,8 @@ QVector<QPair<QString, QString>> DirectShow::getDeviceList()
         return devices;
 
     IEnumMoniker* classenum = nullptr;
-    if (devenum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory, reinterpret_cast<IEnumMoniker**>(&classenum), 0)
+    if (devenum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory,
+                                       reinterpret_cast<IEnumMoniker**>(&classenum), 0)
         != S_OK)
         return devices;
 
@@ -85,7 +86,8 @@ QVector<QPair<QString, QString>> DirectShow::getDeviceList()
             goto fail;
         devHumanName = wcharToUtf8(var.bstrVal);
 
-        devices += {QString("video=") + QString::fromUtf8(devIdString), QString::fromUtf8(devHumanName)};
+        devices +=
+            {QString("video=") + QString::fromUtf8(devIdString), QString::fromUtf8(devHumanName)};
 
     fail:
         if (olestr && coMalloc)
@@ -118,7 +120,8 @@ static IBaseFilter* getDevFilter(QString devName)
         return devFilter;
 
     IEnumMoniker* classenum = nullptr;
-    if (devenum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory, reinterpret_cast<IEnumMoniker**>(&classenum), 0)
+    if (devenum->CreateClassEnumerator(CLSID_VideoInputDeviceCategory,
+                                       reinterpret_cast<IEnumMoniker**>(&classenum), 0)
         != S_OK)
         return devFilter;
 
@@ -145,7 +148,8 @@ static IBaseFilter* getDevFilter(QString devName)
         if (devName.toUtf8().constData() != devIdString)
             goto fail;
 
-        if (m->BindToObject(nullptr, nullptr, IID_IBaseFilter, reinterpret_cast<void**>(&devFilter)) != S_OK)
+        if (m->BindToObject(nullptr, nullptr, IID_IBaseFilter, reinterpret_cast<void**>(&devFilter))
+            != S_OK)
             goto fail;
 
     fail:

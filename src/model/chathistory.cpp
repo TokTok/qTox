@@ -4,8 +4,8 @@
  */
 
 #include "chathistory.h"
-#include "src/persistence/settings.h"
 #include "src/core/chatid.h"
+#include "src/persistence/settings.h"
 #include "src/widget/form/chatform.h"
 
 namespace {
@@ -145,10 +145,10 @@ SearchResult ChatHistory::searchBackward(SearchPos startIdx, const QString& phra
     // If the double disk access is real bad we can optimize this by adding
     // another function to history
     auto dateWherePhraseFound =
-        history->getDateWhereFindPhrase(chat.getPersistentId(), earliestMessageDate, phrase,
-                                        parameter);
+        history->getDateWhereFindPhrase(chat.getPersistentId(), earliestMessageDate, phrase, parameter);
 
-    auto loadIdx = history->getNumMessagesForChatBeforeDate(chat.getPersistentId(), dateWherePhraseFound);
+    auto loadIdx =
+        history->getNumMessagesForChatBeforeDate(chat.getPersistentId(), dateWherePhraseFound);
     loadHistoryIntoSessionChatLog(ChatLogIdx(loadIdx));
 
     // Reset search pos to the message we just loaded to avoid a double search
@@ -176,7 +176,7 @@ std::vector<IChatLog::DateChatLogIdxPair> ChatHistory::getDateIdxs(const QDate& 
 {
     if (canUseHistory()) {
         auto counts = history->getNumMessagesForChatBeforeDateBoundaries(chat.getPersistentId(),
-                                                                           startDate, maxDates);
+                                                                         startDate, maxDates);
 
         std::vector<IChatLog::DateChatLogIdxPair> ret;
         std::transform(counts.begin(), counts.end(), std::back_inserter(ret),
@@ -210,7 +210,8 @@ void ChatHistory::onFileUpdated(const ToxPk& sender, const ToxFile& file)
         switch (file.status) {
         case ToxFile::INITIALIZING: {
             auto selfPk = coreIdHandler.getSelfPublicKey();
-            QString username(selfPk == sender ? coreIdHandler.getUsername() : chat.getDisplayedName(sender));
+            QString username(selfPk == sender ? coreIdHandler.getUsername()
+                                              : chat.getDisplayedName(sender));
 
             // Note: There is some implcit coupling between history and the current
             // chat log. Both rely on generating a new id based on the state of
@@ -260,7 +261,8 @@ void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
             content = ChatForm::ACTION_PREFIX + content;
         }
 
-        history->addNewMessage(chatId, content, sender, message.timestamp, true, message.extensionSet, displayName);
+        history->addNewMessage(chatId, content, sender, message.timestamp, true,
+                               message.extensionSet, displayName);
     }
 
     sessionChatLog.onMessageReceived(sender, message);
@@ -281,8 +283,8 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
 
         auto onInsertion = [this, id](RowId historyId) { handleDispatchedMessage(id, historyId); };
 
-        history->addNewMessage(chatId, content, selfPk, message.timestamp, false, message.extensionSet, username,
-                               onInsertion);
+        history->addNewMessage(chatId, content, selfPk, message.timestamp, false,
+                               message.extensionSet, username, onInsertion);
     }
 
     sessionChatLog.onMessageSent(id, message);
@@ -374,23 +376,26 @@ void ChatHistory::loadHistoryIntoSessionChatLog(ChatLogIdx start) const
                 std::find_if(dispatchedMessageRowIdMap.begin(), dispatchedMessageRowIdMap.end(),
                              [&](RowId dispatchedId) { return dispatchedId == message.id; });
 
-            assert((message.state != MessageState::pending && dispatchedMessageIt == dispatchedMessageRowIdMap.end()) ||
-                   (message.state == MessageState::pending && dispatchedMessageIt != dispatchedMessageRowIdMap.end()));
+            assert((message.state != MessageState::pending
+                    && dispatchedMessageIt == dispatchedMessageRowIdMap.end())
+                   || (message.state == MessageState::pending
+                       && dispatchedMessageIt != dispatchedMessageRowIdMap.end()));
 
             auto chatLogMessage = ChatLogMessage{message.state, processedMessage};
             switch (message.state) {
-                case MessageState::complete:
-                    sessionChatLog.insertCompleteMessageAtIdx(currentIdx, message.sender, message.dispName,
-                                                              chatLogMessage);
-                    break;
-                case MessageState::pending:
-                    sessionChatLog.insertIncompleteMessageAtIdx(currentIdx, message.sender, message.dispName,
-                                                                chatLogMessage, dispatchedMessageIt.key());
-                    break;
-                case MessageState::broken:
-                    sessionChatLog.insertBrokenMessageAtIdx(currentIdx, message.sender, message.dispName,
-                                                            chatLogMessage);
-                    break;
+            case MessageState::complete:
+                sessionChatLog.insertCompleteMessageAtIdx(currentIdx, message.sender,
+                                                          message.dispName, chatLogMessage);
+                break;
+            case MessageState::pending:
+                sessionChatLog.insertIncompleteMessageAtIdx(currentIdx, message.sender,
+                                                            message.dispName, chatLogMessage,
+                                                            dispatchedMessageIt.key());
+                break;
+            case MessageState::broken:
+                sessionChatLog.insertBrokenMessageAtIdx(currentIdx, message.sender,
+                                                        message.dispName, chatLogMessage);
+                break;
             }
             break;
         }
@@ -413,11 +418,11 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
 {
     auto unsentMessages = history->getUndeliveredMessagesForChat(chat.getPersistentId());
 
-    auto requiredExtensions = std::accumulate(
-        unsentMessages.begin(), unsentMessages.end(),
-        ExtensionSet(), [] (const ExtensionSet& a, const History::HistMessage& b) {
-            return a | b.extensionSet;
-        });
+    auto requiredExtensions =
+        std::accumulate(unsentMessages.begin(), unsentMessages.end(), ExtensionSet(),
+                        [](const ExtensionSet& a, const History::HistMessage& b) {
+                            return a | b.extensionSet;
+                        });
 
     for (auto& message : unsentMessages) {
         // We should only store messages as unsent, if this changes in the
@@ -432,12 +437,13 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
         // with the new timestamp. This is intentional as everywhere else we use
         // attempted send time (which is whenever the it was initially inserted
         // into history
-        auto dispatchId = requiredExtensions.none()
-            // We should only send a single message, but in the odd case where we end
-            // up having to split more than when we added the message to history we'll
-            // just associate the last dispatched id with the history message
-            ? messageDispatcher.sendMessage(isAction, messageContent).second
-            : messageDispatcher.sendExtendedMessage(messageContent, requiredExtensions).second;
+        auto dispatchId =
+            requiredExtensions.none()
+                // We should only send a single message, but in the odd case where we end
+                // up having to split more than when we added the message to history we'll
+                // just associate the last dispatched id with the history message
+                ? messageDispatcher.sendMessage(isAction, messageContent).second
+                : messageDispatcher.sendExtendedMessage(messageContent, requiredExtensions).second;
 
         handleDispatchedMessage(dispatchId, message.id);
 

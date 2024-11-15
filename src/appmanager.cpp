@@ -5,14 +5,14 @@
 
 #include "appmanager.h"
 
-#include "src/widget/tool/messageboxmanager.h"
+#include "src/ipc.h"
+#include "src/net/toxuri.h"
+#include "src/nexus.h"
+#include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
-#include "src/persistence/profile.h"
-#include "src/ipc.h"
+#include "src/widget/tool/messageboxmanager.h"
 #include "src/widget/translator.h"
-#include "src/nexus.h"
-#include "src/net/toxuri.h"
 #include "src/widget/widget.h"
 #ifndef CMAKE_BUILD
 #include "src/version.h"
@@ -24,27 +24,26 @@
 #endif
 
 #include <QApplication>
-#include <QFontDatabase>
 #include <QCommandLineParser>
 #include <QDir>
+#include <QFontDatabase>
 #include <QMessageBox>
 #include <QObject>
 
-namespace
-{
+namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
 // inability to register a void* to get back to a class
 #ifdef LOG_TO_FILE
 QAtomicPointer<FILE> logFileFile = nullptr;
-QList<QByteArray>* logBuffer =
-    new QList<QByteArray>(); // Store log messages until log file opened
+QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages until log file opened
 QMutex* logBufferMutex = new QMutex();
 #endif
 
 void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QString& msg)
 {
     // Silence qWarning spam due to bug in QTextBrowser (trying to open a file for base64 images)
-    if (QString::fromUtf8(ctxt.function) == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
+    if (QString::fromUtf8(ctxt.function)
+            == QString("virtual bool QFSFileEngine::open(QIODevice::OpenMode)")
         && msg == QString("QFSFileEngine::open: No file name specified")) {
         return;
     }
@@ -59,12 +58,10 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     QRegularExpression snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
-    if (type == QtWarningMsg
-        && msg.contains(snoreFilter))
-    {
-        // snorenotify logs this when we call requestCloseNotification correctly. The behaviour still works, so we'll
-        // just mask the warning for now. The issue has been reported upstream:
-        // https://github.com/qTox/qTox/pull/6073#pullrequestreview-420748519
+    if (type == QtWarningMsg && msg.contains(snoreFilter)) {
+        // snorenotify logs this when we call requestCloseNotification correctly. The behaviour
+        // still works, so we'll just mask the warning for now. The issue has been reported
+        // upstream: https://github.com/qTox/qTox/pull/6073#pullrequestreview-420748519
         return;
     }
 
@@ -169,8 +166,8 @@ int AppManager::run()
 #if defined(Q_OS_UNIX)
     // PosixSignalNotifier is used only for terminating signals,
     // so it's connected directly to quit() without any filtering.
-    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::activated,
-                     qapp.get(), &QApplication::quit);
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::activated, qapp.get(),
+            &QApplication::quit);
     PosixSignalNotifier::watchCommonTerminatingSignals();
 #endif
 
@@ -197,28 +194,23 @@ int AppManager::run()
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
-    parser.addOption(
-        QCommandLineOption(QStringList() << "p"
-                                         << "profile",
-                           tr("Starts new instance and loads specified profile."),
-                           tr("profile")));
-    parser.addOption(
-        QCommandLineOption(QStringList() << "l"
-                                         << "login",
-                           tr("Starts new instance and opens the login screen.")));
+    parser.addOption(QCommandLineOption(QStringList() << "p"
+                                                      << "profile",
+                                        tr("Starts new instance and loads specified profile."),
+                                        tr("profile")));
+    parser.addOption(QCommandLineOption(QStringList() << "l"
+                                                      << "login",
+                                        tr("Starts new instance and opens the login screen.")));
     parser.addOption(QCommandLineOption(QStringList() << "I"
                                                       << "IPv6",
-                                        tr("Sets IPv6 <on>/<off>. Default is ON."),
-                                        tr("on/off")));
+                                        tr("Sets IPv6 <on>/<off>. Default is ON."), tr("on/off")));
     parser.addOption(QCommandLineOption(QStringList() << "U"
                                                       << "UDP",
-                                        tr("Sets UDP <on>/<off>. Default is ON."),
-                                        tr("on/off")));
+                                        tr("Sets UDP <on>/<off>. Default is ON."), tr("on/off")));
     parser.addOption(
         QCommandLineOption(QStringList() << "L"
                                          << "LAN",
-                           tr(
-                               "Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
+                           tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
                            tr("on/off")));
     parser.addOption(QCommandLineOption(QStringList() << "P"
                                                       << "proxy",
@@ -229,7 +221,8 @@ int AppManager::run()
     if (ipc->isAttached()) {
         connect(settings.get(), &Settings::currentProfileIdChanged, ipc.get(), &IPC::setProfileId);
     } else {
-        qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client functionality.";
+        qWarning() << "Can't init IPC, maybe we're in a jail? Continuing with reduced multi-client "
+                      "functionality.";
     }
 
 #ifdef LOG_TO_FILE
@@ -287,8 +280,7 @@ int AppManager::run()
     if (parser.isSet("p")) {
         profileName = parser.value("p");
         if (!Profile::exists(profileName, settings->getPaths())) {
-            qWarning() << "-p profile" << profileName + ".tox"
-                       << "doesn't exist, opening login screen";
+            qWarning() << "-p profile" << profileName + ".tox" << "doesn't exist, opening login screen";
             doIpc = false;
             autoLogin = false;
         } else {
@@ -348,11 +340,12 @@ int AppManager::run()
     // TODO (kriby): Shift responsibility of linking views to model objects from nexus
     // Further: generate view instances separately (loginScreen, mainGUI, audio)
     Profile* profile = nullptr;
-    if (autoLogin && Profile::exists(profileName, settings->getPaths()) && !Profile::isEncrypted(profileName, settings->getPaths())) {
-        profile = Profile::loadProfile(profileName, QString(), *settings, &parser, *cameraSource, *messageBoxManager);
+    if (autoLogin && Profile::exists(profileName, settings->getPaths())
+        && !Profile::isEncrypted(profileName, settings->getPaths())) {
+        profile = Profile::loadProfile(profileName, QString(), *settings, &parser, *cameraSource,
+                                       *messageBoxManager);
         if (!profile) {
-            QMessageBox::information(nullptr, tr("Error"),
-                                     tr("Failed to load profile automatically."));
+            QMessageBox::information(nullptr, tr("Error"), tr("Failed to load profile automatically."));
         }
     }
     if (profile) {
@@ -366,7 +359,8 @@ int AppManager::run()
         profile = nexus->getProfile();
     }
 
-    uriDialog = std::unique_ptr<ToxURIDialog>(new ToxURIDialog(nullptr, profile->getCore(), *messageBoxManager));
+    uriDialog = std::unique_ptr<ToxURIDialog>(
+        new ToxURIDialog(nullptr, profile->getCore(), *messageBoxManager));
 
     if (ipc->isAttached()) {
         // Start to accept Inter-process communication
@@ -404,19 +398,19 @@ void AppManager::cleanup()
     settings.reset();
     qDebug() << "Cleanup success";
 
-    #ifdef LOG_TO_FILE
-    #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-        FILE* f = logFileFile.loadRelaxed();
-    #else
-        FILE* f = logFileFile.load();
-    #endif
-        if (f != nullptr) {
-            fclose(f);
-    #if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
-            logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
-    #else
-            logFileFile.store(nullptr); // atomically disable logging to file
-    #endif
-        }
-    #endif
+#ifdef LOG_TO_FILE
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+    FILE* f = logFileFile.loadRelaxed();
+#else
+    FILE* f = logFileFile.load();
+#endif
+    if (f != nullptr) {
+        fclose(f);
+#if (QT_VERSION >= QT_VERSION_CHECK(5, 14, 0))
+        logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
+#else
+        logFileFile.store(nullptr); // atomically disable logging to file
+#endif
+    }
+#endif
 }

@@ -628,8 +628,8 @@ void OpenAL::doInput()
 
     // NOTE(sudden6): this loop probably doesn't scale too well with many sources
     for (auto source : sources) {
-        emit source->frameAvailable(inputBuffer, AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL, inputChannels,
-                                    AUDIO_SAMPLE_RATE);
+        emit source->frameAvailable(inputBuffer, AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL,
+                                    inputChannels, AUDIO_SAMPLE_RATE);
     }
 }
 

@@ -7,10 +7,10 @@
 #include "src/persistence/smileypack.h"
 #include "util/interface.h"
 
-#include <QtTest/QtTest>
 #include <QSignalSpy>
-#include <QString>
 #include <QStandardPaths>
+#include <QString>
+#include <QtTest/QtTest>
 
 #include <QGuiApplication>
 
@@ -18,7 +18,7 @@
 
 class MockSettings : public QObject, public ISmileySettings
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     QString getSmileyPack() const override;
     SIGNAL_IMPL(MockSettings, smileyPackChanged, const QString& name)
@@ -39,6 +39,7 @@ private slots:
     void testSmilifySingleCharEmoji();
     void testSmilifyMultiCharEmoji();
     void testSmilifyAsciiEmoticon();
+
 private:
     std::unique_ptr<QGuiApplication> app;
     std::unique_ptr<MockSettings> settings;

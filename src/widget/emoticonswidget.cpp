@@ -17,8 +17,8 @@
 
 #include <math.h>
 
-EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings,
-    Style& style, QWidget* parent)
+EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Style& style,
+                                 QWidget* parent)
     : QMenu(parent)
 {
     setStyleSheet(style.getStylesheet("emoticonWidget/emoticonWidget.css", settings));

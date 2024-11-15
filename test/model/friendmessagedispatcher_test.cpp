@@ -11,8 +11,8 @@
 #include <QObject>
 #include <QtTest/QtTest>
 
-#include <set>
 #include <deque>
+#include <set>
 
 namespace {
 constexpr uint64_t testMaxExtendedMessageSize = 10 * 1024 * 1024;
@@ -21,11 +21,11 @@ constexpr uint64_t testMaxExtendedMessageSize = 10 * 1024 * 1024;
 class MockCoreExtPacket : public ICoreExtPacket
 {
 public:
-
     MockCoreExtPacket(uint64_t& numSentMessages_, uint64_t& currentReceiptId_)
         : numSentMessages(numSentMessages_)
         , currentReceiptId(currentReceiptId_)
-    {}
+    {
+    }
 
     uint64_t addExtendedMessage(QString message_) override;
 
@@ -170,9 +170,10 @@ void TestFriendMessageDispatcher::init()
     f->setStatus(Status::Status::Online);
     f->onNegotiationComplete();
     messageSender = std::unique_ptr<MockFriendMessageSender>(new MockFriendMessageSender());
-    coreExtPacketAllocator = std::unique_ptr<MockCoreExtPacketAllocator>(new MockCoreExtPacketAllocator());
-    sharedProcessorParams =
-        std::unique_ptr<MessageProcessor::SharedParams>(new MessageProcessor::SharedParams(tox_max_message_length(), testMaxExtendedMessageSize));
+    coreExtPacketAllocator =
+        std::unique_ptr<MockCoreExtPacketAllocator>(new MockCoreExtPacketAllocator());
+    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
+        new MessageProcessor::SharedParams(tox_max_message_length(), testMaxExtendedMessageSize));
 
     messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
     friendMessageDispatcher = std::unique_ptr<FriendMessageDispatcher>(

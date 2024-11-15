@@ -26,17 +26,23 @@ DesktopNotify::DesktopNotify(Settings& settings_)
 
     notifyCore.registerApplication(snoreApp);
 
-    connect(&notifyCore, &Snore::SnoreCore::notificationClosed, this, &DesktopNotify::onNotificationClose);
+    connect(&notifyCore, &Snore::SnoreCore::notificationClosed, this,
+            &DesktopNotify::onNotificationClose);
 }
 
 void DesktopNotify::notifyMessage(const NotificationData& notificationData)
 {
-    if(!(settings.getNotify() && settings.getDesktopNotify())) {
+    if (!(settings.getNotify() && settings.getDesktopNotify())) {
         return;
     }
 
     auto icon = notificationData.pixmap.isNull() ? snoreIcon : Snore::Icon(notificationData.pixmap);
-    auto newNotification = Snore::Notification{snoreApp, Snore::Alert(), notificationData.title, notificationData.message, icon, 0};
+    auto newNotification = Snore::Notification{snoreApp,
+                                               Snore::Alert(),
+                                               notificationData.title,
+                                               notificationData.message,
+                                               icon,
+                                               0};
     latestId = newNotification.id();
 
     if (lastNotification.isValid()) {
@@ -58,7 +64,8 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
         // got a response starting with "Snorenotify isn't that well maintained any more"
         // (see https://mail.kde.org/pipermail/snorenotify/2019-March/000004.html)
         // so I don't have hope of this being fixed any time soon
-        notifyCore.requestCloseNotification(lastNotification, Snore::Notification::CloseReasons::Dismissed);
+        notifyCore.requestCloseNotification(lastNotification,
+                                            Snore::Notification::CloseReasons::Dismissed);
     }
 
     notifyCore.broadcastNotification(newNotification);

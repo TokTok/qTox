@@ -23,28 +23,23 @@ enum class Side
 QPoint getPosition(Side side)
 {
     int x, y;
-    switch (side)
-    {
-    case Side::top:
-    {
+    switch (side) {
+    case Side::top: {
         x = 1;
         y = 0;
         break;
     }
-    case Side::bottom:
-    {
+    case Side::bottom: {
         x = 1;
         y = 2;
         break;
     }
-    case Side::left:
-    {
+    case Side::left: {
         x = 0;
         y = 1;
         break;
     }
-    case Side::right:
-    {
+    case Side::right: {
         x = 2;
         y = 1;
         break;
@@ -108,14 +103,16 @@ void TestExifTransform::testTopRight()
 
 void TestExifTransform::testBottomRight()
 {
-    auto image = ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::BottomRight);
+    auto image =
+        ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::BottomRight);
     QVERIFY(getColor(image, Side::bottom) == rowColor);
     QVERIFY(getColor(image, Side::right) == colColor);
 }
 
 void TestExifTransform::testBottomLeft()
 {
-    auto image = ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::BottomLeft);
+    auto image =
+        ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::BottomLeft);
     QVERIFY(getColor(image, Side::bottom) == rowColor);
     QVERIFY(getColor(image, Side::left) == colColor);
 }
@@ -136,14 +133,16 @@ void TestExifTransform::testRightTop()
 
 void TestExifTransform::testRightBottom()
 {
-    auto image = ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::RightBottom);
+    auto image =
+        ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::RightBottom);
     QVERIFY(getColor(image, Side::right) == rowColor);
     QVERIFY(getColor(image, Side::bottom) == colColor);
 }
 
 void TestExifTransform::testLeftBottom()
 {
-    auto image = ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::LeftBottom);
+    auto image =
+        ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::LeftBottom);
     QVERIFY(getColor(image, Side::left) == rowColor);
     QVERIFY(getColor(image, Side::bottom) == colColor);
 }

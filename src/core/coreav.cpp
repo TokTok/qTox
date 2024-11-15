@@ -5,8 +5,8 @@
  */
 
 #include "coreav.h"
-#include "audio/iaudiosettings.h"
 #include "core.h"
+#include "audio/iaudiosettings.h"
 #include "src/model/friend.h"
 #include "src/model/group.h"
 #include "src/persistence/igroupsettings.h"
@@ -62,7 +62,8 @@
  */
 
 CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, CompatibleRecursiveMutex& toxCoreLock,
-               IAudioSettings& audioSettings_, IGroupSettings& groupSettings_, CameraSource& cameraSource_)
+               IAudioSettings& audioSettings_, IGroupSettings& groupSettings_,
+               CameraSource& cameraSource_)
     : audio{nullptr}
     , toxav{std::move(toxav_)}
     , coreavThread{new QThread{this}}
@@ -124,8 +125,8 @@ CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, CompatibleRecursiveMutex& toxCor
 
     assert(toxav != nullptr);
 
-    return CoreAVPtr{new CoreAV{std::move(toxav), toxCoreLock, audioSettings,
-        groupSettings, cameraSource}};
+    return CoreAVPtr{
+        new CoreAV{std::move(toxav), toxCoreLock, audioSettings, groupSettings, cameraSource}};
 }
 
 /**
@@ -251,8 +252,7 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     Toxav_Err_Answer err;
 
     const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
-    if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(),
-                     videoBitrate, &err)) {
+    if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err)) {
         it->second->setActive(true);
         return true;
     } else {
@@ -279,16 +279,15 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 
     uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
     Toxav_Err_Call err;
-    toxav_call(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate,
-                    &err);
+    toxav_call(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err);
     if (!PARSE_ERR(err)) {
         return false;
     }
 
     // Audio backend must be set before making a call
     assert(audio != nullptr);
-    ToxFriendCallPtr call = ToxFriendCallPtr(new ToxFriendCall(friendNum, video,
-        *this, *audio, cameraSource));
+    ToxFriendCallPtr call =
+        ToxFriendCallPtr(new ToxFriendCall(friendNum, video, *this, *audio, cameraSource));
     // Call object must be owned by this thread or there will be locking problems with Audio
     call->moveToThread(thread());
     assert(call != nullptr);
@@ -731,8 +730,8 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
 
     // Audio backend must be set before receiving a call
     assert(self->audio != nullptr);
-    ToxFriendCallPtr call = ToxFriendCallPtr(new ToxFriendCall{friendNum, video,
-        *self, *self->audio, self->cameraSource});
+    ToxFriendCallPtr call =
+        ToxFriendCallPtr(new ToxFriendCall{friendNum, video, *self, *self->audio, self->cameraSource});
     // Call object must be owned by CoreAV thread or there will be locking problems with Audio
     call->moveToThread(self->thread());
     assert(call != nullptr);
@@ -851,8 +850,9 @@ void CoreAV::videoBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rat
     qDebug() << "Recommended video bitrate with" << friendNum << " is now " << rate << ", ignoring it";
 }
 
-void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t* pcm, size_t sampleCount,
-                                uint8_t channels, uint32_t samplingRate, void* vSelf)
+void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t* pcm,
+                                size_t sampleCount, uint8_t channels, uint32_t samplingRate,
+                                void* vSelf)
 {
     std::ignore = toxAV;
     CoreAV* self = static_cast<CoreAV*>(vSelf);

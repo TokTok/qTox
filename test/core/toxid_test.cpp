@@ -5,8 +5,8 @@
 
 #include "src/core/toxid.h"
 
-#include <QtTest/QtTest>
 #include <QString>
+#include <QtTest/QtTest>
 #include <ctime>
 
 const QString corrupted =

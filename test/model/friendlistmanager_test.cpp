@@ -5,41 +5,68 @@
 
 #include "src/model/friendlist/friendlistmanager.h"
 
-#include <QTest>
 #include <QSignalSpy>
+#include <QTest>
 
 class MockFriend : public IFriendListItem
 {
 public:
     MockFriend()
-        : name("No Name"),
-          lastActivity(QDateTime::currentDateTime()),
-          online(false) {}
+        : name("No Name")
+        , lastActivity(QDateTime::currentDateTime())
+        , online(false)
+    {
+    }
 
     MockFriend(const QString& nameStr, bool onlineRes, const QDateTime& lastAct)
-        : name(nameStr),
-          lastActivity(lastAct),
-          online(onlineRes) {}
+        : name(nameStr)
+        , lastActivity(lastAct)
+        , online(onlineRes)
+    {
+    }
 
     ~MockFriend();
 
-    bool isFriend() const override { return true; }
-    bool isGroup() const override { return false; }
-    bool isOnline() const override { return online; }
-    bool widgetIsVisible() const override { return visible; }
+    bool isFriend() const override
+    {
+        return true;
+    }
+    bool isGroup() const override
+    {
+        return false;
+    }
+    bool isOnline() const override
+    {
+        return online;
+    }
+    bool widgetIsVisible() const override
+    {
+        return visible;
+    }
 
-    QString getNameItem() const override { return name; }
-    QDateTime getLastActivity() const override { return lastActivity; }
-    QWidget* getWidget() override { return nullptr; }
+    QString getNameItem() const override
+    {
+        return name;
+    }
+    QDateTime getLastActivity() const override
+    {
+        return lastActivity;
+    }
+    QWidget* getWidget() override
+    {
+        return nullptr;
+    }
 
-    void setWidgetVisible(bool v) override { visible = v; }
+    void setWidgetVisible(bool v) override
+    {
+        visible = v;
+    }
 
 private:
     QString name;
     QDateTime lastActivity;
     bool online = false;
     bool visible = true;
-
 };
 
 MockFriend::~MockFriend() = default;
@@ -48,23 +75,51 @@ class MockGroup : public IFriendListItem
 {
 public:
     MockGroup()
-        : name("group") {}
+        : name("group")
+    {
+    }
 
     MockGroup(const QString& nameStr)
-        :name(nameStr) {}
+        : name(nameStr)
+    {
+    }
 
     ~MockGroup();
 
-    bool isFriend() const override { return false; }
-    bool isGroup() const override { return true; }
-    bool isOnline() const override { return true; }
-    bool widgetIsVisible() const override { return visible; }
+    bool isFriend() const override
+    {
+        return false;
+    }
+    bool isGroup() const override
+    {
+        return true;
+    }
+    bool isOnline() const override
+    {
+        return true;
+    }
+    bool widgetIsVisible() const override
+    {
+        return visible;
+    }
 
-    QString getNameItem() const override { return name; }
-    QDateTime getLastActivity() const override { return QDateTime::currentDateTime(); }
-    QWidget* getWidget() override { return nullptr; }
+    QString getNameItem() const override
+    {
+        return name;
+    }
+    QDateTime getLastActivity() const override
+    {
+        return QDateTime::currentDateTime();
+    }
+    QWidget* getWidget() override
+    {
+        return nullptr;
+    }
 
-    void setWidgetVisible(bool v) override { visible = v; }
+    void setWidgetVisible(bool v) override
+    {
+        visible = v;
+    }
 
 private:
     QString name;
@@ -78,8 +133,15 @@ class FriendItemsBuilder
 public:
     FriendItemsBuilder* addOfflineFriends()
     {
-        QStringList testNames {".test", "123", "A test user", "Aatest user", "atest",
-                              "btest", "ctest", "Test user", "user with long nickname one",
+        QStringList testNames{".test",
+                              "123",
+                              "A test user",
+                              "Aatest user",
+                              "atest",
+                              "btest",
+                              "ctest",
+                              "Test user",
+                              "user with long nickname one",
                               "user with long nickname two"};
 
         for (int i = 0; i < testNames.size(); ++i) {
@@ -95,9 +157,15 @@ public:
 
     FriendItemsBuilder* addOnlineFriends()
     {
-        QStringList testNames {".test online", "123 online", "A test user online",
-                              "Aatest user online", "atest online", "btest online", "ctest online",
-                              "Test user online", "user with long nickname one online",
+        QStringList testNames{".test online",
+                              "123 online",
+                              "A test user online",
+                              "Aatest user online",
+                              "atest online",
+                              "btest online",
+                              "ctest online",
+                              "Test user online",
+                              "user with long nickname one online",
                               "user with long nickname two online"};
 
         for (int i = 0; i < testNames.size(); ++i) {
@@ -169,7 +237,8 @@ public:
         QVector<std::shared_ptr<IFriendListItem>> vec;
         if (!groupsOnTop) {
             for (auto name : sortedByNameOnlineFriends) {
-                vec.push_back(std::shared_ptr<IFriendListItem>(new MockFriend(name, true, QDateTime::currentDateTime())));
+                vec.push_back(std::shared_ptr<IFriendListItem>(
+                    new MockFriend(name, true, QDateTime::currentDateTime())));
             }
 
             for (auto name : sortedByNameGroups) {
@@ -181,12 +250,14 @@ public:
             }
 
             for (auto name : sortedByNameOnlineFriends) {
-                vec.push_back(std::shared_ptr<IFriendListItem>(new MockFriend(name, true, QDateTime::currentDateTime())));
+                vec.push_back(std::shared_ptr<IFriendListItem>(
+                    new MockFriend(name, true, QDateTime::currentDateTime())));
             }
         }
 
         for (auto name : sortedByNameOfflineFriends) {
-            vec.push_back(std::shared_ptr<IFriendListItem>(new MockFriend(name, false, getDateTime(name))));
+            vec.push_back(
+                std::shared_ptr<IFriendListItem>(new MockFriend(name, false, getDateTime(name))));
         }
         clear();
         return vec;
@@ -210,7 +281,8 @@ public:
         QDateTime dateTime = QDateTime::currentDateTime();
         for (int i = 0; i < sortedByActivityFriends.size(); ++i) {
             QString name = sortedByActivityFriends.at(i);
-            vec.push_back(std::shared_ptr<IFriendListItem>(new MockFriend(name, isOnline(name), getDateTime(name))));
+            vec.push_back(std::shared_ptr<IFriendListItem>(
+                new MockFriend(name, isOnline(name), getDateTime(name))));
         }
         clear();
         return vec;
@@ -238,7 +310,8 @@ private:
      * @brief checkDifferentNames The check is necessary for
      * the correct setting of the online status
      */
-    void checkDifferentNames() {
+    void checkDifferentNames()
+    {
         for (auto name : sortedByNameOnlineFriends) {
             if (sortedByNameOfflineFriends.contains(name, Qt::CaseInsensitive)) {
                 QFAIL("Names in sortedByNameOnlineFriends and sortedByNameOfflineFriends "
@@ -280,9 +353,9 @@ private slots:
     void testApplyFilterSearchString();
     void testApplyFilterByStatus();
     void testSetGroupsOnTop();
+
 private:
-    std::unique_ptr<FriendListManager> createManagerWithItems(
-            const QVector<IFriendListItem*> itemsVec);
+    std::unique_ptr<FriendListManager> createManagerWithItems(const QVector<IFriendListItem*> itemsVec);
 };
 
 void TestFriendListManager::testAddFriendListItem()
@@ -319,10 +392,10 @@ void TestFriendListManager::testAddFriendListItem()
 void TestFriendListManager::testSortByName()
 {
     FriendItemsBuilder listBuilder;
-    auto unsortedVec = listBuilder.addOfflineFriends()
-            ->addOnlineFriends()->addGroups()->buildUnsorted();
-    auto sortedVec = listBuilder.addOfflineFriends()
-            ->addOnlineFriends()->addGroups()->buildSortedByName();
+    auto unsortedVec =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted();
+    auto sortedVec =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildSortedByName();
     auto manager = createManagerWithItems(unsortedVec);
 
     manager->sortByName();
@@ -332,7 +405,7 @@ void TestFriendListManager::testSortByName()
     QCOMPARE(success, true);
     QCOMPARE(manager->getPositionsChanged(), false);
     QCOMPARE(manager->getItems().size(), sortedVec.size());
-    QCOMPARE(manager->getGroupsOnTop(),  listBuilder.getGroupsOnTop());
+    QCOMPARE(manager->getGroupsOnTop(), listBuilder.getGroupsOnTop());
 
     for (int i = 0; i < sortedVec.size(); ++i) {
         IFriendListItem* fromManager = manager->getItems().at(i).get();
@@ -344,10 +417,10 @@ void TestFriendListManager::testSortByName()
 void TestFriendListManager::testSortByActivity()
 {
     FriendItemsBuilder listBuilder;
-    auto unsortedVec = listBuilder.addOfflineFriends()
-            ->addOnlineFriends()->addGroups()->buildUnsorted();
-    auto sortedVec = listBuilder.addOfflineFriends()
-            ->addOnlineFriends()->addGroups()->buildSortedByActivity();
+    auto unsortedVec =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted();
+    auto sortedVec =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildSortedByActivity();
 
     std::unique_ptr<FriendListManager> manager = createManagerWithItems(unsortedVec);
     manager->sortByActivity();
@@ -368,7 +441,7 @@ void TestFriendListManager::testSetFilter()
 {
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
-                listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
     QSignalSpy spy(manager.get(), &FriendListManager::itemsChanged);
 
     manager->setFilter("", false, false, false);
@@ -385,7 +458,7 @@ void TestFriendListManager::testApplyFilterSearchString()
 {
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
-                listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
     QVector<std::shared_ptr<IFriendListItem>> resultVec;
     QString testNameA = "NOITEMSWITHTHISNAME";
     QString testNameB = "Test Name B";
@@ -432,7 +505,7 @@ void TestFriendListManager::testApplyFilterByStatus()
 {
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
-                listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
     auto onlineItems = listBuilder.addOnlineFriends()->buildSortedByName();
     auto offlineItems = listBuilder.addOfflineFriends()->buildSortedByName();
     auto groupItems = listBuilder.addGroups()->buildSortedByName();
@@ -490,11 +563,11 @@ void TestFriendListManager::testSetGroupsOnTop()
 {
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
-                listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
-    auto sortedVecOnlineOnTop = listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()
-            ->setGroupsOnTop(false)->buildSortedByName();
-    auto sortedVecGroupsOnTop = listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()
-            ->setGroupsOnTop(true)->buildSortedByName();
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
+    auto sortedVecOnlineOnTop =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->setGroupsOnTop(false)->buildSortedByName();
+    auto sortedVecGroupsOnTop =
+        listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->setGroupsOnTop(true)->buildSortedByName();
 
     manager->setGroupsOnTop(false);
     manager->sortByName();
@@ -515,11 +588,11 @@ void TestFriendListManager::testSetGroupsOnTop()
     }
 }
 
-std::unique_ptr<FriendListManager> TestFriendListManager::createManagerWithItems(
-        const QVector<IFriendListItem*> itemsVec)
+std::unique_ptr<FriendListManager>
+TestFriendListManager::createManagerWithItems(const QVector<IFriendListItem*> itemsVec)
 {
     std::unique_ptr<FriendListManager> manager =
-         std::unique_ptr<FriendListManager>(new FriendListManager(0, this));
+        std::unique_ptr<FriendListManager>(new FriendListManager(0, this));
 
     for (auto item : itemsVec) {
         manager->addFriendListItem(item);

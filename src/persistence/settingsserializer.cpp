@@ -36,7 +36,7 @@
  * @var ArrayEnd
  * Not followed by any data
  */
- /**
+/**
  * @var static const char magic[];
  * @brief Little endian ASCII "QTOX" magic
  */

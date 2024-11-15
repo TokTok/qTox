@@ -7,9 +7,9 @@
 
 #include <ctime>
 
-#include <QtTest/QtTest>
-#include <QString>
 #include <QStandardPaths>
+#include <QString>
+#include <QtTest/QtTest>
 
 
 class TestPaths : public QObject
@@ -24,7 +24,8 @@ private slots:
     void checkPathsPortable();
 #endif
 private:
-    static void verifyqToxPath(const QString& testPath, const QString& basePath, const QString& subPath);
+    static void verifyqToxPath(const QString& testPath, const QString& basePath,
+                               const QString& subPath);
 };
 
 namespace {
@@ -37,7 +38,7 @@ const QLatin1String transfersFolder{"transfers"};
 const QLatin1String screenshotsFolder{"screenshots"};
 #endif // PATHS_VERSION_TCS_COMPLIANT
 const QString sep{QDir::separator()};
-}
+} // namespace
 
 /**
  * @brief Verifies construction in auto mode
@@ -86,7 +87,7 @@ void TestPaths::verifyqToxPath(const QString& testPath, const QString& basePath,
  */
 void TestPaths::checkPathsNonPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::NonPortable);
+    Paths* paths = Paths::makePaths(Paths::Portable::NonPortable);
     QVERIFY(paths != nullptr);
     // Need non-portable environment to match our test cases
     QVERIFY(paths->isPortable() == false);
@@ -123,7 +124,7 @@ void TestPaths::checkPathsNonPortable()
  */
 void TestPaths::checkPathsPortable()
 {
-    Paths * paths = Paths::makePaths(Paths::Portable::Portable);
+    Paths* paths = Paths::makePaths(Paths::Portable::Portable);
     QVERIFY(paths != nullptr);
     // Need portable environment to match our test cases
     QVERIFY(paths->isPortable() == true);

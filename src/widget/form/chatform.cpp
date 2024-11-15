@@ -5,8 +5,8 @@
 
 #include "chatform.h"
 #include "src/chatlog/chatlinecontentproxy.h"
-#include "src/chatlog/chatwidget.h"
 #include "src/chatlog/chatmessage.h"
+#include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/filetransferwidget.h"
 #include "src/chatlog/content/text.h"
 #include "src/core/core.h"
@@ -93,14 +93,13 @@ QString secondsToDHMS(quint32 duration)
 } // namespace
 
 ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
-    IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache_,
-    SmileyPack& smileyPack_, CameraSource& cameraSource_, Settings& settings_,
-    Style& style_, IMessageBoxManager& messageBoxManager,
-    ContentDialogManager& contentDialogManager_, FriendList& friendList_,
-    GroupList& groupList_)
-    : GenericChatForm(profile_.getCore(), chatFriend, chatLog_, messageDispatcher_,
-        documentCache_, smileyPack_, settings_, style_, messageBoxManager, friendList_,
-        groupList_)
+                   IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache_,
+                   SmileyPack& smileyPack_, CameraSource& cameraSource_, Settings& settings_,
+                   Style& style_, IMessageBoxManager& messageBoxManager,
+                   ContentDialogManager& contentDialogManager_, FriendList& friendList_,
+                   GroupList& groupList_)
+    : GenericChatForm(profile_.getCore(), chatFriend, chatLog_, messageDispatcher_, documentCache_,
+                      smileyPack_, settings_, style_, messageBoxManager, friendList_, groupList_)
     , core{profile_.getCore()}
     , f(chatFriend)
     , isTyping{false}
@@ -746,8 +745,7 @@ void ChatForm::showNetcam()
         netcam = createNetcam();
     }
 
-    connect(netcam.get(), &NetCamView::showMessageClicked, this,
-            &ChatForm::onShowMessagesClicked);
+    connect(netcam.get(), &NetCamView::showMessageClicked, this, &ChatForm::onShowMessagesClicked);
 
     bodySplitter->insertWidget(0, netcam.get());
     bodySplitter->setCollapsible(0, false);
@@ -789,8 +787,7 @@ void ChatForm::onShowMessagesClicked()
     if (netcam) {
         if (bodySplitter->sizes()[1] == 0) {
             bodySplitter->setSizes({1, 1});
-        }
-        else {
+        } else {
             bodySplitter->setSizes({1, 0});
         }
 

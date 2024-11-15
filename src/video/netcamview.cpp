@@ -12,28 +12,27 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/video/videosurface.h"
-#include "src/widget/tool/movablewidget.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/movablewidget.h"
 
 #include <QApplication>
 #include <QBoxLayout>
-#include <QScreen>
+#include <QCloseEvent>
 #include <QFrame>
 #include <QLabel>
-#include <QCloseEvent>
 #include <QPushButton>
+#include <QScreen>
 
-namespace
-{
+namespace {
 const auto BTN_STATE_NONE = QVariant("none");
 const auto BTN_STATE_RED = QVariant("red");
 const int BTN_PANEL_HEIGHT = 55;
 const int BTN_PANEL_WIDTH = 250;
 const auto BTN_STYLE_SHEET_PATH = QStringLiteral("chatForm/fullScreenButtons.css");
-}
+} // namespace
 
-NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_,
-    Settings& settings_, Style& style_, Profile& profile, QWidget* parent)
+NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& settings_,
+                       Style& style_, Profile& profile, QWidget* parent)
     : QWidget(parent)
     , selfFrame{nullptr}
     , friendPk{friendPk_}
@@ -248,7 +247,8 @@ void NetCamView::enterFullScreen()
     toggleMessagesButton->hide();
     const auto screenSize = QGuiApplication::screenAt(pos())->geometry();
     buttonPanel->setGeometry((screenSize.width() / 2) - buttonPanel->width() / 2,
-            screenSize.height() - BTN_PANEL_HEIGHT - 25, BTN_PANEL_WIDTH, BTN_PANEL_HEIGHT);
+                             screenSize.height() - BTN_PANEL_HEIGHT - 25, BTN_PANEL_WIDTH,
+                             BTN_PANEL_HEIGHT);
     buttonPanel->show();
     buttonPanel->activateWindow();
     buttonPanel->raise();
@@ -322,7 +322,7 @@ void NetCamView::updateButtonState(QPushButton* btn, bool active)
     btn->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
 }
 
-void NetCamView::keyPressEvent(QKeyEvent *event)
+void NetCamView::keyPressEvent(QKeyEvent* event)
 {
     int key = event->key();
     if (key == Qt::Key_Escape && isFullScreen()) {
@@ -330,7 +330,7 @@ void NetCamView::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void NetCamView::closeEvent(QCloseEvent *event)
+void NetCamView::closeEvent(QCloseEvent* event)
 {
     exitFullScreen();
     event->ignore();

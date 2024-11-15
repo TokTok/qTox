@@ -28,25 +28,30 @@ ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogFile
     : ChatLogItem(std::move(sender_), displayName_, ContentType::fileTransfer,
                   ContentPtr(new ChatLogFile(std::move(file_)),
                              ChatLogItemDeleter<ChatLogFile>::doDelete))
-{}
+{
+}
 
 ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ChatLogMessage message_)
     : ChatLogItem(sender_, displayName_, ContentType::message,
                   ContentPtr(new ChatLogMessage(std::move(message_)),
                              ChatLogItemDeleter<ChatLogMessage>::doDelete))
-{}
+{
+}
 
 ChatLogItem::ChatLogItem(SystemMessage systemMessage)
     : contentType(ContentType::systemMessage)
     , content(new SystemMessage(std::move(systemMessage)), ChatLogItemDeleter<SystemMessage>::doDelete)
-{}
+{
+}
 
-ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ContentType contentType_, ContentPtr content_)
+ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ContentType contentType_,
+                         ContentPtr content_)
     : sender(std::move(sender_))
     , displayName(displayName_)
     , contentType(contentType_)
     , content(std::move(content_))
-{}
+{
+}
 
 const ToxPk& ChatLogItem::getSender() const
 {

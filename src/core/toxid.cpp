@@ -4,8 +4,8 @@
  */
 
 
-#include "chatid.h"
 #include "toxid.h"
+#include "chatid.h"
 #include "toxpk.h"
 
 #include <QRegularExpression>
@@ -13,7 +13,8 @@
 #include <cassert>
 #include <cstdint>
 
-const QRegularExpression ToxId::ToxIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ToxId::numHexChars));
+const QRegularExpression
+    ToxId::ToxIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ToxId::numHexChars));
 
 /**
  * @class ToxId
@@ -37,7 +38,8 @@ const QRegularExpression ToxId::ToxIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s
  */
 ToxId::ToxId()
     : toxId()
-{}
+{
+}
 
 /**
  * @brief The copy constructor.
@@ -45,7 +47,8 @@ ToxId::ToxId()
  */
 ToxId::ToxId(const ToxId& other)
     : toxId(other.toxId)
-{}
+{
+}
 
 /**
  * @brief Create a Tox ID from a QString.

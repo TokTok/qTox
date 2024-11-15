@@ -6,14 +6,16 @@
 #include "groupchatform.h"
 
 #include "tabcompleter.h"
+#include "src/chatlog/chatwidget.h"
+#include "src/chatlog/content/text.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/core/groupid.h"
-#include "src/chatlog/chatwidget.h"
-#include "src/chatlog/content/text.h"
-#include "src/model/friend.h"
 #include "src/friendlist.h"
+#include "src/model/friend.h"
 #include "src/model/group.h"
+#include "src/persistence/igroupsettings.h"
+#include "src/persistence/settings.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/flowlayout.h"
 #include "src/widget/form/chatform.h"
@@ -22,18 +24,15 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/croppinglabel.h"
 #include "src/widget/translator.h"
-#include "src/persistence/igroupsettings.h"
-#include "src/persistence/settings.h"
 
 #include <QDragEnterEvent>
 #include <QMimeData>
+#include <QPushButton>
 #include <QRegularExpression>
 #include <QTimer>
 #include <QToolButton>
-#include <QPushButton>
 
-namespace
-{
+namespace {
 const auto LABEL_PEER_TYPE_OUR = QVariant(QStringLiteral("our"));
 const auto LABEL_PEER_TYPE_MUTED = QVariant(QStringLiteral("muted"));
 const auto LABEL_PEER_PLAYING_AUDIO = QVariant(QStringLiteral("true"));
@@ -59,7 +58,7 @@ QString editName(const QString& name)
     result.append(QStringLiteral("…")); // \u2026 Unicode symbol, not just three separate dots
     return result;
 }
-}
+} // namespace
 
 /**
  * @var QList<QLabel*> GroupChatForm::peerLabels
@@ -70,12 +69,12 @@ QString editName(const QString& name)
  */
 
 GroupChatForm::GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
-    IMessageDispatcher& messageDispatcher_, Settings& settings_, DocumentCache& documentCache_,
-        SmileyPack& smileyPack_, Style& style_, IMessageBoxManager& messageBoxManager,
-        FriendList& friendList_, GroupList& groupList_)
-    : GenericChatForm(core_, chatGroup, chatLog_, messageDispatcher_,
-        documentCache_, smileyPack_, settings_, style_, messageBoxManager, friendList_,
-        groupList_)
+                             IMessageDispatcher& messageDispatcher_, Settings& settings_,
+                             DocumentCache& documentCache_, SmileyPack& smileyPack_, Style& style_,
+                             IMessageBoxManager& messageBoxManager, FriendList& friendList_,
+                             GroupList& groupList_)
+    : GenericChatForm(core_, chatGroup, chatLog_, messageDispatcher_, documentCache_, smileyPack_,
+                      settings_, style_, messageBoxManager, friendList_, groupList_)
     , core{core_}
     , group(chatGroup)
     , inCall(false)
@@ -111,7 +110,7 @@ GroupChatForm::GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
     headWidget->addLayout(namesListLayout);
     headWidget->addStretch();
 
-    //nameLabel->setMinimumHeight(12);
+    // nameLabel->setMinimumHeight(12);
     nusersLabel->setMinimumHeight(12);
 
     connect(msgEdit, &ChatTextEdit::tabPressed, tabber, &TabCompleter::complete);
@@ -200,7 +199,8 @@ void GroupChatForm::updateUserNames()
         label->setTextFormat(Qt::PlainText);
         label->setContextMenuPolicy(Qt::CustomContextMenu);
 
-        connect(label, &QLabel::customContextMenuRequested, this, &GroupChatForm::onLabelContextMenuRequested);
+        connect(label, &QLabel::customContextMenuRequested, this,
+                &GroupChatForm::onLabelContextMenuRequested);
 
         if (peerPk == selfPk) {
             label->setProperty("peerType", LABEL_PEER_TYPE_OUR);
@@ -215,8 +215,7 @@ void GroupChatForm::updateUserNames()
     // add the labels in alphabetical order into the layout
     auto nickLabelList = peerLabels.values();
 
-    std::sort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b)
-    {
+    std::sort(nickLabelList.begin(), nickLabelList.end(), [](const QLabel* a, const QLabel* b) {
         return a->text().toLower() < b->text().toLower();
     });
 

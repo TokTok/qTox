@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QtCore/qsystemdetection.h>
 #include "src/platform/x11_display.h"
 #include <QMutex>
+#include <QtCore/qsystemdetection.h>
 #include <X11/Xlib.h>
 
 namespace Platform {
@@ -44,4 +44,4 @@ void X11Display::unlock()
 {
     X11DisplayPrivate::getSingleInstance().mutex.unlock();
 }
-}
+} // namespace Platform

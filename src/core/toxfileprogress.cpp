@@ -84,14 +84,11 @@ double ToxFileProgress::getProgress() const
 
 double ToxFileProgress::getSpeed() const
 {
-    if (samples.size() > 0
-        && samples[activeSample].bytesSent == filesize) {
+    if (samples.size() > 0 && samples[activeSample].bytesSent == filesize) {
         return 0.0;
     }
 
-    const auto sampleTimeInvalid = [](const Sample& sample) {
-        return sample.timestamp == QTime();
-    };
+    const auto sampleTimeInvalid = [](const Sample& sample) { return sample.timestamp == QTime(); };
 
     if (std::any_of(samples.cbegin(), samples.cend(), sampleTimeInvalid)) {
         return 0.0;
@@ -104,13 +101,13 @@ double ToxFileProgress::getSpeed() const
     const auto& active = samples[activeSample];
     const auto& inactive = samples[!activeSample];
 
-    return (active.bytesSent - inactive.bytesSent) / double(inactive.timestamp.msecsTo(active.timestamp)) * 1000.0;
+    return (active.bytesSent - inactive.bytesSent)
+           / double(inactive.timestamp.msecsTo(active.timestamp)) * 1000.0;
 }
 
 double ToxFileProgress::getTimeLeftSeconds() const
 {
-    if (samples.size() > 0
-        && samples[activeSample].bytesSent == filesize) {
+    if (samples.size() > 0 && samples[activeSample].bytesSent == filesize) {
         return 0;
     }
 

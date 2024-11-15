@@ -27,9 +27,7 @@ FlyoutOverlayWidget::FlyoutOverlayWidget(QWidget* parent)
     hide();
 }
 
-FlyoutOverlayWidget::~FlyoutOverlayWidget()
-{
-}
+FlyoutOverlayWidget::~FlyoutOverlayWidget() {}
 
 int FlyoutOverlayWidget::animationDuration() const
 {

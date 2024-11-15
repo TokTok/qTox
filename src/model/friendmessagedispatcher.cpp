@@ -4,8 +4,8 @@
  */
 
 #include "friendmessagedispatcher.h"
-#include "src/persistence/settings.h"
 #include "src/model/status.h"
+#include "src/persistence/settings.h"
 
 FriendMessageDispatcher::FriendMessageDispatcher(Friend& f_, MessageProcessor processor_,
                                                  ICoreFriendMessageSender& messageSender_,
@@ -15,7 +15,8 @@ FriendMessageDispatcher::FriendMessageDispatcher(Friend& f_, MessageProcessor pr
     , messageSender(messageSender_)
     , processor(std::move(processor_))
 {
-    connect(&f, &Friend::onlineOfflineChanged, this, &FriendMessageDispatcher::onFriendOnlineOfflineChanged);
+    connect(&f, &Friend::onlineOfflineChanged, this,
+            &FriendMessageDispatcher::onFriendOnlineOfflineChanged);
 }
 
 /**
@@ -26,7 +27,8 @@ FriendMessageDispatcher::sendMessage(bool isAction, const QString& content)
 {
     const auto firstId = nextMessageId;
     auto lastId = nextMessageId;
-    for (const auto& message : processor.processOutgoingMessage(isAction, content, f.getSupportedExtensions())) {
+    for (const auto& message :
+         processor.processOutgoingMessage(isAction, content, f.getSupportedExtensions())) {
         auto messageId = nextMessageId++;
         lastId = messageId;
 
@@ -113,7 +115,8 @@ void FriendMessageDispatcher::clearOutgoingMessages()
 }
 
 
-void FriendMessageDispatcher::sendProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+void FriendMessageDispatcher::sendProcessedMessage(Message const& message,
+                                                   OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     if (!Status::isOnline(f.getStatus())) {
         offlineMsgEngine.addUnsentMessage(message, onOfflineMsgComplete);
@@ -128,8 +131,8 @@ void FriendMessageDispatcher::sendProcessedMessage(Message const& message, Offli
 }
 
 
-
-void FriendMessageDispatcher::sendExtendedProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+void FriendMessageDispatcher::sendExtendedProcessedMessage(
+    Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     assert(!message.isAction); // Actions not supported with extensions
 
@@ -156,7 +159,8 @@ void FriendMessageDispatcher::sendExtendedProcessedMessage(Message const& messag
     }
 }
 
-void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message, OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
+void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message,
+                                                       OfflineMsgEngine::CompletionFn onOfflineMsgComplete)
 {
     auto receipt = ReceiptNum();
 
@@ -176,7 +180,7 @@ void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message, O
 
 OfflineMsgEngine::CompletionFn FriendMessageDispatcher::getCompletionFn(DispatchedMessageId messageId)
 {
-    return [this, messageId] (bool success) {
+    return [this, messageId](bool success) {
         if (success) {
             emit messageComplete(messageId);
         } else {

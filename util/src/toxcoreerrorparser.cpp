@@ -87,7 +87,8 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Conference_Send_Message error, int lin
         qCritical() << line << "Message too long";
         return false;
     }
-    qCritical() << line << "Unknown Tox_Err_Conference_Send_Message  error:" << static_cast<int>(error);
+    qCritical() << line
+                << "Unknown Tox_Err_Conference_Send_Message  error:" << static_cast<int>(error);
     return false;
 }
 
@@ -221,7 +222,7 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_By_Public_Key error, int line)
 
 bool ToxcoreErrorParser::parseErr(Tox_Err_Bootstrap error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_BOOTSTRAP_OK:
         return true;
 
@@ -243,7 +244,7 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Bootstrap error, int line)
 
 bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_Add error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_FRIEND_ADD_OK:
         return true;
 
@@ -276,7 +277,8 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_Add error, int line)
         return false;
 
     case TOX_ERR_FRIEND_ADD_MALLOC:
-        qCritical() << line << "A memory allocation failed when trying to increase the friend list size.";
+        qCritical() << line
+                    << "A memory allocation failed when trying to increase the friend list size.";
         return false;
     }
     qCritical() << line << "Unknown Tox_Err_Friend_Add error code:" << error;
@@ -285,7 +287,7 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_Add error, int line)
 
 bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_Delete error, int line)
 {
-    switch(error) {
+    switch (error) {
     case TOX_ERR_FRIEND_DELETE_OK:
         return true;
 
@@ -418,11 +420,12 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_File_Control error, int line)
         return false;
 
     case TOX_ERR_FILE_CONTROL_NOT_FOUND:
-         qCritical() << line << ": No file transfer with the given file number was found for the given friend.";
-         return false;
+        qCritical() << line << ": No file transfer with the given file number was found for the given friend.";
+        return false;
 
     case TOX_ERR_FILE_CONTROL_NOT_PAUSED:
-        qCritical() << line << ": A RESUME control was sent, but the file transfer is running normally.";
+        qCritical() << line
+                    << ": A RESUME control was sent, but the file transfer is running normally.";
         return false;
 
     case TOX_ERR_FILE_CONTROL_DENIED:
@@ -447,7 +450,8 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_File_Get error, int line)
         return true;
 
     case TOX_ERR_FILE_GET_NULL:
-        qCritical() << line << ": One of the arguments to the function was NULL when it was not expected.";
+        qCritical() << line
+                    << ": One of the arguments to the function was NULL when it was not expected.";
         return false;
 
     case TOX_ERR_FILE_GET_FRIEND_NOT_FOUND:
@@ -469,7 +473,8 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_File_Send error, int line)
         return true;
 
     case TOX_ERR_FILE_SEND_NULL:
-        qCritical() << line << ": One of the arguments to the function was NULL when it was not expected.";
+        qCritical() << line
+                    << ": One of the arguments to the function was NULL when it was not expected.";
         return false;
 
     case TOX_ERR_FILE_SEND_FRIEND_NOT_FOUND:

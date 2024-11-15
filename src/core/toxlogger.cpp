@@ -15,7 +15,7 @@
 namespace ToxLogger {
 namespace {
 
-QByteArray cleanPath(const char *file)
+QByteArray cleanPath(const char* file)
 {
     // for privacy, make the path relative to the c-toxcore source directory
     const QRegularExpression pathCleaner(QLatin1String{"[\\s|\\S]*c-toxcore."});
@@ -24,14 +24,14 @@ QByteArray cleanPath(const char *file)
     return cleanedPath;
 }
 
-}  // namespace
+} // namespace
 
 /**
  * @brief Log message handler for toxcore log messages
  * @note See tox.h for the parameter definitions
  */
-void onLogMessage(Tox *tox, Tox_Log_Level level, const char *file, uint32_t line,
-                  const char *func, const char *message, void *user_data)
+void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line, const char* func,
+                  const char* message, void* user_data)
 {
     std::ignore = tox;
     std::ignore = user_data;
@@ -55,4 +55,4 @@ void onLogMessage(Tox *tox, Tox_Log_Level level, const char *file, uint32_t line
     }
 }
 
-}  // namespace ToxLogger
+} // namespace ToxLogger

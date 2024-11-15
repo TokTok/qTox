@@ -142,7 +142,8 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
 
     bodyUI->autoAwaySpinBox->setValue(settings.getAutoAwayTime());
     bodyUI->autoSaveFilesDir->setText(settings.getGlobalAutoAcceptDir());
-    bodyUI->maxAutoAcceptSizeMB->setValue(static_cast<double>(settings.getMaxAutoAcceptSize()) / 1024 / 1024);
+    bodyUI->maxAutoAcceptSizeMB->setValue(static_cast<double>(settings.getMaxAutoAcceptSize())
+                                          / 1024 / 1024);
     bodyUI->autoacceptFiles->setChecked(settings.getAutoSaveEnabled());
 
 

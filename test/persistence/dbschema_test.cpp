@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
+#include "src/core/toxfile.h"
 #include "src/persistence/db/rawdatabase.h"
 #include "src/persistence/db/upgrades/dbupgrader.h"
-#include "src/core/toxfile.h"
 
 #include "dbutility/dbutility.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -32,29 +32,28 @@ bool insertFileId(RawDatabase& db, int row, bool valid)
     }
 
     QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query(
-        QString("INSERT INTO file_transfers "
-        "    (id, message_type, sender_alias, "
-        "    file_restart_id, file_name, file_path, "
-        "    file_hash, file_size, direction, file_state) "
-        "VALUES ( "
-        "    %1, "
-        "    'F', "
-        "    1, "
-        "    ?, "
-        "    %2, "
-        "    %3, "
-        "    %4, "
-        "    1, "
-        "    1, "
-        "    %5 "
-        ");")
-        .arg(row)
-        .arg("\"fooname\"")
-        .arg("\"foo/path\"")
-        .arg("\"foohash\"")
-        .arg(ToxFile::CANCELED)
-        , {resumeId});
+    upgradeQueries += RawDatabase::Query(QString("INSERT INTO file_transfers "
+                                                 "    (id, message_type, sender_alias, "
+                                                 "    file_restart_id, file_name, file_path, "
+                                                 "    file_hash, file_size, direction, file_state) "
+                                                 "VALUES ( "
+                                                 "    %1, "
+                                                 "    'F', "
+                                                 "    1, "
+                                                 "    ?, "
+                                                 "    %2, "
+                                                 "    %3, "
+                                                 "    %4, "
+                                                 "    1, "
+                                                 "    1, "
+                                                 "    %5 "
+                                                 ");")
+                                             .arg(row)
+                                             .arg("\"fooname\"")
+                                             .arg("\"foo/path\"")
+                                             .arg("\"foohash\"")
+                                             .arg(ToxFile::CANCELED),
+                                         {resumeId});
     return db.execNow(upgradeQueries);
 }
 
@@ -62,21 +61,25 @@ class MockMessageBoxManager : public IMessageBoxManager
 {
 public:
     ~MockMessageBoxManager() override = default;
-    void showInfo(const QString& title, const QString& msg) override {
+    void showInfo(const QString& title, const QString& msg) override
+    {
         std::ignore = title;
         std::ignore = msg;
     }
-    void showWarning(const QString& title, const QString& msg) override {
+    void showWarning(const QString& title, const QString& msg) override
+    {
         std::ignore = title;
         std::ignore = msg;
     }
-    void showError(const QString& title, const QString& msg) override {
+    void showError(const QString& title, const QString& msg) override
+    {
         std::ignore = title;
         std::ignore = msg;
         ++errorsShown;
     }
     bool askQuestion(const QString& title, const QString& msg, bool defaultAns = false,
-            bool warning = true, bool yesno = true) override {
+                     bool warning = true, bool yesno = true) override
+    {
         std::ignore = title;
         std::ignore = msg;
         std::ignore = warning;
@@ -84,7 +87,8 @@ public:
         return defaultAns;
     }
     bool askQuestion(const QString& title, const QString& msg, const QString& button1,
-            const QString& button2, bool defaultAns = false, bool warning = true) override {
+                     const QString& button2, bool defaultAns = false, bool warning = true) override
+    {
         std::ignore = title;
         std::ignore = msg;
         std::ignore = button1;
@@ -92,12 +96,15 @@ public:
         std::ignore = warning;
         return defaultAns;
     }
-    void confirmExecutableOpen(const QFileInfo& file) override {
+    void confirmExecutableOpen(const QFileInfo& file) override
+    {
         std::ignore = file;
     }
-    int getErrorsShown() {
+    int getErrorsShown()
+    {
         return errorsShown;
     }
+
 private:
     int errorsShown = 0;
 };
@@ -216,68 +223,71 @@ void TestDbSchema::test1to2()
 
     // friend 1
     // first message in chat is pending - but the second is delivered. This message is "broken"
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (1, 1, 1, ?, 0)",
-        {"first message in chat, pending and stuck"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (1, 1, 1, ?, 0)",
+                                  {"first message in chat, pending and stuck"}};
     queries += {"INSERT INTO faux_offline_pending (id) VALUES ("
-                                        "    last_insert_rowid()"
-                                        ");"};
+                "    last_insert_rowid()"
+                ");"};
     // second message is delivered, causing the first to be considered broken
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (2, 2, 1, ?, 0)",
-        {"second message in chat, delivered"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (2, 2, 1, ?, 0)",
+                                  {"second message in chat, delivered"}};
 
     // third message is pending - this is a normal pending message. It should be untouched.
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (3, 3, 1, ?, 0)",
-        {"third message in chat, pending"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (3, 3, 1, ?, 0)",
+                                  {"third message in chat, pending"}};
     queries += {"INSERT INTO faux_offline_pending (id) VALUES ("
-                                        "    last_insert_rowid()"
-                                        ");"};
+                "    last_insert_rowid()"
+                ");"};
 
     // friend 2
     // first message is delivered.
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (4, 4, 2, ?, 2)",
-        {"first message by friend in chat, delivered"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (4, 4, 2, ?, 2)",
+                                  {"first message by friend in chat, delivered"}};
 
     // second message is also delivered.
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (5, 5, 2, ?, 0)",
-        {"first message by us in chat, delivered"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (5, 5, 2, ?, 0)",
+                                  {"first message by us in chat, delivered"}};
 
     // third message is pending, but not broken since there are no delivered messages after it.
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (6, 6, 2, ?, 0)",
-        {"last message in chat, by us, pending"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (6, 6, 2, ?, 0)",
+                                  {"last message in chat, by us, pending"}};
     queries += {"INSERT INTO faux_offline_pending (id) VALUES ("
-                                        "    last_insert_rowid()"
-                                        ");"};
+                "    last_insert_rowid()"
+                ");"};
 
     QVERIFY(db->execNow(queries));
     QVERIFY(DbUpgrader::dbSchema1to2(*db));
     DbUtility::verifyDb(db, DbUtility::schema2);
 
     long brokenCount = -1;
-    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;", [&](const QVector<QVariant>& row) {
-        brokenCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
+                                           [&](const QVector<QVariant>& row) {
+                                               brokenCount = row[0].toLongLong();
+                                           }};
     QVERIFY(db->execNow(brokenCountQuery));
     QVERIFY(brokenCount == 1); // only friend 1's first message is "broken"
 
     int fauxOfflineCount = -1;
-    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;", [&](const QVector<QVariant>& row) {
-        fauxOfflineCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
+                                                [&](const QVector<QVariant>& row) {
+                                                    fauxOfflineCount = row[0].toLongLong();
+                                                }};
     QVERIFY(db->execNow(fauxOfflineCountQuery));
     // both friend 1's third message and friend 2's third message should still be pending.
-    //The broken message should no longer be pending.
+    // The broken message should no longer be pending.
     QVERIFY(fauxOfflineCount == 2);
 
     int totalHisoryCount = -1;
-    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;", [&](const QVector<QVariant>& row) {
-        totalHisoryCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
+                                                 [&](const QVector<QVariant>& row) {
+                                                     totalHisoryCount = row[0].toLongLong();
+                                                 }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
     QVERIFY(totalHisoryCount == 6); // all messages should still be in history.
 }
@@ -293,51 +303,54 @@ void TestDbSchema::test2to3()
 
     QVector<RawDatabase::Query> queries;
     // pending message, should be moved out
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (1, 1, 0, ?, 0)",
-        {"/me "}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (1, 1, 0, ?, 0)",
+                                  {"/me "}};
     queries += {"INSERT INTO faux_offline_pending (id) VALUES ("
-                                        "    last_insert_rowid()"
-                                        ");"};
+                "    last_insert_rowid()"
+                ");"};
 
     // non pending message with the content "/me ". Maybe it was sent by a friend using a different client.
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (2, 2, 0, ?, 2)",
-        {"/me "}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (2, 2, 0, ?, 2)",
+                                  {"/me "}};
 
     // non pending message sent by us
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (3, 3, 0, ?, 1)",
-        {"a normal message"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (3, 3, 0, ?, 1)",
+                                  {"a normal message"}};
 
     // pending normal message sent by us
-    queries += RawDatabase::Query{
-        "INSERT INTO history (id, timestamp, chat_id, message, sender_alias) VALUES (4, 3, 0, ?, 1)",
-        {"a normal faux offline message"}};
+    queries += RawDatabase::Query{"INSERT INTO history (id, timestamp, chat_id, message, "
+                                  "sender_alias) VALUES (4, 3, 0, ?, 1)",
+                                  {"a normal faux offline message"}};
     queries += {"INSERT INTO faux_offline_pending (id) VALUES ("
-                                        "    last_insert_rowid()"
-                                        ");"};
+                "    last_insert_rowid()"
+                ");"};
     QVERIFY(db->execNow(queries));
     QVERIFY(DbUpgrader::dbSchema2to3(*db));
 
     long brokenCount = -1;
-    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;", [&](const QVector<QVariant>& row) {
-        brokenCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
+                                           [&](const QVector<QVariant>& row) {
+                                               brokenCount = row[0].toLongLong();
+                                           }};
     QVERIFY(db->execNow(brokenCountQuery));
     QVERIFY(brokenCount == 1);
 
     int fauxOfflineCount = -1;
-    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;", [&](const QVector<QVariant>& row) {
-        fauxOfflineCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
+                                                [&](const QVector<QVariant>& row) {
+                                                    fauxOfflineCount = row[0].toLongLong();
+                                                }};
     QVERIFY(db->execNow(fauxOfflineCountQuery));
     QVERIFY(fauxOfflineCount == 1);
 
     int totalHisoryCount = -1;
-    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;", [&](const QVector<QVariant>& row) {
-        totalHisoryCount = row[0].toLongLong();
-    }};
+    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
+                                                 [&](const QVector<QVariant>& row) {
+                                                     totalHisoryCount = row[0].toLongLong();
+                                                 }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
     QVERIFY(totalHisoryCount == 4);
 
@@ -372,8 +385,7 @@ void TestDbSchema::test6to7()
 {
     auto db = std::shared_ptr<RawDatabase>{new RawDatabase{testDatabaseFile->fileName(), {}, {}}};
     // foreign_keys are enabled by History constructor and required for this upgrade to work on older sqlite versions
-    db->execNow(
-        "PRAGMA foreign_keys = ON;");
+    db->execNow("PRAGMA foreign_keys = ON;");
     createSchemaAtVersion(db, DbUtility::schema6);
     QVERIFY(DbUpgrader::dbSchema6to7(*db));
     DbUtility::verifyDb(db, DbUtility::schema7);
@@ -393,16 +405,16 @@ void TestDbSchema::test9to10()
     int numHealed = 0;
     int numUnchanged = 0;
     QVERIFY(db->execNow(RawDatabase::Query("SELECT file_restart_id from file_transfers;",
-        [&](const QVector<QVariant>& row) {
-        auto resumeId = row[0].toByteArray();
-        if (resumeId == QByteArray(32, 0)) {
-            ++numHealed;
-        } else if (resumeId == QByteArray(32, 1)) {
-            ++numUnchanged;
-        } else {
-            QFAIL("Invalid file_restart_id");
-        }
-        })));
+                                           [&](const QVector<QVariant>& row) {
+                                               auto resumeId = row[0].toByteArray();
+                                               if (resumeId == QByteArray(32, 0)) {
+                                                   ++numHealed;
+                                               } else if (resumeId == QByteArray(32, 1)) {
+                                                   ++numUnchanged;
+                                               } else {
+                                                   QFAIL("Invalid file_restart_id");
+                                               }
+                                           })));
     QVERIFY(numHealed == 2);
     QVERIFY(numUnchanged == 3);
     verifyDb(db, DbUtility::schema10);

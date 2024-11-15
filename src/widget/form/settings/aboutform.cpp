@@ -108,26 +108,30 @@ void AboutForm::replaceVersions()
     bodyUI->toxCoreVersion->setText(tr("toxcore version: %1").arg(TOXCORE_VERSION));
     bodyUI->qtVersion->setText(tr("Qt version: %1").arg(QT_VERSION_STR));
 
-    QString issueBody = QString("##### Brief Description\n\n"
-                                "OS: %1\n"
-                                "qTox version: %2\n"
-                                "Commit hash: %3\n"
-                                "toxcore: %4\n"
-                                "Qt: %5\n…\n\n"
-                                "Reproducible: Always / Almost Always / Sometimes"
-                                " / Rarely / Couldn't Reproduce\n\n"
-                                "##### Steps to reproduce\n\n"
-                                "1. \n2. \n3. …\n\n"
-                                "##### Observed Behavior\n\n\n"
-                                "##### Expected Behavior\n\n\n"
-                                "##### Additional Info\n"
-                                "(links, images, etc go here)\n\n"
-                                "----\n\n"
-                                "More information on how to write good bug reports in the wiki: "
-                                "https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports.\n\n"
-                                "Please remove any unnecessary template section before submitting.")
-                            .arg(QSysInfo::prettyProductName()).arg(GIT_DESCRIBE).arg(GIT_VERSION)
-                                 .arg(TOXCORE_VERSION).arg(QT_VERSION_STR);
+    QString issueBody =
+        QString("##### Brief Description\n\n"
+                "OS: %1\n"
+                "qTox version: %2\n"
+                "Commit hash: %3\n"
+                "toxcore: %4\n"
+                "Qt: %5\n…\n\n"
+                "Reproducible: Always / Almost Always / Sometimes"
+                " / Rarely / Couldn't Reproduce\n\n"
+                "##### Steps to reproduce\n\n"
+                "1. \n2. \n3. …\n\n"
+                "##### Observed Behavior\n\n\n"
+                "##### Expected Behavior\n\n\n"
+                "##### Additional Info\n"
+                "(links, images, etc go here)\n\n"
+                "----\n\n"
+                "More information on how to write good bug reports in the wiki: "
+                "https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports.\n\n"
+                "Please remove any unnecessary template section before submitting.")
+            .arg(QSysInfo::prettyProductName())
+            .arg(GIT_DESCRIBE)
+            .arg(GIT_VERSION)
+            .arg(TOXCORE_VERSION)
+            .arg(QT_VERSION_STR);
 
     issueBody.replace("#", "%23").replace(":", "%3A");
 
@@ -146,7 +150,8 @@ void AboutForm::replaceVersions()
                                "Replaces `%2` in the `A list of all known…`"))));
 
     bodyUI->clickToReport->setText(
-        createLink("https://github.com/TokTok/qTox/issues/new?body=" + QString::fromUtf8(QUrl(issueBody).toEncoded()),
+        createLink("https://github.com/TokTok/qTox/issues/new?body="
+                       + QString::fromUtf8(QUrl(issueBody).toEncoded()),
                    QString("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
 

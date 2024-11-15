@@ -17,9 +17,9 @@
 #include <QTextBlock>
 #include <QTextFragment>
 
-Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_,
-    const QColor& custom, const QString& txt, const QFont& font, bool enableElide,
-    const QString& rawText_, const TextType& type)
+Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, const QColor& custom,
+           const QString& txt, const QFont& font, bool enableElide, const QString& rawText_,
+           const TextType& type)
     : rawText(rawText_)
     , elide(enableElide)
     , defFont(font)
@@ -36,11 +36,10 @@ Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_,
     setAcceptHoverEvents(true);
 }
 
-Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_,
-    const QString& txt, const QFont& font, bool enableElide, const QString& rawText_,
-    const TextType& type)
-    : Text(documentCache_, settings_, style_, style_.getColor(Style::ColorPalette::MainText),
-        txt, font, enableElide, rawText_, type)
+Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, const QString& txt,
+           const QFont& font, bool enableElide, const QString& rawText_, const TextType& type)
+    : Text(documentCache_, settings_, style_, style_.getColor(Style::ColorPalette::MainText), txt,
+           font, enableElide, rawText_, type)
 {
 }
 
@@ -69,7 +68,7 @@ void Text::selectText(const QString& txt, const std::pair<int, int>& point)
     selectText(cursor, point);
 }
 
-void Text::selectText(const QRegularExpression &exp, const std::pair<int, int>& point)
+void Text::selectText(const QRegularExpression& exp, const std::pair<int, int>& point)
 {
     regenerate();
 

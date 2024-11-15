@@ -3,8 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/model/notificationgenerator.h"
 #include "src/friendlist.h"
+#include "src/model/notificationgenerator.h"
 
 #include "mock/mockcoreidhandler.h"
 #include "mock/mockgroupquery.h"
@@ -12,34 +12,76 @@
 #include <QObject>
 #include <QtTest/QtTest>
 
-namespace
+namespace {
+class MockNotificationSettings : public INotificationSettings
 {
-    class MockNotificationSettings : public INotificationSettings
+    virtual bool getNotify() const override
     {
-        virtual bool getNotify() const override { return true; }
+        return true;
+    }
 
-        virtual void setNotify(bool newValue) override { std::ignore = newValue; }
+    virtual void setNotify(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
 
-        virtual bool getShowWindow() const override { return true; }
-        virtual void setShowWindow(bool newValue) override { std::ignore = newValue; }
+    virtual bool getShowWindow() const override
+    {
+        return true;
+    }
+    virtual void setShowWindow(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
 
-        virtual bool getDesktopNotify() const override { return true; }
-        virtual void setDesktopNotify(bool enabled) override { std::ignore = enabled; }
+    virtual bool getDesktopNotify() const override
+    {
+        return true;
+    }
+    virtual void setDesktopNotify(bool enabled) override
+    {
+        std::ignore = enabled;
+    }
 
-        virtual bool getNotifySound() const override { return true; }
-        virtual void setNotifySound(bool newValue) override { std::ignore = newValue; }
+    virtual bool getNotifySound() const override
+    {
+        return true;
+    }
+    virtual void setNotifySound(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
 
-        virtual bool getNotifyHide() const override { return notifyHide; }
-        virtual void setNotifyHide(bool newValue) override { notifyHide = newValue; }
+    virtual bool getNotifyHide() const override
+    {
+        return notifyHide;
+    }
+    virtual void setNotifyHide(bool newValue) override
+    {
+        notifyHide = newValue;
+    }
 
-        virtual bool getBusySound() const override { return true; }
-        virtual void setBusySound(bool newValue) override { std::ignore = newValue; }
+    virtual bool getBusySound() const override
+    {
+        return true;
+    }
+    virtual void setBusySound(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
 
-        virtual bool getGroupAlwaysNotify() const override { return true; }
-        virtual void setGroupAlwaysNotify(bool newValue) override { std::ignore = newValue; }
-    private:
-        bool notifyHide = false;
-    };
+    virtual bool getGroupAlwaysNotify() const override
+    {
+        return true;
+    }
+    virtual void setGroupAlwaysNotify(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
+
+private:
+    bool notifyHide = false;
+};
 
 } // namespace
 
@@ -170,8 +212,10 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
 
 void TestNotificationGenerator::testMultipleGroupSourceMessages()
 {
-    Group g(0, GroupId(QByteArray(32, 0)), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
-    Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Group g(0, GroupId(QByteArray(32, 0)), "groupName", false, "selfName", *groupQuery,
+            *coreIdHandler, *friendList);
+    Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", false, "selfName", *groupQuery,
+             *coreIdHandler, *friendList);
 
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -188,7 +232,8 @@ void TestNotificationGenerator::testMixedSourceMessages()
     Friend f(0, ToxPk());
     f.setName("friend");
 
-    Group g(0, GroupId(QByteArray(32, 0)), "group", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Group g(0, GroupId(QByteArray(32, 0)), "group", false, "selfName", *groupQuery, *coreIdHandler,
+            *friendList);
 
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -209,7 +254,8 @@ void TestNotificationGenerator::testFileTransfer()
     Friend f(0, ToxPk());
     f.setName("friend");
 
-    auto notificationData = notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
+    auto notificationData =
+        notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
 
     QVERIFY(notificationData.title == "friend - file transfer");
     QVERIFY(notificationData.message == "file (5.00MiB)");
@@ -221,7 +267,8 @@ void TestNotificationGenerator::testFileTransferAfterMessage()
     f.setName("friend");
 
     notificationGenerator->friendMessageNotification(&f, "test1");
-    auto notificationData = notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
+    auto notificationData =
+        notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
 
     QVERIFY(notificationData.title == "2 message(s) from friend");
     QVERIFY(notificationData.message == "Incoming file transfer");

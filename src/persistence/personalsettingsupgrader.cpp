@@ -12,23 +12,23 @@
 #include <cassert>
 
 namespace {
-    bool version0to1(SettingsSerializer& ps)
+bool version0to1(SettingsSerializer& ps)
+{
+    ps.beginGroup("Friends");
     {
-        ps.beginGroup("Friends");
-        {
-            int size = ps.beginReadArray("Friend");
-            for (int i = 0; i < size; i++) {
-                ps.setArrayIndex(i);
-                const auto oldFriendAddr = ps.value("addr").toString();
-                auto newFriendAddr = oldFriendAddr.left(ToxPk::numHexChars);
-                ps.setValue("addr", newFriendAddr);
-            }
-            ps.endArray();
+        int size = ps.beginReadArray("Friend");
+        for (int i = 0; i < size; i++) {
+            ps.setArrayIndex(i);
+            const auto oldFriendAddr = ps.value("addr").toString();
+            auto newFriendAddr = oldFriendAddr.left(ToxPk::numHexChars);
+            ps.setValue("addr", newFriendAddr);
         }
-        ps.endGroup();
-
-        return true;
+        ps.endArray();
     }
+    ps.endGroup();
+
+    return true;
+}
 } // namespace
 
 bool PersonalSettingsUpgrader::doUpgrade(SettingsSerializer& settingsSerializer, int fromVer, int toVer)
@@ -53,13 +53,13 @@ bool PersonalSettingsUpgrader::doUpgrade(SettingsSerializer& settingsSerializer,
     for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
         auto const newSettingsVersion = i + 1;
         if (!upgradeFns[i](settingsSerializer)) {
-            qCritical() << "Failed to upgrade settings to version " << newSettingsVersion << " aborting";
+            qCritical() << "Failed to upgrade settings to version " << newSettingsVersion
+                        << " aborting";
             return false;
         }
         qDebug() << "Settings upgraded incrementally to schema version " << newSettingsVersion;
     }
 
-    qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->"
-            << toVer << ")";
+    qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->" << toVer << ")";
     return true;
 }

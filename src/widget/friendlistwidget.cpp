@@ -10,9 +10,9 @@
 #include "widget.h"
 #include "src/friendlist.h"
 #include "src/model/friend.h"
+#include "src/model/friendlist/friendlistmanager.h"
 #include "src/model/group.h"
 #include "src/model/status.h"
-#include "src/model/friendlist/friendlistmanager.h"
 #include "src/persistence/settings.h"
 #include "src/widget/categorywidget.h"
 
@@ -85,9 +85,10 @@ qint64 timeUntilTomorrow()
 }
 } // namespace
 
-FriendListWidget::FriendListWidget(const Core &core_, Widget* parent,
-    Settings& settings_, Style& style_, IMessageBoxManager& messageBoxManager_,
-    FriendList& friendList_, GroupList& groupList_, Profile& profile_, bool groupsOnTop)
+FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& settings_,
+                                   Style& style_, IMessageBoxManager& messageBoxManager_,
+                                   FriendList& friendList_, GroupList& groupList_,
+                                   Profile& profile_, bool groupsOnTop)
     : QWidget(parent)
     , core{core_}
     , settings{settings_}
@@ -153,7 +154,7 @@ void FriendListWidget::sortByMode()
 
         QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems(); // Sorted items
         QVector<IFriendListItem*> friendItems; // Items that are not included in the circle
-        int posByName = 0; // Needed for scroll contacts
+        int posByName = 0;                     // Needed for scroll contacts
         // Linking a friend with a circle and setting scroll position
         for (int i = 0; i < itemsTmp.size(); ++i) {
             if (itemsTmp[i]->isFriend() && itemsTmp[i]->getCircleId() >= 0) {
@@ -161,7 +162,7 @@ void FriendListWidget::sortByMode()
                 if (circleWgt != nullptr) {
                     // Place a friend in the circle and continue
                     FriendWidget* frndTmp =
-                            qobject_cast<FriendWidget*>((itemsTmp[i].get())->getWidget());
+                        qobject_cast<FriendWidget*>((itemsTmp[i].get())->getWidget());
                     circleWgt->addFriendWidget(frndTmp, frndTmp->getFriend()->getStatus());
                     continue;
                 }
@@ -180,20 +181,20 @@ void FriendListWidget::sortByMode()
         manager->applyFilter();
 
         if (!manager->needHideCircles()) {
-            //Sorts circles alphabetically and adds them to the layout
+            // Sorts circles alphabetically and adds them to the layout
             QVector<CircleWidget*> circles;
             for (int i = 0; i < settings.getCircleCount(); ++i) {
                 circles.push_back(CircleWidget::getFromID(i));
             }
 
-            std::sort(circles.begin(), circles.end(),
-                        [](CircleWidget* a, CircleWidget* b) {
-                            return a->getName().toUpper() < b->getName().toUpper();
-                        });
+            std::sort(circles.begin(), circles.end(), [](CircleWidget* a, CircleWidget* b) {
+                return a->getName().toUpper() < b->getName().toUpper();
+            });
 
             for (int i = 0; i < circles.size(); ++i) {
 
-                QVector<std::shared_ptr<IFriendListItem>> itemsInCircle = getItemsFromCircle(circles.at(i));
+                QVector<std::shared_ptr<IFriendListItem>> itemsInCircle =
+                    getItemsFromCircle(circles.at(i));
                 for (int j = 0; j < itemsInCircle.size(); ++j) {
                     itemsInCircle.at(j)->setNameSortedPos(posByName++);
                 }
@@ -259,7 +260,7 @@ void FriendListWidget::sortByMode()
             }
         }
 
-        //Hide empty categories
+        // Hide empty categories
         for (int i = 0; i < activityLayout->count(); ++i) {
             QWidget* widget = activityLayout->itemAt(i)->widget();
             CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
@@ -296,7 +297,7 @@ void FriendListWidget::cleanMainLayout()
     }
 }
 
-QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem *currentPos, bool forward) const
+QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, bool forward) const
 {
     int pos = currentPos->getNameSortedPos();
     int nextPos = forward ? pos + 1 : pos - 1;
@@ -314,8 +315,7 @@ QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem *currentPos, boo
     return nullptr;
 }
 
-QVector<std::shared_ptr<IFriendListItem>>
-FriendListWidget::getItemsFromCircle(CircleWidget *circle) const
+QVector<std::shared_ptr<IFriendListItem>> FriendListWidget::getItemsFromCircle(CircleWidget* circle) const
 {
     QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
     QVector<std::shared_ptr<IFriendListItem>> itemsInCircle;
@@ -608,7 +608,7 @@ CircleWidget* FriendListWidget::createCircleWidget(int id)
     }
 
     CircleWidget* circleWidget = new CircleWidget(core, this, id, settings, style,
-        messageBoxManager, friendList, groupList, profile);
+                                                  messageBoxManager, friendList, groupList, profile);
     emit connectCircleWidget(*circleWidget);
     connect(this, &FriendListWidget::onCompactChanged, circleWidget, &CircleWidget::onCompactChanged);
     connect(circleWidget, &CircleWidget::renameRequested, this, &FriendListWidget::renameCircleWidget);

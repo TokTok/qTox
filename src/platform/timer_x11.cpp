@@ -3,10 +3,10 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QtCore/qsystemdetection.h>
 #include "src/platform/timer.h"
 #include "src/platform/x11_display.h"
 #include <QDebug>
+#include <QtCore/qsystemdetection.h>
 #include <X11/extensions/scrnsaver.h>
 
 uint32_t Platform::getIdleTime()

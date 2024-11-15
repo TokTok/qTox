@@ -7,8 +7,8 @@
 
 #include "src/model/friend.h"
 #include "src/nexus.h"
-#include "src/persistence/profile.h"
 #include "src/persistence/ifriendsettings.h"
+#include "src/persistence/profile.h"
 
 AboutFriend::AboutFriend(const Friend* f_, IFriendSettings* const settings_, Profile& profile_)
     : f{f_}
@@ -19,8 +19,8 @@ AboutFriend::AboutFriend(const Friend* f_, IFriendSettings* const settings_, Pro
         std::ignore = pk;
         emit noteChanged(note);
     });
-    settings->connectTo_autoAcceptCallChanged(this,
-            [this](const ToxPk& pk, IFriendSettings::AutoAcceptCallFlags flag) {
+    settings->connectTo_autoAcceptCallChanged(this, [this](const ToxPk& pk,
+                                                           IFriendSettings::AutoAcceptCallFlags flag) {
         std::ignore = pk;
         emit autoAcceptCallChanged(flag);
     });
@@ -53,8 +53,7 @@ QPixmap AboutFriend::getAvatar() const
 {
     const ToxPk pk = f->getPublicKey();
     const QPixmap avatar = profile.loadAvatar(pk);
-    return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg"))
-                           : avatar;
+    return avatar.isNull() ? QPixmap(QStringLiteral(":/img/contact_dark.svg")) : avatar;
 }
 
 QString AboutFriend::getNote() const

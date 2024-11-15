@@ -10,15 +10,17 @@
 #include <QTimeZone>
 #include <QtCore>
 
-#include <memory>
 #include <cassert>
+#include <memory>
 
-extern "C" {
-#include <toxext/toxext.h>
+extern "C"
+{
 #include <tox_extension_messages.h>
+#include <toxext/toxext.h>
 }
 
-std::unique_ptr<CoreExt> CoreExt::makeCoreExt(Tox* core) {
+std::unique_ptr<CoreExt> CoreExt::makeCoreExt(Tox* core)
+{
     auto toxExtPtr = toxext_init(core);
     if (!toxExtPtr) {
         return nullptr;
@@ -33,13 +35,10 @@ CoreExt::CoreExt(ExtensionPtr<ToxExt> toxExt_)
     , toxExtMessages(nullptr, nullptr)
 {
     toxExtMessages = ExtensionPtr<ToxExtensionMessages>(
-        tox_extension_messages_register(
-            toxExt.get(),
-            CoreExt::onExtendedMessageReceived,
-            CoreExt::onExtendedMessageReceipt,
-            CoreExt::onExtendedMessageNegotiation,
-            this,
-            TOX_EXTENSION_MESSAGES_DEFAULT_MAX_RECEIVING_MESSAGE_SIZE),
+        tox_extension_messages_register(toxExt.get(), CoreExt::onExtendedMessageReceived,
+                                        CoreExt::onExtendedMessageReceipt,
+                                        CoreExt::onExtendedMessageNegotiation, this,
+                                        TOX_EXTENSION_MESSAGES_DEFAULT_MAX_RECEIVING_MESSAGE_SIZE),
         tox_extension_messages_free);
 }
 
@@ -57,12 +56,8 @@ void CoreExt::onLosslessPacket(uint32_t friendId, const uint8_t* data, size_t le
     }
 }
 
-CoreExt::Packet::Packet(
-    ToxExtPacketList* packetList_,
-    ToxExtensionMessages* toxExtMessages_,
-    uint32_t friendId_,
-    std::mutex* toxext_mutex_,
-    PacketPassKey passKey)
+CoreExt::Packet::Packet(ToxExtPacketList* packetList_, ToxExtensionMessages* toxExtMessages_,
+                        uint32_t friendId_, std::mutex* toxext_mutex_, PacketPassKey passKey)
     : toxext_mutex(toxext_mutex_)
     , toxExtMessages(toxExtMessages_)
     , packetList(packetList_)
@@ -74,12 +69,9 @@ CoreExt::Packet::Packet(
 
 std::unique_ptr<ICoreExtPacket> CoreExt::getPacket(uint32_t friendId)
 {
-    return std::unique_ptr<Packet>(new Packet(
-        toxext_packet_list_create(toxExt.get(), friendId),
-        toxExtMessages.get(),
-        friendId,
-        &toxext_mutex,
-        PacketPassKey{}));
+    return std::unique_ptr<Packet>(new Packet(toxext_packet_list_create(toxExt.get(), friendId),
+                                              toxExtMessages.get(), friendId, &toxext_mutex,
+                                              PacketPassKey{}));
 }
 
 uint64_t CoreExt::Packet::addExtendedMessage(QString message)
@@ -94,10 +86,8 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
 
     int size = message.toUtf8().size();
     enum Tox_Extension_Messages_Error err;
-    auto maxSize = static_cast<int>(tox_extension_messages_get_max_sending_size(
-        toxExtMessages,
-        friendId,
-        &err));
+    auto maxSize =
+        static_cast<int>(tox_extension_messages_get_max_sending_size(toxExtMessages, friendId, &err));
 
     if (size > maxSize) {
         assert(false);
@@ -107,13 +97,8 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
     }
 
     ToxString toxString(message);
-    const auto receipt = tox_extension_messages_append(
-        toxExtMessages,
-        packetList,
-        toxString.data(),
-        toxString.size(),
-        friendId,
-        &err);
+    const auto receipt = tox_extension_messages_append(toxExtMessages, packetList, toxString.data(),
+                                                       toxString.size(), friendId, &err);
 
     if (err != TOX_EXTENSION_MESSAGES_SUCCESS) {
         qWarning() << "Error sending extension message";
@@ -144,8 +129,8 @@ uint64_t CoreExt::getMaxExtendedMessageSize()
 void CoreExt::onFriendStatusChanged(uint32_t friendId, Status::Status status)
 {
     const auto prevStatusIt = currentStatuses.find(friendId);
-    const auto prevStatus = prevStatusIt == currentStatuses.end()
-        ? Status::Status::Offline : prevStatusIt->second;
+    const auto prevStatus =
+        prevStatusIt == currentStatuses.end() ? Status::Status::Offline : prevStatusIt->second;
 
     currentStatuses[friendId] = status;
 
@@ -159,7 +144,8 @@ void CoreExt::onFriendStatusChanged(uint32_t friendId, Status::Status status)
     }
 }
 
-void CoreExt::onExtendedMessageReceived(uint32_t friendId, const uint8_t* data, size_t size, void* userData)
+void CoreExt::onExtendedMessageReceived(uint32_t friendId, const uint8_t* data, size_t size,
+                                        void* userData)
 {
     QString msg = ToxString(data, size).getQString();
     emit static_cast<CoreExt*>(userData)->extendedMessageReceived(friendId, msg);
@@ -170,7 +156,8 @@ void CoreExt::onExtendedMessageReceipt(uint32_t friendId, uint64_t receiptId, vo
     emit static_cast<CoreExt*>(userData)->extendedReceiptReceived(friendId, receiptId);
 }
 
-void CoreExt::onExtendedMessageNegotiation(uint32_t friendId, bool compatible, uint64_t maxMessageSize, void* userData)
+void CoreExt::onExtendedMessageNegotiation(uint32_t friendId, bool compatible,
+                                           uint64_t maxMessageSize, void* userData)
 {
     auto coreExt = static_cast<CoreExt*>(userData);
 

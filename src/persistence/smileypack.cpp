@@ -11,8 +11,8 @@
 #include <QRegularExpression>
 #include <QStandardPaths>
 #include <QStringBuilder>
-#include <QtConcurrent/QtConcurrentRun>
 #include <QTimer>
+#include <QtConcurrent/QtConcurrentRun>
 
 #if defined(Q_OS_FREEBSD)
 #include <locale.h>
@@ -97,8 +97,7 @@ SmileyPack::SmileyPack(ISmileySettings& settings_)
 {
     loadingMutex.lock();
     QThreadPool::globalInstance()->start([this]() { load(settings.getSmileyPack()); });
-    settings.connectTo_smileyPackChanged(this,
-        [&](const QString&) { onSmileyPackChanged(); });
+    settings.connectTo_smileyPackChanged(this, [&](const QString&) { onSmileyPackChanged(); });
     connect(cleanupTimer, &QTimer::timeout, this, &SmileyPack::cleanupIconsCache);
     cleanupTimer->start(CLEANUP_TIMEOUT);
 }
@@ -254,14 +253,14 @@ void SmileyPack::constructRegex()
             if (emote.toUcs4().length() == 1) {
                 regularPatterns.append(emote);
                 regularPatterns.append(QStringLiteral("|"));
-            }
-            else {
+            } else {
                 multiCharacterEmojiPatterns.append(emote);
                 multiCharacterEmojiPatterns.append(QStringLiteral("|"));
             }
         } else {
             // patterns like ":)" or ":smile:", don't match inside a word or else will hit punctuation and html tags
-            regularPatterns.append(QStringLiteral(R"((?<=^|\s))") % QRegularExpression::escape(emote) % QStringLiteral(R"((?=$|\s))"));
+            regularPatterns.append(QStringLiteral(R"((?<=^|\s))") % QRegularExpression::escape(emote)
+                                   % QStringLiteral(R"((?=$|\s))"));
             regularPatterns.append(QStringLiteral("|"));
         }
     }

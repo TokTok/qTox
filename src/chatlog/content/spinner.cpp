@@ -46,8 +46,8 @@ void Spinner::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, Q
 {
     painter->setClipRect(boundingRect());
 
-    QTransform trans = QTransform().rotate(static_cast<qreal>(curRot))
-                           .translate(-size.width() / 2.0, -size.height() / 2.0);
+    QTransform trans =
+        QTransform().rotate(static_cast<qreal>(curRot)).translate(-size.width() / 2.0, -size.height() / 2.0);
     painter->setOpacity(alpha);
     painter->setTransform(trans, true);
     painter->setRenderHint(QPainter::SmoothPixmapTransform);

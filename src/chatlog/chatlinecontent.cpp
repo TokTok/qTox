@@ -31,9 +31,7 @@ void ChatLineContent::selectionStarted(QPointF scenePos)
     std::ignore = scenePos;
 }
 
-void ChatLineContent::selectionCleared()
-{
-}
+void ChatLineContent::selectionCleared() {}
 
 void ChatLineContent::selectionDoubleClick(QPointF scenePos)
 {
@@ -76,9 +74,7 @@ void ChatLineContent::visibilityChanged(bool visible)
     std::ignore = visible;
 }
 
-void ChatLineContent::reloadTheme()
-{
-}
+void ChatLineContent::reloadTheme() {}
 
 QString ChatLineContent::getText() const
 {

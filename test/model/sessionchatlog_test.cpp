@@ -48,7 +48,7 @@ class TestSessionChatLog : public QObject
     Q_OBJECT
 
 public:
-    TestSessionChatLog(){}
+    TestSessionChatLog() {}
 
 private slots:
     void init();
@@ -69,8 +69,7 @@ void TestSessionChatLog::init()
 {
     friendList = std::unique_ptr<FriendList>(new FriendList());
     groupList = std::unique_ptr<GroupList>(new GroupList());
-    chatLog = std::unique_ptr<SessionChatLog>(new SessionChatLog(idHandler, *friendList,
-                                                                 *groupList));
+    chatLog = std::unique_ptr<SessionChatLog>(new SessionChatLog(idHandler, *friendList, *groupList));
 }
 
 /**

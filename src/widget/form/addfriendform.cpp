@@ -8,10 +8,10 @@
 #include "src/nexus.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentlayout.h"
-#include "src/widget/tool/croppinglabel.h"
 #include "src/widget/style.h"
-#include "src/widget/translator.h"
+#include "src/widget/tool/croppinglabel.h"
 #include "src/widget/tool/imessageboxmanager.h"
+#include "src/widget/translator.h"
 #include <QApplication>
 #include <QClipboard>
 #include <QErrorMessage>
@@ -24,23 +24,22 @@
 #include <QTabWidget>
 #include <QWindow>
 
-namespace
+namespace {
+QString getToxId(const QString& id)
 {
-    QString getToxId(const QString& id)
-    {
-        const QString toxUriPrefix{"tox:"};
-        QString strippedId = id.trimmed();
-        if (strippedId.startsWith(toxUriPrefix)) {
-            strippedId.remove(0, toxUriPrefix.length());
-        }
-        return strippedId;
+    const QString toxUriPrefix{"tox:"};
+    QString strippedId = id.trimmed();
+    if (strippedId.startsWith(toxUriPrefix)) {
+        strippedId.remove(0, toxUriPrefix.length());
     }
-
-    bool checkIsValidId(const QString& id)
-    {
-        return ToxId::isToxId(id);
-    }
+    return strippedId;
 }
+
+bool checkIsValidId(const QString& id)
+{
+    return ToxId::isToxId(id);
+}
+} // namespace
 
 /**
  * @var QString AddFriendForm::lastUsername
@@ -48,7 +47,7 @@ namespace
  */
 
 AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
-    IMessageBoxManager& messageBoxManager_, Core& core_)
+                             IMessageBoxManager& messageBoxManager_, Core& core_)
     : ownId{ownId_}
     , settings{settings_}
     , style{style_}
@@ -102,8 +101,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     connect(&core, &Core::usernameSet, this, &AddFriendForm::onUsernameSet);
 
     // accessibility stuff
-    toxIdLabel.setAccessibleDescription(
-        tr("Tox ID, 76 hexadecimal characters"));
+    toxIdLabel.setAccessibleDescription(tr("Tox ID, 76 hexadecimal characters"));
     toxId.setAccessibleDescription(tr("Type in Tox ID of your friend"));
     messageLabel.setAccessibleDescription(tr("Friend request message"));
     message.setAccessibleDescription(tr(
@@ -194,15 +192,15 @@ void AddFriendForm::addFriend(const QString& idText)
 
     if (!friendId.isValid()) {
         messageBoxManager.showWarning(tr("Couldn't add friend"),
-                         tr("%1 Tox ID is invalid", "Tox address error").arg(idText));
+                                      tr("%1 Tox ID is invalid", "Tox address error").arg(idText));
         return;
     }
 
     deleteFriendRequest(friendId);
     if (friendId == ownId) {
         messageBoxManager.showWarning(tr("Couldn't add friend"),
-                         //: When trying to add your own Tox ID as friend
-                         tr("You can't add yourself as a friend!"));
+                                      //: When trying to add your own Tox ID as friend
+                                      tr("You can't add yourself as a friend!"));
     } else {
         emit friendRequested(friendId, getMessage());
     }
@@ -238,8 +236,8 @@ void AddFriendForm::onImportOpenClicked()
     QFile contactFile(path);
     if (!contactFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         messageBoxManager.showWarning(tr("Couldn't open file"),
-                         //: Error message when trying to open a contact list file to import
-                         tr("Couldn't open the contact file"));
+                                      //: Error message when trying to open a contact list file to import
+                                      tr("Couldn't open the contact file"));
         return;
     }
 
@@ -261,7 +259,7 @@ void AddFriendForm::onImportOpenClicked()
 
     if (contactsToImport.isEmpty()) {
         messageBoxManager.showWarning(tr("Invalid file"),
-                         tr("We couldn't find any contacts to import in this file!"));
+                                      tr("We couldn't find any contacts to import in this file!"));
     }
 
     retranslateUi(); // Update the importFileLabel to show how many contacts we have
@@ -283,7 +281,7 @@ void AddFriendForm::onIdChanged(const QString& id)
         isValidId ? QStringLiteral("%1 (%2)") : QStringLiteral("%1 <font color='red'>(%2)</font>");
     toxIdLabel.setText(labelText.arg(toxIdText, toxIdComment));
     toxId.setStyleSheet(isValidOrEmpty ? QStringLiteral("")
-                                  : style.getStylesheet("addFriendForm/toxId.css", settings));
+                                       : style.getStylesheet("addFriendForm/toxId.css", settings));
     toxId.setToolTip(isValidOrEmpty ? QStringLiteral("") : tr("Invalid Tox ID format"));
 
     sendButton.setEnabled(isValidId);

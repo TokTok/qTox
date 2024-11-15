@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/widget/form/filesform.h"
 #include "src/friendlist.h"
 #include "src/model/friend.h"
+#include "src/widget/form/filesform.h"
 
 #include <QTest>
 #include <limits>
@@ -30,6 +30,7 @@ private slots:
     void testAvatarIgnored();
     void testMultipleFiles();
     void testFileRemoval();
+
 private:
     std::unique_ptr<FileTransferList::Model> model;
     std::unique_ptr<FriendList> friendList;
@@ -148,12 +149,12 @@ void TestFileTransferList::testControl()
     bool cancelCalled = false;
     bool pauseCalled = false;
 
-    QObject::connect(model.get(), &Model::cancel, [&] (ToxFile file) {
+    QObject::connect(model.get(), &Model::cancel, [&](ToxFile file) {
         std::ignore = file;
         cancelCalled = true;
     });
 
-    QObject::connect(model.get(), &Model::togglePause, [&] (ToxFile file) {
+    QObject::connect(model.get(), &Model::togglePause, [&](ToxFile file) {
         std::ignore = file;
         pauseCalled = true;
     });

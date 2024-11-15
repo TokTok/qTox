@@ -23,7 +23,8 @@ CroppingLabel::CroppingLabel(QWidget* parent)
     public:
         explicit LineEdit(QWidget* parent = nullptr)
             : QLineEdit(parent)
-        {}
+        {
+        }
 
     protected:
         void keyPressEvent(QKeyEvent* event) override
@@ -171,7 +172,8 @@ void CroppingLabel::minimizeMaximumWidth()
 void CroppingLabel::editingFinished()
 {
     hideTextEdit();
-    QString newText = textEdit->text().trimmed().remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
+    QString newText =
+        textEdit->text().trimmed().remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
 
     if (origText != newText)
         emit editFinished(textEdit->text());

@@ -5,9 +5,9 @@
 
 #include "src/platform/posixsignalnotifier.h"
 
-#include <QtTest/QtTest>
 #include <QCoreApplication>
 #include <QSignalSpy>
+#include <QtTest/QtTest>
 #include <signal.h>
 #include <unistd.h>
 
@@ -40,10 +40,11 @@ void TestPosixSignalNotifier::checkUsrSignalHandling()
 }
 
 namespace {
-void sighandler(int sig) {
+void sighandler(int sig)
+{
     std::ignore = sig;
 }
-}
+} // namespace
 
 void TestPosixSignalNotifier::checkIgnoreExtraSignals()
 {

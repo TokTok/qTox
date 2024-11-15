@@ -24,11 +24,13 @@ struct MessageDateAdaptor
         : timestamp(item.second.getContentType() == ChatLogItem::ContentType::message
                         ? item.second.getContentAsMessage().message.timestamp
                         : invalidDateTime)
-    {}
+    {
+    }
 
     MessageDateAdaptor(const QDateTime& timestamp_)
         : timestamp(timestamp_)
-    {}
+    {
+    }
 
     const QDateTime& timestamp;
 };
@@ -112,29 +114,32 @@ QString resolveToxPk(FriendList& friendList, GroupList& groupList, const ToxPk& 
 } // namespace
 
 SessionChatLog::SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList_,
-    GroupList& groupList_)
+                               GroupList& groupList_)
     : coreIdHandler(coreIdHandler_)
     , friendList{friendList_}
     , groupList{groupList_}
-{}
+{
+}
 
 /**
  * @brief Alternate constructor that allows for an initial index to be set
  */
 SessionChatLog::SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
-    FriendList& friendList_, GroupList& groupList_)
+                               FriendList& friendList_, GroupList& groupList_)
     : coreIdHandler(coreIdHandler_)
     , nextIdx(initialIdx)
     , friendList{friendList_}
     , groupList{groupList_}
-{}
+{
+}
 
 SessionChatLog::~SessionChatLog() = default;
 
 QString SessionChatLog::resolveSenderNameFromSender(const ToxPk& sender)
 {
     bool isSelf = sender == coreIdHandler.getSelfPublicKey();
-    QString myNickName = coreIdHandler.getUsername().isEmpty() ? sender.toString() : coreIdHandler.getUsername();
+    QString myNickName =
+        coreIdHandler.getUsername().isEmpty() ? sender.toString() : coreIdHandler.getUsername();
 
     return isSelf ? myNickName : resolveToxPk(friendList, groupList, sender);
 }
@@ -176,7 +181,8 @@ SearchResult SessionChatLog::searchForward(SearchPos startPos, const QString& ph
 
         auto numMatches = 0;
         QRegularExpressionMatch lastMatch;
-        while (match.isValid() && numMatches <= static_cast<int>(currentPos.numMatches) && match.hasNext()) {
+        while (match.isValid() && numMatches <= static_cast<int>(currentPos.numMatches)
+               && match.hasNext()) {
             lastMatch = match.next();
             numMatches++;
         }
@@ -239,7 +245,8 @@ SearchResult SessionChatLog::searchBackward(SearchPos startPos, const QString& p
         QRegularExpressionMatch lastMatch;
         while (match.isValid() && match.hasNext()) {
             auto currentMatch = match.next();
-            if (currentPos.numMatches == 0 || static_cast<int>(currentPos.numMatches) > numMatchesBeforePos) {
+            if (currentPos.numMatches == 0
+                || static_cast<int>(currentPos.numMatches) > numMatchesBeforePos) {
                 lastMatch = currentMatch;
                 numMatchesBeforePos++;
             }
@@ -318,8 +325,8 @@ void SessionChatLog::addSystemMessage(const SystemMessage& message)
     emit itemUpdated(messageIdx);
 }
 
-void SessionChatLog::insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
-                                                const ChatLogMessage& message)
+void SessionChatLog::insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
+                                                QString senderName, const ChatLogMessage& message)
 {
     auto item = ChatLogItem(sender, senderName, message);
 
@@ -328,8 +335,8 @@ void SessionChatLog::insertCompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sen
     items.emplace(idx, std::move(item));
 }
 
-void SessionChatLog::insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
-                                                  const ChatLogMessage& message,
+void SessionChatLog::insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
+                                                  QString senderName, const ChatLogMessage& message,
                                                   DispatchedMessageId dispatchId)
 {
     auto item = ChatLogItem(sender, senderName, message);
@@ -340,8 +347,8 @@ void SessionChatLog::insertIncompleteMessageAtIdx(ChatLogIdx idx, const ToxPk& s
     outgoingMessages.insert(dispatchId, idx);
 }
 
-void SessionChatLog::insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
-                                              const ChatLogMessage& message)
+void SessionChatLog::insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sender,
+                                              QString senderName, const ChatLogMessage& message)
 {
     auto item = ChatLogItem(sender, senderName, message);
 
@@ -350,7 +357,8 @@ void SessionChatLog::insertBrokenMessageAtIdx(ChatLogIdx idx, const ToxPk& sende
     items.emplace(idx, std::move(item));
 }
 
-void SessionChatLog::insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName, const ChatLogFile& file)
+void SessionChatLog::insertFileAtIdx(ChatLogIdx idx, const ToxPk& sender, QString senderName,
+                                     const ChatLogFile& file)
 {
     auto item = ChatLogItem(sender, senderName, file);
 
@@ -470,7 +478,8 @@ void SessionChatLog::onFileUpdated(const ToxPk& sender, const ToxFile& file)
         currentFileTransfers.push_back(currentTransfer);
 
         const auto chatLogFile = ChatLogFile{QDateTime::currentDateTime(), file};
-        items.emplace(currentTransfer.idx, ChatLogItem(sender, resolveSenderNameFromSender(sender), chatLogFile));
+        items.emplace(currentTransfer.idx,
+                      ChatLogItem(sender, resolveSenderNameFromSender(sender), chatLogFile));
         messageIdx = currentTransfer.idx;
     } else if (fileIt != currentFileTransfers.end()) {
         messageIdx = fileIt->idx;

@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QApplication>
 #include "src/persistence/settings.h"
 #include "src/platform/autorun.h"
+#include <QApplication>
 #include <string>
 #include <windows.h>
 
@@ -41,7 +41,7 @@ inline tstring currentRegistryKeyName(const Settings& settings)
 {
     return toTString("qTox - " + settings.getCurrentProfile());
 }
-}
+} // namespace Platform
 
 bool Platform::setAutorun(const Settings& settings, bool on)
 {
@@ -56,7 +56,8 @@ bool Platform::setAutorun(const Settings& settings, bool on)
 
     if (on) {
         tstring path = currentCommandLine(settings);
-        result = RegSetValueEx(key, keyName.c_str(), 0, REG_SZ, const_cast<PBYTE>(reinterpret_cast<const unsigned char*>(path.c_str())),
+        result = RegSetValueEx(key, keyName.c_str(), 0, REG_SZ,
+                               const_cast<PBYTE>(reinterpret_cast<const unsigned char*>(path.c_str())),
                                path.length() * sizeof(TCHAR))
                  == ERROR_SUCCESS;
     } else
@@ -81,7 +82,9 @@ bool Platform::getAutorun(const Settings& settings)
     DWORD type = REG_SZ;
     bool result = false;
 
-    if (RegQueryValueEx(key, keyName.c_str(), nullptr, &type, const_cast<PBYTE>(reinterpret_cast<const unsigned char*>(path)), &length) == ERROR_SUCCESS
+    if (RegQueryValueEx(key, keyName.c_str(), nullptr, &type,
+                        const_cast<PBYTE>(reinterpret_cast<const unsigned char*>(path)), &length)
+            == ERROR_SUCCESS
         && type == REG_SZ)
         result = true;
 

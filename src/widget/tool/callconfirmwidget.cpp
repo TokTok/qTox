@@ -36,8 +36,7 @@
  * @brief Used to correct the rounding factors on non-square rects
  */
 
-CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style,
-    const QWidget* anchor_)
+CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWidget* anchor_)
     : QWidget()
     , anchor(anchor_)
     , rectW{120}

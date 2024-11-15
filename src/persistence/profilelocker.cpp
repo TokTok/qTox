@@ -5,8 +5,8 @@
 
 
 #include "profilelocker.h"
-#include "src/persistence/settings.h"
 #include "src/persistence/paths.h"
+#include "src/persistence/settings.h"
 #include <QDebug>
 #include <QDir>
 

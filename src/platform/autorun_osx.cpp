@@ -14,8 +14,8 @@ namespace {
 QString getAutorunFile()
 {
     return QDir::cleanPath(QStandardPaths::writableLocation(QStandardPaths::HomeLocation)
-            + QDir::separator() + "Library" + QDir::separator() + "LaunchAgents"
-            + QDir::separator() + "chat.tox.qtox.autorun.plist");
+                           + QDir::separator() + "Library" + QDir::separator() + "LaunchAgents"
+                           + QDir::separator() + "chat.tox.qtox.autorun.plist");
 }
 } // namespace
 

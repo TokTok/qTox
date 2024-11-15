@@ -80,8 +80,7 @@ fail:
     return -1;
 }
 
-QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h,
-                                                       uint32_t pixelFormat)
+QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h, uint32_t pixelFormat)
 {
     QVector<float> rates;
     v4l2_frmivalenum vfve{};

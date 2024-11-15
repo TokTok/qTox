@@ -4,10 +4,10 @@
  */
 
 #include "aboutfriendform.h"
-#include "src/widget/tool/imessageboxmanager.h"
 #include "ui_aboutfriendform.h"
 #include "src/core/core.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/imessageboxmanager.h"
 
 #include <QFileDialog>
 #include <QMessageBox>
@@ -22,8 +22,8 @@ QString getAutoAcceptDir(const QString& dir)
 
 } // namespace
 
-AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_,
-    Settings& settings_, Style& style_, IMessageBoxManager& messageBoxManager_, QWidget* parent)
+AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings& settings_,
+                                 Style& style_, IMessageBoxManager& messageBoxManager_, QWidget* parent)
     : QDialog(parent)
     , ui(new Ui::AboutFriendForm)
     , about{std::move(about_)}
@@ -41,7 +41,9 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_,
     connect(ui->autogroupinvite, &QCheckBox::clicked, this, &AboutFriendForm::onAutoGroupInvite);
     connect(ui->selectSaveDir, &QPushButton::clicked, this, &AboutFriendForm::onSelectDirClicked);
     connect(ui->removeHistory, &QPushButton::clicked, this, &AboutFriendForm::onRemoveHistoryClicked);
-    about->connectTo_autoAcceptDirChanged(this, [this](const QString& dir){ onAutoAcceptDirChanged(dir); });
+    about->connectTo_autoAcceptDirChanged(this, [this](const QString& dir) {
+        onAutoAcceptDirChanged(dir);
+    });
 
     const QString dir = about->getAutoAcceptDir();
     ui->autoacceptfile->setChecked(!dir.isEmpty());
@@ -74,7 +76,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_,
 
 void AboutFriendForm::onAutoAcceptDirClicked()
 {
-    const QString dir = [this]{
+    const QString dir = [this] {
         if (!ui->autoacceptfile->isChecked()) {
             return QString{};
         }
@@ -130,18 +132,21 @@ void AboutFriendForm::onAcceptedClicked()
 
 void AboutFriendForm::onRemoveHistoryClicked()
 {
-   const bool retYes = messageBoxManager.askQuestion(tr("Confirmation"),
-                                   tr("Are you sure to remove %1 chat history?").arg(about->getName()),
-                                   /* defaultAns = */ false, /* warning = */ true, /* yesno = */ true);
+    const bool retYes =
+        messageBoxManager.askQuestion(tr("Confirmation"),
+                                      tr("Are you sure to remove %1 chat history?").arg(about->getName()),
+                                      /* defaultAns = */ false, /* warning = */ true,
+                                      /* yesno = */ true);
     if (!retYes) {
         return;
     }
 
-   const bool result = about->clearHistory();
+    const bool result = about->clearHistory();
 
     if (!result) {
-        messageBoxManager.showWarning(tr("History removed"),
-                         tr("Failed to remove chat history with %1!").arg(about->getName()).toHtmlEscaped());
+        messageBoxManager.showWarning(
+            tr("History removed"),
+            tr("Failed to remove chat history with %1!").arg(about->getName()).toHtmlEscaped());
         return;
     }
 

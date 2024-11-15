@@ -6,42 +6,52 @@
 #include "src/chatlog/chatlinestorage.h"
 #include <QTest>
 
-namespace
+namespace {
+class IdxChatLine : public ChatLine
 {
-    class IdxChatLine : public ChatLine
+public:
+    explicit IdxChatLine(ChatLogIdx idx_)
+        : ChatLine()
+        , idx(idx_)
     {
-    public:
-        explicit IdxChatLine(ChatLogIdx idx_)
-            : ChatLine()
-            , idx(idx_)
-        {}
-
-        ChatLogIdx get() { return idx; }
-    private:
-        ChatLogIdx idx;
-
-    };
-
-    class TimestampChatLine : public ChatLine
-    {
-    public:
-        explicit TimestampChatLine(QDateTime dateTime)
-            : ChatLine()
-            , timestamp(dateTime)
-        {}
-
-        QDateTime get() { return timestamp; }
-    private:
-        QDateTime timestamp;
-    };
-
-    ChatLogIdx idxFromChatLine(ChatLine::Ptr p) {
-        return std::static_pointer_cast<IdxChatLine>(p)->get();
     }
 
-    QDateTime timestampFromChatLine(ChatLine::Ptr p) {
-        return std::static_pointer_cast<TimestampChatLine>(p)->get();
+    ChatLogIdx get()
+    {
+        return idx;
     }
+
+private:
+    ChatLogIdx idx;
+};
+
+class TimestampChatLine : public ChatLine
+{
+public:
+    explicit TimestampChatLine(QDateTime dateTime)
+        : ChatLine()
+        , timestamp(dateTime)
+    {
+    }
+
+    QDateTime get()
+    {
+        return timestamp;
+    }
+
+private:
+    QDateTime timestamp;
+};
+
+ChatLogIdx idxFromChatLine(ChatLine::Ptr p)
+{
+    return std::static_pointer_cast<IdxChatLine>(p)->get();
+}
+
+QDateTime timestampFromChatLine(ChatLine::Ptr p)
+{
+    return std::static_pointer_cast<TimestampChatLine>(p)->get();
+}
 
 } // namespace
 
@@ -68,13 +78,13 @@ private slots:
     void testContainsIdx();
     void testEndOfStorageDateRemoval();
     void testConsecutiveDateLineRemoval();
+
 private:
     ChatLineStorage storage;
 
     static constexpr size_t initialStartIdx = 10;
     static constexpr size_t initialEndIdx = 20;
     static const QDateTime initialTimestamp;
-
 };
 
 const QDateTime TestChatLineStorage::initialTimestamp = QDate(2021, 01, 01).startOfDay();
@@ -194,12 +204,11 @@ void TestChatLineStorage::testDateLineAddition()
     QCOMPARE(timestampFromChatLine(storage[0]), initialTimestamp);
     QCOMPARE(timestampFromChatLine(storage[storage.size() - 1]), newTimestamp);
 
-    for (size_t i = 1; i < storage.size() - 2; ++i)
-    {
+    for (size_t i = 1; i < storage.size() - 2; ++i) {
         // Ensure that indexed items all stayed in the right order
-        QCOMPARE(idxFromChatLine(storage[i]).get(), idxFromChatLine(storage[ChatLogIdx(initialStartIdx + i - 1)]).get());
+        QCOMPARE(idxFromChatLine(storage[i]).get(),
+                 idxFromChatLine(storage[ChatLogIdx(initialStartIdx + i - 1)]).get());
     }
-
 }
 
 void TestChatLineStorage::testDateLineRemoval()
@@ -224,7 +233,8 @@ void TestChatLineStorage::testInsertionBeforeDates()
     storage.insertDateLine(yesterday, std::make_shared<TimestampChatLine>(yesterday));
 
     auto firstIdx = ChatLogIdx(initialStartIdx - 2);
-    storage.insertChatMessage(firstIdx, initialTimestamp.addDays(-2), std::make_shared<IdxChatLine>(firstIdx));
+    storage.insertChatMessage(firstIdx, initialTimestamp.addDays(-2),
+                              std::make_shared<IdxChatLine>(firstIdx));
 
     QCOMPARE(idxFromChatLine(storage[0]).get(), firstIdx.get());
     QCOMPARE(timestampFromChatLine(storage[1]), yesterday);
@@ -232,7 +242,8 @@ void TestChatLineStorage::testInsertionBeforeDates()
     QCOMPARE(idxFromChatLine(storage[3]).get(), initialStartIdx);
 
     auto secondIdx = ChatLogIdx(initialStartIdx - 1);
-    storage.insertChatMessage(secondIdx, initialTimestamp.addDays(-1), std::make_shared<IdxChatLine>(secondIdx));
+    storage.insertChatMessage(secondIdx, initialTimestamp.addDays(-1),
+                              std::make_shared<IdxChatLine>(secondIdx));
 
     QCOMPARE(idxFromChatLine(storage[0]).get(), firstIdx.get());
     QCOMPARE(timestampFromChatLine(storage[1]), yesterday);
@@ -249,7 +260,8 @@ void TestChatLineStorage::testInsertionAfterDate()
     QCOMPARE(storage.size(), initialEndIdx - initialStartIdx + 1);
     QCOMPARE(timestampFromChatLine(storage[initialEndIdx - initialStartIdx]), newTimestamp);
 
-    storage.insertChatMessage(ChatLogIdx(initialEndIdx), newTimestamp, std::make_shared<IdxChatLine>(ChatLogIdx(initialEndIdx)));
+    storage.insertChatMessage(ChatLogIdx(initialEndIdx), newTimestamp,
+                              std::make_shared<IdxChatLine>(ChatLogIdx(initialEndIdx)));
     QCOMPARE(idxFromChatLine(storage[initialEndIdx - initialStartIdx + 1]).get(), initialEndIdx);
     QCOMPARE(idxFromChatLine(storage[ChatLogIdx(initialEndIdx)]).get(), initialEndIdx);
 }
@@ -271,7 +283,8 @@ void TestChatLineStorage::testEndOfStorageDateRemoval()
 {
     auto tomorrow = initialTimestamp.addDays(1);
     storage.insertDateLine(tomorrow, std::make_shared<TimestampChatLine>(tomorrow));
-    storage.insertChatMessage(ChatLogIdx(initialEndIdx), tomorrow, std::make_shared<IdxChatLine>(ChatLogIdx(initialEndIdx)));
+    storage.insertChatMessage(ChatLogIdx(initialEndIdx), tomorrow,
+                              std::make_shared<IdxChatLine>(ChatLogIdx(initialEndIdx)));
 
     QCOMPARE(storage.size(), initialEndIdx - initialStartIdx + 2);
 
@@ -299,7 +312,8 @@ void TestChatLineStorage::testConsecutiveDateLineRemoval()
 
     storage.insertDateLine(todayPlus1, std::make_shared<TimestampChatLine>(todayPlus1));
     storage.insertChatMessage(todayPlus1Idx, todayPlus1, std::make_shared<IdxChatLine>(todayPlus1Idx));
-    storage.insertChatMessage(todayPlus1Idx2, todayPlus1, std::make_shared<IdxChatLine>(todayPlus1Idx2));
+    storage.insertChatMessage(todayPlus1Idx2, todayPlus1,
+                              std::make_shared<IdxChatLine>(todayPlus1Idx2));
 
     storage.insertDateLine(todayPlus2, std::make_shared<TimestampChatLine>(todayPlus2));
     storage.insertChatMessage(todayPlus2Idx, todayPlus2, std::make_shared<IdxChatLine>(todayPlus2Idx));

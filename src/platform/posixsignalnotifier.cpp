@@ -33,13 +33,13 @@ void signalHandler(int signum)
     // functions can be called in signal handlers.
     // See https://doc.qt.io/qt-4.8/unix-signals.html
 
-    // If test_and_set() returns true, it means it was already in use (only by ~PosixSignalNotifier()),
-    // so we bail out. Our signal handler is blocking, only one will be called (no race between
-    // threads), hence simple implementation.
+    // If test_and_set() returns true, it means it was already in use (only by
+    // ~PosixSignalNotifier()), so we bail out. Our signal handler is blocking, only one will be
+    // called (no race between threads), hence simple implementation.
     if (g_signalSocketUsageFlag.test_and_set())
         return;
 
-    if(::write(g_signalSocketPair[0], &signum, sizeof(signum)) == -1) {
+    if (::write(g_signalSocketPair[0], &signum, sizeof(signum)) == -1) {
         // We hardly can do anything more usefull in signal handler, and
         // any ways it's probably very unexpected error (out of memory?),
         // since we check socket existance with a flag beforehand.
@@ -67,7 +67,7 @@ PosixSignalNotifier::~PosixSignalNotifier()
 void PosixSignalNotifier::watchSignal(int signum)
 {
     sigset_t blockMask;
-    sigemptyset(&blockMask); // do not prefix with ::, it's a macro on macOS
+    sigemptyset(&blockMask);       // do not prefix with ::, it's a macro on macOS
     sigaddset(&blockMask, signum); // do not prefix with ::, it's a macro on macOS
 
     struct sigaction action = {}; // all zeroes by default
@@ -81,7 +81,7 @@ void PosixSignalNotifier::watchSignal(int signum)
 
 void PosixSignalNotifier::watchSignals(std::initializer_list<int> signalSet)
 {
-    for (auto s: signalSet) {
+    for (auto s : signalSet) {
         watchSignal(s);
     }
 }
@@ -111,7 +111,7 @@ void PosixSignalNotifier::onSignalReceived()
 PosixSignalNotifier::PosixSignalNotifier()
 {
     if (::socketpair(AF_UNIX, SOCK_STREAM, 0, g_signalSocketPair.data())) {
-       qFatal("Failed to create socket pair, error = %d", errno);
+        qFatal("Failed to create socket pair, error = %d", errno);
     }
 
     notifier = new QSocketNotifier(g_signalSocketPair[1], QSocketNotifier::Read, this);

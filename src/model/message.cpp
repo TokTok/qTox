@@ -10,37 +10,37 @@
 #include <cassert>
 
 namespace {
-    QStringList splitMessage(const QString& message, uint64_t maxLength)
-    {
-        QStringList splittedMsgs;
-        QByteArray ba_message{message.toUtf8()};
-        while (static_cast<uint64_t>(ba_message.size()) > maxLength) {
-            int splitPos = ba_message.lastIndexOf('\n', maxLength - 1);
+QStringList splitMessage(const QString& message, uint64_t maxLength)
+{
+    QStringList splittedMsgs;
+    QByteArray ba_message{message.toUtf8()};
+    while (static_cast<uint64_t>(ba_message.size()) > maxLength) {
+        int splitPos = ba_message.lastIndexOf('\n', maxLength - 1);
 
-            if (splitPos <= 0) {
-                splitPos = ba_message.lastIndexOf(' ', maxLength - 1);
-            }
-
-            if (splitPos <= 0) {
-                constexpr uint8_t firstOfMultiByteMask = 0xC0;
-                constexpr uint8_t multiByteMask = 0x80;
-                splitPos = maxLength;
-                // don't split a utf8 character
-                if ((ba_message[splitPos] & multiByteMask) == multiByteMask) {
-                    while ((ba_message[splitPos] & firstOfMultiByteMask) != firstOfMultiByteMask) {
-                        --splitPos;
-                    }
-                }
-                --splitPos;
-            }
-            splittedMsgs.append(QString::fromUtf8(ba_message.left(splitPos + 1)));
-            ba_message = ba_message.mid(splitPos + 1);
+        if (splitPos <= 0) {
+            splitPos = ba_message.lastIndexOf(' ', maxLength - 1);
         }
 
-        splittedMsgs.append(QString::fromUtf8(ba_message));
-        return splittedMsgs;
+        if (splitPos <= 0) {
+            constexpr uint8_t firstOfMultiByteMask = 0xC0;
+            constexpr uint8_t multiByteMask = 0x80;
+            splitPos = maxLength;
+            // don't split a utf8 character
+            if ((ba_message[splitPos] & multiByteMask) == multiByteMask) {
+                while ((ba_message[splitPos] & firstOfMultiByteMask) != firstOfMultiByteMask) {
+                    --splitPos;
+                }
+            }
+            --splitPos;
+        }
+        splittedMsgs.append(QString::fromUtf8(ba_message.left(splitPos + 1)));
+        ba_message = ba_message.mid(splitPos + 1);
     }
+
+    splittedMsgs.append(QString::fromUtf8(ba_message));
+    return splittedMsgs;
 }
+} // namespace
 void MessageProcessor::SharedParams::onUserNameSet(const QString& username)
 {
     QString sanename = username;
@@ -58,24 +58,25 @@ void MessageProcessor::SharedParams::onUserNameSet(const QString& username)
 void MessageProcessor::SharedParams::setPublicKey(const QString& pk)
 {
     // no sanitization needed, we expect a ToxPk in its string form
-    pubKeyMention = QRegularExpression("\\b" + pk + "\\b",
-                                       QRegularExpression::CaseInsensitiveOption);
+    pubKeyMention = QRegularExpression("\\b" + pk + "\\b", QRegularExpression::CaseInsensitiveOption);
 }
 
 MessageProcessor::MessageProcessor(const MessageProcessor::SharedParams& sharedParams_)
     : sharedParams(sharedParams_)
-{}
+{
+}
 
 /**
  * @brief Converts an outgoing message into one (or many) sanitized Message(s)
  */
-std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QString const& content, ExtensionSet extensions)
+std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, QString const& content,
+                                                              ExtensionSet extensions)
 {
     std::vector<Message> ret;
 
     const auto maxSendingSize = extensions[ExtensionType::messages]
-        ? sharedParams.getMaxExtendedMessageSize()
-        : sharedParams.getMaxCoreMessageSize();
+                                    ? sharedParams.getMaxExtendedMessageSize()
+                                    : sharedParams.getMaxCoreMessageSize();
 
     const auto splitMsgs = splitMessage(content, maxSendingSize);
 

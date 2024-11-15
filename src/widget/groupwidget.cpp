@@ -16,11 +16,11 @@
 #include "maskablepixmapwidget.h"
 #include "form/groupchatform.h"
 #include "src/core/core.h"
-#include "src/model/friend.h"
 #include "src/friendlist.h"
+#include "src/grouplist.h"
+#include "src/model/friend.h"
 #include "src/model/group.h"
 #include "src/model/status.h"
-#include "src/grouplist.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"
 #include "src/widget/translator.h"
@@ -28,7 +28,7 @@
 #include "tool/croppinglabel.h"
 
 GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_,
-    Settings& settings_, Style& style_)
+                         Settings& settings_, Style& style_)
     : GenericChatroomWidget(compact_, settings_, style_)
     , groupId{chatroom_->getGroup()->getPersistentId()}
     , chatroom{chatroom_}
@@ -71,7 +71,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
     QMenu menu(this);
 
     QAction* openChatWindow = nullptr;
-    if (chatroom->possibleToOpenInNewWindow() ) {
+    if (chatroom->possibleToOpenInNewWindow()) {
         openChatWindow = menu.addAction(tr("Open chat in new window"));
     }
 
@@ -206,7 +206,7 @@ QDateTime GroupWidget::getLastActivity() const
     return QDateTime::currentDateTime();
 }
 
-QWidget *GroupWidget::getWidget()
+QWidget* GroupWidget::getWidget()
 {
     return this;
 }

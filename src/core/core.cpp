@@ -15,11 +15,11 @@
 #include "src/core/toxoptions.h"
 #include "src/core/toxstring.h"
 #include "src/model/groupinvite.h"
-#include "src/model/status.h"
 #include "src/model/ibootstraplistgenerator.h"
+#include "src/model/status.h"
 #include "src/persistence/profile.h"
-#include "util/strongtype.h"
 #include "util/compatiblerecursivemutex.h"
+#include "util/strongtype.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QCoreApplication>
@@ -52,7 +52,8 @@ QList<DhtServer> shuffleBootstrapNodes(QList<DhtServer> bootstrapNodes)
 
 } // namespace
 
-Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_, const ICoreSettings& settings_)
+Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_,
+           const ICoreSettings& settings_)
     : tox(nullptr)
     , toxTimer{new QTimer{this}}
     , coreThread(coreThread_)
@@ -283,7 +284,7 @@ CoreAV* Core::getAv()
     return av;
 }
 
-void Core::setAv(CoreAV *coreAv)
+void Core::setAv(CoreAV* coreAv)
 {
     av = coreAv;
 }
@@ -298,7 +299,7 @@ Tox* Core::getTox() const
     return tox.get();
 }
 
-CompatibleRecursiveMutex &Core::getCoreLoopLock() const
+CompatibleRecursiveMutex& Core::getCoreLoopLock() const
 {
     return coreLoopLock;
 }
@@ -349,22 +350,21 @@ bool Core::checkConnection()
     auto selfConnection = tox_self_get_connection_status(tox.get());
     QString connectionName;
     bool toxConnected = false;
-    switch (selfConnection)
-    {
-        case TOX_CONNECTION_NONE:
-            toxConnected = false;
-            break;
-        case TOX_CONNECTION_TCP:
-            toxConnected = true;
-            connectionName = "a TCP relay";
-            break;
-        case TOX_CONNECTION_UDP:
-            toxConnected = true;
-            connectionName = "the UDP DHT";
-            break;
-        default:
-            qWarning() << "tox_self_get_connection_status returned unknown enum!";
-            break;
+    switch (selfConnection) {
+    case TOX_CONNECTION_NONE:
+        toxConnected = false;
+        break;
+    case TOX_CONNECTION_TCP:
+        toxConnected = true;
+        connectionName = "a TCP relay";
+        break;
+    case TOX_CONNECTION_UDP:
+        toxConnected = true;
+        connectionName = "the UDP DHT";
+        break;
+    default:
+        qWarning() << "tox_self_get_connection_status returned unknown enum!";
+        break;
     }
 
     if (toxConnected && !isConnected) {
@@ -387,7 +387,8 @@ void Core::bootstrapDht()
     ASSERT_CORE_THREAD;
 
 
-    auto const shuffledBootstrapNodes = shuffleBootstrapNodes(bootstrapListGenerator.getBootstrapNodes());
+    auto const shuffledBootstrapNodes =
+        shuffleBootstrapNodes(bootstrapListGenerator.getBootstrapNodes());
     if (shuffledBootstrapNodes.empty()) {
         qWarning() << "No bootstrap node list";
         return;
@@ -434,8 +435,8 @@ void Core::onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cM
     emit static_cast<Core*>(core)->friendRequestReceived(friendPk, requestMessage);
 }
 
-void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, const uint8_t* cMessage,
-                           size_t cMessageSize, void* core)
+void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
+                           const uint8_t* cMessage, size_t cMessageSize, void* core)
 {
     std::ignore = tox;
     bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
@@ -443,7 +444,8 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type, c
     emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
 }
 
-void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize, void* core)
+void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize,
+                              void* core)
 {
     std::ignore = tox;
     QString newName = ToxString(cName, cNameSize).getQString();
@@ -493,23 +495,22 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     Status::Status friendStatus = Status::Status::Offline;
-    switch (status)
-    {
-        case TOX_CONNECTION_NONE:
-            friendStatus = Status::Status::Offline;
-            qDebug() << "Disconnected from friend" << friendId;
-            break;
-        case TOX_CONNECTION_TCP:
-            friendStatus = Status::Status::Online;
-            qDebug() << "Connected to friend" << friendId << "through a TCP relay";
-            break;
-        case TOX_CONNECTION_UDP:
-            friendStatus = Status::Status::Online;
-            qDebug() << "Connected to friend" << friendId << "directly with UDP";
-            break;
-        default:
-            qWarning() << "tox_callback_friend_connection_status returned unknown enum!";
-            break;
+    switch (status) {
+    case TOX_CONNECTION_NONE:
+        friendStatus = Status::Status::Offline;
+        qDebug() << "Disconnected from friend" << friendId;
+        break;
+    case TOX_CONNECTION_TCP:
+        friendStatus = Status::Status::Online;
+        qDebug() << "Connected to friend" << friendId << "through a TCP relay";
+        break;
+    case TOX_CONNECTION_UDP:
+        friendStatus = Status::Status::Online;
+        qDebug() << "Connected to friend" << friendId << "directly with UDP";
+        break;
+    default:
+        qWarning() << "tox_callback_friend_connection_status returned unknown enum!";
+        break;
     }
 
     // Ignore Online because it will be emited from onUserStatusChanged
@@ -590,8 +591,7 @@ void Core::onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId, const
 /**
  * @brief Handling of custom lossless packets received by toxcore. Currently only used to forward toxext packets to CoreExt
  */
-void Core::onLosslessPacket(Tox* tox, uint32_t friendId,
-                            const uint8_t* data, size_t length, void* vCore)
+void Core::onLosslessPacket(Tox* tox, uint32_t friendId, const uint8_t* data, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
@@ -1002,7 +1002,8 @@ void Core::loadFriends()
         if (PARSE_ERR(queryError) && statusMessageSize) {
             std::vector<uint8_t> messageData(statusMessageSize);
             tox_friend_get_status_message(tox.get(), ids[i], messageData.data(), &queryError);
-            QString friendStatusMessage = ToxString(messageData.data(), statusMessageSize).getQString();
+            QString friendStatusMessage =
+                ToxString(messageData.data(), statusMessageSize).getQString();
             emit friendStatusMessageChanged(ids[i], friendStatusMessage);
         }
         checkLastOnline(ids[i]);
@@ -1077,8 +1078,7 @@ GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
     QMutexLocker<CompatibleRecursiveMutex> ml{&coreLoopLock};
 
     std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
-    if (tox_conference_get_id(tox.get(), groupNumber,
-                              idBuff.data())) {
+    if (tox_conference_get_id(tox.get(), groupNumber, idBuff.data())) {
         return GroupId{idBuff.data()};
     } else {
         qCritical() << "Failed to get conference ID of group" << groupNumber;
@@ -1262,8 +1262,8 @@ int Core::createGroup(uint8_t type)
             return std::numeric_limits<uint32_t>::max();
         }
     } else if (type == TOX_CONFERENCE_TYPE_AV) {
-        // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1 group number is our
-        // only indication of an error
+        // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
+        // group number is our only indication of an error
         int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
         if (groupId != -1) {
             emit saveRequest();

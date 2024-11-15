@@ -9,9 +9,7 @@
 #include <QDebug>
 #include <QGraphicsScene>
 
-ChatLine::ChatLine()
-{
-}
+ChatLine::ChatLine() {}
 
 ChatLine::~ChatLine()
 {
@@ -126,7 +124,7 @@ void ChatLine::addColumn(ChatLineContent* item, ColumnFormat fmt)
 
     format.push_back(fmt);
     content.push_back(item);
-    item->setIndex(0, content.size() -1 );
+    item->setIndex(0, content.size() - 1);
 }
 
 void ChatLine::replaceContent(int col, ChatLineContent* lineContent)

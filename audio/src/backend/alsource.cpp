@@ -16,7 +16,8 @@
  */
 AlSource::AlSource(OpenAL& al)
     : audio(al)
-{}
+{
+}
 
 AlSource::~AlSource()
 {

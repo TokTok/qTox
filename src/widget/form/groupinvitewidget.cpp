@@ -22,7 +22,7 @@
  */
 
 GroupInviteWidget::GroupInviteWidget(QWidget* parent, const GroupInvite& invite,
-    Settings& settings_, Core& core_)
+                                     Settings& settings_, Core& core_)
     : QWidget(parent)
     , acceptButton(new QPushButton(this))
     , rejectButton(new QPushButton(this))

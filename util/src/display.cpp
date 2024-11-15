@@ -13,8 +13,11 @@ QString getHumanReadableSize(uint64_t size)
     int exp = 0;
 
     if (size > 0) {
-        exp = std::min(static_cast<int>(log(size) / log(1024)), static_cast<int>(sizeof(suffix) / sizeof(suffix[0]) - 1));
+        exp = std::min(static_cast<int>(log(size) / log(1024)),
+                       static_cast<int>(sizeof(suffix) / sizeof(suffix[0]) - 1));
     }
 
-    return QString().setNum(size / pow(1024, exp), 'f', exp > 1 ? 2 : 0).append(QString::fromUtf8(suffix[exp]));
+    return QString()
+        .setNum(size / pow(1024, exp), 'f', exp > 1 ? 2 : 0)
+        .append(QString::fromUtf8(suffix[exp]));
 }

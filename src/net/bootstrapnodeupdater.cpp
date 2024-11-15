@@ -5,9 +5,9 @@
 
 #include "bootstrapnodeupdater.h"
 
-#include "src/persistence/paths.h"
-#include "src/core/toxpk.h"
 #include "src/core/toxid.h"
+#include "src/core/toxpk.h"
+#include "src/persistence/paths.h"
 
 #include <QDirIterator>
 #include <QFile>
@@ -17,7 +17,6 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QRegularExpression>
-#include <QJsonArray>
 
 #include <cstdint>
 
@@ -30,7 +29,8 @@ const QLatin1String public_key{"public_key"};
 const QLatin1String udp_port{"port"};
 const QLatin1String maintainer{"maintainer"};
 const QLatin1String tcp_ports{"tcp_ports"};
-const QStringList neededFields{status_udp, status_tcp, ipv4, ipv6, public_key, udp_port, tcp_ports, maintainer};
+const QStringList neededFields{status_udp, status_tcp, ipv4,      ipv6,
+                               public_key, udp_port,   tcp_ports, maintainer};
 } // namespace NodeFields
 
 namespace {
@@ -64,7 +64,7 @@ void jsonNodeToDhtServer(const QJsonObject& node, QList<DhtServer>& outList)
     for (int i = 0; i < jsonTcpPorts.count(); ++i) {
         const auto port = jsonTcpPorts.at(i).toInt();
         if (port < 1 || port > std::numeric_limits<uint16_t>::max()) {
-            qDebug  () << "Invalid TCP port in nodes list:" << port;
+            qDebug() << "Invalid TCP port in nodes list:" << port;
             return;
         }
         tcp_ports.emplace_back(static_cast<uint16_t>(port));

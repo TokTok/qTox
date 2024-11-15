@@ -21,7 +21,8 @@
 
 AvatarBroadcaster::AvatarBroadcaster(Core& _core)
     : core{_core}
-{}
+{
+}
 
 /**
  * @brief Set our current avatar.

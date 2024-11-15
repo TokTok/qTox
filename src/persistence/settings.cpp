@@ -8,11 +8,11 @@
 #include "src/core/core.h"
 #include "src/core/corefile.h"
 #include "src/nexus.h"
+#include "src/persistence/globalsettingsupgrader.h"
+#include "src/persistence/personalsettingsupgrader.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/profilelocker.h"
 #include "src/persistence/settingsserializer.h"
-#include "src/persistence/globalsettingsupgrader.h"
-#include "src/persistence/personalsettingsupgrader.h"
 #include "src/persistence/smileypack.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -105,12 +105,14 @@ void Settings::loadGlobal()
     }
     s.endGroup();
 
-    auto upgradeSuccess = GlobalSettingsUpgrader::doUpgrade(*this, globalSettingsVersion, GLOBAL_SETTINGS_VERSION);
+    auto upgradeSuccess =
+        GlobalSettingsUpgrader::doUpgrade(*this, globalSettingsVersion, GLOBAL_SETTINGS_VERSION);
     if (!upgradeSuccess) {
-        messageBoxManager.showError(tr("Failed to load global settings"),
+        messageBoxManager.showError(
+            tr("Failed to load global settings"),
             tr("Unable to upgrade settings from version %1 to version %2. Cannot start qTox.")
-            .arg(globalSettingsVersion)
-            .arg(GLOBAL_SETTINGS_VERSION));
+                .arg(globalSettingsVersion)
+                .arg(GLOBAL_SETTINGS_VERSION));
         std::terminate();
         return;
     }
@@ -479,12 +481,14 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
     }
     ps.endGroup();
 
-    auto upgradeSuccess = PersonalSettingsUpgrader::doUpgrade(ps, personalSettingsVersion, PERSONAL_SETTINGS_VERSION);
+    auto upgradeSuccess =
+        PersonalSettingsUpgrader::doUpgrade(ps, personalSettingsVersion, PERSONAL_SETTINGS_VERSION);
     if (!upgradeSuccess) {
-        messageBoxManager.showError(tr("Failed to load personal settings"),
+        messageBoxManager.showError(
+            tr("Failed to load personal settings"),
             tr("Unable to upgrade settings from version %1 to version %2. Cannot start qTox.")
-            .arg(personalSettingsVersion)
-            .arg(PERSONAL_SETTINGS_VERSION));
+                .arg(personalSettingsVersion)
+                .arg(PERSONAL_SETTINGS_VERSION));
         std::terminate();
         return;
     }
@@ -738,8 +742,7 @@ void Settings::savePersonal()
         qDebug() << "Could not save personal settings because there is no active profile";
         return;
     }
-    QMetaObject::invokeMethod(this, "savePersonal",
-                              Q_ARG(QString, loadedProfile->getName()),
+    QMetaObject::invokeMethod(this, "savePersonal", Q_ARG(QString, loadedProfile->getName()),
                               Q_ARG(const ToxEncrypt*, loadedProfile->getPasskey()));
 }
 
@@ -2255,7 +2258,8 @@ ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType 
 }
 
 template <typename T>
-bool Settings::setVal(T& savedVal, T newVal) {
+bool Settings::setVal(T& savedVal, T newVal)
+{
     QMutexLocker<CompatibleRecursiveMutex> locker{&bigLock};
     if (savedVal != newVal) {
         savedVal = newVal;

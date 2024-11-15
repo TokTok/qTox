@@ -111,18 +111,16 @@ bool GroupInviteForm::addGroupInvite(const GroupInvite& inviteInfo)
         }
     }
 
-    GroupInviteWidget* widget = new GroupInviteWidget(this, inviteInfo, settings,
-        core);
+    GroupInviteWidget* widget = new GroupInviteWidget(this, inviteInfo, settings, core);
     scroll->widget()->layout()->addWidget(widget);
     invites.append(widget);
-    connect(widget, &GroupInviteWidget::accepted, [this] (const GroupInvite& inviteInfo_) {
+    connect(widget, &GroupInviteWidget::accepted, [this](const GroupInvite& inviteInfo_) {
         deleteInviteWidget(inviteInfo_);
         emit groupInviteAccepted(inviteInfo_);
     });
 
-    connect(widget, &GroupInviteWidget::rejected, [this] (const GroupInvite& inviteInfo_) {
-        deleteInviteWidget(inviteInfo_);
-    });
+    connect(widget, &GroupInviteWidget::rejected,
+            [this](const GroupInvite& inviteInfo_) { deleteInviteWidget(inviteInfo_); });
     if (isVisible()) {
         emit groupInvitesSeen();
         return false;

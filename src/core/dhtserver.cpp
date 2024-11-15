@@ -12,15 +12,10 @@
  */
 bool DhtServer::operator==(const DhtServer& other) const
 {
-    return this == &other ||
-        (statusUdp == other.statusUdp
-        && statusTcp == other.statusTcp
-        && ipv4 == other.ipv4
-        && ipv6 == other.ipv6
-        && maintainer == other.maintainer
-        && publicKey == other.publicKey
-        && udpPort == other.udpPort
-        && tcpPorts == other.tcpPorts);
+    return this == &other
+           || (statusUdp == other.statusUdp && statusTcp == other.statusTcp && ipv4 == other.ipv4
+               && ipv6 == other.ipv6 && maintainer == other.maintainer && publicKey == other.publicKey
+               && udpPort == other.udpPort && tcpPorts == other.tcpPorts);
 }
 
 /**

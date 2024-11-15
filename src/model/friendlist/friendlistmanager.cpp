@@ -6,7 +6,8 @@
 #include "friendlistmanager.h"
 #include "src/widget/genericchatroomwidget.h"
 
-FriendListManager::FriendListManager(int countContacts_, QObject *parent) : QObject(parent)
+FriendListManager::FriendListManager(int countContacts_, QObject* parent)
+    : QObject(parent)
 {
     countContacts = countContacts_;
 }
@@ -31,11 +32,12 @@ bool FriendListManager::getGroupsOnTop() const
     return groupsOnTop;
 }
 
-void FriendListManager::addFriendListItem(IFriendListItem *item)
+void FriendListManager::addFriendListItem(IFriendListItem* item)
 {
     if (item->isGroup() && item->getWidget() != nullptr) {
-        items.push_back(IFriendListItemPtr(item, [](IFriendListItem* groupItem){
-                            groupItem->getWidget()->deleteLater();}));
+        items.push_back(IFriendListItemPtr(item, [](IFriendListItem* groupItem) {
+            groupItem->getWidget()->deleteLater();
+        }));
     } else {
         items.push_back(IFriendListItemPtr(item));
     }
@@ -46,7 +48,7 @@ void FriendListManager::addFriendListItem(IFriendListItem *item)
     }
 }
 
-void FriendListManager::removeFriendListItem(IFriendListItem *item)
+void FriendListManager::removeFriendListItem(IFriendListItem* item)
 {
     removeAll(item);
     setSortRequired();
@@ -72,11 +74,11 @@ void FriendListManager::resetParents()
     }
 }
 
-void FriendListManager::setFilter(const QString &searchString, bool hideOnline, bool hideOffline,
+void FriendListManager::setFilter(const QString& searchString, bool hideOnline, bool hideOffline,
                                   bool hideGroups)
 {
-    if (filterParams.searchString == searchString && filterParams.hideOnline == hideOnline &&
-        filterParams.hideOffline == hideOffline && filterParams.hideGroups == hideGroups) {
+    if (filterParams.searchString == searchString && filterParams.hideOnline == hideOnline
+        && filterParams.hideOffline == hideOffline && filterParams.hideGroups == hideGroups) {
         return;
     }
     filterParams.searchString = searchString;
@@ -126,9 +128,9 @@ void FriendListManager::updatePositions()
     positionsChanged = true;
 
     if (byName) {
-        auto sortName = [&](const IFriendListItemPtr &a, const IFriendListItemPtr &b) {
-                            return cmpByName(a, b);
-                        };
+        auto sortName = [&](const IFriendListItemPtr& a, const IFriendListItemPtr& b) {
+            return cmpByName(a, b);
+        };
         if (!needSort) {
             if (std::is_sorted(items.begin(), items.end(), sortName)) {
                 positionsChanged = false;
@@ -138,9 +140,9 @@ void FriendListManager::updatePositions()
         std::sort(items.begin(), items.end(), sortName);
 
     } else {
-        auto sortActivity = [&](const IFriendListItemPtr &a, const IFriendListItemPtr &b) {
-                                return cmpByActivity(a, b);
-                            };
+        auto sortActivity = [&](const IFriendListItemPtr& a, const IFriendListItemPtr& b) {
+            return cmpByActivity(a, b);
+        };
         if (!needSort) {
             if (std::is_sorted(items.begin(), items.end(), sortActivity)) {
                 positionsChanged = false;
@@ -174,7 +176,7 @@ void FriendListManager::removeAll(IFriendListItem* item)
     }
 }
 
-bool FriendListManager::cmpByName(const IFriendListItemPtr &a, const IFriendListItemPtr &b)
+bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
 {
     if (a->isGroup() && !b->isGroup()) {
         if (groupsOnTop) {
@@ -201,7 +203,7 @@ bool FriendListManager::cmpByName(const IFriendListItemPtr &a, const IFriendList
     return a->getNameItem().toUpper() < b->getNameItem().toUpper();
 }
 
-bool FriendListManager::cmpByActivity(const IFriendListItemPtr &a, const IFriendListItemPtr &b)
+bool FriendListManager::cmpByActivity(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
 {
     if (a->isGroup() || b->isGroup()) {
         if (a->isGroup() && !b->isGroup()) {

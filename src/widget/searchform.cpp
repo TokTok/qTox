@@ -7,11 +7,11 @@
 #include "form/searchsettingsform.h"
 #include "src/widget/style.h"
 
-#include <QVBoxLayout>
 #include <QHBoxLayout>
-#include <QPushButton>
-#include <QLabel>
 #include <QKeyEvent>
+#include <QLabel>
+#include <QPushButton>
+#include <QVBoxLayout>
 
 #include <array>
 
@@ -29,15 +29,15 @@ SearchForm::SearchForm(Settings& settings_, Style& style_, QWidget* parent)
     QVBoxLayout* layout = new QVBoxLayout();
     QHBoxLayout* layoutNavigation = new QHBoxLayout();
     QHBoxLayout* layoutMessage = new QHBoxLayout();
-    QSpacerItem *lSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
-    QSpacerItem *rSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
+    QSpacerItem* lSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
+    QSpacerItem* rSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
     searchLine = new LineEdit();
     searchSettingsForm = new SearchSettingsForm(settings, style);
     messageLabel = new QLabel();
 
     searchSettingsForm->setVisible(false);
     messageLabel->setProperty("state", QStringLiteral("red"));
-    messageLabel->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/labels.css"),settings));
+    messageLabel->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/labels.css"), settings));
     messageLabel->setText(tr("The text could not be found."));
     messageLabel->setVisible(false);
 
@@ -104,7 +104,7 @@ void SearchForm::setFocusEditor()
     searchLine->setFocus();
 }
 
-void SearchForm::insertEditor(const QString &text)
+void SearchForm::insertEditor(const QString& text)
 {
     searchLine->insert(text);
 }
@@ -126,7 +126,7 @@ void SearchForm::showEvent(QShowEvent* event)
     emit visibleChanged();
 }
 
-QPushButton *SearchForm::createButton(const QString& name, const QString& state)
+QPushButton* SearchForm::createButton(const QString& name, const QString& state)
 {
     QPushButton* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
@@ -154,7 +154,7 @@ ParameterSearch SearchForm::getAndCheckParametrSearch()
     return ParameterSearch();
 }
 
-void SearchForm::setStateName(QPushButton *btn, ToolButtonState state)
+void SearchForm::setStateName(QPushButton* btn, ToolButtonState state)
 {
     const auto index = static_cast<unsigned long>(state);
     btn->setProperty("state", STATE_NAME[index]);
@@ -296,7 +296,8 @@ void SearchForm::showMessageNotFound(SearchDirection direction)
     messageLabel->setVisible(true);
 }
 
-LineEdit::LineEdit(QWidget* parent) : QLineEdit(parent)
+LineEdit::LineEdit(QWidget* parent)
+    : QLineEdit(parent)
 {
 }
 

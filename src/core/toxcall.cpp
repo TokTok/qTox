@@ -6,10 +6,10 @@
 #include "src/core/toxcall.h"
 #include "audio/audio.h"
 #include "src/core/coreav.h"
+#include "src/model/group.h"
 #include "src/persistence/settings.h"
 #include "src/video/camerasource.h"
 #include "src/video/corevideosource.h"
-#include "src/model/group.h"
 #include <QTimer>
 #include <QtConcurrent/QtConcurrent>
 
@@ -39,7 +39,8 @@ ToxCall::ToxCall(bool VideoEnabled_, CoreAV& av_, IAudioControl& audio_)
     , audio(audio_)
     , videoEnabled{VideoEnabled_}
     , audioSource(audio_.makeSource())
-{}
+{
+}
 
 ToxCall::~ToxCall()
 {
@@ -104,18 +105,19 @@ CoreVideoSource* ToxCall::getVideoSource() const
 }
 
 ToxFriendCall::ToxFriendCall(uint32_t friendNum, bool VideoEnabled, CoreAV& av_,
-    IAudioControl& audio_, CameraSource& cameraSource_)
+                             IAudioControl& audio_, CameraSource& cameraSource_)
     : ToxCall(VideoEnabled, av_, audio_)
     , sink(audio_.makeSink())
     , friendId{friendNum}
     , cameraSource{cameraSource_}
 {
     connect(audioSource.get(), &IAudioSource::frameAvailable, this,
-                         [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
-                             av->sendCallAudio(friendId, pcm, samples, chans, rate);
-                         });
+            [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
+                av->sendCallAudio(friendId, pcm, samples, chans, rate);
+            });
 
-    connect(audioSource.get(), &IAudioSource::invalidated, this, &ToxFriendCall::onAudioSourceInvalidated);
+    connect(audioSource.get(), &IAudioSource::invalidated, this,
+            &ToxFriendCall::onAudioSourceInvalidated);
 
     if (sink) {
         audioSinkInvalid = sink->connectTo_invalidated(this, [this]() { onAudioSinkInvalidated(); });
@@ -151,12 +153,13 @@ void ToxFriendCall::onAudioSourceInvalidated()
 {
     auto newSrc = audio.makeSource();
     connect(newSrc.get(), &IAudioSource::frameAvailable, this,
-                         [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
-                             av->sendCallAudio(friendId, pcm, samples, chans, rate);
-                         });
+            [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
+                av->sendCallAudio(friendId, pcm, samples, chans, rate);
+            });
     audioSource = std::move(newSrc);
 
-    connect(audioSource.get(), &IAudioSource::invalidated, this, &ToxFriendCall::onAudioSourceInvalidated);
+    connect(audioSource.get(), &IAudioSource::invalidated, this,
+            &ToxFriendCall::onAudioSourceInvalidated);
 }
 
 void ToxFriendCall::onAudioSinkInvalidated()
@@ -164,7 +167,8 @@ void ToxFriendCall::onAudioSinkInvalidated()
     auto newSink = audio.makeSink();
 
     if (newSink) {
-        audioSinkInvalid = newSink->connectTo_invalidated(this, [this]() { onAudioSinkInvalidated(); });
+        audioSinkInvalid =
+            newSink->connectTo_invalidated(this, [this]() { onAudioSinkInvalidated(); });
     }
 
     sink = std::move(newSink);
@@ -196,13 +200,14 @@ ToxGroupCall::ToxGroupCall(const Group& group_, CoreAV& av_, IAudioControl& audi
     connect(audioSource.get(), &IAudioSource::frameAvailable, this,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
                 if (group.getPeersCount() <= 1) {
-                   return;
+                    return;
                 }
 
                 av->sendGroupCallAudio(group.getId(), pcm, samples, chans, rate);
             });
 
-    connect(audioSource.get(), &IAudioSource::invalidated, this, &ToxGroupCall::onAudioSourceInvalidated);
+    connect(audioSource.get(), &IAudioSource::invalidated, this,
+            &ToxGroupCall::onAudioSourceInvalidated);
 }
 
 ToxGroupCall::~ToxGroupCall()
@@ -217,7 +222,7 @@ void ToxGroupCall::onAudioSourceInvalidated()
     connect(audioSource.get(), &IAudioSource::frameAvailable,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
                 if (group.getPeersCount() <= 1) {
-                   return;
+                    return;
                 }
 
                 av->sendGroupCallAudio(group.getId(), pcm, samples, chans, rate);
@@ -225,7 +230,8 @@ void ToxGroupCall::onAudioSourceInvalidated()
 
     audioSource = std::move(newSrc);
 
-    connect(audioSource.get(), &IAudioSource::invalidated, this, &ToxGroupCall::onAudioSourceInvalidated);
+    connect(audioSource.get(), &IAudioSource::invalidated, this,
+            &ToxGroupCall::onAudioSourceInvalidated);
 }
 
 
@@ -255,7 +261,8 @@ void ToxGroupCall::addPeer(ToxPk peerId)
     QMetaObject::Connection con;
 
     if (newSink) {
-         con = newSink->connectTo_invalidated(this, [this, peerId]() { onAudioSinkInvalidated(peerId); });
+        con = newSink->connectTo_invalidated(this,
+                                             [this, peerId]() { onAudioSinkInvalidated(peerId); });
     }
 
     peers.emplace(peerId, std::move(newSink));

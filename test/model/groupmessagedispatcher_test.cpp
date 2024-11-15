@@ -4,12 +4,12 @@
  */
 
 #include "src/core/icoregroupmessagesender.h"
+#include "src/friendlist.h"
 #include "src/model/group.h"
 #include "src/model/groupmessagedispatcher.h"
 #include "src/model/message.h"
-#include "src/persistence/settings.h"
 #include "src/persistence/igroupsettings.h"
-#include "src/friendlist.h"
+#include "src/persistence/settings.h"
 #include "util/interface.h"
 
 #include "mock/mockcoreidhandler.h"
@@ -18,8 +18,8 @@
 #include <QObject>
 #include <QtTest/QtTest>
 
-#include <set>
 #include <deque>
+#include <set>
 
 
 class MockGroupMessageSender : public ICoreGroupMessageSender
@@ -56,8 +56,14 @@ public:
     void setBlackList(const QStringList& blist) override;
     SIGNAL_IMPL(MockGroupSettings, blackListChanged, QStringList const& blist)
 
-    bool getShowGroupJoinLeaveMessages() const override { return true; }
-    void setShowGroupJoinLeaveMessages(bool newValue) override { std::ignore = newValue; }
+    bool getShowGroupJoinLeaveMessages() const override
+    {
+        return true;
+    }
+    void setShowGroupJoinLeaveMessages(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
     SIGNAL_IMPL(MockGroupSettings, showGroupJoinLeaveMessagesChanged, bool show)
 
 private:
@@ -137,12 +143,11 @@ void TestGroupMessageDispatcher::init()
     groupSettings = std::unique_ptr<MockGroupSettings>(new MockGroupSettings());
     groupQuery = std::unique_ptr<MockGroupQuery>(new MockGroupQuery());
     coreIdHandler = std::unique_ptr<MockCoreIdHandler>(new MockCoreIdHandler());
-    g = std::unique_ptr<Group>(
-        new Group(0, GroupId(), "TestGroup", false, "me", *groupQuery, *coreIdHandler,
-            *friendList));
+    g = std::unique_ptr<Group>(new Group(0, GroupId(), "TestGroup", false, "me", *groupQuery,
+                                         *coreIdHandler, *friendList));
     messageSender = std::unique_ptr<MockGroupMessageSender>(new MockGroupMessageSender());
-    sharedProcessorParams =
-        std::unique_ptr<MessageProcessor::SharedParams>(new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
+    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
+        new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
     messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
     groupMessageDispatcher = std::unique_ptr<GroupMessageDispatcher>(
         new GroupMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,

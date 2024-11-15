@@ -9,10 +9,10 @@
 #include "chatmessage.h"
 #include "content/filetransferwidget.h"
 #include "content/text.h"
-#include "src/widget/translator.h"
-#include "src/widget/style.h"
-#include "src/persistence/settings.h"
 #include "src/chatlog/chatlinestorage.h"
+#include "src/persistence/settings.h"
+#include "src/widget/style.h"
+#include "src/widget/translator.h"
 #include <iostream>
 
 #include <QAction>
@@ -29,8 +29,7 @@
 #include <set>
 
 
-namespace
-{
+namespace {
 
 // Maximum number of rendered messages at any given time
 int constexpr maxWindowSize = 300;
@@ -48,12 +47,12 @@ T clamp(T x, T min, T max)
 }
 
 ChatMessage::Ptr createDateMessage(QDateTime timestamp, DocumentCache& documentCache,
-    Settings& settings, Style& style)
+                                   Settings& settings, Style& style)
 {
     const auto date = timestamp.date();
     auto dateText = date.toString(settings.getDateFormat());
     return ChatMessage::createChatInfoMessage(dateText, ChatMessage::INFO, QDateTime(),
-        documentCache, settings, style);
+                                              documentCache, settings, style);
 }
 
 ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool colorizeNames,
@@ -74,15 +73,15 @@ ChatMessage::Ptr createMessage(const QString& displayName, bool isSelf, bool col
     }
 
     const auto timestamp = chatLogMessage.message.timestamp;
-    return ChatMessage::createChatMessage(displayName, chatLogMessage.message.content,messageType,
+    return ChatMessage::createChatMessage(displayName, chatLogMessage.message.content, messageType,
                                           isSelf, chatLogMessage.state, timestamp, documentCache,
                                           smileyPack, settings, style, colorizeNames);
 }
 
 void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeNames,
-                   const ChatLogMessage& chatLogMessage, ChatLine::Ptr& chatLine,
-                   DocumentCache& documentCache, SmileyPack& smileyPack,
-                   Settings& settings, Style& style)
+                      const ChatLogMessage& chatLogMessage, ChatLine::Ptr& chatLine,
+                      DocumentCache& documentCache, SmileyPack& smileyPack, Settings& settings,
+                      Style& style)
 {
     // HACK: This is kind of gross, but there's not an easy way to fit this into
     // the existing architecture. This shouldn't ever fail since we should only
@@ -98,8 +97,8 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
             chatMessage->markAsBroken();
         }
     } else {
-        chatLine = createMessage(displayName, isSelf, colorizeNames, chatLogMessage,
-            documentCache, smileyPack, settings, style);
+        chatLine = createMessage(displayName, isSelf, colorizeNames, chatLogMessage, documentCache,
+                                 smileyPack, settings, style);
     }
 }
 
@@ -109,8 +108,7 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
  */
 ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMessage)
 {
-    switch (systemMessage.messageType)
-    {
+    switch (systemMessage.messageType) {
     case SystemMessageType::fileSendFailed:
     case SystemMessageType::messageSendFailed:
     case SystemMessageType::unexpectedCallEnd:
@@ -196,8 +194,8 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 
 
 ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache_,
-    SmileyPack& smileyPack_, Settings& settings_, Style& style_,
-    IMessageBoxManager& messageBoxManager_, QWidget* parent)
+                       SmileyPack& smileyPack_, Settings& settings_, Style& style_,
+                       IMessageBoxManager& messageBoxManager_, QWidget* parent)
     : QGraphicsView(parent)
     , selectionRectColor{style_.getColor(Style::ColorPalette::SelectText)}
     , chatLog(chatLog_)
@@ -313,9 +311,8 @@ void ChatWidget::clearSelection()
     if (selectionMode == SelectionMode::None)
         return;
 
-    forEachLineIn(selFirstRow, selLastRow, *chatLineStorage, [&] (ChatLine::Ptr& line) {
-        line->selectionCleared();
-    });
+    forEachLineIn(selFirstRow, selLastRow, *chatLineStorage,
+                  [&](ChatLine::Ptr& line) { line->selectionCleared(); });
 
     selFirstRow.reset();
     selLastRow.reset();
@@ -373,8 +370,7 @@ void ChatWidget::mousePressEvent(QMouseEvent* ev)
     if (lastClickButton == ev->button()) {
         // Counts only single clicks and first click of doule click
         clickCount++;
-    }
-    else {
+    } else {
         clickCount = 1; // restarting counter
         lastClickButton = ev->button();
     }
@@ -484,8 +480,8 @@ ChatLineContent* ChatWidget::getContentFromPos(QPointF scenePos) const
     if (chatLineStorage->empty())
         return nullptr;
 
-    auto itr =
-        std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(), scenePos.y(), ChatLine::lessThanBSRectBottom);
+    auto itr = std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(), scenePos.y(),
+                                ChatLine::lessThanBSRectBottom);
 
     // find content
     if (itr != chatLineStorage->end() && (*itr)->sceneBoundingRect().contains(scenePos))
@@ -519,7 +515,8 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
     if (chatLines.empty())
         return;
 
-    bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage() || chatLines.begin()->first > chatLineStorage->lastIdx();
+    bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage()
+                         || chatLines.begin()->first > chatLineStorage->lastIdx();
     auto startLineSize = chatLineStorage->size();
 
     QGraphicsScene::ItemIndexMethod oldIndexMeth = scene->itemIndexMethod();
@@ -646,8 +643,7 @@ void ChatWidget::mouseDoubleClickEvent(QMouseEvent* ev)
     if (lastClickButton == ev->button()) {
         // Counts the second click of double click
         clickCount++;
-    }
-    else {
+    } else {
         clickCount = 1; // restarting counter
         lastClickButton = ev->button();
     }
@@ -665,18 +661,18 @@ QString ChatWidget::getSelectedText() const
         // build a nicely formatted message
         QString out;
 
-        forEachLineIn(selFirstRow, selLastRow, *chatLineStorage, [&] (ChatLine::Ptr& line) {
+        forEachLineIn(selFirstRow, selLastRow, *chatLineStorage, [&](ChatLine::Ptr& line) {
             if (line->content[1]->getText().isEmpty())
                 return;
 
-            QString timestamp = line->content[2]->getText().isEmpty()
-                                    ? tr("pending")
-                                    : line->content[2]->getText();
+            QString timestamp =
+                line->content[2]->getText().isEmpty() ? tr("pending") : line->content[2]->getText();
             QString author = line->content[0]->getText();
             QString msg = line->content[1]->getText();
 
-            out +=
-                QString(out.isEmpty() ? QStringLiteral("[%2] %1: %3") : QStringLiteral("\n[%2] %1: %3")).arg(author, timestamp, msg);
+            out += QString(out.isEmpty() ? QStringLiteral("[%2] %1: %3")
+                                         : QStringLiteral("\n[%2] %1: %3"))
+                       .arg(author, timestamp, msg);
         });
 
         return out;
@@ -887,7 +883,6 @@ void ChatWidget::handleSearchResult(SearchResult result, SearchDirection directi
         renderCompletionFns.push_back(selectText);
         jumpToIdx(searchPos.logIdx);
     }
-
 }
 
 void ChatWidget::forceRelayout()
@@ -901,16 +896,15 @@ void ChatWidget::checkVisibility()
         return;
 
     // find first visible line
-    auto lowerBound = std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(), getVisibleRect().top(),
-                                       ChatLine::lessThanBSRectBottom);
+    auto lowerBound = std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(),
+                                       getVisibleRect().top(), ChatLine::lessThanBSRectBottom);
 
     // find last visible line
-    auto upperBound = std::lower_bound(lowerBound, chatLineStorage->end(), getVisibleRect().bottom(),
-                                       ChatLine::lessThanBSRectTop);
+    auto upperBound = std::lower_bound(lowerBound, chatLineStorage->end(),
+                                       getVisibleRect().bottom(), ChatLine::lessThanBSRectTop);
 
-    const ChatLine::Ptr lastLineBeforeVisible = lowerBound == chatLineStorage->begin()
-        ? ChatLine::Ptr()
-        : *std::prev(lowerBound);
+    const ChatLine::Ptr lastLineBeforeVisible =
+        lowerBound == chatLineStorage->begin() ? ChatLine::Ptr() : *std::prev(lowerBound);
 
     // set visibilty
     QList<ChatLine::Ptr> newVisibleLines;
@@ -992,12 +986,13 @@ void ChatWidget::updateBusyNotification()
 {
     // repoisition the busy notification (centered)
     busyNotification->layout(useableWidth(), getVisibleRect().topLeft()
-                                                    + QPointF(0, getVisibleRect().height() / 2.0));
+                                                 + QPointF(0, getVisibleRect().height() / 2.0));
 }
 
 ChatLine::Ptr ChatWidget::findLineByPosY(qreal yPos) const
 {
-    auto itr = std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(), yPos, ChatLine::lessThanBSRectBottom);
+    auto itr = std::lower_bound(chatLineStorage->begin(), chatLineStorage->end(), yPos,
+                                ChatLine::lessThanBSRectBottom);
 
     if (itr != chatLineStorage->end())
         return *itr;
@@ -1032,7 +1027,8 @@ void ChatWidget::removeLines(ChatLogIdx begin, ChatLogIdx end)
 
 QRectF ChatWidget::calculateSceneRect() const
 {
-    qreal bottom = (chatLineStorage->empty() ? 0.0 : chatLineStorage->back()->sceneBoundingRect().bottom());
+    qreal bottom =
+        (chatLineStorage->empty() ? 0.0 : chatLineStorage->back()->sceneBoundingRect().bottom());
 
     if (typingNotification.get() != nullptr)
         bottom += typingNotification->sceneBoundingRect().height() + lineSpacing;
@@ -1162,13 +1158,11 @@ void ChatWidget::setRenderedWindowStart(ChatLogIdx begin)
         // Remove leading lines
         removeLines(currentStart, begin);
         renderMessages(currentEnd, end);
-    }
-    else if (end <= currentEnd && end > currentStart) {
+    } else if (end <= currentEnd && end > currentStart) {
         // Remove trailing lines
         removeLines(end, currentEnd);
         renderMessages(begin, currentStart);
-    }
-    else {
+    } else {
         removeLines(currentStart, currentEnd);
         renderMessages(begin, end);
     }
@@ -1201,10 +1195,9 @@ void ChatWidget::onRenderFinished()
     // invalidated. This could be improved in the future but for now I  do not
     // believe this is a serious usage impediment. Chats can be exported if a
     // user really needs more than 300 messages to be copied
-    if (chatLineStorage->find(selFirstRow) == chatLineStorage->end() ||
-        chatLineStorage->find(selLastRow) == chatLineStorage->end() ||
-        chatLineStorage->find(selClickedRow) == chatLineStorage->end())
-    {
+    if (chatLineStorage->find(selFirstRow) == chatLineStorage->end()
+        || chatLineStorage->find(selLastRow) == chatLineStorage->end()
+        || chatLineStorage->find(selClickedRow) == chatLineStorage->end()) {
         // FIXME: Segfault when selecting while scrolling down
         clearSelection();
     }
@@ -1227,9 +1220,9 @@ void ChatWidget::onScrollValueChanged(int value)
         return;
     }
 
-    if (value == verticalScrollBar()->minimum())
-    {
-        auto idx = clampedAdd(chatLineStorage->firstIdx(), -static_cast<int>(windowChunkSize), chatLog);
+    if (value == verticalScrollBar()->minimum()) {
+        auto idx =
+            clampedAdd(chatLineStorage->firstIdx(), -static_cast<int>(windowChunkSize), chatLog);
 
         if (idx != chatLineStorage->firstIdx()) {
             auto currentTop = (*chatLineStorage)[chatLineStorage->firstIdx()];
@@ -1243,9 +1236,7 @@ void ChatWidget::onScrollValueChanged(int value)
             setRenderedWindowStart(idx);
         }
 
-    }
-    else if (value == verticalScrollBar()->maximum())
-    {
+    } else if (value == verticalScrollBar()->maximum()) {
         auto idx = clampedAdd(chatLineStorage->lastIdx(), static_cast<int>(windowChunkSize), chatLog);
 
         if (idx != chatLineStorage->lastIdx() + 1) {
@@ -1313,9 +1304,8 @@ void ChatWidget::hideEvent(QHideEvent* event)
     // one friend this could end up accumulating chat logs until they restart
     // qTox, but that isn't a regression from previously released behavior.
 
-    auto numLinesToRemove = chatLineStorage->size() > maxWindowSize
-        ? chatLineStorage->size() - maxWindowSize
-        : 0;
+    auto numLinesToRemove =
+        chatLineStorage->size() > maxWindowSize ? chatLineStorage->size() - maxWindowSize : 0;
 
     if (numLinesToRemove > 0) {
         removeLines(chatLineStorage->firstIdx(), chatLineStorage->firstIdx() + numLinesToRemove);
@@ -1361,7 +1351,7 @@ void ChatWidget::focusOutEvent(QFocusEvent* ev)
     }
 }
 
-void ChatWidget::wheelEvent(QWheelEvent *event)
+void ChatWidget::wheelEvent(QWheelEvent* event)
 {
     QGraphicsView::wheelEvent(event);
     checkVisibility();
@@ -1401,7 +1391,8 @@ void ChatWidget::setTypingNotification()
 }
 
 
-void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames_, ChatLine::Ptr& chatMessage)
+void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool colorizeNames_,
+                            ChatLine::Ptr& chatMessage)
 {
     const auto& sender = item.getSender();
 
@@ -1411,8 +1402,8 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
     case ChatLogItem::ContentType::message: {
         const auto& chatLogMessage = item.getContentAsMessage();
 
-        renderMessageRaw(item.getDisplayName(), isSelf, colorizeNames_, chatLogMessage,
-            chatMessage, documentCache, smileyPack, settings, style);
+        renderMessageRaw(item.getDisplayName(), isSelf, colorizeNames_, chatLogMessage, chatMessage,
+                         documentCache, smileyPack, settings, style);
 
         break;
     }
@@ -1425,9 +1416,9 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
         const auto& systemMessage = item.getContentAsSystemMessage();
 
         auto chatMessageType = getChatMessageType(systemMessage);
-        chatMessage = ChatMessage::createChatInfoMessage(systemMessage.toString(),
-            chatMessageType, systemMessage.timestamp, documentCache, settings,
-            style);
+        chatMessage = ChatMessage::createChatInfoMessage(systemMessage.toString(), chatMessageType,
+                                                         systemMessage.timestamp, documentCache,
+                                                         settings, style);
         // Ignore caller's decision to hide the name. We show the icon in the
         // slot of the sender's name so we always want it visible
         hideName = false;
@@ -1441,13 +1432,14 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
 }
 
 void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDateTime timestamp,
-                ChatLine::Ptr& chatMessage)
+                            ChatLine::Ptr& chatMessage)
 {
     if (!chatMessage) {
         CoreFile* coreFile = core.getCoreFile();
         assert(coreFile);
-        chatMessage = ChatMessage::createFileTransferMessage(displayName, *coreFile,
-            file, isSelf, timestamp, documentCache, settings, style, messageBoxManager);
+        chatMessage = ChatMessage::createFileTransferMessage(displayName, *coreFile, file, isSelf,
+                                                             timestamp, documentCache, settings,
+                                                             style, messageBoxManager);
     } else {
         auto proxy = static_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
         assert(proxy->getWidgetType() == ChatLineContentProxy::FileTransferWidgetType);
@@ -1482,18 +1474,16 @@ bool ChatWidget::needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const
     }
 
     qint64 messagesTimeDiff = prevItem.getTimestamp().secsTo(currentItem.getTimestamp());
-    return currentItem.getSender() == prevItem.getSender()
-           && messagesTimeDiff < repNameAfter;
+    return currentItem.getSender() == prevItem.getSender() && messagesTimeDiff < repNameAfter;
 
     return false;
 }
 
 bool ChatWidget::shouldRenderMessage(ChatLogIdx idx) const
 {
-    return chatLineStorage->contains(idx) ||
-        (
-            chatLineStorage->contains(idx - 1) && idx + 1 == chatLog.getNextIdx()
-        ) || chatLineStorage->empty();
+    return chatLineStorage->contains(idx)
+           || (chatLineStorage->contains(idx - 1) && idx + 1 == chatLog.getNextIdx())
+           || chatLineStorage->empty();
 }
 
 void ChatWidget::disableSearchText()
@@ -1512,7 +1502,8 @@ void ChatWidget::removeSearchPhrase()
     disableSearchText();
 }
 
-void ChatWidget::jumpToDate(QDate date) {
+void ChatWidget::jumpToDate(QDate date)
+{
     auto idx = firstItemAfterDate(date, chatLog);
     jumpToIdx(idx);
 }
@@ -1541,8 +1532,7 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
     // bottom
     if (chatLineStorage->hasIndexedMessage() && idx > chatLineStorage->lastIdx()) {
         setRenderedWindowEnd(clampedAdd(idx, windowChunkSize, chatLog));
-    }
-    else {
+    } else {
         setRenderedWindowStart(clampedAdd(idx, -windowChunkSize, chatLog));
     }
 }

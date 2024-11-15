@@ -8,10 +8,10 @@
 #include "src/version.h"
 #endif
 
-#include <QNetworkAccessManager>
 #include <QDebug>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QObject>
 #include <QRegularExpression>
@@ -22,7 +22,8 @@ namespace {
 const QString versionUrl{QStringLiteral("https://api.github.com/repos/qTox/qTox/releases/latest")};
 const QString versionRegexString{QStringLiteral("v([0-9]+)\\.([0-9]+)\\.([0-9]+)")};
 
-struct Version {
+struct Version
+{
     int major;
     int minor;
     int patch;
@@ -48,8 +49,8 @@ Version tagToVersion(QString tagName)
 
 bool isUpdateAvailable(Version current, Version available)
 {
-    // A user may have a version greater than our latest release in the time between a tag being pushed and the release
-    // being published. Don't notify about an update in that case.
+    // A user may have a version greater than our latest release in the time between a tag being
+    // pushed and the release being published. Don't notify about an update in that case.
 
     if (current.major < available.major) {
         return true;
@@ -77,13 +78,13 @@ bool isUpdateAvailable(Version current, Version available)
 
 bool isCurrentVersionStable()
 {
-  QRegularExpression versionRegex(versionRegexString);
-  auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
-  if (currentVer.hasMatch()){
-    return true;
-  } else {
-    return false;
-  }
+    QRegularExpression versionRegex(versionRegexString);
+    auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
+    if (currentVer.hasMatch()) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 } // namespace

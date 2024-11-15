@@ -20,11 +20,11 @@ constexpr int SCHEMA_VERSION = 11;
 std::vector<DbUpgrader::BadEntry> getInvalidPeers(RawDatabase& db)
 {
     std::vector<DbUpgrader::BadEntry> badPeerIds;
-    db.execNow(
-        RawDatabase::Query("SELECT id, public_key FROM peers WHERE LENGTH(public_key) != 64",
-                           [&](const QVector<QVariant>& row) {
-                               badPeerIds.emplace_back(DbUpgrader::BadEntry{row[0].toInt(), row[1].toString()});
-                           }));
+    db.execNow(RawDatabase::Query("SELECT id, public_key FROM peers WHERE LENGTH(public_key) != 64",
+                                  [&](const QVector<QVariant>& row) {
+                                      badPeerIds.emplace_back(
+                                          DbUpgrader::BadEntry{row[0].toInt(), row[1].toString()});
+                                  }));
     return badPeerIds;
 }
 
@@ -32,16 +32,16 @@ RowId getValidPeerRow(RawDatabase& db, const ChatId& chatId)
 {
     bool validPeerExists{false};
     RowId validPeerRow;
-    db.execNow(RawDatabase::Query(QStringLiteral("SELECT id FROM peers WHERE CAST(public_key AS BLOB)=?;"),
-        // Note: The conversion to string then back to binary is intentional to
-        // ensure we're using the binary presentation of the upper case ASCII
-        // representation of the binary key, since we want to find the uppercase
-        // entry or insert it ourselves. This is needed for the dbTo11 upgrade.
-                                    {chatId.toString().toUtf8()},
-                                  [&](const QVector<QVariant>& row) {
-                                      validPeerRow = RowId{row[0].toLongLong()};
-                                      validPeerExists = true;
-                                  }));
+    db.execNow(
+        RawDatabase::Query(QStringLiteral("SELECT id FROM peers WHERE CAST(public_key AS BLOB)=?;"),
+                           // Note: The conversion to string then back to binary is intentional to
+                           // ensure we're using the binary presentation of the upper case ASCII
+                           // representation of the binary key, since we want to find the uppercase
+                           // entry or insert it ourselves. This is needed for the dbTo11 upgrade.
+                           {chatId.toString().toUtf8()}, [&](const QVector<QVariant>& row) {
+                               validPeerRow = RowId{row[0].toLongLong()};
+                               validPeerExists = true;
+                           }));
     if (validPeerExists) {
         return validPeerRow;
     }
@@ -63,8 +63,9 @@ struct DuplicateAlias
     DuplicateAlias(RowId goodAliasRow_, std::vector<RowId> badAliasRows_)
         : goodAliasRow{goodAliasRow_}
         , badAliasRows{badAliasRows_}
-    {}
-    DuplicateAlias(){}
+    {
+    }
+    DuplicateAlias() {}
     RowId goodAliasRow{-1};
     std::vector<RowId> badAliasRows;
 };
@@ -222,8 +223,10 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
 
     if (databaseSchemaVersion > SCHEMA_VERSION) {
         messageBoxManager.showError(QObject::tr("Failed to load chat history"),
-            QObject::tr("Database version (%1) is newer than we currently support (%2). Please upgrade qTox.")
-            .arg(databaseSchemaVersion).arg(SCHEMA_VERSION));
+                                    QObject::tr("Database version (%1) is newer than we currently "
+                                                "support (%2). Please upgrade qTox.")
+                                        .arg(databaseSchemaVersion)
+                                        .arg(SCHEMA_VERSION));
         qWarning().nospace() << "Database version (" << databaseSchemaVersion
                              << ") is newer than we currently support (" << SCHEMA_VERSION
                              << "). Please upgrade qTox";
@@ -235,9 +238,9 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
     }
 
     using DbSchemaUpgradeFn = bool (*)(RawDatabase&);
-    std::vector<DbSchemaUpgradeFn> upgradeFns = {dbSchema0to1, dbSchema1to2, dbSchema2to3,
-                                                 dbSchema3to4, dbSchema4to5, dbSchema5to6,
-                                                 dbSchema6to7, dbSchema7to8, dbSchema8to9,
+    std::vector<DbSchemaUpgradeFn> upgradeFns = {dbSchema0to1,  dbSchema1to2,          dbSchema2to3,
+                                                 dbSchema3to4,  dbSchema4to5,          dbSchema5to6,
+                                                 dbSchema6to7,  dbSchema7to8,          dbSchema8to9,
                                                  dbSchema9to10, DbTo11::dbSchema10to11};
 
     assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
@@ -321,8 +324,7 @@ bool DbUpgrader::createCurrentSchema(RawDatabase& db)
         "reason INTEGER NOT NULL DEFAULT 0, "
         "FOREIGN KEY (id) REFERENCES history(id));"));
     // sqlite doesn't support including the index as part of the CREATE TABLE statement, so add a second query
-    queries += RawDatabase::Query(
-        "CREATE INDEX chat_id_idx on history (chat_id);");
+    queries += RawDatabase::Query("CREATE INDEX chat_id_idx on history (chat_id);");
     queries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = %1;").arg(SCHEMA_VERSION));
     return db.execNow(queries);
 }
@@ -591,21 +593,23 @@ bool DbUpgrader::dbSchema8to9(RawDatabase& db)
 
 bool DbUpgrader::dbSchema9to10(RawDatabase& db)
 {
-    // not technically a schema update, but still a database version update based on healing invalid user data.
-    // We inserted some empty resume_file_id's due to #6553. Heal the under-length entries.
-    // The resume file ID isn't actually used for loaded files at this time, so we can heal it to an arbitrary
-    // value of full length.
+    // not technically a schema update, but still a database version update based on healing invalid
+    // user data. We inserted some empty resume_file_id's due to #6553. Heal the under-length
+    // entries. The resume file ID isn't actually used for loaded files at this time, so we can heal
+    // it to an arbitrary value of full length.
     constexpr int resumeFileIdLengthNow = 32;
     QByteArray dummyResumeId(resumeFileIdLengthNow, 0);
     QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query(QStringLiteral("UPDATE file_transfers SET file_restart_id = ? WHERE LENGTH(file_restart_id) != 32;"),
+    upgradeQueries += RawDatabase::Query(
+        QStringLiteral(
+            "UPDATE file_transfers SET file_restart_id = ? WHERE LENGTH(file_restart_id) != 32;"),
         {dummyResumeId});
     upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 10;"));
     return db.execNow(upgradeQueries);
 }
 
 void DbUpgrader::mergeDuplicatePeers(QVector<RawDatabase::Query>& upgradeQueries, RawDatabase& db,
-                         std::vector<BadEntry> badPeers)
+                                     std::vector<BadEntry> badPeers)
 {
     for (const auto& badPeer : badPeers) {
         const RowId goodPeerId = getValidPeerRow(db, ToxPk{badPeer.toxId.left(64)});

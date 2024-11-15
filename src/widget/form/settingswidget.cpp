@@ -27,10 +27,10 @@
 
 #include <memory>
 
-SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio,
-    Core* core, SmileyPack& smileyPack, CameraSource& cameraSource,
-        Settings& settings, Style& style, IMessageBoxManager& messageBoxManager,
-        Profile& profile, Widget* parent)
+SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, Core* core,
+                               SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings,
+                               Style& style, IMessageBoxManager& messageBoxManager,
+                               Profile& profile, Widget* parent)
     : QWidget(parent, Qt::Window)
 {
     CoreAV* coreAV = core->getAv();

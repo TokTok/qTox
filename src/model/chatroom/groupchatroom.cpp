@@ -13,10 +13,9 @@
 #include "src/model/group.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
-#include "src/friendlist.h"
 
 GroupChatroom::GroupChatroom(Group* group_, IDialogsManager* dialogsManager_, Core& core_,
-    FriendList& friendList_)
+                             FriendList& friendList_)
     : group{group_}
     , dialogsManager{dialogsManager_}
     , core{core_}

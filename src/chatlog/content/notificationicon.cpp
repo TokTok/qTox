@@ -4,8 +4,8 @@
  */
 
 #include "notificationicon.h"
-#include "../pixmapcache.h"
 #include "src/widget/style.h"
+#include "../pixmapcache.h"
 
 #include <QGraphicsScene>
 #include <QPainter>

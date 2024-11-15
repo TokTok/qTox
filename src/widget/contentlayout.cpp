@@ -102,8 +102,7 @@ void ContentLayout::init()
     mainContent->setLayout(new QVBoxLayout);
     mainContent->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
-    if (QStyleFactory::keys().contains(settings.getStyle())
-        && settings.getStyle() != "None") {
+    if (QStyleFactory::keys().contains(settings.getStyle()) && settings.getStyle() != "None") {
         mainHead->setStyle(QStyleFactory::create(settings.getStyle()));
         mainContent->setStyle(QStyleFactory::create(settings.getStyle()));
     }

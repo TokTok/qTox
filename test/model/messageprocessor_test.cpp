@@ -25,7 +25,7 @@ class TestMessageProcessor : public QObject
     Q_OBJECT
 
 public:
-    TestMessageProcessor(){}
+    TestMessageProcessor() {}
 
 private slots:
     void testSelfMention();
@@ -39,7 +39,8 @@ private slots:
  */
 void TestMessageProcessor::testSelfMention()
 {
-    MessageProcessor::SharedParams sharedParams(tox_max_message_length(), 10 * 1024 * 1024);;
+    MessageProcessor::SharedParams sharedParams(tox_max_message_length(), 10 * 1024 * 1024);
+    ;
     const QLatin1String testUserName{"MyUserName"};
     const QLatin1String testToxPk{
         "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"};

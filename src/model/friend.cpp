@@ -11,10 +11,11 @@
 
 #include <QDebug>
 
-#include <memory>
 #include <cassert>
+#include <memory>
 
-Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_, const QString& userName_)
+Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_,
+               const QString& userName_)
     : userName{userName_}
     , userAlias{userAlias_}
     , friendPk{friendPk_}
@@ -203,7 +204,8 @@ ExtensionSet Friend::getSupportedExtensions() const
     return supportedExtensions;
 }
 
-void Friend::onNegotiationComplete() {
+void Friend::onNegotiationComplete()
+{
     if (!isNegotiating) {
         return;
     }

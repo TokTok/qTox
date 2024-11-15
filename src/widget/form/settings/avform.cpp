@@ -30,8 +30,7 @@
 #endif
 
 AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
-               IAudioSettings* audioSettings_, IVideoSettings* videoSettings_,
-               Style& style)
+               IAudioSettings* audioSettings_, IVideoSettings* videoSettings_, Style& style)
     : GenericForm(QPixmap(":/img/settings/av.png"), style)
     , audio(audio_)
     , coreAV{coreAV_}
@@ -67,10 +66,8 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     microphoneSlider->setTickInterval(totalSliderSteps / numTicks);
     microphoneSlider->setTracking(false);
     microphoneSlider->installEventFilter(this);
-    microphoneSlider->setValue(
-        getStepsFromValue(audioSettings_->getAudioInGainDecibel(),
-            audio_.minInputGain(),
-            audio_.maxInputGain()));
+    microphoneSlider->setValue(getStepsFromValue(audioSettings_->getAudioInGainDecibel(),
+                                                 audio_.minInputGain(), audio_.maxInputGain()));
 
     audioThresholdSlider->setToolTip(tr("Use slider to set the activation volume for your"
                                         " input device."));
@@ -90,8 +87,8 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     for (QScreen* qScreen : QGuiApplication::screens()) {
         connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
     }
-    auto* qGUIApp = qobject_cast<QGuiApplication *>(qApp);
-    assert (qGUIApp);
+    auto* qGUIApp = qobject_cast<QGuiApplication*>(qApp);
+    assert(qGUIApp);
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::trackNewScreenGeometry);
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::rescanDevices);
     connect(qGUIApp, &QGuiApplication::screenRemoved, this, &AVForm::rescanDevices);
@@ -145,7 +142,8 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
     camera.setupDevice(devName, mode);
 }
 
-void AVForm::trackNewScreenGeometry(QScreen* qScreen) {
+void AVForm::trackNewScreenGeometry(QScreen* qScreen)
+{
     connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
 }
 

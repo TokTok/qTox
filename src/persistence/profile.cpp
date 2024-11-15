@@ -24,8 +24,8 @@
 #include "src/net/bootstrapnodeupdater.h"
 #include "src/nexus.h"
 #include "src/widget/tool/identicon.h"
-#include "src/widget/widget.h"
 #include "src/widget/tool/imessageboxmanager.h"
+#include "src/widget/widget.h"
 
 namespace {
 enum class LoadToxDataError
@@ -219,7 +219,8 @@ bool logCreateToxDataError(const CreateToxDataError& error, const QString& userN
 
 QStringList Profile::profiles;
 
-void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile, CameraSource& cameraSource)
+void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile,
+                       CameraSource& cameraSource)
 {
     if (toxsave.isEmpty() && !isNewProfile) {
         qCritical() << "Existing toxsave is empty";
@@ -231,8 +232,8 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
         emit failedToStart();
     }
 
-    bootstrapNodes = std::unique_ptr<BootstrapNodeUpdater>(
-        new BootstrapNodeUpdater(s.getProxy(), paths));
+    bootstrapNodes =
+        std::unique_ptr<BootstrapNodeUpdater>(new BootstrapNodeUpdater(s.getProxy(), paths));
 
     Core::ToxCoreErrors err;
     core = Core::makeToxCore(toxsave, s, *bootstrapNodes, &err);
@@ -281,14 +282,15 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
 }
 
 Profile::Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
-    Settings& settings_)
+                 Settings& settings_)
     : name{name_}
     , passkey{std::move(passkey_)}
     , isRemoved{false}
     , encrypted{passkey != nullptr}
     , paths{paths_}
     , settings{settings_}
-{}
+{
+}
 
 /**
  * @brief Locks and loads an existing profile and creates the associate Core* instance.
@@ -464,7 +466,8 @@ void Profile::onSaveToxSave()
 }
 
 // TODO(sudden6): handle this better maybe?
-void Profile::onAvatarOfferReceived(uint32_t friendId, uint32_t fileId, const QByteArray& avatarHash, uint64_t filesize)
+void Profile::onAvatarOfferReceived(uint32_t friendId, uint32_t fileId,
+                                    const QByteArray& avatarHash, uint64_t filesize)
 {
     // accept if we don't have it already
     const bool accept = getAvatarHash(core->getFriendPublicKey(friendId)) != avatarHash;
@@ -537,7 +540,8 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
                       && hashSize <= crypto_generichash_KEYBYTES_MAX,
                   "Key size not supported by libsodium");
     QByteArray hash(hashSize, 0);
-    crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize, reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
+    crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize,
+                       reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
                        reinterpret_cast<uint8_t*>(pubkeyData.data()), pubkeyData.size());
     return paths.getSettingsDirPath() + "avatars/" + QString::fromUtf8(hash.toHex()).toUpper() + ".png";
 }
@@ -618,19 +622,20 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
     QByteArray salt = core->getSelfPublicKey().getByteArray();
     if (salt.size() != TOX_PASS_SALT_LENGTH) {
         qWarning() << "Couldn't compute salt from public key" << name;
-        messageBoxManager.showError(QObject::tr("Error"),
+        messageBoxManager
+            .showError(QObject::tr("Error"),
                        QObject::tr("qTox couldn't open your chat logs, they will be disabled."));
     }
     // At this point it's too early to load the personal settings (Nexus will do it), so we always
     // load
     // the history, and if it fails we can't change the setting now, but we keep a nullptr
-    database = std::make_shared<RawDatabase>(getDbPath(name, settings.getPaths()),
-        password, salt);
+    database = std::make_shared<RawDatabase>(getDbPath(name, settings.getPaths()), password, salt);
     if (database && database->isOpen()) {
         history.reset(new History(database, settings, messageBoxManager));
     } else {
         qWarning() << "Failed to open database for profile" << name;
-        messageBoxManager.showError(QObject::tr("Error"),
+        messageBoxManager
+            .showError(QObject::tr("Error"),
                        QObject::tr("qTox couldn't open your chat logs, they will be disabled."));
     }
 }
@@ -742,7 +747,8 @@ QByteArray Profile::getAvatarHash(const ToxPk& owner)
 {
     QByteArray pic = loadAvatarData(owner);
     QByteArray avatarHash(TOX_HASH_LENGTH, 0);
-    tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()), pic.size());
+    tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()),
+             pic.size());
     return avatarHash;
 }
 
@@ -889,8 +895,7 @@ QStringList Profile::remove()
  */
 bool Profile::rename(QString newName)
 {
-    QString path = paths.getSettingsDirPath() + name,
-            newPath = paths.getSettingsDirPath() + newName;
+    QString path = paths.getSettingsDirPath() + name, newPath = paths.getSettingsDirPath() + newName;
 
     if (!ProfileLocker::lock(newName, paths)) {
         return false;

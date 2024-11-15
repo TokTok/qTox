@@ -23,9 +23,7 @@ ScreenGrabberOverlayItem::ScreenGrabberOverlayItem(ScreenshotGrabber* grabber)
     setPen(QPen(Qt::NoPen));
 }
 
-ScreenGrabberOverlayItem::~ScreenGrabberOverlayItem()
-{
-}
+ScreenGrabberOverlayItem::~ScreenGrabberOverlayItem() {}
 
 void ScreenGrabberOverlayItem::setChosenRect(QRect rect)
 {
@@ -40,7 +38,8 @@ void ScreenGrabberOverlayItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
         screnshootGrabber->beginRectChooser(event);
 }
 
-void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
+void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
+                                     QWidget* widget)
 {
     std::ignore = option;
     std::ignore = widget;

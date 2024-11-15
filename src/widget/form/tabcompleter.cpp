@@ -53,12 +53,12 @@ void TabCompleter::buildCompletionList()
                             .section(QRegularExpression("[^\\w\\d\\$:@--_\\[\\]{}|`^.\\\\]"), -1, -1);
     // that section is then used as the completion regex
     QRegularExpression regex(QString("^[-_\\[\\]{}|`^.\\\\]*").append(QRegularExpression::escape(tabAbbrev)),
-                  QRegularExpression::CaseInsensitiveOption);
+                             QRegularExpression::CaseInsensitiveOption);
 
     const QString ownNick = group->getSelfName();
     for (const auto& name : group->getPeerList()) {
         if (name == ownNick) {
-            continue;   // don't auto complete own name
+            continue; // don't auto complete own name
         }
         if (regex.match(name).hasMatch()) {
             SortableString lower = SortableString(name.toLower());
@@ -122,8 +122,8 @@ bool TabCompleter::SortableString::operator<(const SortableString& other) const
     if (thisTime.isValid() || thatTime.isValid())
         return thisTime > thatTime;
 */ // this could be a
-                                                                              // useful feature at
-                                                                              // some point
+    // useful feature at
+    // some point
 
     return QString::localeAwareCompare(contents, other.contents) < 0;
 }

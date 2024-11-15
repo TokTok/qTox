@@ -44,9 +44,7 @@ void MaskablePixmapWidget::setPixmap(const QPixmap& pmap)
     }
 
     unscaled = pmap;
-    pixmap = pmap.scaled(width(), height(),
-                         Qt::KeepAspectRatio,
-                         Qt::SmoothTransformation);
+    pixmap = pmap.scaled(width(), height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
     updatePixmap();
     update();
 }
@@ -68,9 +66,7 @@ void MaskablePixmapWidget::setSize(QSize size)
     }
 
     if (!unscaled.isNull()) {
-        pixmap = unscaled.scaled(width(), height(),
-                                 Qt::KeepAspectRatio,
-                                 Qt::SmoothTransformation);
+        pixmap = unscaled.scaled(width(), height(), Qt::KeepAspectRatio, Qt::SmoothTransformation);
         updatePixmap();
         update();
     }

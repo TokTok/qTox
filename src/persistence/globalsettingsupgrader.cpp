@@ -4,29 +4,29 @@
  */
 
 #include "globalsettingsupgrader.h"
-#include "src/persistence/settings.h"
 #include "src/persistence/paths.h"
+#include "src/persistence/settings.h"
 
 #include <QDebug>
 #include <QFile>
 
 namespace {
-    bool version0to1(Settings& settings)
-    {
-        const auto& paths = settings.getPaths();
+bool version0to1(Settings& settings)
+{
+    const auto& paths = settings.getPaths();
 
-        QFile badFile{paths.getUserNodesFilePath()};
-        if (badFile.exists()) {
-            if (!badFile.rename(paths.getBackupUserNodesFilePath())) {
-                qCritical() << "Failed to write to" << paths.getBackupUserNodesFilePath() << \
-                    "aborting bootstrap node upgrade.";
-                return false;
-            }
+    QFile badFile{paths.getUserNodesFilePath()};
+    if (badFile.exists()) {
+        if (!badFile.rename(paths.getBackupUserNodesFilePath())) {
+            qCritical() << "Failed to write to" << paths.getBackupUserNodesFilePath()
+                        << "aborting bootstrap node upgrade.";
+            return false;
         }
-        qWarning() << "Moved" << badFile.fileName() << "to" << paths.getBackupUserNodesFilePath() << \
-            "to mitigate a bug. Resetting bootstrap nodes to default.";
-        return true;
     }
+    qWarning() << "Moved" << badFile.fileName() << "to" << paths.getBackupUserNodesFilePath()
+               << "to mitigate a bug. Resetting bootstrap nodes to default.";
+    return true;
+}
 } // namespace
 
 #include <cassert>
@@ -59,7 +59,6 @@ bool GlobalSettingsUpgrader::doUpgrade(Settings& settings, int fromVer, int toVe
         qDebug() << "Settings upgraded incrementally to schema version " << newSettingsVersion;
     }
 
-    qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->"
-            << toVer << ")";
+    qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->" << toVer << ")";
     return true;
 }

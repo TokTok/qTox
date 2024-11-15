@@ -29,9 +29,10 @@ GroupId::GroupId()
  *              GroupId::size, else the GroupId will be empty.
  */
 GroupId::GroupId(const QByteArray& rawId)
-    : ChatId([rawId](){
+    : ChatId([rawId]() {
         assert(rawId.length() == size);
-        return rawId;}())
+        return rawId;
+    }())
 {
 }
 

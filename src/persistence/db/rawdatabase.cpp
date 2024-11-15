@@ -148,13 +148,15 @@ bool RawDatabase::open(const QString& path_, const QString& hexKey)
         return false;
     }
 
-    if (sqlite3_create_function(sqlite, "regexp", 2, SQLITE_UTF8, nullptr, &RawDatabase::regexpInsensitive, nullptr, nullptr)) {
+    if (sqlite3_create_function(sqlite, "regexp", 2, SQLITE_UTF8, nullptr,
+                                &RawDatabase::regexpInsensitive, nullptr, nullptr)) {
         qWarning() << "Failed to create function regexp";
         close();
         return false;
     }
 
-    if (sqlite3_create_function(sqlite, "regexpsensitive", 2, SQLITE_UTF8, nullptr, &RawDatabase::regexpSensitive, nullptr, nullptr)) {
+    if (sqlite3_create_function(sqlite, "regexpsensitive", 2, SQLITE_UTF8, nullptr,
+                                &RawDatabase::regexpSensitive, nullptr, nullptr)) {
         qWarning() << "Failed to create function regexpsensitive";
         close();
         return false;
@@ -171,10 +173,11 @@ bool RawDatabase::open(const QString& path_, const QString& hexKey)
 
 bool RawDatabase::openEncryptedDatabaseAtLatestSupportedVersion(const QString& hexKey)
 {
-    // old qTox database are saved with SQLCipher 3.x defaults. For a period after 1.16.3 but before 1.17.0, databases
-    // could be partially upgraded to SQLCipher 4.0 defaults, since SQLCipher 3.x isn't capable of setitng all the same
-    // params. If SQLCipher 4.x happened to be used, they would have been fully upgraded to 4.0 default params.
-    // We need to support all three of these cases, so also upgrade to the latest possible params while we're here
+    // old qTox database are saved with SQLCipher 3.x defaults. For a period after 1.16.3 but
+    // before 1.17.0, databases could be partially upgraded to SQLCipher 4.0 defaults, since
+    // SQLCipher 3.x isn't capable of setitng all the same params. If SQLCipher 4.x happened to be
+    // used, they would have been fully upgraded to 4.0 default params. We need to support all three
+    // of these cases, so also upgrade to the latest possible params while we're here
     if (!setKey(hexKey)) {
         return false;
     }
@@ -182,7 +185,8 @@ bool RawDatabase::openEncryptedDatabaseAtLatestSupportedVersion(const QString& h
     auto highestSupportedVersion = highestSupportedParams();
     if (setCipherParameters(highestSupportedVersion)) {
         if (testUsable()) {
-            qInfo() << "Opened database with SQLCipher" << toString(highestSupportedVersion) << "parameters";
+            qInfo() << "Opened database with SQLCipher" << toString(highestSupportedVersion)
+                    << "parameters";
             return true;
         } else {
             return updateSavedCipherParameters(hexKey, highestSupportedVersion);
@@ -232,8 +236,8 @@ bool RawDatabase::updateSavedCipherParameters(const QString& hexKey, SqlCipherPa
     if (!commitDbSwap(hexKey)) {
         return false;
     }
-    qInfo() << "Upgraded database from SQLCipher" << toString(currentParams) << "params to" <<
-        toString(newParams) << "params complete";
+    qInfo() << "Upgraded database from SQLCipher" << toString(currentParams) << "params to"
+            << toString(newParams) << "params complete";
     return true;
 }
 
@@ -245,35 +249,36 @@ bool RawDatabase::setCipherParameters(SqlCipherParams params, const QString& dat
     }
     // from https://www.zetetic.net/blog/2018/11/30/sqlcipher-400-release/
     const QString default3_xParams{"PRAGMA database.cipher_page_size = 1024;"
-                   "PRAGMA database.kdf_iter = 64000;"
-                   "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA1;"
-                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA1;"};
-    // cipher_hmac_algorithm and cipher_kdf_algorithm weren't supported in sqlcipher 3.x, so our upgrade to 4 only
-    // applied some of the new params if sqlcipher 3.x was used at the time
+                                   "PRAGMA database.kdf_iter = 64000;"
+                                   "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA1;"
+                                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA1;"};
+    // cipher_hmac_algorithm and cipher_kdf_algorithm weren't supported in sqlcipher 3.x, so our
+    // upgrade to 4 only applied some of the new params if sqlcipher 3.x was used at the time
     const QString halfUpgradedTo4Params{"PRAGMA database.cipher_page_size = 4096;"
-                   "PRAGMA database.kdf_iter = 256000;"
-                   "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA1;"
-                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA1;"};
-    const QString default4_xParams{"PRAGMA database.cipher_page_size = 4096;"
-                   "PRAGMA database.kdf_iter = 256000;"
-                   "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA512;"
-                   "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA512;"
-                   "PRAGMA database.cipher_memory_security = ON;"}; // got disabled by default in 4.5.0, so manually enable it
+                                        "PRAGMA database.kdf_iter = 256000;"
+                                        "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA1;"
+                                        "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA1;"};
+    const QString default4_xParams{
+        "PRAGMA database.cipher_page_size = 4096;"
+        "PRAGMA database.kdf_iter = 256000;"
+        "PRAGMA database.cipher_hmac_algorithm = HMAC_SHA512;"
+        "PRAGMA database.cipher_kdf_algorithm = PBKDF2_HMAC_SHA512;"
+        "PRAGMA database.cipher_memory_security = ON;"}; // got disabled by default in 4.5.0, so manually enable it
 
     QString defaultParams;
-    switch(params) {
-        case SqlCipherParams::p3_0: {
-            defaultParams = default3_xParams;
-            break;
-        }
-        case SqlCipherParams::halfUpgradedTo4: {
-            defaultParams = halfUpgradedTo4Params;
-            break;
-        }
-        case SqlCipherParams::p4_0: {
-            defaultParams = default4_xParams;
-            break;
-        }
+    switch (params) {
+    case SqlCipherParams::p3_0: {
+        defaultParams = default3_xParams;
+        break;
+    }
+    case SqlCipherParams::halfUpgradedTo4: {
+        defaultParams = halfUpgradedTo4Params;
+        break;
+    }
+    case SqlCipherParams::p4_0: {
+        defaultParams = default4_xParams;
+        break;
+    }
     }
 
     qDebug() << "Setting SQLCipher" << toString(params) << "parameters";
@@ -295,24 +300,25 @@ RawDatabase::SqlCipherParams RawDatabase::highestSupportedParams()
 
     SqlCipherParams highestSupportedParams;
     switch (majorVersion) {
-        case 3:
-            highestSupportedParams = SqlCipherParams::halfUpgradedTo4;
-            break;
-        case 4:
-            highestSupportedParams = SqlCipherParams::p4_0;
-            break;
-        default:
-            qCritical() << "Unsupported SQLCipher version detected!";
-            return SqlCipherParams::p3_0;
+    case 3:
+        highestSupportedParams = SqlCipherParams::halfUpgradedTo4;
+        break;
+    case 4:
+        highestSupportedParams = SqlCipherParams::p4_0;
+        break;
+    default:
+        qCritical() << "Unsupported SQLCipher version detected!";
+        return SqlCipherParams::p3_0;
     }
-    qDebug() << "Highest supported SQLCipher params on this system are" << toString(highestSupportedParams);
+    qDebug() << "Highest supported SQLCipher params on this system are"
+             << toString(highestSupportedParams);
     return highestSupportedParams;
 }
 
-RawDatabase::SqlCipherParams RawDatabase::readSavedCipherParams(const QString& hexKey, SqlCipherParams newParams)
+RawDatabase::SqlCipherParams RawDatabase::readSavedCipherParams(const QString& hexKey,
+                                                                SqlCipherParams newParams)
 {
-    for (int i = static_cast<int>(SqlCipherParams::p3_0); i < static_cast<int>(newParams); ++i)
-    {
+    for (int i = static_cast<int>(SqlCipherParams::p3_0); i < static_cast<int>(newParams); ++i) {
         if (!setKey(hexKey)) {
             break;
         }
@@ -532,8 +538,7 @@ bool RawDatabase::encryptDatabase(const QString& newHexKey)
     if (user_version < 0) {
         return false;
     }
-    if (!execNow("ATTACH DATABASE '" + path + ".tmp' AS encrypted KEY \"x'" + newHexKey
-                    + "'\";")) {
+    if (!execNow("ATTACH DATABASE '" + path + ".tmp' AS encrypted KEY \"x'" + newHexKey + "'\";")) {
         qWarning() << "Failed to export encrypted database";
         return false;
     }
@@ -558,8 +563,9 @@ bool RawDatabase::decryptDatabase()
     if (user_version < 0) {
         return false;
     }
-    if (!execNow("ATTACH DATABASE '" + path + ".tmp' AS plaintext KEY '';"
-                                                "SELECT sqlcipher_export('plaintext');")) {
+    if (!execNow("ATTACH DATABASE '" + path
+                 + ".tmp' AS plaintext KEY '';"
+                   "SELECT sqlcipher_export('plaintext');")) {
         qWarning() << "Failed to export decrypted database";
         return false;
     }
@@ -679,9 +685,10 @@ QString RawDatabase::deriveKey(const QString& password)
 
     static const uint8_t expandConstant[TOX_PASS_SALT_LENGTH + 1] =
         "L'ignorance est le pire des maux";
-    const std::unique_ptr<Tox_Pass_Key, PassKeyDeleter> key(tox_pass_key_derive_with_salt(
-        reinterpret_cast<const uint8_t*>(passData.data()),
-        static_cast<std::size_t>(passData.size()), expandConstant, nullptr));
+    const std::unique_ptr<Tox_Pass_Key, PassKeyDeleter> key(
+        tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
+                                      static_cast<std::size_t>(passData.size()), expandConstant,
+                                      nullptr));
     return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
@@ -706,10 +713,10 @@ QString RawDatabase::deriveKey(const QString& password, const QByteArray& salt)
 
     static_assert(TOX_PASS_KEY_LENGTH >= 32, "toxcore must provide 256bit or longer keys");
 
-    const std::unique_ptr<Tox_Pass_Key, PassKeyDeleter> key(tox_pass_key_derive_with_salt(
-        reinterpret_cast<const uint8_t*>(passData.data()),
-        static_cast<std::size_t>(passData.size()),
-        reinterpret_cast<const uint8_t*>(salt.constData()), nullptr));
+    const std::unique_ptr<Tox_Pass_Key, PassKeyDeleter> key(
+        tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
+                                      static_cast<std::size_t>(passData.size()),
+                                      reinterpret_cast<const uint8_t*>(salt.constData()), nullptr));
     return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
@@ -765,7 +772,8 @@ void RawDatabase::process()
                     != SQLITE_OK) {
                     qWarning() << "Failed to prepare statement" << anonymizeQuery(query.query)
                                << "and returned" << r;
-                    qWarning("The full error is %d: %s", sqlite3_errcode(sqlite), sqlite3_errmsg(sqlite));
+                    qWarning("The full error is %d: %s", sqlite3_errcode(sqlite),
+                             sqlite3_errmsg(sqlite));
                     goto cleanupStatements;
                 }
                 query.statements += stmt;
@@ -782,8 +790,8 @@ void RawDatabase::process()
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-                    // SQLITE_STATIC uses old-style cast and 0 as null pointer butcomes from system headers, so can't
-                    // be fixed by us
+                    // SQLITE_STATIC uses old-style cast and 0 as null pointer butcomes from system
+                    // headers, so can't be fixed by us
                     auto sqliteDataType = SQLITE_STATIC;
 #pragma GCC diagnostic pop
                     if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
@@ -903,7 +911,8 @@ QVariant RawDatabase::extractData(sqlite3_stmt* stmt, int col)
  */
 void RawDatabase::regexpInsensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv)
 {
-    regexp(ctx, argc, argv, QRegularExpression::CaseInsensitiveOption | QRegularExpression::UseUnicodePropertiesOption);
+    regexp(ctx, argc, argv,
+           QRegularExpression::CaseInsensitiveOption | QRegularExpression::UseUnicodePropertiesOption);
 }
 
 /**
@@ -917,7 +926,8 @@ void RawDatabase::regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value*
     regexp(ctx, argc, argv, QRegularExpression::UseUnicodePropertiesOption);
 }
 
-void RawDatabase::regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv, const QRegularExpression::PatternOptions cs)
+void RawDatabase::regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
+                         const QRegularExpression::PatternOptions cs)
 {
     std::ignore = argc;
     QRegularExpression regex;

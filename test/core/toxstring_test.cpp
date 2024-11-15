@@ -5,13 +5,13 @@
 
 #include "src/core/toxstring.h"
 
-#include <QtTest/QtTest>
 #include <QByteArray>
 #include <QString>
+#include <QtTest/QtTest>
 
 class TestToxString : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 private slots:
     void QStringTest();
     void QByteArrayTest();
@@ -56,23 +56,22 @@ const int TestToxString::emptyLength = 0;
  */
 void TestToxString::QStringTest()
 {
-    //Create Test Object with QString constructor
+    // Create Test Object with QString constructor
     ToxString test(testStr);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(testStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(testByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
-    {
+    for (int i = 0; i <= lengthUINT8; i++) {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
 }
@@ -83,50 +82,48 @@ void TestToxString::QStringTest()
  */
 void TestToxString::QByteArrayTest()
 {
-    //Create Test Object with QByteArray constructor
+    // Create Test Object with QByteArray constructor
     ToxString test(testByte);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(testStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(testByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
-    {
+    for (int i = 0; i <= lengthUINT8; i++) {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
 }
 
 /**
- * @brief Use uint8t* and size_t as input data, check output: QString, QByteArray, size_t and uint8_t
- *        QVERIFY(expected == result);
+ * @brief Use uint8t* and size_t as input data, check output: QString, QByteArray, size_t and
+ * uint8_t QVERIFY(expected == result);
  */
 void TestToxString::uint8_tTest()
 {
-    //Create Test Object with uint8_t constructor
+    // Create Test Object with uint8_t constructor
     ToxString test(testUINT8, lengthUINT8);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(testStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(testByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(lengthUINT8 == test_size);
-    for (int i = 0; i <= lengthUINT8; i++)
-    {
+    for (int i = 0; i <= lengthUINT8; i++) {
         QVERIFY(testUINT8[i] == test_int[i]);
     }
 }
@@ -137,23 +134,22 @@ void TestToxString::uint8_tTest()
  */
 void TestToxString::emptyQStrTest()
 {
-    //Create Test Object with QString constructor
+    // Create Test Object with QString constructor
     ToxString test(emptyStr);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(emptyStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(emptyByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
-    {
+    for (int i = 0; i <= emptyLength; i++) {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
 }
@@ -164,23 +160,22 @@ void TestToxString::emptyQStrTest()
  */
 void TestToxString::emptyQByteTest()
 {
-    //Create Test Object with QByteArray constructor
+    // Create Test Object with QByteArray constructor
     ToxString test(emptyByte);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(emptyStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(emptyByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
-    {
+    for (int i = 0; i <= emptyLength; i++) {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
 }
@@ -191,50 +186,48 @@ void TestToxString::emptyQByteTest()
  */
 void TestToxString::emptyUINT8Test()
 {
-    //Create Test Object with uint8_t constructor
+    // Create Test Object with uint8_t constructor
     ToxString test(emptyUINT8, emptyLength);
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(emptyStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(emptyByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
-    {
+    for (int i = 0; i <= emptyLength; i++) {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
 }
 
 /**
- * @brief Use nullptr and size_t 5 as input data, check output: QString, QByteArray, size_t and uint8_t
- *        QVERIFY(expected == result);
+ * @brief Use nullptr and size_t 5 as input data, check output: QString, QByteArray, size_t and
+ * uint8_t QVERIFY(expected == result);
  */
 void TestToxString::nullptrUINT8Test()
 {
-    //Create Test Object with uint8_t constructor
-    ToxString test(nullptr, 5);//nullptr and length = 5
+    // Create Test Object with uint8_t constructor
+    ToxString test(nullptr, 5); // nullptr and length = 5
 
-    //Check QString
+    // Check QString
     QString test_string = test.getQString();
     QVERIFY(emptyStr == test_string);
 
-    //Check QByteArray
+    // Check QByteArray
     QByteArray test_byte = test.getBytes();
     QVERIFY(emptyByte == test_byte);
 
-    //Check uint8_t pointer
+    // Check uint8_t pointer
     const uint8_t* test_int = test.data();
     size_t test_size = test.size();
     QVERIFY(emptyLength == test_size);
-    for (int i = 0; i <= emptyLength; i++)
-    {
+    for (int i = 0; i <= emptyLength; i++) {
         QVERIFY(emptyUINT8[i] == test_int[i]);
     }
 }

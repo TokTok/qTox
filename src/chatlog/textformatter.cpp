@@ -84,27 +84,22 @@ const QVector<QRegularExpression> URI_WORD_PATTERNS = {
 
 // clang-format on
 
-struct MatchingUri {
+struct MatchingUri
+{
     bool valid{false};
     int length{0};
 };
 
 // pairs of characters that are ignored when surrounding a URI
-const QPair<QString, QString> URI_WRAPPING_CHARS[] = {
-        {QString("("), QString(")")},
-        {QString("["), QString("]")},
-        {QString("&quot;"), QString("&quot;")},
-        {QString("'"), QString("'")}
-};
+const QPair<QString, QString> URI_WRAPPING_CHARS[] = {{QString("("), QString(")")},
+                                                      {QString("["), QString("]")},
+                                                      {QString("&quot;"), QString("&quot;")},
+                                                      {QString("'"), QString("'")}};
 
 // characters which are ignored from the end of URI
-const QChar URI_ENDING_CHARS[] = {
-        QChar::fromLatin1('?'),
-        QChar::fromLatin1('.'),
-        QChar::fromLatin1('!'),
-        QChar::fromLatin1(':'),
-        QChar::fromLatin1(',')
-};
+const QChar URI_ENDING_CHARS[] = {QChar::fromLatin1('?'), QChar::fromLatin1('.'),
+                                  QChar::fromLatin1('!'), QChar::fromLatin1(':'),
+                                  QChar::fromLatin1(',')};
 
 /**
  * @brief Strips wrapping characters and ending punctuation from URI
@@ -118,12 +113,12 @@ MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startO
     int curValidationEndPos = wrappedUri.length();
     do {
         matchFound = false;
-        for (auto const& surroundChars : URI_WRAPPING_CHARS)
-        {
+        for (auto const& surroundChars : URI_WRAPPING_CHARS) {
             const int openingCharLength = surroundChars.first.length();
             const int closingCharLength = surroundChars.second.length();
-            if (surroundChars.first == wrappedUri.mid(curValidationStartPos, openingCharLength) &&
-                surroundChars.second == wrappedUri.mid(curValidationEndPos - closingCharLength, closingCharLength)) {
+            if (surroundChars.first == wrappedUri.mid(curValidationStartPos, openingCharLength)
+                && surroundChars.second
+                       == wrappedUri.mid(curValidationEndPos - closingCharLength, closingCharLength)) {
                 curValidationStartPos += openingCharLength;
                 curValidationEndPos -= closingCharLength;
                 matchFound = true;
@@ -157,7 +152,8 @@ MatchingUri stripSurroundingChars(const QStringView wrappedUri, const int startO
  * @note done separately from URI since the link must have a scheme added to be valid
  * @return Copy of message with highlighted URLs
  */
-QString highlight(const QString& message, const QVector<QRegularExpression>& patterns, const QString& wrapper)
+QString highlight(const QString& message, const QVector<QRegularExpression>& patterns,
+                  const QString& wrapper)
 {
     QString result = message;
     for (const QRegularExpression& exp : patterns) {
@@ -169,12 +165,15 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
             const int uriWithWrapMatch{0};
             const int uriWithoutWrapMatch{1};
             MatchingUri matchUri = stripSurroundingChars(match.capturedView(uriWithWrapMatch),
-                   match.capturedStart(uriWithoutWrapMatch) - match.capturedStart(uriWithWrapMatch));
+                                                         match.capturedStart(uriWithoutWrapMatch)
+                                                             - match.capturedStart(uriWithWrapMatch));
             if (!matchUri.valid) {
                 continue;
             }
-            const QString wrappedURL = wrapper.arg(match.captured(uriWithoutWrapMatch).left(matchUri.length));
-            result.replace(match.capturedStart(uriWithoutWrapMatch) + offset, matchUri.length, wrappedURL);
+            const QString wrappedURL =
+                wrapper.arg(match.captured(uriWithoutWrapMatch).left(matchUri.length));
+            result.replace(match.capturedStart(uriWithoutWrapMatch) + offset, matchUri.length,
+                           wrappedURL);
             offset = result.length() - startLength;
         }
     }

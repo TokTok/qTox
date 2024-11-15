@@ -30,44 +30,43 @@ const short BUTTONS_LAYOUT_HOR_SPACING = 4;
 const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
 
 const QString STATE_NAME[] = {
-    QString{},
-    QStringLiteral("green"),
-    QStringLiteral("red"),
-    QStringLiteral("yellow"),
-    QStringLiteral("yellow"),
+    QString{},                //
+    QStringLiteral("green"),  //
+    QStringLiteral("red"),    //
+    QStringLiteral("yellow"), //
+    QStringLiteral("yellow"), //
 };
 
 const QString CALL_TOOL_TIP[] = {
-    ChatFormHeader::tr("Can't start audio call"),
-    ChatFormHeader::tr("Start audio call"),
-    ChatFormHeader::tr("End audio call"),
-    ChatFormHeader::tr("Cancel audio call"),
-    ChatFormHeader::tr("Accept audio call"),
+    ChatFormHeader::tr("Can't start audio call"), //
+    ChatFormHeader::tr("Start audio call"),       //
+    ChatFormHeader::tr("End audio call"),         //
+    ChatFormHeader::tr("Cancel audio call"),      //
+    ChatFormHeader::tr("Accept audio call"),      //
 };
 
 const QString VIDEO_TOOL_TIP[] = {
-    ChatFormHeader::tr("Can't start video call"),
-    ChatFormHeader::tr("Start video call"),
-    ChatFormHeader::tr("End video call"),
-    ChatFormHeader::tr("Cancel video call"),
-    ChatFormHeader::tr("Accept video call"),
+    ChatFormHeader::tr("Can't start video call"), //
+    ChatFormHeader::tr("Start video call"),       //
+    ChatFormHeader::tr("End video call"),         //
+    ChatFormHeader::tr("Cancel video call"),      //
+    ChatFormHeader::tr("Accept video call"),      //
 };
 
 const QString VOL_TOOL_TIP[] = {
-    ChatFormHeader::tr("Sound can be disabled only during a call"),
-    ChatFormHeader::tr("Mute call"),
-    ChatFormHeader::tr("Unmute call"),
+    ChatFormHeader::tr("Sound can be disabled only during a call"), //
+    ChatFormHeader::tr("Mute call"),                                //
+    ChatFormHeader::tr("Unmute call"),                              //
 };
 
 const QString MIC_TOOL_TIP[] = {
-    ChatFormHeader::tr("Microphone can be muted only during a call"),
-    ChatFormHeader::tr("Mute microphone"),
-    ChatFormHeader::tr("Unmute microphone"),
+    ChatFormHeader::tr("Microphone can be muted only during a call"), //
+    ChatFormHeader::tr("Mute microphone"),                            //
+    ChatFormHeader::tr("Unmute microphone"),                          //
 };
 
 template <class T, class Fun>
-QPushButton* createButton(const QString& name, T* self, Fun onClickSlot,
-    Settings& settings, Style& style)
+QPushButton* createButton(const QString& name, T* self, Fun onClickSlot, Settings& settings, Style& style)
 {
     QPushButton* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
@@ -77,14 +76,14 @@ QPushButton* createButton(const QString& name, T* self, Fun onClickSlot,
     return btn;
 }
 
-template<class State>
+template <class State>
 void setStateToolTip(QAbstractButton* btn, State state, const QString toolTip[])
 {
     const int index = static_cast<int>(state);
     btn->setToolTip(toolTip[index]);
 }
 
-template<class State>
+template <class State>
 void setStateName(QAbstractButton* btn, State state)
 {
     const int index = static_cast<int>(state);
@@ -92,7 +91,7 @@ void setStateName(QAbstractButton* btn, State state)
     btn->setEnabled(index != 0);
 }
 
-}
+} // namespace
 
 ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* parent)
     : QWidget(parent)
@@ -131,7 +130,8 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     micButton = createButton("micButton", this, &ChatFormHeader::micMuteToggle, settings, style);
     volButton = createButton("volButton", this, &ChatFormHeader::volMuteToggle, settings, style);
     callButton = createButton("callButton", this, &ChatFormHeader::callTriggered, settings, style);
-    videoButton = createButton("videoButton", this, &ChatFormHeader::videoCallTriggered, settings, style);
+    videoButton =
+        createButton("videoButton", this, &ChatFormHeader::videoCallTriggered, settings, style);
 
     QVBoxLayout* micButtonsLayout = new QVBoxLayout();
     micButtonsLayout->setSpacing(MIC_BUTTONS_LAYOUT_SPACING);
@@ -278,7 +278,7 @@ void ChatFormHeader::updateMuteVolButton(bool active, bool outputMuted)
     updateButtonsView();
 }
 
-void ChatFormHeader::setAvatar(const QPixmap &img)
+void ChatFormHeader::setAvatar(const QPixmap& img)
 {
     avatar->setPixmap(img);
 }

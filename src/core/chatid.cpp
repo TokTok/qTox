@@ -3,11 +3,11 @@
  * Copyright © 2024 The TokTok team.
  */
 
+#include "src/core/chatid.h"
 #include <QByteArray>
+#include <QHash>
 #include <QString>
 #include <cstdint>
-#include <QHash>
-#include "src/core/chatid.h"
 
 /**
  * @brief The default constructor. Creates an empty id.

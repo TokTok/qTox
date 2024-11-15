@@ -4,18 +4,18 @@
  */
 
 #include "mock/mockbootstraplistgenerator.h"
-#include "src/core/core.h"
-#include "src/core/toxoptions.h"
-#include "src/core/icoresettings.h"
-#include "src/net/bootstrapnodeupdater.h"
-#include "src/model/ibootstraplistgenerator.h"
-#include "src/persistence/settings.h"
 #include "mock/mockcoresettings.h"
+#include "src/core/core.h"
+#include "src/core/icoresettings.h"
+#include "src/core/toxoptions.h"
+#include "src/model/ibootstraplistgenerator.h"
+#include "src/net/bootstrapnodeupdater.h"
+#include "src/persistence/settings.h"
 
-#include <QtTest/QtTest>
-#include <QtGlobal>
-#include <limits>
 #include <QSignalSpy>
+#include <QtGlobal>
+#include <QtTest/QtTest>
+#include <limits>
 
 #include <iostream>
 #include <memory>
@@ -27,7 +27,7 @@ Q_DECLARE_METATYPE(Status::Status)
 
 class TestCore : public QObject
 {
-Q_OBJECT
+    Q_OBJECT
 public:
     TestCore()
     {
@@ -59,8 +59,8 @@ namespace {
 const int bootstrap_timeout = 15000;
 const int connected_message_wait = 5000;
 
-void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes,
-    Core& bob, MockBootstrapListGenerator& bobsNodes)
+void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& bob,
+                    MockBootstrapListGenerator& bobsNodes)
 {
     alicesNodes.setBootstrapNodes(MockBootstrapListGenerator::makeListFromSelf(bob));
     bobsNodes.setBootstrapNodes(MockBootstrapListGenerator::makeListFromSelf(alice));
@@ -71,8 +71,7 @@ void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes,
     alice.start();
     bob.start();
 
-    QTRY_VERIFY_WITH_TIMEOUT(spyAlice.count() == 1 &&
-        spyBob.count() == 1, bootstrap_timeout);
+    QTRY_VERIFY_WITH_TIMEOUT(spyAlice.count() == 1 && spyBob.count() == 1, bootstrap_timeout);
 }
 } // namespace
 
@@ -123,7 +122,8 @@ void TestCore::make_friends()
     alice->requestFriendship(bob->getSelfId(), friendMsg);
 
     // Wait for friend message to be received
-    QTRY_VERIFY_WITH_TIMEOUT(spyBobFriendMsg.count() == 1 && spyAliceFriendMsg.count() == 1, connected_message_wait);
+    QTRY_VERIFY_WITH_TIMEOUT(spyBobFriendMsg.count() == 1 && spyAliceFriendMsg.count() == 1,
+                             connected_message_wait);
 
     // Check for expected signal content
     QVERIFY(qvariant_cast<ToxPk>(spyBobFriendMsg[0][0]) == alice->getSelfPublicKey());
@@ -139,7 +139,8 @@ void TestCore::make_friends()
     QSignalSpy spyAliceFriendOnline(alice.get(), &Core::friendStatusChanged);
     QSignalSpy spyBobFriendOnline(bob.get(), &Core::friendStatusChanged);
 
-    QTRY_VERIFY_WITH_TIMEOUT(spyAliceFriendOnline.count() >= 1 && spyBobFriendOnline.count() >= 1, connected_message_wait);
+    QTRY_VERIFY_WITH_TIMEOUT(spyAliceFriendOnline.count() >= 1 && spyBobFriendOnline.count() >= 1,
+                             connected_message_wait);
 
     // Check for expected signal content
     QVERIFY(spyAliceFriendOnline[0][0].toInt() == static_cast<int>(Status::Status::Online));
@@ -158,12 +159,12 @@ void TestCore::change_name()
     alice->setUsername(aliceName);
 
     QTRY_VERIFY_WITH_TIMEOUT(aliceSaveRequest.count() == 1, bootstrap_timeout);
-    QTRY_VERIFY_WITH_TIMEOUT(aliceUsernameChanged.count() == 1 &&
-                             aliceUsernameChanged[0][0].toString() == aliceName,
+    QTRY_VERIFY_WITH_TIMEOUT(aliceUsernameChanged.count() == 1
+                                 && aliceUsernameChanged[0][0].toString() == aliceName,
                              bootstrap_timeout);
 
-    QTRY_VERIFY_WITH_TIMEOUT(bobUsernameChangeReceived.count() == 1 &&
-                             bobUsernameChangeReceived[0][1].toString() == aliceName,
+    QTRY_VERIFY_WITH_TIMEOUT(bobUsernameChangeReceived.count() == 1
+                                 && bobUsernameChangeReceived[0][1].toString() == aliceName,
                              bootstrap_timeout);
 
     // Setting the username again to the same value shoud NOT trigger any signals
@@ -189,12 +190,12 @@ void TestCore::change_status_message()
     alice->setStatusMessage(aliceStatusMsg);
 
     QTRY_VERIFY_WITH_TIMEOUT(aliceSaveRequest.count() == 1, connected_message_wait);
-    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusMsgChanged.count() == 1 &&
-                             aliceStatusMsgChanged[0][0].toString() == aliceStatusMsg,
+    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusMsgChanged.count() == 1
+                                 && aliceStatusMsgChanged[0][0].toString() == aliceStatusMsg,
                              connected_message_wait);
 
-    QTRY_VERIFY_WITH_TIMEOUT(bobStatusMsgChangeReceived.count() == 1 &&
-                             bobStatusMsgChangeReceived[0][1].toString() == aliceStatusMsg,
+    QTRY_VERIFY_WITH_TIMEOUT(bobStatusMsgChangeReceived.count() == 1
+                                 && bobStatusMsgChangeReceived[0][1].toString() == aliceStatusMsg,
                              connected_message_wait);
 
     // Setting the status message again to the same value shoud NOT trigger any signals
@@ -217,12 +218,14 @@ void TestCore::change_status()
     alice->setStatus(Status::Status::Away);
 
     QTRY_VERIFY_WITH_TIMEOUT(aliceSaveRequest.count() == 1, connected_message_wait);
-    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusChanged.count() == 1 &&
-                             qvariant_cast<Status::Status>(aliceStatusChanged[0][0]) == Status::Status::Away,
+    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusChanged.count() == 1
+                                 && qvariant_cast<Status::Status>(aliceStatusChanged[0][0])
+                                        == Status::Status::Away,
                              connected_message_wait);
 
-    QTRY_VERIFY_WITH_TIMEOUT(bobStatusChangeReceived.count() == 1 &&
-                             qvariant_cast<Status::Status>(bobStatusChangeReceived[0][1]) == Status::Status::Away,
+    QTRY_VERIFY_WITH_TIMEOUT(bobStatusChangeReceived.count() == 1
+                                 && qvariant_cast<Status::Status>(bobStatusChangeReceived[0][1])
+                                        == Status::Status::Away,
                              connected_message_wait);
 
     // Setting the status message again to the same value again triggers all signals
@@ -230,8 +233,9 @@ void TestCore::change_status()
 
     // TODO(sudden6): Emitting these again odd and should probably be changed, lets codify it for now though
     QTRY_VERIFY_WITH_TIMEOUT(aliceSaveRequest.count() == 2, connected_message_wait);
-    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusChanged.count() == 2 &&
-                             qvariant_cast<Status::Status>(aliceStatusChanged[1][0]) == Status::Status::Away,
+    QTRY_VERIFY_WITH_TIMEOUT(aliceStatusChanged.count() == 2
+                                 && qvariant_cast<Status::Status>(aliceStatusChanged[1][0])
+                                        == Status::Status::Away,
                              connected_message_wait);
 
     // Need to sleep here, because we're testing that we don't get a new signal for the re-set but

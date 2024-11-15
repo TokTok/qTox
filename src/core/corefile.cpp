@@ -8,9 +8,9 @@
 #include "core.h"
 #include "toxfile.h"
 #include "toxstring.h"
-#include "src/persistence/settings.h"
 #include "src/model/status.h"
 #include "src/model/toxclientstandards.h"
+#include "src/persistence/settings.h"
 #include "util/compatiblerecursivemutex.h"
 #include "util/toxcoreerrorparser.h"
 
@@ -30,7 +30,7 @@
  * @brief Manages the file transfer service of toxcore
  */
 
-CoreFilePtr CoreFile::makeCoreFile(Core *core, Tox *tox, CompatibleRecursiveMutex &coreLoopLock)
+CoreFilePtr CoreFile::makeCoreFile(Core* core, Tox* tox, CompatibleRecursiveMutex& coreLoopLock)
 {
     assert(core != nullptr);
     assert(tox != nullptr);
@@ -41,7 +41,7 @@ CoreFilePtr CoreFile::makeCoreFile(Core *core, Tox *tox, CompatibleRecursiveMute
     return result;
 }
 
-CoreFile::CoreFile(Tox *core_, CompatibleRecursiveMutex &coreLoopLock_)
+CoreFile::CoreFile(Tox* core_, CompatibleRecursiveMutex& coreLoopLock_)
     : tox{core_}
     , coreLoopLock{&coreLoopLock_}
 {
@@ -71,7 +71,7 @@ unsigned CoreFile::corefileIterationInterval()
     return idleInterval;
 }
 
-void CoreFile::connectCallbacks(Tox &tox)
+void CoreFile::connectCallbacks(Tox& tox)
 {
     // be careful not to to reconnect already used callbacks here
     tox_callback_file_chunk_request(&tox, CoreFile::onFileDataCallback);
@@ -85,12 +85,13 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
     QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
 
     uint64_t filesize = 0;
-    uint8_t *file_id = nullptr;
-    uint8_t *file_name = nullptr;
+    uint8_t* file_id = nullptr;
+    uint8_t* file_name = nullptr;
     size_t nameLength = 0;
     uint8_t avatarHash[TOX_HASH_LENGTH];
     if (!data.isEmpty()) {
-        static_assert(TOX_HASH_LENGTH <= TOX_FILE_ID_LENGTH, "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
+        static_assert(TOX_HASH_LENGTH <= TOX_FILE_ID_LENGTH,
+                      "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
         tox_hash(avatarHash, reinterpret_cast<const uint8_t*>(data.data()), data.size());
         filesize = data.size();
         file_id = avatarHash;
@@ -98,8 +99,8 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
         nameLength = TOX_HASH_LENGTH;
     }
     Tox_Err_File_Send error;
-    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_AVATAR, filesize,
-                                    file_id, file_name, nameLength, &error);
+    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_AVATAR, filesize, file_id,
+                                           file_name, nameLength, &error);
     if (!PARSE_ERR(error)) {
         return;
     }
@@ -109,23 +110,22 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
     file.avatarData = data;
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
-    tox_file_get_file_id(tox, friendId, fileNum, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
-                         &fileGetErr);
+    tox_file_get_file_id(tox, friendId, fileNum,
+                         reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
     if (!PARSE_ERR(fileGetErr)) {
         return;
     }
     addFile(friendId, fileNum, file);
 }
 
-void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath,
-                        long long filesize)
+void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, long long filesize)
 {
     QMutexLocker<CompatibleRecursiveMutex> locker{coreLoopLock};
 
     ToxString fileName(filename);
     Tox_Err_File_Send sendErr;
-    uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize,
-                                     nullptr, fileName.data(), fileName.size(), &sendErr);
+    uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize, nullptr,
+                                     fileName.data(), fileName.size(), &sendErr);
 
     if (!PARSE_ERR(sendErr)) {
         emit fileSendFailed(friendId, fileName.getQString());
@@ -133,11 +133,16 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath,
     }
     qDebug() << QString("sendFile: Created file sender %1 with friend %2").arg(fileNum).arg(friendId);
 
-    ToxFile file{fileNum, friendId, fileName.getQString(), filePath, static_cast<uint64_t>(filesize), ToxFile::SENDING};
+    ToxFile file{fileNum,
+                 friendId,
+                 fileName.getQString(),
+                 filePath,
+                 static_cast<uint64_t>(filesize),
+                 ToxFile::SENDING};
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
-    tox_file_get_file_id(tox, friendId, fileNum, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
-                         &fileGetErr);
+    tox_file_get_file_id(tox, friendId, fileNum,
+                         reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
     if (!PARSE_ERR(fileGetErr)) {
         return;
     }
@@ -178,11 +183,9 @@ void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
 
     Tox_Err_File_Control err;
     if (file->pauseStatus.localPaused()) {
-        tox_file_control(tox, file->friendId, file->fileNum, TOX_FILE_CONTROL_PAUSE,
-                         &err);
+        tox_file_control(tox, file->friendId, file->fileNum, TOX_FILE_CONTROL_PAUSE, &err);
     } else {
-        tox_file_control(tox, file->friendId, file->fileNum, TOX_FILE_CONTROL_RESUME,
-                         &err);
+        tox_file_control(tox, file->friendId, file->fileNum, TOX_FILE_CONTROL_RESUME, &err);
     }
     PARSE_ERR(err);
 }
@@ -332,16 +335,17 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             return;
         }
         if (!ToxClientStandards::IsValidAvatarSize(filesize)) {
-            qWarning() <<
-                QString("Received avatar request from %1 with size %2.").arg(friendId).arg(filesize) +
-                QString(" The max size allowed for avatars is %3. Cancelling transfer.").arg(ToxClientStandards::MaxAvatarSize);
+            qWarning() << QString("Received avatar request from %1 with size %2.").arg(friendId).arg(filesize)
+                              + QString(
+                                    " The max size allowed for avatars is %3. Cancelling transfer.")
+                                    .arg(ToxClientStandards::MaxAvatarSize);
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
             PARSE_ERR(err);
             return;
         }
         static_assert(TOX_HASH_LENGTH <= TOX_FILE_ID_LENGTH,
-                        "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
+                      "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
         uint8_t avatarHash[TOX_FILE_ID_LENGTH];
         Tox_Err_File_Get fileGetErr;
         tox_file_get_file_id(tox, friendId, fileId, avatarHash, &fileGetErr);
@@ -349,11 +353,11 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             return;
         }
         QByteArray avatarBytes{static_cast<const char*>(static_cast<const void*>(avatarHash)),
-                                TOX_HASH_LENGTH};
+                               TOX_HASH_LENGTH};
         emit core->fileAvatarOfferReceived(friendId, fileId, avatarBytes, filesize);
         return;
     }
-    #ifdef Q_OS_WIN
+#ifdef Q_OS_WIN
     const auto cleanFileName = CoreFile::getCleanFileName(filename.getQString());
     if (cleanFileName != filename.getQString()) {
         qDebug() << QStringLiteral("Cleaned filename");
@@ -362,15 +366,15 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     } else {
         qDebug() << QStringLiteral("filename already clean");
     }
-    #endif
+#endif
     qDebug() << QString("Received file request %1:%2 kind %3").arg(friendId).arg(fileId).arg(kind);
 
     ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING};
     file.fileKind = kind;
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get fileGetErr;
-    tox_file_get_file_id(tox, friendId, fileId, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
-                         &fileGetErr);
+    tox_file_get_file_id(tox, friendId, fileId,
+                         reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
     if (!PARSE_ERR(fileGetErr)) {
         return;
     }
@@ -400,16 +404,14 @@ void CoreFile::handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept
         return;
     }
     // It's an avatar and we don't have it, autoaccept the transfer
-    qDebug() << QString("Received avatar request %1:%2. Accepted.")
-                    .arg(friendId)
-                    .arg(fileId);
+    qDebug() << QString("Received avatar request %1:%2. Accepted.").arg(friendId).arg(fileId);
 
     ToxFile file{fileId, friendId, "<avatar>", "", filesize, ToxFile::RECEIVING};
     file.fileKind = TOX_FILE_KIND_AVATAR;
     file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
     Tox_Err_File_Get getErr;
-    tox_file_get_file_id(tox, friendId, fileId, reinterpret_cast<uint8_t*>(file.resumeFileId.data()),
-                         &getErr);
+    tox_file_get_file_id(tox, friendId, fileId,
+                         reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &getErr);
     if (!PARSE_ERR(getErr)) {
         return;
     }
@@ -498,7 +500,8 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
         file->hashGenerator->addData(QByteArrayView{data.get(), static_cast<qsizetype>(length)});
 #else
-        file->hashGenerator->addData(QByteArray{reinterpret_cast<const char*>(data.get()), static_cast<qsizetype>(length)});
+        file->hashGenerator->addData(
+            QByteArray{reinterpret_cast<const char*>(data.get()), static_cast<qsizetype>(length)});
 #endif
     }
 
@@ -564,7 +567,8 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
 #if QT_VERSION >= QT_VERSION_CHECK(6, 3, 0)
     file->hashGenerator->addData(QByteArrayView{data, static_cast<qsizetype>(length)});
 #else
-    file->hashGenerator->addData(QByteArray{reinterpret_cast<const char*>(data), static_cast<qsizetype>(length)});
+    file->hashGenerator->addData(
+        QByteArray{reinterpret_cast<const char*>(data), static_cast<qsizetype>(length)});
 #endif
 
     if (file->fileKind != TOX_FILE_KIND_AVATAR) {

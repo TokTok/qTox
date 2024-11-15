@@ -97,17 +97,14 @@ QString GenericChatForm::resolveToxPk(const ToxPk& pk)
     return pk.toString();
 }
 
-namespace
-{
+namespace {
 const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
 }
 
-namespace
-{
+namespace {
 
 template <class T, class Fun>
-QPushButton* createButton(const QString& name, T* self, Fun onClickSlot,
-    Settings& settings, Style& style)
+QPushButton* createButton(const QString& name, T* self, Fun onClickSlot, Settings& settings, Style& style)
 {
     QPushButton* btn = new QPushButton();
     // Fix for incorrect layouts on OS X as per
@@ -143,15 +140,16 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     headWidget = new ChatFormHeader(settings, style);
     searchForm = new SearchForm(settings, style);
     dateInfo = new QLabel(this);
-    chatWidget = new ChatWidget(chatLog_, core, documentCache, smileyPack,
-        settings, style, messageBoxManager, this);
+    chatWidget = new ChatWidget(chatLog_, core, documentCache, smileyPack, settings, style,
+                                messageBoxManager, this);
     searchForm->hide();
     dateInfo->setAlignment(Qt::AlignHCenter);
     dateInfo->setVisible(false);
 
     // settings
     connect(&settings, &Settings::emojiFontPointSizeChanged, chatWidget, &ChatWidget::forceRelayout);
-    connect(&settings, &Settings::chatMessageFontChanged, this, &GenericChatForm::onChatMessageFontChanged);
+    connect(&settings, &Settings::chatMessageFontChanged, this,
+            &GenericChatForm::onChatMessageFontChanged);
 
     msgEdit = new ChatTextEdit();
 #ifdef SPELL_CHECKING
@@ -161,10 +159,12 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 #endif
 
     sendButton = createButton("sendButton", this, &GenericChatForm::onSendTriggered, settings, style);
-    emoteButton = createButton("emoteButton", this, &GenericChatForm::onEmoteButtonClicked, settings, style);
+    emoteButton =
+        createButton("emoteButton", this, &GenericChatForm::onEmoteButtonClicked, settings, style);
 
     fileButton = createButton("fileButton", this, &GenericChatForm::onAttachClicked, settings, style);
-    screenshotButton = createButton("screenshotButton", this, &GenericChatForm::onScreenshotClicked, settings, style);
+    screenshotButton = createButton("screenshotButton", this, &GenericChatForm::onScreenshotClicked,
+                                    settings, style);
 
     // TODO: Make updateCallButtons (see ChatForm) abstract
     //       and call here to set tooltips.
@@ -208,26 +208,32 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     contentLayout->addLayout(mainFootLayout);
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    quoteAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::ALT | Qt::Key_Q), this, SLOT(quoteSelectedText()));
+    quoteAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::ALT | Qt::Key_Q), this,
+                                 SLOT(quoteSelectedText()));
 #else
-    quoteAction = menu.addAction(QIcon(), QString(), this, SLOT(quoteSelectedText()), QKeySequence(Qt::ALT | Qt::Key_Q));
+    quoteAction = menu.addAction(QIcon(), QString(), this, SLOT(quoteSelectedText()),
+                                 QKeySequence(Qt::ALT | Qt::Key_Q));
 #endif
     addAction(quoteAction);
     menu.addSeparator();
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    goToCurrentDateAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_G), this, SLOT(goToCurrentDate()));
+    goToCurrentDateAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_G),
+                                           this, SLOT(goToCurrentDate()));
 #else
-    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()), QKeySequence(Qt::CTRL | Qt::Key_G));
+    goToCurrentDateAction = menu.addAction(QIcon(), QString(), this, SLOT(goToCurrentDate()),
+                                           QKeySequence(Qt::CTRL | Qt::Key_G));
 #endif
     addAction(goToCurrentDateAction);
 
     menu.addSeparator();
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    searchAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_F), this, SLOT(searchFormShow()));
+    searchAction = menu.addAction(QIcon(), QString(), QKeySequence(Qt::CTRL | Qt::Key_F), this,
+                                  SLOT(searchFormShow()));
 #else
-    searchAction = menu.addAction(QIcon(), QString(), this, SLOT(searchFormShow()), QKeySequence(Qt::CTRL | Qt::Key_F));
+    searchAction = menu.addAction(QIcon(), QString(), this, SLOT(searchFormShow()),
+                                  QKeySequence(Qt::CTRL | Qt::Key_F));
 #endif
     addAction(searchAction);
 
@@ -237,12 +243,13 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     menu.addSeparator();
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 4, 0)
-    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
-                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L),
-                                 this, SLOT(clearChatArea()));
+    clearAction =
+        menu.addAction(QIcon::fromTheme("edit-clear"), QString(),
+                       QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L), this, SLOT(clearChatArea()));
 #else
-    clearAction = menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this, SLOT(clearChatArea()),
-                                 QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
+    clearAction =
+        menu.addAction(QIcon::fromTheme("edit-clear"), QString(), this, SLOT(clearChatArea()),
+                       QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_L));
 #endif
     addAction(clearAction);
 
@@ -255,7 +262,8 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
     connect(chatWidget, &ChatWidget::customContextMenuRequested, this,
             &GenericChatForm::onChatContextMenuRequested);
-    connect(chatWidget, &ChatWidget::firstVisibleLineChanged, this, &GenericChatForm::updateShowDateInfo);
+    connect(chatWidget, &ChatWidget::firstVisibleLineChanged, this,
+            &GenericChatForm::updateShowDateInfo);
 
     connect(searchForm, &SearchForm::searchInBegin, chatWidget, &ChatWidget::startSearch);
     connect(searchForm, &SearchForm::searchUp, chatWidget, &ChatWidget::onSearchUp);
@@ -279,7 +287,6 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
 
     // update header on name/title change
     connect(chat, &Chat::displayedNameChanged, this, &GenericChatForm::setName);
-
 }
 
 GenericChatForm::~GenericChatForm()
@@ -315,29 +322,29 @@ QDateTime GenericChatForm::getLatestTime() const
     if (chatLog.getFirstIdx() == chatLog.getNextIdx())
         return QDateTime();
 
-    const auto shouldUseTimestamp = [this] (ChatLogIdx idx) {
+    const auto shouldUseTimestamp = [this](ChatLogIdx idx) {
         if (chatLog.at(idx).getContentType() != ChatLogItem::ContentType::systemMessage) {
             return true;
         }
 
         const auto& message = chatLog.at(idx).getContentAsSystemMessage();
         switch (message.messageType) {
-            case SystemMessageType::incomingCall:
-            case SystemMessageType::outgoingCall:
-            case SystemMessageType::callEnd:
-            case SystemMessageType::unexpectedCallEnd:
-                return true;
-            case SystemMessageType::cleared:
-            case SystemMessageType::titleChanged:
-            case SystemMessageType::peerStateChange:
-            case SystemMessageType::peerNameChanged:
-            case SystemMessageType::userLeftGroup:
-            case SystemMessageType::userJoinedGroup:
-            case SystemMessageType::fileSendFailed:
-            case SystemMessageType::messageSendFailed:
-            case SystemMessageType::selfJoinedGroup:
-            case SystemMessageType::selfLeftGroup:
-                return false;
+        case SystemMessageType::incomingCall:
+        case SystemMessageType::outgoingCall:
+        case SystemMessageType::callEnd:
+        case SystemMessageType::unexpectedCallEnd:
+            return true;
+        case SystemMessageType::cleared:
+        case SystemMessageType::titleChanged:
+        case SystemMessageType::peerStateChange:
+        case SystemMessageType::peerNameChanged:
+        case SystemMessageType::userLeftGroup:
+        case SystemMessageType::userJoinedGroup:
+        case SystemMessageType::fileSendFailed:
+        case SystemMessageType::messageSendFailed:
+        case SystemMessageType::selfJoinedGroup:
+        case SystemMessageType::selfLeftGroup:
+            return false;
         }
 
         qWarning("Unexpected system message type %d", static_cast<int>(message.messageType));
@@ -378,8 +385,8 @@ void GenericChatForm::show(ContentLayout* contentLayout_)
     headWidget->show();
 
 #if QT_VERSION < QT_VERSION_CHECK(5, 12, 4) && QT_VERSION > QT_VERSION_CHECK(5, 11, 0)
-    // HACK: switching order happens to avoid a Qt bug causing segfault, present between these versions.
-    // this could cause flickering if our form is shown before added to the layout
+    // HACK: switching order happens to avoid a Qt bug causing segfault, present between these
+    // versions. this could cause flickering if our form is shown before added to the layout
     // https://github.com/qTox/qTox/issues/5570
     QWidget::show();
     contentLayout->mainContent->layout()->addWidget(this);
@@ -402,7 +409,7 @@ bool GenericChatForm::event(QEvent* e)
     if (e->type() == QEvent::KeyPress) {
         QKeyEvent* ke = static_cast<QKeyEvent*>(e);
         if ((ke->modifiers() == Qt::NoModifier || ke->modifiers() == Qt::ShiftModifier)
-                && !ke->text().isEmpty()) {
+            && !ke->text().isEmpty()) {
             if (searchForm->isHidden()) {
                 msgEdit->sendKeyEvent(ke);
                 msgEdit->setFocus();
@@ -519,7 +526,7 @@ void GenericChatForm::addSystemInfoMessage(const QDateTime& datetime, SystemMess
     chatLog.addSystemMessage(systemMessage);
 }
 
-QDateTime GenericChatForm::getTime(const ChatLine::Ptr &chatLine) const
+QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
 {
     if (chatLine) {
         Timestamp* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
@@ -544,9 +551,9 @@ void GenericChatForm::clearChatArea(bool confirm, bool inform)
 {
     if (confirm) {
         QMessageBox::StandardButton mboxResult =
-                QMessageBox::question(this, tr("Confirmation"),
-                                      tr("Are you sure that you want to clear all displayed messages?"),
-                                      QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+            QMessageBox::question(this, tr("Confirmation"),
+                                  tr("Are you sure that you want to clear all displayed messages?"),
+                                  QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
         if (mboxResult == QMessageBox::No) {
             return;
         }
@@ -708,8 +715,7 @@ void GenericChatForm::updateShowDateInfo(const ChatLine::Ptr& prevLine, const Ch
 {
     // If the dateInfo is visible we need to pretend the top line is the one
     // covered by the date to prevent oscillations
-    const auto effectiveTopLine = (dateInfo->isVisible() && prevLine)
-        ? prevLine : topLine;
+    const auto effectiveTopLine = (dateInfo->isVisible() && prevLine) ? prevLine : topLine;
 
     const auto date = getTime(effectiveTopLine);
 

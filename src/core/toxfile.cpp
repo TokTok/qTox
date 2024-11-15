@@ -27,7 +27,8 @@ ToxFile::ToxFile()
     , status(INITIALIZING)
     , direction(SENDING)
     , progress(0)
-{}
+{
+}
 
 /**
  * @brief ToxFile constructor
@@ -43,7 +44,8 @@ ToxFile::ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, QStri
     , status{INITIALIZING}
     , direction{direction_}
     , progress(filesize)
-{}
+{
+}
 
 bool ToxFile::operator==(const ToxFile& other) const
 {

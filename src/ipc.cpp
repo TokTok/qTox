@@ -16,30 +16,28 @@
 #include <unistd.h>
 #endif
 
-namespace
-{
+namespace {
 #ifdef Q_OS_WIN
-    const char* getCurUsername()
-    {
-        return getenv("USERNAME");
-    }
+const char* getCurUsername()
+{
+    return getenv("USERNAME");
+}
 #else
-    const char* getCurUsername()
-    {
-        return getenv("USER");
-    }
+const char* getCurUsername()
+{
+    return getenv("USER");
+}
 #endif
 
-    QString getIpcKey()
-    {
-        auto* user = getCurUsername();
-        if (!user)
-        {
-            qWarning() << "Failed to get current username. Will use a global IPC.";
-            user = "";
-        }
-        return QString("qtox-" IPC_PROTOCOL_VERSION "-") + QString::fromUtf8(user);
+QString getIpcKey()
+{
+    auto* user = getCurUsername();
+    if (!user) {
+        qWarning() << "Failed to get current username. Will use a global IPC.";
+        user = "";
     }
+    return QString("qtox-" IPC_PROTOCOL_VERSION "-") + QString::fromUtf8(user);
+}
 } // namespace
 
 /**

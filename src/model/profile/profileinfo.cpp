@@ -5,10 +5,10 @@
 
 #include "profileinfo.h"
 #include "src/core/core.h"
+#include "src/model/toxclientstandards.h"
 #include "src/nexus.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
-#include "src/model/toxclientstandards.h"
 
 #include <QApplication>
 #include <QBuffer>
@@ -18,10 +18,10 @@
 
 namespace {
 /**
-* @brief Convert QImage to png image.
-* @param pic Picture to convert.
-* @return Byte array with png image.
-*/
+ * @brief Convert QImage to png image.
+ * @param pic Picture to convert.
+ * @return Byte array with png image.
+ */
 QByteArray picToPng(const QImage& pic)
 {
     QByteArray bytes;
@@ -233,8 +233,7 @@ void ProfileInfo::logout()
 {
     // TODO(kriby): Refactor all of these invokeMethod calls with connect() properly when possible
     settings.saveGlobal();
-    QMetaObject::invokeMethod(&nexus, "showLogin",
-                              Q_ARG(QString, settings.getCurrentProfile()));
+    QMetaObject::invokeMethod(&nexus, "showLogin", Q_ARG(QString, settings.getCurrentProfile()));
 }
 
 /**

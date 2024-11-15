@@ -5,8 +5,8 @@
 
 #include "videosurface.h"
 #include "src/core/core.h"
-#include "src/model/friend.h"
 #include "src/friendlist.h"
+#include "src/model/friend.h"
 #include "src/persistence/settings.h"
 #include "src/video/videoframe.h"
 #include "src/widget/friendwidget.h"
@@ -137,7 +137,7 @@ void VideoSurface::onNewFrameAvailable(const std::shared_ptr<VideoFrame>& newFra
 
     float newRatio = getSizeRatio(newSize);
 
-    if (!qFuzzyCompare(newRatio, ratio)  && isVisible()) {
+    if (!qFuzzyCompare(newRatio, ratio) && isVisible()) {
         ratio = newRatio;
         recalulateBounds();
         emit ratioChanged();

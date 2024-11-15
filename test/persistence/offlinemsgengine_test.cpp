@@ -24,7 +24,10 @@ private slots:
 };
 
 namespace {
-void completionFn(bool success) { std::ignore = success; }
+void completionFn(bool success)
+{
+    std::ignore = success;
+}
 } // namespace
 
 void TestOfflineMsgEngine::testReceiptBeforeMessage()
@@ -127,7 +130,7 @@ void TestOfflineMsgEngine::testCallback()
     OfflineMsgEngine offlineMsgEngine;
 
     size_t numCallbacks = 0;
-    auto callback = [&numCallbacks] (bool) { numCallbacks++; };
+    auto callback = [&numCallbacks](bool) { numCallbacks++; };
     Message msg{false, QString(), QDateTime(), {}, {}};
     ReceiptNum receipt;
 
@@ -145,7 +148,7 @@ void TestOfflineMsgEngine::testExtendedMessageCoordination()
     OfflineMsgEngine offlineMsgEngine;
 
     size_t numCallbacks = 0;
-    auto callback = [&numCallbacks] (bool) { numCallbacks++; };
+    auto callback = [&numCallbacks](bool) { numCallbacks++; };
 
     auto msg1 = Message();
     auto msg2 = Message();

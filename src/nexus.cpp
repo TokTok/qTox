@@ -5,19 +5,19 @@
 
 
 #include "nexus.h"
+#include "audio/audio.h"
 #include "persistence/settings.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
+#include "src/ipc.h"
 #include "src/model/groupinvite.h"
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
-#include "src/widget/widget.h"
 #include "src/widget/style.h"
+#include "src/widget/tool/messageboxmanager.h"
+#include "src/widget/widget.h"
 #include "video/camerasource.h"
 #include "widget/loginscreen.h"
-#include "src/widget/tool/messageboxmanager.h"
-#include "audio/audio.h"
-#include "src/ipc.h"
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -46,7 +46,7 @@
 Q_DECLARE_OPAQUE_POINTER(ToxAV*)
 
 Nexus::Nexus(Settings& settings_, IMessageBoxManager& messageBoxManager_,
-    CameraSource& cameraSource_, IPC& ipc_, QObject* parent)
+             CameraSource& cameraSource_, IPC& ipc_, QObject* parent)
     : QObject(parent)
     , profile{nullptr}
     , settings{settings_}
@@ -211,8 +211,7 @@ void Nexus::showMainGUI()
     assert(profile);
 
     // Create GUI
-    widget = new Widget(*profile, *audioControl, cameraSource, settings, *style,
-        ipc, *this);
+    widget = new Widget(*profile, *audioControl, cameraSource, settings, *style, ipc, *this);
 
     // Start GUI
     widget->init();
@@ -254,8 +253,7 @@ Profile* Nexus::getProfile()
  */
 void Nexus::onCreateNewProfile(const QString& name, const QString& pass)
 {
-    setProfile(Profile::createProfile(name, pass, settings, parser, cameraSource,
-        messageBoxManager));
+    setProfile(Profile::createProfile(name, pass, settings, parser, cameraSource, messageBoxManager));
     parser = nullptr; // only apply cmdline proxy settings once
 }
 
@@ -264,8 +262,7 @@ void Nexus::onCreateNewProfile(const QString& name, const QString& pass)
  */
 void Nexus::onLoadProfile(const QString& name, const QString& pass)
 {
-    setProfile(Profile::loadProfile(name, pass, settings, parser, cameraSource,
-        messageBoxManager));
+    setProfile(Profile::loadProfile(name, pass, settings, parser, cameraSource, messageBoxManager));
     parser = nullptr; // only apply cmdline proxy settings once
 }
 /**

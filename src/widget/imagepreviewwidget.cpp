@@ -6,15 +6,14 @@
 #include "imagepreviewwidget.h"
 #include "src/model/exiftransform.h"
 
-#include <QFile>
-#include <QFileInfo>
-#include <QString>
 #include <QApplication>
 #include <QBuffer>
+#include <QFile>
+#include <QFileInfo>
 #include <QScreen>
+#include <QString>
 
-namespace
-{
+namespace {
 QPixmap pixmapFromFile(const QString& filename)
 {
     static const QStringList previewExtensions = {"png", "jpeg", "jpg", "gif", "svg",
@@ -94,7 +93,7 @@ ImagePreviewButton::~ImagePreviewButton() = default;
 void ImagePreviewButton::initialize(const QPixmap& image)
 {
     auto desiredSize = qMin(width(), height()); // Assume widget is a square
-    desiredSize = qMax(desiredSize, 4) - 4; // Leave some room for a border
+    desiredSize = qMax(desiredSize, 4) - 4;     // Leave some room for a border
 
     auto croppedImage = scaleCropIntoSquare(image, desiredSize);
     setIcon(QIcon(croppedImage));

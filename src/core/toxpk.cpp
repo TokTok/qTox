@@ -3,8 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "chatid.h"
 #include "toxpk.h"
+#include "chatid.h"
 
 #include <QByteArray>
 #include <QString>
@@ -30,9 +30,10 @@ ToxPk::ToxPk()
  *              ToxPk::size, else the ToxPk will be empty.
  */
 ToxPk::ToxPk(const QByteArray& rawId)
-    : ChatId([&rawId](){
+    : ChatId([&rawId]() {
         assert(rawId.length() == size);
-        return rawId;}())
+        return rawId;
+    }())
 {
 }
 
@@ -49,18 +50,18 @@ ToxPk::ToxPk(const uint8_t* rawId)
 /**
  * @brief Constructs a ToxPk from a QString.
  *
-  * If the given pk isn't a valid Public Key a ToxPk with all zero bytes is created.
+ * If the given pk isn't a valid Public Key a ToxPk with all zero bytes is created.
  *
  * @param pk Tox Pk string to convert to ToxPk object
  */
 ToxPk::ToxPk(const QString& pk)
-    : ChatId([&pk](){
-    if (pk.length() == numHexChars) {
-        return QByteArray::fromHex(pk.toLatin1());
-    } else {
-        assert(!"ToxPk constructed with invalid length string");
-        return QByteArray(); // invalid pk string
-    }
+    : ChatId([&pk]() {
+        if (pk.length() == numHexChars) {
+            return QByteArray::fromHex(pk.toLatin1());
+        } else {
+            assert(!"ToxPk constructed with invalid length string");
+            return QByteArray(); // invalid pk string
+        }
     }())
 {
 }

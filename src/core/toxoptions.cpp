@@ -23,7 +23,8 @@
 ToxOptions::ToxOptions(Tox_Options* options_, const QByteArray& proxyAddrData_)
     : options(options_)
     , proxyAddrData(proxyAddrData_)
-{}
+{
+}
 
 ToxOptions::~ToxOptions()
 {

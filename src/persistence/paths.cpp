@@ -9,11 +9,11 @@
 #include <QDebug>
 #include <QDir>
 #include <QFile>
+#include <QSettings>
 #include <QStandardPaths>
 #include <QString>
 #include <QStringBuilder>
 #include <QStringList>
-#include <QSettings>
 
 #include <cassert>
 
@@ -66,48 +66,48 @@ const QLatin1String TCSToxFileFolder{"~/.config/tox/"};
  */
 
 namespace {
-    using Portable = Paths::Portable;
-    bool portableFromMode(Portable mode)
-    {
-        bool portable = false;
-        const QString basePortable = qApp->applicationDirPath();
-        const QString baseNonPortable = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-        const QString portableSettingsPath = basePortable % QDir::separator() % globalSettingsFile;
+using Portable = Paths::Portable;
+bool portableFromMode(Portable mode)
+{
+    bool portable = false;
+    const QString basePortable = qApp->applicationDirPath();
+    const QString baseNonPortable = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    const QString portableSettingsPath = basePortable % QDir::separator() % globalSettingsFile;
 
-        switch (mode) {
-        case Portable::Portable:
-            qDebug() << "Forcing portable";
-            return true;
-        case Portable::NonPortable:
-            qDebug() << "Forcing non-portable";
-            return false;
-        case Portable::Auto:
-            if (QFile(portableSettingsPath).exists()) {
-                QSettings ps(portableSettingsPath, QSettings::IniFormat);
-                ps.beginGroup("Advanced");
-                portable = ps.value("makeToxPortable", false).toBool();
-                ps.endGroup();
-            } else {
-                portable = false;
-            }
-            qDebug()<< "Auto portable mode:" << portable;
-            return portable;
-        }
-        assert(!"Unhandled enum class Paths::Portable value");
+    switch (mode) {
+    case Portable::Portable:
+        qDebug() << "Forcing portable";
+        return true;
+    case Portable::NonPortable:
+        qDebug() << "Forcing non-portable";
         return false;
-    }
-
-    QString basePathFromPortable(bool portable)
-    {
-        const QString basePortable = qApp->applicationDirPath();
-        const QString baseNonPortable = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
-        QString basePath = portable ? basePortable : baseNonPortable;
-        if (basePath.isEmpty()) {
-            assert(!"Couldn't find writeable path");
-            qCritical() << "Couldn't find writable path";
+    case Portable::Auto:
+        if (QFile(portableSettingsPath).exists()) {
+            QSettings ps(portableSettingsPath, QSettings::IniFormat);
+            ps.beginGroup("Advanced");
+            portable = ps.value("makeToxPortable", false).toBool();
+            ps.endGroup();
+        } else {
+            portable = false;
         }
-        return basePath;
+        qDebug() << "Auto portable mode:" << portable;
+        return portable;
     }
+    assert(!"Unhandled enum class Paths::Portable value");
+    return false;
+}
+
+QString basePathFromPortable(bool portable)
+{
+    const QString basePortable = qApp->applicationDirPath();
+    const QString baseNonPortable = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QString basePath = portable ? basePortable : baseNonPortable;
+    if (basePath.isEmpty()) {
+        assert(!"Couldn't find writeable path");
+        qCritical() << "Couldn't find writable path";
+    }
+    return basePath;
+}
 } // namespace
 
 Paths::Paths(Portable mode)
@@ -183,8 +183,8 @@ QString Paths::getToxSaveDir() const
         return basePath % QDir::separator() % profileFolder % QDir::separator();
     }
 
-        // GenericDataLocation would be a better solution, but we keep this code for backward
-        // compatibility
+    // GenericDataLocation would be a better solution, but we keep this code for backward
+    // compatibility
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845
 #ifdef Q_OS_WIN

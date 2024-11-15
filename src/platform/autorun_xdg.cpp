@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QApplication>
 #include "src/persistence/settings.h"
 #include "src/platform/autorun.h"
+#include <QApplication>
 #include <QDir>
 #include <QProcessEnvironment>
 
@@ -38,8 +38,7 @@ QString currentBinPath()
 
 inline QString profileRunCommand(const Settings& settings)
 {
-    return "\"" + currentBinPath() + "\" -p \""
-           + settings.getCurrentProfile() + "\"";
+    return "\"" + currentBinPath() + "\" -p \"" + settings.getCurrentProfile() + "\"";
 }
 } // namespace
 

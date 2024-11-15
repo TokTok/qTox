@@ -3,9 +3,9 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QtCore/qsystemdetection.h>
 #include "src/platform/capslock.h"
 #include "src/platform/x11_display.h"
+#include <QtCore/qsystemdetection.h>
 #include <X11/XKBlib.h>
 #undef KeyPress
 #undef KeyRelease

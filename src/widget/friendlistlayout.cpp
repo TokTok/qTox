@@ -6,9 +6,9 @@
 #include "friendlistlayout.h"
 #include "friendlistwidget.h"
 #include "friendwidget.h"
+#include "src/friendlist.h"
 #include "src/model/friend.h"
 #include "src/model/status.h"
-#include "src/friendlist.h"
 #include <cassert>
 
 FriendListLayout::FriendListLayout()
@@ -117,5 +117,6 @@ QLayout* FriendListLayout::getLayoutOffline() const
 
 QLayout* FriendListLayout::getFriendLayout(Status::Status s) const
 {
-    return s == Status::Status::Offline ? friendOfflineLayout.getLayout() : friendOnlineLayout.getLayout();
+    return s == Status::Status::Offline ? friendOfflineLayout.getLayout()
+                                        : friendOnlineLayout.getLayout();
 }

@@ -7,7 +7,8 @@
 
 #include <QDebug>
 
-ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx, QDateTime timestamp, ChatLine::Ptr line)
+ChatLineStorage::iterator ChatLineStorage::insertChatMessage(ChatLogIdx idx, QDateTime timestamp,
+                                                             ChatLine::Ptr line)
 {
     if (idxInfoMap.find(idx) != idxInfoMap.end()) {
         qWarning() << "Index is already rendered, not updating";
@@ -45,9 +46,10 @@ ChatLineStorage::iterator ChatLineStorage::insertDateLine(QDateTime timestamp, C
     // As of right now this should not be a problem since all items should
     // be sent/received in order. If we ever implement sender timestamps and
     // the sender screws us by changing their time we may need to revisit this
-    auto idxMapIt = std::find_if(idxInfoMap.begin(), idxInfoMap.end(), [&] (const IdxInfoMap_t::value_type& v) {
-        return timestamp <= v.second.timestamp;
-    });
+    auto idxMapIt =
+        std::find_if(idxInfoMap.begin(), idxInfoMap.end(), [&](const IdxInfoMap_t::value_type& v) {
+            return timestamp <= v.second.timestamp;
+        });
 
     auto insertionPoint = equivalentLineIterator(idxMapIt);
     insertionPoint = adjustItForDate(insertionPoint, timestamp);
@@ -64,9 +66,8 @@ ChatLineStorage::iterator ChatLineStorage::insertDateLine(QDateTime timestamp, C
 
 bool ChatLineStorage::contains(QDateTime timestamp) const
 {
-    auto it =  std::find_if(dateMap.begin(), dateMap.end(), [&] (DateLineMap_t::value_type v) {
-        return v.second == timestamp;
-    });
+    auto it = std::find_if(dateMap.begin(), dateMap.end(),
+                           [&](DateLineMap_t::value_type v) { return v.second == timestamp; });
 
     return it != dateMap.end();
 }
@@ -79,7 +80,6 @@ ChatLineStorage::iterator ChatLineStorage::find(ChatLogIdx idx)
     }
 
     return lines.begin() + infoIt->second.linePos;
-
 }
 
 ChatLineStorage::iterator ChatLineStorage::find(ChatLine::Ptr line)
@@ -138,9 +138,9 @@ ChatLineStorage::iterator ChatLineStorage::equivalentLineIterator(IdxInfoMap_t::
 ChatLineStorage::IdxInfoMap_t::iterator ChatLineStorage::equivalentInfoIterator(iterator it)
 {
     auto idx = static_cast<size_t>(std::distance(lines.begin(), it));
-    auto equivalentIt = std::find_if(idxInfoMap.begin(), idxInfoMap.end(), [&](const IdxInfoMap_t::value_type& v) {
-        return v.second.linePos >= idx;
-    });
+    auto equivalentIt =
+        std::find_if(idxInfoMap.begin(), idxInfoMap.end(),
+                     [&](const IdxInfoMap_t::value_type& v) { return v.second.linePos >= idx; });
 
     return equivalentIt;
 }
@@ -153,9 +153,10 @@ ChatLineStorage::IdxInfoMap_t::iterator ChatLineStorage::infoIteratorForIdx(Chat
     // If we find an exact match we return that index, otherwise we return
     // the first item after it. It's up to the caller to check if there's an
     // exact match first
-    auto it = std::lower_bound(idxInfoMap.begin(), idxInfoMap.end(), idx_, [](const IdxInfoMap_t::value_type& v, ChatLogIdx idx) {
-        return v.first < idx;
-    });
+    auto it = std::lower_bound(idxInfoMap.begin(), idxInfoMap.end(), idx_,
+                               [](const IdxInfoMap_t::value_type& v, ChatLogIdx idx) {
+                                   return v.first < idx;
+                               });
 
     return it;
 }
@@ -199,10 +200,9 @@ void ChatLineStorage::decrementLinePosAfter(IdxInfoMap_t::iterator inputIt)
 
 bool ChatLineStorage::shouldRemovePreviousLine(iterator prevIt, iterator it)
 {
-    return prevIt != lines.end() && // Previous iterator is valid
-        dateMap.find(*prevIt) != dateMap.end() && // Previous iterator is a date line
-        (
-            it == lines.end() || // Previous iterator is the last line
-            dateMap.find(*it) != dateMap.end() // Adjacent date lines
-        );
+    return prevIt != lines.end() &&                  // Previous iterator is valid
+           dateMap.find(*prevIt) != dateMap.end() && // Previous iterator is a date line
+           (it == lines.end() ||                     // Previous iterator is the last line
+            dateMap.find(*it) != dateMap.end()       // Adjacent date lines
+           );
 }

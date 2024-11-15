@@ -3,8 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include <QtCore/qsystemdetection.h>
 #include "src/platform/capslock.h"
+#include <QtCore/qsystemdetection.h>
 #include <windows.h>
 
 bool Platform::capsLockEnabled()

@@ -20,15 +20,13 @@ QRectF Broken::boundingRect() const
     return QRectF(QPointF(-size.width() / 2.0, -size.height() / 2.0), size);
 }
 
-void Broken::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,
-                       QWidget* widget)
+void Broken::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget)
 {
     painter->setRenderHint(QPainter::SmoothPixmapTransform);
     painter->drawPixmap(0, 0, pmap);
 
     std::ignore = option;
     std::ignore = widget;
-
 }
 
 void Broken::setWidth(float width)

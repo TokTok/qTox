@@ -7,7 +7,4 @@
 #include "chat.h"
 #include <QVariant>
 
-Chat::~Chat()
-{
-
-}
+Chat::~Chat() {}

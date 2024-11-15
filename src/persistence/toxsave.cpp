@@ -4,11 +4,11 @@
  */
 
 #include "toxsave.h"
-#include "src/persistence/settings.h"
-#include "src/widget/widget.h"
-#include "src/nexus.h"
 #include "src/ipc.h"
+#include "src/nexus.h"
+#include "src/persistence/settings.h"
 #include "src/widget/tool/profileimporter.h"
+#include "src/widget/widget.h"
 #include <QCoreApplication>
 #include <QString>
 
@@ -18,7 +18,8 @@ ToxSave::ToxSave(Settings& settings_, IPC& ipc_, QWidget* parent_)
     : settings{settings_}
     , ipc{ipc_}
     , parent{parent_}
-{}
+{
+}
 
 ToxSave::~ToxSave()
 {

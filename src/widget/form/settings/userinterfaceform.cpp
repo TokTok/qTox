@@ -40,8 +40,8 @@
  *
  * Restores all controls from the settings.
  */
-UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings_,
-    Style& style_, SettingsWidget* myParent)
+UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings_, Style& style_,
+                                     SettingsWidget* myParent)
     : GenericForm(QPixmap(":/img/settings/general.png"), style_)
     , smileyPack{smileyPack_}
     , settings{settings_}
@@ -251,8 +251,7 @@ void UserInterfaceForm::reloadSmileys()
     auto geometry = QGuiApplication::primaryScreen()->geometry();
     // 8 is the count of row and column in emoji's in widget
     const int sideSize = 8;
-    int maxSide = qMin(
-        geometry.height() / sideSize, geometry.width() / sideSize);
+    int maxSide = qMin(geometry.height() / sideSize, geometry.width() / sideSize);
     QSize maxSize(maxSide, maxSide);
 
     QSize actualSize = emoticonsIcons.first()->actualSize(maxSize);
@@ -343,8 +342,7 @@ void UserInterfaceForm::retranslateUi()
     bodyUI->retranslateUi(this);
 
     // Restore text style index once translation is complete
-    bodyUI->textStyleComboBox->setCurrentIndex(
-        static_cast<int>(settings.getStylePreference()));
+    bodyUI->textStyleComboBox->setCurrentIndex(static_cast<int>(settings.getStylePreference()));
 
     QStringList colorThemes(Style::getThemeColorNames());
     for (int i = 0; i < colorThemes.size(); ++i) {

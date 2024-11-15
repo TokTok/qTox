@@ -3,7 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-extern "C" {
+extern "C"
+{
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #include <libavcodec/avcodec.h>

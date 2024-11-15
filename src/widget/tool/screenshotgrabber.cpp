@@ -209,8 +209,8 @@ QPixmap ScreenshotGrabber::grabScreen()
     QRect rec = screen->virtualGeometry();
 
     // Multiply by devicePixelRatio to get actual desktop size
-    return screen->grabWindow(0, rec.x() * pixRatio,
-                              rec.y() * pixRatio, rec.width() * pixRatio, rec.height() * pixRatio);
+    return screen->grabWindow(0, rec.x() * pixRatio, rec.y() * pixRatio, rec.width() * pixRatio,
+                              rec.height() * pixRatio);
 }
 
 void ScreenshotGrabber::hideVisibleWindows()

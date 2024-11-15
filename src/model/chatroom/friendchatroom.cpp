@@ -3,8 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/grouplist.h"
 #include "src/model/chatroom/friendchatroom.h"
+#include "src/grouplist.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
 #include "src/model/group.h"
@@ -26,10 +26,10 @@ QString getShortName(const QString& name)
     return name.left(MAX_NAME_LENGTH).trimmed() + "…";
 }
 
-}
+} // namespace
 
-FriendChatroom::FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_,
-    Core& core_, Settings& settings_, GroupList& groupList_)
+FriendChatroom::FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
+                               Settings& settings_, GroupList& groupList_)
     : frnd{frnd_}
     , dialogsManager{dialogsManager_}
     , core{core_}
@@ -113,7 +113,7 @@ QVector<GroupToDisplay> FriendChatroom::getGroups() const
     QVector<GroupToDisplay> groups;
     for (const auto group : groupList.getAllGroups()) {
         const auto name = getShortName(group->getName());
-        const GroupToDisplay groupToDisplay = { name, group };
+        const GroupToDisplay groupToDisplay = {name, group};
         groups.push_back(groupToDisplay);
     }
 
@@ -133,7 +133,7 @@ QVector<CircleToDisplay> FriendChatroom::getOtherCircles() const
         }
 
         const auto name = getShortName(settings.getCircleName(i));
-        const CircleToDisplay circle = { name, i };
+        const CircleToDisplay circle = {name, i};
         circles.push_back(circle);
     }
 

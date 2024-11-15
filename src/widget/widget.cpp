@@ -24,7 +24,6 @@
 #include <QWindow>
 #endif
 
-#include "audio/audio.h"
 #include "circlewidget.h"
 #include "contentdialog.h"
 #include "contentlayout.h"
@@ -33,6 +32,7 @@
 #include "groupwidget.h"
 #include "maskablepixmapwidget.h"
 #include "splitterrestorer.h"
+#include "audio/audio.h"
 #include "form/groupchatform.h"
 #include "src/chatlog/content/filetransferwidget.h"
 #include "src/chatlog/documentcache.h"
@@ -41,6 +41,7 @@
 #include "src/core/corefile.h"
 #include "src/friendlist.h"
 #include "src/grouplist.h"
+#include "src/ipc.h"
 #include "src/model/chathistory.h"
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/chatroom/groupchatroom.h"
@@ -54,6 +55,8 @@
 #include "src/persistence/offlinemsgengine.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
+#include "src/persistence/smileypack.h"
+#include "src/persistence/toxsave.h"
 #include "src/platform/timer.h"
 #include "src/widget/contentdialogmanager.h"
 #include "src/widget/form/addfriendform.h"
@@ -63,12 +66,9 @@
 #include "src/widget/form/profileform.h"
 #include "src/widget/form/settingswidget.h"
 #include "src/widget/style.h"
-#include "src/widget/translator.h"
 #include "src/widget/tool/messageboxmanager.h"
+#include "src/widget/translator.h"
 #include "tool/removechatdialog.h"
-#include "src/persistence/smileypack.h"
-#include "src/persistence/toxsave.h"
-#include "src/ipc.h"
 
 namespace {
 
@@ -127,8 +127,8 @@ void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
 
 Widget* Widget::instance{nullptr};
 
-Widget::Widget(Profile &profile_, IAudioControl& audio_, CameraSource& cameraSource_,
-    Settings& settings_, Style& style_, IPC& ipc_, Nexus& nexus_, QWidget* parent)
+Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource_,
+               Settings& settings_, Style& style_, IPC& ipc_, Nexus& nexus_, QWidget* parent)
     : QMainWindow(parent)
     , profile{profile_}
     , trayMenu{nullptr}
@@ -197,8 +197,8 @@ void Widget::init()
     actionQuit->setMenuRole(QAction::QuitRole);
 #endif
 
-    actionQuit->setIcon(
-        prepareIcon(style.getImagePath("rejectCall/rejectCall.svg", settings), icon_size, icon_size));
+    actionQuit->setIcon(prepareIcon(style.getImagePath("rejectCall/rejectCall.svg", settings),
+                                    icon_size, icon_size));
     connect(actionQuit, &QAction::triggered, qApp, &QApplication::quit);
 
     layout()->setContentsMargins(0, 0, 0, 0);
@@ -255,13 +255,14 @@ void Widget::init()
     core = &profile.getCore();
     auto coreExt = core->getExt();
 
-    sharedMessageProcessorParams.reset(new MessageProcessor::SharedParams(core->getMaxMessageSize(), coreExt->getMaxExtendedMessageSize()));
+    sharedMessageProcessorParams.reset(
+        new MessageProcessor::SharedParams(core->getMaxMessageSize(),
+                                           coreExt->getMaxExtendedMessageSize()));
 
-    chatListWidget = new FriendListWidget(*core, this, settings, style,
-        *messageBoxManager, *friendList, *groupList, profile, settings.getGroupchatPosition());
+    chatListWidget = new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
+                                          *groupList, profile, settings.getGroupchatPosition());
     connect(chatListWidget, &FriendListWidget::searchCircle, this, &Widget::searchCircle);
-    connect(chatListWidget, &FriendListWidget::connectCircleWidget, this,
-            &Widget::connectCircleWidget);
+    connect(chatListWidget, &FriendListWidget::connectCircleWidget, this, &Widget::connectCircleWidget);
     ui->friendList->setWidget(chatListWidget);
     ui->friendList->setLayoutDirection(Qt::RightToLeft);
     ui->friendList->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -287,16 +288,15 @@ void Widget::init()
 
     CoreFile* coreFile = core->getCoreFile();
     filesForm = new FilesForm(*coreFile, settings, style, *messageBoxManager, *friendList);
-    addFriendForm = new AddFriendForm(core->getSelfId(), settings, style,
-        *messageBoxManager, *core);
+    addFriendForm = new AddFriendForm(core->getSelfId(), settings, style, *messageBoxManager, *core);
     groupInviteForm = new GroupInviteForm(settings, *core);
 
 #if UPDATE_CHECK_ENABLED
     updateCheck = std::unique_ptr<UpdateCheck>(new UpdateCheck(settings));
     connect(updateCheck.get(), &UpdateCheck::updateAvailable, this, &Widget::onUpdateAvailable);
 #endif
-    settingsWidget = new SettingsWidget(updateCheck.get(), audio, core, *smileyPack,
-        cameraSource, settings, style, *messageBoxManager, profile, this);
+    settingsWidget = new SettingsWidget(updateCheck.get(), audio, core, *smileyPack, cameraSource,
+                                        settings, style, *messageBoxManager, profile, this);
 #if UPDATE_CHECK_ENABLED
     updateCheck->checkForUpdate();
 #endif
@@ -306,7 +306,8 @@ void Widget::init()
 
 #if DESKTOP_NOTIFICATIONS
     notificationGenerator.reset(new NotificationGenerator(settings, &profile));
-    connect(&notifier, &DesktopNotify::notificationClosed, notificationGenerator.get(), &NotificationGenerator::onNotificationActivated);
+    connect(&notifier, &DesktopNotify::notificationClosed, notificationGenerator.get(),
+            &NotificationGenerator::onNotificationActivated);
 #endif
 
     // connect logout tray menu action
@@ -356,14 +357,21 @@ void Widget::init()
     // signal!
     connect(coreFile, &CoreFile::fileTransferInfo, this, &Widget::dispatchFile, Qt::QueuedConnection);
     connect(coreFile, &CoreFile::fileSendStarted, this, &Widget::dispatchFile, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileReceiveRequested, this, &Widget::dispatchFile, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileTransferAccepted, this, &Widget::dispatchFile, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileTransferCancelled, this, &Widget::dispatchFile, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileTransferFinished, this, &Widget::dispatchFile, Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileReceiveRequested, this, &Widget::dispatchFile,
+            Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileTransferAccepted, this, &Widget::dispatchFile,
+            Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileTransferCancelled, this, &Widget::dispatchFile,
+            Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileTransferFinished, this, &Widget::dispatchFile,
+            Qt::QueuedConnection);
     connect(coreFile, &CoreFile::fileTransferPaused, this, &Widget::dispatchFile, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileTransferRemotePausedUnpaused, this, &Widget::dispatchFileWithBool, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileTransferBrokenUnbroken, this, &Widget::dispatchFileWithBool, Qt::QueuedConnection);
-    connect(coreFile, &CoreFile::fileSendFailed, this, &Widget::dispatchFileSendFailed, Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileTransferRemotePausedUnpaused, this,
+            &Widget::dispatchFileWithBool, Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileTransferBrokenUnbroken, this, &Widget::dispatchFileWithBool,
+            Qt::QueuedConnection);
+    connect(coreFile, &CoreFile::fileSendFailed, this, &Widget::dispatchFileSendFailed,
+            Qt::QueuedConnection);
     // NOTE: We intentionally do not connect the fileUploadFinished and fileDownloadFinished signals
     // because they are duplicates of fileTransferFinished NOTE: We don't hook up the
     // fileNameChanged signal since it is only emitted before a fileReceiveRequest. We get the
@@ -858,8 +866,8 @@ void Widget::setWindowTitle(const QString& title)
     } else {
         QString tmp = title;
         /// <[^>]*> Regexp to remove HTML tags, in case someone used them in title
-        QMainWindow::setWindowTitle(tmp.remove(QRegularExpression("<[^>]*>")) + QStringLiteral(" - ")
-                                    + QApplication::applicationName());
+        QMainWindow::setWindowTitle(tmp.remove(QRegularExpression("<[^>]*>"))
+                                    + QStringLiteral(" - ") + QApplication::applicationName());
     }
 }
 
@@ -1037,7 +1045,7 @@ void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
         }
     }
 
-    audioNotification->connectTo_finishedPlaying(this, [this](){ cleanupNotificationSound(); });
+    audioNotification->connectTo_finishedPlaying(this, [this]() { cleanupNotificationSound(); });
 
     audioNotification->playMono16Sound(sound);
 
@@ -1093,8 +1101,7 @@ void Widget::dispatchFile(ToxFile file)
     auto pk = f->getPublicKey();
 
     if (file.status == ToxFile::INITIALIZING && file.direction == ToxFile::RECEIVING) {
-        auto sender =
-            (file.direction == ToxFile::SENDING) ? core->getSelfPublicKey() : pk;
+        auto sender = (file.direction == ToxFile::SENDING) ? core->getSelfPublicKey() : pk;
 
         QString autoAcceptDir = settings.getAutoAcceptDir(f->getPublicKey());
 
@@ -1148,7 +1155,8 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     settings.updateFriendAddress(friendPk.toString());
 
     Friend* newfriend = friendList->addFriend(friendId, friendPk, settings);
-    auto rawChatroom = new FriendChatroom(newfriend, contentDialogManager.get(), *core, settings, *groupList);
+    auto rawChatroom =
+        new FriendChatroom(newfriend, contentDialogManager.get(), *core, settings, *groupList);
     std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
     const auto compact = settings.getCompactLayout();
     auto widget = new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile);
@@ -1157,18 +1165,17 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
 
     auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto friendMessageDispatcher =
-        std::make_shared<FriendMessageDispatcher>(*newfriend, std::move(messageProcessor), *core, *core->getExt());
+        std::make_shared<FriendMessageDispatcher>(*newfriend, std::move(messageProcessor), *core,
+                                                  *core->getExt());
 
     // Note: We do not have to connect the message dispatcher signals since
     // ChatHistory hooks them up in a very specific order
     auto chatHistory =
         std::make_shared<ChatHistory>(*newfriend, history, *core, settings,
-                                      *friendMessageDispatcher, *friendList,
-                                      *groupList);
-    auto friendForm = new ChatForm(profile, newfriend, *chatHistory,
-        *friendMessageDispatcher, *documentCache, *smileyPack, cameraSource,
-        settings, style, *messageBoxManager, *contentDialogManager, *friendList,
-        *groupList);
+                                      *friendMessageDispatcher, *friendList, *groupList);
+    auto friendForm = new ChatForm(profile, newfriend, *chatHistory, *friendMessageDispatcher,
+                                   *documentCache, *smileyPack, cameraSource, settings, style,
+                                   *messageBoxManager, *contentDialogManager, *friendList, *groupList);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;
@@ -1248,7 +1255,8 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
     f->setStatus(status);
     auto const newStatus = f->getStatus();
 
-    auto const startedNegotiating = (newStatus == Status::Status::Negotiating && oldStatus != newStatus);
+    auto const startedNegotiating =
+        (newStatus == Status::Status::Negotiating && oldStatus != newStatus);
     if (startedNegotiating) {
         constexpr auto negotiationTimeoutMs = 1000;
         auto negotiateTimer = std::unique_ptr<QTimer>(new QTimer);
@@ -1458,8 +1466,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 
     auto form = chatForms[friendPk];
     auto chatroom = friendChatrooms[friendPk];
-    FriendWidget* friendWidget =
-        contentDialogManager->addFriendToDialog(dialog, chatroom, form);
+    FriendWidget* friendWidget = contentDialogManager->addFriendToDialog(dialog, chatroom, form);
 
     friendWidget->setStatusMsg(widget->getStatusMsg());
 
@@ -1514,8 +1521,7 @@ void Widget::addGroupDialog(const Group* group, ContentDialog* dialog)
 
     auto chatForm = groupChatForms[groupId].data();
     auto chatroom = groupChatrooms[groupId];
-    auto groupWidget =
-        contentDialogManager->addGroupToDialog(dialog, chatroom, chatForm);
+    auto groupWidget = contentDialogManager->addGroupToDialog(dialog, chatroom, chatForm);
 
 #if (QT_VERSION >= QT_VERSION_CHECK(5, 7, 0))
     auto removeGroup = QOverload<const GroupId&>::of(&Widget::removeGroup);
@@ -1546,7 +1552,8 @@ void Widget::addGroupDialog(const Group* group, ContentDialog* dialog)
     emit widget->chatroomWidgetClicked(widget);
 }
 
-bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound, QString filename, size_t filesize)
+bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound,
+                                   QString filename, size_t filesize)
 {
     bool hasActive;
     QWidget* currentWindow;
@@ -1583,8 +1590,10 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
         widget->updateStatusLight();
         ui->friendList->trackWidget(settings, style, widget);
 #if DESKTOP_NOTIFICATIONS
-        auto notificationData = filename.isEmpty() ? notificationGenerator->friendMessageNotification(f, text)
-                                                   : notificationGenerator->fileTransferNotification(f, filename, filesize);
+        auto notificationData =
+            filename.isEmpty()
+                ? notificationGenerator->friendMessageNotification(f, text)
+                : notificationGenerator->fileTransferNotification(f, filename, filesize);
         notifier.notifyMessage(notificationData);
 #else
         std::ignore = text;
@@ -1832,8 +1841,8 @@ void Widget::onUpdateAvailable()
 
 ContentDialog* Widget::createContentDialog() const
 {
-    ContentDialog* contentDialog = new ContentDialog(*core, settings, style,
-        *messageBoxManager, *friendList, *groupList, profile);
+    ContentDialog* contentDialog = new ContentDialog(*core, settings, style, *messageBoxManager,
+                                                     *friendList, *groupList, profile);
 
     registerContentDialog(*contentDialog);
     return contentDialog;
@@ -1932,10 +1941,8 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
 
 #ifdef Q_OS_MAC
     connect(dialog, &Dialog::destroyed, &nexus, &Nexus::updateWindowsClosed);
-    connect(dialog, &ActivateDialog::windowStateChanged, &nexus,
-            &Nexus::updateWindowsStates);
-    connect(dialog->windowHandle(), &QWindow::windowTitleChanged, &nexus,
-            &Nexus::updateWindows);
+    connect(dialog, &ActivateDialog::windowStateChanged, &nexus, &Nexus::updateWindowsStates);
+    connect(dialog->windowHandle(), &QWindow::windowTitleChanged, &nexus, &Nexus::updateWindows);
     nexus.updateWindows();
 #endif
 
@@ -2104,7 +2111,6 @@ void Widget::removeGroup(Group* g, bool fake)
     if (contentLayout && contentLayout->mainHead->layout()->isEmpty()) {
         onAddClicked();
     }
-
 }
 
 void Widget::removeGroup(const GroupId& groupId)
@@ -2124,20 +2130,18 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
 
     const auto groupName = tr("Groupchat #%1").arg(groupnumber);
     const bool enabled = core->getGroupAvEnabled(groupnumber);
-    Group* newgroup =
-        groupList->addGroup(*core, groupnumber, groupId, groupName, enabled, core->getUsername(),
-            *friendList);
+    Group* newgroup = groupList->addGroup(*core, groupnumber, groupId, groupName, enabled,
+                                          core->getUsername(), *friendList);
     assert(newgroup);
 
     if (enabled) {
-        connect(newgroup, &Group::userLeft, [this, newgroup](const ToxPk& user){
-            CoreAV *av = core->getAv();
+        connect(newgroup, &Group::userLeft, [this, newgroup](const ToxPk& user) {
+            CoreAV* av = core->getAv();
             assert(av);
             av->invalidateGroupCallPeerSource(*newgroup, user);
         });
     }
-    auto rawChatroom = new GroupChatroom(newgroup, contentDialogManager.get(), *core,
-        *friendList);
+    auto rawChatroom = new GroupChatroom(newgroup, contentDialogManager.get(), *core, *friendList);
     std::shared_ptr<GroupChatroom> chatroom(rawChatroom);
 
     const auto compact = settings.getCompactLayout();
@@ -2150,9 +2154,8 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto history = profile.getHistory();
     // Note: We do not have to connect the message dispatcher signals since
     // ChatHistory hooks them up in a very specific order
-    auto chatHistory =
-        std::make_shared<ChatHistory>(*newgroup, history, *core, settings,
-                                      *messageDispatcher, *friendList, *groupList);
+    auto chatHistory = std::make_shared<ChatHistory>(*newgroup, history, *core, settings,
+                                                     *messageDispatcher, *friendList, *groupList);
 
     auto notifyReceivedCallback = [this, groupId](const ToxPk& author, const Message& message) {
         auto isTargeted = std::any_of(message.metadata.begin(), message.metadata.end(),
@@ -2167,8 +2170,9 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
         connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, notifyReceivedCallback);
     groupAlertConnections.insert(groupId, notifyReceivedConnection);
 
-    auto form = new GroupChatForm(*core, newgroup, *chatHistory, *messageDispatcher,
-        settings, *documentCache, *smileyPack, style, *messageBoxManager, *friendList, *groupList);
+    auto form = new GroupChatForm(*core, newgroup, *chatHistory, *messageDispatcher, settings,
+                                  *documentCache, *smileyPack, style, *messageBoxManager,
+                                  *friendList, *groupList);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableGroupChatsColor());
     groupMessageDispatchers[groupId] = messageDispatcher;
@@ -2189,7 +2193,8 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto widgetRemoveGroup = static_cast<void (Widget::*)(const GroupId&)>(&Widget::removeGroup);
 #endif
     connect(widget, &GroupWidget::removeGroup, this, widgetRemoveGroup);
-    connect(widget, &GroupWidget::middleMouseClicked, this, [this, groupId]() { removeGroup(groupId); });
+    connect(widget, &GroupWidget::middleMouseClicked, this,
+            [this, groupId]() { removeGroup(groupId); });
     connect(widget, &GroupWidget::chatroomWidgetClicked, form, &ChatForm::focusInput);
     connect(newgroup, &Group::titleChangedByUser, this, &Widget::titleChangedByUser);
     connect(core, &Core::usernameSet, newgroup, &Group::setSelfName);
@@ -2293,7 +2298,7 @@ void Widget::onEventIconTick()
     }
 }
 
-//#define XX_UBUNTU1604_XX 1
+// #define XX_UBUNTU1604_XX 1
 
 void Widget::onTryCreateTrayIcon()
 {
@@ -2529,7 +2534,7 @@ void Widget::searchChats()
     FilterCriteria filter = getFilterCriteria();
 
     chatListWidget->searchChatrooms(searchString, filterOnline(filter), filterOffline(filter),
-                                       filterGroups(filter));
+                                    filterGroups(filter));
 
     updateFilterText();
 }

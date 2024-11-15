@@ -16,8 +16,8 @@
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
-#include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/tool/imessageboxmanager.h"
+#include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 
 /**
@@ -49,19 +49,21 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     int index = static_cast<int>(settings.getProxyType());
     bodyUI->proxyType->setCurrentIndex(index);
     on_proxyType_currentIndexChanged(index);
-    const bool udpEnabled = !settings.getForceTCP() && (settings.getProxyType() == Settings::ProxyType::ptNone);
+    const bool udpEnabled =
+        !settings.getForceTCP() && (settings.getProxyType() == Settings::ProxyType::ptNone);
     bodyUI->cbEnableUDP->setChecked(udpEnabled);
     bodyUI->cbEnableLanDiscovery->setChecked(settings.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
 
-    QString warningBody = tr("Unless you %1 know what you are doing, "
-                             "please do %2 change anything here. Changes "
-                             "made here may lead to problems with qTox, and even "
-                             "to loss of your data, e.g. history."
-                             "%3")
-                              .arg(QString("<b>%1</b>").arg(tr("really")))
-                              .arg(QString("<b>%1</b>").arg(tr("not")))
-                              .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
+    QString warningBody =
+        tr("Unless you %1 know what you are doing, "
+           "please do %2 change anything here. Changes "
+           "made here may lead to problems with qTox, and even "
+           "to loss of your data, e.g. history."
+           "%3")
+            .arg(QString("<b>%1</b>").arg(tr("really")))
+            .arg(QString("<b>%1</b>").arg(tr("not")))
+            .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
 
     QString warning = QString("<div style=\"color:#ff0000;\">"
                               "<p><b>%1</b></p><p>%2</p></div>")
@@ -144,8 +146,10 @@ void AdvancedForm::on_btnCopyDebug_clicked()
 void AdvancedForm::on_resetButton_clicked()
 {
     const QString titile = tr("Reset settings");
-    bool result = messageBoxManager.askQuestion(titile, tr("All settings will be reset to default. Are you sure?"),
-                                   tr("Yes"), tr("No"));
+    bool result =
+        messageBoxManager.askQuestion(titile,
+                                      tr("All settings will be reset to default. Are you sure?"),
+                                      tr("Yes"), tr("No"));
 
     if (!result)
         return;
