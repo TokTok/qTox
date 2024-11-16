@@ -1,8 +1,10 @@
 name: 'Load docker image'
+
 inputs:
   docker_image_name:
     description: "Name of docker image"
     required: True
+
 runs:
   using: 'composite'
   steps:
@@ -18,4 +20,8 @@ runs:
       run: sudo apt-get install -y docker-compose
     - name: Load cached docker images
       shell: bash
-      run: docker buildx bake --set *.cache-from=type=local,src=/tmp/.buildx-cache -f docker-compose.yml ${{ inputs.docker_image_name }} --load
+      run: docker buildx bake
+        --set *.cache-from=type=local,src=/tmp/.buildx-cache
+        -f docker-compose.yml
+        ${{ inputs.docker_image_name }}
+        --load

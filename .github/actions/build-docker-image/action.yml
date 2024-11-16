@@ -1,13 +1,23 @@
 name: 'Build docker image'
+
 inputs:
   docker_image_name:
     description: "Name of docker image"
     required: True
+
 runs:
   using: 'composite'
   steps:
+    - uses: dorny/paths-filter@v3
+      id: changes
+      with:
+        filters: |
+          buildscripts:
+            - 'buildscripts/**'
     - uses: docker/setup-buildx-action@v3
+      if: steps.changes.outputs.buildscripts == 'true'
     - name: Setup buildx cache
+      if: steps.changes.outputs.buildscripts == 'true'
       uses: actions/cache@v4
       with:
         path: |
@@ -16,9 +26,15 @@ runs:
         restore-keys: |
           ${{ runner.os }}-${{ inputs.docker_image_name }}-
     - name: Build docker image
+      if: steps.changes.outputs.buildscripts == 'true'
       shell: bash
-      run: docker buildx bake --set *.cache-to=type=local,dest=/tmp/.buildx-cache-new,mode=max --set *.cache-from=type=local,src=/tmp/.buildx-cache -f docker-compose.yml ${{ inputs.docker_image_name }}
+      run: docker buildx bake
+        --set *.cache-to=type=local,dest=/tmp/.buildx-cache-new,mode=max
+        --set *.cache-from=type=local,src=/tmp/.buildx-cache
+        -f docker-compose.yml
+        ${{ inputs.docker_image_name }}
     - name: Replace buildx cache
+      if: steps.changes.outputs.buildscripts == 'true'
       shell: bash
       run: |
         rm -fr /tmp/.buildx-cache
