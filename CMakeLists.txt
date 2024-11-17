@@ -611,7 +611,13 @@ set_target_properties(
              QT_ANDROID_MIN_SDK_VERSION 24
              QT_ANDROID_ABIS arm64-v8a)
 
-include(Testing)
+#target_link_options(${PROJECT_NAME} PRIVATE -static-libgcc -static-libstdc++ -static)
+target_link_directories(${PROJECT_NAME} PRIVATE "/sysroot/opt/qt/plugins/platforms")
+target_link_libraries(${PROJECT_NAME} PRIVATE qoffscreen)
+
+if(BUILD_TESTING)
+  include(Testing)
+endif()
 include(Installation)
 
 if(DEFINED ENV{IN_NIX_SHELL})

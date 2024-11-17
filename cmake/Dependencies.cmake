@@ -134,19 +134,12 @@ endif()
 if(WIN32 OR ANDROID)
   search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
 else()
-  search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
+  search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
   search_dependency(TOXAV               PACKAGE toxav               LIBRARY toxav            OPTIONAL)
   search_dependency(TOXENCRYPTSAVE      PACKAGE toxencryptsave      LIBRARY toxencryptsave   OPTIONAL)
 endif()
 
-# If not found, use automake toxcore libraries
-# We only check for TOXCORE, because the other two are gone in 0.2.0.
-if (NOT TOXCORE_FOUND)
-  search_dependency(TOXCORE         PACKAGE libtoxcore MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
-  search_dependency(TOXAV           PACKAGE libtoxav)
-endif()
-
-search_dependency(OPENAL            PACKAGE openal)
+search_dependency(OPENAL              PACKAGE openal)
 
 if (ANDROID)
   find_library(OPENSL_LIBRARY NAMES OpenSLES)
