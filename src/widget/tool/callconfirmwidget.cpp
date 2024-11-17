@@ -62,11 +62,11 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
     // Note: At the moment this may not work properly. For languages written
     // from right to left, there is no translation for the phrase "Incoming call...".
     // In this situation, the phrase "Incoming call..." looks as "...oming call..."
-    Qt::TextElideMode elideMode =
+    const Qt::TextElideMode elideMode =
         (QGuiApplication::layoutDirection() == Qt::LeftToRight) ? Qt::ElideRight : Qt::ElideLeft;
-    int marginSize = 12;
-    QFontMetrics fontMetrics(callLabel->font());
-    QString elidedText =
+    const int marginSize = 12;
+    const QFontMetrics fontMetrics(callLabel->font());
+    const QString elidedText =
         fontMetrics.elidedText(callLabel->text(), elideMode, rectW - marginSize * 2 - 4);
     callLabel->setText(elidedText);
 

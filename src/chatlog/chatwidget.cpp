@@ -292,7 +292,7 @@ ChatWidget::~ChatWidget()
     Translator::unregister(this);
 
     // Remove chatlines from scene
-    for (ChatLine::Ptr l : *chatLineStorage)
+    for (const ChatLine::Ptr& l : *chatLineStorage)
         l->removeFromScene();
 
     if (busyNotification)
@@ -389,7 +389,7 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
 {
     QGraphicsView::mouseMoveEvent(ev);
 
-    QPointF scenePos = mapToScene(ev->pos());
+    const QPointF scenePos = mapToScene(ev->pos());
 
     if (ev->buttons() & Qt::LeftButton) {
         // autoscroll
@@ -403,8 +403,8 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
         // select
         if (selectionMode == SelectionMode::None
             && (clickPos - ev->pos()).manhattanLength() > QApplication::startDragDistance()) {
-            QPointF sceneClickPos = mapToScene(clickPos.toPoint());
-            ChatLine::Ptr line = findLineByPosY(scenePos.y());
+            const QPointF sceneClickPos = mapToScene(clickPos.toPoint());
+            const ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
             ChatLineContent* content = getContentFromPos(sceneClickPos);
             if (content) {
@@ -431,10 +431,10 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
 
         if (selectionMode != SelectionMode::None) {
             ChatLineContent* content = getContentFromPos(scenePos);
-            ChatLine::Ptr line = findLineByPosY(scenePos.y());
+            const ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
             if (content) {
-                int col = content->getColumn();
+                const int col = content->getColumn();
 
                 if (line == selClickedRow && col == selClickedCol) {
                     selectionMode = SelectionMode::Precise;
@@ -511,11 +511,11 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
     if (chatLines.empty())
         return;
 
-    bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage()
-                         || chatLines.begin()->first > chatLineStorage->lastIdx();
+    const bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage()
+                               || chatLines.begin()->first > chatLineStorage->lastIdx();
     auto startLineSize = chatLineStorage->size();
 
-    QGraphicsScene::ItemIndexMethod oldIndexMeth = scene->itemIndexMethod();
+    const QGraphicsScene::ItemIndexMethod oldIndexMeth = scene->itemIndexMethod();
     scene->setItemIndexMethod(QGraphicsScene::NoIndex);
 
     for (const auto& chatLine : chatLines) {
@@ -553,7 +553,7 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
     // have to rely on the onRenderFinished callback to continue doing any work,
     // even if all rendering is done synchronously
     if (allLinesAtEnd) {
-        bool stickToBtm = stickToBottom();
+        const bool stickToBtm = stickToBottom();
 
         // partial refresh
         layout(startLineSize, chatLineStorage->size(), useableWidth());
@@ -600,7 +600,7 @@ void ChatWidget::startResizeWorker()
     // switch to busy scene displaying the busy notification if there is a lot
     // of text to be resized
     int txt = 0;
-    for (ChatLine::Ptr line : *chatLineStorage) {
+    for (const ChatLine::Ptr& line : *chatLineStorage) {
         if (txt > 500000)
             break;
         for (ChatLineContent* content : line->content)
@@ -617,9 +617,9 @@ void ChatWidget::startResizeWorker()
 
 void ChatWidget::mouseDoubleClickEvent(QMouseEvent* ev)
 {
-    QPointF scenePos = mapToScene(ev->pos());
+    const QPointF scenePos = mapToScene(ev->pos());
     ChatLineContent* content = getContentFromPos(scenePos);
-    ChatLine::Ptr line = findLineByPosY(scenePos.y());
+    const ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
     if (content) {
         content->selectionDoubleClick(scenePos);
@@ -658,10 +658,10 @@ QString ChatWidget::getSelectedText() const
             if (line->content[1]->getText().isEmpty())
                 return;
 
-            QString timestamp =
+            const QString timestamp =
                 line->content[2]->getText().isEmpty() ? tr("pending") : line->content[2]->getText();
-            QString author = line->content[0]->getText();
-            QString msg = line->content[1]->getText();
+            const QString author = line->content[0]->getText();
+            const QString msg = line->content[1]->getText();
 
             out += QString(out.isEmpty() ? QStringLiteral("[%2] %1: %3")
                                          : QStringLiteral("\n[%2] %1: %3"))
@@ -698,7 +698,7 @@ void ChatWidget::clear()
 {
     clearSelection();
 
-    QVector<ChatLine::Ptr> savedLines;
+    const QVector<ChatLine::Ptr> savedLines;
 
     for (auto it = chatLineStorage->begin(); it != chatLineStorage->end();) {
         if (!isActiveFileTransfer(*it)) {
@@ -717,7 +717,7 @@ void ChatWidget::clear()
 
 void ChatWidget::copySelectedText(bool toSelectionBuffer) const
 {
-    QString text = getSelectedText();
+    const QString text = getSelectedText();
     QClipboard* clipboard = QApplication::clipboard();
 
     if (clipboard && !text.isNull())
@@ -739,7 +739,7 @@ void ChatWidget::setTypingNotificationName(const QString& displayName)
     }
 
     Text* text = static_cast<Text*>(typingNotification->getContent(1));
-    QString typingDiv = "<div class=typing>%1</div>";
+    const QString typingDiv = "<div class=typing>%1</div>";
     text->setText(typingDiv.arg(tr("%1 is typing").arg(displayName)));
 
     updateTypingNotification();
@@ -771,7 +771,7 @@ void ChatWidget::selectAll()
 
 void ChatWidget::fontChanged(const QFont& font)
 {
-    for (ChatLine::Ptr l : *chatLineStorage) {
+    for (const ChatLine::Ptr& l : *chatLineStorage) {
         l->fontChanged(font);
     }
 }
@@ -785,7 +785,7 @@ void ChatWidget::reloadTheme()
     selGraphItem->setPen(QPen(selectionRectColor.darker(120)));
     setTypingNotification();
 
-    for (ChatLine::Ptr l : *chatLineStorage) {
+    for (const ChatLine::Ptr& l : *chatLineStorage) {
         l->reloadTheme();
     }
 }
@@ -908,7 +908,7 @@ void ChatWidget::checkVisibility()
     }
 
     // these lines are no longer visible
-    for (ChatLine::Ptr line : visibleLines)
+    for (const ChatLine::Ptr& line : visibleLines)
         line->visibilityChanged(false);
 
     visibleLines = newVisibleLines;
@@ -1107,8 +1107,8 @@ void ChatWidget::renderMessages(ChatLogIdx begin, ChatLogIdx end)
     auto linesToRender = std::map<ChatLogIdx, ChatLine::Ptr>();
 
     for (auto i = begin; i < end; ++i) {
-        bool alreadyRendered = chatLineStorage->contains(i);
-        bool prevIdxRendered = i != begin || chatLineStorage->contains(i - 1);
+        const bool alreadyRendered = chatLineStorage->contains(i);
+        const bool prevIdxRendered = i != begin || chatLineStorage->contains(i - 1);
 
         auto chatMessage = alreadyRendered ? (*chatLineStorage)[i] : ChatLine::Ptr();
         renderItem(chatLog.at(i), needsToHideName(i, prevIdxRendered), colorizeNames, chatMessage);
@@ -1263,9 +1263,9 @@ void ChatWidget::handleMultiClickEvent()
 
     switch (clickCount) {
     case 3:
-        QPointF scenePos = mapToScene(lastClickPos);
+        const QPointF scenePos = mapToScene(lastClickPos);
         ChatLineContent* content = getContentFromPos(scenePos);
-        ChatLine::Ptr line = findLineByPosY(scenePos.y());
+        const ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
         if (content) {
             content->selectionTripleClick(scenePos);
@@ -1359,7 +1359,7 @@ void ChatWidget::retranslateUi()
 
 bool ChatWidget::isActiveFileTransfer(ChatLine::Ptr l)
 {
-    int count = l->getColumnCount();
+    const int count = l->getColumnCount();
     for (int i = 0; i < count; ++i) {
         ChatLineContent* content = l->getContent(i);
         ChatLineContentProxy* proxy = qobject_cast<ChatLineContentProxy*>(content);
@@ -1390,7 +1390,7 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
 {
     const auto& sender = item.getSender();
 
-    bool isSelf = sender == core.getSelfPublicKey();
+    const bool isSelf = sender == core.getSelfPublicKey();
 
     switch (item.getContentType()) {
     case ChatLogItem::ContentType::message: {
@@ -1467,7 +1467,7 @@ bool ChatWidget::needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const
         return false;
     }
 
-    qint64 messagesTimeDiff = prevItem.getTimestamp().secsTo(currentItem.getTimestamp());
+    const qint64 messagesTimeDiff = prevItem.getTimestamp().secsTo(currentItem.getTimestamp());
     return currentItem.getSender() == prevItem.getSender() && messagesTimeDiff < repNameAfter;
 }
 

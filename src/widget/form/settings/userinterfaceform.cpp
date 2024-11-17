@@ -56,7 +56,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     const QFont chatBaseFont = settings.getChatMessageFont();
     bodyUI->txtChatFontSize->setValue(QFontInfo(chatBaseFont).pixelSize());
     bodyUI->txtChatFont->setCurrentFont(chatBaseFont);
-    int index = static_cast<int>(settings.getStylePreference());
+    const int index = static_cast<int>(settings.getStylePreference());
     bodyUI->textStyleComboBox->setCurrentIndex(index);
     bodyUI->useNameColors->setChecked(settings.getEnableConferencesColor());
 
@@ -90,7 +90,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
 
     smileLabels = {bodyUI->smile1, bodyUI->smile2, bodyUI->smile3, bodyUI->smile4, bodyUI->smile5};
 
-    int currentPack = bodyUI->smileyPackBrowser->findData(settings.getSmileyPack());
+    const int currentPack = bodyUI->smileyPackBrowser->findData(settings.getSmileyPack());
     bodyUI->smileyPackBrowser->setCurrentIndex(currentPack);
     reloadSmileys();
     bodyUI->smileyPackBrowser->setEnabled(bodyUI->useEmoticons->isChecked());
@@ -106,13 +106,13 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
 
     bodyUI->styleBrowser->setCurrentText(textStyle);
 
-    for (QString color : Style::getThemeColorNames())
+    for (const QString& color : Style::getThemeColorNames())
         bodyUI->themeColorCBox->addItem(color);
 
     bodyUI->themeColorCBox->setCurrentIndex(settings.getThemeColor());
     bodyUI->emoticonSize->setValue(settings.getEmojiFontPointSize());
 
-    QLocale ql;
+    const QLocale ql;
     QStringList timeFormats;
     timeFormats << ql.timeFormat(QLocale::ShortFormat) << ql.timeFormat(QLocale::LongFormat)
                 << "hh:mm AP"
@@ -121,7 +121,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     timeFormats.removeDuplicates();
     bodyUI->timestamp->addItems(timeFormats);
 
-    QRegularExpression re(QString("^[^\\n]{0,%0}$").arg(MAX_FORMAT_LENGTH));
+    const QRegularExpression re(QString("^[^\\n]{0,%0}$").arg(MAX_FORMAT_LENGTH));
     QRegularExpressionValidator* validator = new QRegularExpressionValidator(re, this);
     QString timeFormat = settings.getTimestampFormat();
 
@@ -180,21 +180,21 @@ void UserInterfaceForm::on_emoticonSize_editingFinished()
 
 void UserInterfaceForm::on_timestamp_editTextChanged(const QString& format)
 {
-    QString timeExample = QTime::currentTime().toString(format);
+    const QString timeExample = QTime::currentTime().toString(format);
     bodyUI->timeExample->setText(timeExample);
 
     settings.setTimestampFormat(format);
-    QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslation();
     Translator::translate(locale);
 }
 
 void UserInterfaceForm::on_dateFormats_editTextChanged(const QString& format)
 {
-    QString dateExample = QDate::currentDate().toString(format);
+    const QString dateExample = QDate::currentDate().toString(format);
     bodyUI->dateExample->setText(dateExample);
 
     settings.setDateFormat(format);
-    QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslation();
     Translator::translate(locale);
 }
 
@@ -206,14 +206,14 @@ void UserInterfaceForm::on_useEmoticons_stateChanged()
 
 void UserInterfaceForm::on_textStyleComboBox_currentTextChanged()
 {
-    Settings::StyleType styleType =
+    const Settings::StyleType styleType =
         static_cast<Settings::StyleType>(bodyUI->textStyleComboBox->currentIndex());
     settings.setStylePreference(styleType);
 }
 
 void UserInterfaceForm::on_smileyPackBrowser_currentIndexChanged(int index)
 {
-    QString filename = bodyUI->smileyPackBrowser->itemData(index).toString();
+    const QString filename = bodyUI->smileyPackBrowser->itemData(index).toString();
     settings.setSmileyPack(filename);
     reloadSmileys();
 }
@@ -223,7 +223,7 @@ void UserInterfaceForm::on_smileyPackBrowser_currentIndexChanged(int index)
  */
 void UserInterfaceForm::reloadSmileys()
 {
-    QList<QStringList> emoticons = smileyPack.getEmoticons();
+    const QList<QStringList> emoticons = smileyPack.getEmoticons();
 
     // sometimes there are no emoticons available, don't crash in this case
     if (emoticons.isEmpty()) {
@@ -239,7 +239,7 @@ void UserInterfaceForm::reloadSmileys()
     emoticonsIcons.clear();
     const QSize size(18, 18);
     for (int i = 0; i < smileLabels.size(); ++i) {
-        std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(smileys[i]);
+        const std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(smileys[i]);
         emoticonsIcons.append(icon);
         smileLabels[i]->setPixmap(icon->pixmap(size));
         smileLabels[i]->setToolTip(smileys[i]);
@@ -249,10 +249,10 @@ void UserInterfaceForm::reloadSmileys()
     auto geometry = QGuiApplication::primaryScreen()->geometry();
     // 8 is the count of row and column in emoji's in widget
     const int sideSize = 8;
-    int maxSide = qMin(geometry.height() / sideSize, geometry.width() / sideSize);
-    QSize maxSize(maxSide, maxSide);
+    const int maxSide = qMin(geometry.height() / sideSize, geometry.width() / sideSize);
+    const QSize maxSize(maxSide, maxSide);
 
-    QSize actualSize = emoticonsIcons.first()->actualSize(maxSize);
+    const QSize actualSize = emoticonsIcons.first()->actualSize(maxSize);
     bodyUI->emoticonSize->setMaximum(actualSize.width());
 }
 
@@ -315,7 +315,7 @@ void UserInterfaceForm::on_cbCompactLayout_stateChanged()
 
 void UserInterfaceForm::on_cbSeparateWindow_stateChanged()
 {
-    bool checked = bodyUI->cbSeparateWindow->isChecked();
+    const bool checked = bodyUI->cbSeparateWindow->isChecked();
     bodyUI->cbDontGroupWindows->setEnabled(checked);
     settings.setSeparateWindow(checked);
 }
@@ -348,7 +348,7 @@ void UserInterfaceForm::on_themeColorCBox_currentIndexChanged(int index)
 void UserInterfaceForm::retranslateUi()
 {
     // Block signals during translation to prevent settings change
-    RecursiveSignalBlocker signalBlocker{this};
+    const RecursiveSignalBlocker signalBlocker{this};
 
     bodyUI->retranslateUi(this);
 

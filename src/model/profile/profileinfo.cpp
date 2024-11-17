@@ -40,8 +40,8 @@ QString sanitize(const QString& src)
 {
     QString name = src;
     // these are pretty much Windows banned filename characters
-    QList<QChar> banned{'/', '\\', ':', '<', '>', '"', '|', '?', '*'};
-    for (QChar c : banned) {
+    const QList<QChar> banned{'/', '\\', ':', '<', '>', '"', '|', '?', '*'};
+    for (const QChar c : banned) {
         name.replace(c, '_');
     }
 
@@ -66,7 +66,7 @@ QString sanitize(const QString& src)
 bool tryRemoveFile(const QString& filepath)
 {
     QFile tmp(filepath);
-    bool writable = tmp.open(QIODevice::WriteOnly);
+    const bool writable = tmp.open(QIODevice::WriteOnly);
     tmp.remove();
     return writable;
 }
@@ -103,7 +103,7 @@ ProfileInfo::ProfileInfo(Core* core_, Profile* profile_, Settings& settings_, Ne
  */
 bool ProfileInfo::setPassword(const QString& password)
 {
-    QString errorMsg = profile->setPassword(password);
+    const QString errorMsg = profile->setPassword(password);
     return errorMsg.isEmpty();
 }
 
@@ -113,7 +113,7 @@ bool ProfileInfo::setPassword(const QString& password)
  */
 bool ProfileInfo::deletePassword()
 {
-    QString errorMsg = profile->setPassword("");
+    const QString errorMsg = profile->setPassword("");
     return errorMsg.isEmpty();
 }
 
@@ -131,8 +131,8 @@ bool ProfileInfo::isEncrypted() const
  */
 void ProfileInfo::copyId() const
 {
-    ToxId selfId = core->getSelfId();
-    QString txt = selfId.toString();
+    const ToxId selfId = core->getSelfId();
+    const QString txt = selfId.toString();
     QClipboard* clip = QApplication::clipboard();
     clip->setText(txt, QClipboard::Clipboard);
     if (clip->supportsSelection()) {
@@ -174,12 +174,12 @@ QString ProfileInfo::getProfileName() const
  */
 IProfileInfo::RenameResult ProfileInfo::renameProfile(const QString& name)
 {
-    QString cur = profile->getName();
+    const QString cur = profile->getName();
     if (name.isEmpty()) {
         return RenameResult::EmptyName;
     }
 
-    QString newName = sanitize(name);
+    const QString newName = sanitize(name);
 
     if (Profile::exists(newName, settings.getPaths())) {
         return RenameResult::ProfileAlreadyExists;
@@ -199,7 +199,7 @@ IProfileInfo::RenameResult ProfileInfo::renameProfile(const QString& name)
  */
 IProfileInfo::SaveResult ProfileInfo::exportProfile(const QString& path) const
 {
-    QString current = profile->getName() + Core::TOX_EXT;
+    const QString current = profile->getName() + Core::TOX_EXT;
     if (path.isEmpty()) {
         return SaveResult::EmptyPath;
     }
@@ -253,7 +253,7 @@ void ProfileInfo::copyQr(const QImage& image) const
  */
 IProfileInfo::SaveResult ProfileInfo::saveQr(const QImage& image, const QString& path) const
 {
-    QString current = profile->getName() + ".png";
+    const QString current = profile->getName() + ".png";
     if (path.isEmpty()) {
         return SaveResult::EmptyPath;
     }
@@ -303,7 +303,7 @@ IProfileInfo::SetAvatarResult ProfileInfo::setAvatar(const QString& path)
  */
 IProfileInfo::SetAvatarResult ProfileInfo::createAvatarFromFile(QFile& file, QByteArray& avatar)
 {
-    QByteArray fileContents{file.readAll()};
+    const QByteArray fileContents{file.readAll()};
     auto err = byteArrayToPng(fileContents, avatar);
     if (err != SetAvatarResult::OK) {
         return err;

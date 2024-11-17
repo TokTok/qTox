@@ -129,9 +129,9 @@ QString SmileyPack::getAsRichText(const QString& key)
 
 void SmileyPack::cleanupIconsCache()
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     for (auto it = cachedIcon.begin(); it != cachedIcon.end();) {
-        std::shared_ptr<QIcon>& icon = it->second;
+        const std::shared_ptr<QIcon>& icon = it->second;
         if (icon.use_count() == 1) {
             it = cachedIcon.erase(it);
         } else {
@@ -170,8 +170,8 @@ QList<QPair<QString, QString>> SmileyPack::listSmileyPacks(const QStringList& pa
         for (const QString& subdirectory : dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
             dir.cd(subdirectory);
             if (dir.exists(EMOTICONS_FILE_NAME)) {
-                QString absPath = dir.absolutePath() + QDir::separator() + EMOTICONS_FILE_NAME;
-                QPair<QString, QString> p{dir.dirName(), absPath};
+                const QString absPath = dir.absolutePath() + QDir::separator() + EMOTICONS_FILE_NAME;
+                const QPair<QString, QString> p{dir.dirName(), absPath};
                 if (!smileyPacks.contains(p)) {
                     smileyPacks.append(p);
                 }
@@ -191,7 +191,7 @@ QList<QPair<QString, QString>> SmileyPack::listSmileyPacks(const QStringList& pa
  */
 void SmileyPack::load(const QString& filename)
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
 
     QFile xmlFile(filename);
     if (!xmlFile.exists() || !xmlFile.open(QIODevice::ReadOnly)) {
@@ -219,7 +219,7 @@ void SmileyPack::load(const QString& filename)
      */
 
     path = QFileInfo(filename).absolutePath();
-    QDomNodeList emoticonElements = doc.elementsByTagName("emoticon");
+    const QDomNodeList emoticonElements = doc.elementsByTagName("emoticon");
     const QString itemName = QStringLiteral("file");
     const QString childName = QStringLiteral("string");
     const int iconsCount = emoticonElements.size();
@@ -228,13 +228,13 @@ void SmileyPack::load(const QString& filename)
     cachedIcon.clear();
 
     for (int i = 0; i < iconsCount; ++i) {
-        QDomNode node = emoticonElements.at(i);
-        QString iconName = node.attributes().namedItem(itemName).nodeValue();
-        QString iconPath = QDir{path}.filePath(iconName);
+        const QDomNode node = emoticonElements.at(i);
+        const QString iconName = node.attributes().namedItem(itemName).nodeValue();
+        const QString iconPath = QDir{path}.filePath(iconName);
         QDomElement stringElement = node.firstChildElement(childName);
         QStringList emoticonList;
         while (!stringElement.isNull()) {
-            QString emoticon = singleCharAsciiEmoticon(
+            const QString emoticon = singleCharAsciiEmoticon(
                 stringElement.text().replace("<", "&lt;").replace(">", "&gt;"));
             emoticonToPath.insert(emoticon, iconPath);
             emoticonList.append(emoticon);
@@ -291,14 +291,14 @@ void SmileyPack::constructRegex()
  */
 QString SmileyPack::smileyfied(const QString& msg)
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     QString result(msg);
 
     int replaceDiff = 0;
     for (const auto& match : smilify.globalMatch(result)) {
-        int startPos = match.capturedStart();
-        int keyLength = match.capturedLength();
-        QString imgRichText = SmileyPack::getAsRichText(match.captured());
+        const int startPos = match.capturedStart();
+        const int keyLength = match.capturedLength();
+        const QString imgRichText = SmileyPack::getAsRichText(match.captured());
         result.replace(startPos + replaceDiff, keyLength, imgRichText);
         replaceDiff += imgRichText.length() - keyLength;
     }
@@ -311,7 +311,7 @@ QString SmileyPack::smileyfied(const QString& msg)
  */
 QList<QStringList> SmileyPack::getEmoticons() const
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     return emoticons;
 }
 
@@ -322,7 +322,7 @@ QList<QStringList> SmileyPack::getEmoticons() const
  */
 std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     if (cachedIcon.contains(emoticon)) {
         return cachedIcon[emoticon];
     }

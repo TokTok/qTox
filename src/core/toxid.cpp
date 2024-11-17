@@ -99,7 +99,7 @@ ToxId::ToxId(const QByteArray& rawId)
  */
 ToxId::ToxId(const uint8_t* rawId, int len)
 {
-    QByteArray tmpId(reinterpret_cast<const char*>(rawId), len);
+    const QByteArray tmpId(reinterpret_cast<const char*>(rawId), len);
     constructToxId(tmpId);
 }
 
@@ -226,7 +226,7 @@ bool ToxId::isValid() const
     const int pkAndChecksum = ToxPk::size + ToxId::nospamSize;
 
     QByteArray data = toxId.left(pkAndChecksum);
-    QByteArray checksum = toxId.right(ToxId::checksumSize);
+    const QByteArray checksum = toxId.right(ToxId::checksumSize);
     QByteArray calculated(ToxId::checksumSize, 0x00);
 
     for (int i = 0; i < pkAndChecksum; i++) {

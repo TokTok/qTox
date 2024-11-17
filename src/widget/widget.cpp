@@ -80,7 +80,7 @@ namespace {
 bool tryRemoveFile(const QString& filepath)
 {
     QFile tmp(filepath);
-    bool writable = tmp.open(QIODevice::WriteOnly);
+    const bool writable = tmp.open(QIODevice::WriteOnly);
     tmp.remove();
     return writable;
 }
@@ -104,8 +104,8 @@ void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
     QString filepath;
     int number = 0;
 
-    QString suffix = QFileInfo(file.fileName).completeSuffix();
-    QString base = QFileInfo(file.fileName).baseName();
+    const QString suffix = QFileInfo(file.fileName).completeSuffix();
+    const QString base = QFileInfo(file.fileName).baseName();
 
     do {
         filepath = QString("%1/%2%3.%4")
@@ -151,7 +151,7 @@ Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSou
     , nexus{nexus_}
 {
     installEventFilter(this);
-    QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslation();
     Translator::translate(locale);
 }
 
@@ -159,7 +159,7 @@ void Widget::init()
 {
     ui->setupUi(this);
 
-    QIcon themeIcon = QIcon::fromTheme("qtox");
+    const QIcon themeIcon = QIcon::fromTheme("qtox");
     if (!themeIcon.isNull()) {
         setWindowIcon(themeIcon);
     }
@@ -522,7 +522,7 @@ void Widget::init()
 bool Widget::eventFilter(QObject* obj, QEvent* event)
 {
     QWindowStateChangeEvent* ce = nullptr;
-    Qt::WindowStates state = windowState();
+    const Qt::WindowStates state = windowState();
 
     switch (event->type()) {
     case QEvent::Close:
@@ -587,8 +587,9 @@ void Widget::updateIcons()
     if (!hasThemeIconBug && QIcon::hasThemeIcon("qtox-" + assetSuffix)) {
         ico = QIcon::fromTheme("qtox-" + assetSuffix);
     } else {
-        QString color = settings.getLightTrayIcon() ? QStringLiteral("light") : QStringLiteral("dark");
-        QString path = ":/img/taskbar/" + color + "/taskbar_" + assetSuffix + ".svg";
+        const QString color =
+            settings.getLightTrayIcon() ? QStringLiteral("light") : QStringLiteral("dark");
+        const QString path = ":/img/taskbar/" + color + "/taskbar_" + assetSuffix + ".svg";
         QSvgRenderer renderer(path);
 
         // Prepare a QImage with desired characteristics
@@ -611,7 +612,7 @@ Widget::~Widget()
     ipc.unregisterEventHandler(activateHandlerKey);
 #endif
 
-    QWidgetList windowList = QApplication::topLevelWidgets();
+    const QWidgetList windowList = QApplication::topLevelWidgets();
 
     for (QWidget* window : windowList) {
         if (window != this) {
@@ -799,7 +800,7 @@ void Widget::onSeparateWindowClicked(bool separate)
 void Widget::onSeparateWindowChanged(bool separate, bool clicked)
 {
     if (!separate) {
-        QWindowList windowList = QGuiApplication::topLevelWindows();
+        const QWindowList windowList = QGuiApplication::topLevelWindows();
 
         for (QWindow* window : windowList) {
             if (window->objectName() == "detachedWindow") {
@@ -820,7 +821,7 @@ void Widget::onSeparateWindowChanged(bool separate, bool clicked)
 
         onShowSettings();
     } else {
-        int width = ui->friendList->size().width();
+        const int width = ui->friendList->size().width();
         QSize size;
         QPoint pos;
 
@@ -1125,7 +1126,7 @@ void Widget::dispatchFile(ToxFile file)
         }
 
         auto maxAutoAcceptSize = settings.getMaxAutoAcceptSize();
-        bool autoAcceptSizeCheckPassed =
+        const bool autoAcceptSizeCheckPassed =
             maxAutoAcceptSize == 0 || maxAutoAcceptSize >= file.progress.getFileSize();
 
         if (!autoAcceptDir.isEmpty() && autoAcceptSizeCheckPassed) {
@@ -1172,7 +1173,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     Friend* newFriend = friendList->addFriend(friendId, friendPk, settings);
     auto rawChatroom =
         new FriendChatroom(newFriend, contentDialogManager.get(), *core, settings, *conferenceList);
-    std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
+    const std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
     const auto compact = settings.getCompactLayout();
     auto widget = new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile);
     connectFriendWidget(*widget);
@@ -1239,7 +1240,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     connect(&profile, &Profile::friendAvatarRemoved, widget, &FriendWidget::onAvatarRemoved);
 
     // Try to get the avatar from the cache
-    QPixmap avatar = profile.loadAvatar(friendPk);
+    const QPixmap avatar = profile.loadAvatar(friendPk);
     if (!avatar.isNull()) {
         friendForm->onAvatarChanged(friendPk, avatar);
         widget->onAvatarSet(friendPk, avatar);
@@ -1434,9 +1435,9 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 {
     const ToxPk& friendPk = frnd->getPublicKey();
     ContentDialog* contentDialog = contentDialogManager->getFriendDialog(friendPk);
-    bool isSeparate = settings.getSeparateWindow();
+    const bool isSeparate = settings.getSeparateWindow();
     FriendWidget* widget = friendWidgets[friendPk];
-    bool isCurrent = activeChatroomWidget == widget;
+    const bool isCurrent = activeChatroomWidget == widget;
     if (!contentDialog && !isSeparate && isCurrent) {
         onAddClicked();
     }
@@ -1476,7 +1477,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
     connect(&profile, &Profile::friendAvatarSet, friendWidget, &FriendWidget::onAvatarSet);
     connect(&profile, &Profile::friendAvatarRemoved, friendWidget, &FriendWidget::onAvatarRemoved);
 
-    QPixmap avatar = profile.loadAvatar(frnd->getPublicKey());
+    const QPixmap avatar = profile.loadAvatar(frnd->getPublicKey());
     if (!avatar.isNull()) {
         friendWidget->onAvatarSet(frnd->getPublicKey(), avatar);
     }
@@ -1486,10 +1487,10 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
 {
     const ConferenceId& conferenceId = conference->getPersistentId();
     ContentDialog* conferenceDialog = contentDialogManager->getConferenceDialog(conferenceId);
-    bool separated = settings.getSeparateWindow();
+    const bool separated = settings.getSeparateWindow();
     Q_ASSERT(conferenceWidgets.contains(conferenceId));
     ConferenceWidget* widget = conferenceWidgets[conferenceId];
-    bool isCurrentWindow = activeChatroomWidget == widget;
+    const bool isCurrentWindow = activeChatroomWidget == widget;
     if (!conferenceDialog && !separated && isCurrentWindow) {
         onAddClicked();
     }
@@ -1649,7 +1650,7 @@ QString Widget::fromDialogType(DialogType type)
 
 bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, bool notify)
 {
-    bool inactiveWindow = isMinimized() || !currentWindow->isActiveWindow();
+    const bool inactiveWindow = isMinimized() || !currentWindow->isActiveWindow();
 
     if (!inactiveWindow && isActive) {
         return false;
@@ -1667,9 +1668,9 @@ bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, 
                 }
                 eventFlag = true;
             }
-            bool isBusy = core->getStatus() == Status::Status::Busy;
-            bool busySound = settings.getBusySound();
-            bool notifySound = settings.getNotifySound();
+            const bool isBusy = core->getStatus() == Status::Status::Busy;
+            const bool busySound = settings.getBusySound();
+            const bool notifySound = settings.getNotifySound();
 
             if (notifySound && sound && (!isBusy || busySound)) {
                 playNotificationSound(IAudioSink::Sound::NewMessage);
@@ -1975,7 +1976,7 @@ void Widget::onConferenceMessageReceived(uint32_t conferencenumber, uint32_t pee
     const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
     assert(conferenceList->findConference(conferenceId));
 
-    ToxPk author = core->getConferencePeerPk(conferencenumber, peernumber);
+    const ToxPk author = core->getConferencePeerPk(conferencenumber, peernumber);
 
     conferenceMessageDispatchers[conferenceId]->onMessageReceived(author, isAction, message);
 }
@@ -2120,7 +2121,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     }
     auto rawChatroom =
         new ConferenceRoom(newConference, contentDialogManager.get(), *core, *friendList);
-    std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
+    const std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
 
     const auto compact = settings.getCompactLayout();
     auto widget = new ConferenceWidget(chatroom, compact, settings, style);
@@ -2248,10 +2249,10 @@ bool Widget::event(QEvent* e)
 void Widget::onUserAwayCheck()
 {
 #ifdef QTOX_PLATFORM_EXT
-    uint32_t autoAwayTime = settings.getAutoAwayTime() * 60 * 1000;
-    bool online = static_cast<Status::Status>(ui->statusButton->property("status").toInt())
-                  == Status::Status::Online;
-    bool away = autoAwayTime && Platform::getIdleTime() >= autoAwayTime;
+    const uint32_t autoAwayTime = settings.getAutoAwayTime() * 60 * 1000;
+    const bool online = static_cast<Status::Status>(ui->statusButton->property("status").toInt())
+                        == Status::Status::Online;
+    const bool away = autoAwayTime && Platform::getIdleTime() >= autoAwayTime;
 
     if (online && away) {
         qDebug() << "auto away activated at" << QTime::currentTime().toString();
@@ -2439,7 +2440,7 @@ bool Widget::filterOnline(FilterCriteria index)
 
 void Widget::clearAllReceipts()
 {
-    QList<Friend*> friends = friendList->getAllFriends();
+    const QList<Friend*> friends = friendList->getAllFriends();
     for (Friend* f : friends) {
         friendMessageDispatchers[f->getPublicKey()]->clearOutgoingMessages();
     }
@@ -2448,13 +2449,13 @@ void Widget::clearAllReceipts()
 void Widget::reloadTheme()
 {
     setStyleSheet("");
-    QWidgetList wgts = findChildren<QWidget*>();
+    const QWidgetList wgts = findChildren<QWidget*>();
     for (auto x : wgts) {
         x->setStyleSheet("");
     }
 
     setStyleSheet(style.getStylesheet("window/general.qss", settings));
-    QString statusPanelStyle = style.getStylesheet("window/statusPanel.qss", settings);
+    const QString statusPanelStyle = style.getStylesheet("window/statusPanel.qss", settings);
     ui->tooliconsZone->setStyleSheet(style.getStylesheet("tooliconsZone/tooliconsZone.qss", settings));
     ui->statusPanel->setStyleSheet(statusPanelStyle);
     ui->statusHead->setStyleSheet(statusPanelStyle);
@@ -2506,8 +2507,8 @@ inline QIcon Widget::prepareIcon(QString path, int w, int h)
 
 void Widget::searchChats()
 {
-    QString searchString = ui->searchContactText->text();
-    FilterCriteria filter = getFilterCriteria();
+    const QString searchString = ui->searchContactText->text();
+    const FilterCriteria filter = getFilterCriteria();
 
     chatListWidget->searchChatRooms(searchString, filterOnline(filter), filterOffline(filter),
                                     filterGroups(filter));
@@ -2533,7 +2534,7 @@ void Widget::changeDisplayMode()
 
 void Widget::updateFilterText()
 {
-    QString action = filterDisplayGroup->checkedAction()->text();
+    const QString action = filterDisplayGroup->checkedAction()->text();
     QString text = filterGroup->checkedAction()->text();
     text = action + QStringLiteral(" | ") + text;
     ui->searchContactFilterBox->setText(text);
@@ -2558,15 +2559,15 @@ Widget::FilterCriteria Widget::getFilterCriteria() const
 void Widget::searchCircle(CircleWidget& circleWidget)
 {
     if (chatListWidget->getMode() == FriendListWidget::SortingMode::Name) {
-        FilterCriteria filter = getFilterCriteria();
-        QString text = ui->searchContactText->text();
+        const FilterCriteria filter = getFilterCriteria();
+        const QString text = ui->searchContactText->text();
         circleWidget.search(text, true, filterOnline(filter), filterOffline(filter));
     }
 }
 
 bool Widget::conferencesVisible() const
 {
-    FilterCriteria filter = getFilterCriteria();
+    const FilterCriteria filter = getFilterCriteria();
     return !filterGroups(filter);
 }
 
@@ -2586,7 +2587,7 @@ void Widget::friendListContextMenu(const QPoint& pos)
 
 void Widget::friendRequestsUpdate()
 {
-    unsigned int unreadFriendRequests = settings.getUnreadFriendRequests();
+    const unsigned int unreadFriendRequests = settings.getUnreadFriendRequests();
 
     if (unreadFriendRequests == 0) {
         delete friendRequestsButton;

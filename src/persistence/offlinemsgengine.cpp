@@ -22,7 +22,7 @@
  */
 void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     receiptResolver.notifyReceiptReceived(receipt);
 }
 
@@ -37,7 +37,7 @@ void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
  */
 void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn completionCallback)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     unsentMessages.push_back(
         OfflineMessage{message, std::chrono::steady_clock::now(), completionCallback});
 }
@@ -55,7 +55,7 @@ void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn com
 void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& message,
                                           CompletionFn completionCallback)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     receiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
                                                 completionCallback});
 }
@@ -65,7 +65,7 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& mes
  */
 std::vector<OfflineMsgEngine::RemovedMessage> OfflineMsgEngine::removeAllMessages()
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     auto messages = receiptResolver.clear();
 
     messages.insert(messages.end(), std::make_move_iterator(unsentMessages.begin()),

@@ -78,7 +78,7 @@ ConferenceInviteForm::~ConferenceInviteForm()
  */
 bool ConferenceInviteForm::isShown() const
 {
-    bool result = isVisible();
+    const bool result = isVisible();
     if (result) {
         headWidget->window()->windowHandle()->alert(0);
     }

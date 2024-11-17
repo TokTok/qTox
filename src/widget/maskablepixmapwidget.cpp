@@ -61,7 +61,7 @@ void MaskablePixmapWidget::setSize(QSize size)
     delete renderTarget;
     renderTarget = new QPixmap(size);
 
-    QPixmap pmapMask = QPixmap(maskName);
+    const QPixmap pmapMask = QPixmap(maskName);
     if (!pmapMask.isNull()) {
         mask = pmapMask.scaled(size, Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
     }
@@ -85,8 +85,8 @@ void MaskablePixmapWidget::updatePixmap()
 {
     renderTarget->fill(Qt::transparent);
 
-    QPoint offset((width() - pixmap.size().width()) / 2,
-                  (height() - pixmap.size().height()) / 2); // centering the pixmap
+    const QPoint offset((width() - pixmap.size().width()) / 2,
+                        (height() - pixmap.size().height()) / 2); // centering the pixmap
 
     QPainter painter(renderTarget);
     painter.setCompositionMode(QPainter::CompositionMode_SourceOver);

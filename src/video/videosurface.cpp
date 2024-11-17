@@ -136,7 +136,7 @@ void VideoSurface::onNewFrameAvailable(const std::shared_ptr<VideoFrame>& newFra
     newSize = lastFrame->getSourceDimensions().size();
     unlock();
 
-    float newRatio = getSizeRatio(newSize);
+    const float newRatio = getSizeRatio(newSize);
 
     if (!qFuzzyCompare(newRatio, ratio) && isVisible()) {
         ratio = newRatio;
@@ -163,7 +163,7 @@ void VideoSurface::paintEvent(QPaintEvent* event)
     QPainter painter(this);
     painter.fillRect(painter.viewport(), Qt::black);
     if (lastFrame) {
-        QImage frame = lastFrame->toQImage(rect().size());
+        const QImage frame = lastFrame->toQImage(rect().size());
         if (frame.isNull())
             lastFrame.reset();
         painter.drawImage(boundingRect, frame, frame.rect(), Qt::NoFormatConversion);
@@ -201,8 +201,8 @@ void VideoSurface::recalculateBounds()
     } else {
         QPoint pos;
         QSize size;
-        QSize usableSize = contentsRect().size();
-        int possibleWidth = usableSize.height() * ratio;
+        const QSize usableSize = contentsRect().size();
+        const int possibleWidth = usableSize.height() * ratio;
 
         if (possibleWidth > usableSize.width())
             size = (QSize(usableSize.width(), usableSize.width() / ratio));

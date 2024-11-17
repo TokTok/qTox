@@ -16,7 +16,7 @@
 
 AlSink::~AlSink()
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     // unsubscribe only if not already killed
     if (!killed) {
@@ -27,7 +27,7 @@ AlSink::~AlSink()
 
 void AlSink::playAudioBuffer(const int16_t* data, int samples, unsigned channels, int sampleRate) const
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     if (killed) {
         qCritical() << "Trying to play audio on an invalid sink";
@@ -38,7 +38,7 @@ void AlSink::playAudioBuffer(const int16_t* data, int samples, unsigned channels
 
 void AlSink::playMono16Sound(const IAudioSink::Sound& sound)
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     if (killed) {
         qCritical() << "Trying to play sound on an invalid sink";
@@ -49,7 +49,7 @@ void AlSink::playMono16Sound(const IAudioSink::Sound& sound)
 
 void AlSink::startLoop()
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     if (killed) {
         qCritical() << "Trying to start loop on an invalid sink";
@@ -60,7 +60,7 @@ void AlSink::startLoop()
 
 void AlSink::stopLoop()
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     if (killed) {
         qCritical() << "Trying to stop loop on an invalid sink";
@@ -71,7 +71,7 @@ void AlSink::stopLoop()
 
 uint AlSink::getSourceId() const
 {
-    uint tmp = sourceId;
+    const uint tmp = sourceId;
     return tmp;
 }
 
@@ -92,7 +92,7 @@ AlSink::AlSink(OpenAL& al, uint sourceId_)
 
 AlSink::operator bool() const
 {
-    QMutexLocker<QRecursiveMutex> locker{&killLock};
+    const QMutexLocker<QRecursiveMutex> locker{&killLock};
 
     return !killed;
 }

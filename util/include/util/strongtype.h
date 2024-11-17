@@ -13,7 +13,7 @@ struct Addable
     T operator+(const T& other) const
     {
         return static_cast<const T&>(*this).get() + other.get();
-    };
+    }
 };
 
 template <typename T, typename Underlying>
@@ -22,7 +22,7 @@ struct UnderlyingAddable
     T operator+(const Underlying& other) const
     {
         return T(static_cast<const T&>(*this).get() + other);
-    };
+    }
 };
 
 template <typename T, typename Underlying>
@@ -31,7 +31,7 @@ struct UnitlessSubtractable
     T operator-(const Underlying& other) const
     {
         return T(static_cast<const T&>(*this).get() - other);
-    };
+    }
 
     Underlying operator-(const T& other) const
     {
@@ -64,11 +64,11 @@ struct EqualityComparable
     bool operator==(const T& other) const
     {
         return static_cast<const T&>(*this).get() == other.get();
-    };
+    }
     bool operator!=(const T& other) const
     {
         return static_cast<const T&>(*this).get() != other.get();
-    };
+    }
 };
 
 template <typename T, typename Underlying>

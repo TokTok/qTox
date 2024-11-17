@@ -1,5 +1,6 @@
 Checks: "-*
 , google-explicit-constructor
+, misc-const-correctness
 , modernize-avoid-bind
 , modernize-deprecated-headers
 , modernize-loop-convert

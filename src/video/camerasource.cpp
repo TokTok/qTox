@@ -234,8 +234,8 @@ CameraSource::CameraSource(Settings& settings_)
  */
 void CameraSource::setupDefault()
 {
-    QString deviceName_ = CameraDevice::getDefaultDeviceName(settings);
-    bool isScreen = CameraDevice::isScreen(deviceName_);
+    const QString deviceName_ = CameraDevice::getDefaultDeviceName(settings);
+    const bool isScreen = CameraDevice::isScreen(deviceName_);
     VideoMode mode_ = VideoMode(settings.getScreenRegion());
     if (!isScreen) {
         mode_ = VideoMode(settings.getCamVideoRes());
@@ -257,7 +257,7 @@ void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode
         return;
     }
 
-    QWriteLocker locker{&deviceMutex};
+    const QWriteLocker locker{&deviceMutex};
 
     if (deviceName_ == deviceName && mode_ == mode) {
         return;
@@ -265,7 +265,7 @@ void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode
 
     if (subscriptions != 0) {
         // To force close, ignoring optimization
-        int subs = subscriptions;
+        const int subs = subscriptions;
         subscriptions = 0;
         closeDevice();
         subscriptions = subs;
@@ -288,7 +288,7 @@ bool CameraSource::isNone() const
 CameraSource::~CameraSource()
 {
     QWriteLocker locker{&streamMutex};
-    QWriteLocker locker2{&deviceMutex};
+    const QWriteLocker locker2{&deviceMutex};
 
     // Stop the device thread
     deviceThread->exit(0);
@@ -327,7 +327,7 @@ CameraSource::~CameraSource()
 
 void CameraSource::subscribe()
 {
-    QWriteLocker locker{&deviceMutex};
+    const QWriteLocker locker{&deviceMutex};
 
     ++subscriptions;
     openDevice();
@@ -335,7 +335,7 @@ void CameraSource::subscribe()
 
 void CameraSource::unsubscribe()
 {
-    QWriteLocker locker{&deviceMutex};
+    const QWriteLocker locker{&deviceMutex};
 
     --subscriptions;
     if (subscriptions == 0) {
@@ -354,7 +354,7 @@ void CameraSource::openDevice()
         return;
     }
 
-    QWriteLocker locker{&streamMutex};
+    const QWriteLocker locker{&streamMutex};
     if (subscriptions == 0) {
         return;
     }
@@ -472,7 +472,7 @@ void CameraSource::closeDevice()
         return;
     }
 
-    QWriteLocker locker{&streamMutex};
+    const QWriteLocker locker{&streamMutex};
     if (subscriptions != 0) {
         return;
     }
@@ -526,8 +526,8 @@ void CameraSource::stream()
 #else
 
         // Forward packets to the decoder and grab the decoded frame
-        bool isVideo = packet.stream_index == videoStreamIndex;
-        bool readyToReceive = isVideo && !avcodec_send_packet(cctx, &packet);
+        const bool isVideo = packet.stream_index == videoStreamIndex;
+        const bool readyToReceive = isVideo && !avcodec_send_packet(cctx, &packet);
 
         if (readyToReceive) {
             AVFrame* frame = av_frame_alloc();
@@ -544,7 +544,7 @@ void CameraSource::stream()
 
     forever
     {
-        QReadLocker locker{&streamMutex};
+        const QReadLocker locker{&streamMutex};
 
         // Exit if device is no longer valid
         if (!device) {

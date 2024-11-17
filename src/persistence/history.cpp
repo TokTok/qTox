@@ -171,7 +171,7 @@ std::vector<RawDatabase::Query> generateNewSystemMessageQueries(const ChatId& ch
 
 FileDbInsertionData::FileDbInsertionData()
 {
-    static int id = qRegisterMetaType<FileDbInsertionData>();
+    static const int id = qRegisterMetaType<FileDbInsertionData>();
     (void)id;
 }
 
@@ -376,7 +376,7 @@ History::generateNewFileTransferQueries(const ChatId& chatId, const ToxPk& sende
     queries.emplace_back(generateUpdateAlias(sender, dispName));
     queries.emplace_back(generateHistoryTableInsertion('F', time, chatId));
 
-    std::weak_ptr<History> weakThis = shared_from_this();
+    const std::weak_ptr<History> weakThis = shared_from_this();
     auto fileId = insertionData.fileId;
 
     QString queryString;
@@ -466,7 +466,7 @@ void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
         direction = ToxFile::SENDING;
     }
 
-    std::weak_ptr<History> weakThis = shared_from_this();
+    const std::weak_ptr<History> weakThis = shared_from_this();
     FileDbInsertionData insertionData;
     insertionData.fileId = fileId;
     insertionData.fileName = fileName;
@@ -705,7 +705,7 @@ QList<History::HistMessage> History::getUndeliveredMessagesForChat(const ChatId&
         auto senderKey = ToxPk{(*it++).toByteArray()};
         auto displayName = QString::fromUtf8((*it++).toByteArray().replace('\0', ""));
 
-        MessageState messageState = getMessageState(isPending, isBroken);
+        const MessageState messageState = getMessageState(isPending, isBroken);
 
         ret +=
             {id, messageState, timestamp, chatId.clone(), displayName, senderKey, messageContent};

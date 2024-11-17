@@ -369,21 +369,21 @@ QString Paths::getAppCacheDirPath() const
 
 QString Paths::getExampleNodesFilePath() const
 {
-    QDir dir(getSettingsDirPath());
+    const QDir dir(getSettingsDirPath());
     constexpr static char nodesFileName[] = "bootstrapNodes.example.json";
     return dir.filePath(nodesFileName);
 }
 
 QString Paths::getUserNodesFilePath() const
 {
-    QDir dir(getSettingsDirPath());
+    const QDir dir(getSettingsDirPath());
     constexpr static char nodesFileName[] = "bootstrapNodes.json";
     return dir.filePath(nodesFileName);
 }
 
 QString Paths::getBackupUserNodesFilePath() const
 {
-    QDir dir(getSettingsDirPath());
+    const QDir dir(getSettingsDirPath());
     constexpr static char nodesFileName[] = "bootstrapNodes.backup.json";
     return dir.filePath(nodesFileName);
 }

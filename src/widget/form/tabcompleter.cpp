@@ -48,13 +48,13 @@ void TabCompleter::buildCompletionList()
 
     // split the string on the given RE (not chars, nums or braces/brackets) and take the last
     // section
-    QString tabAbbrev = msgEdit->toPlainText()
-                            .left(msgEdit->textCursor().position())
-                            .section(QRegularExpression(R"([^\w\d\$:@_\[\]{}|`^.\\-])"), -1, -1);
+    const QString tabAbbrev = msgEdit->toPlainText()
+                                  .left(msgEdit->textCursor().position())
+                                  .section(QRegularExpression(R"([^\w\d\$:@_\[\]{}|`^.\\-])"), -1, -1);
     // that section is then used as the completion regex
-    QRegularExpression regex(QStringLiteral(R"(^[-_\[\]{}|`^.\\]*)")
-                                 .append(QRegularExpression::escape(tabAbbrev)),
-                             QRegularExpression::CaseInsensitiveOption);
+    const QRegularExpression regex(QStringLiteral(R"(^[-_\[\]{}|`^.\\]*)")
+                                       .append(QRegularExpression::escape(tabAbbrev)),
+                                   QRegularExpression::CaseInsensitiveOption);
 
     const QString ownNick = conference->getSelfName();
     for (const auto& name : conference->getPeerList()) {
@@ -62,7 +62,7 @@ void TabCompleter::buildCompletionList()
             continue; // don't auto complete own name
         }
         if (regex.match(name).hasMatch()) {
-            SortableString lower = SortableString(name.toLower());
+            const SortableString lower = SortableString(name.toLower());
             completionMap[lower] = name;
         }
     }

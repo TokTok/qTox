@@ -48,7 +48,7 @@ RowId getValidPeerRow(RawDatabase& db, const ChatId& chatId)
 
     db.execNow(RawDatabase::Query(("SELECT id FROM peers ORDER BY id DESC LIMIT 1;"),
                                   [&](const QVector<QVariant>& row) {
-                                      int64_t maxPeerId = row[0].toInt();
+                                      const int64_t maxPeerId = row[0].toInt();
                                       validPeerRow = RowId{maxPeerId + 1};
                                   }));
     db.execNow(
@@ -376,7 +376,7 @@ bool DbUpgrader::dbSchema1to2(RawDatabase& db)
     // faux_offline_pending to broken_messages
 
     // the last non-pending message in each chat
-    QString lastDeliveredQuery =
+    const QString lastDeliveredQuery =
         QString("SELECT chat_id, MAX(history.id) FROM "
                 "history JOIN peers chat ON chat_id = chat.id "
                 "LEFT JOIN faux_offline_pending ON history.id = faux_offline_pending.id "
@@ -611,7 +611,7 @@ bool DbUpgrader::dbSchema9to10(RawDatabase& db)
     // entries. The resume file ID isn't actually used for loaded files at this time, so we can heal
     // it to an arbitrary value of full length.
     constexpr int resumeFileIdLengthNow = 32;
-    QByteArray dummyResumeId(resumeFileIdLengthNow, 0);
+    const QByteArray dummyResumeId(resumeFileIdLengthNow, 0);
     std::vector<RawDatabase::Query> upgradeQueries;
     upgradeQueries.emplace_back(
         QStringLiteral(

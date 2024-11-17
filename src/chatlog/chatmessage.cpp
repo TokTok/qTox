@@ -58,7 +58,7 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
     text = TextFormatter::highlightURI(text);
 
     // text styling
-    Settings::StyleType styleType = settings.getStylePreference();
+    const Settings::StyleType styleType = settings.getStylePreference();
     if (styleType != Settings::StyleType::NONE) {
         text = TextFormatter::applyMarkdown(text, styleType == Settings::StyleType::WITH_CHARS);
     }
@@ -80,14 +80,15 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
     }
 
     // Note: Eliding cannot be enabled for RichText items. (QTBUG-17207)
-    QFont baseFont = settings.getChatMessageFont();
+    const QFont baseFont = settings.getChatMessageFont();
     QFont authorFont = baseFont;
     if (isMe)
         authorFont.setBold(true);
 
     QColor color = style.getColor(Style::ColorPalette::MainText);
     if (colorizeName) {
-        QByteArray hash = QCryptographicHash::hash((sender.toUtf8()), QCryptographicHash::Sha256);
+        const QByteArray hash =
+            QCryptographicHash::hash((sender.toUtf8()), QCryptographicHash::Sha256);
         auto lightness = color.lightnessF();
         // Adapt as good as possible to Light/Dark themes
         lightness = lightness * 0.5f + 0.3f;
@@ -134,7 +135,7 @@ ChatMessage::Ptr ChatMessage::createChatInfoMessage(const QString& rawMessage,
                                                     Settings& settings, Style& style)
 {
     ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
-    QString text = rawMessage.toHtmlEscaped();
+    const QString text = rawMessage.toHtmlEscaped();
 
     QString img;
     switch (type) {
@@ -149,7 +150,7 @@ ChatMessage::Ptr ChatMessage::createChatInfoMessage(const QString& rawMessage,
         break;
     }
 
-    QFont baseFont = settings.getChatMessageFont();
+    const QFont baseFont = settings.getChatMessageFont();
 
     msg->addColumn(new Image(QSize(18, 18), img),
                    ColumnFormat(NAME_COL_WIDTH, ColumnFormat::FixedSize, ColumnFormat::Right));
@@ -170,7 +171,7 @@ ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, C
 {
     ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
 
-    QFont baseFont = settings.getChatMessageFont();
+    const QFont baseFont = settings.getChatMessageFont();
     QFont authorFont = baseFont;
     if (isMe) {
         authorFont.setBold(true);
@@ -194,7 +195,7 @@ ChatMessage::Ptr ChatMessage::createTypingNotification(DocumentCache& documentCa
 {
     ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
 
-    QFont baseFont = settings.getChatMessageFont();
+    const QFont baseFont = settings.getChatMessageFont();
 
     // Note: "[user]..." is just a placeholder. The actual text is set in
     // ChatForm::setFriendTyping()
@@ -238,7 +239,7 @@ ChatMessage::Ptr ChatMessage::createBusyNotification(DocumentCache& documentCach
 
 void ChatMessage::markAsDelivered(const QDateTime& time)
 {
-    QFont baseFont = settings.getChatMessageFont();
+    const QFont baseFont = settings.getChatMessageFont();
 
     // remove the spinner and replace it by $time
     replaceContent(2, new Timestamp(time, settings.getTimestampFormat(), baseFont, documentCache,

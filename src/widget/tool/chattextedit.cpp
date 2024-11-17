@@ -29,7 +29,7 @@ ChatTextEdit::~ChatTextEdit()
 
 void ChatTextEdit::keyPressEvent(QKeyEvent* event)
 {
-    int key = event->key();
+    const int key = event->key();
     if ((key == Qt::Key_Enter || key == Qt::Key_Return) && !(event->modifiers() & Qt::ShiftModifier)) {
         emit enterPressed();
         return;

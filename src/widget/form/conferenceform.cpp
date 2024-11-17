@@ -288,7 +288,7 @@ void ConferenceForm::dragEnterEvent(QDragEnterEvent* ev)
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk{ev->mimeData()->data("toxPk")};
+    const ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
     if (frnd)
         ev->acceptProposedAction();
@@ -299,13 +299,13 @@ void ConferenceForm::dropEvent(QDropEvent* ev)
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk{ev->mimeData()->data("toxPk")};
+    const ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
     if (!frnd)
         return;
 
-    int friendId = frnd->getId();
-    int conferenceId = conference->getId();
+    const int friendId = frnd->getId();
+    const int conferenceId = conference->getId();
     if (Status::isOnline(frnd->getStatus())) {
         core.conferenceInviteFriend(friendId, conferenceId);
     }

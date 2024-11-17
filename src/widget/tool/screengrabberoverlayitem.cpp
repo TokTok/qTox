@@ -15,7 +15,7 @@
 ScreenGrabberOverlayItem::ScreenGrabberOverlayItem(ScreenshotGrabber* grabber)
     : screenshotGrabber(grabber)
 {
-    QBrush overlayBrush(QColor(0x00, 0x00, 0x00, 0x70)); // Translucent black
+    const QBrush overlayBrush(QColor(0x00, 0x00, 0x00, 0x70)); // Translucent black
 
     setCursor(QCursor(Qt::CrossCursor));
     setBrush(overlayBrush);
@@ -26,7 +26,7 @@ ScreenGrabberOverlayItem::~ScreenGrabberOverlayItem() = default;
 
 void ScreenGrabberOverlayItem::setChosenRect(QRect rect)
 {
-    QRect oldRect = chosenRect;
+    const QRect oldRect = chosenRect;
     chosenRect = rect;
     update(oldRect.united(rect));
 }
@@ -45,11 +45,11 @@ void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphi
     painter->setBrush(brush());
     painter->setPen(pen());
 
-    QRectF self = rect();
-    qreal leftX = chosenRect.x();
-    qreal rightX = chosenRect.x() + chosenRect.width();
-    qreal topY = chosenRect.y();
-    qreal bottomY = chosenRect.y() + chosenRect.height();
+    const QRectF self = rect();
+    const qreal leftX = chosenRect.x();
+    const qreal rightX = chosenRect.x() + chosenRect.width();
+    const qreal topY = chosenRect.y();
+    const qreal bottomY = chosenRect.y() + chosenRect.height();
 
     painter->drawRect(0, 0, leftX, self.height());                      // Left of chosen
     painter->drawRect(rightX, 0, self.width() - rightX, self.height()); // Right of chosen

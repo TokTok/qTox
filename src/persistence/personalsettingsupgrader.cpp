@@ -16,7 +16,7 @@ bool version0to1(SettingsSerializer& ps)
 {
     ps.beginGroup("Friends");
     {
-        int size = ps.beginReadArray("Friend");
+        const int size = ps.beginReadArray("Friend");
         for (int i = 0; i < size; i++) {
             ps.setArrayIndex(i);
             const auto oldFriendAddr = ps.value("addr").toString();

@@ -48,7 +48,7 @@ void FlyoutOverlayWidget::setFlyoutPercent(qreal progress)
 {
     percent = progress;
 
-    QSize self = size();
+    const QSize self = size();
     setMask(QRegion(0, 0, self.width() * progress + 1, self.height()));
     move(startPos.x() + self.width() - self.width() * percent, startPos.y());
     setVisible(progress != 0);
@@ -90,7 +90,7 @@ void FlyoutOverlayWidget::animateHide()
 
 void FlyoutOverlayWidget::finishedAnimation()
 {
-    bool hide = (animation->direction() == QAbstractAnimation::Backward);
+    const bool hide = (animation->direction() == QAbstractAnimation::Backward);
 
     // Delay it by a few frames to let the system catch up on rendering
     if (hide)

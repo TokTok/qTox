@@ -91,13 +91,13 @@ void FriendListManager::setFilter(const QString& searchString, bool hideOnline, 
 
 void FriendListManager::applyFilter()
 {
-    QString searchString = filterParams.searchString;
+    const QString searchString = filterParams.searchString;
 
-    for (IFriendListItemPtr itemTmp : items) {
+    for (const IFriendListItemPtr& itemTmp : items) {
         if (searchString.isEmpty()) {
             itemTmp->setWidgetVisible(true);
         } else {
-            QString tmp_name = itemTmp->getNameItem();
+            const QString tmp_name = itemTmp->getNameItem();
             itemTmp->setWidgetVisible(tmp_name.contains(searchString, Qt::CaseInsensitive));
         }
 
@@ -216,8 +216,8 @@ bool FriendListManager::cmpByActivity(const IFriendListItemPtr& a, const IFriend
         return a->getNameItem().toUpper() < b->getNameItem().toUpper();
     }
 
-    QDateTime dateA = a->getLastActivity();
-    QDateTime dateB = b->getLastActivity();
+    const QDateTime dateA = a->getLastActivity();
+    const QDateTime dateB = b->getLastActivity();
     if (dateA.date() == dateB.date()) {
         if (a->isOnline() && !b->isOnline()) {
             return true;

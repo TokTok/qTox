@@ -102,7 +102,7 @@ void Text::selectionMouseMove(QPointF scenePos)
     if (!doc)
         return;
 
-    int cur = cursorFromPos(scenePos);
+    const int cur = cursorFromPos(scenePos);
     if (cur >= 0) {
         selectionEnd = cur;
         selectedText = extractSanitizedText(getSelectionStart(), getSelectionEnd());
@@ -113,7 +113,7 @@ void Text::selectionMouseMove(QPointF scenePos)
 
 void Text::selectionStarted(QPointF scenePos)
 {
-    int cur = cursorFromPos(scenePos);
+    const int cur = cursorFromPos(scenePos);
     if (cur >= 0) {
         selectionEnd = cur;
         selectionAnchor = cur;
@@ -136,7 +136,7 @@ void Text::selectionDoubleClick(QPointF scenePos)
     if (!doc)
         return;
 
-    int cur = cursorFromPos(scenePos);
+    const int cur = cursorFromPos(scenePos);
 
     if (cur >= 0) {
         QTextCursor cursor(doc);
@@ -157,7 +157,7 @@ void Text::selectionTripleClick(QPointF scenePos)
     if (!doc)
         return;
 
-    int cur = cursorFromPos(scenePos);
+    const int cur = cursorFromPos(scenePos);
 
     if (cur >= 0) {
         QTextCursor cursor(doc);
@@ -184,7 +184,7 @@ void Text::selectionFocusChanged(bool focusIn)
 
 bool Text::isOverSelection(QPointF scenePos) const
 {
-    int cur = cursorFromPos(scenePos);
+    const int cur = cursorFromPos(scenePos);
     if (getSelectionStart() < cur && getSelectionEnd() >= cur)
         return true;
 
@@ -270,7 +270,7 @@ void Text::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
     if (!doc)
         return;
 
-    QString anchor = doc->documentLayout()->anchorAt(event->pos());
+    const QString anchor = doc->documentLayout()->anchorAt(event->pos());
 
     // open anchor in browser
     if (!anchor.isEmpty())
@@ -282,7 +282,7 @@ void Text::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
     if (!doc)
         return;
 
-    QString anchor = doc->documentLayout()->anchorAt(event->pos());
+    const QString anchor = doc->documentLayout()->anchorAt(event->pos());
 
     if (anchor.isEmpty())
         setCursor(Qt::IBeamCursor);
@@ -321,8 +321,8 @@ void Text::regenerate()
         doc->setDefaultFont(defFont);
 
         if (elide) {
-            QFontMetrics metrics = QFontMetrics(defFont);
-            QString elidedText = metrics.elidedText(text, Qt::ElideRight, qRound(width));
+            const QFontMetrics metrics = QFontMetrics(defFont);
+            const QString elidedText = metrics.elidedText(text, Qt::ElideRight, qRound(width));
 
             doc->setPlainText(elidedText);
         } else {
@@ -403,24 +403,24 @@ QString Text::extractSanitizedText(int from, int to) const
 
     QString txt;
 
-    QTextBlock begin = doc->findBlock(from);
-    QTextBlock end = doc->findBlock(to);
+    const QTextBlock begin = doc->findBlock(from);
+    const QTextBlock end = doc->findBlock(to);
     for (QTextBlock block = begin; block != end.next() && block.isValid(); block = block.next()) {
         for (QTextBlock::Iterator itr = block.begin(); itr != block.end(); ++itr) {
             int pos = itr.fragment().position(); // fragment position -> position of the first
                                                  // character in the fragment
 
             if (itr.fragment().charFormat().isImageFormat()) {
-                QTextImageFormat imgFmt = itr.fragment().charFormat().toImageFormat();
-                QString key = imgFmt.name(); // img key (eg. key::D for :D)
-                QString rune = key.mid(4);
+                const QTextImageFormat imgFmt = itr.fragment().charFormat().toImageFormat();
+                const QString key = imgFmt.name(); // img key (eg. key::D for :D)
+                const QString rune = key.mid(4);
 
                 if (pos >= from && pos < to) {
                     txt += rune;
                     ++pos;
                 }
             } else {
-                for (QChar c : itr.fragment().text()) {
+                for (const QChar c : itr.fragment().text()) {
                     if (pos >= from && pos < to)
                         txt += c;
 
@@ -441,7 +441,7 @@ QString Text::extractImgTooltip(int pos) const
 {
     for (QTextBlock::Iterator itr = doc->firstBlock().begin(); itr != doc->firstBlock().end(); ++itr) {
         if (itr.fragment().contains(pos) && itr.fragment().charFormat().isImageFormat()) {
-            QTextImageFormat imgFmt = itr.fragment().charFormat().toImageFormat();
+            const QTextImageFormat imgFmt = itr.fragment().charFormat().toImageFormat();
             return imgFmt.toolTip();
         }
     }

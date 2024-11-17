@@ -73,7 +73,7 @@ AboutForm::AboutForm(UpdateCheck& updateCheck_, QString contactInfo_, Style& sty
  */
 void AboutForm::replaceVersions()
 {
-    QString TOXCORE_VERSION =
+    const QString TOXCORE_VERSION =
         QStringLiteral("%1.%2.%3").arg(tox_version_major()).arg(tox_version_minor()).arg(tox_version_patch());
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(VersionInfo::gitDescribe()));
@@ -86,7 +86,7 @@ void AboutForm::replaceVersions()
         qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
     }
 
-    QString commitLink = "https://github.com/TokTok/qTox/commit/" + VersionInfo::gitVersion();
+    const QString commitLink = "https://github.com/TokTok/qTox/commit/" + VersionInfo::gitVersion();
     bodyUI->gitVersion->setText(
         tr("Commit hash: %1").arg(createLink(commitLink, VersionInfo::gitVersion())));
 
@@ -126,7 +126,7 @@ void AboutForm::replaceVersions()
                  urlEncode(QSysInfo::prettyProductName())),
         QStringLiteral("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
-    QString authorInfo =
+    const QString authorInfo =
         QStringLiteral("<p>%1</p><p>%2</p><p>%3</p>")
             .arg(tr("Original author: %1").arg(createLink("https://github.com/tux3", "tux3")),
                  tr("See a full list of %1 at Github",

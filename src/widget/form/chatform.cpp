@@ -67,14 +67,14 @@ const QString ChatForm::ACTION_PREFIX = QStringLiteral("/me ");
 namespace {
 QString secondsToDHMS(quint32 duration)
 {
-    QString res;
-    QString cD = ChatForm::tr("Call duration: ");
-    quint32 seconds = duration % 60;
+    const QString res;
+    const QString cD = ChatForm::tr("Call duration: ");
+    const quint32 seconds = duration % 60;
     duration /= 60;
-    quint32 minutes = duration % 60;
+    const quint32 minutes = duration % 60;
     duration /= 60;
-    quint32 hours = duration % 24;
-    quint32 days = duration / 24;
+    const quint32 hours = duration % 24;
+    const quint32 days = duration / 24;
 
     // I assume no one will ever have call longer than a month
     if (days) {
@@ -254,7 +254,7 @@ void ChatForm::onTextEditChanged()
 
         return;
     }
-    bool isTypingNow = !msgEdit->toPlainText().isEmpty();
+    const bool isTypingNow = !msgEdit->toPlainText().isEmpty();
     if (isTyping != isTypingNow) {
         core.sendTyping(f->getId(), isTypingNow);
         if (isTypingNow) {
@@ -267,16 +267,16 @@ void ChatForm::onTextEditChanged()
 
 void ChatForm::onAttachClicked()
 {
-    QStringList paths = QFileDialog::getOpenFileNames(Q_NULLPTR, tr("Send a file"),
-                                                      QDir::homePath(), QString(), nullptr);
+    const QStringList paths = QFileDialog::getOpenFileNames(Q_NULLPTR, tr("Send a file"),
+                                                            QDir::homePath(), QString(), nullptr);
 
     if (paths.isEmpty()) {
         return;
     }
 
-    for (QString path : paths) {
+    for (const QString& path : paths) {
         QFile file(path);
-        QString fileName = QFileInfo(path).fileName();
+        const QString fileName = QFileInfo(path).fileName();
         if (!file.exists() || !file.open(QIODevice::ReadOnly)) {
             QMessageBox::warning(this, tr("Unable to open"),
                                  tr("qTox wasn't able to open %1").arg(fileName));
@@ -291,7 +291,7 @@ void ChatForm::onAttachClicked()
             continue;
         }
 
-        qint64 filesize = file.size();
+        const qint64 filesize = file.size();
         core.getCoreFile()->sendFile(f->getId(), fileName, path, filesize);
     }
 }
@@ -302,7 +302,7 @@ void ChatForm::onAvInvite(uint32_t friendId, bool video)
         return;
     }
 
-    QString displayedName = f->getDisplayedName();
+    const QString displayedName = f->getDisplayedName();
 
     SystemMessage systemMessage;
     systemMessage.messageType = SystemMessageType::incomingCall;
@@ -373,7 +373,7 @@ void ChatForm::showOutgoingCall(bool video)
 void ChatForm::onAnswerCallTriggered(bool video)
 {
     headWidget->removeCallConfirm();
-    uint32_t friendId = f->getId();
+    const uint32_t friendId = f->getId();
     emit stopNotification();
     emit acceptCall(friendId);
 
@@ -398,7 +398,7 @@ void ChatForm::onRejectCallTriggered()
 void ChatForm::onCallTriggered()
 {
     CoreAV* av = core.getAv();
-    uint32_t friendId = f->getId();
+    const uint32_t friendId = f->getId();
     if (av->isCallStarted(f)) {
         av->cancelCall(friendId);
     } else if (av->startCall(friendId, false)) {
@@ -409,7 +409,7 @@ void ChatForm::onCallTriggered()
 void ChatForm::onVideoCallTriggered()
 {
     CoreAV* av = core.getAv();
-    uint32_t friendId = f->getId();
+    const uint32_t friendId = f->getId();
     if (av->isCallStarted(f)) {
         // TODO: We want to activate video on the active call.
         if (av->isCallVideoEnabled(f)) {
@@ -459,7 +459,7 @@ void ChatForm::onFriendStatusChanged(const ToxPk& friendPk, Status::Status statu
     updateCallButtons();
 
     if (settings.getStatusChangeNotificationEnabled()) {
-        QString fStatus = Status::getTitle(status);
+        const QString fStatus = Status::getTitle(status);
         addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::peerStateChange,
                              {f->getDisplayedName(), fStatus});
     }
@@ -498,7 +498,7 @@ void ChatForm::onAvatarChanged(const ToxPk& friendPk, const QPixmap& pic)
 std::unique_ptr<NetCamView> ChatForm::createNetcam()
 {
     qDebug() << "creating netcam";
-    uint32_t friendId = f->getId();
+    const uint32_t friendId = f->getId();
     std::unique_ptr<NetCamView> view =
         std::make_unique<NetCamView>(f->getPublicKey(), cameraSource, settings, style, profile, this);
     CoreAV* av = core.getAv();
@@ -527,7 +527,7 @@ void ChatForm::dropEvent(QDropEvent* ev)
         QFileInfo info(url.path());
         QFile file(info.absoluteFilePath());
 
-        QString urlString = url.toString();
+        const QString urlString = url.toString();
         if (url.isValid() && !url.isLocalFile()
             && urlString.length() < static_cast<int>(tox_max_message_length())) {
             messageDispatcher.sendMessage(false, urlString);
@@ -535,7 +535,7 @@ void ChatForm::dropEvent(QDropEvent* ev)
             continue;
         }
 
-        QString fileName = info.fileName();
+        const QString fileName = info.fileName();
         if (!file.exists() || !file.open(QIODevice::ReadOnly)) {
             info.setFile(url.toLocalFile());
             file.setFileName(info.absoluteFilePath());
@@ -600,19 +600,20 @@ void ChatForm::sendImageFromPreview()
     // https://en.wikipedia.org/wiki/ISO_8601
     // Windows has to be supported, thus filename can't have `:` in it :/
     // Format should be: `qTox_Screenshot_yyyy-MM-dd HH-mm-ss.zzz.png`
-    QString filepath = QString("%1images%2qTox_Image_%3.png")
-                           .arg(settings.getPaths().getAppDataDirPath())
-                           .arg(QDir::separator())
-                           .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss.zzz"));
+    const QString filepath =
+        QString("%1images%2qTox_Image_%3.png")
+            .arg(settings.getPaths().getAppDataDirPath())
+            .arg(QDir::separator())
+            .arg(QDateTime::currentDateTime().toString("yyyy-MM-dd HH-mm-ss.zzz"));
     QFile file(filepath);
 
     if (file.open(QFile::ReadWrite)) {
         imagePreviewSource.save(&file, "PNG");
-        qint64 filesize = file.size();
+        const qint64 filesize = file.size();
         imagePreview->hide();
         imagePreviewSource = QPixmap();
         file.close();
-        QFileInfo fi(file);
+        const QFileInfo fi(file);
         CoreFile* coreFile = core.getCoreFile();
         coreFile->sendFile(f->getId(), fi.fileName(), fi.filePath(), filesize);
     } else {
@@ -625,7 +626,7 @@ void ChatForm::sendImageFromPreview()
 void ChatForm::onCopyStatusMessage()
 {
     // make sure to copy not truncated text directly from the friend
-    QString text = f->getStatusMessage();
+    const QString text = f->getStatusMessage();
     QClipboard* clipboard = QApplication::clipboard();
     if (clipboard) {
         clipboard->setText(text, QClipboard::Clipboard);
@@ -635,8 +636,8 @@ void ChatForm::onCopyStatusMessage()
 void ChatForm::updateMuteMicButton()
 {
     const CoreAV* av = core.getAv();
-    bool active = av->isCallActive(f);
-    bool inputMuted = av->isCallInputMuted(f);
+    const bool active = av->isCallActive(f);
+    const bool inputMuted = av->isCallInputMuted(f);
     headWidget->updateMuteMicButton(active, inputMuted);
     if (netcam) {
         netcam->updateMuteMicButton(inputMuted);
@@ -646,8 +647,8 @@ void ChatForm::updateMuteMicButton()
 void ChatForm::updateMuteVolButton()
 {
     const CoreAV* av = core.getAv();
-    bool active = av->isCallActive(f);
-    bool outputMuted = av->isCallOutputMuted(f);
+    const bool active = av->isCallActive(f);
+    const bool outputMuted = av->isCallOutputMuted(f);
     headWidget->updateMuteVolButton(active, outputMuted);
     if (netcam) {
         netcam->updateMuteVolButton(outputMuted);
@@ -671,8 +672,8 @@ void ChatForm::stopCounter(bool error)
     if (!callDurationTimer) {
         return;
     }
-    QString dhms = secondsToDHMS(timeElapsed.elapsed() / 1000);
-    QString name = f->getDisplayedName();
+    const QString dhms = secondsToDHMS(timeElapsed.elapsed() / 1000);
+    const QString name = f->getDisplayedName();
     auto messageType = error ? SystemMessageType::unexpectedCallEnd : SystemMessageType::callEnd;
     // TODO: add notification once notifications are implemented
 
@@ -693,7 +694,7 @@ void ChatForm::onUpdateTime()
 void ChatForm::setFriendTyping(bool isTyping_)
 {
     chatWidget->setTypingNotificationVisible(isTyping_);
-    QString name = f->getDisplayedName();
+    const QString name = f->getDisplayedName();
     chatWidget->setTypingNotificationName(name);
 }
 
@@ -740,7 +741,7 @@ void ChatForm::showNetcam()
     bodySplitter->insertWidget(0, netcam.get());
     bodySplitter->setCollapsible(0, false);
 
-    QSize minSize = netcam->getSurfaceMinSize();
+    const QSize minSize = netcam->getSurfaceMinSize();
     ContentDialog* current = contentDialogManager.current();
     if (current) {
         current->onVideoShow(minSize);

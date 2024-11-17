@@ -81,7 +81,7 @@ PasswordEdit::EventHandler::~EventHandler()
 void PasswordEdit::EventHandler::updateActions()
 {
 #ifdef QTOX_PLATFORM_EXT
-    bool caps = Platform::capsLockEnabled();
+    const bool caps = Platform::capsLockEnabled();
 
     for (QAction* actionIt : actions)
         actionIt->setVisible(caps);

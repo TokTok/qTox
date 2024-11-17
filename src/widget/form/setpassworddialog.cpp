@@ -44,7 +44,7 @@ SetPasswordDialog::~SetPasswordDialog()
 
 void SetPasswordDialog::onPasswordEdit()
 {
-    QString password = ui->passwordlineEdit->text();
+    const QString password = ui->passwordlineEdit->text();
 
     if (password.isEmpty()) {
         ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
@@ -70,7 +70,7 @@ int SetPasswordDialog::getPasswordStrength(QString pass)
 
     double fscore = 0;
     QHash<QChar, int> charCounts;
-    for (QChar c : pass) {
+    for (const QChar c : pass) {
         charCounts[c]++;
         fscore += 5. / charCounts[c];
     }

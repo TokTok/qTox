@@ -32,14 +32,14 @@ ProfileImporter::ProfileImporter(Paths& paths_, QWidget* parent)
  */
 bool ProfileImporter::importProfile()
 {
-    QString title = tr("Import profile", "import dialog title");
-    QString filter = tr("Tox save file (*.tox)", "import dialog filter");
-    QString dir = QDir::homePath();
+    const QString title = tr("Import profile", "import dialog title");
+    const QString filter = tr("Tox save file (*.tox)", "import dialog filter");
+    const QString dir = QDir::homePath();
 
     // TODO: Change all QFileDialog instances across project to use
     // this instead of Q_NULLPTR. Possibly requires >Qt 5.9 due to:
     // https://bugreports.qt.io/browse/QTBUG-59184
-    QString path = QFileDialog::getOpenFileName(Q_NULLPTR, title, dir, filter);
+    const QString path = QFileDialog::getOpenFileName(Q_NULLPTR, title, dir, filter);
 
     return importProfile(path);
 }
@@ -52,7 +52,7 @@ bool ProfileImporter::importProfile()
  */
 bool ProfileImporter::askQuestion(QString title, QString message)
 {
-    QMessageBox::Icon icon = QMessageBox::Warning;
+    const QMessageBox::Icon icon = QMessageBox::Warning;
     QMessageBox box(icon, title, message, QMessageBox::NoButton, this);
     QPushButton* pushButton1 = box.addButton(QApplication::tr("Yes"), QMessageBox::AcceptRole);
     QPushButton* pushButton2 = box.addButton(QApplication::tr("No"), QMessageBox::RejectRole);
@@ -73,14 +73,14 @@ bool ProfileImporter::importProfile(const QString& path)
     if (path.isEmpty())
         return false;
 
-    QFileInfo info(path);
+    const QFileInfo info(path);
     if (!info.exists()) {
         QMessageBox::warning(this, tr("File doesn't exist"), tr("Profile doesn't exist"),
                              QMessageBox::Ok);
         return false;
     }
 
-    QString profile = info.completeBaseName();
+    const QString profile = info.completeBaseName();
 
     if (info.suffix() != "tox") {
         QMessageBox::warning(this, tr("Ignoring non-Tox file", "popup title"),
@@ -91,16 +91,16 @@ bool ProfileImporter::importProfile(const QString& path)
         return false; // ignore importing non-tox file
     }
 
-    QString settingsPath = paths.getSettingsDirPath();
-    QString profilePath = QDir(settingsPath).filePath(profile + Core::TOX_EXT);
+    const QString settingsPath = paths.getSettingsDirPath();
+    const QString profilePath = QDir(settingsPath).filePath(profile + Core::TOX_EXT);
 
     if (QFileInfo(profilePath).exists()) {
-        QString title = tr("Profile already exists", "import confirm title");
-        QString message = tr("A profile named \"%1\" already exists. "
-                             "Do you want to erase it?",
-                             "import confirm text")
-                              .arg(profile);
-        bool erase = askQuestion(title, message);
+        const QString title = tr("Profile already exists", "import confirm title");
+        const QString message = tr("A profile named \"%1\" already exists. "
+                                   "Do you want to erase it?",
+                                   "import confirm text")
+                                    .arg(profile);
+        const bool erase = askQuestion(title, message);
 
         if (!erase)
             return false; // import cancelled

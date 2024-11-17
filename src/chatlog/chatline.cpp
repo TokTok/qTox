@@ -166,7 +166,7 @@ void ChatLine::layout(qreal w, QPointF scenePos)
     if (varWidth == 0.0)
         varWidth = 1.0;
 
-    qreal leftover = qMax(0.0, width - fixedWidth);
+    const qreal leftover = qMax(0.0, width - fixedWidth);
 
     qreal maxVOffset = 0.0;
     qreal xOffset = 0.0;
@@ -207,7 +207,7 @@ void ChatLine::layout(qreal w, QPointF scenePos)
     for (int i = 0; i < content.size(); ++i) {
         // calculate vertical alignment
         // vertical alignment may depend on width, so we do it in a second pass
-        qreal yOffset = maxVOffset - content[i]->getAscent();
+        const qreal yOffset = maxVOffset - content[i]->getAscent();
 
         // reposition
         content[i]->setPos(xPos[i], scenePos.y() + yOffset);

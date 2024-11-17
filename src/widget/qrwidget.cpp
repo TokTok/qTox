@@ -70,8 +70,8 @@ void QRWidget::paintImage()
     QRcode* qr = QRcode_encodeString(dataString.c_str(), 1, QR_ECLEVEL_M, QR_MODE_8, 1);
 
     if (qr != nullptr) {
-        QColor fg("black");
-        QColor bg("white");
+        const QColor fg("black");
+        const QColor bg("white");
         painter.setBrush(bg);
         painter.setPen(Qt::NoPen);
         painter.drawRect(0, 0, size.width(), size.height());
@@ -91,14 +91,14 @@ void QRWidget::paintImage()
                 const unsigned char b = qr->data[xx];
                 if (b & 0x01) {
                     const double rx1 = x * scale, ry1 = y * scale;
-                    QRectF r(rx1, ry1, scale, scale);
+                    const QRectF r(rx1, ry1, scale, scale);
                     painter.drawRects(&r, 1);
                 }
             }
         }
         QRcode_free(qr);
     } else {
-        QColor error("red");
+        const QColor error("red");
         painter.setBrush(error);
         painter.drawRect(0, 0, width(), height());
         qDebug() << "QR FAIL:" << strerror(errno);

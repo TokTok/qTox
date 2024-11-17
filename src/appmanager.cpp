@@ -112,7 +112,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     // Time should be in UTC to save user privacy on log sharing
-    QTime time = QDateTime::currentDateTime().toUTC().time();
+    const QTime time = QDateTime::currentDateTime().toUTC().time();
     QString logPrefix =
         QStringLiteral("[%1 UTC] (%2) %3:%4 : ")
             .arg(time.toString("HH:mm:ss.zzz"), category, file, QString::number(ctxt.line));
@@ -156,8 +156,9 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         logBufferMutex->lock();
         if (logBuffer) {
             // empty logBuffer to file
-            foreach (QByteArray bufferedMsg, *logBuffer)
+            for (const QByteArray& bufferedMsg : *logBuffer) {
                 fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
+            }
 
             delete logBuffer; // no longer needed
             logBuffer = nullptr;
@@ -209,10 +210,10 @@ int AppManager::startGui(QCommandLineParser& parser)
     }
 
 #ifdef LOG_TO_FILE
-    QString logFileDir = settings->getPaths().getAppCacheDirPath();
+    const QString logFileDir = settings->getPaths().getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
 
-    QString logfile = logFileDir + "qtox.log";
+    const QString logfile = logFileDir + "qtox.log";
     FILE* mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
 
     // Trim log file if over 1MB
@@ -295,7 +296,7 @@ int AppManager::startGui(QCommandLineParser& parser)
     }
 
     if (doIpc && !ipc->isCurrentOwner()) {
-        time_t event = ipc->postEvent(eventType, firstParam.toUtf8(), ipcDest);
+        const time_t event = ipc->postEvent(eventType, firstParam.toUtf8(), ipcDest);
         // If someone else processed it, we're done here, no need to actually start qTox
         if (ipc->waitUntilAccepted(event, 2)) {
             if (eventType == "activate") {
@@ -335,7 +336,7 @@ int AppManager::startGui(QCommandLineParser& parser)
         nexus->bootstrapWithProfile(profile);
     } else {
         nexus->setParser(&parser);
-        int returnval = nexus->showLogin(profileName);
+        const int returnval = nexus->showLogin(profileName);
         if (returnval == QDialog::Rejected) {
             return -1;
         }
@@ -394,7 +395,7 @@ int AppManager::run()
         qWarning() << "Couldn't load font";
     }
 
-    QString locale = settings->getTranslation();
+    const QString locale = settings->getTranslation();
     // We need to init the resources in the translations_library explicitly.
     // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
     Q_INIT_RESOURCE(translations);

@@ -48,7 +48,7 @@ Time getTimeBucket(const QDateTime& date)
         return Time::Never;
     }
 
-    QDate today = QDate::currentDate();
+    const QDate today = QDate::currentDate();
     // clang-format off
     const QMap<Time, QDate> dates {
         { Time::Today,     today.addDays(0)    },
@@ -63,7 +63,7 @@ Time getTimeBucket(const QDateTime& date)
     };
     // clang-format on
 
-    for (Time time : dates.keys()) {
+    for (const Time time : dates.keys()) {
         if (dates[time] <= date.date()) {
             return time;
         }
@@ -79,7 +79,7 @@ QDateTime getActiveTimeFriend(const Friend* contact, Settings& settings)
 
 qint64 timeUntilTomorrow()
 {
-    QDateTime now = QDateTime::currentDateTime();
+    const QDateTime now = QDateTime::currentDateTime();
     QDateTime tomorrow = now.addDays(1); // Tomorrow.
     tomorrow.setTime(QTime());           // Midnight.
     return now.msecsTo(tomorrow);
@@ -99,7 +99,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
     , conferenceList{conferenceList_}
     , profile{profile_}
 {
-    int countContacts = core.getFriendList().size();
+    const int countContacts = core.getFriendList().size();
     manager = new FriendListManager(countContacts, this);
     manager->setConferencesOnTop(conferencesOnTop);
     connect(manager, &FriendListManager::itemsChanged, this, &FriendListWidget::itemsChanged);
@@ -154,7 +154,7 @@ void FriendListWidget::sortByMode()
             addCircleWidget(i);
         }
 
-        QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems(); // Sorted items
+        const QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems(); // Sorted items
         QVector<IFriendListItem*> friendItems; // Items that are not included in the circle
         int posByName = 0;                     // Needed for scroll contacts
         // Linking a friend with a circle and setting scroll position
@@ -194,7 +194,8 @@ void FriendListWidget::sortByMode()
 
             for (auto circle : circles) {
 
-                QVector<std::shared_ptr<IFriendListItem>> itemsInCircle = getItemsFromCircle(circle);
+                const QVector<std::shared_ptr<IFriendListItem>> itemsInCircle =
+                    getItemsFromCircle(circle);
                 for (const auto& j : itemsInCircle) {
                     j->setNameSortedPos(posByName++);
                 }
@@ -210,8 +211,8 @@ void FriendListWidget::sortByMode()
         }
         cleanMainLayout();
 
-        QLocale ql(settings.getTranslation());
-        QDate today = QDate::currentDate();
+        const QLocale ql(settings.getTranslation());
+        const QDate today = QDate::currentDate();
 #define COMMENT "Category for sorting friends by activity"
         // clang-format off
         const QMap<Time, QString> names {
@@ -230,15 +231,15 @@ void FriendListWidget::sortByMode()
 // clang-format on
 #undef COMMENT
 
-        QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
+        const QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
 
         for (auto& i : itemsTmp) {
             listLayout->addWidget(i->getWidget());
         }
 
         activityLayout = new QVBoxLayout();
-        bool compact = settings.getCompactLayout();
-        for (Time t : names.keys()) {
+        const bool compact = settings.getCompactLayout();
+        for (const Time t : names.keys()) {
             CategoryWidget* category = new CategoryWidget(compact, settings, style, this);
             category->setName(names[t]);
             activityLayout->addWidget(category);
@@ -250,7 +251,7 @@ void FriendListWidget::sortByMode()
         // Insert widgets to CategoryWidget
         for (auto& i : itemsTmp) {
             if (i->isFriend()) {
-                int timeIndex = static_cast<int>(getTimeBucket(i->getLastActivity()));
+                const int timeIndex = static_cast<int>(getTimeBucket(i->getLastActivity()));
                 QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
                 CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
                 FriendWidget* frnd = qobject_cast<FriendWidget*>((i.get())->getWidget());
@@ -299,7 +300,7 @@ void FriendListWidget::cleanMainLayout()
 
 QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, bool forward) const
 {
-    int pos = currentPos->getNameSortedPos();
+    const int pos = currentPos->getNameSortedPos();
     int nextPos = forward ? pos + 1 : pos - 1;
     if (nextPos >= manager->getItems().size()) {
         nextPos = 0;
@@ -317,10 +318,10 @@ QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, boo
 
 QVector<std::shared_ptr<IFriendListItem>> FriendListWidget::getItemsFromCircle(CircleWidget* circle) const
 {
-    QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
+    const QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
     QVector<std::shared_ptr<IFriendListItem>> itemsInCircle;
     for (const auto& i : itemsTmp) {
-        int circleId = i->getCircleId();
+        const int circleId = i->getCircleId();
         if (CircleWidget::getFromID(circleId) == circle) {
             itemsInCircle.push_back(i);
         }
@@ -331,7 +332,7 @@ QVector<std::shared_ptr<IFriendListItem>> FriendListWidget::getItemsFromCircle(C
 CategoryWidget* FriendListWidget::getTimeCategoryWidget(const Friend* frd) const
 {
     const auto activityTime = getActiveTimeFriend(frd, settings);
-    int timeIndex = static_cast<int>(getTimeBucket(activityTime));
+    const int timeIndex = static_cast<int>(getTimeBucket(activityTime));
     QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
     return qobject_cast<CategoryWidget*>(widget);
 }
@@ -366,7 +367,7 @@ void FriendListWidget::removeConferenceWidget(ConferenceWidget* w)
 void FriendListWidget::removeFriendWidget(FriendWidget* w)
 {
     const Friend* contact = w->getFriend();
-    int id = settings.getFriendCircleID(contact->getPublicKey());
+    const int id = settings.getFriendCircleID(contact->getPublicKey());
     CircleWidget* circleWidget = CircleWidget::getFromID(id);
     if (circleWidget != nullptr) {
         circleWidget->removeFriendWidget(w, contact->getStatus());
@@ -515,7 +516,7 @@ void FriendListWidget::dragEnterEvent(QDragEnterEvent* event)
     if (!event->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk(event->mimeData()->data("toxPk"));
+    const ToxPk toxPk(event->mimeData()->data("toxPk"));
     Friend* frnd = friendList.findFriend(toxPk);
     if (frnd)
         event->acceptProposedAction();
@@ -537,7 +538,7 @@ void FriendListWidget::dropEvent(QDropEvent* event)
         return;
 
     // Save CircleWidget before changing the Id
-    int circleId = settings.getFriendCircleID(f->getPublicKey());
+    const int circleId = settings.getFriendCircleID(f->getPublicKey());
     CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
 
     moveWidget(widget, f->getStatus(), true);
@@ -564,7 +565,7 @@ void FriendListWidget::moveWidget(FriendWidget* widget, Status::Status s, bool a
 {
     if (mode == SortingMode::Name) {
         const Friend* f = widget->getFriend();
-        int circleId = settings.getFriendCircleID(f->getPublicKey());
+        const int circleId = settings.getFriendCircleID(f->getPublicKey());
         CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
 
         if (circleWidget == nullptr || add) {
@@ -592,7 +593,7 @@ void FriendListWidget::updateActivityTime(const QDateTime& time)
     if (mode != SortingMode::Activity)
         return;
 
-    int timeIndex = static_cast<int>(getTimeBucket(time));
+    const int timeIndex = static_cast<int>(getTimeBucket(time));
     QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
     CategoryWidget* categoryWidget = static_cast<CategoryWidget*>(widget);
     categoryWidget->updateStatus();

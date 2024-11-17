@@ -43,12 +43,12 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->cbEnableIPv6->setChecked(settings.getEnableIPv6());
     bodyUI->cbMakeToxPortable->setChecked(settings.getMakeToxPortable());
     bodyUI->proxyAddr->setText(settings.getProxyAddr());
-    quint16 port = settings.getProxyPort();
+    const quint16 port = settings.getProxyPort();
     if (port > 0) {
         bodyUI->proxyPort->setValue(port);
     }
 
-    int index = static_cast<int>(settings.getProxyType());
+    const int index = static_cast<int>(settings.getProxyType());
     bodyUI->proxyType->setCurrentIndex(index);
     on_proxyType_currentIndexChanged(index);
     const bool udpEnabled =
@@ -57,7 +57,7 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->cbEnableLanDiscovery->setChecked(settings.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
 
-    QString warningBody =
+    const QString warningBody =
         tr("Unless you %1 know what you are doing, "
            "please do %2 change anything here. Changes "
            "made here may lead to problems with qTox, and even "
@@ -67,10 +67,10 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
             .arg(QString("<b>%1</b>").arg(tr("not")))
             .arg(QString("<p>%1</p>").arg(tr("Changes here are applied only after restarting qTox.")));
 
-    QString warning = QString("<div style=\"color:#ff0000;\">"
-                              "<p><b>%1</b></p><p>%2</p></div>")
-                          .arg(tr("IMPORTANT NOTE"))
-                          .arg(warningBody);
+    const QString warning = QString("<div style=\"color:#ff0000;\">"
+                                    "<p><b>%1</b></p><p>%2</p></div>")
+                                .arg(tr("IMPORTANT NOTE"))
+                                .arg(warningBody);
 
     bodyUI->warningLabel->setText(warning);
 
@@ -90,7 +90,7 @@ void AdvancedForm::on_cbMakeToxPortable_stateChanged()
 }
 void AdvancedForm::on_btnExportLog_clicked()
 {
-    QString savefile =
+    const QString savefile =
         QFileDialog::getSaveFileName(Q_NULLPTR, tr("Save file"), QString{}, tr("Logs (*.log)"));
 
     if (savefile.isNull() || savefile.isEmpty()) {
@@ -98,10 +98,10 @@ void AdvancedForm::on_btnExportLog_clicked()
         return;
     }
 
-    QString logFileDir = settings.getPaths().getAppCacheDirPath();
-    QString logfile = logFileDir + "qtox.log";
+    const QString logFileDir = settings.getPaths().getAppCacheDirPath();
+    const QString logfile = logFileDir + "qtox.log";
 
-    QFile file(logfile);
+    const QFile file(logfile);
     if (file.exists()) {
         qDebug() << "Found debug log for copying";
     } else {
@@ -117,8 +117,8 @@ void AdvancedForm::on_btnExportLog_clicked()
 
 void AdvancedForm::on_btnCopyDebug_clicked()
 {
-    QString logFileDir = settings.getPaths().getAppCacheDirPath();
-    QString logfile = logFileDir + "qtox.log";
+    const QString logFileDir = settings.getPaths().getAppCacheDirPath();
+    const QString logfile = logFileDir + "qtox.log";
 
     QFile file(logfile);
     if (!file.exists()) {
@@ -148,7 +148,7 @@ void AdvancedForm::on_btnCopyDebug_clicked()
 void AdvancedForm::on_resetButton_clicked()
 {
     const QString title = tr("Reset settings");
-    bool result =
+    const bool result =
         messageBoxManager.askQuestion(title,
                                       tr("All settings will be reset to default. Are you sure?"),
                                       tr("Yes"), tr("No"));
@@ -200,7 +200,7 @@ void AdvancedForm::on_proxyPort_valueChanged(int port)
 
 void AdvancedForm::on_proxyType_currentIndexChanged(int index)
 {
-    Settings::ProxyType proxytype = static_cast<Settings::ProxyType>(index);
+    const Settings::ProxyType proxytype = static_cast<Settings::ProxyType>(index);
     const bool proxyEnabled = proxytype != Settings::ProxyType::ptNone;
 
     bodyUI->proxyAddr->setEnabled(proxyEnabled);
@@ -217,7 +217,7 @@ void AdvancedForm::on_proxyType_currentIndexChanged(int index)
  */
 void AdvancedForm::retranslateUi()
 {
-    int proxyType = bodyUI->proxyType->currentIndex();
+    const int proxyType = bodyUI->proxyType->currentIndex();
     bodyUI->retranslateUi(this);
     bodyUI->proxyType->setCurrentIndex(proxyType);
 }
