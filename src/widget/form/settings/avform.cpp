@@ -139,7 +139,7 @@ void AVForm::showEvent(QShowEvent* event)
 
 void AVForm::open(const QString& devName, const VideoMode& mode)
 {
-    QRect rect = mode.toRect();
+    const QRect rect = mode.toRect();
     videoSettings->setCamVideoRes(rect);
     videoSettings->setCamVideoFPS(mode.fps);
     camera.setupDevice(devName, mode);
@@ -165,15 +165,15 @@ void AVForm::setVolume(qreal value)
 void AVForm::on_videoModesComboBox_currentIndexChanged(int index)
 {
     assert(0 <= index && index < videoModes.size());
-    int devIndex = videoDevCombobox->currentIndex();
+    const int devIndex = videoDevCombobox->currentIndex();
     assert(0 <= devIndex && devIndex < videoDeviceList.size());
 
-    QString devName = videoDeviceList[devIndex].first;
-    VideoMode newMode = videoModes[index];
+    const QString devName = videoDeviceList[devIndex].first;
+    const VideoMode newMode = videoModes[index];
 
     if (CameraDevice::isScreen(devName) && newMode == VideoMode()) {
         if (videoSettings->getScreenGrabbed()) {
-            VideoMode screenMode(videoSettings->getScreenRegion());
+            const VideoMode screenMode(videoSettings->getScreenRegion());
             open(devName, screenMode);
             return;
         }
@@ -184,7 +184,7 @@ void AVForm::on_videoModesComboBox_currentIndexChanged(int index)
             mode.height = mode.height / 2 * 2;
 
             // Needed, if the virtual screen origin is the top left corner of the primary screen
-            QRect screen = QApplication::primaryScreen()->virtualGeometry();
+            const QRect screen = QApplication::primaryScreen()->virtualGeometry();
             mode.x += screen.x();
             mode.y += screen.y();
 
@@ -258,7 +258,8 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
                     continue;
                 }
 
-                bool better = CameraDevice::betterPixelFormat(mode.pixel_format, best.pixel_format);
+                const bool better =
+                    CameraDevice::betterPixelFormat(mode.pixel_format, best.pixel_format);
                 if (mode.fps >= best.fps && better)
                     bestModeIndices[res] = i;
             }
@@ -267,12 +268,12 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
 
     QVector<VideoMode> newVideoModes;
     for (const auto& [_, modeIndex] : qtox::views::reverse(bestModeIndices)) {
-        VideoMode mode_ = allVideoModes[modeIndex];
+        const VideoMode mode_ = allVideoModes[modeIndex];
 
         if (newVideoModes.empty()) {
             newVideoModes.push_back(mode_);
         } else {
-            int size = getModeSize(mode_);
+            const int size = getModeSize(mode_);
             auto result = std::find_if(newVideoModes.cbegin(), newVideoModes.cend(),
                                        [size](VideoMode mode) { return getModeSize(mode) == size; });
 
@@ -286,12 +287,13 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
 void AVForm::fillCameraModesComboBox()
 {
     qDebug() << "selected Modes:";
-    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
+    const bool previouslyBlocked = videoModesComboBox->blockSignals(true);
     videoModesComboBox->clear();
 
     for (auto mode : videoModes) {
         QString str;
-        std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
+        const std::string pixelFormat =
+            CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
         qDebug("width: %d, height: %d, fps: %f, pixel format: %s", mode.width, mode.height,
                static_cast<double>(mode.fps), pixelFormat.c_str());
 
@@ -312,11 +314,11 @@ void AVForm::fillCameraModesComboBox()
 
 int AVForm::searchPreferredIndex()
 {
-    QRect prefRes = videoSettings->getCamVideoRes();
-    float prefFPS = videoSettings->getCamVideoFPS();
+    const QRect prefRes = videoSettings->getCamVideoRes();
+    const float prefFPS = videoSettings->getCamVideoFPS();
 
     for (int i = 0; i < videoModes.size(); ++i) {
-        VideoMode mode = videoModes[i];
+        const VideoMode mode = videoModes[i];
         if (mode.width == prefRes.width() && mode.height == prefRes.height()
             && (qAbs(mode.fps - prefFPS) < 0.0001f)) {
             return i;
@@ -328,12 +330,13 @@ int AVForm::searchPreferredIndex()
 
 void AVForm::fillScreenModesComboBox()
 {
-    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
+    const bool previouslyBlocked = videoModesComboBox->blockSignals(true);
     videoModesComboBox->clear();
 
     for (int i = 0; i < videoModes.size(); ++i) {
-        VideoMode mode = videoModes[i];
-        std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
+        const VideoMode mode = videoModes[i];
+        const std::string pixelFormat =
+            CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
         qDebug("%dx%d+%d,%d fps: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
                static_cast<double>(mode.fps), pixelFormat.c_str());
 
@@ -371,11 +374,11 @@ void AVForm::updateVideoModes(int curIndex)
         qWarning() << "Invalid index:" << curIndex;
         return;
     }
-    QString devName = videoDeviceList[curIndex].first;
+    const QString devName = videoDeviceList[curIndex].first;
     QVector<VideoMode> allVideoModes = CameraDevice::getVideoModes(devName);
 
     qDebug("available Modes:");
-    bool isScreen = CameraDevice::isScreen(devName);
+    const bool isScreen = CameraDevice::isScreen(devName);
     if (isScreen) {
         // Add extra video mode to region selection
         allVideoModes.push_back(VideoMode());
@@ -387,7 +390,7 @@ void AVForm::updateVideoModes(int curIndex)
         fillCameraModesComboBox();
     }
 
-    int preferredIndex = searchPreferredIndex();
+    const int preferredIndex = searchPreferredIndex();
     if (preferredIndex != -1) {
         videoSettings->setScreenGrabbed(false);
         videoModesComboBox->blockSignals(true);
@@ -398,8 +401,8 @@ void AVForm::updateVideoModes(int curIndex)
     }
 
     if (isScreen) {
-        QRect rect = videoSettings->getScreenRegion();
-        VideoMode mode(rect);
+        const QRect rect = videoSettings->getScreenRegion();
+        const VideoMode mode(rect);
 
         videoSettings->setScreenGrabbed(true);
         videoModesComboBox->setCurrentIndex(videoModes.size() - 1);
@@ -412,7 +415,7 @@ void AVForm::updateVideoModes(int curIndex)
     // and the best FPS for that resolution.
     // If we picked the lowest resolution, the quality would be awful
     // but if we picked the largest, FPS would be bad and thus quality bad too.
-    int mid = (videoModes.size() - 1) / 2;
+    const int mid = (videoModes.size() - 1) / 2;
     videoModesComboBox->setCurrentIndex(mid);
 }
 
@@ -421,9 +424,9 @@ void AVForm::on_videoDevCombobox_currentIndexChanged(int index)
     assert(0 <= index && index < videoDeviceList.size());
 
     videoSettings->setScreenGrabbed(false);
-    QString dev = videoDeviceList[index].first;
+    const QString dev = videoDeviceList[index].first;
     videoSettings->setVideoDev(dev);
-    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
+    const bool previouslyBlocked = videoModesComboBox->blockSignals(true);
     updateVideoModes(index);
     videoModesComboBox->blockSignals(previouslyBlocked);
 
@@ -431,7 +434,7 @@ void AVForm::on_videoDevCombobox_currentIndexChanged(int index)
         return;
     }
 
-    int modeIndex = videoModesComboBox->currentIndex();
+    const int modeIndex = videoModesComboBox->currentIndex();
     VideoMode mode = VideoMode();
     if (0 <= modeIndex && modeIndex < videoModes.size()) {
         mode = videoModes[modeIndex];
@@ -451,13 +454,13 @@ void AVForm::on_audioQualityComboBox_currentIndexChanged(int index)
 
 void AVForm::getVideoDevices()
 {
-    QString settingsInDev = videoSettings->getVideoDev();
+    const QString settingsInDev = videoSettings->getVideoDev();
     int videoDevIndex = 0;
     videoDeviceList = CameraDevice::getDeviceList();
     // prevent currentIndexChanged to be fired while adding items
     videoDevCombobox->blockSignals(true);
     videoDevCombobox->clear();
-    for (QPair<QString, QString> device : videoDeviceList) {
+    for (const QPair<QString, QString>& device : videoDeviceList) {
         videoDevCombobox->addItem(device.second);
         if (device.first == settingsInDev)
             videoDevIndex = videoDevCombobox->count() - 1;
@@ -483,9 +486,9 @@ void AVForm::getAudioInDevices()
     inDevCombobox->blockSignals(false);
 
     int idx = 0;
-    bool enabled = audioSettings->getAudioInDevEnabled();
+    const bool enabled = audioSettings->getAudioInDevEnabled();
     if (enabled && deviceNames.size() > 1) {
-        QString dev = audioSettings->getInDev();
+        const QString dev = audioSettings->getInDev();
         idx = qMax(deviceNames.indexOf(dev), 1);
     }
     inDevCombobox->setCurrentIndex(idx);
@@ -502,9 +505,9 @@ void AVForm::getAudioOutDevices()
     outDevCombobox->blockSignals(false);
 
     int idx = 0;
-    bool enabled = audioSettings->getAudioOutDevEnabled();
+    const bool enabled = audioSettings->getAudioOutDevEnabled();
     if (enabled && deviceNames.size() > 1) {
-        QString dev = audioSettings->getOutDev();
+        const QString dev = audioSettings->getOutDev();
         idx = qMax(deviceNames.indexOf(dev), 1);
     }
     outDevCombobox->setCurrentIndex(idx);

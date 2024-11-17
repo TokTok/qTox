@@ -131,9 +131,9 @@ void CategoryWidget::removeFriendWidget(FriendWidget* w, Status::Status s)
 
 void CategoryWidget::updateStatus()
 {
-    QString online = QString::number(listLayout->friendOnlineCount());
-    QString offline = QString::number(listLayout->friendTotalCount());
-    QString text = online + QStringLiteral(" / ") + offline;
+    const QString online = QString::number(listLayout->friendOnlineCount());
+    const QString offline = QString::number(listLayout->friendTotalCount());
+    const QString text = online + QStringLiteral(" / ") + offline;
     statusLabel->setText(text);
 }
 
@@ -148,7 +148,7 @@ void CategoryWidget::search(const QString& searchString, bool updateAll, bool hi
     if (updateAll) {
         listLayout->searchChatRooms(searchString, hideOnline, hideOffline);
     }
-    bool inCategory = searchString.isEmpty() && !(hideOnline && hideOffline);
+    const bool inCategory = searchString.isEmpty() && !(hideOnline && hideOffline);
     setVisible(inCategory || listLayout->hasChatRooms());
 }
 

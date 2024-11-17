@@ -36,8 +36,8 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
     const int itemsPerPage = maxRows * maxCols;
 
     const QList<QStringList>& emoticons = smileyPack.getEmoticons();
-    int itemCount = emoticons.size();
-    int pageCount = std::ceil(float(itemCount) / float(itemsPerPage));
+    const int itemCount = emoticons.size();
+    const int pageCount = std::ceil(float(itemCount) / float(itemsPerPage));
     int currPage = 0;
     int currItem = 0;
     int row = 0;
@@ -75,7 +75,7 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
 
     for (const QStringList& set : emoticons) {
         QPushButton* button = new QPushButton;
-        std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(set[0]);
+        const std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(set[0]);
         emoticonsIcons.append(icon);
         button->setIcon(icon->pixmap(size));
         button->setToolTip(set.join(" "));
@@ -115,7 +115,7 @@ void EmoticonsWidget::onSmileyClicked()
     // emit insert emoticon
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
     if (sender) {
-        QString sequence =
+        const QString sequence =
             sender->property("sequence").toString().replace("&lt;", "<").replace("&gt;", ">");
         emit insertEmoticon(sequence);
     }
@@ -125,7 +125,7 @@ void EmoticonsWidget::onPageButtonClicked()
 {
     QWidget* sender = qobject_cast<QRadioButton*>(QObject::sender());
     if (sender) {
-        int page = sender->property("pageIndex").toInt();
+        const int page = sender->property("pageIndex").toInt();
         stack.setCurrentIndex(page);
     }
 }
@@ -163,7 +163,7 @@ void EmoticonsWidget::wheelEvent(QWheelEvent* e)
 
 void EmoticonsWidget::PageButtonsUpdate()
 {
-    QList<QRadioButton*> pageButtons = findChildren<QRadioButton*>(QString());
+    const QList<QRadioButton*> pageButtons = findChildren<QRadioButton*>(QString());
     foreach (QRadioButton* t_pageButton, pageButtons) {
         if (t_pageButton->property("pageIndex").toInt() == stack.currentIndex())
             t_pageButton->setChecked(true);

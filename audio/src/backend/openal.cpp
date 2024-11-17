@@ -160,7 +160,7 @@ void OpenAL::checkAlcError(ALCdevice* device) noexcept
  */
 void OpenAL::setOutputVolume(qreal volume)
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     alListenerf(AL_GAIN, static_cast<ALfloat>(std::max(0.0, std::min(volume, 1.0))));
     checkAlError();
@@ -173,7 +173,7 @@ void OpenAL::setOutputVolume(qreal volume)
  */
 qreal OpenAL::minInputGain() const
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     return minInGain;
 }
 
@@ -184,7 +184,7 @@ qreal OpenAL::minInputGain() const
  */
 qreal OpenAL::maxInputGain() const
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     return maxInGain;
 }
 
@@ -195,7 +195,7 @@ qreal OpenAL::maxInputGain() const
  */
 qreal OpenAL::minInputThreshold() const
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     return minInThreshold;
 }
 
@@ -206,7 +206,7 @@ qreal OpenAL::minInputThreshold() const
  */
 qreal OpenAL::maxInputThreshold() const
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     return maxInThreshold;
 }
 
@@ -255,7 +255,7 @@ bool OpenAL::reinitOutput(const QString& outDevDesc)
  */
 std::unique_ptr<IAudioSink> OpenAL::makeSink()
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     if (!autoInitOutput()) {
         qWarning("Failed to subscribe to audio output device.");
@@ -283,7 +283,7 @@ std::unique_ptr<IAudioSink> OpenAL::makeSink()
  */
 void OpenAL::destroySink(AlSink& sink)
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     const auto sinksErased = sinks.erase(&sink);
     const auto soundSinksErased = soundSinks.erase(&sink);
@@ -316,7 +316,7 @@ void OpenAL::destroySink(AlSink& sink)
  */
 std::unique_ptr<IAudioSource> OpenAL::makeSource()
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     if (!autoInitInput()) {
         qWarning("Failed to subscribe to audio input device.");
@@ -339,7 +339,7 @@ std::unique_ptr<IAudioSource> OpenAL::makeSource()
  */
 void OpenAL::destroySource(AlSource& source)
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     const auto s = sources.find(&source);
     if (s == sources.end()) {
@@ -393,7 +393,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
 
     // TODO: Try to actually detect if our audio source is stereo
     inputChannels = channels;
-    int stereoFlag = inputChannels == 1 ? AL_FORMAT_MONO16 : AL_FORMAT_STEREO16;
+    const int stereoFlag = inputChannels == 1 ? AL_FORMAT_MONO16 : AL_FORMAT_STEREO16;
     const int bytesPerSample = 2;
     const int safetyFactor = 2; // internal OpenAL ring buffer. must be larger than our inputBuffer
                                 // to avoid the ring from overwriting itself between captures.
@@ -480,7 +480,7 @@ void OpenAL::playMono16Sound(AlSink& sink, const IAudioSink::Sound& sound)
         return;
     }
 
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     // interrupt possibly playing sound, we don't buffer here
     alSourceStop(sourceId);
@@ -508,12 +508,12 @@ void OpenAL::playMono16Sound(AlSink& sink, const IAudioSink::Sound& sound)
 
 void OpenAL::cleanupSound()
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     auto sinkIt = soundSinks.begin();
     while (sinkIt != soundSinks.end()) {
         auto sink = *sinkIt;
-        ALuint sourceId = sink->getSourceId();
+        const ALuint sourceId = sink->getSourceId();
         ALint state = 0;
 
         alGetSourcei(sourceId, AL_SOURCE_STATE, &state);
@@ -530,7 +530,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
                              int sampleRate)
 {
     assert(channels == 1 || channels == 2);
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
     if (!(alOutDev && outputInitialized))
         return;
@@ -688,7 +688,7 @@ void OpenAL::doOutput()
  */
 void OpenAL::doAudio()
 {
-    QMutexLocker<QRecursiveMutex> lock(&audioLock);
+    const QMutexLocker<QRecursiveMutex> lock(&audioLock);
 
     // Output section does nothing
 
@@ -708,7 +708,7 @@ void OpenAL::captureSamples(ALCdevice* device, int16_t* buffer, ALCsizei samples
  */
 bool OpenAL::isOutputReady() const
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     return alOutDev && outputInitialized;
 }
 
@@ -767,13 +767,13 @@ void OpenAL::cleanupBuffers(uint sourceId)
 
 void OpenAL::startLoop(uint sourceId)
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     alSourcei(sourceId, AL_LOOPING, AL_TRUE);
 }
 
 void OpenAL::stopLoop(uint sourceId)
 {
-    QMutexLocker<QRecursiveMutex> locker(&audioLock);
+    const QMutexLocker<QRecursiveMutex> locker(&audioLock);
     alSourcei(sourceId, AL_LOOPING, AL_FALSE);
     alSourceStop(sourceId);
     cleanupBuffers(sourceId);

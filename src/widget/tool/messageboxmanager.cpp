@@ -122,12 +122,12 @@ void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
     };
 
     if (dangerousExtensions.contains(file.suffix())) {
-        bool answer = askQuestion(tr("Executable file", "popup title"),
-                                  tr("You have asked qTox to open an executable file. "
-                                     "Executable files can potentially damage your computer. "
-                                     "Are you sure want to open this file?",
-                                     "popup text"),
-                                  false, true);
+        const bool answer = askQuestion(tr("Executable file", "popup title"),
+                                        tr("You have asked qTox to open an executable file. "
+                                           "Executable files can potentially damage your computer. "
+                                           "Are you sure want to open this file?",
+                                           "popup text"),
+                                        false, true);
         if (!answer) {
             return;
         }
@@ -161,8 +161,8 @@ void MessageBoxManager::_showError(const QString& title, const QString& msg)
 bool MessageBoxManager::_askQuestion(const QString& title, const QString& msg, bool defaultAns,
                                      bool warning, bool yesno)
 {
-    QString positiveButton = yesno ? QApplication::tr("Yes") : QApplication::tr("Ok");
-    QString negativeButton = yesno ? QApplication::tr("No") : QApplication::tr("Cancel");
+    const QString positiveButton = yesno ? QApplication::tr("Yes") : QApplication::tr("Ok");
+    const QString negativeButton = yesno ? QApplication::tr("No") : QApplication::tr("Cancel");
 
     return _askQuestion(title, msg, positiveButton, negativeButton, defaultAns, warning);
 }
@@ -170,7 +170,7 @@ bool MessageBoxManager::_askQuestion(const QString& title, const QString& msg, b
 bool MessageBoxManager::_askQuestion(const QString& title, const QString& msg, const QString& button1,
                                      const QString& button2, bool defaultAns, bool warning)
 {
-    QMessageBox::Icon icon = warning ? QMessageBox::Warning : QMessageBox::Question;
+    const QMessageBox::Icon icon = warning ? QMessageBox::Warning : QMessageBox::Question;
     QMessageBox box(icon, title, msg, QMessageBox::NoButton, this);
     QPushButton* pushButton1 = box.addButton(button1, QMessageBox::AcceptRole);
     QPushButton* pushButton2 = box.addButton(button2, QMessageBox::RejectRole);

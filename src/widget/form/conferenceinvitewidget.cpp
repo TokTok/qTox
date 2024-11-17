@@ -47,10 +47,10 @@ ConferenceInviteWidget::ConferenceInviteWidget(QWidget* parent, ConferenceInvite
  */
 void ConferenceInviteWidget::retranslateUi()
 {
-    QString name = core.getFriendUsername(inviteInfo.getFriendId());
-    QDateTime inviteDate = inviteInfo.getInviteDate();
-    QString date = inviteDate.toString(settings.getDateFormat());
-    QString time = inviteDate.toString(settings.getTimestampFormat());
+    const QString name = core.getFriendUsername(inviteInfo.getFriendId());
+    const QDateTime inviteDate = inviteInfo.getInviteDate();
+    const QString date = inviteDate.toString(settings.getDateFormat());
+    const QString time = inviteDate.toString(settings.getTimestampFormat());
 
     inviteMessageLabel->setText(
         tr("Invited by %1 on %2 at %3.").arg("<b>%1</b>").arg(name.toHtmlEscaped(), date, time));

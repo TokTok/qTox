@@ -116,11 +116,11 @@ void ScreenGrabberChooserRectItem::mousePress(QGraphicsSceneMouseEvent* event)
 void ScreenGrabberChooserRectItem::mouseMove(QGraphicsSceneMouseEvent* event)
 {
     if (state == Moving) {
-        QPointF delta = event->scenePos() - event->lastScenePos();
+        const QPointF delta = event->scenePos() - event->lastScenePos();
         moveBy(delta.x(), delta.y());
     } else if (state == Resizing) {
         prepareGeometryChange();
-        QPointF size = event->scenePos() - scenePos();
+        const QPointF size = event->scenePos() - scenePos();
         mainRect->setRect(0, 0, size.x(), size.y());
         rectWidth = size.x();
         rectHeight = size.y();
@@ -138,12 +138,12 @@ void ScreenGrabberChooserRectItem::mouseRelease(QGraphicsSceneMouseEvent* event)
     if (event->button() == Qt::LeftButton) {
         setCursor(QCursor(Qt::OpenHandCursor));
 
-        QPointF delta = (event->scenePos() - startPos);
+        const QPointF delta = (event->scenePos() - startPos);
         if (qAbs(delta.x()) < MinRectSize || qAbs(delta.y()) < MinRectSize) {
             rectWidth = rectHeight = 0;
             mainRect->setRect(QRect());
         } else {
-            QRect normalized = chosenRect();
+            const QRect normalized = chosenRect();
 
             rectWidth = normalized.width();
             rectHeight = normalized.height();
@@ -185,8 +185,8 @@ void ScreenGrabberChooserRectItem::mouseMoveHandle(int x, int y, QGraphicsSceneM
     delta.ry() *= qAbs(y);
 
     // We increase if the multiplier and the delta have the same sign
-    bool increaseX = ((x < 0) == (delta.x() < 0));
-    bool increaseY = ((y < 0) == (delta.y() < 0));
+    const bool increaseX = ((x < 0) == (delta.x() < 0));
+    const bool increaseY = ((y < 0) == (delta.y() < 0));
 
     if ((delta.x() < 0 && increaseX) || (delta.x() >= 0 && !increaseX)) {
         moveBy(delta.x(), 0);
@@ -300,7 +300,7 @@ void ScreenGrabberChooserRectItem::forwardMainRectEvent(QEvent* event)
 void ScreenGrabberChooserRectItem::forwardHandleEvent(QGraphicsItem* watched, QEvent* event)
 {
     QGraphicsSceneMouseEvent* mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
-    QPoint multiplier = getHandleMultiplier(watched);
+    const QPoint multiplier = getHandleMultiplier(watched);
 
     if (multiplier.isNull())
         return;

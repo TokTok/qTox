@@ -69,10 +69,10 @@ void PrivacyForm::on_cbTypingNotification_stateChanged()
 
 void PrivacyForm::on_nospamLineEdit_editingFinished()
 {
-    QString newNospam = bodyUI->nospamLineEdit->text();
+    const QString newNospam = bodyUI->nospamLineEdit->text();
 
     bool ok;
-    uint32_t nospam = newNospam.toLongLong(&ok, 16);
+    const uint32_t nospam = newNospam.toLongLong(&ok, 16);
     if (ok) {
         core->setNospam(nospam);
     }
@@ -102,7 +102,7 @@ void PrivacyForm::on_randomNospamButton_clicked()
 void PrivacyForm::on_nospamLineEdit_textChanged()
 {
     QString str = bodyUI->nospamLineEdit->text();
-    int curs = bodyUI->nospamLineEdit->cursorPosition();
+    const int curs = bodyUI->nospamLineEdit->cursorPosition();
     if (str.length() != 8) {
         str = QString("00000000").replace(0, str.length(), str);
         bodyUI->nospamLineEdit->setText(str);

@@ -49,11 +49,11 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
     if (stopped)
         return;
 
-    QMutexLocker<QMutex> locker(&biglock);
+    const QMutexLocker<QMutex> locker(&biglock);
 
-    std::shared_ptr<VideoFrame> vframe;
-    int width = vpxFrame->d_w;
-    int height = vpxFrame->d_h;
+    const std::shared_ptr<VideoFrame> vframe;
+    const int width = vpxFrame->d_w;
+    const int height = vpxFrame->d_h;
 
     if (subscribers <= 0)
         return;
@@ -66,7 +66,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
     avFrame->height = height;
     avFrame->format = AV_PIX_FMT_YUV420P;
 
-    int bufSize =
+    const int bufSize =
         av_image_alloc(avFrame->data, avFrame->linesize, width, height,
                        static_cast<AVPixelFormat>(AV_PIX_FMT_YUV420P), VideoFrame::dataAlignment);
 
@@ -76,10 +76,10 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
     }
 
     for (int i = 0; i < 3; ++i) {
-        int dstStride = avFrame->linesize[i];
-        int srcStride = vpxFrame->stride[i];
-        int minStride = std::min(dstStride, srcStride);
-        int size = (i == 0) ? height : height / 2;
+        const int dstStride = avFrame->linesize[i];
+        const int srcStride = vpxFrame->stride[i];
+        const int minStride = std::min(dstStride, srcStride);
+        const int size = (i == 0) ? height : height / 2;
 
         for (int j = 0; j < size; ++j) {
             uint8_t* dst = avFrame->data[i] + dstStride * j;
@@ -93,7 +93,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
 
 void CoreVideoSource::subscribe()
 {
-    QMutexLocker<QMutex> locker(&biglock);
+    const QMutexLocker<QMutex> locker(&biglock);
     ++subscribers;
 }
 
@@ -117,7 +117,7 @@ void CoreVideoSource::unsubscribe()
  */
 void CoreVideoSource::setDeleteOnClose(bool newstate)
 {
-    QMutexLocker<QMutex> locker(&biglock);
+    const QMutexLocker<QMutex> locker(&biglock);
     deleteOnClose = newstate;
 }
 
@@ -129,13 +129,13 @@ void CoreVideoSource::setDeleteOnClose(bool newstate)
  */
 void CoreVideoSource::stopSource()
 {
-    QMutexLocker<QMutex> locker(&biglock);
+    const QMutexLocker<QMutex> locker(&biglock);
     stopped = true;
     emit sourceStopped();
 }
 
 void CoreVideoSource::restartSource()
 {
-    QMutexLocker<QMutex> locker(&biglock);
+    const QMutexLocker<QMutex> locker(&biglock);
     stopped = false;
 }

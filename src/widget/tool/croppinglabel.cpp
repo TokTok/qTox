@@ -117,7 +117,7 @@ void CroppingLabel::paintEvent(QPaintEvent* paintEvent)
 
 void CroppingLabel::setElidedText()
 {
-    QString elidedText = fontMetrics().elidedText(origText, elideMode, width());
+    const QString elidedText = fontMetrics().elidedText(origText, elideMode, width());
     if (elidedText != origText)
         setToolTip(Qt::convertFromPlainText(origText, Qt::WhiteSpaceNormal));
     else
@@ -164,7 +164,7 @@ void CroppingLabel::minimizeMaximumWidth()
 void CroppingLabel::editingFinished()
 {
     hideTextEdit();
-    QString newText =
+    const QString newText =
         textEdit->text().trimmed().remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
 
     if (origText != newText)

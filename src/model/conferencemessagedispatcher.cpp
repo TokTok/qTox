@@ -60,7 +60,7 @@ ConferenceMessageDispatcher::sendMessage(bool isAction, const QString& content)
 void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction,
                                                     const QString& content)
 {
-    bool isSelf = sender == idHandler.getSelfPublicKey();
+    const bool isSelf = sender == idHandler.getSelfPublicKey();
 
     if (isSelf) {
         return;

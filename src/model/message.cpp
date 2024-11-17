@@ -97,7 +97,7 @@ std::vector<Message> MessageProcessor::processOutgoingMessage(bool isAction, con
  */
 Message MessageProcessor::processIncomingCoreMessage(bool isAction, const QString& message)
 {
-    QDateTime timestamp = QDateTime::currentDateTime();
+    const QDateTime timestamp = QDateTime::currentDateTime();
     auto ret = Message{};
     ret.isAction = isAction;
     ret.content = message;

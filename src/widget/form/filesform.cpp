@@ -28,28 +28,28 @@
 namespace {
 QRect pauseRect(const QStyleOptionViewItem& option)
 {
-    float controlSize = option.rect.height() * 0.8f;
-    float rectWidth = option.rect.width();
-    float buttonHorizontalArea = rectWidth / 2;
+    const float controlSize = option.rect.height() * 0.8f;
+    const float rectWidth = option.rect.width();
+    const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half
     // our width from it
-    int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea / 2 - controlSize / 2);
-    int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
+    const int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea / 2 - controlSize / 2);
+    const int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
     return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
 QRect stopRect(const QStyleOptionViewItem& option)
 {
-    float controlSize = option.rect.height() * 0.8;
-    float rectWidth = option.rect.width();
-    float buttonHorizontalArea = rectWidth / 2;
+    const float controlSize = option.rect.height() * 0.8;
+    const float rectWidth = option.rect.width();
+    const float buttonHorizontalArea = rectWidth / 2;
 
     // To center the button, we find the horizontal center and subtract half
     // our width from it
-    int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea + buttonHorizontalArea / 2
-                                - controlSize / 2);
-    int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
+    const int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea
+                                      + buttonHorizontalArea / 2 - controlSize / 2);
+    const int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
     return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
@@ -326,7 +326,7 @@ void Delegate::paint(QPainter* painter, const QStyleOptionViewItem& option, cons
     const auto column = toFileTransferListColumn(index.column());
     switch (column) {
     case Column::progress: {
-        int progress = index.data().toInt();
+        const int progress = index.data().toInt();
 
         QStyleOptionProgressBar progressBarOption;
         progressBarOption.rect = option.rect;
@@ -346,13 +346,13 @@ void Delegate::paint(QPainter* painter, const QStyleOptionViewItem& option, cons
             return;
         }
         const auto localPaused = data.toBool();
-        QPixmap pausePixmap =
+        const QPixmap pausePixmap =
             localPaused
                 ? QPixmap(style.getImagePath("fileTransferInstance/arrow_black.svg", settings))
                 : QPixmap(style.getImagePath("fileTransferInstance/pause_dark.svg", settings));
         QApplication::style()->drawItemPixmap(painter, pauseRect(option), Qt::AlignCenter, pausePixmap);
 
-        QPixmap stopPixmap(style.getImagePath("fileTransferInstance/no_dark.svg", settings));
+        const QPixmap stopPixmap(style.getImagePath("fileTransferInstance/no_dark.svg", settings));
         QApplication::style()->drawItemPixmap(painter, stopRect(option), Qt::AlignCenter, stopPixmap);
         return;
     }

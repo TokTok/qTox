@@ -234,7 +234,7 @@ QFont Style::getFont(Font font)
 
 const QString Style::resolve(const QString& filename, int themeColor, const QFont& baseFont)
 {
-    QString themePath = getThemeFolder(themeColor);
+    const QString themePath = getThemeFolder(themeColor);
     QString fullPath = themePath + filename;
     QString qss;
 
@@ -294,7 +294,7 @@ const QString Style::resolve(const QString& filename, int themeColor, const QFon
     QRegularExpressionMatchIterator i = re.globalMatch(qss);
 
     while (i.hasNext()) {
-        QRegularExpressionMatch match = i.next();
+        const QRegularExpressionMatch match = i.next();
         QString path = match.captured(0);
         const QString phrase = path;
 

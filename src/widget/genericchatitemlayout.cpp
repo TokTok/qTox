@@ -27,7 +27,7 @@ GenericChatItemLayout::~GenericChatItemLayout()
 void GenericChatItemLayout::addSortedWidget(GenericChatItemWidget* widget, int stretch,
                                             Qt::Alignment alignment)
 {
-    int closest = indexOfClosestSortedWidget(widget);
+    const int closest = indexOfClosestSortedWidget(widget);
     layout->insertWidget(closest, widget, stretch, alignment);
 }
 
@@ -36,7 +36,7 @@ int GenericChatItemLayout::indexOfSortedWidget(GenericChatItemWidget* widget) co
     if (layout->isEmpty())
         return -1;
 
-    int index = indexOfClosestSortedWidget(widget);
+    const int index = indexOfClosestSortedWidget(widget);
 
     if (index >= layout->count())
         return -1;
@@ -61,7 +61,7 @@ void GenericChatItemLayout::removeSortedWidget(GenericChatItemWidget* widget)
     if (layout->isEmpty())
         return;
 
-    int index = indexOfClosestSortedWidget(widget);
+    const int index = indexOfClosestSortedWidget(widget);
 
     if (layout->itemAt(index) == nullptr)
         return;
@@ -95,7 +95,7 @@ int GenericChatItemLayout::indexOfClosestSortedWidget(GenericChatItemWidget* wid
     // Binary search: Deferred test of equality.
     int min = 0, max = layout->count();
     while (min < max) {
-        int mid = (max - min) / 2 + min;
+        const int mid = (max - min) / 2 + min;
         GenericChatItemWidget* atMid =
             qobject_cast<GenericChatItemWidget*>(layout->itemAt(mid)->widget());
         assert(atMid != nullptr);
@@ -105,7 +105,7 @@ int GenericChatItemLayout::indexOfClosestSortedWidget(GenericChatItemWidget* wid
         QCollator collator;
         collator.setNumericMode(true);
 
-        int compareValue = collator.compare(atMid->getName(), widget->getName());
+        const int compareValue = collator.compare(atMid->getName(), widget->getName());
 
         if (compareValue < 0)
             lessThan = true;

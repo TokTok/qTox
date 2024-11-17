@@ -61,11 +61,11 @@ const QString FONT_STYLE[]{"normal", "italic", "oblique"};
  */
 QString fontToCss(const QFont& font, const QString& name)
 {
-    QString result{"%1{"
-                   "font-family: \"%2\"; "
-                   "font-size: %3px; "
-                   "font-style: \"%4\"; "
-                   "font-weight: normal;}"};
+    const QString result{"%1{"
+                         "font-family: \"%2\"; "
+                         "font-size: %3px; "
+                         "font-style: \"%4\"; "
+                         "font-weight: normal;}"};
     return result.arg(name).arg(font.family()).arg(font.pixelSize()).arg(FONT_STYLE[font.style()]);
 }
 } // namespace
@@ -296,8 +296,8 @@ GenericChatForm::~GenericChatForm()
 
 void GenericChatForm::adjustFileMenuPosition()
 {
-    QPoint pos = fileButton->mapTo(bodySplitter, QPoint());
-    QSize size = fileFlyout->size();
+    const QPoint pos = fileButton->mapTo(bodySplitter, QPoint());
+    const QSize size = fileFlyout->size();
     fileFlyout->move(pos.x() - size.width(), pos.y());
 }
 
@@ -421,8 +421,8 @@ void GenericChatForm::onChatContextMenuRequested(QPoint pos)
     bool clickedOnLink = false;
     Text* clickedText = qobject_cast<Text*>(chatWidget->getContentFromGlobalPos(pos));
     if (clickedText) {
-        QPointF scenePos = chatWidget->mapToScene(chatWidget->mapFromGlobal(pos));
-        QString linkTarget = clickedText->getLinkAt(scenePos);
+        const QPointF scenePos = chatWidget->mapToScene(chatWidget->mapFromGlobal(pos));
+        const QString linkTarget = clickedText->getLinkAt(scenePos);
         if (!linkTarget.isEmpty()) {
             clickedOnLink = true;
             copyLinkAction->setData(linkTarget);
@@ -437,7 +437,7 @@ void GenericChatForm::onSendTriggered()
 {
     auto msg = msgEdit->toPlainText();
 
-    bool isAction = msg.startsWith(ChatForm::ACTION_PREFIX, Qt::CaseInsensitive);
+    const bool isAction = msg.startsWith(ChatForm::ACTION_PREFIX, Qt::CaseInsensitive);
     if (isAction) {
         msg.remove(0, ChatForm::ACTION_PREFIX.length());
     }
@@ -465,7 +465,7 @@ void GenericChatForm::onEmoteButtonClicked()
 
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
     if (sender) {
-        QPoint pos =
+        const QPoint pos =
             -QPoint(widget.sizeHint().width() / 2, widget.sizeHint().height()) - QPoint(0, 10);
         widget.exec(sender->mapToGlobal(pos));
     }
@@ -539,7 +539,7 @@ void GenericChatForm::clearChatArea()
 void GenericChatForm::clearChatArea(bool confirm, bool inform)
 {
     if (confirm) {
-        QMessageBox::StandardButton mboxResult =
+        const QMessageBox::StandardButton mboxResult =
             QMessageBox::question(this, tr("Confirmation"),
                                   tr("Are you sure that you want to clear all displayed messages?"),
                                   QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
@@ -594,13 +594,13 @@ bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
         break;
 
     case QEvent::Leave: {
-        QPoint flyPos = fileFlyout->mapToGlobal(QPoint());
-        QSize flySize = fileFlyout->size();
+        const QPoint flyPos = fileFlyout->mapToGlobal(QPoint());
+        const QSize flySize = fileFlyout->size();
 
-        QPoint filePos = fileButton->mapToGlobal(QPoint());
-        QSize fileSize = fileButton->size();
+        const QPoint filePos = fileButton->mapToGlobal(QPoint());
+        const QSize fileSize = fileButton->size();
 
-        QRect region = QRect(flyPos, flySize).united(QRect(filePos, fileSize));
+        const QRect region = QRect(flyPos, flySize).united(QRect(filePos, fileSize));
 
         if (!region.contains(QCursor::pos()))
             hideFileMenu();
@@ -621,7 +621,7 @@ bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
 
 void GenericChatForm::quoteSelectedText()
 {
-    QString selectedText = chatWidget->getSelectedText();
+    const QString selectedText = chatWidget->getSelectedText();
 
     if (selectedText.isEmpty())
         return;
@@ -644,7 +644,7 @@ void GenericChatForm::quoteSelectedText()
  */
 void GenericChatForm::copyLink()
 {
-    QString linkText = copyLinkAction->data().toString();
+    const QString linkText = copyLinkAction->data().toString();
     auto* clipboard = QApplication::clipboard();
     clipboard->setText(linkText, QClipboard::Clipboard);
     if (clipboard->supportsSelection()) {
@@ -670,7 +670,7 @@ void GenericChatForm::onLoadHistory()
 
 void GenericChatForm::onExportChat()
 {
-    QString path = QFileDialog::getSaveFileName(Q_NULLPTR, tr("Save chat log"));
+    const QString path = QFileDialog::getSaveFileName(Q_NULLPTR, tr("Save chat log"));
     if (path.isEmpty()) {
         return;
     }

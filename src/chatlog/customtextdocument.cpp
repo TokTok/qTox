@@ -24,10 +24,10 @@ CustomTextDocument::CustomTextDocument(SmileyPack& smileyPack_, Settings& settin
 QVariant CustomTextDocument::loadResource(int type, const QUrl& name)
 {
     if (type == QTextDocument::ImageResource && name.scheme() == "key") {
-        QSize size = QSize(settings.getEmojiFontPointSize(), settings.getEmojiFontPointSize());
-        QString fileName = QUrl::fromPercentEncoding(name.toEncoded()).mid(4).toHtmlEscaped();
+        const QSize size = QSize(settings.getEmojiFontPointSize(), settings.getEmojiFontPointSize());
+        const QString fileName = QUrl::fromPercentEncoding(name.toEncoded()).mid(4).toHtmlEscaped();
 
-        std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(fileName);
+        const std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(fileName);
         emoticonIcons.append(icon);
         return icon->pixmap(size);
     }

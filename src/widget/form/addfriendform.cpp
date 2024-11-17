@@ -113,7 +113,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
 
     const int size = settings.getFriendRequestSize();
     for (int i = 0; i < size; ++i) {
-        Settings::Request request = settings.getFriendRequest(i);
+        const Settings::Request request = settings.getFriendRequest(i);
         addFriendRequestWidget(request.address, request.message);
     }
 }
@@ -188,7 +188,7 @@ void AddFriendForm::onUsernameSet(const QString& username)
 
 void AddFriendForm::addFriend(const QString& idText)
 {
-    ToxId friendId(idText);
+    const ToxId friendId(idText);
 
     if (!friendId.isValid()) {
         messageBoxManager.showWarning(tr("Couldn't add friend"),
@@ -302,7 +302,7 @@ void AddFriendForm::deleteFriendRequest(const ToxId& toxId_)
 {
     const int size = settings.getFriendRequestSize();
     for (int i = 0; i < size; ++i) {
-        Settings::Request request = settings.getFriendRequest(i);
+        const Settings::Request request = settings.getFriendRequest(i);
         if (toxId_.getPublicKey() == ToxPk(request.address)) {
             settings.removeFriendRequest(i);
             return;
@@ -416,7 +416,7 @@ void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const 
 
 void AddFriendForm::removeFriendRequestWidget(QWidget* friendWidget)
 {
-    int index = requestsLayout->indexOf(friendWidget);
+    const int index = requestsLayout->indexOf(friendWidget);
     requestsLayout->removeWidget(friendWidget);
     acceptButtons.removeAt(index);
     rejectButtons.removeAt(index);

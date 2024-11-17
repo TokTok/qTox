@@ -96,7 +96,7 @@ void ProfileLocker::assertLock(Paths& paths)
     }
 
     if (!QFile(lockPathFromName(curLockName, paths)).exists()) {
-        QString tmp = curLockName;
+        const QString tmp = curLockName;
         unlock();
         if (lock(tmp, paths)) {
             qCritical() << "assertLock: Lock file was lost, but could be restored";

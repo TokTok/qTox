@@ -164,9 +164,10 @@ QString highlight(const QString& message, const QVector<QRegularExpression>& pat
             const QRegularExpressionMatch match = iter.next();
             const int uriWithWrapMatch{0};
             const int uriWithoutWrapMatch{1};
-            MatchingUri matchUri = stripSurroundingChars(match.capturedView(uriWithWrapMatch),
-                                                         match.capturedStart(uriWithoutWrapMatch)
-                                                             - match.capturedStart(uriWithWrapMatch));
+            const MatchingUri matchUri =
+                stripSurroundingChars(match.capturedView(uriWithWrapMatch),
+                                      match.capturedStart(uriWithoutWrapMatch)
+                                          - match.capturedStart(uriWithWrapMatch));
             if (!matchUri.valid) {
                 continue;
             }
@@ -227,7 +228,7 @@ QString TextFormatter::applyMarkdown(const QString& message, bool showFormatting
         int offset = 0;
         while (iter.hasNext()) {
             const QRegularExpressionMatch match = iter.next();
-            QString captured = match.captured(!showFormattingSymbols);
+            const QString captured = match.captured(!showFormattingSymbols);
             if (isTagIntersection(captured)) {
                 continue;
             }

@@ -167,7 +167,7 @@ QByteArray ToxEncrypt::encryptPass(const QString& password, const QByteArray& pl
         qWarning() << "Empty password supplied, probably not what you intended.";
     }
 
-    QByteArray pass = password.toUtf8();
+    const QByteArray pass = password.toUtf8();
     QByteArray ciphertext(plaintext.length() + TOX_PASS_ENCRYPTION_EXTRA_LENGTH, 0x00);
     Tox_Err_Encryption error;
     tox_pass_encrypt(reinterpret_cast<const uint8_t*>(plaintext.constData()),
@@ -202,7 +202,7 @@ QByteArray ToxEncrypt::decryptPass(const QString& password, const QByteArray& ci
         qDebug() << "Empty password supplied, probably not what you intended.";
     }
 
-    QByteArray pass = password.toUtf8();
+    const QByteArray pass = password.toUtf8();
     QByteArray plaintext(ciphertext.length() - TOX_PASS_ENCRYPTION_EXTRA_LENGTH, 0x00);
     Tox_Err_Decryption error;
     tox_pass_decrypt(reinterpret_cast<const uint8_t*>(ciphertext.constData()),
@@ -269,7 +269,7 @@ std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password, 
         return std::unique_ptr<ToxEncrypt>{};
     }
 
-    QByteArray pass = password.toUtf8();
+    const QByteArray pass = password.toUtf8();
     Tox_Err_Key_Derivation keyError;
     Tox_Pass_Key* const passKey =
         tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(pass.constData()),

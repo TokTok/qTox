@@ -110,7 +110,7 @@ FileTransferWidget::~FileTransferWidget()
 bool FileTransferWidget::tryRemoveFile(const QString& filepath)
 {
     QFile tmp(filepath);
-    bool writable = tmp.open(QIODevice::WriteOnly);
+    const bool writable = tmp.open(QIODevice::WriteOnly);
     tmp.remove();
     return writable;
 }
@@ -184,7 +184,8 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::NoPen);
 
-    qreal ratio = static_cast<qreal>(geometry().height()) / static_cast<qreal>(geometry().width());
+    const qreal ratio =
+        static_cast<qreal>(geometry().height()) / static_cast<qreal>(geometry().width());
     const int r = 24;
     const int buttonFieldWidth = 32;
     const int lineWidth = 1;
@@ -320,8 +321,9 @@ void FileTransferWidget::updateFileProgress(const ToxFile& file)
         // update UI
         if (speed > 0) {
             // ETA
-            QTime toGo = QTime(0, 0).addSecs(remainingTime);
-            QString format = toGo.hour() > 0 ? QStringLiteral("hh:mm:ss") : QStringLiteral("mm:ss");
+            const QTime toGo = QTime(0, 0).addSecs(remainingTime);
+            const QString format =
+                toGo.hour() > 0 ? QStringLiteral("hh:mm:ss") : QStringLiteral("mm:ss");
             ui->etaLabel->setText(toGo.toString(format));
         } else {
             ui->etaLabel->setText("");
@@ -465,7 +467,7 @@ void FileTransferWidget::handleButton(QPushButton* btn)
         } else if (btn->objectName() == "resume") {
             coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
         } else if (btn->objectName() == "accept") {
-            QString path =
+            const QString path =
                 QFileDialog::getSaveFileName(Q_NULLPTR,
                                              tr("Save a file", "Title of the file saving dialog"),
                                              settings.getGlobalAutoAcceptDir() + "/"
@@ -477,7 +479,7 @@ void FileTransferWidget::handleButton(QPushButton* btn)
     if (btn->objectName() == "ok" || btn->objectName() == "previewButton") {
         messageBoxManager.confirmExecutableOpen(QFileInfo(fileInfo.filePath));
     } else if (btn->objectName() == "dir") {
-        QString dirPath = QFileInfo(fileInfo.filePath).dir().path();
+        const QString dirPath = QFileInfo(fileInfo.filePath).dir().path();
         QDesktopServices::openUrl(QUrl::fromLocalFile(dirPath));
     }
 }
@@ -513,7 +515,7 @@ void FileTransferWidget::updateWidget(const ToxFile& file)
 
     fileInfo = file;
 
-    bool shouldUpdateFileProgress =
+    const bool shouldUpdateFileProgress =
         file.status != ToxFile::TRANSMITTING || lastTransmissionUpdate == QTime()
         || lastTransmissionUpdate.msecsTo(file.progress.lastSampleTime()) > 1000;
 

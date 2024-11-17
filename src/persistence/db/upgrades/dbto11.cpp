@@ -25,7 +25,7 @@ bool DbTo11::dbSchema10to11(RawDatabase& db)
         return false;
     }
     upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 11;"));
-    bool transactionPass = db.execNow(std::move(upgradeQueries));
+    const bool transactionPass = db.execNow(std::move(upgradeQueries));
     if (transactionPass) {
         return db.execNow("VACUUM");
     }

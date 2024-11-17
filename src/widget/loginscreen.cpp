@@ -76,7 +76,7 @@ void LoginScreen::reset(const QString& initialProfileName)
     ui->loginPassword->clear();
     ui->loginUsernames->clear();
 
-    QStringList allProfileNames = Profile::getAllProfileNames(paths);
+    const QStringList allProfileNames = Profile::getAllProfileNames(paths);
 
     if (allProfileNames.isEmpty()) {
         ui->stackedWidget->setCurrentIndex(0);
@@ -137,8 +137,8 @@ void LoginScreen::onLoginPageClicked()
 
 void LoginScreen::onCreateNewProfile()
 {
-    QString name = ui->newUsername->text();
-    QString pass = ui->newPass->text();
+    const QString name = ui->newUsername->text();
+    const QString pass = ui->newPass->text();
 
     if (name.isEmpty()) {
         emit failure(tr("Couldn't create a new profile"), tr("The username must not be empty."));
@@ -191,8 +191,8 @@ void LoginScreen::onLoginUsernameSelected(const QString& name)
 
 void LoginScreen::onLogin()
 {
-    QString name = ui->loginUsernames->currentText();
-    QString pass = ui->loginPassword->text();
+    const QString name = ui->loginUsernames->currentText();
+    const QString pass = ui->loginPassword->text();
 
     // name can be empty when there are no profiles
     if (name.isEmpty()) {

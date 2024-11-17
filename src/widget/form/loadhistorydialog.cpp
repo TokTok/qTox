@@ -41,7 +41,7 @@ QDateTime LoadHistoryDialog::getFromDate()
     QDateTime res(ui->fromDate->selectedDate().startOfDay());
     if (res.date().month() != ui->fromDate->monthShown()
         || res.date().year() != ui->fromDate->yearShown()) {
-        QDate newDate(ui->fromDate->yearShown(), ui->fromDate->monthShown(), 1);
+        const QDate newDate(ui->fromDate->yearShown(), ui->fromDate->monthShown(), 1);
         res.setDate(newDate);
     }
 
@@ -60,8 +60,8 @@ void LoadHistoryDialog::setInfoLabel(const QString& info)
 
 void LoadHistoryDialog::highlightDates(int year, int month)
 {
-    QDate monthStart(year, month, 1);
-    QDate monthEnd(year, month + 1, 1);
+    const QDate monthStart(year, month, 1);
+    const QDate monthEnd(year, month + 1, 1);
 
     // Max 31 days in a month
     auto dateIdxs = chatLog->getDateIdxs(monthStart, 31);

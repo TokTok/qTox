@@ -131,8 +131,8 @@ QList<DhtServer> jsonToNodeList(const QJsonDocument& nodeList)
         qWarning() << "Bootstrap JSON is missing nodes array";
         return result;
     }
-    QJsonArray nodes = rootObj[jsonNodeArrayName].toArray();
-    for (const QJsonValueRef node : nodes) {
+    const QJsonArray nodes = rootObj[jsonNodeArrayName].toArray();
+    for (const auto node : nodes) {
         if (node.isObject()) {
             jsonNodeToDhtServer(node.toObject(), result);
         }
@@ -149,7 +149,7 @@ QList<DhtServer> loadNodesFile(QString file)
         return {};
     }
 
-    QString nodesJson = QString::fromUtf8(nodesFile.readAll());
+    const QString nodesJson = QString::fromUtf8(nodesFile.readAll());
     nodesFile.close();
 
     auto jsonDoc = QJsonDocument::fromJson(nodesJson.toUtf8());
@@ -175,7 +175,7 @@ QByteArray serialize(QList<DhtServer> nodes)
         nodeJson.insert(NodeFields::maintainer, node.maintainer);
 
         QJsonArray tcp_ports;
-        for (unsigned short tcpPort : node.tcpPorts) {
+        for (const unsigned short tcpPort : node.tcpPorts) {
             tcp_ports.push_back(tcpPort);
         }
         nodeJson.insert(NodeFields::tcp_ports, tcp_ports);
@@ -184,7 +184,7 @@ QByteArray serialize(QList<DhtServer> nodes)
     QJsonObject rootObj;
     rootObj.insert("nodes", jsonNodes);
 
-    QJsonDocument doc{rootObj};
+    const QJsonDocument doc{rootObj};
     return doc.toJson(QJsonDocument::Indented);
 }
 
@@ -252,13 +252,13 @@ void BootstrapNodeUpdater::onRequestComplete(QNetworkReply* reply)
     }
 
     // parse the reply JSON
-    QJsonDocument jsonDocument = QJsonDocument::fromJson(reply->readAll());
+    const QJsonDocument jsonDocument = QJsonDocument::fromJson(reply->readAll());
     if (jsonDocument.isNull()) {
         emit availableBootstrapNodes({});
         return;
     }
 
-    QList<DhtServer> result = jsonToNodeList(jsonDocument);
+    const QList<DhtServer> result = jsonToNodeList(jsonDocument);
 
     emit availableBootstrapNodes(result);
 }

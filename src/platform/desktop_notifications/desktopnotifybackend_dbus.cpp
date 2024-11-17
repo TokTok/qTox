@@ -218,7 +218,7 @@ QString imageDataFieldName(const NotificationSpecVersion& specVersion)
 const QFile* getIconFile(const QImage& image, QMutex& iconMutex,
                          std::unique_ptr<QTemporaryFile>& iconFile)
 {
-    QMutexLocker<QMutex> lock(&iconMutex);
+    const QMutexLocker<QMutex> lock(&iconMutex);
     const qint64 iconKey = image.cacheKey();
     iconFile = std::make_unique<QTemporaryFile>(
         QStringList{QDir::tempPath(),

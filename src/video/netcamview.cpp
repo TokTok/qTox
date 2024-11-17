@@ -122,14 +122,14 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
         connect(selfVideoSurface, &VideoSurface::ratioChanged, this, &NetCamView::updateRatio);
 
     connections += connect(videoSurface, &VideoSurface::boundaryChanged, this, [this]() {
-        QRect boundingRect = videoSurface->getBoundingRect();
+        const QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->setBoundary(boundingRect);
     });
 
     connections += connect(videoSurface, &VideoSurface::ratioChanged, this, [this]() {
         selfFrame->setMinimumWidth(selfFrame->minimumHeight() * selfVideoSurface->getRatio());
-        QRect boundingRect = videoSurface->getBoundingRect();
+        const QRect boundingRect = videoSurface->getBoundingRect();
         updateFrameSize(boundingRect.size());
         selfFrame->resetBoundary(boundingRect);
     });
@@ -143,13 +143,13 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
                                    videoSurface->setAvatar(pixmap);
                            });
 
-    QRect videoSize = settings.getCamVideoRes();
+    const QRect videoSize = settings.getCamVideoRes();
     qDebug() << "SIZER" << videoSize;
 }
 
 NetCamView::~NetCamView()
 {
-    for (QMetaObject::Connection conn : connections)
+    for (const QMetaObject::Connection& conn : connections)
         disconnect(conn);
 }
 
@@ -209,9 +209,9 @@ void NetCamView::updateFrameSize(QSize size)
 
 QSize NetCamView::getSurfaceMinSize()
 {
-    QSize surfaceSize = videoSurface->minimumSize();
-    QSize buttonSize = toggleMessagesButton->size();
-    QSize panelSize(0, 45);
+    const QSize surfaceSize = videoSurface->minimumSize();
+    const QSize buttonSize = toggleMessagesButton->size();
+    const QSize panelSize(0, 45);
 
     return surfaceSize + buttonSize + panelSize;
 }
@@ -325,7 +325,7 @@ void NetCamView::updateButtonState(QPushButton* btn, bool active)
 
 void NetCamView::keyPressEvent(QKeyEvent* event)
 {
-    int key = event->key();
+    const int key = event->key();
     if (key == Qt::Key_Escape && isFullScreen()) {
         exitFullScreen();
     }

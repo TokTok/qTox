@@ -85,8 +85,8 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     bool forceTCP = s.getForceTCP();
     // LAN requiring UDP is a toxcore limitation, ideally wouldn't be related
     const bool enableLanDiscovery = s.getEnableLanDiscovery() && !forceTCP;
-    ICoreSettings::ProxyType proxyType = s.getProxyType();
-    quint16 proxyPort = s.getProxyPort();
+    const ICoreSettings::ProxyType proxyType = s.getProxyType();
+    const quint16 proxyPort = s.getProxyPort();
 
     if (!enableLanDiscovery) {
         qWarning() << "Core starting without LAN discovery. Peers can only be found through DHT.";

@@ -62,7 +62,7 @@ unsigned CoreFile::corefileIterationInterval()
     */
     constexpr unsigned fileInterval = 10, idleInterval = 1000;
 
-    for (ToxFile& file : fileMap) {
+    for (const ToxFile& file : fileMap) {
         if (file.status == ToxFile::TRANSMITTING) {
             return fileInterval;
         }
@@ -81,7 +81,7 @@ void CoreFile::connectCallbacks(Tox& tox)
 
 void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     uint32_t fileNum;
     uint64_t filesize = 0;
@@ -120,12 +120,12 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
 
 void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, long long filesize)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
-    ToxString fileName(filename);
+    const ToxString fileName(filename);
     Tox_Err_File_Send sendErr;
-    uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize, nullptr,
-                                     fileName.data(), fileName.size(), &sendErr);
+    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_DATA, filesize, nullptr,
+                                           fileName.data(), fileName.size(), &sendErr);
 
     if (!PARSE_ERR(sendErr)) {
         emit fileSendFailed(friendId, fileName.getQString());
@@ -157,7 +157,7 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, l
 
 void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -192,7 +192,7 @@ void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::cancelFileSend(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -212,7 +212,7 @@ void CoreFile::cancelFileSend(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::cancelFileRecv(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -231,7 +231,7 @@ void CoreFile::cancelFileRecv(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -250,7 +250,7 @@ void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
     if (!file) {
@@ -273,9 +273,9 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
 
 ToxFile* CoreFile::findFile(uint32_t friendId, uint32_t fileId)
 {
-    QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
-    uint64_t key = getFriendKey(friendId, fileId);
+    const uint64_t key = getFriendKey(friendId, fileId);
     if (fileMap.contains(key)) {
         return &fileMap[key];
     }
@@ -286,7 +286,7 @@ ToxFile* CoreFile::findFile(uint32_t friendId, uint32_t fileId)
 
 void CoreFile::addFile(uint32_t friendId, uint32_t fileId, const ToxFile& file)
 {
-    uint64_t key = getFriendKey(friendId, fileId);
+    const uint64_t key = getFriendKey(friendId, fileId);
 
     if (fileMap.contains(key)) {
         qWarning() << "addFile: Overwriting existing file transfer with same ID" << friendId << ':'
@@ -298,7 +298,7 @@ void CoreFile::addFile(uint32_t friendId, uint32_t fileId, const ToxFile& file)
 
 void CoreFile::removeFile(uint32_t friendId, uint32_t fileId)
 {
-    uint64_t key = getFriendKey(friendId, fileId);
+    const uint64_t key = getFriendKey(friendId, fileId);
     if (!fileMap.contains(key)) {
         qWarning() << "removeFile: No such file in queue";
         return;
@@ -309,7 +309,7 @@ void CoreFile::removeFile(uint32_t friendId, uint32_t fileId)
 
 QString CoreFile::getCleanFileName(QString filename)
 {
-    QRegularExpression regex{QStringLiteral(R"([<>:"/\\|?])")};
+    const QRegularExpression regex{QStringLiteral(R"([<>:"/\\|?])")};
     filename.replace(regex, "_");
 
     return filename;
@@ -351,7 +351,8 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
         if (!PARSE_ERR(fileGetErr)) {
             return;
         }
-        QByteArray avatarBytes(reinterpret_cast<const char*>(avatarHash.data()), tox_hash_length());
+        const QByteArray avatarBytes(reinterpret_cast<const char*>(avatarHash.data()),
+                                     tox_hash_length());
         emit core->fileAvatarOfferReceived(friendId, fileId, avatarBytes, filesize);
         return;
     }
@@ -472,7 +473,7 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
         return;
     }
 
-    std::unique_ptr<uint8_t[]> data(new uint8_t[length]);
+    const std::unique_ptr<uint8_t[]> data(new uint8_t[length]);
     int64_t nread;
 
     if (file->fileKind == TOX_FILE_KIND_AVATAR) {
@@ -574,7 +575,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
 
 void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state)
 {
-    bool isOffline = state == Status::Status::Offline;
+    const bool isOffline = state == Status::Status::Offline;
     // TODO: Actually resume broken file transfers
     // We need to:
     // - Start a new file transfer with the same 32byte file ID with toxcore
@@ -582,8 +583,8 @@ void CoreFile::onConnectionStatusChanged(uint32_t friendId, Status::Status state
     // - Update the fileNum in our ToxFile
     // - Update the users of our signals to check the 32byte tox file ID, not the uint32_t file_num
     // (fileId)
-    ToxFile::FileStatus status = !isOffline ? ToxFile::TRANSMITTING : ToxFile::BROKEN;
-    for (uint64_t key : fileMap.keys()) {
+    const ToxFile::FileStatus status = !isOffline ? ToxFile::TRANSMITTING : ToxFile::BROKEN;
+    for (const uint64_t key : fileMap.keys()) {
         if (key >> 32 != friendId)
             continue;
         fileMap[key].status = status;

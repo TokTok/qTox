@@ -29,7 +29,7 @@ bool ToxURIDialog::handleToxURI(const QString& toxURI)
 {
     const QString toxAddress = toxURI.mid(4);
 
-    ToxId toxId(toxAddress);
+    const ToxId toxId(toxAddress);
     QString error = QString();
     if (!toxId.isValid()) {
         error = QMessageBox::tr("%1 is not a valid Tox address.").arg(toxAddress);
@@ -45,7 +45,7 @@ bool ToxURIDialog::handleToxURI(const QString& toxURI)
 
     setUserId(toxURI);
 
-    int result = exec();
+    const int result = exec();
     if (result == QDialog::Accepted) {
         core.requestFriendship(toxId, getRequestMessage());
     }

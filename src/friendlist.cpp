@@ -19,7 +19,7 @@ Friend* FriendList::addFriend(uint32_t friendId, const ToxPk& friendPk, Settings
         qWarning() << "addFriend: friendPk already taken";
     }
 
-    QString alias = settings.getFriendAlias(friendPk);
+    const QString alias = settings.getFriendAlias(friendPk);
     Friend* newFriend = new Friend(friendId, friendPk, alias);
     friendList[friendPk] = newFriend;
     id2key[friendId] = friendPk;

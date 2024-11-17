@@ -144,16 +144,16 @@ VideoFrame::~VideoFrame()
 {
     {
         // Release frame buffer.
-        QWriteLocker frameLockWriteLocker(&frameLock);
+        const QWriteLocker frameLockWriteLocker(&frameLock);
         deleteFrameBuffer();
     }
 
     // Delete tracked reference.
-    QReadLocker refsLockReadLocker(&refsLock);
+    const QReadLocker refsLockReadLocker(&refsLock);
 
     auto refsIt = refsMap.find(sourceID);
     if (refsIt != refsMap.end()) {
-        QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
+        const QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
         auto frameIt = refsIt->second.find(frameID);
         if (frameIt != refsIt->second.end()) {
             refsIt->second.erase(frameID);
@@ -171,7 +171,7 @@ VideoFrame::~VideoFrame()
  */
 bool VideoFrame::isValid()
 {
-    QReadLocker frameLockReadLocker(&frameLock);
+    const QReadLocker frameLockReadLocker(&frameLock);
     return !frameBuffer.empty();
 }
 
@@ -201,7 +201,7 @@ std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* so
     }
 
     const auto frame = [sourceID, sourceFrame] {
-        QMutexLocker<QMutex> sourceMutexLock{&mutexMap[sourceID]};
+        const QMutexLocker<QMutex> sourceMutexLock{&mutexMap[sourceID]};
         auto ret = fromAVFrameUntracked(sourceID, sourceFrame, false);
         refsMap[sourceID][ret->frameID] = ret;
         return ret;
@@ -230,7 +230,7 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
     QList<std::shared_ptr<VideoFrame>> toDelete;
 
     // Must be created after toDelete to avoid deadlock.
-    QWriteLocker refsLockWriteLocker(&refsLock);
+    const QWriteLocker refsLockWriteLocker(&refsLock);
 
     auto refsIt = refsMap.find(sourceID);
     if (refsIt == refsMap.end()) {
@@ -239,7 +239,7 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
     }
 
     if (releaseFrames) {
-        QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
+        const QMutexLocker<QMutex> sourceLocker(&mutexMap[sourceID]);
 
         for (auto& frameIterator : refsIt->second) {
             std::shared_ptr<VideoFrame> frame = frameIterator.second.lock();
@@ -262,7 +262,7 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
  */
 void VideoFrame::releaseFrame()
 {
-    QWriteLocker frameLockWriteLocker(&frameLock);
+    const QWriteLocker frameLockWriteLocker(&frameLock);
     deleteFrameBuffer();
 }
 
@@ -417,8 +417,8 @@ bool VideoFrame::FrameBufferKey::operator!=(const FrameBufferKey& other) const
  */
 size_t VideoFrame::FrameBufferKey::hash(const FrameBufferKey& key)
 {
-    std::hash<int> intHasher;
-    std::hash<bool> boolHasher;
+    const std::hash<int> intHasher;
+    const std::hash<bool> boolHasher;
 
     // Use java-style hash function to combine fields
     // See: https://en.wikipedia.org/wiki/Java_hashCode%28%29#hashCode.28.29_in_general
@@ -482,14 +482,14 @@ AVFrame* VideoFrame::retrieveAVFrame(const QSize& dimensions, const int pixelFor
          * We attempt to obtain a unaligned frame first because an unaligned linesize corresponds
          * to a data aligned frame.
          */
-        FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
+        const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
 
         if (frameBuffer.contains(frameKey)) {
             return frameBuffer[frameKey];
         }
     }
 
-    FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
+    const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
 
     if (frameBuffer.contains(frameKey)) {
         return frameBuffer[frameKey];
@@ -545,7 +545,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
     }
 
     // Bilinear is better for shrinking, bicubic better for upscaling
-    int resizeAlgo = sourceDimensions.width() > dimensions.width() ? SWS_BILINEAR : SWS_BICUBIC;
+    const int resizeAlgo = sourceDimensions.width() > dimensions.width() ? SWS_BILINEAR : SWS_BICUBIC;
 
     SwsContext* swsCtx =
         sws_getContext(sourceDimensions.width(), sourceDimensions.height(),
@@ -595,7 +595,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
  */
 AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const int pixelFormat)
 {
-    FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
+    const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
 
     // We check the presence of the frame in case of double-computation
     if (frameBuffer.contains(frameKey)) {

@@ -22,7 +22,7 @@ void NotificationScrollArea::trackWidget(Settings& settings, Style& style, Gener
     if (trackedWidgets.contains(widget))
         return;
 
-    Visibility visibility = widgetVisible(widget);
+    const Visibility visibility = widgetVisible(widget);
     if (visibility != Visible) {
         if (visibility == Above) {
             if (referencesAbove++ == 0) {
@@ -119,7 +119,7 @@ void NotificationScrollArea::findNextWidget()
     // Try finding a closer one.
     for (; i != trackedWidgets.end(); ++i) {
         if (i.value() == Below) {
-            int y = i.key()->mapTo(viewport(), QPoint()).y();
+            const int y = i.key()->mapTo(viewport(), QPoint()).y();
             if (y < value) {
                 next = i.key();
                 value = y;
@@ -149,7 +149,7 @@ void NotificationScrollArea::findPreviousWidget()
     // Try finding a closer one.
     for (; i != trackedWidgets.end(); ++i) {
         if (i.value() == Above) {
-            int y = i.key()->mapTo(viewport(), QPoint()).y();
+            const int y = i.key()->mapTo(viewport(), QPoint()).y();
             if (y > value) {
                 next = i.key();
                 value = y;
@@ -163,7 +163,7 @@ void NotificationScrollArea::findPreviousWidget()
 
 NotificationScrollArea::Visibility NotificationScrollArea::widgetVisible(QWidget* widget) const
 {
-    int y = widget->mapTo(viewport(), QPoint()).y();
+    const int y = widget->mapTo(viewport(), QPoint()).y();
 
     if (y < 0)
         return Above;

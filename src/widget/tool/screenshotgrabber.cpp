@@ -68,8 +68,8 @@ void ScreenshotGrabber::showGrabber()
     window->setFocus();
     window->grabKeyboard();
 
-    QRect fullGrabbedRect = screenGrab.rect();
-    QRect rec = QApplication::primaryScreen()->virtualGeometry();
+    const QRect fullGrabbedRect = screenGrab.rect();
+    const QRect rec = QApplication::primaryScreen()->virtualGeometry();
 
     window->setGeometry(rec);
     scene->setSceneRect(fullGrabbedRect);
@@ -115,7 +115,7 @@ void ScreenshotGrabber::acceptRegion()
 
     emit regionChosen(rect);
     qDebug() << "Screenshot accepted, chosen region" << rect;
-    QPixmap pixmap = screenGrab.copy(rect);
+    const QPixmap pixmap = screenGrab.copy(rect);
     restoreHiddenWindows();
     emit screenshotTaken(pixmap);
 
@@ -187,11 +187,11 @@ void ScreenshotGrabber::chooseHelperTooltipText(QRect rect)
  */
 void ScreenshotGrabber::adjustTooltipPosition()
 {
-    QRect recGL = QGuiApplication::primaryScreen()->virtualGeometry();
+    const QRect recGL = QGuiApplication::primaryScreen()->virtualGeometry();
     const auto rec = QGuiApplication::screenAt(QCursor::pos())->geometry();
     const QRectF ttRect = helperToolbox->childrenBoundingRect();
-    int x = qAbs(recGL.x()) + rec.x() + ((rec.width() - ttRect.width()) / 2);
-    int y = qAbs(recGL.y()) + rec.y();
+    const int x = qAbs(recGL.x()) + rec.x() + ((rec.width() - ttRect.width()) / 2);
+    const int y = qAbs(recGL.y()) + rec.y();
 
     helperToolbox->setX(x);
     helperToolbox->setY(y);
@@ -206,7 +206,7 @@ void ScreenshotGrabber::reject()
 QPixmap ScreenshotGrabber::grabScreen() const
 {
     QScreen* screen = QGuiApplication::primaryScreen();
-    QRect rec = screen->virtualGeometry();
+    const QRect rec = screen->virtualGeometry();
 
     // Multiply by devicePixelRatio to get actual desktop size
     return screen->grabWindow(0, rec.x() * pixRatio, rec.y() * pixRatio, rec.width() * pixRatio,
@@ -238,7 +238,7 @@ void ScreenshotGrabber::restoreHiddenWindows()
 
 void ScreenshotGrabber::beginRectChooser(QGraphicsSceneMouseEvent* event)
 {
-    QPointF pos = event->scenePos();
+    const QPointF pos = event->scenePos();
     chooserRect->setX(pos.x());
     chooserRect->setY(pos.y());
     chooserRect->beginResize(event->scenePos());

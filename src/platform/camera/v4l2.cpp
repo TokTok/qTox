@@ -115,7 +115,7 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
     QVector<VideoMode> modes;
 
     int error = 0;
-    int fd = deviceOpen(devName, &error);
+    const int fd = deviceOpen(devName, &error);
     if (fd < 0 || error != 0) {
         return modes;
     }
@@ -155,7 +155,7 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
                 rates.append(0.0f);
             }
 
-            for (float rate : rates) {
+            for (const float rate : rates) {
                 mode.fps = rate;
                 if (!modes.contains(mode)) {
                     modes.append(mode);
@@ -184,9 +184,9 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
             deviceFiles += QString("/dev/") + QString::fromUtf8(e->d_name);
     closedir(dir);
 
-    for (QString file : deviceFiles) {
+    for (const QString& file : deviceFiles) {
         const std::string filePath = file.toStdString();
-        int fd = open(filePath.c_str(), O_RDWR);
+        const int fd = open(filePath.c_str(), O_RDWR);
         if (fd < 0) {
             continue;
         }
