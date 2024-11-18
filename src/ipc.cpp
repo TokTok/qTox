@@ -217,9 +217,9 @@ bool IPC::isEventAccepted(time_t time)
 
     if (difftime(global()->lastProcessed, time) > 0) {
         IPCMemory* mem = global();
-        for (uint32_t i = 0; i < EVENT_QUEUE_SIZE; ++i) {
-            if (mem->events[i].posted == time && mem->events[i].processed) {
-                result = mem->events[i].accepted;
+        for (auto& event : mem->events) {
+            if (event.posted == time && event.processed) {
+                result = event.accepted;
                 break;
             }
         }
@@ -268,8 +268,8 @@ void IPC::setProfileId(uint32_t profileId_)
 IPC::IPCEvent* IPC::fetchEvent()
 {
     IPCMemory* mem = global();
-    for (uint32_t i = 0; i < EVENT_QUEUE_SIZE; ++i) {
-        IPCEvent* evt = &mem->events[i];
+    for (auto& event : mem->events) {
+        IPCEvent* evt = &event;
 
         // Garbage-collect events that were not processed in EVENT_GC_TIMEOUT
         // and events that were processed and EVENT_GC_TIMEOUT passed after

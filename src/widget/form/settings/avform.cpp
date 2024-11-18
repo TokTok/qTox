@@ -11,6 +11,7 @@
 #include <QDebug>
 #include <QScreen>
 #include <QShowEvent>
+#include <ranges>
 
 #include "audio/audio.h"
 #include "audio/iaudiosettings.h"
@@ -230,9 +231,9 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
         if (mode.FPS > 60)
             continue;
 
-        for (auto iter = idealModes.begin(); iter != idealModes.end(); ++iter) {
-            int res = iter->first;
-            VideoMode idealMode = iter->second;
+        for (auto& iter : idealModes) {
+            int res = iter.first;
+            VideoMode idealMode = iter.second;
             // don't take approximately correct resolutions unless they really
             // are close
             if (mode.norm(idealMode) > idealMode.tolerance())
@@ -265,8 +266,8 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     QVector<VideoMode> newVideoModes;
-    for (auto it = bestModeInds.rbegin(); it != bestModeInds.rend(); ++it) {
-        VideoMode mode_ = allVideoModes[it->second];
+    for (auto& bestModeInd : std::ranges::reverse_view(bestModeInds)) {
+        VideoMode mode_ = allVideoModes[bestModeInd.second];
 
         if (newVideoModes.empty()) {
             newVideoModes.push_back(mode_);
@@ -288,9 +289,7 @@ void AVForm::fillCameraModesComboBox()
     bool previouslyBlocked = videoModescomboBox->blockSignals(true);
     videoModescomboBox->clear();
 
-    for (int i = 0; i < videoModes.size(); ++i) {
-        VideoMode mode = videoModes[i];
-
+    for (auto mode : videoModes) {
         QString str;
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
         qDebug("width: %d, height: %d, FPS: %f, pixel format: %s", mode.width, mode.height,

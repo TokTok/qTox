@@ -157,25 +157,24 @@ void FriendListWidget::sortByMode()
         QVector<IFriendListItem*> friendItems; // Items that are not included in the circle
         int posByName = 0;                     // Needed for scroll contacts
         // Linking a friend with a circle and setting scroll position
-        for (int i = 0; i < itemsTmp.size(); ++i) {
-            if (itemsTmp[i]->isFriend() && itemsTmp[i]->getCircleId() >= 0) {
-                CircleWidget* circleWgt = CircleWidget::getFromID(itemsTmp[i]->getCircleId());
+        for (auto& i : itemsTmp) {
+            if (i->isFriend() && i->getCircleId() >= 0) {
+                CircleWidget* circleWgt = CircleWidget::getFromID(i->getCircleId());
                 if (circleWgt != nullptr) {
                     // Place a friend in the circle and continue
-                    FriendWidget* frndTmp =
-                        qobject_cast<FriendWidget*>((itemsTmp[i].get())->getWidget());
+                    FriendWidget* frndTmp = qobject_cast<FriendWidget*>((i.get())->getWidget());
                     circleWgt->addFriendWidget(frndTmp, frndTmp->getFriend()->getStatus());
                     continue;
                 }
             }
             // Place the item without the circle in the vector and set the position
-            itemsTmp[i]->setNameSortedPos(posByName++);
-            friendItems.push_back(itemsTmp[i].get());
+            i->setNameSortedPos(posByName++);
+            friendItems.push_back(i.get());
         }
 
         // Add groups and friends without circles
-        for (int i = 0; i < friendItems.size(); ++i) {
-            listLayout->addWidget(friendItems[i]->getWidget());
+        for (auto& friendItem : friendItems) {
+            listLayout->addWidget(friendItem->getWidget());
         }
 
         // TODO: Try to remove
@@ -192,15 +191,14 @@ void FriendListWidget::sortByMode()
                 return a->getName().toUpper() < b->getName().toUpper();
             });
 
-            for (int i = 0; i < circles.size(); ++i) {
+            for (auto circle : circles) {
 
-                QVector<std::shared_ptr<IFriendListItem>> itemsInCircle =
-                    getItemsFromCircle(circles.at(i));
-                for (int j = 0; j < itemsInCircle.size(); ++j) {
-                    itemsInCircle.at(j)->setNameSortedPos(posByName++);
+                QVector<std::shared_ptr<IFriendListItem>> itemsInCircle = getItemsFromCircle(circle);
+                for (const auto& j : itemsInCircle) {
+                    j->setNameSortedPos(posByName++);
                 }
 
-                listLayout->addWidget(circles.at(i));
+                listLayout->addWidget(circle);
             }
         }
     } else if (mode == SortingMode::Activity) {
@@ -233,8 +231,8 @@ void FriendListWidget::sortByMode()
 
         QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
 
-        for (int i = 0; i < itemsTmp.size(); ++i) {
-            listLayout->addWidget(itemsTmp[i]->getWidget());
+        for (auto& i : itemsTmp) {
+            listLayout->addWidget(i->getWidget());
         }
 
         activityLayout = new QVBoxLayout();
@@ -249,12 +247,12 @@ void FriendListWidget::sortByMode()
         manager->applyFilter();
 
         // Insert widgets to CategoryWidget
-        for (int i = 0; i < itemsTmp.size(); ++i) {
-            if (itemsTmp[i]->isFriend()) {
-                int timeIndex = static_cast<int>(getTimeBucket(itemsTmp[i]->getLastActivity()));
+        for (auto& i : itemsTmp) {
+            if (i->isFriend()) {
+                int timeIndex = static_cast<int>(getTimeBucket(i->getLastActivity()));
                 QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
                 CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
-                FriendWidget* frnd = qobject_cast<FriendWidget*>((itemsTmp[i].get())->getWidget());
+                FriendWidget* frnd = qobject_cast<FriendWidget*>((i.get())->getWidget());
                 if (!isVisible() || (isVisible() && frnd->isVisible())) {
                     categoryWidget->addFriendWidget(frnd, frnd->getFriend()->getStatus());
                 }
@@ -320,10 +318,10 @@ QVector<std::shared_ptr<IFriendListItem>> FriendListWidget::getItemsFromCircle(C
 {
     QVector<std::shared_ptr<IFriendListItem>> itemsTmp = manager->getItems();
     QVector<std::shared_ptr<IFriendListItem>> itemsInCircle;
-    for (int i = 0; i < itemsTmp.size(); ++i) {
-        int circleId = itemsTmp.at(i)->getCircleId();
+    for (const auto& i : itemsTmp) {
+        int circleId = i->getCircleId();
         if (CircleWidget::getFromID(circleId) == circle) {
-            itemsInCircle.push_back(itemsTmp.at(i));
+            itemsInCircle.push_back(i);
         }
     }
     return itemsInCircle;

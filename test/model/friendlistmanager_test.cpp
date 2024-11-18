@@ -279,8 +279,7 @@ public:
 
         // Add friends and set the date of the last activity by index
         QDateTime dateTime = QDateTime::currentDateTime();
-        for (int i = 0; i < sortedByActivityFriends.size(); ++i) {
-            QString name = sortedByActivityFriends.at(i);
+        for (auto name : sortedByActivityFriends) {
             vec.push_back(std::shared_ptr<IFriendListItem>(
                 new MockFriend(name, isOnline(name), getDateTime(name))));
         }
