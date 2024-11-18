@@ -15,66 +15,66 @@
 namespace {
 class MockNotificationSettings : public INotificationSettings
 {
-    virtual bool getNotify() const override
+    bool getNotify() const override
     {
         return true;
     }
 
-    virtual void setNotify(bool newValue) override
+    void setNotify(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getShowWindow() const override
+    bool getShowWindow() const override
     {
         return true;
     }
-    virtual void setShowWindow(bool newValue) override
+    void setShowWindow(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getDesktopNotify() const override
+    bool getDesktopNotify() const override
     {
         return true;
     }
-    virtual void setDesktopNotify(bool enabled) override
+    void setDesktopNotify(bool enabled) override
     {
         std::ignore = enabled;
     }
 
-    virtual bool getNotifySound() const override
+    bool getNotifySound() const override
     {
         return true;
     }
-    virtual void setNotifySound(bool newValue) override
+    void setNotifySound(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getNotifyHide() const override
+    bool getNotifyHide() const override
     {
         return notifyHide;
     }
-    virtual void setNotifyHide(bool newValue) override
+    void setNotifyHide(bool newValue) override
     {
         notifyHide = newValue;
     }
 
-    virtual bool getBusySound() const override
+    bool getBusySound() const override
     {
         return true;
     }
-    virtual void setBusySound(bool newValue) override
+    void setBusySound(bool newValue) override
     {
         std::ignore = newValue;
     }
 
-    virtual bool getGroupAlwaysNotify() const override
+    bool getGroupAlwaysNotify() const override
     {
         return true;
     }
-    virtual void setGroupAlwaysNotify(bool newValue) override
+    void setGroupAlwaysNotify(bool newValue) override
     {
         std::ignore = newValue;
     }
@@ -169,7 +169,8 @@ void TestNotificationGenerator::testNotificationClear()
 
 void TestNotificationGenerator::testGroupMessage()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Group g(0, GroupId(nullptr), "groupName", false, "selfName", *groupQuery, *coreIdHandler,
+            *friendList);
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
@@ -180,7 +181,8 @@ void TestNotificationGenerator::testGroupMessage()
 
 void TestNotificationGenerator::testMultipleGroupMessages()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Group g(0, GroupId(nullptr), "groupName", false, "selfName", *groupQuery, *coreIdHandler,
+            *friendList);
 
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -350,7 +352,8 @@ void TestNotificationGenerator::testSimpleFileTransfer()
 
 void TestNotificationGenerator::testSimpleGroupMessage()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Group g(0, GroupId(nullptr), "groupName", false, "selfName", *groupQuery, *coreIdHandler,
+            *friendList);
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 

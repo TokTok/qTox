@@ -25,7 +25,7 @@ public:
     {
     }
 
-    ~MockFriend();
+    ~MockFriend() override;
 
     bool isFriend() const override
     {
@@ -84,7 +84,7 @@ public:
     {
     }
 
-    ~MockGroup();
+    ~MockGroup() override;
 
     bool isFriend() const override
     {
