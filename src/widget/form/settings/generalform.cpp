@@ -138,7 +138,7 @@ GeneralForm::GeneralForm(SettingsWidget* myParent, Settings& settings_, Style& s
     bodyUI->closeToTray->setEnabled(showSystemTray);
 
     bodyUI->statusChanges->setChecked(settings.getStatusChangeNotificationEnabled());
-    bodyUI->groupJoinLeaveMessages->setChecked(settings.getShowGroupJoinLeaveMessages());
+    bodyUI->conferenceJoinLeaveMessages->setChecked(settings.getShowConferenceJoinLeaveMessages());
 
     bodyUI->autoAwaySpinBox->setValue(settings.getAutoAwayTime());
     bodyUI->autoSaveFilesDir->setText(settings.getGlobalAutoAcceptDir());
@@ -211,9 +211,9 @@ void GeneralForm::on_statusChanges_stateChanged()
     settings.setStatusChangeNotificationEnabled(bodyUI->statusChanges->isChecked());
 }
 
-void GeneralForm::on_groupJoinLeaveMessages_stateChanged()
+void GeneralForm::on_conferenceJoinLeaveMessages_stateChanged()
 {
-    settings.setShowGroupJoinLeaveMessages(bodyUI->groupJoinLeaveMessages->isChecked());
+    settings.setShowConferenceJoinLeaveMessages(bodyUI->conferenceJoinLeaveMessages->isChecked());
 }
 
 void GeneralForm::on_autoAwaySpinBox_editingFinished()

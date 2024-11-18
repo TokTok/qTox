@@ -222,12 +222,12 @@
       </layout>
      </item>
      <item row="4" column="0" colspan="2">
-      <widget class="QCheckBox" name="autogroupinvite">
+      <widget class="QCheckBox" name="autoconferenceinvite">
        <property name="accessibleDescription">
-        <string>Automatically accept group chat invitations from this contact if set.</string>
+        <string>Automatically accept conference invitations from this contact if set.</string>
        </property>
        <property name="text">
-        <string>Auto-accept group invites</string>
+        <string>Auto-accept conference invites</string>
        </property>
       </widget>
      </item>
@@ -241,7 +241,7 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="groupBox">
+    <widget class="QGroupBox" name="conferenceBox">
      <property name="title">
       <string>Notes</string>
      </property>

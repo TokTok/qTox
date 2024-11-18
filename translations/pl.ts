@@ -234,7 +234,7 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Audio + Wideo</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Automatycznie akceptuj zaproszenia do czatu grupowego od tego kontaktu.</translation>
     </message>
     <message>
@@ -286,7 +286,7 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Automatyczne odbieranie połączeń:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Automatycznie akceptuj zaproszenia do grup</translation>
     </message>
     <message>
@@ -817,7 +817,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translation>/me oferuje znajomość, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Czat grupowy %1</translation>
     </message>
     <message>
@@ -1024,8 +1024,8 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translation>Offline</translation>
     </message>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Zaproś do grupy</translation>
     </message>
     <message>
@@ -1055,11 +1055,11 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translation>Wybierz domyślną ścieżkę dla plików</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Do nowej grupy</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Zaproś do grupy &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1215,7 +1215,7 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation>Możesz ustawić to dla każdego znajomego, klikając na niego prawym przyciskiem myszy.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Dodaj wiadomość na czacie, gdy użytkownik dołącza do grupy lub ją opuszcza</translation>
     </message>
 </context>
@@ -1280,7 +1280,7 @@ zamiast zostać całkowicie zamknięty.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1300,22 +1300,22 @@ zamiast zostać całkowicie zamknięty.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupy</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Utwórz nową grupę</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Zaproszenia do grup</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Zaproszony przez %1 na %2 przy %3.</translation>
@@ -1330,7 +1330,7 @@ zamiast zostać całkowicie zamknięty.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translatorcomment>better translation? (I have considered translating this as &apos;tytuł&apos;, but it doesn&apos;t look well along with other things IMHO)</translatorcomment>
@@ -1345,8 +1345,8 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation>Usuń rozmowę z tego okna</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Opuść grupę</translation>
     </message>
     <message numerus="yes">
@@ -1690,7 +1690,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
         <translation>Dodaj znajomych</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Utwórz czat grupowy</translation>
     </message>
     <message>
@@ -1759,11 +1759,11 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
         <translation>Otwórz stronę Dodaj znajomych</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Czat grupowy</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Otwórz stronę menadżera czatu grupowego</translation>
     </message>
     <message>
@@ -1886,7 +1886,7 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
         <translation>Nowa wiadomość</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Nowa wiadomość grupowa</translation>
     </message>
     <message>
@@ -1899,11 +1899,11 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
         <translation>%1 - transfer plików</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Otrzymano zaproszenie do grupy</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 zaprasza Cię do dołączenia do grupy.</translation>
     </message>
     <message>
@@ -1994,7 +1994,7 @@ Możliwe są zmianay formatu zapisu, co może skutkować utratą danych.</transl
         <translation>Czarna lista</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtruj wiadomości grupowe według kluczy publicznych należących do członków grupy. Umieść tutaj klucze publiczne, po jednym w każdym wierszu.</translation>
     </message>
 </context>
@@ -2426,11 +2426,11 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Nie udało się wysłać pliku &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation>Użytkownik %1 dołączył do grupy</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation>Użytkownik %1 opuścił grupę</translation>
     </message>
     <message>
@@ -2527,11 +2527,11 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Kontrola</translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation>Dołączono do grupy</translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation>Opuszczono grupę</translation>
     </message>
     <message>
@@ -2819,7 +2819,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Lista kontaktów</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Umieść czaty grupowe na szczycie listy znajomych</translation>
     </message>
     <message>
@@ -2889,7 +2889,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Powiadom</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Powiadomienia z czatów grupowych tylko w przypadku wspomnień</translation>
     </message>
     <message>
@@ -2909,17 +2909,17 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Ukryj nadawcę oraz treść wiadomości</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Używaj kolorowych pseudonimów w czatach grupowych</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Powiadamiaj o nowych wiadomościach z czatów grupowych tylko wtedy, gdy o mnie wspomniano.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>Jeśli zaznaczone, czaty grupowe będą umieszczane na górze listy znajomych, w przeciwnym razie, będą umieszczane poniżej znajomych, którzy są online.</translation>
     </message>
     <message>
@@ -2981,7 +2981,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Znajomi</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupy</translation>
     </message>
     <message>
@@ -3014,11 +3014,11 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Kontakty</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Grupa #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Utwórz nową grupę…</translation>
     </message>
     <message>
@@ -3037,7 +3037,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>Dodaj znajomego</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Zaproszenia do grup</translation>
     </message>
@@ -3078,7 +3078,7 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n nowe zaproszenie do grupy</numerusform>
             <numerusform>%n nowe zaproszenia do grup</numerusform>

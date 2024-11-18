@@ -17,7 +17,7 @@ class GenericChatItemWidget : public QFrame
 public:
     enum ItemType
     {
-        GroupItem,
+        ConferenceItem,
         FriendOfflineItem,
         FriendOnlineItem
     };

@@ -142,7 +142,7 @@ Message MessageProcessor::processIncomingCoreMessage(bool isAction, QString cons
 Message MessageProcessor::processIncomingExtMessage(const QString& content)
 {
     // Note: detectingMentions not implemented here since mentions are only
-    // currently useful in group messages which do not support extensions. If we
+    // currently useful in conference messages which do not support extensions. If we
     // were to support mentions we would probably want to do something more
     // intelligent anyways
     assert(detectingMentions == false);

@@ -40,8 +40,8 @@ public:
     virtual AutoAcceptCallFlags getAutoAcceptCall(const ToxPk& pk) const = 0;
     virtual void setAutoAcceptCall(const ToxPk& pk, AutoAcceptCallFlags accept) = 0;
 
-    virtual bool getAutoGroupInvite(const ToxPk& pk) const = 0;
-    virtual void setAutoGroupInvite(const ToxPk& pk, bool accept) = 0;
+    virtual bool getAutoConferenceInvite(const ToxPk& pk) const = 0;
+    virtual void setAutoConferenceInvite(const ToxPk& pk, bool accept) = 0;
 
     virtual QString getFriendAlias(const ToxPk& pk) const = 0;
     virtual void setFriendAlias(const ToxPk& pk, const QString& alias) = 0;
@@ -57,7 +57,7 @@ public:
 
 signals:
     DECLARE_SIGNAL(autoAcceptCallChanged, const ToxPk& pk, AutoAcceptCallFlags accept);
-    DECLARE_SIGNAL(autoGroupInviteChanged, const ToxPk& pk, bool accept);
+    DECLARE_SIGNAL(autoConferenceInviteChanged, const ToxPk& pk, bool accept);
     DECLARE_SIGNAL(autoAcceptDirChanged, const ToxPk& pk, const QString& dir);
     DECLARE_SIGNAL(contactNoteChanged, const ToxPk& pk, const QString& note);
 };

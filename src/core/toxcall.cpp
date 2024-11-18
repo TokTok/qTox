@@ -6,7 +6,7 @@
 #include "src/core/toxcall.h"
 #include "audio/audio.h"
 #include "src/core/coreav.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/persistence/settings.h"
 #include "src/video/camerasource.h"
 #include "src/video/corevideosource.h"
@@ -15,10 +15,10 @@
 
 /**
  * @var uint32_t ToxCall::callId
- * @brief Could be a friendNum or groupNum, must uniquely identify the call. Do not modify!
+ * @brief Could be a friendNum or conferenceNum, must uniquely identify the call. Do not modify!
  *
  * @var bool ToxCall::inactive
- * @brief True while we're not participating. (stopped group call, ringing but hasn't started yet,
+ * @brief True while we're not participating. (stopped conference call, ringing but hasn't started yet,
  * ...)
  *
  * @var bool ToxFriendCall::videoEnabled
@@ -30,8 +30,8 @@
  * @var TOXAV_FRIEND_CALL_STATE ToxFriendCall::state
  * @brief State of the peer (not ours!)
  *
- * @var QMap ToxGroupCall::peers
- * @brief Keeps sources for users in group calls.
+ * @var QMap ToxConferenceCall::peers
+ * @brief Keeps sources for users in conference calls.
  */
 
 ToxCall::ToxCall(bool VideoEnabled_, CoreAV& av_, IAudioControl& audio_)
@@ -192,56 +192,56 @@ void ToxFriendCall::playAudioBuffer(const int16_t* data, int samples, unsigned c
     }
 }
 
-ToxGroupCall::ToxGroupCall(const Group& group_, CoreAV& av_, IAudioControl& audio_)
+ToxConferenceCall::ToxConferenceCall(const Conference& conference_, CoreAV& av_, IAudioControl& audio_)
     : ToxCall(false, av_, audio_)
-    , group{group_}
+    , conference{conference_}
 {
     // register audio
     connect(audioSource.get(), &IAudioSource::frameAvailable, this,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
-                if (group.getPeersCount() <= 1) {
+                if (conference.getPeersCount() <= 1) {
                     return;
                 }
 
-                av->sendGroupCallAudio(group.getId(), pcm, samples, chans, rate);
+                av->sendConferenceCallAudio(conference.getId(), pcm, samples, chans, rate);
             });
 
     connect(audioSource.get(), &IAudioSource::invalidated, this,
-            &ToxGroupCall::onAudioSourceInvalidated);
+            &ToxConferenceCall::onAudioSourceInvalidated);
 }
 
-ToxGroupCall::~ToxGroupCall()
+ToxConferenceCall::~ToxConferenceCall()
 {
     // disconnect all Qt connections
     clearPeers();
 }
 
-void ToxGroupCall::onAudioSourceInvalidated()
+void ToxConferenceCall::onAudioSourceInvalidated()
 {
     auto newSrc = audio.makeSource();
     connect(audioSource.get(), &IAudioSource::frameAvailable,
             [this](const int16_t* pcm, size_t samples, uint8_t chans, uint32_t rate) {
-                if (group.getPeersCount() <= 1) {
+                if (conference.getPeersCount() <= 1) {
                     return;
                 }
 
-                av->sendGroupCallAudio(group.getId(), pcm, samples, chans, rate);
+                av->sendConferenceCallAudio(conference.getId(), pcm, samples, chans, rate);
             });
 
     audioSource = std::move(newSrc);
 
     connect(audioSource.get(), &IAudioSource::invalidated, this,
-            &ToxGroupCall::onAudioSourceInvalidated);
+            &ToxConferenceCall::onAudioSourceInvalidated);
 }
 
 
-void ToxGroupCall::onAudioSinkInvalidated(ToxPk peerId)
+void ToxConferenceCall::onAudioSinkInvalidated(ToxPk peerId)
 {
     removePeer(peerId);
     addPeer(peerId);
 }
 
-void ToxGroupCall::removePeer(ToxPk peerId)
+void ToxConferenceCall::removePeer(ToxPk peerId)
 {
     const auto& source = peers.find(peerId);
     if (source == peers.cend()) {
@@ -254,7 +254,7 @@ void ToxGroupCall::removePeer(ToxPk peerId)
     sinkInvalid.erase(peerId);
 }
 
-void ToxGroupCall::addPeer(ToxPk peerId)
+void ToxConferenceCall::addPeer(ToxPk peerId)
 {
     std::unique_ptr<IAudioSink> newSink = audio.makeSink();
 
@@ -269,13 +269,13 @@ void ToxGroupCall::addPeer(ToxPk peerId)
     sinkInvalid.insert({peerId, con});
 }
 
-bool ToxGroupCall::havePeer(ToxPk peerId)
+bool ToxConferenceCall::havePeer(ToxPk peerId)
 {
     const auto& source = peers.find(peerId);
     return source != peers.cend();
 }
 
-void ToxGroupCall::clearPeers()
+void ToxConferenceCall::clearPeers()
 {
     peers.clear();
     for (auto con : sinkInvalid) {
@@ -285,7 +285,7 @@ void ToxGroupCall::clearPeers()
     sinkInvalid.clear();
 }
 
-void ToxGroupCall::playAudioBuffer(const ToxPk& peer, const int16_t* data, int samples,
+void ToxConferenceCall::playAudioBuffer(const ToxPk& peer, const int16_t* data, int samples,
                                    unsigned channels, int sampleRate)
 {
     if (!havePeer(peer)) {

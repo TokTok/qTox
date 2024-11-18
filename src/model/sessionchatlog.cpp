@@ -5,7 +5,7 @@
 
 #include "sessionchatlog.h"
 #include "src/friendlist.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 
 #include <QDebug>
 #include <QtGlobal>
@@ -91,14 +91,14 @@ firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
                             });
 }
 
-QString resolveToxPk(FriendList& friendList, GroupList& groupList, const ToxPk& pk)
+QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, const ToxPk& pk)
 {
     Friend* f = friendList.findFriend(pk);
     if (f) {
         return f->getDisplayedName();
     }
 
-    for (Group* it : groupList.getAllGroups()) {
+    for (Conference* it : conferenceList.getAllConferences()) {
         QString res = it->resolveToxPk(pk);
         if (!res.isEmpty()) {
             return res;
@@ -110,10 +110,10 @@ QString resolveToxPk(FriendList& friendList, GroupList& groupList, const ToxPk& 
 } // namespace
 
 SessionChatLog::SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList_,
-                               GroupList& groupList_)
+                               ConferenceList& conferenceList_)
     : coreIdHandler(coreIdHandler_)
     , friendList{friendList_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
 {
 }
 
@@ -121,11 +121,11 @@ SessionChatLog::SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList&
  * @brief Alternate constructor that allows for an initial index to be set
  */
 SessionChatLog::SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
-                               FriendList& friendList_, GroupList& groupList_)
+                               FriendList& friendList_, ConferenceList& conferenceList_)
     : coreIdHandler(coreIdHandler_)
     , nextIdx(initialIdx)
     , friendList{friendList_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
 {
 }
 
@@ -137,7 +137,7 @@ QString SessionChatLog::resolveSenderNameFromSender(const ToxPk& sender)
     QString myNickName =
         coreIdHandler.getUsername().isEmpty() ? sender.toString() : coreIdHandler.getUsername();
 
-    return isSelf ? myNickName : resolveToxPk(friendList, groupList, sender);
+    return isSelf ? myNickName : resolveToxPk(friendList, conferenceList, sender);
 }
 
 const ChatLogItem& SessionChatLog::at(ChatLogIdx idx) const

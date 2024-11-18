@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/widget/tool/chattextedit.h"
 #include <QMap>
 #include <QString>
@@ -15,7 +15,7 @@ class TabCompleter : public QObject
 {
     Q_OBJECT
 public:
-    TabCompleter(ChatTextEdit* msgEdit_, Group* group_);
+    TabCompleter(ChatTextEdit* msgEdit_, Conference* conference_);
 
 public slots:
     void complete();
@@ -33,7 +33,7 @@ private:
     };
 
     ChatTextEdit* msgEdit;
-    Group* group;
+    Conference* conference;
     bool enabled;
     const static QString nickSuffix;
 

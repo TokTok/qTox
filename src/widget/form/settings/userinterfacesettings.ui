@@ -152,7 +152,7 @@
           <item row="2" column="1">
            <widget class="QCheckBox" name="useNameColors">
             <property name="text">
-             <string>Use colored nicknames in group chats</string>
+             <string>Use colored nicknames in conferences</string>
             </property>
            </widget>
           </item>
@@ -184,12 +184,12 @@
              <number>40</number>
             </property>
             <item>
-             <widget class="QCheckBox" name="groupOnlyNotfiyWhenMentioned">
+             <widget class="QCheckBox" name="conferenceOnlyNotfiyWhenMentioned">
               <property name="toolTip">
-               <string comment="toolTip for Group chats only notify when mentioned">Only notify about new messages in group chats when mentioned.</string>
+               <string comment="toolTip for Conferences only notify when mentioned">Only notify about new messages in conferences when mentioned.</string>
               </property>
               <property name="text">
-               <string>Group chats only notify when mentioned</string>
+               <string>Conferences only notify when mentioned</string>
               </property>
              </widget>
             </item>
@@ -250,12 +250,12 @@
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_5">
           <item>
-           <widget class="QCheckBox" name="cbGroupchatPosition">
+           <widget class="QCheckBox" name="cbConferencePosition">
             <property name="toolTip">
-             <string comment="toolTip for groupchat positioning">If checked, group chats will be placed at the top of the friends list, otherwise, they'll be placed below online friends.</string>
+             <string comment="toolTip for conference positioning">If checked, conferences will be placed at the top of the friends list, otherwise, they'll be placed below online friends.</string>
             </property>
             <property name="text">
-             <string>Place groupchats at top of friend list</string>
+             <string>Place conferences at top of friend list</string>
             </property>
            </widget>
           </item>
@@ -615,11 +615,11 @@
   <tabstop>txtChatFontSize</tabstop>
   <tabstop>textStyleComboBox</tabstop>
   <tabstop>notify</tabstop>
-  <tabstop>groupOnlyNotfiyWhenMentioned</tabstop>
+  <tabstop>conferenceOnlyNotfiyWhenMentioned</tabstop>
   <tabstop>notifySound</tabstop>
   <tabstop>busySound</tabstop>
   <tabstop>showWindow</tabstop>
-  <tabstop>cbGroupchatPosition</tabstop>
+  <tabstop>cbConferencePosition</tabstop>
   <tabstop>cbCompactLayout</tabstop>
   <tabstop>cbSeparateWindow</tabstop>
   <tabstop>cbDontGroupWindows</tabstop>

@@ -38,7 +38,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &AboutFriendForm::onAcceptedClicked);
     connect(ui->autoacceptfile, &QCheckBox::clicked, this, &AboutFriendForm::onAutoAcceptDirClicked);
     connect(ui->autoacceptcall, SIGNAL(activated(int)), this, SLOT(onAutoAcceptCallClicked(void)));
-    connect(ui->autogroupinvite, &QCheckBox::clicked, this, &AboutFriendForm::onAutoGroupInvite);
+    connect(ui->autoconferenceinvite, &QCheckBox::clicked, this, &AboutFriendForm::onAutoConferenceInvite);
     connect(ui->selectSaveDir, &QPushButton::clicked, this, &AboutFriendForm::onSelectDirClicked);
     connect(ui->removeHistory, &QPushButton::clicked, this, &AboutFriendForm::onRemoveHistoryClicked);
     about->connectTo_autoAcceptDirChanged(this, [this](const QString& dir) {
@@ -54,7 +54,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
     ui->autoacceptcall->setCurrentIndex(index);
 
     ui->selectSaveDir->setEnabled(ui->autoacceptfile->isChecked());
-    ui->autogroupinvite->setChecked(about->getAutoGroupInvite());
+    ui->autoconferenceinvite->setChecked(about->getAutoConferenceInvite());
 
     if (ui->autoacceptfile->isChecked()) {
         ui->selectSaveDir->setText(about->getAutoAcceptDir());
@@ -109,11 +109,11 @@ void AboutFriendForm::onAutoAcceptCallClicked()
 }
 
 /**
- * @brief Sets the AutoGroupinvite status and saves the settings.
+ * @brief Sets the AutoConferenceinvite status and saves the settings.
  */
-void AboutFriendForm::onAutoGroupInvite()
+void AboutFriendForm::onAutoConferenceInvite()
 {
-    about->setAutoGroupInvite(ui->autogroupinvite->isChecked());
+    about->setAutoConferenceInvite(ui->autoconferenceinvite->isChecked());
 }
 
 void AboutFriendForm::onSelectDirClicked()

@@ -11,9 +11,9 @@
 #include "src/chatlog/content/timestamp.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/smileypack.h"
 #include "src/widget/chatformheader.h"
@@ -75,7 +75,7 @@ QString fontToCss(const QFont& font, const QString& name)
 
 /**
  * @brief Searches for name (possibly alias) of someone with specified public key among all of your
- * friends or groups you are participated
+ * friends or conferences you are participated
  * @param pk Searched public key
  * @return Name or alias of someone with such public key, or public key string representation if no
  * one was found
@@ -87,7 +87,7 @@ QString GenericChatForm::resolveToxPk(const ToxPk& pk)
         return f->getDisplayedName();
     }
 
-    for (Group* it : groupList.getAllGroups()) {
+    for (Conference* it : conferenceList.getAllConferences()) {
         QString res = it->resolveToxPk(pk);
         if (!res.isEmpty()) {
             return res;
@@ -123,7 +123,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
                                  IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                                  SmileyPack& smileyPack_, Settings& settings_, Style& style_,
                                  IMessageBoxManager& messageBoxManager, FriendList& friendList_,
-                                 GroupList& groupList_, QWidget* parent_)
+                                 ConferenceList& conferenceList_, QWidget* parent_)
     : QWidget(parent_, Qt::Window)
     , core{core_}
     , audioInputFlag(false)
@@ -134,7 +134,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     , settings{settings_}
     , style{style_}
     , friendList{friendList_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
 {
     curRow = 0;
     headWidget = new ChatFormHeader(settings, style);
@@ -338,12 +338,12 @@ QDateTime GenericChatForm::getLatestTime() const
         case SystemMessageType::titleChanged:
         case SystemMessageType::peerStateChange:
         case SystemMessageType::peerNameChanged:
-        case SystemMessageType::userLeftGroup:
-        case SystemMessageType::userJoinedGroup:
+        case SystemMessageType::userLeftConference:
+        case SystemMessageType::userJoinedConference:
         case SystemMessageType::fileSendFailed:
         case SystemMessageType::messageSendFailed:
-        case SystemMessageType::selfJoinedGroup:
-        case SystemMessageType::selfLeftGroup:
+        case SystemMessageType::selfJoinedConference:
+        case SystemMessageType::selfLeftConference:
             return false;
         }
 

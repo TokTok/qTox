@@ -27,16 +27,16 @@ bool FriendListManager::getPositionsChanged() const
     return positionsChanged;
 }
 
-bool FriendListManager::getGroupsOnTop() const
+bool FriendListManager::getConferencesOnTop() const
 {
-    return groupsOnTop;
+    return conferencesOnTop;
 }
 
 void FriendListManager::addFriendListItem(IFriendListItem* item)
 {
-    if (item->isGroup() && item->getWidget() != nullptr) {
-        items.push_back(IFriendListItemPtr(item, [](IFriendListItem* groupItem) {
-            groupItem->getWidget()->deleteLater();
+    if (item->isConference() && item->getWidget() != nullptr) {
+        items.push_back(IFriendListItemPtr(item, [](IFriendListItem* conferenceItem) {
+            conferenceItem->getWidget()->deleteLater();
         }));
     } else {
         items.push_back(IFriendListItemPtr(item));
@@ -75,16 +75,16 @@ void FriendListManager::resetParents()
 }
 
 void FriendListManager::setFilter(const QString& searchString, bool hideOnline, bool hideOffline,
-                                  bool hideGroups)
+                                  bool hideConferences)
 {
     if (filterParams.searchString == searchString && filterParams.hideOnline == hideOnline
-        && filterParams.hideOffline == hideOffline && filterParams.hideGroups == hideGroups) {
+        && filterParams.hideOffline == hideOffline && filterParams.hideConferences == hideConferences) {
         return;
     }
     filterParams.searchString = searchString;
     filterParams.hideOnline = hideOnline;
     filterParams.hideOffline = hideOffline;
-    filterParams.hideGroups = hideGroups;
+    filterParams.hideConferences = hideConferences;
 
     setSortRequired();
 }
@@ -111,7 +111,7 @@ void FriendListManager::applyFilter()
             itemTmp->setWidgetVisible(false);
         }
 
-        if (filterParams.hideGroups && itemTmp->isGroup()) {
+        if (filterParams.hideConferences && itemTmp->isConference()) {
             itemTmp->setWidgetVisible(false);
         }
     }
@@ -161,9 +161,9 @@ void FriendListManager::setSortRequired()
     emit itemsChanged();
 }
 
-void FriendListManager::setGroupsOnTop(bool v)
+void FriendListManager::setConferencesOnTop(bool v)
 {
-    groupsOnTop = v;
+    conferencesOnTop = v;
 }
 
 void FriendListManager::removeAll(IFriendListItem* item)
@@ -178,15 +178,15 @@ void FriendListManager::removeAll(IFriendListItem* item)
 
 bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
 {
-    if (a->isGroup() && !b->isGroup()) {
-        if (groupsOnTop) {
+    if (a->isConference() && !b->isConference()) {
+        if (conferencesOnTop) {
             return true;
         }
         return !b->isOnline();
     }
 
-    if (!a->isGroup() && b->isGroup()) {
-        if (groupsOnTop) {
+    if (!a->isConference() && b->isConference()) {
+        if (conferencesOnTop) {
             return false;
         }
         return a->isOnline();
@@ -205,12 +205,12 @@ bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendList
 
 bool FriendListManager::cmpByActivity(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
 {
-    if (a->isGroup() || b->isGroup()) {
-        if (a->isGroup() && !b->isGroup()) {
+    if (a->isConference() || b->isConference()) {
+        if (a->isConference() && !b->isConference()) {
             return true;
         }
 
-        if (!a->isGroup() && b->isGroup()) {
+        if (!a->isConference() && b->isConference()) {
             return false;
         }
         return a->getNameItem().toUpper() < b->getNameItem().toUpper();

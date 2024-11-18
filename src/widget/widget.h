@@ -17,12 +17,12 @@
 
 #include "audio/iaudiocontrol.h"
 #include "audio/iaudiosink.h"
-#include "src/core/groupid.h"
+#include "src/core/conferenceid.h"
 #include "src/core/toxfile.h"
 #include "src/core/toxid.h"
 #include "src/core/toxpk.h"
 #include "src/model/friendmessagedispatcher.h"
-#include "src/model/groupmessagedispatcher.h"
+#include "src/model/conferencemessagedispatcher.h"
 #if DESKTOP_NOTIFICATIONS
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
@@ -48,12 +48,12 @@ class FriendChatroom;
 class FriendListWidget;
 class FriendWidget;
 class GenericChatroomWidget;
-class Group;
-class GroupChatForm;
-class GroupChatroom;
-class GroupInvite;
-class GroupInviteForm;
-class GroupWidget;
+class Conference;
+class ConferenceForm;
+class ConferenceRoom;
+class ConferenceInvite;
+class ConferenceInviteForm;
+class ConferenceWidget;
 class MaskablePixmapWidget;
 class ProfileForm;
 class ProfileInfo;
@@ -75,7 +75,7 @@ class Style;
 class IMessageBoxManager;
 class ContentDialogManager;
 class FriendList;
-class GroupList;
+class ConferenceList;
 class IPC;
 class ToxSave;
 class Nexus;
@@ -88,7 +88,7 @@ private:
     enum class ActiveToolMenuButton
     {
         AddButton,
-        GroupButton,
+        ConferenceButton,
         TransferButton,
         SettingButton,
         None,
@@ -100,7 +100,7 @@ private:
         TransferDialog,
         SettingDialog,
         ProfileDialog,
-        GroupDialog
+        ConferenceDialog
     };
 
     enum class FilterCriteria
@@ -109,7 +109,7 @@ private:
         Online,
         Offline,
         Friends,
-        Groups
+        Conferences
     };
 
 public:
@@ -123,10 +123,10 @@ public:
     static Widget* getInstance(IAudioControl* audio = nullptr);
     void showUpdateDownloadProgress();
     void addFriendDialog(const Friend* frnd, ContentDialog* dialog);
-    void addGroupDialog(const Group* group, ContentDialog* dialog);
+    void addConferenceDialog(const Conference* conference, ContentDialog* dialog);
     bool newFriendMessageAlert(const ToxPk& friendId, const QString& text, bool sound = true,
                                QString filename = QString(), size_t filesize = 0);
-    bool newGroupMessageAlert(const GroupId& groupId, const ToxPk& authorPk, const QString& message,
+    bool newConferenceMessageAlert(const ConferenceId& conferenceId, const ToxPk& authorPk, const QString& message,
                               bool notify);
     bool getIsWindowMinimized();
     void updateIcons();
@@ -139,7 +139,7 @@ public:
 
     static inline QIcon prepareIcon(QString path, int w = 0, int h = 0);
 
-    bool groupsVisible() const;
+    bool conferencesVisible() const;
 
     void resetIcon();
     void registerIpcHandlers();
@@ -176,22 +176,22 @@ public slots:
     void onExtReceiptReceived(uint32_t friendNumber, uint64_t receiptId);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
-    void onEmptyGroupCreated(uint32_t groupnumber, const GroupId& groupId, const QString& title);
-    void onGroupJoined(int groupNum, const GroupId& groupId);
-    void onGroupInviteReceived(const GroupInvite& inviteInfo);
-    void onGroupInviteAccepted(const GroupInvite& inviteInfo);
-    void onGroupMessageReceived(int groupnumber, int peernumber, const QString& message, bool isAction);
-    void onGroupPeerlistChanged(uint32_t groupnumber);
-    void onGroupPeerNameChanged(uint32_t groupnumber, const ToxPk& peerPk, const QString& newName);
-    void onGroupTitleChanged(uint32_t groupnumber, const QString& author, const QString& title);
+    void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId, const QString& title);
+    void onConferenceJoined(int conferenceNum, const ConferenceId& conferenceId);
+    void onConferenceInviteReceived(const ConferenceInvite& inviteInfo);
+    void onConferenceInviteAccepted(const ConferenceInvite& inviteInfo);
+    void onConferenceMessageReceived(int conferencenumber, int peernumber, const QString& message, bool isAction);
+    void onConferencePeerlistChanged(uint32_t conferencenumber);
+    void onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk, const QString& newName);
+    void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author, const QString& title);
     void titleChangedByUser(const QString& title);
-    void onGroupPeerAudioPlaying(int groupnumber, ToxPk peerPk);
-    void onGroupSendFailed(uint32_t groupnumber);
+    void onConferencePeerAudioPlaying(int conferencenumber, ToxPk peerPk);
+    void onConferenceSendFailed(uint32_t conferencenumber);
     void onFriendTypingChanged(uint32_t friendnumber, bool isTyping);
     void nextChat();
     void previousChat();
     void onFriendDialogShown(const Friend* f);
-    void onGroupDialogShown(Group* g);
+    void onConferenceDialogShown(Conference* c);
     void toggleFullscreen();
     void refreshPeerListsLocal(const QString& username);
     void onUpdateAvailable();
@@ -203,14 +203,14 @@ signals:
     void statusSet(Status::Status status);
     void statusSelected(Status::Status status);
     void usernameChanged(const QString& username);
-    void changeGroupTitle(uint32_t groupnumber, const QString& title);
+    void changeConferenceTitle(uint32_t conferencenumber, const QString& title);
     void statusMessageChanged(const QString& statusMessage);
     void resized();
     void windowStateChanged(Qt::WindowStates states);
 
 private slots:
     void onAddClicked();
-    void onGroupClicked();
+    void onConferenceClicked();
     void onTransferClicked();
     void showProfile();
     void openNewDialog(GenericChatroomWidget* widget);
@@ -218,7 +218,7 @@ private slots:
     void onStatusMessageChanged(const QString& newStatusMessage);
     void removeFriend(const ToxPk& friendId);
     void copyFriendIdToClipboard(const ToxPk& friendId);
-    void removeGroup(const GroupId& groupId);
+    void removeConference(const ConferenceId& conferenceId);
     void setStatusOnline();
     void setStatusAway();
     void setStatusBusy();
@@ -230,8 +230,8 @@ private slots:
     void onSplitterMoved(int pos, int index);
     void friendListContextMenu(const QPoint& pos);
     void friendRequestsUpdate();
-    void groupInvitesUpdate();
-    void groupInvitesClear();
+    void conferenceInvitesUpdate();
+    void conferenceInvitesClear();
     void onDialogShown(GenericChatroomWidget* widget);
     void outgoingNotification();
     void onCallEnd();
@@ -259,9 +259,9 @@ private:
     bool newMessageAlert(QWidget* currentWindow, bool isActive, bool sound = true, bool notify = true);
     void setActiveToolMenuButton(ActiveToolMenuButton newActiveButton);
     void hideMainForms(GenericChatroomWidget* chatroomWidget);
-    Group* createGroup(uint32_t groupnumber, const GroupId& groupId);
+    Conference* createConference(uint32_t conferencenumber, const ConferenceId& conferenceId);
     void removeFriend(Friend* f, bool fake = false);
-    void removeGroup(Group* g, bool fake = false);
+    void removeConference(Conference* c, bool fake = false);
     void saveWindowGeometry();
     void saveSplitterGeometry();
     void cycleChats(bool forward);
@@ -309,7 +309,7 @@ private:
     QPoint dragPosition;
     ContentLayout* contentLayout;
     AddFriendForm* addFriendForm;
-    GroupInviteForm* groupInviteForm;
+    ConferenceInviteForm* conferenceInviteForm;
 
     ProfileInfo* profileInfo;
     ProfileForm* profileForm;
@@ -328,8 +328,8 @@ private:
     bool eventIcon;
     bool wasMaximized = false;
     QPushButton* friendRequestsButton;
-    QPushButton* groupInvitesButton;
-    unsigned int unreadGroupInvites;
+    QPushButton* conferenceInvitesButton;
+    unsigned int unreadConferenceInvites;
     int icon_size;
 
     IAudioControl& audio;
@@ -339,7 +339,7 @@ private:
     QMap<ToxPk, FriendWidget*> friendWidgets;
     // Shared pointer because qmap copies stuff all over the place
     QMap<ToxPk, std::shared_ptr<FriendMessageDispatcher>> friendMessageDispatchers;
-    // Stop gap method of linking our friend messages back to a group id.
+    // Stop gap method of linking our friend messages back to a conference id.
     // Eventual goal is to have a notification manager that works on
     // Messages hooked up to message dispatchers but we aren't there
     // yet
@@ -349,17 +349,17 @@ private:
     QMap<ToxPk, ChatForm*> chatForms;
     std::map<ToxPk, std::unique_ptr<QTimer>> negotiateTimers;
 
-    QMap<GroupId, GroupWidget*> groupWidgets;
-    QMap<GroupId, std::shared_ptr<GroupMessageDispatcher>> groupMessageDispatchers;
+    QMap<ConferenceId, ConferenceWidget*> conferenceWidgets;
+    QMap<ConferenceId, std::shared_ptr<ConferenceMessageDispatcher>> conferenceMessageDispatchers;
 
-    // Stop gap method of linking our group messages back to a group id.
+    // Stop gap method of linking our conference messages back to a conference id.
     // Eventual goal is to have a notification manager that works on
     // Messages hooked up to message dispatchers but we aren't there
     // yet
-    QMap<GroupId, QMetaObject::Connection> groupAlertConnections;
-    QMap<GroupId, std::shared_ptr<IChatLog>> groupChatLogs;
-    QMap<GroupId, std::shared_ptr<GroupChatroom>> groupChatrooms;
-    QMap<GroupId, QSharedPointer<GroupChatForm>> groupChatForms;
+    QMap<ConferenceId, QMetaObject::Connection> conferenceAlertConnections;
+    QMap<ConferenceId, std::shared_ptr<IChatLog>> conferenceLogs;
+    QMap<ConferenceId, std::shared_ptr<ConferenceRoom>> conferenceRooms;
+    QMap<ConferenceId, QSharedPointer<ConferenceForm>> conferenceForms;
     Core* core = nullptr;
 
 
@@ -386,7 +386,7 @@ private:
     Style& style;
     IMessageBoxManager* messageBoxManager = nullptr; // freed by Qt on destruction
     std::unique_ptr<FriendList> friendList;
-    std::unique_ptr<GroupList> groupList;
+    std::unique_ptr<ConferenceList> conferenceList;
     std::unique_ptr<ContentDialogManager> contentDialogManager;
     IPC& ipc;
     std::unique_ptr<ToxSave> toxSave;

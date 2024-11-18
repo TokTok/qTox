@@ -232,7 +232,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Audio + Video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Acceptați automat invitațiile discuției de grup de la acest contact dacă este setat.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Acceptare automată apel:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Acceptați automat invitațiile de grup</translation>
     </message>
     <message>
@@ -810,7 +810,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>/Mi-a oferit prietenie, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Discuții de grup</translation>
     </message>
     <message>
@@ -991,8 +991,8 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
 <context>
     <name>FriendWidget</name>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Invitați la grup</translation>
     </message>
     <message>
@@ -1017,11 +1017,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <translation>Eliminați chat-ul din această fereastră</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>În grupul nou</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Invitați la grup &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1209,7 +1209,7 @@ instead of closing entirely.</source>
         <translation>Puteți seta acest lucru pe bază de prieten, făcând clic dreapta pe prieteni individuali.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1273,7 +1273,7 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1293,22 +1293,22 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupuri</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Creați un grup nou</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Grupul invită</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Invitat de %1 pe %2 la %3.</translation>
@@ -1323,7 +1323,7 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation>Setați titlul...</translation>
@@ -1337,8 +1337,8 @@ instead of closing entirely.</source>
         <translation>Eliminați discuția din această fereastră</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Închideți grup</translation>
     </message>
     <message numerus="yes">
@@ -1688,7 +1688,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
         <translation>Adăugați prieteni</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Creați un grup de discuții</translation>
     </message>
     <message>
@@ -1748,11 +1748,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
         <translation>Deschideți pagina de prieteni adăugați</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Grup de discuții</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Deschideți pagina de gestionare a discuțiilor de grup</translation>
     </message>
     <message>
@@ -1873,7 +1873,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
         <translation>Mesaj nou</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Mesaj de grup nou</translation>
     </message>
     <message>
@@ -1886,11 +1886,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
         <translation>%1 - transfer de fișier</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Invitație de grup primită</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 vă invită să vă alăturați unui grup.</translation>
     </message>
     <message>
@@ -1978,7 +1978,7 @@ Salvarea modificărilor formatelor este posibilă, ceea ce poate duce la pierder
         <translation>Listă neagră</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrează mesajele de grup după cheile publice ale membrilor grupului. Puneți aici cheile publice, câte una pe fiecare rând.</translation>
     </message>
 </context>
@@ -2405,11 +2405,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation type="unfinished">Eșec la trimiterea fișierului &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished">%1 sa alăturat grupului</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished">%1 a părăsit grupul</translation>
     </message>
     <message>
@@ -2506,11 +2506,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2798,7 +2798,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Listă de contacte</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Puneți grupurile de discuții deasupra listei de prieteni</translation>
     </message>
     <message>
@@ -2868,7 +2868,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Notificare</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Conversațiile de grup se notifică numai atunci când sunt menționate</translation>
     </message>
     <message>
@@ -2888,17 +2888,17 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Ascundeți expeditor de mesaj și conținut</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Utilizați porecle colorate în discuțiile de grup</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Numai notificări despre mesaje noi din discuțiile de grup când este menționat.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>Dacă este bifat, discuțiile de grup vor fi plasate în partea de sus a listei de prieteni, în caz contrar, vor fi plasate sub prietenii online.</translation>
     </message>
     <message>
@@ -2959,7 +2959,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Numele dvs</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Creați un grup nou...</translation>
     </message>
     <message>
@@ -2992,7 +2992,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Prieteni</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupuri</translation>
     </message>
     <message>
@@ -3000,7 +3000,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Căutare contacte</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Grup discuții #%1</translation>
     </message>
     <message>
@@ -3014,7 +3014,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation>Adăugați prieten</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Grupul invită</translation>
     </message>
@@ -3055,7 +3055,7 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n invitație de grup nouă</numerusform>
             <numerusform>%n invitații de grup noi</numerusform>

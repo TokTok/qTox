@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "src/model/groupinvite.h"
+#include "src/model/conferenceinvite.h"
 
 #include <QWidget>
 
@@ -16,24 +16,24 @@ class QPushButton;
 class Settings;
 class Core;
 
-class GroupInviteWidget : public QWidget
+class ConferenceInviteWidget : public QWidget
 {
     Q_OBJECT
 public:
-    GroupInviteWidget(QWidget* parent, const GroupInvite& invite, Settings& settings, Core& core);
+    ConferenceInviteWidget(QWidget* parent, const ConferenceInvite& invite, Settings& settings, Core& core);
     void retranslateUi();
-    const GroupInvite getInviteInfo() const;
+    const ConferenceInvite getInviteInfo() const;
 
 signals:
-    void accepted(const GroupInvite& invite);
-    void rejected(const GroupInvite& invite);
+    void accepted(const ConferenceInvite& invite);
+    void rejected(const ConferenceInvite& invite);
 
 private:
     QPushButton* acceptButton;
     QPushButton* rejectButton;
     CroppingLabel* inviteMessageLabel;
     QHBoxLayout* widgetLayout;
-    GroupInvite inviteInfo;
+    ConferenceInvite inviteInfo;
     Settings& settings;
     Core& core;
 };

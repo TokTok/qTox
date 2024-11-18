@@ -8,8 +8,8 @@
 #include "chat.h"
 
 #include "src/core/chatid.h"
-#include "src/core/groupid.h"
-#include "src/core/icoregroupquery.h"
+#include "src/core/conferenceid.h"
+#include "src/core/icoreconferencequery.h"
 #include "src/core/icoreidhandler.h"
 #include "src/core/toxpk.h"
 
@@ -19,16 +19,16 @@
 
 class FriendList;
 
-class Group : public Chat
+class Conference : public Chat
 {
     Q_OBJECT
 public:
-    Group(int groupId_, const GroupId persistentGroupId, const QString& name, bool isAvGroupchat,
-          const QString& selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
+    Conference(int conferenceId_, const ConferenceId persistentConferenceId, const QString& name, bool isAvConference,
+          const QString& selfName_, ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
           FriendList& friendList);
-    bool isAvGroupchat() const;
+    bool isAvConference() const;
     uint32_t getId() const override;
-    const GroupId& getPersistentId() const override;
+    const ConferenceId& getPersistentId() const override;
     int getPeersCount() const;
     void regeneratePeerList();
     const QMap<ToxPk, QString>& getPeerList() const;
@@ -59,15 +59,15 @@ signals:
     void peerNameChanged(const ToxPk& peer, const QString& oldName, const QString& newName);
 
 private:
-    ICoreGroupQuery& groupQuery;
+    ICoreConferenceQuery& conferenceQuery;
     ICoreIdHandler& idHandler;
     QString selfName;
     QString title;
     QMap<ToxPk, QString> peerDisplayNames;
     bool hasNewMessages;
     bool userWasMentioned;
-    int toxGroupNum;
-    const GroupId groupId;
-    bool avGroupchat;
+    int toxConferenceNum;
+    const ConferenceId conferenceId;
+    bool avConference;
     FriendList& friendList;
 };

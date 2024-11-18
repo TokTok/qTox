@@ -13,15 +13,15 @@
 
 struct SessionChatLogMetadata;
 class FriendList;
-class GroupList;
+class ConferenceList;
 
 class SessionChatLog : public IChatLog
 {
     Q_OBJECT
 public:
-    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList, GroupList& groupList);
+    SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList, ConferenceList& conferenceList);
     SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
-                   FriendList& friendList, GroupList& groupList);
+                   FriendList& friendList, ConferenceList& conferenceList);
 
     ~SessionChatLog();
     const ChatLogItem& at(ChatLogIdx idx) const override;
@@ -85,5 +85,5 @@ private:
      */
     QMap<DispatchedMessageId, ChatLogIdx> outgoingMessages;
     FriendList& friendList;
-    GroupList& groupList;
+    ConferenceList& conferenceList;
 };

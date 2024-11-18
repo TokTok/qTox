@@ -64,7 +64,7 @@ public:
                     IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                     SmileyPack& smileyPack, Settings& settings, Style& style,
                     IMessageBoxManager& messageBoxmanager, FriendList& friendList,
-                    GroupList& groupList, QWidget* parent_ = nullptr);
+                    ConferenceList& conferenceList, QWidget* parent_ = nullptr);
     ~GenericChatForm() override;
 
     void setName(const QString& newName);
@@ -168,5 +168,5 @@ protected:
     Settings& settings;
     Style& style;
     FriendList& friendList;
-    GroupList& groupList;
+    ConferenceList& conferenceList;
 };

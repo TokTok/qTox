@@ -7,7 +7,7 @@
 
 #include "contentdialog.h"
 #include "src/core/chatid.h"
-#include "src/core/groupid.h"
+#include "src/core/conferenceid.h"
 #include "src/core/toxpk.h"
 #include "src/model/dialogs/idialogsmanager.h"
 
@@ -25,17 +25,17 @@ public:
     bool chatWidgetExists(const ChatId& chatId);
     void focusChat(const ChatId& chatId);
     void updateFriendStatus(const ToxPk& friendPk);
-    void updateGroupStatus(const GroupId& groupId);
+    void updateConferenceStatus(const ConferenceId& conferenceId);
     bool isChatActive(const ChatId& chatId);
     ContentDialog* getFriendDialog(const ToxPk& friendPk) const;
-    ContentDialog* getGroupDialog(const GroupId& groupId) const;
+    ContentDialog* getConferenceDialog(const ConferenceId& conferenceId) const;
 
     IDialogs* getFriendDialogs(const ToxPk& friendPk) const;
-    IDialogs* getGroupDialogs(const GroupId& groupId) const;
+    IDialogs* getConferenceDialogs(const ConferenceId& conferenceId) const;
 
     FriendWidget* addFriendToDialog(ContentDialog* dialog, std::shared_ptr<FriendChatroom> chatroom,
                                     GenericChatForm* form);
-    GroupWidget* addGroupToDialog(ContentDialog* dialog, std::shared_ptr<GroupChatroom> chatroom,
+    ConferenceWidget* addConferenceToDialog(ContentDialog* dialog, std::shared_ptr<ConferenceRoom> chatroom,
                                   GenericChatForm* form);
 
     void addContentDialog(ContentDialog& dialog);

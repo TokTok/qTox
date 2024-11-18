@@ -14,7 +14,7 @@
 #include "src/core/toxlogger.h"
 #include "src/core/toxoptions.h"
 #include "src/core/toxstring.h"
-#include "src/model/groupinvite.h"
+#include "src/model/conferenceinvite.h"
 #include "src/model/ibootstraplistgenerator.h"
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
@@ -62,7 +62,7 @@ Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator
     assert(toxTimer);
     // need to migrate Settings and History if this changes
     assert(ToxPk::size == tox_public_key_size());
-    assert(GroupId::size == tox_conference_id_size());
+    assert(ConferenceId::size == tox_conference_id_size());
     assert(ToxId::size == tox_address_size());
     toxTimer->setSingleShot(true);
     connect(toxTimer, &QTimer::timeout, this, &Core::process);
@@ -95,11 +95,11 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_friend_status(tox, onUserStatusChanged);
     tox_callback_friend_connection_status(tox, onConnectionStatusChanged);
     tox_callback_friend_read_receipt(tox, onReadReceiptCallback);
-    tox_callback_conference_invite(tox, onGroupInvite);
-    tox_callback_conference_message(tox, onGroupMessage);
-    tox_callback_conference_peer_list_changed(tox, onGroupPeerListChange);
-    tox_callback_conference_peer_name(tox, onGroupPeerNameChange);
-    tox_callback_conference_title(tox, onGroupTitleChange);
+    tox_callback_conference_invite(tox, onConferenceInvite);
+    tox_callback_conference_message(tox, onConferenceMessage);
+    tox_callback_conference_peer_list_changed(tox, onConferencePeerListChange);
+    tox_callback_conference_peer_name(tox, onConferencePeerNameChange);
+    tox_callback_conference_title(tox, onConferenceTitleChange);
     tox_callback_friend_lossless_packet(tox, onLosslessPacket);
 }
 
@@ -260,7 +260,7 @@ void Core::onStarted()
     emit idSet(id);
 
     loadFriends();
-    loadGroups();
+    loadConferences();
 
     process(); // starts its own timer
 }
@@ -520,60 +520,60 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
     }
 }
 
-void Core::onGroupInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
+void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
                          const uint8_t* cookie, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     const QByteArray data(reinterpret_cast<const char*>(cookie), length);
-    const GroupInvite inviteInfo(friendId, type, data);
+    const ConferenceInvite inviteInfo(friendId, type, data);
     switch (type) {
     case TOX_CONFERENCE_TYPE_TEXT:
-        qDebug() << QString("Text group invite by %1").arg(friendId);
-        emit core->groupInviteReceived(inviteInfo);
+        qDebug() << QString("Text conference invite by %1").arg(friendId);
+        emit core->conferenceInviteReceived(inviteInfo);
         break;
 
     case TOX_CONFERENCE_TYPE_AV:
-        qDebug() << QString("AV group invite by %1").arg(friendId);
-        emit core->groupInviteReceived(inviteInfo);
+        qDebug() << QString("AV conference invite by %1").arg(friendId);
+        emit core->conferenceInviteReceived(inviteInfo);
         break;
 
     default:
-        qWarning() << "Group invite with unknown type " << type;
+        qWarning() << "Conference invite with unknown type " << type;
     }
 }
 
-void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Message_Type type,
+void Core::onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId, Tox_Message_Type type,
                           const uint8_t* cMessage, size_t length, void* vCore)
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
     QString message = ToxString(cMessage, length).getQString();
-    emit core->groupMessageReceived(groupId, peerId, message, isAction);
+    emit core->conferenceMessageReceived(conferenceId, peerId, message, isAction);
 }
 
-void Core::onGroupPeerListChange(Tox* tox, uint32_t groupId, void* vCore)
+void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCore)
 {
     std::ignore = tox;
     const auto core = static_cast<Core*>(vCore);
-    qDebug() << QString("Group %1 peerlist changed").arg(groupId);
-    // no saveRequest, this callback is called on every connection to group peer, not just on brand new peers
-    emit core->groupPeerlistChanged(groupId);
+    qDebug() << QString("Conference %1 peerlist changed").arg(conferenceId);
+    // no saveRequest, this callback is called on every connection to conference peer, not just on brand new peers
+    emit core->conferencePeerlistChanged(conferenceId);
 }
 
-void Core::onGroupPeerNameChange(Tox* tox, uint32_t groupId, uint32_t peerId, const uint8_t* name,
+void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId, const uint8_t* name,
                                  size_t length, void* vCore)
 {
     std::ignore = tox;
     const auto newName = ToxString(name, length).getQString();
-    qDebug() << QString("Group %1, peer %2, name changed to %3").arg(groupId).arg(peerId).arg(newName);
+    qDebug() << QString("Conference %1, peer %2, name changed to %3").arg(conferenceId).arg(peerId).arg(newName);
     auto* core = static_cast<Core*>(vCore);
-    auto peerPk = core->getGroupPeerPk(groupId, peerId);
-    emit core->groupPeerNameChanged(groupId, peerPk, newName);
+    auto peerPk = core->getConferencePeerPk(conferenceId, peerId);
+    emit core->conferencePeerNameChanged(conferenceId, peerPk, newName);
 }
 
-void Core::onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId, const uint8_t* cTitle,
+void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId, const uint8_t* cTitle,
                               size_t length, void* vCore)
 {
     std::ignore = tox;
@@ -581,10 +581,10 @@ void Core::onGroupTitleChange(Tox* tox, uint32_t groupId, uint32_t peerId, const
     QString author;
     // from tox.h: "If peer_number == UINT32_MAX, then author is unknown (e.g. initial joining the conference)."
     if (peerId != std::numeric_limits<uint32_t>::max()) {
-        author = core->getGroupPeerName(groupId, peerId);
+        author = core->getConferencePeerName(conferenceId, peerId);
     }
     emit core->saveRequest();
-    emit core->groupTitleChanged(groupId, author, ToxString(cTitle, length).getQString());
+    emit core->conferenceTitleChanged(conferenceId, author, ToxString(cTitle, length).getQString());
 }
 
 /**
@@ -718,7 +718,7 @@ void Core::sendTyping(uint32_t friendId, bool typing)
     }
 }
 
-void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type)
+void Core::sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
@@ -732,37 +732,37 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 
     ToxString cMsg(message);
     Tox_Err_Conference_Send_Message error;
-    tox_conference_send_message(tox.get(), groupId, type, cMsg.data(), cMsg.size(), &error);
+    tox_conference_send_message(tox.get(), conferenceId, type, cMsg.data(), cMsg.size(), &error);
     if (!PARSE_ERR(error)) {
-        emit groupSentFailed(groupId);
+        emit conferenceSentFailed(conferenceId);
         return;
     }
 }
 
-void Core::sendGroupMessage(int groupId, const QString& message)
+void Core::sendConferenceMessage(int conferenceId, const QString& message)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    sendGroupMessageWithType(groupId, message, TOX_MESSAGE_TYPE_NORMAL);
+    sendConferenceMessageWithType(conferenceId, message, TOX_MESSAGE_TYPE_NORMAL);
 }
 
-void Core::sendGroupAction(int groupId, const QString& message)
+void Core::sendConferenceAction(int conferenceId, const QString& message)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    sendGroupMessageWithType(groupId, message, TOX_MESSAGE_TYPE_ACTION);
+    sendConferenceMessageWithType(conferenceId, message, TOX_MESSAGE_TYPE_ACTION);
 }
 
-void Core::changeGroupTitle(int groupId, const QString& title)
+void Core::changeConferenceTitle(int conferenceId, const QString& title)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     ToxString cTitle(title);
     Tox_Err_Conference_Title error;
-    tox_conference_set_title(tox.get(), groupId, cTitle.data(), cTitle.size(), &error);
+    tox_conference_set_title(tox.get(), conferenceId, cTitle.data(), cTitle.size(), &error);
     if (PARSE_ERR(error)) {
         emit saveRequest();
-        emit groupTitleChanged(groupId, getUsername(), title);
+        emit conferenceTitleChanged(conferenceId, getUsername(), title);
     }
 }
 
@@ -781,12 +781,12 @@ void Core::removeFriend(uint32_t friendId)
     emit friendRemoved(friendId);
 }
 
-void Core::removeGroup(int groupId)
+void Core::removeConference(int conferenceId)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Delete error;
-    tox_conference_delete(tox.get(), groupId, &error);
+    tox_conference_delete(tox.get(), conferenceId, &error);
     if (PARSE_ERR(error)) {
         emit saveRequest();
 
@@ -796,7 +796,7 @@ void Core::removeGroup(int groupId)
          */
 
         if (av) {
-            av->leaveGroupCall(groupId);
+            av->leaveConferenceCall(conferenceId);
         }
     }
 }
@@ -1009,28 +1009,28 @@ void Core::loadFriends()
     }
 }
 
-void Core::loadGroups()
+void Core::loadConferences()
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    const size_t groupCount = tox_conference_get_chatlist_size(tox.get());
-    if (groupCount == 0) {
+    const size_t conferenceCount = tox_conference_get_chatlist_size(tox.get());
+    if (conferenceCount == 0) {
         return;
     }
 
-    std::vector<uint32_t> groupNumbers(groupCount);
-    tox_conference_get_chatlist(tox.get(), groupNumbers.data());
+    std::vector<uint32_t> conferenceNumbers(conferenceCount);
+    tox_conference_get_chatlist(tox.get(), conferenceNumbers.data());
 
-    for (size_t i = 0; i < groupCount; ++i) {
+    for (size_t i = 0; i < conferenceCount; ++i) {
         Tox_Err_Conference_Title error;
         QString name;
-        const auto groupNumber = groupNumbers[i];
-        size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
-        const GroupId persistentId = getGroupPersistentId(groupNumber);
-        const QString defaultName = tr("Groupchat %1").arg(persistentId.toString().left(8));
+        const auto conferenceNumber = conferenceNumbers[i];
+        size_t titleSize = tox_conference_get_title_size(tox.get(), conferenceNumber, &error);
+        const ConferenceId persistentId = getConferencePersistentId(conferenceNumber);
+        const QString defaultName = tr("Conference %1").arg(persistentId.toString().left(8));
         if (PARSE_ERR(error) || !titleSize) {
             std::vector<uint8_t> nameBuf(titleSize);
-            tox_conference_get_title(tox.get(), groupNumber, nameBuf.data(), &error);
+            tox_conference_get_title(tox.get(), conferenceNumber, nameBuf.data(), &error);
             if (PARSE_ERR(error)) {
                 name = ToxString(nameBuf.data(), titleSize).getQString();
             } else {
@@ -1039,12 +1039,12 @@ void Core::loadGroups()
         } else {
             name = defaultName;
         }
-        if (getGroupAvEnabled(groupNumber)) {
-            if (toxav_groupchat_enable_av(tox.get(), groupNumber, CoreAV::groupCallCallback, this)) {
-                qCritical() << "Failed to enable audio on loaded group" << groupNumber;
+        if (getConferenceAvEnabled(conferenceNumber)) {
+            if (toxav_groupchat_enable_av(tox.get(), conferenceNumber, CoreAV::conferenceCallCallback, this)) {
+                qCritical() << "Failed to enable audio on loaded conference" << conferenceNumber;
             }
         }
-        emit emptyGroupCreated(groupNumber, persistentId, name);
+        emit emptyConferenceCreated(conferenceNumber, persistentId, name);
     }
 }
 
@@ -1072,15 +1072,15 @@ QVector<uint32_t> Core::getFriendList() const
     return friends;
 }
 
-GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
+ConferenceId Core::getConferencePersistentId(uint32_t conferenceNumber) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
-    if (tox_conference_get_id(tox.get(), groupNumber, idBuff.data())) {
-        return GroupId{idBuff.data()};
+    if (tox_conference_get_id(tox.get(), conferenceNumber, idBuff.data())) {
+        return ConferenceId{idBuff.data()};
     } else {
-        qCritical() << "Failed to get conference ID of group" << groupNumber;
+        qCritical() << "Failed to get conference ID of conference" << conferenceNumber;
         return {};
     }
 }
@@ -1089,12 +1089,12 @@ GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
  * @brief Get number of peers in the conference.
  * @return The number of peers in the conference. UINT32_MAX on failure.
  */
-uint32_t Core::getGroupNumberPeers(int groupId) const
+uint32_t Core::getConferenceNumberPeers(int conferenceId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error;
-    uint32_t count = tox_conference_peer_count(tox.get(), groupId, &error);
+    uint32_t count = tox_conference_peer_count(tox.get(), conferenceId, &error);
     if (!PARSE_ERR(error)) {
         return std::numeric_limits<uint32_t>::max();
     }
@@ -1103,20 +1103,20 @@ uint32_t Core::getGroupNumberPeers(int groupId) const
 }
 
 /**
- * @brief Get the name of a peer of a group
+ * @brief Get the name of a peer of a conference
  */
-QString Core::getGroupPeerName(int groupId, int peerId) const
+QString Core::getConferencePeerName(int conferenceId, int peerId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error;
-    size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, peerId, &error);
+    size_t length = tox_conference_peer_get_name_size(tox.get(), conferenceId, peerId, &error);
     if (!PARSE_ERR(error) || !length) {
         return QString{};
     }
 
     std::vector<uint8_t> nameBuf(length);
-    tox_conference_peer_get_name(tox.get(), groupId, peerId, nameBuf.data(), &error);
+    tox_conference_peer_get_name(tox.get(), conferenceId, peerId, nameBuf.data(), &error);
     if (!PARSE_ERR(error)) {
         return QString{};
     }
@@ -1125,15 +1125,15 @@ QString Core::getGroupPeerName(int groupId, int peerId) const
 }
 
 /**
- * @brief Get the public key of a peer of a group
+ * @brief Get the public key of a peer of a conference
  */
-ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
+ToxPk Core::getConferencePeerPk(int conferenceId, int peerId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
     Tox_Err_Conference_Peer_Query error;
-    tox_conference_peer_get_public_key(tox.get(), groupId, peerId, friendPk, &error);
+    tox_conference_peer_get_public_key(tox.get(), conferenceId, peerId, friendPk, &error);
     if (!PARSE_ERR(error)) {
         return ToxPk{};
     }
@@ -1142,24 +1142,24 @@ ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
 }
 
 /**
- * @brief Get the names of the peers of a group
+ * @brief Get the names of the peers of a conference
  */
-QStringList Core::getGroupPeerNames(int groupId) const
+QStringList Core::getConferencePeerNames(int conferenceId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     assert(tox != nullptr);
 
-    uint32_t nPeers = getGroupNumberPeers(groupId);
+    uint32_t nPeers = getConferenceNumberPeers(conferenceId);
     if (nPeers == std::numeric_limits<uint32_t>::max()) {
-        qWarning() << "getGroupPeerNames: Unable to get number of peers";
+        qWarning() << "getConferencePeerNames: Unable to get number of peers";
         return {};
     }
 
     QStringList names;
     for (int i = 0; i < static_cast<int>(nPeers); ++i) {
         Tox_Err_Conference_Peer_Query error;
-        size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
+        size_t length = tox_conference_peer_get_name_size(tox.get(), conferenceId, i, &error);
 
         if (!PARSE_ERR(error) || !length) {
             names.append(QString());
@@ -1167,7 +1167,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
         }
 
         std::vector<uint8_t> nameBuf(length);
-        tox_conference_peer_get_name(tox.get(), groupId, i, nameBuf.data(), &error);
+        tox_conference_peer_get_name(tox.get(), conferenceId, i, nameBuf.data(), &error);
         if (PARSE_ERR(error)) {
             names.append(ToxString(nameBuf.data(), length).getQString());
         } else {
@@ -1181,27 +1181,27 @@ QStringList Core::getGroupPeerNames(int groupId) const
 }
 
 /**
- * @brief Check, that group has audio or video stream
- * @param groupId Id of group to check
- * @return True for AV groups, false for text-only groups
+ * @brief Check, that conference has audio or video stream
+ * @param conferenceId Id of conference to check
+ * @return True for AV conferences, false for text-only conferences
  */
-bool Core::getGroupAvEnabled(int groupId) const
+bool Core::getConferenceAvEnabled(int conferenceId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     Tox_Err_Conference_Get_Type error;
-    Tox_Conference_Type type = tox_conference_get_type(tox.get(), groupId, &error);
+    Tox_Conference_Type type = tox_conference_get_type(tox.get(), conferenceId, &error);
     PARSE_ERR(error);
     // would be nice to indicate to caller that we don't actually know..
     return type == TOX_CONFERENCE_TYPE_AV;
 }
 
 /**
- * @brief Accept a groupchat invite.
- * @param inviteInfo Object which contains info about group invitation
+ * @brief Accept a conference invite.
+ * @param inviteInfo Object which contains info about conference invitation
  *
  * @return Conference number on success, UINT32_MAX on failure.
  */
-uint32_t Core::joinGroupchat(const GroupInvite& inviteInfo)
+uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
@@ -1210,69 +1210,69 @@ uint32_t Core::joinGroupchat(const GroupInvite& inviteInfo)
     const QByteArray invite = inviteInfo.getInvite();
     const uint8_t* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
     const size_t cookieLength = invite.length();
-    uint32_t groupNum{std::numeric_limits<uint32_t>::max()};
+    uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {
     case TOX_CONFERENCE_TYPE_TEXT: {
-        qDebug() << QString("Trying to accept invite for text group chat sent by friend %1").arg(friendId);
+        qDebug() << QString("Trying to accept invite for text conference sent by friend %1").arg(friendId);
         Tox_Err_Conference_Join error;
-        groupNum = tox_conference_join(tox.get(), friendId, cookie, cookieLength, &error);
+        conferenceNum = tox_conference_join(tox.get(), friendId, cookie, cookieLength, &error);
         if (!PARSE_ERR(error)) {
-            groupNum = std::numeric_limits<uint32_t>::max();
+            conferenceNum = std::numeric_limits<uint32_t>::max();
         }
         break;
     }
     case TOX_CONFERENCE_TYPE_AV: {
-        qDebug() << QString("Trying to join AV groupchat invite sent by friend %1").arg(friendId);
-        groupNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
-                                           CoreAV::groupCallCallback, this);
+        qDebug() << QString("Trying to join AV conference invite sent by friend %1").arg(friendId);
+        conferenceNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
+                                           CoreAV::conferenceCallCallback, this);
         break;
     }
     default:
-        qWarning() << "joinGroupchat: Unknown groupchat type " << confType;
+        qWarning() << "joinConference: Unknown conference type " << confType;
     }
-    if (groupNum != std::numeric_limits<uint32_t>::max()) {
+    if (conferenceNum != std::numeric_limits<uint32_t>::max()) {
         emit saveRequest();
-        emit groupJoined(groupNum, getGroupPersistentId(groupNum));
+        emit conferenceJoined(conferenceNum, getConferencePersistentId(conferenceNum));
     }
-    return groupNum;
+    return conferenceNum;
 }
 
-void Core::groupInviteFriend(uint32_t friendId, int groupId)
+void Core::conferenceInviteFriend(uint32_t friendId, int conferenceId)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Invite error;
-    tox_conference_invite(tox.get(), friendId, groupId, &error);
+    tox_conference_invite(tox.get(), friendId, conferenceId, &error);
     PARSE_ERR(error);
 }
 
-int Core::createGroup(uint8_t type)
+int Core::createConference(uint8_t type)
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (type == TOX_CONFERENCE_TYPE_TEXT) {
         Tox_Err_Conference_New error;
-        uint32_t groupId = tox_conference_new(tox.get(), &error);
+        uint32_t conferenceId = tox_conference_new(tox.get(), &error);
         if (PARSE_ERR(error)) {
             emit saveRequest();
-            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
-            return groupId;
+            emit emptyConferenceCreated(conferenceId, getConferencePersistentId(conferenceId));
+            return conferenceId;
         } else {
             return std::numeric_limits<uint32_t>::max();
         }
     } else if (type == TOX_CONFERENCE_TYPE_AV) {
         // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
-        // group number is our only indication of an error
-        int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
-        if (groupId != -1) {
+        // conference number is our only indication of an error
+        int conferenceId = toxav_add_av_groupchat(tox.get(), CoreAV::conferenceCallCallback, this);
+        if (conferenceId != -1) {
             emit saveRequest();
-            emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
+            emit emptyConferenceCreated(conferenceId, getConferencePersistentId(conferenceId));
         } else {
-            qCritical() << "Unknown error creating AV groupchat";
+            qCritical() << "Unknown error creating AV conference";
         }
-        return groupId;
+        return conferenceId;
     } else {
-        qWarning() << "createGroup: Unknown type " << type;
+        qWarning() << "createConference: Unknown type " << type;
         return -1;
     }
 }

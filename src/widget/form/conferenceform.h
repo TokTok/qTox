@@ -7,17 +7,17 @@
 
 #include "genericchatform.h"
 #include "src/core/toxpk.h"
-#include "src/persistence/igroupsettings.h"
+#include "src/persistence/iconferencesettings.h"
 #include <QMap>
 
 namespace Ui {
 class MainWindow;
 }
-class Group;
+class Conference;
 class TabCompleter;
 class FlowLayout;
 class QTimer;
-class GroupId;
+class ConferenceId;
 class IMessageDispatcher;
 struct Message;
 class Settings;
@@ -26,17 +26,17 @@ class SmileyPack;
 class Style;
 class IMessageBoxManager;
 class FriendList;
-class GroupList;
+class ConferenceList;
 
-class GroupChatForm : public GenericChatForm
+class ConferenceForm : public GenericChatForm
 {
     Q_OBJECT
 public:
-    GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
+    ConferenceForm(Core& core_, Conference* chatConference, IChatLog& chatLog_,
                   IMessageDispatcher& messageDispatcher_, Settings& settings_,
                   DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
-                  IMessageBoxManager& messageBoxManager, FriendList& friendList, GroupList& groupList);
-    ~GroupChatForm();
+                  IMessageBoxManager& messageBoxManager, FriendList& friendList, ConferenceList& conferenceList);
+    ~ConferenceForm();
 
     void peerAudioPlaying(ToxPk peerPk);
 
@@ -63,12 +63,12 @@ private:
     void retranslateUi();
     void updateUserCount(int numPeers);
     void updateUserNames();
-    void joinGroupCall();
-    void leaveGroupCall();
+    void joinConferenceCall();
+    void leaveConferenceCall();
 
 private:
     Core& core;
-    Group* group;
+    Conference* conference;
     QMap<ToxPk, QLabel*> peerLabels;
     QMap<ToxPk, QTimer*> peerAudioTimers;
     FlowLayout* namesListLayout;

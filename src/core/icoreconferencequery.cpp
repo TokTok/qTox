@@ -3,6 +3,6 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "igroupsettings.h"
+#include "icoreconferencequery.h"
 
-IGroupSettings::~IGroupSettings() = default;
+ICoreConferenceQuery::~ICoreConferenceQuery() = default;

@@ -6,11 +6,11 @@
 #include "contentdialogmanager.h"
 
 #include "src/friendlist.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/widget/friendwidget.h"
-#include "src/widget/groupwidget.h"
+#include "src/widget/conferencewidget.h"
 
 #include <tuple>
 
@@ -64,20 +64,20 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
     return friendWidget;
 }
 
-GroupWidget* ContentDialogManager::addGroupToDialog(ContentDialog* dialog,
-                                                    std::shared_ptr<GroupChatroom> chatroom,
+ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dialog,
+                                                    std::shared_ptr<ConferenceRoom> chatroom,
                                                     GenericChatForm* form)
 {
-    auto groupWidget = dialog->addGroup(chatroom, form);
-    const auto& groupId = groupWidget->getGroup()->getPersistentId();
+    auto conferenceWidget = dialog->addConference(chatroom, form);
+    const auto& conferenceId = conferenceWidget->getConference()->getPersistentId();
 
-    ContentDialog* lastDialog = getGroupDialog(groupId);
+    ContentDialog* lastDialog = getConferenceDialog(conferenceId);
     if (lastDialog) {
-        lastDialog->removeGroup(groupId);
+        lastDialog->removeConference(conferenceId);
     }
 
-    chatDialogs[groupId] = dialog;
-    return groupWidget;
+    chatDialogs[conferenceId] = dialog;
+    return conferenceWidget;
 }
 
 void ContentDialogManager::focusChat(const ChatId& chatId)
@@ -128,15 +128,15 @@ void ContentDialogManager::updateFriendStatus(const ToxPk& friendPk)
     dialog->updateFriendStatus(friendPk, f->getStatus());
 }
 
-void ContentDialogManager::updateGroupStatus(const GroupId& groupId)
+void ContentDialogManager::updateConferenceStatus(const ConferenceId& conferenceId)
 {
-    auto dialog = chatDialogs.value(groupId);
+    auto dialog = chatDialogs.value(conferenceId);
     if (dialog == nullptr) {
         return;
     }
 
-    dialog->updateChatStatusLight(groupId);
-    if (dialog->isChatActive(groupId)) {
+    dialog->updateChatStatusLight(conferenceId);
+    if (dialog->isChatActive(conferenceId)) {
         dialog->updateTitleAndStatusIcon();
     }
 }
@@ -156,9 +156,9 @@ ContentDialog* ContentDialogManager::getFriendDialog(const ToxPk& friendPk) cons
     return chatDialogs.value(friendPk);
 }
 
-ContentDialog* ContentDialogManager::getGroupDialog(const GroupId& groupId) const
+ContentDialog* ContentDialogManager::getConferenceDialog(const ConferenceId& conferenceId) const
 {
-    return chatDialogs.value(groupId);
+    return chatDialogs.value(conferenceId);
 }
 
 void ContentDialogManager::addContentDialog(ContentDialog& dialog)
@@ -189,7 +189,7 @@ IDialogs* ContentDialogManager::getFriendDialogs(const ToxPk& friendPk) const
     return getFriendDialog(friendPk);
 }
 
-IDialogs* ContentDialogManager::getGroupDialogs(const GroupId& groupId) const
+IDialogs* ContentDialogManager::getConferenceDialogs(const ConferenceId& conferenceId) const
 {
-    return getGroupDialog(groupId);
+    return getConferenceDialog(conferenceId);
 }

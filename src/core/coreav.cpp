@@ -8,8 +8,8 @@
 #include "core.h"
 #include "audio/iaudiosettings.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
-#include "src/persistence/igroupsettings.h"
+#include "src/model/conference.h"
+#include "src/persistence/iconferencesettings.h"
 #include "src/video/corevideosource.h"
 #include "src/video/videoframe.h"
 #include "util/toxcoreerrorparser.h"
@@ -61,7 +61,7 @@
  */
 
 CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& toxCoreLock,
-               IAudioSettings& audioSettings_, IGroupSettings& groupSettings_,
+               IAudioSettings& audioSettings_, IConferenceSettings& conferenceSettings_,
                CameraSource& cameraSource_)
     : audio{nullptr}
     , toxav{std::move(toxav_)}
@@ -69,7 +69,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& tox
     , iterateTimer{new QTimer{this}}
     , coreLock{toxCoreLock}
     , audioSettings{audioSettings_}
-    , groupSettings{groupSettings_}
+    , conferenceSettings{conferenceSettings_}
     , cameraSource{cameraSource_}
 {
     assert(coreavThread);
@@ -103,7 +103,7 @@ void CoreAV::connectCallbacks()
  * @return CoreAV instance on success, {} on failure
  */
 CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock,
-                                     IAudioSettings& audioSettings, IGroupSettings& groupSettings,
+                                     IAudioSettings& audioSettings, IConferenceSettings& conferenceSettings,
                                      CameraSource& cameraSource)
 {
     Toxav_Err_New err;
@@ -125,7 +125,7 @@ CoreAV::CoreAVPtr CoreAV::makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock,
     assert(toxav != nullptr);
 
     return CoreAVPtr{
-        new CoreAV{std::move(toxav), toxCoreLock, audioSettings, groupSettings, cameraSource}};
+        new CoreAV{std::move(toxav), toxCoreLock, audioSettings, conferenceSettings, cameraSource}};
 }
 
 /**
@@ -151,16 +151,16 @@ IAudioControl* CoreAV::getAudio()
 
 CoreAV::~CoreAV()
 {
-    /* Gracefully leave calls and group calls to avoid deadlocks in destructor */
+    /* Gracefully leave calls and conference calls to avoid deadlocks in destructor */
     for (const auto& call : calls) {
         cancelCall(call.first);
     }
-    for (const auto& call : groupCalls) {
-        leaveGroupCall(call.first);
+    for (const auto& call : conferenceCalls) {
+        leaveConferenceCall(call.first);
     }
 
     assert(calls.empty());
-    assert(groupCalls.empty());
+    assert(conferenceCalls.empty());
 
     coreavThread->exit(0);
     coreavThread->wait();
@@ -193,14 +193,14 @@ bool CoreAV::isCallStarted(const Friend* f) const
 }
 
 /**
- * @brief Checks the call status for a Tox group.
- * @param g the group to check
- * @return true, if call is started for the group, false otherwise
+ * @brief Checks the call status for a Tox conference.
+ * @param c the conference to check
+ * @return true, if call is started for the conference, false otherwise
  */
-bool CoreAV::isCallStarted(const Group* g) const
+bool CoreAV::isCallStarted(const Conference* c) const
 {
     QReadLocker locker{&callsLock};
-    return g && (groupCalls.find(g->getId()) != groupCalls.end());
+    return c && (conferenceCalls.find(c->getId()) != conferenceCalls.end());
 }
 
 /**
@@ -219,18 +219,18 @@ bool CoreAV::isCallActive(const Friend* f) const
 }
 
 /**
- * @brief Checks the call status for a Tox group.
- * @param g the group to check
- * @return true, if the call is active for the group, false otherwise
+ * @brief Checks the call status for a Tox conference.
+ * @param c the conference to check
+ * @return true, if the call is active for the conference, false otherwise
  */
-bool CoreAV::isCallActive(const Group* g) const
+bool CoreAV::isCallActive(const Conference* c) const
 {
     QReadLocker locker{&callsLock};
-    auto it = groupCalls.find(g->getId());
-    if (it == groupCalls.end()) {
+    auto it = conferenceCalls.find(c->getId());
+    if (it == conferenceCalls.end()) {
         return false;
     }
-    return isCallStarted(g) && it->second->isActive();
+    return isCallStarted(c) && it->second->isActive();
 }
 
 bool CoreAV::isCallVideoEnabled(const Friend* f) const
@@ -456,10 +456,10 @@ void CoreAV::toggleMuteCallOutput(const Friend* f)
 }
 
 /**
- * @brief Called from Tox API when group call receives audio data.
+ * @brief Called from Tox API when conference call receives audio data.
  *
  * @param[in] tox          the Tox object
- * @param[in] group        the group number
+ * @param[in] conference   the conference number
  * @param[in] peer         the peer number
  * @param[in] data         the audio data to playback
  * @param[in] samples      the audio samples
@@ -467,11 +467,11 @@ void CoreAV::toggleMuteCallOutput(const Friend* f)
  * @param[in] sample_rate  the audio sample rate
  * @param[in] core         the qTox Core class
  */
-void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const int16_t* data,
+void CoreAV::conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer, const int16_t* data,
                                unsigned samples, uint8_t channels, uint32_t sample_rate, void* core)
 {
     /*
-     * Currently group call audio decoding is handled in the Tox thread by c-toxcore,
+     * Currently conference call audio decoding is handled in the Tox thread by c-toxcore,
      * so we can be sure that this function is always called from the Core thread.
      * To change this, an API change in c-toxcore is needed and this function probably must be
      * changed.
@@ -484,20 +484,20 @@ void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const i
 
     QReadLocker locker{&cav->callsLock};
 
-    const ToxPk peerPk = c->getGroupPeerPk(group, peer);
+    const ToxPk peerPk = c->getConferencePeerPk(conference, peer);
     // don't play the audio if it comes from a muted peer
-    if (cav->groupSettings.getBlackList().contains(peerPk.toString())) {
+    if (cav->conferenceSettings.getBlackList().contains(peerPk.toString())) {
         return;
     }
 
-    emit c->groupPeerAudioPlaying(group, peerPk);
+    emit c->conferencePeerAudioPlaying(conference, peerPk);
 
-    auto it = cav->groupCalls.find(group);
-    if (it == cav->groupCalls.end()) {
+    auto it = cav->conferenceCalls.find(conference);
+    if (it == cav->conferenceCalls.end()) {
         return;
     }
 
-    ToxGroupCall& call = *it->second;
+    ToxConferenceCall& call = *it->second;
 
     if (call.getMuteVol() || !call.isActive()) {
         return;
@@ -508,15 +508,15 @@ void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const i
 
 /**
  * @brief Called from core to make sure the source for that peer is invalidated when they leave.
- * @param group Group Index
+ * @param conference Conference Index
  * @param peer Peer Index
  */
-void CoreAV::invalidateGroupCallPeerSource(const Group& group, ToxPk peerPk)
+void CoreAV::invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk)
 {
     QWriteLocker locker{&callsLock};
 
-    auto it = groupCalls.find(group.getId());
-    if (it == groupCalls.end()) {
+    auto it = conferenceCalls.find(conference.getId());
+    if (it == conferenceCalls.end()) {
         return;
     }
     it->second->removePeer(peerPk);
@@ -541,52 +541,52 @@ VideoSource* CoreAV::getVideoSourceFromCall(int friendNum) const
 }
 
 /**
- * @brief Starts a call in an existing AV groupchat.
+ * @brief Starts a call in an existing AV conference.
  * @note Call from the GUI thread.
- * @param groupId Id of group to join
+ * @param conferenceId Id of conference to join
  */
-void CoreAV::joinGroupCall(const Group& group)
+void CoreAV::joinConferenceCall(const Conference& conference)
 {
     QWriteLocker locker{&callsLock};
 
-    qDebug() << QString("Joining group call %1").arg(group.getId());
+    qDebug() << QString("Joining conference call %1").arg(conference.getId());
 
     // Audio backend must be set before starting a call
     assert(audio != nullptr);
 
-    ToxGroupCallPtr groupcall = ToxGroupCallPtr(new ToxGroupCall{group, *this, *audio});
+    ToxConferenceCallPtr conferencecall = ToxConferenceCallPtr(new ToxConferenceCall{conference, *this, *audio});
     // Call Objects must be owned by CoreAV or there will be locking problems with Audio
-    groupcall->moveToThread(thread());
-    assert(groupcall != nullptr);
-    auto ret = groupCalls.emplace(group.getId(), std::move(groupcall));
+    conferencecall->moveToThread(thread());
+    assert(conferencecall != nullptr);
+    auto ret = conferenceCalls.emplace(conference.getId(), std::move(conferencecall));
     if (ret.second == false) {
-        qWarning() << "This group call already exists, not joining!";
+        qWarning() << "This conference call already exists, not joining!";
         return;
     }
     ret.first->second->setActive(true);
 }
 
 /**
- * @brief Will not leave the group, just stop the call.
+ * @brief Will not leave the conference, just stop the call.
  * @note Call from the GUI thread.
- * @param groupId Id of group to leave
+ * @param conferenceId Id of conference to leave
  */
-void CoreAV::leaveGroupCall(int groupNum)
+void CoreAV::leaveConferenceCall(int conferenceNum)
 {
     QWriteLocker locker{&callsLock};
 
-    qDebug() << QString("Leaving group call %1").arg(groupNum);
+    qDebug() << QString("Leaving conference call %1").arg(conferenceNum);
 
-    groupCalls.erase(groupNum);
+    conferenceCalls.erase(conferenceNum);
 }
 
-bool CoreAV::sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples, uint8_t chans,
+bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples, uint8_t chans,
                                 uint32_t rate) const
 {
     QReadLocker locker{&callsLock};
 
-    std::map<int, ToxGroupCallPtr>::const_iterator it = groupCalls.find(groupNum);
-    if (it == groupCalls.end()) {
+    std::map<int, ToxConferenceCallPtr>::const_iterator it = conferenceCalls.find(conferenceNum);
+    if (it == conferenceCalls.end()) {
         return false;
     }
 
@@ -594,76 +594,76 @@ bool CoreAV::sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples
         return true;
     }
 
-    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), groupNum, pcm, samples, chans, rate) != 0)
+    if (toxav_group_send_audio(toxav_get_tox(toxav.get()), conferenceNum, pcm, samples, chans, rate) != 0)
         qDebug() << "toxav_group_send_audio error";
 
     return true;
 }
 
 /**
- * @brief Mutes or unmutes the group call's input (microphone).
- * @param g The group
+ * @brief Mutes or unmutes the conference call's input (microphone).
+ * @param c The conference
  * @param mute True to mute, false to unmute
  */
-void CoreAV::muteCallInput(const Group* g, bool mute)
+void CoreAV::muteCallInput(const Conference* c, bool mute)
 {
     QWriteLocker locker{&callsLock};
 
-    auto it = groupCalls.find(g->getId());
-    if (g && (it != groupCalls.end())) {
+    auto it = conferenceCalls.find(c->getId());
+    if (c && (it != conferenceCalls.end())) {
         it->second->setMuteMic(mute);
     }
 }
 
 /**
- * @brief Mutes or unmutes the group call's output (speaker).
- * @param g The group
+ * @brief Mutes or unmutes the conference call's output (speaker).
+ * @param c The conference
  * @param mute True to mute, false to unmute
  */
-void CoreAV::muteCallOutput(const Group* g, bool mute)
+void CoreAV::muteCallOutput(const Conference* c, bool mute)
 {
     QWriteLocker locker{&callsLock};
 
-    auto it = groupCalls.find(g->getId());
-    if (g && (it != groupCalls.end())) {
+    auto it = conferenceCalls.find(c->getId());
+    if (c && (it != conferenceCalls.end())) {
         it->second->setMuteVol(mute);
     }
 }
 
 /**
- * @brief Returns the group calls input (microphone) state.
- * @param groupId The group id to check
+ * @brief Returns the conference calls input (microphone) state.
+ * @param conferenceId The conference id to check
  * @return true when muted, false otherwise
  */
-bool CoreAV::isGroupCallInputMuted(const Group* g) const
+bool CoreAV::isConferenceCallInputMuted(const Conference* c) const
 {
     QReadLocker locker{&callsLock};
 
-    if (!g) {
+    if (!c) {
         return false;
     }
 
-    const uint32_t groupId = g->getId();
-    auto it = groupCalls.find(groupId);
-    return (it != groupCalls.end()) && it->second->getMuteMic();
+    const uint32_t conferenceId = c->getId();
+    auto it = conferenceCalls.find(conferenceId);
+    return (it != conferenceCalls.end()) && it->second->getMuteMic();
 }
 
 /**
- * @brief Returns the group calls output (speaker) state.
- * @param groupId The group id to check
+ * @brief Returns the conference calls output (speaker) state.
+ * @param conferenceId The conference id to check
  * @return true when muted, false otherwise
  */
-bool CoreAV::isGroupCallOutputMuted(const Group* g) const
+bool CoreAV::isConferenceCallOutputMuted(const Conference* c) const
 {
     QReadLocker locker{&callsLock};
 
-    if (!g) {
+    if (!c) {
         return false;
     }
 
-    const uint32_t groupId = g->getId();
-    auto it = groupCalls.find(groupId);
-    return (it != groupCalls.end()) && it->second->getMuteVol();
+    const uint32_t conferenceId = c->getId();
+    auto it = conferenceCalls.find(conferenceId);
+    return (it != conferenceCalls.end()) && it->second->getMuteVol();
 }
 
 /**

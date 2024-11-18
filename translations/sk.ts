@@ -232,7 +232,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Zvuk + Video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Ak je zaškrtnuté, automaticky prijímať pozvánky do skupín od tohto kontaktu.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Automaticky prijať hovor:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Automaticky prijať pozvánky do skupín</translation>
     </message>
     <message>
@@ -810,7 +810,7 @@ so you can save the file on Windows.</translation>
         <translation>/me žiada o priateľstvo, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Skupinový chat %1</translation>
     </message>
     <message>
@@ -991,8 +991,8 @@ so you can save the file on Windows.</translation>
 <context>
     <name>FriendWidget</name>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Pozvať do skupiny</translation>
     </message>
     <message>
@@ -1017,11 +1017,11 @@ so you can save the file on Windows.</translation>
         <translation>Odstrániť chat z tohto okna</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Do novej skupiny</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Pozvať do skupiny &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1209,7 +1209,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation>Toto môžete nastaviť na individuálnej úrovni pomocou kliknutia pravým tlačidlom na vašich jednotlivých priateľov.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Pridať správu, keď sa užívateľ pridá alebo opustí skupinu</translation>
     </message>
 </context>
@@ -1273,7 +1273,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1293,22 +1293,22 @@ namiesto toho, že by sa zavrel úplne.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Skupiny</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Vytvoriť novú skupinu</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Pozvánky do skupín</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>%2 o %3 pozval %1.</translation>
@@ -1323,7 +1323,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation>Zmeniť názov...</translation>
@@ -1337,8 +1337,8 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation>Odstrániť chat z tohto okna</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Opustiť skupinu</translation>
     </message>
     <message numerus="yes">
@@ -1688,7 +1688,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
         <translation>Pridať priateľov</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Vytvorenie skupinového chatu</translation>
     </message>
     <message>
@@ -1748,11 +1748,11 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
         <translation>Otvoriť stránku na pridávanie priateľov</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Skupinový chat</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Otvoriť stránku na správu skupinového chatu</translation>
     </message>
     <message>
@@ -1873,7 +1873,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
         <translation>Nová správa</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Nová skupinová správa</translation>
     </message>
     <message>
@@ -1886,11 +1886,11 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
         <translation>%1 - prenos súborov</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Pozvánka do skupiny prijatá</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 vás pozýva, aby ste sa pridali do skupiny.</translation>
     </message>
     <message>
@@ -1978,7 +1978,7 @@ Sú možné zmeny formátu, ktoré môžu spôsobiť stratu dát.</translation>
         <translation>Čierna listina</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrovať skupinové správy podľa verejných kľúčov členov skupín. Vložte sem verejné kľúče, jeden kľúč na riadok.</translation>
     </message>
 </context>
@@ -2405,11 +2405,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Nepodarilo sa odoslať súbor &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation>%1 sa pridal/a do skupiny</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation>%1 opustil/a skupinu</translation>
     </message>
     <message>
@@ -2506,11 +2506,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Ovládanie</translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation>Pridali ste sa do skupiny</translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation>Opustili ste skupinu</translation>
     </message>
     <message>
@@ -2798,7 +2798,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Zoznam kontaktov</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Skupinové chaty zobraziť na začiatku zoznamu priateľov</translation>
     </message>
     <message>
@@ -2868,7 +2868,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Upozorniť</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Skupinové chaty upozornia len, keď vás spomenú</translation>
     </message>
     <message>
@@ -2888,17 +2888,17 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Skryť odosielateľa a obsah správy</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Používať farebné prezývky v skupinových chatoch</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Upozorňovať na nové správy v skupinových chatoch len, keď ma spomenú.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>Ak je zaškrtnuté, skupinové chaty budú umiestnené na vrchu zoznamu priateľov, v opačnom prípade budú umiestnené pod priateľmi, ktorí sú online.</translation>
     </message>
     <message>
@@ -2959,7 +2959,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Vaše meno</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Vytvoriť novú skupinu...</translation>
     </message>
     <message>
@@ -2992,7 +2992,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Priatelia</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Skupiny</translation>
     </message>
     <message>
@@ -3000,7 +3000,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Vyhľadávanie kontaktov</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Skupinový chat %1</translation>
     </message>
     <message>
@@ -3014,7 +3014,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation>Pridať priateľa</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Pozvánky do skupín</translation>
     </message>
@@ -3055,7 +3055,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n nová pozvánka do skupiny</numerusform>
             <numerusform>%n nové pozvánky do skupiny</numerusform>

@@ -6,7 +6,7 @@
 #pragma once
 
 class ChatId;
-class GroupId;
+class ConferenceId;
 class ToxPk;
 
 class IDialogs
@@ -23,7 +23,7 @@ public:
     virtual bool isChatActive(const ChatId& chatId) const = 0;
 
     virtual void removeFriend(const ToxPk& friendPk) = 0;
-    virtual void removeGroup(const GroupId& groupId) = 0;
+    virtual void removeConference(const ConferenceId& conferenceId) = 0;
 
     virtual int chatroomCount() const = 0;
 };

@@ -37,7 +37,7 @@ public:
     const Chat* getChat() const final;
 
     bool isFriend() const final;
-    bool isGroup() const final;
+    bool isConference() const final;
     bool isOnline() const final;
     bool widgetIsVisible() const final;
     QString getNameItem() const final;

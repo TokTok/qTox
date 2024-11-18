@@ -232,7 +232,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Heli + video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Kui on valitud, siis nõustu automaatselt grupivestluste kutsetega sellelt kontaktilt.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Vasta kõnele automaatselt:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Vasta rühmakutsetele automaatselt</translation>
     </message>
     <message>
@@ -809,7 +809,7 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translation>/me pakub sõprust, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Grupivestlus %1</translation>
     </message>
     <message>
@@ -993,8 +993,8 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translation>Haagi vestlus sellest aknast lahti</translation>
     </message>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Kutsu gruppi</translation>
     </message>
     <message>
@@ -1049,11 +1049,11 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translation>Ühendamata</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Uude gruppi</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Kutsu gruppi „%1“</translation>
     </message>
     <message>
@@ -1202,7 +1202,7 @@ jätab ta tööle teavituste alal.</translation>
         <translation>Seda saad muuta vastavalt igale sõbrale tehes sõbral paremklõpsu.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1266,7 +1266,7 @@ jätab ta tööle teavituste alal.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1285,22 +1285,22 @@ jätab ta tööle teavituste alal.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupid</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Loo uus grupp</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Grupikutsed</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Kutse edastas %1 kuupäeval %2 kl %3.</translation>
@@ -1315,7 +1315,7 @@ jätab ta tööle teavituste alal.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Open chat in new window</source>
         <translation>Ava vestlus uues aknas</translation>
@@ -1329,8 +1329,8 @@ jätab ta tööle teavituste alal.</translation>
         <translation>Sea pealkiri...</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Lahku grupivestlusest</translation>
     </message>
     <message numerus="yes">
@@ -1678,7 +1678,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
         <translation>Lisa sõpru</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Loo grupivestllus</translation>
     </message>
     <message>
@@ -1738,11 +1738,11 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
         <translation>Ava sõprade lisamise leht</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Grupivestlus</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Ava grupivestluste haldamise leht</translation>
     </message>
     <message>
@@ -1863,7 +1863,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
         <translation>Uus sõnum</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Uus grupisõnum</translation>
     </message>
     <message>
@@ -1876,11 +1876,11 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
         <translation>%1 - failide laadimine</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Grupikutse vastu võetud</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 kustub sind grupiga liituma.</translation>
     </message>
     <message>
@@ -1968,7 +1968,7 @@ Kui saad hulgaliselt soovimatuid sõbrakutseid, muuda seda väärtust.</translat
         <translation>Must nimekiri</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtreeri grupisõnumeid vastvalt grupi liikmete avalikele võtmetele. Pane avalikud võtmed, üks igal real, siia.</translation>
     </message>
 </context>
@@ -2395,11 +2395,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation type="unfinished">Faili &quot;%1&quot; saatmine nurjus</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished">%1 liitus grupiga</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished">%1 lahkus grupist</translation>
     </message>
     <message>
@@ -2496,11 +2496,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2788,7 +2788,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Kontaktide nimistu</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Aseta grupivestlused sõbranimekirja algusesse</translation>
     </message>
     <message>
@@ -2858,7 +2858,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Teavita</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Grupivestluses teavita vaid siis, kui mind mainitakse</translation>
     </message>
     <message>
@@ -2878,17 +2878,17 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Peida sõnumi saatja ja sisu</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Rühmavestlustes kasuta värvitud hüüdnimesid</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Rühmavestlustes teavita uutest sõnumitest vaid siis, kui sind mainitakse.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>Kui see valik on kasutusel, siis rühmavestlused paiknevad sõbraloendi kohal, vastasel juhul paiknevad nad sõbraloendi all.</translation>
     </message>
     <message>
@@ -2941,7 +2941,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Sõbrad</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupid</translation>
     </message>
     <message>
@@ -2985,11 +2985,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Kontaktid</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Grupivestlus #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Loo uus grupp...</translation>
     </message>
     <message>
@@ -3003,7 +3003,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation>Lisa sõber</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Grupikutsed</translation>
     </message>
@@ -3043,7 +3043,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n uus rühmavestluse kutse</numerusform>
             <numerusform>%n uut rühmavestluse kutset</numerusform>

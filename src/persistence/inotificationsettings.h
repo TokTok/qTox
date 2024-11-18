@@ -35,6 +35,6 @@ public:
     virtual bool getBusySound() const = 0;
     virtual void setBusySound(bool newValue) = 0;
 
-    virtual bool getGroupAlwaysNotify() const = 0;
-    virtual void setGroupAlwaysNotify(bool newValue) = 0;
+    virtual bool getConferenceAlwaysNotify() const = 0;
+    virtual void setConferenceAlwaysNotify(bool newValue) = 0;
 };

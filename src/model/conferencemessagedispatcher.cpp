@@ -3,26 +3,26 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "groupmessagedispatcher.h"
-#include "src/persistence/igroupsettings.h"
+#include "conferencemessagedispatcher.h"
+#include "src/persistence/iconferencesettings.h"
 
 #include <QtCore>
 
-GroupMessageDispatcher::GroupMessageDispatcher(Group& g_, MessageProcessor processor_,
+ConferenceMessageDispatcher::ConferenceMessageDispatcher(Conference& g_, MessageProcessor processor_,
                                                ICoreIdHandler& idHandler_,
-                                               ICoreGroupMessageSender& messageSender_,
-                                               const IGroupSettings& groupSettings_)
-    : group(g_)
+                                               ICoreConferenceMessageSender& messageSender_,
+                                               const IConferenceSettings& conferenceSettings_)
+    : conference(g_)
     , processor(processor_)
     , idHandler(idHandler_)
     , messageSender(messageSender_)
-    , groupSettings(groupSettings_)
+    , conferenceSettings(conferenceSettings_)
 {
     processor.enableMentions();
 }
 
 std::pair<DispatchedMessageId, DispatchedMessageId>
-GroupMessageDispatcher::sendMessage(bool isAction, QString const& content)
+ConferenceMessageDispatcher::sendMessage(bool isAction, QString const& content)
 {
     const auto firstMessageId = nextMessageId;
     auto lastMessageId = firstMessageId;
@@ -30,15 +30,15 @@ GroupMessageDispatcher::sendMessage(bool isAction, QString const& content)
     for (auto const& message : processor.processOutgoingMessage(isAction, content, ExtensionSet())) {
         auto messageId = nextMessageId++;
         lastMessageId = messageId;
-        if (group.getPeersCount() != 1) {
+        if (conference.getPeersCount() != 1) {
             if (message.isAction) {
-                messageSender.sendGroupAction(group.getId(), message.content);
+                messageSender.sendConferenceAction(conference.getId(), message.content);
             } else {
-                messageSender.sendGroupMessage(group.getId(), message.content);
+                messageSender.sendConferenceMessage(conference.getId(), message.content);
             }
         }
 
-        // Emit both signals since we do not have receipts for groups
+        // Emit both signals since we do not have receipts for conferences
         //
         // NOTE: We could in theory keep track of our sent message and wait for
         // toxcore to send it back to us to indicate a completed message, but
@@ -52,7 +52,7 @@ GroupMessageDispatcher::sendMessage(bool isAction, QString const& content)
 }
 
 std::pair<DispatchedMessageId, DispatchedMessageId>
-GroupMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSet extensions)
+ConferenceMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSet extensions)
 {
     std::ignore = extensions;
     // Stub this api to immediately fail
@@ -69,7 +69,7 @@ GroupMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSet
  * @param[in] isAction True if is action
  * @param[in] content Message content
  */
-void GroupMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction, QString const& content)
+void ConferenceMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction, QString const& content)
 {
     bool isSelf = sender == idHandler.getSelfPublicKey();
 
@@ -77,8 +77,8 @@ void GroupMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isActio
         return;
     }
 
-    if (groupSettings.getBlackList().contains(sender.toString())) {
-        qDebug() << "onGroupMessageReceived: Filtered:" << sender.toString();
+    if (conferenceSettings.getBlackList().contains(sender.toString())) {
+        qDebug() << "onConferenceMessageReceived: Filtered:" << sender.toString();
         return;
     }
 

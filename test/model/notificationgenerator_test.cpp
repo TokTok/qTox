@@ -7,7 +7,7 @@
 #include "src/model/notificationgenerator.h"
 
 #include "mock/mockcoreidhandler.h"
-#include "mock/mockgroupquery.h"
+#include "mock/mockconferencequery.h"
 
 #include <QObject>
 #include <QtTest/QtTest>
@@ -70,11 +70,11 @@ class MockNotificationSettings : public INotificationSettings
         std::ignore = newValue;
     }
 
-    virtual bool getGroupAlwaysNotify() const override
+    virtual bool getConferenceAlwaysNotify() const override
     {
         return true;
     }
-    virtual void setGroupAlwaysNotify(bool newValue) override
+    virtual void setConferenceAlwaysNotify(bool newValue) override
     {
         std::ignore = newValue;
     }
@@ -94,28 +94,28 @@ private slots:
     void testSingleFriendMessage();
     void testMultipleFriendMessages();
     void testNotificationClear();
-    void testGroupMessage();
-    void testMultipleGroupMessages();
+    void testConferenceMessage();
+    void testMultipleConferenceMessages();
     void testMultipleFriendSourceMessages();
-    void testMultipleGroupSourceMessages();
+    void testMultipleConferenceSourceMessages();
     void testMixedSourceMessages();
     void testFileTransfer();
     void testFileTransferAfterMessage();
-    void testGroupInvitation();
-    void testGroupInviteUncounted();
+    void testConferenceInvitation();
+    void testConferenceInviteUncounted();
     void testFriendRequest();
     void testFriendRequestUncounted();
     void testSimpleFriendMessage();
     void testSimpleFileTransfer();
-    void testSimpleGroupMessage();
+    void testSimpleConferenceMessage();
     void testSimpleFriendRequest();
-    void testSimpleGroupInvite();
+    void testSimpleConferenceInvite();
     void testSimpleMessageToggle();
 
 private:
     std::unique_ptr<INotificationSettings> notificationSettings;
     std::unique_ptr<NotificationGenerator> notificationGenerator;
-    std::unique_ptr<MockGroupQuery> groupQuery;
+    std::unique_ptr<MockConferenceQuery> conferenceQuery;
     std::unique_ptr<MockCoreIdHandler> coreIdHandler;
     std::unique_ptr<FriendList> friendList;
 };
@@ -125,7 +125,7 @@ void TestNotificationGenerator::init()
     friendList.reset(new FriendList());
     notificationSettings.reset(new MockNotificationSettings());
     notificationGenerator.reset(new NotificationGenerator(*notificationSettings, nullptr));
-    groupQuery.reset(new MockGroupQuery());
+    conferenceQuery.reset(new MockConferenceQuery());
     coreIdHandler.reset(new MockCoreIdHandler());
 }
 
@@ -167,31 +167,31 @@ void TestNotificationGenerator::testNotificationClear()
     QVERIFY(notificationData.message == "test2");
 }
 
-void TestNotificationGenerator::testGroupMessage()
+void TestNotificationGenerator::testConferenceMessage()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
+    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
-    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test");
-    QVERIFY(notificationData.title == "groupName");
+    auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test");
+    QVERIFY(notificationData.title == "conferenceName");
     QVERIFY(notificationData.message == "sender1: test");
 }
 
-void TestNotificationGenerator::testMultipleGroupMessages()
+void TestNotificationGenerator::testMultipleConferenceMessages()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
 
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
-    auto sender2 = groupQuery->getGroupPeerPk(0, 1);
+    auto sender2 = conferenceQuery->getConferencePeerPk(0, 1);
     g.updateUsername(sender2, "sender2");
 
-    notificationGenerator->groupMessageNotification(&g, sender, "test1");
+    notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
 
-    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender2, "test2");
-    QVERIFY(notificationData.title == "2 message(s) from groupName");
+    auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender2, "test2");
+    QVERIFY(notificationData.title == "2 message(s) from conferenceName");
     QVERIFY(notificationData.message == "sender2: test2");
 }
 
@@ -210,21 +210,21 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
     QVERIFY(notificationData.message == "friend1, friend2");
 }
 
-void TestNotificationGenerator::testMultipleGroupSourceMessages()
+void TestNotificationGenerator::testMultipleConferenceSourceMessages()
 {
-    Group g(0, GroupId(QByteArray(32, 0)), "groupName", false, "selfName", *groupQuery,
+    Conference g(0, ConferenceId(QByteArray(32, 0)), "conferenceName", false, "selfName", *conferenceQuery,
             *coreIdHandler, *friendList);
-    Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", false, "selfName", *groupQuery,
+    Conference g2(1, ConferenceId(QByteArray(32, 1)), "conferenceName2", false, "selfName", *conferenceQuery,
              *coreIdHandler, *friendList);
 
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
-    notificationGenerator->groupMessageNotification(&g, sender, "test1");
-    auto notificationData = notificationGenerator->groupMessageNotification(&g2, sender, "test1");
+    notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
+    auto notificationData = notificationGenerator->conferenceMessageNotification(&g2, sender, "test1");
 
     QVERIFY(notificationData.title == "2 message(s) from 2 chats");
-    QVERIFY(notificationData.message == "groupName, groupName2");
+    QVERIFY(notificationData.message == "conferenceName, conferenceName2");
 }
 
 void TestNotificationGenerator::testMixedSourceMessages()
@@ -232,21 +232,21 @@ void TestNotificationGenerator::testMixedSourceMessages()
     Friend f(0, ToxPk());
     f.setName("friend");
 
-    Group g(0, GroupId(QByteArray(32, 0)), "group", false, "selfName", *groupQuery, *coreIdHandler,
+    Conference g(0, ConferenceId(QByteArray(32, 0)), "conference", false, "selfName", *conferenceQuery, *coreIdHandler,
             *friendList);
 
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
     notificationGenerator->friendMessageNotification(&f, "test1");
-    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test2");
+    auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test2");
 
     QVERIFY(notificationData.title == "2 message(s) from 2 chats");
-    QVERIFY(notificationData.message == "friend, group");
+    QVERIFY(notificationData.message == "friend, conference");
 
     notificationData = notificationGenerator->fileTransferNotification(&f, "file", 0);
     QVERIFY(notificationData.title == "3 message(s) from 2 chats");
-    QVERIFY(notificationData.message == "friend, group");
+    QVERIFY(notificationData.message == "friend, conference");
 }
 
 void TestNotificationGenerator::testFileTransfer()
@@ -274,24 +274,24 @@ void TestNotificationGenerator::testFileTransferAfterMessage()
     QVERIFY(notificationData.message == "Incoming file transfer");
 }
 
-void TestNotificationGenerator::testGroupInvitation()
+void TestNotificationGenerator::testConferenceInvitation()
 {
     Friend f(0, ToxPk());
     f.setName("friend");
 
-    auto notificationData = notificationGenerator->groupInvitationNotification(&f);
+    auto notificationData = notificationGenerator->conferenceInvitationNotification(&f);
 
-    QVERIFY(notificationData.title == "friend invites you to join a group.");
+    QVERIFY(notificationData.title == "friend invites you to join a conference.");
     QVERIFY(notificationData.message == "");
 }
 
-void TestNotificationGenerator::testGroupInviteUncounted()
+void TestNotificationGenerator::testConferenceInviteUncounted()
 {
     Friend f(0, ToxPk());
     f.setName("friend");
 
     notificationGenerator->friendMessageNotification(&f, "test");
-    notificationGenerator->groupInvitationNotification(&f);
+    notificationGenerator->conferenceInvitationNotification(&f);
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
     QVERIFY(notificationData.title == "2 message(s) from friend");
@@ -348,16 +348,16 @@ void TestNotificationGenerator::testSimpleFileTransfer()
     QVERIFY(notificationData.message == "");
 }
 
-void TestNotificationGenerator::testSimpleGroupMessage()
+void TestNotificationGenerator::testSimpleConferenceMessage()
 {
-    Group g(0, GroupId(0), "groupName", false, "selfName", *groupQuery, *coreIdHandler, *friendList);
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    Conference g(0, ConferenceId(0), "conferenceName", false, "selfName", *conferenceQuery, *coreIdHandler, *friendList);
+    auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
     notificationSettings->setNotifyHide(true);
 
-    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test");
-    QVERIFY(notificationData.title == "New group message");
+    auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test");
+    QVERIFY(notificationData.title == "New conference message");
     QVERIFY(notificationData.message == "");
 }
 
@@ -373,15 +373,15 @@ void TestNotificationGenerator::testSimpleFriendRequest()
     QVERIFY(notificationData.message == "");
 }
 
-void TestNotificationGenerator::testSimpleGroupInvite()
+void TestNotificationGenerator::testSimpleConferenceInvite()
 {
     Friend f(0, ToxPk());
     f.setName("friend");
 
     notificationSettings->setNotifyHide(true);
-    auto notificationData = notificationGenerator->groupInvitationNotification(&f);
+    auto notificationData = notificationGenerator->conferenceInvitationNotification(&f);
 
-    QVERIFY(notificationData.title == "Group invite received");
+    QVERIFY(notificationData.title == "Conference invite received");
     QVERIFY(notificationData.message == "");
 }
 

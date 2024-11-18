@@ -17,8 +17,8 @@ enum class SystemMessageType
     // These values are saved directly to the DB and read back, changing the
     // order will break persistence!
     fileSendFailed = 0,
-    userJoinedGroup,
-    userLeftGroup,
+    userJoinedConference,
+    userLeftConference,
     peerNameChanged,
     peerStateChange,
     titleChanged,
@@ -28,8 +28,8 @@ enum class SystemMessageType
     incomingCall,
     callEnd,
     messageSendFailed,
-    selfJoinedGroup,
-    selfLeftGroup,
+    selfJoinedConference,
+    selfLeftConference,
 };
 
 struct SystemMessage
@@ -44,10 +44,10 @@ struct SystemMessage
         switch (messageType) {
         case SystemMessageType::fileSendFailed:
             return QObject::tr("Failed to send file \"%1\"").arg(args[0]);
-        case SystemMessageType::userJoinedGroup:
-            return QObject::tr("%1 has joined the group").arg(args[0]);
-        case SystemMessageType::userLeftGroup:
-            return QObject::tr("%1 has left the group").arg(args[0]);
+        case SystemMessageType::userJoinedConference:
+            return QObject::tr("%1 has joined the conference").arg(args[0]);
+        case SystemMessageType::userLeftConference:
+            return QObject::tr("%1 has left the conference").arg(args[0]);
         case SystemMessageType::peerNameChanged:
             return QObject::tr("%1 is now known as %2").arg(args[0]).arg(args[1]);
         case SystemMessageType::titleChanged:
@@ -66,10 +66,10 @@ struct SystemMessage
             return QObject::tr("%1 calling").arg(args[0]);
         case SystemMessageType::messageSendFailed:
             return QObject::tr("Message failed to send");
-        case SystemMessageType::selfJoinedGroup:
-            return QObject::tr("You have joined the group");
-        case SystemMessageType::selfLeftGroup:
-            return QObject::tr("You have left the group");
+        case SystemMessageType::selfJoinedConference:
+            return QObject::tr("You have joined the conference");
+        case SystemMessageType::selfLeftConference:
+            return QObject::tr("You have left the conference");
         }
         return {};
     }

@@ -35,8 +35,8 @@ public:
     virtual IFriendSettings::AutoAcceptCallFlags getAutoAcceptCall() const = 0;
     virtual void setAutoAcceptCall(IFriendSettings::AutoAcceptCallFlags flag) = 0;
 
-    virtual bool getAutoGroupInvite() const = 0;
-    virtual void setAutoGroupInvite(bool enabled) = 0;
+    virtual bool getAutoConferenceInvite() const = 0;
+    virtual void setAutoConferenceInvite(bool enabled) = 0;
 
     virtual bool clearHistory() = 0;
     virtual bool isHistoryExistence() = 0;
@@ -51,5 +51,5 @@ public:
 
     DECLARE_SIGNAL(autoAcceptDirChanged, const QString&);
     DECLARE_SIGNAL(autoAcceptCallChanged, IFriendSettings::AutoAcceptCallFlags);
-    DECLARE_SIGNAL(autoGroupInviteChanged, bool);
+    DECLARE_SIGNAL(autoConferenceInviteChanged, bool);
 };

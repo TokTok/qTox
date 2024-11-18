@@ -13,7 +13,7 @@ class QVBoxLayout;
 class QHBoxLayout;
 class ContentLayout;
 class Friend;
-class Group;
+class Conference;
 class Settings;
 class Chat;
 class Style;
@@ -35,7 +35,7 @@ public slots:
     {
         return nullptr;
     }
-    virtual Group* getGroup() const
+    virtual Conference* getConference() const
     {
         return nullptr;
     }

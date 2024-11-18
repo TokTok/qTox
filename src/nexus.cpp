@@ -10,7 +10,7 @@
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/ipc.h"
-#include "src/model/groupinvite.h"
+#include "src/model/conferenceinvite.h"
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
 #include "src/widget/style.h"
@@ -99,9 +99,9 @@ void Nexus::start()
     qRegisterMetaType<std::shared_ptr<VideoFrame>>("std::shared_ptr<VideoFrame>");
     qRegisterMetaType<ToxPk>("ToxPk");
     qRegisterMetaType<ToxId>("ToxId");
-    qRegisterMetaType<ToxPk>("GroupId");
+    qRegisterMetaType<ToxPk>("ConferenceId");
     qRegisterMetaType<ToxPk>("ChatId");
-    qRegisterMetaType<GroupInvite>("GroupInvite");
+    qRegisterMetaType<ConferenceInvite>("ConferenceInvite");
     qRegisterMetaType<ReceiptNum>("ReceiptNum");
     qRegisterMetaType<RowId>("RowId");
     qRegisterMetaType<uint64_t>("uint64_t");

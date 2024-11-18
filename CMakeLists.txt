@@ -175,8 +175,8 @@ set(${PROJECT_NAME}_SOURCES
   src/appmanager.h
   src/friendlist.cpp
   src/friendlist.h
-  src/grouplist.cpp
-  src/grouplist.h
+  src/conferencelist.cpp
+  src/conferencelist.h
   src/ipc.cpp
   src/ipc.h
   src/nexus.cpp
@@ -233,10 +233,10 @@ set(${PROJECT_NAME}_SOURCES
   src/core/icoresettings.h
   src/core/icorefriendmessagesender.cpp
   src/core/icorefriendmessagesender.h
-  src/core/icoregroupmessagesender.cpp
-  src/core/icoregroupmessagesender.h
-  src/core/icoregroupquery.cpp
-  src/core/icoregroupquery.h
+  src/core/icoreconferencemessagesender.cpp
+  src/core/icoreconferencemessagesender.h
+  src/core/icoreconferencequery.cpp
+  src/core/icoreconferencequery.h
   src/core/icoreidhandler.cpp
   src/core/icoreidhandler.h
   src/core/toxcall.cpp
@@ -248,8 +248,8 @@ set(${PROJECT_NAME}_SOURCES
   src/core/toxfilepause.h
   src/core/toxid.cpp
   src/core/toxid.h
-  src/core/groupid.cpp
-  src/core/groupid.h
+  src/core/conferenceid.cpp
+  src/core/conferenceid.h
   src/core/toxlogger.cpp
   src/core/toxlogger.h
   src/core/toxoptions.cpp
@@ -272,8 +272,8 @@ set(${PROJECT_NAME}_SOURCES
   src/model/chatroom/chatroom.h
   src/model/chatroom/friendchatroom.cpp
   src/model/chatroom/friendchatroom.h
-  src/model/chatroom/groupchatroom.cpp
-  src/model/chatroom/groupchatroom.h
+  src/model/chatroom/conferenceroom.cpp
+  src/model/chatroom/conferenceroom.h
   src/model/chat.cpp
   src/model/chat.h
   src/model/dialogs/idialogs.cpp
@@ -290,12 +290,12 @@ set(${PROJECT_NAME}_SOURCES
   src/model/friendmessagedispatcher.h
   src/model/friend.cpp
   src/model/friend.h
-  src/model/groupinvite.cpp
-  src/model/groupinvite.h
-  src/model/groupmessagedispatcher.cpp
-  src/model/groupmessagedispatcher.h
-  src/model/group.cpp
-  src/model/group.h
+  src/model/conferenceinvite.cpp
+  src/model/conferenceinvite.h
+  src/model/conferencemessagedispatcher.cpp
+  src/model/conferencemessagedispatcher.h
+  src/model/conference.cpp
+  src/model/conference.h
   src/model/ibootstraplistgenerator.cpp
   src/model/ibootstraplistgenerator.h
   src/model/ichatlog.h
@@ -329,8 +329,8 @@ set(${PROJECT_NAME}_SOURCES
   src/persistence/history.h
   src/persistence/ifriendsettings.cpp
   src/persistence/ifriendsettings.h
-  src/persistence/igroupsettings.cpp
-  src/persistence/igroupsettings.h
+  src/persistence/iconferencesettings.cpp
+  src/persistence/iconferencesettings.h
   src/persistence/inotificationsettings.cpp
   src/persistence/inotificationsettings.h
   src/persistence/ismileysettings.cpp
@@ -408,12 +408,12 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/form/filesform.h
   src/widget/form/genericchatform.cpp
   src/widget/form/genericchatform.h
-  src/widget/form/groupchatform.cpp
-  src/widget/form/groupchatform.h
-  src/widget/form/groupinviteform.cpp
-  src/widget/form/groupinviteform.h
-  src/widget/form/groupinvitewidget.cpp
-  src/widget/form/groupinvitewidget.h
+  src/widget/form/conferenceform.cpp
+  src/widget/form/conferenceform.h
+  src/widget/form/conferenceinviteform.cpp
+  src/widget/form/conferenceinviteform.h
+  src/widget/form/conferenceinvitewidget.cpp
+  src/widget/form/conferenceinvitewidget.h
   src/widget/form/loadhistorydialog.cpp
   src/widget/form/loadhistorydialog.h
   src/widget/form/profileform.cpp
@@ -454,8 +454,8 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/genericchatitemwidget.h
   src/widget/genericchatroomwidget.cpp
   src/widget/genericchatroomwidget.h
-  src/widget/groupwidget.cpp
-  src/widget/groupwidget.h
+  src/widget/conferencewidget.cpp
+  src/widget/conferencewidget.h
   src/widget/loginscreen.cpp
   src/widget/loginscreen.h
   src/widget/maskablepixmapwidget.cpp

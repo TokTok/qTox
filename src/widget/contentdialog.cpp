@@ -16,17 +16,17 @@
 
 #include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/chatform.h"
 #include "src/widget/friendlistlayout.h"
 #include "src/widget/friendwidget.h"
-#include "src/widget/groupwidget.h"
+#include "src/widget/conferencewidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/adjustingscrollarea.h"
 #include "src/widget/translator.h"
@@ -41,7 +41,7 @@ const QSize defaultSize(720, 400);
 
 ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style_,
                              IMessageBoxManager& messageBoxManager_, FriendList& friendList_,
-                             GroupList& groupList_, Profile& profile_, QWidget* parent)
+                             ConferenceList& conferenceList_, Profile& profile_, QWidget* parent)
     : ActivateDialog(style_, parent, Qt::Window)
     , splitter{new QSplitter(this)}
     , friendLayout{new FriendListLayout(this)}
@@ -52,16 +52,16 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     , style{style_}
     , messageBoxManager{messageBoxManager_}
     , friendList{friendList_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
     , profile{profile_}
 {
     friendLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->setSpacing(0);
 
-    layouts = {friendLayout->getLayoutOnline(), groupLayout.getLayout(),
+    layouts = {friendLayout->getLayoutOnline(), conferenceLayout.getLayout(),
                friendLayout->getLayoutOffline()};
 
-    if (settings.getGroupchatPosition()) {
+    if (settings.getConferencePosition()) {
         layouts.swapItemsAt(0, 1);
     }
 
@@ -70,7 +70,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     friendWidget->setAutoFillBackground(true);
     friendWidget->setLayout(friendLayout);
 
-    onGroupchatPositionChanged(settings.getGroupchatPosition());
+    onConferencePositionChanged(settings.getConferencePosition());
 
     friendScroll = new QScrollArea(this);
     friendScroll->setMinimumWidth(minWidget);
@@ -124,8 +124,8 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, SLOT(previousChat()));
     new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, SLOT(nextChat()));
 
-    connect(&settings, &Settings::groupchatPositionChanged, this,
-            &ContentDialog::onGroupchatPositionChanged);
+    connect(&settings, &Settings::conferencePositionChanged, this,
+            &ContentDialog::onConferencePositionChanged);
     connect(splitter, &QSplitter::splitterMoved, this, &ContentDialog::saveSplitterState);
 
     Translator::registerHandler(std::bind(&ContentDialog::retranslateUi, this), this);
@@ -165,22 +165,22 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
     return friendWidget;
 }
 
-GroupWidget* ContentDialog::addGroup(std::shared_ptr<GroupChatroom> chatroom, GenericChatForm* form)
+ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> chatroom, GenericChatForm* form)
 {
-    const auto g = chatroom->getGroup();
-    const auto& groupId = g->getPersistentId();
+    const auto g = chatroom->getConference();
+    const auto& conferenceId = g->getPersistentId();
     const auto compact = settings.getCompactLayout();
-    auto groupWidget = new GroupWidget(chatroom, compact, settings, style);
-    chatWidgets[groupId] = groupWidget;
-    groupLayout.addSortedWidget(groupWidget);
-    chatForms[groupId] = form;
+    auto conferenceWidget = new ConferenceWidget(chatroom, compact, settings, style);
+    chatWidgets[conferenceId] = conferenceWidget;
+    conferenceLayout.addSortedWidget(conferenceWidget);
+    chatForms[conferenceId] = form;
 
-    connect(groupWidget, &GroupWidget::chatroomWidgetClicked, this, &ContentDialog::activate);
+    connect(conferenceWidget, &ConferenceWidget::chatroomWidgetClicked, this, &ContentDialog::activate);
 
     // FIXME: emit should be removed
-    emit groupWidget->chatroomWidgetClicked(groupWidget);
+    emit conferenceWidget->chatroomWidgetClicked(conferenceWidget);
 
-    return groupWidget;
+    return conferenceWidget;
 }
 
 void ContentDialog::removeFriend(const ToxPk& friendPk)
@@ -212,15 +212,15 @@ void ContentDialog::removeFriend(const ToxPk& friendPk)
     closeIfEmpty();
 }
 
-void ContentDialog::removeGroup(const GroupId& groupId)
+void ContentDialog::removeConference(const ConferenceId& conferenceId)
 {
-    auto chatroomWidget = qobject_cast<GroupWidget*>(chatWidgets[groupId]);
+    auto chatroomWidget = qobject_cast<ConferenceWidget*>(chatWidgets[conferenceId]);
     // Need to find replacement to show here instead.
     if (activeChatroomWidget == chatroomWidget) {
         cycleChats(true, false);
     }
 
-    groupLayout.removeSortedWidget(chatroomWidget);
+    conferenceLayout.removeSortedWidget(chatroomWidget);
     chatroomWidget->deleteLater();
 
     if (chatroomCount() == 0) {
@@ -231,8 +231,8 @@ void ContentDialog::removeGroup(const GroupId& groupId)
         update();
     }
 
-    chatWidgets.remove(groupId);
-    chatForms.remove(groupId);
+    chatWidgets.remove(conferenceId);
+    chatForms.remove(conferenceId);
     closeIfEmpty();
 }
 
@@ -245,7 +245,7 @@ void ContentDialog::closeIfEmpty()
 
 int ContentDialog::chatroomCount() const
 {
-    return friendLayout->friendTotalCount() + groupLayout.getLayout()->count();
+    return friendLayout->friendTotalCount() + conferenceLayout.getLayout()->count();
 }
 
 void ContentDialog::ensureSplitterVisible()
@@ -278,8 +278,8 @@ int ContentDialog::getCurrentLayout(QLayout*& layout)
         return index;
     }
 
-    layout = groupLayout.getLayout();
-    index = groupLayout.indexOfSortedWidget(activeChatroomWidget);
+    layout = conferenceLayout.getLayout();
+    index = conferenceLayout.indexOfSortedWidget(activeChatroomWidget);
     if (index != -1) {
         return index;
     }
@@ -302,15 +302,15 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
     }
 
     if (!inverse && index == currentLayout->count() - 1) {
-        bool groupsOnTop = settings.getGroupchatPosition();
+        bool conferencesOnTop = settings.getConferencePosition();
         bool offlineEmpty = friendLayout->getLayoutOffline()->isEmpty();
         bool onlineEmpty = friendLayout->getLayoutOnline()->isEmpty();
-        bool groupsEmpty = groupLayout.getLayout()->isEmpty();
+        bool conferencesEmpty = conferenceLayout.getLayout()->isEmpty();
         bool isCurOffline = currentLayout == friendLayout->getLayoutOffline();
         bool isCurOnline = currentLayout == friendLayout->getLayoutOnline();
-        bool isCurGroup = currentLayout == groupLayout.getLayout();
-        bool nextIsEmpty = (isCurOnline && offlineEmpty && (groupsEmpty || groupsOnTop))
-                           || (isCurGroup && offlineEmpty && (onlineEmpty || !groupsOnTop))
+        bool isCurConference = currentLayout == conferenceLayout.getLayout();
+        bool nextIsEmpty = (isCurOnline && offlineEmpty && (conferencesEmpty || conferencesOnTop))
+                           || (isCurConference && offlineEmpty && (onlineEmpty || !conferencesOnTop))
                            || (isCurOffline);
 
         if (nextIsEmpty) {
@@ -381,9 +381,9 @@ void ContentDialog::updateTitleAndStatusIcon()
 
     setWindowTitle(username + QStringLiteral(" - ") + activeChatroomWidget->getTitle());
 
-    bool isGroupchat = activeChatroomWidget->getGroup() != nullptr;
-    if (isGroupchat) {
-        setWindowIcon(QIcon(":/img/group.svg"));
+    bool isConference = activeChatroomWidget->getConference() != nullptr;
+    if (isConference) {
+        setWindowIcon(QIcon(":/img/conference.svg"));
         return;
     }
 
@@ -393,12 +393,12 @@ void ContentDialog::updateTitleAndStatusIcon()
 
 /**
  * @brief Update layouts order according to settings.
- * @param groupOnTop If true move groupchat layout on the top. Move under online otherwise.
+ * @param conferenceOnTop If true move conference layout on the top. Move under online otherwise.
  */
-void ContentDialog::reorderLayouts(bool newGroupOnTop)
+void ContentDialog::reorderLayouts(bool newConferenceOnTop)
 {
-    bool oldGroupOnTop = layouts.first() == groupLayout.getLayout();
-    if (newGroupOnTop != oldGroupOnTop) {
+    bool oldConferenceOnTop = layouts.first() == conferenceLayout.getLayout();
+    if (newConferenceOnTop != oldConferenceOnTop) {
         layouts.swapItemsAt(0, 1);
     }
 }
@@ -443,12 +443,12 @@ bool ContentDialog::event(QEvent* event)
             updateTitleAndStatusIcon();
 
             const Friend* frnd = activeChatroomWidget->getFriend();
-            Group* group = activeChatroomWidget->getGroup();
+            Conference* conference = activeChatroomWidget->getConference();
 
             if (frnd) {
                 emit friendDialogShown(frnd);
-            } else if (group) {
-                emit groupDialogShown(group);
+            } else if (conference) {
+                emit conferenceDialogShown(conference);
             }
         }
 
@@ -464,7 +464,7 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
 {
     QObject* o = event->source();
     FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
-    GroupWidget* group = qobject_cast<GroupWidget*>(o);
+    ConferenceWidget* conference = qobject_cast<ConferenceWidget*>(o);
     if (frnd) {
         assert(event->mimeData()->hasFormat("toxPk"));
         ToxPk toxPk{event->mimeData()->data("toxPk")};
@@ -479,15 +479,15 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
         if (!hasChat(friendId)) {
             event->acceptProposedAction();
         }
-    } else if (group) {
-        assert(event->mimeData()->hasFormat("groupId"));
-        GroupId groupId = GroupId{event->mimeData()->data("groupId")};
-        Group* contact = groupList.findGroup(groupId);
+    } else if (conference) {
+        assert(event->mimeData()->hasFormat("conferenceId"));
+        ConferenceId conferenceId = ConferenceId{event->mimeData()->data("conferenceId")};
+        Conference* contact = conferenceList.findConference(conferenceId);
         if (!contact) {
             return;
         }
 
-        if (!hasChat(groupId)) {
+        if (!hasChat(conferenceId)) {
             event->acceptProposedAction();
         }
     }
@@ -497,7 +497,7 @@ void ContentDialog::dropEvent(QDropEvent* event)
 {
     QObject* o = event->source();
     FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
-    GroupWidget* group = qobject_cast<GroupWidget*>(o);
+    ConferenceWidget* conference = qobject_cast<ConferenceWidget*>(o);
     if (frnd) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxId(event->mimeData()->data("toxPk"));
@@ -508,15 +508,15 @@ void ContentDialog::dropEvent(QDropEvent* event)
 
         emit addFriendDialog(contact, this);
         ensureSplitterVisible();
-    } else if (group) {
-        assert(event->mimeData()->hasFormat("groupId"));
-        const GroupId groupId(event->mimeData()->data("groupId"));
-        Group* contact = groupList.findGroup(groupId);
+    } else if (conference) {
+        assert(event->mimeData()->hasFormat("conferenceId"));
+        const ConferenceId conferenceId(event->mimeData()->data("conferenceId"));
+        Conference* contact = conferenceList.findConference(conferenceId);
         if (!contact) {
             return;
         }
 
-        emit addGroupDialog(contact, this);
+        emit addConferenceDialog(contact, this);
         ensureSplitterVisible();
     }
 }
@@ -643,15 +643,15 @@ void ContentDialog::updateFriendWidget(const ToxPk& friendPk, QString alias)
 }
 
 /**
- * @brief Handler of `groupchatPositionChanged` action.
- * Move group layout on the top or on the buttom.
+ * @brief Handler of `conferencePositionChanged` action.
+ * Move conference layout on the top or on the buttom.
  *
- * @param top If true, move group layout on the top, false otherwise.
+ * @param top If true, move conference layout on the top, false otherwise.
  */
-void ContentDialog::onGroupchatPositionChanged(bool top)
+void ContentDialog::onConferencePositionChanged(bool top)
 {
-    friendLayout->removeItem(groupLayout.getLayout());
-    friendLayout->insertLayout(top ? 0 : 1, groupLayout.getLayout());
+    friendLayout->removeItem(conferenceLayout.getLayout());
+    friendLayout->insertLayout(top ? 0 : 1, conferenceLayout.getLayout());
 }
 
 /**

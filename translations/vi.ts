@@ -232,7 +232,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Âm thanh + Video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Tự động chấp nhận lời mời trò chuyện nhóm từ liên hệ này nếu được đặt.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Tự động chấp nhận cuộc gọi:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Tự động chấp nhận lời mời nhóm</translation>
     </message>
     <message>
@@ -808,7 +808,7 @@ so you can save the file on Windows.</source>
         <translation>/tôi yêu cầu bạn bè, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Nhómchat %1</translation>
     </message>
     <message>
@@ -989,8 +989,8 @@ so you can save the file on Windows.</source>
 <context>
     <name>FriendWidget</name>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Mời vào nhóm</translation>
     </message>
     <message>
@@ -1015,11 +1015,11 @@ so you can save the file on Windows.</source>
         <translation>Xóa trò chuyện khỏi cửa sổ này</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Đến nhóm mới</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Mời vào nhóm &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1207,7 +1207,7 @@ thay vì đóng hoàn toàn.</translation>
         <translation>Bạn có thể đặt điều này trên từng người bạn bằng cách nhấp chuột phải vào từng người bạn.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Thêm tin nhắn trò chuyện khi người dùng tham gia hoặc rời khỏi nhóm</translation>
     </message>
 </context>
@@ -1271,7 +1271,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1289,22 +1289,22 @@ thay vì đóng hoàn toàn.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Nhóm</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Tạo nhóm mới</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Lời mời nhóm</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Được %1 mời trên %2 tại %3.</translation>
@@ -1319,7 +1319,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation>Đặt tiêu đề...</translation>
@@ -1333,8 +1333,8 @@ thay vì đóng hoàn toàn.</translation>
         <translation>Xóa trò chuyện khỏi cửa sổ này</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Rời nhóm</translation>
     </message>
     <message numerus="yes">
@@ -1682,7 +1682,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
         <translation>Thêm bạn</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Tạo cuộc trò chuyện nhóm</translation>
     </message>
     <message>
@@ -1742,11 +1742,11 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
         <translation>Mở trang Thêm bạn bè</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Trò chuyện nhóm</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Mở trang quản lý trò chuyện nhóm</translation>
     </message>
     <message>
@@ -1865,7 +1865,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
         <translation>Tin nhắn mới</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Tin nhắn nhóm mới</translation>
     </message>
     <message>
@@ -1878,11 +1878,11 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
         <translation>%1 - tệp đang gửi</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Đã nhận được lời mời nhóm</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 mời bạn tham gia một nhóm.</translation>
     </message>
     <message>
@@ -1970,7 +1970,7 @@ Có thể thay đổi định dạng lưu, điều này có thể làm mất d�
         <translation>Danh sách đen</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Lọc tin nhắn nhóm theo khóa công khai của thành viên nhóm. Đặt các khóa công khai ở đây, một khóa trên mỗi dòng.</translation>
     </message>
 </context>
@@ -2397,11 +2397,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Không gửi được tệp &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation>%1 đã tham gia nhóm</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation>%1 đã rời khỏi nhóm</translation>
     </message>
     <message>
@@ -2498,11 +2498,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Điều khiển</translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation>Bạn đã tham gia nhóm</translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation>Bạn đã rời nhóm</translation>
     </message>
     <message>
@@ -2790,7 +2790,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Danh sách liên hệ</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Đặt các trò chuyện nhóm ở đầu danh sách bạn bè</translation>
     </message>
     <message>
@@ -2860,7 +2860,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Thông báo</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Trò chuyện nhóm chỉ thông báo khi được nhắc đến</translation>
     </message>
     <message>
@@ -2880,17 +2880,17 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Ẩn người gửi tin nhắn và nội dung</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Sử dụng biệt hiệu màu trong các cuộc trò chuyện nhóm</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation>Chỉ thông báo về tin nhắn mới trong cuộc trò chuyện nhóm khi được nhắc đến.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation>Nếu được chọn, các cuộc trò chuyện nhóm sẽ được đặt ở đầu danh sách bạn bè, nếu không, chúng sẽ được đặt bên dưới bạn bè trực tuyến.</translation>
     </message>
     <message>
@@ -2951,7 +2951,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Tên của bạn</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Tạo nhóm mới...</translation>
     </message>
     <message>
@@ -2984,7 +2984,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Bạn bè</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Nhóm</translation>
     </message>
     <message>
@@ -2992,7 +2992,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Tìm kiếm liên hệ</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Nhómchat #%1</translation>
     </message>
     <message>
@@ -3006,7 +3006,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Thêm bạn</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Lời mời vào nhóm</translation>
     </message>
@@ -3045,7 +3045,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n lời mời nhóm mới</numerusform>
         </translation>

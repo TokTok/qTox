@@ -11,7 +11,7 @@
 #include "src/core/toxencrypt.h"
 #include "src/core/toxfile.h"
 #include "src/persistence/ifriendsettings.h"
-#include "src/persistence/igroupsettings.h"
+#include "src/persistence/iconferencesettings.h"
 #include "src/persistence/inotificationsettings.h"
 #include "src/persistence/ismileysettings.h"
 #include "src/persistence/paths.h"
@@ -37,7 +37,7 @@ enum class syncType;
 class Settings : public QObject,
                  public ICoreSettings,
                  public IFriendSettings,
-                 public IGroupSettings,
+                 public IConferenceSettings,
                  public IAudioSettings,
                  public IVideoSettings,
                  public INotificationSettings,
@@ -77,8 +77,8 @@ class Settings : public QObject,
                    showIdenticonsChanged FINAL)
 
     // ChatView
-    Q_PROPERTY(bool groupchatPosition READ getGroupchatPosition WRITE setGroupchatPosition NOTIFY
-                   groupchatPositionChanged FINAL)
+    Q_PROPERTY(bool conferencePosition READ getConferencePosition WRITE setConferencePosition NOTIFY
+                   conferencePositionChanged FINAL)
     Q_PROPERTY(QFont chatMessageFont READ getChatMessageFont WRITE setChatMessageFont NOTIFY
                    chatMessageFontChanged FINAL)
     Q_PROPERTY(StyleType stylePreference READ getStylePreference WRITE setStylePreference NOTIFY
@@ -176,7 +176,7 @@ signals:
     void busySoundChanged(bool enabled);
     void notifySoundChanged(bool enabled);
     void notifyHideChanged(bool enabled);
-    void groupAlwaysNotifyChanged(bool enabled);
+    void conferenceAlwaysNotifyChanged(bool enabled);
     void translationChanged(const QString& translation);
     void currentProfileIdChanged(quint32 id);
     void enableLoggingChanged(bool enabled);
@@ -208,7 +208,7 @@ signals:
     void useEmoticonsChanged(bool enabled);
     void emojiFontPointSizeChanged(int size);
     void dontGroupWindowsChanged(bool enabled);
-    void groupchatPositionChanged(bool enabled);
+    void conferencePositionChanged(bool enabled);
     void chatMessageFontChanged(const QFont& font);
     void stylePreferenceChanged(StyleType type);
     void timestampFormatChanged(const QString& format);
@@ -319,8 +319,8 @@ public:
     bool getBusySound() const override;
     void setBusySound(bool newValue) override;
 
-    bool getGroupAlwaysNotify() const override;
-    void setGroupAlwaysNotify(bool newValue) override;
+    bool getConferenceAlwaysNotify() const override;
+    void setConferenceAlwaysNotify(bool newValue) override;
 
     QString getInDev() const override;
     void setInDev(const QString& deviceSpecifier) override;
@@ -424,8 +424,8 @@ public:
     size_t getMaxAutoAcceptSize() const;
     void setMaxAutoAcceptSize(size_t size);
 
-    bool getAutoGroupInvite(const ToxPk& id) const override;
-    void setAutoGroupInvite(const ToxPk& id, bool accept) override;
+    bool getAutoConferenceInvite(const ToxPk& id) const override;
+    void setAutoConferenceInvite(const ToxPk& id, bool accept) override;
 
     // ChatView
     const QFont& getChatMessageFont() const;
@@ -454,9 +454,9 @@ public:
     void setBlackList(const QStringList& blist) override;
     SIGNAL_IMPL(Settings, blackListChanged, QStringList const& blist)
 
-    bool getShowGroupJoinLeaveMessages() const override;
-    void setShowGroupJoinLeaveMessages(bool newValue) override;
-    SIGNAL_IMPL(Settings, showGroupJoinLeaveMessagesChanged, bool show)
+    bool getShowConferenceJoinLeaveMessages() const override;
+    void setShowConferenceJoinLeaveMessages(bool newValue) override;
+    SIGNAL_IMPL(Settings, showConferenceJoinLeaveMessagesChanged, bool show)
 
     // State
     QByteArray getWindowGeometry() const;
@@ -493,7 +493,7 @@ public:
 
     SIGNAL_IMPL(Settings, autoAcceptCallChanged, const ToxPk& id,
                 IFriendSettings::AutoAcceptCallFlags accept)
-    SIGNAL_IMPL(Settings, autoGroupInviteChanged, const ToxPk& id, bool accept)
+    SIGNAL_IMPL(Settings, autoConferenceInviteChanged, const ToxPk& id, bool accept)
     SIGNAL_IMPL(Settings, autoAcceptDirChanged, const ToxPk& id, const QString& dir)
     SIGNAL_IMPL(Settings, contactNoteChanged, const ToxPk& id, const QString& note)
 
@@ -509,15 +509,15 @@ public:
     bool getDontGroupWindows() const;
     void setDontGroupWindows(bool value);
 
-    bool getGroupchatPosition() const;
-    void setGroupchatPosition(bool value);
+    bool getConferencePosition() const;
+    void setConferencePosition(bool value);
 
     bool getShowIdenticons() const;
     void setShowIdenticons(bool value);
 
     bool getAutoLogin() const;
-    void setEnableGroupChatsColor(bool state);
-    bool getEnableGroupChatsColor() const;
+    void setEnableConferencesColor(bool state);
+    bool getEnableConferencesColor() const;
 
     int getCircleCount() const;
     int addCircle(const QString& name = QString());
@@ -576,7 +576,7 @@ private:
     bool autoLogin;
     bool compactLayout;
     FriendListSortingMode sortingMode;
-    bool groupchatPosition;
+    bool conferencePosition;
     bool separateWindow;
     bool dontGroupWindows;
     bool showIdenticons;
@@ -594,7 +594,7 @@ private:
     bool notifySound;
     bool notifyHide;
     bool busySound;
-    bool groupAlwaysNotify;
+    bool conferenceAlwaysNotify;
     bool nameColors;
 
     bool forceTCP;
@@ -640,7 +640,7 @@ private:
     QString timestampFormat;
     QString dateFormat;
     bool statusChangeNotificationEnabled;
-    bool showGroupJoinLeaveMessages;
+    bool showConferenceJoinLeaveMessages;
     bool spellCheckingEnabled;
 
     // Privacy
@@ -680,7 +680,7 @@ private:
         int circleID = -1;
         QDateTime activity = QDateTime();
         AutoAcceptCallFlags autoAcceptCall;
-        bool autoGroupInvite = false;
+        bool autoConferenceInvite = false;
     };
 
     struct circleProp

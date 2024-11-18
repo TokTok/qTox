@@ -9,12 +9,12 @@
 #include <QDateTime>
 #include <cstdint>
 
-class GroupInvite
+class ConferenceInvite
 {
 public:
-    GroupInvite() = default;
-    GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data);
-    bool operator==(const GroupInvite& other) const;
+    ConferenceInvite() = default;
+    ConferenceInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data);
+    bool operator==(const ConferenceInvite& other) const;
 
     uint32_t getFriendId() const;
     uint8_t getType() const;

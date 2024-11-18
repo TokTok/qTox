@@ -28,9 +28,9 @@ AboutFriend::AboutFriend(const Friend* f_, IFriendSettings* const settings_, Pro
         std::ignore = pk;
         emit autoAcceptDirChanged(dir);
     });
-    settings->connectTo_autoGroupInviteChanged(this, [this](const ToxPk& pk, bool enable) {
+    settings->connectTo_autoConferenceInviteChanged(this, [this](const ToxPk& pk, bool enable) {
         std::ignore = pk;
-        emit autoGroupInviteChanged(enable);
+        emit autoConferenceInviteChanged(enable);
     });
 }
 
@@ -95,16 +95,16 @@ void AboutFriend::setAutoAcceptCall(IFriendSettings::AutoAcceptCallFlags flag)
     settings->saveFriendSettings(pk);
 }
 
-bool AboutFriend::getAutoGroupInvite() const
+bool AboutFriend::getAutoConferenceInvite() const
 {
     const ToxPk pk = f->getPublicKey();
-    return settings->getAutoGroupInvite(pk);
+    return settings->getAutoConferenceInvite(pk);
 }
 
-void AboutFriend::setAutoGroupInvite(bool enabled)
+void AboutFriend::setAutoConferenceInvite(bool enabled)
 {
     const ToxPk pk = f->getPublicKey();
-    settings->setAutoGroupInvite(pk, enabled);
+    settings->setAutoConferenceInvite(pk, enabled);
     settings->saveFriendSettings(pk);
 }
 

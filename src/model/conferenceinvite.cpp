@@ -3,15 +3,15 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "groupinvite.h"
+#include "conferenceinvite.h"
 
 /**
- * @class GroupInvite
+ * @class ConferenceInvite
  *
- * @brief This class contains information needed to create a group invite
+ * @brief This class contains information needed to create a conference invite
  */
 
-GroupInvite::GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data)
+ConferenceInvite::ConferenceInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data)
     : friendId{friendId_}
     , type{inviteType}
     , invite{data}
@@ -19,28 +19,28 @@ GroupInvite::GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArra
 {
 }
 
-bool GroupInvite::operator==(const GroupInvite& other) const
+bool ConferenceInvite::operator==(const ConferenceInvite& other) const
 {
     return friendId == other.friendId && type == other.type && invite == other.invite
            && date == other.date;
 }
 
-uint32_t GroupInvite::getFriendId() const
+uint32_t ConferenceInvite::getFriendId() const
 {
     return friendId;
 }
 
-uint8_t GroupInvite::getType() const
+uint8_t ConferenceInvite::getType() const
 {
     return type;
 }
 
-QByteArray GroupInvite::getInvite() const
+QByteArray ConferenceInvite::getInvite() const
 {
     return invite;
 }
 
-QDateTime GroupInvite::getInviteDate() const
+QDateTime ConferenceInvite::getInviteDate() const
 {
     return date;
 }

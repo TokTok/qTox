@@ -5,10 +5,10 @@
 
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/core/core.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentdialog.h"
@@ -30,12 +30,12 @@ QString getShortName(const QString& name)
 } // namespace
 
 FriendChatroom::FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
-                               Settings& settings_, GroupList& groupList_)
+                               Settings& settings_, ConferenceList& conferenceList_)
     : frnd{frnd_}
     , dialogsManager{dialogsManager_}
     , core{core_}
     , settings{settings_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
 {
 }
 
@@ -73,11 +73,11 @@ QString FriendChatroom::getCircleName() const
     return settings.getCircleName(circleId);
 }
 
-void FriendChatroom::inviteToNewGroup()
+void FriendChatroom::inviteToNewConference()
 {
     const auto friendId = frnd->getId();
-    const auto groupId = core.createGroup();
-    core.groupInviteFriend(friendId, groupId);
+    const auto conferenceId = core.createConference();
+    core.conferenceInviteFriend(friendId, conferenceId);
 }
 
 QString FriendChatroom::getAutoAcceptDir() const
@@ -102,23 +102,23 @@ bool FriendChatroom::autoAcceptEnabled() const
     return getAutoAcceptDir().isEmpty();
 }
 
-void FriendChatroom::inviteFriend(const Group* group)
+void FriendChatroom::inviteFriend(const Conference* conference)
 {
     const auto friendId = frnd->getId();
-    const auto groupId = group->getId();
-    core.groupInviteFriend(friendId, groupId);
+    const auto conferenceId = conference->getId();
+    core.conferenceInviteFriend(friendId, conferenceId);
 }
 
-QVector<GroupToDisplay> FriendChatroom::getGroups() const
+QVector<ConferenceToDisplay> FriendChatroom::getConferences() const
 {
-    QVector<GroupToDisplay> groups;
-    for (const auto group : groupList.getAllGroups()) {
-        const auto name = getShortName(group->getName());
-        const GroupToDisplay groupToDisplay = {name, group};
-        groups.push_back(groupToDisplay);
+    QVector<ConferenceToDisplay> conferences;
+    for (const auto conference : conferenceList.getAllConferences()) {
+        const auto name = getShortName(conference->getName());
+        const ConferenceToDisplay conferenceToDisplay = {name, conference};
+        conferences.push_back(conferenceToDisplay);
     }
 
-    return groups;
+    return conferences;
 }
 
 /**

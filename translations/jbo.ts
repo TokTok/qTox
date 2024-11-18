@@ -224,11 +224,11 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Auto accept group invites</source>
+        <source>Auto accept conference invites</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -785,7 +785,7 @@ so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -804,11 +804,11 @@ so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -980,8 +980,8 @@ so you can save the file on windows.</source>
 <context>
     <name>FriendWidget</name>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1010,11 +1010,11 @@ so you can save the file on windows.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1291,13 +1291,13 @@ instead of system taskbar.</source>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message>
         <source>%1 has set the title to %2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1305,7 +1305,7 @@ instead of system taskbar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -1325,22 +1325,22 @@ instead of system taskbar.</source>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation type="unfinished">girzu</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation type="unfinished"></translation>
@@ -1355,7 +1355,7 @@ instead of system taskbar.</source>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation type="unfinished"></translation>
@@ -1369,8 +1369,8 @@ instead of system taskbar.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
@@ -1813,7 +1813,7 @@ You may want to create one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1873,11 +1873,11 @@ You may want to create one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2009,7 +2009,7 @@ Save format changes are possible, which may result in data loss.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Filter group message by group member&apos;s public key. Put public key here, one per line.</source>
+        <source>Filter conference message by conference member&apos;s public key. Put public key here, one per line.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2759,12 +2759,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If checked, groupchats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2848,12 +2848,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Onlys notify about new messages in groupchats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Onlys notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2976,7 +2976,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2990,7 +2990,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n New Group Invite(s)</source>
+        <source>%n New Conference Invite(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
@@ -3021,7 +3021,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>pendo</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>girzu</translation>
     </message>
     <message>
@@ -3029,7 +3029,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3043,7 +3043,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation type="unfinished"></translation>
     </message>
@@ -3075,7 +3075,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source> invites you to join a group.</source>
+        <source> invites you to join a conference.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

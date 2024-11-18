@@ -7,8 +7,8 @@
 
 #include "genericchatroomwidget.h"
 
-#include "src/core/groupid.h"
-#include "src/model/chatroom/groupchatroom.h"
+#include "src/core/conferenceid.h"
+#include "src/model/chatroom/conferenceroom.h"
 #include "src/model/friendlist/ifriendlistitem.h"
 
 #include <memory>
@@ -16,25 +16,25 @@
 class Settings;
 class Style;
 
-class GroupWidget final : public GenericChatroomWidget, public IFriendListItem
+class ConferenceWidget final : public GenericChatroomWidget, public IFriendListItem
 {
     Q_OBJECT
 public:
-    GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact, Settings& settings,
+    ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact, Settings& settings,
                 Style& style);
-    ~GroupWidget();
+    ~ConferenceWidget();
     void setAsInactiveChatroom() final;
     void setAsActiveChatroom() final;
     void updateStatusLight() final;
     void resetEventFlags() final;
     QString getStatusString() const final;
-    Group* getGroup() const final;
+    Conference* getConference() const final;
     const Chat* getChat() const final;
     void setName(const QString& name);
     void editName();
 
     bool isFriend() const final;
-    bool isGroup() const final;
+    bool isConference() const final;
     QString getNameItem() const final;
     bool isOnline() const final;
     bool widgetIsVisible() const final;
@@ -43,8 +43,8 @@ public:
     void setWidgetVisible(bool visible) final;
 
 signals:
-    void groupWidgetClicked(GroupWidget* widget);
-    void removeGroup(const GroupId& groupId);
+    void conferenceWidgetClicked(ConferenceWidget* widget);
+    void removeConference(const ConferenceId& conferenceId);
 
 protected:
     void contextMenuEvent(QContextMenuEvent* event) final;
@@ -60,8 +60,8 @@ private slots:
     void updateUserCount(int numPeers);
 
 public:
-    GroupId groupId;
+    ConferenceId conferenceId;
 
 private:
-    std::shared_ptr<GroupChatroom> chatroom;
+    std::shared_ptr<ConferenceRoom> chatroom;
 };

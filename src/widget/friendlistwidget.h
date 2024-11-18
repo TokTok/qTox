@@ -19,8 +19,8 @@ class FriendList;
 class FriendListManager;
 class FriendWidget;
 class GenericChatroomWidget;
-class GroupList;
-class GroupWidget;
+class ConferenceList;
+class ConferenceWidget;
 class IFriendListItem;
 class IMessageBoxManager;
 class Profile;
@@ -38,20 +38,20 @@ public:
     using SortingMode = Settings::FriendListSortingMode;
     FriendListWidget(const Core& core, Widget* parent, Settings& settings, Style& style,
                      IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                     GroupList& groupList, Profile& profile, bool groupsOnTop = true);
+                     ConferenceList& conferenceList, Profile& profile, bool conferencesOnTop = true);
     ~FriendListWidget();
     void setMode(SortingMode mode);
     SortingMode getMode() const;
 
-    void addGroupWidget(GroupWidget* widget);
+    void addConferenceWidget(ConferenceWidget* widget);
     void addFriendWidget(FriendWidget* w);
-    void removeGroupWidget(GroupWidget* w);
+    void removeConferenceWidget(ConferenceWidget* w);
     void removeFriendWidget(FriendWidget* w);
     void addCircleWidget(int id);
     void addCircleWidget(FriendWidget* widget = nullptr);
     void removeCircleWidget(CircleWidget* widget);
     void searchChatrooms(const QString& searchString, bool hideOnline = false,
-                         bool hideOffline = false, bool hideGroups = false);
+                         bool hideOffline = false, bool hideConferences = false);
 
     void cycleChats(GenericChatroomWidget* activeChatroomWidget, bool forward);
 
@@ -63,9 +63,9 @@ signals:
     void searchCircle(CircleWidget& circleWidget);
 
 public slots:
-    void renameGroupWidget(GroupWidget* groupWidget, const QString& newName);
+    void renameConferenceWidget(ConferenceWidget* conferenceWidget, const QString& newName);
     void renameCircleWidget(CircleWidget* circleWidget, const QString& newName);
-    void onGroupchatPositionChanged(bool top);
+    void onConferencePositionChanged(bool top);
     void moveWidget(FriendWidget* w, Status::Status s, bool add = false);
     void itemsChanged();
 
@@ -95,6 +95,6 @@ private:
     Style& style;
     IMessageBoxManager& messageBoxManager;
     FriendList& friendList;
-    GroupList& groupList;
+    ConferenceList& conferenceList;
     Profile& profile;
 };

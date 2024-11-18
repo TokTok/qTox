@@ -7,7 +7,7 @@
 
 
 #include "friend.h"
-#include "group.h"
+#include "conference.h"
 #include "notificationdata.h"
 
 #include "src/persistence/inotificationsettings.h"
@@ -33,11 +33,11 @@ public:
     NotificationGenerator& operator=(NotificationGenerator&&) = delete;
 
     NotificationData friendMessageNotification(const Friend* f, const QString& message);
-    NotificationData groupMessageNotification(const Group* g, const ToxPk& sender,
+    NotificationData conferenceMessageNotification(const Conference* c, const ToxPk& sender,
                                               const QString& message);
     NotificationData fileTransferNotification(const Friend* f, const QString& filename,
                                               size_t fileSize);
-    NotificationData groupInvitationNotification(const Friend* from);
+    NotificationData conferenceInvitationNotification(const Friend* from);
     NotificationData friendRequestNotification(const ToxPk& sender, const QString& message);
 
 public slots:
@@ -47,5 +47,5 @@ private:
     INotificationSettings const& notificationSettings;
     Profile* profile;
     QHash<const Friend*, size_t> friendNotifications;
-    QHash<const Group*, size_t> groupNotifications;
+    QHash<const Conference*, size_t> conferenceNotifications;
 };

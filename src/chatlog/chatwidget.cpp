@@ -114,8 +114,8 @@ ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMes
     case SystemMessageType::messageSendFailed:
     case SystemMessageType::unexpectedCallEnd:
         return ChatMessage::ERROR;
-    case SystemMessageType::userJoinedGroup:
-    case SystemMessageType::userLeftGroup:
+    case SystemMessageType::userJoinedConference:
+    case SystemMessageType::userLeftConference:
     case SystemMessageType::peerNameChanged:
     case SystemMessageType::peerStateChange:
     case SystemMessageType::titleChanged:
@@ -123,8 +123,8 @@ ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMes
     case SystemMessageType::outgoingCall:
     case SystemMessageType::incomingCall:
     case SystemMessageType::callEnd:
-    case SystemMessageType::selfJoinedGroup:
-    case SystemMessageType::selfLeftGroup:
+    case SystemMessageType::selfJoinedConference:
+    case SystemMessageType::selfLeftConference:
         return ChatMessage::INFO;
     }
 

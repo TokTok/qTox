@@ -6,13 +6,13 @@
 #include "friendlistwidget.h"
 #include "circlewidget.h"
 #include "friendwidget.h"
-#include "groupwidget.h"
+#include "conferencewidget.h"
 #include "widget.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/friend.h"
 #include "src/model/friendlist/friendlistmanager.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/categorywidget.h"
@@ -88,20 +88,20 @@ qint64 timeUntilTomorrow()
 
 FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& settings_,
                                    Style& style_, IMessageBoxManager& messageBoxManager_,
-                                   FriendList& friendList_, GroupList& groupList_,
-                                   Profile& profile_, bool groupsOnTop)
+                                   FriendList& friendList_, ConferenceList& conferenceList_,
+                                   Profile& profile_, bool conferencesOnTop)
     : QWidget(parent)
     , core{core_}
     , settings{settings_}
     , style{style_}
     , messageBoxManager{messageBoxManager_}
     , friendList{friendList_}
-    , groupList{groupList_}
+    , conferenceList{conferenceList_}
     , profile{profile_}
 {
     int countContacts = core.getFriendList().size();
     manager = new FriendListManager(countContacts, this);
-    manager->setGroupsOnTop(groupsOnTop);
+    manager->setConferencesOnTop(conferencesOnTop);
     connect(manager, &FriendListManager::itemsChanged, this, &FriendListWidget::itemsChanged);
 
     listLayout = new QVBoxLayout;
@@ -173,7 +173,7 @@ void FriendListWidget::sortByMode()
             friendItems.push_back(itemsTmp[i].get());
         }
 
-        // Add groups and friends without circles
+        // Add conferences and friends without circles
         for (int i = 0; i < friendItems.size(); ++i) {
             listLayout->addWidget(friendItems[i]->getWidget());
         }
@@ -342,12 +342,12 @@ FriendListWidget::SortingMode FriendListWidget::getMode() const
     return mode;
 }
 
-void FriendListWidget::addGroupWidget(GroupWidget* widget)
+void FriendListWidget::addConferenceWidget(ConferenceWidget* widget)
 {
-    Group* g = widget->getGroup();
-    connect(g, &Group::titleChanged, [this, widget](const QString& author, const QString& name) {
+    Conference* c = widget->getConference();
+    connect(c, &Conference::titleChanged, [this, widget](const QString& author, const QString& name) {
         std::ignore = author;
-        renameGroupWidget(widget, name);
+        renameConferenceWidget(widget, name);
     });
 
     manager->addFriendListItem(widget);
@@ -358,7 +358,7 @@ void FriendListWidget::addFriendWidget(FriendWidget* w)
     manager->addFriendListItem(w);
 }
 
-void FriendListWidget::removeGroupWidget(GroupWidget* w)
+void FriendListWidget::removeConferenceWidget(ConferenceWidget* w)
 {
     manager->removeFriendListItem(w);
 }
@@ -404,14 +404,14 @@ void FriendListWidget::removeCircleWidget(CircleWidget* widget)
 }
 
 void FriendListWidget::searchChatrooms(const QString& searchString, bool hideOnline,
-                                       bool hideOffline, bool hideGroups)
+                                       bool hideOffline, bool hideConferences)
 {
-    manager->setFilter(searchString, hideOnline, hideOffline, hideGroups);
+    manager->setFilter(searchString, hideOnline, hideOffline, hideConferences);
 }
 
-void FriendListWidget::renameGroupWidget(GroupWidget* groupWidget, const QString& newName)
+void FriendListWidget::renameConferenceWidget(ConferenceWidget* conferenceWidget, const QString& newName)
 {
-    std::ignore = groupWidget;
+    std::ignore = conferenceWidget;
     std::ignore = newName;
     itemsChanged();
 }
@@ -425,9 +425,9 @@ void FriendListWidget::renameCircleWidget(CircleWidget* circleWidget, const QStr
     }
 }
 
-void FriendListWidget::onGroupchatPositionChanged(bool top)
+void FriendListWidget::onConferencePositionChanged(bool top)
 {
-    manager->setGroupsOnTop(top);
+    manager->setConferencesOnTop(top);
 
     if (mode != SortingMode::Name)
         return;
@@ -492,8 +492,8 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
     if (friendWidget != nullptr) {
         wgt = getNextWidgetForName(friendWidget, forward);
     } else {
-        GroupWidget* groupWidget = qobject_cast<GroupWidget*>(activeChatroomWidget);
-        wgt = getNextWidgetForName(groupWidget, forward);
+        ConferenceWidget* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget);
+        wgt = getNextWidgetForName(conferenceWidget, forward);
     }
 
     FriendWidget* friendTmp = qobject_cast<FriendWidget*>(wgt);
@@ -609,7 +609,7 @@ CircleWidget* FriendListWidget::createCircleWidget(int id)
     }
 
     CircleWidget* circleWidget = new CircleWidget(core, this, id, settings, style,
-                                                  messageBoxManager, friendList, groupList, profile);
+                                                  messageBoxManager, friendList, conferenceList, profile);
     emit connectCircleWidget(*circleWidget);
     connect(this, &FriendListWidget::onCompactChanged, circleWidget, &CircleWidget::onCompactChanged);
     connect(circleWidget, &CircleWidget::renameRequested, this, &FriendListWidget::renameCircleWidget);

@@ -3,7 +3,7 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "groupwidget.h"
+#include "conferencewidget.h"
 
 #include <QApplication>
 #include <QContextMenuEvent>
@@ -14,12 +14,12 @@
 #include <QPalette>
 
 #include "maskablepixmapwidget.h"
-#include "form/groupchatform.h"
+#include "form/conferenceform.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
-#include "src/grouplist.h"
+#include "src/conferencelist.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/widget/friendwidget.h"
 #include "src/widget/style.h"
@@ -27,40 +27,40 @@
 #include "src/widget/widget.h"
 #include "tool/croppinglabel.h"
 
-GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_,
+ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact_,
                          Settings& settings_, Style& style_)
     : GenericChatroomWidget(compact_, settings_, style_)
-    , groupId{chatroom_->getGroup()->getPersistentId()}
+    , conferenceId{chatroom_->getConference()->getPersistentId()}
     , chatroom{chatroom_}
 {
-    avatar->setPixmap(Style::scaleSvgImage(":img/group.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", avatar->width(), avatar->height()));
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Online)));
     statusPic.setMargin(3);
 
-    Group* g = chatroom->getGroup();
-    nameLabel->setText(g->getName());
+    Conference* c = chatroom->getConference();
+    nameLabel->setText(c->getName());
 
-    updateUserCount(g->getPeersCount());
+    updateUserCount(c->getPeersCount());
     setAcceptDrops(true);
 
-    connect(g, &Group::titleChanged, this, &GroupWidget::updateTitle);
-    connect(g, &Group::numPeersChanged, this, &GroupWidget::updateUserCount);
-    connect(nameLabel, &CroppingLabel::editFinished, g, &Group::setName);
-    Translator::registerHandler(std::bind(&GroupWidget::retranslateUi, this), this);
+    connect(c, &Conference::titleChanged, this, &ConferenceWidget::updateTitle);
+    connect(c, &Conference::numPeersChanged, this, &ConferenceWidget::updateUserCount);
+    connect(nameLabel, &CroppingLabel::editFinished, c, &Conference::setName);
+    Translator::registerHandler(std::bind(&ConferenceWidget::retranslateUi, this), this);
 }
 
-GroupWidget::~GroupWidget()
+ConferenceWidget::~ConferenceWidget()
 {
     Translator::unregister(this);
 }
 
-void GroupWidget::updateTitle(const QString& author, const QString& newName)
+void ConferenceWidget::updateTitle(const QString& author, const QString& newName)
 {
     std::ignore = author;
     nameLabel->setText(newName);
 }
 
-void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
+void ConferenceWidget::contextMenuEvent(QContextMenuEvent* event)
 {
     if (!active) {
         setBackgroundRole(QPalette::Highlight);
@@ -83,7 +83,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
     menu.addSeparator();
 
     QAction* setTitle = menu.addAction(tr("Set title..."));
-    QAction* quitGroup = menu.addAction(tr("Quit group", "Menu to quit a groupchat"));
+    QAction* quitConference = menu.addAction(tr("Quit conference", "Menu to quit a conference"));
 
     QAction* selectedItem = menu.exec(event->globalPos());
 
@@ -97,18 +97,18 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
         return;
     }
 
-    if (selectedItem == quitGroup) {
-        emit removeGroup(groupId);
+    if (selectedItem == quitConference) {
+        emit removeConference(conferenceId);
     } else if (selectedItem == openChatWindow) {
         emit newWindowOpened(this);
     } else if (selectedItem == removeChatWindow) {
-        chatroom->removeGroupFromDialogs();
+        chatroom->removeConferenceFromDialogs();
     } else if (selectedItem == setTitle) {
         editName();
     }
 }
 
-void GroupWidget::mousePressEvent(QMouseEvent* ev)
+void ConferenceWidget::mousePressEvent(QMouseEvent* ev)
 {
     if (ev->button() == Qt::LeftButton) {
         dragStartPos = ev->pos();
@@ -117,7 +117,7 @@ void GroupWidget::mousePressEvent(QMouseEvent* ev)
     GenericChatroomWidget::mousePressEvent(ev);
 }
 
-void GroupWidget::mouseMoveEvent(QMouseEvent* ev)
+void ConferenceWidget::mouseMoveEvent(QMouseEvent* ev)
 {
     if (!(ev->buttons() & Qt::LeftButton)) {
         return;
@@ -125,9 +125,9 @@ void GroupWidget::mouseMoveEvent(QMouseEvent* ev)
 
     if ((dragStartPos - ev->pos()).manhattanLength() > QApplication::startDragDistance()) {
         QMimeData* mdata = new QMimeData;
-        const Group* group = getGroup();
-        mdata->setText(group->getName());
-        mdata->setData("groupId", group->getPersistentId().getByteArray());
+        const Conference* conference = getConference();
+        mdata->setText(conference->getName());
+        mdata->setData("conferenceId", conference->getPersistentId().getByteArray());
 
         QDrag* drag = new QDrag(this);
         drag->setMimeData(mdata);
@@ -136,33 +136,33 @@ void GroupWidget::mouseMoveEvent(QMouseEvent* ev)
     }
 }
 
-void GroupWidget::updateUserCount(int numPeers)
+void ConferenceWidget::updateUserCount(int numPeers)
 {
     statusMessageLabel->setText(tr("%n user(s) in chat", "Number of users in chat", numPeers));
 }
 
-void GroupWidget::setAsActiveChatroom()
+void ConferenceWidget::setAsActiveChatroom()
 {
     setActive(true);
-    avatar->setPixmap(Style::scaleSvgImage(":img/group_dark.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(Style::scaleSvgImage(":img/conference_dark.svg", avatar->width(), avatar->height()));
 }
 
-void GroupWidget::setAsInactiveChatroom()
+void ConferenceWidget::setAsInactiveChatroom()
 {
     setActive(false);
-    avatar->setPixmap(Style::scaleSvgImage(":img/group.svg", avatar->width(), avatar->height()));
+    avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", avatar->width(), avatar->height()));
 }
 
-void GroupWidget::updateStatusLight()
+void ConferenceWidget::updateStatusLight()
 {
-    Group* g = chatroom->getGroup();
+    Conference* c = chatroom->getConference();
 
-    const bool event = g->getEventFlag();
+    const bool event = c->getEventFlag();
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Online, event)));
     statusPic.setMargin(event ? 1 : 3);
 }
 
-QString GroupWidget::getStatusString() const
+QString ConferenceWidget::getStatusString() const
 {
     if (chatroom->hasNewMessage()) {
         return tr("New Message");
@@ -171,68 +171,68 @@ QString GroupWidget::getStatusString() const
     }
 }
 
-void GroupWidget::editName()
+void ConferenceWidget::editName()
 {
     nameLabel->editBegin();
 }
 
-bool GroupWidget::isFriend() const
+bool ConferenceWidget::isFriend() const
 {
     return false;
 }
 
-bool GroupWidget::isGroup() const
+bool ConferenceWidget::isConference() const
 {
     return true;
 }
 
-QString GroupWidget::getNameItem() const
+QString ConferenceWidget::getNameItem() const
 {
     return nameLabel->fullText();
 }
 
-bool GroupWidget::isOnline() const
+bool ConferenceWidget::isOnline() const
 {
     return true;
 }
 
-bool GroupWidget::widgetIsVisible() const
+bool ConferenceWidget::widgetIsVisible() const
 {
     return isVisible();
 }
 
-QDateTime GroupWidget::getLastActivity() const
+QDateTime ConferenceWidget::getLastActivity() const
 {
     return QDateTime::currentDateTime();
 }
 
-QWidget* GroupWidget::getWidget()
+QWidget* ConferenceWidget::getWidget()
 {
     return this;
 }
 
-void GroupWidget::setWidgetVisible(bool visible)
+void ConferenceWidget::setWidgetVisible(bool visible)
 {
     setVisible(visible);
 }
 
 // TODO: Remove
-Group* GroupWidget::getGroup() const
+Conference* ConferenceWidget::getConference() const
 {
-    return chatroom->getGroup();
+    return chatroom->getConference();
 }
 
-const Chat* GroupWidget::getChat() const
+const Chat* ConferenceWidget::getChat() const
 {
-    return getGroup();
+    return getConference();
 }
 
-void GroupWidget::resetEventFlags()
+void ConferenceWidget::resetEventFlags()
 {
     chatroom->resetEventFlags();
 }
 
-void GroupWidget::dragEnterEvent(QDragEnterEvent* ev)
+void ConferenceWidget::dragEnterEvent(QDragEnterEvent* ev)
 {
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
@@ -247,7 +247,7 @@ void GroupWidget::dragEnterEvent(QDragEnterEvent* ev)
     }
 }
 
-void GroupWidget::dragLeaveEvent(QDragLeaveEvent* event)
+void ConferenceWidget::dragLeaveEvent(QDragLeaveEvent* event)
 {
     std::ignore = event;
     if (!active) {
@@ -255,7 +255,7 @@ void GroupWidget::dragLeaveEvent(QDragLeaveEvent* event)
     }
 }
 
-void GroupWidget::dropEvent(QDropEvent* ev)
+void ConferenceWidget::dropEvent(QDropEvent* ev)
 {
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
@@ -272,13 +272,13 @@ void GroupWidget::dropEvent(QDropEvent* ev)
     }
 }
 
-void GroupWidget::setName(const QString& name)
+void ConferenceWidget::setName(const QString& name)
 {
     nameLabel->setText(name);
 }
 
-void GroupWidget::retranslateUi()
+void ConferenceWidget::retranslateUi()
 {
-    const Group* group = chatroom->getGroup();
-    updateUserCount(group->getPeersCount());
+    const Conference* conference = chatroom->getConference();
+    updateUserCount(conference->getPeersCount());
 }

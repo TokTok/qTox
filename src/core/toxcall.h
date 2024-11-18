@@ -22,7 +22,7 @@ class QTimer;
 class AudioFilterer;
 class CoreVideoSource;
 class CoreAV;
-class Group;
+class Conference;
 class CameraSource;
 
 class ToxCall : public QObject
@@ -101,16 +101,16 @@ private:
     CameraSource& cameraSource;
 };
 
-class ToxGroupCall : public ToxCall
+class ToxConferenceCall : public ToxCall
 {
     Q_OBJECT
 public:
-    ToxGroupCall() = delete;
-    ToxGroupCall(const Group& group_, CoreAV& av_, IAudioControl& audio_);
-    ToxGroupCall(ToxGroupCall&& other) = delete;
-    ~ToxGroupCall();
+    ToxConferenceCall() = delete;
+    ToxConferenceCall(const Conference& conference_, CoreAV& av_, IAudioControl& audio_);
+    ToxConferenceCall(ToxConferenceCall&& other) = delete;
+    ~ToxConferenceCall();
 
-    ToxGroupCall& operator=(ToxGroupCall&& other) = delete;
+    ToxConferenceCall& operator=(ToxConferenceCall&& other) = delete;
     void removePeer(ToxPk peerId);
 
     void playAudioBuffer(const ToxPk& peer, const int16_t* data, int samples, unsigned channels,
@@ -123,7 +123,7 @@ private:
 
     std::map<ToxPk, std::unique_ptr<IAudioSink>> peers;
     std::map<ToxPk, QMetaObject::Connection> sinkInvalid;
-    const Group& group;
+    const Conference& conference;
 
 private slots:
     void onAudioSourceInvalidated();

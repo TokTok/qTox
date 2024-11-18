@@ -9,7 +9,7 @@
 #include <QKeyEvent>
 #include <QRegularExpression>
 
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/widget/tool/chattextedit.h"
 
 /**
@@ -21,10 +21,10 @@
 
 const QString TabCompleter::nickSuffix = QString(": ");
 
-TabCompleter::TabCompleter(ChatTextEdit* msgEdit_, Group* group_)
+TabCompleter::TabCompleter(ChatTextEdit* msgEdit_, Conference* conference_)
     : QObject{msgEdit_}
     , msgEdit{msgEdit_}
-    , group{group_}
+    , conference{conference_}
     , enabled{false}
     , lastCompletionLength{0}
 {
@@ -55,8 +55,8 @@ void TabCompleter::buildCompletionList()
     QRegularExpression regex(QString("^[-_\\[\\]{}|`^.\\\\]*").append(QRegularExpression::escape(tabAbbrev)),
                              QRegularExpression::CaseInsensitiveOption);
 
-    const QString ownNick = group->getSelfName();
-    for (const auto& name : group->getPeerList()) {
+    const QString ownNick = conference->getSelfName();
+    for (const auto& name : conference->getPeerList()) {
         if (name == ownNick) {
             continue; // don't auto complete own name
         }

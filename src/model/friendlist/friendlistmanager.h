@@ -24,19 +24,19 @@ public:
     bool needHideCircles() const;
     // If the contact positions have changed, need to redraw view
     bool getPositionsChanged() const;
-    bool getGroupsOnTop() const;
+    bool getConferencesOnTop() const;
 
     void addFriendListItem(IFriendListItem* item);
     void removeFriendListItem(IFriendListItem* item);
     void sortByName();
     void sortByActivity();
     void resetParents();
-    void setFilter(const QString& searchString, bool hideOnline, bool hideOffline, bool hideGroups);
+    void setFilter(const QString& searchString, bool hideOnline, bool hideOffline, bool hideConferences);
     void applyFilter();
     void updatePositions();
     void setSortRequired();
 
-    void setGroupsOnTop(bool v);
+    void setConferencesOnTop(bool v);
 
 signals:
     void itemsChanged();
@@ -47,7 +47,7 @@ private:
         QString searchString = "";
         bool hideOnline = false;
         bool hideOffline = false;
-        bool hideGroups = false;
+        bool hideConferences = false;
     } filterParams;
 
     void removeAll(IFriendListItem* item);
@@ -56,7 +56,7 @@ private:
 
     bool byName = true;
     bool hideCircles = false;
-    bool groupsOnTop = true;
+    bool conferencesOnTop = true;
     bool positionsChanged = false;
     bool needSort = false;
     QVector<IFriendListItemPtr> items;

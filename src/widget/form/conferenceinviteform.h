@@ -8,8 +8,8 @@
 #include <QWidget>
 
 class ContentLayout;
-class GroupInvite;
-class GroupInviteWidget;
+class ConferenceInvite;
+class ConferenceInviteWidget;
 
 class QGroupBox;
 class QLabel;
@@ -23,35 +23,35 @@ namespace Ui {
 class MainWindow;
 }
 
-class GroupInviteForm : public QWidget
+class ConferenceInviteForm : public QWidget
 {
     Q_OBJECT
 public:
-    GroupInviteForm(Settings& settings, Core& core);
-    ~GroupInviteForm();
+    ConferenceInviteForm(Settings& settings, Core& core);
+    ~ConferenceInviteForm();
 
     void show(ContentLayout* contentLayout);
-    bool addGroupInvite(const GroupInvite& inviteInfo);
+    bool addConferenceInvite(const ConferenceInvite& inviteInfo);
     bool isShown() const;
 
 signals:
-    void groupCreate(uint8_t type);
-    void groupInviteAccepted(const GroupInvite& inviteInfo);
-    void groupInvitesSeen();
+    void conferenceCreate(uint8_t type);
+    void conferenceInviteAccepted(const ConferenceInvite& inviteInfo);
+    void conferenceInvitesSeen();
 
 protected:
     void showEvent(QShowEvent* event) final;
 
 private:
     void retranslateUi();
-    void deleteInviteWidget(const GroupInvite& inviteInfo);
+    void deleteInviteWidget(const ConferenceInvite& inviteInfo);
 
 private:
     QWidget* headWidget;
     QLabel* headLabel;
     QPushButton* createButton;
     QGroupBox* inviteBox;
-    QList<GroupInviteWidget*> invites;
+    QList<ConferenceInviteWidget*> invites;
     QScrollArea* scroll;
     Settings& settings;
     Core& core;

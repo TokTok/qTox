@@ -3,6 +3,6 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "mock/mockgroupquery.h"
+#include "iconferencesettings.h"
 
-MockGroupQuery::~MockGroupQuery() = default;
+IConferenceSettings::~IConferenceSettings() = default;

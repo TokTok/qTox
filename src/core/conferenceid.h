@@ -9,13 +9,13 @@
 #include <QByteArray>
 #include <cstdint>
 
-class GroupId : public ChatId
+class ConferenceId : public ChatId
 {
 public:
     static constexpr int size = 32;
-    GroupId();
-    explicit GroupId(const QByteArray& rawId);
-    explicit GroupId(const uint8_t* rawId);
+    ConferenceId();
+    explicit ConferenceId(const QByteArray& rawId);
+    explicit ConferenceId(const uint8_t* rawId);
     int getSize() const override;
     std::unique_ptr<ChatId> clone() const override;
 };

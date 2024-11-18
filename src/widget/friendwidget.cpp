@@ -7,7 +7,7 @@
 
 #include "circlewidget.h"
 #include "friendlistwidget.h"
-#include "groupwidget.h"
+#include "conferencewidget.h"
 #include "maskablepixmapwidget.h"
 
 #include "src/core/core.h"
@@ -15,7 +15,7 @@
 #include "src/model/about/aboutfriend.h"
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/friend.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/about/aboutfriendform.h"
@@ -107,16 +107,16 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
 
     menu.addSeparator();
     QMenu* inviteMenu =
-        menu.addMenu(tr("Invite to group", "Menu to invite a friend to a groupchat"));
+        menu.addMenu(tr("Invite to conference", "Menu to invite a friend to a conference"));
     inviteMenu->setEnabled(chatroom->canBeInvited());
-    const auto newGroupAction = inviteMenu->addAction(tr("To new group"));
-    connect(newGroupAction, &QAction::triggered, chatroom.get(), &FriendChatroom::inviteToNewGroup);
+    const auto newConferenceAction = inviteMenu->addAction(tr("To new conference"));
+    connect(newConferenceAction, &QAction::triggered, chatroom.get(), &FriendChatroom::inviteToNewConference);
     inviteMenu->addSeparator();
 
-    for (const auto& group : chatroom->getGroups()) {
-        const auto groupAction = inviteMenu->addAction(tr("Invite to group '%1'").arg(group.name));
-        connect(groupAction, &QAction::triggered,
-                [this, group] { chatroom->inviteFriend(group.group); });
+    for (const auto& conference : chatroom->getConferences()) {
+        const auto conferenceAction = inviteMenu->addAction(tr("Invite to conference '%1'").arg(conference.name));
+        connect(conferenceAction, &QAction::triggered,
+                [this, conference] { chatroom->inviteFriend(conference.conference); });
     }
 
     const auto circleId = chatroom->getCircleId();
@@ -349,7 +349,7 @@ bool FriendWidget::isFriend() const
     return true;
 }
 
-bool FriendWidget::isGroup() const
+bool FriendWidget::isConference() const
 {
     return false;
 }

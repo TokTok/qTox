@@ -232,7 +232,7 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Ljud + video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Acceptera gruppchattsinbjudningar automatiskt från denna kontakt om angivet.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Acceptera samtal automatiskt:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Acceptera gruppinbjudningar automatiskt</translation>
     </message>
     <message>
@@ -808,7 +808,7 @@ så att du kan spara filen i Windows.</translation>
         <translation>/me erbjuder vänskap, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Gruppchatt %1</translation>
     </message>
     <message>
@@ -993,8 +993,8 @@ så att du kan spara filen i Windows.</translation>
         <translation>Acceptera automatiskt filer från denna vän</translation>
     </message>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Bjud in till grupp</translation>
     </message>
     <message>
@@ -1012,11 +1012,11 @@ så att du kan spara filen i Windows.</translation>
         <translation>Radera chatt från detta fönster</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Till ny grupp</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Bjud in till grupp &apos;%1&apos;</translation>
     </message>
     <message>
@@ -1200,7 +1200,7 @@ instead of closing entirely.</source>
         <translation>Du kan ställa in detta per vän genom att högerklicka på enskilda vänner.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1264,7 +1264,7 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1283,22 +1283,22 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupper</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Skapa ny grupp</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Gruppinbjudningar</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Inbjuden av %1 den %2 kl. %3.</translation>
@@ -1313,14 +1313,14 @@ instead of closing entirely.</source>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation>Ange titel...</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Lämna grupp</translation>
     </message>
     <message>
@@ -1672,7 +1672,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
         <translation>Lägg till vänner</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Skapa en chattgrupp</translation>
     </message>
     <message>
@@ -1737,11 +1737,11 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
         <translation>Öppna sidan Lägg till vänner</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Gruppchatt</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Öppna gruppchatt-hanteringssidan</translation>
     </message>
     <message>
@@ -1861,7 +1861,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
         <translation>Nytt meddelande</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation>Nytt gruppmeddelande</translation>
     </message>
     <message>
@@ -1874,11 +1874,11 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
         <translation>%1 - filöverföring</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation>Gruppinbjudan mottagen</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation>%1 bjuder in dig till en grupp.</translation>
     </message>
     <message>
@@ -1966,7 +1966,7 @@ Om du blir spammad med vänförfrågningar, ändra NoSpam.</translation>
         <translation>Blocklista</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrera gruppmeddelanden efter gruppmedlemmars offentliga nycklar. Sätt offentliga nycklar här, en per rad.</translation>
     </message>
 </context>
@@ -2393,11 +2393,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation type="unfinished">Det gick inte att skicka filen &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished">%1 har anslutit till gruppen</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished">%1 har lämnat gruppen</translation>
     </message>
     <message>
@@ -2494,11 +2494,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2786,7 +2786,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Kontaktlista</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Placera gruppchattar högst upp i vänlistan</translation>
     </message>
     <message>
@@ -2856,7 +2856,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Avisera</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Gruppchattar aviserar endast vid omnämnande</translation>
     </message>
     <message>
@@ -2876,17 +2876,17 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Dölj meddelandes avsändare och innehåll</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2926,11 +2926,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Ditt namn</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Gruppchatt #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Skapa ny grupp...</translation>
     </message>
     <message>
@@ -2962,7 +2962,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Vänner</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupper</translation>
     </message>
     <message>
@@ -3001,7 +3001,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>Lägg till vän</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Gruppinbjudningar</translation>
     </message>
@@ -3041,7 +3041,7 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

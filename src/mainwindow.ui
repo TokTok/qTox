@@ -926,7 +926,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="groupButton">
+            <widget class="QPushButton" name="conferenceButton">
              <property name="minimumSize">
               <size>
                <width>55</width>
@@ -937,13 +937,13 @@
               <enum>Qt::NoFocus</enum>
              </property>
              <property name="toolTip">
-              <string>Create a group chat</string>
+              <string>Create a conference</string>
              </property>
              <property name="accessibleName">
-              <string>Groupchat</string>
+              <string>Conference</string>
              </property>
              <property name="accessibleDescription">
-              <string>Open groupchat management page</string>
+              <string>Open conference management page</string>
              </property>
              <property name="autoFillBackground">
               <bool>false</bool>
@@ -953,7 +953,7 @@
              </property>
              <property name="icon">
               <iconset resource="../res.qrc">
-               <normaloff>:/img/group.svg</normaloff>:/img/group.svg</iconset>
+               <normaloff>:/img/conference.svg</normaloff>:/img/conference.svg</iconset>
              </property>
              <property name="iconSize">
               <size>

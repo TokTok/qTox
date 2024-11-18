@@ -181,7 +181,7 @@ If a new translation language has been added, update the following files:
   i.e. `git tag -s v1.8.0`
 - use semantic versions for tags: `vMAJOR.MINOR.PATCH`
   - `MAJOR` – bump version when there are breaking changes to video, audio,
-    text chats, groupchats, file transfers, and any other basic functionality.
+    text chats, conferences, file transfers, and any other basic functionality.
     For other things, `MINOR` and `PATCH` are to be bumped.
   - `MINOR` – bump version when there are:
     - new features added

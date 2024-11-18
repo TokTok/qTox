@@ -3,10 +3,10 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "group.h"
+#include "conference.h"
 #include "friend.h"
 #include "src/core/chatid.h"
-#include "src/core/groupid.h"
+#include "src/core/conferenceid.h"
 #include "src/core/toxpk.h"
 #include "src/friendlist.h"
 
@@ -15,22 +15,22 @@
 #include <QDebug>
 
 namespace {
-const int MAX_GROUP_TITLE_LENGTH = 128;
+const int MAX_CONFERENCE_TITLE_LENGTH = 128;
 } // namespace
 
-Group::Group(int groupId_, const GroupId persistentGroupId, const QString& name, bool isAvGroupchat,
-             const QString& selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
+Conference::Conference(int conferenceId_, const ConferenceId persistentConferenceId, const QString& name, bool isAvConference,
+             const QString& selfName_, ICoreConferenceQuery& conferenceQuery_, ICoreIdHandler& idHandler_,
              FriendList& friendList_)
-    : groupQuery(groupQuery_)
+    : conferenceQuery(conferenceQuery_)
     , idHandler(idHandler_)
     , selfName{selfName_}
     , title{name}
-    , toxGroupNum(groupId_)
-    , groupId{persistentGroupId}
-    , avGroupchat{isAvGroupchat}
+    , toxConferenceNum(conferenceId_)
+    , conferenceId{persistentConferenceId}
+    , avConference{isAvConference}
     , friendList{friendList_}
 {
-    // in groupchats, we only notify on messages containing your name <-- dumb
+    // in conferences, we only notify on messages containing your name <-- dumb
     // sound notifications should be on all messages, but system popup notification
     // on naming is appropriate
     hasNewMessages = 0;
@@ -38,9 +38,9 @@ Group::Group(int groupId_, const GroupId persistentGroupId, const QString& name,
     regeneratePeerList();
 }
 
-void Group::setName(const QString& newTitle)
+void Conference::setName(const QString& newTitle)
 {
-    const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
+    const QString shortTitle = newTitle.left(MAX_CONFERENCE_TITLE_LENGTH);
     if (!shortTitle.isEmpty() && title != shortTitle) {
         title = shortTitle;
         emit displayedNameChanged(title);
@@ -49,9 +49,9 @@ void Group::setName(const QString& newTitle)
     }
 }
 
-void Group::setTitle(const QString& author, const QString& newTitle)
+void Conference::setTitle(const QString& author, const QString& newTitle)
 {
-    const QString shortTitle = newTitle.left(MAX_GROUP_TITLE_LENGTH);
+    const QString shortTitle = newTitle.left(MAX_CONFERENCE_TITLE_LENGTH);
     if (!shortTitle.isEmpty() && title != shortTitle) {
         title = shortTitle;
         emit displayedNameChanged(title);
@@ -59,36 +59,36 @@ void Group::setTitle(const QString& author, const QString& newTitle)
     }
 }
 
-QString Group::getName() const
+QString Conference::getName() const
 {
     return title;
 }
 
-QString Group::getDisplayedName() const
+QString Conference::getDisplayedName() const
 {
     return getName();
 }
 
-QString Group::getDisplayedName(const ToxPk& contact) const
+QString Conference::getDisplayedName(const ToxPk& contact) const
 {
     return resolveToxPk(contact);
 }
 
-void Group::regeneratePeerList()
+void Conference::regeneratePeerList()
 {
-    // NOTE: there's a bit of a race here. Core emits a signal for both groupPeerlistChanged and
-    // groupPeerNameChanged back-to-back when a peer joins our group. If we get both before we
-    // process this slot, core->getGroupPeerNames will contain the new peer name, and we'll ignore
+    // NOTE: there's a bit of a race here. Core emits a signal for both conferencePeerlistChanged and
+    // conferencePeerNameChanged back-to-back when a peer joins our conference. If we get both before we
+    // process this slot, core->getConferencePeerNames will contain the new peer name, and we'll ignore
     // the name changed signal, and emit a single userJoined with the correct name. But, if we
     // receive the name changed signal a little later, we will emit userJoined before we have their
     // username, using just their ToxPk, then shortly after emit another peerNameChanged signal.
     // This can cause double-updated to UI and chatlog, but is unavoidable given the API of toxcore.
-    QStringList peers = groupQuery.getGroupPeerNames(toxGroupNum);
+    QStringList peers = conferenceQuery.getConferencePeerNames(toxConferenceNum);
     const auto oldPeerNames = peerDisplayNames;
     peerDisplayNames.clear();
     const int nPeers = peers.size();
     for (int i = 0; i < nPeers; ++i) {
-        const auto pk = groupQuery.getGroupPeerPk(toxGroupNum, i);
+        const auto pk = conferenceQuery.getConferencePeerPk(toxConferenceNum, i);
         if (pk == idHandler.getSelfPublicKey()) {
             peerDisplayNames[pk] = idHandler.getUsername();
         } else {
@@ -115,7 +115,7 @@ void Group::regeneratePeerList()
     }
 }
 
-void Group::updateUsername(ToxPk pk, const QString newName)
+void Conference::updateUsername(ToxPk pk, const QString newName)
 {
     const QString displayName = friendList.decideNickname(pk, newName);
     assert(peerDisplayNames.contains(pk));
@@ -127,22 +127,22 @@ void Group::updateUsername(ToxPk pk, const QString newName)
     }
 }
 
-bool Group::isAvGroupchat() const
+bool Conference::isAvConference() const
 {
-    return avGroupchat;
+    return avConference;
 }
 
-uint32_t Group::getId() const
+uint32_t Conference::getId() const
 {
-    return toxGroupNum;
+    return toxConferenceNum;
 }
 
-const GroupId& Group::getPersistentId() const
+const ConferenceId& Conference::getPersistentId() const
 {
-    return groupId;
+    return conferenceId;
 }
 
-int Group::getPeersCount() const
+int Conference::getPeersCount() const
 {
     return peerDisplayNames.size();
 }
@@ -151,32 +151,32 @@ int Group::getPeersCount() const
  * @brief Gets the PKs and names of all peers
  * @return PKs and names of all peers, including our own PK and name
  */
-const QMap<ToxPk, QString>& Group::getPeerList() const
+const QMap<ToxPk, QString>& Conference::getPeerList() const
 {
     return peerDisplayNames;
 }
 
-void Group::setEventFlag(bool f)
+void Conference::setEventFlag(bool f)
 {
     hasNewMessages = f;
 }
 
-bool Group::getEventFlag() const
+bool Conference::getEventFlag() const
 {
     return hasNewMessages;
 }
 
-void Group::setMentionedFlag(bool f)
+void Conference::setMentionedFlag(bool f)
 {
     userWasMentioned = f;
 }
 
-bool Group::getMentionedFlag() const
+bool Conference::getMentionedFlag() const
 {
     return userWasMentioned;
 }
 
-QString Group::resolveToxPk(const ToxPk& id) const
+QString Conference::resolveToxPk(const ToxPk& id) const
 {
     auto it = peerDisplayNames.find(id);
 
@@ -187,12 +187,12 @@ QString Group::resolveToxPk(const ToxPk& id) const
     return QString();
 }
 
-void Group::setSelfName(const QString& name)
+void Conference::setSelfName(const QString& name)
 {
     selfName = name;
 }
 
-QString Group::getSelfName() const
+QString Conference::getSelfName() const
 {
     return selfName;
 }

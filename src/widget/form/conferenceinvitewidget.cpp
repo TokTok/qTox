@@ -3,7 +3,7 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "groupinvitewidget.h"
+#include "conferenceinvitewidget.h"
 
 #include "src/core/core.h"
 #include "src/nexus.h"
@@ -15,13 +15,13 @@
 #include <QSignalMapper>
 
 /**
- * @class GroupInviteWidget
+ * @class ConferenceInviteWidget
  *
- * @brief This class shows information about single group invite
+ * @brief This class shows information about single conference invite
  * and provides buttons to accept/reject it
  */
 
-GroupInviteWidget::GroupInviteWidget(QWidget* parent, const GroupInvite& invite,
+ConferenceInviteWidget::ConferenceInviteWidget(QWidget* parent, const ConferenceInvite& invite,
                                      Settings& settings_, Core& core_)
     : QWidget(parent)
     , acceptButton(new QPushButton(this))
@@ -44,7 +44,7 @@ GroupInviteWidget::GroupInviteWidget(QWidget* parent, const GroupInvite& invite,
 /**
  * @brief Retranslate all elements in the form.
  */
-void GroupInviteWidget::retranslateUi()
+void ConferenceInviteWidget::retranslateUi()
 {
     QString name = core.getFriendUsername(inviteInfo.getFriendId());
     QDateTime inviteDate = inviteInfo.getInviteDate();
@@ -61,7 +61,7 @@ void GroupInviteWidget::retranslateUi()
  * @brief Returns infomation about invitation - e.g., who and when sent
  * @return Invite information object
  */
-const GroupInvite GroupInviteWidget::getInviteInfo() const
+const ConferenceInvite ConferenceInviteWidget::getInviteInfo() const
 {
     return inviteInfo;
 }

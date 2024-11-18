@@ -37,8 +37,8 @@ public:
     IFriendSettings::AutoAcceptCallFlags getAutoAcceptCall() const override;
     void setAutoAcceptCall(IFriendSettings::AutoAcceptCallFlags flag) override;
 
-    bool getAutoGroupInvite() const override;
-    void setAutoGroupInvite(bool enabled) override;
+    bool getAutoConferenceInvite() const override;
+    void setAutoConferenceInvite(bool enabled) override;
 
     bool clearHistory() override;
     bool isHistoryExistence() override;
@@ -52,7 +52,7 @@ public:
 
     SIGNAL_IMPL(AboutFriend, autoAcceptDirChanged, const QString&)
     SIGNAL_IMPL(AboutFriend, autoAcceptCallChanged, IFriendSettings::AutoAcceptCallFlags)
-    SIGNAL_IMPL(AboutFriend, autoGroupInviteChanged, bool)
+    SIGNAL_IMPL(AboutFriend, autoConferenceInviteChanged, bool)
 
 private:
     const Friend* const f;

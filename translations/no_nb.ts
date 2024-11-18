@@ -232,7 +232,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Lyd og video</translation>
     </message>
     <message>
-        <source>Automatically accept group chat invitations from this contact if set.</source>
+        <source>Automatically accept conference invitations from this contact if set.</source>
         <translation>Godta gruppesamtaleinvitasjoner fra denne kontakten automatisk hvis valgt.</translation>
     </message>
     <message>
@@ -284,7 +284,7 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Besvar automatisk:</translation>
     </message>
     <message>
-        <source>Auto-accept group invites</source>
+        <source>Auto-accept conference invites</source>
         <translation>Godta gruppeinvitasjoner automatisk</translation>
     </message>
     <message>
@@ -810,7 +810,7 @@ slik at du kan lagre filen på Windows.</translation>
         <translation>/me tilbyr vennskap, &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>Groupchat %1</source>
+        <source>Conference %1</source>
         <translation>Gruppesludring %1</translation>
     </message>
     <message>
@@ -986,8 +986,8 @@ slik at du kan lagre filen på Windows.</translation>
 <context>
     <name>FriendWidget</name>
     <message>
-        <source>Invite to group</source>
-        <comment>Menu to invite a friend to a groupchat</comment>
+        <source>Invite to conference</source>
+        <comment>Menu to invite a friend to a conference</comment>
         <translation>Inviter til gruppe</translation>
     </message>
     <message>
@@ -1046,11 +1046,11 @@ slik at du kan lagre filen på Windows.</translation>
         <translation>Fjern sludring fra dette vinduet</translation>
     </message>
     <message>
-        <source>To new group</source>
+        <source>To new conference</source>
         <translation>Til ny gruppe</translation>
     </message>
     <message>
-        <source>Invite to group &apos;%1&apos;</source>
+        <source>Invite to conference &apos;%1&apos;</source>
         <translation>Inviter til gruppen &quot;%1&quot;</translation>
     </message>
     <message>
@@ -1203,7 +1203,7 @@ istedenfor å lukke seg helt.</translation>
         <translation type="unfinished">Du kan sette dette for hver venn ved å høyreklikke på hver av dem.</translation>
     </message>
     <message>
-        <source>Add a chat message when a user joins or leaves a group</source>
+        <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Legg til en sludremelding når en bruker tar del eller forlater en gruppe</translation>
     </message>
 </context>
@@ -1267,7 +1267,7 @@ istedenfor å lukke seg helt.</translation>
     </message>
 </context>
 <context>
-    <name>GroupChatForm</name>
+    <name>ConferenceForm</name>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
@@ -1286,22 +1286,22 @@ istedenfor å lukke seg helt.</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteForm</name>
+    <name>ConferenceInviteForm</name>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupper</translation>
     </message>
     <message>
-        <source>Create new group</source>
+        <source>Create new conference</source>
         <translation>Opprett ny gruppe</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <translation>Gruppeinvitasjoner</translation>
     </message>
 </context>
 <context>
-    <name>GroupInviteWidget</name>
+    <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translation>Invitert av %1 den %2 klokken %3.</translation>
@@ -1316,14 +1316,14 @@ istedenfor å lukke seg helt.</translation>
     </message>
 </context>
 <context>
-    <name>GroupWidget</name>
+    <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
         <translation>Velg tittel...</translation>
     </message>
     <message>
-        <source>Quit group</source>
-        <comment>Menu to quit a groupchat</comment>
+        <source>Quit conference</source>
+        <comment>Menu to quit a conference</comment>
         <translation>Avslutt gruppe</translation>
     </message>
     <message>
@@ -1679,7 +1679,7 @@ Skriv inn samme passord to ganger.</translation>
         <translation>Legg til kontakt</translation>
     </message>
     <message>
-        <source>Create a group chat</source>
+        <source>Create a conference</source>
         <translation>Lag en gruppesamtale</translation>
     </message>
     <message>
@@ -1739,11 +1739,11 @@ Skriv inn samme passord to ganger.</translation>
         <translation>Åpne &quot;Legg til venner&quot;-siden</translation>
     </message>
     <message>
-        <source>Groupchat</source>
+        <source>Conference</source>
         <translation>Gruppesludring</translation>
     </message>
     <message>
-        <source>Open groupchat management page</source>
+        <source>Open conference management page</source>
         <translation>Åpne behandlingssiden gruppesludring</translation>
     </message>
     <message>
@@ -1863,7 +1863,7 @@ Skriv inn samme passord to ganger.</translation>
         <translation type="unfinished">Ny melding</translation>
     </message>
     <message>
-        <source>New group message</source>
+        <source>New conference message</source>
         <translation type="unfinished">Ny gruppemelding</translation>
     </message>
     <message>
@@ -1876,11 +1876,11 @@ Skriv inn samme passord to ganger.</translation>
         <translation type="unfinished">%1 - filoverføring</translation>
     </message>
     <message>
-        <source>Group invite received</source>
+        <source>Conference invite received</source>
         <translation type="unfinished">Gruppeinvitasjon mottatt</translation>
     </message>
     <message>
-        <source>%1 invites you to join a group.</source>
+        <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 inviterer deg til en gruppe.</translation>
     </message>
     <message>
@@ -1968,7 +1968,7 @@ Endringer av lagringsformat er mulig, som kan forårsake data tap.</translation>
         <translation>Svarteliste</translation>
     </message>
     <message>
-        <source>Filter group messages by group members&apos; public keys. Put public keys here, one per line.</source>
+        <source>Filter conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translation>Filtrer gruppemeldinger etter gruppemedlemmers offentlige nøkler. Legg inn offentlige nøkler her, én på hver linje.</translation>
     </message>
 </context>
@@ -2395,11 +2395,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation type="unfinished">Klarte ikke å sende filen &quot;%1&quot;</translation>
     </message>
     <message>
-        <source>%1 has joined the group</source>
+        <source>%1 has joined the conference</source>
         <translation type="unfinished">%1 har tatt del i gruppen</translation>
     </message>
     <message>
-        <source>%1 has left the group</source>
+        <source>%1 has left the conference</source>
         <translation type="unfinished">%1 har forlatt gruppen</translation>
     </message>
     <message>
@@ -2496,11 +2496,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Kontroll</translation>
     </message>
     <message>
-        <source>You have joined the group</source>
+        <source>You have joined the conference</source>
         <translation>Du har tatt del i gruppen</translation>
     </message>
     <message>
-        <source>You have left the group</source>
+        <source>You have left the conference</source>
         <translation>Du har forlatt gruppen</translation>
     </message>
     <message>
@@ -2788,7 +2788,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Kontaktliste</translation>
     </message>
     <message>
-        <source>Place groupchats at top of friend list</source>
+        <source>Place conferences at top of friend list</source>
         <translation>Plasser gruppe-sludringer på toppen av kontaktlisten</translation>
     </message>
     <message>
@@ -2858,7 +2858,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Varsle</translation>
     </message>
     <message>
-        <source>Group chats only notify when mentioned</source>
+        <source>Conferences only notify when mentioned</source>
         <translation>Gruppesludringer varsler kun når nevnt</translation>
     </message>
     <message>
@@ -2878,17 +2878,17 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Skjul meldingsavsender og innhold</translation>
     </message>
     <message>
-        <source>Use colored nicknames in group chats</source>
+        <source>Use colored nicknames in conferences</source>
         <translation>Bruk fargede kallenavn i gruppesludringer</translation>
     </message>
     <message>
-        <source>Only notify about new messages in group chats when mentioned.</source>
-        <comment>toolTip for Group chats only notify when mentioned</comment>
+        <source>Only notify about new messages in conferences when mentioned.</source>
+        <comment>toolTip for Conferences only notify when mentioned</comment>
         <translation type="unfinished">Kun varsle om nye meldinger i gruppesludringer når nevnt.</translation>
     </message>
     <message>
-        <source>If checked, group chats will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
-        <comment>toolTip for groupchat positioning</comment>
+        <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
+        <comment>toolTip for conference positioning</comment>
         <translation type="unfinished">Plasserer gruppesludringer på toppen av vennelisten. Ellers plasseres de under påloggede venner.</translation>
     </message>
     <message>
@@ -2948,7 +2948,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Venner</translation>
     </message>
     <message>
-        <source>Groups</source>
+        <source>Conferences</source>
         <translation>Grupper</translation>
     </message>
     <message>
@@ -2980,11 +2980,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Ditt navn</translation>
     </message>
     <message>
-        <source>Groupchat #%1</source>
+        <source>Conference #%1</source>
         <translation>Gruppesludring #%1</translation>
     </message>
     <message>
-        <source>Create new group...</source>
+        <source>Create new conference...</source>
         <translation>Opprett ny gruppe…</translation>
     </message>
     <message>
@@ -3003,7 +3003,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation>Legg til venn</translation>
     </message>
     <message>
-        <source>Group invites</source>
+        <source>Conference invites</source>
         <comment>title of the window</comment>
         <translation>Gruppeinvitasjoner</translation>
     </message>
@@ -3043,7 +3043,7 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n new group invite(s)</source>
+        <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n ny gruppeinvitasjon</numerusform>
             <numerusform>%n nye gruppeinvitasjoner</numerusform>

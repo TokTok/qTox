@@ -43,11 +43,11 @@ private slots:
     void on_notifyHide_stateChanged(int value);
     void on_busySound_stateChanged();
     void on_showWindow_stateChanged();
-    void on_groupOnlyNotfiyWhenMentioned_stateChanged();
+    void on_conferenceOnlyNotfiyWhenMentioned_stateChanged();
     void on_cbCompactLayout_stateChanged();
     void on_cbSeparateWindow_stateChanged();
     void on_cbDontGroupWindows_stateChanged();
-    void on_cbGroupchatPosition_stateChanged();
+    void on_cbConferencePosition_stateChanged();
     void on_themeColorCBox_currentIndexChanged(int index);
     void on_cbShowIdenticons_stateChanged();
     void on_txtChatFont_currentFontChanged(const QFont& f);

@@ -11,19 +11,19 @@
 
 class Core;
 class IDialogsManager;
-class Group;
+class Conference;
 class ToxPk;
 class FriendList;
 
-class GroupChatroom : public QObject, public Chatroom
+class ConferenceRoom : public QObject, public Chatroom
 {
     Q_OBJECT
 public:
-    GroupChatroom(Group* group_, IDialogsManager* dialogsManager_, Core& core_, FriendList& friendList);
+    ConferenceRoom(Conference* conference_, IDialogsManager* dialogsManager_, Core& core_, FriendList& friendList);
 
     Chat* getChat() override;
 
-    Group* getGroup();
+    Conference* getConference();
 
     bool hasNewMessage() const;
     void resetEventFlags();
@@ -33,10 +33,10 @@ public:
 
     bool possibleToOpenInNewWindow() const;
     bool canBeRemovedFromWindow() const;
-    void removeGroupFromDialogs();
+    void removeConferenceFromDialogs();
 
 private:
-    Group* group{nullptr};
+    Conference* conference{nullptr};
     IDialogsManager* dialogsManager{nullptr};
     Core& core;
     FriendList& friendList;

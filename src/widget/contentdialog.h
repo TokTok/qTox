@@ -5,7 +5,7 @@
 
 #pragma once
 
-#include "src/core/groupid.h"
+#include "src/core/conferenceid.h"
 #include "src/core/toxpk.h"
 #include "src/model/dialogs/idialogs.h"
 #include "src/model/status.h"
@@ -25,9 +25,9 @@ class FriendListLayout;
 class FriendWidget;
 class GenericChatForm;
 class GenericChatroomWidget;
-class Group;
-class GroupChatroom;
-class GroupWidget;
+class Conference;
+class ConferenceRoom;
+class ConferenceWidget;
 class QCloseEvent;
 class QSplitter;
 class QScrollArea;
@@ -35,7 +35,7 @@ class Settings;
 class Style;
 class IMessageBoxManager;
 class FriendList;
-class GroupList;
+class ConferenceList;
 class Profile;
 
 class ContentDialog : public ActivateDialog, public IDialogs
@@ -44,13 +44,13 @@ class ContentDialog : public ActivateDialog, public IDialogs
 public:
     ContentDialog(const Core& core, Settings& settings, Style& style,
                   IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                  GroupList& groupList, Profile& profile, QWidget* parent = nullptr);
+                  ConferenceList& conferenceList, Profile& profile, QWidget* parent = nullptr);
     ~ContentDialog() override;
 
     FriendWidget* addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form);
-    GroupWidget* addGroup(std::shared_ptr<GroupChatroom> chatroom, GenericChatForm* form);
+    ConferenceWidget* addConference(std::shared_ptr<ConferenceRoom> chatroom, GenericChatForm* form);
     void removeFriend(const ToxPk& friendPk) override;
-    void removeGroup(const GroupId& groupId) override;
+    void removeConference(const ConferenceId& conferenceId) override;
     int chatroomCount() const override;
     void ensureSplitterVisible();
     void updateTitleAndStatusIcon();
@@ -73,15 +73,15 @@ public:
 
 signals:
     void friendDialogShown(const Friend* f);
-    void groupDialogShown(Group* g);
+    void conferenceDialogShown(Conference* c);
     void addFriendDialog(Friend* frnd, ContentDialog* contentDialog);
-    void addGroupDialog(Group* group, ContentDialog* contentDialog);
+    void addConferenceDialog(Conference* conference, ContentDialog* contentDialog);
     void activated();
     void willClose();
     void connectFriendWidget(FriendWidget& friendWidget);
 
 public slots:
-    void reorderLayouts(bool newGroupOnTop);
+    void reorderLayouts(bool newConferenceOnTop);
     void previousChat();
     void nextChat();
     void setUsername(const QString& newName);
@@ -101,7 +101,7 @@ public slots:
 
 private slots:
     void updateFriendWidget(const ToxPk& friendPk, QString alias);
-    void onGroupchatPositionChanged(bool top);
+    void onConferencePositionChanged(bool top);
 
 private:
     void closeIfEmpty();
@@ -120,7 +120,7 @@ private:
     QSplitter* splitter;
     QScrollArea* friendScroll;
     FriendListLayout* friendLayout;
-    GenericChatItemLayout groupLayout;
+    GenericChatItemLayout conferenceLayout;
     ContentLayout* contentLayout;
     GenericChatroomWidget* activeChatroomWidget;
     QSize videoSurfaceSize;
@@ -134,6 +134,6 @@ private:
     Style& style;
     IMessageBoxManager& messageBoxManager;
     FriendList& friendList;
-    GroupList& groupList;
+    ConferenceList& conferenceList;
     Profile& profile;
 };

@@ -5,7 +5,7 @@
 * [Contact list](#contact-list)
 * [User Profile](#user-profile)
 * [Settings](#settings)
-* [Groupchats](#groupchats)
+* [Conferences](#conferences)
 * [Message Styling](#message-styling)
 * [Quotes](#quotes)
 * [Multi Window Mode](#multi-window-mode)
@@ -50,13 +50,13 @@ is directly aimed at you, and not sent to everyone, that is:
 
 * audio/video call
 * file transfer
-* groupchat invite
+* conference invite
 * message
 
 **Not** updated on:
 
 * avatar change
-* groupchat message
+* conference message
 * name change
 * [status](#status) change
 * status message change
@@ -67,12 +67,12 @@ Can be accessed by right-clicking on a contact or [circle](#circles). When
 right-clicking on a contact a menu appears that has the following options:
 
 * __Open chat in a new window:__ opens a new window for the chosen contact.
-* __Invite to group:__ offers an option to create a new groupchat and
-  automatically invite the friend to it or to an already existing groupchat.
+* __Invite to conference:__ offers an option to create a new conference and
+  automatically invite the friend to it or to an already existing conference.
 * __Move to circle:__ offers an option to move friend to a new
   [circle](#circles), or to an existing one.
 * __Set alias:__ set alias that will be displayed instead of contact's name.
-* __Auto accept group invites:__ if enabled, all group chat invites from this
+* __Auto accept conference invites:__ if enabled, all conference invites from this
   friend are automatically accepted.
 * __Auto accept files from this friend:__ option to automatically save files
   from the selected contact in a chosen directory.
@@ -223,9 +223,9 @@ In the friend's window you can customize some options for this friend specifical
 
 #### Contact list
 
-* __Group chats always notify:__ If set, qTox will notify you on every new
-  message in a groupchat.
-* __Place groupchats at top of friend list:__ If checked, your groupchats will
+* __Conferences always notify:__ If set, qTox will notify you on every new
+  message in a conference.
+* __Place conferences at top of friend list:__ If checked, your conferences will
   be at the top of the contacts list instead of being sorted with your other
   contacts.
 * __Compact contact list:__ If set, qTox will use a contact list layout which
@@ -273,7 +273,7 @@ found in your [User Profile](#user-profile).
 
 #### BlackList
 
-BlackList is a feature of qTox that locally blocks a group member's messages across all your joined groups, in case someone spams a group. You need to put a members public key into the BlackList text box one per line to activate it. Currently qTox doesn't have a method to get the public key from a group member, this will be added in the future.
+BlackList is a feature of qTox that locally blocks a conference member's messages across all your joined conferences, in case someone spams a conference. You need to put a members public key into the BlackList text box one per line to activate it. Currently qTox doesn't have a method to get the public key from a conference member, this will be added in the future.
 
 ### Audio/Video
 #### Audio Settings
@@ -341,14 +341,14 @@ router or connection, you can try to disable them.
 * __Authors:__ Lists the people who developed this shiny piece of software.
 * __Known Issues:__ Links to our list of known issues and improvements.
 
-## Groupchats
+## Conferences
 
-Groupchats are a way to talk with multiple friends at the same time, like when
-you are standing together in a group. To create a groupchat click the groupchat
+Conferences are a way to talk with multiple friends at the same time, like when
+you are standing together in a conference. To create a conference click the conference
 icon in the bottom left corner and set a name. Now you can invite your contacts
-by right-clicking on the contact and selecting "Invite to group". Currently, if
+by right-clicking on the contact and selecting "Invite to conference". Currently, if
 the last person leaves the chat, it is closed and you have to create a new one.
-Videochats and file transfers are currently unsupported in groupchats.
+Videochats and file transfers are currently unsupported in conferences.
 
 ## Message Styling
 
@@ -388,7 +388,7 @@ context menu. You also can use `ALT` + `q` shortcut.
 3. Selected text will be automatically quoted into the message input area in a
 pretty formatting.
 
-## Friend- and Groupinvites
+## Friend- and Conferenceinvites
 
 To invite a friend to a chat with you, you have to click the `+` button on the
 bottom left of the qTox window. The "Add a friend" Tab allows you to enter the
@@ -398,7 +398,7 @@ registered there.
 On the "Friend requests" tab you can see, friend requests you got from other
 Tox users. You can then choose to either accept or decline these requests.
 
-On the Groupinvites page, you can create a new groupchat and add users to it by
+On the Conferenceinvites page, you can create a new conference and add users to it by
 using the context menu in your contact list. Invites from your contacts are
 also displayed here and you can accept and decline them.
 
@@ -429,7 +429,7 @@ The following shortcuts are currently supported:
 
 ## Push to talk
 
-In audio group chat microphone mute state will be changed while `Ctrl` +
+In audio conference microphone mute state will be changed while `Ctrl` +
 `p` pressed and reverted on release.
 
 ## Commandline Options

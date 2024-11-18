@@ -4,7 +4,7 @@
  */
 
 #include "src/core/chatid.h"
-#include "src/core/groupid.h"
+#include "src/core/conferenceid.h"
 #include "src/core/toxid.h"
 #include "src/core/toxpk.h"
 
@@ -80,9 +80,9 @@ void TestChatId::dataTest()
 void TestChatId::sizeTest()
 {
     ToxPk pk;
-    GroupId id;
+    ConferenceId id;
     QVERIFY(pk.getSize() == ToxPk::size);
-    QVERIFY(id.getSize() == GroupId::size);
+    QVERIFY(id.getSize() == ConferenceId::size);
 }
 
 void TestChatId::hashableTest()

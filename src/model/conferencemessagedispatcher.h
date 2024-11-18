@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "src/core/icoregroupmessagesender.h"
+#include "src/core/icoreconferencemessagesender.h"
 #include "src/core/icoreidhandler.h"
-#include "src/model/group.h"
+#include "src/model/conference.h"
 #include "src/model/imessagedispatcher.h"
 #include "src/model/message.h"
 
@@ -16,15 +16,15 @@
 
 #include <cstdint>
 
-class IGroupSettings;
+class IConferenceSettings;
 
-class GroupMessageDispatcher : public IMessageDispatcher
+class ConferenceMessageDispatcher : public IMessageDispatcher
 {
     Q_OBJECT
 public:
-    GroupMessageDispatcher(Group& g_, MessageProcessor processor, ICoreIdHandler& idHandler,
-                           ICoreGroupMessageSender& messageSender,
-                           const IGroupSettings& groupSettings);
+    ConferenceMessageDispatcher(Conference& g_, MessageProcessor processor, ICoreIdHandler& idHandler,
+                           ICoreConferenceMessageSender& messageSender,
+                           const IConferenceSettings& conferenceSettings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
                                                                     QString const& content) override;
@@ -34,10 +34,10 @@ public:
     void onMessageReceived(ToxPk const& sender, bool isAction, QString const& content);
 
 private:
-    Group& group;
+    Conference& conference;
     MessageProcessor processor;
     ICoreIdHandler& idHandler;
-    ICoreGroupMessageSender& messageSender;
-    const IGroupSettings& groupSettings;
+    ICoreConferenceMessageSender& messageSender;
+    const IConferenceSettings& conferenceSettings;
     DispatchedMessageId nextMessageId{0};
 };

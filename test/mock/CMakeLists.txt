@@ -17,8 +17,8 @@
 add_library(mock_library STATIC
     include/mock/mockcoreidhandler.h
     src/mockcoreidhandler.cpp
-    include/mock/mockgroupquery.h
-    src/mockgroupquery.cpp
+    include/mock/mockconferencequery.h
+    src/mockconferencequery.cpp
     include/mock/mockcoresettings.h
     src/mockcoresettings.cpp
     include/mock/mockbootstraplistgenerator.h

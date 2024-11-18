@@ -59,12 +59,12 @@ bool handleActionPrefix(QString& content)
 
 ChatHistory::ChatHistory(Chat& chat_, History* history_, const ICoreIdHandler& coreIdHandler_,
                          const Settings& settings_, IMessageDispatcher& messageDispatcher,
-                         FriendList& friendList, GroupList& groupList)
+                         FriendList& friendList, ConferenceList& conferenceList)
     : chat(chat_)
     , history(history_)
     , settings(settings_)
     , coreIdHandler(coreIdHandler_)
-    , sessionChatLog(getInitialChatLogIdx(), coreIdHandler_, friendList, groupList)
+    , sessionChatLog(getInitialChatLogIdx(), coreIdHandler_, friendList, conferenceList)
 {
     connect(&messageDispatcher, &IMessageDispatcher::messageComplete, this,
             &ChatHistory::onMessageComplete);

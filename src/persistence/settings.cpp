@@ -172,8 +172,8 @@ void Settings::loadGlobal()
         showWindow = s.value("showWindow", true).toBool();
         notify = s.value("notify", true).toBool();
         desktopNotify = s.value("desktopNotify", true).toBool();
-        groupAlwaysNotify = s.value("groupAlwaysNotify", true).toBool();
-        groupchatPosition = s.value("groupchatPosition", true).toBool();
+        conferenceAlwaysNotify = s.value("conferenceAlwaysNotify", true).toBool();
+        conferencePosition = s.value("conferencePosition", true).toBool();
         separateWindow = s.value("separateWindow", false).toBool();
         dontGroupWindows = s.value("dontGroupWindows", false).toBool();
         showIdenticons = s.value("showIdenticons", true).toBool();
@@ -194,7 +194,7 @@ void Settings::loadGlobal()
         lightTrayIcon = s.value("lightTrayIcon", false).toBool();
         useEmoticons = s.value("useEmoticons", true).toBool();
         statusChangeNotificationEnabled = s.value("statusChangeNotificationEnabled", false).toBool();
-        showGroupJoinLeaveMessages = s.value("showGroupJoinLeaveMessages", false).toBool();
+        showConferenceJoinLeaveMessages = s.value("showConferenceJoinLeaveMessages", false).toBool();
         spellCheckingEnabled = s.value("spellCheckingEnabled", true).toBool();
         themeColor = s.value("themeColor", 0).toInt();
         style = s.value("style", "").toString();
@@ -516,7 +516,7 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
 
             fp.autoAcceptCall =
                 Settings::AutoAcceptCallFlags(QFlag(ps.value("autoAcceptCall", 0).toInt()));
-            fp.autoGroupInvite = ps.value("autoGroupInvite").toBool();
+            fp.autoConferenceInvite = ps.value("autoConferenceInvite").toBool();
             fp.circleID = ps.value("circle", -1).toInt();
 
             if (getEnableLogging())
@@ -658,10 +658,10 @@ void Settings::saveGlobal()
         s.setValue("showWindow", showWindow);
         s.setValue("notify", notify);
         s.setValue("desktopNotify", desktopNotify);
-        s.setValue("groupAlwaysNotify", groupAlwaysNotify);
+        s.setValue("conferenceAlwaysNotify", conferenceAlwaysNotify);
         s.setValue("separateWindow", separateWindow);
         s.setValue("dontGroupWindows", dontGroupWindows);
-        s.setValue("groupchatPosition", groupchatPosition);
+        s.setValue("conferencePosition", conferencePosition);
         s.setValue("showIdenticons", showIdenticons);
 
         s.setValue("smileyPack", smileyPack);
@@ -678,7 +678,7 @@ void Settings::saveGlobal()
         s.setValue("style", style);
         s.setValue("nameColors", nameColors);
         s.setValue("statusChangeNotificationEnabled", statusChangeNotificationEnabled);
-        s.setValue("showGroupJoinLeaveMessages", showGroupJoinLeaveMessages);
+        s.setValue("showConferenceJoinLeaveMessages", showConferenceJoinLeaveMessages);
         s.setValue("spellCheckingEnabled", spellCheckingEnabled);
     }
     s.endGroup();
@@ -766,7 +766,7 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
             ps.setValue("note", frnd.note);
             ps.setValue("autoAcceptDir", frnd.autoAcceptDir);
             ps.setValue("autoAcceptCall", static_cast<int>(frnd.autoAcceptCall));
-            ps.setValue("autoGroupInvite", frnd.autoGroupInvite);
+            ps.setValue("autoConferenceInvite", frnd.autoConferenceInvite);
             ps.setValue("circle", frnd.circleID);
 
             if (getEnableLogging())
@@ -1040,16 +1040,16 @@ void Settings::setStatusChangeNotificationEnabled(bool newValue)
     }
 }
 
-bool Settings::getShowGroupJoinLeaveMessages() const
+bool Settings::getShowConferenceJoinLeaveMessages() const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return showGroupJoinLeaveMessages;
+    return showConferenceJoinLeaveMessages;
 }
 
-void Settings::setShowGroupJoinLeaveMessages(bool newValue)
+void Settings::setShowConferenceJoinLeaveMessages(bool newValue)
 {
-    if (setVal(showGroupJoinLeaveMessages, newValue)) {
-        emit showGroupJoinLeaveMessagesChanged(newValue);
+    if (setVal(showConferenceJoinLeaveMessages, newValue)) {
+        emit showConferenceJoinLeaveMessagesChanged(newValue);
     }
 }
 
@@ -1105,16 +1105,16 @@ void Settings::setBusySound(bool newValue)
     }
 }
 
-bool Settings::getGroupAlwaysNotify() const
+bool Settings::getConferenceAlwaysNotify() const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return groupAlwaysNotify;
+    return conferenceAlwaysNotify;
 }
 
-void Settings::setGroupAlwaysNotify(bool newValue)
+void Settings::setConferenceAlwaysNotify(bool newValue)
 {
-    if (setVal(groupAlwaysNotify, newValue)) {
-        emit groupAlwaysNotifyChanged(newValue);
+    if (setVal(conferenceAlwaysNotify, newValue)) {
+        emit conferenceAlwaysNotifyChanged(newValue);
     }
 }
 
@@ -1346,19 +1346,19 @@ void Settings::setAutoAcceptCall(const ToxPk& id, AutoAcceptCallFlags accept)
     }
 }
 
-bool Settings::getAutoGroupInvite(const ToxPk& id) const
+bool Settings::getAutoConferenceInvite(const ToxPk& id) const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     auto it = friendLst.find(id.getByteArray());
     if (it != friendLst.end()) {
-        return it->autoGroupInvite;
+        return it->autoConferenceInvite;
     }
 
     return false;
 }
 
-void Settings::setAutoGroupInvite(const ToxPk& id, bool accept)
+void Settings::setAutoConferenceInvite(const ToxPk& id, bool accept)
 {
     bool updated = false;
     {
@@ -1366,14 +1366,14 @@ void Settings::setAutoGroupInvite(const ToxPk& id, bool accept)
 
         auto& frnd = getOrInsertFriendPropRef(id);
 
-        if (frnd.autoGroupInvite != accept) {
-            frnd.autoGroupInvite = accept;
+        if (frnd.autoConferenceInvite != accept) {
+            frnd.autoConferenceInvite = accept;
             updated = true;
         }
     }
 
     if (updated) {
-        emit autoGroupInviteChanged(id, accept);
+        emit autoConferenceInviteChanged(id, accept);
     }
 }
 
@@ -1993,16 +1993,16 @@ void Settings::setDontGroupWindows(bool value)
     }
 }
 
-bool Settings::getGroupchatPosition() const
+bool Settings::getConferencePosition() const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return groupchatPosition;
+    return conferencePosition;
 }
 
-void Settings::setGroupchatPosition(bool value)
+void Settings::setConferencePosition(bool value)
 {
-    if (setVal(groupchatPosition, value)) {
-        emit groupchatPositionChanged(value);
+    if (setVal(conferencePosition, value)) {
+        emit conferencePositionChanged(value);
     }
 }
 
@@ -2167,14 +2167,14 @@ void Settings::setAutoLogin(bool state)
     }
 }
 
-void Settings::setEnableGroupChatsColor(bool state)
+void Settings::setEnableConferencesColor(bool state)
 {
     if (setVal(nameColors, state)) {
         emit nameColorsChanged(state);
     }
 }
 
-bool Settings::getEnableGroupChatsColor() const
+bool Settings::getEnableConferencesColor() const
 {
     return nameColors;
 }

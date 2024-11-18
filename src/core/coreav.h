@@ -16,10 +16,10 @@
 #include <tox/toxav.h>
 
 class Friend;
-class Group;
+class Conference;
 class IAudioControl;
 class IAudioSettings;
-class IGroupSettings;
+class IConferenceSettings;
 class QThread;
 class QTimer;
 class CoreVideoSource;
@@ -36,7 +36,7 @@ class CoreAV : public QObject
 public:
     using CoreAVPtr = std::unique_ptr<CoreAV>;
     static CoreAVPtr makeCoreAV(Tox* core, QRecursiveMutex& toxCoreLock, IAudioSettings& audioSettings,
-                                IGroupSettings& groupSettings, CameraSource& cameraSource);
+                                IConferenceSettings& conferenceSettings, CameraSource& cameraSource);
 
     void setAudio(IAudioControl& newAudio);
     IAudioControl* getAudio();
@@ -44,34 +44,34 @@ public:
     ~CoreAV();
 
     bool isCallStarted(const Friend* f) const;
-    bool isCallStarted(const Group* g) const;
+    bool isCallStarted(const Conference* c) const;
     bool isCallActive(const Friend* f) const;
-    bool isCallActive(const Group* g) const;
+    bool isCallActive(const Conference* c) const;
     bool isCallVideoEnabled(const Friend* f) const;
     bool sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                        uint32_t rate) const;
     void sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> frame);
-    bool sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples, uint8_t chans,
+    bool sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size_t samples, uint8_t chans,
                             uint32_t rate) const;
 
     VideoSource* getVideoSourceFromCall(int friendNum) const;
     void sendNoVideo();
 
-    void joinGroupCall(const Group& group);
-    void leaveGroupCall(int groupNum);
-    void muteCallInput(const Group* g, bool mute);
-    void muteCallOutput(const Group* g, bool mute);
-    bool isGroupCallInputMuted(const Group* g) const;
-    bool isGroupCallOutputMuted(const Group* g) const;
+    void joinConferenceCall(const Conference& conference);
+    void leaveConferenceCall(int conferenceNum);
+    void muteCallInput(const Conference* c, bool mute);
+    void muteCallOutput(const Conference* c, bool mute);
+    bool isConferenceCallInputMuted(const Conference* c) const;
+    bool isConferenceCallOutputMuted(const Conference* c) const;
 
     bool isCallInputMuted(const Friend* f) const;
     bool isCallOutputMuted(const Friend* f) const;
     void toggleMuteCallInput(const Friend* f);
     void toggleMuteCallOutput(const Friend* f);
-    static void groupCallCallback(void* tox, uint32_t group, uint32_t peer, const int16_t* data,
+    static void conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer, const int16_t* data,
                                   unsigned samples, uint8_t channels, uint32_t sample_rate,
                                   void* core);
-    void invalidateGroupCallPeerSource(const Group& group, ToxPk peerPk);
+    void invalidateConferenceCallPeerSource(const Conference& conference, ToxPk peerPk);
 
 public slots:
     bool startCall(uint32_t friendNum, bool video);
@@ -103,7 +103,7 @@ private:
     };
 
     CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& toxCoreLock,
-           IAudioSettings& audioSettings_, IGroupSettings& groupSettings_, CameraSource& cameraSource);
+           IAudioSettings& audioSettings_, IConferenceSettings& conferenceSettings_, CameraSource& cameraSource);
     void connectCallbacks();
 
     void process();
@@ -131,14 +131,14 @@ private:
     std::map<uint32_t, ToxFriendCallPtr> calls;
 
 
-    using ToxGroupCallPtr = std::unique_ptr<ToxGroupCall>;
+    using ToxConferenceCallPtr = std::unique_ptr<ToxConferenceCall>;
     /**
-     * @brief Maps group IDs to ToxGroupCalls.
+     * @brief Maps conference IDs to ToxConferenceCalls.
      * @note Need to use STL container here, because Qt containers need a copy constructor.
      */
-    std::map<int, ToxGroupCallPtr> groupCalls;
+    std::map<int, ToxConferenceCallPtr> conferenceCalls;
 
-    // protect 'calls' and 'groupCalls'
+    // protect 'calls' and 'conferenceCalls'
     mutable QReadWriteLock callsLock{QReadWriteLock::Recursive};
 
     /**
@@ -149,6 +149,6 @@ private:
     QRecursiveMutex& coreLock;
 
     IAudioSettings& audioSettings;
-    IGroupSettings& groupSettings;
+    IConferenceSettings& conferenceSettings;
     CameraSource& cameraSource;
 };

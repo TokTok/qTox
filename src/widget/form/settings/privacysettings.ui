@@ -129,7 +129,7 @@ If you are getting spammed with friend requests, change the NoSpam.</string>
           <item>
            <widget class="QTextEdit" name="blackListTextEdit">
             <property name="toolTip">
-             <string>Filter group messages by group members' public keys. Put public keys here, one per line.</string>
+             <string>Filter conference messages by conference members' public keys. Put public keys here, one per line.</string>
             </property>
            </widget>
           </item>

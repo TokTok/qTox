@@ -3,14 +3,14 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "groupinviteform.h"
+#include "conferenceinviteform.h"
 
 #include "ui_mainwindow.h"
 #include "src/core/core.h"
-#include "src/model/groupinvite.h"
+#include "src/model/conferenceinvite.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentlayout.h"
-#include "src/widget/form/groupinvitewidget.h"
+#include "src/widget/form/conferenceinvitewidget.h"
 #include "src/widget/translator.h"
 
 #include <QDateTime>
@@ -26,12 +26,12 @@
 #include <tox/tox.h>
 
 /**
- * @class GroupInviteForm
+ * @class ConferenceInviteForm
  *
- * @brief This form contains all group invites you received
+ * @brief This form contains all conference invites you received
  */
 
-GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
+ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
     : headWidget(new QWidget(this))
     , headLabel(new QLabel(this))
     , createButton(new QPushButton(this))
@@ -42,7 +42,7 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
 {
     QVBoxLayout* layout = new QVBoxLayout(this);
     connect(createButton, &QPushButton::clicked,
-            [this]() { emit groupCreate(TOX_CONFERENCE_TYPE_AV); });
+            [this]() { emit conferenceCreate(TOX_CONFERENCE_TYPE_AV); });
 
     QWidget* innerWidget = new QWidget(scroll);
     innerWidget->setLayout(new QVBoxLayout());
@@ -64,10 +64,10 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
     headLayout->addWidget(headLabel);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&GroupInviteForm::retranslateUi, this), this);
+    Translator::registerHandler(std::bind(&ConferenceInviteForm::retranslateUi, this), this);
 }
 
-GroupInviteForm::~GroupInviteForm()
+ConferenceInviteForm::~ConferenceInviteForm()
 {
     Translator::unregister(this);
 }
@@ -76,7 +76,7 @@ GroupInviteForm::~GroupInviteForm()
  * @brief Detects that form is shown
  * @return True if form is visible
  */
-bool GroupInviteForm::isShown() const
+bool ConferenceInviteForm::isShown() const
 {
     bool result = isVisible();
     if (result) {
@@ -89,7 +89,7 @@ bool GroupInviteForm::isShown() const
  * @brief Shows the form
  * @param contentLayout Main layout that contains all components of the form
  */
-void GroupInviteForm::show(ContentLayout* contentLayout)
+void ConferenceInviteForm::show(ContentLayout* contentLayout)
 {
     contentLayout->mainContent->layout()->addWidget(this);
     contentLayout->mainHead->layout()->addWidget(headWidget);
@@ -98,50 +98,50 @@ void GroupInviteForm::show(ContentLayout* contentLayout)
 }
 
 /**
- * @brief Adds group invite
- * @param inviteInfo Object which contains info about group invitation
+ * @brief Adds conference invite
+ * @param inviteInfo Object which contains info about conference invitation
  * @return true if notification is needed, false otherwise
  */
-bool GroupInviteForm::addGroupInvite(const GroupInvite& inviteInfo)
+bool ConferenceInviteForm::addConferenceInvite(const ConferenceInvite& inviteInfo)
 {
     // supress duplicate invite messages
-    for (GroupInviteWidget* existing : invites) {
+    for (ConferenceInviteWidget* existing : invites) {
         if (existing->getInviteInfo().getInvite() == inviteInfo.getInvite()) {
             return false;
         }
     }
 
-    GroupInviteWidget* widget = new GroupInviteWidget(this, inviteInfo, settings, core);
+    ConferenceInviteWidget* widget = new ConferenceInviteWidget(this, inviteInfo, settings, core);
     scroll->widget()->layout()->addWidget(widget);
     invites.append(widget);
-    connect(widget, &GroupInviteWidget::accepted, [this](const GroupInvite& inviteInfo_) {
+    connect(widget, &ConferenceInviteWidget::accepted, [this](const ConferenceInvite& inviteInfo_) {
         deleteInviteWidget(inviteInfo_);
-        emit groupInviteAccepted(inviteInfo_);
+        emit conferenceInviteAccepted(inviteInfo_);
     });
 
-    connect(widget, &GroupInviteWidget::rejected,
-            [this](const GroupInvite& inviteInfo_) { deleteInviteWidget(inviteInfo_); });
+    connect(widget, &ConferenceInviteWidget::rejected,
+            [this](const ConferenceInvite& inviteInfo_) { deleteInviteWidget(inviteInfo_); });
     if (isVisible()) {
-        emit groupInvitesSeen();
+        emit conferenceInvitesSeen();
         return false;
     }
     return true;
 }
 
-void GroupInviteForm::showEvent(QShowEvent* event)
+void ConferenceInviteForm::showEvent(QShowEvent* event)
 {
     QWidget::showEvent(event);
-    emit groupInvitesSeen();
+    emit conferenceInvitesSeen();
 }
 
 /**
- * @brief Deletes accepted/declined group invite widget
+ * @brief Deletes accepted/declined conference invite widget
  * @param inviteInfo Invite information of accepted/declined widget
  */
-void GroupInviteForm::deleteInviteWidget(const GroupInvite& inviteInfo)
+void ConferenceInviteForm::deleteInviteWidget(const ConferenceInvite& inviteInfo)
 {
     auto deletingWidget =
-        std::find_if(invites.begin(), invites.end(), [=](const GroupInviteWidget* widget) {
+        std::find_if(invites.begin(), invites.end(), [=](const ConferenceInviteWidget* widget) {
             return inviteInfo == widget->getInviteInfo();
         });
     (*deletingWidget)->deleteLater();
@@ -149,14 +149,14 @@ void GroupInviteForm::deleteInviteWidget(const GroupInvite& inviteInfo)
     invites.erase(deletingWidget);
 }
 
-void GroupInviteForm::retranslateUi()
+void ConferenceInviteForm::retranslateUi()
 {
-    headLabel->setText(tr("Groups"));
+    headLabel->setText(tr("Conferences"));
     if (createButton) {
-        createButton->setText(tr("Create new group"));
+        createButton->setText(tr("Create new conference"));
     }
-    inviteBox->setTitle(tr("Group invites"));
-    for (GroupInviteWidget* invite : invites) {
+    inviteBox->setTitle(tr("Conference invites"));
+    for (ConferenceInviteWidget* invite : invites) {
         invite->retranslateUi();
     }
 }

@@ -123,9 +123,9 @@ idea of the general look and features.
 ### Features
 
 - One to one chat with friends
-- Group chats
+- Conferences
 - File transfers, with previewing of images
-- Audio calls, including group calls
+- Audio calls, including conference calls
 - Video calls
 - ToxMe and Tox URI support
 - Translations in over 30 languages

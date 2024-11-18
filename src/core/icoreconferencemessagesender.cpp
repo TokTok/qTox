@@ -3,6 +3,6 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "icoregroupquery.h"
+#include "icoreconferencemessagesender.h"
 
-ICoreGroupQuery::~ICoreGroupQuery() = default;
+ICoreConferenceMessageSender::~ICoreConferenceMessageSender() = default;
