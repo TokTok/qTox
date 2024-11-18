@@ -253,7 +253,7 @@ void ChatMessage::markAsBroken()
 QString ChatMessage::toString() const
 {
     ChatLineContent* c = getContent(1);
-    if (c)
+    if (c != nullptr)
         return c->getText();
 
     return {};
@@ -272,14 +272,14 @@ void ChatMessage::setAsAction()
 void ChatMessage::hideSender()
 {
     ChatLineContent* c = getContent(0);
-    if (c)
+    if (c != nullptr)
         c->hide();
 }
 
 void ChatMessage::hideDate()
 {
     ChatLineContent* c = getContent(2);
-    if (c)
+    if (c != nullptr)
         c->hide();
 }
 

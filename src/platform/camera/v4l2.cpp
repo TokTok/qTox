@@ -64,12 +64,12 @@ int deviceOpen(QString devName, int* error)
         goto fail;
     }
 
-    if (!(cap.capabilities & V4L2_CAP_VIDEO_CAPTURE)) {
+    if ((cap.capabilities & V4L2_CAP_VIDEO_CAPTURE) == 0u) {
         *error = ENODEV;
         goto fail;
     }
 
-    if (!(cap.capabilities & V4L2_CAP_STREAMING)) {
+    if ((cap.capabilities & V4L2_CAP_STREAMING) == 0u) {
         *error = ENOSYS;
         goto fail;
     }
@@ -89,7 +89,7 @@ QVector<float> getDeviceModeFrameRates(int fd, unsigned w, unsigned h, uint32_t 
     vfve.height = h;
     vfve.width = w;
 
-    while (!ioctl(fd, VIDIOC_ENUM_FRAMEINTERVALS, &vfve)) {
+    while (ioctl(fd, VIDIOC_ENUM_FRAMEINTERVALS, &vfve) == 0) {
         float rate;
         switch (vfve.type) {
         case V4L2_FRMSIZE_TYPE_DISCRETE:
@@ -123,13 +123,13 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
     v4l2_fmtdesc vfd{};
     vfd.type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
 
-    while (!ioctl(fd, VIDIOC_ENUM_FMT, &vfd)) {
+    while (ioctl(fd, VIDIOC_ENUM_FMT, &vfd) == 0) {
         vfd.index++;
 
         v4l2_frmsizeenum vfse{};
         vfse.pixel_format = vfd.pixelformat;
 
-        while (!ioctl(fd, VIDIOC_ENUM_FRAMESIZES, &vfse)) {
+        while (ioctl(fd, VIDIOC_ENUM_FRAMESIZES, &vfse) == 0) {
             VideoMode mode;
             mode.pixel_format = vfse.pixel_format;
             switch (vfse.type) {
@@ -175,12 +175,12 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
     QStringList deviceFiles;
 
     DIR* dir = opendir("/dev");
-    if (!dir)
+    if (dir == nullptr)
         return devices;
 
     dirent* e;
-    while ((e = readdir(dir)))
-        if (!strncmp(e->d_name, "video", 5) || !strncmp(e->d_name, "vbi", 3))
+    while ((e = readdir(dir)) != nullptr)
+        if ((strncmp(e->d_name, "video", 5) == 0) || (strncmp(e->d_name, "vbi", 3) == 0))
             deviceFiles += QString("/dev/") + QString::fromUtf8(e->d_name);
     closedir(dir);
 
@@ -195,7 +195,7 @@ QVector<QPair<QString, QString>> v4l2::getDeviceList()
         ioctl(fd, VIDIOC_QUERYCAP, &caps);
         close(fd);
 
-        if (caps.device_caps & V4L2_CAP_VIDEO_CAPTURE)
+        if ((caps.device_caps & V4L2_CAP_VIDEO_CAPTURE) != 0u)
             devices += {file, QString::fromUtf8(reinterpret_cast<const char*>(caps.card))};
     }
     return devices;

@@ -14,7 +14,7 @@ ChatLine::ChatLine() = default;
 ChatLine::~ChatLine()
 {
     for (ChatLineContent* c : content) {
-        if (c->scene())
+        if (c->scene() != nullptr)
             c->scene()->removeItem(c);
 
         delete c;
@@ -52,14 +52,14 @@ ChatLineContent* ChatLine::getContent(QPointF scenePos) const
 void ChatLine::removeFromScene()
 {
     for (ChatLineContent* c : content) {
-        if (c->scene())
+        if (c->scene() != nullptr)
             c->scene()->removeItem(c);
     }
 }
 
 void ChatLine::addToScene(QGraphicsScene* scene)
 {
-    if (!scene)
+    if (scene == nullptr)
         return;
 
     for (ChatLineContent* c : content)
@@ -119,7 +119,7 @@ QRectF ChatLine::sceneBoundingRect() const
 
 void ChatLine::addColumn(ChatLineContent* item, ColumnFormat fmt)
 {
-    if (!item)
+    if (item == nullptr)
         return;
 
     format.push_back(fmt);
@@ -129,14 +129,14 @@ void ChatLine::addColumn(ChatLineContent* item, ColumnFormat fmt)
 
 void ChatLine::replaceContent(int col, ChatLineContent* lineContent)
 {
-    if (col >= 0 && col < content.size() && lineContent) {
+    if (col >= 0 && col < content.size() && (lineContent != nullptr)) {
         QGraphicsScene* scene = content[col]->scene();
         delete content[col];
 
         content[col] = lineContent;
         lineContent->setIndex(row, col);
 
-        if (scene)
+        if (scene != nullptr)
             scene->addItem(content[col]);
 
         layout(width, bbox.topLeft());

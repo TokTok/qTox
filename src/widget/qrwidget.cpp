@@ -89,7 +89,7 @@ void QRWidget::paintImage()
             for (int x = 0; x < s; ++x) {
                 const int xx = yy + x;
                 const unsigned char b = qr->data[xx];
-                if (b & 0x01) {
+                if ((b & 0x01) != 0) {
                     const double rx1 = x * scale;
                     const double ry1 = y * scale;
                     const QRectF r(rx1, ry1, scale, scale);

@@ -20,7 +20,7 @@ QDateTime Timestamp::getTime()
 
 QSizeF Timestamp::idealSize()
 {
-    if (doc) {
+    if (doc != nullptr) {
         return {qMin(doc->idealWidth(), width), doc->size().height()};
     }
     return size;

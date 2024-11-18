@@ -95,7 +95,7 @@ void DebugObjectTreeModel::reload()
 {
     // Find the root object
     QObject* root = this;
-    while (root->parent()) {
+    while (root->parent() != nullptr) {
         root = root->parent();
     }
 

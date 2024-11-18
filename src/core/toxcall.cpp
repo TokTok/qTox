@@ -135,7 +135,7 @@ ToxFriendCall::ToxFriendCall(uint32_t friendNum, bool VideoEnabled, CoreAV& av_,
                                        [&av_, friendNum](std::shared_ptr<VideoFrame> frame) {
                                            av_.sendCallVideo(friendNum, frame);
                                        });
-        if (!videoInConn) {
+        if (videoInConn == nullptr) {
             qDebug() << "Video connection not working";
         }
     }

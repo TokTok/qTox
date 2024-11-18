@@ -99,7 +99,7 @@ Q_LOGGING_CATEGORY(ffmpegDeviceInput, "ffmpeg.device.input")
 
 const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
 {
-    if (!avc) {
+    if (avc == nullptr) {
         return logcat::ffmpeg;
     }
 
@@ -145,12 +145,12 @@ const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
 
 const char* avItemName(void* obj, const AVClass* cls)
 {
-    return (cls->item_name ? cls->item_name : av_default_item_name)(obj);
+    return ((cls->item_name != nullptr) ? cls->item_name : av_default_item_name)(obj);
 }
 
 QString avLogType(void* obj, const AVClass* avc)
 {
-    if (!avc) {
+    if (avc == nullptr) {
         return QStringLiteral("ffmpeg");
     }
 
@@ -160,7 +160,7 @@ QString avLogType(void* obj, const AVClass* avc)
 Q_ATTRIBUTE_FORMAT_PRINTF(3, 0)
 void avLogCallback(void* obj, int level, const char* fmt, va_list args)
 {
-    const AVClass* avc = obj ? *static_cast<const AVClass* const*>(obj) : nullptr;
+    const AVClass* avc = (obj != nullptr) ? *static_cast<const AVClass* const*>(obj) : nullptr;
 
     const auto cat = avLogCategory(avc);
     const QString message =
@@ -275,7 +275,7 @@ void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode
     mode = mode_;
     isNone_ = (deviceName == "none");
 
-    if (subscriptions && !isNone_) {
+    if ((subscriptions != 0) && !isNone_) {
         openDevice();
     }
 }
@@ -302,7 +302,7 @@ CameraSource::~CameraSource()
     // Free all remaining VideoFrame
     VideoFrame::untrackFrames(id, true);
 
-    if (cctx) {
+    if (cctx != nullptr) {
         avcodec_free_context(&cctx);
     }
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
@@ -311,7 +311,7 @@ CameraSource::~CameraSource()
     }
 #endif
 
-    if (device) {
+    if (device != nullptr) {
         for (int i = 0; i < subscriptions; ++i)
             device->close();
 
@@ -361,7 +361,7 @@ void CameraSource::openDevice()
 
     qDebug() << "Opening device" << deviceName << "subscriptions:" << subscriptions;
 
-    if (device) {
+    if (device != nullptr) {
         qWarning() << "Device already open";
         device->open();
         emit openFailed();
@@ -371,7 +371,7 @@ void CameraSource::openDevice()
     // We need to create a new CameraDevice
     device = CameraDevice::open(deviceName, mode);
 
-    if (!device) {
+    if (device == nullptr) {
         qWarning() << "Failed to open device" << deviceName;
         emit openFailed();
         return;
@@ -413,7 +413,7 @@ void CameraSource::openDevice()
     codecId = cparams->codec_id;
 #endif
     const AVCodec* codec = avcodec_find_decoder(codecId);
-    if (!codec) {
+    if (codec == nullptr) {
         qWarning() << "Codec not found";
         emit openFailed();
         return;
@@ -489,7 +489,7 @@ void CameraSource::closeDevice()
     avcodec_close(cctxOrig);
     cctxOrig = nullptr;
 #endif
-    while (device && !device->close()) {
+    while ((device != nullptr) && !device->close()) {
     }
     device = nullptr;
 }
@@ -547,7 +547,7 @@ void CameraSource::stream()
         const QReadLocker locker{&streamMutex};
 
         // Exit if device is no longer valid
-        if (!device) {
+        if (device == nullptr) {
             break;
         }
 

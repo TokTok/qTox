@@ -20,7 +20,7 @@ bool Platform::capsLockEnabled()
 {
     Display* d = X11Display::lock();
     bool caps_state = false;
-    if (d) {
+    if (d != nullptr) {
         unsigned n;
         XkbGetIndicatorState(d, XkbUseCoreKbd, &n);
         caps_state = (n & 0x01) == 1;

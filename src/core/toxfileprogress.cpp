@@ -30,7 +30,7 @@ bool ToxFileProgress::addSample(uint64_t bytesSent, QTime now)
     }
 
     auto* active = &samples[activeSample];
-    auto* inactive = &samples[!activeSample];
+    auto* inactive = &samples[activeSample == 0 ? 1 : 0];
 
     if (bytesSent < active->bytesSent || bytesSent < inactive->bytesSent) {
         qWarning("Bytes sent has decreased since last sample, ignoring sample");
@@ -55,7 +55,7 @@ bool ToxFileProgress::addSample(uint64_t bytesSent, QTime now)
 
     if (active->timestamp.msecsTo(now) >= samplePeriodMs) {
         // Swap samples and set the newly active sample
-        activeSample = !activeSample;
+        activeSample = activeSample == 0 ? 1 : 0;
         std::swap(active, inactive);
     }
 
@@ -99,7 +99,7 @@ double ToxFileProgress::getSpeed() const
     }
 
     const auto& active = samples[activeSample];
-    const auto& inactive = samples[!activeSample];
+    const auto& inactive = samples[activeSample == 0 ? 1 : 0];
 
     return (active.bytesSent - inactive.bytesSent)
            / double(inactive.timestamp.msecsTo(active.timestamp)) * 1000.0;

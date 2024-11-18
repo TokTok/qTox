@@ -438,7 +438,7 @@ void FriendListWidget::onConferencePositionChanged(bool top)
 
 void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, bool forward)
 {
-    if (!activeChatroomWidget) {
+    if (activeChatroomWidget == nullptr) {
         return;
     }
 
@@ -446,7 +446,7 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
     FriendWidget* friendWidget = qobject_cast<FriendWidget*>(activeChatroomWidget);
 
     if (mode == SortingMode::Activity) {
-        if (!friendWidget) {
+        if (friendWidget == nullptr) {
             return;
         }
 
@@ -518,7 +518,7 @@ void FriendListWidget::dragEnterEvent(QDragEnterEvent* event)
     }
     const ToxPk toxPk(event->mimeData()->data("toxPk"));
     Friend* frnd = friendList.findFriend(toxPk);
-    if (frnd)
+    if (frnd != nullptr)
         event->acceptProposedAction();
 }
 
@@ -527,14 +527,14 @@ void FriendListWidget::dropEvent(QDropEvent* event)
     // Check, that the element is dropped from qTox
     QObject* o = event->source();
     FriendWidget* widget = qobject_cast<FriendWidget*>(o);
-    if (!widget)
+    if (widget == nullptr)
         return;
 
     // Check, that the user has a friend with the same ToxPk
     assert(event->mimeData()->hasFormat("toxPk"));
     const ToxPk toxPk{event->mimeData()->data("toxPk")};
     Friend* f = friendList.findFriend(toxPk);
-    if (!f)
+    if (f == nullptr)
         return;
 
     // Save CircleWidget before changing the Id
@@ -543,7 +543,7 @@ void FriendListWidget::dropEvent(QDropEvent* event)
 
     moveWidget(widget, f->getStatus(), true);
 
-    if (circleWidget)
+    if (circleWidget != nullptr)
         circleWidget->updateStatus();
 }
 

@@ -61,7 +61,7 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     Tox_Err_Options_New err;
     Tox_Options* tox_opts = tox_options_new(&err);
 
-    if (!PARSE_ERR(err) || !tox_opts) {
+    if (!PARSE_ERR(err) || (tox_opts == nullptr)) {
         qWarning() << "Failed to create Tox_Options";
         return {};
     }

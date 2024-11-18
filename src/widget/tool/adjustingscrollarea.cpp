@@ -29,7 +29,7 @@ void AdjustingScrollArea::resizeEvent(QResizeEvent* ev)
 
 QSize AdjustingScrollArea::sizeHint() const
 {
-    if (widget()) {
+    if (widget() != nullptr) {
         const int scrollbarWidth = verticalScrollBar()->isVisible() ? verticalScrollBar()->width() : 0;
         return widget()->sizeHint() + QSize(scrollbarWidth, 0);
     }

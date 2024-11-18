@@ -78,7 +78,7 @@ void Spinner::timeout()
     // limit to the range [0.0 - 360.0]
     curRot = remainderf(angle, 360.0f);
 
-    if (scene()) {
+    if (scene() != nullptr) {
         scene()->invalidate(sceneBoundingRect());
     }
 }

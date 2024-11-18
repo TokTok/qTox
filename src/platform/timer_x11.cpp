@@ -18,7 +18,7 @@ uint32_t Platform::getIdleTime()
     uint32_t idleTime = 0;
 
     Display* display = X11Display::lock();
-    if (!display) {
+    if (display == nullptr) {
         qDebug() << "XOpenDisplay failed";
         X11Display::unlock();
         return 0;
@@ -27,9 +27,9 @@ uint32_t Platform::getIdleTime()
     int32_t x11event = 0;
     int32_t x11error = 0;
     static const int32_t hasExtension = XScreenSaverQueryExtension(display, &x11event, &x11error);
-    if (hasExtension) {
+    if (hasExtension != 0) {
         XScreenSaverInfo* info = XScreenSaverAllocInfo();
-        if (info) {
+        if (info != nullptr) {
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
             XScreenSaverQueryInfo(display, DefaultRootWindow(display), info);

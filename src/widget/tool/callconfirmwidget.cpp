@@ -102,7 +102,7 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
  */
 void CallConfirmWidget::reposition()
 {
-    if (parentWidget())
+    if (parentWidget() != nullptr)
         parentWidget()->removeEventFilter(this);
 
     setParent(anchor->window());
@@ -155,7 +155,7 @@ void CallConfirmWidget::showEvent(QShowEvent* event)
 void CallConfirmWidget::hideEvent(QHideEvent* event)
 {
     std::ignore = event;
-    if (parentWidget())
+    if (parentWidget() != nullptr)
         parentWidget()->removeEventFilter(this);
 
     setParent(nullptr);

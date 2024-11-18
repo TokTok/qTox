@@ -25,7 +25,7 @@ FlowLayout::FlowLayout(int margin, int hSpacing, int vSpacing)
 FlowLayout::~FlowLayout()
 {
     QLayoutItem* item;
-    while ((item = takeAt(0)))
+    while ((item = takeAt(0)) != nullptr)
         delete item;
 }
 //! [2]
@@ -166,7 +166,7 @@ int FlowLayout::doLayout(const QRect& rect, bool testOnly) const
 int FlowLayout::smartSpacing(QStyle::PixelMetric pm) const
 {
     QObject* parent = this->parent();
-    if (!parent) {
+    if (parent == nullptr) {
         return -1;
     }
     if (parent->isWidgetType()) {

@@ -103,7 +103,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
     const QString file = canonicalLogFilePath(ctxt.file);
     const QString category =
-        ctxt.category ? QString::fromUtf8(ctxt.category) : QStringLiteral("default");
+        (ctxt.category != nullptr) ? QString::fromUtf8(ctxt.category) : QStringLiteral("default");
     if ((type == QtDebugMsg && category == QStringLiteral("tox.core")
          && (file == QStringLiteral("rtp.c") || file == QStringLiteral("video.c")))
         || (file == QStringLiteral("bwcontroller.c") && msg.contains("update"))) {
@@ -146,15 +146,15 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
 #ifdef LOG_TO_FILE
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
-    if (!logFilePtr) {
+    if (logFilePtr == nullptr) {
         logBufferMutex->lock();
-        if (logBuffer)
+        if (logBuffer != nullptr)
             logBuffer->append(LogMsgBytes);
 
         logBufferMutex->unlock();
     } else {
         logBufferMutex->lock();
-        if (logBuffer) {
+        if (logBuffer != nullptr) {
             // empty logBuffer to file
             for (const QByteArray& bufferedMsg : *logBuffer) {
                 fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
@@ -178,7 +178,7 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
         return false;
     }
 
-    if (!uriDialog) {
+    if (uriDialog == nullptr) {
         return false;
     }
 
@@ -221,7 +221,7 @@ int AppManager::startGui(QCommandLineParser& parser)
         qDebug() << "Log file over 1MB, rotating...";
 
         // close old logfile (need for windows)
-        if (mainLogFilePtr)
+        if (mainLogFilePtr != nullptr)
             fclose(mainLogFilePtr);
 
         QDir dir(logFileDir);
@@ -239,7 +239,7 @@ int AppManager::startGui(QCommandLineParser& parser)
         mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
     }
 
-    if (!mainLogFilePtr) {
+    if (mainLogFilePtr == nullptr) {
         qCritical() << "Couldn't open logfile" << logfile;
     } else {
         qDebug() << "Logging to" << logfile;
@@ -329,11 +329,11 @@ int AppManager::startGui(QCommandLineParser& parser)
         && !Profile::isEncrypted(profileName, settings->getPaths())) {
         profile = Profile::loadProfile(profileName, QString(), *settings, &parser, *cameraSource,
                                        *messageBoxManager);
-        if (!profile) {
+        if (profile == nullptr) {
             QMessageBox::information(nullptr, tr("Error"), tr("Failed to load profile automatically."));
         }
     }
-    if (profile) {
+    if (profile != nullptr) {
         nexus->bootstrapWithProfile(profile);
     } else {
         nexus->setParser(&parser);

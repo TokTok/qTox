@@ -486,7 +486,7 @@ void ChatHistory::breakMessage(DispatchedMessageId id, BrokenMessageReason reaso
 
 bool ChatHistory::canUseHistory() const
 {
-    return history && settings.getEnableLogging();
+    return (history != nullptr) && settings.getEnableLogging();
 }
 
 /**

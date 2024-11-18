@@ -148,7 +148,7 @@ void OpenAL::checkAlError() noexcept
 void OpenAL::checkAlcError(ALCdevice* device) noexcept
 {
     const ALCenum alc_err = alcGetError(device);
-    if (alc_err) {
+    if (alc_err != 0) {
         qWarning("OpenAL error: %s", alcGetString(device, alc_err));
     }
 }
@@ -295,7 +295,7 @@ void OpenAL::destroySink(AlSink& sink)
 
     const uint sid = sink.getSourceId();
 
-    if (alIsSource(sid)) {
+    if (alIsSource(sid) != 0) {
         // stop playing, marks all buffers as processed
         alSourceStop(sid);
         cleanupBuffers(sid);
@@ -364,7 +364,7 @@ void OpenAL::destroySource(AlSource& source)
  */
 bool OpenAL::autoInitInput()
 {
-    return alInDev ? true : initInput(settings.getInDev());
+    return (alInDev != nullptr) ? true : initInput(settings.getInDev());
 }
 
 /**
@@ -374,7 +374,7 @@ bool OpenAL::autoInitInput()
  */
 bool OpenAL::autoInitOutput()
 {
-    return alOutDev ? true : initOutput(settings.getOutDev());
+    return (alOutDev != nullptr) ? true : initOutput(settings.getOutDev());
 }
 
 bool OpenAL::initInput(const QString& deviceName)
@@ -405,7 +405,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
     alInDev = alcCaptureOpenDevice(tmpDevName, AUDIO_SAMPLE_RATE, stereoFlag, ringBufSize);
 
     // Restart the capture if necessary
-    if (!alInDev) {
+    if (alInDev == nullptr) {
         qCWarning(logcat::audio) << "Failed to initialize audio input device:" << deviceName;
         return false;
     }
@@ -439,7 +439,7 @@ bool OpenAL::initOutput(const QString& deviceName)
     const ALchar* tmpDevName = qDevName.isEmpty() ? nullptr : qDevName.constData();
     alOutDev = alcOpenDevice(tmpDevName);
 
-    if (!alOutDev) {
+    if (alOutDev == nullptr) {
         qCWarning(logcat::audio) << "Cannot open audio output device" << deviceName;
         return false;
     }
@@ -448,7 +448,7 @@ bool OpenAL::initOutput(const QString& deviceName)
     alOutContext = alcCreateContext(alOutDev, nullptr);
     checkAlcError(alOutDev);
 
-    if (!alcMakeContextCurrent(alOutContext)) {
+    if (alcMakeContextCurrent(alOutContext) == 0) {
         qCWarning(logcat::audio) << "Cannot create audio output context";
         return false;
     }
@@ -532,7 +532,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
     assert(channels == 1 || channels == 2);
     const QMutexLocker<QRecursiveMutex> locker(&audioLock);
 
-    if (!(alOutDev && outputInitialized))
+    if (!((alOutDev != nullptr) && outputInitialized))
         return;
 
     ALuint bufids[BUFFER_COUNT];
@@ -572,7 +572,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
  */
 void OpenAL::cleanupInput()
 {
-    if (!alInDev)
+    if (alInDev == nullptr)
         return;
 
     qCDebug(logcat::audio) << "Closing audio input";
@@ -593,8 +593,8 @@ void OpenAL::cleanupOutput()
 {
     outputInitialized = false;
 
-    if (alOutDev) {
-        if (!alcMakeContextCurrent(nullptr)) {
+    if (alOutDev != nullptr) {
+        if (alcMakeContextCurrent(nullptr) == 0) {
             qWarning("Failed to clear audio context");
         }
 
@@ -602,7 +602,7 @@ void OpenAL::cleanupOutput()
         alOutContext = nullptr;
 
         qCDebug(logcat::audio) << "Closing audio output";
-        if (alcCloseDevice(alOutDev)) {
+        if (alcCloseDevice(alOutDev) != 0) {
             alOutDev = nullptr;
         } else {
             qWarning("Failed to close output");
@@ -694,7 +694,7 @@ void OpenAL::doAudio()
     // Output section does nothing
 
     // Input section
-    if (alInDev && !sources.empty()) {
+    if ((alInDev != nullptr) && !sources.empty()) {
         doInput();
     }
 }
@@ -710,7 +710,7 @@ void OpenAL::captureSamples(ALCdevice* device, int16_t* buffer, ALCsizei samples
 bool OpenAL::isOutputReady() const
 {
     const QMutexLocker<QRecursiveMutex> locker(&audioLock);
-    return alOutDev && outputInitialized;
+    return (alOutDev != nullptr) && outputInitialized;
 }
 
 QStringList OpenAL::outDeviceNames()
@@ -720,8 +720,8 @@ QStringList OpenAL::outDeviceNames()
                                     ? alcGetString(nullptr, ALC_ALL_DEVICES_SPECIFIER)
                                     : alcGetString(nullptr, ALC_DEVICE_SPECIFIER);
 
-    if (pDeviceList) {
-        while (*pDeviceList) {
+    if (pDeviceList != nullptr) {
+        while (*pDeviceList != 0) {
             auto len = strlen(pDeviceList);
             list << QString::fromUtf8(pDeviceList, len);
             pDeviceList += len + 1;
@@ -736,9 +736,9 @@ QStringList OpenAL::inDeviceNames()
     QStringList list;
     const ALchar* pDeviceList = alcGetString(nullptr, ALC_CAPTURE_DEVICE_SPECIFIER);
 
-    if (pDeviceList) {
+    if (pDeviceList != nullptr) {
         qCDebug(logcat::audio) << "Available input devices:" << pDeviceList;
-        while (*pDeviceList) {
+        while (*pDeviceList != 0) {
             auto len = strlen(pDeviceList);
             list << QString::fromUtf8(pDeviceList, len);
             pDeviceList += len + 1;

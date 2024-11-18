@@ -80,7 +80,7 @@ QString fontToCss(const QFont& font, const QString& name)
 QString GenericChatForm::resolveToxPk(const ToxPk& pk)
 {
     Friend* f = friendList.findFriend(pk);
-    if (f) {
+    if (f != nullptr) {
         return f->getDisplayedName();
     }
 
@@ -420,7 +420,7 @@ void GenericChatForm::onChatContextMenuRequested(QPoint pos)
     // If we right-clicked on a link, give the option to copy it
     bool clickedOnLink = false;
     Text* clickedText = qobject_cast<Text*>(chatWidget->getContentFromGlobalPos(pos));
-    if (clickedText) {
+    if (clickedText != nullptr) {
         const QPointF scenePos = chatWidget->mapToScene(chatWidget->mapFromGlobal(pos));
         const QString linkTarget = clickedText->getLinkAt(scenePos);
         if (!linkTarget.isEmpty()) {
@@ -464,7 +464,7 @@ void GenericChatForm::onEmoteButtonClicked()
     widget.installEventFilter(this);
 
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
-    if (sender) {
+    if (sender != nullptr) {
         const QPoint pos =
             -QPoint(widget.sizeHint().width() / 2, widget.sizeHint().height()) - QPoint(0, 10);
         widget.exec(sender->mapToGlobal(pos));
@@ -475,7 +475,7 @@ void GenericChatForm::onEmoteInsertRequested(QString str)
 {
     // insert the emoticon
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
-    if (sender)
+    if (sender != nullptr)
         msgEdit->insertPlainText(str);
 
     msgEdit->setFocus(); // refocus so that we can continue typing
@@ -521,7 +521,7 @@ QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
     if (chatLine) {
         Timestamp* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
 
-        if (timestamp) {
+        if (timestamp != nullptr) {
             return timestamp->getTime();
         }
         return {};
@@ -574,7 +574,7 @@ void GenericChatForm::resizeEvent(QResizeEvent* event)
 bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
 {
     EmoticonsWidget* ev = qobject_cast<EmoticonsWidget*>(object);
-    if (ev && event->type() == QEvent::KeyPress) {
+    if ((ev != nullptr) && event->type() == QEvent::KeyPress) {
         QKeyEvent* key = static_cast<QKeyEvent*>(event);
         msgEdit->sendKeyEvent(key);
         msgEdit->setFocus();
@@ -585,7 +585,7 @@ bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
         return false;
 
     auto wObject = qobject_cast<QWidget*>(object);
-    if (!wObject || !wObject->isEnabled())
+    if ((wObject == nullptr) || !wObject->isEnabled())
         return false;
 
     switch (event->type()) {
@@ -663,7 +663,7 @@ void GenericChatForm::searchFormShow()
 void GenericChatForm::onLoadHistory()
 {
     LoadHistoryDialog dlg(&chatLog);
-    if (dlg.exec()) {
+    if (dlg.exec() != 0) {
         chatWidget->jumpToDate(dlg.getFromDate().date());
     }
 }

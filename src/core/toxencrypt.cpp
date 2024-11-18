@@ -291,7 +291,7 @@ std::unique_ptr<ToxEncrypt> ToxEncrypt::makeToxEncrypt(const QString& password, 
  */
 QByteArray ToxEncrypt::encrypt(const QByteArray& plaintext) const
 {
-    if (!passKey) {
+    if (passKey == nullptr) {
         qCritical() << "The passkey is invalid.";
         return QByteArray{};
     }

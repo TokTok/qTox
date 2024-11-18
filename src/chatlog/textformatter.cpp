@@ -228,7 +228,7 @@ QString TextFormatter::applyMarkdown(const QString& message, bool showFormatting
         int offset = 0;
         while (iter.hasNext()) {
             const QRegularExpressionMatch match = iter.next();
-            const QString captured = match.captured(!showFormattingSymbols);
+            const QString captured = match.captured(static_cast<int>(!showFormattingSymbols));
             if (isTagIntersection(captured)) {
                 continue;
             }

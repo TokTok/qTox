@@ -425,7 +425,7 @@ size_t VideoFrame::FrameBufferKey::hash(const FrameBufferKey& key)
     ret = 37 * ret + key.frameWidth;
     ret = 37 * ret + key.frameHeight;
     ret = 37 * ret + key.pixelFormat;
-    ret = 37 * ret + key.linesizeAligned;
+    ret = 37 * ret + static_cast<size_t>(key.linesizeAligned);
 
     return ret;
 }
@@ -509,7 +509,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
 {
     AVFrame* ret = av_frame_alloc();
 
-    if (!ret) {
+    if (ret == nullptr) {
         return nullptr;
     }
 
@@ -550,7 +550,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
                        dimensions.height(), static_cast<AVPixelFormat>(pixelFormat), resizeAlgo,
                        nullptr, nullptr, nullptr);
 
-    if (!swsCtx) {
+    if (swsCtx == nullptr) {
         av_freep(&ret->data[0]);
 #if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(57, 48, 101)
         av_frame_unref(ret);

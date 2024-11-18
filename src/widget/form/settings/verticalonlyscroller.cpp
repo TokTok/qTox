@@ -16,13 +16,13 @@ VerticalOnlyScroller::VerticalOnlyScroller(QWidget* parent)
 void VerticalOnlyScroller::resizeEvent(QResizeEvent* event)
 {
     QScrollArea::resizeEvent(event);
-    if (widget())
+    if (widget() != nullptr)
         widget()->setMaximumWidth(event->size().width());
 }
 
 void VerticalOnlyScroller::showEvent(QShowEvent* event)
 {
     QScrollArea::showEvent(event);
-    if (widget())
+    if (widget() != nullptr)
         widget()->setMaximumWidth(size().width());
 }

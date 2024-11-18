@@ -26,10 +26,10 @@ void Translator::translate(const QString& localeName)
 {
     const QMutexLocker<QMutex> locker{&lock};
 
-    if (!core_translator)
+    if (core_translator == nullptr)
         core_translator = new QTranslator();
 
-    if (!app_translator)
+    if (app_translator == nullptr)
         app_translator = new QTranslator();
 
     // Remove old translations

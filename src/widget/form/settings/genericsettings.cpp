@@ -64,8 +64,8 @@ void GenericForm::eventsInit()
 bool GenericForm::eventFilter(QObject* o, QEvent* e)
 {
     if ((e->type() == QEvent::Wheel)
-        && (qobject_cast<QComboBox*>(o) || qobject_cast<QAbstractSpinBox*>(o)
-            || qobject_cast<QCheckBox*>(o))) {
+        && ((qobject_cast<QComboBox*>(o) != nullptr) || (qobject_cast<QAbstractSpinBox*>(o) != nullptr)
+            || (qobject_cast<QCheckBox*>(o) != nullptr))) {
         e->ignore();
         return true;
     }

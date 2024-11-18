@@ -33,7 +33,7 @@ const char* getCurUsername()
 QString getIpcKey()
 {
     auto* user = getCurUsername();
-    if (!user) {
+    if (user == nullptr) {
         qWarning() << "Failed to get current username. Will use a global IPC.";
         user = "";
     }
@@ -151,13 +151,13 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
     IPCMemory* mem = global();
     time_t result = 0;
 
-    for (uint32_t i = 0; !evt && i < EVENT_QUEUE_SIZE; ++i) {
+    for (uint32_t i = 0; (evt == nullptr) && i < EVENT_QUEUE_SIZE; ++i) {
         if (mem->events[i].posted == 0) {
             evt = &mem->events[i];
         }
     }
 
-    if (evt) {
+    if (evt != nullptr) {
         memset(evt, 0, sizeof(IPCEvent));
         memcpy(evt->name, binName.constData(), binName.length());
         memcpy(evt->data, data.constData(), data.length());
@@ -218,7 +218,7 @@ bool IPC::isEventAccepted(time_t time)
     if (difftime(global()->lastProcessed, time) > 0) {
         IPCMemory* mem = global();
         for (auto& event : mem->events) {
-            if (event.posted == time && event.processed) {
+            if (event.posted == time && (event.processed != 0)) {
                 result = event.accepted;
                 break;
             }
@@ -274,12 +274,12 @@ IPC::IPCEvent* IPC::fetchEvent()
         // Garbage-collect events that were not processed in EVENT_GC_TIMEOUT
         // and events that were processed and EVENT_GC_TIMEOUT passed after
         // so sending instance has time to react to those events.
-        if ((evt->processed && difftime(time(nullptr), evt->processed) > EVENT_GC_TIMEOUT)
-            || (!evt->processed && difftime(time(nullptr), evt->posted) > EVENT_GC_TIMEOUT)) {
+        if (((evt->processed != 0) && difftime(time(nullptr), evt->processed) > EVENT_GC_TIMEOUT)
+            || ((evt->processed == 0) && difftime(time(nullptr), evt->posted) > EVENT_GC_TIMEOUT)) {
             memset(evt, 0, sizeof(IPCEvent));
         }
 
-        if (evt->posted && !evt->processed && evt->sender != getpid()
+        if ((evt->posted != 0) && (evt->processed == 0) && evt->sender != getpid()
             && (evt->dest == profileId || (evt->dest == 0 && isCurrentOwnerNoLock()))) {
             return evt;
         }
@@ -371,7 +371,7 @@ bool IPC::isCurrentOwnerNoLock()
     return false;
 #else
     const void* const data = globalMemory.data();
-    if (!data) {
+    if (data == nullptr) {
         qWarning() << "isCurrentOwnerNoLock failed to access the memory, returning false";
         return false;
     }
