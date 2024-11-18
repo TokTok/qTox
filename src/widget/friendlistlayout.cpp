@@ -13,7 +13,7 @@
 #include "src/model/status.h"
 
 FriendListLayout::FriendListLayout()
-    : QVBoxLayout()
+
 {
     init();
 }
