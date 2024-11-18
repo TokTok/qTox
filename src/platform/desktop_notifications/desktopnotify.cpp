@@ -8,27 +8,58 @@
 
 #include <src/persistence/settings.h>
 
-#include <libsnore/snore.h>
+#undef signals
+#include <libnotify/notification.h>
+#include <libnotify/notify.h>
 
+#include <QColorSpace>
 #include <QDebug>
 #include <QThread>
 
+namespace {
+
+GdkPixbuf* convert(const QPixmap& pixmap)
+{
+    const QImage image = pixmap.toImage();
+    return gdk_pixbuf_new_from_data(image.bits(), GDK_COLORSPACE_RGB, true, 8, image.width(),
+                                    image.height(), image.bytesPerLine(), nullptr, nullptr);
+}
+
+} // namespace
+
+struct NotifyNotificationDeleter
+{
+    void operator()(NotifyNotification* notification) const
+    {
+        notify_notification_close(notification, nullptr);
+        g_object_unref(notification);
+    }
+};
+
+struct DesktopNotify::Impl
+{
+    Impl()
+    {
+        notify_init("qTox");
+    }
+
+    ~Impl()
+    {
+        // Delete the notification before uninitializing the library.
+        lastNotification = nullptr;
+        notify_uninit();
+    }
+
+    std::unique_ptr<NotifyNotification, NotifyNotificationDeleter> lastNotification;
+};
+
 DesktopNotify::DesktopNotify(Settings& settings_)
-    : notifyCore{Snore::SnoreCore::instance()}
-    , snoreIcon{":/img/icons/qtox.svg"}
+    : impl{std::make_unique<Impl>()}
     , settings{settings_}
 {
-
-    notifyCore.loadPlugins(Snore::SnorePlugin::Backend);
-    qDebug() << "primary notification backend:" << notifyCore.primaryNotificationBackend();
-
-    snoreApp = Snore::Application("qTox", snoreIcon);
-
-    notifyCore.registerApplication(snoreApp);
-
-    connect(&notifyCore, &Snore::SnoreCore::notificationClosed, this,
-            &DesktopNotify::onNotificationClose);
 }
+
+DesktopNotify::~DesktopNotify() = default;
 
 void DesktopNotify::notifyMessage(const NotificationData& notificationData)
 {
@@ -36,47 +67,38 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
         return;
     }
 
-    auto icon = notificationData.pixmap.isNull() ? snoreIcon : Snore::Icon(notificationData.pixmap);
-    auto newNotification = Snore::Notification{snoreApp,
-                                               Snore::Alert(),
-                                               notificationData.title,
-                                               notificationData.message,
-                                               icon,
-                                               0};
-    latestId = newNotification.id();
+    if (impl->lastNotification) {
+        notify_notification_update(impl->lastNotification.get(),
+                                   notificationData.title.toUtf8().constData(),
+                                   notificationData.message.toUtf8().constData(), nullptr);
+    } else {
+        auto notification = std::unique_ptr<NotifyNotification, NotifyNotificationDeleter>{
+            notify_notification_new(notificationData.title.toUtf8().constData(),
+                                    notificationData.message.toUtf8().constData(), nullptr)};
 
-    if (lastNotification.isValid()) {
-        // Workaround for broken updating behavior in snore. Snore increments
-        // the message count when a notification is updated. Snore also caps the
-        // number of outgoing messages at 3. This means that if we update
-        // notifications more than 3 times we do not get notifications until the
-        // user activates the notification.
-        //
-        // We work around this by closing the existing notification and replacing
-        // it with a new one. We then only process the notification close if the
-        // latest notification id is the same as the one we are closing. This allows
-        // us to continue counting how many unread messages a user has until they
-        // close the notification themselves.
-        //
-        // I've filed a bug on the snorenotify mailing list but the project seems
-        // pretty dead. I filed a ticket on March 11 2020, and as of April 5 2020
-        // the moderators have not even acknowledged the message. A previous message
-        // got a response starting with "Snorenotify isn't that well maintained any more"
-        // (see https://mail.kde.org/pipermail/snorenotify/2019-March/000004.html)
-        // so I don't have hope of this being fixed any time soon
-        notifyCore.requestCloseNotification(lastNotification,
-                                            Snore::Notification::CloseReasons::Dismissed);
+        // If a user actively dismisses the notification, we emit the signal. Otherwise, if it times
+        // out, we keep on adding to the "number of messages" part of the notification.
+        notify_notification_add_action(
+            notification.get(), "dismiss", "Dismiss",
+            [](NotifyNotification* target, char* action, gpointer user_data) {
+                std::ignore = target;
+                std::ignore = action;
+                DesktopNotify* self = static_cast<DesktopNotify*>(user_data);
+                self->impl->lastNotification = nullptr;
+                emit self->notificationClosed();
+            },
+            this, nullptr);
+
+        impl->lastNotification = std::move(notification);
     }
 
-    notifyCore.broadcastNotification(newNotification);
-    lastNotification = newNotification;
+    GdkPixbuf* icon = convert(notificationData.pixmap);
+    if (icon != nullptr) {
+        notify_notification_set_image_from_pixbuf(impl->lastNotification.get(), icon);
+        g_object_unref(icon);
+    }
+
+    notify_notification_show(impl->lastNotification.get(), nullptr);
 }
 
-void DesktopNotify::onNotificationClose(Snore::Notification notification)
-{
-    if (notification.id() == latestId) {
-        lastNotification = {};
-        emit notificationClosed();
-    }
-}
 #endif

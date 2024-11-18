@@ -582,8 +582,16 @@ else()
     message(STATUS "NOT using update check")
 endif()
 
-add_definitions(-DDESKTOP_NOTIFICATIONS=0)
-message(STATUS "not using desktop notifications")
+if(DESKTOP_NOTIFICATIONS)
+  add_definitions(-DDESKTOP_NOTIFICATIONS=1)
+  set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES}
+    src/platform/desktop_notifications/desktopnotify.cpp
+    src/platform/desktop_notifications/desktopnotify.h)
+  message(STATUS "using desktop notifications")
+else()
+  add_definitions(-DDESKTOP_NOTIFICATIONS=0)
+  message(STATUS "not using desktop notifications")
+endif()
 
 if (MINGW)
   STRING(TOLOWER "${CMAKE_BUILD_TYPE}" CMAKE_BUILD_TYPE_LOWER)

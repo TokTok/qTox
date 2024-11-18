@@ -88,7 +88,7 @@ then
         -DCMAKE_PREFIX_PATH=/windows \
         -DCMAKE_BUILD_TYPE=Release \
         -DSPELL_CHECK=OFF \
-        -DDESKTOP_NOTIFICATIONS=ON \
+        -DDESKTOP_NOTIFICATIONS=OFF \
         -DUPDATE_CHECK=ON \
         -DSTRICT_OPTIONS=ON \
         -DTEST_CROSSCOMPILING_EMULATOR=wine \
@@ -101,7 +101,7 @@ then
         -DCMAKE_PREFIX_PATH=/windows \
         -DCMAKE_BUILD_TYPE=Debug \
         -DSPELL_CHECK=OFF \
-        -DDESKTOP_NOTIFICATIONS=ON \
+        -DDESKTOP_NOTIFICATIONS=OFF \
         -DUPDATE_CHECK=ON \
         -DSTRICT_OPTIONS=ON \
         -DTEST_CROSSCOMPILING_EMULATOR=wine \

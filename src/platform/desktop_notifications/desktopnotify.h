@@ -7,8 +7,6 @@
 
 #include "src/model/notificationdata.h"
 
-#include <libsnore/snore.h>
-
 #include <QObject>
 
 #include <memory>
@@ -21,6 +19,7 @@ class DesktopNotify : public QObject
     Q_OBJECT
 public:
     explicit DesktopNotify(Settings& settings);
+    ~DesktopNotify();
 
 public slots:
     void notifyMessage(const NotificationData& notificationData);
@@ -28,14 +27,8 @@ public slots:
 signals:
     void notificationClosed();
 
-private slots:
-    void onNotificationClose(Snore::Notification notification);
-
 private:
-    Snore::SnoreCore& notifyCore;
-    Snore::Application snoreApp;
-    Snore::Icon snoreIcon;
-    Snore::Notification lastNotification;
-    uint latestId;
+    struct Impl;
+    std::unique_ptr<Impl> impl;
     Settings& settings;
 };
