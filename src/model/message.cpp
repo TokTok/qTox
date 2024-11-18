@@ -44,7 +44,7 @@ QStringList splitMessage(const QString& message, uint64_t maxLength)
 void MessageProcessor::SharedParams::onUserNameSet(const QString& username)
 {
     QString sanitizedName = username;
-    sanitizedName.remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
+    sanitizedName.remove(QRegularExpression(R"([\t\n\v\f\r\x0000])"));
     nameMention = QRegularExpression("\\b" + QRegularExpression::escape(username) + "\\b",
                                      QRegularExpression::CaseInsensitiveOption);
     sanitizedNameMention = QRegularExpression("\\b" + QRegularExpression::escape(sanitizedName) + "\\b",
