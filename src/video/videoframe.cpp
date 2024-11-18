@@ -151,7 +151,7 @@ VideoFrame::~VideoFrame()
     // Delete tracked reference
     refsLock.lockForRead();
 
-    if (refsMap.count(sourceID) > 0) {
+    if (refsMap.contains(sourceID)) {
         QMutex& sourceMutex = mutexMap[sourceID];
 
         sourceMutex.lock();
@@ -173,7 +173,7 @@ VideoFrame::~VideoFrame()
 bool VideoFrame::isValid()
 {
     frameLock.lockForRead();
-    bool retValue = frameBuffer.size() > 0;
+    bool retValue = !frameBuffer.empty();
     frameLock.unlock();
 
     return retValue;
@@ -192,7 +192,7 @@ std::shared_ptr<VideoFrame> VideoFrame::trackFrame()
     // Add frame to tracked reference list
     refsLock.lockForRead();
 
-    if (refsMap.count(sourceID) == 0) {
+    if (!refsMap.contains(sourceID)) {
         // We need to add a new source to our reference map, obtain write lock
         refsLock.unlock();
         refsLock.lockForWrite();
@@ -227,7 +227,7 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
 {
     refsLock.lockForWrite();
 
-    if (refsMap.count(sourceID) == 0) {
+    if (!refsMap.contains(sourceID)) {
         // No tracking reference exists for source, simply return
         refsLock.unlock();
 
@@ -520,14 +520,14 @@ AVFrame* VideoFrame::retrieveAVFrame(const QSize& dimensions, const int pixelFor
          */
         FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
 
-        if (frameBuffer.count(frameKey) > 0) {
+        if (frameBuffer.contains(frameKey)) {
             return frameBuffer[frameKey];
         }
     }
 
     FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
 
-    if (frameBuffer.count(frameKey) > 0) {
+    if (frameBuffer.contains(frameKey)) {
         return frameBuffer[frameKey];
     } else {
         return nullptr;
@@ -635,7 +635,7 @@ AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const
     FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
 
     // We check the prescence of the frame in case of double-computation
-    if (frameBuffer.count(frameKey) > 0) {
+    if (frameBuffer.contains(frameKey)) {
         AVFrame* old_ret = frameBuffer[frameKey];
 
         // Free new frame
@@ -717,7 +717,7 @@ T VideoFrame::toGenericObject(const QSize& dimensions, const int pixelFormat, co
     frameLock.lockForRead();
 
     // We return nullObject if the VideoFrame is no longer valid
-    if (frameBuffer.size() == 0) {
+    if (frameBuffer.empty()) {
         frameLock.unlock();
         return nullObject;
     }

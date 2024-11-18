@@ -72,7 +72,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
                         const QHash<const Group*, size_t>& groupNotifications, QString lastMessage,
                         const ToxPk& sender)
 {
-    assert(friendNotifications.size() > 0 || groupNotifications.size() > 0);
+    assert(!friendNotifications.empty() || !groupNotifications.empty());
 
     auto numChats = getNumChats(friendNotifications, groupNotifications);
     if (numChats > 1) {
@@ -89,7 +89,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
             displayNames.push_back(it.key()->getDisplayedName());
         }
 
-        assert(displayNames.size() > 0);
+        assert(!displayNames.empty());
 
         // Lexiographically sort all display names to ensure consistent formatting
         QCollator collator;

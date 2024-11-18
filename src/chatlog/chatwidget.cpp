@@ -134,7 +134,7 @@ ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMes
 ChatLogIdx firstItemAfterDate(QDate date, const IChatLog& chatLog)
 {
     auto idxs = chatLog.getDateIdxs(date, 1);
-    if (idxs.size()) {
+    if (!idxs.empty()) {
         return idxs[0].idx;
     } else {
         return chatLog.getNextIdx();
@@ -1181,7 +1181,7 @@ void ChatWidget::onRenderFinished()
     auto renderCompletionFnsLocal = renderCompletionFns;
     renderCompletionFns.clear();
 
-    while (renderCompletionFnsLocal.size()) {
+    while (!renderCompletionFnsLocal.empty()) {
         renderCompletionFnsLocal.back()();
         renderCompletionFnsLocal.pop_back();
     }

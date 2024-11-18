@@ -174,7 +174,7 @@ void TestGroupMessageDispatcher::testSignals()
     groupMessageDispatcher->sendMessage(false, "test");
 
     // For groups we pair our sent and completed signals since we have no receiver reports
-    QVERIFY(outgoingMessages.size() == 0);
+    QVERIFY(outgoingMessages.empty());
     QVERIFY(!sentMessages.empty());
     QVERIFY(sentMessages.front().isAction == false);
     QVERIFY(sentMessages.front().content == "test");
@@ -227,7 +227,7 @@ void TestGroupMessageDispatcher::testSelfReceive()
 {
     uint8_t selfId[ToxPk::size] = {0};
     groupMessageDispatcher->onMessageReceived(ToxPk(selfId), false, "Test");
-    QVERIFY(receivedMessages.size() == 0);
+    QVERIFY(receivedMessages.empty());
 
     uint8_t id[ToxPk::size] = {1};
     groupMessageDispatcher->onMessageReceived(ToxPk(id), false, "Test");
