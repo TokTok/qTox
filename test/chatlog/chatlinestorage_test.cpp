@@ -5,6 +5,7 @@
 
 #include "src/chatlog/chatlinestorage.h"
 #include <QTest>
+#include <utility>
 
 namespace {
 class IdxChatLine : public ChatLine
@@ -30,7 +31,7 @@ class TimestampChatLine : public ChatLine
 public:
     explicit TimestampChatLine(QDateTime dateTime)
         : ChatLine()
-        , timestamp(dateTime)
+        , timestamp(std::move(dateTime))
     {
     }
 

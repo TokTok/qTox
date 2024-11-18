@@ -13,6 +13,7 @@
 #include <QFile>
 #include <QMetaObject>
 #include <QMutexLocker>
+#include <utility>
 
 
 /**
@@ -70,9 +71,9 @@
  * @param password If empty, the database will be opened unencrypted.
  * Otherwise we will use toxencryptsave to derive a key and encrypt the database.
  */
-RawDatabase::RawDatabase(const QString& path_, const QString& password, const QByteArray& salt)
+RawDatabase::RawDatabase(QString path_, const QString& password, const QByteArray& salt)
     : workerThread{new QThread}
-    , path{path_}
+    , path{std::move(path_)}
     , currentSalt{salt} // we need the salt later if a new password should be set
     , currentHexKey{deriveKey(password, salt)}
 {

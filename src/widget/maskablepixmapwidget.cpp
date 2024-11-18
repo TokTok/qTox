@@ -6,6 +6,7 @@
 #include "maskablepixmapwidget.h"
 #include <QPainter>
 #include <QStyle>
+#include <utility>
 
 /**
  * @var QPixmap* MaskablePixmapWidget::renderTarget
@@ -15,7 +16,7 @@
 MaskablePixmapWidget::MaskablePixmapWidget(QWidget* parent, QSize size, QString maskName_)
     : QLabel("", parent)
     , renderTarget(nullptr)
-    , maskName(maskName_)
+    , maskName(std::move(maskName_))
     , clickable(false)
 {
     setSize(size);

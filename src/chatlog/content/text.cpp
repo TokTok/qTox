@@ -16,11 +16,12 @@
 #include <QPalette>
 #include <QTextBlock>
 #include <QTextFragment>
+#include <utility>
 
 Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, const QColor& custom,
-           const QString& txt, const QFont& font, bool enableElide, const QString& rawText_,
+           const QString& txt, const QFont& font, bool enableElide, QString rawText_,
            const TextType& type)
-    : rawText(rawText_)
+    : rawText(std::move(rawText_))
     , elide(enableElide)
     , defFont(font)
     , textType(type)

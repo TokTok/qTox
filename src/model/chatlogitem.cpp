@@ -8,6 +8,7 @@
 #include "src/model/group.h"
 
 #include <cassert>
+#include <utility>
 
 namespace {
 
@@ -44,10 +45,10 @@ ChatLogItem::ChatLogItem(SystemMessage systemMessage)
 {
 }
 
-ChatLogItem::ChatLogItem(ToxPk sender_, const QString& displayName_, ContentType contentType_,
+ChatLogItem::ChatLogItem(ToxPk sender_, QString displayName_, ContentType contentType_,
                          ContentPtr content_)
     : sender(std::move(sender_))
-    , displayName(displayName_)
+    , displayName(std::move(displayName_))
     , contentType(contentType_)
     , content(std::move(content_))
 {

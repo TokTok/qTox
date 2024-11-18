@@ -6,6 +6,7 @@
 #include <QApplication>
 #include <QDebug>
 #include <QScreen>
+#include <utility>
 extern "C"
 {
 #pragma GCC diagnostic push
@@ -65,8 +66,8 @@ AvFindInputFormatRet iformat{nullptr};
 QHash<QString, CameraDevice*> CameraDevice::openDevices;
 QMutex CameraDevice::openDeviceLock, CameraDevice::iformatLock;
 
-CameraDevice::CameraDevice(const QString& devName_, AVFormatContext* context_)
-    : devName{devName_}
+CameraDevice::CameraDevice(QString devName_, AVFormatContext* context_)
+    : devName{std::move(devName_)}
     , context{context_}
     , refcount{1}
 {

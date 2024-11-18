@@ -13,6 +13,7 @@
 
 #include <cassert>
 #include <sodium.h>
+#include <utility>
 
 #include "profile.h"
 #include "profilelocker.h"
@@ -281,9 +282,8 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
     avatarBroadcaster = std::unique_ptr<AvatarBroadcaster>(new AvatarBroadcaster(*core));
 }
 
-Profile::Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,
-                 Settings& settings_)
-    : name{name_}
+Profile::Profile(QString name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_, Settings& settings_)
+    : name{std::move(name_)}
     , passkey{std::move(passkey_)}
     , isRemoved{false}
     , encrypted{passkey != nullptr}

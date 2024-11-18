@@ -13,7 +13,7 @@ class GroupInvite
 {
 public:
     GroupInvite() = default;
-    GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data);
+    GroupInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data);
     bool operator==(const GroupInvite& other) const;
 
     uint32_t getFriendId() const;

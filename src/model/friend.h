@@ -17,8 +17,7 @@ class Friend : public Chat
 {
     Q_OBJECT
 public:
-    Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_ = {},
-           const QString& userName_ = {});
+    Friend(uint32_t friendId_, ToxPk friendPk_, QString userAlias_ = {}, const QString& userName_ = {});
     Friend(const Friend& other) = delete;
     Friend& operator=(const Friend& other) = delete;
 

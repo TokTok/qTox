@@ -34,6 +34,7 @@
 #include <QMimeData>
 
 #include <cassert>
+#include <utility>
 
 /**
  * @class FriendWidget
@@ -46,7 +47,7 @@ FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compa
                            Settings& settings_, Style& style_,
                            IMessageBoxManager& messageBoxManager_, Profile& profile_)
     : GenericChatroomWidget(compact_, settings_, style_)
-    , chatroom{chatroom_}
+    , chatroom{std::move(chatroom_)}
     , isDefaultAvatar{true}
     , settings{settings_}
     , style{style_}

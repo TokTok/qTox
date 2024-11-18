@@ -13,6 +13,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QSignalMapper>
+#include <utility>
 
 /**
  * @class GroupInviteWidget
@@ -21,14 +22,14 @@
  * and provides buttons to accept/reject it
  */
 
-GroupInviteWidget::GroupInviteWidget(QWidget* parent, const GroupInvite& invite,
-                                     Settings& settings_, Core& core_)
+GroupInviteWidget::GroupInviteWidget(QWidget* parent, GroupInvite invite, Settings& settings_,
+                                     Core& core_)
     : QWidget(parent)
     , acceptButton(new QPushButton(this))
     , rejectButton(new QPushButton(this))
     , inviteMessageLabel(new CroppingLabel(this))
     , widgetLayout(new QHBoxLayout(this))
-    , inviteInfo(invite)
+    , inviteInfo(std::move(invite))
     , settings{settings_}
     , core{core_}
 {
