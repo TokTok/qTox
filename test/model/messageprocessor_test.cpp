@@ -76,7 +76,7 @@ void TestMessageProcessor::testSelfMention()
         QVERIFY(!messageHasSelfMention(processedMessage));
 
         // make lower case
-        QString lower = QString(str).toLower();
+        const QString lower = QString(str).toLower();
 
         // The regex should be case insensitive
         processedMessage = messageProcessor.processIncomingCoreMessage(false, lower % " hi");

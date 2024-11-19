@@ -11,7 +11,7 @@
 int main(int argc, char* argv[])
 {
     AppManager appManager(argc, argv);
-    int errorcode = appManager.run();
+    const int errorcode = appManager.run();
 
     qDebug() << "Exit with status" << errorcode;
     return errorcode;

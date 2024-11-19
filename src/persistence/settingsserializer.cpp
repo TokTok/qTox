@@ -96,7 +96,7 @@ void SettingsSerializer::beginGroup(const QString& prefix)
 {
     if (prefix.isEmpty())
         endGroup();
-    int index = groups.indexOf(prefix);
+    const int index = groups.indexOf(prefix);
     if (index >= 0) {
         group = index;
     } else {
@@ -162,7 +162,7 @@ void SettingsSerializer::setValue(const QString& key, const QVariant& value)
     if (v) {
         v->value = value;
     } else {
-        Value nv{group, array, arrayIndex, key, value};
+        const Value nv{group, array, arrayIndex, key, value};
         if (array >= 0)
             arrays[array].values.append(values.size());
         values.append(nv);
@@ -185,7 +185,7 @@ const SettingsSerializer::Value* SettingsSerializer::findValue(const QString& ke
             if (a.group != group)
                 continue;
 
-            for (int vi : a.values) {
+            for (const int vi : a.values) {
                 const Value& v = values[vi];
                 if (v.arrayIndex == arrayIndex && v.key == key)
                     return &v;
@@ -247,7 +247,7 @@ void SettingsSerializer::save()
     stream.setVersion(QDataStream::Qt_5_0);
 
     // prevent signed overflow and the associated warning
-    int numGroups = std::max(QStringList::size_type(0), groups.size());
+    const int numGroups = std::max(QStringList::size_type(0), groups.size());
     for (int g = -1; g < numGroups; ++g) {
         // Save the group name, if any
         if (g != -1) {
@@ -265,7 +265,7 @@ void SettingsSerializer::save()
             writeStream(stream, a.name.toUtf8());
             writeStream(stream, vintToData(a.size));
 
-            for (int vi : a.values) {
+            for (const int vi : a.values) {
                 const Value& v = values[vi];
                 writeStream(stream, RecordTag::ArrayValue);
                 writeStream(stream, vintToData(values[vi].arrayIndex));
@@ -360,7 +360,7 @@ void SettingsSerializer::readSerialized()
                 qWarning("The personal save file is corrupted!");
                 return;
             }
-            int size = dataToVInt(sizeData);
+            const int size = dataToVInt(sizeData);
             arrays[array].size = qMax(size, arrays[array].size);
         } else if (tag == RecordTag::ArrayValue) {
             QByteArray indexData;
@@ -394,18 +394,18 @@ void SettingsSerializer::readIni()
         if (!s.group().isEmpty())
             beginGroup(s.group());
 
-        for (QString k : s.childKeys()) {
+        for (const QString k : s.childKeys()) {
             setValue(k, s.value(k));
         }
 
         // Add all groups
         gstack.push_back(QString());
-        for (QString g : s.childGroups())
+        for (const QString g : s.childGroups())
             gstack.push_back(g);
 
         // Visit the next group, if any
         while (!gstack.isEmpty()) {
-            QString g = gstack.takeLast();
+            const QString g = gstack.takeLast();
             if (g.isEmpty()) {
                 if (gstack.isEmpty())
                     break;
@@ -423,7 +423,7 @@ void SettingsSerializer::readIni()
     // and its elements are all groups matching the pattern "[<group>/]<arrayName>/<arrayIndex>"
 
     // Find groups that only have 1 key
-    std::unique_ptr<int[]> groupSizes{new int[groups.size()]};
+    const std::unique_ptr<int[]> groupSizes{new int[groups.size()]};
     memset(groupSizes.get(), 0, static_cast<size_t>(groups.size()) * sizeof(int));
     for (const Value& v : values) {
         if (v.group < 0 || v.group > groups.size())
@@ -446,7 +446,7 @@ void SettingsSerializer::readIni()
 
         Array a;
         a.size = v.value.toInt();
-        int slashIndex = groups[static_cast<int>(v.group)].lastIndexOf('/');
+        const int slashIndex = groups[static_cast<int>(v.group)].lastIndexOf('/');
         if (slashIndex == -1) {
             a.group = -1;
             a.name = groups[static_cast<int>(v.group)];
@@ -477,7 +477,7 @@ void SettingsSerializer::readIni()
             if (!groups[g].startsWith(arrayPrefix))
                 continue;
             bool ok;
-            int groupArrayIndex = groups[g].mid(arrayPrefix.size()).toInt(&ok);
+            const int groupArrayIndex = groups[g].mid(arrayPrefix.size()).toInt(&ok);
             if (!ok)
                 continue;
             groupsToKill.append(g);
@@ -502,7 +502,7 @@ void SettingsSerializer::readIni()
     // Clean up spurious array element groups
     std::sort(std::begin(groupsToKill), std::end(groupsToKill), std::greater_equal<int>());
 
-    for (int g : groupsToKill) {
+    for (const int g : groupsToKill) {
         if (groupSizes[static_cast<size_t>(g)])
             continue;
 
@@ -536,7 +536,7 @@ void SettingsSerializer::removeGroup(int group_)
 void SettingsSerializer::writePackedVariant(QDataStream& stream, const QVariant& v)
 {
     assert(v.canConvert(QMetaType(QMetaType::QString)));
-    QString str = v.toString();
+    const QString str = v.toString();
     if (str == "true")
         writeStream(stream, QString("1"));
     else if (str == "false")

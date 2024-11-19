@@ -188,7 +188,7 @@ void CoreAV::process()
  */
 bool CoreAV::isCallStarted(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
     return f && (calls.find(f->getId()) != calls.end());
 }
 
@@ -199,7 +199,7 @@ bool CoreAV::isCallStarted(const Friend* f) const
  */
 bool CoreAV::isCallStarted(const Group* g) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
     return g && (groupCalls.find(g->getId()) != groupCalls.end());
 }
 
@@ -210,7 +210,7 @@ bool CoreAV::isCallStarted(const Group* g) const
  */
 bool CoreAV::isCallActive(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
     auto it = calls.find(f->getId());
     if (it == calls.end()) {
         return false;
@@ -225,7 +225,7 @@ bool CoreAV::isCallActive(const Friend* f) const
  */
 bool CoreAV::isCallActive(const Group* g) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
     auto it = groupCalls.find(g->getId());
     if (it == groupCalls.end()) {
         return false;
@@ -235,15 +235,15 @@ bool CoreAV::isCallActive(const Group* g) const
 
 bool CoreAV::isCallVideoEnabled(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
     auto it = calls.find(f->getId());
     return isCallStarted(f) && it->second->getVideoEnabled();
 }
 
 bool CoreAV::answerCall(uint32_t friendNum, bool video)
 {
-    QWriteLocker locker{&callsLock};
-    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
+    const QWriteLocker locker{&callsLock};
+    const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Answering call %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -266,8 +266,8 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
 
 bool CoreAV::startCall(uint32_t friendNum, bool video)
 {
-    QWriteLocker locker{&callsLock};
-    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
+    const QWriteLocker locker{&callsLock};
+    const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Starting call with %1").arg(friendNum);
     auto it = calls.find(friendNum);
@@ -276,7 +276,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
         return false;
     }
 
-    uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
+    const uint32_t videoBitrate = video ? VIDEO_DEFAULT_BITRATE : 0;
     Toxav_Err_Call err;
     toxav_call(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err);
     if (!PARSE_ERR(err)) {
@@ -297,7 +297,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 bool CoreAV::cancelCall(uint32_t friendNum)
 {
     QWriteLocker locker{&callsLock};
-    QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
+    const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
     qDebug() << QString("Cancelling call with %1").arg(friendNum);
     Toxav_Err_Call_Control err;
@@ -315,7 +315,7 @@ bool CoreAV::cancelCall(uint32_t friendNum)
 
 void CoreAV::timeoutCall(uint32_t friendNum)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     if (!cancelCall(friendNum)) {
         qWarning() << QString("Failed to timeout call with %1").arg(friendNum);
@@ -336,7 +336,7 @@ void CoreAV::timeoutCall(uint32_t friendNum)
 bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                            uint32_t rate) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     auto it = calls.find(callId);
     if (it == calls.end()) {
@@ -372,7 +372,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
 
 void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     // We might be running in the FFmpeg thread and holding the CameraSource lock
     // So be careful not to deadlock with anything while toxav locks in toxav_video_send_frame
@@ -390,7 +390,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 
     if (call.getNullVideoBitrate()) {
         qDebug() << "Restarting video stream to friend" << callId;
-        QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
+        const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
         Toxav_Err_Bit_Rate_Set err;
         toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
         if (!PARSE_ERR(err)) {
@@ -399,7 +399,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
         call.setNullVideoBitrate(false);
     }
 
-    ToxYUVFrame frame = vframe->toToxYUVFrame();
+    const ToxYUVFrame frame = vframe->toToxYUVFrame();
 
     if (!frame) {
         return;
@@ -431,7 +431,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
  */
 void CoreAV::toggleMuteCallInput(const Friend* f)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     auto it = calls.find(f->getId());
     if (f && (it != calls.end())) {
@@ -446,7 +446,7 @@ void CoreAV::toggleMuteCallInput(const Friend* f)
  */
 void CoreAV::toggleMuteCallOutput(const Friend* f)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     auto it = calls.find(f->getId());
     if (f && (it != calls.end())) {
@@ -482,7 +482,7 @@ void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const i
     Core* c = static_cast<Core*>(core);
     CoreAV* cav = c->getAv();
 
-    QReadLocker locker{&cav->callsLock};
+    const QReadLocker locker{&cav->callsLock};
 
     const ToxPk peerPk = c->getGroupPeerPk(group, peer);
     // don't play the audio if it comes from a muted peer
@@ -513,7 +513,7 @@ void CoreAV::groupCallCallback(void* tox, uint32_t group, uint32_t peer, const i
  */
 void CoreAV::invalidateGroupCallPeerSource(const Group& group, ToxPk peerPk)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     auto it = groupCalls.find(group.getId());
     if (it == groupCalls.end()) {
@@ -529,7 +529,7 @@ void CoreAV::invalidateGroupCallPeerSource(const Group& group, ToxPk peerPk)
  */
 VideoSource* CoreAV::getVideoSourceFromCall(int friendNum) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     auto it = calls.find(friendNum);
     if (it == calls.end()) {
@@ -547,7 +547,7 @@ VideoSource* CoreAV::getVideoSourceFromCall(int friendNum) const
  */
 void CoreAV::joinGroupCall(const Group& group)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     qDebug() << QString("Joining group call %1").arg(group.getId());
 
@@ -573,7 +573,7 @@ void CoreAV::joinGroupCall(const Group& group)
  */
 void CoreAV::leaveGroupCall(int groupNum)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     qDebug() << QString("Leaving group call %1").arg(groupNum);
 
@@ -583,9 +583,9 @@ void CoreAV::leaveGroupCall(int groupNum)
 bool CoreAV::sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples, uint8_t chans,
                                 uint32_t rate) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
-    std::map<int, ToxGroupCallPtr>::const_iterator it = groupCalls.find(groupNum);
+    const std::map<int, ToxGroupCallPtr>::const_iterator it = groupCalls.find(groupNum);
     if (it == groupCalls.end()) {
         return false;
     }
@@ -607,7 +607,7 @@ bool CoreAV::sendGroupCallAudio(int groupNum, const int16_t* pcm, size_t samples
  */
 void CoreAV::muteCallInput(const Group* g, bool mute)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     auto it = groupCalls.find(g->getId());
     if (g && (it != groupCalls.end())) {
@@ -622,7 +622,7 @@ void CoreAV::muteCallInput(const Group* g, bool mute)
  */
 void CoreAV::muteCallOutput(const Group* g, bool mute)
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     auto it = groupCalls.find(g->getId());
     if (g && (it != groupCalls.end())) {
@@ -637,7 +637,7 @@ void CoreAV::muteCallOutput(const Group* g, bool mute)
  */
 bool CoreAV::isGroupCallInputMuted(const Group* g) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     if (!g) {
         return false;
@@ -655,7 +655,7 @@ bool CoreAV::isGroupCallInputMuted(const Group* g) const
  */
 bool CoreAV::isGroupCallOutputMuted(const Group* g) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     if (!g) {
         return false;
@@ -673,7 +673,7 @@ bool CoreAV::isGroupCallOutputMuted(const Group* g) const
  */
 bool CoreAV::isCallInputMuted(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     if (!f) {
         return false;
@@ -690,7 +690,7 @@ bool CoreAV::isCallInputMuted(const Friend* f) const
  */
 bool CoreAV::isCallOutputMuted(const Friend* f) const
 {
-    QReadLocker locker{&callsLock};
+    const QReadLocker locker{&callsLock};
 
     if (!f) {
         return false;
@@ -706,7 +706,7 @@ bool CoreAV::isCallOutputMuted(const Friend* f) const
  */
 void CoreAV::sendNoVideo()
 {
-    QWriteLocker locker{&callsLock};
+    const QWriteLocker locker{&callsLock};
 
     // We don't change the audio bitrate, but we signal that we're not sending video anymore
     qDebug() << "CoreAV: Signaling end of video sending";
@@ -789,7 +789,7 @@ void CoreAV::stateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t state, voi
         // If our state was null, we started the call and were still ringing
         if (!call.getState() && state) {
             call.setActive(true);
-            bool videoEnabled = call.getVideoEnabled();
+            const bool videoEnabled = call.getVideoEnabled();
             call.setState(static_cast<TOXAV_FRIEND_CALL_STATE>(state));
             locker.unlock();
             emit self->avStart(friendNum, videoEnabled);
@@ -857,14 +857,14 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
     CoreAV* self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreavThread.get());
-    QReadLocker locker{&self->callsLock};
+    const QReadLocker locker{&self->callsLock};
 
     auto it = self->calls.find(friendNum);
     if (it == self->calls.end()) {
         return;
     }
 
-    ToxFriendCall& call = *it->second;
+    const ToxFriendCall& call = *it->second;
 
     if (call.getMuteVol()) {
         return;
@@ -881,7 +881,7 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
     auto self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreavThread.get());
-    QReadLocker locker{&self->callsLock};
+    const QReadLocker locker{&self->callsLock};
 
     auto it = self->calls.find(friendNum);
     if (it == self->calls.end()) {

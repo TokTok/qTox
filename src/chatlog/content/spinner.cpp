@@ -46,7 +46,7 @@ void Spinner::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, Q
 {
     painter->setClipRect(boundingRect());
 
-    QTransform trans =
+    const QTransform trans =
         QTransform().rotate(static_cast<qreal>(curRot)).translate(-size.width() / 2.0, -size.height() / 2.0);
     painter->setOpacity(alpha);
     painter->setTransform(trans, true);
@@ -74,7 +74,7 @@ qreal Spinner::getAscent() const
 void Spinner::timeout()
 {
     // Use global time, so the animations are synced
-    float angle = QTime::currentTime().msecsSinceStartOfDay() / 1000.0f * rotSpeed;
+    const float angle = QTime::currentTime().msecsSinceStartOfDay() / 1000.0f * rotSpeed;
     // limit to the range [0.0 - 360.0]
     curRot = remainderf(angle, 360.0f);
 

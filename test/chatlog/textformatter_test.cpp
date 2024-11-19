@@ -285,9 +285,9 @@ void workCasesTest(MarkdownFunction applyMarkdown, const QVector<MarkdownToTags>
     for (const MarkdownToTags& mtt : markdownToTags) {
         for (const StringPair& data : testData) {
             const QString input = processInput != nullptr ? processInput(data.first, mtt) : data.first;
-            QString output = processOutput != nullptr ? processOutput(data.second, mtt, showSymbols)
-                                                      : data.second;
-            QString result = applyMarkdown(input, showSymbols);
+            const QString output =
+                processOutput != nullptr ? processOutput(data.second, mtt, showSymbols) : data.second;
+            const QString result = applyMarkdown(input, showSymbols);
             QVERIFY(output == result);
         }
     }
@@ -307,7 +307,7 @@ void exceptionsTest(MarkdownFunction applyMarkdown, const QVector<MarkdownToTags
 {
     for (const MarkdownToTags& mtt : markdownToTags) {
         for (const QString& e : exceptions) {
-            QString processedException = e.arg(mtt.markdownSequence);
+            const QString processedException = e.arg(mtt.markdownSequence);
             QVERIFY(processedException == applyMarkdown(processedException, showSymbols));
         }
     }
@@ -322,7 +322,7 @@ void exceptionsTest(MarkdownFunction applyMarkdown, const QVector<MarkdownToTags
 void specialCasesTest(MarkdownFunction applyMarkdown, const QVector<StringPair>& pairs)
 {
     for (const auto& p : pairs) {
-        QString result = applyMarkdown(p.first, false);
+        const QString result = applyMarkdown(p.first, false);
         QVERIFY(p.second == result);
     }
 }
@@ -336,7 +336,7 @@ using UrlHighlightFunction = QString (*)(const QString&);
 void urlHighlightTest(UrlHighlightFunction function, const QVector<QPair<QString, QString>>& data)
 {
     for (const QPair<QString, QString>& p : data) {
-        QString result = function(p.first);
+        const QString result = function(p.first);
         QVERIFY(p.second == result);
     }
 }

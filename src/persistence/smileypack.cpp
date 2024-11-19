@@ -119,9 +119,9 @@ QString SmileyPack::getAsRichText(const QString& key)
 
 void SmileyPack::cleanupIconsCache()
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     for (auto it = cachedIcon.begin(); it != cachedIcon.end();) {
-        std::shared_ptr<QIcon>& icon = it->second;
+        const std::shared_ptr<QIcon>& icon = it->second;
         if (icon.use_count() == 1) {
             it = cachedIcon.erase(it);
         } else {
@@ -160,8 +160,8 @@ QList<QPair<QString, QString>> SmileyPack::listSmileyPacks(const QStringList& pa
         for (const QString& subdirectory : dir.entryList(QDir::Dirs | QDir::NoDotAndDotDot)) {
             dir.cd(subdirectory);
             if (dir.exists(EMOTICONS_FILE_NAME)) {
-                QString absPath = dir.absolutePath() + QDir::separator() + EMOTICONS_FILE_NAME;
-                QPair<QString, QString> p{dir.dirName(), absPath};
+                const QString absPath = dir.absolutePath() + QDir::separator() + EMOTICONS_FILE_NAME;
+                const QPair<QString, QString> p{dir.dirName(), absPath};
                 if (!smileyPacks.contains(p)) {
                     smileyPacks.append(p);
                 }
@@ -208,7 +208,7 @@ bool SmileyPack::load(const QString& filename)
      */
 
     path = QFileInfo(filename).absolutePath();
-    QDomNodeList emoticonElements = doc.elementsByTagName("emoticon");
+    const QDomNodeList emoticonElements = doc.elementsByTagName("emoticon");
     const QString itemName = QStringLiteral("file");
     const QString childName = QStringLiteral("string");
     const int iconsCount = emoticonElements.size();
@@ -217,13 +217,13 @@ bool SmileyPack::load(const QString& filename)
     cachedIcon.clear();
 
     for (int i = 0; i < iconsCount; ++i) {
-        QDomNode node = emoticonElements.at(i);
-        QString iconName = node.attributes().namedItem(itemName).nodeValue();
-        QString iconPath = QDir{path}.filePath(iconName);
+        const QDomNode node = emoticonElements.at(i);
+        const QString iconName = node.attributes().namedItem(itemName).nodeValue();
+        const QString iconPath = QDir{path}.filePath(iconName);
         QDomElement stringElement = node.firstChildElement(childName);
         QStringList emoticonList;
         while (!stringElement.isNull()) {
-            QString emoticon = stringElement.text().replace("<", "&lt;").replace(">", "&gt;");
+            const QString emoticon = stringElement.text().replace("<", "&lt;").replace(">", "&gt;");
             emoticonToPath.insert(emoticon, iconPath);
             emoticonList.append(emoticon);
             stringElement = stringElement.nextSibling().toElement();
@@ -282,16 +282,16 @@ void SmileyPack::constructRegex()
  */
 QString SmileyPack::smileyfied(const QString& msg)
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     QString result(msg);
 
     int replaceDiff = 0;
     QRegularExpressionMatchIterator iter = smilify.globalMatch(result);
     while (iter.hasNext()) {
-        QRegularExpressionMatch match = iter.next();
-        int startPos = match.capturedStart();
-        int keyLength = match.capturedLength();
-        QString imgRichText = SmileyPack::getAsRichText(match.captured());
+        const QRegularExpressionMatch match = iter.next();
+        const int startPos = match.capturedStart();
+        const int keyLength = match.capturedLength();
+        const QString imgRichText = SmileyPack::getAsRichText(match.captured());
         result.replace(startPos + replaceDiff, keyLength, imgRichText);
         replaceDiff += imgRichText.length() - keyLength;
     }
@@ -304,7 +304,7 @@ QString SmileyPack::smileyfied(const QString& msg)
  */
 QList<QStringList> SmileyPack::getEmoticons() const
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     return emoticons;
 }
 
@@ -315,7 +315,7 @@ QList<QStringList> SmileyPack::getEmoticons() const
  */
 std::shared_ptr<QIcon> SmileyPack::getAsIcon(const QString& emoticon) const
 {
-    QMutexLocker<QMutex> locker(&loadingMutex);
+    const QMutexLocker<QMutex> locker(&loadingMutex);
     if (cachedIcon.find(emoticon) != cachedIcon.end()) {
         return cachedIcon[emoticon];
     }

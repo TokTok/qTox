@@ -21,8 +21,8 @@
 namespace {
 bool insertFileId(RawDatabase& db, int row, bool valid)
 {
-    QByteArray validResumeId(32, 1);
-    QByteArray invalidResumeId;
+    const QByteArray validResumeId(32, 1);
+    const QByteArray invalidResumeId;
 
     QByteArray resumeId;
     if (valid) {
@@ -153,7 +153,7 @@ void TestDbSchema::cleanup()
 
 void TestDbSchema::testCreation()
 {
-    QVector<RawDatabase::Query> queries;
+    const QVector<RawDatabase::Query> queries;
     auto db = std::shared_ptr<RawDatabase>{new RawDatabase{testDatabaseFile->fileName(), {}, {}}};
     QVERIFY(DbUpgrader::createCurrentSchema(*db));
     DbUtility::verifyDb(db, DbUtility::schema11);
@@ -177,11 +177,11 @@ void TestDbSchema::testNewerDb()
 {
     auto db = std::shared_ptr<RawDatabase>{new RawDatabase{testDatabaseFile->fileName(), {}, {}}};
     createSchemaAtVersion(db, DbUtility::schema0);
-    int futureSchemaVersion = 1000000;
+    const int futureSchemaVersion = 1000000;
     db->execNow(
         RawDatabase::Query(QStringLiteral("PRAGMA user_version = %1").arg(futureSchemaVersion)));
     MockMessageBoxManager messageBoxManager;
-    bool success = DbUpgrader::dbSchemaUpgrade(db, messageBoxManager);
+    const bool success = DbUpgrader::dbSchemaUpgrade(db, messageBoxManager);
     QVERIFY(success == false);
     QVERIFY(messageBoxManager.getErrorsShown() == 1);
 }
@@ -266,28 +266,28 @@ void TestDbSchema::test1to2()
     DbUtility::verifyDb(db, DbUtility::schema2);
 
     long brokenCount = -1;
-    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
-                                           [&](const QVector<QVariant>& row) {
-                                               brokenCount = row[0].toLongLong();
-                                           }};
+    const RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
+                                                 [&](const QVector<QVariant>& row) {
+                                                     brokenCount = row[0].toLongLong();
+                                                 }};
     QVERIFY(db->execNow(brokenCountQuery));
     QVERIFY(brokenCount == 1); // only friend 1's first message is "broken"
 
     int fauxOfflineCount = -1;
-    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
-                                                [&](const QVector<QVariant>& row) {
-                                                    fauxOfflineCount = row[0].toLongLong();
-                                                }};
+    const RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
+                                                      [&](const QVector<QVariant>& row) {
+                                                          fauxOfflineCount = row[0].toLongLong();
+                                                      }};
     QVERIFY(db->execNow(fauxOfflineCountQuery));
     // both friend 1's third message and friend 2's third message should still be pending.
     // The broken message should no longer be pending.
     QVERIFY(fauxOfflineCount == 2);
 
     int totalHisoryCount = -1;
-    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
-                                                 [&](const QVector<QVariant>& row) {
-                                                     totalHisoryCount = row[0].toLongLong();
-                                                 }};
+    const RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
+                                                       [&](const QVector<QVariant>& row) {
+                                                           totalHisoryCount = row[0].toLongLong();
+                                                       }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
     QVERIFY(totalHisoryCount == 6); // all messages should still be in history.
 }
@@ -331,26 +331,26 @@ void TestDbSchema::test2to3()
     QVERIFY(DbUpgrader::dbSchema2to3(*db));
 
     long brokenCount = -1;
-    RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
-                                           [&](const QVector<QVariant>& row) {
-                                               brokenCount = row[0].toLongLong();
-                                           }};
+    const RawDatabase::Query brokenCountQuery = {"SELECT COUNT(*) FROM broken_messages;",
+                                                 [&](const QVector<QVariant>& row) {
+                                                     brokenCount = row[0].toLongLong();
+                                                 }};
     QVERIFY(db->execNow(brokenCountQuery));
     QVERIFY(brokenCount == 1);
 
     int fauxOfflineCount = -1;
-    RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
-                                                [&](const QVector<QVariant>& row) {
-                                                    fauxOfflineCount = row[0].toLongLong();
-                                                }};
+    const RawDatabase::Query fauxOfflineCountQuery = {"SELECT COUNT(*) FROM faux_offline_pending;",
+                                                      [&](const QVector<QVariant>& row) {
+                                                          fauxOfflineCount = row[0].toLongLong();
+                                                      }};
     QVERIFY(db->execNow(fauxOfflineCountQuery));
     QVERIFY(fauxOfflineCount == 1);
 
     int totalHisoryCount = -1;
-    RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
-                                                 [&](const QVector<QVariant>& row) {
-                                                     totalHisoryCount = row[0].toLongLong();
-                                                 }};
+    const RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
+                                                       [&](const QVector<QVariant>& row) {
+                                                           totalHisoryCount = row[0].toLongLong();
+                                                       }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
     QVERIFY(totalHisoryCount == 4);
 

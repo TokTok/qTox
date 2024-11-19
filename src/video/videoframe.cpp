@@ -173,7 +173,7 @@ VideoFrame::~VideoFrame()
 bool VideoFrame::isValid()
 {
     frameLock.lockForRead();
-    bool retValue = frameBuffer.size() > 0;
+    const bool retValue = frameBuffer.size() > 0;
     frameLock.unlock();
 
     return retValue;
@@ -240,7 +240,7 @@ void VideoFrame::untrackFrames(const VideoFrame::IDType& sourceID, bool releaseF
         sourceMutex.lock();
 
         for (auto& frameIterator : refsMap[sourceID]) {
-            std::shared_ptr<VideoFrame> frame = frameIterator.second.lock();
+            const std::shared_ptr<VideoFrame> frame = frameIterator.second.lock();
 
             if (frame) {
                 frame->releaseFrame();
@@ -451,8 +451,8 @@ bool VideoFrame::FrameBufferKey::operator!=(const FrameBufferKey& other) const
  */
 size_t VideoFrame::FrameBufferKey::hash(const FrameBufferKey& key)
 {
-    std::hash<int> intHasher;
-    std::hash<bool> boolHasher;
+    const std::hash<int> intHasher;
+    const std::hash<bool> boolHasher;
 
     // Use java-style hash function to combine fields
     // See: https://en.wikipedia.org/wiki/Java_hashCode%28%29#hashCode.28.29_in_general
@@ -518,14 +518,14 @@ AVFrame* VideoFrame::retrieveAVFrame(const QSize& dimensions, const int pixelFor
          * We attempt to obtain a unaligned frame first because an unaligned linesize corresponds
          * to a data aligned frame.
          */
-        FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
+        const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, false);
 
         if (frameBuffer.count(frameKey) > 0) {
             return frameBuffer[frameKey];
         }
     }
 
-    FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
+    const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, true);
 
     if (frameBuffer.count(frameKey) > 0) {
         return frameBuffer[frameKey];
@@ -582,7 +582,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
     }
 
     // Bilinear is better for shrinking, bicubic better for upscaling
-    int resizeAlgo = sourceDimensions.width() > dimensions.width() ? SWS_BILINEAR : SWS_BICUBIC;
+    const int resizeAlgo = sourceDimensions.width() > dimensions.width() ? SWS_BILINEAR : SWS_BICUBIC;
 
     SwsContext* swsCtx =
         sws_getContext(sourceDimensions.width(), sourceDimensions.height(),
@@ -632,7 +632,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
  */
 AVFrame* VideoFrame::storeAVFrame(AVFrame* frame, const QSize& dimensions, const int pixelFormat)
 {
-    FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
+    const FrameBufferKey frameKey = getFrameKey(dimensions, pixelFormat, frame->linesize[0]);
 
     // We check the prescence of the frame in case of double-computation
     if (frameBuffer.count(frameKey) > 0) {

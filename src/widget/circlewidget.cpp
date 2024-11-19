@@ -98,7 +98,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
 
             friendListWidget->removeCircleWidget(this);
 
-            int replacedCircle = settings.removeCircle(id);
+            const int replacedCircle = settings.removeCircle(id);
 
             auto circleReplace = circleList.find(replacedCircle);
             if (circleReplace != circleList.end())
@@ -141,7 +141,7 @@ void CircleWidget::dragEnterEvent(QDragEnterEvent* event)
     if (!event->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk(event->mimeData()->data("toxPk"));
+    const ToxPk toxPk(event->mimeData()->data("toxPk"));
     Friend* f = friendList.findFriend(toxPk);
     if (f != nullptr)
         event->acceptProposedAction();
@@ -169,13 +169,13 @@ void CircleWidget::dropEvent(QDropEvent* event)
         return;
     }
     // Check, that the user has a friend with the same ToxId
-    ToxPk toxPk{event->mimeData()->data("toxPk")};
+    const ToxPk toxPk{event->mimeData()->data("toxPk")};
     Friend* f = friendList.findFriend(toxPk);
     if (!f)
         return;
 
     // Save CircleWidget before changing the Id
-    int circleId = settings.getFriendCircleID(toxPk);
+    const int circleId = settings.getFriendCircleID(toxPk);
     CircleWidget* circleWidget = getFromID(circleId);
 
     addFriendWidget(widget, f->getStatus());
@@ -202,7 +202,7 @@ void CircleWidget::onExpand()
 void CircleWidget::onAddFriendWidget(FriendWidget* w)
 {
     const Friend* f = w->getFriend();
-    ToxPk toxId = f->getPublicKey();
+    const ToxPk toxId = f->getPublicKey();
     settings.setFriendCircleID(toxId, id);
 }
 

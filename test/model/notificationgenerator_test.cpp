@@ -214,8 +214,8 @@ void TestNotificationGenerator::testMultipleGroupSourceMessages()
 {
     Group g(0, GroupId(QByteArray(32, 0)), "groupName", false, "selfName", *groupQuery,
             *coreIdHandler, *friendList);
-    Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", false, "selfName", *groupQuery,
-             *coreIdHandler, *friendList);
+    const Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", false, "selfName", *groupQuery,
+                   *coreIdHandler, *friendList);
 
     auto sender = groupQuery->getGroupPeerPk(0, 0);
     g.updateUsername(sender, "sender1");
@@ -300,7 +300,7 @@ void TestNotificationGenerator::testGroupInviteUncounted()
 
 void TestNotificationGenerator::testFriendRequest()
 {
-    ToxPk sender(QByteArray(32, 0));
+    const ToxPk sender(QByteArray(32, 0));
 
     auto notificationData = notificationGenerator->friendRequestNotification(sender, "request");
 
@@ -312,7 +312,7 @@ void TestNotificationGenerator::testFriendRequestUncounted()
 {
     Friend f(0, ToxPk());
     f.setName("friend");
-    ToxPk sender(QByteArray(32, 0));
+    const ToxPk sender(QByteArray(32, 0));
 
     notificationGenerator->friendMessageNotification(&f, "test");
     notificationGenerator->friendRequestNotification(sender, "request");
@@ -363,7 +363,7 @@ void TestNotificationGenerator::testSimpleGroupMessage()
 
 void TestNotificationGenerator::testSimpleFriendRequest()
 {
-    ToxPk sender(QByteArray(32, 0));
+    const ToxPk sender(QByteArray(32, 0));
 
     notificationSettings->setNotifyHide(true);
 

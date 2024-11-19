@@ -37,8 +37,8 @@ void AvatarBroadcaster::setAvatar(QByteArray data)
     avatarData = data;
     friendsSentTo.clear();
 
-    QVector<uint32_t> friends = core.getFriendList();
-    for (uint32_t friendId : friends) {
+    const QVector<uint32_t> friends = core.getFriendList();
+    for (const uint32_t friendId : friends) {
         sendAvatarTo(friendId);
     }
 }

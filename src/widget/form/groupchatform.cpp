@@ -285,7 +285,7 @@ void GroupChatForm::dragEnterEvent(QDragEnterEvent* ev)
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk{ev->mimeData()->data("toxPk")};
+    const ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
     if (frnd)
         ev->acceptProposedAction();
@@ -296,13 +296,13 @@ void GroupChatForm::dropEvent(QDropEvent* ev)
     if (!ev->mimeData()->hasFormat("toxPk")) {
         return;
     }
-    ToxPk toxPk{ev->mimeData()->data("toxPk")};
+    const ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
     if (!frnd)
         return;
 
-    int friendId = frnd->getId();
-    int groupId = group->getId();
+    const int friendId = frnd->getId();
+    const int groupId = group->getId();
     if (Status::isOnline(frnd->getStatus())) {
         core.groupInviteFriend(friendId, groupId);
     }

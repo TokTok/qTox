@@ -38,11 +38,12 @@ void MovableWidget::setBoundary(QRect newBoundary)
         return;
     }
 
-    qreal changeX = newBoundary.width() / static_cast<qreal>(boundaryRect.width());
-    qreal changeY = newBoundary.height() / static_cast<qreal>(boundaryRect.height());
+    const qreal changeX = newBoundary.width() / static_cast<qreal>(boundaryRect.width());
+    const qreal changeY = newBoundary.height() / static_cast<qreal>(boundaryRect.height());
 
-    qreal percentageX = (x() - boundaryRect.x()) / static_cast<qreal>(boundaryRect.width() - width());
-    qreal percentageY =
+    const qreal percentageX =
+        (x() - boundaryRect.x()) / static_cast<qreal>(boundaryRect.width() - width());
+    const qreal percentageY =
         (y() - boundaryRect.y()) / static_cast<qreal>(boundaryRect.height() - height());
 
     actualSize.setWidth(actualSize.width() * changeX);
@@ -60,7 +61,7 @@ void MovableWidget::setBoundary(QRect newBoundary)
                         percentageY * (newBoundary.height() - height()));
     actualPos += QPointF(newBoundary.topLeft());
 
-    QPoint moveTo = QPoint(round(actualPos.x()), round(actualPos.y()));
+    const QPoint moveTo = QPoint(round(actualPos.x()), round(actualPos.y()));
     move(moveTo);
 
     boundaryRect = newBoundary;
@@ -143,7 +144,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 
             if (event->buttons() & Qt::LeftButton) {
                 QPoint lastPosition = pos();
-                QPoint displacement = lastPoint - event->globalPosition().toPoint();
+                const QPoint displacement = lastPoint - event->globalPosition().toPoint();
                 QSize lastSize = size();
 
 
@@ -179,7 +180,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 
                 if (mode & (ResizeLeft | ResizeRight)) {
                     if (mode & (ResizeUp | ResizeDown)) {
-                        int height = lastSize.width() / getRatio();
+                        const int height = lastSize.width() / getRatio();
 
                         if (!(mode & ResizeDown))
                             lastPosition.setY(lastPosition.y() - (height - lastSize.height()));

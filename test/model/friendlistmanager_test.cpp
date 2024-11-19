@@ -145,8 +145,8 @@ public:
                               "user with long nickname two"};
 
         for (int i = 0; i < testNames.size(); ++i) {
-            int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1; // Mixes positions
-            int sortedByActivityIndex = testNames.size() - i - 1;
+            const int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1; // Mixes positions
+            const int sortedByActivityIndex = testNames.size() - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOfflineFriends.append(testNames[i]);
             sortedByActivityFriends.append(testNames[sortedByActivityIndex]);
@@ -169,8 +169,8 @@ public:
                               "user with long nickname two online"};
 
         for (int i = 0; i < testNames.size(); ++i) {
-            int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1;
-            int sortedByActivityIndex = testNames.size() - i - 1;
+            const int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1;
+            const int sortedByActivityIndex = testNames.size() - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOnlineFriends.append(testNames[i]);
             sortedByActivityFriends.append(testNames[sortedByActivityIndex]);
@@ -278,9 +278,9 @@ public:
         }
 
         // Add friends and set the date of the last activity by index
-        QDateTime dateTime = QDateTime::currentDateTime();
+        const QDateTime dateTime = QDateTime::currentDateTime();
         for (int i = 0; i < sortedByActivityFriends.size(); ++i) {
-            QString name = sortedByActivityFriends.at(i);
+            const QString name = sortedByActivityFriends.at(i);
             vec.push_back(std::shared_ptr<IFriendListItem>(
                 new MockFriend(name, isOnline(name), getDateTime(name))));
         }
@@ -324,7 +324,7 @@ private:
     QDateTime getDateTime(const QString& name)
     {
         QDateTime dateTime = QDateTime::currentDateTime();
-        int pos = sortedByActivityFriends.indexOf(name);
+        const int pos = sortedByActivityFriends.indexOf(name);
         if (pos == -1) {
             return dateTime;
         }
@@ -399,7 +399,7 @@ void TestFriendListManager::testSortByName()
     auto manager = createManagerWithItems(unsortedVec);
 
     manager->sortByName();
-    bool success = manager->getPositionsChanged();
+    const bool success = manager->getPositionsChanged();
     manager->sortByName();
 
     QCOMPARE(success, true);
@@ -409,7 +409,7 @@ void TestFriendListManager::testSortByName()
 
     for (int i = 0; i < sortedVec.size(); ++i) {
         IFriendListItem* fromManager = manager->getItems().at(i).get();
-        std::shared_ptr<IFriendListItem> fromSortedVec = sortedVec.at(i);
+        const std::shared_ptr<IFriendListItem> fromSortedVec = sortedVec.at(i);
         QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
     }
 }
@@ -424,7 +424,7 @@ void TestFriendListManager::testSortByActivity()
 
     std::unique_ptr<FriendListManager> manager = createManagerWithItems(unsortedVec);
     manager->sortByActivity();
-    bool success = manager->getPositionsChanged();
+    const bool success = manager->getPositionsChanged();
     manager->sortByActivity();
 
     QCOMPARE(success, true);
@@ -442,7 +442,7 @@ void TestFriendListManager::testSetFilter()
     FriendItemsBuilder listBuilder;
     auto manager = createManagerWithItems(
         listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
-    QSignalSpy spy(manager.get(), &FriendListManager::itemsChanged);
+    const QSignalSpy spy(manager.get(), &FriendListManager::itemsChanged);
 
     manager->setFilter("", false, false, false);
 
@@ -460,8 +460,8 @@ void TestFriendListManager::testApplyFilterSearchString()
     auto manager = createManagerWithItems(
         listBuilder.addOfflineFriends()->addOnlineFriends()->addGroups()->buildUnsorted());
     QVector<std::shared_ptr<IFriendListItem>> resultVec;
-    QString testNameA = "NOITEMSWITHTHISNAME";
-    QString testNameB = "Test Name B";
+    const QString testNameA = "NOITEMSWITHTHISNAME";
+    const QString testNameB = "Test Name B";
     manager->sortByName();
     manager->setFilter(testNameA, false, false, false);
     manager->applyFilter();

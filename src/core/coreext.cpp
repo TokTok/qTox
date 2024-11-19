@@ -44,14 +44,14 @@ CoreExt::CoreExt(ExtensionPtr<ToxExt> toxExt_)
 
 void CoreExt::process()
 {
-    std::lock_guard<std::mutex> lock(toxext_mutex);
+    const std::lock_guard<std::mutex> lock(toxext_mutex);
     toxext_iterate(toxExt.get());
 }
 
 void CoreExt::onLosslessPacket(uint32_t friendId, const uint8_t* data, size_t length)
 {
     if (is_toxext_packet(data, length)) {
-        std::lock_guard<std::mutex> lock(toxext_mutex);
+        const std::lock_guard<std::mutex> lock(toxext_mutex);
         toxext_handle_lossless_custom_packet(toxExt.get(), friendId, data, length);
     }
 }
@@ -84,7 +84,7 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
         return UINT64_MAX;
     }
 
-    int size = message.toUtf8().size();
+    const int size = message.toUtf8().size();
     enum Tox_Extension_Messages_Error err;
     auto maxSize =
         static_cast<int>(tox_extension_messages_get_max_sending_size(toxExtMessages, friendId, &err));
@@ -96,7 +96,7 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
         return false;
     }
 
-    ToxString toxString(message);
+    const ToxString toxString(message);
     const auto receipt = tox_extension_messages_append(toxExtMessages, packetList, toxString.data(),
                                                        toxString.size(), friendId, &err);
 
@@ -109,7 +109,7 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
 
 bool CoreExt::Packet::send()
 {
-    std::lock_guard<std::mutex> lock(*toxext_mutex);
+    const std::lock_guard<std::mutex> lock(*toxext_mutex);
 
     auto ret = toxext_send(packetList);
     if (ret != TOXEXT_SUCCESS) {
@@ -147,7 +147,7 @@ void CoreExt::onFriendStatusChanged(uint32_t friendId, Status::Status status)
 void CoreExt::onExtendedMessageReceived(uint32_t friendId, const uint8_t* data, size_t size,
                                         void* userData)
 {
-    QString msg = ToxString(data, size).getQString();
+    const QString msg = ToxString(data, size).getQString();
     emit static_cast<CoreExt*>(userData)->extendedMessageReceived(friendId, msg);
 }
 

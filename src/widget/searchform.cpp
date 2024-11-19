@@ -303,7 +303,7 @@ LineEdit::LineEdit(QWidget* parent)
 
 void LineEdit::keyPressEvent(QKeyEvent* event)
 {
-    int key = event->key();
+    const int key = event->key();
 
     if ((key == Qt::Key_Enter || key == Qt::Key_Return)) {
         if ((event->modifiers() & Qt::ShiftModifier)) {

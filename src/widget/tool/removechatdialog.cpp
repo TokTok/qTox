@@ -15,9 +15,9 @@ RemoveChatDialog::RemoveChatDialog(QWidget* parent, const Chat& contact)
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setAttribute(Qt::WA_QuitOnClose, false);
     ui.setupUi(this);
-    QString name = contact.getDisplayedName().toHtmlEscaped();
-    QString text = tr("Are you sure you want to remove %1 from your contacts list?")
-                       .arg(QString("<b>%1</b>").arg(name));
+    const QString name = contact.getDisplayedName().toHtmlEscaped();
+    const QString text = tr("Are you sure you want to remove %1 from your contacts list?")
+                             .arg(QString("<b>%1</b>").arg(name));
 
     ui.label->setText(text);
     auto removeButton = ui.buttonBox->button(QDialogButtonBox::Ok);

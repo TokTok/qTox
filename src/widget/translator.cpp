@@ -24,7 +24,7 @@ QMutex Translator::lock;
  */
 void Translator::translate(const QString& localeName)
 {
-    QMutexLocker<QMutex> locker{&lock};
+    const QMutexLocker<QMutex> locker{&lock};
 
     if (!core_translator)
         core_translator = new QTranslator();
@@ -37,14 +37,15 @@ void Translator::translate(const QString& localeName)
     QApplication::removeTranslator(app_translator);
 
     // Load translations
-    QString locale = localeName.isEmpty() ? QLocale::system().name().section('_', 0, 0) : localeName;
+    const QString locale =
+        localeName.isEmpty() ? QLocale::system().name().section('_', 0, 0) : localeName;
 
     if (core_translator->load(locale, ":translations/")) {
         qDebug() << "Loaded translation" << locale;
 
         // System menu translation
-        QString s_locale = "qt_" + locale;
-        QString location = QLibraryInfo::path(QLibraryInfo::TranslationsPath);
+        const QString s_locale = "qt_" + locale;
+        const QString location = QLibraryInfo::path(QLibraryInfo::TranslationsPath);
         if (app_translator->load(s_locale, location)) {
             QApplication::installTranslator(app_translator);
             qDebug() << "System translation loaded" << locale;
@@ -78,7 +79,7 @@ void Translator::translate(const QString& localeName)
  */
 void Translator::registerHandler(const std::function<void()>& f, void* owner)
 {
-    QMutexLocker<QMutex> locker{&lock};
+    const QMutexLocker<QMutex> locker{&lock};
     callbacks.push_back({owner, f});
 }
 
@@ -88,7 +89,7 @@ void Translator::registerHandler(const std::function<void()>& f, void* owner)
  */
 void Translator::unregister(void* owner)
 {
-    QMutexLocker<QMutex> locker{&lock};
+    const QMutexLocker<QMutex> locker{&lock};
     callbacks.erase(std::remove_if(begin(callbacks), end(callbacks),
                                    [=](const Callback& c) { return c.first == owner; }),
                     end(callbacks));

@@ -32,28 +32,28 @@ private slots:
 
 void TestToxId::toStringTest()
 {
-    ToxId toxId(testToxId);
+    const ToxId toxId(testToxId);
     QVERIFY(testToxId == toxId.toString());
 }
 
 void TestToxId::equalTest()
 {
-    ToxId toxId1(testToxId);
-    ToxId toxId2(newNoSpam);
+    const ToxId toxId1(testToxId);
+    const ToxId toxId2(newNoSpam);
     QVERIFY(toxId1 == toxId2);
     QVERIFY(!(toxId1 != toxId2));
 }
 
 void TestToxId::notEqualTest()
 {
-    ToxId toxId1(testToxId);
-    ToxId toxId2(echoToxId);
+    const ToxId toxId1(testToxId);
+    const ToxId toxId2(echoToxId);
     QVERIFY(toxId1 != toxId2);
 }
 
 void TestToxId::clearTest()
 {
-    ToxId empty;
+    const ToxId empty;
     ToxId test(testToxId);
     QVERIFY(empty != test);
     test.clear();
@@ -62,8 +62,8 @@ void TestToxId::clearTest()
 
 void TestToxId::copyTest()
 {
-    ToxId src(testToxId);
-    ToxId copy = src;
+    const ToxId src(testToxId);
+    const ToxId copy = src;
     QVERIFY(copy == src);
 }
 

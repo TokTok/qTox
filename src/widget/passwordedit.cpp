@@ -87,7 +87,7 @@ PasswordEdit::EventHandler::~EventHandler()
 
 void PasswordEdit::EventHandler::updateActions()
 {
-    bool caps = Platform::capsLockEnabled();
+    const bool caps = Platform::capsLockEnabled();
 
     for (QAction* actionIt : actions)
         actionIt->setVisible(caps);

@@ -129,7 +129,7 @@ IPC::~IPC()
  */
 time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest)
 {
-    QByteArray binName = name.toUtf8();
+    const QByteArray binName = name.toUtf8();
     if (binName.length() > static_cast<int32_t>(sizeof(IPCEvent::name))) {
         return 0;
     }
@@ -233,7 +233,7 @@ bool IPC::isEventAccepted(time_t time)
 bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
 {
     bool result = false;
-    time_t start = time(nullptr);
+    const time_t start = time(nullptr);
     forever
     {
         result = isEventAccepted(postTime);
@@ -334,7 +334,7 @@ void IPC::processEvents()
 
     const std::lock_guard<std::mutex> lock(eventHandlersMutex);
     while (IPCEvent* evt = fetchEvent()) {
-        QString name = QString::fromUtf8(evt->name);
+        const QString name = QString::fromUtf8(evt->name);
         auto it = eventHandlers.find(name);
         if (it != eventHandlers.end()) {
             evt->accepted = runEventHandler(it.value().handler, evt->data, it.value().userData);

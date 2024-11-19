@@ -83,9 +83,9 @@ void AboutForm::replaceVersions()
     // TODO: When we finally have stable releases: build-in a way to tell
     // nightly builds from stable releases.
 
-    QString TOXCORE_VERSION = QString::number(tox_version_major()) + "."
-                              + QString::number(tox_version_minor()) + "."
-                              + QString::number(tox_version_patch());
+    const QString TOXCORE_VERSION = QString::number(tox_version_major()) + "."
+                                    + QString::number(tox_version_minor()) + "."
+                                    + QString::number(tox_version_patch());
 
     bodyUI->youAreUsing->setText(tr("You are using qTox version %1.").arg(QString(GIT_DESCRIBE)));
 
@@ -101,7 +101,7 @@ void AboutForm::replaceVersions()
     qDebug() << "AboutForm not showing updates, qTox built without UPDATE_CHECK";
 #endif
 
-    QString commitLink = "https://github.com/TokTok/qTox/commit/" + QString(GIT_VERSION);
+    QString const commitLink = "https://github.com/TokTok/qTox/commit/" + QString(GIT_VERSION);
     bodyUI->gitVersion->setText(
         tr("Commit hash: %1").arg(createLink(commitLink, QString(GIT_VERSION))));
 
@@ -155,7 +155,7 @@ void AboutForm::replaceVersions()
                    QString("<b>%1</b>").arg(tr("Click here to report a bug."))));
 
 
-    QString authorInfo =
+    const QString authorInfo =
         QString("<p>%1</p><p>%2</p>")
             .arg(tr("Original author: %1").arg(createLink("https://github.com/tux3", "tux3")))
             .arg(

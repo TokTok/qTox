@@ -171,7 +171,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
             screen.setHeight(mode.height);
         } else {
             QScreen* defaultScreen = QApplication::primaryScreen();
-            qreal pixRatio = defaultScreen->devicePixelRatio();
+            const qreal pixRatio = defaultScreen->devicePixelRatio();
 
             screen = defaultScreen->size();
             // Workaround https://trac.ffmpeg.org/ticket/4574 by choping 1 px bottom and right
@@ -363,7 +363,7 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
     if (idesktopFormat) {
         if (QString::fromUtf8(idesktopFormat->name) == QString("x11grab")) {
             QString dev = "x11grab#";
-            QByteArray display = qgetenv("DISPLAY");
+            const QByteArray display = qgetenv("DISPLAY");
 
             if (display.isNull())
                 dev += ":0";
@@ -425,12 +425,12 @@ QVector<VideoMode> CameraDevice::getScreenModes()
     QVector<VideoMode> result;
 
     std::for_each(screens.begin(), screens.end(), [&result](QScreen* s) {
-        QRect rect = s->geometry();
-        QPoint p = rect.topLeft();
-        qreal pixRatio = s->devicePixelRatio();
+        const QRect rect = s->geometry();
+        const QPoint p = rect.topLeft();
+        const qreal pixRatio = s->devicePixelRatio();
 
-        VideoMode mode(rect.width() * pixRatio, rect.height() * pixRatio, p.x() * pixRatio,
-                       p.y() * pixRatio);
+        const VideoMode mode(rect.width() * pixRatio, rect.height() * pixRatio, p.x() * pixRatio,
+                             p.y() * pixRatio);
         result.push_back(mode);
     });
 
@@ -507,7 +507,7 @@ bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
  */
 bool CameraDevice::getDefaultInputFormat()
 {
-    QMutexLocker<QMutex> locker(&iformatLock);
+    const QMutexLocker<QMutex> locker(&iformatLock);
     if (iformat) {
         return true;
     }

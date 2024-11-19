@@ -133,8 +133,8 @@ SessionChatLog::~SessionChatLog() = default;
 
 QString SessionChatLog::resolveSenderNameFromSender(const ToxPk& sender)
 {
-    bool isSelf = sender == coreIdHandler.getSelfPublicKey();
-    QString myNickName =
+    const bool isSelf = sender == coreIdHandler.getSelfPublicKey();
+    const QString myNickName =
         coreIdHandler.getUsername().isEmpty() ? sender.toString() : coreIdHandler.getUsername();
 
     return isSelf ? myNickName : resolveToxPk(friendList, groupList, sender);

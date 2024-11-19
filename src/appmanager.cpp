@@ -57,7 +57,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         return;
     }
 
-    QRegularExpression snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
+    const QRegularExpression snoreFilter{QStringLiteral("Snore::Notification.*was already closed")};
     if (type == QtWarningMsg && msg.contains(snoreFilter)) {
         // snorenotify logs this when we call requestCloseNotification correctly. The behaviour
         // still works, so we'll just mask the warning for now. The issue has been reported
@@ -75,7 +75,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     // Time should be in UTC to save user privacy on log sharing
-    QTime time = QDateTime::currentDateTime().toUTC().time();
+    const QTime time = QDateTime::currentDateTime().toUTC().time();
     QString LogMsg =
         QString("[%1 UTC] %2:%3 : ").arg(time.toString("HH:mm:ss.zzz")).arg(file).arg(ctxt.line);
     switch (type) {
@@ -99,7 +99,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     LogMsg += ": " + msg + "\n";
-    QByteArray LogMsgBytes = LogMsg.toUtf8();
+    const QByteArray LogMsgBytes = LogMsg.toUtf8();
     fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
@@ -178,7 +178,7 @@ int AppManager::run()
         qWarning() << "Couldn't load font";
     }
 
-    QString locale = settings->getTranslation();
+    const QString locale = settings->getTranslation();
     // We need to init the resources in the translations_library explicitely.
     // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
     Q_INIT_RESOURCE(translations);
@@ -222,10 +222,10 @@ int AppManager::run()
     }
 
 #ifdef LOG_TO_FILE
-    QString logFileDir = settings->getPaths().getAppCacheDirPath();
+    QString const logFileDir = settings->getPaths().getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
 
-    QString logfile = logFileDir + "qtox.log";
+    const QString logfile = logFileDir + "qtox.log";
     FILE* mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
 
     // Trim log file if over 1MB
@@ -304,7 +304,7 @@ int AppManager::run()
     }
 
     if (doIpc && !ipc->isCurrentOwner()) {
-        time_t event = ipc->postEvent(eventType, firstParam.toUtf8(), ipcDest);
+        const time_t event = ipc->postEvent(eventType, firstParam.toUtf8(), ipcDest);
         // If someone else processed it, we're done here, no need to actually start qTox
         if (ipc->waitUntilAccepted(event, 2)) {
             if (eventType == "activate") {
@@ -344,7 +344,7 @@ int AppManager::run()
         nexus->bootstrapWithProfile(profile);
     } else {
         nexus->setParser(&parser);
-        int returnval = nexus->showLogin(profileName);
+        const int returnval = nexus->showLogin(profileName);
         if (returnval == QDialog::Rejected) {
             return -1;
         }

@@ -71,7 +71,7 @@ GroupMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSet
  */
 void GroupMessageDispatcher::onMessageReceived(const ToxPk& sender, bool isAction, QString const& content)
 {
-    bool isSelf = sender == idHandler.getSelfPublicKey();
+    const bool isSelf = sender == idHandler.getSelfPublicKey();
 
     if (isSelf) {
         return;

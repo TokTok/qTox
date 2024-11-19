@@ -39,15 +39,15 @@ private slots:
 
 void TestChatId::toStringTest()
 {
-    ToxPk pk(testPk);
+    const ToxPk pk(testPk);
     QVERIFY(testStr == pk.toString());
 }
 
 void TestChatId::equalTest()
 {
-    ToxPk pk1(testPk);
-    ToxPk pk2(testPk);
-    ToxPk pk3(echoPk);
+    const ToxPk pk1(testPk);
+    const ToxPk pk2(testPk);
+    const ToxPk pk3(echoPk);
     QVERIFY(pk1 == pk2);
     QVERIFY(pk1 != pk3);
     QVERIFY(!(pk1 != pk2));
@@ -55,22 +55,22 @@ void TestChatId::equalTest()
 
 void TestChatId::clearTest()
 {
-    ToxPk empty;
-    ToxPk pk(testPk);
+    const ToxPk empty;
+    const ToxPk pk(testPk);
     QVERIFY(empty.isEmpty());
     QVERIFY(!pk.isEmpty());
 }
 
 void TestChatId::copyTest()
 {
-    ToxPk src(testPk);
-    ToxPk copy = src;
+    const ToxPk src(testPk);
+    const ToxPk copy = src;
     QVERIFY(copy == src);
 }
 
 void TestChatId::dataTest()
 {
-    ToxPk pk(testPk);
+    const ToxPk pk(testPk);
     QVERIFY(testPk == pk.getByteArray());
     for (int i = 0; i < pk.getSize(); i++) {
         QVERIFY(testPkArray[i] == pk.getData()[i]);
@@ -79,18 +79,18 @@ void TestChatId::dataTest()
 
 void TestChatId::sizeTest()
 {
-    ToxPk pk;
-    GroupId id;
+    const ToxPk pk;
+    const GroupId id;
     QVERIFY(pk.getSize() == ToxPk::size);
     QVERIFY(id.getSize() == GroupId::size);
 }
 
 void TestChatId::hashableTest()
 {
-    ToxPk pk1{testPkArray};
-    ToxPk pk2{testPk};
+    const ToxPk pk1{testPkArray};
+    const ToxPk pk2{testPk};
     QVERIFY(qHash(pk1) == qHash(pk2));
-    ToxPk pk3{echoPk};
+    const ToxPk pk3{echoPk};
     QVERIFY(qHash(pk1) != qHash(pk3));
 }
 

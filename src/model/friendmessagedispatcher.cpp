@@ -164,7 +164,7 @@ void FriendMessageDispatcher::sendCoreProcessedMessage(Message const& message,
 {
     auto receipt = ReceiptNum();
 
-    uint32_t friendId = f.getId();
+    const uint32_t friendId = f.getId();
 
     auto sendFn = message.isAction ? std::mem_fn(&ICoreFriendMessageSender::sendAction)
                                    : std::mem_fn(&ICoreFriendMessageSender::sendMessage);

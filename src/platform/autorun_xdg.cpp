@@ -12,7 +12,7 @@
 namespace {
 QString getAutostartDirPath()
 {
-    QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
+    const QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
     QString config = env.value("XDG_CONFIG_HOME");
     if (config.isEmpty())
         config = QDir::homePath() + "/" + ".config";
@@ -44,7 +44,7 @@ inline QString profileRunCommand(const Settings& settings)
 
 bool Platform::setAutorun(const Settings& settings, bool on)
 {
-    QString dirPath = getAutostartDirPath();
+    const QString dirPath = getAutostartDirPath();
     QFile desktop(getAutostartFilePath(settings, dirPath));
     if (on) {
         if (!QDir().mkpath(dirPath) || !desktop.open(QFile::WriteOnly | QFile::Truncate))

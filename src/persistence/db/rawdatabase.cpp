@@ -424,7 +424,7 @@ bool RawDatabase::execNow(const QVector<RawDatabase::Query>& statements)
     trans.done = &done;
     trans.success = &success;
     {
-        QMutexLocker<QMutex> locker{&transactionsMutex};
+        const QMutexLocker<QMutex> locker{&transactionsMutex};
         pendingTransactions.enqueue(trans);
     }
 
@@ -461,7 +461,7 @@ void RawDatabase::execLater(const QVector<RawDatabase::Query>& statements)
     Transaction trans;
     trans.queries = statements;
     {
-        QMutexLocker<QMutex> locker{&transactionsMutex};
+        const QMutexLocker<QMutex> locker{&transactionsMutex};
         pendingTransactions.enqueue(trans);
     }
 
@@ -506,7 +506,7 @@ bool RawDatabase::setPassword(const QString& password)
     }
 
     if (!password.isEmpty()) {
-        QString newHexKey = deriveKey(password, currentSalt);
+        const QString newHexKey = deriveKey(password, currentSalt);
         if (!currentHexKey.isEmpty()) {
             if (!execNow("PRAGMA rekey = \"x'" + newHexKey + "'\"")) {
                 qWarning() << "Failed to change encryption key";
@@ -738,7 +738,7 @@ void RawDatabase::process()
         // Fetch the next transaction
         Transaction trans;
         {
-            QMutexLocker<QMutex> locker{&transactionsMutex};
+            const QMutexLocker<QMutex> locker{&transactionsMutex};
             if (pendingTransactions.isEmpty())
                 return;
             trans = pendingTransactions.dequeue();
@@ -779,7 +779,7 @@ void RawDatabase::process()
                 query.statements += stmt;
 
                 // Now we can bind our params to this statement
-                int nParams = sqlite3_bind_parameter_count(stmt);
+                const int nParams = sqlite3_bind_parameter_count(stmt);
                 if (query.blobs.size() < curParam + nParams) {
                     qWarning() << "Not enough parameters to bind to query "
                                << anonymizeQuery(query.query);
@@ -807,7 +807,7 @@ void RawDatabase::process()
 
             // Execute each statement of each query of our transaction
             for (sqlite3_stmt* stmt : query.statements) {
-                int column_count = sqlite3_column_count(stmt);
+                const int column_count = sqlite3_column_count(stmt);
                 int result;
                 do {
                     result = sqlite3_step(stmt);
@@ -825,7 +825,7 @@ void RawDatabase::process()
                 if (result == SQLITE_DONE)
                     continue;
 
-                QString anonQuery = anonymizeQuery(query.query);
+                const QString anonQuery = anonymizeQuery(query.query);
                 switch (result) {
                 case SQLITE_ERROR:
                     qWarning() << "Error executing query" << anonQuery;
@@ -887,18 +887,18 @@ QString RawDatabase::anonymizeQuery(const QByteArray& query)
  */
 QVariant RawDatabase::extractData(sqlite3_stmt* stmt, int col)
 {
-    int type = sqlite3_column_type(stmt, col);
+    const int type = sqlite3_column_type(stmt, col);
     if (type == SQLITE_INTEGER) {
         return sqlite3_column_int64(stmt, col);
     } else if (type == SQLITE_TEXT) {
         const char* str = reinterpret_cast<const char*>(sqlite3_column_text(stmt, col));
-        int len = sqlite3_column_bytes(stmt, col);
+        const int len = sqlite3_column_bytes(stmt, col);
         return QString::fromUtf8(str, len);
     } else if (type == SQLITE_NULL) {
         return QVariant{};
     } else {
         const char* data = reinterpret_cast<const char*>(sqlite3_column_blob(stmt, col));
-        int len = sqlite3_column_bytes(stmt, col);
+        const int len = sqlite3_column_bytes(stmt, col);
         return QByteArray(data, len);
     }
 }

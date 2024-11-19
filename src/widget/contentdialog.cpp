@@ -101,7 +101,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     setAttribute(Qt::WA_DeleteOnClose);
     setObjectName("detached");
 
-    QByteArray geometry = settings.getDialogGeometry();
+    const QByteArray geometry = settings.getDialogGeometry();
 
     if (!geometry.isNull()) {
         restoreGeometry(geometry);
@@ -302,16 +302,16 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
     }
 
     if (!inverse && index == currentLayout->count() - 1) {
-        bool groupsOnTop = settings.getGroupchatPosition();
-        bool offlineEmpty = friendLayout->getLayoutOffline()->isEmpty();
-        bool onlineEmpty = friendLayout->getLayoutOnline()->isEmpty();
-        bool groupsEmpty = groupLayout.getLayout()->isEmpty();
-        bool isCurOffline = currentLayout == friendLayout->getLayoutOffline();
-        bool isCurOnline = currentLayout == friendLayout->getLayoutOnline();
-        bool isCurGroup = currentLayout == groupLayout.getLayout();
-        bool nextIsEmpty = (isCurOnline && offlineEmpty && (groupsEmpty || groupsOnTop))
-                           || (isCurGroup && offlineEmpty && (onlineEmpty || !groupsOnTop))
-                           || (isCurOffline);
+        const bool groupsOnTop = settings.getGroupchatPosition();
+        const bool offlineEmpty = friendLayout->getLayoutOffline()->isEmpty();
+        const bool onlineEmpty = friendLayout->getLayoutOnline()->isEmpty();
+        const bool groupsEmpty = groupLayout.getLayout()->isEmpty();
+        const bool isCurOffline = currentLayout == friendLayout->getLayoutOffline();
+        const bool isCurOnline = currentLayout == friendLayout->getLayoutOnline();
+        const bool isCurGroup = currentLayout == groupLayout.getLayout();
+        const bool nextIsEmpty = (isCurOnline && offlineEmpty && (groupsEmpty || groupsOnTop))
+                                 || (isCurGroup && offlineEmpty && (onlineEmpty || !groupsOnTop))
+                                 || (isCurOffline);
 
         if (nextIsEmpty) {
             forward = !forward;
@@ -322,13 +322,13 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
     // If goes out of the layout, then go to the next and skip empty. This loop goes more
     // then 1 time, because for empty layout index will be out of interval (0 < 0 || 0 >= 0)
     while (index < 0 || index >= currentLayout->count()) {
-        int oldCount = currentLayout->count();
+        const int oldCount = currentLayout->count();
         currentLayout = nextLayout(currentLayout, forward);
         if (currentLayout == nullptr) {
             qFatal("Layouts changed during iteration");
             break;
         }
-        int newCount = currentLayout->count();
+        const int newCount = currentLayout->count();
         if (index < 0) {
             index = newCount - 1;
         } else if (index >= oldCount) {
@@ -352,7 +352,7 @@ void ContentDialog::onVideoShow(QSize size)
     }
 
     videoSurfaceSize = size;
-    QSize minSize_ = minimumSize();
+    const QSize minSize_ = minimumSize();
     setMinimumSize(minSize_ + videoSurfaceSize);
 }
 
@@ -363,7 +363,7 @@ void ContentDialog::onVideoHide()
         return;
     }
 
-    QSize minSize_ = minimumSize();
+    const QSize minSize_ = minimumSize();
     setMinimumSize(minSize_ - videoSurfaceSize);
     videoSurfaceSize = QSize();
 }
@@ -381,13 +381,13 @@ void ContentDialog::updateTitleAndStatusIcon()
 
     setWindowTitle(username + QStringLiteral(" - ") + activeChatroomWidget->getTitle());
 
-    bool isGroupchat = activeChatroomWidget->getGroup() != nullptr;
+    const bool isGroupchat = activeChatroomWidget->getGroup() != nullptr;
     if (isGroupchat) {
         setWindowIcon(QIcon(":/img/group.svg"));
         return;
     }
 
-    Status::Status currentStatus = activeChatroomWidget->getFriend()->getStatus();
+    const Status::Status currentStatus = activeChatroomWidget->getFriend()->getStatus();
     setWindowIcon(QIcon{Status::getIconPath(currentStatus)});
 }
 
@@ -397,7 +397,7 @@ void ContentDialog::updateTitleAndStatusIcon()
  */
 void ContentDialog::reorderLayouts(bool newGroupOnTop)
 {
-    bool oldGroupOnTop = layouts.first() == groupLayout.getLayout();
+    const bool oldGroupOnTop = layouts.first() == groupLayout.getLayout();
     if (newGroupOnTop != oldGroupOnTop) {
         layouts.swapItemsAt(0, 1);
     }
@@ -467,13 +467,13 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
     GroupWidget* group = qobject_cast<GroupWidget*>(o);
     if (frnd) {
         assert(event->mimeData()->hasFormat("toxPk"));
-        ToxPk toxPk{event->mimeData()->data("toxPk")};
+        const ToxPk toxPk{event->mimeData()->data("toxPk")};
         Friend* contact = friendList.findFriend(toxPk);
         if (!contact) {
             return;
         }
 
-        ToxPk friendId = contact->getPublicKey();
+        const ToxPk friendId = contact->getPublicKey();
 
         // If friend is already in a dialog then you can't drop friend where it already is.
         if (!hasChat(friendId)) {
@@ -481,7 +481,7 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
         }
     } else if (group) {
         assert(event->mimeData()->hasFormat("groupId"));
-        GroupId groupId = GroupId{event->mimeData()->data("groupId")};
+        const GroupId groupId = GroupId{event->mimeData()->data("groupId")};
         Group* contact = groupList.findGroup(groupId);
         if (!contact) {
             return;
@@ -638,7 +638,7 @@ void ContentDialog::updateFriendWidget(const ToxPk& friendPk, QString alias)
     Friend* f = friendList.findFriend(friendPk);
     FriendWidget* friendWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
 
-    Status::Status status = f->getStatus();
+    const Status::Status status = f->getStatus();
     friendLayout->addFriendWidget(friendWidget, status);
 }
 
@@ -691,13 +691,13 @@ bool ContentDialog::hasChat(const ChatId& chatId) const
  */
 QLayout* ContentDialog::nextLayout(QLayout* layout, bool forward) const
 {
-    int index = layouts.indexOf(layout);
+    const int index = layouts.indexOf(layout);
     if (index == -1) {
         return nullptr;
     }
 
     int next = forward ? index + 1 : index - 1;
-    size_t size = layouts.size();
+    const size_t size = layouts.size();
     next = (next + size) % size;
 
     return layouts[next];

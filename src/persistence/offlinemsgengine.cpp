@@ -22,13 +22,13 @@
  */
 void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     receiptResolver.notifyReceiptReceived(receipt);
 }
 
 void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     extendedReceiptResolver.notifyReceiptReceived(receipt);
 }
 
@@ -43,7 +43,7 @@ void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
  */
 void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn completionCallback)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     unsentMessages.push_back(
         OfflineMessage{message, std::chrono::steady_clock::now(), completionCallback});
 }
@@ -61,7 +61,7 @@ void OfflineMsgEngine::addUnsentMessage(Message const& message, CompletionFn com
 void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, Message const& message,
                                           CompletionFn completionCallback)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     receiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
                                                 completionCallback});
 }
@@ -69,7 +69,7 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, Message const& mes
 void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, Message const& message,
                                               CompletionFn completionCallback)
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     extendedReceiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
                                                         completionCallback});
 }
@@ -79,7 +79,7 @@ void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, Messag
  */
 std::vector<OfflineMsgEngine::RemovedMessage> OfflineMsgEngine::removeAllMessages()
 {
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
+    const QMutexLocker<QRecursiveMutex> ml(&mutex);
     auto messages = receiptResolver.clear();
     auto extendedMessages = extendedReceiptResolver.clear();
 

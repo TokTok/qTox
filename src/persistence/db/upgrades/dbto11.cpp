@@ -25,7 +25,7 @@ bool DbTo11::dbSchema10to11(RawDatabase& db)
         return false;
     }
     upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 11;"));
-    bool transactionPass = db.execNow(upgradeQueries);
+    const bool transactionPass = db.execNow(upgradeQueries);
     if (transactionPass) {
         return db.execNow("VACUUM");
     }

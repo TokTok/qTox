@@ -317,7 +317,7 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
 
     LoadToxDataError error;
     QByteArray toxsave = QByteArray();
-    QString path = paths.getSettingsDirPath() + name + ".tox";
+    const QString path = paths.getSettingsDirPath() + name + ".tox";
     std::unique_ptr<ToxEncrypt> tmpKey = loadToxData(password, path, toxsave, error);
     if (logLoadToxDataError(error, path)) {
         ProfileLocker::unlock();
@@ -350,7 +350,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
 {
     CreateToxDataError error;
     Paths& paths = settings.getPaths();
-    QString path = paths.getSettingsDirPath() + name + ".tox";
+    const QString path = paths.getSettingsDirPath() + name + ".tox";
     std::unique_ptr<ToxEncrypt> tmpKey = createToxData(name, password, path, error, paths);
 
     if (logCreateToxDataError(error, name)) {
@@ -393,9 +393,9 @@ QStringList Profile::getFilesByExt(QString extension, Settings& settings)
     QStringList out;
     dir.setFilter(QDir::Files | QDir::NoDotAndDotDot);
     dir.setNameFilters(QStringList("*." + extension));
-    QFileInfoList list = dir.entryInfoList();
+    const QFileInfoList list = dir.entryInfoList();
     out.reserve(list.size());
-    for (QFileInfo file : list) {
+    for (const QFileInfo file : list) {
         out += file.completeBaseName();
     }
 
@@ -460,7 +460,7 @@ void Profile::startCore()
  */
 void Profile::onSaveToxSave()
 {
-    QByteArray data = core->getToxSaveData();
+    const QByteArray data = core->getToxSaveData();
     assert(data.size());
     saveToxSave(data);
 }
@@ -486,7 +486,7 @@ bool Profile::saveToxSave(QByteArray data)
     ProfileLocker::assertLock(paths);
     assert(ProfileLocker::getCurLockName() == name);
 
-    QString path = paths.getSettingsDirPath() + name + ".tox";
+    const QString path = paths.getSettingsDirPath() + name + ".tox";
     qDebug() << "Saving tox save to " << path;
     QSaveFile saveFile(path);
     if (!saveFile.open(QIODevice::WriteOnly)) {
@@ -619,7 +619,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
         return;
     }
 
-    QByteArray salt = core->getSelfPublicKey().getByteArray();
+    const QByteArray salt = core->getSelfPublicKey().getByteArray();
     if (salt.size() != TOX_PASS_SALT_LENGTH) {
         qWarning() << "Couldn't compute salt from public key" << name;
         messageBoxManager
@@ -723,7 +723,7 @@ void Profile::saveAvatar(const ToxPk& owner, const QByteArray& avatar)
     const bool needEncrypt = encrypted && !avatar.isEmpty();
     const QByteArray& pic = needEncrypt ? passkey->encrypt(avatar) : avatar;
 
-    QString path = avatarPath(owner);
+    const QString path = avatarPath(owner);
     QDir(paths.getSettingsDirPath()).mkdir("avatars");
     if (pic.isEmpty()) {
         QFile::remove(path);
@@ -803,7 +803,7 @@ void Profile::removeAvatar(const ToxPk& owner)
 
 bool Profile::exists(QString name, Paths& paths)
 {
-    QString path = paths.getSettingsDirPath() + name;
+    const QString path = paths.getSettingsDirPath() + name;
     return QFile::exists(path + ".tox");
 }
 
@@ -825,7 +825,7 @@ bool Profile::isEncrypted() const
 bool Profile::isEncrypted(QString name, Paths& paths)
 {
     uint8_t data[TOX_PASS_ENCRYPTION_EXTRA_LENGTH] = {0};
-    QString path = paths.getSettingsDirPath() + name + ".tox";
+    const QString path = paths.getSettingsDirPath() + name + ".tox";
     QFile saveFile(path);
     if (!saveFile.open(QIODevice::ReadOnly)) {
         qWarning() << "Couldn't open tox save " << path;
@@ -859,7 +859,7 @@ QStringList Profile::remove()
             i--;
         }
     }
-    QString path = paths.getSettingsDirPath() + name;
+    const QString path = paths.getSettingsDirPath() + name;
     ProfileLocker::unlock();
 
     QFile profileMain{path + ".tox"};
@@ -876,7 +876,7 @@ QStringList Profile::remove()
         qWarning() << "Could not remove file " << profileConfig.fileName();
     }
 
-    QString dbPath = getDbPath(name, settings.getPaths());
+    const QString dbPath = getDbPath(name, settings.getPaths());
     if (database && database->isOpen() && !database->remove() && QFile::exists(dbPath)) {
         ret.push_back(dbPath);
         qWarning() << "Could not remove file " << dbPath;
@@ -907,7 +907,7 @@ bool Profile::rename(QString newName)
         database->rename(newName);
     }
 
-    bool resetAutorun = settings.getAutorun();
+    const bool resetAutorun = settings.getAutorun();
     settings.setAutorun(false);
     settings.setCurrentProfile(newName);
     if (resetAutorun) {
@@ -964,10 +964,10 @@ QString Profile::setPassword(const QString& newPassword)
                    "password.");
     }
 
-    QByteArray avatar = loadAvatarData(core->getSelfPublicKey());
+    const QByteArray avatar = loadAvatarData(core->getSelfPublicKey());
     saveAvatar(core->getSelfPublicKey(), avatar);
 
-    QVector<uint32_t> friendList = core->getFriendList();
+    const QVector<uint32_t> friendList = core->getFriendList();
     QVectorIterator<uint32_t> i(friendList);
     while (i.hasNext()) {
         const ToxPk friendPublicKey = core->getFriendPublicKey(i.next());

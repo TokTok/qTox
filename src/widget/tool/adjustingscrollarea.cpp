@@ -17,7 +17,7 @@ AdjustingScrollArea::AdjustingScrollArea(QWidget* parent)
 
 void AdjustingScrollArea::resizeEvent(QResizeEvent* ev)
 {
-    int scrollBarWidth =
+    const int scrollBarWidth =
         verticalScrollBar()->isVisible() ? verticalScrollBar()->sizeHint().width() : 0;
 
     if (layoutDirection() == Qt::RightToLeft)
@@ -30,7 +30,7 @@ void AdjustingScrollArea::resizeEvent(QResizeEvent* ev)
 QSize AdjustingScrollArea::sizeHint() const
 {
     if (widget()) {
-        int scrollbarWidth = verticalScrollBar()->isVisible() ? verticalScrollBar()->width() : 0;
+        const int scrollbarWidth = verticalScrollBar()->isVisible() ? verticalScrollBar()->width() : 0;
         return widget()->sizeHint() + QSize(scrollbarWidth, 0);
     }
 

@@ -32,7 +32,7 @@ struct Version
 Version tagToVersion(QString tagName)
 {
     // capture tag name to avoid showing update available on dev builds which include hash as part of describe
-    QRegularExpression versionFormat(versionRegexString);
+    const QRegularExpression versionFormat(versionRegexString);
     auto matches = versionFormat.match(tagName);
     assert(matches.lastCapturedIndex() == 3);
 
@@ -78,7 +78,7 @@ bool isUpdateAvailable(Version current, Version available)
 
 bool isCurrentVersionStable()
 {
-    QRegularExpression versionRegex(versionRegexString);
+    const QRegularExpression versionRegex(versionRegexString);
     auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
     if (currentVer.hasMatch()) {
         return true;
@@ -112,7 +112,7 @@ void UpdateCheck::checkForUpdate()
     }
 
     manager.setProxy(settings.getProxy());
-    QNetworkRequest request{versionUrl};
+    const QNetworkRequest request{versionUrl};
     manager.get(request);
 }
 
@@ -130,11 +130,11 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         reply->deleteLater();
         return;
     }
-    QByteArray result = reply->readAll();
-    QJsonDocument doc = QJsonDocument::fromJson(result);
-    QJsonObject jObject = doc.object();
+    const QByteArray result = reply->readAll();
+    const QJsonDocument doc = QJsonDocument::fromJson(result);
+    const QJsonObject jObject = doc.object();
     QVariantMap mainMap = jObject.toVariantMap();
-    QString latestVersion = mainMap["tag_name"].toString();
+    const QString latestVersion = mainMap["tag_name"].toString();
     if (latestVersion.isEmpty()) {
         qWarning() << "No tag name found in response:";
         emit updateCheckFailed();
@@ -147,7 +147,7 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
 
     if (isUpdateAvailable(currentVer, availableVer)) {
         qInfo() << "Update available to version" << latestVersion;
-        QUrl link{mainMap["html_url"].toString()};
+        const QUrl link{mainMap["html_url"].toString()};
         emit updateAvailable(latestVersion, link);
     } else {
         qInfo() << "qTox is up to date";

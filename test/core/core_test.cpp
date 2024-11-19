@@ -65,8 +65,8 @@ void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& 
     alicesNodes.setBootstrapNodes(MockBootstrapListGenerator::makeListFromSelf(bob));
     bobsNodes.setBootstrapNodes(MockBootstrapListGenerator::makeListFromSelf(alice));
 
-    QSignalSpy spyAlice(&alice, &Core::connected);
-    QSignalSpy spyBob(&bob, &Core::connected);
+    const QSignalSpy spyAlice(&alice, &Core::connected);
+    const QSignalSpy spyBob(&bob, &Core::connected);
 
     alice.start();
     bob.start();
@@ -152,7 +152,7 @@ void TestCore::change_name()
     // Change the name of Alice to "Alice"
     const QLatin1String aliceName{"Alice"};
 
-    QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
+    const QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
     QSignalSpy aliceUsernameChanged(alice.get(), &Core::usernameSet);
     QSignalSpy bobUsernameChangeReceived(bob.get(), &Core::friendUsernameChanged);
 
@@ -183,7 +183,7 @@ void TestCore::change_status_message()
     // Change the status message of Alice
     const QLatin1String aliceStatusMsg{"Testing a lot"};
 
-    QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
+    const QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
     QSignalSpy aliceStatusMsgChanged(alice.get(), &Core::statusMessageSet);
     QSignalSpy bobStatusMsgChangeReceived(bob.get(), &Core::friendStatusMessageChanged);
 
@@ -211,7 +211,7 @@ void TestCore::change_status_message()
 
 void TestCore::change_status()
 {
-    QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
+    const QSignalSpy aliceSaveRequest(alice.get(), &Core::saveRequest);
     QSignalSpy aliceStatusChanged(alice.get(), &Core::statusSet);
     QSignalSpy bobStatusChangeReceived(bob.get(), &Core::friendStatusChanged);
 

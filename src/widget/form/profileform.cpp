@@ -190,12 +190,12 @@ void ProfileForm::show(ContentLayout* contentLayout)
     contentLayout->mainContent->layout()->addWidget(this);
     QWidget::show();
     prFileLabelUpdate();
-    bool portable = settings.getMakeToxPortable();
-    QString defaultPath = QDir(settings.getPaths().getSettingsDirPath()).path().trimmed();
-    QString appPath = QApplication::applicationDirPath();
-    QString dirPath = portable ? appPath : defaultPath;
+    const bool portable = settings.getMakeToxPortable();
+    const QString defaultPath = QDir(settings.getPaths().getSettingsDirPath()).path().trimmed();
+    const QString appPath = QApplication::applicationDirPath();
+    const QString dirPath = portable ? appPath : defaultPath;
 
-    QString dirPrLink =
+    const QString dirPrLink =
         tr("Current profile location: %1").arg(QString("<a href=\"file://%1\">%1</a>").arg(dirPath));
 
     bodyUI->dirPrLink->setText(dirPrLink);
@@ -258,7 +258,7 @@ void ProfileForm::onSelfAvatarLoaded(const QPixmap& pic)
 
 void ProfileForm::setToxId(const ToxId& id)
 {
-    QString idString = id.toString();
+    const QString idString = id.toString();
     static const QString ToxIdColor = QStringLiteral("%1"
                                                      "<span style='color:blue'>%2</span>"
                                                      "<span style='color:gray'>%3</span>");
@@ -432,7 +432,7 @@ void ProfileForm::onChangePassClicked()
         return;
     }
 
-    QString newPass = dialog->getPassword();
+    const QString newPass = dialog->getPassword();
     if (!profileInfo->setPassword(newPass)) {
         messageBoxManager.showInfo(CAN_NOT_CHANGE_PASSWORD.first, CAN_NOT_CHANGE_PASSWORD.second);
     }

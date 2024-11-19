@@ -244,17 +244,17 @@ void Core::onStarted()
     ASSERT_CORE_THREAD;
 
     // One time initialization stuff
-    QString name = getUsername();
+    const QString name = getUsername();
     if (!name.isEmpty()) {
         emit usernameSet(name);
     }
 
-    QString msg = getStatusMessage();
+    const QString msg = getStatusMessage();
     if (!msg.isEmpty()) {
         emit statusMessageSet(msg);
     }
 
-    ToxId id = getSelfId();
+    const ToxId id = getSelfId();
     // Id comes from toxcore, must be valid
     assert(id.isValid());
     emit idSet(id);
@@ -318,7 +318,7 @@ CoreExt* Core::getExt()
  */
 void Core::process()
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     ASSERT_CORE_THREAD;
 
@@ -338,7 +338,7 @@ void Core::process()
         tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
     }
 
-    unsigned sleeptime =
+    const unsigned sleeptime =
         qMin(tox_iteration_interval(tox.get()), getCoreFile()->corefileIterationInterval());
     toxTimer->start(sleeptime);
 }
@@ -407,7 +407,7 @@ void Core::bootstrapDht()
             continue;
         }
 
-        ToxPk pk{dhtServer.publicKey};
+        const ToxPk pk{dhtServer.publicKey};
         qDebug() << "Connecting to bootstrap node" << pk.toString();
         const uint8_t* pkPtr = pk.getData();
 
@@ -429,8 +429,8 @@ void Core::onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cM
                            size_t cMessageSize, void* core)
 {
     std::ignore = tox;
-    ToxPk friendPk(cFriendPk);
-    QString requestMessage = ToxString(cMessage, cMessageSize).getQString();
+    const ToxPk friendPk(cFriendPk);
+    const QString requestMessage = ToxString(cMessage, cMessageSize).getQString();
     emit static_cast<Core*>(core)->friendRequestReceived(friendPk, requestMessage);
 }
 
@@ -438,8 +438,8 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
                            const uint8_t* cMessage, size_t cMessageSize, void* core)
 {
     std::ignore = tox;
-    bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
-    QString msg = ToxString(cMessage, cMessageSize).getQString();
+    const bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
+    const QString msg = ToxString(cMessage, cMessageSize).getQString();
     emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
 }
 
@@ -447,7 +447,7 @@ void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName,
                               void* core)
 {
     std::ignore = tox;
-    QString newName = ToxString(cName, cNameSize).getQString();
+    const QString newName = ToxString(cName, cNameSize).getQString();
     // no saveRequest, this callback is called on every connection, not just on name change
     emit static_cast<Core*>(core)->friendUsernameChanged(friendId, newName);
 }
@@ -462,7 +462,7 @@ void Core::onStatusMessageChanged(Tox* tox, uint32_t friendId, const uint8_t* cM
                                   size_t cMessageSize, void* core)
 {
     std::ignore = tox;
-    QString message = ToxString(cMessage, cMessageSize).getQString();
+    const QString message = ToxString(cMessage, cMessageSize).getQString();
     // no saveRequest, this callback is called on every connection, not just on name change
     emit static_cast<Core*>(core)->friendStatusMessageChanged(friendId, message);
 }
@@ -513,7 +513,7 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
     }
 
     // Ignore Online because it will be emited from onUserStatusChanged
-    bool isOffline = friendStatus == Status::Status::Offline;
+    const bool isOffline = friendStatus == Status::Status::Offline;
     if (isOffline) {
         emit core->friendStatusChanged(friendId, friendStatus);
         core->checkLastOnline(friendId);
@@ -548,8 +548,8 @@ void Core::onGroupMessage(Tox* tox, uint32_t groupId, uint32_t peerId, Tox_Messa
 {
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
-    bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
-    QString message = ToxString(cMessage, length).getQString();
+    const bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
+    const QString message = ToxString(cMessage, length).getQString();
     emit core->groupMessageReceived(groupId, peerId, message, isAction);
 }
 
@@ -605,9 +605,9 @@ void Core::onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, 
 
 void Core::acceptFriendRequest(const ToxPk& friendPk)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     Tox_Err_Friend_Add error;
-    uint32_t friendId = tox_friend_add_norequest(tox.get(), friendPk.getData(), &error);
+    const uint32_t friendId = tox_friend_add_norequest(tox.get(), friendPk.getData(), &error);
     if (PARSE_ERR(error)) {
         emit saveRequest();
         emit friendAdded(friendId, friendPk);
@@ -624,7 +624,7 @@ void Core::acceptFriendRequest(const ToxPk& friendPk)
  */
 QString Core::getFriendRequestErrorMessage(const ToxId& friendId, const QString& message) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (!friendId.isValid()) {
         return tr("Invalid Tox ID", "Error while sending friend request");
@@ -648,19 +648,19 @@ QString Core::getFriendRequestErrorMessage(const ToxId& friendId, const QString&
 
 void Core::requestFriendship(const ToxId& friendId, const QString& message)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    ToxPk friendPk = friendId.getPublicKey();
-    QString errorMessage = getFriendRequestErrorMessage(friendId, message);
+    const ToxPk friendPk = friendId.getPublicKey();
+    const QString errorMessage = getFriendRequestErrorMessage(friendId, message);
     if (!errorMessage.isNull()) {
         emit failedToAddFriend(friendPk, errorMessage);
         emit saveRequest();
         return;
     }
 
-    ToxString cMessage(message);
+    const ToxString cMessage(message);
     Tox_Err_Friend_Add error;
-    uint32_t friendNumber =
+    const uint32_t friendNumber =
         tox_friend_add(tox.get(), friendId.getBytes(), cMessage.data(), cMessage.size(), &error);
     if (PARSE_ERR(error)) {
         qDebug() << "Requested friendship from " << friendNumber;
@@ -676,7 +676,7 @@ void Core::requestFriendship(const ToxId& friendId, const QString& message)
 bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
                                ReceiptNum& receipt)
 {
-    int size = message.toUtf8().size();
+    const int size = message.toUtf8().size();
     auto maxSize = static_cast<int>(getMaxMessageSize());
     if (size > maxSize) {
         assert(false);
@@ -685,7 +685,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
         return false;
     }
 
-    ToxString cMessage(message);
+    const ToxString cMessage(message);
     Tox_Err_Friend_Send_Message error;
     receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
                                                  cMessage.size(), &error)};
@@ -697,19 +697,19 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
 
 bool Core::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)
 {
-    QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
+    const QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
     return sendMessageWithType(friendId, message, TOX_MESSAGE_TYPE_NORMAL, receipt);
 }
 
 bool Core::sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt)
 {
-    QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
+    const QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
     return sendMessageWithType(friendId, action, TOX_MESSAGE_TYPE_ACTION, receipt);
 }
 
 void Core::sendTyping(uint32_t friendId, bool typing)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Set_Typing error;
     tox_self_set_typing(tox.get(), friendId, typing, &error);
@@ -720,9 +720,9 @@ void Core::sendTyping(uint32_t friendId, bool typing)
 
 void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Message_Type type)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    int size = message.toUtf8().size();
+    const int size = message.toUtf8().size();
     auto maxSize = static_cast<int>(getMaxMessageSize());
     if (size > maxSize) {
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
@@ -730,7 +730,7 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
         return;
     }
 
-    ToxString cMsg(message);
+    const ToxString cMsg(message);
     Tox_Err_Conference_Send_Message error;
     tox_conference_send_message(tox.get(), groupId, type, cMsg.data(), cMsg.size(), &error);
     if (!PARSE_ERR(error)) {
@@ -741,23 +741,23 @@ void Core::sendGroupMessageWithType(int groupId, const QString& message, Tox_Mes
 
 void Core::sendGroupMessage(int groupId, const QString& message)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     sendGroupMessageWithType(groupId, message, TOX_MESSAGE_TYPE_NORMAL);
 }
 
 void Core::sendGroupAction(int groupId, const QString& message)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     sendGroupMessageWithType(groupId, message, TOX_MESSAGE_TYPE_ACTION);
 }
 
 void Core::changeGroupTitle(int groupId, const QString& title)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    ToxString cTitle(title);
+    const ToxString cTitle(title);
     Tox_Err_Conference_Title error;
     tox_conference_set_title(tox.get(), groupId, cTitle.data(), cTitle.size(), &error);
     if (PARSE_ERR(error)) {
@@ -768,7 +768,7 @@ void Core::changeGroupTitle(int groupId, const QString& title)
 
 void Core::removeFriend(uint32_t friendId)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_Delete error;
     tox_friend_delete(tox.get(), friendId, &error);
@@ -783,7 +783,7 @@ void Core::removeFriend(uint32_t friendId)
 
 void Core::removeGroup(int groupId)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Delete error;
     tox_conference_delete(tox.get(), groupId, &error);
@@ -806,14 +806,14 @@ void Core::removeGroup(int groupId)
  */
 QString Core::getUsername() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     QString sname;
     if (!tox) {
         return sname;
     }
 
-    int size = tox_self_get_name_size(tox.get());
+    const int size = tox_self_get_name_size(tox.get());
     if (!size) {
         return {};
     }
@@ -824,13 +824,13 @@ QString Core::getUsername() const
 
 void Core::setUsername(const QString& username)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (username == getUsername()) {
         return;
     }
 
-    ToxString cUsername(username);
+    const ToxString cUsername(username);
     Tox_Err_Set_Info error;
     tox_self_set_name(tox.get(), cUsername.data(), cUsername.size(), &error);
     if (!PARSE_ERR(error)) {
@@ -847,7 +847,7 @@ void Core::setUsername(const QString& username)
  */
 ToxId Core::getSelfId() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     uint8_t friendId[TOX_ADDRESS_SIZE] = {0x00};
     tox_self_get_address(tox.get(), friendId);
@@ -860,7 +860,7 @@ ToxId Core::getSelfId() const
  */
 ToxPk Core::getSelfPublicKey() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     uint8_t selfPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
     tox_self_get_public_key(tox.get(), selfPk);
@@ -869,7 +869,7 @@ ToxPk Core::getSelfPublicKey() const
 
 QByteArray Core::getSelfDhtId() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     QByteArray dhtKey(TOX_PUBLIC_KEY_SIZE, 0x00);
     tox_self_get_dht_id(tox.get(), reinterpret_cast<uint8_t*>(dhtKey.data()));
     return dhtKey;
@@ -877,7 +877,7 @@ QByteArray Core::getSelfDhtId() const
 
 int Core::getSelfUdpPort() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     Tox_Err_Get_Port error;
     auto port = tox_self_get_udp_port(tox.get(), &error);
     if (!PARSE_ERR(error)) {
@@ -891,11 +891,11 @@ int Core::getSelfUdpPort() const
  */
 QString Core::getStatusMessage() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     assert(tox != nullptr);
 
-    size_t size = tox_self_get_status_message_size(tox.get());
+    const size_t size = tox_self_get_status_message_size(tox.get());
     if (!size) {
         return {};
     }
@@ -909,20 +909,20 @@ QString Core::getStatusMessage() const
  */
 Status::Status Core::getStatus() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     return static_cast<Status::Status>(tox_self_get_status(tox.get()));
 }
 
 void Core::setStatusMessage(const QString& message)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (message == getStatusMessage()) {
         return;
     }
 
-    ToxString cMessage(message);
+    const ToxString cMessage(message);
     Tox_Err_Set_Info error;
     tox_self_set_status_message(tox.get(), cMessage.data(), cMessage.size(), &error);
     if (!PARSE_ERR(error)) {
@@ -936,7 +936,7 @@ void Core::setStatusMessage(const QString& message)
 
 void Core::setStatus(Status::Status status)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_User_Status userstatus;
     switch (status) {
@@ -967,9 +967,9 @@ void Core::setStatus(Status::Status status)
  */
 QByteArray Core::getToxSaveData()
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    uint32_t fileSize = tox_get_savedata_size(tox.get());
+    const uint32_t fileSize = tox_get_savedata_size(tox.get());
     QByteArray data;
     data.resize(fileSize);
     tox_get_savedata(tox.get(), reinterpret_cast<uint8_t*>(data.data()));
@@ -978,7 +978,7 @@ QByteArray Core::getToxSaveData()
 
 void Core::loadFriends()
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const size_t friendCount = tox_self_get_friend_list_size(tox.get());
     if (friendCount == 0) {
@@ -997,11 +997,12 @@ void Core::loadFriends()
         emit friendAdded(ids[i], ToxPk(friendPk));
         emit friendUsernameChanged(ids[i], getFriendUsername(ids[i]));
         Tox_Err_Friend_Query queryError;
-        size_t statusMessageSize = tox_friend_get_status_message_size(tox.get(), ids[i], &queryError);
+        const size_t statusMessageSize =
+            tox_friend_get_status_message_size(tox.get(), ids[i], &queryError);
         if (PARSE_ERR(queryError) && statusMessageSize) {
             std::vector<uint8_t> messageData(statusMessageSize);
             tox_friend_get_status_message(tox.get(), ids[i], messageData.data(), &queryError);
-            QString friendStatusMessage =
+            const QString friendStatusMessage =
                 ToxString(messageData.data(), statusMessageSize).getQString();
             emit friendStatusMessageChanged(ids[i], friendStatusMessage);
         }
@@ -1011,7 +1012,7 @@ void Core::loadFriends()
 
 void Core::loadGroups()
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const size_t groupCount = tox_conference_get_chatlist_size(tox.get());
     if (groupCount == 0) {
@@ -1025,7 +1026,7 @@ void Core::loadGroups()
         Tox_Err_Conference_Title error;
         QString name;
         const auto groupNumber = groupNumbers[i];
-        size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
+        const size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
         const GroupId persistentId = getGroupPersistentId(groupNumber);
         const QString defaultName = tr("Groupchat %1").arg(persistentId.toString().left(8));
         if (PARSE_ERR(error) || !titleSize) {
@@ -1050,7 +1051,7 @@ void Core::loadGroups()
 
 void Core::checkLastOnline(uint32_t friendId)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_Get_Last_Online error;
     const uint64_t lastOnline = tox_friend_get_last_online(tox.get(), friendId, &error);
@@ -1064,7 +1065,7 @@ void Core::checkLastOnline(uint32_t friendId)
  */
 QVector<uint32_t> Core::getFriendList() const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     QVector<uint32_t> friends;
     friends.resize(tox_self_get_friend_list_size(tox.get()));
@@ -1074,7 +1075,7 @@ QVector<uint32_t> Core::getFriendList() const
 
 GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
     if (tox_conference_get_id(tox.get(), groupNumber, idBuff.data())) {
@@ -1091,10 +1092,10 @@ GroupId Core::getGroupPersistentId(uint32_t groupNumber) const
  */
 uint32_t Core::getGroupNumberPeers(int groupId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error;
-    uint32_t count = tox_conference_peer_count(tox.get(), groupId, &error);
+    const uint32_t count = tox_conference_peer_count(tox.get(), groupId, &error);
     if (!PARSE_ERR(error)) {
         return std::numeric_limits<uint32_t>::max();
     }
@@ -1107,10 +1108,10 @@ uint32_t Core::getGroupNumberPeers(int groupId) const
  */
 QString Core::getGroupPeerName(int groupId, int peerId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Peer_Query error;
-    size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, peerId, &error);
+    const size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, peerId, &error);
     if (!PARSE_ERR(error) || !length) {
         return QString{};
     }
@@ -1129,7 +1130,7 @@ QString Core::getGroupPeerName(int groupId, int peerId) const
  */
 ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
     Tox_Err_Conference_Peer_Query error;
@@ -1146,11 +1147,11 @@ ToxPk Core::getGroupPeerPk(int groupId, int peerId) const
  */
 QStringList Core::getGroupPeerNames(int groupId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     assert(tox != nullptr);
 
-    uint32_t nPeers = getGroupNumberPeers(groupId);
+    const uint32_t nPeers = getGroupNumberPeers(groupId);
     if (nPeers == std::numeric_limits<uint32_t>::max()) {
         qWarning() << "getGroupPeerNames: Unable to get number of peers";
         return {};
@@ -1159,7 +1160,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
     QStringList names;
     for (int i = 0; i < static_cast<int>(nPeers); ++i) {
         Tox_Err_Conference_Peer_Query error;
-        size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
+        const size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
 
         if (!PARSE_ERR(error) || !length) {
             names.append(QString());
@@ -1187,9 +1188,9 @@ QStringList Core::getGroupPeerNames(int groupId) const
  */
 bool Core::getGroupAvEnabled(int groupId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
     Tox_Err_Conference_Get_Type error;
-    Tox_Conference_Type type = tox_conference_get_type(tox.get(), groupId, &error);
+    const Tox_Conference_Type type = tox_conference_get_type(tox.get(), groupId, &error);
     PARSE_ERR(error);
     // would be nice to indicate to caller that we don't actually know..
     return type == TOX_CONFERENCE_TYPE_AV;
@@ -1203,7 +1204,7 @@ bool Core::getGroupAvEnabled(int groupId) const
  */
 uint32_t Core::joinGroupchat(const GroupInvite& inviteInfo)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const uint32_t friendId = inviteInfo.getFriendId();
     const uint8_t confType = inviteInfo.getType();
@@ -1239,7 +1240,7 @@ uint32_t Core::joinGroupchat(const GroupInvite& inviteInfo)
 
 void Core::groupInviteFriend(uint32_t friendId, int groupId)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Conference_Invite error;
     tox_conference_invite(tox.get(), friendId, groupId, &error);
@@ -1248,11 +1249,11 @@ void Core::groupInviteFriend(uint32_t friendId, int groupId)
 
 int Core::createGroup(uint8_t type)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (type == TOX_CONFERENCE_TYPE_TEXT) {
         Tox_Err_Conference_New error;
-        uint32_t groupId = tox_conference_new(tox.get(), &error);
+        const uint32_t groupId = tox_conference_new(tox.get(), &error);
         if (PARSE_ERR(error)) {
             emit saveRequest();
             emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
@@ -1263,7 +1264,7 @@ int Core::createGroup(uint8_t type)
     } else if (type == TOX_CONFERENCE_TYPE_AV) {
         // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
         // group number is our only indication of an error
-        int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
+        const int groupId = toxav_add_av_groupchat(tox.get(), CoreAV::groupCallCallback, this);
         if (groupId != -1) {
             emit saveRequest();
             emit emptyGroupCreated(groupId, getGroupPersistentId(groupId));
@@ -1282,10 +1283,10 @@ int Core::createGroup(uint8_t type)
  */
 bool Core::isFriendOnline(uint32_t friendId) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_Query error;
-    Tox_Connection connection = tox_friend_get_connection_status(tox.get(), friendId, &error);
+    const Tox_Connection connection = tox_friend_get_connection_status(tox.get(), friendId, &error);
     PARSE_ERR(error);
     return connection != TOX_CONNECTION_NONE;
 }
@@ -1295,7 +1296,7 @@ bool Core::isFriendOnline(uint32_t friendId) const
  */
 bool Core::hasFriendWithPublicKey(const ToxPk& publicKey) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     if (publicKey.isEmpty()) {
         return false;
@@ -1311,7 +1312,7 @@ bool Core::hasFriendWithPublicKey(const ToxPk& publicKey) const
  */
 ToxPk Core::getFriendPublicKey(uint32_t friendNumber) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     uint8_t rawid[TOX_PUBLIC_KEY_SIZE];
     Tox_Err_Friend_Get_Public_Key error;
@@ -1329,10 +1330,10 @@ ToxPk Core::getFriendPublicKey(uint32_t friendNumber) const
  */
 QString Core::getFriendUsername(uint32_t friendnumber) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_Query error;
-    size_t nameSize = tox_friend_get_name_size(tox.get(), friendnumber, &error);
+    const size_t nameSize = tox_friend_get_name_size(tox.get(), friendnumber, &error);
     if (!PARSE_ERR(error) || !nameSize) {
         return QString();
     }
@@ -1362,10 +1363,10 @@ uint64_t Core::getMaxMessageSize() const
 
 QString Core::getPeerName(const ToxPk& id) const
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_By_Public_Key keyError;
-    uint32_t friendId = tox_friend_by_public_key(tox.get(), id.getData(), &keyError);
+    const uint32_t friendId = tox_friend_by_public_key(tox.get(), id.getData(), &keyError);
     if (!PARSE_ERR(keyError)) {
         qWarning() << "getPeerName: No such peer";
         return {};
@@ -1393,7 +1394,7 @@ QString Core::getPeerName(const ToxPk& id) const
  */
 void Core::setNospam(uint32_t nospam)
 {
-    QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     tox_self_set_nospam(tox.get(), nospam);
     emit idSet(getSelfId());
