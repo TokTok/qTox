@@ -73,7 +73,7 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->warningLabel->setText(warning);
 
     eventsInit();
-    Translator::registerHandler(std::bind(&AdvancedForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 AdvancedForm::~AdvancedForm()

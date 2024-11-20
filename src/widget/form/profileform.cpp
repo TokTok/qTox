@@ -159,7 +159,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_, Style&
     }
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&ProfileForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 void ProfileForm::prFileLabelUpdate()

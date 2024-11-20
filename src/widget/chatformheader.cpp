@@ -153,7 +153,7 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     setLayout(headLayout);
 
     updateButtonsView();
-    Translator::registerHandler(std::bind(&ChatFormHeader::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 
     connect(&style, &Style::themeReload, this, &ChatFormHeader::reloadTheme);
 }

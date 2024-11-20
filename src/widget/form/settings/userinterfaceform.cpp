@@ -156,7 +156,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     on_dateFormats_editTextChanged(dateFormat);
 
     eventsInit();
-    Translator::registerHandler(std::bind(&UserInterfaceForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 UserInterfaceForm::~UserInterfaceForm()

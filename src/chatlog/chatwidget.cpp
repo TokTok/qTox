@@ -282,7 +282,7 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
 
     reloadTheme();
     retranslateUi();
-    Translator::registerHandler(std::bind(&ChatWidget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 
     connect(this, &ChatWidget::renderFinished, this, &ChatWidget::onRenderFinished);
     connect(&chatLog_, &IChatLog::itemUpdated, this, &ChatWidget::onMessageUpdated);

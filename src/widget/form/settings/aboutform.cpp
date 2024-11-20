@@ -69,7 +69,7 @@ AboutForm::AboutForm(UpdateCheck* updateCheck_, Style& style_)
         bodyUI->gitVersion->setOpenExternalLinks(false);
 
     eventsInit();
-    Translator::registerHandler(std::bind(&AboutForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 /**

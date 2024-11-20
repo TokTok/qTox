@@ -220,7 +220,7 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style)
 #endif
 
     eventsInit();
-    Translator::registerHandler(std::bind(&GeneralForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 GeneralForm::~GeneralForm()

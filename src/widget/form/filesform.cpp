@@ -453,7 +453,7 @@ FilesForm::FilesForm(CoreFile& coreFile, Settings& settings, Style& style,
     connect(recvd, &QTableView::activated, this, &FilesForm::onReceivedFileActivated);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&FilesForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 FilesForm::~FilesForm()

@@ -56,7 +56,7 @@ LoginScreen::LoginScreen(Settings& settings_, Style& style, const QString& initi
     setStyleSheet(style.getStylesheet("loginScreen/loginScreen.css", settings));
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&LoginScreen::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 LoginScreen::~LoginScreen()

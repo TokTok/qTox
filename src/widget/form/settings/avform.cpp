@@ -92,7 +92,7 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::trackNewScreenGeometry);
     connect(qGUIApp, &QGuiApplication::screenAdded, this, &AVForm::rescanDevices);
     connect(qGUIApp, &QGuiApplication::screenRemoved, this, &AVForm::rescanDevices);
-    Translator::registerHandler(std::bind(&AVForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 AVForm::~AVForm()

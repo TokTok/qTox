@@ -46,7 +46,7 @@ GroupWidget::GroupWidget(std::shared_ptr<GroupChatroom> chatroom_, bool compact_
     connect(g, &Group::titleChanged, this, &GroupWidget::updateTitle);
     connect(g, &Group::numPeersChanged, this, &GroupWidget::updateUserCount);
     connect(nameLabel, &CroppingLabel::editFinished, g, &Group::setName);
-    Translator::registerHandler(std::bind(&GroupWidget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 GroupWidget::~GroupWidget()

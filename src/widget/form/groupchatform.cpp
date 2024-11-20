@@ -132,7 +132,7 @@ GroupChatForm::GroupChatForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
 
     updateUserNames();
     setAcceptDrops(true);
-    Translator::registerHandler(std::bind(&GroupChatForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 GroupChatForm::~GroupChatForm()

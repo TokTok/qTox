@@ -109,7 +109,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     message.setTabChangesFocus(true);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&AddFriendForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 
     const int size = settings.getFriendRequestSize();
     for (int i = 0; i < size; ++i) {

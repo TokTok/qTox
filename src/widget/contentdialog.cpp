@@ -128,7 +128,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
             &ContentDialog::onGroupchatPositionChanged);
     connect(splitter, &QSplitter::splitterMoved, this, &ContentDialog::saveSplitterState);
 
-    Translator::registerHandler(std::bind(&ContentDialog::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 ContentDialog::~ContentDialog()

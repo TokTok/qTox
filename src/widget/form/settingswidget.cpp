@@ -72,7 +72,7 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
 
     connect(settingsWidgets.get(), &QTabWidget::currentChanged, this, &SettingsWidget::onTabChanged);
 
-    Translator::registerHandler(std::bind(&SettingsWidget::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 SettingsWidget::~SettingsWidget()

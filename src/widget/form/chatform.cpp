@@ -205,7 +205,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
 
     setAcceptDrops(true);
     retranslateUi();
-    Translator::registerHandler(std::bind(&ChatForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 ChatForm::~ChatForm()

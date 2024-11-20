@@ -283,7 +283,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     fileFlyout->installEventFilter(this);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&GenericChatForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 
     // update header on name/title change
     connect(chat, &Chat::displayedNameChanged, this, &GenericChatForm::setName);

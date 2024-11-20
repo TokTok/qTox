@@ -37,7 +37,7 @@ PrivacyForm::PrivacyForm(Core* core_, Settings& settings_, Style& style, Profile
     const RecursiveSignalBlocker signalBlocker(this);
 
     eventsInit();
-    Translator::registerHandler(std::bind(&PrivacyForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 PrivacyForm::~PrivacyForm()

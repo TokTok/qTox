@@ -64,7 +64,7 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
     headLayout->addWidget(headLabel);
 
     retranslateUi();
-    Translator::registerHandler(std::bind(&GroupInviteForm::retranslateUi, this), this);
+    Translator::registerHandler([this] { retranslateUi(); }, this);
 }
 
 GroupInviteForm::~GroupInviteForm()
