@@ -84,7 +84,7 @@ double ToxFileProgress::getProgress() const
 
 double ToxFileProgress::getSpeed() const
 {
-    if (samples.size() > 0 && samples[activeSample].bytesSent == filesize) {
+    if (!samples.empty() && samples[activeSample].bytesSent == filesize) {
         return 0.0;
     }
 
@@ -107,7 +107,7 @@ double ToxFileProgress::getSpeed() const
 
 double ToxFileProgress::getTimeLeftSeconds() const
 {
-    if (samples.size() > 0 && samples[activeSample].bytesSent == filesize) {
+    if (!samples.empty() && samples[activeSample].bytesSent == filesize) {
         return 0;
     }
 

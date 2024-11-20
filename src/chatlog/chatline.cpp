@@ -147,7 +147,7 @@ void ChatLine::replaceContent(int col, ChatLineContent* lineContent)
 
 void ChatLine::layout(qreal w, QPointF scenePos)
 {
-    if (!content.size())
+    if (content.empty())
         return;
 
     width = w;

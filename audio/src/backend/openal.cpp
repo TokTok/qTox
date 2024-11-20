@@ -381,7 +381,7 @@ bool OpenAL::initInput(const QString& deviceName, uint32_t channels)
 bool OpenAL::initOutput(const QString& deviceName)
 {
     // there should be no sinks when initializing the output
-    assert(sinks.size() == 0);
+    assert(sinks.empty());
 
     outputInitialized = false;
     if (!settings.getAudioOutDevEnabled())

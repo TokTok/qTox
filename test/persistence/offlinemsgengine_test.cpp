@@ -72,7 +72,7 @@ void TestOfflineMsgEngine::testResendWorkflow()
     offlineMsgEngine.onReceiptReceived(receipt);
 
     messagesToResend = offlineMsgEngine.removeAllMessages();
-    QVERIFY(messagesToResend.size() == 0);
+    QVERIFY(messagesToResend.empty());
 
     auto const nullMsg = Message();
     auto msg2 = Message();
