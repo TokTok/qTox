@@ -156,11 +156,11 @@ void ChatLine::layout(qreal w, QPointF scenePos)
     qreal fixedWidth = (content.size() - 1) * columnSpacing;
     qreal varWidth = 0.0; // used for normalisation
 
-    for (int i = 0; i < format.size(); ++i) {
-        if (format[i].policy == ColumnFormat::FixedSize)
-            fixedWidth += format[i].size;
+    for (auto& i : format) {
+        if (i.policy == ColumnFormat::FixedSize)
+            fixedWidth += i.size;
         else
-            varWidth += format[i].size;
+            varWidth += i.size;
     }
 
     if (varWidth == 0.0)

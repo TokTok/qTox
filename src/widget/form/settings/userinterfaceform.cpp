@@ -235,8 +235,8 @@ void UserInterfaceForm::reloadSmileys()
     }
 
     QStringList smileys;
-    for (int i = 0; i < emoticons.size(); ++i)
-        smileys.push_front(emoticons.at(i).first());
+    for (const auto& emoticon : emoticons)
+        smileys.push_front(emoticon.first());
 
     emoticonsIcons.clear();
     const QSize size(18, 18);

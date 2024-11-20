@@ -68,8 +68,8 @@ void FriendListManager::sortByActivity()
 
 void FriendListManager::resetParents()
 {
-    for (int i = 0; i < items.size(); ++i) {
-        IFriendListItem* itemTmp = items[i].get();
+    for (auto& item : items) {
+        IFriendListItem* itemTmp = item.get();
         itemTmp->getWidget()->setParent(nullptr);
     }
 }

@@ -175,8 +175,8 @@ QByteArray serialize(QList<DhtServer> nodes)
         nodeJson.insert(NodeFields::maintainer, node.maintainer);
 
         QJsonArray tcp_ports;
-        for (size_t i = 0; i < node.tcpPorts.size(); ++i) {
-            tcp_ports.push_back(node.tcpPorts.at(i));
+        for (unsigned short tcpPort : node.tcpPorts) {
+            tcp_ports.push_back(tcpPort);
         }
         nodeJson.insert(NodeFields::tcp_ports, tcp_ports);
         jsonNodes.append(nodeJson);
