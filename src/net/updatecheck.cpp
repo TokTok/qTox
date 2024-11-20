@@ -80,11 +80,7 @@ bool isCurrentVersionStable()
 {
     QRegularExpression versionRegex(versionRegexString);
     auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
-    if (currentVer.hasMatch()) {
-        return true;
-    } else {
-        return false;
-    }
+    return currentVer.hasMatch();
 }
 
 } // namespace
@@ -105,7 +101,7 @@ void UpdateCheck::checkForUpdate()
         return;
     }
 
-    if (isCurrentVersionStable() == false) {
+    if (!isCurrentVersionStable()) {
         qWarning() << "Currently running an untested/unstable version of qTox";
         emit versionIsUnstable();
         return;

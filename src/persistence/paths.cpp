@@ -124,10 +124,7 @@ Paths::Paths(Portable mode)
 bool Paths::setPortable(bool newPortable)
 {
     auto oldVal = portable.exchange(newPortable);
-    if (oldVal != newPortable) {
-        return true;
-    }
-    return false;
+    return oldVal != newPortable;
 }
 
 /**

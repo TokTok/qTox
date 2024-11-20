@@ -689,10 +689,7 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
     Tox_Err_Friend_Send_Message error;
     receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
                                                  cMessage.size(), &error)};
-    if (PARSE_ERR(error)) {
-        return true;
-    }
-    return false;
+    return PARSE_ERR(error);
 }
 
 bool Core::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)

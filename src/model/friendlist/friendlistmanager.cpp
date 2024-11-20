@@ -116,11 +116,7 @@ void FriendListManager::applyFilter()
         }
     }
 
-    if (filterParams.hideOnline && filterParams.hideOffline) {
-        hideCircles = true;
-    } else {
-        hideCircles = false;
-    }
+    hideCircles = filterParams.hideOnline && filterParams.hideOffline;
 }
 
 void FriendListManager::updatePositions()
