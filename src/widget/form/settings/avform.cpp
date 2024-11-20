@@ -142,7 +142,7 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
     camera.setupDevice(devName, mode);
 }
 
-void AVForm::trackNewScreenGeometry(QScreen* qScreen)
+void AVForm::trackNewScreenGeometry(QScreen* qScreen) const
 {
     connect(qScreen, &QScreen::geometryChanged, this, &AVForm::rescanDevices);
 }
@@ -627,13 +627,13 @@ void AVForm::retranslateUi()
     Ui::AVForm::retranslateUi(this);
 }
 
-int AVForm::getStepsFromValue(qreal val, qreal valMin, qreal valMax)
+int AVForm::getStepsFromValue(qreal val, qreal valMin, qreal valMax) const
 {
     const float norm = (val - valMin) / (valMax - valMin);
     return norm * totalSliderSteps;
 }
 
-qreal AVForm::getValueFromSteps(int steps, qreal valMin, qreal valMax)
+qreal AVForm::getValueFromSteps(int steps, qreal valMin, qreal valMax) const
 {
     return (static_cast<qreal>(steps) / totalSliderSteps) * (valMax - valMin) + valMin;
 }

@@ -42,7 +42,7 @@ public slots:
 
     bool eventFilter(QObject* object, QEvent* event) final;
 
-    bool isActive();
+    bool isActive() const;
 
     void setName(const QString& name);
     void setStatusMsg(const QString& status);

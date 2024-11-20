@@ -2723,12 +2723,12 @@ void Widget::refreshPeerListsLocal(const QString& username)
     }
 }
 
-void Widget::connectCircleWidget(CircleWidget& circleWidget)
+void Widget::connectCircleWidget(CircleWidget& circleWidget) const
 {
     connect(&circleWidget, &CircleWidget::newContentDialog, this, &Widget::registerContentDialog);
 }
 
-void Widget::connectFriendWidget(FriendWidget& friendWidget)
+void Widget::connectFriendWidget(FriendWidget& friendWidget) const
 {
     connect(&friendWidget, &FriendWidget::updateFriendActivity, this, &Widget::updateFriendActivity);
 }

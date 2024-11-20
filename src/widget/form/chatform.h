@@ -99,7 +99,7 @@ private slots:
     void previewImage(const QPixmap& pixmap);
     void cancelImagePreview();
     void sendImageFromPreview();
-    void doScreenshot();
+    void doScreenshot() const;
     void onCopyStatusMessage();
 
     void callUpdateFriendActivity();

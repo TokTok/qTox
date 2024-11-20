@@ -101,7 +101,7 @@ public:
     std::vector<Message> processOutgoingMessage(bool isAction, const QString& content,
                                                 ExtensionSet extensions);
     Message processIncomingCoreMessage(bool isAction, const QString& message);
-    Message processIncomingExtMessage(const QString& content);
+    Message processIncomingExtMessage(const QString& content) const;
 
     /**
      * @brief Enables mention detection in the processor

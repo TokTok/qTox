@@ -577,7 +577,7 @@ void ChatForm::onScreenshotClicked()
     QTimer::singleShot(SCREENSHOT_GRABBER_OPENING_DELAY, this, SLOT(hideFileMenu()));
 }
 
-void ChatForm::doScreenshot()
+void ChatForm::doScreenshot() const
 {
     // note: grabber is self-managed and will destroy itself when done
     ScreenshotGrabber* grabber = new ScreenshotGrabber;

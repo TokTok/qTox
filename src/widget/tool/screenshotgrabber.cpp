@@ -203,7 +203,7 @@ void ScreenshotGrabber::reject()
     deleteLater();
 }
 
-QPixmap ScreenshotGrabber::grabScreen()
+QPixmap ScreenshotGrabber::grabScreen() const
 {
     QScreen* screen = QGuiApplication::primaryScreen();
     QRect rec = screen->virtualGeometry();

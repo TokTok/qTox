@@ -139,7 +139,7 @@ Message MessageProcessor::processIncomingCoreMessage(bool isAction, QString cons
     return ret;
 }
 
-Message MessageProcessor::processIncomingExtMessage(const QString& content)
+Message MessageProcessor::processIncomingExtMessage(const QString& content) const
 {
     // Note: detectingMentions not implemented here since mentions are only
     // currently useful in group messages which do not support extensions. If we

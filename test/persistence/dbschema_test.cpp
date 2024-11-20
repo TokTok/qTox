@@ -100,7 +100,7 @@ public:
     {
         std::ignore = file;
     }
-    int getErrorsShown()
+    int getErrorsShown() const
     {
         return errorsShown;
     }

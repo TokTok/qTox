@@ -241,8 +241,8 @@ private slots:
     void dispatchFile(ToxFile file);
     void dispatchFileWithBool(ToxFile file, bool pausedOrBroken);
     void dispatchFileSendFailed(uint32_t friendId, const QString& fileName);
-    void connectCircleWidget(CircleWidget& circleWidget);
-    void connectFriendWidget(FriendWidget& friendWidget);
+    void connectCircleWidget(CircleWidget& circleWidget) const;
+    void connectFriendWidget(FriendWidget& friendWidget) const;
     void searchCircle(CircleWidget& circleWidget);
     void updateFriendActivity(const Friend& frnd);
     void registerContentDialog(ContentDialog& contentDialog) const;

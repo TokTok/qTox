@@ -54,7 +54,7 @@ private:
     bool handleKeyPress(QKeyEvent* event);
     void reject();
 
-    QPixmap grabScreen();
+    QPixmap grabScreen() const;
 
     void hideVisibleWindows();
     void restoreHiddenWindows();

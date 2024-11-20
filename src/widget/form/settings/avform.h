@@ -77,9 +77,9 @@ private:
     void hideEvent(QHideEvent* event) final;
     void showEvent(QShowEvent* event) final;
     void open(const QString& devName, const VideoMode& mode);
-    int getStepsFromValue(qreal val, qreal valMin, qreal valMax);
-    qreal getValueFromSteps(int steps, qreal valMin, qreal valMax);
-    void trackNewScreenGeometry(QScreen* qScreen);
+    int getStepsFromValue(qreal val, qreal valMin, qreal valMax) const;
+    qreal getValueFromSteps(int steps, qreal valMin, qreal valMax) const;
+    void trackNewScreenGeometry(QScreen* qScreen) const;
 
 private:
     IAudioControl& audio;

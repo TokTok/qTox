@@ -176,7 +176,7 @@ void FriendListManager::removeAll(IFriendListItem* item)
     }
 }
 
-bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
+bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendListItemPtr& b) const
 {
     if (a->isGroup() && !b->isGroup()) {
         if (groupsOnTop) {

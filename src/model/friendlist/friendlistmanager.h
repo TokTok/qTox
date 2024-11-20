@@ -51,7 +51,7 @@ private:
     } filterParams;
 
     void removeAll(IFriendListItem* item);
-    bool cmpByName(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB);
+    bool cmpByName(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB) const;
     bool cmpByActivity(const IFriendListItemPtr& itemA, const IFriendListItemPtr& itemB);
 
     bool byName = true;

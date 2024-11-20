@@ -202,7 +202,7 @@ public:
         return this;
     }
 
-    bool getGroupsOnTop()
+    bool getGroupsOnTop() const
     {
         return groupsOnTop;
     }
