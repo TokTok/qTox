@@ -7,6 +7,7 @@
 #include <QFile>
 #include <QRegularExpression>
 #include <tox/tox.h>
+#include <utility>
 
 #define TOX_HEX_ID_LENGTH 2 * TOX_ADDRESS_SIZE
 
@@ -38,7 +39,7 @@ ToxFile::ToxFile(uint32_t fileNum_, uint32_t friendId_, QString fileName_, QStri
     : fileKind{TOX_FILE_KIND_DATA}
     , fileNum(fileNum_)
     , friendId(friendId_)
-    , fileName{fileName_}
+    , fileName{std::move(fileName_)}
     , filePath{filePath_}
     , file{new QFile(filePath_)}
     , status{INITIALIZING}

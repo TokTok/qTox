@@ -14,7 +14,7 @@ class ToxString
 {
 public:
     explicit ToxString(const QString& text);
-    explicit ToxString(const QByteArray& text);
+    explicit ToxString(QByteArray text);
     ToxString(const uint8_t* text, size_t length);
 
     const uint8_t* data() const;

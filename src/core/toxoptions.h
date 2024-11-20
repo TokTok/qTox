@@ -25,7 +25,7 @@ public:
     void setIPv6Enabled(bool enabled);
 
 private:
-    ToxOptions(Tox_Options* options_, const QByteArray& proxyAddrData_);
+    ToxOptions(Tox_Options* options_, QByteArray proxyAddrData_);
 
 private:
     Tox_Options* options = nullptr;

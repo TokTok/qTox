@@ -54,7 +54,7 @@ public:
     const QString& getDisplayName() const;
 
 private:
-    ChatLogItem(ToxPk sender, const QString& displayName_, ContentType contentType, ContentPtr content);
+    ChatLogItem(ToxPk sender, QString displayName_, ContentType contentType, ContentPtr content);
 
     ToxPk sender;
     QString displayName;

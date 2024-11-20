@@ -13,6 +13,7 @@
 
 #include <QByteArray>
 #include <QDebug>
+#include <utility>
 
 /**
  * @brief The ToxOptions class wraps the Tox_Options struct and the matching
@@ -20,9 +21,9 @@
  *        are correctly deleted.
  */
 
-ToxOptions::ToxOptions(Tox_Options* options_, const QByteArray& proxyAddrData_)
+ToxOptions::ToxOptions(Tox_Options* options_, QByteArray proxyAddrData_)
     : options(options_)
-    , proxyAddrData(proxyAddrData_)
+    , proxyAddrData(std::move(proxyAddrData_))
 {
 }
 

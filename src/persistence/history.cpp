@@ -5,6 +5,7 @@
 
 #include <QDebug>
 #include <cassert>
+#include <utility>
 
 #include <tox/tox.h>
 
@@ -171,7 +172,7 @@ FileDbInsertionData::FileDbInsertionData()
  */
 History::History(std::shared_ptr<RawDatabase> db_, Settings& settings_,
                  IMessageBoxManager& messageBoxManager)
-    : db(db_)
+    : db(std::move(db_))
     , settings(settings_)
 {
     if (!isValid()) {

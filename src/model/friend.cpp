@@ -13,12 +13,12 @@
 
 #include <cassert>
 #include <memory>
+#include <utility>
 
-Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAlias_,
-               const QString& userName_)
+Friend::Friend(uint32_t friendId_, ToxPk friendPk_, QString userAlias_, const QString& userName_)
     : userName{userName_}
-    , userAlias{userAlias_}
-    , friendPk{friendPk_}
+    , userAlias{std::move(userAlias_)}
+    , friendPk{std::move(friendPk_)}
     , friendId{friendId_}
     , hasNewEvents{false}
     , friendStatus{Status::Status::Offline}

@@ -5,16 +5,18 @@
 
 #include "groupinvite.h"
 
+#include <utility>
+
 /**
  * @class GroupInvite
  *
  * @brief This class contains information needed to create a group invite
  */
 
-GroupInvite::GroupInvite(uint32_t friendId_, uint8_t inviteType, const QByteArray& data)
+GroupInvite::GroupInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data)
     : friendId{friendId_}
     , type{inviteType}
-    , invite{data}
+    , invite{std::move(data)}
     , date{QDateTime::currentDateTime()}
 {
 }

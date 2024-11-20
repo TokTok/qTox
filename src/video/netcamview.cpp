@@ -22,6 +22,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QScreen>
+#include <utility>
 
 namespace {
 const auto BTN_STATE_NONE = QVariant("none");
@@ -35,7 +36,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
                        Style& style_, Profile& profile, QWidget* parent)
     : QWidget(parent)
     , selfFrame{nullptr}
-    , friendPk{friendPk_}
+    , friendPk{std::move(friendPk_)}
     , e(false)
     , cameraSource{cameraSource_}
     , settings{settings_}

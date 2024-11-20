@@ -23,8 +23,8 @@ class Group : public Chat
 {
     Q_OBJECT
 public:
-    Group(int groupId_, const GroupId persistentGroupId, const QString& name, bool isAvGroupchat,
-          const QString& selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
+    Group(int groupId_, const GroupId persistentGroupId, QString name, bool isAvGroupchat,
+          QString selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
           FriendList& friendList);
     bool isAvGroupchat() const;
     uint32_t getId() const override;

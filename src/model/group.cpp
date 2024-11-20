@@ -13,18 +13,19 @@
 #include <cassert>
 
 #include <QDebug>
+#include <utility>
 
 namespace {
 const int MAX_GROUP_TITLE_LENGTH = 128;
 } // namespace
 
-Group::Group(int groupId_, const GroupId persistentGroupId, const QString& name, bool isAvGroupchat,
-             const QString& selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
+Group::Group(int groupId_, const GroupId persistentGroupId, QString name, bool isAvGroupchat,
+             QString selfName_, ICoreGroupQuery& groupQuery_, ICoreIdHandler& idHandler_,
              FriendList& friendList_)
     : groupQuery(groupQuery_)
     , idHandler(idHandler_)
-    , selfName{selfName_}
-    , title{name}
+    , selfName{std::move(selfName_)}
+    , title{std::move(name)}
     , toxGroupNum(groupId_)
     , groupId{persistentGroupId}
     , avGroupchat{isAvGroupchat}

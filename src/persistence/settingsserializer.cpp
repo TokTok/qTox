@@ -14,6 +14,7 @@
 #include <QSaveFile>
 #include <cassert>
 #include <memory>
+#include <utility>
 
 /**
  * @class SettingsSerializer
@@ -84,7 +85,7 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
 } // namespace
 
 SettingsSerializer::SettingsSerializer(QString filePath_, const ToxEncrypt* passKey_)
-    : path{filePath_}
+    : path{std::move(filePath_)}
     , passKey{passKey_}
     , group{-1}
     , array{-1}

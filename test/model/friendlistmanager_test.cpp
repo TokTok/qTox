@@ -7,6 +7,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
+#include <utility>
 
 class MockFriend : public IFriendListItem
 {
@@ -18,9 +19,9 @@ public:
     {
     }
 
-    MockFriend(const QString& nameStr, bool onlineRes, const QDateTime& lastAct)
-        : name(nameStr)
-        , lastActivity(lastAct)
+    MockFriend(QString nameStr, bool onlineRes, QDateTime lastAct)
+        : name(std::move(nameStr))
+        , lastActivity(std::move(lastAct))
         , online(onlineRes)
     {
     }
@@ -79,8 +80,8 @@ public:
     {
     }
 
-    MockGroup(const QString& nameStr)
-        : name(nameStr)
+    MockGroup(QString nameStr)
+        : name(std::move(nameStr))
     {
     }
 

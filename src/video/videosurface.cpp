@@ -15,6 +15,7 @@
 #include <QDebug>
 #include <QLabel>
 #include <QPainter>
+#include <utility>
 
 namespace {
 float getSizeRatio(const QSize size)
@@ -27,12 +28,12 @@ float getSizeRatio(const QSize size)
  * @var std::atomic_bool VideoSurface::frameLock
  * @brief Fast lock for lastFrame.
  */
-VideoSurface::VideoSurface(const QPixmap& avatar_, QWidget* parent, bool expanding_)
+VideoSurface::VideoSurface(QPixmap avatar_, QWidget* parent, bool expanding_)
     : QWidget{parent}
     , source{nullptr}
     , frameLock{false}
     , hasSubscribed{0}
-    , avatar{avatar_}
+    , avatar{std::move(avatar_)}
     , ratio{1.0f}
     , expanding{expanding_}
 {
