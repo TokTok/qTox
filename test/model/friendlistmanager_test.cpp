@@ -7,6 +7,7 @@
 
 #include <QSignalSpy>
 #include <QTest>
+#include <memory>
 
 class MockFriend : public IFriendListItem
 {
@@ -360,7 +361,7 @@ private:
 
 void TestFriendListManager::testAddFriendListItem()
 {
-    auto manager = std::unique_ptr<FriendListManager>(new FriendListManager(0, this));
+    auto manager = std::make_unique<FriendListManager>(0, this);
     QSignalSpy spy(manager.get(), &FriendListManager::itemsChanged);
     FriendItemsBuilder listBuilder;
 
@@ -591,8 +592,7 @@ void TestFriendListManager::testSetGroupsOnTop()
 std::unique_ptr<FriendListManager>
 TestFriendListManager::createManagerWithItems(const QVector<IFriendListItem*> itemsVec)
 {
-    std::unique_ptr<FriendListManager> manager =
-        std::unique_ptr<FriendListManager>(new FriendListManager(0, this));
+    std::unique_ptr<FriendListManager> manager = std::make_unique<FriendListManager>(0, this);
 
     for (auto item : itemsVec) {
         manager->addFriendListItem(item);

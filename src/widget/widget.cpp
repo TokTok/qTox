@@ -18,6 +18,7 @@
 #include <QString>
 #include <QSvgRenderer>
 #include <QWindow>
+#include <memory>
 #ifdef Q_OS_MAC
 #include <QMenuBar>
 #include <QSignalMapper>
@@ -255,9 +256,9 @@ void Widget::init()
     core = &profile.getCore();
     auto coreExt = core->getExt();
 
-    sharedMessageProcessorParams.reset(
-        new MessageProcessor::SharedParams(core->getMaxMessageSize(),
-                                           coreExt->getMaxExtendedMessageSize()));
+    sharedMessageProcessorParams =
+        std::make_unique<MessageProcessor::SharedParams>(core->getMaxMessageSize(),
+                                                         coreExt->getMaxExtendedMessageSize());
 
     chatListWidget = new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
                                           *groupList, profile, settings.getGroupchatPosition());
@@ -292,7 +293,7 @@ void Widget::init()
     groupInviteForm = new GroupInviteForm(settings, *core);
 
 #if UPDATE_CHECK_ENABLED
-    updateCheck = std::unique_ptr<UpdateCheck>(new UpdateCheck(settings));
+    updateCheck = std::make_unique<UpdateCheck>(settings);
     connect(updateCheck.get(), &UpdateCheck::updateAvailable, this, &Widget::onUpdateAvailable);
 #endif
     settingsWidget = new SettingsWidget(updateCheck.get(), audio, core, *smileyPack, cameraSource,
@@ -1261,7 +1262,7 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
         (newStatus == Status::Status::Negotiating && oldStatus != newStatus);
     if (startedNegotiating) {
         constexpr auto negotiationTimeoutMs = 1000;
-        auto negotiateTimer = std::unique_ptr<QTimer>(new QTimer);
+        auto negotiateTimer = std::make_unique<QTimer>();
         negotiateTimer->setSingleShot(true);
         negotiateTimer->setInterval(negotiationTimeoutMs);
         connect(negotiateTimer.get(), &QTimer::timeout, f, &Friend::onNegotiationComplete);
@@ -2296,7 +2297,7 @@ void Widget::onTryCreateTrayIcon()
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
-            icon = std::unique_ptr<QSystemTrayIcon>(new QSystemTrayIcon);
+            icon = std::make_unique<QSystemTrayIcon>();
             updateIcons();
             trayMenu = new QMenu(this);
 

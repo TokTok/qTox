@@ -11,6 +11,7 @@
 
 #include <QObject>
 #include <QtTest/QtTest>
+#include <memory>
 
 namespace {
 class MockNotificationSettings : public INotificationSettings
@@ -122,11 +123,11 @@ private:
 
 void TestNotificationGenerator::init()
 {
-    friendList.reset(new FriendList());
-    notificationSettings.reset(new MockNotificationSettings());
-    notificationGenerator.reset(new NotificationGenerator(*notificationSettings, nullptr));
-    groupQuery.reset(new MockGroupQuery());
-    coreIdHandler.reset(new MockCoreIdHandler());
+    friendList = std::make_unique<FriendList>();
+    notificationSettings = std::make_unique<MockNotificationSettings>();
+    notificationGenerator = std::make_unique<NotificationGenerator>(*notificationSettings, nullptr);
+    groupQuery = std::make_unique<MockGroupQuery>();
+    coreIdHandler = std::make_unique<MockCoreIdHandler>();
 }
 
 void TestNotificationGenerator::testSingleFriendMessage()

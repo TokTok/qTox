@@ -18,6 +18,7 @@
 
 #include <QCryptographicHash>
 #include <QDebug>
+#include <memory>
 
 #include "src/persistence/history.h"
 #include "src/persistence/settings.h"
@@ -42,7 +43,7 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
                                                 SmileyPack& smileyPack, Settings& settings,
                                                 Style& style, bool colorizeName)
 {
-    ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
+    ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
 
     QString text = rawMessage.toHtmlEscaped();
     QString senderText = sender;
@@ -132,7 +133,7 @@ ChatMessage::Ptr ChatMessage::createChatInfoMessage(const QString& rawMessage,
                                                     DocumentCache& documentCache,
                                                     Settings& settings, Style& style)
 {
-    ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
+    ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
     QString text = rawMessage.toHtmlEscaped();
 
     QString img;
@@ -167,7 +168,7 @@ ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, C
                                                         Settings& settings, Style& style,
                                                         IMessageBoxManager& messageBoxManager)
 {
-    ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
+    ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
 
     QFont baseFont = settings.getChatMessageFont();
     QFont authorFont = baseFont;
@@ -191,7 +192,7 @@ ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, C
 ChatMessage::Ptr ChatMessage::createTypingNotification(DocumentCache& documentCache,
                                                        Settings& settings, Style& style)
 {
-    ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
+    ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
 
     QFont baseFont = settings.getChatMessageFont();
 
@@ -221,7 +222,7 @@ ChatMessage::Ptr ChatMessage::createTypingNotification(DocumentCache& documentCa
 ChatMessage::Ptr ChatMessage::createBusyNotification(DocumentCache& documentCache,
                                                      Settings& settings, Style& style)
 {
-    ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
+    ChatMessage::Ptr msg = std::make_shared<ChatMessage>(documentCache, settings, style);
     QFont baseFont = settings.getChatMessageFont();
     baseFont.setPixelSize(baseFont.pixelSize() + 2);
     baseFont.setBold(true);

@@ -11,8 +11,8 @@
 #include <array>
 #include <atomic>
 
-#include <errno.h>
-#include <signal.h>     // sigaction()
+#include <cerrno>
+#include <csignal>      // sigaction()
 #include <sys/socket.h> // socketpair()
 #include <sys/types.h>  // may be needed for BSD
 #include <unistd.h>     // close()

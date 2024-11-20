@@ -9,6 +9,7 @@
 
 #include <QTest>
 #include <limits>
+#include <memory>
 
 #include <tox/tox.h> // TOX_FILE_KIND_*
 
@@ -42,8 +43,8 @@ using namespace FileTransferList;
 
 void TestFileTransferList::init()
 {
-    friendList = std::unique_ptr<FriendList>(new FriendList());
-    model = std::unique_ptr<Model>(new Model(*friendList));
+    friendList = std::make_unique<FriendList>();
+    model = std::make_unique<Model>(*friendList);
 }
 
 void TestFileTransferList::testFileTransferListConversion()

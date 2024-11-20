@@ -9,8 +9,8 @@
 #include "v4l2.h"
 
 #include <QDebug>
+#include <cerrno>
 #include <dirent.h>
-#include <errno.h>
 #include <fcntl.h>
 #include <linux/videodev2.h>
 #include <map>

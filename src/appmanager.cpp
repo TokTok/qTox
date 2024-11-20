@@ -31,6 +31,7 @@
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <QObject>
+#include <memory>
 
 namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
@@ -353,8 +354,8 @@ int AppManager::run()
     // TODO(kriby): Consider moving application initializing variables into a globalSettings object
     //  note: Because Settings is shouldering global settings as well as model specific ones it
     //  cannot be integrated into a central model object yet
-    cameraSource = std::unique_ptr<CameraSource>(new CameraSource{*settings});
-    nexus = std::unique_ptr<Nexus>(new Nexus{*settings, *messageBoxManager, *cameraSource, *ipc});
+    cameraSource = std::make_unique<CameraSource>(*settings);
+    nexus = std::make_unique<Nexus>(*settings, *messageBoxManager, *cameraSource, *ipc);
     // Autologin
     // TODO (kriby): Shift responsibility of linking views to model objects from nexus
     // Further: generate view instances separately (loginScreen, mainGUI, audio)
@@ -378,8 +379,7 @@ int AppManager::run()
         profile = nexus->getProfile();
     }
 
-    uriDialog = std::unique_ptr<ToxURIDialog>(
-        new ToxURIDialog(nullptr, profile->getCore(), *messageBoxManager));
+    uriDialog = std::make_unique<ToxURIDialog>(nullptr, profile->getCore(), *messageBoxManager);
 
     if (ipc->isAttached()) {
         // Start to accept Inter-process communication

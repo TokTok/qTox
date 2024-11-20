@@ -53,8 +53,8 @@ TestSmileyPack::TestSmileyPack()
     static char* qtTestAppArgv[] = {arg1, arg2, arg3};
     static int qtTestAppArgc = 3;
 
-    app = std::unique_ptr<QGuiApplication>(new QGuiApplication(qtTestAppArgc, qtTestAppArgv));
-    settings = std::unique_ptr<MockSettings>(new MockSettings());
+    app = std::make_unique<QGuiApplication>(qtTestAppArgc, qtTestAppArgv);
+    settings = std::make_unique<MockSettings>();
 }
 
 /**

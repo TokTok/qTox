@@ -39,9 +39,9 @@ SettingsWidget::SettingsWidget(UpdateCheck* updateCheck, IAudioControl& audio, C
 
     setAttribute(Qt::WA_DeleteOnClose);
 
-    bodyLayout = std::unique_ptr<QVBoxLayout>(new QVBoxLayout());
+    bodyLayout = std::make_unique<QVBoxLayout>();
 
-    settingsWidgets = std::unique_ptr<QTabWidget>(new QTabWidget(this));
+    settingsWidgets = std::make_unique<QTabWidget>(this);
     settingsWidgets->setTabPosition(QTabWidget::North);
     bodyLayout->addWidget(settingsWidgets.get());
 

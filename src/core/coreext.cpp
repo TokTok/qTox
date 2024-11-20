@@ -69,9 +69,8 @@ CoreExt::Packet::Packet(ToxExtPacketList* packetList_, ToxExtensionMessages* tox
 
 std::unique_ptr<ICoreExtPacket> CoreExt::getPacket(uint32_t friendId)
 {
-    return std::unique_ptr<Packet>(new Packet(toxext_packet_list_create(toxExt.get(), friendId),
-                                              toxExtMessages.get(), friendId, &toxext_mutex,
-                                              PacketPassKey{}));
+    return std::make_unique<Packet>(toxext_packet_list_create(toxExt.get(), friendId),
+                                    toxExtMessages.get(), friendId, &toxext_mutex, PacketPassKey{});
 }
 
 uint64_t CoreExt::Packet::addExtendedMessage(QString message)

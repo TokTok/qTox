@@ -15,7 +15,7 @@
 #include <QPushButton>
 #include <QRadioButton>
 
-#include <math.h>
+#include <cmath>
 
 EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Style& style,
                                  QWidget* parent)

@@ -8,7 +8,7 @@
 #include <QCoreApplication>
 #include <QSignalSpy>
 #include <QtTest/QtTest>
-#include <signal.h>
+#include <csignal>
 #include <unistd.h>
 
 class TestPosixSignalNotifier : public QObject

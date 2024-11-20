@@ -12,6 +12,7 @@
 #include <QtTest/QtTest>
 
 #include <deque>
+#include <memory>
 #include <set>
 
 #include <tox/tox.h> // tox_max_message_length
@@ -63,7 +64,7 @@ public:
 std::unique_ptr<ICoreExtPacket> MockCoreExtPacketAllocator::getPacket(uint32_t friendId)
 {
     std::ignore = friendId;
-    return std::unique_ptr<MockCoreExtPacket>(new MockCoreExtPacket(numSentMessages, currentReceiptId));
+    return std::make_unique<MockCoreExtPacket>(numSentMessages, currentReceiptId);
 }
 
 class MockFriendMessageSender : public ICoreFriendMessageSender
@@ -168,18 +169,19 @@ TestFriendMessageDispatcher::TestFriendMessageDispatcher() {}
  */
 void TestFriendMessageDispatcher::init()
 {
-    f = std::unique_ptr<Friend>(new Friend(0, ToxPk()));
+    f = std::make_unique<Friend>(0, ToxPk());
     f->setStatus(Status::Status::Online);
     f->onNegotiationComplete();
-    messageSender = std::unique_ptr<MockFriendMessageSender>(new MockFriendMessageSender());
-    coreExtPacketAllocator =
-        std::unique_ptr<MockCoreExtPacketAllocator>(new MockCoreExtPacketAllocator());
-    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
-        new MessageProcessor::SharedParams(tox_max_message_length(), testMaxExtendedMessageSize));
+    messageSender = std::make_unique<MockFriendMessageSender>();
+    coreExtPacketAllocator = std::make_unique<MockCoreExtPacketAllocator>();
+    sharedProcessorParams =
+        std::make_unique<MessageProcessor::SharedParams>(tox_max_message_length(),
+                                                         testMaxExtendedMessageSize);
 
-    messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
-    friendMessageDispatcher = std::unique_ptr<FriendMessageDispatcher>(
-        new FriendMessageDispatcher(*f, *messageProcessor, *messageSender, *coreExtPacketAllocator));
+    messageProcessor = std::make_unique<MessageProcessor>(*sharedProcessorParams);
+    friendMessageDispatcher =
+        std::make_unique<FriendMessageDispatcher>(*f, *messageProcessor, *messageSender,
+                                                  *coreExtPacketAllocator);
 
     connect(friendMessageDispatcher.get(), &FriendMessageDispatcher::messageSent, this,
             &TestFriendMessageDispatcher::onMessageSent);

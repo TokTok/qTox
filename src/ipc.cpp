@@ -9,9 +9,9 @@
 #include <QThread>
 
 #include <chrono>
+#include <cstdlib>
 #include <ctime>
 #include <random>
-#include <stdlib.h>
 #ifndef _MSC_VER
 #include <unistd.h>
 #endif

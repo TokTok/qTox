@@ -19,6 +19,7 @@
 #include <QtTest/QtTest>
 
 #include <deque>
+#include <memory>
 #include <set>
 
 #include <tox/tox.h> // tox_max_message_length
@@ -140,19 +141,19 @@ TestGroupMessageDispatcher::TestGroupMessageDispatcher() {}
  */
 void TestGroupMessageDispatcher::init()
 {
-    friendList = std::unique_ptr<FriendList>(new FriendList());
-    groupSettings = std::unique_ptr<MockGroupSettings>(new MockGroupSettings());
-    groupQuery = std::unique_ptr<MockGroupQuery>(new MockGroupQuery());
-    coreIdHandler = std::unique_ptr<MockCoreIdHandler>(new MockCoreIdHandler());
-    g = std::unique_ptr<Group>(new Group(0, GroupId(), "TestGroup", false, "me", *groupQuery,
-                                         *coreIdHandler, *friendList));
-    messageSender = std::unique_ptr<MockGroupMessageSender>(new MockGroupMessageSender());
-    sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
-        new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
-    messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
-    groupMessageDispatcher = std::unique_ptr<GroupMessageDispatcher>(
-        new GroupMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,
-                                   *groupSettings));
+    friendList = std::make_unique<FriendList>();
+    groupSettings = std::make_unique<MockGroupSettings>();
+    groupQuery = std::make_unique<MockGroupQuery>();
+    coreIdHandler = std::make_unique<MockCoreIdHandler>();
+    g = std::make_unique<Group>(0, GroupId(), "TestGroup", false, "me", *groupQuery, *coreIdHandler,
+                                *friendList);
+    messageSender = std::make_unique<MockGroupMessageSender>();
+    sharedProcessorParams =
+        std::make_unique<MessageProcessor::SharedParams>(tox_max_message_length(), 10 * 1024 * 1024);
+    messageProcessor = std::make_unique<MessageProcessor>(*sharedProcessorParams);
+    groupMessageDispatcher =
+        std::make_unique<GroupMessageDispatcher>(*g, *messageProcessor, *coreIdHandler,
+                                                 *messageSender, *groupSettings);
 
     connect(groupMessageDispatcher.get(), &GroupMessageDispatcher::messageSent, this,
             &TestGroupMessageDispatcher::onMessageSent);

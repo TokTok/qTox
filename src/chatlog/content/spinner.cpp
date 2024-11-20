@@ -12,7 +12,7 @@
 #include <QTime>
 #include <QVariantAnimation>
 
-#include <math.h>
+#include <cmath>
 
 Spinner::Spinner(const QString& img, QSize Size, qreal speed)
     : size(Size)

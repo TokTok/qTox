@@ -17,7 +17,7 @@
 #include <QPushButton>
 #include <QRect>
 #include <QVBoxLayout>
-#include <assert.h>
+#include <cassert>
 
 /**
  * @class CallConfirmWidget

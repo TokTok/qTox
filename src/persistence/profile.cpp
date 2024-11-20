@@ -12,6 +12,7 @@
 #include <QThread>
 
 #include <cassert>
+#include <memory>
 #include <sodium.h>
 
 #include "profile.h"
@@ -232,8 +233,7 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
         emit failedToStart();
     }
 
-    bootstrapNodes =
-        std::unique_ptr<BootstrapNodeUpdater>(new BootstrapNodeUpdater(s.getProxy(), paths));
+    bootstrapNodes = std::make_unique<BootstrapNodeUpdater>(s.getProxy(), paths);
 
     Core::ToxCoreErrors err;
     core = Core::makeToxCore(toxsave, s, *bootstrapNodes, &err);
@@ -278,7 +278,7 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
     connect(core.get(), &Core::fileAvatarOfferReceived, this, &Profile::onAvatarOfferReceived,
             Qt::ConnectionType::QueuedConnection);
     // broadcast our own avatar
-    avatarBroadcaster = std::unique_ptr<AvatarBroadcaster>(new AvatarBroadcaster(*core));
+    avatarBroadcaster = std::make_unique<AvatarBroadcaster>(*core);
 }
 
 Profile::Profile(const QString& name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_,

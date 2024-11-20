@@ -20,6 +20,7 @@
 #include <QStyle>
 #include <QTextDocument>
 #include <QToolButton>
+#include <memory>
 
 namespace {
 const QSize AVATAR_SIZE{40, 40};
@@ -206,7 +207,7 @@ void ChatFormHeader::showOutgoingCall(bool video)
 void ChatFormHeader::createCallConfirm(bool video)
 {
     QWidget* btn = video ? videoButton : callButton;
-    callConfirm = std::unique_ptr<CallConfirmWidget>(new CallConfirmWidget(settings, style, btn));
+    callConfirm = std::make_unique<CallConfirmWidget>(settings, style, btn);
     connect(callConfirm.get(), &CallConfirmWidget::accepted, this, &ChatFormHeader::callAccepted);
     connect(callConfirm.get(), &CallConfirmWidget::rejected, this, &ChatFormHeader::callRejected);
 }

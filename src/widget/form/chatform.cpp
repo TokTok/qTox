@@ -46,6 +46,7 @@
 #include <QStringBuilder>
 
 #include <cassert>
+#include <memory>
 
 /**
  * @brief ChatForm::incomingNotification Notify that we are called by someone.
@@ -504,8 +505,8 @@ std::unique_ptr<NetCamView> ChatForm::createNetcam()
 {
     qDebug() << "creating netcam";
     uint32_t friendId = f->getId();
-    std::unique_ptr<NetCamView> view = std::unique_ptr<NetCamView>(
-        new NetCamView(f->getPublicKey(), cameraSource, settings, style, profile, this));
+    std::unique_ptr<NetCamView> view =
+        std::make_unique<NetCamView>(f->getPublicKey(), cameraSource, settings, style, profile, this);
     CoreAV* av = core.getAv();
     VideoSource* source = av->getVideoSourceFromCall(friendId);
     view->show(source, f->getDisplayedName());
