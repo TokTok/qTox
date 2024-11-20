@@ -13,7 +13,7 @@ FriendMessageDispatcher::FriendMessageDispatcher(Friend& f_, MessageProcessor pr
     : f(f_)
     , coreExtPacketAllocator(coreExtPacketAllocator_)
     , messageSender(messageSender_)
-    , processor(std::move(processor_))
+    , processor(processor_)
 {
     connect(&f, &Friend::onlineOfflineChanged, this,
             &FriendMessageDispatcher::onFriendOnlineOfflineChanged);

@@ -1167,8 +1167,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
 
     auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto friendMessageDispatcher =
-        std::make_shared<FriendMessageDispatcher>(*newfriend, std::move(messageProcessor), *core,
-                                                  *core->getExt());
+        std::make_shared<FriendMessageDispatcher>(*newfriend, messageProcessor, *core, *core->getExt());
 
     // Note: We do not have to connect the message dispatcher signals since
     // ChatHistory hooks them up in a very specific order
@@ -2142,8 +2141,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     auto widget = new GroupWidget(chatroom, compact, settings, style);
     auto messageProcessor = MessageProcessor(*sharedMessageProcessorParams);
     auto messageDispatcher =
-        std::make_shared<GroupMessageDispatcher>(*newgroup, std::move(messageProcessor), *core,
-                                                 *core, settings);
+        std::make_shared<GroupMessageDispatcher>(*newgroup, messageProcessor, *core, *core, settings);
 
     auto history = profile.getHistory();
     // Note: We do not have to connect the message dispatcher signals since
