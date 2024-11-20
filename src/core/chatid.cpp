@@ -12,10 +12,7 @@
 /**
  * @brief The default constructor. Creates an empty id.
  */
-ChatId::ChatId()
-    : id()
-{
-}
+ChatId::ChatId() {}
 ChatId::~ChatId() = default;
 
 /**

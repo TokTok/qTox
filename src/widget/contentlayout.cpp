@@ -10,8 +10,7 @@
 #include <QStyleFactory>
 
 ContentLayout::ContentLayout(Settings& settings_, Style& style_)
-    : QVBoxLayout()
-    , settings{settings_}
+    : settings{settings_}
     , style{style_}
 {
     init();

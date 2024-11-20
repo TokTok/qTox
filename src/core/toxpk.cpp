@@ -19,10 +19,7 @@
 /**
  * @brief The default constructor. Creates an empty Tox key.
  */
-ToxPk::ToxPk()
-    : ChatId()
-{
-}
+ToxPk::ToxPk() {}
 
 /**
  * @brief Constructs a ToxPk from bytes.

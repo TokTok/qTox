@@ -36,10 +36,7 @@ const QRegularExpression
 /**
  * @brief The default constructor. Creates an empty Tox ID.
  */
-ToxId::ToxId()
-    : toxId()
-{
-}
+ToxId::ToxId() {}
 
 /**
  * @brief The copy constructor.

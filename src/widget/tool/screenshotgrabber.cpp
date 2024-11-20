@@ -21,8 +21,7 @@
 #include "src/widget/widget.h"
 
 ScreenshotGrabber::ScreenshotGrabber()
-    : QObject()
-    , mKeysBlocked(false)
+    : mKeysBlocked(false)
     , scene(nullptr)
     , mQToxVisible(true)
 {

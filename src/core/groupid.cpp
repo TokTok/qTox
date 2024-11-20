@@ -18,10 +18,7 @@
 /**
  * @brief The default constructor. Creates an empty Tox group ID.
  */
-GroupId::GroupId()
-    : ChatId()
-{
-}
+GroupId::GroupId() {}
 
 /**
  * @brief Constructs a GroupId from bytes.

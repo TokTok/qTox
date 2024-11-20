@@ -12,7 +12,7 @@
 #include <cassert>
 
 FriendListLayout::FriendListLayout()
-    : QVBoxLayout()
+
 {
     init();
 }

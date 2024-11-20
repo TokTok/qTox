@@ -37,8 +37,7 @@
  */
 
 CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWidget* anchor_)
-    : QWidget()
-    , anchor(anchor_)
+    : anchor(anchor_)
     , rectW{120}
     , rectH{85}
     , spikeW{30}

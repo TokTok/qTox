@@ -46,7 +46,6 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     , splitter{new QSplitter(this)}
     , friendLayout{new FriendListLayout(this)}
     , activeChatroomWidget(nullptr)
-    , videoSurfaceSize(QSize())
     , videoCount(0)
     , settings{settings_}
     , style{style_}

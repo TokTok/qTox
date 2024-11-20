@@ -81,8 +81,6 @@ CameraSource::CameraSource(Settings& settings_)
     : deviceThread{new QThread}
     , deviceName{"none"}
     , device{nullptr}
-    , mode(VideoMode())
-    // clang-format off
     , cctx{nullptr}
 #if LIBAVCODEC_VERSION_INT < 3747941
     , cctxOrig{nullptr}
@@ -105,8 +103,6 @@ CameraSource::CameraSource(Settings& settings_)
 #endif
     avdevice_register_all();
 }
-
-// clang-format on
 
 /**
  * @brief Setup default device
