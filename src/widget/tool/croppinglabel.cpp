@@ -88,12 +88,12 @@ void CroppingLabel::resizeEvent(QResizeEvent* ev)
 
 QSize CroppingLabel::sizeHint() const
 {
-    return QSize(0, QLabel::sizeHint().height());
+    return {0, QLabel::sizeHint().height()};
 }
 
 QSize CroppingLabel::minimumSizeHint() const
 {
-    return QSize(fontMetrics().horizontalAdvance("..."), QLabel::minimumSizeHint().height());
+    return {fontMetrics().horizontalAdvance("..."), QLabel::minimumSizeHint().height()};
 }
 
 void CroppingLabel::mouseReleaseEvent(QMouseEvent* e)

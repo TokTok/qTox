@@ -20,12 +20,12 @@ QPixmap pixmapFromFile(const QString& filename)
                                                   "PNG", "JPEG", "JPG", "GIF", "SVG"};
 
     if (!previewExtensions.contains(QFileInfo(filename).suffix())) {
-        return QPixmap();
+        return {};
     }
 
     QFile imageFile(filename);
     if (!imageFile.open(QIODevice::ReadOnly)) {
-        return QPixmap();
+        return {};
     }
 
     const QByteArray imageFileData = imageFile.readAll();

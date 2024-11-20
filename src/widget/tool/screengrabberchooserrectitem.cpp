@@ -45,8 +45,12 @@ ScreenGrabberChooserRectItem::~ScreenGrabberChooserRectItem() {}
 
 QRectF ScreenGrabberChooserRectItem::boundingRect() const
 {
-    return QRectF(-HandleSize - 1, -HandleSize - 1, rectWidth + HandleSize + 1,
-                  rectHeight + HandleSize + 1);
+    return {
+        -HandleSize - 1,
+        -HandleSize - 1,
+        static_cast<qreal>(rectWidth + HandleSize + 1),
+        static_cast<qreal>(rectHeight + HandleSize + 1),
+    };
 }
 
 void ScreenGrabberChooserRectItem::beginResize(QPointF mousePos)
@@ -214,30 +218,30 @@ void ScreenGrabberChooserRectItem::mouseReleaseHandle(int x, int y, QGraphicsSce
 QPoint ScreenGrabberChooserRectItem::getHandleMultiplier(QGraphicsItem* handle)
 {
     if (handle == topLeft)
-        return QPoint(-1, -1);
+        return {-1, -1};
 
     if (handle == topCenter)
-        return QPoint(0, -1);
+        return {0, -1};
 
     if (handle == topRight)
-        return QPoint(1, -1);
+        return {1, -1};
 
     if (handle == rightCenter)
-        return QPoint(1, 0);
+        return {1, 0};
 
     if (handle == bottomRight)
-        return QPoint(1, 1);
+        return {1, 1};
 
     if (handle == bottomCenter)
-        return QPoint(0, 1);
+        return {0, 1};
 
     if (handle == bottomLeft)
-        return QPoint(-1, 1);
+        return {-1, 1};
 
     if (handle == leftCenter)
-        return QPoint(-1, 0);
+        return {-1, 0};
 
-    return QPoint();
+    return {};
 }
 
 void ScreenGrabberChooserRectItem::updateHandlePositions()

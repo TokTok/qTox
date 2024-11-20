@@ -184,7 +184,7 @@ QString Group::resolveToxPk(const ToxPk& id) const
         return *it;
     }
 
-    return QString();
+    return {};
 }
 
 void Group::setSelfName(const QString& name)

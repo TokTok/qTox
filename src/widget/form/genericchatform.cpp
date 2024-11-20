@@ -320,7 +320,7 @@ void GenericChatForm::hideFileMenu()
 QDateTime GenericChatForm::getLatestTime() const
 {
     if (chatLog.getFirstIdx() == chatLog.getNextIdx())
-        return QDateTime();
+        return {};
 
     const auto shouldUseTimestamp = [this](ChatLogIdx idx) {
         if (chatLog.at(idx).getContentType() != ChatLogItem::ContentType::systemMessage) {
@@ -359,7 +359,7 @@ QDateTime GenericChatForm::getLatestTime() const
         }
     }
 
-    return QDateTime();
+    return {};
 }
 
 void GenericChatForm::reloadTheme()
@@ -526,11 +526,11 @@ QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine) const
         if (timestamp) {
             return timestamp->getTime();
         } else {
-            return QDateTime();
+            return {};
         }
     }
 
-    return QDateTime();
+    return {};
 }
 
 

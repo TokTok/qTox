@@ -39,7 +39,7 @@ VideoMode::VideoMode(QRect rect)
 
 QRect VideoMode::toRect() const
 {
-    return QRect(x, y, width, height);
+    return {x, y, width, height};
 }
 
 bool VideoMode::operator==(const VideoMode& other) const

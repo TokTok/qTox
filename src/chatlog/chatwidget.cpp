@@ -675,7 +675,7 @@ QString ChatWidget::getSelectedText() const
         return out;
     }
 
-    return QString();
+    return {};
 }
 
 bool ChatWidget::isEmpty() const
@@ -994,7 +994,7 @@ ChatLine::Ptr ChatWidget::findLineByPosY(qreal yPos) const
     if (itr != chatLineStorage->end())
         return *itr;
 
-    return ChatLine::Ptr();
+    return {};
 }
 
 void ChatWidget::removeLines(ChatLogIdx begin, ChatLogIdx end)
@@ -1030,8 +1030,12 @@ QRectF ChatWidget::calculateSceneRect() const
     if (typingNotification.get() != nullptr)
         bottom += typingNotification->sceneBoundingRect().height() + lineSpacing;
 
-    return QRectF(-margins.left(), -margins.top(), useableWidth(),
-                  bottom + margins.bottom() + margins.top());
+    return {
+        static_cast<qreal>(-margins.left()),
+        static_cast<qreal>(-margins.top()),
+        useableWidth(),
+        bottom + margins.bottom() + margins.top(),
+    };
 }
 
 void ChatWidget::onSelectionTimerTimeout()

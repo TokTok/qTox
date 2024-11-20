@@ -1667,7 +1667,7 @@ QString Widget::fromDialogType(DialogType type)
     }
 
     assert(false);
-    return QString();
+    return {};
 }
 
 bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, bool notify)

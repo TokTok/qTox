@@ -255,7 +255,7 @@ QString ChatMessage::toString() const
     if (c)
         return c->getText();
 
-    return QString();
+    return {};
 }
 
 bool ChatMessage::isAction() const

@@ -712,7 +712,7 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
                                           QString phrase, const ParameterSearch& parameter)
 {
     if (historyAccessBlocked()) {
-        return QDateTime();
+        return {};
     }
 
     QDateTime result;

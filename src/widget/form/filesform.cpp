@@ -35,7 +35,7 @@ QRect pauseRect(const QStyleOptionViewItem& option)
     // our width from it
     int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea / 2 - controlSize / 2);
     int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
-    return QRect(buttonXPos, buttonYPos, controlSize, controlSize);
+    return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
 QRect stopRect(const QStyleOptionViewItem& option)
@@ -49,7 +49,7 @@ QRect stopRect(const QStyleOptionViewItem& option)
     int buttonXPos = std::round(option.rect.x() + buttonHorizontalArea + buttonHorizontalArea / 2
                                 - controlSize / 2);
     int buttonYPos = std::round(option.rect.y() + option.rect.height() * 0.1f);
-    return QRect(buttonXPos, buttonYPos, controlSize, controlSize);
+    return {buttonXPos, buttonYPos, static_cast<int>(controlSize), static_cast<int>(controlSize)};
 }
 
 QString fileStatusString(ToxFile file)
@@ -167,11 +167,11 @@ Model::Model(FriendList& friendList_, QObject* parent)
 QVariant Model::headerData(int section, Qt::Orientation orientation, int role) const
 {
     if (role != Qt::DisplayRole) {
-        return QVariant();
+        return {};
     }
 
     if (orientation != Qt::Orientation::Horizontal) {
-        return QVariant();
+        return {};
     }
 
     const auto column = toFileTransferListColumn(section);
@@ -241,7 +241,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
     const auto row = index.row();
     if (row < 0 || static_cast<size_t>(row) > files.size()) {
         qWarning("Invalid file transfer row %d (files: %zu)", row, files.size());
-        return QVariant();
+        return {};
     }
 
     if (role == Qt::UserRole) {
@@ -249,7 +249,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
     }
 
     if (role != Qt::DisplayRole) {
-        return QVariant();
+        return {};
     }
 
     const auto column = toFileTransferListColumn(index.column());
@@ -280,7 +280,7 @@ QVariant Model::data(const QModelIndex& index, int role) const
         break;
     }
 
-    return QVariant();
+    return {};
 }
 
 bool Model::setData(const QModelIndex& index, const QVariant& value, int role)

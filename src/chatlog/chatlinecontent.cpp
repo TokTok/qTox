@@ -56,7 +56,7 @@ bool ChatLineContent::isOverSelection(QPointF scenePos) const
 
 QString ChatLineContent::getSelectedText() const
 {
-    return QString();
+    return {};
 }
 
 void ChatLineContent::fontChanged(const QFont& font)
@@ -78,5 +78,5 @@ void ChatLineContent::reloadTheme() {}
 
 QString ChatLineContent::getText() const
 {
-    return QString();
+    return {};
 }

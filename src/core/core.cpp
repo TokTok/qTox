@@ -1318,7 +1318,7 @@ ToxPk Core::getFriendPublicKey(uint32_t friendNumber) const
     tox_friend_get_public_key(tox.get(), friendNumber, rawid, &error);
     if (!PARSE_ERR(error)) {
         qWarning() << "getFriendPublicKey: Getting public key failed";
-        return ToxPk();
+        return {};
     }
 
     return ToxPk(rawid);
@@ -1334,13 +1334,13 @@ QString Core::getFriendUsername(uint32_t friendnumber) const
     Tox_Err_Friend_Query error;
     size_t nameSize = tox_friend_get_name_size(tox.get(), friendnumber, &error);
     if (!PARSE_ERR(error) || !nameSize) {
-        return QString();
+        return {};
     }
 
     std::vector<uint8_t> nameBuf(nameSize);
     tox_friend_get_name(tox.get(), friendnumber, nameBuf.data(), &error);
     if (!PARSE_ERR(error)) {
-        return QString();
+        return {};
     }
     return ToxString(nameBuf.data(), nameSize).getQString();
 }

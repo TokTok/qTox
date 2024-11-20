@@ -445,7 +445,7 @@ QString Text::extractImgTooltip(int pos) const
         }
     }
 
-    return QString();
+    return {};
 }
 
 void Text::selectText(QTextCursor& cursor, const std::pair<int, int>& point)

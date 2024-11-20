@@ -24,7 +24,7 @@ QString dataToString(QByteArray data)
     } while ((num3 & 0x80) != 0);
 
     if (strlen <= 0)
-        return QString();
+        return {};
 
     // Remove the strlen
     data.remove(0, i);

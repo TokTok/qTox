@@ -118,7 +118,7 @@ QDateTime ChatLogItem::getTimestamp() const
     }
 
     assert(false);
-    return QDateTime();
+    return {};
 }
 
 void ChatLogItem::setDisplayName(QString name)
