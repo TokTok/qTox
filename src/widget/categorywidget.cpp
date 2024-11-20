@@ -162,7 +162,8 @@ bool CategoryWidget::cycleChats(bool forward)
             setExpanded(true);
             emitChatroomWidget(listLayout->getLayoutOnline(), 0);
             return true;
-        } else if (!listLayout->getLayoutOffline()->isEmpty()) {
+        }
+        if (!listLayout->getLayoutOffline()->isEmpty()) {
             setExpanded(true);
             emitChatroomWidget(listLayout->getLayoutOffline(), 0);
             return true;
@@ -173,7 +174,8 @@ bool CategoryWidget::cycleChats(bool forward)
             emitChatroomWidget(listLayout->getLayoutOffline(),
                                listLayout->getLayoutOffline()->count() - 1);
             return true;
-        } else if (!listLayout->getLayoutOnline()->isEmpty()) {
+        }
+        if (!listLayout->getLayoutOnline()->isEmpty()) {
             setExpanded(true);
             emitChatroomWidget(listLayout->getLayoutOnline(),
                                listLayout->getLayoutOnline()->count() - 1);
@@ -210,7 +212,8 @@ bool CategoryWidget::cycleChats(FriendWidget* activeChatroomWidget, bool forward
 
             index = currentLayout->count() - 1;
             continue;
-        } else if (index >= currentLayout->count()) {
+        }
+        if (index >= currentLayout->count()) {
             if (currentLayout == listLayout->getLayoutOnline())
                 currentLayout = listLayout->getLayoutOffline();
             else

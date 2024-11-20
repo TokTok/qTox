@@ -60,9 +60,8 @@ QString getIconPath(Status status, bool event)
     const QString statusSuffix = getAssetSuffix(status);
     if (status == Status::Blocked) {
         return ":/img/status/" + statusSuffix + ".svg";
-    } else {
-        return ":/img/status/" + statusSuffix + eventSuffix + ".svg";
     }
+    return ":/img/status/" + statusSuffix + eventSuffix + ".svg";
 }
 
 bool isOnline(Status status)

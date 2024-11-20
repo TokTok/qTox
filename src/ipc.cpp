@@ -181,10 +181,10 @@ bool IPC::isCurrentOwner()
         const bool isOwner = isCurrentOwnerNoLock();
         globalMemory.unlock();
         return isOwner;
-    } else {
-        qWarning() << "isCurrentOwner failed to lock, returning false";
-        return false;
     }
+    qWarning() << "isCurrentOwner failed to lock, returning false";
+    return false;
+
 #endif
 }
 

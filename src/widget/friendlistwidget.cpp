@@ -465,7 +465,8 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
             if (index < 0) {
                 index = LAST_TIME;
                 continue;
-            } else if (index > LAST_TIME) {
+            }
+            if (index > LAST_TIME) {
                 index = 0;
                 continue;
             }

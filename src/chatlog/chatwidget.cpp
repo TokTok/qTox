@@ -136,9 +136,8 @@ ChatLogIdx firstItemAfterDate(QDate date, const IChatLog& chatLog)
     auto idxs = chatLog.getDateIdxs(date, 1);
     if (idxs.size()) {
         return idxs[0].idx;
-    } else {
-        return chatLog.getNextIdx();
     }
+    return chatLog.getNextIdx();
 }
 
 /**
@@ -181,14 +180,13 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
         }
 
         return idx - std::abs(val);
-    } else {
-        auto distToEnd = chatLog.getNextIdx() - idx;
-        if (static_cast<size_t>(val) > distToEnd) {
-            return chatLog.getNextIdx();
-        }
-
-        return idx + val;
     }
+    auto distToEnd = chatLog.getNextIdx() - idx;
+    if (static_cast<size_t>(val) > distToEnd) {
+        return chatLog.getNextIdx();
+    }
+
+    return idx + val;
 }
 
 } // namespace
@@ -654,7 +652,8 @@ QString ChatWidget::getSelectedText() const
 {
     if (selectionMode == SelectionMode::Precise) {
         return selClickedRow->content[selClickedCol]->getSelectedText();
-    } else if (selectionMode == SelectionMode::Multi) {
+    }
+    if (selectionMode == SelectionMode::Multi) {
         // build a nicely formatted message
         QString out;
 

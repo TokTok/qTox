@@ -213,7 +213,8 @@ bool v4l2::betterPixelFormat(uint32_t a, uint32_t b)
 {
     if (pixFmtToQuality.find(a) == pixFmtToQuality.end()) {
         return false;
-    } else if (pixFmtToQuality.find(b) == pixFmtToQuality.end()) {
+    }
+    if (pixFmtToQuality.find(b) == pixFmtToQuality.end()) {
         return true;
     }
     return pixFmtToQuality.at(a) > pixFmtToQuality.at(b);

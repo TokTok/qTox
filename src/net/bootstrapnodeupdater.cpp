@@ -219,9 +219,8 @@ QList<DhtServer> BootstrapNodeUpdater::getBootstrapNodes() const
     auto userFilePath = paths.getUserNodesFilePath();
     if (QFile::exists(userFilePath)) {
         return loadNodesFile(userFilePath);
-    } else {
-        return loadNodesFile(builtinNodesFile);
     }
+    return loadNodesFile(builtinNodesFile);
 }
 
 void BootstrapNodeUpdater::requestBootstrapNodes()

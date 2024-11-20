@@ -53,7 +53,8 @@ QPixmap scaleCropIntoSquare(const QPixmap& source, const int targetSize)
     // Only one dimension will be bigger after Qt::KeepAspectRatioByExpanding
     if (result.width() > targetSize) {
         return result.copy((result.width() - targetSize) / 2, 0, targetSize, targetSize);
-    } else if (result.height() > targetSize) {
+    }
+    if (result.height() > targetSize) {
         return result.copy(0, (result.height() - targetSize) / 2, targetSize, targetSize);
     }
 
@@ -72,9 +73,8 @@ QString getToolTipDisplayingImage(const QPixmap& image)
         if (image.width() > maxPreviewWidth || image.height() > maxPreviewHeight) {
             return image.scaled(maxPreviewWidth, maxPreviewHeight, Qt::KeepAspectRatio,
                                 Qt::SmoothTransformation);
-        } else {
-            return image;
         }
+        return image;
     }();
 
     QByteArray imageData;

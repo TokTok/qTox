@@ -161,9 +161,8 @@ ChatLogIdx ChatHistory::getFirstIdx() const
 {
     if (canUseHistory()) {
         return ChatLogIdx(0);
-    } else {
-        return sessionChatLog.getFirstIdx();
     }
+    return sessionChatLog.getFirstIdx();
 }
 
 ChatLogIdx ChatHistory::getNextIdx() const
@@ -189,9 +188,8 @@ std::vector<IChatLog::DateChatLogIdxPair> ChatHistory::getDateIdxs(const QDate& 
 
         // Do not re-search in the session chat log. If we have history the query to the history should have been sufficient
         return ret;
-    } else {
-        return sessionChatLog.getDateIdxs(startDate, maxDates);
     }
+    return sessionChatLog.getDateIdxs(startDate, maxDates);
 }
 
 void ChatHistory::addSystemMessage(const SystemMessage& message)

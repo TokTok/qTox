@@ -2559,11 +2559,11 @@ Widget::FilterCriteria Widget::getFilterCriteria() const
 
     if (checked == filterOnlineAction)
         return FilterCriteria::Online;
-    else if (checked == filterOfflineAction)
+    if (checked == filterOfflineAction)
         return FilterCriteria::Offline;
-    else if (checked == filterFriendsAction)
+    if (checked == filterFriendsAction)
         return FilterCriteria::Friends;
-    else if (checked == filterGroupsAction)
+    if (checked == filterGroupsAction)
         return FilterCriteria::Groups;
 
     return FilterCriteria::All;

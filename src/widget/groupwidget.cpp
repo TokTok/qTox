@@ -166,9 +166,8 @@ QString GroupWidget::getStatusString() const
 {
     if (chatroom->hasNewMessage()) {
         return tr("New Message");
-    } else {
-        return tr("Online");
     }
+    return tr("Online");
 }
 
 void GroupWidget::editName()

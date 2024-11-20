@@ -119,12 +119,11 @@ int SettingsSerializer::beginReadArray(const QString& prefix)
         array = static_cast<int>(index - std::begin(arrays));
         arrayIndex = -1;
         return index->size;
-    } else {
-        array = arrays.size();
-        arrays.push_back({group, 0, prefix, {}});
-        arrayIndex = -1;
-        return 0;
     }
+    array = arrays.size();
+    arrays.push_back({group, 0, prefix, {}});
+    arrayIndex = -1;
+    return 0;
 }
 
 void SettingsSerializer::beginWriteArray(const QString& prefix, int size)
@@ -174,8 +173,7 @@ QVariant SettingsSerializer::value(const QString& key, const QVariant& defaultVa
     const Value* v = findValue(key);
     if (v)
         return v->value;
-    else
-        return defaultValue;
+    return defaultValue;
 }
 
 const SettingsSerializer::Value* SettingsSerializer::findValue(const QString& key) const
@@ -409,8 +407,7 @@ void SettingsSerializer::readIni()
             if (g.isEmpty()) {
                 if (gstack.isEmpty())
                     break;
-                else
-                    s.endGroup();
+                s.endGroup();
             } else {
                 s.beginGroup(g);
                 break;

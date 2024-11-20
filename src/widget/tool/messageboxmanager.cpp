@@ -77,14 +77,13 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, bo
 {
     if (QThread::currentThread() == qApp->thread()) {
         return _askQuestion(title, msg, defaultAns, warning, yesno);
-    } else {
-        bool ret;
-        QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
-                                  Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
-                                  Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),
-                                  Q_ARG(bool, warning), Q_ARG(bool, yesno));
-        return ret;
     }
+    bool ret;
+    QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
+                              Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
+                              Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),
+                              Q_ARG(bool, warning), Q_ARG(bool, yesno));
+    return ret;
 }
 
 /**
@@ -104,14 +103,13 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, co
 {
     if (QThread::currentThread() == qApp->thread()) {
         return _askQuestion(title, msg, button1, button2, defaultAns, warning);
-    } else {
-        bool ret;
-        QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
-                                  Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
-                                  Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),
-                                  Q_ARG(bool, warning));
-        return ret;
     }
+    bool ret;
+    QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
+                              Q_RETURN_ARG(bool, ret), Q_ARG(const QString&, title),
+                              Q_ARG(const QString&, msg), Q_ARG(bool, defaultAns),
+                              Q_ARG(bool, warning));
+    return ret;
 }
 
 void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)

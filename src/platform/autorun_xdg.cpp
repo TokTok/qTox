@@ -31,9 +31,8 @@ QString currentBinPath()
 
     if (env.contains(appImageEnvKey)) {
         return env.value(appImageEnvKey);
-    } else {
-        return QApplication::applicationFilePath();
     }
+    return QApplication::applicationFilePath();
 }
 
 inline QString profileRunCommand(const Settings& settings)
@@ -57,8 +56,8 @@ bool Platform::setAutorun(const Settings& settings, bool on)
         desktop.write("\n");
         desktop.close();
         return true;
-    } else
-        return desktop.remove();
+    }
+    return desktop.remove();
 }
 
 bool Platform::getAutorun(const Settings& settings)

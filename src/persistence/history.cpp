@@ -407,13 +407,12 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
                                       .arg(file_state)
                                       .arg(id.get()),
                                   {filePath.toUtf8(), fileHash});
-    } else {
-        return RawDatabase::Query(QStringLiteral("UPDATE file_transfers "
-                                                 "SET file_state = %1 "
-                                                 "WHERE id = %2")
-                                      .arg(file_state)
-                                      .arg(id.get()));
     }
+    return RawDatabase::Query(QStringLiteral("UPDATE file_transfers "
+                                             "SET file_state = %1 "
+                                             "WHERE id = %2")
+                                  .arg(file_state)
+                                  .arg(id.get()));
 }
 
 void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,

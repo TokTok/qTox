@@ -58,10 +58,9 @@ ToxPk::ToxPk(const QString& pk)
     : ChatId([&pk]() {
         if (pk.length() == numHexChars) {
             return QByteArray::fromHex(pk.toLatin1());
-        } else {
-            assert(!"ToxPk constructed with invalid length string");
-            return QByteArray(); // invalid pk string
         }
+        assert(!"ToxPk constructed with invalid length string");
+        return QByteArray(); // invalid pk string
     }())
 {
 }

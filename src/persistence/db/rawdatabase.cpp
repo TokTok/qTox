@@ -188,13 +188,11 @@ bool RawDatabase::openEncryptedDatabaseAtLatestSupportedVersion(const QString& h
             qInfo() << "Opened database with SQLCipher" << toString(highestSupportedVersion)
                     << "parameters";
             return true;
-        } else {
-            return updateSavedCipherParameters(hexKey, highestSupportedVersion);
         }
-    } else {
-        qCritical() << "Failed to set latest supported SQLCipher params!";
-        return false;
+        return updateSavedCipherParameters(hexKey, highestSupportedVersion);
     }
+    qCritical() << "Failed to set latest supported SQLCipher params!";
+    return false;
 }
 
 bool RawDatabase::testUsable()
@@ -890,17 +888,18 @@ QVariant RawDatabase::extractData(sqlite3_stmt* stmt, int col)
     int type = sqlite3_column_type(stmt, col);
     if (type == SQLITE_INTEGER) {
         return sqlite3_column_int64(stmt, col);
-    } else if (type == SQLITE_TEXT) {
+    }
+    if (type == SQLITE_TEXT) {
         const char* str = reinterpret_cast<const char*>(sqlite3_column_text(stmt, col));
         int len = sqlite3_column_bytes(stmt, col);
         return QString::fromUtf8(str, len);
-    } else if (type == SQLITE_NULL) {
-        return QVariant{};
-    } else {
-        const char* data = reinterpret_cast<const char*>(sqlite3_column_blob(stmt, col));
-        int len = sqlite3_column_bytes(stmt, col);
-        return QByteArray(data, len);
     }
+    if (type == SQLITE_NULL) {
+        return QVariant{};
+    }
+    const char* data = reinterpret_cast<const char*>(sqlite3_column_blob(stmt, col));
+    int len = sqlite3_column_bytes(stmt, col);
+    return QByteArray(data, len);
 }
 
 /**

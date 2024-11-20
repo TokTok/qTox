@@ -82,9 +82,8 @@ bool isCurrentVersionStable()
     auto currentVer = versionRegex.match(GIT_DESCRIBE_EXACT);
     if (currentVer.hasMatch()) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 }
 
 } // namespace

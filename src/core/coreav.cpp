@@ -254,14 +254,13 @@ bool CoreAV::answerCall(uint32_t friendNum, bool video)
     if (toxav_answer(toxav.get(), friendNum, audioSettings.getAudioBitrate(), videoBitrate, &err)) {
         it->second->setActive(true);
         return true;
-    } else {
-        qWarning() << "Failed to answer call with error" << err;
-        Toxav_Err_Call_Control controlErr;
-        toxav_call_control(toxav.get(), friendNum, TOXAV_CALL_CONTROL_CANCEL, &controlErr);
-        PARSE_ERR(controlErr);
-        calls.erase(it);
-        return false;
     }
+    qWarning() << "Failed to answer call with error" << err;
+    Toxav_Err_Call_Control controlErr;
+    toxav_call_control(toxav.get(), friendNum, TOXAV_CALL_CONTROL_CANCEL, &controlErr);
+    PARSE_ERR(controlErr);
+    calls.erase(it);
+    return false;
 }
 
 bool CoreAV::startCall(uint32_t friendNum, bool video)

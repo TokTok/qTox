@@ -39,9 +39,8 @@ QString generateSingleChatTitle(const QHash<T, size_t> numNotifications, T conta
         return QObject::tr("%1 message(s) from %2")
             .arg(numNotifications[contact])
             .arg(contact->getDisplayedName());
-    } else {
-        return contact->getDisplayedName();
     }
+    return contact->getDisplayedName();
 }
 
 QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
@@ -51,9 +50,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
     if (numChats > 1) {
         return generateMultiChatTitle(numChats,
                                       getNumMessages(friendNotifications, groupNotifications));
-    } else {
-        return generateSingleChatTitle(friendNotifications, f);
     }
+    return generateSingleChatTitle(friendNotifications, f);
 }
 
 QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
@@ -63,9 +61,8 @@ QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
     if (numChats > 1) {
         return generateMultiChatTitle(numChats,
                                       getNumMessages(friendNotifications, groupNotifications));
-    } else {
-        return generateSingleChatTitle(groupNotifications, g);
     }
+    return generateSingleChatTitle(groupNotifications, g);
 }
 
 QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
@@ -105,15 +102,15 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
         }
 
         return ret;
-    } else if (groupNotifications.size() == 1) {
+    }
+    if (groupNotifications.size() == 1) {
         auto it = groupNotifications.begin();
         if (it == groupNotifications.end()) {
             qFatal("Concurrency error: group notifications got cleared while reading");
         }
         return it.key()->getPeerList()[sender] + ": " + lastMessage;
-    } else {
-        return lastMessage;
     }
+    return lastMessage;
 }
 
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)

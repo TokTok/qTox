@@ -39,18 +39,16 @@ int FlowLayout::horizontalSpacing() const
 {
     if (m_hSpace >= 0) {
         return m_hSpace;
-    } else {
-        return smartSpacing(QStyle::PM_LayoutHorizontalSpacing);
     }
+    return smartSpacing(QStyle::PM_LayoutHorizontalSpacing);
 }
 
 int FlowLayout::verticalSpacing() const
 {
     if (m_vSpace >= 0) {
         return m_vSpace;
-    } else {
-        return smartSpacing(QStyle::PM_LayoutVerticalSpacing);
     }
+    return smartSpacing(QStyle::PM_LayoutVerticalSpacing);
 }
 //! [4]
 

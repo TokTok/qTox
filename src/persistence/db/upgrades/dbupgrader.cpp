@@ -88,9 +88,8 @@ DuplicateAlias getDuplicateAliasRows(RawDatabase& db, RowId goodPeerRow, RowId b
 
     if (hasGoodEntry) {
         return {goodAliasRow, badAliasRows};
-    } else {
-        return {};
     }
+    return {};
 }
 
 void mergeAndDeleteAlias(QVector<RawDatabase::Query>& upgradeQueries, RowId goodAlias,
@@ -232,7 +231,8 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
                              << "). Please upgrade qTox";
         // We don't know what future versions have done, we have to disable db access until we re-upgrade
         return false;
-    } else if (databaseSchemaVersion == SCHEMA_VERSION) {
+    }
+    if (databaseSchemaVersion == SCHEMA_VERSION) {
         // No work to do
         return true;
     }

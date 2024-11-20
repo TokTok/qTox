@@ -171,9 +171,8 @@ ToxPk ToxId::getPublicKey() const
     auto const pkBytes = toxId.left(ToxPk::size);
     if (pkBytes.isEmpty()) {
         return ToxPk{};
-    } else {
-        return ToxPk{pkBytes};
     }
+    return ToxPk{pkBytes};
 }
 
 /**

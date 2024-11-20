@@ -167,7 +167,7 @@ NotificationScrollArea::Visibility NotificationScrollArea::widgetVisible(QWidget
 
     if (y < 0)
         return Above;
-    else if (y + widget->height() - 1 > viewport()->height())
+    if (y + widget->height() - 1 > viewport()->height())
         return Below;
 
     return Visible;

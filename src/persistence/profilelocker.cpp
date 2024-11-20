@@ -133,6 +133,5 @@ QString ProfileLocker::getCurLockName()
 {
     if (lockfile)
         return curLockName;
-    else
-        return QString();
+    return QString();
 }
