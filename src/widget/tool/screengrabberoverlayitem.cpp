@@ -23,7 +23,7 @@ ScreenGrabberOverlayItem::ScreenGrabberOverlayItem(ScreenshotGrabber* grabber)
     setPen(QPen(Qt::NoPen));
 }
 
-ScreenGrabberOverlayItem::~ScreenGrabberOverlayItem() {}
+ScreenGrabberOverlayItem::~ScreenGrabberOverlayItem() = default;
 
 void ScreenGrabberOverlayItem::setChosenRect(QRect rect)
 {

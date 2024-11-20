@@ -18,7 +18,7 @@ ToolBoxGraphicsItem::ToolBoxGraphicsItem()
     setOpacity(activeOpacity);
 }
 
-ToolBoxGraphicsItem::~ToolBoxGraphicsItem() {}
+ToolBoxGraphicsItem::~ToolBoxGraphicsItem() = default;
 
 void ToolBoxGraphicsItem::hoverEnterEvent(QGraphicsSceneHoverEvent* event)
 {

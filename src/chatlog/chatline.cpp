@@ -9,7 +9,7 @@
 #include <QDebug>
 #include <QGraphicsScene>
 
-ChatLine::ChatLine() {}
+ChatLine::ChatLine() = default;
 
 ChatLine::~ChatLine()
 {

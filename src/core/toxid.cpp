@@ -46,9 +46,8 @@ ToxId::ToxId()
  * @param other ToxId to copy
  */
 ToxId::ToxId(const ToxId& other)
-    : toxId(other.toxId)
-{
-}
+
+    = default;
 
 /**
  * @brief Create a Tox ID from a QString.

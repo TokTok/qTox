@@ -25,7 +25,7 @@ class TestMessageProcessor : public QObject
     Q_OBJECT
 
 public:
-    TestMessageProcessor() {}
+    TestMessageProcessor() = default;
 
 private slots:
     void testSelfMention();

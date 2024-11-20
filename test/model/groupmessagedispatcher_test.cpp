@@ -133,7 +133,7 @@ private:
     std::unique_ptr<FriendList> friendList;
 };
 
-TestGroupMessageDispatcher::TestGroupMessageDispatcher() {}
+TestGroupMessageDispatcher::TestGroupMessageDispatcher() = default;
 
 /**
  * @brief Test initialization. Resets all members to initial state

@@ -1884,7 +1884,7 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
             connect(core, &Core::usernameSet, this, &Dialog::retranslateUi);
         }
 
-        ~Dialog()
+        ~Dialog() override
         {
             Translator::unregister(this);
         }

@@ -41,7 +41,7 @@ ScreenGrabberChooserRectItem::ScreenGrabberChooserRectItem(QGraphicsScene* scene
     hideHandles();
 }
 
-ScreenGrabberChooserRectItem::~ScreenGrabberChooserRectItem() {}
+ScreenGrabberChooserRectItem::~ScreenGrabberChooserRectItem() = default;
 
 QRectF ScreenGrabberChooserRectItem::boundingRect() const
 {
