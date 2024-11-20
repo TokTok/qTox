@@ -85,8 +85,8 @@ void MovableWidget::setRatio(float r)
 
 void MovableWidget::mousePressEvent(QMouseEvent* event)
 {
-    if (event->buttons() & Qt::LeftButton) {
-        if (!(mode & Resize))
+    if ((event->buttons() & Qt::LeftButton) != 0u) {
+        if ((mode & Resize) == 0)
             mode |= Moving;
 
         lastPoint = event->globalPosition().toPoint();
@@ -95,7 +95,7 @@ void MovableWidget::mousePressEvent(QMouseEvent* event)
 
 void MovableWidget::mouseMoveEvent(QMouseEvent* event)
 {
-    if (mode & Moving) {
+    if ((mode & Moving) != 0) {
         QPoint moveTo = pos() - (lastPoint - event->globalPosition().toPoint());
         checkBoundary(moveTo);
 
@@ -126,7 +126,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                 mode &= ~ResizeDown;
         }
 
-        if (mode & Resize) {
+        if ((mode & Resize) != 0) {
             const Modes ResizeUpRight = ResizeUp | ResizeRight;
             const Modes ResizeUpLeft = ResizeUp | ResizeLeft;
             const Modes ResizeDownRight = ResizeDown | ResizeRight;
@@ -136,18 +136,18 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                 setCursor(Qt::SizeBDiagCursor);
             else if ((mode & ResizeUpLeft) == ResizeUpLeft || (mode & ResizeDownRight) == ResizeDownRight)
                 setCursor(Qt::SizeFDiagCursor);
-            else if (mode & (ResizeLeft | ResizeRight))
+            else if ((mode & (ResizeLeft | ResizeRight)) != 0)
                 setCursor(Qt::SizeHorCursor);
             else
                 setCursor(Qt::SizeVerCursor);
 
-            if (event->buttons() & Qt::LeftButton) {
+            if ((event->buttons() & Qt::LeftButton) != 0u) {
                 QPoint lastPosition = pos();
                 QPoint displacement = lastPoint - event->globalPosition().toPoint();
                 QSize lastSize = size();
 
 
-                if (mode & ResizeUp) {
+                if ((mode & ResizeUp) != 0) {
                     lastSize.setHeight(height() + displacement.y());
 
                     if (lastSize.height() > maximumHeight())
@@ -157,7 +157,7 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                         lastPosition.setY(y() - displacement.y());
                 }
 
-                if (mode & ResizeLeft) {
+                if ((mode & ResizeLeft) != 0) {
                     lastSize.setWidth(width() + displacement.x());
                     if (lastSize.width() > maximumWidth())
                         lastPosition.setX(x() - displacement.x() + (lastSize.width() - maximumWidth()));
@@ -165,10 +165,10 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                         lastPosition.setX(x() - displacement.x());
                 }
 
-                if (mode & ResizeRight)
+                if ((mode & ResizeRight) != 0)
                     lastSize.setWidth(width() - displacement.x());
 
-                if (mode & ResizeDown)
+                if ((mode & ResizeDown) != 0)
                     lastSize.setHeight(height() - displacement.y());
 
                 if (lastSize.height() > maximumHeight())
@@ -177,11 +177,11 @@ void MovableWidget::mouseMoveEvent(QMouseEvent* event)
                 if (lastSize.width() > maximumWidth())
                     lastSize.setWidth(maximumWidth());
 
-                if (mode & (ResizeLeft | ResizeRight)) {
-                    if (mode & (ResizeUp | ResizeDown)) {
+                if ((mode & (ResizeLeft | ResizeRight)) != 0) {
+                    if ((mode & (ResizeUp | ResizeDown)) != 0) {
                         int height = lastSize.width() / getRatio();
 
-                        if (!(mode & ResizeDown))
+                        if ((mode & ResizeDown) == 0)
                             lastPosition.setY(lastPosition.y() - (height - lastSize.height()));
 
                         resize(lastSize.width(), height);
@@ -225,7 +225,7 @@ void MovableWidget::mouseDoubleClickEvent(QMouseEvent* event)
     if (!(event->buttons() & Qt::LeftButton))
         return;
 
-    if (!graphicsEffect()) {
+    if (graphicsEffect() == nullptr) {
         QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
         opacityEffect->setOpacity(0.5);
         setGraphicsEffect(opacityEffect);

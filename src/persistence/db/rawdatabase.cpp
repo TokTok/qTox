@@ -149,14 +149,16 @@ bool RawDatabase::open(const QString& path_, const QString& hexKey)
     }
 
     if (sqlite3_create_function(sqlite, "regexp", 2, SQLITE_UTF8, nullptr,
-                                &RawDatabase::regexpInsensitive, nullptr, nullptr)) {
+                                &RawDatabase::regexpInsensitive, nullptr, nullptr)
+        != 0) {
         qWarning() << "Failed to create function regexp";
         close();
         return false;
     }
 
     if (sqlite3_create_function(sqlite, "regexpsensitive", 2, SQLITE_UTF8, nullptr,
-                                &RawDatabase::regexpSensitive, nullptr, nullptr)) {
+                                &RawDatabase::regexpSensitive, nullptr, nullptr)
+        != 0) {
         qWarning() << "Failed to create function regexpsensitive";
         close();
         return false;
@@ -411,7 +413,7 @@ bool RawDatabase::execNow(const RawDatabase::Query& statement)
  */
 bool RawDatabase::execNow(const QVector<RawDatabase::Query>& statements)
 {
-    if (!sqlite) {
+    if (sqlite == nullptr) {
         qWarning() << "Trying to exec, but the database is not open";
         return false;
     }
@@ -453,7 +455,7 @@ void RawDatabase::execLater(const RawDatabase::Query& statement)
 
 void RawDatabase::execLater(const QVector<RawDatabase::Query>& statements)
 {
-    if (!sqlite) {
+    if (sqlite == nullptr) {
         qWarning() << "Trying to exec, but the database is not open";
         return;
     }
@@ -484,7 +486,7 @@ void RawDatabase::sync()
  */
 bool RawDatabase::setPassword(const QString& password)
 {
-    if (!sqlite) {
+    if (sqlite == nullptr) {
         qWarning() << "Trying to change the password, but the database is not open";
         return false;
     }
@@ -603,7 +605,7 @@ bool RawDatabase::commitDbSwap(const QString& hexKey)
  */
 bool RawDatabase::rename(const QString& newPath)
 {
-    if (!sqlite) {
+    if (sqlite == nullptr) {
         qWarning() << "Trying to change the password, but the database is not open";
         return false;
     }
@@ -637,7 +639,7 @@ bool RawDatabase::rename(const QString& newPath)
  */
 bool RawDatabase::remove()
 {
-    if (!sqlite) {
+    if (sqlite == nullptr) {
         qWarning() << "Trying to remove the database, but it is not open";
         return false;
     }
@@ -730,7 +732,7 @@ void RawDatabase::process()
 {
     assert(QThread::currentThread() == workerThread.get());
 
-    if (!sqlite)
+    if (sqlite == nullptr)
         return;
 
     forever

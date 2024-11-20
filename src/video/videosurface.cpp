@@ -97,7 +97,7 @@ QPixmap VideoSurface::getAvatar() const
 
 void VideoSurface::subscribe()
 {
-    if (source && hasSubscribed++ == 0) {
+    if ((source != nullptr) && hasSubscribed++ == 0) {
         source->subscribe();
         connect(source, &VideoSource::frameAvailable, this, &VideoSurface::onNewFrameAvailable);
         connect(source, &VideoSource::sourceStopped, this, &VideoSurface::onSourceStopped);
@@ -106,7 +106,7 @@ void VideoSurface::subscribe()
 
 void VideoSurface::unsubscribe()
 {
-    if (!source || hasSubscribed == 0)
+    if ((source == nullptr) || hasSubscribed == 0)
         return;
 
     if (--hasSubscribed != 0)

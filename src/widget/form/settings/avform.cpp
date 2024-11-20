@@ -106,7 +106,7 @@ void AVForm::hideEvent(QHideEvent* event)
     audioSink.reset();
     audioSrc.reset();
 
-    if (camVideoSurface) {
+    if (camVideoSurface != nullptr) {
         camVideoSurface->setSource(nullptr);
         killVideoSurface();
     }
@@ -296,7 +296,7 @@ void AVForm::fillCameraModesComboBox()
         qDebug("width: %d, height: %d, FPS: %f, pixel format: %s", mode.width, mode.height,
                static_cast<double>(mode.FPS), pixelFormat.c_str());
 
-        if (mode.height && mode.width) {
+        if ((mode.height != 0) && (mode.width != 0)) {
             str += QString("%1p").arg(mode.height);
         } else {
             str += tr("Default resolution");
@@ -339,7 +339,7 @@ void AVForm::fillScreenModesComboBox()
                static_cast<double>(mode.FPS), pixelFormat.c_str());
 
         QString name;
-        if (mode.width && mode.height)
+        if ((mode.width != 0) && (mode.height != 0))
             name = tr("Screen %1").arg(i + 1);
         else
             name = tr("Select region");
@@ -598,7 +598,7 @@ void AVForm::on_audioThresholdSlider_valueChanged(int sliderSteps)
 }
 void AVForm::createVideoSurface()
 {
-    if (camVideoSurface)
+    if (camVideoSurface != nullptr)
         return;
 
     camVideoSurface = new VideoSurface(QPixmap(), CamFrame);
@@ -610,7 +610,7 @@ void AVForm::createVideoSurface()
 
 void AVForm::killVideoSurface()
 {
-    if (!camVideoSurface)
+    if (camVideoSurface == nullptr)
         return;
 
     QLayoutItem* child;

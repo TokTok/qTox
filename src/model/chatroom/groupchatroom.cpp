@@ -65,14 +65,14 @@ bool GroupChatroom::possibleToOpenInNewWindow() const
 {
     const auto groupId = group->getPersistentId();
     const auto dialogs = dialogsManager->getGroupDialogs(groupId);
-    return !dialogs || dialogs->chatroomCount() > 1;
+    return (dialogs == nullptr) || dialogs->chatroomCount() > 1;
 }
 
 bool GroupChatroom::canBeRemovedFromWindow() const
 {
     const auto groupId = group->getPersistentId();
     const auto dialogs = dialogsManager->getGroupDialogs(groupId);
-    return dialogs && dialogs->hasChat(groupId);
+    return (dialogs != nullptr) && dialogs->hasChat(groupId);
 }
 
 void GroupChatroom::removeGroupFromDialogs()

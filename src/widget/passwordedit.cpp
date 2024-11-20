@@ -37,7 +37,7 @@ PasswordEdit::~PasswordEdit()
 void PasswordEdit::registerHandler()
 {
 #ifdef ENABLE_CAPSLOCK_INDICATOR
-    if (!eventHandler)
+    if (eventHandler == nullptr)
         eventHandler = new EventHandler();
     if (!eventHandler->actions.contains(action))
         eventHandler->actions.append(action);
@@ -49,7 +49,7 @@ void PasswordEdit::unregisterHandler()
 #ifdef ENABLE_CAPSLOCK_INDICATOR
     int idx;
 
-    if (eventHandler && (idx = eventHandler->actions.indexOf(action)) >= 0) {
+    if ((eventHandler != nullptr) && (idx = eventHandler->actions.indexOf(action)) >= 0) {
         eventHandler->actions.remove(idx);
         if (eventHandler->actions.isEmpty()) {
             delete eventHandler;

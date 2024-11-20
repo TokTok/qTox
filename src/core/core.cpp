@@ -122,7 +122,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     auto toxOptions = ToxOptions::makeToxOptions(savedata, settings);
     if (toxOptions == nullptr) {
         qCritical() << "Could not allocate ToxOptions data structure";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::ERROR_ALLOC;
         }
         return {};
@@ -130,7 +130,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
 
     ToxCorePtr core(new Core(thread, bootstrapNodes, settings));
     if (core == nullptr) {
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::ERROR_ALLOC;
         }
         return {};
@@ -145,7 +145,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
 
     case TOX_ERR_NEW_LOAD_BAD_FORMAT:
         qCritical() << "Failed to parse Tox save data";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::BAD_PROXY;
         }
         return {};
@@ -162,7 +162,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
         }
 
         qCritical() << "Can't to bind the port";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::FAILED_TO_START;
         }
         return {};
@@ -171,42 +171,42 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     case TOX_ERR_NEW_PROXY_BAD_PORT:
     case TOX_ERR_NEW_PROXY_BAD_TYPE:
         qCritical() << "Bad proxy, error code:" << tox_err;
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::BAD_PROXY;
         }
         return {};
 
     case TOX_ERR_NEW_PROXY_NOT_FOUND:
         qCritical() << "Proxy not found";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::BAD_PROXY;
         }
         return {};
 
     case TOX_ERR_NEW_LOAD_ENCRYPTED:
         qCritical() << "Attempted to load encrypted Tox save data";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::INVALID_SAVE;
         }
         return {};
 
     case TOX_ERR_NEW_MALLOC:
         qCritical() << "Memory allocation failed";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::ERROR_ALLOC;
         }
         return {};
 
     case TOX_ERR_NEW_NULL:
         qCritical() << "A parameter was null";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::FAILED_TO_START;
         }
         return {};
 
     default:
         qCritical() << "Toxcore failed to start, unknown error code:" << tox_err;
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::FAILED_TO_START;
         }
         return {};
@@ -219,7 +219,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     core->file = CoreFile::makeCoreFile(core.get(), core->tox.get(), core->coreLoopLock);
     if (!core->file) {
         qCritical() << "CoreFile failed to start";
-        if (err) {
+        if (err != nullptr) {
             *err = ToxCoreErrors::FAILED_TO_START;
         }
         return {};
@@ -333,7 +333,7 @@ void Core::process()
     // TODO(sudden6): recheck if this is still necessary
     if (checkConnection()) {
         tolerance = CORE_DISCONNECT_TOLERANCE;
-    } else if (!(--tolerance)) {
+    } else if ((--tolerance) == 0) {
         bootstrapDht();
         tolerance = 3 * CORE_DISCONNECT_TOLERANCE;
     }
@@ -795,7 +795,7 @@ void Core::removeGroup(int groupId)
          * we don't change av at runtime.
          */
 
-        if (av) {
+        if (av != nullptr) {
             av->leaveGroupCall(groupId);
         }
     }
@@ -814,7 +814,7 @@ QString Core::getUsername() const
     }
 
     int size = tox_self_get_name_size(tox.get());
-    if (!size) {
+    if (size == 0) {
         return {};
     }
     std::vector<uint8_t> nameBuf(size);
@@ -896,7 +896,7 @@ QString Core::getStatusMessage() const
     assert(tox != nullptr);
 
     size_t size = tox_self_get_status_message_size(tox.get());
-    if (!size) {
+    if (size == 0u) {
         return {};
     }
     std::vector<uint8_t> nameBuf(size);
@@ -998,7 +998,7 @@ void Core::loadFriends()
         emit friendUsernameChanged(ids[i], getFriendUsername(ids[i]));
         Tox_Err_Friend_Query queryError;
         size_t statusMessageSize = tox_friend_get_status_message_size(tox.get(), ids[i], &queryError);
-        if (PARSE_ERR(queryError) && statusMessageSize) {
+        if (PARSE_ERR(queryError) && (statusMessageSize != 0u)) {
             std::vector<uint8_t> messageData(statusMessageSize);
             tox_friend_get_status_message(tox.get(), ids[i], messageData.data(), &queryError);
             QString friendStatusMessage =
@@ -1028,7 +1028,7 @@ void Core::loadGroups()
         size_t titleSize = tox_conference_get_title_size(tox.get(), groupNumber, &error);
         const GroupId persistentId = getGroupPersistentId(groupNumber);
         const QString defaultName = tr("Groupchat %1").arg(persistentId.toString().left(8));
-        if (PARSE_ERR(error) || !titleSize) {
+        if (PARSE_ERR(error) || (titleSize == 0u)) {
             std::vector<uint8_t> nameBuf(titleSize);
             tox_conference_get_title(tox.get(), groupNumber, nameBuf.data(), &error);
             if (PARSE_ERR(error)) {
@@ -1040,7 +1040,8 @@ void Core::loadGroups()
             name = defaultName;
         }
         if (getGroupAvEnabled(groupNumber)) {
-            if (toxav_groupchat_enable_av(tox.get(), groupNumber, CoreAV::groupCallCallback, this)) {
+            if (toxav_groupchat_enable_av(tox.get(), groupNumber, CoreAV::groupCallCallback, this)
+                != 0) {
                 qCritical() << "Failed to enable audio on loaded group" << groupNumber;
             }
         }
@@ -1111,7 +1112,7 @@ QString Core::getGroupPeerName(int groupId, int peerId) const
 
     Tox_Err_Conference_Peer_Query error;
     size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, peerId, &error);
-    if (!PARSE_ERR(error) || !length) {
+    if (!PARSE_ERR(error) || (length == 0u)) {
         return QString{};
     }
 
@@ -1161,7 +1162,7 @@ QStringList Core::getGroupPeerNames(int groupId) const
         Tox_Err_Conference_Peer_Query error;
         size_t length = tox_conference_peer_get_name_size(tox.get(), groupId, i, &error);
 
-        if (!PARSE_ERR(error) || !length) {
+        if (!PARSE_ERR(error) || (length == 0u)) {
             names.append(QString());
             continue;
         }
@@ -1333,7 +1334,7 @@ QString Core::getFriendUsername(uint32_t friendnumber) const
 
     Tox_Err_Friend_Query error;
     size_t nameSize = tox_friend_get_name_size(tox.get(), friendnumber, &error);
-    if (!PARSE_ERR(error) || !nameSize) {
+    if (!PARSE_ERR(error) || (nameSize == 0u)) {
         return QString();
     }
 
@@ -1373,7 +1374,7 @@ QString Core::getPeerName(const ToxPk& id) const
 
     Tox_Err_Friend_Query queryError;
     const size_t nameSize = tox_friend_get_name_size(tox.get(), friendId, &queryError);
-    if (!PARSE_ERR(queryError) || !nameSize) {
+    if (!PARSE_ERR(queryError) || (nameSize == 0u)) {
         return {};
     }
 

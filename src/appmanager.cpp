@@ -131,15 +131,15 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
 #ifdef LOG_TO_FILE
     FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
-    if (!logFilePtr) {
+    if (logFilePtr == nullptr) {
         logBufferMutex->lock();
-        if (logBuffer)
+        if (logBuffer != nullptr)
             logBuffer->append(LogMsgBytes);
 
         logBufferMutex->unlock();
     } else {
         logBufferMutex->lock();
-        if (logBuffer) {
+        if (logBuffer != nullptr) {
             // empty logBuffer to file
             foreach (QByteArray bufferedMsg, *logBuffer)
                 fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
@@ -162,7 +162,7 @@ bool toxURIEventHandler(const QByteArray& eventData, void* userData)
         return false;
     }
 
-    if (!uriDialog) {
+    if (uriDialog == nullptr) {
         return false;
     }
 
@@ -260,7 +260,7 @@ int AppManager::run()
         qDebug() << "Log file over 1MB, rotating...";
 
         // close old logfile (need for windows)
-        if (mainLogFilePtr)
+        if (mainLogFilePtr != nullptr)
             fclose(mainLogFilePtr);
 
         QDir dir(logFileDir);
@@ -278,7 +278,7 @@ int AppManager::run()
         mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
     }
 
-    if (!mainLogFilePtr)
+    if (mainLogFilePtr == nullptr)
         qCritical() << "Couldn't open logfile" << logfile;
 
     logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
@@ -363,11 +363,11 @@ int AppManager::run()
         && !Profile::isEncrypted(profileName, settings->getPaths())) {
         profile = Profile::loadProfile(profileName, QString(), *settings, &parser, *cameraSource,
                                        *messageBoxManager);
-        if (!profile) {
+        if (profile == nullptr) {
             QMessageBox::information(nullptr, tr("Error"), tr("Failed to load profile automatically."));
         }
     }
-    if (profile) {
+    if (profile != nullptr) {
         nexus->bootstrapWithProfile(profile);
     } else {
         nexus->setParser(&parser);

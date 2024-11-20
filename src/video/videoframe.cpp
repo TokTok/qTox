@@ -549,7 +549,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
 {
     AVFrame* ret = av_frame_alloc();
 
-    if (!ret) {
+    if (ret == nullptr) {
         return nullptr;
     }
 
@@ -590,7 +590,7 @@ AVFrame* VideoFrame::generateAVFrame(const QSize& dimensions, const int pixelFor
                        dimensions.height(), static_cast<AVPixelFormat>(pixelFormat), resizeAlgo,
                        nullptr, nullptr, nullptr);
 
-    if (!swsCtx) {
+    if (swsCtx == nullptr) {
         av_freep(&ret->data[0]);
 #if LIBAVCODEC_VERSION_INT < 3747941
         av_frame_unref(ret);

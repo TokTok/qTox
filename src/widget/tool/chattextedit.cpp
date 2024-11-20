@@ -39,7 +39,7 @@ void ChatTextEdit::keyPressEvent(QKeyEvent* event)
         return;
     }
     if (key == Qt::Key_Tab) {
-        if (event->modifiers())
+        if (event->modifiers() != 0u)
             event->ignore();
         else {
             emit tabPressed();
@@ -79,12 +79,12 @@ bool ChatTextEdit::pasteIfImage(QKeyEvent* event)
 {
     std::ignore = event;
     const QClipboard* const clipboard = QApplication::clipboard();
-    if (!clipboard) {
+    if (clipboard == nullptr) {
         return false;
     }
 
     const QMimeData* const mimeData = clipboard->mimeData();
-    if (!mimeData || !mimeData->hasImage()) {
+    if ((mimeData == nullptr) || !mimeData->hasImage()) {
         return false;
     }
 

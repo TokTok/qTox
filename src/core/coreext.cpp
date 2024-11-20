@@ -22,7 +22,7 @@ extern "C"
 std::unique_ptr<CoreExt> CoreExt::makeCoreExt(Tox* core)
 {
     auto toxExtPtr = toxext_init(core);
-    if (!toxExtPtr) {
+    if (toxExtPtr == nullptr) {
         return nullptr;
     }
 
@@ -93,7 +93,7 @@ uint64_t CoreExt::Packet::addExtendedMessage(QString message)
         assert(false);
         qCritical() << "addExtendedMessage called with message of size:" << size
                     << "when max is:" << maxSize << ". Ignoring.";
-        return false;
+        return 0u;
     }
 
     ToxString toxString(message);

@@ -166,7 +166,7 @@ void NetCamView::hide()
     setSource(nullptr);
     selfVideoSurface->setSource(nullptr);
 
-    if (selfFrame)
+    if (selfFrame != nullptr)
         selfFrame->deleteLater();
 
     selfFrame = nullptr;

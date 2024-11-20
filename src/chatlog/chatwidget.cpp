@@ -91,7 +91,7 @@ void renderMessageRaw(const QString& displayName, bool isSelf, bool colorizeName
     // ChatLine a QObject which I didn't think was worth it.
     auto chatMessage = static_cast<ChatMessage*>(chatLine.get());
 
-    if (chatMessage) {
+    if (chatMessage != nullptr) {
         if (chatLogMessage.state == MessageState::complete) {
             chatMessage->markAsDelivered(chatLogMessage.message.timestamp);
         } else if (chatLogMessage.state == MessageState::broken) {
@@ -134,7 +134,7 @@ ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMes
 ChatLogIdx firstItemAfterDate(QDate date, const IChatLog& chatLog)
 {
     auto idxs = chatLog.getDateIdxs(date, 1);
-    if (idxs.size()) {
+    if (idxs.size() != 0u) {
         return idxs[0].idx;
     } else {
         return chatLog.getNextIdx();
@@ -396,7 +396,7 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
 
     QPointF scenePos = mapToScene(ev->pos());
 
-    if (ev->buttons() & Qt::LeftButton) {
+    if ((ev->buttons() & Qt::LeftButton) != 0u) {
         // autoscroll
         if (ev->pos().y() < 0)
             selectionScrollDir = AutoScrollDirection::Up;
@@ -412,7 +412,7 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
             ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
             ChatLineContent* content = getContentFromPos(sceneClickPos);
-            if (content) {
+            if (content != nullptr) {
                 selClickedRow = line;
                 selClickedCol = content->getColumn();
                 selFirstRow = line;
@@ -423,9 +423,9 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
                 selectionMode = SelectionMode::Precise;
 
                 // ungrab mouse grabber
-                if (scene->mouseGrabberItem())
+                if (scene->mouseGrabberItem() != nullptr)
                     scene->mouseGrabberItem()->ungrabMouse();
-            } else if (line.get()) {
+            } else if (line.get() != nullptr) {
                 selClickedRow = line;
                 selFirstRow = selClickedRow;
                 selLastRow = selClickedRow;
@@ -438,7 +438,7 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
             ChatLineContent* content = getContentFromPos(scenePos);
             ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
-            if (content) {
+            if (content != nullptr) {
                 int col = content->getColumn();
 
                 if (line == selClickedRow && col == selClickedCol) {
@@ -451,7 +451,7 @@ void ChatWidget::mouseMoveEvent(QMouseEvent* ev)
 
                     line->selectionCleared();
                 }
-            } else if (line.get()) {
+            } else if (line.get() != nullptr) {
                 if (line != selClickedRow) {
                     selectionMode = SelectionMode::Multi;
                     line->selectionCleared();
@@ -496,7 +496,7 @@ bool ChatWidget::isOverSelection(QPointF scenePos) const
     if (selectionMode == SelectionMode::Precise) {
         ChatLineContent* content = getContentFromPos(scenePos);
 
-        if (content)
+        if (content != nullptr)
             return content->isOverSelection(scenePos);
     } else if (selectionMode == SelectionMode::Multi) {
         if (selGraphItem->rect().contains(scenePos))
@@ -626,7 +626,7 @@ void ChatWidget::mouseDoubleClickEvent(QMouseEvent* ev)
     ChatLineContent* content = getContentFromPos(scenePos);
     ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
-    if (content) {
+    if (content != nullptr) {
         content->selectionDoubleClick(scenePos);
         selClickedCol = content->getColumn();
         selClickedRow = line;
@@ -724,13 +724,13 @@ void ChatWidget::copySelectedText(bool toSelectionBuffer) const
     QString text = getSelectedText();
     QClipboard* clipboard = QApplication::clipboard();
 
-    if (clipboard && !text.isNull())
+    if ((clipboard != nullptr) && !text.isNull())
         clipboard->setText(text, toSelectionBuffer ? QClipboard::Selection : QClipboard::Clipboard);
 }
 
 void ChatWidget::setTypingNotificationVisible(bool visible)
 {
-    if (typingNotification.get()) {
+    if (typingNotification.get() != nullptr) {
         typingNotification->setVisible(visible);
         updateTypingNotification();
     }
@@ -738,7 +738,7 @@ void ChatWidget::setTypingNotificationVisible(bool visible)
 
 void ChatWidget::setTypingNotificationName(const QString& displayName)
 {
-    if (!typingNotification.get()) {
+    if (typingNotification.get() == nullptr) {
         setTypingNotification();
     }
 
@@ -751,7 +751,7 @@ void ChatWidget::setTypingNotificationName(const QString& displayName)
 
 void ChatWidget::scrollToLine(ChatLine::Ptr line)
 {
-    if (!line.get())
+    if (line.get() == nullptr)
         return;
 
     updateSceneRect();
@@ -968,7 +968,7 @@ void ChatWidget::updateMultiSelectionRect()
 void ChatWidget::updateTypingNotification()
 {
     ChatLine* notification = typingNotification.get();
-    if (!notification)
+    if (notification == nullptr)
         return;
 
     qreal posY = 0.0;
@@ -1181,7 +1181,7 @@ void ChatWidget::onRenderFinished()
     auto renderCompletionFnsLocal = renderCompletionFns;
     renderCompletionFns.clear();
 
-    while (renderCompletionFnsLocal.size()) {
+    while (renderCompletionFnsLocal.size() != 0u) {
         renderCompletionFnsLocal.back()();
         renderCompletionFnsLocal.pop_back();
     }
@@ -1270,7 +1270,7 @@ void ChatWidget::handleMultiClickEvent()
         ChatLineContent* content = getContentFromPos(scenePos);
         ChatLine::Ptr line = findLineByPosY(scenePos.y());
 
-        if (content) {
+        if (content != nullptr) {
             content->selectionTripleClick(scenePos);
             selClickedCol = content->getColumn();
             selClickedRow = line;
@@ -1366,12 +1366,12 @@ bool ChatWidget::isActiveFileTransfer(ChatLine::Ptr l)
     for (int i = 0; i < count; ++i) {
         ChatLineContent* content = l->getContent(i);
         ChatLineContentProxy* proxy = qobject_cast<ChatLineContentProxy*>(content);
-        if (!proxy)
+        if (proxy == nullptr)
             continue;
 
         QWidget* widget = proxy->getWidget();
         FileTransferWidget* transferWidget = qobject_cast<FileTransferWidget*>(widget);
-        if (transferWidget && transferWidget->isActive())
+        if ((transferWidget != nullptr) && transferWidget->isActive())
             return true;
     }
 

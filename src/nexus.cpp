@@ -179,7 +179,7 @@ void Nexus::bootstrapWithProfile(Profile* p)
 
     profile = p;
 
-    if (profile) {
+    if (profile != nullptr) {
         audioControl = std::unique_ptr<IAudioControl>(Audio::makeAudio(settings));
         assert(audioControl != nullptr);
         profile->getCore().getAv()->setAudio(*audioControl);
@@ -271,7 +271,7 @@ void Nexus::onLoadProfile(const QString& name, const QString& pass)
  */
 void Nexus::setProfile(Profile* p)
 {
-    if (!p) {
+    if (p == nullptr) {
         emit profileLoadFailed();
         // Warnings are issued during respective createNew/load calls
         return;

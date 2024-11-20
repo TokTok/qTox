@@ -159,7 +159,7 @@ void CoreFile::pauseResumeFile(uint32_t friendId, uint32_t fileId)
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("pauseResumeFileSend: No such file in queue");
         return;
     }
@@ -194,7 +194,7 @@ void CoreFile::cancelFileSend(uint32_t friendId, uint32_t fileId)
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("cancelFileSend: No such file in queue");
         return;
     }
@@ -214,7 +214,7 @@ void CoreFile::cancelFileRecv(uint32_t friendId, uint32_t fileId)
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("cancelFileRecv: No such file in queue");
         return;
     }
@@ -233,7 +233,7 @@ void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("rejectFileRecvRequest: No such file in queue");
         return;
     }
@@ -252,7 +252,7 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     ToxFile* file = findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("acceptFileRecvRequest: No such file in queue");
         return;
     }
@@ -324,7 +324,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     const ToxPk friendPk = core->getFriendPublicKey(friendId);
 
     if (kind == TOX_FILE_KIND_AVATAR) {
-        if (!filesize) {
+        if (filesize == 0u) {
             qDebug() << QString("Received empty avatar request %1:%2").arg(friendId).arg(fileId);
             // Avatars of size 0 means explicitely no avatar
             Tox_Err_File_Control err;
@@ -424,7 +424,7 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     Core* core = static_cast<Core*>(vCore);
     CoreFile* coreFile = core->getCoreFile();
     ToxFile* file = coreFile->findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("onFileControlCallback: No such file in queue");
         return;
     }
@@ -460,13 +460,13 @@ void CoreFile::onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, 
     Core* core = static_cast<Core*>(vCore);
     CoreFile* coreFile = core->getCoreFile();
     ToxFile* file = coreFile->findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("onFileDataCallback: No such file in queue");
         return;
     }
 
     // If we reached EOF, ack and cleanup the transfer
-    if (!length) {
+    if (length == 0u) {
         file->status = ToxFile::FINISHED;
         if (file->fileKind != TOX_FILE_KIND_AVATAR) {
             emit coreFile->fileTransferFinished(*file);
@@ -520,7 +520,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
     Core* core = static_cast<Core*>(vCore);
     CoreFile* coreFile = core->getCoreFile();
     ToxFile* file = coreFile->findFile(friendId, fileId);
-    if (!file) {
+    if (file == nullptr) {
         qWarning("onFileRecvChunkCallback: No such file in queue");
         Tox_Err_File_Control err;
         tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
@@ -541,7 +541,7 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
         return;
     }
 
-    if (!length) {
+    if (length == 0u) {
         file->status = ToxFile::FINISHED;
         if (file->fileKind == TOX_FILE_KIND_AVATAR) {
             QPixmap pic;

@@ -377,10 +377,10 @@ void UserInterfaceForm::on_txtChatFontSize_valueChanged(int px)
 
 void UserInterfaceForm::on_useNameColors_stateChanged(int value)
 {
-    settings.setEnableGroupChatsColor(value);
+    settings.setEnableGroupChatsColor(value != 0);
 }
 
 void UserInterfaceForm::on_notifyHide_stateChanged(int value)
 {
-    settings.setNotifyHide(value);
+    settings.setNotifyHide(value != 0);
 }

@@ -264,7 +264,7 @@ void Settings::updateProfileData(Profile* profile, const QCommandLineParser* par
     setCurrentProfile(profile->getName());
     saveGlobal();
     loadPersonal(*profile, newProfile);
-    if (parser) {
+    if (parser != nullptr) {
         applyCommandLineOptions(*parser);
     }
 }
@@ -736,7 +736,7 @@ void Settings::saveGlobal()
  */
 void Settings::savePersonal()
 {
-    if (!loadedProfile) {
+    if (loadedProfile == nullptr) {
         qDebug() << "Could not save personal settings because there is no active profile";
         return;
     }

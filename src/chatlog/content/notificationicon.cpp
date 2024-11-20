@@ -73,7 +73,7 @@ void NotificationIcon::updateGradient()
     grad.setColorAt(qMin(1.0, alpha + dotWidth), Qt::lightGray);
     grad.setColorAt(1, Qt::lightGray);
 
-    if (scene() && isVisible()) {
+    if ((scene() != nullptr) && isVisible()) {
         scene()->invalidate(sceneBoundingRect());
     }
 }

@@ -169,7 +169,7 @@ void GroupChatForm::onAttachClicked()
 void GroupChatForm::updateUserNames()
 {
     QLayoutItem* child;
-    while ((child = namesListLayout->takeAt(0))) {
+    while ((child = namesListLayout->takeAt(0)) != nullptr) {
         child->widget()->hide();
         delete child->widget();
         delete child;
@@ -261,7 +261,7 @@ void GroupChatForm::peerAudioPlaying(ToxPk peerPk)
     peerLabels[peerPk]->style()->unpolish(peerLabels[peerPk]);
     peerLabels[peerPk]->style()->polish(peerLabels[peerPk]);
     // TODO(sudden6): check if this can ever be false, cause [] default constructs
-    if (!peerAudioTimers[peerPk]) {
+    if (peerAudioTimers[peerPk] == nullptr) {
         peerAudioTimers[peerPk] = new QTimer(this);
         peerAudioTimers[peerPk]->setSingleShot(true);
         connect(peerAudioTimers[peerPk], &QTimer::timeout, [this, peerPk] {
@@ -287,7 +287,7 @@ void GroupChatForm::dragEnterEvent(QDragEnterEvent* ev)
     }
     ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
-    if (frnd)
+    if (frnd != nullptr)
         ev->acceptProposedAction();
 }
 
@@ -298,7 +298,7 @@ void GroupChatForm::dropEvent(QDropEvent* ev)
     }
     ToxPk toxPk{ev->mimeData()->data("toxPk")};
     Friend* frnd = friendList.findFriend(toxPk);
-    if (!frnd)
+    if (frnd == nullptr)
         return;
 
     int friendId = frnd->getId();
@@ -352,7 +352,7 @@ void GroupChatForm::onCallClicked()
 void GroupChatForm::keyPressEvent(QKeyEvent* ev)
 {
     // Push to talk (CTRL+P)
-    if (ev->key() == Qt::Key_P && (ev->modifiers() & Qt::ControlModifier) && inCall) {
+    if (ev->key() == Qt::Key_P && ((ev->modifiers() & Qt::ControlModifier) != 0u) && inCall) {
         onMicMuteToggle();
     }
 
@@ -363,7 +363,7 @@ void GroupChatForm::keyPressEvent(QKeyEvent* ev)
 void GroupChatForm::keyReleaseEvent(QKeyEvent* ev)
 {
     // Push to talk (CTRL+P)
-    if (ev->key() == Qt::Key_P && (ev->modifiers() & Qt::ControlModifier) && inCall) {
+    if (ev->key() == Qt::Key_P && ((ev->modifiers() & Qt::ControlModifier) != 0u) && inCall) {
         onMicMuteToggle();
     }
 

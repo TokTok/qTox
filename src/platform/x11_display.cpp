@@ -21,7 +21,7 @@ struct X11DisplayPrivate
     }
     ~X11DisplayPrivate()
     {
-        if (display) {
+        if (display != nullptr) {
             XCloseDisplay(display);
         }
     }

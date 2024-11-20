@@ -66,5 +66,5 @@ uint32_t VideoMode::tolerance() const
  */
 VideoMode::operator bool() const
 {
-    return width || height || static_cast<int>(FPS);
+    return (width != 0) || (height != 0) || (static_cast<int>(FPS) != 0);
 }

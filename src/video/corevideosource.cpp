@@ -59,7 +59,7 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxframe)
         return;
 
     AVFrame* avframe = av_frame_alloc();
-    if (!avframe)
+    if (avframe == nullptr)
         return;
 
     avframe->width = width;

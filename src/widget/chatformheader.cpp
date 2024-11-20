@@ -229,8 +229,8 @@ void ChatFormHeader::updateExtensionSupport(ExtensionSet extensions)
 
 void ChatFormHeader::updateCallButtons(bool online, bool audio, bool video)
 {
-    const bool audioAvaliable = online && (mode & Mode::Audio);
-    const bool videoAvaliable = online && (mode & Mode::Video);
+    const bool audioAvaliable = online && ((mode & Mode::Audio) != 0);
+    const bool videoAvaliable = online && ((mode & Mode::Video) != 0);
     if (!audioAvaliable) {
         callState = CallButtonState::Disabled;
     } else if (video) {

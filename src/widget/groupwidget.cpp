@@ -93,7 +93,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
         setBackgroundRole(QPalette::Window);
     }
 
-    if (!selectedItem) {
+    if (selectedItem == nullptr) {
         return;
     }
 

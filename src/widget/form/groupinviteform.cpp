@@ -152,7 +152,7 @@ void GroupInviteForm::deleteInviteWidget(const GroupInvite& inviteInfo)
 void GroupInviteForm::retranslateUi()
 {
     headLabel->setText(tr("Groups"));
-    if (createButton) {
+    if (createButton != nullptr) {
         createButton->setText(tr("Create new group"));
     }
     inviteBox->setTitle(tr("Group invites"));

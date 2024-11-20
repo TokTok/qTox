@@ -400,7 +400,7 @@ RawDatabase::Query History::generateFileFinished(RowId id, bool success, const Q
                                                  const QByteArray& fileHash)
 {
     auto file_state = success ? ToxFile::FINISHED : ToxFile::CANCELED;
-    if (filePath.length()) {
+    if (filePath.length() != 0) {
         return RawDatabase::Query(QStringLiteral("UPDATE file_transfers "
                                                  "SET file_state = %1, file_path = ?, file_hash = ?"
                                                  "WHERE id = %2")
@@ -835,7 +835,7 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
         "WHERE chats.uuid = ?"              // filter this conversation
         "AND countHistory.id <= history.id"); // and filter that our unfiltered table history id only has elements up to history.id
 
-    auto limitString = (maxNum) ? QString("LIMIT %1").arg(maxNum) : QString("");
+    auto limitString = (maxNum) != 0u ? QString("LIMIT %1").arg(maxNum) : QString("");
 
     auto query =
         RawDatabase::Query(QStringLiteral("SELECT (%1), (timestamp / 1000 / 60 / 60 / 24) AS day "

@@ -76,15 +76,15 @@ QString secondsToDHMS(quint32 duration)
     quint32 days = duration / 24;
 
     // I assume no one will ever have call longer than a month
-    if (days) {
+    if (days != 0u) {
         return cD + res.asprintf("%dd%02dh %02dm %02ds", days, hours, minutes, seconds);
     }
 
-    if (hours) {
+    if (hours != 0u) {
         return cD + res.asprintf("%02dh %02dm %02ds", hours, minutes, seconds);
     }
 
-    if (minutes) {
+    if (minutes != 0u) {
         return cD + res.asprintf("%02dm %02ds", minutes, seconds);
     }
 
@@ -637,7 +637,7 @@ void ChatForm::onCopyStatusMessage()
     // make sure to copy not truncated text directly from the friend
     QString text = f->getStatusMessage();
     QClipboard* clipboard = QApplication::clipboard();
-    if (clipboard) {
+    if (clipboard != nullptr) {
         clipboard->setText(text, QClipboard::Clipboard);
     }
 }
@@ -666,7 +666,7 @@ void ChatForm::updateMuteVolButton()
 
 void ChatForm::startCounter()
 {
-    if (callDurationTimer) {
+    if (callDurationTimer != nullptr) {
         return;
     }
     callDurationTimer = new QTimer();
@@ -678,7 +678,7 @@ void ChatForm::startCounter()
 
 void ChatForm::stopCounter(bool error)
 {
-    if (!callDurationTimer) {
+    if (callDurationTimer == nullptr) {
         return;
     }
     QString dhms = secondsToDHMS(timeElapsed.elapsed() / 1000);
@@ -752,7 +752,7 @@ void ChatForm::showNetcam()
 
     QSize minSize = netcam->getSurfaceMinSize();
     ContentDialog* current = contentDialogManager.current();
-    if (current) {
+    if (current != nullptr) {
         current->onVideoShow(minSize);
     }
 }
@@ -764,7 +764,7 @@ void ChatForm::hideNetcam()
     }
 
     ContentDialog* current = contentDialogManager.current();
-    if (current) {
+    if (current != nullptr) {
         current->onVideoHide();
     }
 

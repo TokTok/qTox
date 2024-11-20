@@ -112,7 +112,7 @@ bool AboutFriend::clearHistory()
 {
     const ToxPk pk = f->getPublicKey();
     History* const history = profile.getHistory();
-    if (history) {
+    if (history != nullptr) {
         history->removeChatHistory(pk);
         return true;
     }
@@ -123,7 +123,7 @@ bool AboutFriend::clearHistory()
 bool AboutFriend::isHistoryExistence()
 {
     History* const history = profile.getHistory();
-    if (history) {
+    if (history != nullptr) {
         const ToxPk pk = f->getPublicKey();
         return history->historyExists(pk);
     }

@@ -472,7 +472,7 @@ void Widget::init()
     ui->transferButton->setCheckable(true);
     ui->settingsButton->setCheckable(true);
 
-    if (contentLayout) {
+    if (contentLayout != nullptr) {
         onAddClicked();
     }
 
@@ -530,7 +530,7 @@ bool Widget::eventFilter(QObject* obj, QEvent* event)
 
     case QEvent::WindowStateChange:
         ce = static_cast<QWindowStateChangeEvent*>(event);
-        if (state.testFlag(Qt::WindowMinimized) && obj) {
+        if (state.testFlag(Qt::WindowMinimized) && (obj != nullptr)) {
             wasMaximized = ce->oldState().testFlag(Qt::WindowMaximized);
         }
 
@@ -827,12 +827,12 @@ void Widget::onSeparateWindowChanged(bool separate, bool clicked)
         QSize size;
         QPoint pos;
 
-        if (contentLayout) {
+        if (contentLayout != nullptr) {
             pos = mapToGlobal(ui->mainSplitter->widget(1)->pos());
             size = ui->mainSplitter->widget(1)->size();
         }
 
-        if (contentLayout) {
+        if (contentLayout != nullptr) {
             contentLayout->clear();
             contentLayout->parentWidget()->setParent(nullptr); // Remove from splitter.
             contentLayout->parentWidget()->hide();
@@ -847,7 +847,7 @@ void Widget::onSeparateWindowChanged(bool separate, bool clicked)
             showNormal();
             resize(width, height());
 
-            if (settingsWidget) {
+            if (settingsWidget != nullptr) {
                 ContentLayout* contentLayout_ = createContentDialog((DialogType::SettingDialog));
                 contentLayout_->parentWidget()->resize(size);
                 contentLayout_->parentWidget()->move(pos);
@@ -1096,7 +1096,7 @@ void Widget::dispatchFile(ToxFile file)
 {
     const auto& friendId = friendList->id2Key(file.friendId);
     Friend* f = friendList->findFriend(friendId);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1249,7 +1249,7 @@ void Widget::onCoreFriendStatusChanged(int friendId, Status::Status status)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1295,7 +1295,7 @@ void Widget::onFriendStatusMessageChanged(int friendId, const QString& message)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1329,7 +1329,7 @@ void Widget::onFriendUsernameChanged(int friendId, const QString& username)
 {
     const auto& friendPk = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendPk);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1363,7 +1363,7 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
     const Friend* frnd = widget->getFriend();
     const Group* group = widget->getGroup();
     bool chatFormIsSet;
-    if (frnd) {
+    if (frnd != nullptr) {
         form = chatForms[frnd->getPublicKey()];
         contentDialogManager->focusChat(frnd->getPersistentId());
         chatFormIsSet = contentDialogManager->chatWidgetExists(frnd->getPersistentId());
@@ -1390,7 +1390,7 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
 
         dialog->show();
 
-        if (frnd) {
+        if (frnd != nullptr) {
             addFriendDialog(frnd, dialog);
         } else {
             addGroupDialog(group, dialog);
@@ -1400,7 +1400,7 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
         dialog->activateWindow();
     } else {
         hideMainForms(widget);
-        if (frnd) {
+        if (frnd != nullptr) {
             chatForms[frnd->getPublicKey()]->show(contentLayout);
         } else {
             groupChatForms[group->getPersistentId()]->show(contentLayout);
@@ -1414,7 +1414,7 @@ void Widget::onFriendMessageReceived(uint32_t friendnumber, const QString& messa
 {
     const auto& friendId = friendList->id2Key(friendnumber);
     Friend* f = friendList->findFriend(friendId);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1425,7 +1425,7 @@ void Widget::onReceiptReceived(int friendId, ReceiptNum receipt)
 {
     const auto& friendKey = friendList->id2Key(friendId);
     Friend* f = friendList->findFriend(friendKey);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1436,7 +1436,7 @@ void Widget::onExtendedMessageSupport(uint32_t friendNumber, bool supported)
 {
     const auto& friendKey = friendList->id2Key(friendNumber);
     Friend* f = friendList->findFriend(friendKey);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -1462,7 +1462,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
     bool isSeparate = settings.getSeparateWindow();
     FriendWidget* widget = friendWidgets[friendPk];
     bool isCurrent = activeChatroomWidget == widget;
-    if (!contentDialog && !isSeparate && isCurrent) {
+    if ((contentDialog == nullptr) && !isSeparate && isCurrent) {
         onAddClicked();
     }
 
@@ -1513,7 +1513,7 @@ void Widget::addGroupDialog(const Group* group, ContentDialog* dialog)
     bool separated = settings.getSeparateWindow();
     GroupWidget* widget = groupWidgets[groupId];
     bool isCurrentWindow = activeChatroomWidget == widget;
-    if (!groupDialog && !separated && isCurrentWindow) {
+    if ((groupDialog == nullptr) && !separated && isCurrentWindow) {
         onAddClicked();
     }
 
@@ -1563,7 +1563,7 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
                 contentDialog = createContentDialog();
             } else {
                 contentDialog = contentDialogManager->current();
-                if (!contentDialog) {
+                if (contentDialog == nullptr) {
                     contentDialog = createContentDialog();
                 }
             }
@@ -1787,7 +1787,7 @@ void Widget::removeFriend(Friend* f, bool fake)
     delete chatForm;
 
     delete f;
-    if (contentLayout && contentLayout->mainHead->layout()->isEmpty()) {
+    if ((contentLayout != nullptr) && contentLayout->mainHead->layout()->isEmpty()) {
         onAddClicked();
     }
 }
@@ -2102,7 +2102,7 @@ void Widget::removeGroup(Group* g, bool fake)
     groupAlertConnections.remove(groupId);
 
     delete g;
-    if (contentLayout && contentLayout->mainHead->layout()->isEmpty()) {
+    if ((contentLayout != nullptr) && contentLayout->mainHead->layout()->isEmpty()) {
         onAddClicked();
     }
 }
@@ -2117,7 +2117,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
     assert(core != nullptr);
 
     Group* g = groupList->findGroup(groupId);
-    if (g) {
+    if (g != nullptr) {
         qWarning() << "Group already exists";
         return g;
     }
@@ -2195,7 +2195,7 @@ Group* Widget::createGroup(uint32_t groupnumber, const GroupId& groupId)
 void Widget::onEmptyGroupCreated(uint32_t groupnumber, const GroupId& groupId, const QString& title)
 {
     Group* group = createGroup(groupnumber, groupId);
-    if (!group) {
+    if (group == nullptr) {
         return;
     }
     if (title.isEmpty()) {
@@ -2234,7 +2234,7 @@ bool Widget::event(QEvent* e)
         ui->friendList->updateVisualTracking();
         break;
     case QEvent::WindowActivate:
-        if (activeChatroomWidget) {
+        if (activeChatroomWidget != nullptr) {
             activeChatroomWidget->resetEventFlags();
             activeChatroomWidget->updateStatusLight();
             setWindowTitle(activeChatroomWidget->getTitle());
@@ -2266,7 +2266,7 @@ void Widget::onUserAwayCheck()
     uint32_t autoAwayTime = settings.getAutoAwayTime() * 60 * 1000;
     bool online = static_cast<Status::Status>(ui->statusButton->property("status").toInt())
                   == Status::Status::Online;
-    bool away = autoAwayTime && Platform::getIdleTime() >= autoAwayTime;
+    bool away = (autoAwayTime != 0u) && Platform::getIdleTime() >= autoAwayTime;
 
     if (online && away) {
         qDebug() << "auto away activated at" << QTime::currentTime().toString();
@@ -2283,7 +2283,7 @@ void Widget::onUserAwayCheck()
 void Widget::onEventIconTick()
 {
     if (eventFlag) {
-        eventIcon ^= true;
+        eventIcon ^= 1;
         updateIcons();
     }
 }
@@ -2294,7 +2294,7 @@ void Widget::onTryCreateTrayIcon()
 {
 #ifndef XX_UBUNTU1604_XX
     static int32_t tries = 15;
-    if (!icon && tries--) {
+    if (!icon && ((tries--) != 0)) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
             icon = std::unique_ptr<QSystemTrayIcon>(new QSystemTrayIcon);
             updateIcons();
@@ -2379,7 +2379,7 @@ void Widget::onFriendTypingChanged(uint32_t friendnumber, bool isTyping)
 {
     const auto& friendId = friendList->id2Key(friendnumber);
     Friend* f = friendList->findFriend(friendId);
-    if (!f) {
+    if (f == nullptr) {
         return;
     }
 
@@ -2605,7 +2605,7 @@ void Widget::friendRequestsUpdate()
     if (unreadFriendRequests == 0) {
         delete friendRequestsButton;
         friendRequestsButton = nullptr;
-    } else if (!friendRequestsButton) {
+    } else if (friendRequestsButton == nullptr) {
         friendRequestsButton = new QPushButton(this);
         friendRequestsButton->setObjectName("green");
         ui->statusLayout->insertWidget(2, friendRequestsButton);
@@ -2616,7 +2616,7 @@ void Widget::friendRequestsUpdate()
         });
     }
 
-    if (friendRequestsButton) {
+    if (friendRequestsButton != nullptr) {
         friendRequestsButton->setText(tr("%n new friend request(s)", "", unreadFriendRequests));
     }
 }
@@ -2626,7 +2626,7 @@ void Widget::groupInvitesUpdate()
     if (unreadGroupInvites == 0) {
         delete groupInvitesButton;
         groupInvitesButton = nullptr;
-    } else if (!groupInvitesButton) {
+    } else if (groupInvitesButton == nullptr) {
         groupInvitesButton = new QPushButton(this);
         groupInvitesButton->setObjectName("green");
         ui->statusLayout->insertWidget(2, groupInvitesButton);
@@ -2634,7 +2634,7 @@ void Widget::groupInvitesUpdate()
         connect(groupInvitesButton, &QPushButton::released, this, &Widget::onGroupClicked);
     }
 
-    if (groupInvitesButton) {
+    if (groupInvitesButton != nullptr) {
         groupInvitesButton->setText(tr("%n new group invite(s)", "", unreadGroupInvites));
     }
 }
@@ -2680,7 +2680,7 @@ void Widget::retranslateUi()
     actionQuit->setText(tr("Exit", "Tray action menu to exit Tox"));
     actionShow->setText(tr("Show", "Tray action menu to show qTox window"));
 
-    if (!settings.getSeparateWindow() && (settingsWidget && settingsWidget->isShown())) {
+    if (!settings.getSeparateWindow() && ((settingsWidget != nullptr) && settingsWidget->isShown())) {
         setWindowTitle(fromDialogType(DialogType::SettingDialog));
     }
 
@@ -2707,7 +2707,7 @@ void Widget::retranslateUi()
 
 void Widget::focusChatInput()
 {
-    if (activeChatroomWidget) {
+    if (activeChatroomWidget != nullptr) {
         if (const Friend* f = activeChatroomWidget->getFriend()) {
             chatForms[f->getPublicKey()]->focusInput();
         } else if (Group* g = activeChatroomWidget->getGroup()) {

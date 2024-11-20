@@ -228,7 +228,7 @@ void ScreenshotGrabber::hideVisibleWindows()
 void ScreenshotGrabber::restoreHiddenWindows()
 {
     foreach (QWidget* w, mHiddenWindows) {
-        if (w)
+        if (w != nullptr)
             w->setVisible(true);
     }
 

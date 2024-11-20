@@ -297,7 +297,7 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
 {
     QLayout* currentLayout;
     int index = getCurrentLayout(currentLayout);
-    if (!currentLayout || index == -1) {
+    if ((currentLayout == nullptr) || index == -1) {
         return;
     }
 
@@ -338,7 +338,7 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
 
     QWidget* widget = currentLayout->itemAt(index)->widget();
     GenericChatroomWidget* chatWidget = qobject_cast<GenericChatroomWidget*>(widget);
-    if (chatWidget && chatWidget != activeChatroomWidget) {
+    if ((chatWidget != nullptr) && chatWidget != activeChatroomWidget) {
         // FIXME: emit should be removed
         emit chatWidget->chatroomWidgetClicked(chatWidget);
     }
@@ -374,7 +374,7 @@ void ContentDialog::onVideoHide()
  */
 void ContentDialog::updateTitleAndStatusIcon()
 {
-    if (!activeChatroomWidget) {
+    if (activeChatroomWidget == nullptr) {
         setWindowTitle(username);
         return;
     }
@@ -436,7 +436,7 @@ bool ContentDialog::event(QEvent* event)
 {
     switch (event->type()) {
     case QEvent::WindowActivate:
-        if (activeChatroomWidget) {
+        if (activeChatroomWidget != nullptr) {
             activeChatroomWidget->resetEventFlags();
             activeChatroomWidget->updateStatusLight();
 
@@ -445,9 +445,9 @@ bool ContentDialog::event(QEvent* event)
             const Friend* frnd = activeChatroomWidget->getFriend();
             Group* group = activeChatroomWidget->getGroup();
 
-            if (frnd) {
+            if (frnd != nullptr) {
                 emit friendDialogShown(frnd);
-            } else if (group) {
+            } else if (group != nullptr) {
                 emit groupDialogShown(group);
             }
         }
@@ -465,11 +465,11 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
     QObject* o = event->source();
     FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
     GroupWidget* group = qobject_cast<GroupWidget*>(o);
-    if (frnd) {
+    if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         ToxPk toxPk{event->mimeData()->data("toxPk")};
         Friend* contact = friendList.findFriend(toxPk);
-        if (!contact) {
+        if (contact == nullptr) {
             return;
         }
 
@@ -479,11 +479,11 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
         if (!hasChat(friendId)) {
             event->acceptProposedAction();
         }
-    } else if (group) {
+    } else if (group != nullptr) {
         assert(event->mimeData()->hasFormat("groupId"));
         GroupId groupId = GroupId{event->mimeData()->data("groupId")};
         Group* contact = groupList.findGroup(groupId);
-        if (!contact) {
+        if (contact == nullptr) {
             return;
         }
 
@@ -498,21 +498,21 @@ void ContentDialog::dropEvent(QDropEvent* event)
     QObject* o = event->source();
     FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
     GroupWidget* group = qobject_cast<GroupWidget*>(o);
-    if (frnd) {
+    if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxId(event->mimeData()->data("toxPk"));
         Friend* contact = friendList.findFriend(toxId);
-        if (!contact) {
+        if (contact == nullptr) {
             return;
         }
 
         emit addFriendDialog(contact, this);
         ensureSplitterVisible();
-    } else if (group) {
+    } else if (group != nullptr) {
         assert(event->mimeData()->hasFormat("groupId"));
         const GroupId groupId(event->mimeData()->data("groupId"));
         Group* contact = groupList.findGroup(groupId);
-        if (!contact) {
+        if (contact == nullptr) {
             return;
         }
 
@@ -580,7 +580,7 @@ void ContentDialog::activate(GenericChatroomWidget* widget)
 
     contentLayout->clear();
 
-    if (activeChatroomWidget) {
+    if (activeChatroomWidget != nullptr) {
         activeChatroomWidget->setAsInactiveChatroom();
     }
 
