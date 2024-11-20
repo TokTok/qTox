@@ -26,8 +26,6 @@ QString getTitle(Status status)
         return QObject::tr("offline", "contact status");
     case Status::Blocked:
         return QObject::tr("blocked", "contact status");
-    case Status::Negotiating:
-        return QObject::tr("negotitating", "contact status");
     }
 
     assert(false);
@@ -47,8 +45,6 @@ QString getAssetSuffix(Status status)
         return "offline";
     case Status::Blocked:
         return "blocked";
-    case Status::Negotiating:
-        return "negotiating";
     }
     assert(false);
     return QStringLiteral("");
@@ -67,9 +63,6 @@ QString getIconPath(Status status, bool event)
 
 bool isOnline(Status status)
 {
-    return status != Status::Offline
-           && status != Status::Blocked
-           // We don't want to treat a friend as online unless we know their feature set
-           && status != Status::Negotiating;
+    return status != Status::Offline && status != Status::Blocked;
 }
 } // namespace Status

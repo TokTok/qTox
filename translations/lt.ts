@@ -921,25 +921,6 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Palaikomi visi plėtiniai</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Nepalaikomi jokie plėtiniai</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Palaikomi ne visi plėtiniai</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Kelių dalių žinutės: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2392,11 +2373,6 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 žinutė (-ės) iš %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>derybos</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

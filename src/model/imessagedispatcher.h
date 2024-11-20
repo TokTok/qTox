@@ -22,7 +22,7 @@ class IMessageDispatcher : public QObject
 {
     Q_OBJECT
 public:
-    virtual ~IMessageDispatcher() = default;
+    virtual ~IMessageDispatcher();
 
     /**
      * @brief Sends message to associated chat
@@ -32,17 +32,6 @@ public:
      */
     virtual std::pair<DispatchedMessageId, DispatchedMessageId>
     sendMessage(bool isAction, const QString& content) = 0;
-
-    /**
-     * @brief Sends message to associated chat ensuring that extensions are available
-     * @param[in] content Message content
-     * @param[in] extensions extensions required for given message
-     * @return Pair of first and last dispatched message IDs
-     * @note If the provided extensions are not supported the message will be flagged
-     *       as broken
-     */
-    virtual std::pair<DispatchedMessageId, DispatchedMessageId>
-    sendExtendedMessage(const QString& content, ExtensionSet extensions) = 0;
 
 signals:
     /**

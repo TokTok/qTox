@@ -90,10 +90,10 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
  * @param dispName Name, which should be displayed.
  * @param insertIdCallback Function, called after query execution.
  */
-QVector<RawDatabase::Query>
-generateNewTextMessageQueries(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                              const QDateTime& time, bool isDelivered, ExtensionSet extensionSet,
-                              QString dispName, std::function<void(RowId)> insertIdCallback)
+QVector<RawDatabase::Query> generateNewTextMessageQueries(const ChatId& chatId, const QString& message,
+                                                          const ToxPk& sender, const QDateTime& time,
+                                                          bool isDelivered, QString dispName,
+                                                          std::function<void(RowId)> insertIdCallback)
 {
     QVector<RawDatabase::Query> queries;
 
@@ -119,10 +119,10 @@ generateNewTextMessageQueries(const ChatId& chatId, const QString& message, cons
 
     if (!isDelivered) {
         queries += RawDatabase::Query{
-            QString("INSERT INTO faux_offline_pending (id, required_extensions) VALUES ("
-                    "    last_insert_rowid(), %1"
-                    ");")
-                .arg(extensionSet.to_ulong())};
+            QStringLiteral("INSERT INTO faux_offline_pending (id) VALUES ("
+                           "    last_insert_rowid()"
+                           ");"),
+        };
     }
 
     return queries;
@@ -478,15 +478,15 @@ void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& sys
  * @param insertIdCallback Function, called after query execution.
  */
 void History::addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                            const QDateTime& time, bool isDelivered, ExtensionSet extensionSet,
-                            QString dispName, const std::function<void(RowId)>& insertIdCallback)
+                            const QDateTime& time, bool isDelivered, QString dispName,
+                            const std::function<void(RowId)>& insertIdCallback)
 {
     if (historyAccessBlocked()) {
         return;
     }
 
     db->execLater(generateNewTextMessageQueries(chatId, message, sender, time, isDelivered,
-                                                extensionSet, dispName, insertIdCallback));
+                                                dispName, insertIdCallback));
 }
 
 void History::setFileFinished(const QByteArray& fileId, bool success, const QString& filePath,
@@ -556,10 +556,10 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
 
     auto rowCallback = [&chatId, &messages](const QVector<QVariant>& row) {
         // If the select statement is changed please update these constants
-        constexpr auto messageOffset = 6;
-        constexpr auto fileOffset = 7;
-        constexpr auto senderOffset = 13;
-        constexpr auto systemOffset = 15;
+        constexpr auto messageOffset = 5;
+        constexpr auto fileOffset = 6;
+        constexpr auto senderOffset = 12;
+        constexpr auto systemOffset = 14;
 
         auto it = row.begin();
 
@@ -567,8 +567,6 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
         const auto messageType = (*it++).toString();
         const auto timestamp = QDateTime::fromMSecsSinceEpoch((*it++).toLongLong());
         const auto isPending = !(*it++).isNull();
-        // If NULL this should just reutrn 0 which is an empty extension set, good enough for now
-        const auto requiredExtensions = ExtensionSet((*it++).toLongLong());
         const auto isBroken = !(*it++).isNull();
         const auto messageState = getMessageState(isPending, isBroken);
 
@@ -583,8 +581,8 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
             it = std::next(row.begin(), senderOffset);
             const auto senderKey = ToxPk{(*it++).toByteArray()};
             const auto senderName = QString::fromUtf8((*it++).toByteArray().replace('\0', ""));
-            messages += HistMessage(id, messageState, requiredExtensions, timestamp, chatId.clone(),
-                                    senderName, senderKey, messageContent);
+            messages += HistMessage(id, messageState, timestamp, chatId.clone(), senderName,
+                                    senderKey, messageContent);
             break;
         }
         case 'F': {
@@ -630,23 +628,37 @@ QList<History::HistMessage> History::getMessagesForChat(const ChatId& chatId, si
     };
 
     // Don't forget to update the rowCallback if you change the selected columns!
-    QString queryString = QStringLiteral(
-        "SELECT history.id, history.message_type, history.timestamp, faux_offline_pending.id, "
-        "    faux_offline_pending.required_extensions, broken_messages.id, text_messages.message, "
-        "    file_restart_id, file_name, file_path, file_size, file_transfers.direction, "
-        "    file_state, authors.public_key as sender_key, aliases.display_name, "
-        "    system_messages.system_message_type, system_messages.arg1, system_messages.arg2, "
-        "    system_messages.arg3, system_messages.arg4 "
-        "FROM history "
-        "LEFT JOIN text_messages ON history.id = text_messages.id "
-        "LEFT JOIN file_transfers ON history.id = file_transfers.id "
-        "LEFT JOIN system_messages ON system_messages.id == history.id "
-        "LEFT JOIN aliases ON text_messages.sender_alias = aliases.id OR "
-        "file_transfers.sender_alias = aliases.id "
-        "LEFT JOIN authors ON aliases.owner = authors.id "
-        "LEFT JOIN faux_offline_pending ON faux_offline_pending.id = history.id "
-        "LEFT JOIN broken_messages ON broken_messages.id = history.id "
-        "WHERE history.chat_id = ");
+    QString queryString =
+        QStringLiteral("SELECT\n"
+                       "    history.id,\n"
+                       "    history.message_type,\n"
+                       "    history.timestamp,\n"
+                       "    faux_offline_pending.id,\n"
+                       "    broken_messages.id,\n"
+                       "    text_messages.message,\n"
+                       "    file_transfers.file_restart_id,\n"
+                       "    file_transfers.file_name,\n"
+                       "    file_transfers.file_path,\n"
+                       "    file_transfers.file_size,\n"
+                       "    file_transfers.direction,\n"
+                       "    file_transfers.file_state,\n"
+                       "    authors.public_key as sender_key,\n"
+                       "    aliases.display_name,\n"
+                       "    system_messages.system_message_type,\n"
+                       "    system_messages.arg1,\n"
+                       "    system_messages.arg2,\n"
+                       "    system_messages.arg3,\n"
+                       "    system_messages.arg4\n"
+                       "FROM history "
+                       "LEFT JOIN text_messages ON history.id = text_messages.id "
+                       "LEFT JOIN file_transfers ON history.id = file_transfers.id "
+                       "LEFT JOIN system_messages ON system_messages.id == history.id "
+                       "LEFT JOIN aliases ON text_messages.sender_alias = aliases.id OR "
+                       "file_transfers.sender_alias = aliases.id "
+                       "LEFT JOIN authors ON aliases.owner = authors.id "
+                       "LEFT JOIN faux_offline_pending ON faux_offline_pending.id = history.id "
+                       "LEFT JOIN broken_messages ON broken_messages.id = history.id "
+                       "WHERE history.chat_id = ");
     QVector<QByteArray> boundParams;
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(" LIMIT %1 OFFSET %2;").arg(lastIdx - firstIdx).arg(firstIdx);
@@ -669,7 +681,6 @@ QList<History::HistMessage> History::getUndeliveredMessagesForChat(const ChatId&
         auto id = RowId{(*it++).toLongLong()};
         auto timestamp = QDateTime::fromMSecsSinceEpoch((*it++).toLongLong());
         auto isPending = !(*it++).isNull();
-        auto extensionSet = ExtensionSet((*it++).toLongLong());
         auto isBroken = !(*it++).isNull();
         auto messageContent = (*it++).toString();
         auto senderKey = ToxPk{(*it++).toByteArray()};
@@ -677,21 +688,26 @@ QList<History::HistMessage> History::getUndeliveredMessagesForChat(const ChatId&
 
         MessageState messageState = getMessageState(isPending, isBroken);
 
-        ret += {id,          messageState, extensionSet,  timestamp, chatId.clone(),
-                displayName, senderKey,    messageContent};
+        ret +=
+            {id, messageState, timestamp, chatId.clone(), displayName, senderKey, messageContent};
     };
 
-    QString queryString = QStringLiteral(
-        "SELECT history.id, history.timestamp, faux_offline_pending.id, "
-        "    faux_offline_pending.required_extensions, broken_messages.id, text_messages.message, "
-        "    authors.public_key as sender_key, aliases.display_name "
-        "FROM history "
-        "JOIN text_messages ON history.id = text_messages.id "
-        "JOIN aliases ON text_messages.sender_alias = aliases.id "
-        "JOIN authors ON aliases.owner = authors.id "
-        "JOIN faux_offline_pending ON faux_offline_pending.id = history.id "
-        "LEFT JOIN broken_messages ON broken_messages.id = history.id "
-        "WHERE history.chat_id = ");
+    QString queryString =
+        QStringLiteral("SELECT\n"
+                       "    history.id,\n"
+                       "    history.timestamp,\n"
+                       "    faux_offline_pending.id,\n"
+                       "    broken_messages.id,\n"
+                       "    text_messages.message,\n"
+                       "    authors.public_key as sender_key,\n"
+                       "    aliases.display_name\n"
+                       "FROM history "
+                       "JOIN text_messages ON history.id = text_messages.id "
+                       "JOIN aliases ON text_messages.sender_alias = aliases.id "
+                       "JOIN authors ON aliases.owner = authors.id "
+                       "JOIN faux_offline_pending ON faux_offline_pending.id = history.id "
+                       "LEFT JOIN broken_messages ON broken_messages.id = history.id "
+                       "WHERE history.chat_id = ");
     QVector<QByteArray> boundParams;
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(" AND history.message_type = 'T';");

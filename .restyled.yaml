@@ -20,7 +20,4 @@ restylers:
   - prettier-json:
       # TODO(iphydf): enable
       enabled: false
-  - prettier-markdown:
-      # TODO(iphydf): enable
-      enabled: false
   - "*"

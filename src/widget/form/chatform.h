@@ -72,7 +72,6 @@ public slots:
     void onAvEnd(uint32_t friendId, bool error);
     void onAvatarChanged(const ToxPk& friendPk, const QPixmap& pic);
     void onFileNameChanged(const ToxPk& friendPk);
-    void onExtensionSupportChanged(ExtensionSet extensions);
     void clearChatArea();
     void onShowMessagesClicked();
     void onSplitterMoved(int pos, int index);

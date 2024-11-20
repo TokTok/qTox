@@ -921,25 +921,6 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Všechna rozšíření jsou podporována</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Žádné rozšíření není podporováno</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Ne všechna rozšíření jsou podporována</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Vícedílné zprávy: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2390,11 +2371,6 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 zpráva(y) od uživatele %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>vyjednávání</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

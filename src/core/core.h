@@ -30,7 +30,6 @@
 
 class CoreAV;
 class CoreFile;
-class CoreExt;
 class IAudioControl;
 class ICoreSettings;
 class ConferenceInvite;
@@ -68,8 +67,6 @@ public:
     Tox* getTox() const;
     QRecursiveMutex& getCoreLoopLock() const;
 
-    const CoreExt* getExt() const;
-    CoreExt* getExt();
     ~Core();
 
     static const QString TOX_EXT;
@@ -212,8 +209,6 @@ private:
     static void onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
                                         const uint8_t* cTitle, size_t length, void* vCore);
 
-    static void onLosslessPacket(Tox* tox, uint32_t friendId, const uint8_t* data, size_t length,
-                                 void* core);
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type);
@@ -257,7 +252,6 @@ private:
 
     std::unique_ptr<CoreFile> file;
     CoreAV* av = nullptr;
-    std::unique_ptr<CoreExt> ext;
     QTimer* toxTimer = nullptr;
     // recursive, since we might call our own functions
     mutable QRecursiveMutex coreLoopLock;

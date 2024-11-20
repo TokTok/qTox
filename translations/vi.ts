@@ -916,25 +916,6 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Tất cả các tiện ích mở rộng được hỗ trợ</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Không có tiện ích mở rộng nào được hỗ trợ</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Không phải tất cả các tiện ích mở rộng đều được hỗ trợ</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Tin nhắn dài: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2390,11 +2371,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 tin nhắn từ %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>thương lượng</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

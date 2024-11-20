@@ -918,25 +918,6 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Kaikki liitännäiset tuettu</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Ei tuettuja liitännäisiä</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Kaikkia liitännäisiä ei tueta</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Moniosaiset viestit: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2386,11 +2367,6 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 viesti(ä) 2 chatista</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>neuvottelee</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

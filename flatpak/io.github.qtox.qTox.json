@@ -100,32 +100,6 @@
             ]
         },
         {
-            "name": "toxext",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"
-            ],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/src/toxext"
-                }
-            ]
-        },
-        {
-            "name": "tox_extension_messages",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release"
-            ],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/src/toxext_messages"
-                }
-            ]
-        },
-        {
             "name": "qTox",
             "buildsystem": "cmake-ninja",
             "config-opts": [

@@ -33,9 +33,6 @@ find_package(Qt6Test          REQUIRED)
 find_package(Qt6Widgets       REQUIRED)
 find_package(Qt6Xml           REQUIRED)
 
-find_package(ToxExt                         REQUIRED)
-find_package(ToxExtensionMessages           REQUIRED)
-
 function(add_dependency)
   set(ALL_LIBRARIES ${ALL_LIBRARIES} ${ARGN} PARENT_SCOPE)
 endfunction()
@@ -49,10 +46,6 @@ add_dependency(
   Qt6::Svg
   Qt6::Widgets
   Qt6::Xml)
-
-add_dependency(
-  ToxExt::ToxExt
-  ToxExtensionMessages::ToxExtensionMessages)
 
 include(CMakeParseArguments)
 
@@ -145,7 +138,7 @@ if(${SPELL_CHECK})
 endif()
 
 # Try to find cmake toxcore libraries
-if(WIN32)
+if(WIN32 OR ANDROID)
   search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL STATIC_PACKAGE)
 else()
   search_dependency(TOXCORE             PACKAGE toxcore          OPTIONAL)
@@ -158,7 +151,7 @@ if (NOT TOXCORE_FOUND)
   search_dependency(TOXAV           PACKAGE libtoxav)
 endif()
 
-search_dependency(OPENAL              PACKAGE openal)
+search_dependency(OPENAL            PACKAGE openal)
 
 if (ANDROID)
   find_library(OPENSL_LIBRARY NAMES OpenSLES)

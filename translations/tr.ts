@@ -918,25 +918,6 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Tüm uzantılar destekleniyor</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Hiçbir uzantı desteklenmiyor</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Bazı uzantılar desteklenmiyor</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Çok Parçalı İletiler: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2386,11 +2367,6 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 ileti, %2&apos;den</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>müzakere ediliyor</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

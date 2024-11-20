@@ -918,25 +918,6 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Todas as extensões são suportadas</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Nenhuma extensão suportada</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Nem todas as extensões são suportadas</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Mensagens multipartes: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2386,11 +2367,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 mensagem(s) de %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>a negociar</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

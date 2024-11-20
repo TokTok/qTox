@@ -919,25 +919,6 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Kõik laiendused on toetatud</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Toetatud laiendused puuduvad</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Mõned laiendused ei ole toetatud</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Mitmeosalised sõnumid: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2388,11 +2369,6 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 sõnum(it) kasutajalt %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>läbirääkimine</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

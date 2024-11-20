@@ -918,25 +918,6 @@ så att du kan spara filen i Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Alla tillägg som stöds</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Inga tillägg stöds</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Alla tillägg stöds inte</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Flerdelade meddelanden: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2385,11 +2366,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>

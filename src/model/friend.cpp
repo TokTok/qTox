@@ -22,7 +22,6 @@ Friend::Friend(uint32_t friendId_, const ToxPk& friendPk_, const QString& userAl
     , friendId{friendId_}
     , hasNewEvents{false}
     , friendStatus{Status::Status::Offline}
-    , isNegotiating{false}
 {
     if (userName_.isEmpty()) {
         userName = friendPk.toString();
@@ -151,71 +150,23 @@ bool Friend::getEventFlag() const
 
 void Friend::setStatus(Status::Status s)
 {
-    // Internal status should never be negotiating. We only expose this externally through the use of isNegotiating
-    assert(s != Status::Status::Negotiating);
-
     const bool wasOnline = Status::isOnline(getStatus());
     if (friendStatus == s) {
         return;
     }
 
-    // When a friend goes online we want to give them some time to negotiate
-    // extension support
-    const auto startNegotating = friendStatus == Status::Status::Offline;
-
-    if (startNegotating) {
-        qDebug() << "Starting negotiation with friend " << friendId;
-        isNegotiating = true;
-    }
-
     friendStatus = s;
     const bool nowOnline = Status::isOnline(getStatus());
 
-    const auto emitStatusChange = startNegotating || !isNegotiating;
-    if (emitStatusChange) {
-        const auto statusToEmit = isNegotiating ? Status::Status::Negotiating : friendStatus;
-        emit statusChanged(friendPk, statusToEmit);
-        if (wasOnline && !nowOnline) {
-            emit onlineOfflineChanged(friendPk, false);
-        } else if (!wasOnline && nowOnline) {
-            emit onlineOfflineChanged(friendPk, true);
-        }
+    emit statusChanged(friendPk, friendStatus);
+    if (wasOnline && !nowOnline) {
+        emit onlineOfflineChanged(friendPk, false);
+    } else if (!wasOnline && nowOnline) {
+        emit onlineOfflineChanged(friendPk, true);
     }
 }
 
 Status::Status Friend::getStatus() const
 {
-    return isNegotiating ? Status::Status::Negotiating : friendStatus;
-}
-
-void Friend::setExtendedMessageSupport(bool supported)
-{
-    supportedExtensions[ExtensionType::messages] = supported;
-    emit extensionSupportChanged(supportedExtensions);
-
-    // If all extensions are supported we can exit early
-    if (supportedExtensions.all()) {
-        onNegotiationComplete();
-    }
-}
-
-ExtensionSet Friend::getSupportedExtensions() const
-{
-    return supportedExtensions;
-}
-
-void Friend::onNegotiationComplete()
-{
-    if (!isNegotiating) {
-        return;
-    }
-
-    qDebug() << "Negotiation complete for friend " << friendId;
-
-    isNegotiating = false;
-    emit statusChanged(friendPk, friendStatus);
-
-    if (Status::isOnline(getStatus())) {
-        emit onlineOfflineChanged(friendPk, true);
-    }
+    return friendStatus;
 }

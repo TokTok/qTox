@@ -17,7 +17,6 @@ enum class Status
     Busy,
     Offline,
     Blocked,
-    Negotiating,
 };
 
 QString getIconPath(Status status, bool event = false);

@@ -915,25 +915,6 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>所有扩展都受支持</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>没有扩展受支持</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>并非所有扩展都受支持</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>多部分消息： </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2382,11 +2363,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>来自 %2 的 %1 消息</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>协商</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

@@ -27,7 +27,7 @@ ConferenceMessageDispatcher::sendMessage(bool isAction, const QString& content)
     const auto firstMessageId = nextMessageId;
     auto lastMessageId = firstMessageId;
 
-    for (const auto& message : processor.processOutgoingMessage(isAction, content, ExtensionSet())) {
+    for (const auto& message : processor.processOutgoingMessage(isAction, content)) {
         auto messageId = nextMessageId++;
         lastMessageId = messageId;
         if (conference.getPeersCount() != 1) {
@@ -49,18 +49,6 @@ ConferenceMessageDispatcher::sendMessage(bool isAction, const QString& content)
     }
 
     return std::make_pair(firstMessageId, lastMessageId);
-}
-
-std::pair<DispatchedMessageId, DispatchedMessageId>
-ConferenceMessageDispatcher::sendExtendedMessage(const QString& content, ExtensionSet extensions)
-{
-    std::ignore = extensions;
-    // Stub this api to immediately fail
-    auto messageId = nextMessageId++;
-    auto messages = processor.processOutgoingMessage(false, content, ExtensionSet());
-    emit messageSent(messageId, messages[0]);
-    emit messageBroken(messageId, BrokenMessageReason::unsupportedExtensions);
-    return {messageId, messageId};
 }
 
 /**

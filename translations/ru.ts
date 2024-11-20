@@ -923,25 +923,6 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Поддерживаются все расширения</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Ни одно расширение не поддерживается</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Не все расширения поддерживаются</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Мультипликативные Сообщения: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2393,11 +2374,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 сообщения(ий) от %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>переговаривается</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

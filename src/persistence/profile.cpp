@@ -710,7 +710,7 @@ void Profile::onRequestSent(const ToxPk& friendPk, const QString& message)
     const ToxPk selfPk = core->getSelfPublicKey();
     const QDateTime datetime = QDateTime::currentDateTime();
     const QString selfName = core->getUsername();
-    history->addNewMessage(friendPk, inviteStr, selfPk, datetime, true, ExtensionSet(), selfName);
+    history->addNewMessage(friendPk, inviteStr, selfPk, datetime, true, selfName);
 }
 
 /**

@@ -920,25 +920,6 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Alle støttede utvidelser</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Ingen støttede utvidelser</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Ikke alle utvidelsene støttes</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Meldinger i flere deler: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2388,11 +2369,6 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 melding(er) fra %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation type="unfinished">forhandler</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

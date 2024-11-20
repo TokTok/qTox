@@ -42,6 +42,9 @@ else
 fi
 
 build_qtox() {
+    # TODO(iphydf): Remove this when we have a proper solution.
+    # This is because QAbstractUndoItem has this warning.
+    export CXXFLAGS="-Wno-weak-vtables"
     cmake -DUPDATE_CHECK=ON \
         -DSPELL_CHECK=OFF \
         -DSTRICT_OPTIONS=ON \

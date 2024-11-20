@@ -261,8 +261,7 @@ void ChatHistory::onMessageReceived(const ToxPk& sender, const Message& message)
             content = ChatForm::ACTION_PREFIX + content;
         }
 
-        history->addNewMessage(chatId, content, sender, message.timestamp, true,
-                               message.extensionSet, displayName);
+        history->addNewMessage(chatId, content, sender, message.timestamp, true, displayName);
     }
 
     sessionChatLog.onMessageReceived(sender, message);
@@ -283,8 +282,8 @@ void ChatHistory::onMessageSent(DispatchedMessageId id, const Message& message)
 
         auto onInsertion = [this, id](RowId historyId) { handleDispatchedMessage(id, historyId); };
 
-        history->addNewMessage(chatId, content, selfPk, message.timestamp, false,
-                               message.extensionSet, username, onInsertion);
+        history->addNewMessage(chatId, content, selfPk, message.timestamp, false, username,
+                               onInsertion);
     }
 
     sessionChatLog.onMessageSent(id, message);
@@ -370,7 +369,7 @@ void ChatHistory::loadHistoryIntoSessionChatLog(ChatLogIdx start) const
             // we hit IMessageDispatcher's signals which history listens for.
             // Items added to history have already been sent so we know they already
             // reflect what was sent/received.
-            auto processedMessage = Message{isAction, messageContent, message.timestamp, {}, {}};
+            auto processedMessage = Message{isAction, messageContent, message.timestamp, {}};
 
             auto dispatchedMessageIt =
                 std::find_if(dispatchedMessageRowIdMap.begin(), dispatchedMessageRowIdMap.end(),
@@ -418,12 +417,6 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
 {
     auto unsentMessages = history->getUndeliveredMessagesForChat(chat.getPersistentId());
 
-    auto requiredExtensions =
-        std::accumulate(unsentMessages.begin(), unsentMessages.end(), ExtensionSet(),
-                        [](const ExtensionSet& a, const History::HistMessage& b) {
-                            return a | b.extensionSet;
-                        });
-
     for (auto& message : unsentMessages) {
         // We should only store messages as unsent, if this changes in the
         // future we need to extend this logic
@@ -437,13 +430,7 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
         // with the new timestamp. This is intentional as everywhere else we use
         // attempted send time (which is whenever the it was initially inserted
         // into history
-        auto dispatchId =
-            requiredExtensions.none()
-                // We should only send a single message, but in the odd case where we end
-                // up having to split more than when we added the message to history we'll
-                // just associate the last dispatched id with the history message
-                ? messageDispatcher.sendMessage(isAction, messageContent).second
-                : messageDispatcher.sendExtendedMessage(messageContent, requiredExtensions).second;
+        auto dispatchId = messageDispatcher.sendMessage(isAction, messageContent).second;
 
         handleDispatchedMessage(dispatchId, message.id);
 

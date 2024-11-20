@@ -366,7 +366,7 @@ jobs:
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
         run: brew bundle --file ./osx/Brewfile
-      - name: Install toxcore and toxext
+      - name: Install toxcore
         run: |
           git clone --depth=1 https://github.com/TokTok/dockerfiles
           dockerfiles/qtox/build_toxcore_linux.sh sudo

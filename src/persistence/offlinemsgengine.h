@@ -26,8 +26,6 @@ public:
     void addUnsentMessage(const Message& message, CompletionFn completionCallback);
     void addSentCoreMessage(ReceiptNum receipt, const Message& message,
                             CompletionFn completionCallback);
-    void addSentExtendedMessage(ExtendedReceiptNum receipt, const Message& message,
-                                CompletionFn completionCallback);
 
     struct RemovedMessage
     {
@@ -38,7 +36,6 @@ public:
 
 public slots:
     void onReceiptReceived(ReceiptNum receipt);
-    void onExtendedReceiptReceived(ExtendedReceiptNum receipt);
 
 private:
     struct OfflineMessage
@@ -99,6 +96,5 @@ private:
     };
 
     ReceiptResolver<ReceiptNum> receiptResolver;
-    ReceiptResolver<ExtendedReceiptNum> extendedReceiptResolver;
     std::vector<OfflineMessage> unsentMessages;
 };

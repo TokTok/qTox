@@ -219,16 +219,12 @@ set(${PROJECT_NAME}_SOURCES
   src/chatlog/textformatter.h
   src/core/coreav.cpp
   src/core/coreav.h
-  src/core/coreext.cpp
-  src/core/coreext.h
   src/core/core.cpp
   src/core/corefile.cpp
   src/core/corefile.h
   src/core/core.h
   src/core/dhtserver.cpp
   src/core/dhtserver.h
-  src/core/icoreextpacket.cpp
-  src/core/icoreextpacket.h
   src/core/icoresettings.cpp
   src/core/icoresettings.h
   src/core/icorefriendmessagesender.cpp
@@ -299,6 +295,7 @@ set(${PROJECT_NAME}_SOURCES
   src/model/ibootstraplistgenerator.cpp
   src/model/ibootstraplistgenerator.h
   src/model/ichatlog.h
+  src/model/imessagedispatcher.cpp
   src/model/imessagedispatcher.h
   src/model/message.cpp
   src/model/message.h
@@ -391,8 +388,6 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/contentlayout.h
   src/widget/emoticonswidget.cpp
   src/widget/emoticonswidget.h
-  src/widget/extensionstatus.cpp
-  src/widget/extensionstatus.h
   src/widget/flowlayout.cpp
   src/widget/flowlayout.h
   src/widget/imagepreviewwidget.h

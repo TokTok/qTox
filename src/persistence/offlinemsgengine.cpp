@@ -26,12 +26,6 @@ void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
     receiptResolver.notifyReceiptReceived(receipt);
 }
 
-void OfflineMsgEngine::onExtendedReceiptReceived(ExtendedReceiptNum receipt)
-{
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
-    extendedReceiptResolver.notifyReceiptReceived(receipt);
-}
-
 /**
  * @brief Add a message which has been saved to history, but not sent yet to the peer.
  *
@@ -66,14 +60,6 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& mes
                                                 completionCallback});
 }
 
-void OfflineMsgEngine::addSentExtendedMessage(ExtendedReceiptNum receipt, const Message& message,
-                                              CompletionFn completionCallback)
-{
-    QMutexLocker<QRecursiveMutex> ml(&mutex);
-    extendedReceiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
-                                                        completionCallback});
-}
-
 /**
  * @brief Removes all messages which are being tracked.
  */
@@ -81,10 +67,6 @@ std::vector<OfflineMsgEngine::RemovedMessage> OfflineMsgEngine::removeAllMessage
 {
     QMutexLocker<QRecursiveMutex> ml(&mutex);
     auto messages = receiptResolver.clear();
-    auto extendedMessages = extendedReceiptResolver.clear();
-
-    messages.insert(messages.end(), std::make_move_iterator(extendedMessages.begin()),
-                    std::make_move_iterator(extendedMessages.end()));
 
     messages.insert(messages.end(), std::make_move_iterator(unsentMessages.begin()),
                     std::make_move_iterator(unsentMessages.end()));

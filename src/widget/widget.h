@@ -171,9 +171,6 @@ public slots:
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
     void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
     void onReceiptReceived(int friendId, ReceiptNum receipt);
-    void onExtendedMessageSupport(uint32_t friendNumber, bool supported);
-    void onFriendExtMessageReceived(uint32_t friendNumber, const QString& message);
-    void onExtReceiptReceived(uint32_t friendNumber, uint64_t receiptId);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
     void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
@@ -351,7 +348,6 @@ private:
     QMap<ToxPk, std::shared_ptr<ChatHistory>> friendChatLogs;
     QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatrooms;
     QMap<ToxPk, ChatForm*> chatForms;
-    std::map<ToxPk, std::unique_ptr<QTimer>> negotiateTimers;
 
     QMap<ConferenceId, ConferenceWidget*> conferenceWidgets;
     QMap<ConferenceId, std::shared_ptr<ConferenceMessageDispatcher>> conferenceMessageDispatchers;

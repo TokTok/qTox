@@ -105,7 +105,6 @@ void Nexus::start()
     qRegisterMetaType<ReceiptNum>("ReceiptNum");
     qRegisterMetaType<RowId>("RowId");
     qRegisterMetaType<uint64_t>("uint64_t");
-    qRegisterMetaType<ExtensionSet>("ExtensionSet");
 
     qApp->setQuitOnLastWindowClosed(false);
 

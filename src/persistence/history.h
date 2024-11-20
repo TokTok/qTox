@@ -14,7 +14,6 @@
 #include <cstdint>
 #include <tox/toxencryptsave.h>
 
-#include "src/core/extension.h"
 #include "src/core/toxfile.h"
 #include "src/core/toxpk.h"
 #include "src/model/brokenmessagereason.h"
@@ -129,7 +128,7 @@ class History : public QObject, public std::enable_shared_from_this<History>
 public:
     struct HistMessage
     {
-        HistMessage(RowId id_, MessageState state_, ExtensionSet extensionSet_, QDateTime timestamp_,
+        HistMessage(RowId id_, MessageState state_, QDateTime timestamp_,
                     std::unique_ptr<ChatId> chat_, QString dispName_, ToxPk sender_, QString message)
             : chat{std::move(chat_)}
             , sender{sender_}
@@ -137,7 +136,6 @@ public:
             , timestamp{timestamp_}
             , id{id_}
             , state{state_}
-            , extensionSet(extensionSet_)
             , content(std::move(message))
         {
         }
@@ -171,7 +169,6 @@ public:
             , timestamp{other.timestamp}
             , id{other.id}
             , state{other.state}
-            , extensionSet{other.extensionSet}
             , content{other.content}
         {
         }
@@ -184,7 +181,6 @@ public:
             timestamp = other.timestamp;
             id = other.id;
             state = other.state;
-            extensionSet = other.extensionSet;
             content = other.content;
             return *this;
         }
@@ -195,7 +191,6 @@ public:
         QDateTime timestamp;
         RowId id;
         MessageState state;
-        ExtensionSet extensionSet;
         HistMessageContent content;
     };
 
@@ -216,8 +211,8 @@ public:
     void eraseHistory();
     void removeChatHistory(const ChatId& chatId);
     void addNewMessage(const ChatId& chatId, const QString& message, const ToxPk& sender,
-                       const QDateTime& time, bool isDelivered, ExtensionSet extensions,
-                       QString dispName, const std::function<void(RowId)>& insertIdCallback = {});
+                       const QDateTime& time, bool isDelivered, QString dispName,
+                       const std::function<void(RowId)>& insertIdCallback = {});
 
     void addNewFileMessage(const ChatId& chatId, const QByteArray& fileId, const QString& fileName,
                            const QString& filePath, int64_t size, const ToxPk& sender,

@@ -922,25 +922,6 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Toate extensiile acceptate</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Nu sunt acceptate extensii</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Nu toate extensiile sunt acceptate</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Mesaje multipart: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2398,11 +2379,6 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 mesaj(e) de la %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>negociere</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

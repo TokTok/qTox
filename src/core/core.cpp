@@ -8,7 +8,6 @@
 #include "coreav.h"
 #include "corefile.h"
 
-#include "src/core/coreext.h"
 #include "src/core/dhtserver.h"
 #include "src/core/icoresettings.h"
 #include "src/core/toxlogger.h"
@@ -100,7 +99,6 @@ void Core::registerCallbacks(Tox* tox)
     tox_callback_conference_peer_list_changed(tox, onConferencePeerListChange);
     tox_callback_conference_peer_name(tox, onConferencePeerNameChange);
     tox_callback_conference_title(tox, onConferenceTitleChange);
-    tox_callback_friend_lossless_packet(tox, onLosslessPacket);
 }
 
 /**
@@ -225,9 +223,6 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
         return {};
     }
 
-    core->ext = CoreExt::makeCoreExt(core->tox.get());
-    connect(core.get(), &Core::friendStatusChanged, core->ext.get(), &CoreExt::onFriendStatusChanged);
-
     registerCallbacks(core->tox.get());
 
     // connect the thread with the Core
@@ -303,16 +298,6 @@ QRecursiveMutex& Core::getCoreLoopLock() const
     return coreLoopLock;
 }
 
-const CoreExt* Core::getExt() const
-{
-    return ext.get();
-}
-
-CoreExt* Core::getExt()
-{
-    return ext.get();
-}
-
 /**
  * @brief Processes toxcore events and ensure we stay connected, called by its own timer
  */
@@ -323,7 +308,6 @@ void Core::process()
     ASSERT_CORE_THREAD;
 
     tox_iterate(tox.get(), this);
-    ext->process();
 
 #ifdef DEBUG
     // we want to see the debug messages immediately
@@ -587,15 +571,6 @@ void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t pee
     emit core->conferenceTitleChanged(conferenceId, author, ToxString(cTitle, length).getQString());
 }
 
-/**
- * @brief Handling of custom lossless packets received by toxcore. Currently only used to forward toxext packets to CoreExt
- */
-void Core::onLosslessPacket(Tox* tox, uint32_t friendId, const uint8_t* data, size_t length, void* vCore)
-{
-    std::ignore = tox;
-    Core* core = static_cast<Core*>(vCore);
-    core->ext->onLosslessPacket(friendId, data, length);
-}
 
 void Core::onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core)
 {

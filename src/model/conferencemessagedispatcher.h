@@ -29,8 +29,6 @@ public:
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
                                                                     const QString& content) override;
 
-    std::pair<DispatchedMessageId, DispatchedMessageId>
-    sendExtendedMessage(const QString& content, ExtensionSet extensions) override;
     void onMessageReceived(const ToxPk& sender, bool isAction, const QString& content);
 
 private:

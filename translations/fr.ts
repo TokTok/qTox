@@ -918,25 +918,6 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Toutes les extensions sont prises en charge</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Aucune extension prise en charge</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Ni toutes les extensions sont prises en charge</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Messages en plusieurs parties&#x202f;: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2386,11 +2367,6 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 message(s) de %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>en négociation</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

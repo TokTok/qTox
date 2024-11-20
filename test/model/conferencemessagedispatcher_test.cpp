@@ -148,7 +148,7 @@ void TestConferenceMessageDispatcher::init()
                                                    *conferenceQuery, *coreIdHandler, *friendList));
     messageSender = std::unique_ptr<MockConferenceMessageSender>(new MockConferenceMessageSender());
     sharedProcessorParams = std::unique_ptr<MessageProcessor::SharedParams>(
-        new MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024));
+        new MessageProcessor::SharedParams(tox_max_message_length()));
     messageProcessor = std::unique_ptr<MessageProcessor>(new MessageProcessor(*sharedProcessorParams));
     conferenceMessageDispatcher = std::unique_ptr<ConferenceMessageDispatcher>(
         new ConferenceMessageDispatcher(*g, *messageProcessor, *coreIdHandler, *messageSender,

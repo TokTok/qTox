@@ -922,25 +922,6 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Visi paplašinājumi ir atbalstīti</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Neviens paplašinājums ir atbalstīts</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Ne visi paplašinājumi ir atbalstīti</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Vairāku daļu ziņojumi: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2392,11 +2373,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>

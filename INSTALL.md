@@ -1,4 +1,5 @@
 # Install Instructions
+
 - [Dependencies](#dependencies)
 - [Linux](#linux)
   - [Simple install](#simple-install)
@@ -26,7 +27,6 @@
   - [Compile dependencies](#compile-dependencies)
     - [docker](#docker)
     - [Compile toxcore](#compile-toxcore)
-    - [Compile extensions](#compile-extensions)
   - [Compile qTox](#compile-qtox)
   - [Security hardening with AppArmor](#security-hardening-with-apparmor)
 - [BSD](#bsd)
@@ -39,20 +39,18 @@
 
 ## Dependencies
 
-| Name                     | Version     | Modules                                                  |
-|--------------------------|-------------|----------------------------------------------------------|
-| [Qt]                     | >= 5.7.1    | concurrent, core, gui, network, opengl, svg, widget, xml |
-| [GCC]/[MinGW]            | >= 4.8      | C++11 enabled                                            |
-| [toxcore]                | >= 0.2.10   | core, av                                                 |
-| [FFmpeg]                 | >= 2.6.0    | avformat, avdevice, avcodec, avutil, swscale             |
-| [CMake]                  | >= 3.7.2    |                                                          |
-| [OpenAL Soft]            | >= 1.16.0   |                                                          |
-| [qrencode]               | >= 3.0.3    |                                                          |
-| [sqlcipher]              | >= 3.2.0    |                                                          |
-| [pkg-config]             | >= 0.28     |                                                          |
-| [snorenotify]            | >= 0.7.0    | optional dependency                                      |
-| [toxext]                 | >= 0.0.3    |                                                          |
-| [tox_extension_messages] | >= 0.0.3    |                                                          |
+| Name          | Version   | Modules                                                  |
+| ------------- | --------- | -------------------------------------------------------- |
+| [Qt]          | >= 5.7.1  | concurrent, core, gui, network, opengl, svg, widget, xml |
+| [GCC]/[MinGW] | >= 4.8    | C++11 enabled                                            |
+| [toxcore]     | >= 0.2.10 | core, av                                                 |
+| [FFmpeg]      | >= 2.6.0  | avformat, avdevice, avcodec, avutil, swscale             |
+| [CMake]       | >= 3.7.2  |                                                          |
+| [OpenAL Soft] | >= 1.16.0 |                                                          |
+| [qrencode]    | >= 3.0.3  |                                                          |
+| [sqlcipher]   | >= 3.2.0  |                                                          |
+| [pkg-config]  | >= 0.28   |                                                          |
+| [snorenotify] | >= 0.7.0  | optional dependency                                      |
 
 ## Optional dependencies
 
@@ -67,13 +65,13 @@ Dependencies needed to run tests / code formatting, etc. Disabled if
 dependencies are missing.
 
 | Name    | Version |
-|---------|---------|
+| ------- | ------- |
 | [Check] | >= 0.9  |
 
 ### Spell checking support
 
 | Name     | Version |
-|----------|---------|
+| -------- | ------- |
 | [sonnet] | >= 5.45 |
 
 Use `-DSPELL_CHECK=OFF` to disable it.
@@ -87,7 +85,7 @@ of spell check).
 #### Auto-away support
 
 | Name            | Version  |
-|-----------------|----------|
+| --------------- | -------- |
 | [libXScrnSaver] | >= 1.2   |
 | [libX11]        | >= 1.6.0 |
 
@@ -97,24 +95,24 @@ Disabled if dependencies are missing during compilation.
 
 Disabled by default
 
-| Name              | Version   |
-|-------------------|-----------|
-| [snorenotify]     | >= 0.7.0  |
+| Name          | Version  |
+| ------------- | -------- |
+| [snorenotify] | >= 0.7.0 |
 
 To enable: `-DDESKTOP_NOTIFICATIONS=True`
 
-
 ## Linux
+
 ### Simple install
 
 Easy qTox install is provided for variety of distributions:
 
-* [Arch](#arch)
-* [Debian](#debian)
-* [Fedora](#fedora)
-* [Gentoo](#gentoo)
-* [Slackware](#slackware)
-* [Ubuntu](#ubuntu)
+- [Arch](#arch)
+- [Debian](#debian)
+- [Fedora](#fedora)
+- [Gentoo](#gentoo)
+- [Slackware](#slackware)
+- [Ubuntu](#ubuntu)
 
 ---
 
@@ -186,13 +184,12 @@ zypper in qtox
 qTox SlackBuild and all of its dependencies can be found here:
 http://slackbuilds.org/repository/14.2/network/qTox/
 
-----
+---
 
 If your distribution is not listed, or you want / need to compile qTox, there
 are provided instructions.
 
-
-----
+---
 
 Most of the dependencies should be available through your package manager. You
 may either follow the directions below, or simply run `./simple_make.sh` after
@@ -210,8 +207,8 @@ sudo apt install qtox
 ```
 
 ### Install git
-In order to clone the qTox repository you need Git.
 
+In order to clone the qTox repository you need Git.
 
 <a name="arch-git" />
 
@@ -253,7 +250,6 @@ sudo zypper install git
 sudo apt-get install git
 ```
 
-
 ### Clone qTox
 
 Afterwards open a new terminal, change to a directory of your choice and clone
@@ -266,9 +262,8 @@ cd qTox
 ```
 
 The following steps assumes that you cloned the repository at
-`/home/$USER/qTox`.  If you decided to choose another location, replace
+`/home/$USER/qTox`. If you decided to choose another location, replace
 corresponding parts.
-
 
 ### Docker
 
@@ -307,37 +302,11 @@ echo '/usr/local/lib/' | sudo tee -a /etc/ld.so.conf.d/locallib.conf
 sudo ldconfig
 ```
 
-<a name="compile-extensions" />
-
-#### Compile extensions
-
-qTox uses the toxext library and some of the extensions that go with it.
-
-You will likely have to compile these yourself.
-
-```bash
-git clone https://github.com/toxext/toxext.git toxext
-cd toxext
-# Note: See buildscirpts/download/download_toxext.sh for which version should be checked out
-cmake .
-make -j$(nproc)
-sudo make install
-```
-
-```bash
-git clone https://github.com/toxext/tox_extension_messages.git tox_extension_messages
-cd tox_extension_messages
-# Note: See buildscirpts/download/download_toxext_messages.sh for which version should be checked out
-cmake .
-make -j$(nproc)
-sudo make install
-```
-
 ### Compile qTox
 
-**Make sure that all the dependencies are installed.**  If you experience
+**Make sure that all the dependencies are installed.** If you experience
 problems with compiling, it's most likely due to missing dependencies, so please
-make sure that you did install *all of them*.
+make sure that you did install _all of them_.
 
 If you are compiling on Fedora 25, you must add libtoxcore to the
 `PKG_CONFIG_PATH` environment variable manually:
@@ -360,7 +329,6 @@ Now you can start compiled qTox with `./qtox`
 
 Congratulations, you've compiled qTox `:)`
 
-
 #### Debian / Ubuntu / Mint
 
 If the compiling process stops with a missing dependency like:
@@ -374,7 +342,6 @@ And install the package that provides the missing file.
 Start make again. Repeat if necessary until all dependencies are installed. If
 you can, please note down all additional dependencies you had to install that
 aren't listed here, and let us know what is missing `;)`
-
 
 ---
 
@@ -394,7 +361,7 @@ qTox is available as a binary package. To install the qTox package:
 pkg install qTox
 ```
 
-The qTox port is also available at ``net-im/qTox``. To build and install qTox
+The qTox port is also available at `net-im/qTox`. To build and install qTox
 from sources using the port:
 
 ```bash
@@ -412,6 +379,7 @@ Compiling qTox on OS X for development requires 2 tools:
 [Xcode](https://developer.apple.com/xcode/) and [homebrew](https://brew.sh).
 
 ### Manual Compiling
+
 #### Required Libraries
 
 Install homebrew if you don't have it:
@@ -433,7 +401,7 @@ Then install required dependencies available via `brew`.
 brew bundle --file osx/Brewfile
 ```
 
-Then, install [toxcore](https://github.com/toktok/c-toxcore/blob/master/INSTALL.md), [ToxExt](https://github.com/toxext/toxext), and [tox_extension_messages](https://github.com/toxext/tox_extension_messages.
+Then, install [toxcore](https://github.com/toktok/c-toxcore/blob/master/INSTALL.md).
 
 ```bash
 buildscripts/build_toxcore_linux.sh
@@ -485,7 +453,6 @@ Switches:
   - `MIN` – minimal support for emoticons, only a single emoticon pack is
     included
 
-
 [AppArmor]: /security/apparmor/README.md
 [Atk]: https://wiki.gnome.org/Accessibility
 [Cairo]: https://www.cairographics.org/
@@ -506,5 +473,3 @@ Switches:
 [sonnet]: https://github.com/KDE/sonnet
 [snorenotify]: https://techbase.kde.org/Projects/Snorenotify
 [sqlcipher]: https://github.com/sqlcipher/sqlcipher
-[toxext]: https://github.com/toxext/toxext
-[tox_extension_messages]: https://github.com/toxext/tox_extension_messages

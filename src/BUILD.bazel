@@ -19,7 +19,6 @@ qt_moc(
         "chatlog/customtextdocument.h",
         "core/core.h",
         "core/coreav.h",
-        "core/coreext.h",
         "core/corefile.h",
         "core/toxcall.h",
         "ipc.h",
@@ -63,7 +62,6 @@ qt_moc(
         "widget/contentdialog.h",
         "widget/contentdialogmanager.h",
         "widget/emoticonswidget.h",
-        "widget/extensionstatus.h",
         "widget/form/addfriendform.h",
         "widget/form/chatform.h",
         "widget/form/conferenceform.h",
@@ -244,8 +242,6 @@ cc_library(
         "@qt//:qt_widgets",
         "@qt//:qt_xml",
         "@sqlcipher",
-        "@tox_extension_messages",
-        "@toxext",
     ] + select({
         "//tools/config:freebsd": [],
         "//tools/config:linux": [

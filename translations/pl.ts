@@ -930,25 +930,6 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Wszystkie rozszerzenia są wspierane</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Brak wspieranych rozszerzeń</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Nie wszystkie rozszerzenia są wspierane</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Wiadomości Wieloczęściowe: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2419,11 +2400,6 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 wiadomość(i) od %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>negocjowanie</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>

@@ -20,7 +20,6 @@ private slots:
     void testResendWorkflow();
     void testTypeCoordination();
     void testCallback();
-    void testExtendedMessageCoordination();
 };
 
 namespace {
@@ -34,7 +33,7 @@ void TestOfflineMsgEngine::testReceiptBeforeMessage()
 {
     OfflineMsgEngine offlineMsgEngine;
 
-    Message msg{false, QString(), QDateTime(), {}, {}};
+    Message msg{false, QString(), QDateTime(), {}};
 
     const auto receipt = ReceiptNum(0);
     offlineMsgEngine.onReceiptReceived(receipt);
@@ -66,13 +65,13 @@ void TestOfflineMsgEngine::testResendWorkflow()
     offlineMsgEngine.addSentCoreMessage(receipt, Message(), completionFn);
     auto messagesToResend = offlineMsgEngine.removeAllMessages();
 
-    QVERIFY(messagesToResend.size() == 1);
+    QCOMPARE(messagesToResend.size(), 1);
 
     offlineMsgEngine.addSentCoreMessage(receipt, Message(), completionFn);
     offlineMsgEngine.onReceiptReceived(receipt);
 
     messagesToResend = offlineMsgEngine.removeAllMessages();
-    QVERIFY(messagesToResend.size() == 0);
+    QVERIFY(messagesToResend.empty());
 
     const auto nullMsg = Message();
     auto msg2 = Message();
@@ -89,8 +88,8 @@ void TestOfflineMsgEngine::testResendWorkflow()
     offlineMsgEngine.onReceiptReceived(ReceiptNum(3));
 
     messagesToResend = offlineMsgEngine.removeAllMessages();
-    QVERIFY(messagesToResend.size() == 1);
-    QVERIFY(messagesToResend[0].message.content == "msg2");
+    QCOMPARE(messagesToResend.size(), 1);
+    QCOMPARE(messagesToResend[0].message.content, "msg2");
 }
 
 
@@ -102,27 +101,24 @@ void TestOfflineMsgEngine::testTypeCoordination()
     auto msg2 = Message();
     auto msg3 = Message();
     auto msg4 = Message();
-    auto msg5 = Message();
 
     msg1.content = "msg1";
     msg2.content = "msg2";
     msg3.content = "msg3";
     msg4.content = "msg4";
-    msg5.content = "msg5";
 
     offlineMsgEngine.addSentCoreMessage(ReceiptNum(1), msg1, completionFn);
     offlineMsgEngine.addUnsentMessage(msg2, completionFn);
-    offlineMsgEngine.addSentExtendedMessage(ExtendedReceiptNum(1), msg3, completionFn);
-    offlineMsgEngine.addSentCoreMessage(ReceiptNum(2), msg4, completionFn);
-    offlineMsgEngine.addSentCoreMessage(ReceiptNum(3), msg5, completionFn);
+    offlineMsgEngine.addSentCoreMessage(ReceiptNum(2), msg3, completionFn);
+    offlineMsgEngine.addSentCoreMessage(ReceiptNum(3), msg4, completionFn);
 
     const auto messagesToResend = offlineMsgEngine.removeAllMessages();
 
-    QVERIFY(messagesToResend[0].message.content == "msg1");
-    QVERIFY(messagesToResend[1].message.content == "msg2");
-    QVERIFY(messagesToResend[2].message.content == "msg3");
-    QVERIFY(messagesToResend[3].message.content == "msg4");
-    QVERIFY(messagesToResend[4].message.content == "msg5");
+    QCOMPARE(messagesToResend.size(), 4);
+    QCOMPARE(messagesToResend[0].message.content, "msg1");
+    QCOMPARE(messagesToResend[1].message.content, "msg2");
+    QCOMPARE(messagesToResend[2].message.content, "msg3");
+    QCOMPARE(messagesToResend[3].message.content, "msg4");
 }
 
 void TestOfflineMsgEngine::testCallback()
@@ -131,7 +127,7 @@ void TestOfflineMsgEngine::testCallback()
 
     size_t numCallbacks = 0;
     auto callback = [&numCallbacks](bool) { numCallbacks++; };
-    Message msg{false, QString(), QDateTime(), {}, {}};
+    Message msg{false, QString(), QDateTime(), {}};
     ReceiptNum receipt;
 
     offlineMsgEngine.addSentCoreMessage(ReceiptNum(1), Message(), callback);
@@ -140,38 +136,7 @@ void TestOfflineMsgEngine::testCallback()
     offlineMsgEngine.onReceiptReceived(ReceiptNum(1));
     offlineMsgEngine.onReceiptReceived(ReceiptNum(2));
 
-    QVERIFY(numCallbacks == 2);
-}
-
-void TestOfflineMsgEngine::testExtendedMessageCoordination()
-{
-    OfflineMsgEngine offlineMsgEngine;
-
-    size_t numCallbacks = 0;
-    auto callback = [&numCallbacks](bool) { numCallbacks++; };
-
-    auto msg1 = Message();
-    auto msg2 = Message();
-    auto msg3 = Message();
-
-    offlineMsgEngine.addSentCoreMessage(ReceiptNum(1), msg1, callback);
-    offlineMsgEngine.addSentExtendedMessage(ExtendedReceiptNum(1), msg1, callback);
-    offlineMsgEngine.addSentCoreMessage(ReceiptNum(2), msg1, callback);
-
-    offlineMsgEngine.onExtendedReceiptReceived(ExtendedReceiptNum(2));
-    QVERIFY(numCallbacks == 0);
-
-    offlineMsgEngine.onReceiptReceived(ReceiptNum(1));
-    QVERIFY(numCallbacks == 1);
-
-    offlineMsgEngine.onReceiptReceived(ReceiptNum(1));
-    QVERIFY(numCallbacks == 1);
-
-    offlineMsgEngine.onExtendedReceiptReceived(ExtendedReceiptNum(1));
-    QVERIFY(numCallbacks == 2);
-
-    offlineMsgEngine.onReceiptReceived(ReceiptNum(2));
-    QVERIFY(numCallbacks == 3);
+    QCOMPARE(numCallbacks, 2);
 }
 
 QTEST_GUILESS_MAIN(TestOfflineMsgEngine)

@@ -39,8 +39,8 @@ private slots:
  */
 void TestMessageProcessor::testSelfMention()
 {
-    MessageProcessor::SharedParams sharedParams(tox_max_message_length(), 10 * 1024 * 1024);
-    ;
+    MessageProcessor::SharedParams sharedParams(tox_max_message_length());
+
     const QLatin1String testUserName{"MyUserName"};
     const QLatin1String testToxPk{
         "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"};
@@ -111,7 +111,7 @@ void TestMessageProcessor::testSelfMention()
  */
 void TestMessageProcessor::testOutgoingMessage()
 {
-    auto sharedParams = MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024);
+    auto sharedParams = MessageProcessor::SharedParams(tox_max_message_length());
     auto messageProcessor = MessageProcessor(sharedParams);
 
     QString testStr;
@@ -120,17 +120,10 @@ void TestMessageProcessor::testOutgoingMessage()
         testStr += "a";
     }
 
-    auto messages = messageProcessor.processOutgoingMessage(false, testStr, ExtensionSet());
+    auto messages = messageProcessor.processOutgoingMessage(false, testStr);
 
     // The message processor should split our messages
-    QVERIFY(messages.size() == 2);
-
-    auto extensionSet = ExtensionSet();
-    extensionSet[ExtensionType::messages] = true;
-    messages = messageProcessor.processOutgoingMessage(false, testStr, extensionSet);
-
-    // If we have multipart messages we shouldn't split our messages
-    QVERIFY(messages.size() == 1);
+    QCOMPARE(messages.size(), 2);
 }
 
 /**
@@ -139,7 +132,7 @@ void TestMessageProcessor::testOutgoingMessage()
 void TestMessageProcessor::testIncomingMessage()
 {
     // Nothing too special happening on the incoming side if we aren't looking for self mentions
-    auto sharedParams = MessageProcessor::SharedParams(tox_max_message_length(), 10 * 1024 * 1024);
+    auto sharedParams = MessageProcessor::SharedParams(tox_max_message_length());
     auto messageProcessor = MessageProcessor(sharedParams);
     auto message = messageProcessor.processIncomingCoreMessage(false, "test");
 

@@ -922,25 +922,6 @@ so you can save the file on Windows.</translation>
     </message>
 </context>
 <context>
-    <name>ExtensionStatus</name>
-    <message>
-        <source>All extensions supported</source>
-        <translation>Všetky rozšírenia sú podporované</translation>
-    </message>
-    <message>
-        <source>No extensions supported</source>
-        <translation>Žiadne rozšírenia nie sú podporované</translation>
-    </message>
-    <message>
-        <source>Not all extensions supported</source>
-        <translation>Nie všetky rozšírenia sú podporované</translation>
-    </message>
-    <message>
-        <source>Multipart Messages: </source>
-        <translation>Multipartové správy: </translation>
-    </message>
-</context>
-<context>
     <name>FileTransferWidget</name>
     <message>
         <source>Form</source>
@@ -2398,11 +2379,6 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
         <translation>%1 správ(a) z %2</translation>
-    </message>
-    <message>
-        <source>negotitating</source>
-        <comment>contact status</comment>
-        <translation>dohováram sa</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
