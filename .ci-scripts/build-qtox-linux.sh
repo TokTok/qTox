@@ -18,78 +18,100 @@
 set -euo pipefail
 
 usage() {
-    echo "$0 [--minimal|--full] --build-type [Debug|Release]"
-    echo "Build script to build/test qtox from a CI environment."
-    echo "--minimal or --full are required, --build-type is required."
+  echo "$0 [--minimal|--full] --build-type [Debug|Release]"
+  echo "Build script to build/test qtox from a CI environment."
+  echo "--minimal or --full are required, --build-type is required."
 }
 
-while (( $# > 0 )); do
-    case $1 in
-    --minimal) MINIMAL=1 ; shift ;;
-    --full) MINIMAL=0; shift ;;
-    --sanitize) SANITIZE=1; shift ;;
-    --tidy) TIDY=1; shift;;
-    --build-type) BUILD_TYPE="$2"; shift 2 ;;
-    --help|-h) usage; exit 1 ;;
-    *) echo "Unexpected argument $1"; usage; exit 1 ;;
-    esac
+while (($# > 0)); do
+  case $1 in
+    --minimal)
+      MINIMAL=1
+      shift
+      ;;
+    --full)
+      MINIMAL=0
+      shift
+      ;;
+    --sanitize)
+      SANITIZE=1
+      shift
+      ;;
+    --tidy)
+      TIDY=1
+      shift
+      ;;
+    --build-type)
+      BUILD_TYPE="$2"
+      shift 2
+      ;;
+    --help | -h)
+      usage
+      exit 1
+      ;;
+    *)
+      echo "Unexpected argument $1"
+      usage
+      exit 1
+      ;;
+  esac
 done
 
 if [ -z "${MINIMAL+x}" ]; then
-    echo "Please build either minimal or full version of qtox"
-    usage
-    exit 1
+  echo "Please build either minimal or full version of qtox"
+  usage
+  exit 1
 fi
 
 if [ -z "${BUILD_TYPE+x}" ]; then
-    echo "Please specify build type"
-    usage
-    exit 1
+  echo "Please specify build type"
+  usage
+  exit 1
 fi
 
 SANITIZE_ARGS=()
 if [ ! -z "${SANITIZE+x}" ]; then
-    SANITIZE_ARGS+=("-DASAN=ON")
+  SANITIZE_ARGS+=("-DASAN=ON")
 fi
 
 if [ ! -z "${TIDY+x}" ]; then
-    export CXX=clang++
-    export CC=clang
-    COMPILE_COMMANDS=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
+  export CXX=clang++
+  export CC=clang
+  COMPILE_COMMANDS=("-DCMAKE_EXPORT_COMPILE_COMMANDS=ON")
 else
-    COMPILE_COMMANDS=()
+  COMPILE_COMMANDS=()
 fi
-
 
 SRCDIR=/qtox
 export CTEST_OUTPUT_ON_FAILURE=1
+export QT_QPA_PLATFORM=offscreen
 
-if [ $MINIMAL -eq 1 ]; then
-    cmake "$SRCDIR" \
-        -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
-        -DSMILEYS=DISABLED \
-        -DSTRICT_OPTIONS=ON \
-        -DSPELL_CHECK=OFF \
-        -GNinja \
-        "${COMPILE_COMMANDS[@]}" \
-        "${SANITIZE_ARGS[@]}"
+if [ "$MINIMAL" -eq 1 ]; then
+  cmake "$SRCDIR" \
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DSMILEYS=DISABLED \
+    -DSTRICT_OPTIONS=ON \
+    -DSPELL_CHECK=OFF \
+    -GNinja \
+    "${COMPILE_COMMANDS[@]}" \
+    "${SANITIZE_ARGS[@]}"
 else
-    cmake "$SRCDIR" \
-        -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
-        -DUPDATE_CHECK=ON \
-        -DSTRICT_OPTIONS=ON \
-        -DCODE_COVERAGE=ON \
-        -DDESKTOP_NOTIFICATIONS=ON \
-        -GNinja \
-        "${COMPILE_COMMANDS[@]}" \
-        "${SANITIZE_ARGS[@]}"
+  cmake "$SRCDIR" \
+    -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DUPDATE_CHECK=ON \
+    -DSTRICT_OPTIONS=ON \
+    -DCODE_COVERAGE=ON \
+    -DDESKTOP_NOTIFICATIONS=ON \
+    -GNinja \
+    "${COMPILE_COMMANDS[@]}" \
+    "${SANITIZE_ARGS[@]}"
 fi
 
 cmake --build .
 
 if [ ! -z "${TIDY+x}" ]; then
-    run-clang-tidy -header-filter=.* src/ audio/src/ audio/include test/src/ \
-        test/include util/src/ util/include/
+  run-clang-tidy -header-filter=.* src/ audio/src/ audio/include test/src/ \
+    test/include util/src/ util/include/
 else
-    ctest -j"$(nproc)"
+  ctest -j"$(nproc)"
 fi

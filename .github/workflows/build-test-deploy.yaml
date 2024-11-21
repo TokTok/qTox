@@ -104,16 +104,20 @@ jobs:
     needs: [update-nightly-tag]
     permissions:
       contents: write
+    strategy:
+      matrix:
+        arch: [arm64-v8a]
+        build_type: [Release]
     steps:
       - uses: actions/checkout@v4
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm android_builder ./android/cross-compile/build.sh
+        run: docker-compose run --rm android_builder.${{ matrix.arch }} ./android/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }}
       - name: Upload Android apk
         uses: actions/upload-artifact@v4
         with:
-          name: qTox-${{ github.sha }}.arm64-v8a.apk
+          name: qTox-${{ github.sha }}.${{ matrix.arch }}.apk
           path: _build/android-build//build/outputs/apk/release/android-build-release-signed.apk
       - name: Get tag name for Android release file name
         if: contains(github.ref, 'refs/tags/v')
@@ -122,8 +126,8 @@ jobs:
       - name: Rename Android APK for release upload
         if: contains(github.ref, 'refs/tags/v')
         run: |
-          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk
-          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk > qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256
+          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk
+          sha256sum qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk > qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk.sha256
       - name: Upload to versioned release
         if: contains(github.ref, 'refs/tags/v')
         uses: ncipollo/release-action@v1
@@ -131,12 +135,12 @@ jobs:
           allowUpdates: true
           draft: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk,qTox-${{ steps.get_version.outputs.VERSION }}.arm64-v8a.apk.sha256"
+          artifacts: "qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk,qTox-${{ steps.get_version.outputs.VERSION }}.${{ matrix.arch }}.apk.sha256"
       - name: Rename Android APK for nightly upload
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
-          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-nightly.apk
-          sha256sum qTox-nightly.apk > qTox-nightly.apk.sha256
+          cp _build/android-build//build/outputs/apk/release/android-build-release-signed.apk qTox-nightly.${{ matrix.arch }}.apk
+          sha256sum qTox-nightly.${{ matrix.arch }}.apk > qTox-nightly.${{ matrix.arch }}.apk.sha256
       - name: Upload to nightly release
         uses: ncipollo/release-action@v1
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
@@ -148,7 +152,7 @@ jobs:
           prerelease: true
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qTox-nightly.apk,qTox-nightly.apk.sha256"
+          artifacts: "qTox-nightly.${{ matrix.arch }}.apk,qTox-nightly.${{ matrix.arch }}.apk.sha256"
 
   build-flatpak:
     name: Flatpak
@@ -158,6 +162,11 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Cache flatpak-builder cache
+        uses: actions/cache@v4
+        with:
+          path: ".flatpak-builder"
+          key: ${{ github.job }}
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
@@ -303,6 +312,7 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           key: ${{ github.job }}
+          append-timestamp: false
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
@@ -362,6 +372,7 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           key: ${{ github.job }}
+          append-timestamp: false
       - name: Fetch build scripts
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew

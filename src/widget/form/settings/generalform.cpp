@@ -92,6 +92,8 @@ QFontDatabase::WritingSystem writingSystem(QLocale::Script script)
         return QFontDatabase::WritingSystem::Bengali;
     case QLocale::Script::CanadianAboriginalScript:
         return QFontDatabase::WritingSystem::Devanagari;
+    case QLocale::Script::CaucasianAlbanianScript:
+        return QFontDatabase::WritingSystem::Armenian;
     case QLocale::Script::CyrillicScript:
         return QFontDatabase::WritingSystem::Cyrillic;
     case QLocale::Script::DevanagariScript:
