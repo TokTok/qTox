@@ -1,14 +1,14 @@
-name: ci
+# name: ci
 
-on:
-  pull_request:
-    branches: [master]
+# on:
+#   pull_request:
+#     branches: [master]
 
-# Cancel old PR builds when pushing new commits.
-concurrency:
-  group: ci-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
+# # Cancel old PR builds when pushing new commits.
+# concurrency:
+#   group: ci-${{ github.event.pull_request.number || github.ref }}
+#   cancel-in-progress: true
 
-jobs:
-  common:
-    uses: TokTok/ci-tools/.github/workflows/common-ci.yml@master
+# jobs:
+#   common:
+#     uses: TokTok/ci-tools/.github/workflows/common-ci.yml@master
