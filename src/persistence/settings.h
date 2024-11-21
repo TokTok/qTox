@@ -8,6 +8,7 @@
 
 #include "audio/iaudiosettings.h"
 #include "src/core/icoresettings.h"
+#include "src/core/idebugsettings.h"
 #include "src/core/toxencrypt.h"
 #include "src/core/toxfile.h"
 #include "src/persistence/iconferencesettings.h"
@@ -36,6 +37,7 @@ enum class syncType;
 
 class Settings : public QObject,
                  public ICoreSettings,
+                 public IDebugSettings,
                  public IFriendSettings,
                  public IConferenceSettings,
                  public IAudioSettings,
@@ -260,6 +262,11 @@ public:
 
     void setAutoSaveEnabled(bool newValue);
     bool getAutoSaveEnabled() const;
+
+    SIGNAL_IMPL(Settings, enableDebugChanged, bool enabled)
+
+    void setEnableDebug(bool newValue) override;
+    bool getEnableDebug() const override;
 
     // ICoreSettings
     bool getEnableIPv6() const override;
@@ -610,6 +617,8 @@ private:
     bool enableLogging;
 
     int autoAwayTime;
+
+    bool enableDebug;
 
     QHash<QString, QByteArray> widgetSettings;
     QHash<QString, QString> autoAccept;

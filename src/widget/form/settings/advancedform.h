@@ -34,6 +34,7 @@ private slots:
     // Debug
     void on_btnCopyDebug_clicked();
     void on_btnExportLog_clicked();
+    void on_cbEnableDebug_stateChanged();
     // Connection
     void on_cbEnableIPv6_stateChanged();
     void on_cbEnableUDP_stateChanged();

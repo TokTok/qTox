@@ -590,6 +590,10 @@ kas var radīt video zvanu problēmas.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation type="unfinished">Atspējot šo ļaus savionot Tox ar Tor. Tā var noslogot Tox tīklu, tad atspējojiet ja nepieciešams.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -919,6 +923,28 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation type="unfinished">Draugs ir jau pievienots</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1772,6 +1798,18 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Open Settings</source>
         <translation>Atvērt iestatījumus</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Atkļūdošana</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3089,6 +3127,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Previous conversation</source>
         <translation>Iepriekšējā saruna</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Atkļūdošana</translation>
     </message>
 </context>
 </TS>

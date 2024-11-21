@@ -590,6 +590,10 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Å skru av dette tillater f.eks. Tox over Tor. Det belaster dog Tox-nettverket, så fravelg dette kun når det er nødvendig.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -917,6 +921,28 @@ slik at du kan lagre filen på Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation type="unfinished">Kontakt allerede lagt til</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1765,6 +1791,18 @@ Skriv inn samme passord to ganger.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Åpne innstillinger</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Feilrett</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3081,6 +3119,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
     <message>
         <source>Previous conversation</source>
         <translation>Forrige samtale</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Feilrett</translation>
     </message>
 </context>
 </TS>

@@ -302,6 +302,8 @@ void Widget::init()
     updateCheck->checkForUpdate();
 #endif
 
+    debugWidget = new DebugWidget(settings.getPaths(), style, this);
+
     profileInfo = new ProfileInfo(core, &profile, settings, nexus);
     profileForm = new ProfileForm(profileInfo, settings, style, *messageBoxManager);
 
@@ -310,6 +312,8 @@ void Widget::init()
     connect(&notifier, &DesktopNotify::notificationClosed, notificationGenerator.get(),
             &NotificationGenerator::onNotificationActivated);
 #endif
+
+    ui->debugButton->setVisible(settings.getEnableDebug());
 
     // connect logout tray menu action
     connect(actionLogout, &QAction::triggered, profileForm, &ProfileForm::onLogoutClicked);
@@ -321,6 +325,7 @@ void Widget::init()
     connect(ui->conferenceButton, &QPushButton::clicked, this, &Widget::onConferenceClicked);
     connect(ui->transferButton, &QPushButton::clicked, this, &Widget::onTransferClicked);
     connect(ui->settingsButton, &QPushButton::clicked, this, &Widget::onShowSettings);
+    connect(ui->debugButton, &QPushButton::clicked, this, &Widget::onShowDebug);
     connect(profilePicture, &MaskablePixmapWidget::clicked, this, &Widget::showProfile);
     connect(ui->nameLabel, &CroppingLabel::clicked, this, &Widget::showProfile);
     connect(ui->statusLabel, &CroppingLabel::editFinished, this, &Widget::onStatusMessageChanged);
@@ -473,6 +478,7 @@ void Widget::init()
     ui->conferenceButton->setCheckable(true);
     ui->transferButton->setCheckable(true);
     ui->settingsButton->setCheckable(true);
+    ui->debugButton->setCheckable(true);
 
     if (contentLayout) {
         onAddClicked();
@@ -497,6 +503,7 @@ void Widget::init()
             &Widget::onConferenceInviteAccepted);
 
     // settings
+    connect(&settings, &Settings::enableDebugChanged, this, &Widget::onEnableDebugChanged);
     connect(&settings, &Settings::showSystemTrayChanged, this, &Widget::onSetShowSystemTray);
     connect(&settings, &Settings::separateWindowChanged, this, &Widget::onSeparateWindowClicked);
     connect(&settings, &Settings::compactLayoutChanged, chatListWidget,
@@ -645,6 +652,7 @@ Widget::~Widget()
     delete timer;
     delete contentLayout;
     delete settingsWidget;
+    delete debugWidget;
 
     friendList->clear();
     conferenceList->clear();
@@ -968,6 +976,22 @@ void Widget::onShowSettings()
         settingsWidget->show(contentLayout);
         setWindowTitle(fromDialogType(DialogType::SettingDialog));
         setActiveToolMenuButton(ActiveToolMenuButton::SettingButton);
+    }
+}
+
+void Widget::onShowDebug()
+{
+    if (settings.getSeparateWindow()) {
+        if (!debugWidget->isShown()) {
+            debugWidget->show(createContentDialog(DialogType::DebugDialog));
+        }
+
+        setActiveToolMenuButton(ActiveToolMenuButton::None);
+    } else {
+        hideMainForms(nullptr);
+        debugWidget->show(contentLayout);
+        setWindowTitle(fromDialogType(DialogType::DebugDialog));
+        setActiveToolMenuButton(ActiveToolMenuButton::DebugButton);
     }
 }
 
@@ -1670,6 +1694,8 @@ QString Widget::fromDialogType(DialogType type)
         return tr("Settings", "title of the window");
     case DialogType::ProfileDialog:
         return tr("My profile", "title of the window");
+    case DialogType::DebugDialog:
+        return tr("Debug", "title of the window");
     }
 
     assert(false);
@@ -2400,6 +2426,11 @@ void Widget::onFriendTypingChanged(uint32_t friendnumber, bool isTyping)
     chatForms[f->getPublicKey()]->setFriendTyping(isTyping);
 }
 
+void Widget::onEnableDebugChanged(bool newValue)
+{
+    ui->debugButton->setVisible(newValue);
+}
+
 void Widget::onSetShowSystemTray(bool newValue)
 {
     if (icon) {
@@ -2669,6 +2700,8 @@ void Widget::setActiveToolMenuButton(ActiveToolMenuButton newActiveButton)
     ui->transferButton->setDisabled(newActiveButton == ActiveToolMenuButton::TransferButton);
     ui->settingsButton->setChecked(newActiveButton == ActiveToolMenuButton::SettingButton);
     ui->settingsButton->setDisabled(newActiveButton == ActiveToolMenuButton::SettingButton);
+    ui->debugButton->setChecked(newActiveButton == ActiveToolMenuButton::DebugButton);
+    ui->debugButton->setDisabled(newActiveButton == ActiveToolMenuButton::DebugButton);
 }
 
 void Widget::retranslateUi()

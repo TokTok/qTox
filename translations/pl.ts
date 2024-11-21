@@ -596,6 +596,10 @@ co może powodować problemy z rozmowami wideo.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Wyłączenie tej opcji umożliwia np. używanie Tox przez sieć Tor. Zwiększa to jednak obciążenie sieci Tox, więc odznacz to pole tylko wtedy, gdy jest to konieczne.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -927,6 +931,28 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Znajomy jest już dodany</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1785,6 +1811,18 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Otwórz ustawienia</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Debug</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3117,6 +3155,11 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
     <message>
         <source>Previous conversation</source>
         <translation>Poprzednia konwersacja</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Debug</translation>
     </message>
 </context>
 </TS>

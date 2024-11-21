@@ -156,6 +156,7 @@ void Settings::loadGlobal()
         enableIPv6 = s.value("enableIPv6", true).toBool();
         forceTCP = s.value("forceTCP", false).toBool();
         enableLanDiscovery = s.value("enableLanDiscovery", true).toBool();
+        enableDebug = s.value("enableDebug", false).toBool();
     }
     s.endGroup();
 
@@ -642,6 +643,7 @@ void Settings::saveGlobal()
         s.setValue("forceTCP", forceTCP);
         s.setValue("enableLanDiscovery", enableLanDiscovery);
         s.setValue("dbSyncType", static_cast<int>(dbSyncType));
+        s.setValue("enableDebug", enableDebug);
     }
     s.endGroup();
 
@@ -979,6 +981,19 @@ bool Settings::getAutoSaveEnabled() const
 {
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return autoSaveEnabled;
+}
+
+void Settings::setEnableDebug(bool newValue)
+{
+    if (setVal(enableDebug, newValue)) {
+        emit enableDebugChanged(newValue);
+    }
+}
+
+bool Settings::getEnableDebug() const
+{
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return enableDebug;
 }
 
 void Settings::setAutostartInTray(bool newValue)

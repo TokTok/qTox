@@ -24,8 +24,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>489</width>
-        <height>549</height>
+        <width>485</width>
+        <height>545</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -74,18 +74,33 @@
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <widget class="QPushButton" name="btnExportLog">
-            <property name="text">
-             <string>Export Debug Log</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnCopyDebug">
-            <property name="text">
-             <string>Copy Debug Log</string>
-            </property>
-           </widget>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <item>
+               <widget class="QPushButton" name="btnCopyDebug">
+                <property name="text">
+                 <string>Copy Debug Log</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btnExportLog">
+                <property name="text">
+                 <string>Export Debug Log</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="cbEnableDebug">
+              <property name="text">
+               <string>Enable Debug Tools (developers only)</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -243,8 +258,6 @@
  <tabstops>
   <tabstop>scrollArea</tabstop>
   <tabstop>cbMakeToxPortable</tabstop>
-  <tabstop>btnExportLog</tabstop>
-  <tabstop>btnCopyDebug</tabstop>
   <tabstop>cbEnableIPv6</tabstop>
   <tabstop>cbEnableUDP</tabstop>
   <tabstop>proxyType</tabstop>

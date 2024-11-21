@@ -588,6 +588,10 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Vô hiệu hóa quyền này, ví dụ: Tox qua Tor. Tuy nhiên, nó sẽ tải lên vào mạng Tox, vì vậy chỉ bỏ chọn khi cần thiết.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -913,6 +917,28 @@ so you can save the file on Windows.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Bạn bè đã được thêm rồi</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1768,6 +1794,18 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Mở cài đặt</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Gỡ lỗi</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3082,6 +3120,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>Previous conversation</source>
         <translation>Cuộc trò chuyện trước</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Gỡ lỗi</translation>
     </message>
 </context>
 </TS>

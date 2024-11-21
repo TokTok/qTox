@@ -589,6 +589,10 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Ottamalla tämän pois päältä on mahdollista käyttää Toxia Tor-verkossa. Tämä lisää kuitenkin kuormaa Tox-verkkoon, joten ota tämä pois päältä vain, jos on pakko.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -915,6 +919,28 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Kontakti on jo lisätty</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1763,6 +1789,18 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Avaa asetukset</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Virheenpoisto</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3079,6 +3117,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     <message>
         <source>Previous conversation</source>
         <translation>Edellinen keskustelu</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Virheenpoisto</translation>
     </message>
 </context>
 </TS>

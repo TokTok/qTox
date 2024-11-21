@@ -590,6 +590,10 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Vypnutie tohto nastavenia povolí napr. používanie Toxu cez Tor. Sieť Tox však viac zataží, a tak odškrtnite, len ak je to nutné.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -919,6 +923,28 @@ so you can save the file on Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Priateľ je už pridaný</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1774,6 +1800,18 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Otvoriť nastavenia</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Ladenie</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3094,6 +3132,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     <message>
         <source>Previous conversation</source>
         <translation>Predchádzajúca konverzácia</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Ladenie</translation>
     </message>
 </context>
 </TS>

@@ -589,6 +589,10 @@ vilket kan leda till problem med videosamtal.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Inaktivering av detta tillåter t.ex. Tox över Tor. Det ökar dock belastningen på Tox-nätverket, så avmarkera endast när det behövs.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -915,6 +919,28 @@ så att du kan spara filen i Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Vän är redan tillagd</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1763,6 +1789,18 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Öppna inställningar</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Felsök</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3079,6 +3117,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
     <message>
         <source>Previous conversation</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Felsök</translation>
     </message>
 </context>
 </TS>

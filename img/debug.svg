@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- SPDX-License-Identifier: MIT
+     Copyright © 2024 css.gg.
+     Source: https://www.svgrepo.com/svg/315692/debug
+  -->
+
+<svg
+   width="666.66699"
+   height="666.66699"
+   viewBox="0 0 20.000009 20.00001"
+   fill="none"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="debug.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview10"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.28375"
+     inkscape:cx="225.90068"
+     inkscape:cy="332.61928"
+     inkscape:window-width="2560"
+     inkscape:window-height="1355"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <g
+     id="g3036"
+     transform="translate(2.0000047)">
+    <path
+       d="M 6,9 C 6,8.4477 6.4477,8 7,8 h 2 c 0.5523,0 1,0.4477 1,1 0,0.5523 -0.4477,1 -1,1 H 7 C 6.4477,10 6,9.5523 6,9 Z"
+       fill="#000000"
+       id="path2"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       d="m 7,12 c -0.5523,0 -1,0.4477 -1,1 0,0.5523 0.4477,1 1,1 h 2 c 0.5523,0 1,-0.4477 1,-1 0,-0.5523 -0.4477,-1 -1,-1 z"
+       fill="#000000"
+       id="path4"
+       style="fill:#ffffff;fill-opacity:1" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="M 5.09447,2.74918 C 4.41606,2.03243 4,1.0648 4,0 h 2 c 0,1.10457 0.8954,2 2,2 1.1046,0 2,-0.89543 2,-2 h 2 C 12,1.0648 11.5839,2.03243 10.9055,2.74918 12.1782,3.45491 13.1673,4.6099 13.6586,6 H 15 c 0.5523,0 1,0.44772 1,1 0,0.55229 -0.4477,1 -1,1 h -1 v 2 h 1 c 0.5523,0 1,0.4477 1,1 0,0.5523 -0.4477,1 -1,1 h -1 v 2 h 1 c 0.5523,0 1,0.4477 1,1 0,0.5523 -0.4477,1 -1,1 H 13.6586 C 12.8349,18.3304 10.6124,20 8,20 5.38756,20 3.16508,18.3304 2.34141,16 H 1 C 0.44772,16 0,15.5523 0,15 0,14.4477 0.44772,14 1,14 H 2 V 12 H 1 C 0.44772,12 0,11.5523 0,11 0,10.4477 0.44772,10 1,10 H 2 V 8 H 1 C 0.44772,8 0,7.55229 0,7 0,6.44772 0.44772,6 1,6 H 2.34141 C 2.83274,4.6099 3.82181,3.45491 5.09447,2.74918 Z M 4,14 V 8 C 4,5.79086 5.79086,4 8,4 c 2.2091,0 4,1.79086 4,4 v 6 c 0,2.2091 -1.7909,4 -4,4 -2.20914,0 -4,-1.7909 -4,-4 z"
+       fill="#000000"
+       id="path6"
+       style="fill:#ffffff;fill-opacity:1" />
+  </g>
+</svg>

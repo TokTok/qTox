@@ -589,6 +589,10 @@ o que pode levar a problemas com as videochamadas.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Desabilitar esta opção permite, por exemplo, utilizar o Tox com a rede Tor. Isso no entanto carrega mais a rede Tox; portanto, desmarque apenas se necessário.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -916,6 +920,28 @@ de forma que você possa salvar o arquivo no Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Amigo já adicionado</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1771,6 +1797,18 @@ Certifique-se de que você entrou a mesma senha duas vezes.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Abrir Configurações</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Depurar</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3088,6 +3126,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
     <message>
         <source>Previous conversation</source>
         <translation>Conversa anterior</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Depurar</translation>
     </message>
 </context>
 </TS>

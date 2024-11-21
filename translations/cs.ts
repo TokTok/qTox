@@ -590,6 +590,10 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Zakázání této funkce umožní použití některých služeb, např. Tox over Tor, ale zároveň zvýší zátěž sítě Tox, proto ji nezakazujte není-li to nezbytné.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -918,6 +922,28 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Kontakt je již v seznamu</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1766,6 +1792,18 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Otevřít Nastavení</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Ladění</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3085,6 +3123,11 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
     <message>
         <source>Previous conversation</source>
         <translation>Předchozí konverzace</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Ladění</translation>
     </message>
 </context>
 </TS>

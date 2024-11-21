@@ -38,6 +38,8 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     // block all child signals during initialization
     const RecursiveSignalBlocker signalBlocker(this);
 
+    bodyUI->cbEnableDebug->setChecked(settings.getEnableDebug());
+
     bodyUI->cbEnableIPv6->setChecked(settings.getEnableIPv6());
     bodyUI->cbMakeToxPortable->setChecked(settings.getMakeToxPortable());
     bodyUI->proxyAddr->setText(settings.getProxyAddr());
@@ -156,6 +158,11 @@ void AdvancedForm::on_resetButton_clicked()
 
     settings.resetToDefault();
     messageBoxManager.showInfo(titile, "Changes will take effect after restart");
+}
+
+void AdvancedForm::on_cbEnableDebug_stateChanged()
+{
+    settings.setEnableDebug(bodyUI->cbEnableDebug->isChecked());
 }
 
 void AdvancedForm::on_cbEnableIPv6_stateChanged()

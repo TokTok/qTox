@@ -586,6 +586,10 @@ which may lead to problems with video calls.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -914,6 +918,28 @@ so you can save the file on Windows.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation type="unfinished">Пријатељ је већ додат</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1765,6 +1791,18 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Open Settings</source>
         <translation>Отворите поставке</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Прочишћавање</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3082,6 +3120,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Previous conversation</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Прочишћавање</translation>
     </message>
 </context>
 </TS>

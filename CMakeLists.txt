@@ -139,6 +139,7 @@ qt6_wrap_ui(${PROJECT_NAME}_FORMS
   src/loginscreen.ui
   src/mainwindow.ui
   src/widget/about/aboutfriendform.ui
+  src/widget/form/debug/debuglog.ui
   src/widget/form/loadhistorydialog.ui
   src/widget/form/profileform.ui
   src/widget/form/removechatdialog.ui
@@ -239,6 +240,8 @@ set(${PROJECT_NAME}_SOURCES
   src/core/icoreconferencequery.h
   src/core/icoreidhandler.cpp
   src/core/icoreidhandler.h
+  src/core/idebugsettings.cpp
+  src/core/idebugsettings.h
   src/core/toxcall.cpp
   src/core/toxcall.h
   src/core/toxencrypt.cpp
@@ -276,6 +279,8 @@ set(${PROJECT_NAME}_SOURCES
   src/model/chatroom/conferenceroom.h
   src/model/chat.cpp
   src/model/chat.h
+  src/model/debug/debuglogmodel.cpp
+  src/model/debug/debuglogmodel.h
   src/model/dialogs/idialogs.cpp
   src/model/dialogs/idialogs.h
   src/model/dialogs/idialogsmanager.h
@@ -404,6 +409,10 @@ set(${PROJECT_NAME}_SOURCES
   src/widget/form/addfriendform.h
   src/widget/form/chatform.cpp
   src/widget/form/chatform.h
+  src/widget/form/debug/debuglog.cpp
+  src/widget/form/debug/debuglog.h
+  src/widget/form/debugwidget.cpp
+  src/widget/form/debugwidget.h
   src/widget/form/filesform.cpp
   src/widget/form/filesform.h
   src/widget/form/filetransferlist.h

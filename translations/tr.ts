@@ -591,6 +591,10 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Bunu devre dışı bırakmak, örneğin Tor üzerinden Tox&apos;a izin verir. Ancak Tor ağına yük ekler, bu nedenle yalnızca gerektiğinde işaretini kaldırın.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -915,6 +919,28 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Arkadaş zaten eklendi</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1764,6 +1790,18 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Ayarları Aç</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Hata Ayıklama</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3077,6 +3115,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     <message>
         <source>Previous conversation</source>
         <translation>Önceki konuşma</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Hata Ayıklama</translation>
     </message>
 </context>
 </TS>

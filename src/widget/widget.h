@@ -27,6 +27,7 @@
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
 #endif
+#include "src/widget/form/debugwidget.h"
 
 #define PIXELS_TO_ACT 7
 
@@ -91,6 +92,7 @@ private:
         ConferenceButton,
         TransferButton,
         SettingButton,
+        DebugButton,
         None,
     };
 
@@ -100,7 +102,8 @@ private:
         TransferDialog,
         SettingDialog,
         ProfileDialog,
-        ConferenceDialog
+        ConferenceDialog,
+        DebugDialog,
     };
 
     enum class FilterCriteria
@@ -149,6 +152,7 @@ public:
 public slots:
     void reloadTheme();
     void onShowSettings();
+    void onShowDebug();
     void onSeparateWindowClicked(bool separate);
     void onSeparateWindowChanged(bool separate, bool clicked);
     void setWindowTitle(const QString& title);
@@ -230,6 +234,7 @@ private slots:
     void onUserAwayCheck();
     void onEventIconTick();
     void onTryCreateTrayIcon();
+    void onEnableDebugChanged(bool newValue);
     void onSetShowSystemTray(bool newValue);
     void onSplitterMoved(int pos, int index);
     void friendListContextMenu(const QPoint& pos);
@@ -318,6 +323,7 @@ private:
     ProfileInfo* profileInfo;
     ProfileForm* profileForm;
 
+    QPointer<DebugWidget> debugWidget;
     QPointer<SettingsWidget> settingsWidget;
     std::unique_ptr<UpdateCheck> updateCheck; // ownership should be moved outside Widget once non-singleton
     FilesForm* filesForm;

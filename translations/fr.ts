@@ -589,6 +589,10 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Désactiver ceci permettra par exemple d&apos;utiliser Tox à travers Tor. Désactiver seulement si nécessaire, car cela ajoutera une charge supplémentaire au réseau Tox.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -915,6 +919,28 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Ce contact a déjà été ajouté</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1763,6 +1789,18 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
     <message>
         <source>Open Settings</source>
         <translation>Ouvrir les paramètres</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Déboguer</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3079,6 +3117,11 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <message>
         <source>Previous conversation</source>
         <translation>Conversation précédente</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Déboguer</translation>
     </message>
 </context>
 </TS>

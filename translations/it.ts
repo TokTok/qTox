@@ -589,6 +589,10 @@ il che può portare a problemi con le videochiamate.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Disabilitando questo sarà possibile usare qTox con Tor. Tuttavia verrà aggiunto carico alla rete Tox, quindi disabilitare solo se necessario.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -915,6 +919,28 @@ in modo da poter salvare il file su Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>L&apos;amico è già stato aggiunto</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1763,6 +1789,18 @@ Assicurati di inserire la stessa password due volte.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Apri Impostazioni</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Debug</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3079,6 +3117,11 @@ Questo ID include una sezione NoSpam (in colore blu) e il controllo checksum (in
     <message>
         <source>Previous conversation</source>
         <translation>Conversazione precedente</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Debug</translation>
     </message>
 </context>
 </TS>

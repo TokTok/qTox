@@ -590,6 +590,10 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Išjungus, galima naudotis Tox protokolu per Tor. Tox tinklas dėl to yra papildomai apkraunamas, todėl nuimkite žymėjimą tik tada, kai reikia.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -918,6 +922,28 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Toks kontaktas jau yra pridėtas</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1766,6 +1792,18 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Open Settings</source>
         <translation>Atverti nustatymus</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Derinimas</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3087,6 +3125,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Previous conversation</source>
         <translation>Ankstesnis pokalbis</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Derinimas</translation>
     </message>
 </context>
 </TS>

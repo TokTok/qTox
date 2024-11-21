@@ -1054,6 +1054,50 @@
              </property>
             </widget>
            </item>
+           <item>
+            <widget class="QPushButton" name="debugButton">
+             <property name="minimumSize">
+              <size>
+               <width>55</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>55</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="toolTip">
+              <string>Open internal debugging tools</string>
+             </property>
+             <property name="accessibleName">
+              <string>Debug</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Open Debugger</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../res.qrc">
+               <normaloff>:/img/debug.svg</normaloff>:/img/debug.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>15</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
           </layout>
          </widget>
         </item>

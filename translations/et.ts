@@ -589,6 +589,10 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Selle keelamine lubab näiteks Toxi üle Tor võrgu. See põhjustab Tor võrgule lisakoormust, mistõttu kasuta seda ainult vajadusel.</translation>
     </message>
+    <message>
+        <source>Enable Debug Tools (developers only)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -916,6 +920,28 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translation>Sõber on juba lisatud</translation>
+    </message>
+</context>
+<context>
+    <name>DebugLog</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-reload</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Auto-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DebugLogForm</name>
+    <message>
+        <source>Debug Log</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1764,6 +1790,18 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     <message>
         <source>Open Settings</source>
         <translation>Ava seaded</translation>
+    </message>
+    <message>
+        <source>Open internal debugging tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished">Veaotsing</translation>
+    </message>
+    <message>
+        <source>Open Debugger</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3081,6 +3119,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     <message>
         <source>Previous conversation</source>
         <translation>Eelmine vestlus</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Veaotsing</translation>
     </message>
 </context>
 </TS>

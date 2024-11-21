@@ -43,6 +43,13 @@ QListView
     color: @mainText;
 }
 
+QListView#debugLog
+{
+    font-family: "Monospace";
+    font-size: 8pt;
+    background-color: #242424;
+}
+
 QTextEdit, QPlainTextEdit
 {
     border-color: @groundExtra;
