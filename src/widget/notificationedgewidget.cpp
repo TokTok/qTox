@@ -16,7 +16,7 @@ NotificationEdgeWidget::NotificationEdgeWidget(Position position, Settings& sett
     : QWidget(parent)
 {
     setAttribute(Qt::WA_StyledBackground); // Show background.
-    setStyleSheet(style.getStylesheet("notificationEdge/notificationEdge.css", settings));
+    setStyleSheet(style.getStylesheet("notificationEdge/notificationEdge.qss", settings));
     QHBoxLayout* layout = new QHBoxLayout(this);
     layout->addStretch();
 

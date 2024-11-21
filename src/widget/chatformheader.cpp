@@ -26,7 +26,7 @@ const short HEAD_LAYOUT_SPACING = 5;
 const short MIC_BUTTONS_LAYOUT_SPACING = 4;
 const short BUTTONS_LAYOUT_HOR_SPACING = 4;
 
-const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
+const QString STYLE_PATH = QStringLiteral("chatForm/buttons.qss");
 
 const QString STATE_NAME[] = {
     QString{},                //
@@ -281,7 +281,7 @@ QSize ChatFormHeader::getAvatarSize() const
 
 void ChatFormHeader::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("chatArea/chatHead.css", settings));
+    setStyleSheet(style.getStylesheet("chatArea/chatHead.qss", settings));
     callButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
     videoButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
     volButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));

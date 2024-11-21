@@ -59,8 +59,8 @@ ContentLayout::~ContentLayout()
 void ContentLayout::reloadTheme()
 {
 #ifndef Q_OS_MAC
-    mainHead->setStyleSheet(style.getStylesheet("settings/mainHead.css", settings));
-    mainContent->setStyleSheet(style.getStylesheet("window/general.css", settings));
+    mainHead->setStyleSheet(style.getStylesheet("settings/mainHead.qss", settings));
+    mainContent->setStyleSheet(style.getStylesheet("window/general.qss", settings));
 #endif
 }
 

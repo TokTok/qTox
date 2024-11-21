@@ -149,7 +149,7 @@ void FileTransferWidget::setBackgroundColor(const QColor& c, bool whiteFont)
 
     setProperty("fontColor", whiteFont ? "white" : "black");
 
-    setStyleSheet(style.getStylesheet("fileTransferInstance/filetransferWidget.css", settings));
+    setStyleSheet(style.getStylesheet("fileTransferInstance/filetransferWidget.qss", settings));
     Style::repolish(this);
 
     update();

@@ -28,7 +28,7 @@ const auto BTN_STATE_NONE = QVariant("none");
 const auto BTN_STATE_RED = QVariant("red");
 const int BTN_PANEL_HEIGHT = 55;
 const int BTN_PANEL_WIDTH = 250;
-const auto BTN_STYLE_SHEET_PATH = QStringLiteral("chatForm/fullScreenButtons.css");
+const auto BTN_STYLE_SHEET_PATH = QStringLiteral("chatForm/fullScreenButtons.qss");
 } // namespace
 
 NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& settings_,

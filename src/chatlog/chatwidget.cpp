@@ -782,7 +782,7 @@ void ChatWidget::fontChanged(const QFont& font)
 
 void ChatWidget::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("chatArea/chatArea.css", settings));
+    setStyleSheet(style.getStylesheet("chatArea/chatArea.qss", settings));
     setBackgroundBrush(QBrush(style.getColor(Style::ColorPalette::GroundBase), Qt::SolidPattern));
     selectionRectColor = style.getColor(Style::ColorPalette::SelectText);
     selGraphItem->setBrush(QBrush(selectionRectColor));

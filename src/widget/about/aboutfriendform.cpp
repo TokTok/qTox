@@ -90,7 +90,7 @@ void AboutFriendForm::onAutoAcceptDirClicked()
 
 void AboutFriendForm::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("window/general.css", settings));
+    setStyleSheet(style.getStylesheet("window/general.qss", settings));
 }
 
 void AboutFriendForm::onAutoAcceptDirChanged(const QString& path)

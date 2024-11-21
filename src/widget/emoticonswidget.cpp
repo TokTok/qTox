@@ -21,7 +21,7 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
                                  QWidget* parent)
     : QMenu(parent)
 {
-    setStyleSheet(style.getStylesheet("emoticonWidget/emoticonWidget.css", settings));
+    setStyleSheet(style.getStylesheet("emoticonWidget/emoticonWidget.qss", settings));
     setLayout(&layout);
     layout.addWidget(&stack);
 

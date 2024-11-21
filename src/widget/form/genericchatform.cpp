@@ -98,7 +98,7 @@ QString GenericChatForm::resolveToxPk(const ToxPk& pk)
 }
 
 namespace {
-const QString STYLE_PATH = QStringLiteral("chatForm/buttons.css");
+const QString STYLE_PATH = QStringLiteral("chatForm/buttons.qss");
 }
 
 namespace {
@@ -364,8 +364,8 @@ QDateTime GenericChatForm::getLatestTime() const
 
 void GenericChatForm::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("genericChatForm/genericChatForm.css", settings));
-    msgEdit->setStyleSheet(style.getStylesheet("msgEdit/msgEdit.css", settings)
+    setStyleSheet(style.getStylesheet("genericChatForm/genericChatForm.qss", settings));
+    msgEdit->setStyleSheet(style.getStylesheet("msgEdit/msgEdit.qss", settings)
                            + fontToCss(settings.getChatMessageFont(), "QTextEdit"));
 
     emoteButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
@@ -499,7 +499,7 @@ void GenericChatForm::onChatMessageFontChanged(const QFont& font)
     chatWidget->fontChanged(font);
     chatWidget->forceRelayout();
     // message editor
-    msgEdit->setStyleSheet(style.getStylesheet("msgEdit/msgEdit.css", settings)
+    msgEdit->setStyleSheet(style.getStylesheet("msgEdit/msgEdit.qss", settings)
                            + fontToCss(font, "QTextEdit"));
 }
 

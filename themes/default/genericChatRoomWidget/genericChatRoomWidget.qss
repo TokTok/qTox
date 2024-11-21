@@ -7,10 +7,10 @@ GenericChatroomWidget:hover {
 GenericChatroomWidget[active="true"] {
     background-color: @groundBase; /* When active */
 }
-CroppingLabel#statusMessageLabelObj { 
+CroppingLabel#statusMessageLabelObj {
     color: @groundExtra; /* Base color */
 }
-CroppingLabel#statusMessageLabelObj[active="true"] { 
+CroppingLabel#statusMessageLabelObj[active="true"] {
     color: @statusActive; /* Color when active */
 }
 CroppingLabel#nameLabelObj {

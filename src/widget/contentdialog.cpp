@@ -429,8 +429,8 @@ void ContentDialog::setUsername(const QString& newName)
 
 void ContentDialog::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("contentDialog/contentDialog.css", settings));
-    friendScroll->setStyleSheet(style.getStylesheet("friendList/friendList.css", settings));
+    setStyleSheet(style.getStylesheet("contentDialog/contentDialog.qss", settings));
+    friendScroll->setStyleSheet(style.getStylesheet("friendList/friendList.qss", settings));
 }
 
 bool ContentDialog::event(QEvent* event)

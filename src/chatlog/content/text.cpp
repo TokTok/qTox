@@ -27,7 +27,7 @@ Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, co
     , customColor(custom)
     , documentCache(documentCache_)
     , settings{settings_}
-    , defStyleSheet(style_.getStylesheet(QStringLiteral("chatArea/innerStyle.css"), settings_, font))
+    , defStyleSheet(style_.getStylesheet(QStringLiteral("chatArea/innerStyle.qss"), settings_, font))
     , style{style_}
 {
     color = textColor();
@@ -246,7 +246,7 @@ void Text::visibilityChanged(bool visible)
 
 void Text::reloadTheme()
 {
-    defStyleSheet = style.getStylesheet(QStringLiteral("chatArea/innerStyle.css"), settings, defFont);
+    defStyleSheet = style.getStylesheet(QStringLiteral("chatArea/innerStyle.qss"), settings, defFont);
     color = textColor();
     dirty = true;
     regenerate();

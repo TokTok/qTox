@@ -50,17 +50,17 @@
         <file>img/transfer.svg</file>
         <file>themes/dark/palette.ini</file>
         <file>themes/dark/fileTransferWidget/fileDone.svg</file>
-        <file>themes/dark/chatArea/chatArea.css</file>
-        <file>themes/dark/chatArea/chatHead.css</file>
-        <file>themes/dark/chatArea/innerStyle.css</file>
+        <file>themes/dark/chatArea/chatArea.qss</file>
+        <file>themes/dark/chatArea/chatHead.qss</file>
+        <file>themes/dark/chatArea/innerStyle.qss</file>
         <file>themes/dark/chatArea/scrollBarUpArrow.svg</file>
         <file>themes/dark/chatArea/scrollBarDownArrow.svg</file>
         <file>themes/dark/chatArea/scrollBarLeftArrow.svg</file>
         <file>themes/dark/chatArea/scrollBarRightArrow.svg</file>
-        <file>themes/dark/chatForm/buttons.css</file>
-        <file>themes/dark/chatForm/fullScreenButtons.css</file>
+        <file>themes/dark/chatForm/buttons.qss</file>
+        <file>themes/dark/chatForm/fullScreenButtons.qss</file>
         <file>themes/dark/chatForm/callButton.svg</file>
-        <file>themes/dark/chatForm/labels.css</file>
+        <file>themes/dark/chatForm/labels.qss</file>
         <file>themes/dark/chatForm/micButton.svg</file>
         <file>themes/dark/chatForm/micButtonRed.svg</file>
         <file>themes/dark/chatForm/videoButton.svg</file>
@@ -82,19 +82,19 @@
         <file>themes/dark/emoticonWidget/dot_page.svg</file>
         <file>themes/dark/emoticonWidget/dot_page_current.svg</file>
         <file>themes/dark/emoticonWidget/dot_page_hover.svg</file>
-        <file>themes/dark/emoticonWidget/emoticonWidget.css</file>
-        <file>themes/dark/friendList/friendList.css</file>
-	<file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.css</file>
-        <file>themes/dark/msgEdit/msgEdit.css</file>
-        <file>themes/dark/settings/mainHead.css</file>
+        <file>themes/dark/emoticonWidget/emoticonWidget.qss</file>
+        <file>themes/dark/friendList/friendList.qss</file>
+	<file>themes/dark/genericChatRoomWidget/genericChatRoomWidget.qss</file>
+        <file>themes/dark/msgEdit/msgEdit.qss</file>
+        <file>themes/dark/settings/mainHead.qss</file>
         <file>themes/dark/settings/checkboxChecked.svg</file>
         <file>themes/dark/settings/checkboxCheckedDisabled.svg</file>
-        <file>themes/dark/statusButton/statusButton.css</file>
+        <file>themes/dark/statusButton/statusButton.qss</file>
         <file>themes/dark/statusButton/menu_indicator.svg</file>
-        <file>themes/dark/window/general.css</file>
-        <file>themes/dark/window/profile.css</file>
-        <file>themes/dark/window/statusPanel.css</file>
-        <file>themes/dark/window/window.css</file>
+        <file>themes/dark/window/general.qss</file>
+        <file>themes/dark/window/profile.qss</file>
+        <file>themes/dark/window/statusPanel.qss</file>
+        <file>themes/dark/window/window.qss</file>
         <file>themes/dark/chatArea/info.svg</file>
         <file>themes/dark/chatArea/spinner.svg</file>
         <file>themes/dark/chatArea/typing.svg</file>
@@ -108,28 +108,28 @@
         <file>themes/dark/fileTransferInstance/arrow_white.svg</file>
         <file>themes/dark/fileTransferInstance/arrow_black.svg</file>
         <file>themes/dark/fileTransferInstance/browse.svg</file>
-        <file>themes/dark/fileTransferInstance/filetransferWidget.css</file>
-        <file>themes/dark/genericChatForm/genericChatForm.css</file>
+        <file>themes/dark/fileTransferInstance/filetransferWidget.qss</file>
+        <file>themes/dark/genericChatForm/genericChatForm.qss</file>
         <file>themes/dark/acceptCall/acceptCall.svg</file>
-        <file>themes/dark/addFriendForm/toxId.css</file>
+        <file>themes/dark/addFriendForm/toxId.qss</file>
         <file>themes/dark/rejectCall/rejectCall.svg</file>
-        <file>themes/dark/notificationEdge/notificationEdge.css</file>
-        <file>themes/dark/loginScreen/loginScreen.css</file>
-        <file>themes/dark/contentDialog/contentDialog.css</file>
-        <file>themes/dark/tooliconsZone/tooliconsZone.css</file>
+        <file>themes/dark/notificationEdge/notificationEdge.qss</file>
+        <file>themes/dark/loginScreen/loginScreen.qss</file>
+        <file>themes/dark/contentDialog/contentDialog.qss</file>
+        <file>themes/dark/tooliconsZone/tooliconsZone.qss</file>
         <file>themes/default/palette.ini</file>
         <file>themes/default/fileTransferWidget/fileDone.svg</file>
-        <file>themes/default/chatArea/chatArea.css</file>
-        <file>themes/default/chatArea/chatHead.css</file>
-        <file>themes/default/chatArea/innerStyle.css</file>
+        <file>themes/default/chatArea/chatArea.qss</file>
+        <file>themes/default/chatArea/chatHead.qss</file>
+        <file>themes/default/chatArea/innerStyle.qss</file>
         <file>themes/default/chatArea/scrollBarUpArrow.svg</file>
         <file>themes/default/chatArea/scrollBarDownArrow.svg</file>
         <file>themes/default/chatArea/scrollBarLeftArrow.svg</file>
         <file>themes/default/chatArea/scrollBarRightArrow.svg</file>
-        <file>themes/default/chatForm/buttons.css</file>
-        <file>themes/default/chatForm/fullScreenButtons.css</file>
+        <file>themes/default/chatForm/buttons.qss</file>
+        <file>themes/default/chatForm/fullScreenButtons.qss</file>
         <file>themes/default/chatForm/callButton.svg</file>
-        <file>themes/default/chatForm/labels.css</file>
+        <file>themes/default/chatForm/labels.qss</file>
         <file>themes/default/chatForm/micButton.svg</file>
         <file>themes/default/chatForm/micButtonRed.svg</file>
         <file>themes/default/chatForm/videoButton.svg</file>
@@ -151,17 +151,17 @@
         <file>themes/default/emoticonWidget/dot_page.svg</file>
         <file>themes/default/emoticonWidget/dot_page_current.svg</file>
         <file>themes/default/emoticonWidget/dot_page_hover.svg</file>
-        <file>themes/default/emoticonWidget/emoticonWidget.css</file>
-        <file>themes/default/friendList/friendList.css</file>
-	<file>themes/default/genericChatRoomWidget/genericChatRoomWidget.css</file>
-        <file>themes/default/msgEdit/msgEdit.css</file>
-        <file>themes/default/settings/mainHead.css</file>
-        <file>themes/default/statusButton/statusButton.css</file>
+        <file>themes/default/emoticonWidget/emoticonWidget.qss</file>
+        <file>themes/default/friendList/friendList.qss</file>
+	<file>themes/default/genericChatRoomWidget/genericChatRoomWidget.qss</file>
+        <file>themes/default/msgEdit/msgEdit.qss</file>
+        <file>themes/default/settings/mainHead.qss</file>
+        <file>themes/default/statusButton/statusButton.qss</file>
         <file>themes/default/statusButton/menu_indicator.svg</file>
-        <file>themes/default/window/general.css</file>
-        <file>themes/default/window/profile.css</file>
-        <file>themes/default/window/statusPanel.css</file>
-        <file>themes/default/window/window.css</file>
+        <file>themes/default/window/general.qss</file>
+        <file>themes/default/window/profile.qss</file>
+        <file>themes/default/window/statusPanel.qss</file>
+        <file>themes/default/window/window.qss</file>
         <file>themes/default/chatArea/info.svg</file>
         <file>themes/default/chatArea/spinner.svg</file>
         <file>themes/default/chatArea/typing.svg</file>
@@ -175,17 +175,17 @@
         <file>themes/default/fileTransferInstance/arrow_white.svg</file>
         <file>themes/default/fileTransferInstance/arrow_black.svg</file>
         <file>themes/default/fileTransferInstance/browse.svg</file>
-        <file>themes/default/fileTransferInstance/filetransferWidget.css</file>
-        <file>themes/default/genericChatForm/genericChatForm.css</file>
+        <file>themes/default/fileTransferInstance/filetransferWidget.qss</file>
+        <file>themes/default/genericChatForm/genericChatForm.qss</file>
         <file>themes/default/acceptCall/acceptCall.svg</file>
-        <file>themes/default/addFriendForm/toxId.css</file>
+        <file>themes/default/addFriendForm/toxId.qss</file>
         <file>themes/default/rejectCall/rejectCall.svg</file>
         <file>img/login_logo.svg</file>
-        <file>themes/default/notificationEdge/notificationEdge.css</file>
-        <file>themes/default/loginScreen/loginScreen.css</file>
+        <file>themes/default/notificationEdge/notificationEdge.qss</file>
+        <file>themes/default/loginScreen/loginScreen.qss</file>
         <file>img/others/logout-icon.svg</file>
         <file>img/caps_lock.svg</file>
-        <file>themes/default/contentDialog/contentDialog.css</file>
-        <file>themes/default/tooliconsZone/tooliconsZone.css</file>
+        <file>themes/default/contentDialog/contentDialog.qss</file>
+        <file>themes/default/tooliconsZone/tooliconsZone.qss</file>
     </qresource>
 </RCC>

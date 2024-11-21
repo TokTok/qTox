@@ -148,7 +148,7 @@ QString GenericChatroomWidget::getTitle() const
 
 void GenericChatroomWidget::reloadTheme()
 {
-    setStyleSheet(style.getStylesheet("genericChatRoomWidget/genericChatRoomWidget.css", settings));
+    setStyleSheet(style.getStylesheet("genericChatRoomWidget/genericChatRoomWidget.qss", settings));
 }
 
 void GenericChatroomWidget::activate()

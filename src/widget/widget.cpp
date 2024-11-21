@@ -1858,7 +1858,7 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
 
         void reloadTheme() final
         {
-            setStyleSheet(style.getStylesheet("window/general.css", settings));
+            setStyleSheet(style.getStylesheet("window/general.qss", settings));
         }
 
     protected:
@@ -2434,15 +2434,15 @@ void Widget::reloadTheme()
         x->setStyleSheet("");
     }
 
-    setStyleSheet(style.getStylesheet("window/general.css", settings));
-    QString statusPanelStyle = style.getStylesheet("window/statusPanel.css", settings);
-    ui->tooliconsZone->setStyleSheet(style.getStylesheet("tooliconsZone/tooliconsZone.css", settings));
+    setStyleSheet(style.getStylesheet("window/general.qss", settings));
+    QString statusPanelStyle = style.getStylesheet("window/statusPanel.qss", settings);
+    ui->tooliconsZone->setStyleSheet(style.getStylesheet("tooliconsZone/tooliconsZone.qss", settings));
     ui->statusPanel->setStyleSheet(statusPanelStyle);
     ui->statusHead->setStyleSheet(statusPanelStyle);
-    ui->friendList->setStyleSheet(style.getStylesheet("friendList/friendList.css", settings));
-    ui->statusButton->setStyleSheet(style.getStylesheet("statusButton/statusButton.css", settings));
+    ui->friendList->setStyleSheet(style.getStylesheet("friendList/friendList.qss", settings));
+    ui->statusButton->setStyleSheet(style.getStylesheet("statusButton/statusButton.qss", settings));
 
-    profilePicture->setStyleSheet(style.getStylesheet("window/profile.css", settings));
+    profilePicture->setStyleSheet(style.getStylesheet("window/profile.qss", settings));
 }
 
 void Widget::nextChat()

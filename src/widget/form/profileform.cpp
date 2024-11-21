@@ -111,7 +111,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_, Style&
     profilePicture->installEventFilter(this);
     profilePicture->setAccessibleName("Profile avatar");
     profilePicture->setAccessibleDescription("Set a profile avatar shown to all contacts");
-    profilePicture->setStyleSheet(style.getStylesheet("window/profile.css", settings));
+    profilePicture->setStyleSheet(style.getStylesheet("window/profile.qss", settings));
     connect(profilePicture, &MaskablePixmapWidget::clicked, this, &ProfileForm::onAvatarClicked);
     connect(profilePicture, &MaskablePixmapWidget::customContextMenuRequested, this,
             &ProfileForm::showProfilePictureContextMenu);

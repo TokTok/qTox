@@ -37,7 +37,7 @@ SearchForm::SearchForm(Settings& settings_, Style& style_, QWidget* parent)
 
     searchSettingsForm->setVisible(false);
     messageLabel->setProperty("state", QStringLiteral("red"));
-    messageLabel->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/labels.css"), settings));
+    messageLabel->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/labels.qss"), settings));
     messageLabel->setText(tr("The text could not be found."));
     messageLabel->setVisible(false);
 
@@ -111,11 +111,11 @@ void SearchForm::insertEditor(const QString& text)
 
 void SearchForm::reloadTheme()
 {
-    settingsButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
-    upButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
-    downButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
-    hideButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
-    startButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
+    settingsButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
+    upButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
+    downButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
+    hideButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
+    startButton->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
 
     searchSettingsForm->reloadTheme();
 }
@@ -132,7 +132,7 @@ QPushButton* SearchForm::createButton(const QString& name, const QString& state)
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setProperty("state", state);
-    btn->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
+    btn->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
 
     return btn;
 }
@@ -158,7 +158,7 @@ void SearchForm::setStateName(QPushButton* btn, ToolButtonState state)
 {
     const auto index = static_cast<unsigned long>(state);
     btn->setProperty("state", STATE_NAME[index]);
-    btn->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.css"), settings));
+    btn->setStyleSheet(style.getStylesheet(QStringLiteral("chatForm/buttons.qss"), settings));
     btn->setEnabled(index != 0);
 }
 
