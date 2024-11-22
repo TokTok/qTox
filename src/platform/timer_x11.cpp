@@ -20,7 +20,8 @@ uint32_t Platform::getIdleTime()
         return 0;
     }
 
-    int32_t x11event = 0, x11error = 0;
+    int32_t x11event = 0;
+    int32_t x11error = 0;
     static int32_t hasExtension = XScreenSaverQueryExtension(display, &x11event, &x11error);
     if (hasExtension) {
         XScreenSaverInfo* info = XScreenSaverAllocInfo();

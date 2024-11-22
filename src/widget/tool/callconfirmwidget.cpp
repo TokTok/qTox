@@ -71,7 +71,8 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
     callLabel->setText(elidedText);
 
     QDialogButtonBox* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
-    QPushButton *accept = new QPushButton(this), *reject = new QPushButton(this);
+    QPushButton* accept = new QPushButton(this);
+    QPushButton* reject = new QPushButton(this);
     accept->setFlat(true);
     reject->setFlat(true);
     accept->setStyleSheet("QPushButton{border:none;}");

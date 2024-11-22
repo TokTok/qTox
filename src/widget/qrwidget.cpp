@@ -90,7 +90,8 @@ void QRWidget::paintImage()
                 const int xx = yy + x;
                 const unsigned char b = qr->data[xx];
                 if (b & 0x01) {
-                    const double rx1 = x * scale, ry1 = y * scale;
+                    const double rx1 = x * scale;
+                    const double ry1 = y * scale;
                     QRectF r(rx1, ry1, scale, scale);
                     painter.drawRects(&r, 1);
                 }

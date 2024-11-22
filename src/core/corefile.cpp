@@ -60,7 +60,8 @@ unsigned CoreFile::corefileIterationInterval()
        comes to CPU usage – just keep the CPU usage low when there are no file
        transfers, and speed things up when there is an ongoing file transfer.
     */
-    constexpr unsigned fileInterval = 10, idleInterval = 1000;
+    constexpr unsigned fileInterval = 10;
+    constexpr unsigned idleInterval = 1000;
 
     for (ToxFile& file : fileMap) {
         if (file.status == ToxFile::TRANSMITTING) {

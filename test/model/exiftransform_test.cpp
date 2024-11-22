@@ -22,7 +22,8 @@ enum class Side
 
 QPoint getPosition(Side side)
 {
-    int x, y;
+    int x;
+    int y;
     switch (side) {
     case Side::top: {
         x = 1;

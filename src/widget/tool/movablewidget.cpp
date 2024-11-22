@@ -236,7 +236,10 @@ void MovableWidget::mouseDoubleClickEvent(QMouseEvent* event)
 
 void MovableWidget::checkBoundary(QPoint& point) const
 {
-    int x1, y1, x2, y2;
+    int x1;
+    int y1;
+    int x2;
+    int y2;
     boundaryRect.getCoords(&x1, &y1, &x2, &y2);
 
     if (point.x() < boundaryRect.left())

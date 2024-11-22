@@ -491,7 +491,8 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
         return;
 
     ALuint bufids[BUFFER_COUNT];
-    ALint processed = 0, queued = 0;
+    ALint processed = 0;
+    ALint queued = 0;
     alGetSourcei(sourceId, AL_BUFFERS_PROCESSED, &processed);
     alGetSourcei(sourceId, AL_BUFFERS_QUEUED, &queued);
     alSourcei(sourceId, AL_LOOPING, AL_FALSE);

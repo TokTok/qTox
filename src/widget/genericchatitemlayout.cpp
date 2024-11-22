@@ -93,7 +93,8 @@ QLayout* GenericChatItemLayout::getLayout() const
 int GenericChatItemLayout::indexOfClosestSortedWidget(GenericChatItemWidget* widget) const
 {
     // Binary search: Deferred test of equality.
-    int min = 0, max = layout->count();
+    int min = 0;
+    int max = layout->count();
     while (min < max) {
         int mid = (max - min) / 2 + min;
         GenericChatItemWidget* atMid =

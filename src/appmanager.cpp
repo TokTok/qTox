@@ -295,7 +295,8 @@ int AppManager::run()
 
     uint32_t ipcDest = 0;
     bool doIpc = ipc->isAttached();
-    QString eventType, firstParam;
+    QString eventType;
+    QString firstParam;
     if (parser.isSet("p")) {
         profileName = parser.value("p");
         if (!Profile::exists(profileName, settings->getPaths())) {
