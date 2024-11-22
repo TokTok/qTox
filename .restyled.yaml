@@ -5,9 +5,6 @@ exclude:
 restylers:
   - astyle:
       enabled: false
-  - cmake-format:
-      # TODO(iphydf): enable
-      enabled: false
   - prettier-json:
       # TODO(iphydf): enable
       enabled: false

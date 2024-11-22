@@ -1,21 +1,9 @@
-#   Copyright © 2020 by The qTox Project Contributors
-#
-#   This file is part of qTox, a Qt-based graphical interface for Tox.
-#   qTox is libre software: you can redistribute it and/or modify
-#   it under the terms of the GNU General Public License as published by
-#   the Free Software Foundation, either version 3 of the License, or
-#   (at your option) any later version.
-#
-#   qTox is distributed in the hope that it will be useful,
-#   but WITHOUT ANY WARRANTY; without even the implied warranty of
-#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#   GNU General Public License for more details.
-#
-#   You should have received a copy of the GNU General Public License
-#   along with qTox.  If not, see <http://www.gnu.org/licenses/>
+# SPDX-License-Identifier: GPL-3.0-or-later Copyright © 2020 by The qTox Project
+# Contributors Copyright © 2024 The TokTok team.
 
 # Edit this list if translations are added
-qt6_add_translation(translations_FILES
+qt6_add_translation(
+  translations_FILES
   ar.ts
   ber.ts
   be.ts
@@ -69,31 +57,36 @@ qt6_add_translation(translations_FILES
   ur.ts
   vi.ts
   zh_CN.ts
-  zh_TW.ts
-)
+  zh_TW.ts)
 
 # Generate a resource file which contains all translation files
 function(generate_translation_resource)
-    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
+  file(
+    WRITE "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
     "<!DOCTYPE RCC>
     <RCC version=\"1.0\">
       <qresource prefix=\"/translations\">
     ")
-    foreach(qm ${translations_FILES})
-      get_filename_component(qm_name ${qm} NAME)
-      file(APPEND "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
-        "    <file alias=\"${qm_name}\">${qm}</file>\n")
-    endforeach(qm)
+  foreach(qm ${translations_FILES})
+    get_filename_component(qm_name ${qm} NAME)
     file(APPEND "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
+         "    <file alias=\"${qm_name}\">${qm}</file>\n")
+  endforeach(qm)
+  file(
+    APPEND "${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in"
     "  </qresource>
     </RCC>
     ")
 endfunction()
 
 generate_translation_resource()
-configure_file(${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in ./translations.qrc COPYONLY)
+configure_file(${CMAKE_CURRENT_BINARY_DIR}/translations.qrc.in
+               ./translations.qrc COPYONLY)
 
-add_library(translations_library STATIC ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc)
+add_library(translations_library STATIC
+            ${CMAKE_CURRENT_BINARY_DIR}/translations.qrc)
 
-# An explicit dependency is needed or AUTORCC will run before the translation files are created
-set_target_properties(translations_library PROPERTIES AUTOGEN_TARGET_DEPENDS "${translations_FILES}")
+# An explicit dependency is needed or AUTORCC will run before the translation
+# files are created
+set_target_properties(translations_library PROPERTIES AUTOGEN_TARGET_DEPENDS
+                                                      "${translations_FILES}")
