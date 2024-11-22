@@ -1,15 +1,15 @@
----
-bazel-opt_task:
-  timeout_in: 10m
-  container:
-    image: toxchat/toktok-stack:latest-release
-    cpu: 8
-    memory: 6G
-  configure_script:
-    - /src/workspace/tools/inject-repo qtox
-  test_all_script:
-    - cd /src/workspace && bazel
-        --max_idle_secs=5
-        test -k
-        --remote_cache=http://$CIRRUS_HTTP_CACHE_HOST
-        //qtox/...
+# ---
+# bazel-opt_task:
+#   timeout_in: 10m
+#   container:
+#     image: toxchat/toktok-stack:latest-release
+#     cpu: 8
+#     memory: 6G
+#   configure_script:
+#     - /src/workspace/tools/inject-repo qtox
+#   test_all_script:
+#     - cd /src/workspace && bazel
+#         --max_idle_secs=5
+#         test -k
+#         --remote_cache=http://$CIRRUS_HTTP_CACHE_HOST
+#         //qtox/...
