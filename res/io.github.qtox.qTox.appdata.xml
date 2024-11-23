@@ -71,7 +71,6 @@
     <content_attribute id="social-audio">intense</content_attribute>
   </content_rating>
  <releases>
-​  <release version="1.17.6" date="2022-03-05"/>
+​  <release version="1.18.0-rc1" date="2024-11-23"/>
  </releases>
 </component>
-

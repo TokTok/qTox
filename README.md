@@ -171,18 +171,18 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 ```
 
 [#qtox@libera.chat]: https://web.libera.chat/#qtox
-[64 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.6/setup-qtox-x86_64-release.exe
-[32 bit release]: https://github.com/qTox/qTox/releases/download/v1.17.6/setup-qtox-i686-release.exe
+[64 bit release]: https://github.com/qTox/qTox/releases/download/v1.18.0-rc1/setup-qtox-x86_64-release.exe
+[32 bit release]: https://github.com/qTox/qTox/releases/download/v1.18.0-rc1/setup-qtox-i686-release.exe
 [32nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qtox-nightly-i686-release.exe
 [64nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qtox-nightly-x86_64-release.exe
-[Flatpak]: https://github.com/qTox/qTox/releases/download/v1.17.6/qTox-v1.17.6.x86_64.flatpak
+[Flatpak]: https://github.com/qTox/qTox/releases/download/v1.18.0-rc1/qTox-v1.18.0.x86_64.flatpak
 [Flatpak nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly.flatpak
 [Arch]: /INSTALL.md#arch
 [Building instructions]: /INSTALL.md#os-x
 [Contributing]: /CONTRIBUTING.md#how-to-start-contributing
 [Debian]: https://packages.debian.org/search?keywords=qtox
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
-[Latest release]: https://github.com/qTox/qTox/releases/download/v1.17.6/qTox.dmg
+[Latest release]: https://github.com/qTox/qTox/releases/download/v1.18.0-rc1/qTox.dmg
 [Latest nightly]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly.dmg
 [Fedora]: /INSTALL.md#fedora
 [Gentoo]: /INSTALL.md#gentoo
