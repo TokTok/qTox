@@ -1,0 +1,19 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "dependencies": [
+    "ffmpeg",
+    "libexif",
+    "libqrencode",
+    "libsodium",
+    "libvpx",
+    "qtbase",
+    "qtsvg",
+    {
+      "name": "qttools",
+      "host": true,
+      "default-features": false,
+      "features": ["linguist"]
+    },
+    "sqlcipher"
+  ]
+}
