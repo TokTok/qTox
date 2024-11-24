@@ -50,9 +50,9 @@ void TabCompleter::buildCompletionList()
     // section
     QString tabAbbrev = msgEdit->toPlainText()
                             .left(msgEdit->textCursor().position())
-                            .section(QRegularExpression("[^\\w\\d\\$:@--_\\[\\]{}|`^.\\\\]"), -1, -1);
+                            .section(QRegularExpression(R"([^\w\d\$:@--_\[\]{}|`^.\\])"), -1, -1);
     // that section is then used as the completion regex
-    QRegularExpression regex(QString("^[-_\\[\\]{}|`^.\\\\]*").append(QRegularExpression::escape(tabAbbrev)),
+    QRegularExpression regex(QString(R"(^[-_\[\]{}|`^.\\]*)").append(QRegularExpression::escape(tabAbbrev)),
                              QRegularExpression::CaseInsensitiveOption);
 
     const QString ownNick = conference->getSelfName();
