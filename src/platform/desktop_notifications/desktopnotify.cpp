@@ -8,6 +8,7 @@
 
 #include "src/persistence/settings.h"
 
+#if !defined(Q_OS_MAC) && !defined(Q_OS_WIN)
 // We need to undef signals because libnotify uses it as a parameter name.
 #undef signals
 #include <libnotify/notification.h>
@@ -109,4 +110,29 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
     notify_notification_show(impl->lastNotification.get(), nullptr);
 }
 
-#endif
+#else // Q_OS_MAC || Q_OS_WIN
+
+struct DesktopNotify::Impl
+{
+    Impl() {}
+
+    ~Impl() {}
+};
+
+DesktopNotify::DesktopNotify(Settings& settings_)
+    : impl{std::make_unique<Impl>()}
+    , settings{settings_}
+{
+}
+
+DesktopNotify::~DesktopNotify() = default;
+
+void DesktopNotify::notifyMessage(const NotificationData& notificationData)
+{
+    if (!(settings.getNotify() && settings.getDesktopNotify())) {
+        return;
+    }
+}
+
+#endif // Q_OS_MAC || Q_OS_WIN
+#endif // DESKTOP_NOTIFICATIONS

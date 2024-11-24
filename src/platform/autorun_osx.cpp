@@ -3,7 +3,11 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/platform/autorun.h"
+#include "autorun.h"
+
+#include <QtCore/qsystemdetection.h>
+
+#ifdef Q_OS_MACOS
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
@@ -38,3 +42,4 @@ bool Platform::getAutorun(const Settings& settings)
     QSettings autoRun(getAutorunFile(), QSettings::NativeFormat);
     return autoRun.value("RunAtLoad", false).toBool();
 }
+#endif

@@ -5,6 +5,7 @@
 
 #include "posixsignalnotifier.h"
 
+#ifndef Q_OS_WIN
 #include <QDebug>
 #include <QSocketNotifier>
 
@@ -117,3 +118,4 @@ PosixSignalNotifier::PosixSignalNotifier()
     notifier = new QSocketNotifier(g_signalSocketPair[1], QSocketNotifier::Read, this);
     connect(notifier, &QSocketNotifier::activated, this, &PosixSignalNotifier::onSignalReceived);
 }
+#endif

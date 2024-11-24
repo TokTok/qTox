@@ -4,8 +4,10 @@
  */
 
 #include "src/platform/x11_display.h"
-#include <QMutex>
 #include <QtCore/qsystemdetection.h>
+
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
+#include <QMutex>
 #include <X11/Xlib.h>
 
 namespace Platform {
@@ -45,3 +47,4 @@ void X11Display::unlock()
     X11DisplayPrivate::getSingleInstance().mutex.unlock();
 }
 } // namespace Platform
+#endif

@@ -124,8 +124,6 @@ search_dependency(VPX                 PACKAGE vpx)
 if(DESKTOP_NOTIFICATIONS)
   if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
     search_dependency(LIBNOTIFY       PACKAGE libnotify)
-  else()
-    message(FATAL_ERROR "Desktop notifications are not supported on this platform")
   endif()
 endif()
 

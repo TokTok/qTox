@@ -3,11 +3,14 @@
  * Copyright © 2024 The TokTok team.
  */
 
-#include "src/platform/capslock.h"
+#include "capslock.h"
+
 #include <QtCore/qsystemdetection.h>
 
+#ifdef Q_OS_MACOS
 // TODO: Implement for osx
 bool Platform::capsLockEnabled()
 {
     return false;
 }
+#endif
