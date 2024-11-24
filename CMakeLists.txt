@@ -316,6 +316,8 @@ set(${PROJECT_NAME}_SOURCES
     src/net/avatarbroadcaster.h
     src/net/toxuri.cpp
     src/net/toxuri.h
+    src/net/updatecheck.cpp
+    src/net/updatecheck.h
     src/persistence/db/rawdatabase.cpp
     src/persistence/db/rawdatabase.h
     src/persistence/db/upgrades/dbupgrader.cpp
@@ -354,6 +356,27 @@ set(${PROJECT_NAME}_SOURCES
     src/persistence/smileypack.h
     src/persistence/toxsave.cpp
     src/persistence/toxsave.h
+    src/platform/autorun.h
+    src/platform/autorun_osx.cpp
+    src/platform/autorun_win.cpp
+    src/platform/autorun_xdg.cpp
+    src/platform/camera/directshow.cpp
+    src/platform/camera/directshow.h
+    src/platform/camera/v4l2.cpp
+    src/platform/camera/v4l2.h
+    src/platform/capslock.h
+    src/platform/capslock_osx.cpp
+    src/platform/capslock_win.cpp
+    src/platform/capslock_x11.cpp
+    src/platform/desktop_notifications/desktopnotify.cpp
+    src/platform/desktop_notifications/desktopnotify.h
+    src/platform/posixsignalnotifier.cpp
+    src/platform/posixsignalnotifier.h
+    src/platform/timer.h
+    src/platform/timer_osx.cpp
+    src/platform/timer_win.cpp
+    src/platform/timer_x11.cpp
+    src/platform/x11_display.cpp
     src/video/cameradevice.cpp
     src/video/cameradevice.h
     src/video/camerasource.cpp
@@ -512,41 +535,7 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/widget.h)
 
 if(${CMAKE_SYSTEM_NAME} MATCHES "Windows")
-  set(${PROJECT_NAME}_SOURCES
-      ${${PROJECT_NAME}_SOURCES} src/platform/camera/directshow.cpp
-      src/platform/camera/directshow.h)
-
   set(${PROJECT_NAME}_RESOURCES ${${PROJECT_NAME}_RESOURCES} windows/qtox.rc)
-elseif(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES
-                                               "FreeBSD")
-  set(${PROJECT_NAME}_SOURCES
-      ${${PROJECT_NAME}_SOURCES} src/platform/camera/v4l2.cpp
-      src/platform/camera/v4l2.h)
-endif()
-
-if(UNIX)
-  set(${PROJECT_NAME}_SOURCES
-      ${${PROJECT_NAME}_SOURCES} src/platform/posixsignalnotifier.cpp
-      src/platform/posixsignalnotifier.h)
-endif()
-
-if(PLATFORM_EXTENSIONS)
-  set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES} src/platform/autorun.h
-                              src/platform/capslock.h src/platform/timer.h)
-  if(WIN32)
-    set(${PROJECT_NAME}_SOURCES
-        ${${PROJECT_NAME}_SOURCES} src/platform/autorun_win.cpp
-        src/platform/capslock_win.cpp src/platform/timer_win.cpp)
-  elseif(${X11_EXT})
-    set(${PROJECT_NAME}_SOURCES
-        ${${PROJECT_NAME}_SOURCES} src/platform/autorun_xdg.cpp
-        src/platform/capslock_x11.cpp src/platform/timer_x11.cpp
-        src/platform/x11_display.cpp)
-  elseif(${APPLE_EXT})
-    set(${PROJECT_NAME}_SOURCES
-        ${${PROJECT_NAME}_SOURCES} src/platform/autorun_osx.cpp
-        src/platform/capslock_osx.cpp src/platform/timer_osx.cpp)
-  endif()
 endif()
 
 add_definitions(-DQT_MESSAGELOGCONTEXT=1)
@@ -559,8 +548,6 @@ endif()
 
 if(${UPDATE_CHECK})
   add_definitions(-DUPDATE_CHECK_ENABLED=1)
-  set(${PROJECT_NAME}_SOURCES ${${PROJECT_NAME}_SOURCES}
-                              src/net/updatecheck.cpp src/net/updatecheck.h)
   message(STATUS "using update check")
 else()
   message(STATUS "NOT using update check")
@@ -568,10 +555,6 @@ endif()
 
 if(DESKTOP_NOTIFICATIONS)
   add_definitions(-DDESKTOP_NOTIFICATIONS=1)
-  set(${PROJECT_NAME}_SOURCES
-      ${${PROJECT_NAME}_SOURCES}
-      src/platform/desktop_notifications/desktopnotify.cpp
-      src/platform/desktop_notifications/desktopnotify.h)
   message(STATUS "using desktop notifications")
 else()
   add_definitions(-DDESKTOP_NOTIFICATIONS=0)

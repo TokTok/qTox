@@ -4,9 +4,12 @@
  */
 
 #include "src/platform/timer.h"
+
+#include <QtCore/qsystemdetection.h>
+
+#if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include "src/platform/x11_display.h"
 #include <QDebug>
-#include <QtCore/qsystemdetection.h>
 #include <X11/extensions/scrnsaver.h>
 
 uint32_t Platform::getIdleTime()
@@ -37,3 +40,4 @@ uint32_t Platform::getIdleTime()
     X11Display::unlock();
     return idleTime;
 }
+#endif

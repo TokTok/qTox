@@ -3,6 +3,8 @@
  * Copyright © 2024 The TokTok team.
  */
 #include "src/net/updatecheck.h"
+
+#ifdef UPDATE_CHECK_ENABLED
 #include "src/persistence/settings.h"
 #ifndef CMAKE_BUILD
 #include "src/version.h"
@@ -156,3 +158,4 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
 
     reply->deleteLater();
 }
+#endif

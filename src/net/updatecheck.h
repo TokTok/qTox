@@ -12,6 +12,7 @@
 
 #include <memory>
 
+#ifdef UPDATE_CHECK_ENABLED
 class Settings;
 class QString;
 class QUrl;
@@ -38,3 +39,4 @@ private:
     QTimer updateTimer;
     const Settings& settings;
 };
+#endif

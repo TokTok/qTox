@@ -11,11 +11,9 @@
 #include <QString>
 #include <QVector>
 
-#ifndef Q_OS_WIN
-#error "This file is only meant to be compiled for Windows targets"
-#endif
-
+#ifdef Q_OS_WIN
 namespace DirectShow {
 QVector<QPair<QString, QString>> getDeviceList();
 QVector<VideoMode> getDeviceModes(QString devName);
 } // namespace DirectShow
+#endif

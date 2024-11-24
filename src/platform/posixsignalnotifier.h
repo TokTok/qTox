@@ -7,6 +7,7 @@
 
 #include <QObject>
 
+#ifndef Q_OS_WIN
 class QSocketNotifier;
 
 class PosixSignalNotifier : public QObject
@@ -34,3 +35,4 @@ private:
 private:
     QSocketNotifier* notifier{nullptr};
 };
+#endif
