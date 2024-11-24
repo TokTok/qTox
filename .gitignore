@@ -23,6 +23,8 @@ _[Bb]uild*/
 _obj
 _test
 libs
+/build
+/vcpkg_installed
 
 # Git
 *.orig

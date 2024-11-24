@@ -1,0 +1,27 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "windows-default",
+            "description": "Configure for Windows using default settings",
+            "binaryDir": "${sourceDir}/_build",
+            "cacheVariables": {
+                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "windows-default",
+            "configurePreset": "windows-default",
+            "description": "Build for Windows using default settings"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "windows-default",
+            "configurePreset": "windows-default",
+            "description": "Run tests for Windows using default settings"
+        }
+    ]
+}
