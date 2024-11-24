@@ -372,7 +372,7 @@ private:
     std::unique_ptr<MessageProcessor::SharedParams> sharedMessageProcessorParams;
 #if DESKTOP_NOTIFICATIONS
     std::unique_ptr<NotificationGenerator> notificationGenerator;
-    DesktopNotify notifier;
+    std::unique_ptr<DesktopNotify> notifier;
 #endif
 
 #ifdef Q_OS_MAC

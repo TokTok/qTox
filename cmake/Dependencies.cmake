@@ -121,12 +121,6 @@ search_dependency(LIBSWSCALE          PACKAGE libswscale)
 search_dependency(SQLCIPHER           PACKAGE sqlcipher)
 search_dependency(VPX                 PACKAGE vpx)
 
-if(DESKTOP_NOTIFICATIONS)
-  if(${CMAKE_SYSTEM_NAME} MATCHES "Linux" OR ${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
-    search_dependency(LIBNOTIFY       PACKAGE libnotify)
-  endif()
-endif()
-
 if(SPELL_CHECK)
     find_package(KF6Sonnet)
     if(KF6Sonnet_FOUND)

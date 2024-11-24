@@ -9,16 +9,20 @@
 
 #include <QObject>
 
-#include <memory>
-#include <unordered_set>
-
+class QSystemTrayIcon;
 class Settings;
 
 class DesktopNotify : public QObject
 {
     Q_OBJECT
 public:
-    explicit DesktopNotify(Settings& settings);
+    /**
+     * Icon is optional, if not provided, no notifications will be shown.
+     *
+     * In the future, we may implement a fallback notification system if there's no
+     * system tray available.
+     */
+    DesktopNotify(Settings& settings, QSystemTrayIcon* icon);
     ~DesktopNotify();
 
 public slots:
@@ -28,7 +32,6 @@ signals:
     void notificationClosed();
 
 private:
-    struct Impl;
-    std::unique_ptr<Impl> impl;
-    Settings& settings;
+    Settings& settings_;
+    QSystemTrayIcon* icon_;
 };

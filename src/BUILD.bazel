@@ -3,15 +3,6 @@ load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_uic")
 
 VERSION = "1.16.3"
 
-DEFINES = [
-    "DEBUG",
-    "DESKTOP_NOTIFICATIONS",
-    "LOG_TO_FILE",
-    "QTOX_PLATFORM_EXT",
-    "QT_MESSAGELOGCONTEXT",
-    "UPDATE_CHECK_ENABLED",
-]
-
 qt_moc(
     name = "src_moc",
     srcs = [
@@ -128,7 +119,7 @@ qt_moc(
     mocopts = [
         "-Iqtox",
         "-Iqtox/util/include",
-    ] + ["-D%s=1" % d for d in DEFINES],
+    ],
     tags = ["no-cross"],
     deps = [
         "//qtox/util",
@@ -173,9 +164,43 @@ cc_library(
         ":src_moc",
         ":src_ui",
     ] + glob(
-        ["**/*.cpp"],
-        exclude = ["main.cpp"],
-    ),
+        [
+            "**/*.cpp",
+        ],
+        exclude = [
+            "main.cpp",
+            "platform/camera/v4l2.cpp",
+            "platform/camera/directshow.cpp",
+            "platform/posixsignalnotifier.cpp",
+            "platform/*_osx.cpp",
+            "platform/*_win.cpp",
+            "platform/*_x11.cpp",
+            "platform/x11_*.cpp",
+        ],
+    ) + select({
+        "//tools/config:freebsd": [
+            "platform/camera/v4l2.cpp",
+            "platform/posixsignalnotifier.cpp",
+        ],
+        "//tools/config:linux": [
+            "platform/camera/v4l2.cpp",
+            "platform/capslock_x11.cpp",
+            "platform/posixsignalnotifier.cpp",
+            "platform/timer_x11.cpp",
+            "platform/x11_display.cpp",
+        ],
+        "//tools/config:osx": [
+            "platform/capslock_osx.cpp",
+            "platform/install_osx.cpp",
+            "platform/posixsignalnotifier.cpp",
+            "platform/timer_osx.cpp",
+        ],
+        "//tools/config:windows": [
+            "platform/camera/directshow.cpp",
+            "platform/capslock_win.cpp",
+            "platform/timer_win.cpp",
+        ],
+    }),
     hdrs = glob(["**/*.h"]) + [":version"],
     copts = [
         "-iquoteqtox",
@@ -186,7 +211,14 @@ cc_library(
         "//tools/config:osx": [],
         "//tools/config:windows": [],
     }),
-    defines = DEFINES,
+    defines = [
+        "DEBUG",
+        "DESKTOP_NOTIFICATIONS",
+        "LOG_TO_FILE",
+        "QTOX_PLATFORM_EXT",
+        "QT_MESSAGELOGCONTEXT",
+        "UPDATE_CHECK_ENABLED",
+    ],
     includes = ["."],
     linkopts = select({
         "//tools/config:freebsd": [],
@@ -203,7 +235,6 @@ cc_library(
         "//qtox/util",
         "@ffmpeg",
         "@libexif",
-        "@libnotify",
         "@libqrencode",
         "@libsodium",
         "@libvpx",

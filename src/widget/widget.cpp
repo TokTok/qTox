@@ -138,9 +138,6 @@ Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSou
     , eventIcon(false)
     , audio(audio_)
     , settings(settings_)
-#if DESKTOP_NOTIFICATIONS
-    , notifier{settings}
-#endif
     , smileyPack(new SmileyPack(settings))
     , documentCache(new DocumentCache(*smileyPack, settings))
     , cameraSource{cameraSource_}
@@ -304,12 +301,6 @@ void Widget::init()
 
     profileInfo = new ProfileInfo(core, &profile, settings, nexus);
     profileForm = new ProfileForm(profileInfo, settings, style, *messageBoxManager);
-
-#if DESKTOP_NOTIFICATIONS
-    notificationGenerator.reset(new NotificationGenerator(settings, &profile));
-    connect(&notifier, &DesktopNotify::notificationClosed, notificationGenerator.get(),
-            &NotificationGenerator::onNotificationActivated);
-#endif
 
     ui->debugButton->setVisible(settings.getEnableDebug());
 
@@ -1567,17 +1558,13 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
         f->setEventFlag(true);
         widget->updateStatusLight();
         ui->friendList->trackWidget(settings, style, widget);
-#if DESKTOP_NOTIFICATIONS
-        auto notificationData =
-            filename.isEmpty()
-                ? notificationGenerator->friendMessageNotification(f, text)
-                : notificationGenerator->fileTransferNotification(f, filename, filesize);
-        notifier.notifyMessage(notificationData);
-#else
-        std::ignore = text;
-        std::ignore = filename;
-        std::ignore = filesize;
-#endif
+        if (notifier != nullptr) {
+            auto notificationData =
+                filename.isEmpty()
+                    ? notificationGenerator->friendMessageNotification(f, text)
+                    : notificationGenerator->fileTransferNotification(f, filename, filesize);
+            notifier->notifyMessage(notificationData);
+        }
 
         if (contentDialog == nullptr) {
             if (hasActive) {
@@ -1616,13 +1603,11 @@ bool Widget::newConferenceMessageAlert(const ConferenceId& conferenceId, const T
 
     c->setEventFlag(true);
     widget->updateStatusLight();
-#if DESKTOP_NOTIFICATIONS
-    auto notificationData = notificationGenerator->conferenceMessageNotification(c, authorPk, message);
-    notifier.notifyMessage(notificationData);
-#else
-    std::ignore = authorPk;
-    std::ignore = message;
-#endif
+    if (notifier != nullptr) {
+        auto notificationData =
+            notificationGenerator->conferenceMessageNotification(c, authorPk, message);
+        notifier->notifyMessage(notificationData);
+    }
 
     if (contentDialog == nullptr) {
         if (hasActive) {
@@ -1698,10 +1683,11 @@ void Widget::onFriendRequestReceived(const ToxPk& friendPk, const QString& messa
     if (addFriendForm->addFriendRequest(friendPk.toString(), message)) {
         friendRequestsUpdate();
         newMessageAlert(window(), isActiveWindow(), true, true);
-#if DESKTOP_NOTIFICATIONS
-        auto notificationData = notificationGenerator->friendRequestNotification(friendPk, message);
-        notifier.notifyMessage(notificationData);
-#endif
+        if (notifier != nullptr) {
+            auto notificationData =
+                notificationGenerator->friendRequestNotification(friendPk, message);
+            notifier->notifyMessage(notificationData);
+        }
     }
 }
 
@@ -1958,10 +1944,10 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
             ++unreadConferenceInvites;
             conferenceInvitesUpdate();
             newMessageAlert(window(), isActiveWindow(), true, true);
-#if DESKTOP_NOTIFICATIONS
-            auto notificationData = notificationGenerator->conferenceInvitationNotification(f);
-            notifier.notifyMessage(notificationData);
-#endif
+            if (notifier != nullptr) {
+                auto notificationData = notificationGenerator->conferenceInvitationNotification(f);
+                notifier->notifyMessage(notificationData);
+            }
         }
     } else {
         qWarning() << "onConferenceInviteReceived: Unknown conference type:" << confType;
@@ -2282,11 +2268,8 @@ void Widget::onEventIconTick()
     }
 }
 
-// #define XX_UBUNTU1604_XX 1
-
 void Widget::onTryCreateTrayIcon()
 {
-#ifndef XX_UBUNTU1604_XX
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -2321,15 +2304,17 @@ void Widget::onTryCreateTrayIcon()
             show();
         }
     } else {
-#endif
         disconnect(timer, &QTimer::timeout, this, &Widget::onTryCreateTrayIcon);
         if (!icon) {
             qWarning() << "No system tray detected!";
             show();
         }
-#ifndef XX_UBUNTU1604_XX
     }
-#endif
+
+    notifier = std::make_unique<DesktopNotify>(settings, icon.get());
+    notificationGenerator = std::make_unique<NotificationGenerator>(settings, &profile);
+    connect(notifier.get(), &DesktopNotify::notificationClosed, notificationGenerator.get(),
+            &NotificationGenerator::onNotificationActivated);
 }
 
 void Widget::setStatusOnline()
