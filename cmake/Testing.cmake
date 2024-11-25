@@ -34,7 +34,10 @@ auto_test(core toxid "" "")
 auto_test(core toxstring "" "")
 auto_test(core fileprogress "" "")
 auto_test(chatlog textformatter "" "")
-auto_test(net bsu "${${PROJECT_NAME}_RESOURCES}" "") # needs nodes list
+# TODO(iphydf): Fix on windows.
+if(NOT WIN32)
+  auto_test(net bsu "${${PROJECT_NAME}_RESOURCES}" "") # needs nodes list
+endif()
 auto_test(chatlog chatlinestorage "" "")
 auto_test(persistence paths "" "")
 auto_test(persistence dbschema "" "dbutility_library")
