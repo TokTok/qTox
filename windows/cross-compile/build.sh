@@ -109,8 +109,7 @@ if [[ $RUN_TESTS -ne 0 ]]; then
   export WINEPATH='/export;/windows/bin'
   export CTEST_OUTPUT_ON_FAILURE=1
   export PATH="$PATH:/opt/wine-stable/bin"
-  # TODO(iphydf): Fix tests on windows.
-  # ctest -j$(nproc)
+  ctest -j"$(nproc)"
 fi
 set -u
 

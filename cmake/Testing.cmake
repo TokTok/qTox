@@ -28,19 +28,24 @@ add_subdirectory(test/dbutility)
 
 set(TEST_RESOURCES test/resources/test_data.qrc ${${PROJECT_NAME}_RESOURCES})
 
-auto_test(core core "${${PROJECT_NAME}_RESOURCES}" "mock_library")
+# TODO(iphydf): Fix the platform DLL loading so these tests can be re-enabled.
+if(NOT WIN32)
+  auto_test(core core "${${PROJECT_NAME}_RESOURCES}" "mock_library")
+endif()
 auto_test(core chatid "" "")
 auto_test(core toxid "" "")
 auto_test(core toxstring "" "")
 auto_test(core fileprogress "" "")
 auto_test(chatlog textformatter "" "")
-auto_test(net bsu "${${PROJECT_NAME}_RESOURCES}" "") # needs nodes list
+if(NOT WIN32)
+  auto_test(net bsu "${${PROJECT_NAME}_RESOURCES}" "") # needs nodes list
+endif()
 auto_test(chatlog chatlinestorage "" "")
 auto_test(persistence paths "" "")
 auto_test(persistence dbschema "" "dbutility_library")
 auto_test(persistence/dbupgrade dbTo11 "" "dbutility_library")
 auto_test(persistence offlinemsgengine "" "")
-if(NOT "${SMILEYS}" STREQUAL "DISABLED")
+if(NOT WIN32 AND NOT "${SMILEYS}" STREQUAL "DISABLED")
   auto_test(persistence smileypack "${SMILEY_RESOURCES}" "") # needs emojione
 endif()
 auto_test(model friendlistmanager "" "")
