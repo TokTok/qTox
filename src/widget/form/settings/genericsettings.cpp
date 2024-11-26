@@ -18,8 +18,9 @@
  * It provides correct behaviour of controls for settings forms.
  */
 
-GenericForm::GenericForm(const QPixmap& icon, Style& style)
-    : formIcon(icon)
+GenericForm::GenericForm(const QPixmap& icon, Style& style, QWidget* parent)
+    : QWidget(parent)
+    , formIcon(icon)
 {
     connect(&style, &Style::themeReload, this, &GenericForm::reloadTheme);
 }

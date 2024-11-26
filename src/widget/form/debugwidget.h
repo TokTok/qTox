@@ -7,7 +7,6 @@
 #include <QWidget>
 
 #include <array>
-#include <memory>
 
 class ContentLayout;
 class GenericForm;
@@ -35,8 +34,8 @@ private:
     void retranslateUi();
 
 private:
-    std::unique_ptr<QVBoxLayout> bodyLayout;
-    std::unique_ptr<QTabWidget> debugWidgets;
-    std::array<std::unique_ptr<GenericForm>, 1> dbgForms;
+    QVBoxLayout* bodyLayout;
+    QTabWidget* debugWidgets;
+    std::array<GenericForm*, 2> dbgForms;
     int currentIndex;
 };

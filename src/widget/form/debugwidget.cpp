@@ -6,6 +6,7 @@
 
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/debug/debuglog.h"
+#include "src/widget/form/debug/debugobjecttree.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
 
@@ -21,19 +22,21 @@ DebugWidget::DebugWidget(Paths& paths, Style& style, Widget* parent)
 {
     setAttribute(Qt::WA_DeleteOnClose);
 
-    bodyLayout = std::unique_ptr<QVBoxLayout>(new QVBoxLayout());
+    bodyLayout = new QVBoxLayout();
 
-    debugWidgets = std::unique_ptr<QTabWidget>(new QTabWidget(this));
+    debugWidgets = new QTabWidget(this);
     debugWidgets->setTabPosition(QTabWidget::North);
-    bodyLayout->addWidget(debugWidgets.get());
+    bodyLayout->addWidget(debugWidgets);
 
-    std::unique_ptr<DebugLogForm> abtfrm(new DebugLogForm(paths, style));
+    dbgForms = {
+        new DebugLogForm(paths, style, this),
+        new DebugObjectTree(style, this),
+    };
 
-    dbgForms = {{std::move(abtfrm)}};
-    for (auto& dbgForm : dbgForms)
-        debugWidgets->addTab(dbgForm.get(), dbgForm->getFormIcon(), dbgForm->getFormName());
+    for (auto* dbgForm : dbgForms)
+        debugWidgets->addTab(dbgForm, dbgForm->getFormIcon(), dbgForm->getFormName());
 
-    connect(debugWidgets.get(), &QTabWidget::currentChanged, this, &DebugWidget::onTabChanged);
+    connect(debugWidgets, &QTabWidget::currentChanged, this, &DebugWidget::onTabChanged);
 
     Translator::registerHandler(std::bind(&DebugWidget::retranslateUi, this), this);
 }
@@ -60,7 +63,7 @@ bool DebugWidget::isShown() const
 
 void DebugWidget::show(ContentLayout* contentLayout)
 {
-    contentLayout->mainContent->layout()->addWidget(debugWidgets.get());
+    contentLayout->mainContent->layout()->addWidget(debugWidgets);
     debugWidgets->show();
     onTabChanged(debugWidgets->currentIndex());
 }

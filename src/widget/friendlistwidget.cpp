@@ -113,6 +113,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
     mode = settings.getFriendSortingMode();
 
     dayTimer = new QTimer(this);
+    dayTimer->setObjectName("dayTimer");
     dayTimer->setTimerType(Qt::VeryCoarseTimer);
     connect(dayTimer, &QTimer::timeout, this, &FriendListWidget::dayTimeout);
     dayTimer->start(timeUntilTomorrow());

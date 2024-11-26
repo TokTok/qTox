@@ -21,7 +21,7 @@ class DebugLogForm : public GenericForm
 {
     Q_OBJECT
 public:
-    DebugLogForm(Paths& paths, Style& style);
+    DebugLogForm(Paths& paths, Style& style, QWidget* parent);
     ~DebugLogForm();
     QString getFormName() final
     {

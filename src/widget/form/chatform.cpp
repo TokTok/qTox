@@ -97,9 +97,10 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
                    SmileyPack& smileyPack_, CameraSource& cameraSource_, Settings& settings_,
                    Style& style_, IMessageBoxManager& messageBoxManager,
                    ContentDialogManager& contentDialogManager_, FriendList& friendList_,
-                   ConferenceList& conferenceList_)
+                   ConferenceList& conferenceList_, QWidget* parent_)
     : GenericChatForm(profile_.getCore(), chatFriend, chatLog_, messageDispatcher_, documentCache_,
-                      smileyPack_, settings_, style_, messageBoxManager, friendList_, conferenceList_)
+                      smileyPack_, settings_, style_, messageBoxManager, friendList_,
+                      conferenceList_, parent_)
     , core{profile_.getCore()}
     , f(chatFriend)
     , isTyping{false}

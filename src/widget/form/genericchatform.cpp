@@ -151,7 +151,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     connect(&settings, &Settings::chatMessageFontChanged, this,
             &GenericChatForm::onChatMessageFontChanged);
 
-    msgEdit = new ChatTextEdit();
+    msgEdit = new ChatTextEdit(this);
 #ifdef SPELL_CHECKING
     if (settings.getSpellCheckingEnabled()) {
         decorator = new Sonnet::SpellCheckDecorator(msgEdit);

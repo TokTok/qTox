@@ -1187,7 +1187,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     auto friendForm =
         new ChatForm(profile, newfriend, *chatHistory, *friendMessageDispatcher, *documentCache,
                      *smileyPack, cameraSource, settings, style, *messageBoxManager,
-                     *contentDialogManager, *friendList, *conferenceList);
+                     *contentDialogManager, *friendList, *conferenceList, this);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;

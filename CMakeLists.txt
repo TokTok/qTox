@@ -138,6 +138,7 @@ qt6_wrap_ui(
   src/mainwindow.ui
   src/widget/about/aboutfriendform.ui
   src/widget/form/debug/debuglog.ui
+  src/widget/form/debug/debugobjecttree.ui
   src/widget/form/loadhistorydialog.ui
   src/widget/form/profileform.ui
   src/widget/form/removechatdialog.ui
@@ -271,6 +272,8 @@ set(${PROJECT_NAME}_SOURCES
     src/model/chat.h
     src/model/debug/debuglogmodel.cpp
     src/model/debug/debuglogmodel.h
+    src/model/debug/debugobjecttreemodel.cpp
+    src/model/debug/debugobjecttreemodel.h
     src/model/dialogs/idialogs.cpp
     src/model/dialogs/idialogs.h
     src/model/dialogs/idialogsmanager.h
@@ -423,6 +426,8 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/form/chatform.h
     src/widget/form/debug/debuglog.cpp
     src/widget/form/debug/debuglog.h
+    src/widget/form/debug/debugobjecttree.cpp
+    src/widget/form/debug/debugobjecttree.h
     src/widget/form/debugwidget.cpp
     src/widget/form/debugwidget.h
     src/widget/form/filesform.cpp

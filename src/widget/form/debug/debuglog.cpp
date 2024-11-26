@@ -50,8 +50,8 @@ QStringList loadLogs(Paths& paths)
 }
 } // namespace
 
-DebugLogForm::DebugLogForm(Paths& paths, Style& style)
-    : GenericForm{QPixmap(":/img/settings/general.png"), style}
+DebugLogForm::DebugLogForm(Paths& paths, Style& style, QWidget* parent)
+    : GenericForm{QPixmap(":/img/settings/general.png"), style, parent}
     , ui_{std::make_unique<Ui::DebugLog>()}
     , debugLogModel_{std::make_unique<DebugLogModel>(loadLogs(paths), this)}
     , reloadTimer_{std::make_unique<QTimer>(this)}
