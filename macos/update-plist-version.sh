@@ -20,6 +20,8 @@
 
 set -euo pipefail
 
+readonly VERSION_PATTERN='[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?'
+
 # update version in `Info.plist` file to supplied one after the right lines
 update_version() {
   local vars=(
@@ -28,14 +30,14 @@ update_version() {
   )
 
   for v in "${vars[@]}"; do
-    sed -i -r "\\R$v\$R,+1 s,(<string>)[0-9\\.]+(</string>)$,\\1$@\\2," \
+    sed -i -r "\\R$v\$R,+1 s,(<string>)$VERSION_PATTERN(</string>)$,\\1$@\\3," \
       "./Info.plist"
   done
 }
 
 # exit if supplied arg is not a version
 is_version() {
-  if [[ ! $@ =~ [0-9\\.]+ ]]; then
+  if [[ ! $@ =~ $VERSION_PATTERN ]]; then
     echo "Not a version: $@"
     exit 1
   fi

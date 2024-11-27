@@ -20,8 +20,17 @@ jobs:
   # Preparation jobs
   ################################################################################################
 
+  validate-pr:
+    name: Validate PR
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate PR
+        run: .ci-scripts/validate-pr.py
+
   update-nightly-tag:
     name: Update nightly release tag
+    needs: [validate-pr]
     runs-on: ubuntu-22.04
     permissions:
       contents: write
@@ -37,6 +46,7 @@ jobs:
 
   clang-tidy:
     name: Clang-Tidy
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     steps:
@@ -53,6 +63,7 @@ jobs:
 
   translation-check:
     name: Check for translatable strings
+    needs: [validate-pr]
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-22.04
     steps:
@@ -70,6 +81,7 @@ jobs:
 
   build-alpine:
     name: Alpine
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
@@ -90,6 +102,7 @@ jobs:
 
   build-alpine-static:
     name: Alpine (static)
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
@@ -109,6 +122,7 @@ jobs:
 
   build-debian:
     name: Debian
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
@@ -129,6 +143,7 @@ jobs:
 
   build-fedora:
     name: Fedora with ASAN
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
@@ -149,6 +164,7 @@ jobs:
 
   build-ubuntu:
     name: Ubuntu LTS
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     runs-on: ubuntu-22.04
     strategy:
@@ -181,8 +197,8 @@ jobs:
 
   build-android:
     name: Android
-    runs-on: ubuntu-22.04
     needs: [update-nightly-tag]
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     strategy:
@@ -263,8 +279,8 @@ jobs:
 
   build-flatpak:
     name: Flatpak
-    runs-on: ubuntu-22.04
     needs: [update-nightly-tag]
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     steps:
@@ -324,7 +340,7 @@ jobs:
 
   build-macos-distributable:
     name: macOS distributable
-    needs: update-nightly-tag
+    needs: [update-nightly-tag]
     strategy:
       matrix:
         arch: [arm64, x86_64]
@@ -372,7 +388,6 @@ jobs:
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: .ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
       - name: Install the Apple certificate
-#       if: github.event_name == 'push'
         env:
           BUILD_CERTIFICATE_BASE64: ${{ secrets.APPLE_BUILD_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.APPLE_P12_PASSWORD }}
@@ -413,7 +428,7 @@ jobs:
 
   test-macos-distributable:
     name: Test macOS distributable
-    needs: build-macos-distributable
+    needs: [build-macos-distributable]
     strategy:
       matrix:
         arch: [arm64, x86_64]
@@ -437,6 +452,7 @@ jobs:
 
   build-macos-user:
     name: macOS user
+    needs: [validate-pr]
     if: github.event_name == 'pull_request' || github.event_name == 'schedule'
     strategy:
       matrix:
@@ -466,8 +482,8 @@ jobs:
 
   build-windows:
     name: Windows
-    runs-on: ubuntu-22.04
     needs: [update-nightly-tag]
+    runs-on: ubuntu-22.04
     permissions:
       contents: write
     strategy:
@@ -553,6 +569,7 @@ jobs:
 
   build-docs:
     name: Docs
+    needs: [update-nightly-tag]
     runs-on: ubuntu-22.04
     env:
       DOXYGEN_CONFIG_FILE: doxygen.conf

@@ -10,6 +10,7 @@ import subprocess  # nosec
 import tempfile
 import unittest
 from typing import Any
+from typing import Optional
 
 QTOX_ROOT = pathlib.Path(__file__).parent.parent
 TOKTOK_ROOT = QTOX_ROOT.parent
@@ -35,6 +36,20 @@ def parse_args() -> argparse.Namespace:
         help="Output manifest path",
         required=True,
         dest="output_manifest_path",
+    )
+    parser.add_argument(
+        "--download-files-path",
+        help="Path to the dockerfiles/qtox/download directory",
+        required=False,
+        default=DOWNLOAD_FILE_PATHS,
+        dest="download_files_path",
+    )
+    parser.add_argument(
+        "--git-tag",
+        help="Git tag to use for the qTox version",
+        required=False,
+        default=None,
+        dest="git_tag",
     )
     return parser.parse_args()
 
@@ -125,7 +140,7 @@ class CommitFromTagTest(unittest.TestCase):
         )
 
 
-def git_tag() -> str:
+def get_git_tag() -> str:
     git_output = subprocess.run(  # nosec
         ["git", "describe", "--tags", "--abbrev=0"],
         check=True,
@@ -153,14 +168,15 @@ def update_git_source(module: dict[str, Any], tag: str) -> None:
     )
 
 
-def main(flathub_manifest_path: str, output_manifest_path: str) -> None:
+def main(flathub_manifest_path: str, output_manifest_path: str, download_files_path: str, git_tag: Optional[str]) -> None:
     flathub_manifest = load_flathub_manifest(flathub_manifest_path)
 
-    sqlcipher_version = find_version(DOWNLOAD_FILE_PATHS /
+    download_files_dir = pathlib.Path(download_files_path)
+    sqlcipher_version = find_version(download_files_dir /
                                      "download_sqlcipher.sh")
-    sodium_version = find_version(DOWNLOAD_FILE_PATHS / "download_sodium.sh")
-    toxcore_version = find_version(DOWNLOAD_FILE_PATHS / "download_toxcore.sh")
-    qTox_version = git_tag()
+    sodium_version = find_version(download_files_dir / "download_sodium.sh")
+    toxcore_version = find_version(download_files_dir / "download_toxcore.sh")
+    qTox_version = git_tag or get_git_tag()
 
     for module in flathub_manifest["modules"]:
         if module["name"] == "sqlcipher":
@@ -172,9 +188,14 @@ def main(flathub_manifest_path: str, output_manifest_path: str) -> None:
         elif module["name"] == "qTox":
             update_git_source(module, qTox_version)
 
-    with open(output_manifest_path, "w") as f:
-        json.dump(flathub_manifest, f, indent=2)
-        f.write("\n")
+    orig = load_flathub_manifest(output_manifest_path)
+    if json.dumps(flathub_manifest) == json.dumps(orig):
+        print("No changes needed")
+    else:
+        print("Changes detected, writing to", output_manifest_path)
+        with open(output_manifest_path, "w") as f:
+            json.dump(flathub_manifest, f, indent=2)
+            f.write("\n")
 
 
 if __name__ == "__main__":
