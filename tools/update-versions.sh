@@ -23,7 +23,7 @@ set -eu -o pipefail
 
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly BASE_DIR="$SCRIPT_DIR/../"
-readonly VERSION_PATTERN="[0-9]+\.[0-9]+\.[0-9]+"
+readonly VERSION_PATTERN='[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?'
 
 update_windows() {
   (
@@ -50,7 +50,7 @@ update_appdata() {
   cd "$BASE_DIR"/res/
   local isodate="$(date --iso-8601)"
   sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" io.github.qtox.qTox.appdata.xml
-  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}|\1""$isodate""|g" io.github.qtox.qTox.appdata.xml
+  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" io.github.qtox.qTox.appdata.xml
 }
 
 # exit if supplied arg is not a version
