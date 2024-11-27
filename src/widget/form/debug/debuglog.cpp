@@ -9,16 +9,10 @@
 #include "src/model/debug/debuglogmodel.h"
 #include "src/persistence/paths.h"
 #include "src/widget/style.h"
-#include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 
-#include <tox/tox.h>
-
-#include <QDebug>
-#include <QDesktopServices>
 #include <QFile>
 #include <QMetaEnum>
-#include <QPushButton>
 #include <QTimer>
 
 #include <memory>
