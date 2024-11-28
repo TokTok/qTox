@@ -1,0 +1,33 @@
+name: Feature Request
+description: File a feature request.
+title: "[FR]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to create a feature request!
+
+        Make sure you've looked through the [existing feature requests](https://github.com/TokTok/qTox/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) to see if your idea has already been suggested. If it has, feel free to add your support to the existing issue. If your feature request exists on the [qTox/qTox repository](https://github.com/qTox/qTox/issues), feel free to recreate it here.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details (e.g. Tox ID or email)
+      description: How can we get in touch with you if we need more info?
+      placeholder: "tox:12345678..."
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature Description
+      description: Explain what you would like to see added or changed. The more detail, the better! If you have mockups, designs, or screenshots, attach them here.
+      placeholder: "I would like qTox to..."
+    validations:
+      required: true
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contribution
+      options:
+        - label: I would like to contribute to this feature

@@ -1,0 +1,102 @@
+name: Bug Report
+description: File a bug report.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+
+        If you filed this report from the qTox about form, version fields should be filled out automatically. If you're filing this report manually, please fill out the following fields to the best of your ability.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details (e.g. Tox ID or email)
+      description: How can we get in touch with you if we need more info?
+      placeholder: "tox:12345678..."
+    validations:
+      required: false
+  - type: input
+    id: qtox_version
+    attributes:
+      label: qTox Version
+      placeholder: 1.18.0-rc.1
+  - type: input
+    id: commit_hash
+    attributes:
+      label: Commit Hash
+      placeholder: "ae2b1f..."
+  - type: input
+    id: toxcore_version
+    attributes:
+      label: Toxcore Version
+      placeholder: 0.2.20
+  - type: input
+    id: qt_version
+    attributes:
+      label: Qt Version
+      placeholder: 6.8.0
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: How can we reproduce the bug?
+      value: |
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: Observed Behavior
+      description: Please describe what you saw. If you have screenshots, attach them here.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      placeholder: Tell us what you expected to see.
+    validations:
+      required: true
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Reproducibility
+      description: How often can you reproduce this bug?
+      options:
+        - Unable to reproduce
+        - Rarely
+        - Sometimes
+        - Almost always
+        - Always
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What Operating System are you running?
+      options:
+        - Other (please specify)
+        - Linux
+        - macOS
+        - Windows
+    validations:
+      required: true
+  - type: input
+    id: os_detail
+    attributes:
+      label: Operating System version/distro/name/etc.
+      placeholder: Windows 11, Ubuntu 20.04, FreeBSD, etc.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks. If you have a large log file, please attach it in the Observed Behavior section. To get the log, go to **Settings → Advanced → Copy Debug Log** or **Export Debug Log** if you want to to attach it.
+      render: shell
