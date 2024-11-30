@@ -824,9 +824,9 @@ ToxId Core::getSelfId() const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    uint8_t friendId[TOX_ADDRESS_SIZE] = {0x00};
-    tox_self_get_address(tox.get(), friendId);
-    return ToxId(friendId, TOX_ADDRESS_SIZE);
+    std::vector<uint8_t> friendId(tox_address_size());
+    tox_self_get_address(tox.get(), friendId.data());
+    return ToxId(friendId.data(), friendId.size());
 }
 
 /**
@@ -837,15 +837,15 @@ ToxPk Core::getSelfPublicKey() const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    uint8_t selfPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
-    tox_self_get_public_key(tox.get(), selfPk);
-    return ToxPk(selfPk);
+    std::vector<uint8_t> selfPk(tox_public_key_size());
+    tox_self_get_public_key(tox.get(), selfPk.data());
+    return ToxPk(selfPk.data());
 }
 
 QByteArray Core::getSelfDhtId() const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
-    QByteArray dhtKey(TOX_PUBLIC_KEY_SIZE, 0x00);
+    QByteArray dhtKey(tox_public_key_size(), 0x00);
     tox_self_get_dht_id(tox.get(), reinterpret_cast<uint8_t*>(dhtKey.data()));
     return dhtKey;
 }
@@ -962,14 +962,14 @@ void Core::loadFriends()
 
     std::vector<uint32_t> ids(friendCount);
     tox_self_get_friend_list(tox.get(), ids.data());
-    uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
+    std::vector<uint8_t> friendPk(tox_public_key_size());
     for (size_t i = 0; i < friendCount; ++i) {
         Tox_Err_Friend_Get_Public_Key keyError;
-        tox_friend_get_public_key(tox.get(), ids[i], friendPk, &keyError);
+        tox_friend_get_public_key(tox.get(), ids[i], friendPk.data(), &keyError);
         if (!PARSE_ERR(keyError)) {
             continue;
         }
-        emit friendAdded(ids[i], ToxPk(friendPk));
+        emit friendAdded(ids[i], ToxPk(friendPk.data()));
         emit friendUsernameChanged(ids[i], getFriendUsername(ids[i]));
         Tox_Err_Friend_Query queryError;
         size_t statusMessageSize = tox_friend_get_status_message_size(tox.get(), ids[i], &queryError);
@@ -1052,7 +1052,7 @@ ConferenceId Core::getConferencePersistentId(uint32_t conferenceNumber) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    std::vector<uint8_t> idBuff(TOX_CONFERENCE_UID_SIZE);
+    std::vector<uint8_t> idBuff(tox_conference_id_size());
     if (tox_conference_get_id(tox.get(), conferenceNumber, idBuff.data())) {
         return ConferenceId{idBuff.data()};
     } else {
@@ -1107,14 +1107,14 @@ ToxPk Core::getConferencePeerPk(int conferenceId, int peerId) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    uint8_t friendPk[TOX_PUBLIC_KEY_SIZE] = {0x00};
+    std::vector<uint8_t> friendPk(tox_public_key_size());
     Tox_Err_Conference_Peer_Query error;
-    tox_conference_peer_get_public_key(tox.get(), conferenceId, peerId, friendPk, &error);
+    tox_conference_peer_get_public_key(tox.get(), conferenceId, peerId, friendPk.data(), &error);
     if (!PARSE_ERR(error)) {
         return ToxPk{};
     }
 
-    return ToxPk(friendPk);
+    return ToxPk(friendPk.data());
 }
 
 /**
@@ -1289,15 +1289,15 @@ ToxPk Core::getFriendPublicKey(uint32_t friendNumber) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    uint8_t rawid[TOX_PUBLIC_KEY_SIZE];
+    std::vector<uint8_t> rawid(tox_public_key_size());
     Tox_Err_Friend_Get_Public_Key error;
-    tox_friend_get_public_key(tox.get(), friendNumber, rawid, &error);
+    tox_friend_get_public_key(tox.get(), friendNumber, rawid.data(), &error);
     if (!PARSE_ERR(error)) {
         qWarning() << "getFriendPublicKey: Getting public key failed";
         return ToxPk();
     }
 
-    return ToxPk(rawid);
+    return ToxPk(rawid.data());
 }
 
 /**

@@ -533,12 +533,11 @@ QString Profile::avatarPath(const ToxPk& owner, bool forceUnencrypted)
 
     QByteArray idData = ownerStr.toUtf8();
     QByteArray pubkeyData = core->getSelfPublicKey().getByteArray();
-    constexpr int hashSize = TOX_PUBLIC_KEY_SIZE;
-    static_assert(hashSize >= crypto_generichash_BYTES_MIN && hashSize <= crypto_generichash_BYTES_MAX,
-                  "Hash size not supported by libsodium");
-    static_assert(hashSize >= crypto_generichash_KEYBYTES_MIN
-                      && hashSize <= crypto_generichash_KEYBYTES_MAX,
-                  "Key size not supported by libsodium");
+    const uint32_t hashSize = tox_public_key_size();
+    Q_ASSERT_X(hashSize >= crypto_generichash_BYTES_MIN && hashSize <= crypto_generichash_BYTES_MAX,
+               "avatarPath", "Hash size not supported by libsodium");
+    Q_ASSERT_X(hashSize >= crypto_generichash_KEYBYTES_MIN && hashSize <= crypto_generichash_KEYBYTES_MAX,
+               "avatarPath", "Key size not supported by libsodium");
     QByteArray hash(hashSize, 0);
     crypto_generichash(reinterpret_cast<uint8_t*>(hash.data()), hashSize,
                        reinterpret_cast<uint8_t*>(idData.data()), idData.size(),
@@ -746,7 +745,7 @@ void Profile::saveAvatar(const ToxPk& owner, const QByteArray& avatar)
 QByteArray Profile::getAvatarHash(const ToxPk& owner)
 {
     QByteArray pic = loadAvatarData(owner);
-    QByteArray avatarHash(TOX_HASH_LENGTH, 0);
+    QByteArray avatarHash(tox_hash_length(), 0);
     tox_hash(reinterpret_cast<uint8_t*>(avatarHash.data()), reinterpret_cast<uint8_t*>(pic.data()),
              pic.size());
     return avatarHash;

@@ -84,22 +84,23 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
     QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
     uint64_t filesize = 0;
-    uint8_t* file_id = nullptr;
-    uint8_t* file_name = nullptr;
+    std::vector<uint8_t>* file_id = nullptr;
+    std::vector<uint8_t>* file_name = nullptr;
     size_t nameLength = 0;
-    uint8_t avatarHash[TOX_HASH_LENGTH];
+    std::vector<uint8_t> avatarHash(tox_hash_length());
     if (!data.isEmpty()) {
-        static_assert(TOX_HASH_LENGTH <= TOX_FILE_ID_LENGTH,
-                      "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
-        tox_hash(avatarHash, reinterpret_cast<const uint8_t*>(data.data()), data.size());
+        Q_ASSERT(tox_hash_length() <= tox_file_id_length());
+        tox_hash(avatarHash.data(), reinterpret_cast<const uint8_t*>(data.data()), data.size());
         filesize = data.size();
-        file_id = avatarHash;
-        file_name = avatarHash;
-        nameLength = TOX_HASH_LENGTH;
+        file_id = &avatarHash;
+        file_name = &avatarHash;
+        nameLength = tox_hash_length();
     }
     Tox_Err_File_Send error;
-    const uint32_t fileNum = tox_file_send(tox, friendId, TOX_FILE_KIND_AVATAR, filesize, file_id,
-                                           file_name, nameLength, &error);
+    const uint32_t fileNum =
+        tox_file_send(tox, friendId, TOX_FILE_KIND_AVATAR, filesize,
+                      file_id == nullptr ? nullptr : file_id->data(),
+                      file_name == nullptr ? nullptr : file_name->data(), nameLength, &error);
     if (!PARSE_ERR(error)) {
         return;
     }
@@ -107,7 +108,7 @@ void CoreFile::sendAvatarFile(uint32_t friendId, const QByteArray& data)
     ToxFile file{fileNum, friendId, "", "", filesize, ToxFile::SENDING};
     file.fileKind = TOX_FILE_KIND_AVATAR;
     file.avatarData = data;
-    file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
+    file.resumeFileId.resize(tox_file_id_length());
     Tox_Err_File_Get fileGetErr;
     tox_file_get_file_id(tox, friendId, fileNum,
                          reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
@@ -138,7 +139,7 @@ void CoreFile::sendFile(uint32_t friendId, QString filename, QString filePath, l
                  filePath,
                  static_cast<uint64_t>(filesize),
                  ToxFile::SENDING};
-    file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
+    file.resumeFileId.resize(tox_file_id_length());
     Tox_Err_File_Get fileGetErr;
     tox_file_get_file_id(tox, friendId, fileNum,
                          reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
@@ -343,16 +344,14 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
             PARSE_ERR(err);
             return;
         }
-        static_assert(TOX_HASH_LENGTH <= TOX_FILE_ID_LENGTH,
-                      "TOX_HASH_LENGTH > TOX_FILE_ID_LENGTH!");
-        uint8_t avatarHash[TOX_FILE_ID_LENGTH];
+        Q_ASSERT(tox_hash_length() <= tox_file_id_length());
+        std::vector<uint8_t> avatarHash(tox_file_id_length());
         Tox_Err_File_Get fileGetErr;
-        tox_file_get_file_id(tox, friendId, fileId, avatarHash, &fileGetErr);
+        tox_file_get_file_id(tox, friendId, fileId, avatarHash.data(), &fileGetErr);
         if (!PARSE_ERR(fileGetErr)) {
             return;
         }
-        QByteArray avatarBytes{static_cast<const char*>(static_cast<const void*>(avatarHash)),
-                               TOX_HASH_LENGTH};
+        QByteArray avatarBytes(reinterpret_cast<const char*>(avatarHash.data()), tox_hash_length());
         emit core->fileAvatarOfferReceived(friendId, fileId, avatarBytes, filesize);
         return;
     }
@@ -370,7 +369,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
 
     ToxFile file{fileId, friendId, filename.getQString(), "", filesize, ToxFile::RECEIVING};
     file.fileKind = kind;
-    file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
+    file.resumeFileId.resize(tox_file_id_length());
     Tox_Err_File_Get fileGetErr;
     tox_file_get_file_id(tox, friendId, fileId,
                          reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &fileGetErr);
@@ -407,7 +406,7 @@ void CoreFile::handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept
 
     ToxFile file{fileId, friendId, "<avatar>", "", filesize, ToxFile::RECEIVING};
     file.fileKind = TOX_FILE_KIND_AVATAR;
-    file.resumeFileId.resize(TOX_FILE_ID_LENGTH);
+    file.resumeFileId.resize(tox_file_id_length());
     Tox_Err_File_Get getErr;
     tox_file_get_file_id(tox, friendId, fileId,
                          reinterpret_cast<uint8_t*>(file.resumeFileId.data()), &getErr);
