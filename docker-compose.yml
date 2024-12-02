@@ -28,7 +28,8 @@ services:
     image: toxchat/qtox:android-builder.arm64-v8a.debug
     <<: *shared_params
   android_builder.arm64-v8a.release:
-    image: toxchat/qtox:android-builder.arm64-v8a.release
+    image: toxchat/qtox:android-builder.arm64-v8a.debug
+    # image: toxchat/qtox:android-builder.arm64-v8a.release
     <<: *shared_params
   debian:
     image: toxchat/qtox:debian
