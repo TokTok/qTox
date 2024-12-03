@@ -7,6 +7,20 @@
       "generator": "Ninja",
       "cacheVariables": {
         "ASAN": true,
+        "UBSAN": true,
+        "SPELL_CHECK": true,
+        "STRICT_OPTIONS": true,
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+      }
+    },
+    {
+      "name": "debug-tsan",
+      "binaryDir": "${sourceDir}/_build-tsan",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "TSAN": true,
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
         "CMAKE_BUILD_TYPE": "Debug",

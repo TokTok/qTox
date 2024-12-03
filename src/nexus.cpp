@@ -358,7 +358,8 @@ void Nexus::updateWindowsArg(QWindow* closedWindow)
         QAction* action = windowActions->addAction(windowList[i]->title());
         action->setCheckable(true);
         action->setChecked(windowList[i] == activeWindow);
-        connect(action, &QAction::triggered, [=] { onOpenWindow(windowList[i]); });
+        connect(action, &QAction::triggered, this,
+                [this, &windowList, i] { onOpenWindow(windowList[i]); });
         windowMenu->addAction(action);
         dockMenu->insertAction(dockLast, action);
     }

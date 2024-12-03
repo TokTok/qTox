@@ -35,6 +35,7 @@ build_qtox() {
   # CMake will use -I instead of -isystem, so we need to set it manually.
   cmake \
     -DCMAKE_CXX_FLAGS="-isystem/usr/local/include" \
+    -DUBSAN=ON \
     -DUPDATE_CHECK=ON \
     -DSPELL_CHECK=OFF \
     -DSTRICT_OPTIONS=ON \
@@ -45,7 +46,7 @@ build_qtox() {
     .
   cmake --build .
   ctest --output-on-failure --parallel "$(sysctl -n hw.ncpu)"
-  cmake --build . --target install
+  cmake --install .
   cp qTox.dmg "$BIN_NAME"
 }
 

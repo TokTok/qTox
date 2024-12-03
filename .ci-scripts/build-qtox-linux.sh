@@ -10,6 +10,7 @@ usage() {
   echo "$0 [--minimal|--full] --build-type [Debug|Release] [--with-gui-tests] [--sanitize] [--tidy]"
   echo "Build script to build/test qtox from a CI environment."
   echo "--minimal or --full are required, --build-type is required."
+  echo "UndefinedBehaviorSanitizer is always enabled. In Release builds, it is used without additional runtime dependencies."
 }
 
 while (($# > 0)); do
@@ -84,19 +85,21 @@ export QT_QPA_PLATFORM=offscreen
 if [ "$MINIMAL" -eq 1 ]; then
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
+    -DSTRICT_OPTIONS=ON \
+    -DUBSAN=ON \
+    -GNinja \
     -DSMILEYS=DISABLED \
     -DUPDATE_CHECK=OFF \
-    -DSTRICT_OPTIONS=ON \
     -DSPELL_CHECK=OFF \
-    -GNinja \
     "${CMAKE_ARGS[@]}"
 else
   cmake "$SRCDIR" \
     -DCMAKE_BUILD_TYPE="$BUILD_TYPE" \
-    -DUPDATE_CHECK=ON \
     -DSTRICT_OPTIONS=ON \
-    -DCODE_COVERAGE=ON \
+    -DUBSAN=ON \
     -GNinja \
+    -DCODE_COVERAGE=ON \
+    -DUPDATE_CHECK=ON \
     "${CMAKE_ARGS[@]}"
 fi
 

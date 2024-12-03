@@ -10,7 +10,9 @@
 #
 # ##############################################################################
 
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.16)
+cmake_policy(VERSION 3.16)
+
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 
 option(PLATFORM_EXTENSIONS
@@ -21,14 +23,10 @@ option(SPELL_CHECK "Enable spellcheck support" ON)
 option(SVGZ_ICON "Compress the SVG icon of qTox" ON)
 option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
+option(UBSAN "Compile with UndefinedBehaviorSanitizer" OFF)
 option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
 option(GUI_TESTS
        "Enable GUI rendering tests, likely tied to a specific Qt version" OFF)
-
-# process generated files if cmake >= 3.10
-if(POLICY CMP0071)
-  cmake_policy(SET CMP0071 NEW)
-endif()
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE
@@ -36,20 +34,6 @@ if(NOT CMAKE_BUILD_TYPE)
       CACHE STRING
             "Options are: None, Debug, Release, RelWithDebInfo, MinSizeRel."
             FORCE)
-endif()
-
-if(ASAN)
-  set(CMAKE_CXX_FLAGS_DEBUG
-      "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
-  set(CMAKE_LINKER_FLAGS_DEBUG
-      "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=address")
-endif()
-
-if(TSAN)
-  set(CMAKE_CXX_FLAGS_DEBUG
-      "${CMAKE_CXX_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=thread")
-  set(CMAKE_LINKER_FLAGS_DEBUG
-      "${CMAKE_LINKER_FLAGS_DEBUG} -fno-omit-frame-pointer -fsanitize=thread")
 endif()
 
 set(ENV{PKG_CONFIG_PATH}
@@ -69,6 +53,51 @@ execute_process(
 
 project(qtox)
 
+# C++ and C standards.
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_C_STANDARD 11)
+
+if(ASAN
+   OR TSAN
+   OR UBSAN)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-omit-frame-pointer")
+endif()
+
+if(ASAN)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=address")
+endif()
+
+if(TSAN)
+  if(ASAN)
+    message(FATAL_ERROR "ASAN and TSAN cannot be enabled at the same time")
+  endif()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=thread")
+  set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=thread")
+endif()
+
+if(UBSAN)
+  if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_CXX_FLAGS
+        "${CMAKE_CXX_FLAGS} -fsanitize=undefined,nullability,local-bounds,float-divide-by-zero"
+    )
+    set(CMAKE_LINKER_FLAGS
+        "${CMAKE_LINKER_FLAGS} -fsanitize=undefined,nullability,local-bounds,float-divide-by-zero"
+    )
+    set(CMAKE_CXX_FLAGS_RELEASE
+        "${CMAKE_CXX_FLAGS_RELEASE} -fsanitize-trap=all")
+  elseif(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=undefined")
+    set(CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fsanitize=undefined")
+    set(CMAKE_CXX_FLAGS_RELEASE
+        "${CMAKE_CXX_FLAGS_RELEASE} -fno-sanitize-recover=all")
+  else()
+    message(
+      FATAL_ERROR
+        "UBSAN is not supported by the compiler (${CMAKE_CXX_COMPILER_ID})")
+  endif()
+endif()
+
 # Instruct CMake to run moc automatically when needed.
 set(CMAKE_AUTOMOC ON)
 # Run resource compilation automatically
@@ -81,8 +110,7 @@ set(AUTORCC_OPTIONS -compress 9 -threshold 0)
 # unwanted side effects.
 set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
 
-# Use C++20.
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
+# Disable exceptions (Qt doesn't use them, we don't need them).
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
 
 # Hardening flags (ASLR, warnings, etc)
@@ -100,8 +128,6 @@ endif()
 add_definitions(-DQT_NO_CAST_FROM_BYTEARRAY)
 add_definitions(-DQT_NO_CAST_TO_ASCII)
 add_definitions(-DQT_RESTRICTED_CAST_FROM_ASCII)
-
-include(CheckAtomic)
 
 # Use ccache when available to speed up builds.
 if(USE_CCACHE)
