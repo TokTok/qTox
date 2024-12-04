@@ -84,7 +84,9 @@ set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1)
 # Use C++20.
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
+if(NOT ANDROID)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti")
+endif()
 
 # Hardening flags (ASLR, warnings, etc)
 set(POSITION_INDEPENDENT_CODE True)
