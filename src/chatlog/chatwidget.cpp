@@ -1472,8 +1472,6 @@ bool ChatWidget::needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const
 
     qint64 messagesTimeDiff = prevItem.getTimestamp().secsTo(currentItem.getTimestamp());
     return currentItem.getSender() == prevItem.getSender() && messagesTimeDiff < repNameAfter;
-
-    return false;
 }
 
 bool ChatWidget::shouldRenderMessage(ChatLogIdx idx) const

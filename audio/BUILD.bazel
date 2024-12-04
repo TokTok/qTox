@@ -12,7 +12,7 @@ qt_moc(
     ],
     hdrs = glob(["**/*.h"]),
     mocopts = ["-Iqtox/audio/include"],
-    tags = ["no-cross"],
+    tags = ["qt"],
     deps = ["//qtox/util"],
 )
 
@@ -20,13 +20,13 @@ qt_rcc(
     name = "audio_res",
     srcs = ["resources/audio_res.qrc"],
     data = glob(["resources/*.pcm"]),
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 cc_library(
     name = "audio_res_lib",
     srcs = [":audio_res"],
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     alwayslink = True,
 )
@@ -54,7 +54,7 @@ cc_library(
         "UPDATE_CHECK_ENABLED",
     ],
     includes = ["include"],
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         ":audio_res_lib",

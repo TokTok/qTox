@@ -226,8 +226,6 @@ bool CategoryWidget::cycleChats(FriendWidget* activeChatroomWidget, bool forward
             emit chatWidget->chatroomWidgetClicked(chatWidget);
         return true;
     }
-
-    return false;
 }
 
 void CategoryWidget::onCompactChanged(bool _compact)

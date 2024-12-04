@@ -198,7 +198,7 @@ void TestFileProgress::testNoSamples()
 {
     auto progress = ToxFileProgress(100, 1000);
     QCOMPARE(progress.getSpeed(), 0.0);
-    QVERIFY(progress.getTimeLeftSeconds() == std::numeric_limits<double>::infinity());
+    QCOMPARE(progress.getTimeLeftSeconds(), std::numeric_limits<double>::infinity());
     QCOMPARE(progress.getProgress(), 0.0);
 }
 

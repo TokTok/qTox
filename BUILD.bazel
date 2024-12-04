@@ -7,7 +7,7 @@ project(license = "gpl3-https")
 qt_lconvert(
     name = "qtox_qms",
     srcs = glob(["translations/*.ts"]),
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 genrule(
@@ -15,14 +15,14 @@ genrule(
     srcs = ["translations/translations.qrc"],
     outs = ["translations/translations_local.qrc"],
     cmd = "cp $< $@",
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 qt_rcc(
     name = "translations",
     srcs = [":translations_qrc"],
     data = [":qtox_qms"],
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 qt_rcc(
@@ -38,7 +38,7 @@ qt_rcc(
         "smileys/*/*",
         "themes/**/*",
     ]),
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 cc_library(
@@ -47,14 +47,14 @@ cc_library(
         ":res",
         ":translations",
     ],
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     alwayslink = True,
 )
 
 cc_binary(
     name = "qtox",
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = ["//qtox/src:main"],
 )

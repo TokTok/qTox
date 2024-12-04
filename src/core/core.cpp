@@ -929,7 +929,6 @@ void Core::setStatus(Status::Status status)
 
     default:
         return;
-        break;
     }
 
     tox_self_set_status(tox.get(), userstatus);

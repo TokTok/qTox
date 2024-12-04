@@ -327,7 +327,6 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
         currentLayout = nextLayout(currentLayout, forward);
         if (currentLayout == nullptr) {
             qFatal("Layouts changed during iteration");
-            break;
         }
         int newCount = currentLayout->count();
         if (index < 0) {

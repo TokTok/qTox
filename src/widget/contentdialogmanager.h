@@ -14,7 +14,7 @@
 #include <QObject>
 
 /**
- * @breaf Manage all content dialogs
+ * @brief Manage all content dialogs
  */
 class ContentDialogManager : public QObject, public IDialogsManager
 {

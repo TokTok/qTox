@@ -6,7 +6,7 @@ qt_rcc(
     testonly = True,
     srcs = ["resources/test_data.qrc"],
     data = glob(["resources/**/*.png"]),
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 COPTS = ["-Iqtox"] + select({
@@ -24,7 +24,7 @@ qt_moc(
         "-Iqtox",
         "-Iqtox/util/include",
     ],
-    tags = ["no-cross"],
+    tags = ["qt"],
     deps = [
         "//qtox/src",
         "//qtox/util",
@@ -38,7 +38,7 @@ cc_library(
     hdrs = ["dbutility/include/dbutility/dbutility.h"],
     copts = COPTS,
     strip_include_prefix = "dbutility/include",
-    tags = ["no-cross"],
+    tags = ["qt"],
     deps = [
         "//qtox/src",
         "@qt//:qt_core",
@@ -56,8 +56,11 @@ cc_library(
     hdrs = glob(["mock/include/mock/*.h"]),
     copts = COPTS,
     includes = ["mock/include"],
-    tags = ["no-cross"],
-    deps = ["//qtox/src"],
+    tags = ["qt"],
+    deps = [
+        "//qtox/src",
+        "@qt//:qt_core",
+    ],
 )
 
 [qt_test(
@@ -73,6 +76,9 @@ cc_library(
         "//qtox:res_lib",
         "//qtox/src",
         "//qtox/util",
+        "@qt//:qt_core",
+        "@qt//:qt_gui",
+        "@qt//:qt_network",
     ],
 ) for src in glob(
     ["**/*_test.cpp"],

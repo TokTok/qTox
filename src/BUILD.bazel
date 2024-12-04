@@ -130,7 +130,7 @@ qt_moc(
         "-Iqtox",
         "-Iqtox/util/include",
     ] + ["-D%s=1" % d for d in DEFINES],
-    tags = ["no-cross"],
+    tags = ["qt"],
     deps = [
         "//qtox/util",
         "@qt//:qt_widgets",
@@ -140,7 +140,7 @@ qt_moc(
 qt_uic(
     name = "src_ui",
     srcs = glob(["**/*.ui"]),
-    tags = ["no-cross"],
+    tags = ["qt"],
 )
 
 objc_library(
@@ -195,7 +195,7 @@ cc_library(
         "//tools/config:osx": ["-framework IOKit"],
         "//tools/config:windows": [],
     }),
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         "//c-toxcore",
@@ -239,10 +239,12 @@ cc_library(
         "//tools/config:osx": [],
         "//tools/config:windows": [],
     }),
-    tags = ["no-cross"],
+    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
         ":src",
         "//qtox/audio",
+        "@qt//:qt_core",
+        "@qt//:qt_gui",
     ],
 )

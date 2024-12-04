@@ -112,7 +112,6 @@ void Settings::loadGlobal()
                 .arg(globalSettingsVersion)
                 .arg(GLOBAL_SETTINGS_VERSION));
         std::terminate();
-        return;
     }
     globalSettingsVersion = GLOBAL_SETTINGS_VERSION;
 
@@ -489,7 +488,6 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
                 .arg(personalSettingsVersion)
                 .arg(PERSONAL_SETTINGS_VERSION));
         std::terminate();
-        return;
     }
     personalSettingsVersion = PERSONAL_SETTINGS_VERSION;
 
