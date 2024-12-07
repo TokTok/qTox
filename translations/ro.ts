@@ -1928,7 +1928,7 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK ACTIVAT</translation>
     </message>
 </context>

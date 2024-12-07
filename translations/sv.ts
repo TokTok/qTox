@@ -1916,7 +1916,7 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK AKTIVERAD</translation>
     </message>
 </context>

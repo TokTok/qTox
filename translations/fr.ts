@@ -1916,7 +1916,7 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>MAJUSCULES ACTIVÉES</translation>
     </message>
 </context>

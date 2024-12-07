@@ -1928,7 +1928,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>ZAPNUTÝ CAPS-LOCK</translation>
     </message>
 </context>

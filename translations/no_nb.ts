@@ -1918,7 +1918,7 @@ Skriv inn samme passord to ganger.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK PÅSLÅTT</translation>
     </message>
 </context>

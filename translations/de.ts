@@ -1924,7 +1924,7 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>FESTSTELLTASTE AKTIVIERT</translation>
     </message>
 </context>

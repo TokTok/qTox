@@ -1920,7 +1920,7 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK ZAPNUTÝ</translation>
     </message>
 </context>

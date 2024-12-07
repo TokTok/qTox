@@ -1918,7 +1918,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>SUURTÄHED ON AKTIVEERITUD</translation>
     </message>
 </context>

@@ -1922,7 +1922,7 @@ Plural:10–20,30,40,..</translatorcomment>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>ĮJUNGTAS „CAPS LOCK“</translation>
     </message>
 </context>

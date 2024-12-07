@@ -1916,7 +1916,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK-ETKİN</translation>
     </message>
 </context>

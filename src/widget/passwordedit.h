@@ -8,6 +8,8 @@
 #include <QAction>
 #include <QLineEdit>
 
+#include <memory>
+
 class PasswordEdit : public QLineEdit
 {
     Q_OBJECT
@@ -37,5 +39,5 @@ private:
 private:
     QAction* action;
 
-    static EventHandler* eventHandler;
+    static std::unique_ptr<EventHandler> eventHandler;
 };

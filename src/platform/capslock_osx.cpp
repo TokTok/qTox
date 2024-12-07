@@ -9,10 +9,41 @@
 #include <QtCore/qsystemdetection.h>
 
 #ifdef Q_OS_MACOS
-// TODO: Implement for osx
+#include <QDebug>
+
+#include <CoreFoundation/CoreFoundation.h>
+#include <IOKit/hidsystem/IOHIDLib.h>
+#include <IOKit/hidsystem/IOHIDParameter.h>
+
 bool Platform::capsLockEnabled()
 {
-    return false;
+    const auto mdict = IOServiceMatching(kIOHIDSystemClass);
+    const auto ios = IOServiceGetMatchingService(kIOMainPortDefault, mdict);
+    if (!ios) {
+        if (mdict) {
+            CFRelease(mdict);
+        }
+        qWarning("IOServiceGetMatchingService() failed");
+        return false;
+    }
+
+    io_connect_t ioc;
+    auto kr = IOServiceOpen(ios, mach_task_self(), kIOHIDParamConnectType, &ioc);
+    IOObjectRelease(ios);
+    if (kr != KERN_SUCCESS) {
+        qWarning("IOServiceOpen() failed: %x", kr);
+        return false;
+    }
+
+    bool state;
+    kr = IOHIDGetModifierLockState(ioc, kIOHIDCapsLockState, &state);
+    if (kr != KERN_SUCCESS) {
+        IOServiceClose(ioc);
+        qWarning("IOHIDGetModifierLockState() failed: %x", kr);
+        return false;
+    }
+    IOServiceClose(ioc);
+    return state;
 }
 #endif
 #endif

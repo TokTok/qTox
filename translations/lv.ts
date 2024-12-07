@@ -1926,7 +1926,7 @@ Please make sure to enter the same password twice.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>Ir ieslēgts &apos;&apos;Caps Lock&apos;&apos;</translation>
     </message>
 </context>

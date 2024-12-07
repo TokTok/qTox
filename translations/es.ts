@@ -1917,7 +1917,7 @@ Verifica que sean la misma en ambos recuadros.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>BLOQ MAYÚS ACTIVO</translation>
     </message>
 </context>

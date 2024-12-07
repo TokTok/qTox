@@ -1944,7 +1944,7 @@ You may want to create one.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

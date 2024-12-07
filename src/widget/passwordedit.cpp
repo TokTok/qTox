@@ -4,17 +4,12 @@
  */
 
 #include "passwordedit.h"
-#ifdef QTOX_PLATFORM_EXT
-#include "src/platform/capslock.h"
-#endif
+
 #include <QCoreApplication>
 
-// It isn't needed for OSX, because it shows indicator by default
-#if defined(QTOX_PLATFORM_EXT) && !defined(Q_OS_MACOS)
-#define ENABLE_CAPSLOCK_INDICATOR
-#endif
+#include "src/platform/capslock.h"
 
-PasswordEdit::EventHandler* PasswordEdit::eventHandler{nullptr};
+std::unique_ptr<PasswordEdit::EventHandler> PasswordEdit::eventHandler{nullptr};
 
 PasswordEdit::PasswordEdit(QWidget* parent)
     : QLineEdit(parent)
@@ -22,9 +17,9 @@ PasswordEdit::PasswordEdit(QWidget* parent)
 {
     setEchoMode(QLineEdit::Password);
 
-#ifdef ENABLE_CAPSLOCK_INDICATOR
+#ifdef QTOX_PLATFORM_EXT
     action->setIcon(QIcon(":img/caps_lock.svg"));
-    action->setToolTip(tr("CAPS-LOCK ENABLED"));
+    action->setToolTip(tr("Caps-lock enabled"));
     addAction(action, QLineEdit::TrailingPosition);
 #endif
 }
@@ -36,9 +31,9 @@ PasswordEdit::~PasswordEdit()
 
 void PasswordEdit::registerHandler()
 {
-#ifdef ENABLE_CAPSLOCK_INDICATOR
+#ifdef QTOX_PLATFORM_EXT
     if (!eventHandler)
-        eventHandler = new EventHandler();
+        eventHandler = std::make_unique<EventHandler>();
     if (!eventHandler->actions.contains(action))
         eventHandler->actions.append(action);
 #endif
@@ -46,13 +41,12 @@ void PasswordEdit::registerHandler()
 
 void PasswordEdit::unregisterHandler()
 {
-#ifdef ENABLE_CAPSLOCK_INDICATOR
+#ifdef QTOX_PLATFORM_EXT
     int idx;
 
     if (eventHandler && (idx = eventHandler->actions.indexOf(action)) >= 0) {
         eventHandler->actions.remove(idx);
         if (eventHandler->actions.isEmpty()) {
-            delete eventHandler;
             eventHandler = nullptr;
         }
     }
@@ -62,7 +56,7 @@ void PasswordEdit::unregisterHandler()
 void PasswordEdit::showEvent(QShowEvent* event)
 {
     std::ignore = event;
-#ifdef ENABLE_CAPSLOCK_INDICATOR
+#ifdef QTOX_PLATFORM_EXT
     action->setVisible(Platform::capsLockEnabled());
 #endif
     registerHandler();
@@ -74,7 +68,7 @@ void PasswordEdit::hideEvent(QHideEvent* event)
     unregisterHandler();
 }
 
-#ifdef ENABLE_CAPSLOCK_INDICATOR
+#ifdef QTOX_PLATFORM_EXT
 PasswordEdit::EventHandler::EventHandler()
 {
     QCoreApplication::instance()->installEventFilter(this);
@@ -106,4 +100,4 @@ bool PasswordEdit::EventHandler::eventFilter(QObject* obj, QEvent* event)
 
     return QObject::eventFilter(obj, event);
 }
-#endif // ENABLE_CAPSLOCK_INDICATOR
+#endif // QTOX_PLATFORM_EXT

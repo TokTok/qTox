@@ -1920,7 +1920,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>CAPS-LOCK ENABLED</source>
+        <source>Caps-lock enabled</source>
         <translation>CAPS-LOCK BẬT</translation>
     </message>
 </context>
