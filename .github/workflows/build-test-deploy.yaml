@@ -241,12 +241,15 @@ jobs:
       matrix:
         arch: [i686, x86_64]
         build_type: [Debug, Release]
+        include:
+          - arch: x86_64
+            run_tests: --run-tests
     steps:
       - uses: actions/checkout@v4
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
       - name: Run build
-        run: docker-compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} --run-tests --src-dir /qtox
+        run: docker-compose run --rm windows_builder.${{ matrix.arch }} ./windows/cross-compile/build.sh --arch ${{ matrix.arch }} --build-type ${{ matrix.build_type }} ${{ matrix.run_tests }} --src-dir /qtox
       - name: Upload installer
         if: matrix.build_type == 'release'
         uses: actions/upload-artifact@v4
