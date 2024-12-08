@@ -7,6 +7,7 @@
 
 #include <QDebug>
 #include <QGuiApplication>
+#include <QtPlugin>
 
 int main(int argc, char* argv[])
 {
@@ -16,3 +17,5 @@ int main(int argc, char* argv[])
     qDebug() << "Exit with status" << errorcode;
     return errorcode;
 }
+
+Q_IMPORT_PLUGIN(QOffscreenIntegrationPlugin)
