@@ -642,10 +642,8 @@ target_link_libraries(
   ${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                           ${ALL_LIBRARIES})
 set_target_properties(
-  ${PROJECT_NAME}
-  PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 24
-             QT_ANDROID_MIN_SDK_VERSION 24
-             QT_ANDROID_ABIS arm64-v8a)
+  ${PROJECT_NAME} PROPERTIES QT_ANDROID_TARGET_SDK_VERSION 24
+                             QT_ANDROID_MIN_SDK_VERSION 24)
 
 include(Testing)
 include(Installation)

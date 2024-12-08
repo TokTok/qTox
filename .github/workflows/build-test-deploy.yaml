@@ -141,9 +141,10 @@ jobs:
       contents: write
     strategy:
       matrix:
-        arch: [arm64-v8a]
+        arch: [armeabi-v7a, arm64-v8a]
         build_type: [Debug, Release]
         exclude:
+          - arch: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'armeabi-v7a' }}
           - build_type: ${{ github.event_name == 'pull_request' && !contains(github.event.pull_request.labels.*.name, 'packaging') && 'Debug' }}
     steps:
       - name: Compute values for remaining steps
