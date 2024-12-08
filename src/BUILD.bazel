@@ -8,6 +8,7 @@ DEFINES = [
     "QTOX_PLATFORM_EXT",
     "QT_MESSAGELOGCONTEXT",
     "UPDATE_CHECK_ENABLED",
+    "WITH_DBUS",
 ]
 
 qt_moc(
@@ -58,6 +59,7 @@ qt_moc(
         "persistence/settings.h",
         "persistence/smileypack.h",
         "platform/desktop_notifications/desktopnotify.h",
+        "platform/desktop_notifications/desktopnotify_dbus.h",
         "platform/posixsignalnotifier.h",
         "video/camerasource.h",
         "video/corevideosource.h",
@@ -203,6 +205,7 @@ cc_library(
         "@openal",
         "@qt//:qt_concurrent",
         "@qt//:qt_core",
+        "@qt//:qt_dbus",
         "@qt//:qt_gui",
         "@qt//:qt_network",
         "@qt//:qt_svg",

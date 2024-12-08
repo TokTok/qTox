@@ -9,21 +9,29 @@
 
 #include <QObject>
 
+#include <memory>
+
 class QSystemTrayIcon;
 class Settings;
 
+/**
+ * @brief Show desktop notifications.
+ *
+ * Icon is optional, if not provided, no notifications will be shown unless
+ * another backend exists.
+ *
+ * If DBus is available and a desktop notification server responds to us,
+ * it is preferred over tray notifications.
+ */
 class DesktopNotify : public QObject
 {
     Q_OBJECT
+
 public:
-    /**
-     * Icon is optional, if not provided, no notifications will be shown.
-     *
-     * In the future, we may implement a fallback notification system if there's no
-     * system tray available.
-     */
-    DesktopNotify(Settings& settings, QSystemTrayIcon* icon);
+    DesktopNotify(Settings& settings, QObject* parent);
     ~DesktopNotify();
+
+    void setIcon(QSystemTrayIcon* icon);
 
 public slots:
     void notifyMessage(const NotificationData& notificationData);
@@ -32,6 +40,6 @@ signals:
     void notificationClosed();
 
 private:
-    Settings& settings_;
-    QSystemTrayIcon* icon_;
+    struct Private;
+    const std::unique_ptr<Private> d;
 };
