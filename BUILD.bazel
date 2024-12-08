@@ -1,5 +1,5 @@
-load("@rules_cc//cc:defs.bzl", "cc_binary", "cc_library")
-load("//third_party/qt:build_defs.bzl", "qt_lconvert", "qt_rcc")
+load("@rules_cc//cc:defs.bzl", "cc_library")
+load("//third_party/qt:build_defs.bzl", "qt_binary", "qt_lconvert", "qt_rcc")
 load("//tools/project:build_defs.bzl", "project")
 
 project(license = "gpl3-https")
@@ -52,9 +52,8 @@ cc_library(
     alwayslink = True,
 )
 
-cc_binary(
+qt_binary(
     name = "qtox",
-    tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = ["//qtox/src:main"],
 )
