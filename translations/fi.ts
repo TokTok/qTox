@@ -886,7 +886,7 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Uusi viesti</translation>
     </message>
     <message>
@@ -1859,11 +1859,11 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
         <translation>Tuo kaikki eteen</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Sulje kokoruututila</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Mene kokoruututilaan</translation>
     </message>
 </context>

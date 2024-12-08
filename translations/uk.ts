@@ -888,8 +888,8 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
-        <translation type="unfinished"></translation>
+        <source>New message</source>
+        <translation type="unfinished">Нове повідомлення</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1863,11 +1863,11 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished">На передній план</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Вимкнути повноекранний режим</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Увімкнути повноекранний режим</translation>
     </message>
 </context>

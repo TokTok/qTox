@@ -884,7 +884,7 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nova poruka</translation>
     </message>
     <message>
@@ -1853,11 +1853,11 @@ Please make sure to enter the same password twice.</source>
         <translation>Prikaži sve naprijed</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Prekini cjeloekranski prikaz</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Otvori cjeloekranski prikaz</translation>
     </message>
 </context>

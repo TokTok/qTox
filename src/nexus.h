@@ -52,7 +52,7 @@ public:
     QMenu* viewMenu;
     QMenu* windowMenu;
     QAction* minimizeAction;
-    QAction* fullscreenAction;
+    QAction* fullScreenAction;
     QAction* frontAction;
     QMenu* dockMenu;
 
@@ -63,7 +63,7 @@ public slots:
     void updateWindowsClosed();
     void updateWindowsStates();
     void onOpenWindow(QObject* object);
-    void toggleFullscreen();
+    void toggleFullScreen();
     void bringAllToFront();
 
 private:

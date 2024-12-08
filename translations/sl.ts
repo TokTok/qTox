@@ -887,8 +887,8 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
-        <translation type="unfinished"></translation>
+        <source>New message</source>
+        <translation type="unfinished">Novo sporočilo</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1857,11 +1857,11 @@ Please make sure to enter the same password twice.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

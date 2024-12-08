@@ -886,7 +886,7 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nova mensagem</translation>
     </message>
     <message>
@@ -1859,11 +1859,11 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
         <translation>Trazer tudo para a frente</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Sair do ecrã inteiro</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Mudar para ecrã inteiro</translation>
     </message>
 </context>

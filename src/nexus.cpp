@@ -118,9 +118,9 @@ void Nexus::start()
     windowMenu = globalMenuBar->addMenu(QString());
     globalMenuBar->addAction(windowMenu->menuAction());
 
-    fullscreenAction = viewMenu->addAction(QString());
-    fullscreenAction->setShortcut(QKeySequence::FullScreen);
-    connect(fullscreenAction, &QAction::triggered, this, &Nexus::toggleFullscreen);
+    fullScreenAction = viewMenu->addAction(QString());
+    fullScreenAction->setShortcut(QKeySequence::FullScreen);
+    connect(fullScreenAction, &QAction::triggered, this, &Nexus::toggleFullScreen);
 
     minimizeAction = windowMenu->addAction(QString());
     minimizeAction->setShortcut(Qt::CTRL | Qt::Key_M);
@@ -315,9 +315,9 @@ void Nexus::onWindowStateChanged(Qt::WindowStates state)
             minimizeAction->setEnabled(false);
 
         if (state & Qt::WindowFullScreen)
-            fullscreenAction->setText(tr("Exit Fullscreen"));
+            fullScreenAction->setText(tr("Exit Full Screen"));
         else
-            fullscreenAction->setText(tr("Enter Fullscreen"));
+            fullScreenAction->setText(tr("Enter Full Screen"));
 
         updateWindows();
     }
@@ -399,7 +399,7 @@ void Nexus::onOpenWindow(QObject* object)
     window->requestActivate();
 }
 
-void Nexus::toggleFullscreen()
+void Nexus::toggleFullScreen()
 {
     QWidget* window = QApplication::activeWindow();
 

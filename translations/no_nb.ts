@@ -888,7 +888,7 @@ slik at du kan lagre filen på Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Ny melding</translation>
     </message>
     <message>
@@ -1861,11 +1861,11 @@ Skriv inn samme passord to ganger.</translation>
         <translation>Bring alle til forgrunnen</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Gå ut av fullskjermsvisning</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Fullskjermsvisning</translation>
     </message>
 </context>

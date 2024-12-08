@@ -884,7 +884,7 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Tin nhắn mới</translation>
     </message>
     <message>
@@ -1864,11 +1864,11 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
         <translation>Đưa tất cả lên đầu</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Thoát toàn màn hình</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Chế độ toàn màn hình</translation>
     </message>
 </context>

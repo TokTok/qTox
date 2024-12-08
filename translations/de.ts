@@ -887,7 +887,7 @@ um sie in Windows speichern zu können.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Neue Nachricht</translation>
     </message>
     <message>
@@ -1867,11 +1867,11 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
         <translation>Alles in den Vordergrund bringen</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Vollbildmodus verlassen</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Vollbildmodus</translation>
     </message>
 </context>

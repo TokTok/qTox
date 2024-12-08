@@ -886,7 +886,7 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nieuw bericht</translation>
     </message>
     <message>
@@ -1859,11 +1859,11 @@ Zorg ervoor dat je hetzelfde wachtwoord twee keer invoert.</translation>
         <translation>Alles naar de voorgrond brengen</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Volledig scherm verlaten</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Volledig scherm gebruiken</translation>
     </message>
 </context>

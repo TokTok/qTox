@@ -890,7 +890,7 @@ so you can save the file on Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nová správa</translation>
     </message>
     <message>
@@ -1870,11 +1870,11 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
         <translation>Presunúť všetko dopredu</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Opustiť režim celej obrazovky</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Na celú obrazovku</translation>
     </message>
 </context>

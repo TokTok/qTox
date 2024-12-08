@@ -376,7 +376,7 @@ void Widget::init()
     new QShortcut(Qt::CTRL | Qt::Key_Tab, this, this, &Widget::nextChat);
     new QShortcut(Qt::CTRL | Qt::Key_PageUp, this, this, &Widget::previousChat);
     new QShortcut(Qt::CTRL | Qt::Key_PageDown, this, this, &Widget::nextChat);
-    new QShortcut(Qt::Key_F11, this, this, &Widget::toggleFullscreen);
+    new QShortcut(Qt::Key_F11, this, this, &Widget::toggleFullScreen);
 
 #ifdef Q_OS_MAC
     QMenuBar* globalMenu = nexus.globalMenuBar;
@@ -403,9 +403,8 @@ void Widget::init()
     editMenu = globalMenu->insertMenu(viewMenu, new QMenu(this));
     editMenu->menu()->addSeparator();
 
-    viewMenu->menu()->insertMenu(nexus.fullscreenAction, filterMenu);
-
-    viewMenu->menu()->insertSeparator(nexus.fullscreenAction);
+    viewMenu->menu()->insertMenu(nexus.fullScreenAction, filterMenu);
+    viewMenu->menu()->insertSeparator(nexus.fullScreenAction);
 
     contactMenu = globalMenu->insertMenu(windowMenu, new QMenu(this));
 
@@ -584,7 +583,7 @@ void Widget::updateIcons()
         QString path = ":/img/taskbar/" + color + "/taskbar_" + assetSuffix + ".svg";
         QSvgRenderer renderer(path);
 
-        // Prepare a QImage with desired characteritisc
+        // Prepare a QImage with desired characteristics
         QImage image = QImage(250, 250, QImage::Format_ARGB32);
         image.fill(Qt::transparent);
         QPainter painter(&image);
@@ -1781,7 +1780,7 @@ void Widget::onConferenceDialogShown(Conference* c)
     onDialogShown(conferenceWidgets[conferenceId]);
 }
 
-void Widget::toggleFullscreen()
+void Widget::toggleFullScreen()
 {
     if (windowState().testFlag(Qt::WindowFullScreen)) {
         setWindowState(windowState() & ~Qt::WindowFullScreen);

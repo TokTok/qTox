@@ -885,7 +885,7 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Нова порука</translation>
     </message>
     <message>
@@ -1861,11 +1861,11 @@ Please make sure to enter the same password twice.</source>
         <translation>Све у први план</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Напусти цео екран</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Пређи на цео екран</translation>
     </message>
 </context>

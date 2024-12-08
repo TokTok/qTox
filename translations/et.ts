@@ -886,7 +886,7 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Uus sõnum</translation>
     </message>
     <message>
@@ -1860,11 +1860,11 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
         <translation>Too kõik esile</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Ära kuva üle kogu ekraani</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Kuva üle kogu ekraani</translation>
     </message>
 </context>

@@ -878,8 +878,8 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
-        <translation type="unfinished"></translation>
+        <source>New message</source>
+        <translation type="unfinished">新しいメッセージ</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1846,11 +1846,11 @@ Please make sure to enter the same password twice.</source>
         <translation>すべて最前面に表示</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>全画面表示を終了</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>全画面表示を開始</translation>
     </message>
 </context>

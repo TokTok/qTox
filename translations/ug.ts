@@ -882,8 +882,8 @@ so you can save the file on Windows.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
-        <translation type="unfinished"></translation>
+        <source>New message</source>
+        <translation type="unfinished">يېڭى ئۇچۇر</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1858,11 +1858,11 @@ Please make sure to enter the same password twice.</source>
         <translation>ئەڭ ئۈستىگە يۆتكەش</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>تولۇق ئېكراندىن چېكىنىش</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>تولۇق ئېكران ھالىتى</translation>
     </message>
 </context>

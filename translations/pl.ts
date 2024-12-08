@@ -898,7 +898,7 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nowa Wiadomość</translation>
     </message>
     <message>
@@ -1882,12 +1882,12 @@ Pamiętaj, aby dwukrotnie wprowadzić to samo hasło.</translation>
         <translation>Pokaż na pierwszym planie</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translatorcomment>better translation?</translatorcomment>
         <translation>Opuść pełny ekran</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Pełny ekran</translation>
     </message>
 </context>

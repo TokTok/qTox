@@ -890,7 +890,7 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Mesaj nou</translation>
     </message>
     <message>
@@ -1870,11 +1870,11 @@ Vă rugăm să vă asigurați că introduceți aceeași parolă de două ori.</t
         <translation>Aduceți tot în față</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Ieșiți din ecranul complet</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Intrați în ecranul complet</translation>
     </message>
 </context>

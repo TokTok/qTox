@@ -890,7 +890,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Jauns ziņojums</translation>
     </message>
     <message>
@@ -1868,11 +1868,11 @@ Please make sure to enter the same password twice.</source>
         <translation>Novietot visu priekšā</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Iziet no pilnekrāna režīma</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Aktivizēt pilnekrāna režīmu</translation>
     </message>
 </context>

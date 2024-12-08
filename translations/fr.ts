@@ -886,7 +886,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nouveau message</translation>
     </message>
     <message>
@@ -1859,11 +1859,11 @@ Veuillez vous assurer d&apos;entrer deux fois le même mot de passe.</translatio
         <translation>Envoyer tout au premier plan</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Quitter le plein écran</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Entrer en plein écran</translation>
     </message>
 </context>

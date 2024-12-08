@@ -889,7 +889,7 @@ takže můžete soubor uložit i v systému Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nová zpráva</translation>
     </message>
     <message>
@@ -1862,11 +1862,11 @@ Ujistěte se, že zadáváte stejné heslo dvakrát.</translation>
         <translation>Přenést vše do popředí</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Opustit režim celé obrazovky</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Přepnout na celou obrazovku</translation>
     </message>
 </context>

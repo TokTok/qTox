@@ -886,7 +886,7 @@ så att du kan spara filen i Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nytt meddelande</translation>
     </message>
     <message>
@@ -1859,11 +1859,11 @@ Vänligen se till att du skriver samma lösenord två gånger.</translation>
         <translation>Flytta längst fram</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Avsluta helskärmsläge</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Använd helskärm</translation>
     </message>
 </context>

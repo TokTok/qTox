@@ -195,7 +195,7 @@ public slots:
     void previousChat();
     void onFriendDialogShown(const Friend* f);
     void onConferenceDialogShown(Conference* c);
-    void toggleFullscreen();
+    void toggleFullScreen();
     void refreshPeerListsLocal(const QString& username);
     void onUpdateAvailable();
     void onCoreChanged(Core& core);

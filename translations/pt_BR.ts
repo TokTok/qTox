@@ -887,7 +887,7 @@ de forma que você possa salvar o arquivo no Windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nova Mensagem</translation>
     </message>
     <message>
@@ -1867,11 +1867,11 @@ Certifique-se de que você entrou a mesma senha duas vezes.</translation>
         <translation>Trazer Todos para a Frente</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Sair da Tela Cheia</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Entrar em Tela Cheia</translation>
     </message>
 </context>

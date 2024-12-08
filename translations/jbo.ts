@@ -1381,7 +1381,7 @@ instead of system taskbar.</source>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1920,11 +1920,11 @@ You may want to create one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

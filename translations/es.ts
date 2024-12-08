@@ -887,7 +887,7 @@ para que puedas guardar el archivo en windows.</translation>
         </translation>
     </message>
     <message>
-        <source>New Message</source>
+        <source>New message</source>
         <translation>Nuevo Mensaje</translation>
     </message>
     <message>
@@ -1860,11 +1860,11 @@ Verifica que sean la misma en ambos recuadros.</translation>
         <translation>Traer todos al frente</translation>
     </message>
     <message>
-        <source>Exit Fullscreen</source>
+        <source>Exit Full Screen</source>
         <translation>Salir de pantalla completa</translation>
     </message>
     <message>
-        <source>Enter Fullscreen</source>
+        <source>Enter Full Screen</source>
         <translation>Pantalla completa</translation>
     </message>
 </context>

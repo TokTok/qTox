@@ -166,7 +166,7 @@ void ConferenceWidget::updateStatusLight()
 QString ConferenceWidget::getStatusString() const
 {
     if (chatroom->hasNewMessage()) {
-        return tr("New Message");
+        return tr("New message");
     } else {
         return tr("Online");
     }

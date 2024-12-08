@@ -567,7 +567,7 @@ void ChatForm::clearChatArea()
 void ChatForm::onScreenshotClicked()
 {
     doScreenshot();
-    // Give the window manager a moment to open the fullscreen grabber window
+    // Give the window manager a moment to open the full-screen grabber window
     QTimer::singleShot(SCREENSHOT_GRABBER_OPENING_DELAY, this, &ChatForm::hideFileMenu);
 }
 
