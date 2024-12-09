@@ -649,7 +649,7 @@ bool RawDatabase::remove()
         return ret;
     }
 
-    qDebug() << "Removing database " << path;
+    qDebug() << "Removing database" << path;
     close();
     return QFile::remove(path);
 }

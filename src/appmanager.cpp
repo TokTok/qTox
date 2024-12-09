@@ -299,7 +299,7 @@ int AppManager::run()
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
     qapp->addLibraryPath("platforms");
 
-    qDebug() << "commit: " << GIT_VERSION;
+    qDebug() << "commit:" << GIT_VERSION;
 
     QString profileName;
     bool autoLogin = settings->getAutoLogin();

@@ -121,7 +121,7 @@ void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
         CoreFile* coreFile = core->getCoreFile();
         coreFile->acceptFileRecvRequest(file.friendId, file.fileNum, filepath);
     } else {
-        qWarning() << "Cannot write to " << filepath;
+        qWarning() << "Cannot write to" << filepath;
     }
 }
 
@@ -2297,7 +2297,7 @@ void Widget::onTryCreateTrayIcon()
     } else {
         disconnect(timer, &QTimer::timeout, this, &Widget::onTryCreateTrayIcon);
         if (!icon) {
-            qWarning() << "No system tray detected!";
+            qWarning() << "No system tray detected";
             show();
         }
     }
