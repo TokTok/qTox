@@ -654,7 +654,13 @@ set_target_properties(
              QT_ANDROID_PACKAGE_SOURCE_DIR
              "${CMAKE_CURRENT_SOURCE_DIR}/android/${Qt6Core_VERSION}")
 
-include(Testing)
+#target_link_options(${PROJECT_NAME} PRIVATE -static-libgcc -static-libstdc++ -static)
+target_link_directories(${PROJECT_NAME} PRIVATE "/sysroot/opt/qt/plugins/platforms")
+target_link_libraries(${PROJECT_NAME} PRIVATE qoffscreen)
+
+if(BUILD_TESTING)
+  include(Testing)
+endif()
 include(Installation)
 
 if(DEFINED ENV{IN_NIX_SHELL})
