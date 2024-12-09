@@ -23,7 +23,7 @@ public:
     static constexpr int numHexChars = size * 2;
 
     ToxId();
-    ToxId(const ToxId& other);
+    ToxId(ToxId&& other);
     explicit ToxId(const QString& id);
     explicit ToxId(const QByteArray& rawId);
     explicit ToxId(const uint8_t* rawId, int len);
@@ -39,7 +39,6 @@ public:
     static bool isValidToxId(const QString& id);
     static bool isToxId(const QString& id);
     const uint8_t* getBytes() const;
-    QByteArray getToxId() const;
     ToxPk getPublicKey() const;
     QString getNoSpamString() const;
 
