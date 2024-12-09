@@ -7,6 +7,7 @@
 
 #include <QDebug>
 #include <QGuiApplication>
+#include <QtPlugin>
 
 int main(int argc, char* argv[])
 {
@@ -16,3 +17,12 @@ int main(int argc, char* argv[])
     qDebug() << "Exit with status" << errorcode;
     return errorcode;
 }
+
+#ifdef QT_STATIC
+Q_IMPORT_PLUGIN(QLinuxFbIntegrationPlugin)
+Q_IMPORT_PLUGIN(QOffscreenIntegrationPlugin)
+Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)
+Q_IMPORT_PLUGIN(QXcbGlxIntegrationPlugin)
+Q_IMPORT_PLUGIN(QVncIntegrationPlugin)
+Q_IMPORT_PLUGIN(QWaylandIntegrationPlugin)
+#endif

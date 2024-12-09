@@ -25,6 +25,9 @@ option(ASAN "Compile with AddressSanitizer" OFF)
 option(TSAN "Compile with ThreadSanitizer" OFF)
 option(UBSAN "Compile with UndefinedBehaviorSanitizer" OFF)
 option(STRICT_OPTIONS "Error on compile warning, used by CI" OFF)
+option(BUILD_TESTING "Enable tests (turn OFF for static builds)" ON)
+option(FULLY_STATIC
+       "Produce a fully statically linked qTox binary (experimental)" OFF)
 option(GUI_TESTS
        "Enable GUI rendering tests, likely tied to a specific Qt version" OFF)
 
@@ -654,7 +657,20 @@ set_target_properties(
              QT_ANDROID_PACKAGE_SOURCE_DIR
              "${CMAKE_CURRENT_SOURCE_DIR}/android/${Qt6Core_VERSION}")
 
-include(Testing)
+if(FULLY_STATIC)
+  target_link_directories(${PROJECT_NAME} PRIVATE
+                          "/sysroot/opt/qt/plugins/platforms")
+  target_link_libraries(
+    ${PROJECT_NAME}
+    PRIVATE Qt6::QLinuxFbIntegrationPlugin Qt6::QOffscreenIntegrationPlugin
+            Qt6::QVncIntegrationPlugin Qt6::QXcbGlxIntegrationPlugin
+            Qt6::QXcbIntegrationPlugin Qt6::QWaylandIntegrationPlugin)
+  target_link_options(${PROJECT_NAME} PRIVATE -static)
+endif()
+
+if(BUILD_TESTING)
+  include(Testing)
+endif()
 include(Installation)
 
 if(DEFINED ENV{IN_NIX_SHELL})

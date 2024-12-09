@@ -86,6 +86,25 @@ jobs:
       - name: Run build
         run: docker-compose run --rm alpine ./.ci-scripts/build-qtox-linux.sh --build-type ${{ matrix.build_type }} --${{ matrix.features }}
 
+  build-alpine-static:
+    name: Alpine (static)
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        build_type: [Release]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: ${{ github.job }}
+          append-timestamp: false
+      - name: Install docker-compose
+        run: sudo apt-get install -y docker-compose
+      - name: Run build
+        run: docker-compose run --rm alpine-static ./.ci-scripts/build-qtox-linux-static.sh --build-type ${{ matrix.build_type }}
+
   build-debian:
     name: Debian
     if: github.event_name == 'pull_request'

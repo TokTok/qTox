@@ -24,6 +24,9 @@ services:
   alpine:
     image: toxchat/qtox:alpine
     <<: *shared_params
+  alpine-static:
+    image: toxchat/qtox:alpine-static
+    <<: *shared_params
   android_builder.armeabi-v7a.debug_6.2.4:
     image: toxchat/qtox:android-builder.armeabi-v7a.debug_6.2.4
     <<: *shared_params

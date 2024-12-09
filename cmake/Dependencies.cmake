@@ -131,7 +131,7 @@ if(SPELL_CHECK)
 endif()
 
 # Try to find cmake toxcore libraries
-if(WIN32 OR ANDROID)
+if(WIN32 OR ANDROID OR FULLY_STATIC)
   search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL STATIC_PACKAGE MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
 else()
   search_dependency(TOXCORE             PACKAGE toxcore             LIBRARY toxcore          OPTIONAL MINIMUM_VERSION ${TOXCORE_MINIMUM_VERSION})
