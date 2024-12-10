@@ -1,0 +1,16 @@
+#!/usr/bin/make -f
+
+ifeq ($(ARCH),i686)
+WINE_DLL_DIR="/usr/lib/x86_64-linux-gnu/wine/i386-windows"
+endif
+ifeq ($(ARCH),x86_64)
+#WINE_DLL_DIR="/usr/lib/x86_64-linux-gnu/wine/x86_64-windows" "/usr/lib/x86_64-linux-gnu/wine/i386-windows"
+endif
+
+dlls-required: $(EXES:$(PREFIX_DIR)/%=$(BUILD_DIR)/%.check)
+	@cat $+ >$@
+
+$(BUILD_DIR)/%.check: $(PREFIX_DIR)/%
+	@echo "Checking $<"
+	@mkdir -p $(@D)
+	@python3 /usr/local/bin/mingw-ldd.py "$<" --dll-lookup-dirs "$(PREFIX_DIR)" $(WINE_DLL_DIR) --output-format tree >$@
