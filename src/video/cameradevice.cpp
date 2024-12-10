@@ -463,7 +463,7 @@ QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
         return avfoundation::getDeviceModes(devName);
 #endif
     else
-        qWarning() << "Video mode listing not implemented for input " << iformat->name;
+        qWarning() << "Video mode listing not implemented for input" << iformat->name;
 
     return {};
 }

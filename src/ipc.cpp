@@ -79,7 +79,7 @@ IPC::IPC(uint32_t profileId_)
     static std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
     std::uniform_int_distribution<uint64_t> distribution;
     globalId = distribution(rng);
-    qDebug() << "Our global IPC ID is " << globalId;
+    qDebug() << "Our global IPC ID is" << globalId;
 #ifdef ANDROID
     return;
 #else
@@ -164,7 +164,7 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
         mem->lastEvent = evt->posted = result = qMax(mem->lastEvent + 1, time(nullptr));
         evt->dest = dest;
         evt->sender = getpid();
-        qDebug() << "postEvent " << name << "to" << dest;
+        qDebug() << "postEvent" << name << "to" << dest;
     }
 
     globalMemory.unlock();

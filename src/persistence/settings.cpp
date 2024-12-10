@@ -752,7 +752,7 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
 
     QString path = paths.getSettingsDirPath() + profileName + ".ini";
 
-    qDebug() << "Saving personal settings at " << path;
+    qDebug() << "Saving personal settings at" << path;
 
     SettingsSerializer ps(path, passkey);
     ps.beginGroup("Friends");
@@ -2203,7 +2203,7 @@ void Settings::createPersonal(const Paths& paths, const QString& basename)
     QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
     QString path = paths.getSettingsDirPath() + QDir::separator() + basename + ".ini";
-    qDebug() << "Creating new profile settings in " << path;
+    qDebug() << "Creating new profile settings in" << path;
 
     QSettings ps(path, QSettings::IniFormat);
     ps.beginGroup("Friends");
@@ -2225,7 +2225,7 @@ void Settings::createSettingsDir()
     QString dir = paths.getSettingsDirPath();
     QDir directory(dir);
     if (!directory.exists() && !directory.mkpath(directory.absolutePath()))
-        qCritical() << "Error while creating directory " << dir;
+        qCritical() << "Error while creating directory" << dir;
 }
 
 /**

@@ -249,10 +249,10 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
     for (int64_t i = databaseSchemaVersion; i < static_cast<int>(upgradeFns.size()); ++i) {
         const auto newDbVersion = i + 1;
         if (!upgradeFns[i](*db)) {
-            qCritical() << "Failed to upgrade db to schema version " << newDbVersion << " aborting";
+            qCritical() << "Failed to upgrade db to schema version" << newDbVersion << " aborting";
             return false;
         }
-        qDebug() << "Database upgraded incrementally to schema version " << newDbVersion;
+        qDebug() << "Database upgraded incrementally to schema version" << newDbVersion;
     }
 
     qInfo() << "Database upgrade finished (databaseSchemaVersion" << databaseSchemaVersion << "->"

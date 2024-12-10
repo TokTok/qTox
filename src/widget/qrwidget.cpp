@@ -101,7 +101,7 @@ void QRWidget::paintImage()
         QColor error("red");
         painter.setBrush(error);
         painter.drawRect(0, 0, width(), height());
-        qDebug() << "QR FAIL: " << strerror(errno);
+        qDebug() << "QR FAIL:" << strerror(errno);
     }
 
     qr = nullptr;

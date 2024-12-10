@@ -53,11 +53,11 @@ bool PersonalSettingsUpgrader::doUpgrade(SettingsSerializer& settingsSerializer,
     for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
         const auto newSettingsVersion = i + 1;
         if (!upgradeFns[i](settingsSerializer)) {
-            qCritical() << "Failed to upgrade settings to version " << newSettingsVersion
-                        << " aborting";
+            qCritical() << "Failed to upgrade settings to version" << newSettingsVersion
+                        << "- aborting";
             return false;
         }
-        qDebug() << "Settings upgraded incrementally to schema version " << newSettingsVersion;
+        qDebug() << "Settings upgraded incrementally to schema version" << newSettingsVersion;
     }
 
     qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->" << toVer << ")";

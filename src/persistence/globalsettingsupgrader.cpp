@@ -56,7 +56,7 @@ bool GlobalSettingsUpgrader::doUpgrade(Settings& settings, int fromVer, int toVe
             qCritical() << "Failed to upgrade settings to version" << newSettingsVersion << "aborting";
             return false;
         }
-        qDebug() << "Settings upgraded incrementally to schema version " << newSettingsVersion;
+        qDebug() << "Settings upgraded incrementally to schema version" << newSettingsVersion;
     }
 
     qInfo() << "Settings upgrade finished (settingsVersion" << fromVer << "->" << toVer << ")";

@@ -164,7 +164,7 @@ static IBaseFilter* getDevFilter(QString devName)
     classenum->Release();
 
     if (!devFilter)
-        qWarning() << "Couldn't find the device " << devName;
+        qWarning() << "Couldn't find the device" << devName;
 
     return devFilter;
 }

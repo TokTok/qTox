@@ -357,7 +357,7 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
                 ++retries;
                 QThread::usleep(500);
             } else {
-                qDebug() << "toxav_audio_send_frame error: " << err;
+                qDebug() << "toxav_audio_send_frame error:" << err;
             }
         }
     } while (err == TOXAV_ERR_SEND_FRAME_SYNC && retries < 5);
@@ -414,7 +414,7 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
                 ++retries;
                 QThread::usleep(500);
             } else {
-                qDebug() << "toxav_video_send_frame error: " << err;
+                qDebug() << "toxav_video_send_frame error:" << err;
             }
         }
     } while (err == TOXAV_ERR_SEND_FRAME_SYNC && retries < 5);
@@ -826,8 +826,8 @@ void CoreAV::bitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t arate, u
     std::ignore = self;
     std::ignore = toxav;
 
-    qDebug() << "Recommended bitrate with" << friendNum << " is now " << arate << "/" << vrate
-             << ", ignoring it";
+    qDebug() << "Recommended bitrate with" << friendNum << "is now" << arate << "/" << vrate
+             << "- ignoring it";
 }
 
 // This is only a dummy implementation for now
@@ -837,7 +837,7 @@ void CoreAV::audioBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rat
     std::ignore = self;
     std::ignore = toxav;
 
-    qDebug() << "Recommended audio bitrate with" << friendNum << " is now " << rate << ", ignoring it";
+    qDebug() << "Recommended audio bitrate with" << friendNum << "is now" << rate << "- ignoring it";
 }
 
 // This is only a dummy implementation for now
@@ -847,7 +847,7 @@ void CoreAV::videoBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rat
     std::ignore = self;
     std::ignore = toxav;
 
-    qDebug() << "Recommended video bitrate with" << friendNum << " is now " << rate << ", ignoring it";
+    qDebug() << "Recommended video bitrate with" << friendNum << "is now" << rate << "- ignoring it";
 }
 
 void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t* pcm,

@@ -433,7 +433,7 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
         emit coreFile->fileTransferCancelled(*file);
         coreFile->removeFile(friendId, fileId);
     } else if (control == TOX_FILE_CONTROL_PAUSE) {
-        qDebug() << "onFileControlCallback: Received pause for file " << friendId << ":" << fileId;
+        qDebug() << "onFileControlCallback: Received pause for file" << friendId << ":" << fileId;
         file->pauseStatus.remotePause();
         file->status = ToxFile::PAUSED;
         emit coreFile->fileTransferRemotePausedUnpaused(*file, true);
@@ -441,12 +441,12 @@ void CoreFile::onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileI
         if (file->direction == ToxFile::SENDING && file->fileKind == TOX_FILE_KIND_AVATAR)
             qDebug() << "Avatar transfer" << fileId << "to friend" << friendId << "accepted";
         else
-            qDebug() << "onFileControlCallback: Received resume for file " << friendId << ":" << fileId;
+            qDebug() << "onFileControlCallback: Received resume for file" << friendId << ":" << fileId;
         file->pauseStatus.remoteResume();
         file->status = file->pauseStatus.paused() ? ToxFile::PAUSED : ToxFile::TRANSMITTING;
         emit coreFile->fileTransferRemotePausedUnpaused(*file, false);
     } else {
-        qWarning() << "Unhandled file control " << control << " for file " << friendId << ':' << fileId;
+        qWarning() << "Unhandled file control" << control << " for file" << friendId << ':' << fileId;
     }
 }
 

@@ -64,7 +64,7 @@ std::unique_ptr<ToxEncrypt> loadToxData(const QString& password, const QString& 
     qint64 fileSize = 0;
 
     QFile saveFile(filePath);
-    qDebug() << "Loading tox save " << filePath;
+    qDebug() << "Loading tox save" << filePath;
 
     if (!saveFile.exists()) {
         error = LoadToxDataError::FILE_NOT_FOUND;
@@ -155,16 +155,16 @@ bool logLoadToxDataError(const LoadToxDataError& error, const QString& path)
     case LoadToxDataError::OK:
         return false;
     case LoadToxDataError::FILE_NOT_FOUND:
-        qWarning() << "The tox save file " << path << " was not found";
+        qWarning() << "The tox save file" << path << "was not found";
         break;
     case LoadToxDataError::COULD_NOT_READ_FILE:
-        qCritical() << "The tox save file " << path << " couldn't be opened";
+        qCritical() << "The tox save file" << path << "couldn't be opened";
         break;
     case LoadToxDataError::FILE_IS_EMPTY:
-        qWarning() << "The tox save file" << path << " is empty!";
+        qWarning() << "The tox save file" << path << "is empty";
         break;
     case LoadToxDataError::ENCRYPTED_NO_PASSWORD:
-        qCritical() << "The tox save file is encrypted, but we don't have a password!";
+        qCritical() << "The tox save file is encrypted, but we don't have a password";
         break;
     case LoadToxDataError::COULD_NOT_DERIVE_KEY:
         qCritical() << "Failed to derive key of the tox save file";
@@ -190,14 +190,14 @@ bool logCreateToxDataError(const CreateToxDataError& error, const QString& userN
         qCritical() << "Failed to derive key for the tox save";
         break;
     case CreateToxDataError::PROFILE_LOCKED:
-        qCritical() << "Tried to create profile " << userName
-                    << ", but another profile is already locked!";
+        qCritical().nospace() << "Tried to create profile " << userName
+                              << ", but another profile is already locked";
         break;
     case CreateToxDataError::ALREADY_EXISTS:
-        qCritical() << "Tried to create profile " << userName << ", but it already exists!";
+        qCritical().nospace() << "Tried to create profile " << userName << ", but it already exists";
         break;
     case CreateToxDataError::LOCK_FAILED:
-        qWarning() << "Failed to lock profile " << userName;
+        qWarning() << "Failed to lock profile" << userName;
         break;
     default:
         break;
@@ -305,13 +305,14 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
                               IMessageBoxManager& messageBoxManager)
 {
     if (ProfileLocker::hasLock()) {
-        qCritical() << "Tried to load profile " << name << ", but another profile is already locked!";
+        qCritical().nospace() << "Tried to load profile " << name
+                              << ", but another profile is already locked";
         return nullptr;
     }
 
     Paths& paths = settings.getPaths();
     if (!ProfileLocker::lock(name, paths)) {
-        qWarning() << "Failed to lock profile " << name;
+        qWarning() << "Failed to lock profile" << name;
         return nullptr;
     }
 
@@ -487,17 +488,17 @@ bool Profile::saveToxSave(QByteArray data)
     assert(ProfileLocker::getCurLockName() == name);
 
     QString path = paths.getSettingsDirPath() + name + ".tox";
-    qDebug() << "Saving tox save to " << path;
+    qDebug() << "Saving tox save to" << path;
     QSaveFile saveFile(path);
     if (!saveFile.open(QIODevice::WriteOnly)) {
-        qCritical() << "Tox save file " << path << " couldn't be opened";
+        qCritical() << "Tox save file" << path << "couldn't be opened";
         return false;
     }
 
     if (encrypted) {
         data = passkey->encrypt(data);
         if (data.isEmpty()) {
-            qCritical() << "Failed to encrypt, can't save!";
+            qCritical() << "Failed to encrypt, can't save";
             saveFile.cancelWriting();
             return false;
         }
@@ -510,7 +511,7 @@ bool Profile::saveToxSave(QByteArray data)
         saveFile.commit();
     } else {
         saveFile.cancelWriting();
-        qCritical() << "Failed to write, can't save!";
+        qCritical() << "Failed to write, can't save";
         return false;
     }
     return true;
@@ -729,7 +730,7 @@ void Profile::saveAvatar(const ToxPk& owner, const QByteArray& avatar)
     } else {
         QSaveFile file(path);
         if (!file.open(QIODevice::WriteOnly)) {
-            qWarning() << "Tox avatar " << path << " couldn't be saved";
+            qWarning() << "Tox avatar" << path << "couldn't be saved";
             return;
         }
         file.write(pic);
@@ -827,7 +828,7 @@ bool Profile::isEncrypted(QString name, Paths& paths)
     QString path = paths.getSettingsDirPath() + name + ".tox";
     QFile saveFile(path);
     if (!saveFile.open(QIODevice::ReadOnly)) {
-        qWarning() << "Couldn't open tox save " << path;
+        qWarning() << "Couldn't open tox save" << path;
         return false;
     }
 
@@ -846,7 +847,7 @@ bool Profile::isEncrypted(QString name, Paths& paths)
 QStringList Profile::remove()
 {
     if (isRemoved) {
-        qWarning() << "Profile " << name << " is already removed!";
+        qWarning() << "Profile" << name << "is already removed";
         return {};
     }
     isRemoved = true;
@@ -868,17 +869,17 @@ QStringList Profile::remove()
 
     if (!profileMain.remove() && profileMain.exists()) {
         ret.push_back(profileMain.fileName());
-        qWarning() << "Could not remove file " << profileMain.fileName();
+        qWarning() << "Could not remove file" << profileMain.fileName();
     }
     if (!profileConfig.remove() && profileConfig.exists()) {
         ret.push_back(profileConfig.fileName());
-        qWarning() << "Could not remove file " << profileConfig.fileName();
+        qWarning() << "Could not remove file" << profileConfig.fileName();
     }
 
     QString dbPath = getDbPath(name, settings.getPaths());
     if (database && database->isOpen() && !database->remove() && QFile::exists(dbPath)) {
         ret.push_back(dbPath);
-        qWarning() << "Could not remove file " << dbPath;
+        qWarning() << "Could not remove file" << dbPath;
     }
 
     history.reset();

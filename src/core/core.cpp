@@ -523,7 +523,7 @@ void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type t
         break;
 
     default:
-        qWarning() << "Conference invite with unknown type " << type;
+        qWarning() << "Conference invite with unknown type" << type;
     }
 }
 
@@ -638,7 +638,7 @@ void Core::requestFriendship(const ToxId& friendId, const QString& message)
     uint32_t friendNumber =
         tox_friend_add(tox.get(), friendId.getBytes(), cMessage.data(), cMessage.size(), &error);
     if (PARSE_ERR(error)) {
-        qDebug() << "Requested friendship from " << friendNumber;
+        qDebug() << "Requested friendship from" << friendNumber;
         emit saveRequest();
         emit friendAdded(friendNumber, friendPk);
         emit requestSent(friendPk, message);
@@ -1203,7 +1203,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
         break;
     }
     default:
-        qWarning() << "joinConference: Unknown conference type " << confType;
+        qWarning() << "joinConference: Unknown conference type" << confType;
     }
     if (conferenceNum != std::numeric_limits<uint32_t>::max()) {
         emit saveRequest();
@@ -1247,7 +1247,7 @@ int Core::createConference(uint8_t type)
         }
         return conferenceId;
     } else {
-        qWarning() << "createConference: Unknown type " << type;
+        qWarning() << "createConference: Unknown type" << type;
         return -1;
     }
 }

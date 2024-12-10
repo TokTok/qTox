@@ -110,7 +110,7 @@ void AdvancedForm::on_btnExportLog_clicked()
     }
 
     if (QFile::copy(logfile, savefile))
-        qDebug() << "Successfully copied to: " << savefile;
+        qDebug() << "Successfully copied to:" << savefile;
     else
         qDebug() << "File was not copied";
 }
