@@ -40,6 +40,8 @@ done
 
 # Common directory paths
 
+QTOX_BUILD_DIR="_build-$WINEARCH"
+readonly QTOX_BUILD_DIR
 QTOX_PREFIX_DIR="$(realpath install-prefix)"
 readonly QTOX_PREFIX_DIR
 QTOX_PACKAGE_DIR="$(realpath package-prefix)"
@@ -82,7 +84,7 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
     -DSTRICT_OPTIONS=ON \
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
-    -B_build \
+    "-B$QTOX_BUILD_DIR" \
     "$QTOX_SRC_DIR"
 elif [[ "$BUILD_TYPE" == "Debug" ]]; then
   cmake -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
@@ -95,18 +97,18 @@ elif [[ "$BUILD_TYPE" == "Debug" ]]; then
     -DTEST_CROSSCOMPILING_EMULATOR=wine \
     -GNinja \
     -DCMAKE_EXE_LINKER_FLAGS="-mconsole" \
-    -B_build \
+    "-B$QTOX_BUILD_DIR" \
     "$QTOX_SRC_DIR"
 fi
 
-cmake --build _build
+cmake --build "$QTOX_BUILD_DIR"
 
 mkdir -p "$QTOX_PREFIX_DIR"
-cp _build/qtox.exe "$QTOX_PREFIX_DIR"
+cp "$QTOX_BUILD_DIR/qtox.exe" "$QTOX_PREFIX_DIR"
 cp -r /export/* "$QTOX_PREFIX_DIR"
 
 export WINEQT_QPA_PLATFORM='offscreen'
-export WINEPREFIX="$PWD/_build/.wine"
+export WINEPREFIX="$PWD/$QTOX_BUILD_DIR/.wine"
 
 # Check if our main binary runs (just to see if any DLL errors happen early on).
 # This also initialises the wine directory for tests (avoiding race conditions).
@@ -119,7 +121,7 @@ if [[ $RUN_TESTS -ne 0 ]]; then
   # we want to see if the prefix dir has everything we need).
   export WINEQT_PLUGIN_PATH='z:\export'
   export WINEPATH='z:\export;z:\windows\bin'
-  ctest --test-dir _build --parallel "$(nproc)" --output-on-failure
+  ctest --test-dir "$QTOX_BUILD_DIR" --parallel "$(nproc)" --output-on-failure
 fi
 set -u
 
@@ -194,12 +196,7 @@ fi
 # Create a tree of all required dlls
 # Assumes all .exe files are directly in $QTOX_PREFIX_DIR, not in subdirs
 while IFS= read -r line; do
-  if [[ "$ARCH" == "i686" ]]; then
-    WINE_DLL_DIR=("/usr/lib/x86_64-linux-gnu/wine/i386-windows")
-  elif [[ "$ARCH" == "x86_64" ]]; then
-    WINE_DLL_DIR=("/usr/lib/x86_64-linux-gnu/wine/x86_64-windows" "/usr/lib/x86_64-linux-gnu/wine/i386-windows")
-  fi
-  python3 /usr/local/bin/mingw-ldd.py "$line" --dll-lookup-dirs "$QTOX_PREFIX_DIR" "${WINE_DLL_DIR[@]}" --output-format tree >>dlls-required
+  python3 /usr/local/bin/mingw-ldd.py "$line" --dll-lookup-dirs "$QTOX_PREFIX_DIR" --output-format tree >>dlls-required
 done < <(cat exes runtime-dlls)
 
 # Check that no extra dlls get bundled
