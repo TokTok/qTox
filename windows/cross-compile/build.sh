@@ -217,6 +217,8 @@ if grep 'not found' dlls-required | grep -q -v 'api-ms-win-'; then
   exit 1
 fi
 
+cat dlls-required
+
 # Check that OpenAL is bundled. It is availabe from WINE, but not on Windows systems
 if grep -q '/opt/wine-stable/lib/wine/i386-windows/openal32.dll' dlls-required; then
   cat dlls-required
