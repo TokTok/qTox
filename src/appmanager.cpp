@@ -23,8 +23,6 @@
 #include "src/platform/posixsignalnotifier.h"
 #endif
 
-#include <filesystem>
-
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
@@ -41,46 +39,49 @@ QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages un
 QMutex* logBufferMutex = new QMutex();
 #endif
 
+constexpr std::string_view sourceRootPath()
+{
+    // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
+    // nullptr in release builds.
+    constexpr std::string_view path = __FILE__;
+    constexpr size_t srcRootPos = [=]() {
+        size_t pos = path.find("/src/");
+        if (pos == std::string_view::npos) {
+            pos = path.find("\\src\\");
+        }
+        return pos;
+    }();
+    // If this fails, we might not be getting a long enough path from __FILE__.
+    // In that case, we'll need to use a different method to find the source root,
+    // or only show the filename without the path.
+    static_assert(srcRootPos != std::string_view::npos);
+    return path.substr(0, srcRootPos);
+}
+
 // Clean up the file path to avoid leaking the user's username or build directory structure.
 QString canonicalLogFilePath(const char* filename)
 {
     QString file = QString::fromUtf8(filename);
-    // We're not using QT_MESSAGELOG_FILE here, because that can be 0, NULL, or
-    // nullptr in release builds.
-#ifdef ANDROID
-    const QString srcPath = QStringLiteral(__FILE__);
-#else
-    const QString srcPath =
-        QString::fromStdString(std::filesystem::path(__FILE__).parent_path().parent_path().string());
-#endif
-    if (file.startsWith(srcPath)) {
+    constexpr std::string_view srcPath = sourceRootPath();
+    if (file.startsWith(QString::fromUtf8(srcPath.data(), srcPath.size()))) {
         file = file.mid(srcPath.length() + 1);
     }
 
     // The file path is outside of the project directory, but if it's in the user's $HOME, we should
     // still strip the path to prevent leaking the user's username.
-    if (file.startsWith("/")) {
-        const auto home = QDir::homePath();
-        if (file.startsWith(home)) {
-            file = QStringLiteral("~") + file.mid(home.length());
-        }
+    const auto home = QDir::homePath();
+    if (file.startsWith(home)) {
+        file = QStringLiteral("~") + file.mid(home.length());
     }
 
     return file;
 }
 
 // Replace the user's home with "~" to prevent leaking the user's username in log messages.
-QString canonicalLogMessage(const QString& msg)
+QString canonicalLogMessage(QString msg)
 {
-    QString message = msg;
-
     // Replace the user's home with "~" to prevent leaking the user's username in log messages.
-    const auto home = QDir::homePath();
-    if (message.contains(home)) {
-        message.replace(home, QStringLiteral("~"));
-    }
-
-    return message;
+    return msg.replace(QDir::homePath(), QStringLiteral("~"));
 }
 
 void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QString& msg)
