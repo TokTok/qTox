@@ -35,6 +35,14 @@ add_dependency(
   Qt6::Widgets
   Qt6::Xml)
 
+# Optional dependency for desktop notifications.
+find_package(Qt6DBus)
+
+if(Qt6DBus_FOUND)
+  add_dependency(Qt6::DBus)
+  message(STATUS "Using DBus for desktop notifications")
+endif()
+
 include(CMakeParseArguments)
 
 set(TOXCORE_MINIMUM_VERSION "0.2.20")

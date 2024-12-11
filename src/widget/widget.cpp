@@ -164,6 +164,13 @@ void Widget::init()
         setWindowIcon(themeIcon);
     }
 
+    // Initialised once and early. Notifications can happen through system backends
+    // before we initialise the tray icon (if that even ever happens).
+    notifier = std::make_unique<DesktopNotify>(settings, this);
+    notificationGenerator = std::make_unique<NotificationGenerator>(settings, &profile);
+    connect(notifier.get(), &DesktopNotify::notificationClosed, notificationGenerator.get(),
+            &NotificationGenerator::onNotificationActivated);
+
     timer = new QTimer();
     timer->start(1000);
 
@@ -2264,7 +2271,7 @@ void Widget::onTryCreateTrayIcon()
     static int32_t tries = 15;
     if (!icon && tries--) {
         if (QSystemTrayIcon::isSystemTrayAvailable()) {
-            icon = std::unique_ptr<QSystemTrayIcon>(new QSystemTrayIcon);
+            icon = std::unique_ptr<QSystemTrayIcon>(new QSystemTrayIcon(this));
             updateIcons();
             trayMenu = new QMenu(this);
 
@@ -2302,10 +2309,7 @@ void Widget::onTryCreateTrayIcon()
         }
     }
 
-    notifier = std::make_unique<DesktopNotify>(settings, icon.get());
-    notificationGenerator = std::make_unique<NotificationGenerator>(settings, &profile);
-    connect(notifier.get(), &DesktopNotify::notificationClosed, notificationGenerator.get(),
-            &NotificationGenerator::onNotificationActivated);
+    notifier->setIcon(icon.get());
 }
 
 void Widget::setStatusOnline()
