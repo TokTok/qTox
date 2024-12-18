@@ -15,7 +15,6 @@ find_package(Qt6Core          REQUIRED)
 find_package(Qt6Gui           REQUIRED)
 find_package(Qt6Linguist      REQUIRED)
 find_package(Qt6Network       REQUIRED)
-find_package(Qt6OpenGL        REQUIRED)
 find_package(Qt6Svg           REQUIRED)
 find_package(Qt6Test          REQUIRED)
 find_package(Qt6Widgets       REQUIRED)
@@ -30,7 +29,6 @@ add_dependency(
   Qt6::Core
   Qt6::Gui
   Qt6::Network
-  Qt6::OpenGL
   Qt6::Svg
   Qt6::Widgets
   Qt6::Xml)
@@ -39,8 +37,12 @@ add_dependency(
 find_package(Qt6DBus)
 
 if(Qt6DBus_FOUND)
-  add_dependency(Qt6::DBus)
-  message(STATUS "Using DBus for desktop notifications")
+  if(Qt6DBus_DIR MATCHES "^${Qt6_DIR}")
+    add_dependency(Qt6::DBus)
+    message(STATUS "Using DBus for desktop notifications")
+  else()
+    message(STATUS "Not using DBus (Qt6DBus found in ${Qt6DBus_DIR}, which is outside Qt6 installation ${Qt6_DIR})")
+  endif()
 endif()
 
 include(CMakeParseArguments)
@@ -126,7 +128,12 @@ search_dependency(LIBQRENCODE         PACKAGE libqrencode)
 search_dependency(LIBSODIUM           PACKAGE libsodium)
 search_dependency(LIBSWSCALE          PACKAGE libswscale)
 search_dependency(SQLCIPHER           PACKAGE sqlcipher)
+search_dependency(OPUS                PACKAGE opus)
 search_dependency(VPX                 PACKAGE vpx)
+
+if(APPLE)
+  search_dependency(LIBCRYPTO         PACKAGE libcrypto)
+endif()
 
 if(SPELL_CHECK)
     find_package(KF6Sonnet)

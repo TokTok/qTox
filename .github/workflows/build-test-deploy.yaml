@@ -340,15 +340,29 @@ jobs:
         run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
         run: brew bundle --file ./macos/Brewfile-DepBuildDeps
-      - name: Cache dependencies
+      - name: Cache dependencies (except Qt)
         id: cache-deps
         uses: actions/cache@v4
         with:
-          path: ".ci-scripts/dockerfiles/local-deps"
+          path: |
+            .ci-scripts/dockerfiles/local-deps/bin
+            .ci-scripts/dockerfiles/local-deps/include
+            .ci-scripts/dockerfiles/local-deps/lib
+            .ci-scripts/dockerfiles/local-deps/share
           key: ${{ runner.os }}-${{ matrix.arch }}-local-deps
-      - name: Build dependencies
+      - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
+      - name: Cache Qt
+        id: cache-qt
+        uses: actions/cache@v4
+        with:
+          path: |
+            .ci-scripts/dockerfiles/local-deps/qt
+          key: ${{ runner.os }}-${{ matrix.arch }}-qt
+      - name: Build Qt
+        if: steps.cache-qt.outputs.cache-hit != 'true'
+        run: ./.ci-scripts/build-macos-qt.sh ${{ matrix.arch }}
       - name: Build qTox
         run: ./.ci-scripts/build-qtox-macos.sh dist ${{ matrix.arch }}
       - name: Upload dmg

@@ -9,14 +9,6 @@ set -euo pipefail
 readonly SCRIPT_DIR="$(dirname "$(realpath "$0")")"
 . "$SCRIPT_DIR/macos_install_deps.sh"
 
+# Needs openssl from build-macos-deps.sh to already have been installed.
 install_deps \
-  build_openssl.sh \
-  build_qrencode.sh \
-  build_libexif.sh \
-  build_sodium.sh \
-  build_openal.sh \
-  build_vpx.sh \
-  build_opus.sh \
-  build_ffmpeg.sh \
-  build_toxcore.sh \
-  build_sqlcipher.sh
+  build_qt_macos.sh

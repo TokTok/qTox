@@ -1,11 +1,9 @@
-# Dependencies for building all of qTox's dependencies from source. Needed for
-# distributable builds, but users should use Brewfile if they are just compiling
-# for their own machine.
+# Dependencies for building all of qTox's dependencies except Qt from source.
+# Needed for distributable builds, but users should use Brewfile if they are
+# just compiling for their own machine.
 brew "cmake"
 brew "coreutils"
 brew "git"
 brew "libtool"
 brew "ninja"
 brew "yasm"
-
-brew "qt@6" # Qt sets a low compatibility version by default: https://doc.qt.io/qt-6/macos.html#target-platforms

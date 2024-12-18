@@ -50,7 +50,7 @@ if(APPLE)
   # The /opt version is needed on arm64, but it doesn't harm on x86_64. The
   # /usr/local version is needed on x86_64, but it doesn't harm on arm64.
   set(ENV{PKG_CONFIG_PATH}
-      /opt/homebrew/opt/openal-soft/lib/pkgconfig:/usr/local/opt/openal-soft/lib/pkgconfig:$ENV{PKG_CONFIG_PATH}
+      $ENV{PKG_CONFIG_PATH}:/opt/homebrew/opt/openal-soft/lib/pkgconfig:/usr/local/opt/openal-soft/lib/pkgconfig
   )
 endif()
 
