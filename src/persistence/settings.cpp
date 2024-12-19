@@ -33,6 +33,7 @@
 #include <QNetworkProxy>
 #include <QStandardPaths>
 #include <QStyleFactory>
+#include <QStyleHints>
 #include <QThread>
 #include <QtCore/QCommandLineParser>
 
@@ -92,7 +93,7 @@ void Settings::loadGlobal()
         defaultSettings = true;
     }
 
-    qDebug() << "Loading settings from " + filePath;
+    qDebug() << "Loading settings from" << filePath;
 
     QSettings s(filePath, QSettings::IniFormat);
 
@@ -185,6 +186,10 @@ void Settings::loadGlobal()
             smileyPack = DEFAULT_SMILEYS;
         }
 
+        const bool systemIsDarkMode =
+            QGuiApplication::styleHints()->colorScheme() == Qt::ColorScheme::Dark;
+        qDebug() << "System dark mode:" << systemIsDarkMode;
+
         emojiFontPointSize = s.value("emojiFontPointSize", 24).toInt();
         firstColumnHandlePos = s.value("firstColumnHandlePos", 50).toInt();
         secondColumnHandlePosFromRight = s.value("secondColumnHandlePosFromRight", 50).toInt();
@@ -192,12 +197,12 @@ void Settings::loadGlobal()
         dateFormat = s.value("dateFormat", "yyyy-MM-dd").toString();
         minimizeOnClose = s.value("minimizeOnClose", false).toBool();
         minimizeToTray = s.value("minimizeToTray", false).toBool();
-        lightTrayIcon = s.value("lightTrayIcon", false).toBool();
+        lightTrayIcon = s.value("lightTrayIcon", systemIsDarkMode).toBool();
         useEmoticons = s.value("useEmoticons", true).toBool();
         statusChangeNotificationEnabled = s.value("statusChangeNotificationEnabled", false).toBool();
         showConferenceJoinLeaveMessages = s.value("showConferenceJoinLeaveMessages", false).toBool();
         spellCheckingEnabled = s.value("spellCheckingEnabled", true).toBool();
-        themeColor = s.value("themeColor", 0).toInt();
+        themeColor = s.value("themeColor", systemIsDarkMode ? 5 : 0).toInt();
         style = s.value("style", "").toString();
         if (style == "") // Default to Fusion if available, otherwise no style
         {
@@ -604,7 +609,7 @@ void Settings::saveGlobal()
         return;
 
     QString path = paths.getSettingsDirPath() + globalSettingsFile;
-    qDebug() << "Saving global settings at " + path;
+    qDebug() << "Saving global settings at" << path;
 
     QSettings s(path, QSettings::IniFormat);
 

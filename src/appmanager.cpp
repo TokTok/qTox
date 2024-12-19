@@ -96,6 +96,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         // Prevent sonnet's complaints from leaking user chat messages to logs
         return;
     }
+    Q_ASSERT(!msg.startsWith("\""));
 
     if (msg
         == QStringLiteral(
