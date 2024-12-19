@@ -105,11 +105,14 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     }
 
     const QString file = canonicalLogFilePath(ctxt.file);
+    const QString category =
+        ctxt.category ? QString::fromUtf8(ctxt.category) : QStringLiteral("default");
 
     // Time should be in UTC to save user privacy on log sharing
     QTime time = QDateTime::currentDateTime().toUTC().time();
     QString logPrefix =
-        QStringLiteral("[%1 UTC] %2:%3 : ").arg(time.toString("HH:mm:ss.zzz")).arg(file).arg(ctxt.line);
+        QStringLiteral("[%1 UTC] (%2) %3:%4 : ")
+            .arg(time.toString("HH:mm:ss.zzz"), category, file, QString::number(ctxt.line));
     switch (type) {
     case QtDebugMsg:
         logPrefix += "Debug";

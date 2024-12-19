@@ -30,6 +30,7 @@ public:
         int index;
 
         QString time;
+        QString category;
         QString file;
         int line;
         QtMsgType type;
