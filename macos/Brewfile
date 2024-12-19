@@ -1,5 +1,6 @@
 brew "cmake"
 brew "coreutils"
+brew "create-dmg"
 brew "ffmpeg"
 brew "git"
 brew "libexif"

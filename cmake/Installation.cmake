@@ -12,19 +12,7 @@ if(APPLE)
   set_target_properties(${PROJECT_NAME} PROPERTIES
     MACOSX_BUNDLE_INFO_PLIST "${CMAKE_SOURCE_DIR}/macos/info.plist")
 
-  find_path(MACDEPLOYQT_PATH macdeployqt PATH_SUFFIXES bin)
-  if(NOT MACDEPLOYQT_PATH)
-    message(FATAL_ERROR "Could not find macdeployqt for macOS bundling. You can point MACDEPLOYQT_PATH to it's path.")
-  endif()
-
   set(BUNDLE_PATH "${CMAKE_BINARY_DIR}/${PROJECT_NAME}.app")
-
-  install(CODE "
-  message(STATUS \"Creating app bundle\")
-  execute_process(COMMAND ln -sf /opt/homebrew/lib ${CMAKE_BINARY_DIR}/lib)
-  execute_process(COMMAND ${MACDEPLOYQT_PATH}/macdeployqt ${BUNDLE_PATH} -no-strip)
-  " COMPONENT Runtime
-  )
 
   install(FILES img/icons/qtox.icns DESTINATION ${BUNDLE_PATH}/Contents/Resources/)
   install(FILES img/icons/qtox_profile.icns DESTINATION ${BUNDLE_PATH}/Contents/Resources/)

@@ -790,8 +790,8 @@ void RawDatabase::process()
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wold-style-cast"
 #pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-                    // SQLITE_STATIC uses old-style cast and 0 as null pointer butcomes from system
-                    // headers, so can't be fixed by us
+                    // SQLITE_STATIC uses old-style cast and 0 as null pointer but comes from
+                    // system headers, so can't be fixed by us.
                     auto sqliteDataType = SQLITE_STATIC;
 #pragma GCC diagnostic pop
                     if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
@@ -803,7 +803,6 @@ void RawDatabase::process()
                 }
                 curParam += nParams;
             } while (compileTail != query.query.data() + query.query.size());
-
 
             // Execute each statement of each query of our transaction
             for (sqlite3_stmt* stmt : query.statements) {

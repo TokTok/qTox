@@ -8,15 +8,9 @@ set -eu -o pipefail
 
 QTOX_DIR="$1"
 
-cd "$2"
-BUNDLE_PATH="$PWD"
-cd -
+BUNDLE_PATH="$(realpath "$2")"
+BUILD_DIR="$(realpath "$BUNDLE_PATH/..")"
 
-cd "$BUNDLE_PATH/../"
-BUILD_DIR="$PWD"
-cd -
-
-DMG_DIR="$BUILD_DIR/dmg.tmp"
 APP_VER=$(defaults read "$BUNDLE_PATH/Contents/Info.plist" CFBundleVersion)
 
 if [ ! -d "$BUNDLE_PATH" ]; then
@@ -24,18 +18,20 @@ if [ ! -d "$BUNDLE_PATH" ]; then
   exit 1
 fi
 
-rm -rf "$DMG_DIR"
 rm -f "$BUILD_DIR/qTox.dmg"
-mkdir "$DMG_DIR"
-cp -r "$BUNDLE_PATH" "$DMG_DIR/"
 
-cd "$DMG_DIR"
-ln -s /Applications "./Install to Applications"
-mkdir .background
-cp -f "$QTOX_DIR"/macos/background-DMG/qTox-DMG-bak.tiff .background/backgroundImage.tiff
-cp -f "$QTOX_DIR"/macos/DS_Store-DMG ./.DS_Store
-cp -f "$QTOX_DIR"/LICENSE ./LICENSE
-cp -f "$QTOX_DIR"/README.md ./README.md
-cd -
-
-hdiutil create -volname "qTox $APP_VER" -srcfolder "$DMG_DIR/" -format UDZO "$BUILD_DIR/qTox.dmg"
+create-dmg \
+  --filesystem APFS \
+  --no-internet-enable \
+  --volname "qTox $APP_VER" \
+  --volicon "$QTOX_DIR/img/icons/qtox.icns" \
+  --background "$QTOX_DIR/macos/backgroundImage.tiff" \
+  --eula "$QTOX_DIR/macos/gplv3.rtf" \
+  --window-pos 200 120 \
+  --window-size 640 480 \
+  --icon-size 128 \
+  --hide-extension "qTox.app" \
+  --icon "qTox.app" 0 300 \
+  --app-drop-link 400 300 \
+  "$BUILD_DIR/qTox.dmg" \
+  "$BUNDLE_PATH"

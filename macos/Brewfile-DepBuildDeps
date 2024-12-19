@@ -3,7 +3,10 @@
 # just compiling for their own machine.
 brew "cmake"
 brew "coreutils"
+brew "create-dmg"
 brew "git"
 brew "libtool"
 brew "ninja"
 brew "yasm"
+# accelerate builds with ccache
+brew "ccache"

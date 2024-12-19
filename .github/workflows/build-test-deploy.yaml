@@ -329,6 +329,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
@@ -351,12 +353,10 @@ jobs:
           path: |
             .ci-scripts/dockerfiles/local-deps/qt
           key: ${{ runner.os }}-${{ matrix.arch }}-qt
-      - name: Set up ccache
-        run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
-      - name: Fetch build scripts
-        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
         run: brew bundle --file ./macos/Brewfile-DepBuildDeps
+      - name: Set up ccache
+        run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Build dependencies (except Qt)
         if: steps.cache-deps.outputs.cache-hit != 'true'
         run: ./.ci-scripts/build-macos-deps.sh ${{ matrix.arch }}
@@ -434,17 +434,17 @@ jobs:
     runs-on: ${{ matrix.arch == 'arm64' && 'macos-14' || 'macos-13' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
           path: ".cache/ccache"
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
-      - name: Set up ccache
-        run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
-      - name: Fetch build scripts
-        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
         run: brew bundle --file ./macos/Brewfile
+      - name: Set up ccache
+        run: ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
       - name: Install toxcore
         run: .ci-scripts/dockerfiles/qtox/build_toxcore_linux.sh sudo
       - name: Build qTox
