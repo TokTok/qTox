@@ -877,7 +877,7 @@ void ChatWidget::handleSearchResult(SearchResult result, SearchDirection directi
         jumpToIdx(searchPos.logIdx);
         selectText();
     } else {
-        renderCompletionFns.push_back(selectText);
+        renderCompletionFns.emplace_back(selectText);
         jumpToIdx(searchPos.logIdx);
     }
 }
@@ -1224,7 +1224,7 @@ void ChatWidget::onScrollValueChanged(int value)
         if (idx != chatLineStorage->firstIdx()) {
             auto currentTop = (*chatLineStorage)[chatLineStorage->firstIdx()];
 
-            renderCompletionFns.push_back([this, currentTop] {
+            renderCompletionFns.emplace_back([this, currentTop] {
                 scrollToLine(currentTop);
                 scrollMonitoringEnabled = true;
             });
@@ -1243,7 +1243,7 @@ void ChatWidget::onScrollValueChanged(int value)
             auto currentBottomPx = (*chatLineStorage)[currentBottomIdx]->sceneBoundingRect().bottom();
             auto bottomOffset = currentBottomPx - currentTopPx;
 
-            renderCompletionFns.push_back([this, currentBottomIdx, bottomOffset] {
+            renderCompletionFns.emplace_back([this, currentBottomIdx, bottomOffset] {
                 auto it = chatLineStorage->find(currentBottomIdx);
                 if (it != chatLineStorage->end()) {
                     updateSceneRect();
@@ -1516,7 +1516,7 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
 
     // If the requested idx is not currently rendered we need to request a
     // render and jump to the requested line after the render completes
-    renderCompletionFns.push_back([this, idx] {
+    renderCompletionFns.emplace_back([this, idx] {
         if (chatLineStorage->contains(idx)) {
             scrollToLine((*chatLineStorage)[idx]);
         }

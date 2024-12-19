@@ -48,8 +48,7 @@ bool DbTo11::getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>&
         RawDatabase::Query("SELECT id, public_key FROM peers WHERE CAST(public_key AS BLOB) != "
                            "CAST(UPPER(public_key) AS BLOB)",
                            [&](const QVector<QVariant>& row) {
-                               badPeers.emplace_back(
-                                   DbUpgrader::BadEntry{row[0].toInt(), row[1].toString()});
+                               badPeers.emplace_back(row[0].toInt(), row[1].toString());
                            }));
 }
 

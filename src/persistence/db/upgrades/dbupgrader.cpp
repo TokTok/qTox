@@ -22,8 +22,7 @@ std::vector<DbUpgrader::BadEntry> getInvalidPeers(RawDatabase& db)
     std::vector<DbUpgrader::BadEntry> badPeerIds;
     db.execNow(RawDatabase::Query("SELECT id, public_key FROM peers WHERE LENGTH(public_key) != 64",
                                   [&](const QVector<QVariant>& row) {
-                                      badPeerIds.emplace_back(
-                                          DbUpgrader::BadEntry{row[0].toInt(), row[1].toString()});
+                                      badPeerIds.emplace_back(row[0].toInt(), row[1].toString());
                                   }));
     return badPeerIds;
 }
@@ -83,7 +82,7 @@ DuplicateAlias getDuplicateAliasRows(RawDatabase& db, RowId goodPeerRow, RowId b
         [&](const QVector<QVariant>& row) {
             hasGoodEntry = true;
             goodAliasRow = RowId{row[0].toInt()};
-            badAliasRows.emplace_back(RowId{row[1].toLongLong()});
+            badAliasRows.emplace_back(row[1].toLongLong());
         }));
 
     if (hasGoodEntry) {
