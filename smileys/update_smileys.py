@@ -71,10 +71,12 @@ def add_missing_smileys(path: str, smileys: dict[str, list[str]]) -> None:
     """Add smileys that exist in the path but not in the smileys dict."""
     for emoji_str in sorted(filter_svgs(os.listdir(path)),
                             key=parse_emoji_sequence):
-        if emoji_str not in smileys or len(smileys[emoji_str]) == 1:
-            smileys[emoji_str] = [
-                emoji_to_string(parse_emoji_sequence(emoji_str))
-            ]
+        emoji = emoji_to_string(parse_emoji_sequence(emoji_str))
+        if (emoji_str not in smileys or len(smileys[emoji_str]) == 1
+                and smileys[emoji_str][0] == emoji):
+            smileys[emoji_str] = [emoji]
+        if emoji not in smileys[emoji_str]:
+            smileys[emoji_str].append(emoji)
 
 
 def remove_missing_smileys(path: str, smileys: dict[str, list[str]]) -> None:
@@ -85,6 +87,23 @@ def remove_missing_smileys(path: str, smileys: dict[str, list[str]]) -> None:
             del smileys[emoji_str]
 
 
+def prefer_emoji(emoji: str, string: str) -> str:
+    """Provide sorting key that puts the emoji first."""
+    if string == emoji:
+        return ""
+    return string
+
+
+def sort_strings(smileys: dict[str, list[str]]) -> None:
+    """Sort the strings in the smileys dict.
+
+    We put the emoji string first.
+    """
+    for emoji_str, strings in smileys.items():
+        emoji = emoji_to_string(parse_emoji_sequence(emoji_str))
+        strings.sort(key=lambda s: prefer_emoji(emoji, s))
+
+
 def main() -> None:
     if len(sys.argv) != 2:
         print(f"Usage: {sys.argv[0]} <smileypack>")
@@ -92,6 +111,7 @@ def main() -> None:
     smileys = load_smileys(os.path.join(sys.argv[1], "emoticons.xml"))
     add_missing_smileys(sys.argv[1], smileys)
     remove_missing_smileys(sys.argv[1], smileys)
+    sort_strings(smileys)
     save_smileys(os.path.join(sys.argv[1], "emoticons.xml"), smileys)
 
 

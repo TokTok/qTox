@@ -329,6 +329,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
@@ -353,8 +355,6 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.arch }}-qt
       - name: Set up ccache
         run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
-      - name: Fetch build scripts
-        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew dependencies to build dependencies
         run: brew bundle --file ./macos/Brewfile-DepBuildDeps
       - name: Build dependencies (except Qt)
@@ -434,6 +434,8 @@ jobs:
     runs-on: ${{ matrix.arch == 'arm64' && 'macos-14' || 'macos-13' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Fetch build scripts
+        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Cache compiler output
         uses: actions/cache@v4
         with:
@@ -441,8 +443,6 @@ jobs:
           key: ${{ github.job }}-${{ matrix.arch }}-ccache
       - name: Set up ccache
         run: brew install ccache && ccache --set-config=max_size=200M --set-config=cache_dir="$PWD/.cache/ccache" && ccache --show-config
-      - name: Fetch build scripts
-        run: git clone --depth=1 https://github.com/TokTok/dockerfiles ".ci-scripts/dockerfiles"
       - name: Homebrew
         run: brew bundle --file ./macos/Brewfile
       - name: Install toxcore

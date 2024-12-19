@@ -2,8 +2,8 @@
 <messaging-emoticon-map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../messaging-emoticon-map.xsd">
     <emoticon file="263a">
         <string>☺</string>
-        <string>:-)</string>
         <string>:)</string>
+        <string>:-)</string>
         <string>:smile:</string>
     </emoticon>
     <emoticon file="1f600">
@@ -44,8 +44,8 @@
     </emoticon>
     <emoticon file="1f609">
         <string>😉</string>
-        <string>;-)</string>
         <string>;)</string>
+        <string>;-)</string>
     </emoticon>
     <emoticon file="1f60a">
         <string>😊</string>
@@ -54,8 +54,8 @@
     <emoticon file="1f60b">
         <string>😋</string>
         <string>:-P</string>
-        <string>:P</string>
         <string>:-p</string>
+        <string>:P</string>
         <string>:p</string>
     </emoticon>
     <emoticon file="1f60c">
@@ -68,20 +68,20 @@
     </emoticon>
     <emoticon file="1f60e">
         <string>😎</string>
-        <string>:cool:</string>
         <string>(H)</string>
         <string>(h)</string>
-        <string>8-)</string>
         <string>8)</string>
+        <string>8-)</string>
+        <string>:cool:</string>
     </emoticon>
     <emoticon file="1f60f">
         <string>😏</string>
     </emoticon>
     <emoticon file="1f610">
         <string>😐</string>
-        <string>:|</string>
         <string>:-|</string>
         <string>:disappointed:</string>
+        <string>:|</string>
     </emoticon>
     <emoticon file="1f611">
         <string>😑</string>
@@ -100,23 +100,23 @@
     <emoticon file="1f615">
         <string>😕</string>
         <string>:-/</string>
-        <string>:/</string>
         <string>:-\</string>
+        <string>:/</string>
         <string>:\</string>
     </emoticon>
     <emoticon file="1f616">
         <string>😖</string>
         <string>:-s</string>
-        <string>:s</string>
         <string>:oops:</string>
+        <string>:s</string>
     </emoticon>
     <emoticon file="1f617">
         <string>😗</string>
     </emoticon>
     <emoticon file="1f618">
         <string>😘</string>
-        <string>:-*</string>
         <string>:*</string>
+        <string>:-*</string>
     </emoticon>
     <emoticon file="1f619">
         <string>😙</string>
@@ -129,16 +129,16 @@
     </emoticon>
     <emoticon file="1f61c">
         <string>😜</string>
-        <string>;P</string>
         <string>;-P</string>
+        <string>;P</string>
     </emoticon>
     <emoticon file="1f61d">
         <string>😝</string>
     </emoticon>
     <emoticon file="1f61e">
         <string>😞</string>
-        <string>:-(</string>
         <string>:(</string>
+        <string>:-(</string>
         <string>:sad:</string>
     </emoticon>
     <emoticon file="1f61f">
@@ -147,17 +147,17 @@
     <emoticon file="1f620">
         <string>😠</string>
         <string>:angry:</string>
-        <string>&gt;:-(</string>
         <string>&gt;:(</string>
+        <string>&gt;:-(</string>
     </emoticon>
     <emoticon file="1f621">
         <string>😡</string>
     </emoticon>
     <emoticon file="1f622">
         <string>😢</string>
-        <string>:cry:</string>
         <string>:'(</string>
         <string>:,(</string>
+        <string>:cry:</string>
     </emoticon>
     <emoticon file="1f623">
         <string>😣</string>
@@ -206,10 +206,10 @@
     </emoticon>
     <emoticon file="1f632">
         <string>😲</string>
-        <string>:-o</string>
-        <string>:o</string>
         <string>:-O</string>
+        <string>:-o</string>
         <string>:O</string>
+        <string>:o</string>
     </emoticon>
     <emoticon file="1f633">
         <string>😳</string>
@@ -218,10 +218,10 @@
     </emoticon>
     <emoticon file="1f634">
         <string>😴</string>
+        <string>#)</string>
         <string>:sleep:</string>
         <string>:sleeping:</string>
         <string>|-)</string>
-        <string>#)</string>
     </emoticon>
     <emoticon file="1f635">
         <string>😵</string>
@@ -235,8 +235,8 @@
     <emoticon file="1f638">
         <string>😸</string>
         <string>:3</string>
-        <string>=^_^=</string>
         <string>=(^_^)=</string>
+        <string>=^_^=</string>
     </emoticon>
     <emoticon file="1f639">
         <string>😹</string>
@@ -279,11 +279,11 @@
     </emoticon>
     <emoticon file="1f64a">
         <string>🙊</string>
-        <string>:silence:</string>
-        <string>:-x</string>
         <string>:-X</string>
-        <string>:x</string>
+        <string>:-x</string>
         <string>:X</string>
+        <string>:silence:</string>
+        <string>:x</string>
     </emoticon>
     <emoticon file="1f64b">
         <string>🙋</string>
@@ -1244,10 +1244,10 @@
     </emoticon>
     <emoticon file="1f47c">
         <string>👼</string>
-        <string>:angel:</string>
         <string>0:)</string>
-        <string>O:)</string>
         <string>0:-)</string>
+        <string>:angel:</string>
+        <string>O:)</string>
         <string>O:-)</string>
     </emoticon>
     <emoticon file="1f47d">
@@ -1258,13 +1258,13 @@
     </emoticon>
     <emoticon file="1f47f">
         <string>👿</string>
-        <string>:devil:</string>
         <string>:666:</string>
-        <string>}:-)</string>
-        <string>}:-&gt;</string>
+        <string>:devil:</string>
+        <string>&gt;:-&gt;</string>
         <string>]:-)</string>
         <string>]:-&gt;</string>
-        <string>&gt;:-&gt;</string>
+        <string>}:-)</string>
+        <string>}:-&gt;</string>
     </emoticon>
     <emoticon file="1f480">
         <string>💀</string>
@@ -1296,8 +1296,8 @@
     </emoticon>
     <emoticon file="1f489">
         <string>💉</string>
-        <string>:syringe:</string>
         <string>:injection:</string>
+        <string>:syringe:</string>
     </emoticon>
     <emoticon file="1f48a">
         <string>💊</string>
@@ -2325,9 +2325,9 @@
     </emoticon>
     <emoticon file="2764">
         <string>❤</string>
-        <string>&lt;3</string>
         <string>:heart:</string>
         <string>:love:</string>
+        <string>&lt;3</string>
     </emoticon>
     <emoticon file="2795">
         <string>➕</string>
@@ -2357,12 +2357,12 @@
         <string>〰</string>
     </emoticon>
     <emoticon file="3297">
-        <string>祝</string>
         <string>㊗</string>
+        <string>祝</string>
     </emoticon>
     <emoticon file="3299">
-        <string>秘</string>
         <string>㊙</string>
+        <string>秘</string>
     </emoticon>
     <emoticon file="00a9">
         <string>©</string>
