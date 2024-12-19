@@ -2,42 +2,78 @@
   "version": 3,
   "configurePresets": [
     {
+      "name": "static",
+      "binaryDir": "${sourceDir}/_build-static",
+      "generator": "Ninja",
+      "environment": {
+        "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
+      },
+      "cacheVariables": {
+        "SPELL_CHECK": true,
+        "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": true,
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_COMPILE_WARNING_AS_ERROR": true,
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14"
+      }
+    },
+    {
       "name": "asan",
       "binaryDir": "${sourceDir}/_build-asan",
       "generator": "Ninja",
+      "environment": {
+        "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
+      },
       "cacheVariables": {
         "ASAN": true,
         "UBSAN": true,
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": true,
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
-        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14"
       }
     },
     {
       "name": "tsan",
       "binaryDir": "${sourceDir}/_build-tsan",
       "generator": "Ninja",
+      "environment": {
+        "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
+      },
       "cacheVariables": {
         "TSAN": true,
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": true,
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
-        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14"
       }
     },
     {
       "name": "profiling",
       "binaryDir": "${sourceDir}/_build-profiling",
       "generator": "Ninja",
+      "environment": {
+        "PKG_CONFIG_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/pkgconfig"
+      },
       "cacheVariables": {
         "SPELL_CHECK": true,
         "STRICT_OPTIONS": true,
+        "UPDATE_CHECK": true,
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_COMPILE_WARNING_AS_ERROR": true,
-        "CMAKE_EXPORT_COMPILE_COMMANDS": true
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_PREFIX_PATH": "${sourceDir}/.ci-scripts/dockerfiles/local-deps/lib/cmake",
+        "CMAKE_OSX_DEPLOYMENT_TARGET": "14"
       }
     }
   ]
