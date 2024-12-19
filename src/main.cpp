@@ -19,10 +19,16 @@ int main(int argc, char* argv[])
 }
 
 #ifdef QT_STATIC
+#if defined(Q_OS_LINUX)
 Q_IMPORT_PLUGIN(QLinuxFbIntegrationPlugin)
 Q_IMPORT_PLUGIN(QOffscreenIntegrationPlugin)
 Q_IMPORT_PLUGIN(QXcbIntegrationPlugin)
 Q_IMPORT_PLUGIN(QXcbGlxIntegrationPlugin)
 Q_IMPORT_PLUGIN(QVncIntegrationPlugin)
 Q_IMPORT_PLUGIN(QWaylandIntegrationPlugin)
+#elif defined(Q_OS_MACOS)
+Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin)
+#else
+#error "No static linking supported for platform"
 #endif
+#endif // QT_STATIC

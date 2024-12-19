@@ -31,7 +31,7 @@ fi
 build_qtox() {
   # Explicitly include with -isystem to avoid warnings from system headers.
   # CMake will use -I instead of -isystem, so we need to set it manually.
-  cmake \
+  "$DEP_PREFIX/qt/bin/qt-cmake" \
     -DCMAKE_CXX_FLAGS="-isystem/usr/local/include" \
     -DUBSAN=ON \
     -DUPDATE_CHECK=ON \
