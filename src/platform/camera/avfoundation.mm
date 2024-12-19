@@ -12,23 +12,25 @@
 
 #import <AVFoundation/AVFoundation.h>
 
-QVector<QPair<QString, QString> > avfoundation::getDeviceList()
+QVector<QPair<QString, QString>> avfoundation::getDeviceList()
 {
-    QVector<QPair<QString, QString> > result;
+    QVector<QPair<QString, QString>> result;
 
 #if __MAC_OS_X_VERSION_MIN_REQUIRED >= 101400
-    const AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    const AVAuthorizationStatus authStatus =
+        [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus != AVAuthorizationStatusDenied && authStatus != AVAuthorizationStatusNotDetermined) {
         qDebug() << "We already have access to the camera.";
     } else {
         qDebug() << "We don't have access to the camera yet; asking user for permission.";
         QMutex mutex;
-        QMutex *mutexPtr = &mutex;
+        QMutex* mutexPtr = &mutex;
         __block BOOL isGranted = false;
-        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-            isGranted = granted;
-            mutexPtr->unlock();
-        }];
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
+                                 completionHandler:^(BOOL granted) {
+                                   isGranted = granted;
+                                   mutexPtr->unlock();
+                                 }];
         mutex.lock();
         if (isGranted) {
             qInfo() << "We now have access to the camera.";
@@ -44,7 +46,8 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
     NSArray* devices = [NSArray arrayWithObjects:objects count:count];
 
     for (AVCaptureDevice* device in devices) {
-        result.append({ QString::fromNSString([device uniqueID]), QString::fromNSString([device localizedName]) });
+        result.append({QString::fromNSString([device uniqueID]),
+                       QString::fromNSString([device localizedName])});
     }
 
     uint32_t numScreens = 0;
@@ -53,7 +56,8 @@ QVector<QPair<QString, QString> > avfoundation::getDeviceList()
         CGDirectDisplayID screens[numScreens];
         CGGetActiveDisplayList(numScreens, screens, &numScreens);
         for (uint32_t i = 0; i < numScreens; i++) {
-            result.append({ QString("%1 %2").arg(CAPTURE_SCREEN).arg(i), QObject::tr("Capture screen %1").arg(i) });
+            result.append({QString("%1 %2").arg(CAPTURE_SCREEN).arg(i),
+                           QObject::tr("Capture screen %1").arg(i)});
         }
     }
 
@@ -66,9 +70,9 @@ QVector<VideoMode> avfoundation::getDeviceModes(QString devName)
 
     if (devName.startsWith(CAPTURE_SCREEN)) {
         return result;
-    }
-    else {
-        NSString* deviceName = [NSString stringWithCString:devName.toUtf8().constData() encoding:NSUTF8StringEncoding];
+    } else {
+        NSString* deviceName = [NSString stringWithCString:devName.toUtf8().constData()
+                                                  encoding:NSUTF8StringEncoding];
         AVCaptureDevice* device = [AVCaptureDevice deviceWithUniqueID:deviceName];
 
         if (device == nil) {
@@ -78,7 +82,8 @@ QVector<VideoMode> avfoundation::getDeviceModes(QString devName)
         for (AVCaptureDeviceFormat* format in [device formats]) {
             CMFormatDescriptionRef formatDescription;
             CMVideoDimensions dimensions;
-            formatDescription = static_cast<CMFormatDescriptionRef>([format performSelector:@selector(formatDescription)]);
+            formatDescription = static_cast<CMFormatDescriptionRef>(
+                [format performSelector:@selector(formatDescription)]);
             dimensions = CMVideoFormatDescriptionGetDimensions(formatDescription);
 
             for (AVFrameRateRange* range in format.videoSupportedFrameRateRanges) {
