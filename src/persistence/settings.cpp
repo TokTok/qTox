@@ -92,7 +92,7 @@ void Settings::loadGlobal()
         defaultSettings = true;
     }
 
-    qDebug() << "Loading settings from " + filePath;
+    qDebug() << "Loading settings from" << filePath;
 
     QSettings s(filePath, QSettings::IniFormat);
 
@@ -604,7 +604,7 @@ void Settings::saveGlobal()
         return;
 
     QString path = paths.getSettingsDirPath() + globalSettingsFile;
-    qDebug() << "Saving global settings at " + path;
+    qDebug() << "Saving global settings at" << path;
 
     QSettings s(path, QSettings::IniFormat);
 

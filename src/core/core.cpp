@@ -1355,7 +1355,7 @@ QString Core::getPeerName(const ToxPk& id) const
     std::vector<uint8_t> nameBuf(nameSize);
     tox_friend_get_name(tox.get(), friendId, nameBuf.data(), &queryError);
     if (!PARSE_ERR(queryError)) {
-        qWarning() << "getPeerName: Can't get name of friend " + QString().setNum(friendId);
+        qWarning() << "getPeerName: Can't get name of friend" << friendId;
         return {};
     }
 
