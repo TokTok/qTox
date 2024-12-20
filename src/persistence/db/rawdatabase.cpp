@@ -720,6 +720,111 @@ QString RawDatabase::deriveKey(const QString& password, const QByteArray& salt)
     return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
 }
 
+void RawDatabase::compileAndExecute(Transaction& trans)
+{
+    // In case we exit early, prepare to signal errors
+    if (trans.success != nullptr)
+        trans.success->store(false, std::memory_order_release);
+
+    // Add transaction commands if necessary
+    if (trans.queries.size() > 1) {
+        trans.queries.prepend({"BEGIN;"});
+        trans.queries.append({"COMMIT;"});
+    }
+
+    // Compile queries
+    for (Query& query : trans.queries) {
+        assert(query.statements.isEmpty());
+        // sqlite3_prepare_v2 only compiles one statement at a time in the query,
+        // we need to loop over them all
+        int curParam = 0;
+        const char* compileTail = query.query.data();
+        do {
+            // Compile the next statement
+            sqlite3_stmt* stmt;
+            int r;
+            if ((r = sqlite3_prepare_v2(sqlite, compileTail,
+                                        query.query.size()
+                                            - static_cast<int>(compileTail - query.query.data()),
+                                        &stmt, &compileTail))
+                != SQLITE_OK) {
+                qWarning() << "Failed to prepare statement" << anonymizeQuery(query.query)
+                           << "and returned" << r;
+                qWarning("The full error is %d: %s", sqlite3_errcode(sqlite), sqlite3_errmsg(sqlite));
+                return;
+            }
+            query.statements += stmt;
+
+            // Now we can bind our params to this statement
+            int nParams = sqlite3_bind_parameter_count(stmt);
+            if (query.blobs.size() < curParam + nParams) {
+                qWarning() << "Not enough parameters to bind to query " << anonymizeQuery(query.query);
+                return;
+            }
+            for (int i = 0; i < nParams; ++i) {
+                const QByteArray& blob = query.blobs[curParam + i];
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wold-style-cast"
+#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
+                // SQLITE_STATIC uses old-style cast and 0 as null pointer but comes from
+                // system headers, so can't be fixed by us.
+                constexpr auto sqliteDataType = SQLITE_STATIC;
+#pragma GCC diagnostic pop
+                if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
+                    != SQLITE_OK) {
+                    qWarning() << "Failed to bind param" << curParam + i << "to query"
+                               << anonymizeQuery(query.query);
+                    return;
+                }
+            }
+            curParam += nParams;
+        } while (compileTail != query.query.data() + query.query.size());
+
+        // Execute each statement of each query of our transaction
+        for (sqlite3_stmt* stmt : query.statements) {
+            int column_count = sqlite3_column_count(stmt);
+            int result;
+            do {
+                result = sqlite3_step(stmt);
+
+                // Execute our row callback
+                if (result == SQLITE_ROW && query.rowCallback) {
+                    QVector<QVariant> row;
+                    for (int i = 0; i < column_count; ++i)
+                        row += extractData(stmt, i);
+
+                    query.rowCallback(row);
+                }
+            } while (result == SQLITE_ROW);
+
+            if (result == SQLITE_DONE)
+                continue;
+
+            QString anonQuery = anonymizeQuery(query.query);
+            switch (result) {
+            case SQLITE_ERROR:
+                qWarning() << "Error executing query" << anonQuery;
+                return;
+            case SQLITE_MISUSE:
+                qWarning() << "Misuse executing query" << anonQuery;
+                return;
+            case SQLITE_CONSTRAINT:
+                qWarning() << "Constraint error executing query" << anonQuery;
+                return;
+            default:
+                qWarning() << "Unknown error" << result << "executing query" << anonQuery;
+                return;
+            }
+        }
+
+        if (query.insertCallback)
+            query.insertCallback(RowId{sqlite3_last_insert_rowid(sqlite)});
+    }
+
+    if (trans.success != nullptr)
+        trans.success->store(true, std::memory_order_release);
+}
+
 /**
  * @brief Implements the actual processing of pending transactions.
  * Unqueues, compiles, binds and executes queries, then notifies of results
@@ -744,112 +849,9 @@ void RawDatabase::process()
             trans = pendingTransactions.dequeue();
         }
 
-        // In case we exit early, prepare to signal errors
-        if (trans.success != nullptr)
-            trans.success->store(false, std::memory_order_release);
+        compileAndExecute(trans);
 
-        // Add transaction commands if necessary
-        if (trans.queries.size() > 1) {
-            trans.queries.prepend({"BEGIN;"});
-            trans.queries.append({"COMMIT;"});
-        }
-
-        // Compile queries
-        for (Query& query : trans.queries) {
-            assert(query.statements.isEmpty());
-            // sqlite3_prepare_v2 only compiles one statement at a time in the query,
-            // we need to loop over them all
-            int curParam = 0;
-            const char* compileTail = query.query.data();
-            do {
-                // Compile the next statement
-                sqlite3_stmt* stmt;
-                int r;
-                if ((r = sqlite3_prepare_v2(sqlite, compileTail,
-                                            query.query.size()
-                                                - static_cast<int>(compileTail - query.query.data()),
-                                            &stmt, &compileTail))
-                    != SQLITE_OK) {
-                    qWarning() << "Failed to prepare statement" << anonymizeQuery(query.query)
-                               << "and returned" << r;
-                    qWarning("The full error is %d: %s", sqlite3_errcode(sqlite),
-                             sqlite3_errmsg(sqlite));
-                    goto cleanupStatements;
-                }
-                query.statements += stmt;
-
-                // Now we can bind our params to this statement
-                int nParams = sqlite3_bind_parameter_count(stmt);
-                if (query.blobs.size() < curParam + nParams) {
-                    qWarning() << "Not enough parameters to bind to query "
-                               << anonymizeQuery(query.query);
-                    goto cleanupStatements;
-                }
-                for (int i = 0; i < nParams; ++i) {
-                    const QByteArray& blob = query.blobs[curParam + i];
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wold-style-cast"
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-                    // SQLITE_STATIC uses old-style cast and 0 as null pointer but comes from
-                    // system headers, so can't be fixed by us.
-                    auto sqliteDataType = SQLITE_STATIC;
-#pragma GCC diagnostic pop
-                    if (sqlite3_bind_blob(stmt, i + 1, blob.data(), blob.size(), sqliteDataType)
-                        != SQLITE_OK) {
-                        qWarning() << "Failed to bind param" << curParam + i << "to query"
-                                   << anonymizeQuery(query.query);
-                        goto cleanupStatements;
-                    }
-                }
-                curParam += nParams;
-            } while (compileTail != query.query.data() + query.query.size());
-
-            // Execute each statement of each query of our transaction
-            for (sqlite3_stmt* stmt : query.statements) {
-                int column_count = sqlite3_column_count(stmt);
-                int result;
-                do {
-                    result = sqlite3_step(stmt);
-
-                    // Execute our row callback
-                    if (result == SQLITE_ROW && query.rowCallback) {
-                        QVector<QVariant> row;
-                        for (int i = 0; i < column_count; ++i)
-                            row += extractData(stmt, i);
-
-                        query.rowCallback(row);
-                    }
-                } while (result == SQLITE_ROW);
-
-                if (result == SQLITE_DONE)
-                    continue;
-
-                QString anonQuery = anonymizeQuery(query.query);
-                switch (result) {
-                case SQLITE_ERROR:
-                    qWarning() << "Error executing query" << anonQuery;
-                    goto cleanupStatements;
-                case SQLITE_MISUSE:
-                    qWarning() << "Misuse executing query" << anonQuery;
-                    goto cleanupStatements;
-                case SQLITE_CONSTRAINT:
-                    qWarning() << "Constraint error executing query" << anonQuery;
-                    goto cleanupStatements;
-                default:
-                    qWarning() << "Unknown error" << result << "executing query" << anonQuery;
-                    goto cleanupStatements;
-                }
-            }
-
-            if (query.insertCallback)
-                query.insertCallback(RowId{sqlite3_last_insert_rowid(sqlite)});
-        }
-
-        if (trans.success != nullptr)
-            trans.success->store(true, std::memory_order_release);
-
-    // Free our statements
-    cleanupStatements:
+        // Free our statements
         for (Query& query : trans.queries) {
             for (sqlite3_stmt* stmt : query.statements)
                 sqlite3_finalize(stmt);

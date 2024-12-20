@@ -74,13 +74,13 @@ CameraDevice::CameraDevice(const QString& devName_, AVFormatContext* context_)
 
 CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 {
-    openDeviceLock.lock();
+    QMutexLocker<QMutex> lock(&openDeviceLock);
     AVFormatContext* fctx = nullptr;
     CameraDevice* dev = openDevices.value(devName);
     int aduration;
     std::string devString;
     if (dev) {
-        goto out;
+        return dev;
     }
 
     AvFindInputFormatRet format;
@@ -96,7 +96,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 
     devString = devName.toStdString();
     if (avformat_open_input(&fctx, devString.c_str(), format, options) < 0) {
-        goto out;
+        return nullptr;
     }
 
 // Fix avformat_find_stream_info hanging on garbage input
@@ -108,7 +108,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 
     if (avformat_find_stream_info(fctx, nullptr) < 0) {
         avformat_close_input(&fctx);
-        goto out;
+        return nullptr;
     }
 
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
@@ -120,8 +120,6 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
     dev = new CameraDevice{devName, fctx};
     openDevices[devName] = dev;
 
-out:
-    openDeviceLock.unlock();
     return dev;
 }
 

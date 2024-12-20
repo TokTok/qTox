@@ -79,6 +79,17 @@ public:
         friend class RawDatabase;
     };
 
+private:
+    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
+                       const QRegularExpression::PatternOptions cs);
+
+    struct Transaction
+    {
+        QVector<Query> queries;
+        std::atomic_bool* success = nullptr;
+        std::atomic_bool* done = nullptr;
+    };
+
 public:
     enum class SqlCipherParams
     {
@@ -131,6 +142,7 @@ protected slots:
     void process();
 
 private:
+    void compileAndExecute(Transaction& trans);
     QString anonymizeQuery(const QByteArray& query);
     bool openEncryptedDatabaseAtLatestSupportedVersion(const QString& hexKey);
     bool updateSavedCipherParameters(const QString& hexKey, SqlCipherParams newParams);
@@ -150,17 +162,6 @@ protected:
     static QVariant extractData(sqlite3_stmt* stmt, int col);
     static void regexpInsensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
     static void regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
-
-private:
-    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
-                       const QRegularExpression::PatternOptions cs);
-
-    struct Transaction
-    {
-        QVector<Query> queries;
-        std::atomic_bool* success = nullptr;
-        std::atomic_bool* done = nullptr;
-    };
 
 private:
     sqlite3* sqlite;

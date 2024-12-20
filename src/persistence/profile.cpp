@@ -68,46 +68,43 @@ std::unique_ptr<ToxEncrypt> loadToxData(const QString& password, const QString& 
 
     if (!saveFile.exists()) {
         error = LoadToxDataError::FILE_NOT_FOUND;
-        goto fail;
+        return nullptr;
     }
 
     if (!saveFile.open(QIODevice::ReadOnly)) {
         error = LoadToxDataError::COULD_NOT_READ_FILE;
-        goto fail;
+        return nullptr;
     }
 
     fileSize = saveFile.size();
     if (fileSize <= 0) {
         error = LoadToxDataError::FILE_IS_EMPTY;
-        goto fail;
+        return nullptr;
     }
 
     data = saveFile.readAll();
     if (ToxEncrypt::isEncrypted(data)) {
         if (password.isEmpty()) {
             error = LoadToxDataError::ENCRYPTED_NO_PASSWORD;
-            goto fail;
+            return nullptr;
         }
 
         tmpKey = ToxEncrypt::makeToxEncrypt(password, data);
         if (!tmpKey) {
             error = LoadToxDataError::COULD_NOT_DERIVE_KEY;
-            goto fail;
+            return nullptr;
         }
 
         data = tmpKey->decrypt(data);
         if (data.isEmpty()) {
             error = LoadToxDataError::DECRYPTION_FAILED;
-            goto fail;
+            return nullptr;
         }
     }
 
     saveFile.close();
     error = LoadToxDataError::OK;
     return tmpKey;
-fail:
-    saveFile.close();
-    return nullptr;
 }
 
 /**
