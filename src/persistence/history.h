@@ -241,7 +241,7 @@ private slots:
     void onFileInserted(RowId dbId, QByteArray fileId);
 
 private:
-    QVector<RawDatabase::Query>
+    std::vector<RawDatabase::Query>
     generateNewFileTransferQueries(const ChatId& chatId, const ToxPk& sender, const QDateTime& time,
                                    const QString& dispName, const FileDbInsertionData& insertionData);
     bool historyAccessBlocked();

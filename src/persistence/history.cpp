@@ -98,17 +98,17 @@ RawDatabase::Query generateHistoryTableInsertion(char type, const QDateTime& tim
  * @param dispName Name, which should be displayed.
  * @param insertIdCallback Function, called after query execution.
  */
-QVector<RawDatabase::Query> generateNewTextMessageQueries(const ChatId& chatId, const QString& message,
-                                                          const ToxPk& sender, const QDateTime& time,
-                                                          bool isDelivered, QString dispName,
-                                                          std::function<void(RowId)> insertIdCallback)
+std::vector<RawDatabase::Query>
+generateNewTextMessageQueries(const ChatId& chatId, const QString& message, const ToxPk& sender,
+                              const QDateTime& time, bool isDelivered, QString dispName,
+                              std::function<void(RowId)> insertIdCallback)
 {
-    QVector<RawDatabase::Query> queries;
+    std::vector<RawDatabase::Query> queries;
 
-    queries += generateEnsurePkInChats(chatId);
-    queries += generateEnsurePkInAuthors(sender);
-    queries += generateUpdateAlias(sender, dispName);
-    queries += generateHistoryTableInsertion('T', time, chatId);
+    queries.emplace_back(generateEnsurePkInChats(chatId));
+    queries.emplace_back(generateEnsurePkInAuthors(sender));
+    queries.emplace_back(generateUpdateAlias(sender, dispName));
+    queries.emplace_back(generateHistoryTableInsertion('T', time, chatId));
 
     QVector<QByteArray> boundParams;
     QString queryString = QStringLiteral( //
@@ -123,40 +123,37 @@ QVector<RawDatabase::Query> generateNewTextMessageQueries(const ChatId& chatId, 
     queryString += "), ?";
     boundParams += message.toUtf8();
     queryString += ");";
-    queries += RawDatabase::Query(queryString, boundParams, insertIdCallback);
+    queries.emplace_back(queryString, boundParams, insertIdCallback);
 
     if (!isDelivered) {
-        queries += RawDatabase::Query{
-            QStringLiteral( //
-                "INSERT INTO faux_offline_pending (id) VALUES ("
-                "    last_insert_rowid()"
-                ");"),
-        };
+        queries.emplace_back(QStringLiteral( //
+            "INSERT INTO faux_offline_pending (id) VALUES ("
+            "    last_insert_rowid()"
+            ");"));
     }
 
     return queries;
 }
 
-QVector<RawDatabase::Query> generateNewSystemMessageQueries(const ChatId& chatId,
-                                                            const SystemMessage& systemMessage)
+std::vector<RawDatabase::Query> generateNewSystemMessageQueries(const ChatId& chatId,
+                                                                const SystemMessage& systemMessage)
 {
-    QVector<RawDatabase::Query> queries;
+    std::vector<RawDatabase::Query> queries;
 
-    queries += generateEnsurePkInChats(chatId);
-    queries += generateHistoryTableInsertion('S', systemMessage.timestamp, chatId);
+    queries.emplace_back(generateEnsurePkInChats(chatId));
+    queries.emplace_back(generateHistoryTableInsertion('S', systemMessage.timestamp, chatId));
 
     QVector<QByteArray> blobs;
     std::transform(systemMessage.args.begin(), systemMessage.args.end(), std::back_inserter(blobs),
                    [](const QString& s) { return s.toUtf8(); });
 
-    queries += RawDatabase::Query{
-        QStringLiteral( //
+    queries.emplace_back( //
+        QStringLiteral(   //
             "INSERT INTO system_messages (id, message_type, "
             "system_message_type, arg1, arg2, arg3, arg4)"
             "VALUES (last_insert_rowid(), 'S', %1, ?, ?, ?, ?)")
             .arg(static_cast<int>(systemMessage.messageType)),
-        blobs,
-    };
+        blobs);
 
     return queries;
 }
@@ -272,7 +269,7 @@ void History::removeChatHistory(const ChatId& chatId)
         return;
     }
 
-    QVector<RawDatabase::Query> queries;
+    std::vector<RawDatabase::Query> queries;
     QVector<QByteArray> boundParams;
     QString queryString = QStringLiteral( //
         "DELETE FROM faux_offline_pending "
@@ -282,7 +279,7 @@ void History::removeChatHistory(const ChatId& chatId)
         "    WHERE chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(")");
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral( //
@@ -293,7 +290,7 @@ void History::removeChatHistory(const ChatId& chatId)
         "    WHERE chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(")");
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral( //
@@ -303,7 +300,7 @@ void History::removeChatHistory(const ChatId& chatId)
         "   WHERE message_type = 'T' AND chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(")");
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral( //
@@ -313,7 +310,7 @@ void History::removeChatHistory(const ChatId& chatId)
         "    WHERE message_type = 'F' AND chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(")");
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral( //
@@ -323,30 +320,30 @@ void History::removeChatHistory(const ChatId& chatId)
         "   WHERE message_type = 'S' AND chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
     queryString += QStringLiteral(")");
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral("DELETE FROM history WHERE chat_id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
     queryString = QStringLiteral("DELETE FROM chats WHERE id=");
     addChatIdSubQuery(queryString, boundParams, chatId);
-    queries += {queryString, boundParams};
+    queries.emplace_back(queryString, boundParams);
     boundParams.clear();
 
-    queries += RawDatabase::Query{QStringLiteral( //
+    queries.emplace_back(QStringLiteral( //
         "DELETE FROM aliases WHERE id NOT IN ( "
         "   SELECT DISTINCT sender_alias FROM text_messages "
         "   UNION "
-        "   SELECT DISTINCT sender_alias FROM file_transfers)")};
+        "   SELECT DISTINCT sender_alias FROM file_transfers)"));
 
-    queries += RawDatabase::Query{QStringLiteral( //
+    queries.emplace_back(QStringLiteral( //
         "DELETE FROM authors WHERE id NOT IN ( "
-        "   SELECT DISTINCT owner FROM aliases)")};
+        "   SELECT DISTINCT owner FROM aliases)"));
 
-    if (!db->execNow(queries)) {
+    if (!db->execNow(std::move(queries))) {
         qWarning() << "Failed to remove friend's history";
     } else {
         db->execNow(RawDatabase::Query{QStringLiteral("VACUUM")});
@@ -366,17 +363,17 @@ void History::onFileInserted(RowId dbId, QByteArray fileId)
     }
 }
 
-QVector<RawDatabase::Query>
+std::vector<RawDatabase::Query>
 History::generateNewFileTransferQueries(const ChatId& chatId, const ToxPk& sender,
                                         const QDateTime& time, const QString& dispName,
                                         const FileDbInsertionData& insertionData)
 {
-    QVector<RawDatabase::Query> queries;
+    std::vector<RawDatabase::Query> queries;
 
-    queries += generateEnsurePkInChats(chatId);
-    queries += generateEnsurePkInAuthors(sender);
-    queries += generateUpdateAlias(sender, dispName);
-    queries += generateHistoryTableInsertion('F', time, chatId);
+    queries.emplace_back(generateEnsurePkInChats(chatId));
+    queries.emplace_back(generateEnsurePkInAuthors(sender));
+    queries.emplace_back(generateUpdateAlias(sender, dispName));
+    queries.emplace_back(generateHistoryTableInsertion('F', time, chatId));
 
     std::weak_ptr<History> weakThis = shared_from_this();
     auto fileId = insertionData.fileId;
@@ -407,7 +404,7 @@ History::generateNewFileTransferQueries(const ChatId& chatId, const ToxPk& sende
                        .arg(insertionData.size)
                        .arg(insertionData.direction)
                        .arg(ToxFile::CANCELED);
-    queries += RawDatabase::Query(queryString, boundParams, [weakThis, fileId](RowId id) {
+    queries.emplace_back(queryString, boundParams, [weakThis, fileId](RowId id) {
         auto pThis = weakThis.lock();
         if (pThis)
             emit pThis->fileInserted(id, fileId);
@@ -475,9 +472,7 @@ void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
     insertionData.size = size;
     insertionData.direction = direction;
 
-    auto queries = generateNewFileTransferQueries(chatId, sender, time, dispName, insertionData);
-
-    db->execLater(queries);
+    db->execLater(generateNewFileTransferQueries(chatId, sender, time, dispName, insertionData));
 }
 
 void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& systemMessage)
@@ -485,9 +480,7 @@ void History::addNewSystemMessage(const ChatId& chatId, const SystemMessage& sys
     if (historyAccessBlocked())
         return;
 
-    const auto queries = generateNewSystemMessageQueries(chatId, systemMessage);
-
-    db->execLater(queries);
+    db->execLater(generateNewSystemMessageQueries(chatId, systemMessage));
 }
 
 /**
@@ -817,8 +810,8 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
         break;
     }
 
-    auto query = RawDatabase::Query( //
-        QStringLiteral(              //
+    db->execNow(RawDatabase::Query( //
+        QStringLiteral(             //
             "SELECT timestamp "
             "FROM history "
             "JOIN chats ON chat_id = chats.id "
@@ -828,9 +821,7 @@ QDateTime History::getDateWhereFindPhrase(const ChatId& chatId, const QDateTime&
             "%2")
             .arg(message)
             .arg(period),
-        {chatId.getByteArray()}, rowCallback);
-
-    db->execNow(query);
+        {chatId.getByteArray()}, rowCallback));
 
     return result;
 }
@@ -879,8 +870,8 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
 
     auto limitString = (maxNum) ? QString("LIMIT %1").arg(maxNum) : QString("");
 
-    auto query = RawDatabase::Query( //
-        QStringLiteral(              //
+    db->execNow(RawDatabase::Query( //
+        QStringLiteral(             //
             "SELECT (%1), (timestamp / 1000 / 60 / 60 / 24) AS day "
             "FROM history "
             "JOIN chats ON chat_id = chats.id "
@@ -891,9 +882,7 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
             .arg(countMessagesForFriend)
             .arg(QDateTime(from.startOfDay()).toMSecsSinceEpoch())
             .arg(limitString),
-        {chatId.getByteArray(), chatId.getByteArray()}, rowCallback);
-
-    db->execNow(query);
+        {chatId.getByteArray(), chatId.getByteArray()}, rowCallback));
 
     return dateIdxs;
 }
@@ -938,17 +927,17 @@ void History::markAsBroken(RowId messageId, BrokenMessageReason reason)
         return;
     }
 
-    QVector<RawDatabase::Query> queries;
-    queries += RawDatabase::Query( //
-        QStringLiteral(            //
+    std::vector<RawDatabase::Query> queries;
+    queries.emplace_back( //
+        QStringLiteral(   //
             "DELETE FROM faux_offline_pending WHERE id=%1;")
             .arg(messageId.get()));
-    queries += RawDatabase::Query( //
-        QStringLiteral(            //
+    queries.emplace_back( //
+        QStringLiteral(   //
             "INSERT INTO broken_messages (id, reason) "
             "VALUES (%1, %2);")
             .arg(messageId.get())
             .arg(static_cast<int64_t>(reason)));
 
-    db->execLater(queries);
+    db->execLater(std::move(queries));
 }
