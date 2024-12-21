@@ -36,7 +36,7 @@ SplitterRestorer::SplitterRestorer(QSplitter* splitter_)
 
 /**
  * @brief Restore splitter from state. And reset in case of error.
- * Set the splitter to a reasonnable width by default and on first start
+ * Set the splitter to a reasonable width by default and on first start
  * @param state State saved by QSplitter::saveState()
  * @param windowSize Widnow size (used to calculate splitter size)
  */

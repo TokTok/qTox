@@ -259,7 +259,7 @@ void ContentDialog::ensureSplitterVisible()
 }
 
 /**
- * @brief Get current layout and index of current wiget in it.
+ * @brief Get current layout and index of current widget in it.
  * Current layout -- layout contains activated widget.
  *
  * @param[out] layout Current layout
@@ -291,7 +291,7 @@ int ContentDialog::getCurrentLayout(QLayout*& layout)
 
 /**
  * @brief Activate next/previous chat.
- * @param forward If true, activate next contace, previous otherwise.
+ * @param forward If true, activate next contact, previous otherwise.
  * @param inverse ??? TODO: Add docs.
  */
 void ContentDialog::cycleChats(bool forward, bool inverse)
@@ -644,7 +644,7 @@ void ContentDialog::updateFriendWidget(const ToxPk& friendPk, QString alias)
 
 /**
  * @brief Handler of `conferencePositionChanged` action.
- * Move conference layout on the top or on the buttom.
+ * Move conference layout on the top or on the bottom.
  *
  * @param top If true, move conference layout on the top, false otherwise.
  */
@@ -686,7 +686,7 @@ bool ContentDialog::hasChat(const ChatId& chatId) const
 /**
  * @brief Find the next or previous layout in layout list.
  * @param layout Current layout.
- * @param forward If true, move forward, backward othwerwise.
+ * @param forward If true, move forward, backward otherwise.
  * @return Next/previous layout.
  */
 QLayout* ContentDialog::nextLayout(QLayout* layout, bool forward) const

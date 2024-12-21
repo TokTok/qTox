@@ -88,7 +88,7 @@ void PrivacyForm::showEvent(QShowEvent* event)
     bodyUI->blackListTextEdit->setText(s.getBlackList().join('\n'));
 }
 
-void PrivacyForm::on_randomNosapamButton_clicked()
+void PrivacyForm::on_randomNospamButton_clicked()
 {
     uint32_t newNospam{0};
 

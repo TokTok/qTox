@@ -84,7 +84,7 @@ ToxId::ToxId(const QByteArray& rawId)
 }
 
 /**
- * @brief Create a Tox ID from uint8_t bytes and lenght, convenience function for toxcore interface.
+ * @brief Create a Tox ID from uint8_t bytes and length, convenience function for toxcore interface.
  *
  * If the given rawId is not a valid Tox ID, but can be a Public Key then:
  * publicKey == rawId and noSpam == 0 == checkSum.
@@ -104,7 +104,7 @@ ToxId::ToxId(const uint8_t* rawId, int len)
 void ToxId::constructToxId(const QByteArray& rawId)
 {
     if (rawId.length() == ToxId::size && isToxId(QString::fromUtf8(rawId.toHex()).toUpper())) {
-        toxId = QByteArray(rawId); // construct from full toxid
+        toxId = QByteArray(rawId); // construct from full tox id
     } else {
         assert(!"ToxId constructed with invalid input");
         toxId = QByteArray(); // invalid id

@@ -312,8 +312,8 @@ void ChatForm::onAvInvite(uint32_t friendId, bool video)
     // AutoAcceptCall is set for this friend
     if (settings.getAutoAcceptCall(f->getPublicKey()).testFlag(testedFlag)) {
         qDebug() << "automatic call answer";
-        CoreAV* coreav = core.getAv();
-        QMetaObject::invokeMethod(coreav, "answerCall", Qt::QueuedConnection,
+        CoreAV* coreAv = core.getAv();
+        QMetaObject::invokeMethod(coreAv, "answerCall", Qt::QueuedConnection,
                                   Q_ARG(uint32_t, friendId), Q_ARG(bool, video));
         onAvStart(friendId, video);
     } else {

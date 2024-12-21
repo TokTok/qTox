@@ -266,7 +266,7 @@ void FriendListWidget::sortByMode()
         for (int i = 0; i < activityLayout->count(); ++i) {
             QWidget* widget = activityLayout->itemAt(i)->widget();
             CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
-            categoryWidget->setVisible(categoryWidget->hasChatrooms());
+            categoryWidget->setVisible(categoryWidget->hasChatRooms());
         }
 
         listLayout->addLayout(activityLayout);
@@ -405,7 +405,7 @@ void FriendListWidget::removeCircleWidget(CircleWidget* widget)
     widget->deleteLater();
 }
 
-void FriendListWidget::searchChatrooms(const QString& searchString, bool hideOnline,
+void FriendListWidget::searchChatRooms(const QString& searchString, bool hideOnline,
                                        bool hideOffline, bool hideConferences)
 {
     manager->setFilter(searchString, hideOnline, hideOffline, hideConferences);
@@ -598,7 +598,7 @@ void FriendListWidget::updateActivityTime(const QDateTime& time)
     CategoryWidget* categoryWidget = static_cast<CategoryWidget*>(widget);
     categoryWidget->updateStatus();
 
-    categoryWidget->setVisible(categoryWidget->hasChatrooms());
+    categoryWidget->setVisible(categoryWidget->hasChatRooms());
 }
 
 CircleWidget* FriendListWidget::createCircleWidget(int id)

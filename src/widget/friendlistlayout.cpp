@@ -94,12 +94,12 @@ int FriendListLayout::friendTotalCount() const
     return friendOfflineLayout.getLayout()->count() + friendOnlineCount();
 }
 
-bool FriendListLayout::hasChatrooms() const
+bool FriendListLayout::hasChatRooms() const
 {
     return !(friendOfflineLayout.getLayout()->isEmpty() && friendOnlineLayout.getLayout()->isEmpty());
 }
 
-void FriendListLayout::searchChatrooms(const QString& searchString, bool hideOnline, bool hideOffline)
+void FriendListLayout::searchChatRooms(const QString& searchString, bool hideOnline, bool hideOffline)
 {
     friendOnlineLayout.search(searchString, hideOnline);
     friendOfflineLayout.search(searchString, hideOffline);

@@ -8,46 +8,45 @@
 #include <QRegularExpression>
 #include <QVector>
 
-// clang-format off
-
 namespace {
 // Note: escaping of '\' is only needed because QStringLiteral is broken by linebreak
 const QString SINGLE_SIGN_PATTERN = QStringLiteral("(?<=^|\\s)"
-                                                          "[%1]"
-                                                          "(?!\\s)"
-                                                          "([^%1\\n]+?)"
-                                                          "(?<!\\s)"
-                                                          "[%1]"
-                                                          "(?=$|\\s)");
+                                                   "[%1]"
+                                                   "(?!\\s)"
+                                                   "([^%1\\n]+?)"
+                                                   "(?<!\\s)"
+                                                   "[%1]"
+                                                   "(?=$|\\s)");
 
 const QString SINGLE_SLASH_PATTERN = QStringLiteral("(?<=^|\\s)"
-                                                           "/"
-                                                           "(?!\\s)"
-                                                           "([^/\\n]+?)"
-                                                           "(?<!\\s)"
-                                                           "/"
-                                                           "(?=$|\\s)");
+                                                    "/"
+                                                    "(?!\\s)"
+                                                    "([^/\\n]+?)"
+                                                    "(?<!\\s)"
+                                                    "/"
+                                                    "(?=$|\\s)");
 
 const QString DOUBLE_SIGN_PATTERN = QStringLiteral("(?<=^|\\s)"
-                                                          "[%1]{2}"
-                                                          "(?!\\s)"
-                                                          "([^\\n]+?)"
-                                                          "(?<!\\s)"
-                                                          "[%1]{2}"
-                                                          "(?=$|\\s)");
+                                                   "[%1]{2}"
+                                                   "(?!\\s)"
+                                                   "([^\\n]+?)"
+                                                   "(?<!\\s)"
+                                                   "[%1]{2}"
+                                                   "(?=$|\\s)");
 
 const QString MULTILINE_CODE = QStringLiteral("(?<=^|\\s)"
-                                                     "```"
-                                                     "(?!`)"
-                                                     "((.|\\n)+?)"
-                                                     "(?<!`)"
-                                                     "```"
-                                                     "(?=$|\\s)");
+                                              "```"
+                                              "(?!`)"
+                                              "((.|\\n)+?)"
+                                              "(?<!`)"
+                                              "```"
+                                              "(?=$|\\s)");
 
-#define REGEXP_WRAPPER_PAIR(pattern, wrapper)\
-{QRegularExpression(pattern,QRegularExpression::UseUnicodePropertiesOption),QStringLiteral(wrapper)}
+#define REGEXP_WRAPPER_PAIR(pattern, wrapper)                                     \
+    {QRegularExpression(pattern, QRegularExpression::UseUnicodePropertiesOption), \
+     QStringLiteral(wrapper)}
 
-const QPair<QRegularExpression, QString> REGEX_TO_WRAPPER[] {
+const QPair<QRegularExpression, QString> REGEX_TO_WRAPPER[]{
     REGEXP_WRAPPER_PAIR(SINGLE_SLASH_PATTERN, "<i>%1</i>"),
     REGEXP_WRAPPER_PAIR(SINGLE_SIGN_PATTERN.arg('*'), "<b>%1</b>"),
     REGEXP_WRAPPER_PAIR(SINGLE_SIGN_PATTERN.arg('_'), "<u>%1</u>"),
@@ -66,8 +65,7 @@ const QString HREF_WRAPPER = QStringLiteral(R"(<a href="%1">%1</a>)");
 const QString WWW_WRAPPER = QStringLiteral(R"(<a href="http://%1">%1</a>)");
 
 const QVector<QRegularExpression> WWW_WORD_PATTERN = {
-        QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www\.)\S+))"))
-};
+    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www\.)\S+))"))};
 
 const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     // Note: This does not match only strictly valid URLs, but we broaden search to any string following scheme to
@@ -76,13 +74,12 @@ const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((file|smb)://([\S| ]*)))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(tox:[a-zA-Z\d]{76}))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(mailto:\S+@\S+\.\S+))")),
-    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(magnet:[?]((xt(.\d)?=urn:)|(mt=)|(kt=)|(tr=)|(dn=)|(xl=)|(xs=)|(as=)|(x.))[\S| ]+))")),
+    QRegularExpression(QStringLiteral(
+        R"((?<=^|\s)\S*(magnet:[?]((xt(.\d)?=urn:)|(mt=)|(kt=)|(tr=)|(dn=)|(xl=)|(xs=)|(as=)|(x.))[\S| ]+))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(gemini://\S+))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(ed2k://\|file\|\S+))")),
 };
 
-
-// clang-format on
 
 struct MatchingUri
 {
@@ -91,15 +88,18 @@ struct MatchingUri
 };
 
 // pairs of characters that are ignored when surrounding a URI
-const QPair<QString, QString> URI_WRAPPING_CHARS[] = {{QString("("), QString(")")},
-                                                      {QString("["), QString("]")},
-                                                      {QString("&quot;"), QString("&quot;")},
-                                                      {QString("'"), QString("'")}};
+const QPair<QString, QString> URI_WRAPPING_CHARS[] = {
+    {QString("("), QString(")")},
+    {QString("["), QString("]")},
+    {QString("&quot;"), QString("&quot;")},
+    {QString("'"), QString("'")},
+};
 
 // characters which are ignored from the end of URI
-const QChar URI_ENDING_CHARS[] = {QChar::fromLatin1('?'), QChar::fromLatin1('.'),
-                                  QChar::fromLatin1('!'), QChar::fromLatin1(':'),
-                                  QChar::fromLatin1(',')};
+const QChar URI_ENDING_CHARS[] = {
+    QChar::fromLatin1('?'), QChar::fromLatin1('.'), QChar::fromLatin1('!'),
+    QChar::fromLatin1(':'), QChar::fromLatin1(','),
+};
 
 /**
  * @brief Strips wrapping characters and ending punctuation from URI

@@ -215,16 +215,16 @@ bool logCreateToxDataError(const CreateToxDataError& error, const QString& userN
 
 QStringList Profile::profiles;
 
-void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile,
+void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
                        CameraSource& cameraSource)
 {
-    if (toxsave.isEmpty() && !isNewProfile) {
-        qCritical() << "Existing toxsave is empty";
+    if (toxSave.isEmpty() && !isNewProfile) {
+        qCritical() << "Existing toxSave is empty";
         emit failedToStart();
     }
 
-    if (!toxsave.isEmpty() && isNewProfile) {
-        qCritical() << "New profile has toxsave data";
+    if (!toxSave.isEmpty() && isNewProfile) {
+        qCritical() << "New profile has toxSave data";
         emit failedToStart();
     }
 
@@ -232,7 +232,7 @@ void Profile::initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile
         std::unique_ptr<BootstrapNodeUpdater>(new BootstrapNodeUpdater(s.getProxy(), paths));
 
     Core::ToxCoreErrors err;
-    core = Core::makeToxCore(toxsave, s, *bootstrapNodes, &err);
+    core = Core::makeToxCore(toxSave, s, *bootstrapNodes, &err);
     if (!core) {
         switch (err) {
         case Core::ToxCoreErrors::BAD_PROXY:
@@ -313,9 +313,9 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
     }
 
     LoadToxDataError error;
-    QByteArray toxsave = QByteArray();
+    QByteArray toxSave = QByteArray();
     QString path = paths.getSettingsDirPath() + name + ".tox";
-    std::unique_ptr<ToxEncrypt> tmpKey = loadToxData(password, path, toxsave, error);
+    std::unique_ptr<ToxEncrypt> tmpKey = loadToxData(password, path, toxSave, error);
     if (logLoadToxDataError(error, path)) {
         ProfileLocker::unlock();
         return nullptr;
@@ -327,7 +327,7 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
     constexpr bool isNewProfile = false;
     settings.updateProfileData(p, parser, isNewProfile);
 
-    p->initCore(toxsave, settings, isNewProfile, cameraSource);
+    p->initCore(toxSave, settings, isNewProfile, cameraSource);
     p->loadDatabase(password, messageBoxManager);
 
     return p;
@@ -406,13 +406,13 @@ QStringList Profile::getFilesByExt(QString extension, Paths& paths)
 const QStringList Profile::getAllProfileNames(Paths& paths)
 {
     profiles.clear();
-    QStringList toxfiles = getFilesByExt("tox", paths), inifiles = getFilesByExt("ini", paths);
-    for (const QString& toxfile : toxfiles) {
-        if (!inifiles.contains(toxfile)) {
-            Settings::createPersonal(paths, toxfile);
+    QStringList toxFiles = getFilesByExt("tox", paths), iniFiles = getFilesByExt("ini", paths);
+    for (const QString& toxFile : toxFiles) {
+        if (!iniFiles.contains(toxFile)) {
+            Settings::createPersonal(paths, toxFile);
         }
 
-        profiles.append(toxfile);
+        profiles.append(toxFile);
     }
     return profiles;
 }
@@ -785,7 +785,7 @@ History* Profile::getHistory()
 
 /**
  * @brief Removes a cached avatar.
- * @param owner Friend PK whose avater to delete.
+ * @param owner Friend PK whose avatar to delete.
  */
 void Profile::removeAvatar(const ToxPk& owner)
 {

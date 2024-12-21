@@ -45,7 +45,7 @@
 
 /**
  * @class GenericChatForm
- * @brief Parent class for all chatforms. It's provide the minimum required UI
+ * @brief Parent class for all chat forms. It's provide the minimum required UI
  * elements and methods to work with chat messages.
  */
 

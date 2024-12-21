@@ -80,20 +80,20 @@ which may lead to problems with video calls.</source>
         <translation>오디오 음질</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>높음(64kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>높음(64kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>중간(32kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>중간(32kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>낮음 (16kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>낮음 (16kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>아주 낮음 (8kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>아주 낮음 (8kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

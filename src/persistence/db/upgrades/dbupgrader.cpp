@@ -447,8 +447,8 @@ bool DbUpgrader::dbSchema3to4(RawDatabase& db)
 
 bool DbUpgrader::dbSchema4to5(RawDatabase& db)
 {
-    // add foreign key contrains to database tables. sqlite doesn't support advanced alter table
-    // commands, so instead we need to copy data to new tables with the foreign key contraints:
+    // add foreign key constraints to database tables. sqlite doesn't support advanced alter table
+    // commands, so instead we need to copy data to new tables with the foreign key constraints:
     // http://www.sqlitetutorial.net/sqlite-alter-table/
     QVector<RawDatabase::Query> upgradeQueries;
     addForeignKeyToAlias(upgradeQueries);
@@ -570,8 +570,8 @@ bool DbUpgrader::dbSchema6to7(RawDatabase& db)
 bool DbUpgrader::dbSchema7to8(RawDatabase& db)
 {
     // Dummy upgrade. This upgrade does not change the schema, however on
-    // version 7 if qtox saw a system message it would assert and crash. This
-    // upgrade ensures that old versions of qtox do not try to load the new
+    // version 7 if qTox saw a system message it would assert and crash. This
+    // upgrade ensures that old versions of qTox do not try to load the new
     // database
 
     QVector<RawDatabase::Query> upgradeQueries;
@@ -583,7 +583,7 @@ bool DbUpgrader::dbSchema7to8(RawDatabase& db)
 bool DbUpgrader::dbSchema8to9(RawDatabase& db)
 {
     // not technically a schema update, but still a database version update based on healing invalid user data
-    // we added ourself in the peers table by ToxId isntead of ToxPk. Heal this over-length entry.
+    // we added ourself in the peers table by ToxId instead of ToxPk. Heal this over-length entry.
     QVector<RawDatabase::Query> upgradeQueries;
     const auto badPeers = getInvalidPeers(db);
     mergeDuplicatePeers(upgradeQueries, db, badPeers);

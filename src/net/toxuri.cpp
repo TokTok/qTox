@@ -27,12 +27,12 @@
  */
 bool ToxURIDialog::handleToxURI(const QString& toxURI)
 {
-    QString toxaddr = toxURI.mid(4);
+    const QString toxAddress = toxURI.mid(4);
 
-    ToxId toxId(toxaddr);
+    ToxId toxId(toxAddress);
     QString error = QString();
     if (!toxId.isValid()) {
-        error = QMessageBox::tr("%1 is not a valid Tox address.").arg(toxaddr);
+        error = QMessageBox::tr("%1 is not a valid Tox address.").arg(toxAddress);
     } else if (toxId == core.getSelfId()) {
         error = QMessageBox::tr("You can't add yourself as a friend!",
                                 "When trying to add your own Tox ID as friend");

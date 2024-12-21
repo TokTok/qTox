@@ -38,7 +38,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
     connect(ui->buttonBox, &QDialogButtonBox::accepted, this, &AboutFriendForm::onAcceptedClicked);
     connect(ui->autoacceptfile, &QCheckBox::clicked, this, &AboutFriendForm::onAutoAcceptDirClicked);
     connect(ui->autoacceptcall, &QComboBox::activated, this, &AboutFriendForm::onAutoAcceptCallClicked);
-    connect(ui->autoconferenceinvite, &QCheckBox::clicked, this,
+    connect(ui->autoConferenceInvite, &QCheckBox::clicked, this,
             &AboutFriendForm::onAutoConferenceInvite);
     connect(ui->selectSaveDir, &QPushButton::clicked, this, &AboutFriendForm::onSelectDirClicked);
     connect(ui->removeHistory, &QPushButton::clicked, this, &AboutFriendForm::onRemoveHistoryClicked);
@@ -55,7 +55,7 @@ AboutFriendForm::AboutFriendForm(std::unique_ptr<IAboutFriend> about_, Settings&
     ui->autoacceptcall->setCurrentIndex(index);
 
     ui->selectSaveDir->setEnabled(ui->autoacceptfile->isChecked());
-    ui->autoconferenceinvite->setChecked(about->getAutoConferenceInvite());
+    ui->autoConferenceInvite->setChecked(about->getAutoConferenceInvite());
 
     if (ui->autoacceptfile->isChecked()) {
         ui->selectSaveDir->setText(about->getAutoAcceptDir());
@@ -110,11 +110,11 @@ void AboutFriendForm::onAutoAcceptCallClicked()
 }
 
 /**
- * @brief Sets the AutoConferenceinvite status and saves the settings.
+ * @brief Sets the AutoConferenceInvite status and saves the settings.
  */
 void AboutFriendForm::onAutoConferenceInvite()
 {
-    about->setAutoConferenceInvite(ui->autoconferenceinvite->isChecked());
+    about->setAutoConferenceInvite(ui->autoConferenceInvite->isChecked());
 }
 
 void AboutFriendForm::onSelectDirClicked()
@@ -151,7 +151,7 @@ void AboutFriendForm::onRemoveHistoryClicked()
         return;
     }
 
-    emit histroyRemoved();
+    emit historyRemoved();
 
     ui->removeHistory->setEnabled(false); // For know clearly to has removed the history
 }

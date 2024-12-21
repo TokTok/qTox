@@ -85,7 +85,7 @@ unsigned getVUint32Size(QByteArray data)
 QByteArray vintToData(int num)
 {
     QByteArray data(sizeof(int), 0);
-    // Write the size in a Uint of variable lenght (8-32 bits)
+    // Write the size in a Uint of variable length (8-32 bits)
     int i = 0;
     while (num >= 0x80) {
         data[i] = static_cast<char>(num | 0x80);
@@ -100,7 +100,7 @@ QByteArray vintToData(int num)
 QByteArray vuintToData(size_t num)
 {
     QByteArray data(sizeof(size_t), 0);
-    // Write the size in a Uint of variable lenght (8-32 bits)
+    // Write the size in a Uint of variable length (8-32 bits)
     int i = 0;
     while (num >= 0x80) {
         data[i] = static_cast<char>(num | 0x80);

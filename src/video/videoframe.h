@@ -86,7 +86,7 @@ private:
     public:
         FrameBufferKey(const int width, const int height, const int pixFmt, const bool lineAligned);
 
-        // Explictly state default constructor/destructor
+        // Explicitly state default constructor/destructor
 
         FrameBufferKey(const FrameBufferKey&) = default;
         FrameBufferKey(FrameBufferKey&&) = default;

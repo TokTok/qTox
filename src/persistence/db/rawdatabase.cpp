@@ -175,7 +175,7 @@ bool RawDatabase::openEncryptedDatabaseAtLatestSupportedVersion(const QString& h
 {
     // old qTox database are saved with SQLCipher 3.x defaults. For a period after 1.16.3 but
     // before 1.17.0, databases could be partially upgraded to SQLCipher 4.0 defaults, since
-    // SQLCipher 3.x isn't capable of setitng all the same params. If SQLCipher 4.x happened to be
+    // SQLCipher 3.x isn't capable of setting all the same params. If SQLCipher 4.x happened to be
     // used, they would have been fully upgraded to 4.0 default params. We need to support all three
     // of these cases, so also upgrade to the latest possible params while we're here
     if (!setKey(hexKey)) {
@@ -632,7 +632,7 @@ bool RawDatabase::rename(const QString& newPath)
 
 /**
  * @brief Deletes the on disk database file after closing it.
- * @note Will process all transactions before deletings.
+ * @note Will process all transactions before deletions.
  * @return True if success, false otherwise.
  */
 bool RawDatabase::remove()
@@ -705,7 +705,7 @@ QString RawDatabase::deriveKey(const QString& password, const QByteArray& salt)
     }
 
     if (salt.length() != TOX_PASS_SALT_LENGTH) {
-        qWarning() << "Salt length doesn't match toxencryptsave expections";
+        qWarning() << "Salt length doesn't match toxencryptsave expectations";
         return {};
     }
 
@@ -905,7 +905,7 @@ QVariant RawDatabase::extractData(sqlite3_stmt* stmt, int col)
 }
 
 /**
- * @brief Use for create function in db for search data use regular experessions without case sensitive
+ * @brief Use for create function in db for search data use regular expressions without case sensitive
  * @param ctx ctx the context in which an SQL function executes
  * @param argc number of arguments
  * @param argv arguments
@@ -917,7 +917,7 @@ void RawDatabase::regexpInsensitive(sqlite3_context* ctx, int argc, sqlite3_valu
 }
 
 /**
- * @brief Use for create function in db for search data use regular experessions without case sensitive
+ * @brief Use for create function in db for search data use regular expressions without case sensitive
  * @param ctx the context in which an SQL function executes
  * @param argc number of arguments
  * @param argv arguments

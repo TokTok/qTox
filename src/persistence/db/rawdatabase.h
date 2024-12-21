@@ -96,7 +96,7 @@ public:
         // keep these sorted in upgrade order
         p3_0, // SQLCipher 3.0 default encryption params
               // SQLCipher 4.0 default params where SQLCipher 3.0 supports them, but 3.0 params
-              // where not possible. We accidentally got to this state when attemption to update all
+              // where not possible. We accidentally got to this state when attempting to update all
               // databases to 4.0 defaults even when using SQLCipher 3.x, but might as well keep
               // using these for people with SQLCipher 3.x.
         halfUpgradedTo4,

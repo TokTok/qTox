@@ -263,7 +263,7 @@ void IPC::setProfileId(uint32_t profileId_)
 
 /**
  * @brief Only called when global memory IS LOCKED.
- * @return nullptr if no evnts present, IPC event otherwise
+ * @return nullptr if no events present, IPC event otherwise
  */
 IPC::IPCEvent* IPC::fetchEvent()
 {

@@ -369,7 +369,7 @@ void SessionChatLog::insertSystemMessageAtIdx(ChatLogIdx idx, SystemMessage mess
 }
 
 /**
- * @brief Inserts message data into the chatlog buffer
+ * @brief Inserts message data into the chat log buffer
  * @note Owner of SessionChatLog is in charge of attaching this to the appropriate IMessageDispatcher
  */
 void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& message)
@@ -385,7 +385,7 @@ void SessionChatLog::onMessageReceived(const ToxPk& sender, const Message& messa
 }
 
 /**
- * @brief Inserts message data into the chatlog buffer
+ * @brief Inserts message data into the chat log buffer
  * @note Owner of SessionChatLog is in charge of attaching this to the appropriate IMessageDispatcher
  */
 void SessionChatLog::onMessageSent(DispatchedMessageId id, const Message& message)
@@ -455,7 +455,7 @@ void SessionChatLog::onMessageBroken(DispatchedMessageId id, BrokenMessageReason
 }
 
 /**
- * @brief Updates file state in the chatlog
+ * @brief Updates file state in the chat log
  * @note The files need to be pre-filtered for the current chat since we do no validation
  * @note This should be attached to any CoreFile signal that fits the signature
  */

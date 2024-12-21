@@ -44,15 +44,15 @@ SetPasswordDialog::~SetPasswordDialog()
 
 void SetPasswordDialog::onPasswordEdit()
 {
-    QString pswd = ui->passwordlineEdit->text();
+    QString password = ui->passwordlineEdit->text();
 
-    if (pswd.isEmpty()) {
+    if (password.isEmpty()) {
         ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
         ui->body->setText(body);
-    } else if (pswd.length() < 6) {
+    } else if (password.length() < 6) {
         ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
         ui->body->setText(body + tr("The password is too short."));
-    } else if (pswd != ui->repasswordlineEdit->text()) {
+    } else if (password != ui->repasswordlineEdit->text()) {
         ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(false);
         ui->body->setText(body + tr("The password doesn't match."));
     } else {
@@ -60,7 +60,7 @@ void SetPasswordDialog::onPasswordEdit()
         ui->body->setText(body);
     }
 
-    ui->passStrengthMeter->setValue(getPasswordStrength(pswd));
+    ui->passStrengthMeter->setValue(getPasswordStrength(password));
 }
 
 int SetPasswordDialog::getPasswordStrength(QString pass)

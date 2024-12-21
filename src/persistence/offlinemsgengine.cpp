@@ -30,10 +30,10 @@ void OfflineMsgEngine::onReceiptReceived(ReceiptNum receipt)
  * @brief Add a message which has been saved to history, but not sent yet to the peer.
  *
  * OfflineMsgEngine will send this message once the friend becomes online again, then track its
- * receipt, updating history and chatlog once received.
+ * receipt, updating history and chat log once received.
  *
  * @param[in] messageID   database RowId of the message, used to eventually mark messages as received in history
- * @param[in] msg         chat message line in the chatlog, used to eventually set the message's receieved timestamp
+ * @param[in] msg         chat message line in the chat log, used to eventually set the message's received timestamp
  */
 void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn completionCallback)
 {
@@ -46,11 +46,11 @@ void OfflineMsgEngine::addUnsentMessage(const Message& message, CompletionFn com
  * @brief Add a message which has been saved to history, and which has been sent to the peer.
  *
  * OfflineMsgEngine will track this message's receipt. If the friend goes offline then comes back before the receipt
- * is received, OfflineMsgEngine will also resend the message, updating history and chatlog once received.
+ * is received, OfflineMsgEngine will also resend the message, updating history and chat log once received.
  *
  * @param[in] receipt     the toxcore message ID, corresponding to expected receipt ID
  * @param[in] messageID   database RowId of the message, used to eventually mark messages as received in history
- * @param[in] msg         chat message line in the chatlog, used to eventually set the message's receieved timestamp
+ * @param[in] msg         chat message line in the chat log, used to eventually set the message's received timestamp
  */
 void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& message,
                                           CompletionFn completionCallback)

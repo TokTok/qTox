@@ -28,7 +28,7 @@ ProfileImporter::ProfileImporter(Paths& paths_, QWidget* parent)
 
 /**
  * @brief Show a file dialog. Selected file will be imported as Tox profile.
- * @return True, if the import was succesful. False otherwise.
+ * @return True, if the import was successful. False otherwise.
  */
 bool ProfileImporter::importProfile()
 {
@@ -66,7 +66,7 @@ bool ProfileImporter::askQuestion(QString title, QString message)
 /**
  * @brief Try to import Tox profile.
  * @param path Path to Tox profile.
- * @return True, if the import was succesful. False otherwise.
+ * @return True, if the import was successful. False otherwise.
  */
 bool ProfileImporter::importProfile(const QString& path)
 {
@@ -88,7 +88,7 @@ bool ProfileImporter::importProfile(const QString& path)
                                 "Tox save file; ignoring.",
                                 "popup text"),
                              QMessageBox::Ok);
-        return false; // ingore importing non-tox file
+        return false; // ignore importing non-tox file
     }
 
     QString settingsPath = paths.getSettingsDirPath();
@@ -103,7 +103,7 @@ bool ProfileImporter::importProfile(const QString& path)
         bool erase = askQuestion(title, message);
 
         if (!erase)
-            return false; // import canelled
+            return false; // import cancelled
 
         QFile(profilePath).remove();
     }
@@ -114,5 +114,5 @@ bool ProfileImporter::importProfile(const QString& path)
     QMessageBox::information(this, tr("Profile imported"),
                              tr("%1.tox was successfully imported").arg(profile), QMessageBox::Ok);
 
-    return true; // import successfull
+    return true; // import successful
 }

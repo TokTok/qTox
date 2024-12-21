@@ -58,7 +58,7 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Friend_Send_Message error, const char*
         return false;
 
     case TOX_ERR_FRIEND_SEND_MESSAGE_TOO_LONG:
-        qCriticalFrom(file, line, func) << "Attemped to send message that's too long";
+        qCriticalFrom(file, line, func) << "Attempted to send message that's too long";
         return false;
 
     case TOX_ERR_FRIEND_SEND_MESSAGE_EMPTY:

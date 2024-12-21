@@ -154,7 +154,7 @@ void ChatLine::layout(qreal w, QPointF scenePos)
     bbox.setTopLeft(scenePos);
 
     qreal fixedWidth = (content.size() - 1) * columnSpacing;
-    qreal varWidth = 0.0; // used for normalisation
+    qreal varWidth = 0.0; // used for normalization
 
     for (int i = 0; i < format.size(); ++i) {
         if (format[i].policy == ColumnFormat::FixedSize)

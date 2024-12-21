@@ -20,11 +20,11 @@ Friend* FriendList::addFriend(uint32_t friendId, const ToxPk& friendPk, Settings
     }
 
     QString alias = settings.getFriendAlias(friendPk);
-    Friend* newfriend = new Friend(friendId, friendPk, alias);
-    friendList[friendPk] = newfriend;
+    Friend* newFriend = new Friend(friendId, friendPk, alias);
+    friendList[friendPk] = newFriend;
     id2key[friendId] = friendPk;
 
-    return newfriend;
+    return newFriend;
 }
 
 Friend* FriendList::findFriend(const ToxPk& friendPk)
@@ -54,8 +54,8 @@ void FriendList::removeFriend(const ToxPk& friendPk, Settings& settings, bool fa
 
 void FriendList::clear()
 {
-    for (auto friendptr : friendList)
-        delete friendptr;
+    for (auto friendPtr : friendList)
+        delete friendPtr;
     friendList.clear();
 }
 

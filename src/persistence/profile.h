@@ -99,7 +99,7 @@ private:
     static QStringList getFilesByExt(QString extension, Paths& paths);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
-    void initCore(const QByteArray& toxsave, Settings& s, bool isNewProfile,
+    void initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
                   CameraSource& cameraSource);
 
 private:

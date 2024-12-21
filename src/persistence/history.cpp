@@ -457,7 +457,7 @@ void History::addNewFileMessage(const ChatId& chatId, const QByteArray& fileId,
 
     // What we will do instead is chain callbacks to try to get reasonable behavior.
     // We can call the generateNewMessageQueries() fn to insert a message with an empty
-    // message in it, and get the id with the callbck. Once we have the id we can ammend
+    // message in it, and get the id with the callback. Once we have the id we can amend
     // the data to have our newly inserted file_id as well
 
     ToxFile::FileDirection direction;

@@ -65,7 +65,7 @@ private slots:
 
     // camera
     void on_videoDevCombobox_currentIndexChanged(int index);
-    void on_videoModescomboBox_currentIndexChanged(int index);
+    void on_videoModesComboBox_currentIndexChanged(int index);
 
     void rescanDevices();
     void setVolume(qreal value);

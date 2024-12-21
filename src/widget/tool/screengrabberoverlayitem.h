@@ -23,7 +23,7 @@ protected:
     void paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWidget* widget) final;
 
 private:
-    ScreenshotGrabber* screnshootGrabber;
+    ScreenshotGrabber* screenshotGrabber;
 
     QRect chosenRect;
 };

@@ -16,7 +16,7 @@
 /**
  * Helper class to keep track of what we're currently rendering and in what order
  * Some constraints that may not be obvious
- *   * Rendered views are not always contiguous. When we clear the chatlog
+ *   * Rendered views are not always contiguous. When we clear the chat log
  *   ongoing file transfers are not removed or else we would have no way to stop
  *   them. If history is loaded after this point then we could actually be
  *   inserting elements both before and in the middle of our existing rendered

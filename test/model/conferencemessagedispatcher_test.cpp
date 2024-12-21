@@ -235,7 +235,7 @@ void TestConferenceMessageDispatcher::testSelfReceive()
 }
 
 /**
- * @brief Tests that messages from blacklisted peers do not get propogated from the dispatcher
+ * @brief Tests that messages from blacklisted peers do not get propagated from the dispatcher
  */
 void TestConferenceMessageDispatcher::testBlacklist()
 {

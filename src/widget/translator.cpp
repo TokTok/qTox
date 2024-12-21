@@ -73,8 +73,8 @@ void Translator::translate(const QString& localeName)
 
 /**
  * @brief Register a function to be called when the UI needs to be retranslated.
- * @param f Function, wich will called.
- * @param owner Widget to retanslate.
+ * @param f Function, which will called.
+ * @param owner Widget to retranslate.
  */
 void Translator::registerHandler(const std::function<void()>& f, void* owner)
 {

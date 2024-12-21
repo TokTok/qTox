@@ -264,7 +264,7 @@ NOTE: qtox will not run in the docker container unless your x11 session allows c
 
 <a name="arch-other-deps" />
 
-Please see buildscripts/docker/Dockerfile... for your distribution for an up to date list of commands to set up your build environment
+Please see https://github.com/TokTok/dockerfiles/tree/master/qtox/docker for your distribution for an up to date list of commands to set up your build environment
 
 ### Compile dependencies
 
@@ -277,7 +277,8 @@ Provided that you have all required dependencies installed, you can simply run:
 ```bash
 git clone https://github.com/TokTok/c-toxcore.git toxcore
 cd toxcore
-# Note: See buildscirpts/download/download_toxcore.sh for which version should be checked out
+# Note: See dockerfiles/qtox/download/download_toxcore.sh for which version should be checked out
+# https://github.com/TokTok/dockerfiles
 cmake -B_build -H. -GNinja -DBOOTSTRAP_DAEMON=OFF
 cmake --build _build
 sudo cmake --install _build
@@ -388,10 +389,11 @@ Then install required dependencies available via `brew`.
 brew bundle --file macos/Brewfile
 ```
 
-Then, install [toxcore](https://github.com/toktok/c-toxcore/blob/master/INSTALL.md).
+Then, install [toxcore](https://github.com/TokTok/c-toxcore/blob/master/INSTALL.md).
 
 ```bash
-buildscripts/build_toxcore_linux.sh
+git clone --depth=1 https://github.com/TokTok/dockerfiles
+dockerfiles/qtox/build_toxcore_linux.sh
 ```
 
 Finally, build qTox.

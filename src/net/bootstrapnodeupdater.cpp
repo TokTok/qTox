@@ -190,7 +190,7 @@ QByteArray serialize(QList<DhtServer> nodes)
 
 void createExampleBootstrapNodesFile(const Paths& paths)
 {
-    // deserialize and reserialize instead of just copying to strip out any unnecessary json, making it easier for
+    // deserialize and re-serialize instead of just copying to strip out any unnecessary json, making it easier for
     // users to edit. Overwrite the file on every start to keep it up to date when our internal list updates.
     auto buildInNodes = loadNodesFile(builtinNodesFile);
     auto serializedNodes = serialize(buildInNodes);
@@ -236,7 +236,7 @@ void BootstrapNodeUpdater::requestBootstrapNodes()
 }
 
 /**
- * @brief Loads the list of built in boostrap nodes
+ * @brief Loads the list of built in bootstrap nodes
  * @return List of bootstrap nodes on success, empty list on error
  */
 QList<DhtServer> BootstrapNodeUpdater::loadDefaultBootstrapNodes()

@@ -276,11 +276,11 @@ void FriendWidget::changeAutoAccept(bool enable)
 void FriendWidget::showDetails()
 {
     const auto frnd = chatroom->getFriend();
-    const auto iabout = new AboutFriend(frnd, &settings, profile);
-    std::unique_ptr<IAboutFriend> about = std::unique_ptr<IAboutFriend>(iabout);
+    const auto iAbout = new AboutFriend(frnd, &settings, profile);
+    std::unique_ptr<IAboutFriend> about = std::unique_ptr<IAboutFriend>(iAbout);
     const auto aboutUser =
         new AboutFriendForm(std::move(about), settings, style, messageBoxManager, this);
-    connect(aboutUser, &AboutFriendForm::histroyRemoved, this, &FriendWidget::friendHistoryRemoved);
+    connect(aboutUser, &AboutFriendForm::historyRemoved, this, &FriendWidget::friendHistoryRemoved);
     aboutUser->show();
 }
 

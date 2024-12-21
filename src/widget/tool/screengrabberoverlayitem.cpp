@@ -13,9 +13,8 @@
 #include "screenshotgrabber.h"
 
 ScreenGrabberOverlayItem::ScreenGrabberOverlayItem(ScreenshotGrabber* grabber)
-    : screnshootGrabber(grabber)
+    : screenshotGrabber(grabber)
 {
-
     QBrush overlayBrush(QColor(0x00, 0x00, 0x00, 0x70)); // Translucent black
 
     setCursor(QCursor(Qt::CrossCursor));
@@ -35,7 +34,7 @@ void ScreenGrabberOverlayItem::setChosenRect(QRect rect)
 void ScreenGrabberOverlayItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
 {
     if (event->button() == Qt::LeftButton)
-        screnshootGrabber->beginRectChooser(event);
+        screenshotGrabber->beginRectChooser(event);
 }
 
 void ScreenGrabberOverlayItem::paint(QPainter* painter, const QStyleOptionGraphicsItem* option,

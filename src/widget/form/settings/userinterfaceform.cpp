@@ -63,7 +63,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->useNameColors->setChecked(settings.getEnableConferencesColor());
 
     bodyUI->notify->setChecked(settings.getNotify());
-    // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
+    // Note: UI is boolean inverted from settings to maintain setting file backwards compatibility
     bodyUI->conferenceOnlyNotifyWhenMentioned->setChecked(!settings.getConferenceAlwaysNotify());
     bodyUI->conferenceOnlyNotifyWhenMentioned->setEnabled(settings.getNotify());
     bodyUI->notifySound->setChecked(settings.getNotifySound());
@@ -300,7 +300,7 @@ void UserInterfaceForm::on_showWindow_stateChanged()
 
 void UserInterfaceForm::on_conferenceOnlyNotifyWhenMentioned_stateChanged()
 {
-    // Note: UI is boolean inversed from settings to maintain setting file backwards compatibility
+    // Note: UI is boolean inverted from settings to maintain setting file backwards compatibility
     settings.setConferenceAlwaysNotify(!bodyUI->conferenceOnlyNotifyWhenMentioned->isChecked());
 }
 

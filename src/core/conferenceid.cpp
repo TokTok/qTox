@@ -25,7 +25,7 @@ ConferenceId::ConferenceId()
 
 /**
  * @brief Constructs a ConferenceId from bytes.
- * @param rawId The bytes to construct the ConferenceId from. The lenght must be exactly
+ * @param rawId The bytes to construct the ConferenceId from. The length must be exactly
  *              ConferenceId::size, else the ConferenceId will be empty.
  */
 ConferenceId::ConferenceId(const QByteArray& rawId)

@@ -20,7 +20,7 @@
 #include <cassert>
 
 using ChatLogIdx =
-    NamedType<size_t, struct ChatLogIdxTag, Orderable, UnderlyingAddable, UnitlessDifferencable, Incrementable>;
+    NamedType<size_t, struct ChatLogIdxTag, Orderable, UnderlyingAddable, UnitlessSubtractable, Incrementable>;
 Q_DECLARE_METATYPE(ChatLogIdx)
 
 struct SearchPos

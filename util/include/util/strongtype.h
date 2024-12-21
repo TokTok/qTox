@@ -26,7 +26,7 @@ struct UnderlyingAddable
 };
 
 template <typename T, typename Underlying>
-struct UnitlessDifferencable
+struct UnitlessSubtractable
 {
     T operator-(const Underlying& other) const
     {
@@ -59,7 +59,7 @@ struct Incrementable
 
 
 template <typename T, typename>
-struct EqualityComparible
+struct EqualityComparable
 {
     bool operator==(const T& other) const
     {
@@ -81,7 +81,7 @@ struct Hashable
 };
 
 template <typename T, typename Underlying>
-struct Orderable : EqualityComparible<T, Underlying>
+struct Orderable : EqualityComparable<T, Underlying>
 {
     bool operator<(const T& rhs) const
     {
@@ -104,7 +104,7 @@ struct Orderable : EqualityComparible<T, Underlying>
 
 /**
  * This class facilitates creating a named class which wraps underlying POD,
- * avoiding implict casts and arithmetic of the underlying data.
+ * avoiding implicit casts and arithmetic of the underlying data.
  * Usage: Declare named type with arbitrary tag, then hook up Qt metatype for use
  * in signals/slots. For queued connections, registering the metatype is also
  * required before the type is used.

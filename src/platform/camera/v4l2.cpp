@@ -81,7 +81,7 @@ fail:
     return -1;
 }
 
-QVector<float> getDeviceModeFramerates(int fd, unsigned w, unsigned h, uint32_t pixelFormat)
+QVector<float> getDeviceModeFrameRates(int fd, unsigned w, unsigned h, uint32_t pixelFormat)
 {
     QVector<float> rates;
     v4l2_frmivalenum vfve{};
@@ -147,7 +147,7 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
             }
 
             QVector<float> rates =
-                getDeviceModeFramerates(fd, mode.width, mode.height, vfd.pixelformat);
+                getDeviceModeFrameRates(fd, mode.width, mode.height, vfd.pixelformat);
 
             // insert dummy FPS value to have the mode in the list even if we don't know the FPS
             // this fixes support for some webcams, see #5082

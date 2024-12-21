@@ -101,7 +101,7 @@ public:
 ### Spacing
 
 Spaces are to be added before the opening parenthesis of all control
-statements. No spaces should be present preceeding or trailing in argument
+statements. No spaces should be present preceding or trailing in argument
 lists, template specification, array indexing or between any set of brackets.
 
 Spaces should additionally be present in between all binary, ternary and
@@ -294,9 +294,9 @@ int a = 0;
 int* x;     // Pointer is put next to the type
 int& y = a; // Reference is put next to the type.
 
-int (*z)[1]; // Special case: pointer binded to 'z' due to requirement of being in paratheses.
+int (*z)[1]; // Special case: pointer bound to 'z' due to requirement of being in parentheses.
 
-int* (*a)(int*) = &bar; // Pointer binded to 'a' due to require of being in paratheses, rest of the
+int* (*a)(int*) = &bar; // Pointer bound to 'a' due to require of being in parentheses, rest of the
                         // type maintains pointer being next to the type.
 
 void foo(int* x, int&&); // Forward function declaration pointers and rvalue references bind to type
@@ -448,10 +448,10 @@ source code, available at https://qtox.github.io/doxygen.
 /**
  * @brief I can be briefly described as well!
  *
- * And here goes my longer descrption!
+ * And here goes my longer description!
  *
  * @param x Description for the first parameter
- * @param y Description for the second paramater
+ * @param y Description for the second parameter
  * @return An amazing result
  */
 static int example(int x, int y)
@@ -529,7 +529,7 @@ temporary QString and thus avoids malloc:
 `QLatin1String` is literal type and knows string length at compile time
 (compared to `QString(const char*)` run-time cost with plain C++
 string literal). Also, copying 8-bit latin string requires less memory
-bandwith compared to 16-bit `QStringLiteral` mentioned earlier, and
+bandwidth compared to 16-bit `QStringLiteral` mentioned earlier, and
 copying here is unavoidable (and thus `QStringLiteral` loses it's purpose).
 
 Include `<QStringBuilder>` and use `%` operator for optimized single-pass

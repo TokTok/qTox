@@ -460,7 +460,7 @@ void TestFriendListManager::testApplyFilterSearchString()
     auto manager = createManagerWithItems(
         listBuilder.addOfflineFriends()->addOnlineFriends()->addConferences()->buildUnsorted());
     QVector<std::shared_ptr<IFriendListItem>> resultVec;
-    QString testNameA = "NOITEMSWITHTHISNAME";
+    QString testNameA = "NO_ITEMS_WITH_THIS_NAME";
     QString testNameB = "Test Name B";
     manager->sortByName();
     manager->setFilter(testNameA, false, false, false);

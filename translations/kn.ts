@@ -76,19 +76,19 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>ಹೆಚ್ಚು (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>ಹೆಚ್ಚು (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>ಸಾಮಾನ್ಯ (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>ಸಾಮಾನ್ಯ (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>ಕಡಿಮೆ (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>ಕಡಿಮೆ (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
+        <source>Very low (8 kBps)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

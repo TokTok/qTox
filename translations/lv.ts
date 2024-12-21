@@ -80,20 +80,20 @@ kas var radīt video zvanu problēmas.</translation>
         <translation>Audio kvalitāte</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>Augsts (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>Augsts (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Vidējs (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Vidējs (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>Zems (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>Zems (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Ļoti zems (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Ļoti zems (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

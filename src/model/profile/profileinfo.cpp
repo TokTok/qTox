@@ -74,9 +74,9 @@ bool tryRemoveFile(const QString& filepath)
 
 /**
  * @class ProfileInfo
- * @brief Implement interface, that provides invormation about self profile.
+ * @brief Implement interface, that provides information about self profile.
  * Also, provide methods to work with profile file.
- * @note Should be used only when QAppliaction constructed.
+ * @note Should be used only when QApplication constructed.
  */
 
 /**
@@ -347,7 +347,7 @@ IProfileInfo::SetAvatarResult ProfileInfo::byteArrayToPng(QByteArray inData, QBy
  */
 IProfileInfo::SetAvatarResult ProfileInfo::scalePngToAvatar(QByteArray& avatar)
 {
-    // We do a first rescale to 256x256 in case the image was huge, then keep tryng from here
+    // We do a first rescale to 256x256 in case the image was huge, then keep trying from here
     constexpr int scaleSizes[] = {256, 128, 64, 32};
 
     for (auto scaleSize : scaleSizes) {

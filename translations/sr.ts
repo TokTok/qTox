@@ -80,19 +80,19 @@ which may lead to problems with video calls.</source>
         <translation>Квалитет звука</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
+        <source>High (64 kBps)</source>
         <translation>висок (64 kb/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
+        <source>Medium (32 kBps)</source>
         <translation>средњи (32 kb/s)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
+        <source>Low (16 kBps)</source>
         <translation>низак (16 kb/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
+        <source>Very low (8 kBps)</source>
         <translation>врло низак (8 kb/s)</translation>
     </message>
     <message>

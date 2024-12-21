@@ -496,7 +496,7 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
         break;
     }
 
-    // Ignore Online because it will be emited from onUserStatusChanged
+    // Ignore Online because it will be emitted from onUserStatusChanged
     bool isOffline = friendStatus == Status::Status::Offline;
     if (isOffline) {
         emit core->friendStatusChanged(friendId, friendStatus);
@@ -1035,7 +1035,7 @@ void Core::checkLastOnline(uint32_t friendId)
 }
 
 /**
- * @brief Returns the list of friendIds in our friendlist, an empty list on error
+ * @brief Returns the list of friendIds in our friend list, an empty list on error
  */
 QVector<uint32_t> Core::getFriendList() const
 {
@@ -1302,18 +1302,18 @@ ToxPk Core::getFriendPublicKey(uint32_t friendNumber) const
 /**
  * @brief Get the username of a friend
  */
-QString Core::getFriendUsername(uint32_t friendnumber) const
+QString Core::getFriendUsername(uint32_t friendNumber) const
 {
     QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     Tox_Err_Friend_Query error;
-    size_t nameSize = tox_friend_get_name_size(tox.get(), friendnumber, &error);
+    size_t nameSize = tox_friend_get_name_size(tox.get(), friendNumber, &error);
     if (!PARSE_ERR(error) || !nameSize) {
         return QString();
     }
 
     std::vector<uint8_t> nameBuf(nameSize);
-    tox_friend_get_name(tox.get(), friendnumber, nameBuf.data(), &error);
+    tox_friend_get_name(tox.get(), friendNumber, nameBuf.data(), &error);
     if (!PARSE_ERR(error)) {
         return QString();
     }

@@ -40,7 +40,7 @@ protected:
 private:
     // TODO: Merge with 'createButton' from chatformheader.cpp
     QPushButton* createButton(const QString& name, const QString& state);
-    ParameterSearch getAndCheckParametrSearch();
+    ParameterSearch getAndCheckParameterSearch();
     void setStateName(QPushButton* btn, ToolButtonState state);
     void useBeginState();
 

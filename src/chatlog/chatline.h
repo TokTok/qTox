@@ -32,10 +32,10 @@ struct ColumnFormat
     };
 
     ColumnFormat() {}
-    ColumnFormat(qreal s, Policy p, Align halign = Left)
+    ColumnFormat(qreal s, Policy p, Align hAlign_ = Left)
         : size(s)
         , policy(p)
-        , hAlign(halign)
+        , hAlign(hAlign_)
     {
     }
 

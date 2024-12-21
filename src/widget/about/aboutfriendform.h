@@ -37,7 +37,7 @@ private:
     IMessageBoxManager& messageBoxManager;
 
 signals:
-    void histroyRemoved();
+    void historyRemoved();
 
 public slots:
     void reloadTheme();

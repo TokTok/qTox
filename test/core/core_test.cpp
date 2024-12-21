@@ -167,7 +167,7 @@ void TestCore::change_name()
                                  && bobUsernameChangeReceived[0][1].toString() == aliceName,
                              bootstrap_timeout);
 
-    // Setting the username again to the same value shoud NOT trigger any signals
+    // Setting the username again to the same value should NOT trigger any signals
     alice->setUsername(aliceName);
 
     // Need to sleep here, because we're testing that these don't increase based on
@@ -198,7 +198,7 @@ void TestCore::change_status_message()
                                  && bobStatusMsgChangeReceived[0][1].toString() == aliceStatusMsg,
                              connected_message_wait);
 
-    // Setting the status message again to the same value shoud NOT trigger any signals
+    // Setting the status message again to the same value should NOT trigger any signals
     alice->setStatusMessage(aliceStatusMsg);
 
     // Need to sleep here, because we're testing that these don't increase based on

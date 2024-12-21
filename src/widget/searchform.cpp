@@ -137,7 +137,7 @@ QPushButton* SearchForm::createButton(const QString& name, const QString& state)
     return btn;
 }
 
-ParameterSearch SearchForm::getAndCheckParametrSearch()
+ParameterSearch SearchForm::getAndCheckParameterSearch()
 {
     if (isActiveSettings) {
         auto sendParam = searchSettingsForm->getParameterSearch();
@@ -192,7 +192,7 @@ void SearchForm::changedSearchPhrase(const QString& text)
         }
     } else {
         isSearchInBegin = true;
-        emit searchInBegin(searchPhrase, getAndCheckParametrSearch());
+        emit searchInBegin(searchPhrase, getAndCheckParameterSearch());
     }
 }
 
@@ -208,7 +208,7 @@ void SearchForm::clickedUp()
 
     if (startButton->isHidden()) {
         isSearchInBegin = false;
-        emit searchUp(searchPhrase, getAndCheckParametrSearch());
+        emit searchUp(searchPhrase, getAndCheckParameterSearch());
     } else {
         clickedStart();
     }
@@ -226,7 +226,7 @@ void SearchForm::clickedDown()
 
     if (startButton->isHidden()) {
         isSearchInBegin = false;
-        emit searchDown(searchPhrase, getAndCheckParametrSearch());
+        emit searchDown(searchPhrase, getAndCheckParameterSearch());
     } else {
         clickedStart();
     }
@@ -242,7 +242,7 @@ void SearchForm::clickedStart()
 {
     changedState(false);
     isSearchInBegin = true;
-    emit searchInBegin(searchPhrase, getAndCheckParametrSearch());
+    emit searchInBegin(searchPhrase, getAndCheckParameterSearch());
 }
 
 void SearchForm::clickedSearch()

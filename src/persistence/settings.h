@@ -414,9 +414,6 @@ public:
     StyleType getStylePreference() const;
     void setStylePreference(StyleType newValue);
 
-    bool isCurstomEmojiFont() const;
-    void setCurstomEmojiFont(bool value);
-
     int getEmojiFontPointSize() const;
     void setEmojiFontPointSize(int value);
 

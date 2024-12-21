@@ -304,7 +304,7 @@ QList<QStringList> SmileyPack::getEmoticons() const
 }
 
 /**
- * @brief Gets icon accoring to passed emoticon
+ * @brief Gets icon according to passed emoticon
  * @param emoticon Passed emoticon
  * @return Returns cached icon according to passed emoticon, null if no icon mapped to this emoticon
  */

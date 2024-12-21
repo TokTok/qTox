@@ -36,7 +36,7 @@ VideoSurface::VideoSurface(const QPixmap& avatar_, QWidget* parent, bool expandi
     , ratio{1.0f}
     , expanding{expanding_}
 {
-    recalulateBounds();
+    recalculateBounds();
 }
 
 VideoSurface::VideoSurface(const QPixmap& avatar_, VideoSource* source_, QWidget* parent)
@@ -117,7 +117,7 @@ void VideoSurface::unsubscribe()
     unlock();
 
     ratio = 1.0f;
-    recalulateBounds();
+    recalculateBounds();
     emit ratioChanged();
     emit boundaryChanged();
 
@@ -139,7 +139,7 @@ void VideoSurface::onNewFrameAvailable(const std::shared_ptr<VideoFrame>& newFra
 
     if (!qFuzzyCompare(newRatio, ratio) && isVisible()) {
         ratio = newRatio;
-        recalulateBounds();
+        recalculateBounds();
         emit ratioChanged();
         emit boundaryChanged();
     }
@@ -183,7 +183,7 @@ void VideoSurface::paintEvent(QPaintEvent* event)
 void VideoSurface::resizeEvent(QResizeEvent* event)
 {
     QWidget::resizeEvent(event);
-    recalulateBounds();
+    recalculateBounds();
     emit boundaryChanged();
 }
 
@@ -193,7 +193,7 @@ void VideoSurface::showEvent(QShowEvent* e)
     // emit ratioChanged();
 }
 
-void VideoSurface::recalulateBounds()
+void VideoSurface::recalculateBounds()
 {
     if (expanding) {
         boundingRect = contentsRect();

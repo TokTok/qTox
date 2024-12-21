@@ -106,7 +106,7 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
             qWarning() << "Proxy address" << proxyAddr << "is too long";
         } else if (!proxyAddr.isEmpty() && proxyPort > 0) {
             qDebug() << "Using proxy" << proxyAddr << ":" << proxyPort;
-            // protection against changings in Tox_Proxy_Type enum
+            // protection against changes in Tox_Proxy_Type enum
             if (proxyType == ICoreSettings::ProxyType::ptSOCKS5) {
                 tox_options_set_proxy_type(*toxOptions, TOX_PROXY_TYPE_SOCKS5);
             } else if (proxyType == ICoreSettings::ProxyType::ptHTTP) {

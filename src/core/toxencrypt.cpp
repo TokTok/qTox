@@ -107,7 +107,7 @@ QString getSaltError(Tox_Err_Get_Salt error)
 } // namespace
 /**
  * @class ToxEncrypt
- * @brief Encapsulates the toxencrypsave API.
+ * @brief Encapsulates the toxencryptsave API.
  * Since key derivation is work intensive and to avoid storing plaintext
  * passwords in memory, use a ToxEncrypt object and encrypt() or decrypt()
  * when you have to encrypt or decrypt more than once with the same password.

@@ -52,7 +52,7 @@ void TestPosixSignalNotifier::checkIgnoreExtraSignals()
     psn.watchSignal(SIGUSR1);
     QSignalSpy spy(&psn, &PosixSignalNotifier::activated);
 
-    // To avoid kiiling
+    // To avoid killing
     signal(SIGUSR2, sighandler);
     kill(getpid(), SIGUSR2);
 

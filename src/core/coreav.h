@@ -89,8 +89,8 @@ signals:
 private slots:
     static void callCallback(ToxAV* toxAV, uint32_t friendNum, bool audio, bool video, void* self);
     static void stateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t state, void* self);
-    static void bitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t arate, uint32_t vrate,
-                                void* self);
+    static void bitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t audioRate,
+                                uint32_t videoRate, void* self);
     static void audioBitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t rate, void* self);
     static void videoBitrateCallback(ToxAV* toxAV, uint32_t friendNum, uint32_t rate, void* self);
 
@@ -114,7 +114,7 @@ private:
                                    void* self);
     static void videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, uint16_t h,
                                    const uint8_t* y, const uint8_t* u, const uint8_t* v,
-                                   int32_t ystride, int32_t ustride, int32_t vstride, void* self);
+                                   int32_t yStride, int32_t uStride, int32_t vStride, void* self);
 
 private:
     static constexpr uint32_t VIDEO_DEFAULT_BITRATE = 2500;
@@ -123,7 +123,7 @@ private:
     // atomic because potentially accessed by different threads
     std::atomic<IAudioControl*> audio;
     std::unique_ptr<ToxAV, ToxAVDeleter> toxav;
-    std::unique_ptr<QThread> coreavThread;
+    std::unique_ptr<QThread> coreAvThread;
     QTimer* iterateTimer = nullptr;
     using ToxFriendCallPtr = std::unique_ptr<ToxFriendCall>;
     /**

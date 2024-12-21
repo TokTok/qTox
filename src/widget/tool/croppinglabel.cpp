@@ -157,7 +157,7 @@ QString CroppingLabel::fullText()
 void CroppingLabel::minimizeMaximumWidth()
 {
     // This function chooses the smallest possible maximum width.
-    // Text width + padding. Without padding, we'll have elipses.
+    // Text width + padding. Without padding, we'll have ellipses.
     setMaximumWidth(fontMetrics().horizontalAdvance(origText) + fontMetrics().horizontalAdvance("..."));
 }
 

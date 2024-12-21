@@ -38,7 +38,7 @@ ChatLogIdx findFirstMessage(const SessionChatLog& sessionChatLog)
 }
 
 /**
- * @brief Handles presence of aciton prefix in content
+ * @brief Handles presence of action prefix in content
  * @param[in/out] content
  * @return True if was an action
  */
@@ -47,7 +47,7 @@ bool handleActionPrefix(QString& content)
     // Unfortunately due to legacy reasons we have to continue
     // inserting and parsing for ACTION_PREFIX in our messages even
     // though we have the ability to something more intelligent now
-    // that we aren't owned by chatform logic
+    // that we aren't owned by chat form logic
     auto isAction = content.startsWith(ChatForm::ACTION_PREFIX, Qt::CaseInsensitive);
     if (isAction) {
         content.remove(0, ChatForm::ACTION_PREFIX.size());
@@ -213,7 +213,7 @@ void ChatHistory::onFileUpdated(const ToxPk& sender, const ToxFile& file)
             QString username(selfPk == sender ? coreIdHandler.getUsername()
                                               : chat.getDisplayedName(sender));
 
-            // Note: There is some implcit coupling between history and the current
+            // Note: There is some implicit coupling between history and the current
             // chat log. Both rely on generating a new id based on the state of
             // initializing. If this is changed in the session chat log we'll end up
             // with a different order when loading from history
@@ -308,11 +308,11 @@ void ChatHistory::onMessageBroken(DispatchedMessageId id, BrokenMessageReason re
 }
 
 /**
- * @brief Forces the given index and all future indexes to be in the chatlog
+ * @brief Forces the given index and all future indexes to be in the chat log
  * @param[in] idx
  * @note Marked const since this doesn't change _external_ state of the class. We
-     still have all the same items at all the same indexes, we've just stuckem
-     in ram
+     still have all the same items at all the same indexes, we've just put them
+     in RAM.
  */
 void ChatHistory::ensureIdxInSessionChatLog(ChatLogIdx idx) const
 {
@@ -325,8 +325,8 @@ void ChatHistory::ensureIdxInSessionChatLog(ChatLogIdx idx) const
  * are not in the session chat log into the session chat log
  * @param[in] idx
  * @note Marked const since this doesn't change _external_ state of the class. We
-   still have all the same items at all the same indexes, we've just stuckem
-   in ram
+   still have all the same items at all the same indexes, we've just put them
+   in RAM.
  * @note no end idx as we always load from start -> latest. In the future we
  * could have a less contiguous history
  */
@@ -426,7 +426,7 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
         auto isAction = handleActionPrefix(messageContent);
 
         // NOTE: timestamp will be generated in messageDispatcher but we haven't
-        // hooked up our history callback so it will not be shown in our chatlog
+        // hooked up our history callback so it will not be shown in our chat log
         // with the new timestamp. This is intentional as everywhere else we use
         // attempted send time (which is whenever the it was initially inserted
         // into history
@@ -434,7 +434,7 @@ void ChatHistory::dispatchUnsentMessages(IMessageDispatcher& messageDispatcher)
 
         handleDispatchedMessage(dispatchId, message.id);
 
-        // We don't add the messages to the underlying chatlog since
+        // We don't add the messages to the underlying chat log since
         // 1. We don't even know the ChatLogIdx of this message
         // 2. We only want to display the latest N messages on boot by default,
         //    even if there are more than N messages that haven't been sent

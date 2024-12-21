@@ -80,20 +80,20 @@ which may lead to problems with video calls.</source>
         <translation>ئاۋاز سۈپىتى</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>يۇقىرى (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>يۇقىرى (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>ئوتتۇراھال (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>ئوتتۇراھال (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>تۆۋەن (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>تۆۋەن (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>بەك تۆۋەن (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>بەك تۆۋەن (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

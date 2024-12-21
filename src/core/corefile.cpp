@@ -327,7 +327,7 @@ void CoreFile::onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileI
     if (kind == TOX_FILE_KIND_AVATAR) {
         if (!filesize) {
             qDebug("Received empty avatar request %d:%d", friendId, fileId);
-            // Avatars of size 0 means explicitely no avatar
+            // Avatars of size 0 means explicitly no avatar
             Tox_Err_File_Control err;
             tox_file_control(tox, friendId, fileId, TOX_FILE_CONTROL_CANCEL, &err);
             PARSE_ERR(err);

@@ -30,7 +30,7 @@ public:
     void removeFriendWidget(FriendWidget* w, Status::Status s);
     void updateStatus();
 
-    bool hasChatrooms() const;
+    bool hasChatRooms() const;
     bool cycleChats(bool forward);
     bool cycleChats(FriendWidget* activeChatroomWidget, bool forward);
     void search(const QString& searchString, bool updateAll = false, bool hideOnline = false,

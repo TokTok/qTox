@@ -40,7 +40,7 @@ using AvFindInputFormatRet = decltype(av_find_input_format(""));
  * @class CameraDevice
  *
  * Maintains an FFmpeg context for open camera devices,
- * takes care of sharing the context accross users and closing
+ * takes care of sharing the context across users and closing
  * the camera device when not in use. The device can be opened
  * recursively, and must then be closed recursively
  */
@@ -77,7 +77,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
     QMutexLocker<QMutex> lock(&openDeviceLock);
     AVFormatContext* fctx = nullptr;
     CameraDevice* dev = openDevices.value(devName);
-    int aduration;
+    int aDuration;
     std::string devString;
     if (dev) {
         return dev;
@@ -101,9 +101,9 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 
 // Fix avformat_find_stream_info hanging on garbage input
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
-    aduration = fctx->max_analyze_duration2 = 0;
+    aDuration = fctx->max_analyze_duration2 = 0;
 #else
-    aduration = fctx->max_analyze_duration = 0;
+    aDuration = fctx->max_analyze_duration = 0;
 #endif
 
     if (avformat_find_stream_info(fctx, nullptr) < 0) {
@@ -112,9 +112,9 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
     }
 
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
-    fctx->max_analyze_duration2 = aduration;
+    fctx->max_analyze_duration2 = aDuration;
 #else
-    fctx->max_analyze_duration = aduration;
+    fctx->max_analyze_duration = aDuration;
 #endif
 
     dev = new CameraDevice{devName, fctx};
@@ -127,7 +127,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
  * @brief Opens a device.
  *
  * Opens a device, creating a new one if needed
- * If the device is alreay open in another mode, the mode
+ * If the device is already open in another mode, the mode
  * will be ignored and the existing device is used
  * If the mode does not exist, a new device can't be opened.
  *
@@ -331,7 +331,7 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
 }
 
 /**
- * @brief Get device list with desciption
+ * @brief Get device list with description
  * @return A list of device names and descriptions.
  * The names are the first part of the pair and can be passed to open(QString).
  */

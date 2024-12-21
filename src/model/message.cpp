@@ -43,11 +43,11 @@ QStringList splitMessage(const QString& message, uint64_t maxLength)
 } // namespace
 void MessageProcessor::SharedParams::onUserNameSet(const QString& username)
 {
-    QString sanename = username;
-    sanename.remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
+    QString sanitizedName = username;
+    sanitizedName.remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
     nameMention = QRegularExpression("\\b" + QRegularExpression::escape(username) + "\\b",
                                      QRegularExpression::CaseInsensitiveOption);
-    sanitizedNameMention = QRegularExpression("\\b" + QRegularExpression::escape(sanename) + "\\b",
+    sanitizedNameMention = QRegularExpression("\\b" + QRegularExpression::escape(sanitizedName) + "\\b",
                                               QRegularExpression::CaseInsensitiveOption);
 }
 

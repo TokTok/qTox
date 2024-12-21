@@ -43,7 +43,7 @@ void signalHandler(int signum)
     if (::write(g_signalSocketPair[0], &signum, sizeof(signum)) == -1) {
         // We hardly can do anything more useful in signal handler, and
         // any ways it's probably very unexpected error (out of memory?),
-        // since we check socket existance with a flag beforehand.
+        // since we check socket existence with a flag beforehand.
         abort();
     }
 
@@ -55,7 +55,7 @@ void signalHandler(int signum)
 PosixSignalNotifier::~PosixSignalNotifier()
 {
     while (g_signalSocketUsageFlag.test_and_set()) {
-        // spin-loop until we aquire flag (signal handler might be running and have flag in use)
+        // spin-loop until we acquire flag (signal handler might be running and have flag in use)
     }
 
     // do not leak sockets

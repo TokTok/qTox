@@ -22,7 +22,7 @@
  * ...)
  *
  * @var bool ToxFriendCall::videoEnabled
- * @brief True if our user asked for a video call, sending and recieving.
+ * @brief True if our user asked for a video call, sending and receiving.
  *
  * @var bool ToxFriendCall::nullVideoBitrate
  * @brief True if our video bitrate is zero, i.e. if the device is closed.

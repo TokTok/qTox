@@ -33,8 +33,8 @@ QPixmap GenericForm::getFormIcon()
 /**
  * @brief Prevent stealing mouse wheel scroll.
  *
- * Scrolling event won't be transmitted to comboboxes or spinboxes.
- * You can scroll through general settings without accidentially changing
+ * Scrolling event won't be transmitted to comboboxes or spin boxes.
+ * You can scroll through general settings without accidentally changing
  * theme / skin / icons etc.
  * @see GenericForm::eventFilter(QObject *o, QEvent *e) at the bottom of this file for more
  */

@@ -170,7 +170,7 @@ void forEachLineIn(ChatLine::Ptr first, ChatLine::Ptr last, ChatLineStorage& sto
 
 /**
  * @brief Helper function to add an offset ot a ChatLogIdx without going
- * outside the bounds of the associated chatlog
+ * outside the bounds of the associated chat log
  */
 ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 {
@@ -369,7 +369,7 @@ void ChatWidget::mousePressEvent(QMouseEvent* ev)
     }
 
     if (lastClickButton == ev->button()) {
-        // Counts only single clicks and first click of doule click
+        // Counts only single clicks and first click of double click
         clickCount++;
     } else {
         clickCount = 1; // restarting counter
@@ -903,7 +903,7 @@ void ChatWidget::checkVisibility()
     const ChatLine::Ptr lastLineBeforeVisible =
         lowerBound == chatLineStorage->begin() ? ChatLine::Ptr() : *std::prev(lowerBound);
 
-    // set visibilty
+    // set visibility
     QList<ChatLine::Ptr> newVisibleLines;
     for (auto itr = lowerBound; itr != upperBound; ++itr) {
         newVisibleLines.append(*itr);
@@ -981,7 +981,7 @@ void ChatWidget::updateTypingNotification()
 
 void ChatWidget::updateBusyNotification()
 {
-    // repoisition the busy notification (centered)
+    // reposition the busy notification (centered)
     busyNotification->layout(useableWidth(), getVisibleRect().topLeft()
                                                  + QPointF(0, getVisibleRect().height() / 2.0));
 }
@@ -1295,8 +1295,8 @@ void ChatWidget::showEvent(QShowEvent* event)
 void ChatWidget::hideEvent(QHideEvent* event)
 {
     std::ignore = event;
-    // Purge accumulated lines from the chatlog. We do not purge messages while
-    // the chatlog is open because it causes flickers. When a user leaves the
+    // Purge accumulated lines from the chat log. We do not purge messages while
+    // the chat log is open because it causes flickers. When a user leaves the
     // chat we take the opportunity to remove old messages. If a user only has
     // one friend this could end up accumulating chat logs until they restart
     // qTox, but that isn't a regression from previously released behavior.
@@ -1522,7 +1522,7 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
         }
     });
 
-    // If the chatlog is empty it's likely the user has just cleared. In this
+    // If the chat log is empty it's likely the user has just cleared. In this
     // case it makes more sense to present the jump as if we're coming from the
     // bottom
     if (chatLineStorage->hasIndexedMessage() && idx > chatLineStorage->lastIdx()) {

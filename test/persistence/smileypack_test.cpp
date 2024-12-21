@@ -44,7 +44,7 @@ private:
 };
 
 /**
- * @brief Test that single-character emojis (non-ascii) are correctly smilified
+ * @brief Test that single-character emojis (non-ascii) are correctly smileyfied
  */
 void TestSmileyPack::testSmilifySingleCharEmoji()
 {
@@ -58,7 +58,7 @@ void TestSmileyPack::testSmilifySingleCharEmoji()
 }
 
 /**
- * @brief Test that multi-character emojis (non-ascii) are correctly smilified
+ * @brief Test that multi-character emojis (non-ascii) are correctly smileyfied
  *  and not incorrectly matched against single-char counterparts
  */
 void TestSmileyPack::testSmilifyMultiCharEmoji()
@@ -79,7 +79,7 @@ void TestSmileyPack::testSmilifyMultiCharEmoji()
 
 
 /**
- * @brief Test that single character emojis (non-ascii) are correctly smilified
+ * @brief Test that single character emojis (non-ascii) are correctly smileyfied
  *  and not when surrounded by non-punctuation and non-whitespace chars
  */
 void TestSmileyPack::testSmilifyAsciiEmoticon()

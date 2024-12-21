@@ -62,7 +62,7 @@ private:
 };
 
 /**
- * @brief Test initialiation, resets the chatlog
+ * @brief Test initialization, resets the chat log
  */
 void TestSessionChatLog::init()
 {
@@ -73,7 +73,7 @@ void TestSessionChatLog::init()
 }
 
 /**
- * @brief Quick sanity test that the chatlog is working as expected. Tests basic insertion, retrieval, and searching of messages
+ * @brief Quick sanity test that the chat log is working as expected. Tests basic insertion, retrieval, and searching of messages
  */
 void TestSessionChatLog::testSanity()
 {

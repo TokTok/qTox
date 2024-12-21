@@ -161,7 +161,7 @@ const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& 
 {
     int width;
     int height;
-    int rowstride;
+    int rowStride;
     bool hasAlpha;
     int bitsPerSample;
     int channels;
@@ -169,7 +169,7 @@ const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& 
     argument.beginStructure();
     argument >> width;
     argument >> height;
-    argument >> rowstride;
+    argument >> rowStride;
     argument >> hasAlpha;
     argument >> bitsPerSample;
     argument >> channels;
@@ -179,7 +179,7 @@ const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& 
         reinterpret_cast<const uchar*>(data.constData()),
         width,
         height,
-        rowstride,
+        rowStride,
         channels == 4 ? QImage::Format_RGBA8888 : QImage::Format_RGB888,
     }};
     return argument;

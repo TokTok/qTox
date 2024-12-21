@@ -147,9 +147,9 @@ void AdvancedForm::on_btnCopyDebug_clicked()
 
 void AdvancedForm::on_resetButton_clicked()
 {
-    const QString titile = tr("Reset settings");
+    const QString title = tr("Reset settings");
     bool result =
-        messageBoxManager.askQuestion(titile,
+        messageBoxManager.askQuestion(title,
                                       tr("All settings will be reset to default. Are you sure?"),
                                       tr("Yes"), tr("No"));
 
@@ -157,7 +157,7 @@ void AdvancedForm::on_resetButton_clicked()
         return;
 
     settings.resetToDefault();
-    messageBoxManager.showInfo(titile, "Changes will take effect after restart");
+    messageBoxManager.showInfo(title, "Changes will take effect after restart");
 }
 
 void AdvancedForm::on_cbEnableDebug_stateChanged()

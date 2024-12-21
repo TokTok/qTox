@@ -93,7 +93,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
 
         assert(displayNames.size() > 0);
 
-        // Lexiographically sort all display names to ensure consistent formatting
+        // Lexicographically sort all display names to ensure consistent formatting
         QCollator collator;
         std::sort(displayNames.begin(), displayNames.end(),
                   [&](const QString& a, const QString& b) { return collator.compare(a, b) < 1; });

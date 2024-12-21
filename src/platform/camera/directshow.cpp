@@ -177,7 +177,7 @@ QVector<VideoMode> DirectShow::getDeviceModes(QString devName)
     if (!devFilter)
         return modes;
 
-    // The outter loop tries to find a valid output pin
+    // The outer loop tries to find a valid output pin
     GUID category;
     DWORD r2;
     IEnumPins* pins = nullptr;

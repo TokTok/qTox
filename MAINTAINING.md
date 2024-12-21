@@ -64,7 +64,7 @@ git config --global alias.logs 'log --show-signature'
 
   You don't have to use it, but then you're running into risk of breaking
   CI build of master & other PRs, since it verifies all commit messages,
-  indlucing merge messages.
+  including merge messages.
 
   Risk, that can be avoided when one doesn't type manually merge message :wink:
 
@@ -82,7 +82,7 @@ git config --global alias.logs 'log --show-signature'
 - if a PR requires changes but there has been no activity from the PR submitter
   for more than 2 months, close the PR.
 
-# Continous Integration
+# Continuous Integration
 
 All CI is done through GitHub actions. Nightly builds are published to
 qTox/qTox releases.
@@ -142,12 +142,12 @@ Use `D-hard` if you think that:
 
 - The issue is described only vaguely
 - The exact way to reproduce the issue is not known
-- The issue happens only on a specifc OS
+- The issue happens only on a specific OS
 - The issue is not only caused by code from qTox
 
 ### Determining initial priority
 
-After assesing the user impact and the difficulty to fix the issue you look up
+After assessing the user impact and the difficulty to fix the issue you look up
 the initial priority for the issue in the following table:
 
 |          | `U-high`   | `U-low`    |
@@ -155,7 +155,7 @@ the initial priority for the issue in the following table:
 | `E-easy` | `P-high`   | `P-medium` |
 | `E-hard` | `P-medium` | `P-low`    |
 
-Possible security issues should be tagged with `P-high` initally. If they are
+Possible security issues should be tagged with `P-high` initially. If they are
 confirmed security issues, the tag should be changed to `P-very-high`, else
 apply the normal rating process.
 
@@ -163,8 +163,8 @@ apply the normal rating process.
 
 Weblate provides an easy way for people to translate qTox.
 
-New translable strings need to be generated into a form Weblate can consume
-using `./tools/update-translation-files.sh ALL` and commiting the result. This
+New translatable strings need to be generated into a form Weblate can consume
+using `./tools/update-translation-files.sh ALL` and committing the result. This
 should be done as soon as strings are available since weblate follows our
 branch, so is checked for in CI.
 
@@ -209,7 +209,8 @@ If a new translation language has been added, update the following files:
 - Update version number for windows/macos packages using the
   [`./tools/update-versions.sh`] script, e.g. `./tools/update-versions.sh
 1.11.0`
-- Update toxcore version number to the latest tag in [`./buildscripts/download/download_toxcore.sh]
+- Update toxcore version number to the latest tag in
+  [`dockerfiles/qtox/download/download_toxcore.sh`](https://github.com/TokTok/dockerfiles/blob/master/qtox/download/download_toxcore.sh)
 - Pull in latest translations from Weblate.
 - Update the bootstrap nodelist at `./res/nodes.json` from https://nodes.tox.chat/json.
   This can be done by running [`./tools/update-nodes.sh`]

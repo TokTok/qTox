@@ -174,7 +174,7 @@ void OpenAL::reinitInput(const QString& inDevDesc)
 
     locker.unlock();
     // this must happen outside `audioLock`, to avoid a deadlock when
-    // a slot on AlSource::invalidate tries to create a new source immedeately.
+    // a slot on AlSource::invalidate tries to create a new source immediately.
     for (auto& source : bakSources) {
         source->kill();
     }
@@ -193,7 +193,7 @@ bool OpenAL::reinitOutput(const QString& outDevDesc)
 
     locker.unlock();
     // this must happen outside `audioLock`, to avoid a deadlock when
-    // a slot on AlSink::invalidate tries to create a new source immedeately.
+    // a slot on AlSink::invalidate tries to create a new source immediately.
     for (auto& sink : bakSinks) {
         sink->kill();
     }

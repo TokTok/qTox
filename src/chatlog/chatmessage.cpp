@@ -211,9 +211,9 @@ ChatMessage::Ptr ChatMessage::createTypingNotification(DocumentCache& documentCa
 }
 
 /**
- * @brief Create message placeholder while chatform restructures text
+ * @brief Create message placeholder while chat form restructures text
  *
- * It can take a while for chatform to resize large amounts of text, thus
+ * It can take a while for chat form to resize large amounts of text, thus
  * a message placeholder is needed to inform users about it.
  *
  * @return created message

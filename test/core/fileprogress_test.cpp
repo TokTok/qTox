@@ -78,7 +78,7 @@ void TestFileProgress::testSpeedReset()
     QCOMPARE(progress.getBytesSent(), uint64_t(20));
     QCOMPARE(progress.getProgress(), 0.2);
 
-    // Ensure that pushing new samples after reset works correectly
+    // Ensure that pushing new samples after reset works correctly
     nextSampleTime = nextSampleTime.addMSecs(1000);
     QVERIFY(progress.addSample(30, nextSampleTime));
 

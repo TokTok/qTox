@@ -171,7 +171,7 @@ public slots:
     void onFriendDisplayedNameChanged(const QString& displayed);
     void onFriendUsernameChanged(uint32_t friendId, const QString& username);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
-    void onFriendMessageReceived(uint32_t friendnumber, const QString& message, bool isAction);
+    void onFriendMessageReceived(uint32_t friendNumber, const QString& message, bool isAction);
     void onReceiptReceived(uint32_t friendId, ReceiptNum receipt);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
@@ -190,7 +190,7 @@ public slots:
     void titleChangedByUser(const QString& title);
     void onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk);
     void onConferenceSendFailed(uint32_t conferencenumber);
-    void onFriendTypingChanged(uint32_t friendnumber, bool isTyping);
+    void onFriendTypingChanged(uint32_t friendNumber, bool isTyping);
     void nextChat();
     void previousChat();
     void onFriendDialogShown(const Friend* f);
@@ -342,7 +342,7 @@ private:
     Settings& settings;
 
     QMap<ToxPk, FriendWidget*> friendWidgets;
-    // Shared pointer because qmap copies stuff all over the place
+    // Shared pointer because QMap copies stuff all over the place
     QMap<ToxPk, std::shared_ptr<FriendMessageDispatcher>> friendMessageDispatchers;
     // Stop gap method of linking our friend messages back to a conference id.
     // Eventual goal is to have a notification manager that works on
@@ -350,7 +350,7 @@ private:
     // yet
     QMap<ToxPk, QMetaObject::Connection> friendAlertConnections;
     QMap<ToxPk, std::shared_ptr<ChatHistory>> friendChatLogs;
-    QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatrooms;
+    QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatRooms;
     QMap<ToxPk, ChatForm*> chatForms;
 
     QMap<ConferenceId, ConferenceWidget*> conferenceWidgets;

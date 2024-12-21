@@ -117,7 +117,7 @@ public:
 
 protected:
     // Public default audio settings
-    // Samplerate for Tox calls and sounds
+    // Sample rate for Tox calls and sounds
     static constexpr uint32_t AUDIO_SAMPLE_RATE = 48000;
     static constexpr uint32_t AUDIO_FRAME_DURATION = 20;
     static constexpr uint32_t AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL =

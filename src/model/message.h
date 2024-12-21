@@ -20,7 +20,7 @@ enum class MessageMetadataType
     selfMention,
 };
 
-// May need to be extended in the future to have a more varianty type (imagine
+// May need to be extended in the future to have a more variant-like type (imagine
 // if we wanted to add message replies and shoved a reply id in here)
 struct MessageMetadata
 {

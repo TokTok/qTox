@@ -26,8 +26,8 @@ public:
     int friendOnlineCount() const;
     int friendTotalCount() const;
 
-    bool hasChatrooms() const;
-    void searchChatrooms(const QString& searchString, bool hideOnline = false,
+    bool hasChatRooms() const;
+    void searchChatRooms(const QString& searchString, bool hideOnline = false,
                          bool hideOffline = false);
 
     QLayout* getLayoutOnline() const;

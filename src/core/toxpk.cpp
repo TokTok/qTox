@@ -26,7 +26,7 @@ ToxPk::ToxPk()
 
 /**
  * @brief Constructs a ToxPk from bytes.
- * @param rawId The bytes to construct the ToxPk from. The lenght must be exactly
+ * @param rawId The bytes to construct the ToxPk from. The length must be exactly
  *              ToxPk::size, else the ToxPk will be empty.
  */
 ToxPk::ToxPk(const QByteArray& rawId)

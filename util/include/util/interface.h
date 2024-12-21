@@ -16,7 +16,7 @@
  * in class, it should be inherit QObject. To avoid this issue, interface can
  * provide some pure virtual methods, which allow to connect to some signal.
  *
- * This file provides macros to make signals declaring easly. With this macros
+ * This file provides macros to make signals declaring easy. With these macros,
  * signal-like method will be declared and implemented in one line each.
  *
  * @example

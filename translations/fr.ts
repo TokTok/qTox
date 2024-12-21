@@ -80,20 +80,20 @@ ce qui peut entraîner des problèmes avec les appels vidéo.</translation>
         <translation>Qualité audio</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
+        <source>High (64 kBps)</source>
         <translation>Haute (64Kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Moyenne (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Moyenne (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
+        <source>Low (16 kBps)</source>
         <translation>Basse (16 Kbits/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Très faible (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Très faible (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

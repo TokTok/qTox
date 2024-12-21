@@ -89,7 +89,7 @@ Contacts can be in one or in no circle.
 Contact details can be accessed by right-clicking on a contact and picking the
 `Show details` option.
 
-Some of the informations listed are:
+Some of the information listed are:
 
 - avatar
 - name
@@ -167,7 +167,7 @@ can have different nicknames, status messages and friends.
 
 In the friend's window you can customize some options for this friend specifically.
 
-- _Auto answer:_ chooses the way to autoaccept audio and video calls.
+- _Auto answer:_ chooses the way to auto-accept audio and video calls.
   - _Manual:_ All calls must be manually accepted.
   - _Audio:_ Only audio calls will be automatically accepted. Video calls must be manually accepted.
   - _Audio + video:_ All calls will be automatically accepted.
@@ -203,7 +203,7 @@ In the friend's window you can customize some options for this friend specifical
   will set your status to "Away". A setting of 0 will never change your status.
 - **Default directory to save files:** Allows you to specify the default
   destination for incoming file transfers.
-- **Autoaccept files:** If set, qTox will automatically accept file transfers
+- **Auto-accept files:** If set, qTox will automatically accept file transfers
   and put them in the directory specified above.
 
 ### User Interface
@@ -302,7 +302,7 @@ BlackList is a feature of qTox that locally blocks a conference member's message
 If you set up everything correctly, you should see the preview of your video
 device in the box below.
 
-- **Rescan devices:** Use this button to search for newly attached devices, e.g.
+- **Re-scan devices:** Use this button to search for newly attached devices, e.g.
   you plugged in a webcam.
 
 ### Advanced
@@ -334,7 +334,7 @@ router or connection, you can try to disable them.
 ---
 
 - **Reset to default settings:** Use this button to revert any changes you made
-  to the qTox settings. _Note that current implentation [is
+  to the qTox settings. _Note that the current implementation [is
   buggy](https://github.com/qTox/qTox/issues/3664) and aside from settings also
   friend [aliases] will be removed!_
 
@@ -353,7 +353,7 @@ you are standing together in a conference. To create a conference click the conf
 icon in the bottom left corner and set a name. Now you can invite your contacts
 by right-clicking on the contact and selecting "Invite to conference". Currently, if
 the last person leaves the chat, it is closed and you have to create a new one.
-Videochats and file transfers are currently unsupported in conferences.
+Video chats and file transfers are currently unsupported in conferences.
 
 ## Message Styling
 
@@ -363,7 +363,7 @@ Similar to other messaging applications, qTox supports stylized text formatting.
   or `**text**`
 - For **Italics**, surround text in single or double forward slashes: `/text/`
   or `//text//`
-- For **Strikethrough**, surround text in single or double tilde's: `~text~`
+- For **Strike-through**, surround text in single or double tilde's: `~text~`
   or `~~text~~`
 - For **Underline**, surround text in single or double underscores: `_text_`
   or `__text__`
@@ -393,7 +393,7 @@ qTox has feature to quote selected text in chat window:
 3. Selected text will be automatically quoted into the message input area in a
    pretty formatting.
 
-## Friend- and Conferenceinvites
+## Friend and Conference invites
 
 To invite a friend to a chat with you, you have to click the `+` button on the
 bottom left of the qTox window. The "Add a friend" Tab allows you to enter the
@@ -403,7 +403,7 @@ registered there.
 On the "Friend requests" tab you can see, friend requests you got from other
 Tox users. You can then choose to either accept or decline these requests.
 
-On the Conferenceinvites page, you can create a new conference and add users to it by
+On the Conference invites page, you can create a new conference and add users to it by
 using the context menu in your contact list. Invites from your contacts are
 also displayed here and you can accept and decline them.
 
@@ -442,7 +442,7 @@ In audio conference microphone mute state will be changed while `Ctrl` +
 | Option                             | Action                                                              |
 | ---------------------------------- | ------------------------------------------------------------------- |
 | `-p` `<profile>`                   | Use specified unencrypted profile                                   |
-| `-l`                               | Start with loginscreen                                              |
+| `-l`                               | Start with login screen                                             |
 | `-I` `<on/off>`                    | Sets IPv6 toggle [Default: ON]                                      |
 | `-U` `<on/off>`                    | Sets UDP toggle [Default: ON]                                       |
 | `-L` `<on/off>`                    | Sets LAN toggle [Default: ON]                                       |
@@ -489,7 +489,7 @@ blocking of bootstrap nodes:
   - This can be done at [startup](#commandline-proxy-options) or
   - By setting [connection settings](#connection-settings).
 - [Custom bootstrap nodes](#bootstrap-nodes) can be set. Note that these
-  require the DHT key of the node, which is different from the longterm Tox
+  require the DHT key of the node, which is different from the long-term Tox
   public key, and which changes on every start of a client, so it's best to use a
   [bootstrap daemon](https://github.com/TokTok/c-toxcore/tree/master/other/bootstrap_daemon).
 

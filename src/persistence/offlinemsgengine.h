@@ -67,10 +67,10 @@ private:
 
         void notifyReceiptReceived(ReceiptT receipt)
         {
-            auto unackedMessageIt = unAckedMessages.find(receipt);
-            if (unackedMessageIt != unAckedMessages.end()) {
-                unackedMessageIt->second.completionFn(true);
-                unAckedMessages.erase(unackedMessageIt);
+            auto unAckedMessageIt = unAckedMessages.find(receipt);
+            if (unAckedMessageIt != unAckedMessages.end()) {
+                unAckedMessageIt->second.completionFn(true);
+                unAckedMessages.erase(unAckedMessageIt);
                 return;
             }
 

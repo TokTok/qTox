@@ -81,20 +81,20 @@ bu da görüntülü aramalarda sorunlara neden olabilir.</translation>
         <translation>Ses kalitesi</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>Yüksek (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>Yüksek (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Orta (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Orta (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>Düşük (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>Düşük (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Çok düşük (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Çok düşük (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

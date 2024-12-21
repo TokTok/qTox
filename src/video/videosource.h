@@ -29,7 +29,7 @@ public:
 
     virtual ~VideoSource() = default;
     /**
-     * @brief If subscribe sucessfully opens the source, it will start emitting frameAvailable
+     * @brief If subscribe successfully opens the source, it will start emitting frameAvailable
      * signals.
      */
     virtual void subscribe() = 0;

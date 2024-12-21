@@ -137,19 +137,19 @@ void CategoryWidget::updateStatus()
     statusLabel->setText(text);
 }
 
-bool CategoryWidget::hasChatrooms() const
+bool CategoryWidget::hasChatRooms() const
 {
-    return listLayout->hasChatrooms();
+    return listLayout->hasChatRooms();
 }
 
 void CategoryWidget::search(const QString& searchString, bool updateAll, bool hideOnline,
                             bool hideOffline)
 {
     if (updateAll) {
-        listLayout->searchChatrooms(searchString, hideOnline, hideOffline);
+        listLayout->searchChatRooms(searchString, hideOnline, hideOffline);
     }
     bool inCategory = searchString.isEmpty() && !(hideOnline && hideOffline);
-    setVisible(inCategory || listLayout->hasChatrooms());
+    setVisible(inCategory || listLayout->hasChatRooms());
 }
 
 bool CategoryWidget::cycleChats(bool forward)

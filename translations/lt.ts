@@ -80,20 +80,20 @@ vaizdo skambučiais.</translation>
         <translation>Garso kokybė</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>Aukšta (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>Aukšta (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Vidutinė (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Vidutinė (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>Žema (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>Žema (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Labai žema (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Labai žema (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

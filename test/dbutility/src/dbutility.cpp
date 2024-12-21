@@ -210,7 +210,7 @@ void DbUtility::verifyDb(std::shared_ptr<RawDatabase> db,
                                                }
                                                QString tableSql = row[1].toString();
                                                // table and column names can be quoted. UPDATE
-                                               // TEABLE automatically quotes the new names, but
+                                               // TABLE automatically quotes the new names, but
                                                // this has no functional impact on the schema. Strip
                                                // quotes for comparison so that our created schema
                                                // matches schema made from UPDATE TABLEs.

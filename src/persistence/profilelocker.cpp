@@ -117,7 +117,7 @@ void ProfileLocker::deathByBrokenLock()
 }
 
 /**
- * @brief Chacks, that profile locked.
+ * @brief Checks whether profile is locked.
  * @return Returns true if we're currently holding a lock.
  */
 bool ProfileLocker::hasLock()

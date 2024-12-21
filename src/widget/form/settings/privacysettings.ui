@@ -106,7 +106,7 @@ If you are getting spammed with friend requests, change the NoSpam.</string>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="randomNosapamButton">
+             <widget class="QPushButton" name="randomNospamButton">
               <property name="text">
                <string>Generate random NoSpam</string>
               </property>

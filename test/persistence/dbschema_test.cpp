@@ -49,9 +49,9 @@ bool insertFileId(RawDatabase& db, int row, bool valid)
                                                  "    %5 "
                                                  ");")
                                              .arg(row)
-                                             .arg("\"fooname\"")
+                                             .arg("\"fooName\"")
                                              .arg("\"foo/path\"")
-                                             .arg("\"foohash\"")
+                                             .arg("\"fooHash\"")
                                              .arg(ToxFile::CANCELED),
                                          {resumeId});
     return db.execNow(upgradeQueries);
@@ -141,7 +141,7 @@ void TestDbSchema::init()
 {
     testDatabaseFile = std::unique_ptr<QTemporaryFile>(new QTemporaryFile());
     // fileName is only defined once the file is opened. Since RawDatabase
-    // will be openening the file itself not using QFile, open and close it now.
+    // will be opening the file itself not using QFile, open and close it now.
     QVERIFY(testDatabaseFile->open());
     testDatabaseFile->close();
 }
@@ -283,13 +283,13 @@ void TestDbSchema::test1to2()
     // The broken message should no longer be pending.
     QVERIFY(fauxOfflineCount == 2);
 
-    int totalHisoryCount = -1;
+    int totalHistoryCount = -1;
     RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
                                                  [&](const QVector<QVariant>& row) {
-                                                     totalHisoryCount = row[0].toLongLong();
+                                                     totalHistoryCount = row[0].toLongLong();
                                                  }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
-    QVERIFY(totalHisoryCount == 6); // all messages should still be in history.
+    QVERIFY(totalHistoryCount == 6); // all messages should still be in history.
 }
 
 void TestDbSchema::test2to3()
@@ -297,7 +297,7 @@ void TestDbSchema::test2to3()
     auto db = std::shared_ptr<RawDatabase>{new RawDatabase{testDatabaseFile->fileName(), {}, {}}};
     createSchemaAtVersion(db, DbUtility::schema2);
 
-    // since we don't enforce foreign key contraints in the db, we can stick in IDs to other tables
+    // since we don't enforce foreign key constraints in the db, we can stick in IDs to other tables
     // to avoid generating proper entries for peers and aliases tables, since they aren't actually
     // relevant for the test.
 
@@ -346,13 +346,13 @@ void TestDbSchema::test2to3()
     QVERIFY(db->execNow(fauxOfflineCountQuery));
     QVERIFY(fauxOfflineCount == 1);
 
-    int totalHisoryCount = -1;
+    int totalHistoryCount = -1;
     RawDatabase::Query totalHistoryCountQuery = {"SELECT COUNT(*) FROM history;",
                                                  [&](const QVector<QVariant>& row) {
-                                                     totalHisoryCount = row[0].toLongLong();
+                                                     totalHistoryCount = row[0].toLongLong();
                                                  }};
     QVERIFY(db->execNow(totalHistoryCountQuery));
-    QVERIFY(totalHisoryCount == 4);
+    QVERIFY(totalHistoryCount == 4);
 
     DbUtility::verifyDb(db, DbUtility::schema3);
 }

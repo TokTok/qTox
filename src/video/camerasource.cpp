@@ -28,7 +28,7 @@ extern "C"
  * @class CameraSource
  * @brief This class is a wrapper to share a camera's captured video frames
  *
- * It allows objects to suscribe and unsuscribe to the stream, starting
+ * It allows objects to subscribe and unsubscribe to the stream, starting
  * the camera and streaming new video frames only when needed.
  * This is a singleton, since we can only capture from one
  * camera at the same time without thread-safety issues.
@@ -48,8 +48,8 @@ extern "C"
  * @brief Short name of the device for CameraDevice's open(QString)
  *
  * @var CameraDevice* CameraSource::device
- * @brief Non-owning pointer to an open CameraDevice, or nullptr. Not atomic, synced with memfences
- * when becomes null.
+ * @brief Non-owning pointer to an open CameraDevice, or nullptr. Not atomic, synced
+ * with memory fences when becomes null.
  *
  * @var VideoMode CameraSource::mode
  * @brief What mode we tried to open the device in, all zeros means default mode
@@ -406,9 +406,9 @@ void CameraSource::stream()
 
         // Forward packets to the decoder and grab the decoded frame
         bool isVideo = packet.stream_index == videoStreamIndex;
-        bool readyToRecive = isVideo && !avcodec_send_packet(cctx, &packet);
+        bool readyToReceive = isVideo && !avcodec_send_packet(cctx, &packet);
 
-        if (readyToRecive) {
+        if (readyToReceive) {
             AVFrame* frame = av_frame_alloc();
             if (frame && !avcodec_receive_frame(cctx, frame)) {
                 VideoFrame* vframe = new VideoFrame(id, frame);

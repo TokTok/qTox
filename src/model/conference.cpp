@@ -83,7 +83,7 @@ void Conference::regeneratePeerList()
     // the name changed signal, and emit a single userJoined with the correct name. But, if we
     // receive the name changed signal a little later, we will emit userJoined before we have their
     // username, using just their ToxPk, then shortly after emit another peerNameChanged signal.
-    // This can cause double-updated to UI and chatlog, but is unavoidable given the API of toxcore.
+    // This can cause double-updated to UI and chat log, but is unavoidable given the API of toxcore.
     QStringList peers = conferenceQuery.getConferencePeerNames(toxConferenceNum);
     const auto oldPeerNames = peerDisplayNames;
     peerDisplayNames.clear();

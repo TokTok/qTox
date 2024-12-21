@@ -173,7 +173,7 @@ void AVForm::setVolume(qreal value)
     volumeDisplay->setValue(getStepsFromValue(value, audio.minOutputVolume(), audio.maxOutputVolume()));
 }
 
-void AVForm::on_videoModescomboBox_currentIndexChanged(int index)
+void AVForm::on_videoModesComboBox_currentIndexChanged(int index)
 {
     assert(0 <= index && index < videoModes.size());
     int devIndex = videoDevCombobox->currentIndex();
@@ -236,7 +236,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     idealModes[1440] = VideoMode(2560, 1440);
     idealModes[2160] = VideoMode(3840, 2160);
 
-    std::map<int, int> bestModeInds;
+    std::map<int, int> bestModeIndices;
     for (int i = 0; i < allVideoModes.size(); ++i) {
         VideoMode mode = allVideoModes[i];
 
@@ -252,34 +252,34 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
             if (mode.norm(idealMode) > idealMode.tolerance())
                 continue;
 
-            if (bestModeInds.find(res) == bestModeInds.end()) {
-                bestModeInds[res] = i;
+            if (bestModeIndices.find(res) == bestModeIndices.end()) {
+                bestModeIndices[res] = i;
                 continue;
             }
 
-            int index = bestModeInds[res];
+            int index = bestModeIndices[res];
             VideoMode best = allVideoModes[index];
             if (mode.norm(idealMode) < best.norm(idealMode)) {
-                bestModeInds[res] = i;
+                bestModeIndices[res] = i;
                 continue;
             }
 
             if (mode.norm(idealMode) == best.norm(idealMode)) {
                 // prefer higher FPS and "better" pixel formats
                 if (mode.FPS > best.FPS) {
-                    bestModeInds[res] = i;
+                    bestModeIndices[res] = i;
                     continue;
                 }
 
                 bool better = CameraDevice::betterPixelFormat(mode.pixel_format, best.pixel_format);
                 if (mode.FPS >= best.FPS && better)
-                    bestModeInds[res] = i;
+                    bestModeIndices[res] = i;
             }
         }
     }
 
     QVector<VideoMode> newVideoModes;
-    for (auto it = bestModeInds.rbegin(); it != bestModeInds.rend(); ++it) {
+    for (auto it = bestModeIndices.rbegin(); it != bestModeIndices.rend(); ++it) {
         VideoMode mode_ = allVideoModes[it->second];
 
         if (newVideoModes.empty()) {
@@ -299,8 +299,8 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
 void AVForm::fillCameraModesComboBox()
 {
     qDebug() << "selected Modes:";
-    bool previouslyBlocked = videoModescomboBox->blockSignals(true);
-    videoModescomboBox->clear();
+    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
+    videoModesComboBox->clear();
 
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
@@ -316,13 +316,13 @@ void AVForm::fillCameraModesComboBox()
             str += tr("Default resolution");
         }
 
-        videoModescomboBox->addItem(str);
+        videoModesComboBox->addItem(str);
     }
 
     if (videoModes.isEmpty())
-        videoModescomboBox->addItem(tr("Default resolution"));
+        videoModesComboBox->addItem(tr("Default resolution"));
 
-    videoModescomboBox->blockSignals(previouslyBlocked);
+    videoModesComboBox->blockSignals(previouslyBlocked);
 }
 
 int AVForm::searchPreferredIndex()
@@ -343,8 +343,8 @@ int AVForm::searchPreferredIndex()
 
 void AVForm::fillScreenModesComboBox()
 {
-    bool previouslyBlocked = videoModescomboBox->blockSignals(true);
-    videoModescomboBox->clear();
+    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
+    videoModesComboBox->clear();
 
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
@@ -358,20 +358,20 @@ void AVForm::fillScreenModesComboBox()
         else
             name = tr("Select region");
 
-        videoModescomboBox->addItem(name);
+        videoModesComboBox->addItem(name);
     }
 
-    videoModescomboBox->blockSignals(previouslyBlocked);
+    videoModesComboBox->blockSignals(previouslyBlocked);
 }
 
 void AVForm::fillAudioQualityComboBox()
 {
     const bool previouslyBlocked = audioQualityComboBox->blockSignals(true);
 
-    audioQualityComboBox->addItem(tr("High (64 kbps)"), 64);
-    audioQualityComboBox->addItem(tr("Medium (32 kbps)"), 32);
-    audioQualityComboBox->addItem(tr("Low (16 kbps)"), 16);
-    audioQualityComboBox->addItem(tr("Very low (8 kbps)"), 8);
+    audioQualityComboBox->addItem(tr("High (64 kBps)"), 64);
+    audioQualityComboBox->addItem(tr("Medium (32 kBps)"), 32);
+    audioQualityComboBox->addItem(tr("Low (16 kBps)"), 16);
+    audioQualityComboBox->addItem(tr("Very low (8 kBps)"), 8);
 
     const int currentBitrate = audioSettings->getAudioBitrate();
     const int index = audioQualityComboBox->findData(currentBitrate);
@@ -402,13 +402,13 @@ void AVForm::updateVideoModes(int curIndex)
         fillCameraModesComboBox();
     }
 
-    int preferedIndex = searchPreferredIndex();
-    if (preferedIndex != -1) {
+    int preferredIndex = searchPreferredIndex();
+    if (preferredIndex != -1) {
         videoSettings->setScreenGrabbed(false);
-        videoModescomboBox->blockSignals(true);
-        videoModescomboBox->setCurrentIndex(preferedIndex);
-        videoModescomboBox->blockSignals(false);
-        open(devName, videoModes[preferedIndex]);
+        videoModesComboBox->blockSignals(true);
+        videoModesComboBox->setCurrentIndex(preferredIndex);
+        videoModesComboBox->blockSignals(false);
+        open(devName, videoModes[preferredIndex]);
         return;
     }
 
@@ -417,7 +417,7 @@ void AVForm::updateVideoModes(int curIndex)
         VideoMode mode(rect);
 
         videoSettings->setScreenGrabbed(true);
-        videoModescomboBox->setCurrentIndex(videoModes.size() - 1);
+        videoModesComboBox->setCurrentIndex(videoModes.size() - 1);
         open(devName, mode);
         return;
     }
@@ -428,7 +428,7 @@ void AVForm::updateVideoModes(int curIndex)
     // If we picked the lowest resolution, the quality would be awful
     // but if we picked the largest, FPS would be bad and thus quality bad too.
     int mid = (videoModes.size() - 1) / 2;
-    videoModescomboBox->setCurrentIndex(mid);
+    videoModesComboBox->setCurrentIndex(mid);
 }
 
 void AVForm::on_videoDevCombobox_currentIndexChanged(int index)
@@ -438,15 +438,15 @@ void AVForm::on_videoDevCombobox_currentIndexChanged(int index)
     videoSettings->setScreenGrabbed(false);
     QString dev = videoDeviceList[index].first;
     videoSettings->setVideoDev(dev);
-    bool previouslyBlocked = videoModescomboBox->blockSignals(true);
+    bool previouslyBlocked = videoModesComboBox->blockSignals(true);
     updateVideoModes(index);
-    videoModescomboBox->blockSignals(previouslyBlocked);
+    videoModesComboBox->blockSignals(previouslyBlocked);
 
     if (videoSettings->getScreenGrabbed()) {
         return;
     }
 
-    int modeIndex = videoModescomboBox->currentIndex();
+    int modeIndex = videoModesComboBox->currentIndex();
     VideoMode mode = VideoMode();
     if (0 <= modeIndex && modeIndex < videoModes.size()) {
         mode = videoModes[modeIndex];

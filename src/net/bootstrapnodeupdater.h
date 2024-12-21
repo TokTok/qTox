@@ -33,9 +33,6 @@ private slots:
     void onRequestComplete(QNetworkReply* reply);
 
 private:
-    QList<DhtServer> loadUserBootrapNodes();
-
-private:
     QNetworkProxy proxy;
     QNetworkAccessManager nam;
     Paths& paths;

@@ -80,20 +80,20 @@ videokvalitet enn det din internett-tilkobling klarer å levere.</translation>
         <translation>Lydkvalitet</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>Høy (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>Høy (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Middels (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Middels (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>Lav (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>Lav (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Veldig lav (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Veldig lav (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

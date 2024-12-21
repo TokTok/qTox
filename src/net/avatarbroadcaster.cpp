@@ -26,7 +26,7 @@ AvatarBroadcaster::AvatarBroadcaster(Core& _core)
 
 /**
  * @brief Set our current avatar.
- * @param data Byte array on avater.
+ * @param data Byte array on avatar.
  */
 void AvatarBroadcaster::setAvatar(QByteArray data)
 {

@@ -80,20 +80,20 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Kvalita zvuku</translation>
     </message>
     <message>
-        <source>High (64 kbps)</source>
-        <translation>Vysoká (64 kbps)</translation>
+        <source>High (64 kBps)</source>
+        <translation>Vysoká (64 kBps)</translation>
     </message>
     <message>
-        <source>Medium (32 kbps)</source>
-        <translation>Střední (32 kbps)</translation>
+        <source>Medium (32 kBps)</source>
+        <translation>Střední (32 kBps)</translation>
     </message>
     <message>
-        <source>Low (16 kbps)</source>
-        <translation>Nízká (16 kbps)</translation>
+        <source>Low (16 kBps)</source>
+        <translation>Nízká (16 kBps)</translation>
     </message>
     <message>
-        <source>Very low (8 kbps)</source>
-        <translation>Velmi nízká (8 kbps)</translation>
+        <source>Very low (8 kBps)</source>
+        <translation>Velmi nízká (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>

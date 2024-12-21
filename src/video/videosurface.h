@@ -43,7 +43,7 @@ private slots:
     void onSourceStopped();
 
 private:
-    void recalulateBounds();
+    void recalculateBounds();
     void lock();
     void unlock();
 
