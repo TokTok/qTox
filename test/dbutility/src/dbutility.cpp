@@ -183,13 +183,13 @@ const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema11{
     {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
 
 void DbUtility::createSchemaAtVersion(std::shared_ptr<RawDatabase> db,
-                                      const std::vector<DbUtility::SqliteMasterEntry>& schema)
+                                      std::vector<DbUtility::SqliteMasterEntry> schema)
 {
-    QVector<RawDatabase::Query> queries;
-    for (const auto& entry : schema) {
-        queries += entry.sql;
+    std::vector<RawDatabase::Query> queries;
+    for (auto& entry : schema) {
+        queries.emplace_back(std::move(entry.sql));
     }
-    QVERIFY(db->execNow(queries));
+    QVERIFY(db->execNow(std::move(queries)));
 }
 
 bool DbUtility::SqliteMasterEntry::operator==(const DbUtility::SqliteMasterEntry& rhs) const

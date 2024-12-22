@@ -65,6 +65,10 @@ project(qtox)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_C_STANDARD 11)
 
+if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fcolor-diagnostics")
+endif()
+
 if(ASAN
    OR TSAN
    OR UBSAN)
@@ -373,6 +377,8 @@ set(${PROJECT_NAME}_SOURCES
     src/net/updatecheck.h
     src/persistence/db/rawdatabase.cpp
     src/persistence/db/rawdatabase.h
+    src/persistence/db/rawdatabaseimpl.cpp
+    src/persistence/db/rawdatabaseimpl.h
     src/persistence/db/upgrades/dbupgrader.cpp
     src/persistence/db/upgrades/dbupgrader.h
     src/persistence/db/upgrades/dbto11.h
