@@ -1,118 +1,105 @@
 {
-    "app-id": "io.github.qtox.qTox",
-    "runtime": "org.kde.Platform",
-    "sdk": "org.kde.Sdk",
-    "runtime-version": "6.7",
-    "command": "qtox",
-    "rename-icon": "qtox",
-    "finish-args": [
-        "--share=network",
-        "--socket=pulseaudio",
-        "--socket=wayland",
-        "--socket=x11",
-        "--share=ipc",
-        "--talk-name=org.kde.StatusNotifierWatcher",
-        "--filesystem=xdg-desktop",
-        "--filesystem=xdg-documents",
-        "--filesystem=xdg-download",
-        "--filesystem=xdg-music",
-        "--filesystem=xdg-pictures",
-        "--filesystem=xdg-videos",
-        "--filesystem=/media",
-        "--device=all"
-    ],
-    "add-extensions": {
-        "org.freedesktop.Platform.ffmpeg-full": {
-            "directory": "lib/ffmpeg",
-            "version": "20.08",
-            "add-ld-path": "."
+  "app-id": "io.github.qtox.qTox",
+  "runtime": "org.kde.Platform",
+  "sdk": "org.kde.Sdk",
+  "runtime-version": "6.8",
+  "command": "qtox",
+  "rename-icon": "qtox",
+  "finish-args": [
+    "--share=network",
+    "--socket=pulseaudio",
+    "--socket=wayland",
+    "--socket=x11",
+    "--share=ipc",
+    "--talk-name=org.kde.StatusNotifierWatcher",
+    "--filesystem=xdg-desktop",
+    "--filesystem=xdg-documents",
+    "--filesystem=xdg-download",
+    "--filesystem=xdg-music",
+    "--filesystem=xdg-pictures",
+    "--filesystem=xdg-videos",
+    "--filesystem=/media",
+    "--device=all"
+  ],
+  "add-extensions": {
+    "org.freedesktop.Platform.ffmpeg-full": {
+      "directory": "lib/ffmpeg",
+      "version": "20.08",
+      "add-ld-path": "."
+    }
+  },
+  "cleanup-commands": ["mkdir -p /app/lib/ffmpeg"],
+  "cleanup": ["/include", "/lib/pkgconfig", "/share/man", "*.la", "*.a"],
+  "modules": [
+    {
+      "name": "tcl",
+      "subdir": "unix",
+      "build-options": {
+        "no-debuginfo": true
+      },
+      "cleanup": ["*"],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz",
+          "sha256": "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
         }
+      ]
     },
-    "cleanup-commands": [
-        "mkdir -p /app/lib/ffmpeg"
-    ],
-    "cleanup": [
-        "/include",
-        "/lib/pkgconfig",
-        "/share/man",
-        "*.la",
-        "*.a"
-    ],
-    "modules": [
+    {
+      "name": "sqlcipher",
+      "cleanup": ["/bin"],
+      "config-opts": ["--enable-tempstore=yes", "--disable-tcl"],
+      "build-options": {
+        "cflags": "-DSQLITE_HAS_CODEC",
+        "ldflags": "-lcrypto"
+      },
+      "sources": [
         {
-            "name": "tcl",
-            "subdir": "unix",
-            "build-options": {
-                "no-debuginfo": true
-            },
-            "cleanup": [ "*" ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/tcl/Tcl/8.6.10/tcl8.6.10-src.tar.gz",
-                    "sha256": "5196dbf6638e3df8d5c87b5815c8c2b758496eb6f0e41446596c9a4e638d87ed"
-                }
-            ]
-        },
-        {
-            "name": "sqlcipher",
-            "cleanup": [
-                "/bin"
-            ],
-            "config-opts": [
-                "--enable-tempstore=yes",
-                "--disable-tcl"
-            ],
-            "build-options": {
-                "cflags": "-DSQLITE_HAS_CODEC",
-                "ldflags": "-lcrypto"
-            },
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/src/sqlcipher"
-                }
-            ]
-        },
-        {
-            "name": "libsodium",
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/src/libsodium"
-                }
-            ]
-        },
-        {
-            "name": "c-toxcore",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DDHT_BOOTSTRAP=OFF",
-                "-DBOOTSTRAP_DAEMON=OFF",
-                "-DENABLE_STATIC=OFF"
-            ],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/src/toxcore"
-                }
-            ]
-        },
-        {
-            "name": "qTox",
-            "buildsystem": "cmake-ninja",
-            "config-opts": [
-                "-DCMAKE_BUILD_TYPE=Release",
-                "-DSVGZ_ICON=OFF",
-                "-DSTRICT_OPTIONS=ON"
-            ],
-            "sources": [
-                {
-                    "type": "dir",
-                    "path": "/qtox/"
-                }
-            ]
+          "type": "dir",
+          "path": "/src/sqlcipher"
         }
-    ]
+      ]
+    },
+    {
+      "name": "libsodium",
+      "sources": [
+        {
+          "type": "dir",
+          "path": "/src/libsodium"
+        }
+      ]
+    },
+    {
+      "name": "c-toxcore",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DDHT_BOOTSTRAP=OFF",
+        "-DBOOTSTRAP_DAEMON=OFF",
+        "-DENABLE_STATIC=OFF"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "/src/toxcore"
+        }
+      ]
+    },
+    {
+      "name": "qTox",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DSVGZ_ICON=OFF",
+        "-DSTRICT_OPTIONS=ON"
+      ],
+      "sources": [
+        {
+          "type": "dir",
+          "path": "/qtox/"
+        }
+      ]
+    }
+  ]
 }
