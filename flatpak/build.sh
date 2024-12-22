@@ -29,3 +29,7 @@ if [ -n "${FLATPAK_BUILD:-}" ]; then
 fi
 
 rm -f .flatpak-builder/cache/.lock
+
+# Make files world-readable and executable (if they are executable)
+find . -type f -exec chmod a+r {} +
+find . -executable -exec chmod a+x {} +
