@@ -25,7 +25,8 @@ import unittest
 import subprocess
 
 QTOX_ROOT = Path(__file__).parent.parent
-DOWNLOAD_FILE_PATHS = QTOX_ROOT / 'buildscripts' / 'download'
+TOKTOK_ROOT = QTOX_ROOT.parent
+DOWNLOAD_FILE_PATHS = TOKTOK_ROOT / 'dockerfiles' / 'qtox' / 'download'
 
 def parse_args():
     parser = ArgumentParser(description="""
@@ -109,8 +110,6 @@ def main(flathub_manifest_path, output_manifest_path):
     sqlcipher_version = find_version(DOWNLOAD_FILE_PATHS / 'download_sqlcipher.sh')
     sodium_version = find_version(DOWNLOAD_FILE_PATHS / 'download_sodium.sh')
     toxcore_version = find_version(DOWNLOAD_FILE_PATHS / 'download_toxcore.sh')
-    toxext_version = find_version(DOWNLOAD_FILE_PATHS / 'download_toxext.sh')
-    toxext_messages_version = find_version(DOWNLOAD_FILE_PATHS / 'download_toxext_messages.sh')
 
     for module in flathub_manifest["modules"]:
         if module["name"] == "sqlcipher":
@@ -119,10 +118,6 @@ def main(flathub_manifest_path, output_manifest_path):
             update_source(module, sodium_version)
         elif module["name"] == "c-toxcore":
             update_source(module, f"v{toxcore_version}")
-        elif module["name"] == "toxext":
-            update_source(module, f"v{toxext_version}")
-        elif module["name"] == "tox_extension_messages":
-            update_source(module, f"v{toxext_messages_version}")
 
     with open(output_manifest_path, 'w') as f:
         json.dump(flathub_manifest, f, indent=4)
