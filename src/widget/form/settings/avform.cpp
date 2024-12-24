@@ -7,6 +7,7 @@
 
 #include <cassert>
 #include <map>
+#include <ranges>
 
 #include <QDebug>
 #include <QScreen>
@@ -48,18 +49,6 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
     cbEnableTestSound->setToolTip(tr("Play a test sound while changing the output volume."));
 
     connect(rescanButton, &QPushButton::clicked, this, &AVForm::rescanDevices);
-
-    // TODO(iphydf): Fix the crashing bug when changing the video device during a call.
-    // See https://github.com/TokTok/qTox/issues/281
-    connect(coreAV_, &CoreAV::avStart, this, [this](uint32_t friendId, bool video) {
-        std::ignore = friendId;
-        std::ignore = video;
-        videoDevCombobox->setEnabled(false);
-    });
-    connect(coreAV_, &CoreAV::avEnd, this, [this](uint32_t friendId) {
-        std::ignore = friendId;
-        videoDevCombobox->setEnabled(!coreAV->isAnyCallActive());
-    });
 
     playbackSlider->setTracking(false);
     playbackSlider->setMaximum(totalSliderSteps);
@@ -152,7 +141,7 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
 {
     QRect rect = mode.toRect();
     videoSettings->setCamVideoRes(rect);
-    videoSettings->setCamVideoFPS(static_cast<float>(mode.FPS));
+    videoSettings->setCamVideoFPS(mode.fps);
     camera.setupDevice(devName, mode);
 }
 
@@ -226,27 +215,26 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     // Identify the best resolutions available for the supposed XXXXp resolutions.
-    std::map<int, VideoMode> idealModes;
-    idealModes[120] = VideoMode(160, 120);
-    idealModes[240] = VideoMode(430, 240);
-    idealModes[360] = VideoMode(640, 360);
-    idealModes[480] = VideoMode(854, 480);
-    idealModes[720] = VideoMode(1280, 720);
-    idealModes[1080] = VideoMode(1920, 1080);
-    idealModes[1440] = VideoMode(2560, 1440);
-    idealModes[2160] = VideoMode(3840, 2160);
+    constexpr std::array<std::pair<int, VideoMode>, 8> idealModes{{
+        {120, VideoMode(160, 120)},    // 1
+        {240, VideoMode(430, 240)},    // 2
+        {360, VideoMode(640, 360)},    // 3
+        {480, VideoMode(854, 480)},    // 4
+        {720, VideoMode(1280, 720)},   // 5
+        {1080, VideoMode(1920, 1080)}, // 6
+        {1440, VideoMode(2560, 1440)}, // 7
+        {2160, VideoMode(3840, 2160)}, // 8
+    }};
 
     std::map<int, int> bestModeIndices;
     for (int i = 0; i < allVideoModes.size(); ++i) {
-        VideoMode mode = allVideoModes[i];
+        const VideoMode mode = allVideoModes[i];
 
         // PS3-Cam protection, everything above 60fps makes no sense
-        if (mode.FPS > 60)
+        if (mode.fps > 60)
             continue;
 
-        for (auto iter = idealModes.begin(); iter != idealModes.end(); ++iter) {
-            int res = iter->first;
-            VideoMode idealMode = iter->second;
+        for (const auto& [res, idealMode] : idealModes) {
             // don't take approximately correct resolutions unless they really
             // are close
             if (mode.norm(idealMode) > idealMode.tolerance())
@@ -257,8 +245,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
                 continue;
             }
 
-            int index = bestModeIndices[res];
-            VideoMode best = allVideoModes[index];
+            const VideoMode best = allVideoModes[bestModeIndices[res]];
             if (mode.norm(idealMode) < best.norm(idealMode)) {
                 bestModeIndices[res] = i;
                 continue;
@@ -266,21 +253,21 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
 
             if (mode.norm(idealMode) == best.norm(idealMode)) {
                 // prefer higher FPS and "better" pixel formats
-                if (mode.FPS > best.FPS) {
+                if (mode.fps > best.fps) {
                     bestModeIndices[res] = i;
                     continue;
                 }
 
                 bool better = CameraDevice::betterPixelFormat(mode.pixel_format, best.pixel_format);
-                if (mode.FPS >= best.FPS && better)
+                if (mode.fps >= best.fps && better)
                     bestModeIndices[res] = i;
             }
         }
     }
 
     QVector<VideoMode> newVideoModes;
-    for (auto it = bestModeIndices.rbegin(); it != bestModeIndices.rend(); ++it) {
-        VideoMode mode_ = allVideoModes[it->second];
+    for (const auto& [_, modeIndex] : std::views::reverse(bestModeIndices)) {
+        VideoMode mode_ = allVideoModes[modeIndex];
 
         if (newVideoModes.empty()) {
             newVideoModes.push_back(mode_);
@@ -307,8 +294,8 @@ void AVForm::fillCameraModesComboBox()
 
         QString str;
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
-        qDebug("width: %d, height: %d, FPS: %f, pixel format: %s", mode.width, mode.height,
-               static_cast<double>(mode.FPS), pixelFormat.c_str());
+        qDebug("width: %d, height: %d, fps: %f, pixel format: %s", mode.width, mode.height,
+               static_cast<double>(mode.fps), pixelFormat.c_str());
 
         if (mode.height && mode.width) {
             str += QString("%1p").arg(mode.height);
@@ -333,7 +320,7 @@ int AVForm::searchPreferredIndex()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         if (mode.width == prefRes.width() && mode.height == prefRes.height()
-            && (qAbs(mode.FPS - prefFPS) < 0.0001f)) {
+            && (qAbs(mode.fps - prefFPS) < 0.0001f)) {
             return i;
         }
     }
@@ -349,8 +336,8 @@ void AVForm::fillScreenModesComboBox()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
-        qDebug("%dx%d+%d,%d FPS: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
-               static_cast<double>(mode.FPS), pixelFormat.c_str());
+        qDebug("%dx%d+%d,%d fps: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
+               static_cast<double>(mode.fps), pixelFormat.c_str());
 
         QString name;
         if (mode.width && mode.height)

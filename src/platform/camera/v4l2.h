@@ -9,7 +9,8 @@
 #include <QString>
 #include <QVector>
 
-#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) && !defined(ANDROID)
+#define USING_V4L 1
 namespace v4l2 {
 QVector<VideoMode> getDeviceModes(QString devName);
 QVector<QPair<QString, QString>> getDeviceList();

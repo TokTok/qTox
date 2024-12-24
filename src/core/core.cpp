@@ -331,7 +331,7 @@ bool Core::checkConnection()
 {
     ASSERT_CORE_THREAD;
     auto selfConnection = tox_self_get_connection_status(tox.get());
-    QString connectionName;
+    const char* connectionName;
     bool toxConnected = false;
     switch (selfConnection) {
     case TOX_CONNECTION_NONE:
@@ -351,7 +351,7 @@ bool Core::checkConnection()
     }
 
     if (toxConnected && !isConnected) {
-        qDebug().noquote() << "Connected to" << connectionName;
+        qDebug() << "Connected to" << connectionName;
         emit connected();
     } else if (!toxConnected && isConnected) {
         qDebug() << "Disconnected from the DHT";

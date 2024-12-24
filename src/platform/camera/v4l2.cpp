@@ -8,7 +8,7 @@
 
 #include "v4l2.h"
 
-#if defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)
+#if defined(USING_V4L)
 #include <QDebug>
 #include <dirent.h>
 #include <errno.h>
@@ -156,7 +156,7 @@ QVector<VideoMode> v4l2::getDeviceModes(QString devName)
             }
 
             for (float rate : rates) {
-                mode.FPS = rate;
+                mode.fps = rate;
                 if (!modes.contains(mode)) {
                     modes.append(std::move(mode));
                 }

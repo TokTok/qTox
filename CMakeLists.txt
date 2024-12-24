@@ -443,6 +443,8 @@ set(${PROJECT_NAME}_SOURCES
     src/video/ivideosettings.h
     src/video/netcamview.cpp
     src/video/netcamview.h
+    src/video/scopedavdictionary.cpp
+    src/video/scopedavdictionary.h
     src/video/videoframe.cpp
     src/video/videoframe.h
     src/video/videomode.cpp

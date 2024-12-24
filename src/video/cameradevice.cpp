@@ -15,26 +15,21 @@ extern "C"
 #pragma GCC diagnostic pop
 }
 #include "cameradevice.h"
+#include "scopedavdictionary.h"
 #include "src/persistence/settings.h"
+
+#include <QDebug>
+#include <QMutex>
+#include <QMutexLocker>
+#include <QScreen>
+#include <QVector>
 
 // no longer needed when avformat version < 59 is no longer supported
 using AvFindInputFormatRet = decltype(av_find_input_format(""));
 
-#if (defined(Q_OS_LINUX) || defined(Q_OS_FREEBSD)) && !defined(ANDROID)
-#define USING_V4L 1
-#else
-#define USING_V4L 0
-#endif
-
-#ifdef Q_OS_WIN
-#include "src/platform/camera/directshow.h"
-#endif
-#if USING_V4L
-#include "src/platform/camera/v4l2.h"
-#endif
-#ifdef Q_OS_MACOS
 #include "src/platform/camera/avfoundation.h"
-#endif
+#include "src/platform/camera/directshow.h"
+#include "src/platform/camera/v4l2.h"
 
 /**
  * @class CameraDevice
@@ -60,6 +55,50 @@ using AvFindInputFormatRet = decltype(av_find_input_format(""));
 namespace {
 AvFindInputFormatRet idesktopFormat{nullptr};
 AvFindInputFormatRet iformat{nullptr};
+
+QDebug operator<<(QDebug dbg, const AVDictionary* const* dict)
+{
+    QVector<QString> options;
+    AVDictionaryEntry* entry = nullptr;
+    while ((entry = av_dict_get(*dict, "", entry, AV_DICT_IGNORE_SUFFIX))) {
+        options.append(QStringLiteral("%1: %2").arg(QString::fromUtf8(entry->key),
+                                                    QString::fromUtf8(entry->value)));
+    }
+
+    return dbg << options.join(", ").toUtf8().constData();
+}
+
+constexpr int numDigits(uint32_t num)
+{
+    int digits = 0;
+    while (num) {
+        num /= 10;
+        ++digits;
+    }
+    return digits;
+}
+
+template <uint32_t Num>
+constexpr auto toCharArray()
+{
+    std::array<char, numDigits(Num) + 1> str{};
+    int cur = numDigits(Num);
+    for (uint32_t num = Num; num; num /= 10) {
+        str[--cur] = num % 10 + '0';
+    }
+    return str;
+}
+
+// Compile-time unit test for the above function.
+static_assert(toCharArray<12345>() == std::array<char, 6>{'1', '2', '3', '4', '5', '\0'});
+
+struct AVFormatContextDeleter
+{
+    void operator()(AVFormatContext* ctx) const
+    {
+        avformat_free_context(ctx);
+    }
+};
 } // namespace
 
 QHash<QString, CameraDevice*> CameraDevice::openDevices;
@@ -75,35 +114,35 @@ CameraDevice::CameraDevice(const QString& devName_, AVFormatContext* context_)
 CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 {
     QMutexLocker<QMutex> lock(&openDeviceLock);
-    AVFormatContext* fctx = nullptr;
     CameraDevice* dev = openDevices.value(devName);
-    int aDuration;
-    std::string devString;
     if (dev) {
         return dev;
     }
 
-    AvFindInputFormatRet format;
-    if (devName.startsWith("x11grab#")) {
-        devName = devName.mid(8);
-        format = idesktopFormat;
-    } else if (devName.startsWith("gdigrab#")) {
-        devName = devName.mid(8);
-        format = idesktopFormat;
-    } else {
-        format = iformat;
-    }
+    const AvFindInputFormatRet format = [&devName] {
+        for (const auto& grabName : {QStringLiteral("x11grab#"), QStringLiteral("gdigrab#")}) {
+            if (devName.startsWith(grabName)) {
+                devName = devName.mid(grabName.size());
+                return idesktopFormat;
+            }
+        }
+        return iformat;
+    }();
 
-    devString = devName.toStdString();
-    if (avformat_open_input(&fctx, devString.c_str(), format, options) < 0) {
+    qDebug() << "Opening device" << devName << "with format" << format->name << "and options"
+             << options;
+    AVFormatContext* fctx = nullptr;
+    if (avformat_open_input(&fctx, devName.toStdString().c_str(), format, options) < 0) {
         return nullptr;
     }
 
 // Fix avformat_find_stream_info hanging on garbage input
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
-    aDuration = fctx->max_analyze_duration2 = 0;
+    const int aDuration = fctx->max_analyze_duration2;
+    fctx->max_analyze_duration2 = 0;
 #else
-    aDuration = fctx->max_analyze_duration = 0;
+    const int aDuration = fctx->max_analyze_duration;
+    fctx->max_analyze_duration = 0;
 #endif
 
     if (avformat_find_stream_info(fctx, nullptr) < 0) {
@@ -145,23 +184,22 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         return nullptr;
     }
 
-#if USING_V4L || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
-    float FPS = 5;
-    if (mode.FPS > 0.0f) {
-        FPS = mode.FPS;
+#if defined(USING_V4L) || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
+    float fps = 5;
+    if (mode.fps > 0.0f) {
+        fps = mode.fps;
     } else {
-        qWarning() << "VideoMode could be invalid!";
+        qWarning() << "Frame rate not set; VideoMode could be invalid (defaulting to" << fps << "fps)";
     }
 
-    const std::string videoSize =
-        QStringLiteral("%1x%2").arg(mode.width).arg(mode.height).toStdString();
-    const std::string framerate = QString{}.setNum(FPS).toStdString();
+    const QString videoSize = QStringLiteral("%1x%2").arg(mode.width).arg(mode.height);
+    const QString framerate = QString::number(static_cast<double>(fps));
 #endif
 
-    AVDictionary* options = nullptr;
+    ScopedAVDictionary options;
     if (!iformat)
         ;
-#if USING_V4L
+#if defined(USING_V4L)
     else if (devName.startsWith("x11grab#")) {
         QSize screen;
         if (mode.width && mode.height) {
@@ -177,63 +215,62 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
             screen.setWidth((screen.width() * pixRatio) - 2);
             screen.setHeight((screen.height() * pixRatio) - 2);
         }
-        const std::string screenVideoSize =
-            QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
-        av_dict_set(&options, "video_size", screenVideoSize.c_str(), 0);
-        devName += QString("+%1,%2").arg(QString().setNum(mode.x), QString().setNum(mode.y));
+        const QString screenVideoSize =
+            QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height());
+        options["video_size"] = screenVideoSize;
+        devName += QStringLiteral("+%1,%2").arg(QString::number(mode.x), QString::number(mode.y));
 
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
-    } else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2")
+        options["framerate"] = framerate;
+    } else if (QString::fromUtf8(iformat->name) == QStringLiteral("video4linux2,v4l2")
                && !mode.isUnspecified()) {
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
-        const std::string pixelFormatStr = v4l2::getPixelFormatString(mode.pixel_format).toStdString();
+        options["video_size"] = videoSize;
+        options["framerate"] = framerate;
+        const QString pixelFormatStr = v4l2::getPixelFormatString(mode.pixel_format);
         // don't try to set a format string that doesn't exist
-        if (pixelFormatStr != "unknown" && pixelFormatStr != "invalid") {
-            const char* pixel_format = pixelFormatStr.c_str();
-            av_dict_set(&options, "pixel_format", pixel_format, 0);
+        if (pixelFormatStr != QStringLiteral("unknown") && pixelFormatStr != QStringLiteral("invalid")) {
+            options["pixel_format"] = pixelFormatStr;
         }
     }
 #endif
 #ifdef Q_OS_WIN
     else if (devName.startsWith("gdigrab#")) {
-
-        const std::string offsetX = QString().setNum(mode.x).toStdString();
-        const std::string offsetY = QString().setNum(mode.y).toStdString();
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
-        av_dict_set(&options, "offset_x", offsetX.c_str(), 0);
-        av_dict_set(&options, "offset_y", offsetY.c_str(), 0);
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-    } else if (QString::fromUtf8(iformat->name) == QString("dshow") && !mode.isUnspecified()) {
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
+        options["framerate"] = framerate;
+        options["video_size"] = videoSize;
+        options["offset_x"] = QString::number(mode.x);
+        options["offset_y"] = QString::number(mode.y);
+    } else if (QString::fromUtf8(iformat->name) == QStringLiteral("dshow") && !mode.isUnspecified()) {
+        options["framerate"] = framerate;
+        options["video_size"] = videoSize;
     }
 #endif
 #ifdef Q_OS_MACOS
-    else if (QString::fromUtf8(iformat->name) == QString("avfoundation")) {
-        if (avfoundation::isDesktopCapture(devName)) {
-            av_dict_set(&options, "framerate", framerate.c_str(), 0);
-            av_dict_set_int(&options, "capture_cursor", 1, 0);
-            av_dict_set_int(&options, "capture_mouse_clicks", 1, 0);
-        } else if (!mode.isUnspecified()) {
-            av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-            av_dict_set(&options, "framerate", framerate.c_str(), 0);
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("avfoundation")) {
+        if (!avfoundation::hasPermission(devName)) {
+            qWarning() << "No permission to access device" << devName;
+            return nullptr;
         }
-        av_dict_set(&options, "probesize", "33554432", 0);
+        if (avfoundation::isDesktopCapture(devName)) {
+            qDebug() << "Opening desktop capture" << devName;
+            options["framerate"] = framerate;
+            options["capture_cursor"] = 1;
+            options["capture_mouse_clicks"] = 1;
+        } else if (!mode.isUnspecified()) {
+            qDebug() << "Opening camera" << devName;
+            options["video_size"] = videoSize;
+            options["framerate"] = framerate;
+        }
+        // We need a fair amount of probe buffer to calculate the fps: 30MiB.
+        constexpr auto probesize = toCharArray<30 * 1024 * 1024>();
+        options["probesize"] = probesize;
         // TODO(iphydf): Find available pixel formats and select the first one.
-        av_dict_set(&options, "pixel_format", "uyvy422", 0);
+        options["pixel_format"] = "uyvy422";
     }
 #endif
     else if (!mode.isUnspecified()) {
         qWarning().nospace() << "No known options for " << iformat->name << ", using defaults.";
     }
 
-    CameraDevice* dev = open(devName, &options);
-    if (options) {
-        av_dict_free(&options);
-    }
-
-    return dev;
+    return open(devName, options.get());
 }
 
 /**
@@ -270,19 +307,18 @@ bool CameraDevice::close()
  */
 QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
 {
-    QVector<QPair<QString, QString>> devices;
-
-    if (!getDefaultInputFormat())
-        return devices;
+    if (!getDefaultInputFormat()) {
+        return {};
+    }
 
     // Alloc an input device context
-    AVFormatContext* s;
-    if (!(s = avformat_alloc_context()))
-        return devices;
+    std::unique_ptr<AVFormatContext, AVFormatContextDeleter> s{avformat_alloc_context()};
+    if (s == nullptr) {
+        return {};
+    }
 
     if (!iformat->priv_class || !AV_IS_INPUT_DEVICE(iformat->priv_class->category)) {
-        avformat_free_context(s);
-        return devices;
+        return {};
     }
 
     s->iformat = iformat;
@@ -290,8 +326,7 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
     if (s->iformat->priv_data_size > 0) {
         s->priv_data = av_mallocz(s->iformat->priv_data_size);
         if (!s->priv_data) {
-            avformat_free_context(s);
-            return devices;
+            return {};
         }
         if (s->iformat->priv_class) {
             *static_cast<const AVClass**>(s->priv_data) = s->iformat->priv_class;
@@ -303,28 +338,27 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
 #endif
 
     // List the devices for this context
-    AVDeviceInfoList* devlist = nullptr;
-    AVDictionary* tmp = nullptr;
-    av_dict_copy(&tmp, nullptr, 0);
-    if (av_opt_set_dict2(s, &tmp, AV_OPT_SEARCH_CHILDREN) < 0) {
-        av_dict_free(&tmp);
-        avformat_free_context(s);
-        return devices;
+    ScopedAVDictionary tmp;
+    av_dict_copy(tmp.get(), nullptr, 0);
+    if (av_opt_set_dict2(s.get(), tmp.get(), AV_OPT_SEARCH_CHILDREN) < 0) {
+        return {};
     }
-    avdevice_list_devices(s, &devlist);
-    av_dict_free(&tmp);
-    avformat_free_context(s);
+
+    AVDeviceInfoList* devlist = nullptr;
+    avdevice_list_devices(s.get(), &devlist);
     if (!devlist) {
         qWarning() << "avdevice_list_devices failed";
-        return devices;
+        return {};
     }
 
     // Convert the list to a QVector
-    devices.resize(devlist->nb_devices);
+    QVector<QPair<QString, QString>> devices;
     for (int i = 0; i < devlist->nb_devices; ++i) {
-        AVDeviceInfo* dev = devlist->devices[i];
-        devices[i].first = QString::fromUtf8(dev->device_name);
-        devices[i].second = QString::fromUtf8(dev->device_description);
+        const AVDeviceInfo* dev = devlist->devices[i];
+        devices.append({
+            QString::fromUtf8(dev->device_name),
+            QString::fromUtf8(dev->device_description),
+        });
     }
     avdevice_free_list_devices(&devlist);
     return devices;
@@ -337,44 +371,42 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
  */
 QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 {
-    QVector<QPair<QString, QString>> devices;
-
-    devices.append({"none", QObject::tr("None", "No camera device set")});
+    QVector<QPair<QString, QString>> devices{{"none", QObject::tr("None", "No camera device set")}};
 
     if (!getDefaultInputFormat())
         return devices;
 
     if (!iformat)
         ;
-#ifdef Q_OS_WIN
-    else if (QString::fromUtf8(iformat->name) == QString("dshow"))
-        devices += DirectShow::getDeviceList();
-#endif
-#if USING_V4L
-    else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2"))
+#if defined(USING_V4L)
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("video4linux2,v4l2"))
         devices += v4l2::getDeviceList();
 #endif
+#ifdef Q_OS_WIN
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("dshow"))
+        devices += DirectShow::getDeviceList();
+#endif
 #ifdef Q_OS_MACOS
-    else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("avfoundation"))
         devices += avfoundation::getDeviceList();
 #endif
     else
         devices += getRawDeviceListGeneric();
 
     if (idesktopFormat) {
-        if (QString::fromUtf8(idesktopFormat->name) == QString("x11grab")) {
+        if (QString::fromUtf8(idesktopFormat->name) == QStringLiteral("x11grab")) {
             QString dev = "x11grab#";
             QByteArray display = qgetenv("DISPLAY");
 
             if (display.isNull())
                 dev += ":0";
             else
-                dev += QString::fromUtf8(display.constData());
+                dev += QString::fromUtf8(display);
 
             devices.push_back(QPair<QString, QString>{
                 dev, QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
         }
-        if (QString::fromUtf8(idesktopFormat->name) == QString("gdigrab"))
+        if (QString::fromUtf8(idesktopFormat->name) == QStringLiteral("gdigrab"))
             devices.push_back(QPair<QString, QString>{
                 "gdigrab#desktop",
                 QObject::tr("Desktop", "Desktop as a camera input for screen sharing")});
@@ -451,16 +483,16 @@ QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
         ;
     else if (isScreen(devName))
         return getScreenModes();
-#ifdef Q_OS_WIN
-    else if (QString::fromUtf8(iformat->name) == QString("dshow"))
-        return DirectShow::getDeviceModes(devName);
-#endif
-#if USING_V4L
-    else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2"))
+#if defined(USING_V4L)
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("video4linux2,v4l2"))
         return v4l2::getDeviceModes(devName);
 #endif
+#ifdef Q_OS_WIN
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("dshow"))
+        return DirectShow::getDeviceModes(devName);
+#endif
 #ifdef Q_OS_MACOS
-    else if (QString::fromUtf8(iformat->name) == QString("avfoundation"))
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("avfoundation"))
         return avfoundation::getDeviceModes(devName);
 #endif
     else
@@ -476,11 +508,11 @@ QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
  */
 QString CameraDevice::getPixelFormatString(uint32_t pixel_format)
 {
-#if USING_V4L
+#if defined(USING_V4L)
     return v4l2::getPixelFormatString(pixel_format);
 #else
     std::ignore = pixel_format;
-    return QString("unknown");
+    return QStringLiteral("unknown");
 #endif
 }
 
@@ -493,7 +525,7 @@ QString CameraDevice::getPixelFormatString(uint32_t pixel_format)
  */
 bool CameraDevice::betterPixelFormat(uint32_t a, uint32_t b)
 {
-#if USING_V4L
+#if defined(USING_V4L)
     return v4l2::betterPixelFormat(a, b);
 #else
     std::ignore = a;
@@ -516,7 +548,7 @@ bool CameraDevice::getDefaultInputFormat()
     avdevice_register_all();
 
 // Desktop capture input formats
-#if USING_V4L
+#if defined(USING_V4L)
     idesktopFormat = av_find_input_format("x11grab");
 #endif
 #ifdef Q_OS_WIN
@@ -524,7 +556,7 @@ bool CameraDevice::getDefaultInputFormat()
 #endif
 
 // Webcam input formats
-#if USING_V4L
+#if defined(USING_V4L)
     if ((iformat = av_find_input_format("v4l2")))
         return true;
 #endif
