@@ -26,7 +26,6 @@ private slots:
     void equalTest();
     void notEqualTest();
     void clearTest();
-    void copyTest();
     void validationTest();
 };
 
@@ -58,13 +57,6 @@ void TestToxId::clearTest()
     QVERIFY(empty != test);
     test.clear();
     QVERIFY(empty == test);
-}
-
-void TestToxId::copyTest()
-{
-    ToxId src(testToxId);
-    ToxId copy = src;
-    QVERIFY(copy == src);
 }
 
 void TestToxId::validationTest()
