@@ -7,6 +7,7 @@
 
 #include <cassert>
 #include <map>
+#include <ranges>
 
 #include <QDebug>
 #include <QScreen>
@@ -214,27 +215,26 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     // Identify the best resolutions available for the supposed XXXXp resolutions.
-    std::map<int, VideoMode> idealModes;
-    idealModes[120] = VideoMode(160, 120);
-    idealModes[240] = VideoMode(430, 240);
-    idealModes[360] = VideoMode(640, 360);
-    idealModes[480] = VideoMode(854, 480);
-    idealModes[720] = VideoMode(1280, 720);
-    idealModes[1080] = VideoMode(1920, 1080);
-    idealModes[1440] = VideoMode(2560, 1440);
-    idealModes[2160] = VideoMode(3840, 2160);
+    constexpr std::array<std::pair<int, VideoMode>, 8> idealModes{{
+        {120, VideoMode(160, 120)},    // 1
+        {240, VideoMode(430, 240)},    // 2
+        {360, VideoMode(640, 360)},    // 3
+        {480, VideoMode(854, 480)},    // 4
+        {720, VideoMode(1280, 720)},   // 5
+        {1080, VideoMode(1920, 1080)}, // 6
+        {1440, VideoMode(2560, 1440)}, // 7
+        {2160, VideoMode(3840, 2160)}, // 8
+    }};
 
     std::map<int, int> bestModeIndices;
     for (int i = 0; i < allVideoModes.size(); ++i) {
-        VideoMode mode = allVideoModes[i];
+        const VideoMode mode = allVideoModes[i];
 
         // PS3-Cam protection, everything above 60fps makes no sense
         if (mode.fps > 60)
             continue;
 
-        for (auto iter = idealModes.begin(); iter != idealModes.end(); ++iter) {
-            int res = iter->first;
-            VideoMode idealMode = iter->second;
+        for (const auto& [res, idealMode] : idealModes) {
             // don't take approximately correct resolutions unless they really
             // are close
             if (mode.norm(idealMode) > idealMode.tolerance())
@@ -245,8 +245,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
                 continue;
             }
 
-            int index = bestModeIndices[res];
-            VideoMode best = allVideoModes[index];
+            const VideoMode best = allVideoModes[bestModeIndices[res]];
             if (mode.norm(idealMode) < best.norm(idealMode)) {
                 bestModeIndices[res] = i;
                 continue;
@@ -267,8 +266,8 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     QVector<VideoMode> newVideoModes;
-    for (auto it = bestModeIndices.rbegin(); it != bestModeIndices.rend(); ++it) {
-        VideoMode mode_ = allVideoModes[it->second];
+    for (const auto& [_, modeIndex] : std::views::reverse(bestModeIndices)) {
+        VideoMode mode_ = allVideoModes[modeIndex];
 
         if (newVideoModes.empty()) {
             newVideoModes.push_back(mode_);

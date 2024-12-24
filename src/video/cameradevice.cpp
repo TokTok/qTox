@@ -15,6 +15,7 @@ extern "C"
 #pragma GCC diagnostic pop
 }
 #include "cameradevice.h"
+#include "scopedavdictionary.h"
 #include "src/persistence/settings.h"
 
 #include <QDebug>
@@ -90,58 +91,6 @@ constexpr auto toCharArray()
 
 // Compile-time unit test for the above function.
 static_assert(toCharArray<12345>() == std::array<char, 6>{'1', '2', '3', '4', '5', '\0'});
-
-class ScopedAVDictionary
-{
-    AVDictionary* options = nullptr;
-
-    struct Setter
-    {
-        AVDictionary** dict;
-        const char* key;
-
-        void operator=(const char* value)
-        {
-            av_dict_set(dict, key, value, 0);
-        }
-
-        template <size_t N>
-        void operator=(const std::array<char, N>& value)
-        {
-            *this = value.data();
-        }
-
-        void operator=(const QString& value)
-        {
-            *this = value.toStdString().c_str();
-        }
-
-        void operator=(int64_t value)
-        {
-            av_dict_set_int(dict, key, value, 0);
-        }
-    };
-
-public:
-    ScopedAVDictionary() = default;
-    ScopedAVDictionary& operator=(const ScopedAVDictionary&) = delete;
-    ScopedAVDictionary(const ScopedAVDictionary&) = delete;
-
-    ~ScopedAVDictionary()
-    {
-        av_dict_free(&options);
-    }
-
-    Setter operator[](const char* key)
-    {
-        return {&options, key};
-    }
-
-    AVDictionary** get()
-    {
-        return &options;
-    }
-};
 
 struct AVFormatContextDeleter
 {

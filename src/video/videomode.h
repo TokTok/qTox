@@ -15,7 +15,15 @@ struct VideoMode
     float fps = -1.0f;
     uint32_t pixel_format = 0;
 
-    explicit VideoMode(int width = 0, int height = 0, int x = 0, int y = 0, float fps = -1.0f);
+    explicit constexpr VideoMode(int width_ = 0, int height_ = 0, int x_ = 0, int y_ = 0,
+                                 float fps_ = -1.0f)
+        : width(width_)
+        , height(height_)
+        , x(x_)
+        , y(y_)
+        , fps(fps_)
+    {
+    }
 
     explicit VideoMode(QRect rect);
 

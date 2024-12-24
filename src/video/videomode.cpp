@@ -20,15 +20,6 @@
  * @note a value < 0 indicates an invalid value
  */
 
-VideoMode::VideoMode(int width_, int height_, int x_, int y_, float fps_)
-    : width(width_)
-    , height(height_)
-    , x(x_)
-    , y(y_)
-    , fps(fps_)
-{
-}
-
 VideoMode::VideoMode(QRect rect)
     : width(rect.width())
     , height(rect.height())
