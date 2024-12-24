@@ -49,18 +49,6 @@ AVForm::AVForm(IAudioControl& audio_, CoreAV* coreAV_, CameraSource& camera_,
 
     connect(rescanButton, &QPushButton::clicked, this, &AVForm::rescanDevices);
 
-    // TODO(iphydf): Fix the crashing bug when changing the video device during a call.
-    // See https://github.com/TokTok/qTox/issues/281
-    connect(coreAV_, &CoreAV::avStart, this, [this](uint32_t friendId, bool video) {
-        std::ignore = friendId;
-        std::ignore = video;
-        videoDevCombobox->setEnabled(false);
-    });
-    connect(coreAV_, &CoreAV::avEnd, this, [this](uint32_t friendId) {
-        std::ignore = friendId;
-        videoDevCombobox->setEnabled(!coreAV->isAnyCallActive());
-    });
-
     playbackSlider->setTracking(false);
     playbackSlider->setMaximum(totalSliderSteps);
     playbackSlider->setValue(getStepsFromValue(audioSettings_->getOutVolume(),

@@ -14,7 +14,8 @@
 #endif
 
 namespace avfoundation {
-bool isDesktopCapture(QString devName);
-QVector<VideoMode> getDeviceModes(QString devName);
+bool isDesktopCapture(const QString& devName);
+bool hasPermission(const QString& devName);
+QVector<VideoMode> getDeviceModes(const QString& devName);
 QVector<QPair<QString, QString>> getDeviceList();
 } // namespace avfoundation

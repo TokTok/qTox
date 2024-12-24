@@ -143,7 +143,7 @@ void CameraSource::setupDevice(const QString& deviceName_, const VideoMode& mode
         return;
     }
 
-    if (subscriptions) {
+    if (subscriptions != 0) {
         // To force close, ignoring optimization
         int subs = subscriptions;
         subscriptions = 0;
@@ -242,6 +242,7 @@ void CameraSource::openDevice()
     qDebug() << "Opening device" << deviceName << "subscriptions:" << subscriptions;
 
     if (device) {
+        qWarning() << "Device already open";
         device->open();
         emit openFailed();
         return;
@@ -251,7 +252,7 @@ void CameraSource::openDevice()
     device = CameraDevice::open(deviceName, mode);
 
     if (!device) {
-        qWarning() << "Failed to open device!";
+        qWarning() << "Failed to open device" << deviceName;
         emit openFailed();
         return;
     }
@@ -298,7 +299,6 @@ void CameraSource::openDevice()
         return;
     }
 
-
 #if LIBAVCODEC_VERSION_INT < 3747941
     // Copy context, since we apparently aren't allowed to use the original
     cctx = avcodec_alloc_context3(codec);
@@ -321,7 +321,7 @@ void CameraSource::openDevice()
 
     // Open codec
     if (avcodec_open2(cctx, codec, nullptr) < 0) {
-        qWarning() << "Can't open codec";
+        qWarning() << "Can't open codec" << codec->name;
         avcodec_free_context(&cctx);
         emit openFailed();
         return;
@@ -336,6 +336,7 @@ void CameraSource::openDevice()
     while (!streamFuture.isRunning())
         QThread::yieldCurrentThread();
 
+    qDebug() << "Opened device" << deviceName << "with codec" << codec->name;
     emit deviceOpened();
 }
 

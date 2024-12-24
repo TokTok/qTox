@@ -41,11 +41,22 @@ NSArray* getDevices()
 
 } // namespace
 
-bool avfoundation::isDesktopCapture(QString devName)
+bool avfoundation::isDesktopCapture(const QString& devName)
 {
     NSArray* devices = getDevices();
     const int index = devName.toInt();
     return index >= [devices count];
+}
+
+bool avfoundation::hasPermission(const QString& devName)
+{
+    if (isDesktopCapture(devName)) {
+        return CGPreflightScreenCaptureAccess();
+    }
+
+    const AVAuthorizationStatus authStatus =
+        [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    return authStatus == AVAuthorizationStatusAuthorized;
 }
 
 QVector<QPair<QString, QString>> avfoundation::getDeviceList()
@@ -98,7 +109,7 @@ QVector<QPair<QString, QString>> avfoundation::getDeviceList()
     return result;
 }
 
-QVector<VideoMode> avfoundation::getDeviceModes(QString devName)
+QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
 {
     QVector<VideoMode> result;
     NSArray* devices = getDevices();

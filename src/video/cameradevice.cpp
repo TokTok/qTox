@@ -17,6 +17,8 @@ extern "C"
 #include "cameradevice.h"
 #include "src/persistence/settings.h"
 
+#include <QDebug>
+
 // no longer needed when avformat version < 59 is no longer supported
 using AvFindInputFormatRet = decltype(av_find_input_format(""));
 
@@ -60,6 +62,63 @@ using AvFindInputFormatRet = decltype(av_find_input_format(""));
 namespace {
 AvFindInputFormatRet idesktopFormat{nullptr};
 AvFindInputFormatRet iformat{nullptr};
+
+QDebug operator<<(QDebug dbg, const AVDictionary* const* dict)
+{
+    QMap<QString, QString> map;
+    AVDictionaryEntry* entry = nullptr;
+    while ((entry = av_dict_get(*dict, "", entry, AV_DICT_IGNORE_SUFFIX))) {
+        map[QString::fromUtf8(entry->key)] = QString::fromUtf8(entry->value);
+    }
+
+    return dbg << map;
+}
+
+constexpr int numDigits(uint32_t num)
+{
+    int digits = 0;
+    while (num) {
+        num /= 10;
+        ++digits;
+    }
+    return digits;
+}
+
+template <uint32_t Num>
+constexpr auto toCharArray()
+{
+    std::array<char, numDigits(Num) + 1> str{};
+    int end = numDigits(Num);
+    for (uint32_t num = Num; num; num /= 10) {
+        str[--end] = num % 10 + '0';
+    }
+    return str;
+}
+
+// Compile-time unit test for the above function.
+static_assert(toCharArray<12345>() == std::array<char, 6>{'1', '2', '3', '4', '5', '\0'});
+
+struct ScopedAVDictionary
+{
+    AVDictionary* options = nullptr;
+    ~ScopedAVDictionary()
+    {
+        av_dict_free(&options);
+    }
+
+    AVDictionary** get()
+    {
+        return &options;
+    }
+};
+
+struct AVFormatContextDeleter
+{
+    void operator()(AVFormatContext* ctx) const
+    {
+        avformat_free_context(ctx);
+    }
+};
 } // namespace
 
 QHash<QString, CameraDevice*> CameraDevice::openDevices;
@@ -75,35 +134,36 @@ CameraDevice::CameraDevice(const QString& devName_, AVFormatContext* context_)
 CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 {
     QMutexLocker<QMutex> lock(&openDeviceLock);
-    AVFormatContext* fctx = nullptr;
     CameraDevice* dev = openDevices.value(devName);
-    int aDuration;
-    std::string devString;
     if (dev) {
         return dev;
     }
 
-    AvFindInputFormatRet format;
-    if (devName.startsWith("x11grab#")) {
-        devName = devName.mid(8);
-        format = idesktopFormat;
-    } else if (devName.startsWith("gdigrab#")) {
-        devName = devName.mid(8);
-        format = idesktopFormat;
-    } else {
-        format = iformat;
-    }
+    const AvFindInputFormatRet format = [&devName] {
+        for (const auto& grabName : {QStringLiteral("x11grab#"), QStringLiteral("gdigrab#")}) {
+            if (devName.startsWith(grabName)) {
+                devName = devName.mid(grabName.size());
+                return idesktopFormat;
+            }
+        }
+        return iformat;
+    }();
 
-    devString = devName.toStdString();
+    const std::string devString = devName.toStdString();
+    qDebug() << "Opening device" << devName << "with format" << format->name << "and options"
+             << options;
+    AVFormatContext* fctx = nullptr;
     if (avformat_open_input(&fctx, devString.c_str(), format, options) < 0) {
         return nullptr;
     }
 
 // Fix avformat_find_stream_info hanging on garbage input
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
-    aDuration = fctx->max_analyze_duration2 = 0;
+    const int aDuration = fctx->max_analyze_duration2;
+    fctx->max_analyze_duration2 = 0;
 #else
-    aDuration = fctx->max_analyze_duration = 0;
+    const int aDuration = fctx->max_analyze_duration;
+    fctx->max_analyze_duration = 0;
 #endif
 
     if (avformat_find_stream_info(fctx, nullptr) < 0) {
@@ -158,7 +218,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
     const std::string framerate = QString{}.setNum(FPS).toStdString();
 #endif
 
-    AVDictionary* options = nullptr;
+    ScopedAVDictionary options;
     if (!iformat)
         ;
 #if USING_V4L
@@ -179,19 +239,19 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         }
         const std::string screenVideoSize =
             QStringLiteral("%1x%2").arg(screen.width()).arg(screen.height()).toStdString();
-        av_dict_set(&options, "video_size", screenVideoSize.c_str(), 0);
+        av_dict_set(options.get(), "video_size", screenVideoSize.c_str(), 0);
         devName += QString("+%1,%2").arg(QString().setNum(mode.x), QString().setNum(mode.y));
 
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
+        av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
     } else if (QString::fromUtf8(iformat->name) == QString("video4linux2,v4l2")
                && !mode.isUnspecified()) {
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
+        av_dict_set(options.get(), "video_size", videoSize.c_str(), 0);
+        av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
         const std::string pixelFormatStr = v4l2::getPixelFormatString(mode.pixel_format).toStdString();
         // don't try to set a format string that doesn't exist
         if (pixelFormatStr != "unknown" && pixelFormatStr != "invalid") {
             const char* pixel_format = pixelFormatStr.c_str();
-            av_dict_set(&options, "pixel_format", pixel_format, 0);
+            av_dict_set(options.get(), "pixel_format", pixel_format, 0);
         }
     }
 #endif
@@ -200,40 +260,43 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
 
         const std::string offsetX = QString().setNum(mode.x).toStdString();
         const std::string offsetY = QString().setNum(mode.y).toStdString();
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
-        av_dict_set(&options, "offset_x", offsetX.c_str(), 0);
-        av_dict_set(&options, "offset_y", offsetY.c_str(), 0);
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
+        av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
+        av_dict_set(options.get(), "offset_x", offsetX.c_str(), 0);
+        av_dict_set(options.get(), "offset_y", offsetY.c_str(), 0);
+        av_dict_set(options.get(), "video_size", videoSize.c_str(), 0);
     } else if (QString::fromUtf8(iformat->name) == QString("dshow") && !mode.isUnspecified()) {
-        av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-        av_dict_set(&options, "framerate", framerate.c_str(), 0);
+        av_dict_set(options.get(), "video_size", videoSize.c_str(), 0);
+        av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
     }
 #endif
 #ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QString("avfoundation")) {
-        if (avfoundation::isDesktopCapture(devName)) {
-            av_dict_set(&options, "framerate", framerate.c_str(), 0);
-            av_dict_set_int(&options, "capture_cursor", 1, 0);
-            av_dict_set_int(&options, "capture_mouse_clicks", 1, 0);
-        } else if (!mode.isUnspecified()) {
-            av_dict_set(&options, "video_size", videoSize.c_str(), 0);
-            av_dict_set(&options, "framerate", framerate.c_str(), 0);
+        if (!avfoundation::hasPermission(devName)) {
+            qWarning() << "No permission to access device" << devName;
+            return nullptr;
         }
-        av_dict_set(&options, "probesize", "33554432", 0);
+        if (avfoundation::isDesktopCapture(devName)) {
+            qDebug() << "Opening desktop capture" << devName;
+            av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
+            av_dict_set_int(options.get(), "capture_cursor", 1, 0);
+            av_dict_set_int(options.get(), "capture_mouse_clicks", 1, 0);
+        } else if (!mode.isUnspecified()) {
+            qDebug() << "Opening camera" << devName;
+            av_dict_set(options.get(), "video_size", videoSize.c_str(), 0);
+            av_dict_set(options.get(), "framerate", framerate.c_str(), 0);
+        }
+        // We need a fair amount of probe buffer to calculate the fps: 30MiB.
+        constexpr auto probesize = toCharArray<30 * 1024 * 1024>();
+        av_dict_set(options.get(), "probesize", probesize.data(), 0);
         // TODO(iphydf): Find available pixel formats and select the first one.
-        av_dict_set(&options, "pixel_format", "uyvy422", 0);
+        av_dict_set(options.get(), "pixel_format", "uyvy422", 0);
     }
 #endif
     else if (!mode.isUnspecified()) {
         qWarning().nospace() << "No known options for " << iformat->name << ", using defaults.";
     }
 
-    CameraDevice* dev = open(devName, &options);
-    if (options) {
-        av_dict_free(&options);
-    }
-
-    return dev;
+    return open(devName, options.get());
 }
 
 /**
@@ -276,12 +339,12 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
         return devices;
 
     // Alloc an input device context
-    AVFormatContext* s;
-    if (!(s = avformat_alloc_context()))
+    std::unique_ptr<AVFormatContext, AVFormatContextDeleter> s{avformat_alloc_context()};
+    if (s == nullptr) {
         return devices;
+    }
 
     if (!iformat->priv_class || !AV_IS_INPUT_DEVICE(iformat->priv_class->category)) {
-        avformat_free_context(s);
         return devices;
     }
 
@@ -290,7 +353,6 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
     if (s->iformat->priv_data_size > 0) {
         s->priv_data = av_mallocz(s->iformat->priv_data_size);
         if (!s->priv_data) {
-            avformat_free_context(s);
             return devices;
         }
         if (s->iformat->priv_class) {
@@ -303,17 +365,14 @@ QVector<QPair<QString, QString>> CameraDevice::getRawDeviceListGeneric()
 #endif
 
     // List the devices for this context
-    AVDeviceInfoList* devlist = nullptr;
-    AVDictionary* tmp = nullptr;
-    av_dict_copy(&tmp, nullptr, 0);
-    if (av_opt_set_dict2(s, &tmp, AV_OPT_SEARCH_CHILDREN) < 0) {
-        av_dict_free(&tmp);
-        avformat_free_context(s);
+    ScopedAVDictionary tmp;
+    av_dict_copy(tmp.get(), nullptr, 0);
+    if (av_opt_set_dict2(s.get(), tmp.get(), AV_OPT_SEARCH_CHILDREN) < 0) {
         return devices;
     }
-    avdevice_list_devices(s, &devlist);
-    av_dict_free(&tmp);
-    avformat_free_context(s);
+
+    AVDeviceInfoList* devlist = nullptr;
+    avdevice_list_devices(s.get(), &devlist);
     if (!devlist) {
         qWarning() << "avdevice_list_devices failed";
         return devices;
