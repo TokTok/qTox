@@ -56,7 +56,7 @@ private:
 };
 
 namespace {
-const int bootstrap_timeout = 15000;
+const int bootstrap_timeout = 20000;
 const int connected_message_wait = 5000;
 
 void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& bob,

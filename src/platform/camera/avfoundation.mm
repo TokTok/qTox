@@ -135,7 +135,7 @@ QVector<VideoMode> avfoundation::getDeviceModes(const QString& devName)
                 VideoMode mode;
                 mode.width = dimensions.width;
                 mode.height = dimensions.height;
-                mode.FPS = range.maxFrameRate;
+                mode.fps = range.maxFrameRate;
                 result.append(mode);
             }
         }

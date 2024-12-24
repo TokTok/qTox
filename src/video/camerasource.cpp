@@ -119,7 +119,7 @@ void CameraSource::setupDefault()
     VideoMode mode_ = VideoMode(settings.getScreenRegion());
     if (!isScreen) {
         mode_ = VideoMode(settings.getCamVideoRes());
-        mode_.FPS = settings.getCamVideoFPS();
+        mode_.fps = settings.getCamVideoFPS();
     }
 
     setupDevice(deviceName_, mode_);

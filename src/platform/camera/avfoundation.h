@@ -9,13 +9,11 @@
 #include <QString>
 #include <QVector>
 
-#ifndef Q_OS_MACOS
-#error "This file is only meant to be compiled for macOS targets"
-#endif
-
+#ifdef Q_OS_MACOS
 namespace avfoundation {
 bool isDesktopCapture(const QString& devName);
 bool hasPermission(const QString& devName);
 QVector<VideoMode> getDeviceModes(const QString& devName);
 QVector<QPair<QString, QString>> getDeviceList();
 } // namespace avfoundation
+#endif

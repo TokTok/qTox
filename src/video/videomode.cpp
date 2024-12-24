@@ -15,17 +15,17 @@
  * @var unsigned short VideoMode::x, VideoMode::y
  * @brief Coordinates of upper-left corner.
  *
- * @var float VideoMode::FPS
+ * @var float VideoMode::fps
  * @brief Frames per second supported by the device at this resolution
  * @note a value < 0 indicates an invalid value
  */
 
-VideoMode::VideoMode(int width_, int height_, int x_, int y_, float FPS_)
+VideoMode::VideoMode(int width_, int height_, int x_, int y_, float fps_)
     : width(width_)
     , height(height_)
     , x(x_)
     , y(y_)
-    , FPS(FPS_)
+    , fps(fps_)
 {
 }
 
@@ -45,7 +45,7 @@ QRect VideoMode::toRect() const
 bool VideoMode::operator==(const VideoMode& other) const
 {
     return width == other.width && height == other.height && x == other.x && y == other.y
-           && qFuzzyCompare(FPS, other.FPS) && pixel_format == other.pixel_format;
+           && qFuzzyCompare(fps, other.fps) && pixel_format == other.pixel_format;
 }
 
 uint32_t VideoMode::norm(const VideoMode& other) const
@@ -66,5 +66,5 @@ uint32_t VideoMode::tolerance() const
  */
 bool VideoMode::isUnspecified() const
 {
-    return width == 0 || height == 0 || static_cast<int>(FPS) == 0;
+    return width == 0 || height == 0 || static_cast<int>(fps) == 0;
 }

@@ -140,7 +140,7 @@ void AVForm::open(const QString& devName, const VideoMode& mode)
 {
     QRect rect = mode.toRect();
     videoSettings->setCamVideoRes(rect);
-    videoSettings->setCamVideoFPS(static_cast<float>(mode.FPS));
+    videoSettings->setCamVideoFPS(mode.fps);
     camera.setupDevice(devName, mode);
 }
 
@@ -229,7 +229,7 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
         VideoMode mode = allVideoModes[i];
 
         // PS3-Cam protection, everything above 60fps makes no sense
-        if (mode.FPS > 60)
+        if (mode.fps > 60)
             continue;
 
         for (auto iter = idealModes.begin(); iter != idealModes.end(); ++iter) {
@@ -254,13 +254,13 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
 
             if (mode.norm(idealMode) == best.norm(idealMode)) {
                 // prefer higher FPS and "better" pixel formats
-                if (mode.FPS > best.FPS) {
+                if (mode.fps > best.fps) {
                     bestModeIndices[res] = i;
                     continue;
                 }
 
                 bool better = CameraDevice::betterPixelFormat(mode.pixel_format, best.pixel_format);
-                if (mode.FPS >= best.FPS && better)
+                if (mode.fps >= best.fps && better)
                     bestModeIndices[res] = i;
             }
         }
@@ -295,8 +295,8 @@ void AVForm::fillCameraModesComboBox()
 
         QString str;
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
-        qDebug("width: %d, height: %d, FPS: %f, pixel format: %s", mode.width, mode.height,
-               static_cast<double>(mode.FPS), pixelFormat.c_str());
+        qDebug("width: %d, height: %d, fps: %f, pixel format: %s", mode.width, mode.height,
+               static_cast<double>(mode.fps), pixelFormat.c_str());
 
         if (mode.height && mode.width) {
             str += QString("%1p").arg(mode.height);
@@ -321,7 +321,7 @@ int AVForm::searchPreferredIndex()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         if (mode.width == prefRes.width() && mode.height == prefRes.height()
-            && (qAbs(mode.FPS - prefFPS) < 0.0001f)) {
+            && (qAbs(mode.fps - prefFPS) < 0.0001f)) {
             return i;
         }
     }
@@ -337,8 +337,8 @@ void AVForm::fillScreenModesComboBox()
     for (int i = 0; i < videoModes.size(); ++i) {
         VideoMode mode = videoModes[i];
         std::string pixelFormat = CameraDevice::getPixelFormatString(mode.pixel_format).toStdString();
-        qDebug("%dx%d+%d,%d FPS: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
-               static_cast<double>(mode.FPS), pixelFormat.c_str());
+        qDebug("%dx%d+%d,%d fps: %f, pixel format: %s", mode.width, mode.height, mode.x, mode.y,
+               static_cast<double>(mode.fps), pixelFormat.c_str());
 
         QString name;
         if (mode.width && mode.height)
