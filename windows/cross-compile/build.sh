@@ -75,7 +75,7 @@ export PKG_CONFIG_PATH=/windows/lib64/pkgconfig
 
 # Spell check on windows currently not supported, disable
 if [[ "$BUILD_TYPE" == "Release" ]]; then
-  cmake -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
+  /windows/bin/qt-cmake \
     -DCMAKE_LIBRARY_PATH=/windows/lib64 \
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Release \
@@ -87,7 +87,7 @@ if [[ "$BUILD_TYPE" == "Release" ]]; then
     "-B$QTOX_BUILD_DIR" \
     "$QTOX_SRC_DIR"
 elif [[ "$BUILD_TYPE" == "Debug" ]]; then
-  cmake -DCMAKE_TOOLCHAIN_FILE=/build/windows-toolchain.cmake \
+  /windows/bin/qt-cmake \
     -DCMAKE_LIBRARY_PATH=/windows/lib64 \
     -DCMAKE_PREFIX_PATH=/windows \
     -DCMAKE_BUILD_TYPE=Debug \
