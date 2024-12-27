@@ -27,18 +27,23 @@ else
   echo "No Development identity found, skipping code signing"
 fi
 
-create-dmg \
-  --filesystem APFS \
-  --no-internet-enable \
-  --volname "qTox $APP_VER" \
-  --volicon "$QTOX_DIR/img/icons/qtox.icns" \
-  --background "$QTOX_DIR/macos/backgroundImage.tiff" \
-  --eula "$QTOX_DIR/macos/gplv3.rtf" \
-  --window-pos 200 120 \
-  --window-size 640 480 \
-  --icon-size 128 \
-  --hide-extension "qTox.app" \
-  --icon "qTox.app" 0 300 \
-  --app-drop-link 400 300 \
-  "$BUILD_DIR/qTox.dmg" \
-  "$BUNDLE_PATH"
+createdmg() {
+  create-dmg \
+    --filesystem APFS \
+    --no-internet-enable \
+    --volname "qTox $APP_VER" \
+    --volicon "$QTOX_DIR/img/icons/qtox.icns" \
+    --background "$QTOX_DIR/macos/backgroundImage.tiff" \
+    --eula "$QTOX_DIR/macos/gplv3.rtf" \
+    --window-pos 200 120 \
+    --window-size 640 480 \
+    --icon-size 128 \
+    --hide-extension "qTox.app" \
+    --icon "qTox.app" 0 300 \
+    --app-drop-link 400 300 \
+    "$BUILD_DIR/qTox.dmg" \
+    "$BUNDLE_PATH"
+}
+
+# Retry 3 times in case of "hdiutil: create failed - Resource busy".
+createdmg || createdmg || createdmg

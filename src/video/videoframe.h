@@ -25,7 +25,13 @@ extern "C"
 #include <memory>
 #include <unordered_map>
 
-class FrameLocker
+/**
+ * @brief A combination of QReadLocker and QWriteLocker that unlocks the lock when destroyed.
+ *
+ * Unlike QReadLocker and QWriteLocker, objects of this class are movable, so we use this to
+ * extend a critical section to the calling scope.
+ */
+class ReadWriteLocker
 {
 public:
     enum LockType
@@ -34,46 +40,46 @@ public:
         ReadLock,
     };
 
-    FrameLocker() = default;
+    ReadWriteLocker() = default;
 
-    explicit FrameLocker(QReadWriteLock* lock, LockType type)
-        : lock(lock)
+    explicit ReadWriteLocker(QReadWriteLock* lock, LockType type)
+        : lock_(lock)
     {
         switch (type) {
         case WriteLock:
-            lock->lockForWrite();
+            lock_->lockForWrite();
             break;
         case ReadLock:
-            lock->lockForRead();
+            lock_->lockForRead();
             break;
         }
     }
 
-    ~FrameLocker()
+    ~ReadWriteLocker()
     {
-        if (lock != nullptr) {
-            lock->unlock();
+        if (lock_ != nullptr) {
+            lock_->unlock();
         }
     }
 
-    FrameLocker(FrameLocker&& other)
-        : lock(other.lock)
+    ReadWriteLocker(ReadWriteLocker&& other)
+        : lock_(other.lock_)
     {
-        other.lock = nullptr;
+        other.lock_ = nullptr;
     }
 
-    FrameLocker& operator=(FrameLocker&& other)
+    ReadWriteLocker& operator=(ReadWriteLocker&& other)
     {
         if (this != &other) {
-            lock = other.lock;
-            other.lock = nullptr;
+            lock_ = other.lock_;
+            other.lock_ = nullptr;
         }
 
         return *this;
     }
 
 private:
-    QReadWriteLock* lock;
+    QReadWriteLock* lock_;
 };
 
 struct ToxYUVFrame
@@ -120,10 +126,8 @@ public:
 
     void releaseFrame();
 
-    std::pair<const AVFrame*, FrameLocker> getAVFrame(QSize frameSize, const int pixelFormat,
-                                                      const bool requireAligned);
     QImage toQImage(QSize frameSize = {});
-    std::pair<ToxYUVFrame, FrameLocker> toToxYUVFrame(QSize frameSize = {});
+    std::pair<ToxYUVFrame, ReadWriteLocker> toToxYUVFrame();
 
     IDType getFrameID() const;
     IDType getSourceID() const;
@@ -181,7 +185,7 @@ private:
     void deleteFrameBuffer();
 
     template <typename F>
-    std::pair<std::invoke_result_t<F, AVFrame* const>, FrameLocker>
+    std::pair<std::invoke_result_t<F, AVFrame* const>, ReadWriteLocker>
     toGenericObject(const QSize& dimensions, int pixelFormat, bool requireAligned,
                     const F& objectConstructor);
 
