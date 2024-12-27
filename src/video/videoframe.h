@@ -25,6 +25,57 @@ extern "C"
 #include <memory>
 #include <unordered_map>
 
+class FrameLocker
+{
+public:
+    enum LockType
+    {
+        WriteLock,
+        ReadLock,
+    };
+
+    FrameLocker() = default;
+
+    explicit FrameLocker(QReadWriteLock* lock, LockType type)
+        : lock(lock)
+    {
+        switch (type) {
+        case WriteLock:
+            lock->lockForWrite();
+            break;
+        case ReadLock:
+            lock->lockForRead();
+            break;
+        }
+    }
+
+    ~FrameLocker()
+    {
+        if (lock != nullptr) {
+            lock->unlock();
+        }
+    }
+
+    FrameLocker(FrameLocker&& other)
+        : lock(other.lock)
+    {
+        other.lock = nullptr;
+    }
+
+    FrameLocker& operator=(FrameLocker&& other)
+    {
+        if (this != &other) {
+            lock = other.lock;
+            other.lock = nullptr;
+        }
+
+        return *this;
+    }
+
+private:
+    QReadWriteLock* lock;
+};
+
 struct ToxYUVFrame
 {
 public:
@@ -69,9 +120,10 @@ public:
 
     void releaseFrame();
 
-    const AVFrame* getAVFrame(QSize frameSize, const int pixelFormat, const bool requireAligned);
+    std::pair<const AVFrame*, FrameLocker> getAVFrame(QSize frameSize, const int pixelFormat,
+                                                      const bool requireAligned);
     QImage toQImage(QSize frameSize = {});
-    ToxYUVFrame toToxYUVFrame(QSize frameSize = {});
+    std::pair<ToxYUVFrame, FrameLocker> toToxYUVFrame(QSize frameSize = {});
 
     IDType getFrameID() const;
     IDType getSourceID() const;
@@ -129,9 +181,9 @@ private:
     void deleteFrameBuffer();
 
     template <typename F>
-    std::invoke_result_t<F, AVFrame* const> toGenericObject(const QSize& dimensions,
-                                                            int pixelFormat, bool requireAligned,
-                                                            const F& objectConstructor);
+    std::pair<std::invoke_result_t<F, AVFrame* const>, FrameLocker>
+    toGenericObject(const QSize& dimensions, int pixelFormat, bool requireAligned,
+                    const F& objectConstructor);
 
 private:
     // ID

@@ -64,6 +64,7 @@ QVector<QPair<QString, QString>> avfoundation::getDeviceList()
     QVector<QPair<QString, QString>> result;
 
 #if __MAC_OS_X_VERSION_MIN_REQUIRED >= 101400
+    CGRequestScreenCaptureAccess();
     const AVAuthorizationStatus authStatus =
         [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus != AVAuthorizationStatusDenied && authStatus != AVAuthorizationStatusNotDetermined) {

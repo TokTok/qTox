@@ -25,4 +25,5 @@ install_deps() {
     popd
     rm -rf "external/$dep"
   done
+  rmdir external
 }

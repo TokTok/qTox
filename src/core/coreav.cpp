@@ -397,9 +397,9 @@ void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
         call.setNullVideoBitrate(false);
     }
 
-    ToxYUVFrame frame = vframe->toToxYUVFrame();
+    auto [frame, frameLocker] = vframe->toToxYUVFrame();
 
-    if (!frame) {
+    if (!frame.isValid()) {
         return;
     }
 
