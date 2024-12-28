@@ -32,6 +32,7 @@
 #include <memory>
 #include <random>
 #include <tox/tox.h>
+#include <tox/tox_events.h>
 
 const QString Core::TOX_EXT = ".tox";
 
@@ -46,7 +47,43 @@ QList<DhtServer> shuffleBootstrapNodes(QList<DhtServer> bootstrapNodes)
     return bootstrapNodes;
 }
 
+struct Tox_Events_Deleter
+{
+    [[maybe_unused]]
+    void operator()(Tox_Events* events)
+    {
+        tox_events_free(events);
+    }
+};
+
+Tox_Message_Type toToxEnum(Core::MessageType type)
+{
+    switch (type) {
+    case Core::MessageType::NORMAL:
+        return TOX_MESSAGE_TYPE_NORMAL;
+    case Core::MessageType::ACTION:
+        return TOX_MESSAGE_TYPE_ACTION;
+    }
+    qFatal("Unknown message type: %d", static_cast<int>(type));
+}
+
+ConferenceType fromToxEnum(Tox_Conference_Type type)
+{
+    switch (type) {
+    case TOX_CONFERENCE_TYPE_TEXT:
+        return ConferenceType::TEXT;
+    case TOX_CONFERENCE_TYPE_AV:
+        return ConferenceType::AV;
+    }
+    return ConferenceType::UNKNOWN;
+}
+
 } // namespace
+
+void Core::Tox_Deleter::operator()(Tox* tox_) const
+{
+    tox_kill(tox_);
+}
 
 Core::Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_,
            const ICoreSettings& settings_)
@@ -76,27 +113,6 @@ Core::~Core()
     coreThread->wait();
 
     tox.reset();
-}
-
-/**
- * @brief Registers all toxcore callbacks
- * @param tox Tox instance to register the callbacks on
- */
-void Core::registerCallbacks(Tox* tox)
-{
-    tox_callback_friend_request(tox, onFriendRequest);
-    tox_callback_friend_message(tox, onFriendMessage);
-    tox_callback_friend_name(tox, onFriendNameChange);
-    tox_callback_friend_typing(tox, onFriendTypingChange);
-    tox_callback_friend_status_message(tox, onStatusMessageChanged);
-    tox_callback_friend_status(tox, onUserStatusChanged);
-    tox_callback_friend_connection_status(tox, onConnectionStatusChanged);
-    tox_callback_friend_read_receipt(tox, onReadReceiptCallback);
-    tox_callback_conference_invite(tox, onConferenceInvite);
-    tox_callback_conference_message(tox, onConferenceMessage);
-    tox_callback_conference_peer_list_changed(tox, onConferencePeerListChange);
-    tox_callback_conference_peer_name(tox, onConferencePeerNameChange);
-    tox_callback_conference_title(tox, onConferenceTitleChange);
 }
 
 /**
@@ -182,7 +198,7 @@ std::pair<ToxCorePtr, Core::ToxCoreErrors> Core::makeToxCore(const QByteArray& s
         return {nullptr, ToxCoreErrors::FAILED_TO_START};
     }
 
-    registerCallbacks(core->tox.get());
+    tox_events_init(core->tox.get());
 
     // connect the thread with the Core
     connect(thread, &QThread::started, core.get(), &Core::onStarted);
@@ -257,6 +273,93 @@ QRecursiveMutex& Core::getCoreLoopLock() const
     return coreLoopLock;
 }
 
+void Core::dispatchEvent(const Tox_Event* event)
+{
+    switch (tox_event_get_type(event)) {
+    case TOX_EVENT_FRIEND_REQUEST:
+        return onFriendRequest(tox_event_get_friend_request(event), this);
+    case TOX_EVENT_FRIEND_CONNECTION_STATUS:
+        return onFriendConnectionStatus(tox_event_get_friend_connection_status(event), this);
+    case TOX_EVENT_FRIEND_LOSSY_PACKET:
+        break;
+    case TOX_EVENT_FRIEND_LOSSLESS_PACKET:
+        break;
+    case TOX_EVENT_FRIEND_NAME:
+        return onFriendName(tox_event_get_friend_name(event), this);
+    case TOX_EVENT_FRIEND_STATUS:
+        return onFriendStatus(tox_event_get_friend_status(event), this);
+    case TOX_EVENT_FRIEND_STATUS_MESSAGE:
+        return onFriendStatusMessage(tox_event_get_friend_status_message(event), this);
+    case TOX_EVENT_FRIEND_MESSAGE:
+        return onFriendMessage(tox_event_get_friend_message(event), this);
+    case TOX_EVENT_FRIEND_READ_RECEIPT:
+        return onFriendReadReceipt(tox_event_get_friend_read_receipt(event), this);
+    case TOX_EVENT_FRIEND_TYPING:
+        return onFriendTyping(tox_event_get_friend_typing(event), this);
+    case TOX_EVENT_FILE_CHUNK_REQUEST:
+        return CoreFile::onFileChunkRequest(tox_event_get_file_chunk_request(event), this);
+    case TOX_EVENT_FILE_RECV:
+        return CoreFile::onFileRecv(tox_event_get_file_recv(event), this);
+    case TOX_EVENT_FILE_RECV_CHUNK:
+        return CoreFile::onFileRecvChunk(tox_event_get_file_recv_chunk(event), this);
+    case TOX_EVENT_FILE_RECV_CONTROL:
+        return CoreFile::onFileRecvControl(tox_event_get_file_recv_control(event), this);
+    case TOX_EVENT_CONFERENCE_INVITE:
+        return onConferenceInvite(tox_event_get_conference_invite(event), this);
+    case TOX_EVENT_CONFERENCE_CONNECTED:
+        break;
+    case TOX_EVENT_CONFERENCE_PEER_LIST_CHANGED:
+        return onConferencePeerListChanged(tox_event_get_conference_peer_list_changed(event), this);
+    case TOX_EVENT_CONFERENCE_PEER_NAME:
+        return onConferencePeerName(tox_event_get_conference_peer_name(event), this);
+    case TOX_EVENT_CONFERENCE_TITLE:
+        return onConferenceTitle(tox_event_get_conference_title(event), this);
+    case TOX_EVENT_CONFERENCE_MESSAGE:
+        return onConferenceMessage(tox_event_get_conference_message(event), this);
+    case TOX_EVENT_GROUP_PEER_NAME:
+        break;
+    case TOX_EVENT_GROUP_PEER_STATUS:
+        break;
+    case TOX_EVENT_GROUP_TOPIC:
+        break;
+    case TOX_EVENT_GROUP_PRIVACY_STATE:
+        break;
+    case TOX_EVENT_GROUP_VOICE_STATE:
+        break;
+    case TOX_EVENT_GROUP_TOPIC_LOCK:
+        break;
+    case TOX_EVENT_GROUP_PEER_LIMIT:
+        break;
+    case TOX_EVENT_GROUP_PASSWORD:
+        break;
+    case TOX_EVENT_GROUP_MESSAGE:
+        break;
+    case TOX_EVENT_GROUP_PRIVATE_MESSAGE:
+        break;
+    case TOX_EVENT_GROUP_CUSTOM_PACKET:
+        break;
+    case TOX_EVENT_GROUP_CUSTOM_PRIVATE_PACKET:
+        break;
+    case TOX_EVENT_GROUP_INVITE:
+        break;
+    case TOX_EVENT_GROUP_PEER_JOIN:
+        break;
+    case TOX_EVENT_GROUP_PEER_EXIT:
+        break;
+    case TOX_EVENT_GROUP_SELF_JOIN:
+        break;
+    case TOX_EVENT_GROUP_JOIN_FAIL:
+        break;
+    case TOX_EVENT_GROUP_MODERATION:
+        break;
+    case TOX_EVENT_DHT_GET_NODES_RESPONSE:
+        break;
+    default:
+        qWarning() << "Unknown event type" << tox_event_type_to_string(tox_event_get_type(event));
+        break;
+    }
+}
+
 /**
  * @brief Processes toxcore events and ensure we stay connected, called by its own timer
  */
@@ -266,7 +369,16 @@ void Core::process()
 
     ASSERT_CORE_THREAD;
 
-    tox_iterate(tox.get(), this);
+    Tox_Err_Events_Iterate err;
+    std::unique_ptr<Tox_Events, Tox_Events_Deleter> events{tox_events_iterate(tox.get(), true, &err)};
+    if (err != TOX_ERR_EVENTS_ITERATE_OK) {
+        PARSE_ERR(err);
+    } else if (events != nullptr) {
+        for (uint32_t i = 0; i < tox_events_get_size(events.get()); ++i) {
+            const Tox_Event* event = tox_events_get(events.get(), i);
+            dispatchEvent(event);
+        }
+    }
 
 #ifdef DEBUG
     // we want to see the debug messages immediately
@@ -368,51 +480,63 @@ void Core::bootstrapDht()
     }
 }
 
-void Core::onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cMessage,
-                           size_t cMessageSize, void* core)
+void Core::onFriendRequest(const Tox_Event_Friend_Request* event, void* vCore)
 {
-    std::ignore = tox;
-    const ToxPk friendPk(cFriendPk);
-    const QString requestMessage = ToxString(cMessage, cMessageSize).getQString();
-    emit static_cast<Core*>(core)->friendRequestReceived(friendPk, requestMessage);
+    Core* core = static_cast<Core*>(vCore);
+    const ToxPk friendPk(tox_event_friend_request_get_public_key(event));
+    const QString requestMessage = ToxString(tox_event_friend_request_get_message(event),
+                                             tox_event_friend_request_get_message_length(event))
+                                       .getQString();
+    emit core->friendRequestReceived(friendPk, requestMessage);
 }
 
-void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
-                           const uint8_t* cMessage, size_t cMessageSize, void* core)
+void Core::onFriendMessage(const Tox_Event_Friend_Message* event, void* vCore)
 {
-    std::ignore = tox;
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_message_get_friend_number(event);
+    const auto type = tox_event_friend_message_get_type(event);
+    const auto* const message = tox_event_friend_message_get_message(event);
+    const auto length = tox_event_friend_message_get_message_length(event);
     const bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
-    const QString msg = ToxString(cMessage, cMessageSize).getQString();
-    emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
+    const QString msg = ToxString(message, length).getQString();
+    emit core->friendMessageReceived(friendId, msg, isAction);
 }
 
-void Core::onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName, size_t cNameSize,
-                              void* core)
+void Core::onFriendName(const Tox_Event_Friend_Name* event, void* vCore)
 {
-    std::ignore = tox;
-    const QString newName = ToxString(cName, cNameSize).getQString();
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_name_get_friend_number(event);
+    const auto* const name = tox_event_friend_name_get_name(event);
+    const auto length = tox_event_friend_name_get_name_length(event);
+    const QString newName = ToxString(name, length).getQString();
     // no saveRequest, this callback is called on every connection, not just on name change
-    emit static_cast<Core*>(core)->friendUsernameChanged(friendId, newName);
+    emit core->friendUsernameChanged(friendId, newName);
 }
 
-void Core::onFriendTypingChange(Tox* tox, uint32_t friendId, bool isTyping, void* core)
+void Core::onFriendTyping(const Tox_Event_Friend_Typing* event, void* vCore)
 {
-    std::ignore = tox;
-    emit static_cast<Core*>(core)->friendTypingChanged(friendId, isTyping);
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_typing_get_friend_number(event);
+    const auto isTyping = tox_event_friend_typing_get_typing(event);
+    emit core->friendTypingChanged(friendId, isTyping);
 }
 
-void Core::onStatusMessageChanged(Tox* tox, uint32_t friendId, const uint8_t* cMessage,
-                                  size_t cMessageSize, void* core)
+void Core::onFriendStatusMessage(const Tox_Event_Friend_Status_Message* event, void* vCore)
 {
-    std::ignore = tox;
-    const QString message = ToxString(cMessage, cMessageSize).getQString();
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_status_message_get_friend_number(event);
+    const auto* const message = tox_event_friend_status_message_get_message(event);
+    const auto length = tox_event_friend_status_message_get_message_length(event);
+    const QString msg = ToxString(message, length).getQString();
     // no saveRequest, this callback is called on every connection, not just on name change
-    emit static_cast<Core*>(core)->friendStatusMessageChanged(friendId, message);
+    emit core->friendStatusMessageChanged(friendId, msg);
 }
 
-void Core::onUserStatusChanged(Tox* tox, uint32_t friendId, Tox_User_Status userstatus, void* core)
+void Core::onFriendStatus(const Tox_Event_Friend_Status* event, void* vCore)
 {
-    std::ignore = tox;
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_status_get_friend_number(event);
+    const auto userstatus = tox_event_friend_status_get_status(event);
     Status::Status status;
     switch (userstatus) {
     case TOX_USER_STATUS_AWAY:
@@ -429,13 +553,14 @@ void Core::onUserStatusChanged(Tox* tox, uint32_t friendId, Tox_User_Status user
     }
 
     // no saveRequest, this callback is called on every connection, not just on name change
-    emit static_cast<Core*>(core)->friendStatusChanged(friendId, status);
+    emit core->friendStatusChanged(friendId, status);
 }
 
-void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection status, void* vCore)
+void Core::onFriendConnectionStatus(const Tox_Event_Friend_Connection_Status* event, void* vCore)
 {
-    std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_connection_status_get_friend_number(event);
+    const auto status = tox_event_friend_connection_status_get_connection_status(event);
     Status::Status friendStatus = Status::Status::Offline;
     switch (status) {
     case TOX_CONNECTION_NONE:
@@ -463,78 +588,88 @@ void Core::onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection
     }
 }
 
-void Core::onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
-                              const uint8_t* cookie, size_t length, void* vCore)
+void Core::onConferenceInvite(const Tox_Event_Conference_Invite* event, void* vCore)
 {
-    std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_conference_invite_get_friend_number(event);
+    const auto type = tox_event_conference_invite_get_type(event);
+    const auto* const cookie = tox_event_conference_invite_get_cookie(event);
+    const auto length = tox_event_conference_invite_get_cookie_length(event);
     const QByteArray data(reinterpret_cast<const char*>(cookie), length);
-    const ConferenceInvite inviteInfo(friendId, type, data);
-    switch (type) {
-    case TOX_CONFERENCE_TYPE_TEXT:
+    const ConferenceInvite inviteInfo(friendId, fromToxEnum(type), data);
+    switch (fromToxEnum(type)) {
+    case ConferenceType::TEXT:
         qDebug() << "Text conference invite by" << friendId;
         emit core->conferenceInviteReceived(inviteInfo);
         break;
 
-    case TOX_CONFERENCE_TYPE_AV:
+    case ConferenceType::AV:
         qDebug() << "AV conference invite by" << friendId;
         emit core->conferenceInviteReceived(inviteInfo);
         break;
 
-    default:
-        qWarning() << "Conference invite with unknown type" << type;
+    case ConferenceType::UNKNOWN:
+        qCritical() << "Conference invite with unknown type" << type;
+        break;
     }
 }
 
-void Core::onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId, Tox_Message_Type type,
-                               const uint8_t* cMessage, size_t length, void* vCore)
+void Core::onConferenceMessage(const Tox_Event_Conference_Message* event, void* vCore)
 {
-    std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
-    const bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
-    const QString message = ToxString(cMessage, length).getQString();
-    emit core->conferenceMessageReceived(conferenceId, peerId, message, isAction);
+    const auto conferenceId = tox_event_conference_message_get_conference_number(event);
+    const auto peerId = tox_event_conference_message_get_peer_number(event);
+    const auto type = tox_event_conference_message_get_type(event);
+    const auto* const message = tox_event_conference_message_get_message(event);
+    const auto length = tox_event_conference_message_get_message_length(event);
+    bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
+    QString msg = ToxString(message, length).getQString();
+    emit core->conferenceMessageReceived(conferenceId, peerId, msg, isAction);
 }
 
-void Core::onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* vCore)
+void Core::onConferencePeerListChanged(const Tox_Event_Conference_Peer_List_Changed* event, void* vCore)
 {
-    std::ignore = tox;
-    auto* const core = static_cast<Core*>(vCore);
+    Core* core = static_cast<Core*>(vCore);
+    const auto conferenceId = tox_event_conference_peer_list_changed_get_conference_number(event);
     qDebug("Conference %u peerlist changed", conferenceId);
-    // no saveRequest, this callback is called on every connection to conference peer, not just on brand new peers
     emit core->conferencePeerlistChanged(conferenceId);
 }
 
-void Core::onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                      const uint8_t* name, size_t length, void* vCore)
+void Core::onConferencePeerName(const Tox_Event_Conference_Peer_Name* event, void* vCore)
 {
-    std::ignore = tox;
+    Core* core = static_cast<Core*>(vCore);
+    const auto conferenceId = tox_event_conference_peer_name_get_conference_number(event);
+    const auto peerId = tox_event_conference_peer_name_get_peer_number(event);
+    const auto* const name = tox_event_conference_peer_name_get_name(event);
+    const auto length = tox_event_conference_peer_name_get_name_length(event);
     const auto newName = ToxString(name, length).getQString();
     qDebug().nospace() << "Conference " << conferenceId << ", peer " << peerId << ", name " << newName;
-    auto* core = static_cast<Core*>(vCore);
     auto peerPk = core->getConferencePeerPk(conferenceId, peerId);
     emit core->conferencePeerNameChanged(conferenceId, peerPk, newName);
 }
 
-void Core::onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                   const uint8_t* cTitle, size_t length, void* vCore)
+void Core::onConferenceTitle(const Tox_Event_Conference_Title* event, void* vCore)
 {
-    std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
+    const auto conferenceId = tox_event_conference_title_get_conference_number(event);
+    const auto peerId = tox_event_conference_title_get_peer_number(event);
+    const auto* const title = tox_event_conference_title_get_title(event);
+    const auto length = tox_event_conference_title_get_title_length(event);
     QString author;
     // from tox.h: "If peer_number == UINT32_MAX, then author is unknown (e.g. initial joining the conference)."
     if (peerId != std::numeric_limits<uint32_t>::max()) {
         author = core->getConferencePeerName(conferenceId, peerId);
     }
     emit core->saveRequest();
-    emit core->conferenceTitleChanged(conferenceId, author, ToxString(cTitle, length).getQString());
+    emit core->conferenceTitleChanged(conferenceId, author, ToxString(title, length).getQString());
 }
 
-
-void Core::onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core)
+void Core::onFriendReadReceipt(const Tox_Event_Friend_Read_Receipt* event, void* vCore)
 {
-    std::ignore = tox;
-    emit static_cast<Core*>(core)->receiptReceived(friendId, ReceiptNum{receipt});
+    Core* core = static_cast<Core*>(vCore);
+    const auto friendId = tox_event_friend_read_receipt_get_friend_number(event);
+    const auto receipt = tox_event_friend_read_receipt_get_message_id(event);
+    emit core->receiptReceived(friendId, ReceiptNum{receipt});
 }
 
 void Core::acceptFriendRequest(const ToxPk& friendPk)
@@ -607,11 +742,11 @@ void Core::requestFriendship(const ToxId& friendId, const QString& message)
     }
 }
 
-bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
+bool Core::sendMessageWithType(uint32_t friendId, const QString& message, MessageType type,
                                ReceiptNum& receipt)
 {
     const int size = message.toUtf8().size();
-    auto maxSize = static_cast<int>(getMaxMessageSize());
+    const auto maxSize = static_cast<int>(getMaxMessageSize());
     if (size > maxSize) {
         assert(false);
         qCritical() << "Core::sendMessageWithType called with message of size:" << size
@@ -621,21 +756,21 @@ bool Core::sendMessageWithType(uint32_t friendId, const QString& message, Tox_Me
 
     const ToxString cMessage(message);
     Tox_Err_Friend_Send_Message error;
-    receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, type, cMessage.data(),
-                                                 cMessage.size(), &error)};
+    receipt = ReceiptNum{tox_friend_send_message(tox.get(), friendId, toToxEnum(type),
+                                                 cMessage.data(), cMessage.size(), &error)};
     return PARSE_ERR(error);
 }
 
 bool Core::sendMessage(uint32_t friendId, const QString& message, ReceiptNum& receipt)
 {
     const QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
-    return sendMessageWithType(friendId, message, TOX_MESSAGE_TYPE_NORMAL, receipt);
+    return sendMessageWithType(friendId, message, MessageType::NORMAL, receipt);
 }
 
 bool Core::sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt)
 {
     const QMutexLocker<QRecursiveMutex> ml(&coreLoopLock);
-    return sendMessageWithType(friendId, action, TOX_MESSAGE_TYPE_ACTION, receipt);
+    return sendMessageWithType(friendId, action, MessageType::ACTION, receipt);
 }
 
 void Core::sendTyping(uint32_t friendId, bool typing)
@@ -649,7 +784,7 @@ void Core::sendTyping(uint32_t friendId, bool typing)
     }
 }
 
-void Core::sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type)
+void Core::sendConferenceMessageWithType(int conferenceId, const QString& message, MessageType type)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
@@ -663,7 +798,8 @@ void Core::sendConferenceMessageWithType(int conferenceId, const QString& messag
 
     const ToxString cMsg(message);
     Tox_Err_Conference_Send_Message error;
-    tox_conference_send_message(tox.get(), conferenceId, type, cMsg.data(), cMsg.size(), &error);
+    tox_conference_send_message(tox.get(), conferenceId, toToxEnum(type), cMsg.data(), cMsg.size(),
+                                &error);
     if (!PARSE_ERR(error)) {
         emit conferenceSentFailed(conferenceId);
         return;
@@ -674,14 +810,14 @@ void Core::sendConferenceMessage(int conferenceId, const QString& message)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    sendConferenceMessageWithType(conferenceId, message, TOX_MESSAGE_TYPE_NORMAL);
+    sendConferenceMessageWithType(conferenceId, message, MessageType::NORMAL);
 }
 
 void Core::sendConferenceAction(int conferenceId, const QString& message)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    sendConferenceMessageWithType(conferenceId, message, TOX_MESSAGE_TYPE_ACTION);
+    sendConferenceMessageWithType(conferenceId, message, MessageType::ACTION);
 }
 
 void Core::changeConferenceTitle(uint32_t conferenceId, const QString& title)
@@ -1138,13 +1274,13 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const uint32_t friendId = inviteInfo.getFriendId();
-    const uint8_t confType = inviteInfo.getType();
+    const ConferenceType confType = inviteInfo.getType();
     const QByteArray invite = inviteInfo.getInvite();
     const auto* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
     const size_t cookieLength = invite.length();
     uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {
-    case TOX_CONFERENCE_TYPE_TEXT: {
+    case ConferenceType::TEXT: {
         qDebug() << "Trying to accept invite for text conference sent by friend" << friendId;
         Tox_Err_Conference_Join error;
         conferenceNum = tox_conference_join(tox.get(), friendId, cookie, cookieLength, &error);
@@ -1153,7 +1289,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
         }
         break;
     }
-    case TOX_CONFERENCE_TYPE_AV: {
+    case ConferenceType::AV: {
         qDebug() << "Trying to join AV conference invite sent by friend" << friendId;
         conferenceNum = toxav_join_av_groupchat(tox.get(), friendId, cookie, cookieLength,
                                                 CoreAV::conferenceCallCallback, this);
@@ -1178,11 +1314,11 @@ void Core::conferenceInviteFriend(uint32_t friendId, int conferenceId)
     PARSE_ERR(error);
 }
 
-int Core::createConference(uint8_t type)
+int Core::createConference(ConferenceType type)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    if (type == TOX_CONFERENCE_TYPE_TEXT) {
+    if (type == ConferenceType::TEXT) {
         Tox_Err_Conference_New error;
         const uint32_t conferenceId = tox_conference_new(tox.get(), &error);
         if (PARSE_ERR(error)) {
@@ -1192,7 +1328,7 @@ int Core::createConference(uint8_t type)
         }
         return std::numeric_limits<uint32_t>::max();
     }
-    if (type == TOX_CONFERENCE_TYPE_AV) {
+    if (type == ConferenceType::AV) {
         // unlike tox_conference_new, toxav_add_av_groupchat does not have an error enum, so -1
         // conference number is our only indication of an error
         const int conferenceId =

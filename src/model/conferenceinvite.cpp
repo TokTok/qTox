@@ -13,7 +13,7 @@
  * @brief This class contains information needed to create a conference invite
  */
 
-ConferenceInvite::ConferenceInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data)
+ConferenceInvite::ConferenceInvite(uint32_t friendId_, ConferenceType inviteType, QByteArray data)
     : friendId{friendId_}
     , type{inviteType}
     , invite{std::move(data)}
@@ -32,7 +32,7 @@ uint32_t ConferenceInvite::getFriendId() const
     return friendId;
 }
 
-uint8_t ConferenceInvite::getType() const
+ConferenceType ConferenceInvite::getType() const
 {
     return type;
 }
