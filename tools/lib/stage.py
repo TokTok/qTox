@@ -35,7 +35,7 @@ def _window_width() -> int:
         return 100
 
 
-def _clear() -> None:
+def clear() -> None:
     """Clear the line."""
     if not _isatty():
         return
@@ -51,7 +51,7 @@ def print_stage_start(name: str, description: str) -> None:
     Looks roughly like:
        [ .... ] Stage name (requirement description)
     """
-    _clear()
+    clear()
     text = f"\033[1;34m[ .... ]\033[0m {name} {description}"
     print(text, end="", flush=True)
 
@@ -66,7 +66,7 @@ def print_stage_progress(name: str, description: str, start_time: int) -> None:
     Looks roughly like:
        [  30 ] Stage name (requirement description)
     """
-    _clear()
+    clear()
     elapsed = int(time.time()) - start_time
     text = f"\r\033[1;34m[ {elapsed:4d} ]\033[0m {name} {description}"
     print(text, end="", flush=True)
@@ -81,7 +81,7 @@ def print_stage_end(name: str, description: str, success: bool) -> None:
     Looks roughly like:
        [  OK  ] Stage name (result description)
     """
-    _clear()
+    clear()
     status = " \033[1;32mOK\033[0m " if success else "\033[1;31mFAIL\033[0m"
     text = f"\r\033[1;34m[ {status} \033[1;34m]\033[0m {name} {description}"
     print(text)

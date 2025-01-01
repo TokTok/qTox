@@ -1895,7 +1895,7 @@ Verifica que sean la misma en ambos recuadros.</translation>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation>% 1 - transferencia de archivo</translation>
+        <translation>%1 - transferencia de archivo</translation>
     </message>
     <message>
         <source>Conference invite received</source>
@@ -1903,7 +1903,7 @@ Verifica que sean la misma en ambos recuadros.</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>% 1 te invita a unirte a un grupo.</translation>
+        <translation>%1 te invita a unirte a un grupo.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1911,7 +1911,7 @@ Verifica que sean la misma en ambos recuadros.</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation>Solicitud de amistad recibida de% 1</translation>
+        <translation>Solicitud de amistad recibida de%1</translation>
     </message>
 </context>
 <context>
@@ -2295,7 +2295,7 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>% 1 no es una dirección Tox válida.</translation>
+        <translation>%1 no es una dirección Tox válida.</translation>
     </message>
 </context>
 <context>
@@ -2931,39 +2931,39 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Si está deshabilitado, la notificación silenciada suena cuando el estado es Ocupado (pero aún muestra una notificación)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilice notificaciones de escritorio, p. en un centro de notificaciones o en la bandeja del sistema. Sin esto, la notificación sólo será visible como un icono de bandeja parpadeante.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Muestra solo &quot;mensaje nuevo&quot; sin mostrar información potencialmente secreta en las notificaciones de escritorio.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Divida la lista de amigos y la ventana de chat en ventanas móviles por separado.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Muestre emojis textuales como imágenes coloridas en lugar de texto o emojis con fuentes en blanco y negro.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seleccione qué conjunto de imágenes usar al representar emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamaño en píxeles de una imagen emoji. Seleccione algo similar al tamaño de fuente base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Estilo base que se utilizará en la interfaz de usuario. Se recomienda Fusion ya que funciona mejor con la temática qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema de color de la interfaz de usuario. Úselo para seleccionar el modo oscuro.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>

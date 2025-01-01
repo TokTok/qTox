@@ -36,9 +36,9 @@ qt6_add_translation(
   lt.ts
   lv.ts
   mk.ts
+  nb_NO.ts
   nl.ts
   nl_BE.ts
-  no_nb.ts
   pl.ts
   pr.ts
   pt_BR.ts

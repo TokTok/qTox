@@ -162,7 +162,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Pode encontrar uma lista de todos os problemas conhecidos no nosso % 1 no Github. Se descobrir um erro ou vulnerabilidade de segurança no qTox, informe-nos de acordo com as diretrizes da nossa página wiki % 2.</translation>
+        <translation>Pode encontrar uma lista de todos os problemas conhecidos no nosso %1 no Github. Se descobrir um erro ou vulnerabilidade de segurança no qTox, informe-nos de acordo com as diretrizes da nossa página wiki %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -190,7 +190,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Esta versão do qTox está sendo mantida pela equipe TokTok após o arquivamento do projeto qTox original.</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Habilitar ferramentas de depuração (somente desenvolvedores)</translation>
     </message>
 </context>
 <context>
@@ -929,22 +929,22 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro de depuração</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Recarregar automaticamente</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rolagem automática</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro de depuração</translation>
     </message>
 </context>
 <context>
@@ -1178,7 +1178,7 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (sem fontes)</translation>
     </message>
 </context>
 <context>
@@ -1298,7 +1298,7 @@ em vez de fechar.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Adicione uma mensagem de bate-papo quando um usuário entrar ou sair de uma conferência</translation>
     </message>
 </context>
 <context>
@@ -1521,7 +1521,7 @@ Partilhe-o com os seus amigos para começar a conversar.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Carregar histórico de:</translation>
     </message>
 </context>
 <context>
@@ -1773,7 +1773,7 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abra ferramentas de depuração interna</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1781,7 +1781,7 @@ Certifique-se de introduziu a mesma palavra-passe duas vezes.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abra o depurador</translation>
     </message>
 </context>
 <context>
@@ -2278,7 +2278,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Da esquerda para a direita</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2294,7 +2294,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>% 1 não é um endereço Tox válido.</translation>
+        <translation>%1 não é um endereço Tox válido.</translation>
     </message>
 </context>
 <context>
@@ -2457,23 +2457,23 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inicializando</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Transmitindo</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Finalizado</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quebrado</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cancelado</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2485,23 +2485,23 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nome do arquivo</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Contato</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Progresso</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamanho</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Velocidade</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2509,23 +2509,23 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Controlar</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Você entrou na conferência</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Você saiu da conferência</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao carregar o histórico de bate-papo</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A versão do banco de dados (%1) é mais recente do que a suportada atualmente (%2). Atualize o qTox.</translation>
     </message>
 </context>
 <context>
@@ -2634,7 +2634,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Caixa de diálogo Selecionar data</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2692,15 +2692,15 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao carregar configurações pessoais</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Não foi possível atualizar as configurações da versão %1 para a versão %2. Não é possível iniciar o qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Falha ao carregar configurações globais</translation>
     </message>
 </context>
 <context>
@@ -2930,47 +2930,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se desativado, silenciar sons de notificação quando o status for Ocupado (mas ainda mostrar uma notificação)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use notificações na área de trabalho, por ex. em uma central de notificação ou na bandeja do sistema. Sem isso, a notificação só ficará visível como um ícone piscando na bandeja.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mostrar apenas &quot;nova mensagem&quot; sem mostrar informações potencialmente secretas nas notificações da área de trabalho.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Divida a lista de amigos e a janela de bate-papo em janelas móveis separadas.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exiba emojis textuais como imagens coloridas em vez de texto ou emojis renderizados em fonte preto/branco.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selecione qual conjunto de imagens usar ao renderizar emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamanho em pixels de uma imagem emoji. Selecione algo semelhante ao tamanho da fonte base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Estilo base a ser usado para a IU. Fusion é recomendado porque funciona melhor com o tema qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema de cores da interface do usuário. Use isto para selecionar o modo escuro.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se desativado, use notificações básicas na bandeja do sistema. Caso contrário, tente usar o back-end de notificação do seu ambiente de área de trabalho. Desative esta opção se observar problemas com notificações na área de trabalho.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use back-end de notificação específico do sistema, se disponível</translation>
     </message>
 </context>
 <context>

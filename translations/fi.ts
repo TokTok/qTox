@@ -190,7 +190,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">TokTok-tiimi ylläpitää tätä qTox-versiota alkuperäisen qTox-projektin arkistoinnin jälkeen.</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ota virheenkorjaustyökalut käyttöön (vain kehittäjät)</translation>
     </message>
 </context>
 <context>
@@ -929,22 +929,22 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Virheenkorjausloki</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automaattinen uudelleenlataus</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automaattinen vieritys</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Virheenkorjausloki</translation>
     </message>
 </context>
 <context>
@@ -1178,7 +1178,7 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (ei fontteja)</translation>
     </message>
 </context>
 <context>
@@ -1298,7 +1298,7 @@ eikä sulkeudu kokonaan.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lisää chat-viesti, kun käyttäjä liittyy neuvotteluun tai poistuu siitä</translation>
     </message>
 </context>
 <context>
@@ -1521,7 +1521,7 @@ Jaa se kavereillesi aloittaaksesi keskustelut.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lataushistoria kohteesta:</translation>
     </message>
 </context>
 <context>
@@ -1773,7 +1773,7 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avaa sisäiset virheenkorjaustyökalut</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1781,7 +1781,7 @@ Varmista, että syötät saman salasanan kahdesti.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avaa Debugger</translation>
     </message>
 </context>
 <context>
@@ -2278,7 +2278,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Kirjoitussuunta vasemmalta oikealle</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2457,23 +2457,23 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alustus</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lähetetään</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valmis</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rikki</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Peruutettu</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2485,23 +2485,23 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tiedoston nimi</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ota yhteyttä</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edistyminen</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Koko</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nopeus</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2509,23 +2509,23 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ohjaus</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Olet liittynyt konferenssiin</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Olet poistunut konferenssista</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Keskusteluhistorian lataaminen epäonnistui</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tietokannan versio (%1) on uudempi kuin tällä hetkellä tuemme (%2). Päivitä qTox.</translation>
     </message>
 </context>
 <context>
@@ -2634,7 +2634,7 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valitse Päivämäärä-valintaikkuna</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2692,15 +2692,15 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Henkilökohtaisten asetusten lataaminen epäonnistui</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Asetuksia ei voi päivittää versiosta %1 versioon %2. qToxia ei voi käynnistää.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yleisten asetusten lataaminen epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -2930,47 +2930,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jos se ei ole käytössä, mykistää ilmoitusäänet, kun tila on Varattu (mutta näytä silti ilmoitus)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Käytä työpöytäilmoituksia, esim. ilmoituskeskuksessa tai ilmaisinalueella. Ilman tätä ilmoitus näkyy vain vilkkuvana tarjotinkuvakkeena.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Näytä vain &quot;uusi viesti&quot; näyttämättä mahdollisesti salaisia ​​tietoja työpöytäilmoituksissa.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jaa ystävälista ja chat-ikkuna erikseen siirrettäviin ikkunoihin.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Näytä tekstihymiöt värikkäinä kuvina tekstin tai mustavalkoisella fontilla renderöityjen emojien sijaan.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valitse, mitä kuvasarjaa käytetään emojien hahmontamiseen.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emoji-kuvan koko pikseleinä. Valitse jotain peruskirjasinkokoasi vastaavaa.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Käyttöliittymässä käytettävä perustyyli. Fuusiota suositellaan, koska se toimii parhaiten qTox-teemalla.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Käyttöliittymän väriteema. Käytä tätä valitaksesi tumman tilan.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jos se ei ole käytössä, käytä perustiedot ilmaisinalueelta. Muussa tapauksessa yritä käyttää työpöytäympäristösi ilmoitustaustaa. Poista tämä käytöstä, jos havaitset ongelmia työpöydän ilmoituksissa.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Käytä järjestelmäkohtaista ilmoitustaustaa, jos sellainen on saatavilla</translation>
     </message>
 </context>
 <context>

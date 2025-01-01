@@ -190,7 +190,7 @@ il che può portare a problemi con le videochiamate.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Questa versione di qTox viene mantenuta dal team TokTok dopo l&apos;archiviazione del progetto qTox originale.</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@ il che può portare a problemi con le videochiamate.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abilita strumenti di debug (solo sviluppatori)</translation>
     </message>
 </context>
 <context>
@@ -929,22 +929,22 @@ in modo da poter salvare il file su Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro di debug</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ricarica automatica</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scorrimento automatico</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro di debug</translation>
     </message>
 </context>
 <context>
@@ -1178,7 +1178,7 @@ in modo da poter salvare il file su Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (nessun carattere)</translation>
     </message>
 </context>
 <context>
@@ -1773,7 +1773,7 @@ Assicurati di inserire la stessa password due volte.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Apri strumenti di debug interni</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1781,7 +1781,7 @@ Assicurati di inserire la stessa password due volte.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Apri Debug</translation>
     </message>
 </context>
 <context>
@@ -2930,47 +2930,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se disabilitato, la notifica disattivata suona quando lo stato è Occupato (ma mostra comunque una notifica)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilizza le notifiche desktop, ad es. in un centro notifiche o nella barra delle applicazioni. Senza questo, la notifica sarà visibile solo come un&apos;icona lampeggiante nella barra delle applicazioni.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mostra solo &quot;nuovo messaggio&quot; senza mostrare informazioni potenzialmente segrete nelle notifiche desktop.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dividi l&apos;elenco degli amici e la finestra di chat in finestre spostabili separatamente.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Visualizza emoji testuali come immagini colorate invece di testo o emoji con caratteri in bianco/nero.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seleziona quale set di immagini utilizzare durante il rendering degli emoji.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dimensioni in pixel di un&apos;immagine emoji. Seleziona qualcosa di simile alla dimensione del carattere di base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stile di base da utilizzare per l&apos;interfaccia utente. Si consiglia Fusion poiché funziona meglio con i temi qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema colore dell&apos;interfaccia utente. Usalo per selezionare la modalità oscura.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se disabilitato, utilizza le notifiche di base nella barra delle applicazioni. Altrimenti, prova a utilizzare il backend di notifica del tuo ambiente desktop. Disabilitalo se riscontri problemi con le notifiche desktop.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilizza il backend di notifica specifico del sistema, se disponibile</translation>
     </message>
 </context>
 <context>

@@ -25,31 +25,31 @@
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও সেটিংস</translation>
     </message>
     <message>
         <source>Gain</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লাভ</translation>
     </message>
     <message>
         <source>Playback device</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্লেব্যাক ডিভাইস</translation>
     </message>
     <message>
         <source>Capture device</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্যাপচার ডিভাইস</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আয়তন</translation>
     </message>
     <message>
         <source>Video Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও সেটিংস</translation>
     </message>
     <message>
         <source>Video device</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও ডিভাইস</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -57,51 +57,55 @@ The higher values, the better video quality your friends may get.
 Note though that with better video quality there is needed better internet connection.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার ক্যামেরার রেজোলিউশন সেট করুন।
+উচ্চতর মান, আপনার বন্ধুরা তত ভাল ভিডিও গুণমান পেতে পারে।
+উল্লেখ্য, যদিও ভালো ভিডিও মানের সাথে আরও ভালো ইন্টারনেট সংযোগ প্রয়োজন।
+কখনও কখনও আপনার সংযোগ উচ্চতর ভিডিও গুণমান পরিচালনা করার জন্য যথেষ্ট ভাল নাও হতে পারে,
+যা ভিডিও কলে সমস্যা হতে পারে।</translation>
     </message>
     <message>
         <source>Resolution</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">রেজোলিউশন</translation>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিভাইসগুলি পুনরায় স্ক্যান করুন</translation>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টেস্ট সাউন্ড</translation>
     </message>
     <message>
         <source>Audio quality</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও গুণমান</translation>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">উচ্চ (64 kBps)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মাঝারি (32 kBps)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কম (16 kBps)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খুব কম (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">থ্রেশহোল্ড</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার স্পিকারের ভলিউম সেট করতে স্লাইডার ব্যবহার করুন।</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রেরিত অডিও গুণমান. আপনার ব্যান্ডউইথ যথেষ্ট বেশি না হলে বা আপনি ব্যান্ডউইথের ব্যবহার কমাতে চাইলে এই সেটিংটি কম করুন।</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -109,324 +113,328 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার ক্যামেরার রেজোলিউশন সেট করুন।
+উচ্চতর মান, আপনার বন্ধুরা তত ভাল ভিডিও গুণমান পেতে পারে।
+মনে রাখবেন যে ভাল ভিডিও মানের সাথে, আপনি আরও ব্যান্ডউইথ ব্যবহার করেন।
+কখনও কখনও আপনার সংযোগ উচ্চতর ভিডিও গুণমান পরিচালনা করার জন্য যথেষ্ট ভাল নাও হতে পারে,
+যা ভিডিও কলে সমস্যা হতে পারে।</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আউটপুট ভলিউম পরিবর্তন করার সময় একটি পরীক্ষা শব্দ বাজান।</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1dB থেকে %2dB পর্যন্ত আপনার ইনপুট ডিভাইসের লাভ সেট করতে স্লাইডার ব্যবহার করুন।</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার ইনপুট ডিভাইসের জন্য অ্যাক্টিভেশন ভলিউম সেট করতে স্লাইডার ব্যবহার করুন।</translation>
     </message>
 </context>
 <context>
     <name>AboutForm</name>
     <message>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্পর্কে</translation>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মূল লেখক: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি qTox সংস্করণ %1 ব্যবহার করছেন।</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কমিট হ্যাশ: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্সকোর সংস্করণ: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Qt সংস্করণ: %1</translation>
     </message>
     <message>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সমস্ত পরিচিত সমস্যার একটি তালিকা আমাদের Github এ %1 এ পাওয়া যেতে পারে। আপনি যদি qTox-এর মধ্যে কোনো বাগ বা নিরাপত্তার দুর্বলতা খুঁজে পান, তাহলে অনুগ্রহ করে আমাদের %2 উইকি নিবন্ধের নির্দেশিকা অনুযায়ী রিপোর্ট করুন।</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি বাগ রিপোর্ট করতে এখানে ক্লিক করুন.</translation>
     </message>
     <message>
         <source>See a full list of %1 at Github</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Github-এ %1 এর সম্পূর্ণ তালিকা দেখুন</translation>
     </message>
     <message>
         <source>bug-tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বাগ-ট্র্যাকার</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দরকারী বাগ রিপোর্ট লেখা</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবদানকারী</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox-এর এই সংস্করণটি TokTok টিম মূল qTox প্রকল্পের আর্কাইভ করার পরে রক্ষণাবেক্ষণ করছে।</translation>
     </message>
 </context>
 <context>
     <name>AboutFriendForm</name>
     <message>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডায়ালগ</translation>
     </message>
     <message>
         <source>username</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যবহারকারীর নাম</translation>
     </message>
     <message>
         <source>status message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবস্থা বার্তা</translation>
     </message>
     <message>
         <source>Used aliases:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যবহৃত উপনাম:</translation>
     </message>
     <message>
         <source>HISTORY OF ALIASES</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ALIASES ইতিহাস</translation>
     </message>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেট থাকলে স্বয়ংক্রিয়ভাবে পরিচিতি থেকে ফাইল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল সংরক্ষণ করার জন্য ডিফল্ট ডিরেক্টরি:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ম্যানুয়াল</translation>
     </message>
     <message>
         <source>Audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও</translation>
     </message>
     <message>
         <source>Audio + Video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও + ভিডিও</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেট থাকলে স্বয়ংক্রিয়ভাবে এই পরিচিতি থেকে সম্মেলনের আমন্ত্রণ গ্রহণ করুন।</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইতিহাস সরান (অপারেশন পূর্বাবস্থায় ফেরানো যাবে না!)</translation>
     </message>
     <message>
         <source>Notes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নোট</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগ সম্পর্কে নোটের জন্য ইনপুট ক্ষেত্র</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইতিহাস মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;এটি আপনার বন্ধুর সর্বজনীন কী, অন্য চ্যানেলের মাধ্যমে তাদের পরিচয় যাচাই করতে এটি ব্যবহার করুন৷ আপনি এটি অন্য লোকেদের কাছে পাঠাতে পারবেন না যাতে তারা এই পরিচিতি যোগ করতে পারে৷&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;৷</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সর্বজনীন কী (টক্সআইডি নয়):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি %1 চ্যাট ইতিহাস মুছে ফেলার ব্যাপারে নিশ্চিত?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এর সাথে চ্যাট ইতিহাস সরাতে ব্যর্থ!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে ফাইল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই পরিচিতির জন্য স্বয়ংক্রিয়ভাবে গ্রহণ অক্ষম করা হয়েছে৷</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কল স্বয়ংক্রিয়ভাবে গ্রহণ করুন:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলনের আমন্ত্রণগুলি স্বয়ংক্রিয়ভাবে গ্রহণ করুন৷</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি এখানে এই পরিচিতি সম্পর্কে মন্তব্য সংরক্ষণ করতে পারেন.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি স্বয়ংক্রিয় গ্রহণ ডিরেক্টরি নির্বাচন করুন</translation>
     </message>
 </context>
 <context>
     <name>AboutSettings</name>
     <message>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সংস্করণ</translation>
     </message>
     <message>
         <source>License</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লাইসেন্স</translation>
     </message>
     <message>
         <source>Authors</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লেখক</translation>
     </message>
     <message>
         <source>Known Issues</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিত সমস্যা</translation>
     </message>
     <message>
         <source>Open update download link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপডেট ডাউনলোড লিঙ্ক খুলুন</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপডেট উপলব্ধ</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox আপ টু ডেট ✓৷</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বর্তমানে qTox-এর একটি অপরীক্ষিত/অস্থির সংস্করণ চলছে</translation>
     </message>
 </context>
 <context>
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুদের যোগ করুন</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবৈধ টক্স আইডি বিন্যাস</translation>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ পাঠান</translation>
     </message>
     <message>
         <source>Add a friend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি বন্ধু যোগ করুন</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ</translation>
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রত্যাখ্যান করুন</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু যোগ করা যায়নি</translation>
     </message>
     <message>
         <source>Type in Tox ID of your friend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার বন্ধুর টক্স আইডি টাইপ করুন</translation>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু অনুরোধ বার্তা</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফ্রেন্ড রিকোয়েস্টের সাথে পাঠাতে মেসেজ টাইপ করুন অথবা ডিফল্ট মেসেজ পাঠাতে খালি রাখুন</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি নিজেকে বন্ধু হিসাবে যুক্ত করতে পারবেন না!</translation>
     </message>
     <message>
         <source>Open contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগের তালিকা খুলুন</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল খুলতে পারেনি</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগ ফাইল খুলতে পারেনি</translation>
     </message>
     <message>
         <source>Invalid file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবৈধ ফাইল</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমরা এই ফাইলটিতে আমদানি করার জন্য কোনো পরিচিতি খুঁজে পাইনি!</translation>
     </message>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স আইডি</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা</translation>
     </message>
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খোলা</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ পাঠান</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এখানে! আমাকে টক্স করতে পারে?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতির একটি তালিকা আমদানি করুন, প্রতি লাইনে একটি টক্স আইডি</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
@@ -437,72 +445,72 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতি আমদানি করুন</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স আইডি, 76 হেক্সাডেসিমেল অক্ষর</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 টক্স আইডি অবৈধ</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">76 হেক্সাডেসিমেল অক্ষর</translation>
     </message>
 </context>
 <context>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">উন্নত</translation>
     </message>
     <message>
         <source>really</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সত্যিই</translation>
     </message>
     <message>
         <source>not</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">না</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গুরুত্বপূর্ণ নোট</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেটিংস রিসেট করুন</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সমস্ত সেটিংস ডিফল্টে রিসেট করা হবে। আপনি কি নিশ্চিত?</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">হ্যাঁ</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">না</translation>
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লগ (*. লগ)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যদি না আপনি %1 জানেন যে আপনি কি করছেন, অনুগ্রহ করে %2 এখানে কিছু পরিবর্তন করুন। এখানে করা পরিবর্তনগুলি qTox এর সাথে সমস্যা হতে পারে, এমনকি আপনার ডেটা হারাতে পারে, যেমন ইতিহাস।%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এখানে পরিবর্তনগুলি শুধুমাত্র qTox পুনরায় চালু করার পরে প্রয়োগ করা হয়।</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল সংরক্ষণ করুন</translation>
     </message>
 </context>
 <context>
@@ -510,278 +518,279 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Save settings to the working directory instead of the usual conf dir</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সাধারণ conf dir-এর পরিবর্তে কার্যকারী ডিরেক্টরিতে সেটিংস সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স পোর্টেবল করুন</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিফল্ট সেটিংসে রিসেট করুন</translation>
     </message>
     <message>
         <source>Portable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বহনযোগ্য</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IPv6 সক্ষম করুন (প্রস্তাবিত)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UDP সক্ষম করুন (প্রস্তাবিত)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রক্সি প্রকার:</translation>
     </message>
     <message>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ঠিকানা:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্দর:</translation>
     </message>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
         <source>SOCKS5</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SOCKS5</translation>
     </message>
     <message>
         <source>HTTP</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">HTTP</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ লগ রপ্তানি করুন</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ লগ কপি করুন</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN আবিষ্কার সক্ষম করুন</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সংযোগ সেটিংস</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এটি নিষ্ক্রিয় করা অনুমতি দেয়, যেমন, টক্স ওভার টর। এটি টক্স নেটওয়ার্কে লোড যোগ করে, তাই প্রয়োজন হলেই টিক চিহ্ন সরিয়ে দিন।</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ টুল সক্ষম করুন (শুধুমাত্র বিকাশকারীরা)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পার্স করার জন্য URI টক্স করুন</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন উদাহরণ শুরু করে এবং নির্দিষ্ট প্রোফাইল লোড করে।</translation>
     </message>
     <message>
         <source>profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন উদাহরণ শুরু করে এবং লগইন স্ক্রিন খোলে।</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; সেট করে। ডিফল্ট চালু আছে।</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চালু/বন্ধ</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UDP সেট করে &lt;on&gt;/&lt;off&gt;। ডিফল্ট চালু আছে।</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN আবিষ্কার &lt;on&gt;/&lt;off&gt; সেট করে। UDP বন্ধ ওভাররাইড। ডিফল্ট চালু আছে।</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রক্সি সেটিংস সেট করে। ডিফল্ট নেই.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ঠিকানা):(পোর্ট)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে প্রোফাইল লোড করতে ব্যর্থ হয়েছে.</translation>
     </message>
 </context>
 <context>
     <name>ChatForm</name>
     <message>
         <source>Send a file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি ফাইল পাঠান</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox %1 খুলতে পারেনি</translation>
     </message>
     <message>
         <source>Unable to open</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খুলতে অক্ষম</translation>
     </message>
     <message>
         <source>Bad idea</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খারাপ ধারণা</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অস্থায়ী ফাইল খুলতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
         <translatorcomment>laut Duden ist Screenshot schon deutsch</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox স্ক্রিনশট সংরক্ষণ করতে সক্ষম ছিল না</translation>
     </message>
     <message>
         <source>Call duration: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কলের সময়কাল:</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কপি</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি একটি অনুক্রমিক ফাইল পাঠানোর চেষ্টা করছেন, যা কাজ করছে না!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলের নামে অবৈধ অক্ষর রয়েছে৷</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবৈধ অক্ষর _তে পরিবর্তন করা হয়েছে
+যাতে আপনি উইন্ডোজে ফাইলটি সংরক্ষণ করতে পারেন।</translation>
     </message>
 </context>
 <context>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও কল শুরু করা যাচ্ছে না</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও কল শুরু করুন</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও কল শেষ করুন</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও কল বাতিল করুন</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও কল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল শুরু করা যাচ্ছে না</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল শুরু করুন</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল শেষ করুন</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল বাতিল করুন</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুধুমাত্র একটি কলের সময় শব্দ নিষ্ক্রিয় করা যেতে পারে</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কল আনমিউট করুন</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কল মিউট করুন</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুধুমাত্র কলের সময় মাইক্রোফোন মিউট করা যাবে</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মাইক্রোফোন আনমিউট করুন</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মাইক্রোফোন নিঃশব্দ করুন</translation>
     </message>
 </context>
 <context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এখানে আপনার বার্তা টাইপ করুন...</translation>
     </message>
 </context>
 <context>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মুলতুবি</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 টাইপ করছে</translation>
     </message>
     <message>
         <source>Copy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কপি</translation>
     </message>
     <message>
         <source>Select all</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সব নির্বাচন করুন</translation>
     </message>
 </context>
 <context>
@@ -789,16 +798,16 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বৃত্তের নাম পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বৃত্ত সরান</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন উইন্ডোতে সব খুলুন</translation>
     </message>
 </context>
 <context>
@@ -813,61 +822,61 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিঃশব্দ</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিঃশব্দ</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন সম্মেলন তৈরি করুন</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলনের আমন্ত্রণ</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 দ্বারা %3 এ %2 তে আমন্ত্রিত।</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগদান করুন</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রত্যাখ্যান</translation>
     </message>
 </context>
 <context>
     <name>ConferenceWidget</name>
     <message>
         <source>Set title...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শিরোনাম সেট করুন...</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন উইন্ডোতে চ্যাট খুলুন</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই উইন্ডো থেকে চ্যাট সরান</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন ছেড়ে দিন</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -879,64 +888,64 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন বার্তা</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনলাইন</translation>
     </message>
 </context>
 <context>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">/আমি বন্ধুত্ব অফার করি, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবৈধ টক্স আইডি</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনাকে আপনার অনুরোধের সাথে একটি বার্তা লিখতে হবে</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার বার্তা খুব দীর্ঘ!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু ইতিমধ্যে যোগ করা হয়েছে</translation>
     </message>
 </context>
 <context>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ লগ</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে পুনরায় লোড করুন</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অটো-স্ক্রোল</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ লগ</translation>
     </message>
 </context>
 <context>
@@ -944,7 +953,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Form</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফর্ম</translation>
     </message>
     <message>
         <source>10Mb</source>
@@ -964,114 +973,114 @@ so you can save the file on Windows.</source>
     <message>
         <source>Filename</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলের নাম</translation>
     </message>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাঠানোর জন্য অপেক্ষা করা হচ্ছে...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই ফাইলটি গ্রহণ করতে গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবস্থান লেখার যোগ্য নয়</translation>
     </message>
     <message>
         <source>You do not have permission to write that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার সেই অবস্থান লেখার অনুমতি নেই। অন্যটি বেছে নিন বা সংরক্ষণ ডায়ালগটি বাতিল করুন৷</translation>
     </message>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আবার শুরু হচ্ছে...</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থানান্তর বাতিল করুন</translation>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থানান্তর বিরাম দিন</translation>
     </message>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিরতি দেওয়া হয়েছে</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল খুলুন</translation>
     </message>
     <message>
         <source>Open file directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল ডিরেক্টরি খুলুন</translation>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থানান্তর পুনরায় শুরু করুন</translation>
     </message>
     <message>
         <source>Accept transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থানান্তর গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি ফাইল সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">রিমোট পজ করা হয়েছে</translation>
     </message>
 </context>
 <context>
     <name>FilesForm</name>
     <message>
         <source>Downloads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডাউনলোড</translation>
     </message>
     <message>
         <source>Uploads</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপলোড</translation>
     </message>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থানান্তরিত ফাইল</translation>
     </message>
 </context>
 <context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আজ</translation>
     </message>
     <message>
         <source>Yesterday</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গতকাল</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গত ৭ দিন</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই মাসে</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কখনই না</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">6 মাসের বেশি পুরানো</translation>
     </message>
 </context>
 <context>
@@ -1079,70 +1088,70 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলনে আমন্ত্রণ জানান</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বৃত্তে সরান...</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন বৃত্তে</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চেনাশোনা &apos;%1&apos; থেকে সরান</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন উইন্ডোতে চ্যাট খুলুন</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই উইন্ডো থেকে চ্যাট সরান</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন সম্মেলনে</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন &apos;%1&apos;-এ আমন্ত্রণ</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">উপনাম সেট করুন...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে এই বন্ধুর কাছ থেকে ফাইল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Show details</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিস্তারিত দেখান</translation>
     </message>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি স্বয়ংক্রিয় গ্রহণ ডিরেক্টরি নির্বাচন করুন</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন বার্তা</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনলাইন</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দূরে</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যস্ত</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1151,524 +1160,531 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; চেনাশোনাতে যান</translation>
     </message>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুকে সরিয়ে দাও</translation>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবরুদ্ধ</translation>
     </message>
 </context>
 <context>
     <name>GeneralForm</name>
     <message>
         <source>General</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সাধারণ</translation>
     </message>
     <message>
         <source>Choose an auto accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি স্বয়ংক্রিয় গ্রহণ ডিরেক্টরি নির্বাচন করুন</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (কোন ফন্ট নেই)</translation>
     </message>
 </context>
 <context>
     <name>GeneralSettings</name>
     <message>
         <source>General Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সাধারণ সেটিংস</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox রিস্টার্ট না হওয়া পর্যন্ত অনুবাদ লোড নাও হতে পারে।</translation>
     </message>
     <message>
         <source>Language:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভাষা:</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সিস্টেম ট্রে আইকন দেখান</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">হালকা ট্রে আইকন সক্রিয় করুন.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">হালকা আইকন</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox ট্রেতে মিনিমাইজ করা শুরু করবে।</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ট্রেতে শুরু করুন</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ট্রের কাছে</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ট্রেতে ছোট করুন</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অটোস্টার্ট</translation>
     </message>
     <message>
         <source>Set where files will be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলগুলি কোথায় সংরক্ষণ করা হবে তা সেট করুন।</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে ফাইল গ্রহণ করুন</translation>
     </message>
     <message>
         <source>Set to 0 to disable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিষ্ক্রিয় করতে 0 এ সেট করুন</translation>
     </message>
     <message>
         <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিষ্ক্রিয়তার নির্দিষ্ট সময়ের পরে আপনার স্ট্যাটাস Away এ পরিবর্তন করা হয়েছে।</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এর পরে স্বয়ংক্রিয়ভাবে দূরে (0 নিষ্ক্রিয় করতে):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতিদের স্থিতি পরিবর্তন দেখান</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অপারেটিং সিস্টেম স্টার্টআপে qTox শুরু করুন (বর্তমান প্রোফাইল)।</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল সংরক্ষণ করার জন্য ডিফল্ট ডিরেক্টরি:</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপডেটের জন্য চেক করুন</translation>
     </message>
     <message>
         <source>Spell checking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বানান পরীক্ষা</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সর্বাধিক স্বয়ংক্রিয়ভাবে গ্রহণযোগ্য ফাইলের আকার (অক্ষম করতে 0):</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এমবি</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">minimize চাপার পর (_) qTox ট্রেতে মিনিমাইজ হবে,
+সিস্টেম টাস্কবারের পরিবর্তে।</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্লোজ (X) চাপার পর qTox ট্রেতে বন্ধ হয়ে যাবে,
+সম্পূর্ণরূপে বন্ধ করার পরিবর্তে।</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি স্বতন্ত্র বন্ধুদের ডান ক্লিক করে এটি প্রতি-বন্ধু ভিত্তিতে সেট করতে পারেন।</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যখন একজন ব্যবহারকারী একটি কনফারেন্সে যোগ দেয় বা ছেড়ে যায় তখন একটি চ্যাট বার্তা যোগ করুন</translation>
     </message>
 </context>
 <context>
     <name>GenericChatForm</name>
     <message>
         <source>Send message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা পাঠান</translation>
     </message>
     <message>
         <source>Smileys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্মাইলিস</translation>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল(গুলি) পাঠান</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি স্ক্রিনশট পাঠান</translation>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাট লগ সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রদর্শিত বার্তা সাফ করুন</translation>
     </message>
     <message>
         <source>Quote selected text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নির্বাচিত পাঠ্য উদ্ধৃত করুন</translation>
     </message>
     <message>
         <source>Copy link address</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লিঙ্ক ঠিকানা কপি করুন</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
         <source>Search in text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাঠ্যে অনুসন্ধান করুন</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বর্তমান তারিখে যান</translation>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাটের ইতিহাস লোড করুন...</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলে রপ্তানি করুন</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি নিশ্চিত যে আপনি সমস্ত প্রদর্শিত বার্তা সাফ করতে চান?</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাবলিক তথ্য</translation>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স আইডি</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার টক্স আইডি (কপি করতে ক্লিক করুন)</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল</translation>
     </message>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইলের নাম পরিবর্তন করুন।</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লগইন স্ক্রিনে ফিরে যান</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>import profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লগআউট</translation>
     </message>
     <message>
         <source>Remove password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড সরান</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই QR কোডে আপনার টক্স আইডি রয়েছে। আপনি এটি আপনার বন্ধুদের সাথেও শেয়ার করতে পারেন।</translation>
     </message>
     <message>
         <source>Save image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ছবি সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Copy image</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ছবি কপি করুন</translation>
     </message>
     <message>
         <source>Rename</source>
         <comment>rename profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নাম পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল মুছুন।</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনাকে একটি ফাইলে আপনার টক্স প্রোফাইল রপ্তানি করার অনুমতি দেয়।
+প্রোফাইল আপনার ইতিহাস ধারণ করে না.</translation>
     </message>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">রপ্তানি</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মুছে দিন</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার প্রোফাইল থেকে আপনার পাসওয়ার্ড এবং এনক্রিপশন সরান.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নাম ইনপুট</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতিদের কাছে দৃশ্যমান নাম</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থিতি বার্তা ইনপুট</translation>
     </message>
     <message>
         <source>Status message visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থিতি বার্তা পরিচিতিদের কাছে দৃশ্যমান</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার টক্স আইডি</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল হিসাবে QR ছবি সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্লিপবোর্ডে QR ইমেজ কপি করুন</translation>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইলের নাম পরিবর্তন করুন।</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল মুছুন।</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল রপ্তানি করুন</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল থেকে পাসওয়ার্ড সরান</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল পাসওয়ার্ড পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>My name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমার নাম:</translation>
     </message>
     <message>
         <source>My status:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমার অবস্থা:</translation>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমার প্রোফাইল</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই আইডি অন্যান্য টক্স ব্যবহারকারীদের যোগ করতে এবং আপনার সাথে যোগাযোগ করার অনুমতি দেয়।
+চ্যাটিং শুরু করতে আপনার বন্ধুদের সাথে শেয়ার করুন।</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইতিহাস ডায়ালগ লোড করুন</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">থেকে ইতিহাস লোড করুন:</translation>
     </message>
 </context>
 <context>
     <name>LoginScreen</name>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যবহারকারীর নাম:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড:</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিশ্চিত করুন:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড শক্তি: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল তৈরি করুন</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইলে পাসওয়ার্ড না থাকলে, qTox লগইন স্ক্রীন এড়িয়ে যেতে পারে</translation>
     </message>
     <message>
         <source>Load automatically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে লোড করুন</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লোড</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল লোড করুন</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন প্রোফাইল</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি নতুন প্রোফাইল তৈরি করা যায়নি</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যবহারকারীর নাম খালি হওয়া উচিত নয়।</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ডটি কমপক্ষে 6 অক্ষরের হতে হবে।</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই নামের একটি প্রোফাইল ইতিমধ্যেই বিদ্যমান৷</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড সুরক্ষিত প্রোফাইল স্বয়ংক্রিয়ভাবে লোড করা যাবে না.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল লোড করা যায়নি</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কোন নির্বাচিত প্রোফাইল নেই.
+
+আপনি একটি তৈরি করতে চাইতে পারেন.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই প্রোফাইল লোড করা যায়নি</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই প্রোফাইল ইতিমধ্যে ব্যবহার করা হয়.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভুল পাসওয়ার্ড।</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমদানি</translation>
     </message>
     <message>
         <source>Username input field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যবহারকারীর নাম ইনপুট ক্ষেত্র</translation>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড ইনপুট ক্ষেত্র, আপনি এটি খালি রাখতে পারেন (কোন পাসওয়ার্ড নেই), বা কমপক্ষে 6 অক্ষর টাইপ করুন</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড নিশ্চিতকরণ ক্ষেত্র</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি নতুন প্রোফাইল বোতাম তৈরি করুন</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল তালিকা</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইলের তালিকা</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড ইনপুট</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে চেকবক্স লোড করুন</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল আমদানি করুন</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নির্বাচিত প্রোফাইল বোতাম লোড করুন</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন প্রোফাইল তৈরি পৃষ্ঠা</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিদ্যমান প্রোফাইল পৃষ্ঠা লোড হচ্ছে৷</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার দেওয়া পাসওয়ার্ডগুলি আলাদা।
+অনুগ্রহ করে একই পাসওয়ার্ড দুবার প্রবেশ করানো নিশ্চিত করুন।</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তোমার নাম</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার অবস্থা</translation>
     </message>
     <message>
         <source>...</source>
@@ -1677,103 +1693,103 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Add friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুদের যোগ করুন</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি সম্মেলন তৈরি করুন</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্পূর্ণ ফাইল স্থানান্তর দেখুন</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার সেটিংস পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধ</translation>
     </message>
     <message>
         <source>Open profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল খুলুন</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্লিক করলে প্রোফাইল পেজ খুলুন</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থিতি বার্তা ইনপুট</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার স্থিতি বার্তা সেট করুন যা অন্যদের দেখানো হবে</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্ট্যাটাস</translation>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রাপ্যতা স্থিতি সেট করুন</translation>
     </message>
     <message>
         <source>Contact search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগ অনুসন্ধান</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিত বন্ধুদের জন্য যোগাযোগ অনুসন্ধান ইনপুট</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বাছাই এবং দৃশ্যমানতা</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুদের সাজানো এবং দৃশ্যমানতা সেট করুন</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু যোগ করুন পৃষ্ঠা খুলুন</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন পরিচালনা পৃষ্ঠা খুলুন</translation>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল স্থানান্তর ইতিহাস</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল স্থানান্তর ইতিহাস খুলুন</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেটিংস</translation>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেটিংস খুলুন</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অভ্যন্তরীণ ডিবাগিং টুল খুলুন</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগার খুলুন</translation>
     </message>
 </context>
 <context>
@@ -1781,51 +1797,51 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এক্সিকিউটেবল ফাইল</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি qTox কে একটি এক্সিকিউটেবল ফাইল খুলতে বলেছেন। এক্সিকিউটেবল ফাইলগুলি আপনার কম্পিউটারের সম্ভাব্য ক্ষতি করতে পারে। আপনি কি এই ফাইলটি খুলতে চান?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স ভিডিও</translation>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পূর্ণ পর্দা</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও প্রিভিউ টগল করুন</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অডিও নিঃশব্দ করুন</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">মাইক্রোফোন নিঃশব্দ করুন</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভিডিও কল শেষ করুন</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পূর্ণ স্ক্রীন থেকে প্রস্থান করুন</translation>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা লুকান</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা দেখান</translation>
     </message>
 </context>
 <context>
@@ -1833,30 +1849,30 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দেখুন</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">জানালা</translation>
     </message>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ছোট করুন</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সকলকে সামনে আনুন</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফুল স্ক্রীন থেকে প্রস্থান করুন</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পূর্ণ স্ক্রীনে প্রবেশ করুন</translation>
     </message>
 </context>
 <context>
@@ -1873,58 +1889,58 @@ Please make sure to enter the same password twice.</source>
     <name>NotificationGenerator</name>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন বার্তা</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন সম্মেলনের বার্তা</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইনকামিং ফাইল স্থানান্তর</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - ফাইল স্থানান্তর</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলনের আমন্ত্রণ গৃহীত হয়েছে</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 আপনাকে একটি সম্মেলনে যোগদানের জন্য আমন্ত্রণ জানিয়েছে৷</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ গৃহীত হয়েছে</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 থেকে বন্ধুর অনুরোধ গৃহীত হয়েছে</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ক্যাপ-লক সক্ষম</translation>
     </message>
 </context>
 <context>
     <name>PrivacyForm</name>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গোপনীয়তা</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি স্থায়ীভাবে সব চ্যাট ইতিহাস মুছে দিতে চান?</translation>
     </message>
 </context>
 <context>
@@ -1932,264 +1948,272 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি যখন টাইপ করছেন তখন আপনার বন্ধুরা দেখতে পাবে।</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টাইপিং বিজ্ঞপ্তি পাঠান</translation>
     </message>
     <message>
         <source>Keep chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাটের ইতিহাস রাখুন</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নোস্প্যাম আপনার টক্স আইডির অংশ।
+যদি আপনাকে বন্ধুর অনুরোধে স্প্যাম করা হয়, তাহলে আপনার NoSpam পরিবর্তন করা উচিত।
+লোকেরা আপনাকে আপনার পুরানো আইডি দিয়ে যুক্ত করতে পারবে না, তবে আপনি আপনার বর্তমান বন্ধুদের রাখবেন।</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নোস্প্যাম</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam হল আপনার আইডির একটি অংশ যা ইচ্ছামত পরিবর্তন করা যায়।
+আপনি যদি বন্ধুর অনুরোধের সাথে স্প্যাম হয়ে থাকেন তবে NoSpam পরিবর্তন করুন।</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এলোমেলো NoSpam তৈরি করুন</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাট ইতিহাস রাখা এখনও উন্নয়নশীল.
+বিন্যাস পরিবর্তনগুলি সংরক্ষণ করা সম্ভব, যার ফলে ডেটা ক্ষতি হতে পারে।</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গোপনীয়তা</translation>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন ব্লক তালিকা</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কনফারেন্স সদস্যদের পাবলিক কী দ্বারা সম্মেলনের বার্তাগুলি ফিল্টার করুন৷ এখানে পাবলিক কী রাখুন, প্রতি লাইনে একটি।</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড থেকে কী বের করতে ব্যর্থ হয়েছে, প্রোফাইলটি নতুন পাসওয়ার্ড ব্যবহার করবে না।</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox-এ টক্সিং</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডাটাবেস পাসওয়ার্ড পরিবর্তন করা যায়নি, এটি দূষিত হতে পারে বা পুরানো পাসওয়ার্ড ব্যবহার করতে পারে।</translation>
     </message>
 </context>
 <context>
     <name>ProfileForm</name>
     <message>
         <source>Choose a profile picture</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি প্রোফাইল ছবি চয়ন করুন</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; পুনঃনামকরণ করুন</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই ফাইলটি খুলতে অক্ষম৷</translation>
     </message>
     <message>
         <source>Current profile: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বর্তমান প্রোফাইল:</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সরান</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই ছবিটি পড়তে অক্ষম.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সরবরাহ করা চিত্রটি খুব বড়৷
+অন্য ছবি ব্যবহার করুন.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইলের নাম পরিবর্তন করে &quot;%1&quot; করা যায়নি</translation>
     </message>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবস্থান লেখার যোগ্য নয়</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অপসারণ করার কিছুই নেই</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার প্রোফাইলে একটি পাসওয়ার্ড নেই!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি নতুন পাসওয়ার্ড লিখুন.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি এই প্রোফাইল মুছে ফেলার বিষয়ে নিশ্চিত?</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Save QrCode (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QrCode সংরক্ষণ করুন (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল মুছে ফেলা যায়নি!</translation>
     </message>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল পাসওয়ার্ড সেট করুন</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বর্তমান প্রোফাইল অবস্থান: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড পরিবর্তন করা যায়নি</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খালি পথ অনুপলব্ধ</translation>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নাম পরিবর্তন করতে ব্যর্থ হয়েছে৷</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল ইতিমধ্যেই বিদ্যমান</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; নামের একটি প্রোফাইল ইতিমধ্যেই বিদ্যমান।</translation>
     </message>
     <message>
         <source>Empty name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খালি নাম</translation>
     </message>
     <message>
         <source>Empty name is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খালি নাম অনুপলব্ধ</translation>
     </message>
     <message>
         <source>Empty path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাঁকা পথ</translation>
     </message>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল রপ্তানি করুন</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স সেভ ফাইল (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিম্নলিখিত ফাইলগুলি মোছা যাবে না:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনুগ্রহ করে ম্যানুয়ালি সেগুলি সরান৷</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ছবি (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার সেই অবস্থানে লেখার অনুমতি নেই। অন্যটি বেছে নিন বা সংরক্ষণ ডায়ালগটি বাতিল করুন৷</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল সংরক্ষণ করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার নির্বাচিত ফাইলটি সংরক্ষণ করা যায়নি৷</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খালি পথ অনুপলব্ধ.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডাটাবেস পাসওয়ার্ড পরিবর্তন করা যায়নি, এটি দূষিত হতে পারে বা পুরানো পাসওয়ার্ড ব্যবহার করতে পারে।</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স ব্যবহারকারীর নাম %1 অক্ষরের বেশি হতে পারে না।</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল মুছুন</translation>
     </message>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড সরান</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি আপনার পাসওয়ার্ড সরানোর বিষয়ে নিশ্চিত?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই আইডি অন্যান্য টক্স ব্যবহারকারীদের যোগ করতে এবং আপনার সাথে যোগাযোগ করার অনুমতি দেয়।
+চ্যাটিং শুরু করতে আপনার বন্ধুদের সাথে শেয়ার করুন।
+
+এই আইডিতে NoSpam কোড (নীল রঙে) এবং চেকসাম (ধূসর রঙে) অন্তর্ভুক্ত রয়েছে।</translation>
     </message>
 </context>
 <context>
@@ -2197,67 +2221,67 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল আমদানি করুন</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টক্স সেভ ফাইল (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নন-টক্স ফাইল উপেক্ষা করা</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সতর্কতা: আপনি এমন একটি ফাইল বেছে নিয়েছেন যা টক্স সেভ ফাইল নয়; উপেক্ষা করা</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল ইতিমধ্যেই বিদ্যমান</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; নামের একটি প্রোফাইল ইতিমধ্যেই বিদ্যমান। আপনি এটা মুছে ফেলতে চান?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল বিদ্যমান নেই</translation>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল বিদ্যমান নেই</translation>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল আমদানি করা হয়েছে৷</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1.tox সফলভাবে আমদানি করা হয়েছে</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ঠিক আছে</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বাতিল করুন</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">হ্যাঁ</translation>
     </message>
     <message>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">না</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2269,270 +2293,270 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু যোগ করা যায়নি</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি নিজেকে বন্ধু হিসাবে যুক্ত করতে পারবেন না!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 একটি বৈধ টক্স ঠিকানা নয়।</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিফল্ট</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নীল</translation>
     </message>
     <message>
         <source>Olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">জলপাই</translation>
     </message>
     <message>
         <source>Red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লাল</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভায়োলেট</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইনকামিং কল...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এখানে! আমাকে টক্স করতে পারে?</translation>
     </message>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
         <source>Desktop</source>
         <comment>Desktop as a camera input for screen sharing</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডেস্কটপ</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox আপনার চ্যাট লগ খুলতে পারেনি, সেগুলি অক্ষম করা হবে।</translation>
     </message>
     <message>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অন্ধকার</translation>
     </message>
     <message>
         <source>Dark blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গাঢ় নীল</translation>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গাঢ় জলপাই</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গাঢ় লাল</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গাঢ় বেগুনি</translation>
     </message>
     <message>
         <source>online</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনলাইন</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দূরে</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যস্ত</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অফলাইন</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবরুদ্ধ</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাঠ্য পুনরায় ফর্ম্যাট করা হচ্ছে...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 চ্যাট থেকে %1 বার্তা(গুলি)</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 থেকে %1 বার্তা(গুলি)</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল &quot;%1&quot; পাঠাতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 সম্মেলনে যোগদান করেছে</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 সম্মেলন ছেড়ে গেছে</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এখন %2 নামে পরিচিত</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 শিরোনামটি %2 এ সেট করেছে</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সাফ করা হয়েছে</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এর সাথে কল অপ্রত্যাশিতভাবে শেষ হয়েছে। %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এর সাথে কল শেষ হয়েছে। %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 এখন %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 কল করা হচ্ছে</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 কলিং</translation>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা পাঠাতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুরু করা হচ্ছে</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ট্রান্সমিটিং</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সমাপ্ত</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ভাঙ্গা</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বাতিল</translation>
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিরতি দেওয়া হয়েছে</translation>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">রিমোট পজ করা হয়েছে</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইলের নাম</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগ</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অগ্রগতি</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আকার</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">গতি</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্ট্যাটাস</translation>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিয়ন্ত্রণ</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি সম্মেলনে যোগদান করেছেন</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি সম্মেলন ত্যাগ করেছেন</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাটের ইতিহাস লোড করা যায়নি</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডাটাবেস সংস্করণ (%1) আমরা বর্তমানে সমর্থন করি (%2) এর চেয়ে নতুন। অনুগ্রহ করে qTox আপগ্রেড করুন।</translation>
     </message>
 </context>
 <context>
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুকে সরিয়ে দাও</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেট করা থাকলে বন্ধুর সাথে সমস্ত চ্যাট ইতিহাস মুছে ফেলুন</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এছাড়াও চ্যাট ইতিহাস সরান</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি আপনার পরিচিতি তালিকা থেকে %1 সরানোর বিষয়ে নিশ্চিত?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সরান</translation>
     </message>
 </context>
 <context>
@@ -2540,151 +2564,151 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি অঞ্চল নির্বাচন করতে ক্লিক করুন এবং টেনে আনুন। qTox উইন্ডো লুকাতে/দেখাতে %1 টিপুন, বা বাতিল করতে %2 টিপুন।</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থান</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পলায়ন</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নির্বাচনের একটি স্ক্রিনশট পাঠাতে %1, qTox উইন্ডো লুকাতে/দেখাতে %2, বা বাতিল করতে %3 টিপুন।</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রবেশ করুন</translation>
     </message>
 </context>
 <context>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লেখাটি পাওয়া যায়নি।</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুরু করুন</translation>
     </message>
 </context>
 <context>
     <name>SearchSettingsForm</name>
     <message>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফর্ম</translation>
     </message>
     <message>
         <source>Start search:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনুসন্ধান শুরু করুন:</translation>
     </message>
     <message>
         <source>from the end</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শেষ থেকে</translation>
     </message>
     <message>
         <source>from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শুরু থেকে</translation>
     </message>
     <message>
         <source>after date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তারিখের পরে</translation>
     </message>
     <message>
         <source>before date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তারিখের আগে</translation>
     </message>
     <message>
         <source>00.00.0000</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">00.00.0000</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কেস সংবেদনশীল</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্পূর্ণ শব্দ শুধুমাত্র</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">রেগুলার এক্সপ্রেশন ব্যবহার করুন</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তারিখ ডায়ালগ নির্বাচন করুন</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি তারিখ নির্বাচন করুন</translation>
     </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
     <message>
         <source>Set your password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার পাসওয়ার্ড সেট করুন</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নিশ্চিত করুন:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড শক্তি: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড মেলে না।</translation>
     </message>
     <message>
         <source>Confirm password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড নিশ্চিত করুন</translation>
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড ইনপুট নিশ্চিত করুন</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড ইনপুট</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড ইনপুট ক্ষেত্র, ন্যূনতম 6 অক্ষর দীর্ঘ</translation>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাসওয়ার্ড খুব ছোট.</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বৃত্ত #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যক্তিগত সেটিংস লোড করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সংস্করণ %1 থেকে সংস্করণ %2 তে সেটিংস আপগ্রেড করতে অক্ষম৷ qTox শুরু করা যাবে না।</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিশ্বব্যাপী সেটিংস লোড করতে ব্যর্থ হয়েছে৷</translation>
     </message>
 </context>
 <context>
@@ -2692,59 +2716,59 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add a friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি বন্ধু যোগ করুন</translation>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি কি %1 কে বন্ধু হিসেবে যুক্ত করতে চান?</translation>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইউজার আইডি:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ বার্তা:</translation>
     </message>
     <message>
         <source>Send</source>
         <comment>Send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাঠান</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বাতিল করুন</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceForm</name>
     <message>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইউজার ইন্টারফেস</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceSettings</name>
     <message>
         <source>Chat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চ্যাট</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বেস ফন্ট:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আকার:</translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2759,202 +2783,213 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox রিস্টার্ট না হওয়া পর্যন্ত নতুন টেক্সট স্টাইলিং পছন্দ চ্যাটের ইতিহাসে লোড নাও হতে পারে।
+এটি অবিলম্বে নতুন বার্তা প্রভাবিত করবে.
+
+প্লেইনটেক্সট:
+    বার্তাগুলিতে কোনো বিন্যাস প্রয়োগ করবেন না।
+    যেমন &quot;**টেক্সট**&quot; &quot;**পাঠ্য**&quot; হিসেবে দেখাবে, বোল্ড নয়।
+ফর্ম্যাটিং অক্ষর দেখান:
+    বিন্যাস প্রয়োগ করুন এবং অক্ষর দেখান।
+    যেমন &quot;**টেক্সট**&quot; দেখাবে &quot;**টেক্সট**&quot;, বোল্ড হিসেবে।
+বিন্যাস অক্ষর লুকান:
+    বিন্যাস প্রয়োগ করুন এবং অক্ষর দেখাবেন না।
+    যেমন &quot;**টেক্সট**&quot; &quot;টেক্সট&quot; হিসেবে দেখাবে, বোল্ড।</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টেক্সট স্টাইলিং:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পাঠ্য স্টাইলিং পছন্দ নির্বাচন করুন.</translation>
     </message>
     <message>
         <source>Plaintext</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্লেইনটেক্সট</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফরম্যাটিং অক্ষর দেখান</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বিন্যাস অক্ষর লুকান</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন বার্তা</translation>
     </message>
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি একটি নতুন বার্তা পেলে qTox এর উইন্ডো খুলুন এবং এখনও কোন উইন্ডো খোলা নেই।</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খোলা জানালা</translation>
     </message>
     <message>
         <source>Contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">যোগাযোগের তালিকা</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু তালিকার শীর্ষে সম্মেলন রাখুন</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার যোগাযোগের তালিকা কমপ্যাক্ট মোডে দেখানো হবে (ছোট অবতার, টেবুলার ভিউ)।</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কমপ্যাক্ট যোগাযোগ তালিকা</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একাধিক উইন্ডো মোড</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রতিটি চ্যাট একটি পৃথক উইন্ডোতে খুলুন</translation>
     </message>
     <message>
         <source>Emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইমোটিকন</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইমোটিকন ব্যবহার করুন</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইমোটিকন আকার:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">থিম</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শৈলী:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">থিমের রঙ:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টাইমস্ট্যাম্প বিন্যাস:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তারিখ বিন্যাস:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">খালি অবতারের পরিবর্তে আইডেন্টিকন ব্যবহার করুন</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনি যখন একটি নতুন বার্তা, কল, বা বন্ধুত্বের অনুরোধ পান এবং উইন্ডোটি নির্বাচন করা হয় না তখন একটি বিজ্ঞপ্তি দেখান৷</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অবহিত করুন</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন শুধুমাত্র যখন উল্লেখ করা হয়</translation>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">শব্দ বাজান</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যস্ত থাকাকালীন শব্দ বাজান</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডেস্কটপ বিজ্ঞপ্তির মাধ্যমে অবহিত করুন</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বার্তা প্রেরক এবং বিষয়বস্তু লুকান</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কনফারেন্সে রঙিন ডাকনাম ব্যবহার করুন</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আপনার ডাকনাম উল্লেখ করা হলেই কনফারেন্সে নতুন বার্তা সম্পর্কে অবহিত করুন।</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">চেক করা হলে, কনফারেন্সগুলিকে বন্ধু তালিকার শীর্ষে রাখা হবে, অন্যথায়, সেগুলিকে অনলাইন বন্ধুদের নীচে রাখা হবে৷</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সক্ষম হলে, অবতার ছাড়া প্রতিটি পরিচিতির ডিফল্ট ছবির পরিবর্তে তাদের টক্স আইডির উপর ভিত্তি করে একটি তৈরি আইকন থাকবে৷ আবেদন করার জন্য পুনরায় চালু করতে হবে।</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্মাইলি প্যাক:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অক্ষম থাকলে, স্ট্যাটাস ব্যস্ত থাকলে বিজ্ঞপ্তি নিঃশব্দ করে (তবে একটি বিজ্ঞপ্তি দেখান)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডেস্কটপ বিজ্ঞপ্তি ব্যবহার করুন, যেমন একটি বিজ্ঞপ্তি কেন্দ্রে বা সিস্টেম ট্রেতে। এটি ছাড়া, বিজ্ঞপ্তিটি শুধুমাত্র একটি ফ্ল্যাশিং ট্রে আইকন হিসাবে দৃশ্যমান হবে৷</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডেস্কটপ বিজ্ঞপ্তিতে সম্ভাব্য গোপন তথ্য না দেখিয়ে শুধুমাত্র &quot;নতুন বার্তা&quot; দেখান৷</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফ্রেন্ড লিস্ট এবং চ্যাট উইন্ডোকে আলাদাভাবে সরানো যায় এমন উইন্ডোতে বিভক্ত করুন।</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">টেক্সট বা কালো/সাদা ফন্ট-রেন্ডার করা ইমোজির পরিবর্তে রঙিন ছবি হিসেবে পাঠ্য ইমোজি প্রদর্শন করুন।</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ইমোজি রেন্ডার করার সময় কোন ছবির সেট ব্যবহার করবেন তা নির্বাচন করুন।</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">একটি ইমোজি ছবির পিক্সেলের আকার। আপনার বেস ফন্ট আকার অনুরূপ কিছু নির্বাচন করুন.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI এর জন্য ব্যবহার করার জন্য বেস স্টাইল। ফিউশন সুপারিশ করা হয় কারণ এটি qTox থিমিংয়ের সাথে সেরা কাজ করে।</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI রঙের থিম। ডার্ক মোড নির্বাচন করতে এটি ব্যবহার করুন।</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অক্ষম হলে, মৌলিক সিস্টেম ট্রে বিজ্ঞপ্তিগুলি ব্যবহার করুন৷ অন্যথায়, আপনার ডেস্কটপ পরিবেশের বিজ্ঞপ্তি ব্যাকএন্ড ব্যবহার করার চেষ্টা করুন। আপনি যদি ডেস্কটপ বিজ্ঞপ্তিগুলির সাথে সমস্যাগুলি লক্ষ্য করেন তবে এটি অক্ষম করুন৷</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">উপলব্ধ থাকলে সিস্টেম-নির্দিষ্ট বিজ্ঞপ্তি ব্যাকএন্ড ব্যবহার করুন</translation>
     </message>
 </context>
 <context>
@@ -2962,70 +2997,70 @@ Hide formatting characters:
     <message>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনলাইন</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দূরে</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্যস্ত</translation>
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্পাদনা করুন</translation>
     </message>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লগআউট</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফিল্টার...</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতি</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্ট্যাটাস</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">তোমার নাম</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন সম্মেলন তৈরি করুন...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নতুন চেনাশোনা যোগ করুন...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">নামে</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কার্যকলাপ দ্বারা</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সব</translation>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অনলাইন</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -3034,62 +3069,62 @@ Hide formatting characters:
     </message>
     <message>
         <source>Friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুরা</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন</translation>
     </message>
     <message>
         <source>Search Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতি অনুসন্ধান করুন</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলন #%1</translation>
     </message>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">দেখান</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধু যোগ করুন</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্মেলনের আমন্ত্রণ</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ফাইল স্থানান্তর</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সেটিংস</translation>
     </message>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আমার প্রোফাইল</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore শুরু করতে ব্যর্থ হয়েছে, আপনি এই বার্তাটি বন্ধ করার পরে অ্যাপ্লিকেশনটি বন্ধ হয়ে যাবে৷</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore আপনার প্রক্সি সেটিংস দিয়ে শুরু করতে ব্যর্থ হয়েছে৷ qTox চালাতে পারে না; অনুগ্রহ করে আপনার সেটিংস পরিবর্তন করুন এবং পুনরায় চালু করুন।</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">বন্ধুত্বের অনুরোধ পাঠাতে পারিনি</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3108,36 +3143,36 @@ Hide formatting characters:
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রস্থান করুন</translation>
     </message>
     <message>
         <source>Change status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">স্থিতি পরিবর্তন করুন</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">প্রোফাইল সম্পাদনা করুন</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">লগআউট</translation>
     </message>
     <message>
         <source>Add contact...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরিচিতি যোগ করুন...</translation>
     </message>
     <message>
         <source>Next conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পরবর্তী কথোপকথন</translation>
     </message>
     <message>
         <source>Previous conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">আগের কথোপকথন</translation>
     </message>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ডিবাগ</translation>
     </message>
 </context>
 </TS>

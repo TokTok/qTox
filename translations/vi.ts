@@ -190,7 +190,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Phiên bản qTox này đang được nhóm TokTok duy trì sau khi lưu trữ dự án qTox ban đầu.</translation>
     </message>
 </context>
 <context>
@@ -594,7 +594,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bật Công cụ gỡ lỗi (chỉ dành cho nhà phát triển)</translation>
     </message>
 </context>
 <context>
@@ -927,22 +927,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nhật ký gỡ lỗi</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tự động tải lại</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tự động cuộn</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nhật ký gỡ lỗi</translation>
     </message>
 </context>
 <context>
@@ -1182,7 +1182,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (không có phông chữ)</translation>
     </message>
 </context>
 <context>
@@ -1778,7 +1778,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mở công cụ gỡ lỗi nội bộ</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1786,7 +1786,7 @@ Hãy đảm bảo nhập cùng một mật khẩu hai lần.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mở trình gỡ lỗi</translation>
     </message>
 </context>
 <context>
@@ -2525,11 +2525,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Không tải được lịch sử trò chuyện</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Phiên bản cơ sở dữ liệu (%1) mới hơn phiên bản chúng tôi hiện hỗ trợ (%2). Vui lòng nâng cấp qTox.</translation>
     </message>
 </context>
 <context>
@@ -2934,47 +2934,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nếu bị tắt, âm thanh thông báo sẽ tắt khi trạng thái Bận (nhưng vẫn hiển thị thông báo)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sử dụng thông báo trên màn hình, ví dụ: trong trung tâm thông báo hoặc ở khay hệ thống. Nếu không có điều này, thông báo sẽ chỉ hiển thị dưới dạng biểu tượng khay nhấp nháy.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chỉ hiển thị &quot;tin nhắn mới&quot; mà không hiển thị thông tin có thể bí mật trong thông báo trên màn hình.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chia danh sách bạn bè và cửa sổ trò chuyện thành các cửa sổ có thể di chuyển riêng biệt.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hiển thị biểu tượng cảm xúc dạng văn bản dưới dạng hình ảnh đầy màu sắc thay vì văn bản hoặc biểu tượng cảm xúc được hiển thị bằng phông chữ đen/trắng.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chọn bộ ảnh sẽ sử dụng khi hiển thị biểu tượng cảm xúc.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kích thước tính bằng pixel của hình ảnh biểu tượng cảm xúc. Chọn một cái gì đó tương tự như kích thước phông chữ cơ bản của bạn.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kiểu cơ bản để sử dụng cho giao diện người dùng. Nên sử dụng Fusion vì nó hoạt động tốt nhất với chủ đề qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Chủ đề màu sắc giao diện người dùng. Sử dụng tính năng này để chọn chế độ tối.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nếu bị tắt, hãy sử dụng thông báo khay hệ thống cơ bản. Nếu không, hãy thử sử dụng phần phụ trợ thông báo của môi trường máy tính để bàn của bạn. Tắt tính năng này nếu bạn quan sát thấy sự cố với thông báo trên màn hình.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sử dụng phụ trợ thông báo dành riêng cho hệ thống nếu có</translation>
     </message>
 </context>
 <context>

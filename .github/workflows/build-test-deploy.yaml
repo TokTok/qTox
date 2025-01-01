@@ -109,8 +109,10 @@ jobs:
       - name: Install deps
         run: sudo apt-get update && sudo apt-get install qt6-l10n-tools
       - name: Test for modified translatable strings
-        run: PATH="/usr/lib/qt6/bin:$PATH"
-          ./tools/update-translation-files.sh ALL &&
+        run: |
+          export PATH="/usr/lib/qt6/bin:$PATH"
+          tools/update-translation-files.sh ALL
+          tools/translate.py
           git diff --exit-code
 
   clang-tidy:

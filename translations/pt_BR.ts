@@ -162,7 +162,7 @@ o que pode levar a problemas com as videochamadas.</translation>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Uma lista de todos os problemas conhecidos pode ser encontrada no nosso % 1 no Github. Se você descobrir um bug ou vulnerabilidade de segurança no qTox, informe-o de acordo com as diretrizes em nosso artigo wiki % 2.</translation>
+        <translation>Uma lista de todos os problemas conhecidos pode ser encontrada no nosso %1 no Github. Se você descobrir um bug ou vulnerabilidade de segurança no qTox, informe-o de acordo com as diretrizes em nosso artigo wiki %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -190,7 +190,7 @@ o que pode levar a problemas com as videochamadas.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Esta versão do qTox está sendo mantida pela equipe TokTok após o arquivamento do projeto qTox original.</translation>
     </message>
 </context>
 <context>
@@ -273,7 +273,7 @@ o que pode levar a problemas com as videochamadas.</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation>Falha ao remover o histórico de conversas com % 1!</translation>
+        <translation>Falha ao remover o histórico de conversas com %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -595,7 +595,7 @@ o que pode levar a problemas com as videochamadas.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Habilitar ferramentas de depuração (somente desenvolvedores)</translation>
     </message>
 </context>
 <context>
@@ -930,22 +930,22 @@ de forma que você possa salvar o arquivo no Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro de depuração</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Recarregar automaticamente</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rolagem automática</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Registro de depuração</translation>
     </message>
 </context>
 <context>
@@ -1185,7 +1185,7 @@ de forma que você possa salvar o arquivo no Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (sem fontes)</translation>
     </message>
 </context>
 <context>
@@ -1781,7 +1781,7 @@ Certifique-se de que você entrou a mesma senha duas vezes.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abra ferramentas de depuração interna</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1789,7 +1789,7 @@ Certifique-se de que você entrou a mesma senha duas vezes.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abra o depurador</translation>
     </message>
 </context>
 <context>
@@ -2188,7 +2188,7 @@ Por favor, escolha outra.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation>Os nomes de usuário Tox não podem exceder% 1 caracteres.</translation>
+        <translation>Os nomes de usuário Tox não podem exceder%1 caracteres.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2286,7 +2286,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Da esquerda para a direita</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2302,7 +2302,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>% 1 não é um endereço Tox válido.</translation>
+        <translation>%1 não é um endereço Tox válido.</translation>
     </message>
 </context>
 <context>
@@ -2938,47 +2938,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se desativado, silenciar sons de notificação quando o status for Ocupado (mas ainda mostrar uma notificação)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use notificações na área de trabalho, por ex. em uma central de notificação ou na bandeja do sistema. Sem isso, a notificação só ficará visível como um ícone piscando na bandeja.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mostrar apenas &quot;nova mensagem&quot; sem mostrar informações potencialmente secretas nas notificações da área de trabalho.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Divida a lista de amigos e a janela de bate-papo em janelas móveis separadas.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exiba emojis textuais como imagens coloridas em vez de texto ou emojis renderizados em fonte preto/branco.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selecione qual conjunto de imagens usar ao renderizar emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tamanho em pixels de uma imagem emoji. Selecione algo semelhante ao tamanho da fonte base.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Estilo base a ser usado para a IU. Fusion é recomendado porque funciona melhor com o tema qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema de cores da interface do usuário. Use isto para selecionar o modo escuro.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Se desativado, use notificações básicas na bandeja do sistema. Caso contrário, tente usar o back-end de notificação do seu ambiente de área de trabalho. Desative esta opção se observar problemas com notificações na área de trabalho.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Use back-end de notificação específico do sistema, se disponível</translation>
     </message>
 </context>
 <context>

@@ -2288,7 +2288,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Зліва-направо (LTR)</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>

@@ -190,7 +190,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seda qToxi versiooni hooldab TokToki meeskond pärast algse qToxi projekti arhiveerimist.</translation>
     </message>
 </context>
 <context>
@@ -595,7 +595,7 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Silumistööriistade lubamine (ainult arendajatele)</translation>
     </message>
 </context>
 <context>
@@ -930,22 +930,22 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Silumislogi</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automaatne uuesti laadimine</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automaatne kerimine</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Silumislogi</translation>
     </message>
 </context>
 <context>
@@ -1179,7 +1179,7 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (fonte pole)</translation>
     </message>
 </context>
 <context>
@@ -1299,7 +1299,7 @@ jätab ta tööle teavituste alal.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lisage vestlussõnum, kui kasutaja konverentsiga liitub või sealt lahkub</translation>
     </message>
 </context>
 <context>
@@ -1522,7 +1522,7 @@ Jaga seda oma sõpradele, et nendega suhelda.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Laadi ajalugu alates:</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1774,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avage sisemised silumistööriistad</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1782,7 +1782,7 @@ Palun vaata, et sa mõlemal korral sisestad sama salasõna.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avage silur</translation>
     </message>
 </context>
 <context>
@@ -2280,7 +2280,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>V→P</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2459,23 +2459,23 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Initsialiseerimine</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edastamine</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valmis</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Katki</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tühistatud</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2487,23 +2487,23 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Faili nimi</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Võtke ühendust</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Edusammud</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Suurus</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kiirus</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2511,23 +2511,23 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontrolli</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Olete konverentsiga liitunud</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Olete konverentsilt lahkunud</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vestlusajaloo laadimine ebaõnnestus</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Andmebaasi versioon (%1) on uuem, kui me praegu toetame (%2). Palun uuendage qTox.</translation>
     </message>
 </context>
 <context>
@@ -2636,7 +2636,7 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valige Kuupäeva dialoog</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2694,15 +2694,15 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Isiklike seadete laadimine ebaõnnestus</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seadeid ei saa versioonilt %1 versioonile %2 uuendada. QToxi ei saa käivitada.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Globaalsete seadete laadimine ebaõnnestus</translation>
     </message>
 </context>
 <context>
@@ -2932,47 +2932,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kui see on keelatud, vaigistatakse märguandehelid, kui olek on Hõivatud (kuid kuvatakse siiski märguanne)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kasutage töölaua märguandeid, nt. teavituskeskuses või süsteemses salves. Ilma selleta on teatis nähtav ainult vilkuva salveikoonina.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kuva ainult &quot;uus sõnum&quot; ilma potentsiaalselt salajast teavet kuvamata töölaua märguannetes.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jagage sõbraloend ja vestlusaken eraldi teisaldatavateks akendeks.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kuvage tekstilised emotikonid värviliste piltidena teksti või mustvalgete fontidega renderdatud emotikonide asemel.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valige, millist pildikomplekti emotikonide renderdamisel kasutada.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emotikonide pildi suurus pikslites. Valige midagi, mis sarnaneb oma põhifondi suurusele.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kasutajaliidese jaoks kasutatav põhistiil. Fusion on soovitatav, kuna see töötab kõige paremini qToxi teemaga.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI värviteema. Kasutage seda tumeda režiimi valimiseks.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kui see on keelatud, kasutage põhilisi süsteemses salves teavitusi. Vastasel juhul proovige kasutada oma töölauakeskkonna teavituste taustaprogrammi. Keelake see, kui märkate probleeme töölaua märguannetega.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kasutage süsteemipõhist teavituste taustaprogrammi, kui see on saadaval</translation>
     </message>
 </context>
 <context>

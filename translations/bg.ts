@@ -190,7 +190,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Тази версия на qTox се поддържа от екипа на TokTok след архивирането на оригиналния проект qTox.</translation>
     </message>
 </context>
 <context>
@@ -596,7 +596,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Активиране на инструментите за отстраняване на грешки (само за разработчици)</translation>
     </message>
 </context>
 <context>
@@ -930,22 +930,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дневник за отстраняване на грешки</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоматично презареждане</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Автоматично превъртане</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дневник за отстраняване на грешки</translation>
     </message>
 </context>
 <context>
@@ -1179,7 +1179,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (без шрифтове)</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1774,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отворете вътрешни инструменти за отстраняване на грешки</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1782,7 +1782,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отворете Debugger</translation>
     </message>
 </context>
 <context>
@@ -2279,7 +2279,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Отляво надясно</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2931,47 +2931,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ако е деактивирано, заглушава звука на известието, когато състоянието е Заето (но все още показва известие)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Използвайте известия на работния плот, напр. в център за уведомяване или в системната област. Без това известието ще се вижда само като мигаща икона в областта.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Показвайте само „ново съобщение“, без да показвате потенциално секретна информация в известията на работния плот.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Разделете списъка с приятели и прозореца за чат на отделни подвижни прозорци.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Показвайте текстови емотикони като цветни картини вместо текст или черно-бели емотикони, изобразени с шрифт.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Изберете кой набор от снимки да използвате, когато изобразявате емотикони.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Размер в пиксели на емоджи картина. Изберете нещо подобно на вашия основен размер на шрифта.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Основен стил, който да използвате за потребителския интерфейс. Препоръчва се Fusion, тъй като работи най-добре с оформянето на qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Цветна тема на потребителския интерфейс. Използвайте това, за да изберете тъмен режим.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ако е деактивирано, използвайте основните известия в системната област. В противен случай опитайте да използвате бекенда за уведомяване на вашата работна среда. Деактивирайте това, ако забележите проблеми с известията на работния плот.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Използвайте специфичен за системата бекенд за уведомяване, ако има такъв</translation>
     </message>
 </context>
 <context>

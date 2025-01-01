@@ -190,7 +190,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Táto verzia qTox je udržiavaná tímom TokTok po archivácii pôvodného projektu qTox.</translation>
     </message>
 </context>
 <context>
@@ -596,7 +596,7 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Povoliť nástroje na ladenie (len pre vývojárov)</translation>
     </message>
 </context>
 <context>
@@ -933,22 +933,22 @@ so you can save the file on Windows.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Denník ladenia</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatické opätovné načítanie</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatické posúvanie</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Denník ladenia</translation>
     </message>
 </context>
 <context>
@@ -1188,7 +1188,7 @@ so you can save the file on Windows.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (žiadne písma)</translation>
     </message>
 </context>
 <context>
@@ -1784,7 +1784,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otvorte interné nástroje na ladenie</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1792,7 +1792,7 @@ Prosím, uistite sa, že ste zadali to isté heslo dvakrát.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otvorte Debugger</translation>
     </message>
 </context>
 <context>
@@ -2290,7 +2290,7 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Zľava doprava</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2533,11 +2533,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Načítanie histórie rozhovorov zlyhalo</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Verzia databázy (%1) je novšia ako v súčasnosti podporujeme (%2). Aktualizujte qTox.</translation>
     </message>
 </context>
 <context>
@@ -2942,47 +2942,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ak je táto možnosť vypnutá, stlmí zvuky upozornenia, keď je stav Zaneprázdnený (ale stále sa zobrazuje upozornenie)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Využite upozornenia na ploche, napr. v oznamovacom centre alebo na systémovej lište. Bez toho bude upozornenie viditeľné iba ako blikajúca ikona na paneli.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zobrazovať iba „novú správu“ bez zobrazovania potenciálne tajných informácií v upozorneniach na pracovnej ploche.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rozdeľte zoznam priateľov a okno rozhovoru do samostatne pohyblivých okien.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zobrazte textové emotikony ako farebné obrázky namiesto textu alebo emodži vykreslených čiernobielym písmom.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vyberte, ktorá sada obrázkov sa použije pri vykresľovaní emotikonov.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Veľkosť obrázka emodži v pixeloch. Vyberte niečo podobné vašej základnej veľkosti písma.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Základný štýl, ktorý sa má použiť pre používateľské rozhranie. Odporúča sa Fusion, pretože najlepšie funguje s motívom qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Farebná téma používateľského rozhrania. Použite na výber tmavého režimu.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ak je zakázaná, použite základné upozornenia na systémovej lište. V opačnom prípade sa pokúste použiť oznamovací backend prostredia pracovnej plochy. Vypnite to, ak spozorujete problémy s upozorneniami na pracovnej ploche.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ak je to možné, použite systém upozornení</translation>
     </message>
 </context>
 <context>

@@ -2942,47 +2942,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dacă este dezactivată, notificarea sună sună când starea este Ocupat (dar totuși afișează o notificare)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilizați notificări de pe desktop, de ex. într-un centru de notificare sau în bara de sistem. Fără aceasta, notificarea va fi vizibilă doar ca o pictogramă intermitentă.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afișați doar „mesaj nou” fără a afișa informații potențial secrete în notificările desktop.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Împărțiți lista de prieteni și fereastra de chat în ferestre mobile separate.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Afișați emoji-urile text ca imagini colorate în loc de text sau emoji-uri redate cu fonturi alb/negru.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Selectați ce set de imagini să utilizați atunci când redați emoji-uri.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dimensiunea în pixeli a unei imagini emoji. Selectați ceva similar cu dimensiunea fontului de bază.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stil de bază de utilizat pentru interfața de utilizare. Fusion este recomandat, deoarece funcționează cel mai bine cu tematica qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema de culoare UI. Utilizați aceasta pentru a selecta modul întunecat.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dacă este dezactivat, utilizați notificările de bază din bara de sistem. În caz contrar, încercați să utilizați backend-ul de notificare al mediului desktop. Dezactivați acest lucru dacă observați probleme cu notificările desktop.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Utilizați backend-ul de notificare specific sistemului, dacă este disponibil</translation>
     </message>
 </context>
 <context>

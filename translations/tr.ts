@@ -191,7 +191,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QTox&apos;un bu sürümü, orijinal qTox projesinin arşivlenmesinin ardından TokTok ekibi tarafından sürdürülmektedir.</translation>
     </message>
 </context>
 <context>
@@ -597,7 +597,7 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hata Ayıklama Araçlarını Etkinleştir (yalnızca geliştiriciler)</translation>
     </message>
 </context>
 <context>
@@ -929,22 +929,22 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hata Ayıklama Günlüğü</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otomatik yeniden yükle</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otomatik kaydırma</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hata Ayıklama Günlüğü</translation>
     </message>
 </context>
 <context>
@@ -1179,7 +1179,7 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (yazı tipi yok)</translation>
     </message>
 </context>
 <context>
@@ -1774,7 +1774,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dahili hata ayıklama araçlarını açın</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1782,7 +1782,7 @@ Lütfen aynı parolayı iki kez girdiğinizden emin olun.</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hata Ayıklayıcıyı Aç</translation>
     </message>
 </context>
 <context>
@@ -2930,47 +2930,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Devre dışı bırakılırsa, durum Meşgul olduğunda bildirim sesi kapatılır (ancak yine de bir bildirim gösterilir)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Masaüstü bildirimlerini kullanın, ör. bir bildirim merkezinde veya sistem tepsisinde. Bu olmadan bildirim yalnızca yanıp sönen bir tepsi simgesi olarak görünür.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Masaüstü bildirimlerinde potansiyel olarak gizli bilgileri göstermeden yalnızca &quot;yeni mesajı&quot; gösterin.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Arkadaş listesini ve sohbet penceresini ayrı ayrı hareket ettirilebilen pencerelere bölün.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Metinli emojileri, metin veya siyah/beyaz yazı tipiyle oluşturulan emojiler yerine renkli resimler olarak görüntüleyin.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emojileri oluştururken hangi resim grubunun kullanılacağını seçin.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bir emoji resminin piksel cinsinden boyutu. Temel yazı tipi boyutunuza benzer bir şey seçin.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kullanıcı arayüzü için kullanılacak temel stil. Fusion, qTox temasıyla en iyi şekilde çalıştığı için önerilir.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kullanıcı arayüzü renk teması. Karanlık modu seçmek için bunu kullanın.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Devre dışı bırakılırsa temel sistem tepsisi bildirimlerini kullanın. Aksi takdirde, masaüstü ortamınızın bildirim arka ucunu kullanmayı deneyin. Masaüstü bildirimleriyle ilgili sorunlar gözlemlerseniz bunu devre dışı bırakın.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Varsa sisteme özel bildirim arka ucunu kullanın</translation>
     </message>
 </context>
 <context>

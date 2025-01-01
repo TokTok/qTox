@@ -101,11 +101,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце паўзунок, каб усталяваць гучнасць дынамікаў.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Якасць перададзенага гуку. Паменшыце гэты параметр, калі ваша прапускная здольнасць недастаткова высокая або калі вы хочаце паменшыць выкарыстанне паласы прапускання.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,19 +113,23 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Усталюйце дазвол вашай камеры.
+Чым вышэйшыя значэнні, тым лепшую якасць відэа могуць атрымаць вашы сябры.
+Звярніце ўвагу, што з лепшай якасцю відэа вы выкарыстоўваеце большую паласу прапускання.
+Часам ваша злучэнне можа быць недастаткова добрым, каб апрацоўваць больш высокую якасць відэа,
+што можа прывесці да праблем з відэазванкамі.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Прайграйце тэставы гук, змяняючы гучнасць выхаду.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце паўзунок, каб усталяваць узмацненне вашай прылады ўводу ў дыяпазоне ад %1dB да %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце паўзунок, каб усталяваць гучнасць актывацыі для прылады ўводу.</translation>
     </message>
 </context>
 <context>
@@ -186,7 +190,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Гэтая версія qTox падтрымліваецца камандай TokTok пасля архівавання арыгінальнага праекта qTox.</translation>
     </message>
 </context>
 <context>
@@ -273,28 +277,28 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтаматычнае прыняцце файлаў</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтаматычнае прыняцце для гэтага кантакту адключана</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтаматычны прыём выкліку:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтаматычны прыём запрашэнняў на канферэнцыю</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы можаце захоўваць каментарыі аб гэтым кантакце тут.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберыце каталог з аўтаматычным прыняццем</translation>
     </message>
 </context>
 <context>
@@ -329,7 +333,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Зараз працуе неправераная/нестабільная версія qTox</translation>
     </message>
 </context>
 <context>
@@ -446,17 +450,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox ID, 76 шаснаццатковых знакаў</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 Tox ID несапраўдны</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">76 шаснаццатковых знакаў</translation>
     </message>
 </context>
 <context>
@@ -499,15 +503,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Калі вы не %1 ведаеце, што робіце, калі ласка, %2 змяніце што-небудзь тут. Унесеныя тут змены могуць прывесці да праблем з qTox і нават да страты вашых даных, напрыклад. гісторыя.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Змены тут прымяняюцца толькі пасля перазапуску qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Захаваць файл</translation>
     </message>
 </context>
 <context>
@@ -583,16 +587,16 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Налады злучэння</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адключэнне дазваляе, напрыклад, Tox праз Tor. Аднак гэта павялічвае нагрузку на сетку Tox, таму здымайце галачку толькі пры неабходнасці.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Уключыць інструменты адладкі (толькі для распрацоўшчыкаў)</translation>
     </message>
 </context>
 <context>
@@ -615,27 +619,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Усталёўвае IPv6 &lt;уключана&gt;/&lt;выключана&gt;. Па змаўчанні ўключана.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">укл/выкл</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Усталёўвае UDP &lt;уключана&gt;/&lt;выключана&gt;. Па змаўчанні ўключана.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Усталёўвае выяўленне лакальнай сеткі &lt;ўключана&gt;/&lt;выключана&gt;. Выключэнне UDP. Па змаўчанні ўключана.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Задае налады проксі. Па змаўчанні - НЯМА.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/НЯМА):(АДРАС):(ПОРТ)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -643,7 +647,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося аўтаматычна загрузіць профіль.</translation>
     </message>
 </context>
 <context>
@@ -693,7 +697,8 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Недапушчальныя сімвалы былі зменены на _
+так што вы можаце захаваць файл у Windows.</translation>
     </message>
 </context>
 <context>
@@ -901,7 +906,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Канферэнцыя %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -928,22 +933,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Журнал адладкі</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтаматычная перазагрузка</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аўтапракрутка</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Журнал адладкі</translation>
     </message>
 </context>
 <context>
@@ -1035,7 +1040,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пульт дыстанцыйнага кіравання прыпынены</translation>
     </message>
 </context>
 <context>
@@ -1051,7 +1056,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перададзеныя файлы</translation>
     </message>
 </context>
 <context>
@@ -1078,7 +1083,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Старэйшыя за 6 месяцаў</translation>
     </message>
 </context>
 <context>
@@ -1158,7 +1163,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перайсці да круга &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1167,7 +1172,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Заблакіраваны</translation>
     </message>
 </context>
 <context>
@@ -1183,7 +1188,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (без шрыфтоў)</translation>
     </message>
 </context>
 <context>
@@ -1286,22 +1291,24 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пасля націску мінімізацыі (_) qTox згорнецца ў трэй,
+замест сістэмнай панэлі задач.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пасля націску &quot;Зачыніць&quot; (X) qTox зачыніцца ў латок,
+замест таго, каб цалкам закрыць.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы можаце ўсталяваць гэта для кожнага сябра, пстрыкнуўшы правай кнопкай мышы асобных сяброў.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дадайце паведамленне ў чат, калі карыстальнік далучаецца да канферэнцыі або пакідае яе</translation>
     </message>
 </context>
 <context>
@@ -1348,7 +1355,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перайсці да бягучай даты</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1360,7 +1367,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы ўпэўнены, што хочаце ачысціць усе паказаныя паведамленні?</translation>
     </message>
 </context>
 <context>
@@ -1512,18 +1519,19 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Гэты ідэнтыфікатар дазваляе іншым карыстальнікам Tox дадаваць і звязвацца з вамі.
+Падзяліцеся з сябрамі, каб пачаць размаўляць.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дыялог гісторыі загрузкі</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Загрузіць гісторыю з:</translation>
     </message>
 </context>
 <context>
@@ -1667,7 +1675,8 @@ You may want to create one.</source>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Паролі, якія вы ўвялі, розныя.
+Пераканайцеся, што вы ўвялі адзін і той жа пароль двойчы.</translation>
     </message>
 </context>
 <context>
@@ -1775,7 +1784,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адкрыйце ўнутраныя інструменты адладкі</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1783,7 +1792,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адкрыйце адладчык</translation>
     </message>
 </context>
 <context>
@@ -1831,11 +1840,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Схаваць паведамленні</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Паказаць паведамленні</translation>
     </message>
 </context>
 <context>
@@ -1888,32 +1897,32 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Новае паведамленне канферэнцыі</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перадача ўваходнага файла</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - перадача файла</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Запрашэнне на канферэнцыю атрымана</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 запрашае вас далучыцца да канферэнцыі.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Атрыманы запыт у сябры</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Запыт сябра атрыманы ад %1</translation>
     </message>
 </context>
 <context>
@@ -1993,7 +2002,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адфільтраваць паведамленні канферэнцыі па адкрытых ключах удзельнікаў канферэнцыі. Змесціце адкрытыя ключы тут, па адным у радку.</translation>
     </message>
 </context>
 <context>
@@ -2008,7 +2017,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Немагчыма змяніць пароль базы дадзеных, магчыма, ён пашкоджаны або выкарыстоўваецца стары пароль.</translation>
     </message>
 </context>
 <context>
@@ -2163,32 +2172,32 @@ Please use another image.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">У вас няма дазволу пісаць у гэта месца. Выберыце іншы або адмяніце дыялогавае акно захавання.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося захаваць файл</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося захаваць выбраны файл.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пусты шлях недаступны.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Немагчыма змяніць пароль базы дадзеных, магчыма, ён пашкоджаны або выкарыстоўваецца стары пароль.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Імёны карыстальнікаў Tox не могуць перавышаць %1 сімвалаў.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выдаліць профіль</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2198,14 +2207,17 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы ўпэўнены, што хочаце выдаліць свой пароль?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Гэты ідэнтыфікатар дазваляе іншым карыстальнікам Tox дадаваць і звязвацца з вамі.
+Падзяліцеся з сябрамі, каб пачаць размаўляць.
+
+Гэты ідэнтыфікатар уключае код NoSpam (сіні) і кантрольную суму (шэры).</translation>
     </message>
 </context>
 <context>
@@ -2278,7 +2290,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Л→П</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2294,7 +2306,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 не з&apos;яўляецца сапраўдным адрасам Tox.</translation>
     </message>
 </context>
 <context>
@@ -2394,17 +2406,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перафармаціраванне тэксту...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 паведамленне(я) з %2 чатаў</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 паведамленне(я) ад %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2457,23 +2469,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ініцыялізацыя</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Перадача</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Скончана</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Зламаны</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адменена</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2481,27 +2493,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пульт дыстанцыйнага кіравання прыпынены</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Імя файла</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Кантакт</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Прагрэс</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Памер</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">хуткасць</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2509,23 +2521,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Кантроль</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы далучыліся да канферэнцыі</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Вы пакінулі канферэнцыю</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося загрузіць гісторыю чата</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Версія базы дадзеных (%1) навейшая, чым мы зараз падтрымліваем (%2). Абнавіце qTox.</translation>
     </message>
 </context>
 <context>
@@ -2634,7 +2646,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберыце дыялогавае акно даты</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2681,7 +2693,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пароль занадта кароткі.</translation>
     </message>
 </context>
 <context>
@@ -2692,15 +2704,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося загрузіць асабістыя налады</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Немагчыма абнавіць налады з версіі %1 да версіі %2. Немагчыма запусціць qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Не ўдалося загрузіць глабальныя налады</translation>
     </message>
 </context>
 <context>
@@ -2902,75 +2914,75 @@ Hide formatting characters:
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Схаваць адпраўніка і змест паведамлення</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце каляровыя мянушкі ў канферэнцыях</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Апавяшчаць аб новых паведамленнях у канферэнцыях толькі тады, калі згадваецца ваш нік.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Калі пазначана, канферэнцыі будуць размешчаны ўверсе спісу сяброў, у адваротным выпадку яны будуць размешчаны ніжэй сяброў у інтэрнэце.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Калі гэта ўключана, кожны кантакт без аватара будзе мець згенераваны значок на аснове іх Tox ID замест выявы па змаўчанні. Для прымянення патрабуецца перазапуск.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Пакет смайлікаў:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Калі адключана, гукі апавяшчэнняў адключаюцца, калі стан &quot;Заняты&quot; (але апавяшчэнне па-ранейшаму паказваецца)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце апавяшчэнні на працоўным стале, напр. у цэнтры апавяшчэнняў або ў сістэмным трэі. Без гэтага апавяшчэнне будзе бачна толькі ў выглядзе міргаючага значка ў панэлі.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Паказваць толькі «новае паведамленне» без паказу патэнцыйна сакрэтнай інфармацыі ў апавяшчэннях на працоўным стале.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Падзяліць спіс сяброў і акно чата на асобныя вокны, якія можна перамяшчаць.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Адлюстроўвайце тэкставыя эмодзі ў выглядзе маляўнічых малюнкаў замест тэксту або эмодзі з чорна-белым шрыфтам.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберыце, які набор малюнкаў выкарыстоўваць пры візуалізацыі эмодзі.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Памер выявы эмодзі ў пікселях. Выберыце нешта падобнае да вашага базавага памеру шрыфта.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Базавы стыль для карыстальніцкага інтэрфейсу. Рэкамендуецца Fusion, бо ён лепш за ўсё працуе з тэматыкай qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Каляровая тэма інтэрфейсу. Выкарыстоўвайце гэта, каб выбраць цёмны рэжым.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Калі выключана, выкарыстоўваць асноўныя апавяшчэнні ў сістэмным трэі. У адваротным выпадку паспрабуйце выкарыстоўваць бэкэнд апавяшчэнняў працоўнага асяроддзя. Адключыце гэта, калі вы бачыце праблемы з апавяшчэннямі на працоўным стале.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выкарыстоўвайце бэкэнд апавяшчэнняў для канкрэтнай сістэмы, калі ён даступны</translation>
     </message>
 </context>
 <context>
@@ -3096,16 +3108,16 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore не ўдалося запусціць, праграма спыніцца пасля таго, як вы закрыеце гэта паведамленне.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore не ўдалося запусціць з вашымі наладамі проксі. qTox не можа працаваць; змяніце налады і перазапусціце.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Немагчыма адправіць запыт у сябры</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3130,11 +3142,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Change status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Змяніць статус</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Рэдагаваць профіль</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3142,15 +3154,15 @@ Hide formatting characters:
     </message>
     <message>
         <source>Add contact...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Дадаць кантакт...</translation>
     </message>
     <message>
         <source>Next conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Наступная размова</translation>
     </message>
     <message>
         <source>Previous conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Папярэдняя размова</translation>
     </message>
     <message>
         <source>Debug</source>

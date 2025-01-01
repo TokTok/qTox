@@ -105,7 +105,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pārraidītā audio kvalitāte. Samaziniet šo iestatījumu, ja joslas platums nav pietiekami liels vai ja vēlaties samazināt joslas platuma lietojumu.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -125,11 +125,11 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet slīdni, lai iestatītu ievades ierīces pastiprinājumu no %1dB līdz %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet slīdni, lai iestatītu ievades ierīces aktivizācijas skaļumu.</translation>
     </message>
 </context>
 <context>
@@ -190,7 +190,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šo qTox versiju uztur TokTok komanda pēc sākotnējā qTox projekta arhivēšanas.</translation>
     </message>
 </context>
 <context>
@@ -596,7 +596,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iespējot atkļūdošanas rīkus (tikai izstrādātājiem)</translation>
     </message>
 </context>
 <context>
@@ -619,27 +619,27 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iestata IPv6 &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ieslēgts/izslēgts</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iestata UDP &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iestata LAN atklāšanu &lt;ieslēgts&gt;/&lt;izslēgts&gt;. UDP izslēgšanas ignorēšana. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iestata starpniekservera iestatījumus. Noklusējums ir NEVIENS.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/NEVIENS):(ADRESE):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -647,7 +647,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās automātiski ielādēt profilu.</translation>
     </message>
 </context>
 <context>
@@ -933,22 +933,22 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atkļūdošanas žurnāls</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automātiskā pārlādēšana</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automātiska ritināšana</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atkļūdošanas žurnāls</translation>
     </message>
 </context>
 <context>
@@ -1040,7 +1040,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tālvadības pults ir apturēta</translation>
     </message>
 </context>
 <context>
@@ -1163,7 +1163,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pārvietot uz loku &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1188,7 +1188,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (nav fontu)</translation>
     </message>
 </context>
 <context>
@@ -1304,11 +1304,11 @@ vietā pilnīgi aizveroties.</translation>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Varat to iestatīt katram draugam, ar peles labo pogu noklikšķinot uz atsevišķiem draugiem.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pievienojiet tērzēšanas ziņojumu, kad lietotājs pievienojas konferencei vai atstāj to</translation>
     </message>
 </context>
 <context>
@@ -1355,7 +1355,7 @@ vietā pilnīgi aizveroties.</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pāriet uz pašreizējo datumu</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1367,7 +1367,7 @@ vietā pilnīgi aizveroties.</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vai tiešām vēlaties notīrīt visus parādītos ziņojumus?</translation>
     </message>
 </context>
 <context>
@@ -1519,18 +1519,19 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šis ID ļauj citiem Tox lietotājiem pievienot un sazināties ar jums.
+Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ielādes vēstures dialoglodziņš</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ielādes vēsture no:</translation>
     </message>
 </context>
 <context>
@@ -1674,7 +1675,8 @@ Jūs varat izveidot jaunu.</translation>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūsu ievadītās paroles atšķiras.
+Lūdzu, divreiz ievadiet vienu un to pašu paroli.</translation>
     </message>
 </context>
 <context>
@@ -1782,7 +1784,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atveriet iekšējos atkļūdošanas rīkus</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1790,7 +1792,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atveriet atkļūdotāju</translation>
     </message>
 </context>
 <context>
@@ -1798,12 +1800,12 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izpildāmais fails</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūs esat lūdzis qTox atvērt izpildāmo failu. Izpildāmie faili var sabojāt datoru. Vai tiešām vēlaties atvērt šo failu?</translation>
     </message>
 </context>
 <context>
@@ -1838,11 +1840,11 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slēpt ziņas</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rādīt ziņas</translation>
     </message>
 </context>
 <context>
@@ -1895,32 +1897,32 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jauns konferences ziņojums</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ienākošo failu pārsūtīšana</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 — failu pārsūtīšana</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saņemts konferences ielūgums</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 aicina jūs pievienoties konferencei.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Saņemts drauga pieprasījums</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Draudzības pieprasījums saņemts no %1</translation>
     </message>
 </context>
 <context>
@@ -2000,7 +2002,7 @@ Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšan
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Filtrējiet konferences ziņojumus pēc konferences dalībnieku publiskajām atslēgām. Šeit ievietojiet publiskās atslēgas, pa vienai katrā rindā.</translation>
     </message>
 </context>
 <context>
@@ -2015,7 +2017,7 @@ Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšan
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli, iespējams, tā ir bojāta vai izmanto veco paroli.</translation>
     </message>
 </context>
 <context>
@@ -2170,32 +2172,32 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jums nav atļaujas rakstīt uz šo vietu. Izvēlieties citu vai atceliet saglabāšanas dialoglodziņu.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās saglabāt failu</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūsu izvēlēto failu nevarēja saglabāt.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tukšs ceļš nav pieejams.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli, iespējams, tā ir bojāta vai izmanto veco paroli.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox lietotājvārdi nedrīkst pārsniegt %1 rakstzīmes.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dzēst profilu</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2205,14 +2207,17 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vai tiešām vēlaties noņemt savu paroli?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šis ID ļauj citiem Tox lietotājiem pievienot un sazināties ar jums.
+Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
+
+Šajā ID ir ietverts NoSpam kods (zilā krāsā) un kontrolsumma (pelēkā krāsā).</translation>
     </message>
 </context>
 <context>
@@ -2285,7 +2290,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>No labās puses uz kreiso</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2301,7 +2306,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 nav derīga Tox adrese.</translation>
     </message>
 </context>
 <context>
@@ -2381,7 +2386,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">prom</translation>
     </message>
     <message>
         <source>busy</source>
@@ -2391,7 +2396,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">bezsaistē</translation>
     </message>
     <message>
         <source>blocked</source>
@@ -2401,17 +2406,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Notiek teksta pārformatēšana...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ziņojums(-i) no %2 tērzēšanas</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ziņojums(-i) no %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2460,27 +2465,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ziņojumu neizdevās nosūtīt</translation>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inicializēšana</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Notiek pārraide</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pabeigts</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Salauzts</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atcelts</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2488,27 +2493,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tālvadības pults ir apturēta</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Faila nosaukums</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sazināties</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Progress</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmērs</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ātrums</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2516,23 +2521,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontrole</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūs esat pievienojies konferencei</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūs esat pametis konferenci</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās ielādēt tērzēšanas vēsturi</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Datu bāzes versija (%1) ir jaunāka, nekā mēs pašlaik atbalstām (%2). Lūdzu, jauniniet qTox.</translation>
     </message>
 </context>
 <context>
@@ -2641,7 +2646,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izvēlieties datuma dialoglodziņu</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2688,7 +2693,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parole ir pārāk īsa.</translation>
     </message>
 </context>
 <context>
@@ -2699,15 +2704,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās ielādēt personiskos iestatījumus</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevar jaunināt iestatījumus no versijas %1 uz versiju %2. Nevar palaist qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās ielādēt globālos iestatījumus</translation>
     </message>
 </context>
 <context>
@@ -2823,161 +2828,161 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ievietojiet konferences draugu saraksta augšgalā</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūsu kontaktpersonu saraksts tiks parādīts kompaktā režīmā (mazie iemiesojumi, tabulas skats).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kompakts kontaktpersonu saraksts</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vairāku logu režīms</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atveriet katru tērzēšanu atsevišķā logā</translation>
     </message>
     <message>
         <source>Emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emocijas</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet emocijzīmes</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emocijas izmērs:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tēma</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stils:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Motīva krāsa:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Laika zīmoga formāts:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Datuma formāts:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet identifikatorus, nevis tukšus iemiesojumus</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rādīt paziņojumu, kad saņemat jaunu ziņojumu, zvanu vai draudzības pieprasījumu un logs nav atlasīts.</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paziņot</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konferences paziņo tikai tad, ja tās ir minētas</translation>
     </message>
     <message>
         <source>Play sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atskaņot skaņu</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atskaņot skaņu, kamēr ir aizņemts</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paziņot, izmantojot darbvirsmas paziņojumus</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Slēpt ziņojuma sūtītāju un saturu</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konferencēs izmantojiet krāsainus segvārdus</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Paziņojiet par jauniem ziņojumiem konferencēs tikai tad, kad tiek minēts jūsu segvārds.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja ir atzīmēta izvēles rūtiņa, konferences tiks ievietotas draugu saraksta augšgalā, pretējā gadījumā tās tiks ievietotas zem tiešsaistes draugiem.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja tas ir iespējots, katrai kontaktpersonai bez iemiesojuma noklusējuma attēla vietā tiks izveidota ikona, kuras pamatā ir viņu Tox ID. Lai lietotu, ir nepieciešama restartēšana.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Smaidiņu komplekts:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja tas ir atspējots, atskan paziņojuma skaņas, kad statuss ir Aizņemts (taču joprojām tiek rādīts paziņojums)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet darbvirsmas paziņojumus, piem. paziņojumu centrā vai sistēmas teknē. Bez tā paziņojums būs redzams tikai kā mirgojoša ikona.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rādīt tikai &quot;jaunu ziņojumu&quot;, neparādot potenciāli slepenu informāciju darbvirsmas paziņojumos.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sadaliet draugu sarakstu un tērzēšanas logu atsevišķi pārvietojamos logos.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parādiet teksta emocijzīmes kā krāsainus attēlus, nevis tekstu vai melnbaltā fontā atveidotas emocijzīmes.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atlasiet, kuru attēlu kopu izmantot emocijzīmju renderēšanai.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Emocijas attēla izmērs pikseļos. Izvēlieties kaut ko līdzīgu pamata fonta lielumam.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI pamatstils. Fusion ir ieteicams, jo tas vislabāk darbojas ar qTox tēmu.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI krāsu motīvs. Izmantojiet šo, lai izvēlētos tumšo režīmu.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ja tas ir atspējots, izmantojiet pamata sistēmas teknes paziņojumus. Pretējā gadījumā mēģiniet izmantot savas darbvirsmas vides paziņojumu aizmugursistēmu. Atspējojiet šo, ja pamanāt problēmas ar darbvirsmas paziņojumiem.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izmantojiet sistēmai raksturīgu paziņojumu aizmugursistēmu, ja tāda ir pieejama</translation>
     </message>
 </context>
 <context>
@@ -3016,7 +3021,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontakti</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3028,19 +3033,19 @@ Hide formatting characters:
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izveidot jaunu konferenci...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pievienot jaunu loku...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pēc Vārda</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pēc aktivitātes</translation>
     </message>
     <message>
         <source>All</source>
@@ -3065,21 +3070,21 @@ Hide formatting characters:
     </message>
     <message>
         <source>Search Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Meklēt kontaktos</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konference #%1</translation>
     </message>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rādīt</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pievienojiet draugu</translation>
     </message>
     <message>
         <source>Conference invites</source>
@@ -3089,7 +3094,7 @@ Hide formatting characters:
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failu pārsūtīšana</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3103,12 +3108,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore neizdevās palaist, lietojumprogramma tiks pārtraukta pēc šī ziņojuma aizvēršanas.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore neizdevās startēt ar starpniekservera iestatījumiem. qTox nevar palaist; lūdzu, mainiet iestatījumus un restartējiet.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>

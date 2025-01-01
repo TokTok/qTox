@@ -101,11 +101,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε το ρυθμιστικό για να ρυθμίσετε την ένταση των ηχείων σας.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ποιότητα μετάδοσης ήχου. Χαμηλώστε αυτήν τη ρύθμιση εάν το εύρος ζώνης σας δεν είναι αρκετά υψηλό ή εάν θέλετε να μειώσετε τη χρήση του εύρους ζώνης.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,19 +113,23 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ορίστε την ανάλυση της κάμεράς σας.
+Όσο υψηλότερες τιμές, τόσο καλύτερη ποιότητα βίντεο μπορεί να έχουν οι φίλοι σας.
+Σημειώστε ότι με καλύτερη ποιότητα βίντεο, χρησιμοποιείτε περισσότερο εύρος ζώνης.
+Μερικές φορές η σύνδεσή σας μπορεί να μην είναι αρκετά καλή για να χειριστεί υψηλότερη ποιότητα βίντεο,
+που μπορεί να οδηγήσει σε προβλήματα με τις βιντεοκλήσεις.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παίξτε έναν δοκιμαστικό ήχο ενώ αλλάζετε την ένταση του ήχου εξόδου.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε το ρυθμιστικό για να ρυθμίσετε το κέρδος της συσκευής εισόδου σας από %1dB έως %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε το ρυθμιστικό για να ορίσετε την ένταση του ήχου ενεργοποίησης για τη συσκευή εισόδου σας.</translation>
     </message>
 </context>
 <context>
@@ -158,7 +162,7 @@ which may lead to problems with video calls.</source>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Μια λίστα με όλα τα γνωστά θέματα μπορεί να βρεθεί στο %1 μας στο Github. Αν ανακαλύψετε κάποιο σφάλμα ή κενό ασφαλείας στο εσωτερικό του qTox, παρακαλούμε να το αναφέρετε σύμφωνα με τις οδηγίες στο % 2 του άρθρου wiki μας.</translation>
+        <translation>Μια λίστα με όλα τα γνωστά θέματα μπορεί να βρεθεί στο %1 μας στο Github. Αν ανακαλύψετε κάποιο σφάλμα ή κενό ασφαλείας στο εσωτερικό του qTox, παρακαλούμε να το αναφέρετε σύμφωνα με τις οδηγίες στο %2 του άρθρου wiki μας.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -186,7 +190,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτή η έκδοση του qTox διατηρείται από την ομάδα TokTok μετά την αρχειοθέτηση του αρχικού έργου qTox.</translation>
     </message>
 </context>
 <context>
@@ -253,11 +257,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Αυτό είναι το δημόσιο κλειδί του φίλου σας, χρησιμοποιήστε το για να επαληθεύσετε την ταυτότητά του μέσω άλλου καναλιού. Δεν μπορείτε να το στείλετε σε άλλα άτομα, ώστε να μπορούν να προσθέσουν αυτήν την επαφή.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δημόσιο κλειδί (όχι ToxID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -265,11 +269,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Είστε βέβαιοι ότι θα αφαιρέσετε το ιστορικό συνομιλιών %1;</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απέτυχε η κατάργηση του ιστορικού συνομιλίας με το %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -277,24 +281,24 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η αυτόματη αποδοχή για αυτήν την επαφή είναι απενεργοποιημένη</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτόματη αποδοχή κλήσης:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτόματη αποδοχή προσκλήσεων συνεδρίου</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μπορείτε να αποθηκεύσετε σχόλια σχετικά με αυτήν την επαφή εδώ.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλέξτε έναν κατάλογο αυτόματης αποδοχής</translation>
     </message>
 </context>
 <context>
@@ -317,19 +321,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Open update download link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ανοίξτε τον σύνδεσμο λήψης ενημέρωσης</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διαθέσιμη ενημέρωση</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το qTox είναι ενημερωμένο ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτήν τη στιγμή εκτελείται μια μη δοκιμασμένη/ασταθής έκδοση του qTox</translation>
     </message>
 </context>
 <context>
@@ -445,17 +449,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox ID, 76 δεκαεξαδικοί χαρακτήρες</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το αναγνωριστικό %1 Tox δεν είναι έγκυρο</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">76 δεκαεξαδικοί χαρακτήρες</translation>
     </message>
 </context>
 <context>
@@ -498,15 +502,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εκτός εάν το %1 γνωρίζετε τι κάνετε, κάντε το %2 να αλλάξετε οτιδήποτε εδώ. Οι αλλαγές που γίνονται εδώ μπορεί να οδηγήσουν σε προβλήματα με το qTox, ακόμη και σε απώλεια των δεδομένων σας, π.χ. ιστορικό.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι αλλαγές εδώ εφαρμόζονται μόνο μετά την επανεκκίνηση του qTox.</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποθήκευση αρχείου</translation>
     </message>
 </context>
 <context>
@@ -578,20 +582,20 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ενεργοποίηση εντοπισμού LAN</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ρυθμίσεις σύνδεσης</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η απενεργοποίηση αυτού επιτρέπει, π.χ., Tox over Tor. Ωστόσο, προσθέτει φορτίο στο δίκτυο Tox, οπότε καταργήστε την επιλογή μόνο όταν είναι απαραίτητο.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ενεργοποίηση εργαλείων εντοπισμού σφαλμάτων (μόνο για προγραμματιστές)</translation>
     </message>
 </context>
 <context>
@@ -614,27 +618,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ορίζει το IPv6 &lt;on&gt;/&lt;off&gt;. Η προεπιλογή είναι ΟΝ.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ενεργοποίηση/απενεργοποίηση</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ρυθμίζει το UDP &lt;on&gt;/&lt;off&gt;. Η προεπιλογή είναι ΟΝ.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ρυθμίζει την ανακάλυψη LAN &lt;on&gt;/&lt;off&gt;. UDP off παρακάμπτει. Η προεπιλογή είναι ΟΝ.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ορίζει ρυθμίσεις διακομιστή μεσολάβησης. Η προεπιλογή είναι ΚΑΝΕΝΑ.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/ΚΑΜΙΑ):(ΔΙΕΥΘΥΝΣΗ):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>
@@ -642,7 +646,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η αυτόματη φόρτωση του προφίλ απέτυχε.</translation>
     </message>
 </context>
 <context>
@@ -686,12 +690,13 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το όνομα αρχείου περιείχε παράνομους χαρακτήρες</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι παράνομοι χαρακτήρες έχουν αλλάξει σε _
+ώστε να μπορείτε να αποθηκεύσετε το αρχείο στα Windows.</translation>
     </message>
 </context>
 <context>
@@ -842,7 +847,7 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Προσκεκλημένος από% 1% 2 σε% 3.</translation>
+        <translation>Προσκλήθηκε από το %1 στο %2 στο %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -897,7 +902,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάσκεψη %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -924,22 +929,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μητρώο εντοπισμού σφαλμάτων</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτόματη επαναφόρτωση</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτόματη κύλιση</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μητρώο εντοπισμού σφαλμάτων</translation>
     </message>
 </context>
 <context>
@@ -1026,7 +1031,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το τηλεχειριστήριο σε παύση</translation>
     </message>
 </context>
 <context>
@@ -1042,7 +1047,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μεταφερθέντα αρχεία</translation>
     </message>
 </context>
 <context>
@@ -1069,7 +1074,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Πάνω από 6 μήνες</translation>
     </message>
 </context>
 <context>
@@ -1148,7 +1153,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μετακίνηση στον κύκλο &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1157,7 +1162,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποκλεισμένος</translation>
     </message>
 </context>
 <context>
@@ -1173,7 +1178,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (χωρίς γραμματοσειρές)</translation>
     </message>
 </context>
 <context>
@@ -1258,7 +1263,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ελέγξτε για ενημερώσεις</translation>
     </message>
     <message>
         <source>Spell checking</source>
@@ -1266,32 +1271,34 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μέγιστο μέγεθος αρχείου αυτόματης αποδοχής (0 για απενεργοποίηση):</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αφού πατήσετε ελαχιστοποίηση (_), το qTox θα ελαχιστοποιηθεί στο δίσκο,
+αντί για τη γραμμή εργασιών συστήματος.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αφού πατήσετε το κλείσιμο (X), το qTox θα κλείσει στο δίσκο,
+αντί να κλείσει τελείως.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μπορείτε να το ορίσετε ανά φίλο κάνοντας δεξί κλικ σε μεμονωμένους φίλους.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προσθέστε ένα μήνυμα συνομιλίας όταν ένας χρήστης συμμετέχει ή αποχωρεί από μια διάσκεψη</translation>
     </message>
 </context>
 <context>
@@ -1334,11 +1341,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Search in text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αναζήτηση σε κείμενο</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μετάβαση στην τρέχουσα ημερομηνία</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1350,7 +1357,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να διαγράψετε όλα τα μηνύματα που εμφανίζονται;</translation>
     </message>
 </context>
 <context>
@@ -1502,18 +1509,19 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτό το αναγνωριστικό επιτρέπει σε άλλους χρήστες του Tox να προσθέτουν και να επικοινωνούν μαζί σας.
+Μοιραστείτε το με τους φίλους σας για να ξεκινήσετε τη συνομιλία.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Φόρτωση διαλόγου ιστορικού</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ιστορικό φόρτωσης από:</translation>
     </message>
 </context>
 <context>
@@ -1657,7 +1665,8 @@ You may want to create one.</source>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Οι κωδικοί πρόσβασης που έχετε εισάγει είναι διαφορετικοί.
+Βεβαιωθείτε ότι έχετε εισάγει τον ίδιο κωδικό πρόσβασης δύο φορές.</translation>
     </message>
 </context>
 <context>
@@ -1764,7 +1773,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ανοίξτε τα εσωτερικά εργαλεία εντοπισμού σφαλμάτων</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1772,7 +1781,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ανοίξτε το πρόγραμμα εντοπισμού σφαλμάτων</translation>
     </message>
 </context>
 <context>
@@ -1796,15 +1805,15 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Πλήρης οθόνη</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εναλλαγή προεπισκόπησης βίντεο</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σίγαση ήχου</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1816,15 +1825,15 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έξοδος από πλήρη οθόνη</translation>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόκρυψη μηνυμάτων</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση μηνυμάτων</translation>
     </message>
 </context>
 <context>
@@ -1876,32 +1885,32 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Νέο μήνυμα συνεδρίου</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εισερχόμενη μεταφορά αρχείων</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - μεταφορά αρχείων</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Λήψη πρόσκλησης συνεδρίου</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 σας προσκαλεί να συμμετάσχετε σε μια διάσκεψη.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Λήφθηκε αίτημα φιλίας</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Λήφθηκε αίτημα φιλίας από το %1</translation>
     </message>
 </context>
 <context>
@@ -1981,7 +1990,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Φιλτράρετε τα μηνύματα της διάσκεψης με βάση τα δημόσια κλειδιά των μελών της διάσκεψης. Βάλτε εδώ δημόσια κλειδιά, ένα ανά γραμμή.</translation>
     </message>
 </context>
 <context>
@@ -1996,7 +2005,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αλλαγή του κωδικού πρόσβασης της βάσης δεδομένων, ενδέχεται να είναι κατεστραμμένο ή να χρησιμοποιεί τον παλιό κωδικό πρόσβασης.</translation>
     </message>
 </context>
 <context>
@@ -2151,32 +2160,32 @@ Please use another image.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν έχετε άδεια να γράψετε σε αυτήν την τοποθεσία. Επιλέξτε άλλο ή ακυρώστε το παράθυρο διαλόγου αποθήκευσης.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία αποθήκευσης αρχείου</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αποθήκευση του αρχείου που επιλέξατε.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η κενή διαδρομή δεν είναι διαθέσιμη.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αλλαγή του κωδικού πρόσβασης της βάσης δεδομένων, ενδέχεται να είναι κατεστραμμένο ή να χρησιμοποιεί τον παλιό κωδικό πρόσβασης.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τα ονόματα χρηστών Tox δεν μπορούν να υπερβαίνουν τους %1 χαρακτήρες.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διαγραφή προφίλ</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2186,14 +2195,17 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να αφαιρέσετε τον κωδικό πρόσβασής σας;</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτό το αναγνωριστικό επιτρέπει σε άλλους χρήστες του Tox να προσθέτουν και να επικοινωνούν μαζί σας.
+Μοιραστείτε το με τους φίλους σας για να ξεκινήσετε τη συνομιλία.
+
+Αυτό το αναγνωριστικό περιλαμβάνει τον κωδικό NoSpam (με μπλε χρώμα) και το άθροισμα ελέγχου (με γκρι).</translation>
     </message>
 </context>
 <context>
@@ -2266,7 +2278,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation>Αριστερά προς τα δεξιά (ΑΠΔ)</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -2282,7 +2294,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 δεν είναι έγκυρη διεύθυνση Tox.</translation>
     </message>
 </context>
 <context>
@@ -2336,23 +2348,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σκοτάδι</translation>
     </message>
     <message>
         <source>Dark blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σκούρο μπλε</translation>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σκούρα ελιά</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σκούρο κόκκινο</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σκούρο βιολετί</translation>
     </message>
     <message>
         <source>online</source>
@@ -2377,22 +2389,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">μπλοκαριστεί</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επαναμορφοποίηση κειμένου...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 μήνυμα(α) από %2 συνομιλίες</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 μήνυμα(α) από %2</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2400,15 +2412,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 συμμετείχε στη διάσκεψη</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 αποχώρησε από τη διάσκεψη</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το %1 είναι πλέον γνωστό ως %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2445,23 +2457,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αρχικοποίηση</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μετάδοση</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Πεπερασμένος</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Σπασμένος</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ακυρώθηκε</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2469,27 +2481,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το τηλεχειριστήριο σε παύση</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Όνομα αρχείου</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επαφή</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Πρόοδος</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μέγεθος</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ταχύτητα</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2497,23 +2509,23 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ελεγχος</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έχετε λάβει μέρος στο συνέδριο</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έχετε αποχωρήσει από το συνέδριο</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η φόρτωση του ιστορικού συνομιλίας απέτυχε</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η έκδοση της βάσης δεδομένων (%1) είναι νεότερη από αυτήν που υποστηρίζουμε αυτήν τη στιγμή (%2). Αναβαθμίστε το qTox.</translation>
     </message>
 </context>
 <context>
@@ -2571,11 +2583,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η εύρεση του κειμένου.</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αρχή</translation>
     </message>
 </context>
 <context>
@@ -2586,47 +2598,47 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Start search:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έναρξη αναζήτησης:</translation>
     </message>
     <message>
         <source>from the end</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">από το τέλος</translation>
     </message>
     <message>
         <source>from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">από την αρχή</translation>
     </message>
     <message>
         <source>after date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">μετά την ημερομηνίαν ταυτήν</translation>
     </message>
     <message>
         <source>before date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">πριν από την ημερομηνία</translation>
     </message>
     <message>
         <source>00.00.0000</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">00.00.0000</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ολόκληρες λέξεις μόνο</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε κανονικές εκφράσεις</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλέξτε Διάλογος ημερομηνίας</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλέξτε μια ημερομηνία</translation>
     </message>
 </context>
 <context>
@@ -2669,7 +2681,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ο κωδικός πρόσβασης είναι πολύ σύντομος.</translation>
     </message>
 </context>
 <context>
@@ -2680,15 +2692,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία φόρτωσης προσωπικών ρυθμίσεων</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν είναι δυνατή η αναβάθμιση των ρυθμίσεων από την έκδοση %1 στην έκδοση %2. Δεν είναι δυνατή η εκκίνηση του qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αποτυχία φόρτωσης καθολικών ρυθμίσεων</translation>
     </message>
 </context>
 <context>
@@ -2866,15 +2878,15 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση ειδοποίησης όταν λαμβάνετε νέο μήνυμα, κλήση ή αίτημα φιλίας και το παράθυρο δεν είναι επιλεγμένο.</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Κοινοποιώ</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Τα συνέδρια ειδοποιούν μόνο όταν αναφέρονται</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2886,79 +2898,79 @@ Hide formatting characters:
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ειδοποίηση μέσω ειδοποιήσεων επιφάνειας εργασίας</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Απόκρυψη του αποστολέα και των περιεχομένων του μηνύματος</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε χρωματιστά ψευδώνυμα σε συνέδρια</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ειδοποιήστε για νέα μηνύματα σε συνέδρια μόνο όταν αναφέρεται το ψευδώνυμό σας.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εάν επιλεγεί, τα συνέδρια θα τοποθετηθούν στην κορυφή της λίστας φίλων, διαφορετικά θα τοποθετηθούν κάτω από τους διαδικτυακούς φίλους.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εάν είναι ενεργοποιημένη, κάθε επαφή χωρίς avatar θα έχει ένα εικονίδιο που δημιουργείται με βάση το Tox ID της αντί για την προεπιλεγμένη εικόνα. Απαιτείται επανεκκίνηση για την εφαρμογή.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Smiley pack:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εάν είναι απενεργοποιημένη, η ειδοποίηση σίγασης ακούγεται όταν η κατάσταση είναι Busy (αλλά εξακολουθεί να εμφανίζεται μια ειδοποίηση)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε ειδοποιήσεις επιφάνειας εργασίας, π.χ. σε ένα κέντρο ειδοποιήσεων ή στο δίσκο συστήματος. Χωρίς αυτό, η ειδοποίηση θα είναι ορατή μόνο ως εικονίδιο δίσκου που αναβοσβήνει.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση μόνο &quot;νέου μηνύματος&quot; χωρίς εμφάνιση δυνητικά μυστικών πληροφοριών στις ειδοποιήσεις επιφάνειας εργασίας.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Διαχωρίστε τη λίστα φίλων και το παράθυρο συνομιλίας σε ξεχωριστά μετακινούμενα παράθυρα.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εμφάνιση emoji κειμένου ως πολύχρωμες εικόνες αντί για κείμενο ή ασπρόμαυρα emoji που αποδίδονται με γραμματοσειρά.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Επιλέξτε ποιο σύνολο εικόνων θα χρησιμοποιήσετε κατά την απόδοση emojis.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Μέγεθος σε pixel μιας εικόνας emoji. Επιλέξτε κάτι παρόμοιο με το βασικό μέγεθος γραμματοσειράς σας.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Βασικό στυλ για χρήση για το περιβάλλον χρήστη. Το Fusion συνιστάται καθώς λειτουργεί καλύτερα με το θέμα qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Έγχρωμο θέμα διεπαφής χρήστη. Χρησιμοποιήστε αυτό για να επιλέξετε τη σκοτεινή λειτουργία.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Εάν είναι απενεργοποιημένο, χρησιμοποιήστε τις βασικές ειδοποιήσεις στο δίσκο συστήματος. Διαφορετικά, προσπαθήστε να χρησιμοποιήσετε το backend ειδοποιήσεων του περιβάλλοντος της επιφάνειας εργασίας σας. Απενεργοποιήστε το εάν παρατηρήσετε προβλήματα με τις ειδοποιήσεις επιφάνειας εργασίας.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Χρησιμοποιήστε το backend ειδοποιήσεων για το συγκεκριμένο σύστημα, εάν είναι διαθέσιμο</translation>
     </message>
 </context>
 <context>
@@ -3083,16 +3095,16 @@ Hide formatting characters:
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το Toxcore απέτυχε να ξεκινήσει, η εφαρμογή θα τερματιστεί αφού κλείσετε αυτό το μήνυμα.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Το Toxcore απέτυχε να ξεκινήσει με τις ρυθμίσεις διακομιστή μεσολάβησης. Το qTox δεν μπορεί να εκτελεστεί. τροποποιήστε τις ρυθμίσεις σας και κάντε επανεκκίνηση.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Δεν ήταν δυνατή η αποστολή αιτήματος φιλίας</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3115,7 +3127,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Change status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αλλαγή κατάστασης</translation>
     </message>
     <message>
         <source>Edit profile</source>

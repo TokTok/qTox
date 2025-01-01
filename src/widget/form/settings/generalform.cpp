@@ -52,9 +52,9 @@ const QStringList locales = {
     "lt",      // Lithuanian
     "lv",      // Latvian
     "mk",      // Macedonian
+    "nb_NO",   // Norwegian Bokmål
     "nl",      // Dutch
     "nl_BE",   // Flemish
-    "no_nb",   // Norwegian Bokmål
     "pl",      // Polish
     "pr",      // Pirate
     "pt",      // Portuguese

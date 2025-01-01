@@ -190,7 +190,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Šią qTox versiją prižiūri TokTok komanda po originalaus qTox projekto archyvavimo.</translation>
     </message>
 </context>
 <context>
@@ -596,7 +596,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Įgalinti derinimo įrankius (tik kūrėjams)</translation>
     </message>
 </context>
 <context>
@@ -932,22 +932,22 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Derinimo žurnalas</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatinis perkrovimas</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Automatinis slinkimas</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Derinimo žurnalas</translation>
     </message>
 </context>
 <context>
@@ -1181,7 +1181,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (nėra šriftų)</translation>
     </message>
 </context>
 <context>
@@ -1301,7 +1301,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pridėkite pokalbio pranešimą, kai vartotojas prisijungia prie konferencijos arba iš jos išeina</translation>
     </message>
 </context>
 <context>
@@ -1524,7 +1524,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Įkėlimo istorija iš:</translation>
     </message>
 </context>
 <context>
@@ -1776,7 +1776,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atidarykite vidinius derinimo įrankius</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1784,7 +1784,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atidarykite Debugger</translation>
     </message>
 </context>
 <context>
@@ -2463,23 +2463,23 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inicijuoja</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Perdavimas</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Baigta</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sulaužytas</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atšaukta</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2491,23 +2491,23 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failo pavadinimas</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Susisiekite</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pažanga</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dydis</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Greitis</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2515,23 +2515,23 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kontrolė</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jūs prisijungėte prie konferencijos</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Išėjote iš konferencijos</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko įkelti pokalbių istorijos</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Duomenų bazės versija (%1) yra naujesnė nei šiuo metu palaikome (%2). Atnaujinkite qTox.</translation>
     </message>
 </context>
 <context>
@@ -2640,7 +2640,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite datos dialogo langą</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2698,15 +2698,15 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko įkelti asmeninių nustatymų</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neįmanoma atnaujinti nustatymų iš versijos %1 į versiją %2. Nepavyko paleisti qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nepavyko įkelti visuotinių nustatymų</translation>
     </message>
 </context>
 <context>
@@ -2936,47 +2936,47 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jei išjungta, nutildyti pranešimo garsai, kai būsena yra Užimta (bet vis tiek rodomas pranešimas)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Naudokite darbalaukio pranešimus, pvz. pranešimų centre arba sistemos dėkle. Be to pranešimas bus matomas tik kaip mirksinti dėklo piktograma.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Rodyti tik „naują žinutę“, nerodant galimai slaptos informacijos darbalaukio pranešimuose.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Padalinkite draugų sąrašą ir pokalbių langą į atskirus perkeliamus langus.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pateikite tekstinius jaustukus kaip spalvotus paveikslėlius, o ne tekstą arba juodu / baltu šriftu atvaizduotus jaustukus.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite, kurį paveikslėlių rinkinį naudoti pateikiant jaustukus.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jaustuko paveikslėlio dydis pikseliais. Pasirinkite kažką panašaus į pagrindinį šrifto dydį.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pagrindinis stilius, naudojamas UI. Fusion rekomenduojama, nes ji geriausiai veikia su qTox temomis.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI spalvų tema. Naudokite tai norėdami pasirinkti tamsųjį režimą.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jei išjungta, naudokite pagrindinius sistemos dėklo pranešimus. Kitu atveju pabandykite naudoti savo darbalaukio aplinkos pranešimų foną. Išjunkite šią funkciją, jei pastebėsite su darbalaukio pranešimais susijusių problemų.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jei įmanoma, naudokite konkrečios sistemos pranešimų foną</translation>
     </message>
 </context>
 <context>

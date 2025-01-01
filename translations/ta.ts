@@ -81,31 +81,31 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அதிக (64 kBps)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நடுத்தர (32 kBps)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">குறைந்த (16 kBps)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மிகக் குறைவு (8 kBps)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வாசல்</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் ஸ்பீக்கர்களின் ஒலியளவை அமைக்க ஸ்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒலிபரப்பு தரம். உங்கள் அலைவரிசை போதுமானதாக இல்லாவிட்டால் அல்லது அலைவரிசை பயன்பாட்டைக் குறைக்க விரும்பினால் இந்த அமைப்பைக் குறைக்கவும்.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -113,19 +113,23 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கேமராவின் தீர்மானத்தை அமைக்கவும்.
+அதிக மதிப்புகள், சிறந்த வீடியோ தரத்தை உங்கள் நண்பர்கள் பெறலாம்.
+சிறந்த வீடியோ தரத்துடன், அதிக அலைவரிசையைப் பயன்படுத்துகிறீர்கள் என்பதை நினைவில் கொள்ளவும்.
+சில நேரங்களில் உங்கள் இணைப்பு உயர் வீடியோ தரத்தைக் கையாள போதுமானதாக இருக்காது,
+இது வீடியோ அழைப்புகளில் சிக்கல்களுக்கு வழிவகுக்கும்.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெளியீட்டு அளவை மாற்றும்போது சோதனை ஒலியை இயக்கவும்.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் உள்ளீட்டு சாதனத்தின் ஆதாயத்தை %1dB இலிருந்து %2dB வரை அமைக்க ஸ்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் உள்ளீட்டு சாதனத்திற்கான செயல்படுத்தும் அளவை அமைக்க ஸ்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
 </context>
 <context>
@@ -187,7 +191,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அசல் qTox திட்டத்தின் காப்பகத்தைத் தொடர்ந்து qTox இன் இந்தப் பதிப்பு TokTok குழுவால் பராமரிக்கப்படுகிறது.</translation>
     </message>
 </context>
 <context>
@@ -254,48 +258,48 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;இது உங்கள் நண்பரின் பொது விசை, மற்றொரு சேனல் மூலம் அவர்களின் அடையாளத்தைச் சரிபார்க்க இதைப் பயன்படுத்தவும். நீங்கள் இதை மற்றவர்களுக்கு அனுப்ப முடியாது, அதனால் அவர்கள் இந்தத் தொடர்பைச் சேர்க்கலாம்.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பொது விசை (ToxID அல்ல):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 அரட்டை வரலாற்றை நீக்குவது உறுதியா?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உடனான அரட்டை வரலாற்றை அகற்ற முடியவில்லை!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்புகளை தானாக ஏற்கவும்</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த தொடர்பை தானாக ஏற்றுக்கொள்வது முடக்கப்பட்டுள்ளது</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அழைப்பைத் தானாக ஏற்கவும்:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டு அழைப்புகளைத் தானாக ஏற்கவும்</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தத் தொடர்பைப் பற்றிய கருத்துகளை இங்கே சேமிக்கலாம்.</translation>
     </message>
     <message>
         <source>Choose an auto-accept directory</source>
         <extracomment>popup title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தானாக ஏற்கும் கோப்பகத்தைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -318,19 +322,19 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Open update download link</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதுப்பிப்பு பதிவிறக்க இணைப்பைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Update available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதுப்பிப்பு கிடைக்கிறது</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox புதுப்பித்த நிலையில் உள்ளது ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தற்போது qTox இன் சோதிக்கப்படாத/நிலையற்ற பதிப்பு இயங்குகிறது</translation>
     </message>
 </context>
 <context>
@@ -386,24 +390,24 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Open contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்பு பட்டியலைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பைத் திறக்க முடியவில்லை</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்பு கோப்பை திறக்க முடியவில்லை</translation>
     </message>
     <message>
         <source>Invalid file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தவறான கோப்பு</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தக் கோப்பில் இறக்குமதி செய்ய எந்தத் தொடர்புகளையும் எங்களால் கண்டுபிடிக்க முடியவில்லை!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -418,11 +422,11 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">திற</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர் கோரிக்கைகளை அனுப்பவும்</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -431,7 +435,7 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு வரிக்கு ஒரு டாக்ஸ் ஐடி, தொடர்புகளின் பட்டியலை இறக்குமதி செய்யவும்</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
@@ -442,21 +446,21 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Import contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்புகளை இறக்குமதி செய்யவும்</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டாக்ஸ் ஐடி, 76 ஹெக்ஸாடெசிமல் எழுத்துக்கள்</translation>
     </message>
     <message>
         <source>%1 Tox ID is invalid</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 டாக்ஸ் ஐடி தவறானது</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">76 ஹெக்ஸாடெசிமல் எழுத்துக்கள்</translation>
     </message>
 </context>
 <context>
@@ -499,15 +503,15 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் என்ன செய்கிறீர்கள் என்று %1 க்கு தெரியாவிட்டால், தயவுசெய்து %2 இங்கே எதையும் மாற்றவும். இங்கே செய்யப்பட்ட மாற்றங்கள் qTox இல் சிக்கல்களுக்கு வழிவகுக்கும், மேலும் உங்கள் தரவை இழக்க நேரிடலாம், எ.கா. வரலாறு%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இங்கே மாற்றங்கள் qTox ஐ மறுதொடக்கம் செய்த பின்னரே பயன்படுத்தப்படும்.</translation>
     </message>
     <message>
         <source>Save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பை சேமிக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -579,71 +583,71 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN கண்டுபிடிப்பை இயக்கு</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இணைப்பு அமைப்புகள்</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இதை முடக்குவது, எ.கா., டாக்ஸ் ஓவர் டோரை அனுமதிக்கிறது. இருப்பினும், இது டாக்ஸ் நெட்வொர்க்கில் சுமை சேர்க்கிறது, எனவே தேவைப்படும்போது மட்டும் தேர்வுநீக்கவும்.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழைத்திருத்த கருவிகளை இயக்கு (டெவலப்பர்கள் மட்டும்)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பாகுபடுத்த டாக்ஸ் URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய நிகழ்வைத் தொடங்கி, குறிப்பிட்ட சுயவிவரத்தை ஏற்றுகிறது.</translation>
     </message>
     <message>
         <source>profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம்</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய நிகழ்வைத் தொடங்கி உள்நுழைவுத் திரையைத் திறக்கும்.</translation>
     </message>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; ஐ அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>on/off</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஆன்/ஆஃப்</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UDPயை &lt;on&gt;/&lt;off&gt; அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LAN கண்டுபிடிப்பை &lt;on&gt;/&lt;off&gt; அமைக்கிறது. UDP முடக்கப்பட்டுள்ளது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ப்ராக்ஸி அமைப்புகளை அமைக்கிறது. இயல்புநிலை இல்லை.</translation>
     </message>
     <message>
         <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(SOCKS5/HTTP/NONE):(முகவரி):(போர்ட்)</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழை</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை தானாக ஏற்றுவதில் தோல்வி.</translation>
     </message>
 </context>
 <context>
@@ -688,12 +692,13 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு பெயரில் சட்டவிரோத எழுத்துக்கள் உள்ளன</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சட்டவிரோத எழுத்துக்கள் _ ஆக மாற்றப்பட்டுள்ளன
+எனவே நீங்கள் Windows இல் கோப்பை சேமிக்க முடியும்.</translation>
     </message>
 </context>
 <context>
@@ -728,7 +733,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வீடியோ அழைப்பை முடிக்கவும்</translation>
     </message>
     <message>
         <source>Cancel video call</source>
@@ -818,11 +823,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஊமை</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடக்கு</translation>
     </message>
 </context>
 <context>
@@ -899,7 +904,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடு%1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -926,22 +931,22 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழைத்திருத்த பதிவு</translation>
     </message>
     <message>
         <source>Auto-reload</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தானாக மீண்டும் ஏற்றவும்</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தானாக உருட்டும்</translation>
     </message>
 </context>
 <context>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழைத்திருத்த பதிவு</translation>
     </message>
 </context>
 <context>
@@ -1033,7 +1038,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remote paused</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரிமோட் இடைநிறுத்தப்பட்டது</translation>
     </message>
 </context>
 <context>
@@ -1049,7 +1054,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாற்றப்பட்ட கோப்புகள்</translation>
     </message>
 </context>
 <context>
@@ -1076,7 +1081,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">6 மாதங்களுக்கு மேல் பழையது</translation>
     </message>
 </context>
 <context>
@@ -1156,7 +1161,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; வட்டத்திற்கு நகர்த்து</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1165,7 +1170,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தடுக்கப்பட்டது</translation>
     </message>
 </context>
 <context>
@@ -1181,7 +1186,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 (no fonts)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 (எழுத்துருக்கள் இல்லை)</translation>
     </message>
 </context>
 <context>
@@ -1266,40 +1271,42 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதுப்பிப்புகளைச் சரிபார்க்கவும்</translation>
     </message>
     <message>
         <source>Spell checking</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எழுத்துப்பிழை சரிபார்ப்பு</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அதிகபட்ச தானாக ஏற்றுக்கொள்ளும் கோப்பு அளவு (முடக்க 0):</translation>
     </message>
     <message>
         <source> MB</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எம்பி</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">minimize (_) ஐ அழுத்திய பிறகு qTox ட்ரேயில் குறைக்கப்படும்,
+கணினி பணிப்பட்டிக்கு பதிலாக.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">க்ளோஸ் (X) ஐ அழுத்திய பிறகு qTox தட்டுக்கு மூடப்படும்,
+முழுவதுமாக மூடுவதற்கு பதிலாக.</translation>
     </message>
     <message>
         <source>You can set this on a per-friend basis by right clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தனிப்பட்ட நண்பர்களை ரைட் கிளிக் செய்வதன் மூலம் இதை ஒரு நண்பர் என்ற அடிப்படையில் அமைக்கலாம்.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு பயனர் மாநாட்டில் சேரும்போது அல்லது வெளியேறும்போது அரட்டைச் செய்தியைச் சேர்க்கவும்</translation>
     </message>
 </context>
 <context>
@@ -1338,15 +1345,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <source>Search in text</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரையில் தேடவும்</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தற்போதைய தேதிக்குச் செல்லவும்</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1358,7 +1365,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காண்பிக்கப்படும் எல்லா செய்திகளையும் அழிக்க விரும்புகிறீர்களா?</translation>
     </message>
 </context>
 <context>
@@ -1444,35 +1451,35 @@ Profile does not contain your history.</source>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் சுயவிவரத்திலிருந்து கடவுச்சொல் மற்றும் குறியாக்கத்தை அகற்றவும்.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெயர் உள்ளீடு</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெயர் தொடர்புகளுக்கு தெரியும்</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை செய்தி உள்ளீடு</translation>
     </message>
     <message>
         <source>Status message visible to contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை செய்தி தொடர்புகளுக்குத் தெரியும்</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் டாக்ஸ் ஐடி</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QR படத்தை கோப்பாக சேமிக்கவும்</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QR படத்தை கிளிப்போர்டுக்கு நகலெடுக்கவும்</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1484,294 +1491,298 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஏற்றுமதி சுயவிவரம்</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்திலிருந்து கடவுச்சொல்லை அகற்று</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவர கடவுச்சொல்லை மாற்றவும்</translation>
     </message>
     <message>
         <source>My name:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">என் பெயர்:</translation>
     </message>
     <message>
         <source>My status:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எனது நிலை:</translation>
     </message>
     <message>
         <source>My profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எனது சுயவிவரம்</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த ஐடி மற்ற டாக்ஸ் பயனர்களைச் சேர்க்க மற்றும் உங்களைத் தொடர்புகொள்ள அனுமதிக்கிறது.
+அரட்டையைத் தொடங்க உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வரலாற்று உரையாடலை ஏற்றவும்</translation>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இதிலிருந்து ஏற்ற வரலாற்றை:</translation>
     </message>
 </context>
 <context>
     <name>LoginScreen</name>
     <message>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பயனர் பெயர்:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல்:</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உறுதிப்படுத்தவும்:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் வலிமை: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை உருவாக்கவும்</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தில் கடவுச்சொல் இல்லை என்றால், qTox உள்நுழைவுத் திரையைத் தவிர்க்கலாம்</translation>
     </message>
     <message>
         <source>Load automatically</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தானாக ஏற்றவும்</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஏற்றவும்</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை ஏற்றவும்</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய சுயவிவரம்</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய சுயவிவரத்தை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பயனர்பெயர் காலியாக இருக்கக்கூடாது.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் குறைந்தது 6 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தப் பெயரில் ஒரு சுயவிவரம் ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் பாதுகாக்கப்பட்ட சுயவிவரங்களை தானாக ஏற்ற முடியாது.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை ஏற்ற முடியவில்லை</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட சுயவிவரம் எதுவும் இல்லை.
+
+நீங்கள் ஒன்றை உருவாக்க விரும்பலாம்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த சுயவிவரத்தை ஏற்ற முடியவில்லை</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த சுயவிவரம் ஏற்கனவே பயன்பாட்டில் உள்ளது.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தவறான கடவுச்சொல்.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இறக்குமதி</translation>
     </message>
     <message>
         <source>Username input field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பயனர்பெயர் உள்ளீட்டு புலம்</translation>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீட்டு புலம், நீங்கள் அதை காலியாக விடலாம் (கடவுச்சொல் இல்லை), அல்லது குறைந்தது 6 எழுத்துகளை உள்ளிடவும்</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உறுதிப்படுத்தல் புலம்</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய சுயவிவர பொத்தானை உருவாக்கவும்</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரப் பட்டியல்</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரங்களின் பட்டியல்</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீடு</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தானாக தேர்வுப்பெட்டியை ஏற்றவும்</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை இறக்குமதி செய்</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேர்ந்தெடுக்கப்பட்ட சுயவிவர பொத்தானை ஏற்றவும்</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய சுயவிவரத்தை உருவாக்கும் பக்கம்</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஏற்கனவே உள்ள சுயவிவரப் பக்கத்தை ஏற்றுகிறது</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் உள்ளிட்ட கடவுச்சொற்கள் வேறுபட்டவை.
+ஒரே கடவுச்சொல்லை இருமுறை உள்ளிடுவதை உறுதிசெய்யவும்.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் பெயர்</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் நிலை</translation>
     </message>
     <message>
         <source>...</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">...</translation>
     </message>
     <message>
         <source>Add friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர்களைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு மாநாட்டை உருவாக்கவும்</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடிக்கப்பட்ட கோப்பு பரிமாற்றங்களைக் காண்க</translation>
     </message>
     <message>
         <source>Change your settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் அமைப்புகளை மாற்றவும்</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மூடு</translation>
     </message>
     <message>
         <source>Open profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கிளிக் செய்தவுடன் சுயவிவரப் பக்கத்தைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை செய்தி உள்ளீடு</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மற்றவர்களுக்குக் காண்பிக்கப்படும் உங்கள் நிலைச் செய்தியை அமைக்கவும்</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை</translation>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கிடைக்கும் நிலையை அமைக்கவும்</translation>
     </message>
     <message>
         <source>Contact search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேடலைத் தொடர்பு கொள்ளவும்</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தெரிந்த நண்பர்களுக்கான தேடல் உள்ளீட்டைத் தொடர்பு கொள்ளவும்</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வரிசைப்படுத்துதல் மற்றும் தெரிவுநிலை</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர்களை வரிசைப்படுத்துதல் மற்றும் தெரிவுநிலையை அமைக்கவும்</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர்களைச் சேர் பக்கத்தைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடு</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டு மேலாண்மை பக்கத்தைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு பரிமாற்ற வரலாறு</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு பரிமாற்ற வரலாற்றைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அமைப்புகள்</translation>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அமைப்புகளைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உள் பிழைத்திருத்த கருவிகளைத் திறக்கவும்</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1779,7 +1790,7 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழைத்திருத்தியைத் திறக்கவும்</translation>
     </message>
 </context>
 <context>
@@ -1787,12 +1798,12 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இயங்கக்கூடிய கோப்பு</translation>
     </message>
     <message>
         <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இயங்கக்கூடிய கோப்பைத் திறக்க qToxஐக் கேட்டுள்ளீர்கள். இயங்கக்கூடிய கோப்புகள் உங்கள் கணினியை சேதப்படுத்தும். இந்தக் கோப்பை நிச்சயமாகத் திறக்க விரும்புகிறீர்களா?</translation>
     </message>
 </context>
 <context>
@@ -1803,15 +1814,15 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழுத்திரை</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வீடியோ மாதிரிக்காட்சியை நிலைமாற்று</translation>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஆடியோவை முடக்கு</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1819,19 +1830,19 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வீடியோ அழைப்பை முடிக்கவும்</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழுத்திரையிலிருந்து வெளியேறவும்</translation>
     </message>
     <message>
         <source>Hide messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செய்திகளை மறை</translation>
     </message>
     <message>
         <source>Show messages</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செய்திகளைக் காட்டு</translation>
     </message>
 </context>
 <context>
@@ -1839,30 +1850,30 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காண்க</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஜன்னல்</translation>
     </message>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">குறைக்கவும்</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அனைத்தையும் முன் கொண்டு வாருங்கள்</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழுத்திரையிலிருந்து வெளியேறு</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழுத் திரையில் நுழையவும்</translation>
     </message>
 </context>
 <context>
@@ -1883,54 +1894,54 @@ Please make sure to enter the same password twice.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய மாநாட்டுச் செய்தி</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உள்வரும் கோப்பு பரிமாற்றம்</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 - கோப்பு பரிமாற்றம்</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டு அழைப்பு பெறப்பட்டது</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உங்களை ஒரு மாநாட்டில் சேர அழைக்கிறார்.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர் கோரிக்கை பெறப்பட்டது</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர் கோரிக்கை %1 இலிருந்து பெறப்பட்டது</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கேப்ஸ்-லாக் இயக்கப்பட்டது</translation>
     </message>
 </context>
 <context>
     <name>PrivacyForm</name>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தனியுரிமை</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உறுதிப்படுத்தல்</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அனைத்து அரட்டை வரலாற்றையும் நிரந்தரமாக நீக்க விரும்புகிறீர்களா?</translation>
     </message>
 </context>
 <context>
@@ -1938,60 +1949,64 @@ Please make sure to enter the same password twice.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் தட்டச்சு செய்யும் போது உங்கள் நண்பர்கள் பார்க்க முடியும்.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தட்டச்சு அறிவிப்புகளை அனுப்பவும்</translation>
     </message>
     <message>
         <source>Keep chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அரட்டை வரலாற்றை வைத்திருங்கள்</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam என்பது உங்கள் டாக்ஸ் ஐடியின் ஒரு பகுதியாகும்.
+நீங்கள் நண்பர் கோரிக்கைகளால் ஸ்பேம் செய்யப்படுகிறீர்கள் என்றால், உங்கள் NoSpam ஐ மாற்ற வேண்டும்.
+உங்கள் பழைய ஐடியுடன் பிறர் உங்களைச் சேர்க்க முடியாது, ஆனால் உங்கள் தற்போதைய நண்பர்களை நீங்கள் வைத்துக் கொள்வீர்கள்.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">NoSpam என்பது உங்கள் ஐடியின் ஒரு பகுதியாகும், அதை விருப்பப்படி மாற்றலாம்.
+நீங்கள் நண்பர் கோரிக்கைகளால் ஸ்பேம் செய்யப்பட்டால், NoSpam ஐ மாற்றவும்.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சீரற்ற NoSpam ஐ உருவாக்கவும்</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அரட்டை வரலாற்றை வைத்திருப்பது இன்னும் வளர்ச்சியில் உள்ளது.
+சேமி வடிவமைப்பு மாற்றங்கள் சாத்தியம், இது தரவு இழப்பு ஏற்படலாம்.</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தனியுரிமை</translation>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டு தொகுதி பட்டியல்</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டு உறுப்பினர்களின் பொது விசைகள் மூலம் மாநாட்டு செய்திகளை வடிகட்டவும். பொது விசைகளை ஒரு வரிக்கு ஒன்று இங்கே வைக்கவும்.</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல்லில் இருந்து விசையைப் பெறுவதில் தோல்வி, சுயவிவரம் புதிய கடவுச்சொல்லைப் பயன்படுத்தாது.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
@@ -1999,48 +2014,49 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை, அது சிதைந்திருக்கலாம் அல்லது பழைய கடவுச்சொல்லைப் பயன்படுத்தலாம்.</translation>
     </message>
 </context>
 <context>
     <name>ProfileForm</name>
     <message>
         <source>Choose a profile picture</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரப் படத்தைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழை</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மறுபெயரிடவும் &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தக் கோப்பைத் திறக்க முடியவில்லை.</translation>
     </message>
     <message>
         <source>Current profile: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தற்போதைய சுயவிவரம்:</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அகற்று</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தப் படத்தைப் படிக்க முடியவில்லை.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வழங்கப்பட்ட படம் மிகவும் பெரியது.
+தயவுசெய்து மற்றொரு படத்தைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை &quot;%1&quot; என மறுபெயரிட முடியவில்லை</translation>
     </message>
     <message>
         <source>Location not writable</source>
@@ -2049,35 +2065,35 @@ Please use another image.</source>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அகற்ற எதுவும் இல்லை</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் சுயவிவரத்தில் கடவுச்சொல் இல்லை!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய கடவுச்சொல்லை உள்ளிடவும்.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்தச் சுயவிவரத்தை நிச்சயமாக நீக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சேமிக்கவும்</translation>
     </message>
     <message>
         <source>Save QrCode (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QrCode (*.png) சேமிக்கவும்</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்புகளை நீக்க முடியவில்லை!</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -2087,98 +2103,98 @@ Please use another image.</source>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவர கடவுச்சொல்லை அமைக்கவும்</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தற்போதைய சுயவிவர இடம்:%1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல்லை மாற்ற முடியவில்லை</translation>
     </message>
     <message>
         <source>Empty path is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காலியான பாதை கிடைக்கவில்லை</translation>
     </message>
     <message>
         <source>Failed to rename</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மறுபெயரிடுவதில் தோல்வி</translation>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம் ஏற்கனவே உள்ளது</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; என்ற பெயரில் ஒரு சுயவிவரம் ஏற்கனவே உள்ளது.</translation>
     </message>
     <message>
         <source>Empty name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெற்றுப் பெயர்</translation>
     </message>
     <message>
         <source>Empty name is unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெற்றுப் பெயர் கிடைக்கவில்லை</translation>
     </message>
     <message>
         <source>Empty path</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெற்று பாதை</translation>
     </message>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஏற்றுமதி சுயவிவரம்</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox சேமிப்பு கோப்பு (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பின்வரும் கோப்புகளை நீக்க முடியவில்லை:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அவற்றை கைமுறையாக அகற்றவும்.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
         <comment>filetype filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">படங்கள் (%1)</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அந்த இடத்திற்கு எழுத உங்களுக்கு அனுமதி இல்லை. இன்னொன்றைத் தேர்வு செய்யவும் அல்லது சேமி உரையாடலை ரத்து செய்யவும்.</translation>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பைச் சேமிப்பதில் தோல்வி</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் தேர்ந்தெடுத்த கோப்பைச் சேமிக்க முடியவில்லை.</translation>
     </message>
     <message>
         <source>Empty path is unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காலியான பாதை கிடைக்கவில்லை.</translation>
     </message>
     <message>
         <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை, அது சிதைந்திருக்கலாம் அல்லது பழைய கடவுச்சொல்லைப் பயன்படுத்தலாம்.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டாக்ஸ் பயனர் பெயர்கள் %1 எழுத்துகளுக்கு மேல் இருக்கக்கூடாது.</translation>
     </message>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை நீக்கு</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2188,14 +2204,17 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கடவுச்சொல்லை நிச்சயமாக அகற்ற விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த ஐடி மற்ற டாக்ஸ் பயனர்களைச் சேர்க்க மற்றும் உங்களைத் தொடர்புகொள்ள அனுமதிக்கிறது.
+அரட்டையைத் தொடங்க உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.
+
+இந்த ஐடியில் NoSpam குறியீடு (நீலத்தில்), மற்றும் செக்சம் (சாம்பல் நிறத்தில்) ஆகியவை அடங்கும்.</translation>
     </message>
 </context>
 <context>
@@ -2203,59 +2222,59 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தை இறக்குமதி செய்</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tox சேமிப்பு கோப்பு (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டாக்ஸ் அல்லாத கோப்பைப் புறக்கணித்தல்</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எச்சரிக்கை: டாக்ஸ் சேவ் கோப்பு அல்லாத கோப்பைத் தேர்ந்தெடுத்துள்ளீர்கள்; புறக்கணித்தல்.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம் ஏற்கனவே உள்ளது</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&quot;%1&quot; என்ற பெயரில் ஒரு சுயவிவரம் ஏற்கனவே உள்ளது. அதை அழிக்க வேண்டுமா?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு இல்லை</translation>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம் இல்லை</translation>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரம் இறக்குமதி செய்யப்பட்டது</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1.tox வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
         <source>Ok</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சரி</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரத்து செய்</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2268,7 +2287,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>Translate this string to the string &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">LTR</translation>
     </message>
 </context>
 <context>
@@ -2284,34 +2303,34 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 சரியான டாக்ஸ் முகவரி அல்ல.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இயல்புநிலை</translation>
     </message>
     <message>
         <source>Blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீலம்</translation>
     </message>
     <message>
         <source>Olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஆலிவ்</translation>
     </message>
     <message>
         <source>Red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சிவப்பு</translation>
     </message>
     <message>
         <source>Violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வயலட்</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உள்வரும் அழைப்பு...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -2326,35 +2345,35 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Desktop</source>
         <comment>Desktop as a camera input for screen sharing</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டெஸ்க்டாப்</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிழை</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox ஆல் உங்கள் அரட்டை பதிவுகளை திறக்க முடியவில்லை, அவை முடக்கப்படும்.</translation>
     </message>
     <message>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இருள்</translation>
     </message>
     <message>
         <source>Dark blue</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடர் நீலம்</translation>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடர் ஆலிவ்</translation>
     </message>
     <message>
         <source>Dark red</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடர் சிவப்பு</translation>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடர் ஊதா</translation>
     </message>
     <message>
         <source>online</source>
@@ -2379,22 +2398,22 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தடுக்கப்பட்டது</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரையை மறுவடிவமைக்கிறது...</translation>
     </message>
     <message>
         <source>%1 message(s) from %2 chats</source>
         <extracomment>e.g. 3 messages from 2 chats</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 அரட்டைகளில் இருந்து %1 செய்தி(கள்).</translation>
     </message>
     <message>
         <source>%1 message(s) from %2</source>
         <extracomment>e.g. 2 messages from Bob</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%2 இலிருந்து %1 செய்தி(கள்).</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2402,19 +2421,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 மாநாட்டில் சேர்ந்துள்ளார்</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 மாநாட்டிலிருந்து வெளியேறினார்</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 இப்போது%2 என அறியப்படுகிறது</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 தலைப்பை %2 என அமைத்துள்ளார்</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2422,7 +2441,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உடனான அழைப்பு எதிர்பாராத விதமாக முடிந்தது. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
@@ -2443,27 +2462,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செய்தியை அனுப்ப முடியவில்லை</translation>
     </message>
     <message>
         <source>Initializing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">துவக்குதல்</translation>
     </message>
     <message>
         <source>Transmitting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடத்துகிறது</translation>
     </message>
     <message>
         <source>Finished</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடிந்தது</translation>
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உடைந்தது</translation>
     </message>
     <message>
         <source>Canceled</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரத்து செய்யப்பட்டது</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2471,51 +2490,51 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remote paused</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரிமோட் இடைநிறுத்தப்பட்டது</translation>
     </message>
     <message>
         <source>File Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு பெயர்</translation>
     </message>
     <message>
         <source>Contact</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்பு கொள்ளவும்</translation>
     </message>
     <message>
         <source>Progress</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முன்னேற்றம்</translation>
     </message>
     <message>
         <source>Size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அளவு</translation>
     </message>
     <message>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வேகம்</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை</translation>
     </message>
     <message>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கட்டுப்பாடு</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டில் கலந்து கொண்டீர்கள்</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாட்டிலிருந்து வெளியேறிவிட்டீர்கள்</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அரட்டை வரலாற்றை ஏற்ற முடியவில்லை</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தரவுத்தள பதிப்பு (%1) நாங்கள் தற்போது ஆதரிக்கும் (%2) விட புதியது. தயவுசெய்து qTox ஐ மேம்படுத்தவும்.</translation>
     </message>
 </context>
 <context>
@@ -2526,19 +2545,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அமைக்கப்பட்டிருந்தால், நண்பருடனான அனைத்து அரட்டை வரலாற்றையும் அகற்றவும்</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அரட்டை வரலாற்றையும் அகற்றவும்</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் தொடர்புகள் பட்டியலிலிருந்து %1 ஐ நிச்சயமாக அகற்ற விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அகற்று</translation>
     </message>
 </context>
 <context>
@@ -2546,38 +2565,38 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு பகுதியைத் தேர்ந்தெடுக்க கிளிக் செய்து இழுக்கவும். qTox சாளரத்தை மறைக்க/காட்ட %1ஐ அழுத்தவும் அல்லது ரத்துசெய்ய %2ஐ அழுத்தவும்.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">விண்வெளி</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எஸ்கேப்</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேர்வின் ஸ்கிரீன் ஷாட்டை அனுப்ப %1ஐயும், qTox சாளரத்தை மறைக்க/காண்பிக்க %2ஐயும் அல்லது ரத்துசெய்ய %3ஐயும் அழுத்தவும்.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உள்ளிடவும்</translation>
     </message>
 </context>
 <context>
     <name>SearchForm</name>
     <message>
         <source>The text could not be found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரை கண்டுபிடிக்க முடியவில்லை.</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடங்கு</translation>
     </message>
 </context>
 <context>
@@ -2588,109 +2607,109 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Start search:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேடலைத் தொடங்கு:</translation>
     </message>
     <message>
         <source>from the end</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடிவில் இருந்து</translation>
     </message>
     <message>
         <source>from the beginning</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஆரம்பத்தில் இருந்து</translation>
     </message>
     <message>
         <source>after date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேதிக்குப் பிறகு</translation>
     </message>
     <message>
         <source>before date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேதிக்கு முன்</translation>
     </message>
     <message>
         <source>00.00.0000</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">00.00.0000</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கேஸ் சென்சிட்டிவ்</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முழு வார்த்தைகள் மட்டுமே</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வழக்கமான வெளிப்பாடுகளைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேதி உரையாடலைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <source>Select a date</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒரு தேதியைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
 </context>
 <context>
     <name>SetPasswordDialog</name>
     <message>
         <source>Set your password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கடவுச்சொல்லை அமைக்கவும்</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உறுதிப்படுத்தவும்:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல்:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் வலிமை: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் பொருந்தவில்லை.</translation>
     </message>
     <message>
         <source>Confirm password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல்லை உறுதிப்படுத்தவும்</translation>
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீட்டை உறுதிப்படுத்தவும்</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீடு</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் உள்ளீட்டு புலம், குறைந்தபட்சம் 6 எழுத்துகள் நீளம்</translation>
     </message>
     <message>
         <source>The password is too short.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கடவுச்சொல் மிகவும் சிறியது.</translation>
     </message>
 </context>
 <context>
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வட்டம் #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தனிப்பட்ட அமைப்புகளை ஏற்றுவதில் தோல்வி</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பதிப்பு %1 இலிருந்து பதிப்பு %2 க்கு அமைப்புகளை மேம்படுத்த முடியவில்லை. qTox ஐ தொடங்க முடியாது.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உலகளாவிய அமைப்புகளை ஏற்றுவதில் தோல்வி</translation>
     </message>
 </context>
 <context>
@@ -2702,7 +2721,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1ஐ நண்பராக சேர்க்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>User ID:</source>
@@ -2715,12 +2734,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Send</source>
         <comment>Send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அனுப்பு</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரத்து செய்</translation>
     </message>
 </context>
 <context>
@@ -2731,26 +2750,26 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User Interface</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பயனர் இடைமுகம்</translation>
     </message>
 </context>
 <context>
     <name>UserInterfaceSettings</name>
     <message>
         <source>Chat</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அரட்டை</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடிப்படை எழுத்துரு:</translation>
     </message>
     <message>
         <source>px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Size: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அளவு:</translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2765,27 +2784,38 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">qTox மீண்டும் தொடங்கும் வரை, புதிய உரை ஸ்டைலிங் விருப்பம் அரட்டை வரலாற்றில் ஏற்றப்படாமல் இருக்கலாம்.
+இது புதிய செய்திகளை உடனடியாக பாதிக்கும்.
+
+எளிய உரை:
+    செய்திகளுக்கு எந்த வடிவமைப்பையும் பயன்படுத்த வேண்டாம்.
+    எ.கா. &quot;**உரை**&quot; தடிமனாக இல்லாமல் &quot;**உரை**&quot; ஆக காண்பிக்கப்படும்.
+வடிவமைப்பு எழுத்துகளைக் காட்டு:
+    வடிவமைப்பைப் பயன்படுத்தவும் மற்றும் எழுத்துக்களைக் காட்டவும்.
+    எ.கா. &quot;**உரை**&quot; தடிமனான &quot;**உரை**&quot; எனக் காண்பிக்கும்.
+வடிவமைப்பு எழுத்துகளை மறை:
+    வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்ட வேண்டாம்.
+    எ.கா. &quot;**உரை**&quot; &quot;உரை&quot;, தடிமனாக காண்பிக்கப்படும்.</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரை ஸ்டைலிங்:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரை ஸ்டைலிங் விருப்பத்தைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
         <source>Plaintext</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எளிய உரை</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வடிவமைத்தல் எழுத்துகளைக் காட்டு</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வடிவமைப்பு எழுத்துகளை மறை</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2794,89 +2824,89 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நீங்கள் ஒரு புதிய செய்தியைப் பெறும்போது qTox இன் சாளரத்தைத் திறக்கவும், இன்னும் எந்தச் சாளரமும் திறக்கப்படவில்லை.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சாளரத்தைத் திற</translation>
     </message>
     <message>
         <source>Contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்பு பட்டியல்</translation>
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர்களின் பட்டியலில் மாநாடுகளை முதலிடத்தில் வைக்கவும்</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் தொடர்பு பட்டியல் கச்சிதமான முறையில் (சிறிய அவதாரங்கள், அட்டவணைக் காட்சி) காட்டப்படும்.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுருக்கமான தொடர்பு பட்டியல்</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பல சாளர முறை</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஒவ்வொரு அரட்டையையும் தனித்தனி சாளரத்தில் திறக்கவும்</translation>
     </message>
     <message>
         <source>Emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எமோடிகான்கள்</translation>
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எமோடிகான்களைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எமோடிகான் அளவு:</translation>
     </message>
     <message>
         <source> px</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">px</translation>
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தீம்</translation>
     </message>
     <message>
         <source>Style:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உடை:</translation>
     </message>
     <message>
         <source>Theme color:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தீம் நிறம்:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நேர முத்திரை வடிவம்:</translation>
     </message>
     <message>
         <source>Date format:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தேதி வடிவம்:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெற்று அவதாரங்களுக்குப் பதிலாக அடையாளங்களைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய செய்தி, அழைப்பு அல்லது நண்பர் கோரிக்கையைப் பெறும்போது, ​​சாளரம் தேர்ந்தெடுக்கப்படாதபோது அறிவிப்பைக் காட்டு.</translation>
     </message>
     <message>
         <source>Notify</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அறிவிக்கவும்</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடுகள் குறிப்பிடப்பட்டால் மட்டுமே அறிவிக்கப்படும்</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2888,79 +2918,79 @@ Hide formatting characters:
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டெஸ்க்டாப் அறிவிப்புகள் மூலம் தெரிவிக்கவும்</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செய்தி அனுப்புபவர் மற்றும் உள்ளடக்கங்களை மறை</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடுகளில் வண்ண புனைப்பெயர்களைப் பயன்படுத்துங்கள்</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடுகளில் உங்கள் புனைப்பெயர் குறிப்பிடப்பட்டால் மட்டுமே புதிய செய்திகளைப் பற்றி அறிவிக்கவும்.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சரிபார்க்கப்பட்டால், மாநாடுகள் நண்பர்கள் பட்டியலில் முதலிடத்தில் வைக்கப்படும், இல்லையெனில், அவை ஆன்லைன் நண்பர்களுக்குக் கீழே வைக்கப்படும்.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இயக்கப்பட்டால், அவதார் இல்லாத ஒவ்வொரு தொடர்பும் இயல்புப் படத்திற்குப் பதிலாக டாக்ஸ் ஐடியின் அடிப்படையில் உருவாக்கப்பட்ட ஐகானைக் கொண்டிருக்கும். விண்ணப்பிக்க மறுதொடக்கம் தேவை.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஸ்மைலி பேக்:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடக்கப்பட்டிருந்தால், நிலை பிஸியாக இருக்கும்போது அறிவிப்பை ஒலியடக்கும் (ஆனால் இன்னும் அறிவிப்பைக் காட்டு)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டெஸ்க்டாப் அறிவிப்புகளைப் பயன்படுத்தவும், எ.கா. அறிவிப்பு மையத்தில் அல்லது கணினி தட்டில். இது இல்லாமல், அறிவிப்பு ஒளிரும் தட்டு ஐகானாக மட்டுமே தெரியும்.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">டெஸ்க்டாப் அறிவிப்புகளில் ரகசியத் தகவலைக் காட்டாமல் &quot;புதிய செய்தியை&quot; மட்டும் காட்டவும்.</translation>
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர் பட்டியல் மற்றும் அரட்டை சாளரத்தை தனித்தனியாக நகரக்கூடிய சாளரங்களாக பிரிக்கவும்.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உரை அல்லது கருப்பு/வெள்ளை எழுத்துரு-ரெண்டர் செய்யப்பட்ட ஈமோஜிகளுக்குப் பதிலாக உரை ஈமோஜிகளை வண்ணமயமான படங்களாகக் காண்பி.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எமோஜிகளை ரெண்டரிங் செய்யும் போது எந்தெந்த படங்களைப் பயன்படுத்த வேண்டும் என்பதைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஈமோஜி படத்தின் பிக்சல்களில் அளவு. உங்கள் அடிப்படை எழுத்துரு அளவை ஒத்த ஒன்றைத் தேர்ந்தெடுக்கவும்.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UIக்கு பயன்படுத்துவதற்கான அடிப்படை நடை. qTox தீமிங்கில் சிறப்பாகச் செயல்படுவதால் ஃப்யூஷன் பரிந்துரைக்கப்படுகிறது.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">UI வண்ண தீம். இருண்ட பயன்முறையைத் தேர்ந்தெடுக்க இதைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முடக்கப்பட்டிருந்தால், அடிப்படை சிஸ்டம் ட்ரே அறிவிப்புகளைப் பயன்படுத்தவும். இல்லையெனில், உங்கள் டெஸ்க்டாப் சூழலின் அறிவிப்பு பின்தளத்தைப் பயன்படுத்த முயற்சிக்கவும். டெஸ்க்டாப் அறிவிப்புகளில் சிக்கல்களைக் கண்டால் இதை முடக்கவும்.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சிஸ்டம் சார்ந்த அறிவிப்பு பின்தளத்தில் இருந்தால் பயன்படுத்தவும்</translation>
     </message>
 </context>
 <context>
@@ -2982,11 +3012,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>File</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு</translation>
     </message>
     <message>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">திருத்தவும்</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -2995,39 +3025,39 @@ Hide formatting characters:
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வடிகட்டி...</translation>
     </message>
     <message>
         <source>Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்புகள்</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலை</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் பெயர்</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய மாநாட்டை உருவாக்கு...</translation>
     </message>
     <message>
         <source>Add new circle...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">புதிய வட்டத்தைச் சேர்...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பெயரால்</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">செயல்பாட்டின் மூலம்</translation>
     </message>
     <message>
         <source>All</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அனைத்து</translation>
     </message>
     <message>
         <source>Online</source>
@@ -3040,7 +3070,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Friends</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர்கள்</translation>
     </message>
     <message>
         <source>Conferences</source>
@@ -3048,21 +3078,21 @@ Hide formatting characters:
     </message>
     <message>
         <source>Search Contacts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்புகளைத் தேடுங்கள்</translation>
     </message>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">மாநாடு #%1</translation>
     </message>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">காட்டு</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பரைச் சேர்க்கவும்</translation>
     </message>
     <message>
         <source>Conference invites</source>
@@ -3072,30 +3102,30 @@ Hide formatting characters:
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கோப்பு இடமாற்றங்கள்</translation>
     </message>
     <message>
         <source>Settings</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அமைப்புகள்</translation>
     </message>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">எனது சுயவிவரம்</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toxcore தொடங்குவதில் தோல்வி, நீங்கள் இந்த செய்தியை மூடிய பிறகு பயன்பாடு நிறுத்தப்படும்.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் ப்ராக்ஸி அமைப்புகளுடன் Toxcore தொடங்க முடியவில்லை. qTox இயக்க முடியாது; உங்கள் அமைப்புகளை மாற்றி மீண்டும் தொடங்கவும்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நண்பர் கோரிக்கையை அனுப்ப முடியவில்லை</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3114,15 +3144,15 @@ Hide formatting characters:
     <message>
         <source>Exit</source>
         <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வெளியேறு</translation>
     </message>
     <message>
         <source>Change status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">நிலையை மாற்றவும்</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">சுயவிவரத்தைத் திருத்தவும்</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3130,15 +3160,15 @@ Hide formatting characters:
     </message>
     <message>
         <source>Add contact...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தொடர்பைச் சேர்...</translation>
     </message>
     <message>
         <source>Next conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">அடுத்த உரையாடல்</translation>
     </message>
     <message>
         <source>Previous conversation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">முந்தைய உரையாடல்</translation>
     </message>
     <message>
         <source>Debug</source>
