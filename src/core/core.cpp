@@ -10,23 +10,24 @@
 
 #include "src/core/dhtserver.h"
 #include "src/core/icoresettings.h"
-#include "src/core/toxlogger.h"
 #include "src/core/toxoptions.h"
 #include "src/core/toxstring.h"
 #include "src/model/conferenceinvite.h"
 #include "src/model/ibootstraplistgenerator.h"
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
-#include "util/strongtype.h"
 #include "util/toxcoreerrorparser.h"
 
 #include <QCoreApplication>
 #include <QDateTime>
+#include <QDebug>
+#include <QHostInfo>
 #include <QRegularExpression>
 #include <QString>
 #include <QStringBuilder>
 #include <QTimer>
 
+#include <QtNetwork/qhostaddress.h>
 #include <tox/tox.h>
 
 #include <algorithm>
@@ -362,13 +363,34 @@ bool Core::checkConnection()
     return toxConnected;
 }
 
+void Core::bootstrapTo(const DhtServer& dhtServer, const QHostAddress& address)
+{
+    ASSERT_CORE_THREAD;
+
+    const auto& ip = address.toString().toUtf8();
+    const auto& pk = dhtServer.publicKey;
+
+    qDebug() << "Connecting to bootstrap node" << pk.toString() << "at" << ip;
+
+    Tox_Err_Bootstrap error;
+    if (dhtServer.statusUdp) {
+        tox_bootstrap(tox.get(), ip.constData(), dhtServer.udpPort, pk.getData(), &error);
+        PARSE_ERR(error);
+    }
+    if (dhtServer.statusTcp) {
+        const auto ports = dhtServer.tcpPorts.size();
+        const auto tcpPort = dhtServer.tcpPorts[rand() % ports];
+        tox_add_tcp_relay(tox.get(), ip.constData(), tcpPort, pk.getData(), &error);
+        PARSE_ERR(error);
+    }
+}
+
 /**
  * @brief Connects us to the Tox network
  */
 void Core::bootstrapDht()
 {
     ASSERT_CORE_THREAD;
-
 
     const auto shuffledBootstrapNodes =
         shuffleBootstrapNodes(bootstrapListGenerator.getBootstrapNodes());
@@ -377,34 +399,28 @@ void Core::bootstrapDht()
         return;
     }
 
-    // i think the more we bootstrap, the more we jitter because the more we overwrite nodes
-    auto numNewNodes = 2;
+    // I think the more we bootstrap, the more we jitter because the more we overwrite nodes.
+    int numNewNodes = 2;
     for (int i = 0; i < numNewNodes && i < shuffledBootstrapNodes.size(); ++i) {
         const auto& dhtServer = shuffledBootstrapNodes.at(i);
-        QByteArray address;
-        if (!dhtServer.ipv4.isEmpty()) {
-            address = dhtServer.ipv4.toLatin1();
-        } else if (!dhtServer.ipv6.isEmpty() && settings.getEnableIPv6()) {
-            address = dhtServer.ipv6.toLatin1();
+        QString address;
+        if (!dhtServer.ipv6.isEmpty() && settings.getEnableIPv6()) {
+            address = dhtServer.ipv6;
+        } else if (!dhtServer.ipv4.isEmpty()) {
+            address = dhtServer.ipv4;
         } else {
             ++numNewNodes;
             continue;
         }
 
-        ToxPk pk{dhtServer.publicKey};
-        qDebug() << "Connecting to bootstrap node" << pk.toString();
-        const uint8_t* pkPtr = pk.getData();
-
-        Tox_Err_Bootstrap error;
-        if (dhtServer.statusUdp) {
-            tox_bootstrap(tox.get(), address.constData(), dhtServer.udpPort, pkPtr, &error);
-            PARSE_ERR(error);
+        QHostInfo hostInfo = QHostInfo::fromName(address);
+        if (hostInfo.error() != QHostInfo::NoError) {
+            qWarning() << "Failed to resolve" << address << "address:" << hostInfo.errorString();
+            return;
         }
-        if (dhtServer.statusTcp) {
-            const auto ports = dhtServer.tcpPorts.size();
-            const auto tcpPort = dhtServer.tcpPorts[rand() % ports];
-            tox_add_tcp_relay(tox.get(), address.constData(), tcpPort, pkPtr, &error);
-            PARSE_ERR(error);
+
+        for (const auto& addr : hostInfo.addresses()) {
+            bootstrapTo(dhtServer, addr);
         }
     }
 }

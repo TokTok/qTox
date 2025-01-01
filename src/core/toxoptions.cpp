@@ -24,6 +24,10 @@ ToxOptions::ToxOptions(Tox_Options* options_, const QByteArray& proxyAddrData_)
     : options(options_)
     , proxyAddrData(proxyAddrData_)
 {
+    assert(options != nullptr);
+#if TOX_VERSION_IS_API_COMPATIBLE(0, 2, 21)
+    tox_options_set_experimental_disable_dns(options, true);
+#endif
 }
 
 ToxOptions::~ToxOptions()

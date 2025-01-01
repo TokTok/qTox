@@ -8,6 +8,8 @@ add_library(
   util_library STATIC
   include/util/algorithm.h
   src/algorithm.cpp
+  include/util/laterdeleter.h
+  src/laterdeleter.cpp
   include/util/interface.h
   include/util/ranges.h
   src/ranges.cpp
