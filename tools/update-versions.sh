@@ -49,8 +49,8 @@ update_readme() {
 update_appdata() {
   cd "$BASE_DIR"/res/
   local isodate="$(date --iso-8601)"
-  sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" io.github.qtox.qTox.appdata.xml
-  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" io.github.qtox.qTox.appdata.xml
+  sed -ri "s|(<release version=\")$VERSION_PATTERN|\1$@|g" com.github.TokTok.qTox.appdata.xml
+  sed -ri "s|(<release version=\"$VERSION_PATTERN\" date=\").{10}\"|\1$isodate\"|g" com.github.TokTok.qTox.appdata.xml
 }
 
 # exit if supplied arg is not a version

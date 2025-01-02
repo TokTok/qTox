@@ -232,7 +232,7 @@ In the PRs in this step, only make pull requests. Do not merge, yet.
   release.
 - Make a PR writing a short blog post for https://github.com/qTox/blog/.
 - Make a PR on our [Flathub repository] copying the local manifest
-  [`flatpak/io.github.qtox.qTox.json`] into the repository.
+  [`flatpak/com.github.TokTok.qTox.json`] into the repository.
 - Ensure the build passed for qTox on all architectures on
   [the Flathub build bot]
 
@@ -266,6 +266,6 @@ helping for a while, ask to be added to the `TokTok` organization on GitHub.
 [`tools/format-code.sh`]: /tools/format-code.sh
 [`tools/validate_pr.py`]: /tools/validate_pr.py
 [Flathub repository]: https://github.com/flathub/io.github.qtox.qTox
-[`flatpak/io.github.qtox.qTox.json`]: /flatpak/io.github.qtox.qTox.json
+[`flatpak/com.github.TokTok.qTox.json`]: /flatpak/com.github.TokTok.qTox.json
 [`flatpak/update_flathub_descriptor_dependencies.py`]: /flatpak/update_flathub_descriptor_dependencies.py
 [the Flathub build bot]: https://flathub.org/builds/#/

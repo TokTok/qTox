@@ -98,7 +98,7 @@ def check_flathub_descriptor_dependencies(failures: list[str],
                      "Update flathub descriptor dependencies",
                      failures) as check:
         flathub_manifest_path = os.path.join(GIT_BASE_DIR, "flatpak",
-                                             "io.github.qtox.qTox.json")
+                                             "com.github.TokTok.qTox.json")
         subprocess.run(  # nosec
             [
                 "flatpak/update_flathub_descriptor_dependencies.py",
@@ -177,7 +177,7 @@ def check_package_versions(failures: list[str], config: Config) -> None:
         files = (
             "README.md",
             "macos/Info.plist",
-            "res/io.github.qtox.qTox.appdata.xml",
+            "res/com.github.TokTok.qTox.appdata.xml",
             "windows/qtox.nsi",
             "windows/qtox64.nsi",
         )
@@ -196,7 +196,7 @@ def check_package_versions(failures: list[str], config: Config) -> None:
 def check_no_version_changes(failures: list[str]) -> None:
     """Check that no version changes are made in a non-release PR.
 
-    Diff res/io.github.qtox.qTox.appdata.xml against $GITHUB_BASE_BRANCH and
+    Diff res/com.github.TokTok.qTox.appdata.xml against $GITHUB_BASE_BRANCH and
     check if there's a line starting with "+" or "-" that contains a version
     number.
 
@@ -215,7 +215,7 @@ def check_no_version_changes(failures: list[str]) -> None:
                 "diff",
                 github.base_branch(),
                 "--",
-                "res/io.github.qtox.qTox.appdata.xml",
+                "res/com.github.TokTok.qTox.appdata.xml",
             ],
             cwd=GIT_BASE_DIR,
             universal_newlines=True,
