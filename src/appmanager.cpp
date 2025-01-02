@@ -211,7 +211,7 @@ int AppManager::run()
 #endif
 
     qapp->setApplicationName("qTox");
-    qapp->setDesktopFileName("com.github.TokTok.qTox");
+    qapp->setDesktopFileName("io.github.TokTok.qTox");
     qapp->setApplicationVersion("\nGit commit: " + QString(GIT_VERSION));
 
     // Install Unicode 6.1 supporting font

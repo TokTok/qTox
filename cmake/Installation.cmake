@@ -26,8 +26,8 @@ else()
   include(GNUInstallDirs)
   # follow the xdg-desktop specification
   install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}")
-  install(FILES "res/com.github.TokTok.qTox.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
-  install(FILES "com.github.TokTok.qTox.desktop" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
+  install(FILES "res/io.github.TokTok.qTox.appdata.xml" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/metainfo")
+  install(FILES "io.github.TokTok.qTox.desktop" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications")
 
   # Install application icons according to the XDG spec
   set(ICON_SIZES 14 16 22 24 32 36 48 64 72 96 128 192 256 512)

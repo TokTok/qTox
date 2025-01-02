@@ -9,7 +9,7 @@ set -exuo pipefail
 
 # use multiple cores when building
 export MAKEFLAGS="-j$(nproc)"
-FLATPAK_DESCRIPTOR=$(dirname "$(realpath "$0")")/com.github.TokTok.qTox.json
+FLATPAK_DESCRIPTOR=$(dirname "$(realpath "$0")")/io.github.TokTok.qTox.json
 
 # If $FLATPAK_BUILD is set, use it as the build directory
 if [ -n "${FLATPAK_BUILD:-}" ]; then
@@ -21,7 +21,7 @@ fi
 flatpak-builder --ccache --disable-rofiles-fuse --install-deps-from=flathub --force-clean --repo=qtox-repo _build-flatpak "$FLATPAK_DESCRIPTOR"
 
 # Create a bundle for distribution
-flatpak build-bundle qtox-repo qtox.flatpak com.github.TokTok.qTox
+flatpak build-bundle qtox-repo qtox.flatpak io.github.TokTok.qTox
 
 # If $FLATPAK_BUILD is set, copy the bundle to the build directory
 if [ -n "${FLATPAK_BUILD:-}" ]; then

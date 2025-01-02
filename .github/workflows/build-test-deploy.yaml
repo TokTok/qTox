@@ -439,8 +439,8 @@ jobs:
       - name: Point flathub descriptor at the release tag
         if: contains(github.ref, 'refs/tags/v')
         run: flatpak/localize_flathub_descriptor.py
-          --flathub-manifest flatpak/com.github.TokTok.qTox.json
-          --output flatpak/com.github.TokTok.qTox.json
+          --flathub-manifest flatpak/io.github.TokTok.qTox.json
+          --output flatpak/io.github.TokTok.qTox.json
           --git-tag "${{ steps.get_version.outputs.version_tag }}"
       - name: Install docker-compose
         run: sudo apt-get install -y docker-compose
@@ -501,7 +501,7 @@ jobs:
       - name: Install flatpak
         run: flatpak install --user -y --bundle qtox.flatpak
       - name: Run flatpak
-        run: flatpak run com.github.TokTok.qTox --help
+        run: flatpak run io.github.TokTok.qTox --help
         env:
           QT_QPA_PLATFORM: offscreen
 

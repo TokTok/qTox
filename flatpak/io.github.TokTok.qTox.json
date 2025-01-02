@@ -1,5 +1,5 @@
 {
-    "app-id": "com.github.TokTok.qTox",
+    "app-id": "io.github.TokTok.qTox",
     "runtime": "org.kde.Platform",
     "sdk": "org.kde.Sdk",
     "runtime-version": "6.8",
