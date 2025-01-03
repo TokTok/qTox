@@ -1300,6 +1300,16 @@ in plaats van volledig te sluiten.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Voeg een chatbericht toe wanneer een gebruiker een conferentie betreedt of verlaat</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klik hier als u fouten in een vertaling aantreft en u wilt helpen deze op te lossen.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Help vertalen</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

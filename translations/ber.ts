@@ -1549,6 +1549,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⴻⵙⴱⴻⴷⴷⴻⴹ ⴰⵢⴰ ⵙ ⵍⵙⴰⵙ ⵏ ⵢⴰⵍ ⴰⵎⴻⴷⴷⴰⴽⴻⵍ ⵙ ⵜⵎⴻⵥⵥⵓⵖⵜ ⵏ ⵢⵉⴷⵉⵙ ⴰⵢⴻⴼⴼⵓⵙ ⵖⴻⴼ ⵢⵉⵎⴻⴷⴷⵓⴽⴰⵍ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ.</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⴽⵏⴻⴷ ⴷⴰⴳⵉ ⵎⴰ ⵢⴻⵍⵍⴰ ⵜⵓⴼⵉⴹ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ ⴷⴻⴳ ⵜⵙⵓⵇⵉⵍⵜ ⵢⴻⵔⵏⴰ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵄⵉⵡⵏⴻⴹ ⴰⴷ ⵜⵜⵜⴻⵙⵙⵉⵣⴻⴷⴳⴻⴹ.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵄⵉⵡⴻⵏ ⴰⵙⵓⵇⴻⵍ</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

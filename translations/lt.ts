@@ -1311,6 +1311,16 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pridėkite pokalbio pranešimą, kai vartotojas prisijungia prie konferencijos arba iš jos išeina</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Spustelėkite čia, jei vertime radote klaidų ir norite padėti jas ištaisyti.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Padėkite išversti</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

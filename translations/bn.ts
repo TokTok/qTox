@@ -1577,6 +1577,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">যখন একজন ব্যবহারকারী একটি কনফারেন্সে যোগ দেয় বা ছেড়ে যায় তখন একটি চ্যাট বার্তা যোগ করুন</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">আপনি যদি কোনো অনুবাদে ত্রুটি খুঁজে পান এবং এটি ঠিক করতে সাহায্য করতে চান তাহলে এখানে ক্লিক করুন।</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">অনুবাদে সাহায্য করুন</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

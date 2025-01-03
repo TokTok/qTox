@@ -15,7 +15,7 @@ class SettingsWidget;
 class Settings;
 class Style;
 
-class GeneralForm : public GenericForm
+class GeneralForm final : public GenericForm
 {
     Q_OBJECT
 public:
@@ -54,4 +54,5 @@ private:
 private:
     const std::unique_ptr<Ui::GeneralSettings> bodyUI;
     Settings& settings;
+    Style& style;
 };

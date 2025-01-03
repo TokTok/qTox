@@ -1398,6 +1398,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">إضافة رسالة محادثة عندما ينضم المستخدم إلى مؤتمر أو يغادره</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">انقر هنا إذا وجدت أخطاء في الترجمة وترغب في المساعدة في إصلاحها.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">مساعدة في الترجمة</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

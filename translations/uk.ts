@@ -1303,6 +1303,16 @@ instead of closing entirely.</source>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation>Надсилати повідомлення в чат, коли користувач вступає в конференцію, або покидає її</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Натисніть тут, якщо ви знайшли помилки в перекладі та хотіли б допомогти їх виправити.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Допоможіть перекласти</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

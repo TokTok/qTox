@@ -1460,6 +1460,16 @@ i stedet for at lukke helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tilføj en chatbesked, når en bruger deltager i eller forlader en konference</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klik her, hvis du finder fejl i en oversættelse og gerne vil hjælpe med at rette den.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hjælp med at oversætte</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

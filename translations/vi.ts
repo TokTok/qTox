@@ -1311,6 +1311,16 @@ thay vì đóng hoàn toàn.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Thêm tin nhắn trò chuyện khi người dùng tham gia hoặc rời khỏi nhóm</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bấm vào đây nếu bạn tìm thấy lỗi trong bản dịch và muốn giúp sửa lỗi đó.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Trợ giúp dịch</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

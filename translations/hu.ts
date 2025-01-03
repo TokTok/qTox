@@ -1343,6 +1343,16 @@ ahelyett, hogy teljesen bezárná.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Adjon hozzá egy csevegőüzenetet, amikor egy felhasználó csatlakozik a konferenciához, vagy elhagyja azt</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kattintson ide, ha hibát talál a fordításban, és szeretne segíteni a javításban.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Segíts fordítani</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

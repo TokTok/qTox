@@ -1556,6 +1556,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">جب کوئی صارف کانفرنس میں شامل ہوتا ہے یا چھوڑتا ہے تو چیٹ کا پیغام شامل کریں۔</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">اگر آپ کو ترجمے میں غلطیاں نظر آتی ہیں اور آپ اسے ٹھیک کرنے میں مدد کرنا چاہتے ہیں تو یہاں کلک کریں۔</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ترجمہ کرنے میں مدد کریں۔</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

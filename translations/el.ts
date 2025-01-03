@@ -1357,6 +1357,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Προσθέστε ένα μήνυμα συνομιλίας όταν ένας χρήστης συμμετέχει ή αποχωρεί από μια διάσκεψη</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Κάντε κλικ εδώ εάν βρείτε σφάλματα σε μια μετάφραση και θέλετε να βοηθήσετε να το διορθώσετε.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Βοηθήστε στη μετάφραση</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

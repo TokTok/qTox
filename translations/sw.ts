@@ -1582,6 +1582,16 @@ badala ya kufunga kabisa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ongeza ujumbe wa gumzo mtumiaji anapojiunga au kuondoka kwenye mkutano</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bofya hapa ukipata hitilafu katika tafsiri na ungependa kusaidia kurekebisha.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Saidia kutafsiri</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

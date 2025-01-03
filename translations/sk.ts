@@ -1317,6 +1317,16 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Pridať správu, keď sa užívateľ pridá alebo opustí skupinu</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kliknite sem, ak nájdete chyby v preklade a chcete pomôcť s ich opravou.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pomôžte s prekladom</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

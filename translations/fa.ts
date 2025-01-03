@@ -1350,6 +1350,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">وقتی کاربر به کنفرانسی می‌پیوندد یا از کنفرانس خارج می‌شود، یک پیام چت اضافه کنید</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">اگر خطاهایی در ترجمه پیدا کردید و می خواهید به رفع آن کمک کنید، اینجا را کلیک کنید.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">کمک به ترجمه</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

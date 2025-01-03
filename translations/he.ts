@@ -1561,6 +1561,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הוסף הודעת צ&apos;אט כאשר משתמש מצטרף או עוזב ועידה</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">לחץ כאן אם אתה מוצא שגיאות בתרגום וברצונך לעזור בתיקון.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">עזרה בתרגום</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

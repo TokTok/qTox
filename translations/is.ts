@@ -1562,6 +1562,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bættu við spjallskilaboðum þegar notandi gengur í eða yfirgefur ráðstefnu</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Smelltu hér ef þú finnur villur í þýðingu og vilt hjálpa til við að laga hana.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hjálpaðu til við að þýða</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1580,6 +1580,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පරිශීලකයෙකු සම්මන්ත්‍රණයකට සම්බන්ධ වන විට හෝ පිටවන විට කතාබස් පණිවිඩයක් එක් කරන්න</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ඔබ පරිවර්තනයක දෝෂ සොයාගෙන එය නිවැරදි කිරීමට උදව් කිරීමට කැමති නම් මෙහි ක්ලික් කරන්න.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">පරිවර්තනයට උදව් කරන්න</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

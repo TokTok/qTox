@@ -1324,6 +1324,16 @@ zamiast zostać całkowicie zamknięty.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Dodaj wiadomość na czacie, gdy użytkownik dołącza do grupy lub ją opuszcza</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kliknij tutaj, jeśli znajdziesz błędy w tłumaczeniu i chcesz pomóc je naprawić.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pomóż przetłumaczyć</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

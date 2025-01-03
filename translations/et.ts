@@ -1309,6 +1309,16 @@ jätab ta tööle teavituste alal.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lisage vestlussõnum, kui kasutaja konverentsiga liitub või sealt lahkub</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klõpsake siin, kui leiate tõlkes vigu ja soovite aidata neid parandada.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Aidake tõlkida</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

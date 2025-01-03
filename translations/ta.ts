@@ -1390,6 +1390,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ஒரு பயனர் மாநாட்டில் சேரும்போது அல்லது வெளியேறும்போது அரட்டைச் செய்தியைச் சேர்க்கவும்</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">மொழிபெயர்ப்பில் பிழைகளைக் கண்டறிந்து அதைச் சரிசெய்ய உதவ விரும்பினால் இங்கே கிளிக் செய்யவும்.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">மொழிபெயர்க்க உதவுங்கள்</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

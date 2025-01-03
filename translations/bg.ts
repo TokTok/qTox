@@ -1308,6 +1308,16 @@ instead of closing entirely.</source>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Съобщение в чата, когато потребител се присъедини или напусне група</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Щракнете тук, ако откриете грешки в превод и искате да помогнете за коригирането им.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Помогнете с превода</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

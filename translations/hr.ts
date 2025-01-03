@@ -1347,6 +1347,16 @@ umjesto da se potpuno zatvori.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dodajte chat poruku kada se korisnik pridruži ili napusti konferenciju</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kliknite ovdje ako pronađete pogreške u prijevodu i želite pomoći da ih popravite.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pomozite prevesti</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

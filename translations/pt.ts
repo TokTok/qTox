@@ -1308,6 +1308,16 @@ em vez de fechar.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Adicione uma mensagem de bate-papo quando um usuário entrar ou sair de uma conferência</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Clique aqui se encontrar erros em uma tradução e quiser ajudar a corrigi-los.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ajude a traduzir</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

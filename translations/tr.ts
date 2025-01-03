@@ -1308,6 +1308,16 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Bir kullanıcı gruba katıldığında veya gruptan ayrıldığında sohbet iletisi ekle</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bir çeviride hatalar bulursanız ve düzeltmeye yardımcı olmak istiyorsanız burayı tıklayın.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Çeviriye yardım edin</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

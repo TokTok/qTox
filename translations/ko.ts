@@ -1451,6 +1451,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">사용자가 회의에 참가하거나 나갈 때 채팅 메시지 추가</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">번역에서 오류를 발견하고 이를 수정하는 데 도움을 주고 싶다면 여기를 클릭하세요.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">번역을 도와주세요</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

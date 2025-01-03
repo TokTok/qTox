@@ -1304,6 +1304,14 @@ instead of closing entirely.</source>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

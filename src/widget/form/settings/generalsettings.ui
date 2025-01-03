@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1312</width>
+    <width>590</width>
     <height>511</height>
    </rect>
   </property>
@@ -32,15 +32,15 @@
       <bool>true</bool>
      </property>
      <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
      </property>
      <widget class="QWidget" name="scrollAreaWidgetContents">
       <property name="geometry">
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1298</width>
-        <height>497</height>
+        <width>576</width>
+        <height>510</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0">
@@ -50,7 +50,7 @@
        <property name="topMargin">
         <number>9</number>
        </property>
-       <item alignment="Qt::AlignTop">
+       <item alignment="Qt::AlignmentFlag::AlignTop">
         <widget class="QGroupBox" name="generalGroup">
          <property name="title">
           <string>General Settings</string>
@@ -82,9 +82,22 @@
              </widget>
             </item>
             <item>
+             <widget class="QLabel" name="transWeblate">
+              <property name="toolTip">
+               <string>Click here if you find errors in a translation and would like to help fix it.</string>
+              </property>
+              <property name="text">
+               <string>Help translate</string>
+              </property>
+              <property name="openExternalLinks">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
              <spacer name="generalSpacer">
               <property name="orientation">
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Orientation::Horizontal</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -239,7 +252,7 @@ instead of closing entirely.</string>
                <string>Your status is changed to Away after set period of inactivity.</string>
               </property>
               <property name="layoutDirection">
-               <enum>Qt::LeftToRight</enum>
+               <enum>Qt::LayoutDirection::LeftToRight</enum>
               </property>
               <property name="text">
                <string>Auto away after (0 to disable):</string>
@@ -336,7 +349,7 @@ instead of closing entirely.</string>
        <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>

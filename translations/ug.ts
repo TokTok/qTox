@@ -1368,6 +1368,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ئىشلەتكۈچى يىغىنغا قاتناشقاندا ياكى ئايرىلغاندا پاراڭ ئۇچۇرى قوشۇڭ</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تەرجىمىدە خاتالىق بايقىسىڭىز ، ئۇنى ئوڭشاشقا ياردەم قىلماقچى بولسىڭىز بۇ يەرنى چېكىڭ.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تەرجىمە قىلىشقا ياردەم قىلىڭ</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1473,6 +1473,16 @@ anstataŭ tute fermi.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aldonu babilmesaĝon kiam uzanto aliĝas aŭ forlasas konferencon</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klaku ĉi tie se vi trovas erarojn en traduko kaj ŝatus helpi ripari ĝin.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Helpu traduki</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

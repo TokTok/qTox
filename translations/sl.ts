@@ -1374,6 +1374,16 @@ namesto da bi se popolnoma zaprl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dodajte sporočilo klepeta, ko se uporabnik pridruži konferenci ali jo zapusti</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kliknite tukaj, če v prevodu najdete napake in bi jih radi pomagali popraviti.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pomagajte prevesti</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

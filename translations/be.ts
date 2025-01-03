@@ -1356,6 +1356,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Дадайце паведамленне ў чат, калі карыстальнік далучаецца да канферэнцыі або пакідае яе</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Націсніце тут, калі вы знайшлі памылкі ў перакладзе і хацелі б дапамагчы іх выправіць.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Дапамажыце перакласці</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

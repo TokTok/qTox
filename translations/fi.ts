@@ -1308,6 +1308,16 @@ eikä sulkeudu kokonaan.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lisää chat-viesti, kun käyttäjä liittyy neuvotteluun tai poistuu siitä</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Napsauta tätä, jos löydät käännöksestä virheitä ja haluat auttaa korjaamaan ne.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Auta kääntämään</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

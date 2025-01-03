@@ -1570,6 +1570,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಬಳಕೆದಾರರು ಕಾನ್ಫರೆನ್ಸ್‌ಗೆ ಸೇರಿದಾಗ ಅಥವಾ ತೊರೆದಾಗ ಚಾಟ್ ಸಂದೇಶವನ್ನು ಸೇರಿಸಿ</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ನೀವು ಅನುವಾದದಲ್ಲಿ ದೋಷಗಳನ್ನು ಕಂಡುಕೊಂಡರೆ ಮತ್ತು ಅದನ್ನು ಸರಿಪಡಿಸಲು ಸಹಾಯ ಮಾಡಲು ಬಯಸಿದರೆ ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಅನುವಾದಿಸಲು ಸಹಾಯ ಮಾಡಿ</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

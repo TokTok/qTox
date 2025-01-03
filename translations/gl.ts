@@ -1351,6 +1351,16 @@ en lugar de pechar por completo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Engade unha mensaxe de chat cando un usuario se une ou saia dunha conferencia</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Fai clic aquí se atopas erros nunha tradución e queres axudar a corrixilos.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Axuda a traducir</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1331,6 +1331,16 @@ vietā pilnīgi aizveroties.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pievienojiet tērzēšanas ziņojumu, kad lietotājs pievienojas konferencei vai atstāj to</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Noklikšķiniet šeit, ja tulkojumā atrodat kļūdas un vēlaties palīdzēt tās novērst.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Palīdziet tulkot</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

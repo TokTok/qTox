@@ -1478,6 +1478,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">當用戶加入或離開會議時添加聊天訊息</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">如果您發現翻譯錯誤並希望幫助修復它，請按一下此處。</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">幫忙翻譯</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

@@ -1575,6 +1575,16 @@ në vend që të mbyllet plotësisht.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Shto një mesazh bisede kur një përdorues bashkohet ose largohet nga një konferencë</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klikoni këtu nëse gjeni gabime në një përkthim dhe dëshironi të ndihmoni në rregullimin e tij.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ndihmoni përkthimin</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

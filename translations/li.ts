@@ -1585,6 +1585,16 @@ in plaats vaan gans te slete.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">MB</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klik hei es geer foute in un vertaoling vindt en wilt helpe um deze op te losse.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Help vertaole</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

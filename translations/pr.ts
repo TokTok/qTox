@@ -1307,6 +1307,14 @@ instead of closing entirely.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation type="unfinished">Ye can set this fer each matey by right clickin&apos; &apos;em.</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translation type="unfinished">Click &apos;ere if ye find errors in a translation &apos;n&apos; would like ta help fix it.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translation type="unfinished">Lend a hand translatin&apos;</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

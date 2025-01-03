@@ -1309,6 +1309,16 @@ istedenfor å lukke seg helt.</translation>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translation type="unfinished">Legg til en sludremelding når en bruker tar del eller forlater en gruppe</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klikk her hvis du finner feil i en oversettelse og vil hjelpe deg med å fikse den.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hjelp til å oversette</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

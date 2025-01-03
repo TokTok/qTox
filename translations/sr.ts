@@ -1354,6 +1354,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Додајте поруку ћаскања када се корисник придружи конференцији или напусти</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Кликните овде ако пронађете грешке у преводу и желите да помогнете да их исправите.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Помозите у преводу</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

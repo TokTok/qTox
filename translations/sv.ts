@@ -1313,6 +1313,16 @@ istället för att stänga helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lägg till ett chattmeddelande när en användare går med i eller lämnar en konferens</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klicka här om du hittar fel i en översättning och vill hjälpa till att fixa det.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hjälp till att översätta</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

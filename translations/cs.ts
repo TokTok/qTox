@@ -1311,6 +1311,16 @@ nedojde k jeho úplnému ukončení.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Přidejte chatovou zprávu, když se uživatel připojí ke konferenci nebo ji opustí</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokud v překladu najdete chyby a chcete je pomoci opravit, klikněte sem.</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pomozte přeložit</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

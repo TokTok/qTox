@@ -1555,6 +1555,16 @@ mu&apos;i nai lo nu mulno ganlo</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">do ka&apos;e terzu&apos;e da bi&apos;unai lo pritu klika lo pendo</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ko ti klika fau lo nu do facki lo selfanva be do vau gi&apos;e djica lo nu sidju lo cikre</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ko sidju lo ka fanva</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>

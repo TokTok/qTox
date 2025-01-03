@@ -1363,6 +1363,16 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ユーザーが会議に参加または会議から退出したときにチャット メッセージを追加する</translation>
     </message>
+    <message>
+        <source>Click here if you find errors in a translation and would like to help fix it.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">翻訳に誤りを見つけて修正を希望される場合は、ここをクリックしてください。</translation>
+    </message>
+    <message>
+        <source>Help translate</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">翻訳を手伝ってください</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
