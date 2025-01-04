@@ -38,6 +38,6 @@ struct BadEntry
     RowId row;
     QString toxId;
 };
-void mergeDuplicatePeers(QVector<RawDatabase::Query>& upgradeQueries, RawDatabase& db,
-                         std::vector<BadEntry> badPeers);
+void mergeDuplicatePeers(std::vector<RawDatabase::Query>& upgradeQueries, RawDatabase& db,
+                         const std::vector<BadEntry>& badPeers);
 } // namespace DbUpgrader

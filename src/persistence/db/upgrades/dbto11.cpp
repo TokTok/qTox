@@ -12,11 +12,11 @@
 
 bool DbTo11::dbSchema10to11(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> upgradeQueries;
+    std::vector<RawDatabase::Query> upgradeQueries;
     if (!appendDeduplicatePeersQueries(db, upgradeQueries)) {
         return false;
     }
-    if (!db.execNow(upgradeQueries)) {
+    if (!db.execNow(std::move(upgradeQueries))) {
         return false;
     }
     upgradeQueries.clear();
@@ -24,15 +24,16 @@ bool DbTo11::dbSchema10to11(RawDatabase& db)
     if (!appendSplitPeersQueries(db, upgradeQueries)) {
         return false;
     }
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 11;"));
-    bool transactionPass = db.execNow(upgradeQueries);
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 11;"));
+    bool transactionPass = db.execNow(std::move(upgradeQueries));
     if (transactionPass) {
         return db.execNow("VACUUM");
     }
     return transactionPass;
 }
 
-bool DbTo11::appendDeduplicatePeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries)
+bool DbTo11::appendDeduplicatePeersQueries(RawDatabase& db,
+                                           std::vector<RawDatabase::Query>& upgradeQueries)
 {
     std::vector<DbUpgrader::BadEntry> badPeers;
     if (!getInvalidPeers(db, badPeers)) {
@@ -52,7 +53,7 @@ bool DbTo11::getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>&
                            }));
 }
 
-bool DbTo11::appendSplitPeersQueries(RawDatabase& db, QVector<RawDatabase::Query>& upgradeQueries)
+bool DbTo11::appendSplitPeersQueries(RawDatabase& db, std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // splitting peers table into separate chat and authors table.
     // peers had a dual-meaning of each friend having their own chat, but also each peer
@@ -72,7 +73,7 @@ bool DbTo11::appendSplitPeersQueries(RawDatabase& db, QVector<RawDatabase::Query
 }
 
 bool DbTo11::PeersToAuthors::appendPeersToAuthorsQueries(RawDatabase& db,
-                                                         QVector<RawDatabase::Query>& upgradeQueries)
+                                                         std::vector<RawDatabase::Query>& upgradeQueries)
 {
     appendCreateNewTablesQueries(upgradeQueries);
     if (!appendPopulateAuthorQueries(db, upgradeQueries)) {
@@ -87,19 +88,17 @@ bool DbTo11::PeersToAuthors::appendPeersToAuthorsQueries(RawDatabase& db,
     return true;
 }
 
-void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("CREATE TABLE authors (id INTEGER PRIMARY KEY, "
-                                          "public_key BLOB NOT NULL UNIQUE);"));
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("CREATE TABLE aliases_new ("
-                                          "id INTEGER PRIMARY KEY, "
-                                          "owner INTEGER, "
-                                          "display_name BLOB NOT NULL, "
-                                          "UNIQUE(owner, display_name), "
-                                          "FOREIGN KEY (owner) REFERENCES authors(id));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE authors (id INTEGER PRIMARY KEY, "
+                                               "public_key BLOB NOT NULL UNIQUE);"));
+    upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE aliases_new ("
+                                               "id INTEGER PRIMARY KEY, "
+                                               "owner INTEGER, "
+                                               "display_name BLOB NOT NULL, "
+                                               "UNIQUE(owner, display_name), "
+                                               "FOREIGN KEY (owner) REFERENCES authors(id));"));
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE text_messages_new "
                        "(id INTEGER PRIMARY KEY, "
                        "message_type CHAR(1) NOT NULL CHECK (message_type = 'T'), "
@@ -107,7 +106,7 @@ void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(QVector<RawDatabase::Q
                        "message BLOB NOT NULL, "
                        "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type), "
                        "FOREIGN KEY (sender_alias) REFERENCES aliases_new(id));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE file_transfers_new "
                        "(id INTEGER PRIMARY KEY, "
                        "message_type CHAR(1) NOT NULL CHECK (message_type = 'F'), "
@@ -124,54 +123,52 @@ void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(QVector<RawDatabase::Q
 }
 
 bool DbTo11::PeersToAuthors::appendPopulateAuthorQueries(RawDatabase& db,
-                                                         QVector<RawDatabase::Query>& upgradeQueries)
+                                                         std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // don't copy over directly, so that we can convert from string to blob
     return db.execNow(RawDatabase::Query(
         QStringLiteral(
             "SELECT DISTINCT peers.public_key FROM peers JOIN aliases ON peers.id=aliases.owner"),
         [&](const QVector<QVariant>& row) {
-            upgradeQueries +=
-                RawDatabase::Query(QStringLiteral("INSERT INTO authors (public_key) VALUES (?)"),
-                                   {ToxPk{row[0].toString()}.getByteArray()});
+            upgradeQueries.emplace_back(QStringLiteral(
+                                            "INSERT INTO authors (public_key) VALUES (?)"),
+                                        QVector<QByteArray>{ToxPk{row[0].toString()}.getByteArray()});
         }));
 }
 
 bool DbTo11::PeersToAuthors::appendUpdateAliasesFkQueries(RawDatabase& db,
-                                                          QVector<RawDatabase::Query>& upgradeQueries)
+                                                          std::vector<RawDatabase::Query>& upgradeQueries)
 {
     return db.execNow(RawDatabase::Query(
         QStringLiteral("SELECT id, public_key FROM peers"), [&](const QVector<QVariant>& row) {
             const auto oldPeerId = row[0].toLongLong();
             const auto pk = ToxPk{row[1].toString()};
-            upgradeQueries +=
-                RawDatabase::Query(QStringLiteral(
-                                       "INSERT INTO aliases_new (id, owner, display_name) "
-                                       "SELECT id, "
-                                       "(SELECT id FROM authors WHERE public_key = ?), "
-                                       "display_name "
-                                       "FROM aliases WHERE "
-                                       "owner = '%1';")
-                                       .arg(oldPeerId),
-                                   {pk.getByteArray()});
+            upgradeQueries.emplace_back(QStringLiteral(
+                                            "INSERT INTO aliases_new (id, owner, display_name) "
+                                            "SELECT id, "
+                                            "(SELECT id FROM authors WHERE public_key = ?), "
+                                            "display_name "
+                                            "FROM aliases WHERE "
+                                            "owner = '%1';")
+                                            .arg(oldPeerId),
+                                        QVector<QByteArray>{pk.getByteArray()});
         }));
 }
 
-void DbTo11::PeersToAuthors::appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToAuthors::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE text_messages;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE text_messages;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE text_messages_new RENAME TO text_messages;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE file_transfers;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE file_transfers;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE file_transfers_new RENAME TO file_transfers;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE aliases;"));
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("ALTER TABLE aliases_new RENAME TO aliases;"));
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE aliases;"));
+    upgradeQueries.emplace_back(QStringLiteral("ALTER TABLE aliases_new RENAME TO aliases;"));
 }
 
 bool DbTo11::PeersToChats::appendPeersToChatsQueries(RawDatabase& db,
-                                                     QVector<RawDatabase::Query>& upgradeQueries)
+                                                     std::vector<RawDatabase::Query>& upgradeQueries)
 {
     appendCreateNewTablesQueries(upgradeQueries);
     if (!appendPopulateChatsQueries(db, upgradeQueries)) {
@@ -189,12 +186,11 @@ bool DbTo11::PeersToChats::appendPeersToChatsQueries(RawDatabase& db,
     return true;
 }
 
-void DbTo11::PeersToChats::appendCreateNewTablesQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToChats::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("CREATE TABLE chats (id INTEGER PRIMARY KEY, "
-                                          "uuid BLOB NOT NULL UNIQUE);"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral(
+    upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE chats (id INTEGER PRIMARY KEY, "
+                                               "uuid BLOB NOT NULL UNIQUE);"));
+    upgradeQueries.emplace_back(QStringLiteral(
         "CREATE TABLE history_new "
         "(id INTEGER PRIMARY KEY, "
         "message_type CHAR(1) NOT NULL DEFAULT 'T' CHECK (message_type in ('T','F','S')), "
@@ -202,7 +198,7 @@ void DbTo11::PeersToChats::appendCreateNewTablesQueries(QVector<RawDatabase::Que
         "chat_id INTEGER NOT NULL, "
         "UNIQUE (id, message_type), "
         "FOREIGN KEY (chat_id) REFERENCES chats(id));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE text_messages_new "
                        "(id INTEGER PRIMARY KEY, "
                        "message_type CHAR(1) NOT NULL CHECK (message_type = 'T'), "
@@ -210,7 +206,7 @@ void DbTo11::PeersToChats::appendCreateNewTablesQueries(QVector<RawDatabase::Que
                        "message BLOB NOT NULL, "
                        "FOREIGN KEY (id, message_type) REFERENCES history_new(id, message_type), "
                        "FOREIGN KEY (sender_alias) REFERENCES aliases(id));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE file_transfers_new "
                        "(id INTEGER PRIMARY KEY, "
                        "message_type CHAR(1) NOT NULL CHECK (message_type = 'F'), "
@@ -224,7 +220,7 @@ void DbTo11::PeersToChats::appendCreateNewTablesQueries(QVector<RawDatabase::Que
                        "file_state INTEGER NOT NULL, "
                        "FOREIGN KEY (id, message_type) REFERENCES history_new(id, message_type), "
                        "FOREIGN KEY (sender_alias) REFERENCES aliases(id));"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral(
+    upgradeQueries.emplace_back(QStringLiteral(
         "CREATE TABLE system_messages_new "
         "(id INTEGER PRIMARY KEY, "
         "message_type CHAR(1) NOT NULL CHECK (message_type = 'S'), "
@@ -234,32 +230,31 @@ void DbTo11::PeersToChats::appendCreateNewTablesQueries(QVector<RawDatabase::Que
         "arg3 BLOB, "
         "arg4 BLOB, "
         "FOREIGN KEY (id, message_type) REFERENCES history_new(id, message_type));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE faux_offline_pending_new (id INTEGER PRIMARY KEY, "
                        "required_extensions INTEGER NOT NULL DEFAULT 0, "
                        "FOREIGN KEY (id) REFERENCES history_new(id));"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("CREATE TABLE broken_messages_new (id INTEGER PRIMARY KEY, "
                        "reason INTEGER NOT NULL DEFAULT 0, "
                        "FOREIGN KEY (id) REFERENCES history_new(id));"));
 }
 
 bool DbTo11::PeersToChats::appendPopulateChatsQueries(RawDatabase& db,
-                                                      QVector<RawDatabase::Query>& upgradeQueries)
+                                                      std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // don't copy over directly, so that we can convert from string to blob
     return db.execNow(RawDatabase::Query(
         QStringLiteral(
             "SELECT DISTINCT peers.public_key FROM peers JOIN history ON peers.id=history.chat_id"),
         [&](const QVector<QVariant>& row) {
-            upgradeQueries +=
-                RawDatabase::Query(QStringLiteral("INSERT INTO chats (uuid) VALUES (?)"),
-                                   {ToxPk{row[0].toString()}.getByteArray()});
+            upgradeQueries.emplace_back(QStringLiteral("INSERT INTO chats (uuid) VALUES (?)"),
+                                        QVector<QByteArray>{ToxPk{row[0].toString()}.getByteArray()});
         }));
 }
 
 bool DbTo11::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
-                                                        QVector<RawDatabase::Query>& upgradeQueries)
+                                                        std::vector<RawDatabase::Query>& upgradeQueries)
 {
     return db.execNow(RawDatabase::Query(
         QStringLiteral("SELECT DISTINCT peers.id, peers.public_key FROM peers JOIN history ON "
@@ -267,7 +262,7 @@ bool DbTo11::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
         [&](const QVector<QVariant>& row) {
             const auto oldPeerId = row[0].toLongLong();
             const auto pk = ToxPk{row[1].toString()};
-            upgradeQueries += RawDatabase::Query(
+            upgradeQueries.emplace_back(
                 QStringLiteral("INSERT INTO history_new (id, message_type, timestamp, chat_id) "
                                "SELECT id, "
                                "message_type, "
@@ -275,63 +270,62 @@ bool DbTo11::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
                                "(SELECT id FROM chats WHERE uuid = ?) "
                                "FROM history WHERE chat_id = '%1'")
                     .arg(oldPeerId),
-                {pk.getByteArray()});
+                QVector<QByteArray>{pk.getByteArray()});
         }));
 }
 
-void DbTo11::PeersToChats::appendReplaceOldTablesQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToChats::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE text_messages;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE text_messages;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE text_messages_new RENAME TO text_messages;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE file_transfers;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE file_transfers;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE file_transfers_new RENAME TO file_transfers;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE system_messages;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE system_messages;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE system_messages_new RENAME TO system_messages;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE faux_offline_pending;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE faux_offline_pending;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE faux_offline_pending_new RENAME TO faux_offline_pending;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE broken_messages;"));
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE broken_messages;"));
+    upgradeQueries.emplace_back(
         QStringLiteral("ALTER TABLE broken_messages_new RENAME TO broken_messages;"));
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE history;"));
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("ALTER TABLE history_new RENAME TO history;"));
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE history;"));
+    upgradeQueries.emplace_back(QStringLiteral("ALTER TABLE history_new RENAME TO history;"));
 }
 
-void DbTo11::appendUpdateTextMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::appendUpdateTextMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO text_messages_new SELECT * FROM text_messages"));
 }
 
-void DbTo11::appendUpdateFileTransfersFkQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::appendUpdateFileTransfersFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO file_transfers_new SELECT * FROM file_transfers"));
 }
 
-void DbTo11::PeersToChats::appendUpdateSystemMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToChats::appendUpdateSystemMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO system_messages_new SELECT * FROM system_messages"));
 }
 
-void DbTo11::PeersToChats::appendUpdateFauxOfflinePendingFkQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToChats::appendUpdateFauxOfflinePendingFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO faux_offline_pending_new SELECT * FROM faux_offline_pending"));
 }
 
-void DbTo11::PeersToChats::appendUpdateBrokenMessagesFkQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::PeersToChats::appendUpdateBrokenMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO broken_messages_new SELECT * FROM broken_messages"));
 }
 
-void DbTo11::appendDropPeersQueries(QVector<RawDatabase::Query>& upgradeQueries)
+void DbTo11::appendDropPeersQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
-    upgradeQueries += RawDatabase::Query(QStringLiteral("DROP TABLE peers;"));
+    upgradeQueries.emplace_back(QStringLiteral("DROP TABLE peers;"));
 }

@@ -627,7 +627,7 @@ void Profile::loadDatabase(QString password, IMessageBoxManager& messageBoxManag
     // At this point it's too early to load the personal settings (Nexus will do it), so we always
     // load
     // the history, and if it fails we can't change the setting now, but we keep a nullptr
-    database = std::make_shared<RawDatabase>(getDbPath(name, settings.getPaths()), password, salt);
+    database = RawDatabase::open(getDbPath(name, settings.getPaths()), password, salt);
     if (database && database->isOpen()) {
         history.reset(new History(database, settings, messageBoxManager));
     } else {

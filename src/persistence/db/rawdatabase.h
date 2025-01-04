@@ -7,39 +7,41 @@
 
 #include "util/strongtype.h"
 
-#include <QByteArray>
-#include <QMutex>
-#include <QPair>
-#include <QQueue>
-#include <QRegularExpression>
-#include <QString>
-#include <QThread>
+#include <QMetaType>
 #include <QVariant>
 #include <QVector>
 
-#include <atomic>
-#include <cassert>
 #include <functional>
-#include <memory>
+#include <vector>
 
-/// The two following defines are required to use SQLCipher
-/// They are used by the sqlite3.h header
-#define SQLITE_HAS_CODEC
-#define SQLITE_TEMP_STORE 2
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wzero-as-null-pointer-constant"
-#include <sqlite3.h>
-#pragma GCC diagnostic pop
+struct sqlite3_stmt;
 
 using RowId = NamedType<int64_t, struct RowIdTag, Orderable>;
 Q_DECLARE_METATYPE(RowId)
 
-class RawDatabase : QObject
+/**
+ * @brief Implements a low level RAII interface to a SQLCipher (SQlite3) database.
+ *
+ * Thread-safe, does all database operations on a worker thread.
+ * The queries must not contain transaction commands (BEGIN/COMMIT/...) or the behavior is
+ * undefined.
+ *
+ * @var QMutex RawDatabaseImpl::transactionsMutex;
+ * @brief Protects pendingTransactions
+ */
+class RawDatabase
 {
-    Q_OBJECT
+public:
+    virtual ~RawDatabase();
 
 public:
+    /**
+     * @brief A query to be executed by the database.
+     *
+     * Can be composed of one or more SQL statements in the query,
+     * optional BLOB parameters to be bound, and callbacks fired when the query is executed
+     * Calling any database method from a query callback is undefined behavior.
+     */
     class Query
     {
     public:
@@ -67,108 +69,45 @@ public:
             , rowCallback{rowCallback_}
         {
         }
+
         Query() = default;
+        Query(const Query&) = delete;
+        Query& operator=(const Query&) = delete;
+        Query(Query&&) = default;
+        Query& operator=(Query&&) = default;
 
     private:
+        /** @brief UTF-8 query string */
         QByteArray query;
+        /** @brief Bound data blobs */
         QVector<QByteArray> blobs;
+        /** @brief Called after execution with the last insert rowid */
         std::function<void(RowId)> insertCallback;
+        /** @brief Called during execution for each row */
         std::function<void(const QVector<QVariant>&)> rowCallback;
+        /** @brief Statements to be compiled from the query */
         QVector<sqlite3_stmt*> statements;
 
-        friend class RawDatabase;
+        friend class RawDatabaseImpl;
     };
 
-private:
-    static void regexp(sqlite3_context* ctx, int argc, sqlite3_value** argv,
-                       const QRegularExpression::PatternOptions cs);
+    virtual bool isOpen() = 0;
 
-    struct Transaction
-    {
-        QVector<Query> queries;
-        std::atomic_bool* success = nullptr;
-        std::atomic_bool* done = nullptr;
-    };
+    virtual bool execNow(const QString& statement) = 0;
+    virtual bool execNow(Query statement) = 0;
+    virtual bool execNow(std::vector<Query> statements) = 0;
+
+    virtual void execLater(const QString& statement) = 0;
+    virtual void execLater(Query statement) = 0;
+    virtual void execLater(std::vector<Query> statements) = 0;
+
+    virtual void sync() = 0;
+
+    static std::shared_ptr<RawDatabase> open(const QString& path, const QString& password,
+                                             const QByteArray& salt);
 
 public:
-    enum class SqlCipherParams
-    {
-        // keep these sorted in upgrade order
-        p3_0, // SQLCipher 3.0 default encryption params
-              // SQLCipher 4.0 default params where SQLCipher 3.0 supports them, but 3.0 params
-              // where not possible. We accidentally got to this state when attempting to update all
-              // databases to 4.0 defaults even when using SQLCipher 3.x, but might as well keep
-              // using these for people with SQLCipher 3.x.
-        halfUpgradedTo4,
-        p4_0 // SQLCipher 4.0 default encryption params
-    };
-
-    RawDatabase(const QString& path_, const QString& password, const QByteArray& salt);
-    ~RawDatabase();
-    bool isOpen();
-
-    bool execNow(const QString& statement);
-    bool execNow(const Query& statement);
-    bool execNow(const QVector<Query>& statements);
-
-    void execLater(const QString& statement);
-    void execLater(const Query& statement);
-    void execLater(const QVector<Query>& statements);
-
-    void sync();
-
-    static QString toString(SqlCipherParams params)
-    {
-        switch (params) {
-        case SqlCipherParams::p3_0:
-            return "3.0 default";
-        case SqlCipherParams::halfUpgradedTo4:
-            return "3.x max compatible";
-        case SqlCipherParams::p4_0:
-            return "4.0 default";
-        }
-        assert(false);
-        return {};
-    }
-
-public slots:
-    bool setPassword(const QString& password);
-    bool rename(const QString& newPath);
-    bool remove();
-
-protected slots:
-    bool open(const QString& path_, const QString& hexKey = {});
-    void close();
-    void process();
-
-private:
-    void compileAndExecute(Transaction& trans);
-    QString anonymizeQuery(const QByteArray& query);
-    bool openEncryptedDatabaseAtLatestSupportedVersion(const QString& hexKey);
-    bool updateSavedCipherParameters(const QString& hexKey, SqlCipherParams newParams);
-    bool setCipherParameters(SqlCipherParams params, const QString& database = {});
-    SqlCipherParams highestSupportedParams();
-    SqlCipherParams readSavedCipherParams(const QString& hexKey, SqlCipherParams newParams);
-    bool setKey(const QString& hexKey);
-    int getUserVersion();
-    bool encryptDatabase(const QString& newHexKey);
-    bool decryptDatabase();
-    bool commitDbSwap(const QString& hexKey);
-    bool testUsable();
-
-protected:
-    static QString deriveKey(const QString& password, const QByteArray& salt);
-    static QString deriveKey(const QString& password);
-    static QVariant extractData(sqlite3_stmt* stmt, int col);
-    static void regexpInsensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
-    static void regexpSensitive(sqlite3_context* ctx, int argc, sqlite3_value** argv);
-
-private:
-    sqlite3* sqlite;
-    std::unique_ptr<QThread> workerThread;
-    QQueue<Transaction> pendingTransactions;
-    QMutex transactionsMutex;
-    QString path;
-    QByteArray currentSalt;
-    QString currentHexKey;
+    virtual bool setPassword(const QString& password) = 0;
+    virtual bool rename(const QString& newPath) = 0;
+    virtual bool remove() = 0;
 };

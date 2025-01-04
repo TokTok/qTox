@@ -92,96 +92,97 @@ DuplicateAlias getDuplicateAliasRows(RawDatabase& db, RowId goodPeerRow, RowId b
     }
 }
 
-void mergeAndDeleteAlias(QVector<RawDatabase::Query>& upgradeQueries, RowId goodAlias,
+void mergeAndDeleteAlias(std::vector<RawDatabase::Query>& upgradeQueries, RowId goodAlias,
                          std::vector<RowId> badAliases)
 {
     for (const auto badAliasId : badAliases) {
-        upgradeQueries += RawDatabase::Query(
+        upgradeQueries.emplace_back(
             QStringLiteral("UPDATE text_messages SET sender_alias = %1 WHERE sender_alias = %2;")
                 .arg(goodAlias.get())
                 .arg(badAliasId.get()));
-        upgradeQueries += RawDatabase::Query(
+        upgradeQueries.emplace_back(
             QStringLiteral("UPDATE file_transfers SET sender_alias = %1 WHERE sender_alias = %2;")
                 .arg(goodAlias.get())
                 .arg(badAliasId.get()));
-        upgradeQueries += RawDatabase::Query(
+        upgradeQueries.emplace_back(
             QStringLiteral("DELETE FROM aliases WHERE id = %1;").arg(badAliasId.get()));
     }
 }
 
-void mergeAndDeletePeer(QVector<RawDatabase::Query>& upgradeQueries, RowId goodPeerId, RowId badPeerId)
+void mergeAndDeletePeer(std::vector<RawDatabase::Query>& upgradeQueries, RowId goodPeerId,
+                        RowId badPeerId)
 {
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("UPDATE aliases SET owner = %1 WHERE owner = %2")
-                               .arg(goodPeerId.get())
-                               .arg(badPeerId.get()));
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("UPDATE history SET chat_id = %1 WHERE chat_id = %2;")
-                               .arg(goodPeerId.get())
-                               .arg(badPeerId.get()));
-    upgradeQueries +=
-        RawDatabase::Query(QStringLiteral("DELETE FROM peers WHERE id = %1").arg(badPeerId.get()));
+    upgradeQueries.emplace_back(QStringLiteral("UPDATE aliases SET owner = %1 WHERE owner = %2")
+                                    .arg(goodPeerId.get())
+                                    .arg(badPeerId.get()));
+    upgradeQueries.emplace_back(
+        QStringLiteral("UPDATE history SET chat_id = %1 WHERE chat_id = %2;")
+            .arg(goodPeerId.get())
+            .arg(badPeerId.get()));
+    upgradeQueries.emplace_back(QStringLiteral("DELETE FROM peers WHERE id = %1").arg(badPeerId.get()));
 }
 
-void addForeignKeyToAlias(QVector<RawDatabase::Query>& queries)
+void addForeignKeyToAlias(std::vector<RawDatabase::Query>& queries)
 {
-    queries += RawDatabase::Query(
+    queries.emplace_back(
         QStringLiteral("CREATE TABLE aliases_new (id INTEGER PRIMARY KEY, owner INTEGER, "
                        "display_name BLOB NOT NULL, UNIQUE(owner, display_name), "
                        "FOREIGN KEY (owner) REFERENCES peers(id));"));
-    queries +=
-        RawDatabase::Query(QStringLiteral("INSERT INTO aliases_new (id, owner, display_name) "
-                                          "SELECT id, owner, display_name "
-                                          "FROM aliases;"));
-    queries += RawDatabase::Query(QStringLiteral("DROP TABLE aliases;"));
-    queries += RawDatabase::Query(QStringLiteral("ALTER TABLE aliases_new RENAME TO aliases;"));
+    queries.emplace_back(QStringLiteral("INSERT INTO aliases_new (id, owner, display_name) "
+                                        "SELECT id, owner, display_name "
+                                        "FROM aliases;"));
+    queries.emplace_back(QStringLiteral("DROP TABLE aliases;"));
+    queries.emplace_back(QStringLiteral("ALTER TABLE aliases_new RENAME TO aliases;"));
 }
 
-void addForeignKeyToHistory(QVector<RawDatabase::Query>& queries)
+void addForeignKeyToHistory(std::vector<RawDatabase::Query>& queries)
 {
-    queries +=
-        RawDatabase::Query(QStringLiteral("CREATE TABLE history_new "
-                                          "(id INTEGER PRIMARY KEY, "
-                                          "timestamp INTEGER NOT NULL, "
-                                          "chat_id INTEGER NOT NULL, "
-                                          "sender_alias INTEGER NOT NULL, "
-                                          "message BLOB NOT NULL, "
-                                          "file_id INTEGER, "
-                                          "FOREIGN KEY (file_id) REFERENCES file_transfers(id), "
-                                          "FOREIGN KEY (chat_id) REFERENCES peers(id), "
-                                          "FOREIGN KEY (sender_alias) REFERENCES aliases(id));"));
-    queries += RawDatabase::Query(QStringLiteral(
+    queries.emplace_back(QStringLiteral("CREATE TABLE history_new "
+                                        "(id INTEGER PRIMARY KEY, "
+                                        "timestamp INTEGER NOT NULL, "
+                                        "chat_id INTEGER NOT NULL, "
+                                        "sender_alias INTEGER NOT NULL, "
+                                        "message BLOB NOT NULL, "
+                                        "file_id INTEGER, "
+                                        "FOREIGN KEY (file_id) REFERENCES file_transfers(id), "
+                                        "FOREIGN KEY (chat_id) REFERENCES peers(id), "
+                                        "FOREIGN KEY (sender_alias) REFERENCES aliases(id));"));
+    queries.emplace_back(QStringLiteral(
         "INSERT INTO history_new (id, timestamp, chat_id, sender_alias, message, file_id) "
         "SELECT id, timestamp, chat_id, sender_alias, message, file_id "
         "FROM history;"));
-    queries += RawDatabase::Query(QStringLiteral("DROP TABLE history;"));
-    queries += RawDatabase::Query(QStringLiteral("ALTER TABLE history_new RENAME TO history;"));
+    queries.emplace_back(QStringLiteral("DROP TABLE history;"));
+    queries.emplace_back(QStringLiteral("ALTER TABLE history_new RENAME TO history;"));
 }
 
-void addForeignKeyToFauxOfflinePending(QVector<RawDatabase::Query>& queries)
+void addForeignKeyToFauxOfflinePending(std::vector<RawDatabase::Query>& queries)
 {
-    queries += RawDatabase::Query(
-        QStringLiteral("CREATE TABLE new_faux_offline_pending (id INTEGER PRIMARY KEY, "
-                       "FOREIGN KEY (id) REFERENCES history(id));"));
-    queries += RawDatabase::Query(QStringLiteral("INSERT INTO new_faux_offline_pending (id) "
-                                                 "SELECT id "
-                                                 "FROM faux_offline_pending;"));
-    queries += RawDatabase::Query(QStringLiteral("DROP TABLE faux_offline_pending;"));
-    queries += RawDatabase::Query(
-        QStringLiteral("ALTER TABLE new_faux_offline_pending RENAME TO faux_offline_pending;"));
+    queries.emplace_back(QStringLiteral( //
+        "CREATE TABLE new_faux_offline_pending (id INTEGER PRIMARY KEY, "
+        "FOREIGN KEY (id) REFERENCES history(id));"));
+    queries.emplace_back(QStringLiteral( //
+        "INSERT INTO new_faux_offline_pending (id) "
+        "SELECT id "
+        "FROM faux_offline_pending;"));
+    queries.emplace_back(QStringLiteral( //
+        "DROP TABLE faux_offline_pending;"));
+    queries.emplace_back(QStringLiteral( //
+        "ALTER TABLE new_faux_offline_pending RENAME TO faux_offline_pending;"));
 }
 
-void addForeignKeyToBrokenMessages(QVector<RawDatabase::Query>& queries)
+void addForeignKeyToBrokenMessages(std::vector<RawDatabase::Query>& queries)
 {
-    queries += RawDatabase::Query(
-        QStringLiteral("CREATE TABLE new_broken_messages (id INTEGER PRIMARY KEY, "
-                       "FOREIGN KEY (id) REFERENCES history(id));"));
-    queries += RawDatabase::Query(QStringLiteral("INSERT INTO new_broken_messages (id) "
-                                                 "SELECT id "
-                                                 "FROM broken_messages;"));
-    queries += RawDatabase::Query(QStringLiteral("DROP TABLE broken_messages;"));
-    queries += RawDatabase::Query(
-        QStringLiteral("ALTER TABLE new_broken_messages RENAME TO broken_messages;"));
+    queries.emplace_back(QStringLiteral( //
+        "CREATE TABLE new_broken_messages (id INTEGER PRIMARY KEY, "
+        "FOREIGN KEY (id) REFERENCES history(id));"));
+    queries.emplace_back(QStringLiteral( //
+        "INSERT INTO new_broken_messages (id) "
+        "SELECT id "
+        "FROM broken_messages;"));
+    queries.emplace_back(QStringLiteral( //
+        "DROP TABLE broken_messages;"));
+    queries.emplace_back(QStringLiteral( //
+        "ALTER TABLE new_broken_messages RENAME TO broken_messages;"));
 }
 } // namespace
 
@@ -261,8 +262,8 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
 
 bool DbUpgrader::createCurrentSchema(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> queries;
-    queries += RawDatabase::Query(QStringLiteral(
+    std::vector<RawDatabase::Query> queries;
+    queries.emplace_back(QStringLiteral(
         "CREATE TABLE authors (id INTEGER PRIMARY KEY, "
         "public_key BLOB NOT NULL UNIQUE);"
         "CREATE TABLE chats (id INTEGER PRIMARY KEY, "
@@ -323,9 +324,9 @@ bool DbUpgrader::createCurrentSchema(RawDatabase& db)
         "reason INTEGER NOT NULL DEFAULT 0, "
         "FOREIGN KEY (id) REFERENCES history(id));"));
     // sqlite doesn't support including the index as part of the CREATE TABLE statement, so add a second query
-    queries += RawDatabase::Query("CREATE INDEX chat_id_idx on history (chat_id);");
-    queries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = %1;").arg(SCHEMA_VERSION));
-    return db.execNow(queries);
+    queries.emplace_back("CREATE INDEX chat_id_idx on history (chat_id);");
+    queries.emplace_back(QStringLiteral("PRAGMA user_version = %1;").arg(SCHEMA_VERSION));
+    return db.execNow(std::move(queries));
 }
 
 bool DbUpgrader::isNewDb(std::shared_ptr<RawDatabase>& db, bool& success)
@@ -345,20 +346,21 @@ bool DbUpgrader::isNewDb(std::shared_ptr<RawDatabase>& db, bool& success)
 
 bool DbUpgrader::dbSchema0to1(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> queries;
-    queries += RawDatabase::Query(QStringLiteral("CREATE TABLE file_transfers "
-                                                 "(id INTEGER PRIMARY KEY, "
-                                                 "chat_id INTEGER NOT NULL, "
-                                                 "file_restart_id BLOB NOT NULL, "
-                                                 "file_name BLOB NOT NULL, "
-                                                 "file_path BLOB NOT NULL, "
-                                                 "file_hash BLOB NOT NULL, "
-                                                 "file_size INTEGER NOT NULL, "
-                                                 "direction INTEGER NOT NULL, "
-                                                 "file_state INTEGER NOT NULL);"));
-    queries += RawDatabase::Query(QStringLiteral("ALTER TABLE history ADD file_id INTEGER;"));
-    queries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 1;"));
-    return db.execNow(queries);
+    std::vector<RawDatabase::Query> queries;
+    queries.emplace_back(QStringLiteral( //
+        "CREATE TABLE file_transfers "
+        "(id INTEGER PRIMARY KEY, "
+        "chat_id INTEGER NOT NULL, "
+        "file_restart_id BLOB NOT NULL, "
+        "file_name BLOB NOT NULL, "
+        "file_path BLOB NOT NULL, "
+        "file_hash BLOB NOT NULL, "
+        "file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, "
+        "file_state INTEGER NOT NULL);"));
+    queries.emplace_back(QStringLiteral("ALTER TABLE history ADD file_id INTEGER;"));
+    queries.emplace_back(QStringLiteral("PRAGMA user_version = 1;"));
+    return db.execNow(std::move(queries));
 }
 
 bool DbUpgrader::dbSchema1to2(RawDatabase& db)
@@ -375,22 +377,24 @@ bool DbUpgrader::dbSchema1to2(RawDatabase& db)
                 "WHERE faux_offline_pending.id IS NULL "
                 "GROUP BY chat_id;");
 
-    QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query(QStringLiteral("CREATE TABLE broken_messages "
-                                                        "(id INTEGER PRIMARY KEY);"));
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE broken_messages "
+                                               "(id INTEGER PRIMARY KEY);"));
 
     auto rowCallback = [&upgradeQueries](const QVector<QVariant>& row) {
         auto chatId = row[0].toLongLong();
         auto lastDeliveredHistoryId = row[1].toLongLong();
 
-        upgradeQueries += QString("INSERT INTO broken_messages "
-                                  "SELECT faux_offline_pending.id FROM "
-                                  "history JOIN faux_offline_pending "
-                                  "ON faux_offline_pending.id = history.id "
-                                  "WHERE history.chat_id=%1 "
-                                  "AND history.id < %2;")
-                              .arg(chatId)
-                              .arg(lastDeliveredHistoryId);
+        upgradeQueries.emplace_back( //
+            QStringLiteral(          //
+                "INSERT INTO broken_messages "
+                "SELECT faux_offline_pending.id FROM "
+                "history JOIN faux_offline_pending "
+                "ON faux_offline_pending.id = history.id "
+                "WHERE history.chat_id=%1 "
+                "AND history.id < %2;")
+                .arg(chatId)
+                .arg(lastDeliveredHistoryId));
     };
     // note this doesn't modify the db, just generate new queries, so is safe
     // to run outside of our upgrade transaction
@@ -398,13 +402,14 @@ bool DbUpgrader::dbSchema1to2(RawDatabase& db)
         return false;
     }
 
-    upgradeQueries += QString("DELETE FROM faux_offline_pending "
-                              "WHERE id in ("
-                              "SELECT id FROM broken_messages);");
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "DELETE FROM faux_offline_pending "
+        "WHERE id in ("
+        "SELECT id FROM broken_messages);"));
 
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 2;"));
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 2;"));
 
-    return db.execNow(upgradeQueries);
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema2to3(RawDatabase& db)
@@ -417,31 +422,34 @@ bool DbUpgrader::dbSchema2to3(RawDatabase& db)
 
     const QString emptyActionMessageString = "/me ";
 
-    QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query{QString("INSERT INTO broken_messages "
-                                                 "SELECT faux_offline_pending.id FROM "
-                                                 "history JOIN faux_offline_pending "
-                                                 "ON faux_offline_pending.id = history.id "
-                                                 "WHERE history.message = ?;"),
-                                         {emptyActionMessageString.toUtf8()}};
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back( //
+        QStringLiteral(          //
+            "INSERT INTO broken_messages "
+            "SELECT faux_offline_pending.id FROM "
+            "history JOIN faux_offline_pending "
+            "ON faux_offline_pending.id = history.id "
+            "WHERE history.message = ?;"),
+        QVector<QByteArray>{emptyActionMessageString.toUtf8()});
 
-    upgradeQueries += QString("DELETE FROM faux_offline_pending "
-                              "WHERE id in ("
-                              "SELECT id FROM broken_messages);");
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "DELETE FROM faux_offline_pending "
+        "WHERE id in ("
+        "SELECT id FROM broken_messages);"));
 
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 3;"));
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 3;"));
 
-    return db.execNow(upgradeQueries);
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema3to4(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query{QString("CREATE INDEX chat_id_idx on history (chat_id);")};
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back(QStringLiteral("CREATE INDEX chat_id_idx on history (chat_id);"));
 
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 4;"));
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 4;"));
 
-    return db.execNow(upgradeQueries);
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema4to5(RawDatabase& db)
@@ -449,13 +457,13 @@ bool DbUpgrader::dbSchema4to5(RawDatabase& db)
     // add foreign key constraints to database tables. sqlite doesn't support advanced alter table
     // commands, so instead we need to copy data to new tables with the foreign key constraints:
     // http://www.sqlitetutorial.net/sqlite-alter-table/
-    QVector<RawDatabase::Query> upgradeQueries;
+    std::vector<RawDatabase::Query> upgradeQueries;
     addForeignKeyToAlias(upgradeQueries);
     addForeignKeyToHistory(upgradeQueries);
     addForeignKeyToFauxOfflinePending(upgradeQueries);
     addForeignKeyToBrokenMessages(upgradeQueries);
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 5;"));
-    auto transactionPass = db.execNow(upgradeQueries);
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 5;"));
+    auto transactionPass = db.execNow(std::move(upgradeQueries));
     if (transactionPass) {
         db.execNow("VACUUM;"); // after copying all the tables and deleting the old ones, our db file is half empty.
     }
@@ -464,39 +472,41 @@ bool DbUpgrader::dbSchema4to5(RawDatabase& db)
 
 bool DbUpgrader::dbSchema5to6(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> upgradeQueries;
+    std::vector<RawDatabase::Query> upgradeQueries;
 
-    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE faux_offline_pending "
-                                                 "ADD COLUMN required_extensions INTEGER NOT NULL "
-                                                 "DEFAULT 0;")};
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "ALTER TABLE faux_offline_pending "
+        "ADD COLUMN required_extensions INTEGER NOT NULL "
+        "DEFAULT 0;"));
 
-    upgradeQueries += RawDatabase::Query{QString("ALTER TABLE broken_messages "
-                                                 "ADD COLUMN reason INTEGER NOT NULL "
-                                                 "DEFAULT 0;")};
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "ALTER TABLE broken_messages "
+        "ADD COLUMN reason INTEGER NOT NULL "
+        "DEFAULT 0;"));
 
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 6;"));
-    return db.execNow(upgradeQueries);
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 6;"));
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema6to7(RawDatabase& db)
 {
-    QVector<RawDatabase::Query> upgradeQueries;
+    std::vector<RawDatabase::Query> upgradeQueries;
 
     // Cannot add UNIQUE(id, message_type) to history table without creating a new one. Create a new history table
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE history_new (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT "
         "'T' CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER "
         "NOT NULL, UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES peers(id))");
 
     // Create new text_messages table. We will split messages out of history and insert them into this new table
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
         "(message_type = 'T'), sender_alias INTEGER NOT NULL, message BLOB NOT NULL, FOREIGN KEY "
         "(id, message_type) REFERENCES history_new(id, message_type), FOREIGN KEY (sender_alias) "
         "REFERENCES aliases(id))");
 
     // Cannot add a FOREIGN KEY to the file_transfers table without creating a new one. Create a new file_transfers table
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE file_transfers_new (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL "
         "CHECK (message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
         "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size "
@@ -504,19 +514,18 @@ bool DbUpgrader::dbSchema6to7(RawDatabase& db)
         "(id, message_type) REFERENCES history_new(id, message_type), FOREIGN KEY (sender_alias) "
         "REFERENCES aliases(id))");
 
-    upgradeQueries +=
-        RawDatabase::Query("INSERT INTO history_new SELECT id, 'T' AS message_type, timestamp, "
-                           "chat_id FROM history WHERE history.file_id IS NULL");
+    upgradeQueries.emplace_back(
+        "INSERT INTO history_new SELECT id, 'T' AS message_type, timestamp, "
+        "chat_id FROM history WHERE history.file_id IS NULL");
 
-    upgradeQueries +=
-        RawDatabase::Query("INSERT INTO text_messages SELECT id, 'T' AS message_type, "
-                           "sender_alias, message FROM history WHERE history.file_id IS NULL");
+    upgradeQueries.emplace_back("INSERT INTO text_messages SELECT id, 'T' AS message_type, "
+                                "sender_alias, message FROM history WHERE history.file_id IS NULL");
 
-    upgradeQueries +=
-        RawDatabase::Query("INSERT INTO history_new SELECT id, 'F' AS message_type, timestamp, "
-                           "chat_id FROM history WHERE history.file_id IS NOT NULL");
+    upgradeQueries.emplace_back(
+        "INSERT INTO history_new SELECT id, 'F' AS message_type, timestamp, "
+        "chat_id FROM history WHERE history.file_id IS NOT NULL");
 
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "INSERT INTO file_transfers_new (id, message_type, sender_alias, file_restart_id, "
         "file_name, file_path, file_hash, file_size, direction, file_state) SELECT history.id, 'F' "
         "as message_type, history.sender_alias, file_transfers.file_restart_id, "
@@ -525,45 +534,44 @@ bool DbUpgrader::dbSchema6to7(RawDatabase& db)
         "history INNER JOIN file_transfers on history.file_id = file_transfers.id WHERE "
         "history.file_id IS NOT NULL");
 
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
         "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 "
         "BLOB, arg4 BLOB, "
         "FOREIGN KEY (id, message_type) REFERENCES history_new(id, message_type))");
 
     // faux_offline_pending needs to be re-created to reference the new history table
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE faux_offline_pending_new (id INTEGER PRIMARY KEY, required_extensions "
         "INTEGER NOT NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history_new(id))");
-    upgradeQueries += RawDatabase::Query("INSERT INTO faux_offline_pending_new SELECT id, "
-                                         "required_extensions FROM faux_offline_pending");
-    upgradeQueries += RawDatabase::Query("DROP TABLE faux_offline_pending");
-    upgradeQueries +=
-        RawDatabase::Query("ALTER TABLE faux_offline_pending_new RENAME TO faux_offline_pending");
+    upgradeQueries.emplace_back("INSERT INTO faux_offline_pending_new SELECT id, "
+                                "required_extensions FROM faux_offline_pending");
+    upgradeQueries.emplace_back("DROP TABLE faux_offline_pending");
+    upgradeQueries.emplace_back(
+        "ALTER TABLE faux_offline_pending_new RENAME TO faux_offline_pending");
 
     // broken_messages needs to be re-created to reference the new history table
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "CREATE TABLE broken_messages_new (id INTEGER PRIMARY KEY, reason INTEGER NOT NULL DEFAULT "
         "0, FOREIGN KEY (id) REFERENCES history_new(id))");
-    upgradeQueries += RawDatabase::Query(
+    upgradeQueries.emplace_back(
         "INSERT INTO broken_messages_new SELECT id, reason FROM broken_messages");
-    upgradeQueries += RawDatabase::Query("DROP TABLE broken_messages");
-    upgradeQueries +=
-        RawDatabase::Query("ALTER TABLE broken_messages_new RENAME TO broken_messages");
+    upgradeQueries.emplace_back("DROP TABLE broken_messages");
+    upgradeQueries.emplace_back("ALTER TABLE broken_messages_new RENAME TO broken_messages");
 
     // Everything referencing old history should now be gone
-    upgradeQueries += RawDatabase::Query("DROP TABLE history");
-    upgradeQueries += RawDatabase::Query("ALTER TABLE history_new RENAME TO history");
+    upgradeQueries.emplace_back("DROP TABLE history");
+    upgradeQueries.emplace_back("ALTER TABLE history_new RENAME TO history");
 
     // Drop file transfers late since history depends on it
-    upgradeQueries += RawDatabase::Query("DROP TABLE file_transfers");
-    upgradeQueries += RawDatabase::Query("ALTER TABLE file_transfers_new RENAME TO file_transfers");
+    upgradeQueries.emplace_back("DROP TABLE file_transfers");
+    upgradeQueries.emplace_back("ALTER TABLE file_transfers_new RENAME TO file_transfers");
 
-    upgradeQueries += RawDatabase::Query("CREATE INDEX chat_id_idx on history (chat_id);");
+    upgradeQueries.emplace_back("CREATE INDEX chat_id_idx on history (chat_id);");
 
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 7;"));
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 7;"));
 
-    return db.execNow(upgradeQueries);
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema7to8(RawDatabase& db)
@@ -573,21 +581,21 @@ bool DbUpgrader::dbSchema7to8(RawDatabase& db)
     // upgrade ensures that old versions of qTox do not try to load the new
     // database
 
-    QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 8;"));
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 8;"));
 
-    return db.execNow(upgradeQueries);
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema8to9(RawDatabase& db)
 {
     // not technically a schema update, but still a database version update based on healing invalid user data
     // we added ourself in the peers table by ToxId instead of ToxPk. Heal this over-length entry.
-    QVector<RawDatabase::Query> upgradeQueries;
+    std::vector<RawDatabase::Query> upgradeQueries;
     const auto badPeers = getInvalidPeers(db);
     mergeDuplicatePeers(upgradeQueries, db, badPeers);
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 9;"));
-    return db.execNow(upgradeQueries);
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 9;"));
+    return db.execNow(std::move(upgradeQueries));
 }
 
 bool DbUpgrader::dbSchema9to10(RawDatabase& db)
@@ -598,17 +606,17 @@ bool DbUpgrader::dbSchema9to10(RawDatabase& db)
     // it to an arbitrary value of full length.
     constexpr int resumeFileIdLengthNow = 32;
     QByteArray dummyResumeId(resumeFileIdLengthNow, 0);
-    QVector<RawDatabase::Query> upgradeQueries;
-    upgradeQueries += RawDatabase::Query(
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back(
         QStringLiteral(
             "UPDATE file_transfers SET file_restart_id = ? WHERE LENGTH(file_restart_id) != 32;"),
-        {dummyResumeId});
-    upgradeQueries += RawDatabase::Query(QStringLiteral("PRAGMA user_version = 10;"));
-    return db.execNow(upgradeQueries);
+        QVector<QByteArray>{dummyResumeId});
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 10;"));
+    return db.execNow(std::move(upgradeQueries));
 }
 
-void DbUpgrader::mergeDuplicatePeers(QVector<RawDatabase::Query>& upgradeQueries, RawDatabase& db,
-                                     std::vector<BadEntry> badPeers)
+void DbUpgrader::mergeDuplicatePeers(std::vector<RawDatabase::Query>& upgradeQueries,
+                                     RawDatabase& db, const std::vector<BadEntry>& badPeers)
 {
     for (const auto& badPeer : badPeers) {
         const RowId goodPeerId = getValidPeerRow(db, ToxPk{badPeer.toxId.left(64)});
