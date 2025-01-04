@@ -791,6 +791,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පැතිකඩ ස්වයංක්‍රීයව පූරණය කිරීමට අසමත් විය.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">මෙම වැඩසටහන නවතම qTox අනුවාදය ධාවනය කරන්නේ දැයි පරීක්ෂා කරයි.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

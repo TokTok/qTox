@@ -650,6 +650,10 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>Failed to load profile automatically.</source>
         <translation type="unfinished">Failed ta load profile automatically.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translation>Checks if this here ship be runnin&apos; the freshest qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

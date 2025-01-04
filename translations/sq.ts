@@ -786,6 +786,11 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ngarkimi automatik i profilit dështoi.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kontrollon nëse ky program po ekzekuton versionin më të fundit qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

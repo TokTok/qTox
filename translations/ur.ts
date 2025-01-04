@@ -767,6 +767,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پروفائل خودکار طور پر لوڈ کرنے میں ناکام۔</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">چیک کرتا ہے کہ آیا یہ پروگرام تازہ ترین qTox ورژن چلا رہا ہے۔</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

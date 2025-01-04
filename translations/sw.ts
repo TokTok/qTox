@@ -793,6 +793,11 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Imeshindwa kupakia wasifu kiotomatiki.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hukagua ikiwa programu hii ina toleo jipya zaidi la qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -777,6 +777,11 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <source>Failed to load profile automatically.</source>
         <translation type="unfinished">Failed to load profile automatically</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ko jundi lo du&apos;u xu le sampla ca&apos;o bajra le cnino qTox moi</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -687,6 +687,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">プロファイルの自動読み込みに失敗しました。</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">このプログラムが最新の qTox バージョンを実行しているかどうかを確認します。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

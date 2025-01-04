@@ -649,6 +649,11 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Không thể tải hồ sơ tự động.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kiểm tra xem chương trình này có đang chạy phiên bản qTox mới nhất hay không.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

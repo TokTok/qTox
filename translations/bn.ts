@@ -788,6 +788,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">স্বয়ংক্রিয়ভাবে প্রোফাইল লোড করতে ব্যর্থ হয়েছে.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">এই প্রোগ্রামটি সর্বশেষ qTox সংস্করণ চালাচ্ছে কিনা তা পরীক্ষা করে।</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

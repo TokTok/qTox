@@ -22,7 +22,7 @@ class UpdateCheck : public QObject
 public:
     static bool isCurrentVersionStable();
 
-    explicit UpdateCheck(const Settings& settings_);
+    explicit UpdateCheck(const Settings& settings_, QObject* parent = nullptr);
 
     constexpr bool canCheck() const
     {
@@ -36,6 +36,7 @@ public:
     void checkForUpdate();
 
 signals:
+    void complete(QString currentVersion, QString latestVersion, QUrl link);
     void updateAvailable(QString latestVersion, QUrl link);
     void upToDate();
     void updateCheckFailed();

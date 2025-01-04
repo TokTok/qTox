@@ -785,6 +785,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪ್ರೊಫೈಲ್ ಅನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಈ ಪ್ರೋಗ್ರಾಂ ಇತ್ತೀಚಿನ qTox ಆವೃತ್ತಿಯನ್ನು ಚಾಲನೆ ಮಾಡುತ್ತಿದೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸುತ್ತದೆ.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

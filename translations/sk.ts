@@ -651,6 +651,11 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <source>Failed to load profile automatically.</source>
         <translation>Automatické načítanie profilu zlyhalo.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skontroluje, či tento program používa najnovšiu verziu qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

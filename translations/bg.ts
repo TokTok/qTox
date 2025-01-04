@@ -651,6 +651,11 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation>Грешка при автоматично зареждане на профил.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Проверява дали тази програма изпълнява най-новата версия на qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

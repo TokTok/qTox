@@ -707,6 +707,11 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">சுயவிவரத்தை தானாக ஏற்றுவதில் தோல்வி.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">இந்த நிரல் சமீபத்திய qTox பதிப்பில் இயங்குகிறதா என்பதைச் சரிபார்க்கிறது.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

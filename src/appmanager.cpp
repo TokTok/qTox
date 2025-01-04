@@ -201,68 +201,8 @@ void AppManager::preConstructionInitialization()
     qInstallMessageHandler(logMessageHandler);
 }
 
-int AppManager::run()
+int AppManager::startGui(QCommandLineParser& parser)
 {
-#if defined(Q_OS_UNIX)
-    // PosixSignalNotifier is used only for terminating signals,
-    // so it's connected directly to quit() without any filtering.
-    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::activated, qapp.get(),
-            &QApplication::quit);
-    PosixSignalNotifier::watchCommonTerminatingSignals();
-#endif
-
-    qapp->setApplicationName("qTox");
-    qapp->setDesktopFileName("io.github.qtox.qTox");
-    qapp->setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
-                                    .arg(VersionInfo::gitDescribe())
-                                    .arg(VersionInfo::gitVersion())
-                                    .arg(UpdateCheck::isCurrentVersionStable()
-                                             ? QStringLiteral("stable")
-                                             : QStringLiteral("unstable")));
-
-    // Install Unicode 6.1 supporting font
-    // Keep this as close to the beginning of `main()` as possible, otherwise
-    // on systems that have poor support for Unicode qTox will look bad.
-    if (QFontDatabase::addApplicationFont("://font/DejaVuSans.ttf") == -1) {
-        qWarning() << "Couldn't load font";
-    }
-
-    QString locale = settings->getTranslation();
-    // We need to init the resources in the translations_library explicitly.
-    // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
-    Q_INIT_RESOURCE(translations);
-    Translator::translate(locale);
-
-    // Process arguments
-    QCommandLineParser parser;
-    parser.setApplicationDescription("qTox, version: " + VersionInfo::gitVersion());
-    parser.addHelpOption();
-    parser.addVersionOption();
-    parser.addPositionalArgument("uri", tr("Tox URI to parse"));
-    parser.addOption(QCommandLineOption(QStringList() << "p"
-                                                      << "profile",
-                                        tr("Starts new instance and loads specified profile."),
-                                        tr("profile")));
-    parser.addOption(QCommandLineOption(QStringList() << "l"
-                                                      << "login",
-                                        tr("Starts new instance and opens the login screen.")));
-    parser.addOption(QCommandLineOption(QStringList() << "I"
-                                                      << "IPv6",
-                                        tr("Sets IPv6 <on>/<off>. Default is ON."), tr("on/off")));
-    parser.addOption(QCommandLineOption(QStringList() << "U"
-                                                      << "UDP",
-                                        tr("Sets UDP <on>/<off>. Default is ON."), tr("on/off")));
-    parser.addOption(
-        QCommandLineOption(QStringList() << "L"
-                                         << "LAN",
-                           tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
-                           tr("on/off")));
-    parser.addOption(QCommandLineOption(QStringList() << "P"
-                                                      << "proxy",
-                                        tr("Sets proxy settings. Default is NONE."),
-                                        tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
-    parser.process(*qapp);
-
     if (ipc->isAttached()) {
         connect(settings.get(), &Settings::currentProfileIdChanged, ipc.get(), &IPC::setProfileId);
     } else {
@@ -420,6 +360,97 @@ int AppManager::run()
     }
 
     connect(qapp.get(), &QApplication::aboutToQuit, this, &AppManager::cleanup);
+
+    return 0;
+}
+
+int AppManager::run()
+{
+#if defined(Q_OS_UNIX)
+    // PosixSignalNotifier is used only for terminating signals,
+    // so it's connected directly to quit() without any filtering.
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::activated, qapp.get(),
+            &QApplication::quit);
+    PosixSignalNotifier::watchCommonTerminatingSignals();
+#endif
+
+    qapp->setApplicationName("qTox");
+    qapp->setDesktopFileName("io.github.qtox.qTox");
+    qapp->setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
+                                    .arg(VersionInfo::gitDescribe())
+                                    .arg(VersionInfo::gitVersion())
+                                    .arg(UpdateCheck::isCurrentVersionStable()
+                                             ? QStringLiteral("stable")
+                                             : QStringLiteral("unstable")));
+
+    // Install Unicode 6.1 supporting font
+    // Keep this as close to the beginning of `main()` as possible, otherwise
+    // on systems that have poor support for Unicode qTox will look bad.
+    if (QFontDatabase::addApplicationFont("://font/DejaVuSans.ttf") == -1) {
+        qWarning() << "Couldn't load font";
+    }
+
+    QString locale = settings->getTranslation();
+    // We need to init the resources in the translations_library explicitly.
+    // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
+    Q_INIT_RESOURCE(translations);
+    Translator::translate(locale);
+
+    // Process arguments
+    QCommandLineParser parser;
+    parser.setApplicationDescription("qTox, version: " + VersionInfo::gitVersion());
+    parser.addHelpOption();
+    parser.addVersionOption();
+    parser.addPositionalArgument("uri", tr("Tox URI to parse"));
+    parser.addOption(QCommandLineOption(QStringList() << "p"
+                                                      << "profile",
+                                        tr("Starts new instance and loads specified profile."),
+                                        tr("profile")));
+    parser.addOption(QCommandLineOption(QStringList() << "l"
+                                                      << "login",
+                                        tr("Starts new instance and opens the login screen.")));
+    parser.addOption(QCommandLineOption(QStringList() << "I"
+                                                      << "IPv6",
+                                        tr("Sets IPv6 <on>/<off>. Default is ON."), tr("on/off")));
+    parser.addOption(QCommandLineOption(QStringList() << "U"
+                                                      << "UDP",
+                                        tr("Sets UDP <on>/<off>. Default is ON."), tr("on/off")));
+    parser.addOption(
+        QCommandLineOption(QStringList() << "L"
+                                         << "LAN",
+                           tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
+                           tr("on/off")));
+    parser.addOption(QCommandLineOption(QStringList() << "P"
+                                                      << "proxy",
+                                        tr("Sets proxy settings. Default is NONE."),
+                                        tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
+#ifdef UPDATE_CHECK_ENABLED
+    parser.addOption(
+        QCommandLineOption(QStringList() << "u"
+                                         << "update-check",
+                           tr("Checks whether this program is running the latest qTox version.")));
+#endif // UPDATE_CHECK_ENABLED
+    parser.process(*qapp);
+
+    // If update-check is requested, do it and exit.
+    if (parser.isSet("update-check")) {
+        UpdateCheck* updateCheck = new UpdateCheck(*settings, qapp.get());
+        updateCheck->checkForUpdate();
+        connect(updateCheck, &UpdateCheck::complete, this,
+                [this](QString currentVersion, QString latestVersion, QUrl link) {
+                    const QString message =
+                        QStringLiteral("Current version: %1\nLatest version: %2\n%3\n")
+                            .arg(currentVersion, latestVersion, link.toString());
+                    // Output to stdout.
+                    QTextStream(stdout) << message;
+                    qapp->quit();
+                });
+    } else {
+        const int result = startGui(parser);
+        if (result != 0) {
+            return result;
+        }
+    }
 
     return qapp->exec();
 }

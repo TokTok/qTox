@@ -645,6 +645,10 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

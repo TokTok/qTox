@@ -794,6 +794,11 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Profiel neet automatisch gelaoje.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Controleert of dit programma de meis recente qTox-versie gebruuk.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

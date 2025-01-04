@@ -650,6 +650,11 @@ o que pode levar a problemas com as videochamadas.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Falha ao carregar o perfil automaticamente.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Verifica se este programa está executando a versão mais recente do qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

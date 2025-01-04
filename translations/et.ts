@@ -650,6 +650,11 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Profiili automaatne laadimine ebaõnnestus.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kontrollib, kas see programm kasutab uusimat qToxi versiooni.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

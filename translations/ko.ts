@@ -707,6 +707,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">프로필을 자동으로 로드하지 못했습니다.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">이 프로그램이 최신 qTox 버전을 실행하고 있는지 확인합니다.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

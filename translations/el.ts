@@ -685,6 +685,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Η αυτόματη φόρτωση του προφίλ απέτυχε.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ελέγχει εάν αυτό το πρόγραμμα εκτελεί την πιο πρόσφατη έκδοση qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

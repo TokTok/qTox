@@ -677,6 +677,11 @@ o que pode provocar problemas coas videochamadas.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Erro ao cargar o perfil automaticamente.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Comproba se este programa está executando a última versión de qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

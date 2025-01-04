@@ -773,6 +773,11 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mistókst að hlaða prófíl sjálfkrafa.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Athugar hvort þetta forrit sé að keyra nýjustu qTox útgáfuna.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

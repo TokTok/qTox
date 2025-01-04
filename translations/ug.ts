@@ -686,6 +686,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ئارخىپنى ئاپتوماتىك يۈكلىيەلمىدى.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">بۇ پروگراممىنىڭ ئەڭ يېڭى qTox نەشرىنى ئىجرا قىلىۋاتقان-ئىشلىمەيدىغانلىقىنى تەكشۈرۈڭ.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

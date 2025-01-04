@@ -721,6 +721,11 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Profilen kunne ikke indlæses automatisk.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kontrollerer, om dette program kører den seneste qTox-version.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

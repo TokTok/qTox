@@ -709,6 +709,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">فشل في تحميل الملف الشخصي تلقائيا.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">يتحقق مما إذا كان هذا البرنامج يعمل بأحدث إصدار من qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -648,6 +648,11 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Kon profiel niet automatisch laden.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Controleert of dit programma de nieuwste qTox-versie gebruikt.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

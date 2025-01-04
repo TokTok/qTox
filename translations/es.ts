@@ -649,6 +649,11 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>No se pudo cargar el perfil automáticamente.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Comprueba si este programa está ejecutando la última versión de qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -676,6 +676,11 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation>بارگذاری خودکار نمایه موفق نبود.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">بررسی می کند که آیا این برنامه آخرین نسخه qTox را اجرا می کند یا خیر.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

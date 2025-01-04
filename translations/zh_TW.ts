@@ -727,6 +727,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">無法自動載入設定檔。</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">檢查該程式是否運行最新的 qTox 版本。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

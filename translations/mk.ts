@@ -686,6 +686,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не успеа автоматски да се вчита профилот.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Проверува дали оваа програма ја извршува најновата верзија qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

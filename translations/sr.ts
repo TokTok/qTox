@@ -678,6 +678,11 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation>Нисам успео да сам учитам профил.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Проверава да ли овај програм покреће најновију верзију кТок-а.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

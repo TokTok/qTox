@@ -647,6 +647,11 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation>无法自动加载配置文件。</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">检查该程序是否运行最新的 qTox 版本。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

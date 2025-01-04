@@ -767,6 +767,11 @@ which may lead to problems with video calls.</source>
         <source>Failed to load profile automatically.</source>
         <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵙⵙⵉⵡⴻⴹ ⴰⴼⴻⵔⴷⵉⵙ ⵙ ⵡⵓⴷⴻⵎ ⴰⵡⵓⵔⵎⴰⵏ.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵍⵉ ⵎⴰ ⵢⴻⵍⵍⴰ ⴰⵀⵉⵍⴰ ⵢⴻⵜⵜⴽⴻⵎⵎⵉⵍ ⵙ ⵜⴰⵍⵖⴰ ⵜⴰⵏⴻⴳⴳⴰⵔⵓⵜ ⵏ qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

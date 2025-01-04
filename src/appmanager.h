@@ -13,6 +13,7 @@ class MessageBoxManager;
 class Settings;
 class IPC;
 class QApplication;
+class QCommandLineParser;
 class ToxURIDialog;
 class Nexus;
 class CameraSource;
@@ -25,6 +26,9 @@ public:
     AppManager(int& argc, char** argv);
     ~AppManager();
     int run();
+
+private:
+    int startGui(QCommandLineParser& parser);
 
 private slots:
     void cleanup();

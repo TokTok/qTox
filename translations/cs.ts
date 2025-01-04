@@ -651,6 +651,11 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <source>Failed to load profile automatically.</source>
         <translation>Nepodařilo se automaticky načíst profil.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Zkontroluje, zda tento program používá nejnovější verzi qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

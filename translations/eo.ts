@@ -739,6 +739,11 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Malsukcesis aŭtomate ŝargi profilon.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kontrolas ĉu ĉi tiu programo funkcias la plej novan qTox-version.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

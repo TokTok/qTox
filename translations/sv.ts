@@ -652,6 +652,11 @@ vilket kan leda till problem med videosamtal.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Det gick inte att läsa in profilen automatiskt.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kontrollerar om det här programmet kör den senaste versionen av qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

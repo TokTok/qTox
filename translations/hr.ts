@@ -678,6 +678,11 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <source>Failed to load profile automatically.</source>
         <translation>Neuspjelo automatsko učitavanje profila.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Provjerava pokreće li ovaj program najnoviju verziju qTox-a.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -85,8 +85,9 @@ bool UpdateCheck::isCurrentVersionStable()
     return versionRegex.match(VersionInfo::gitDescribeExact()).hasMatch();
 }
 
-UpdateCheck::UpdateCheck(const Settings& settings_)
-    : settings(settings_)
+UpdateCheck::UpdateCheck(const Settings& settings_, QObject* parent)
+    : QObject(parent)
+    , settings(settings_)
 {
     qInfo() << "qTox is running version:" << VersionInfo::gitDescribe();
 #ifdef UPDATE_CHECK_ENABLED
@@ -101,12 +102,6 @@ void UpdateCheck::checkForUpdate()
 #ifdef UPDATE_CHECK_ENABLED
     if (!settings.getCheckUpdates()) {
         // still run the timer to check periodically incase setting changes
-        return;
-    }
-
-    if (!isCurrentVersionStable()) {
-        qWarning() << "Currently running an untested/unstable version of qTox";
-        emit versionIsUnstable();
         return;
     }
 
@@ -143,12 +138,20 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         return;
     }
 
+    const QUrl link{mainMap["html_url"].toString()};
+    emit complete(VersionInfo::gitDescribe(), latestVersion, link);
+
+    if (!isCurrentVersionStable()) {
+        qWarning() << "Currently running an untested/unstable version of qTox";
+        emit versionIsUnstable();
+        return;
+    }
+
     const auto currentVer = tagToVersion(VersionInfo::gitDescribe());
     const auto availableVer = tagToVersion(latestVersion);
 
     if (isUpdateAvailable(currentVer, availableVer)) {
         qInfo() << "Update available to version" << latestVersion;
-        const QUrl link{mainMap["html_url"].toString()};
         emit updateAvailable(latestVersion, link);
     } else {
         qInfo() << "qTox is up to date";

@@ -661,6 +661,11 @@ kas var radīt video zvanu problēmas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Neizdevās automātiski ielādēt profilu.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pārbauda, ​​vai šajā programmā darbojas jaunākā qTox versija.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

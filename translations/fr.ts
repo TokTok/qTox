@@ -650,6 +650,11 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Impossible de charger le profil automatiquement.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vérifie si ce programme exécute la dernière version de qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

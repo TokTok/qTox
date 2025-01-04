@@ -676,6 +676,11 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Profil automatikus betöltése sikertelen.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ellenőrzi, hogy ez a program a legújabb qTox verziót futtatja-e.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

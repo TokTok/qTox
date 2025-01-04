@@ -650,6 +650,11 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Profiilin automaattinen lataaminen epäonnistui.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tarkistaa, onko tässä ohjelmassa uusin qTox-versio.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

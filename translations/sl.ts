@@ -693,6 +693,11 @@ kar lahko povzroči težave z video klici.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Profila ni bilo mogoče samodejno naložiti.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Preveri, ali ta program izvaja najnovejšo različico qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

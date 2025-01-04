@@ -679,6 +679,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Не ўдалося аўтаматычна загрузіць профіль.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Правярае, ці працуе гэтая праграма з апошняй версіяй qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

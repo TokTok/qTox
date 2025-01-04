@@ -649,6 +649,11 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>Failed to load profile automatically.</source>
         <translation>Nu s-a putut încărca automat profilul.</translation>
     </message>
+    <message>
+        <source>Checks whether this program is running the latest qTox version.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Verifică dacă acest program rulează cea mai recentă versiune qTox.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
