@@ -48,7 +48,7 @@ bool checkIsValidId(const QString& id)
 
 AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
                              IMessageBoxManager& messageBoxManager_, Core& core_)
-    : ownId{ownId_}
+    : ownId{std::move(ownId_)}
     , settings{settings_}
     , style{style_}
     , messageBoxManager{messageBoxManager_}
