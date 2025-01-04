@@ -6,6 +6,7 @@
 
 #include "src/persistence/settings.h"
 #include "src/version.h"
+#include "util/laterdeleter.h"
 
 #include <QDebug>
 #include <QJsonDocument>
@@ -124,11 +125,12 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         return;
     }
 
+    const LaterDeleter replyDeleter(reply);
+
 #ifdef UPDATE_CHECK_ENABLED
     if (reply->error() != QNetworkReply::NoError) {
         qWarning() << "Failed to check for update:" << reply->error();
         emit updateCheckFailed();
-        reply->deleteLater();
         return;
     }
     const QByteArray result = reply->readAll();
@@ -139,7 +141,6 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
     if (latestVersion.isEmpty()) {
         qWarning() << "No tag name found in response:";
         emit updateCheckFailed();
-        reply->deleteLater();
         return;
     }
 
@@ -154,7 +155,5 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         qInfo() << "qTox is up to date";
         emit upToDate();
     }
-
-    reply->deleteLater();
 #endif
 }

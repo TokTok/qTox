@@ -28,6 +28,7 @@
 #include <functional>
 #include <memory>
 
+class QHostAddress;
 class CoreAV;
 class CoreFile;
 class IAudioControl;
@@ -220,6 +221,7 @@ private:
     void makeTox(QByteArray savedata, ICoreSettings* s);
     void loadFriends();
     void loadConferences();
+    void bootstrapTo(const DhtServer& dhtServer, const QHostAddress& address);
     void bootstrapDht();
 
     void checkLastOnline(uint32_t friendId);
