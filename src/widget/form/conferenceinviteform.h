@@ -7,6 +7,8 @@
 
 #include <QWidget>
 
+#include "src/core/conferencetype.h"
+
 class ContentLayout;
 class ConferenceInvite;
 class ConferenceInviteWidget;
@@ -35,7 +37,7 @@ public:
     bool isShown() const;
 
 signals:
-    void conferenceCreate(uint8_t type);
+    void conferenceCreate(ConferenceType type);
     void conferenceInviteAccepted(const ConferenceInvite& inviteInfo);
     void conferenceInvitesSeen();
 

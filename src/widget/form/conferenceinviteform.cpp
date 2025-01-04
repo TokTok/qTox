@@ -42,7 +42,7 @@ ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
 {
     QVBoxLayout* layout = new QVBoxLayout(this);
     connect(createButton, &QPushButton::clicked, this,
-            [this]() { emit conferenceCreate(TOX_CONFERENCE_TYPE_AV); });
+            [this]() { emit conferenceCreate(ConferenceType::AV); });
 
     QWidget* innerWidget = new QWidget(scroll);
     innerWidget->setLayout(new QVBoxLayout());

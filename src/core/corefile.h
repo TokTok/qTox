@@ -6,8 +6,6 @@
 
 #pragma once
 
-#include <tox/tox.h> // Tox_File_Control
-
 #include "toxfile.h"
 #include "src/core/toxpk.h"
 #include "src/model/status.h"
@@ -17,11 +15,15 @@
 #include <QObject>
 #include <QString>
 
-#include <cstddef>
 #include <cstdint>
 #include <memory>
 
 struct Tox;
+struct Tox_Event_File_Recv;
+struct Tox_Event_File_Recv_Control;
+struct Tox_Event_File_Chunk_Request;
+struct Tox_Event_File_Recv_Chunk;
+struct Tox_Dispatch;
 class Core;
 class CoreFile;
 
@@ -30,6 +32,8 @@ using CoreFilePtr = std::unique_ptr<CoreFile>;
 class CoreFile : public QObject
 {
     Q_OBJECT
+
+    friend class Core;
 
 public:
     void handleAvatarOffer(uint32_t friendId, uint32_t fileId, bool accept, uint64_t filesize);
@@ -70,16 +74,10 @@ private:
         return (static_cast<std::uint64_t>(friendId) << 32) + fileId;
     }
 
-    static void connectCallbacks(Tox& tox);
-    static void onFileReceiveCallback(Tox* tox, uint32_t friendId, uint32_t fileId, uint32_t kind,
-                                      uint64_t filesize, const uint8_t* fname, size_t fnameLen,
-                                      void* vCore);
-    static void onFileControlCallback(Tox* tox, uint32_t friendId, uint32_t fileId,
-                                      Tox_File_Control control, void* vCore);
-    static void onFileDataCallback(Tox* tox, uint32_t friendId, uint32_t fileId, uint64_t pos,
-                                   size_t length, void* vCore);
-    static void onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fileId, uint64_t position,
-                                        const uint8_t* data, size_t length, void* vCore);
+    static void onFileRecv(const Tox_Event_File_Recv* event, Core* core);
+    static void onFileRecvControl(const Tox_Event_File_Recv_Control* event, Core* core);
+    static void onFileChunkRequest(const Tox_Event_File_Chunk_Request* event, Core* core);
+    static void onFileRecvChunk(const Tox_Event_File_Recv_Chunk* event, Core* core);
 
     static QString getCleanFileName(QString filename);
 

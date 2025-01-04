@@ -299,6 +299,8 @@ set(${PROJECT_NAME}_SOURCES
     src/core/toxid.h
     src/core/conferenceid.cpp
     src/core/conferenceid.h
+    src/core/conferencetype.cpp
+    src/core/conferencetype.h
     src/core/toxlogger.cpp
     src/core/toxlogger.h
     src/core/toxoptions.cpp

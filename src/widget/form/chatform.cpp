@@ -46,6 +46,7 @@
 #include <QStringBuilder>
 
 #include <cassert>
+#include <tox/tox.h> // tox_max_message_length
 
 /**
  * @brief ChatForm::incomingNotification Notify that we are called by someone.

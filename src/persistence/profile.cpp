@@ -13,6 +13,7 @@
 
 #include <cassert>
 #include <sodium.h>
+#include <tox/tox.h> // tox_public_key_size
 
 #include "profile.h"
 #include "profilelocker.h"

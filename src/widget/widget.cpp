@@ -6,6 +6,7 @@
 #include "widget.h"
 
 #include <cassert>
+#include <tox/tox.h> // TOX_CONFERENCE_TYPE_TEXT
 
 #include <QActionGroup>
 #include <QClipboard>
@@ -1935,8 +1936,8 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
     const Friend* f = friendList->findFriend(friendPk);
     updateFriendActivity(*f);
 
-    const uint8_t confType = inviteInfo.getType();
-    if (confType == TOX_CONFERENCE_TYPE_TEXT || confType == TOX_CONFERENCE_TYPE_AV) {
+    const ConferenceType confType = inviteInfo.getType();
+    if (confType == ConferenceType::TEXT || confType == ConferenceType::AV) {
         if (settings.getAutoConferenceInvite(f->getPublicKey())) {
             onConferenceInviteAccepted(inviteInfo);
         } else {
@@ -1953,7 +1954,7 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
             }
         }
     } else {
-        qWarning() << "onConferenceInviteReceived: Unknown conference type:" << confType;
+        qWarning() << "onConferenceInviteReceived: Unknown conference type";
         return;
     }
 }
