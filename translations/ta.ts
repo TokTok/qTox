@@ -604,14 +604,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation type="unfinished">ஏதிலை</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>பிழைதேடு</translation>
     </message>
@@ -673,11 +665,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; ஐ அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ஆன்/ஆஃப்</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDPயை &lt;on&gt;/&lt;off&gt; அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
@@ -691,11 +678,6 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ப்ராக்ஸி அமைப்புகளை அமைக்கிறது. இயல்புநிலை இல்லை.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(முகவரி):(போர்ட்)</translation>
     </message>
     <message>
         <source>Error</source>

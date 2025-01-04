@@ -610,14 +610,6 @@ which may lead to problems with video calls.</source>
         <translation>لا شيئ</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>تصحيح الأخطاء</translation>
     </message>
@@ -676,11 +668,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">يضبط IPv6 على &lt;on&gt;/&lt;off&gt;. الافتراضي قيد التشغيل.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تشغيل/إيقاف</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">يضبط UDP على &lt;on&gt;/&lt;off&gt;. الافتراضي قيد التشغيل.</translation>
@@ -694,11 +681,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">يضبط إعدادات الوكيل. الافتراضي هو لا شيء.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(العنوان):(المنفذ)</translation>
     </message>
     <message>
         <source>Error</source>

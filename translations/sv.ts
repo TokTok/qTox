@@ -562,14 +562,6 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Ingen</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Felsök</translation>
     </message>
@@ -623,10 +615,6 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Ställer in IPv6 &lt;på&gt;/&lt;av&gt;. Standardvärdet är PÅ.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>på/av</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Ställer in UDP &lt;på&gt;/&lt;av&gt;. Standardvärdet är PÅ.</translation>
     </message>
@@ -638,11 +626,6 @@ vilket kan leda till problem med videosamtal.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ställer in proxyinställningar. Standard är INGEN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/INGEN):(ADRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

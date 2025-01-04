@@ -560,14 +560,6 @@ which may lead to problems with video calls.</source>
         <translation>无</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>调试</translation>
     </message>
@@ -620,10 +612,6 @@ which may lead to problems with video calls.</source>
         <translation>设置 IPv6 &lt;开&gt;/&lt;关&gt;。 默认为开。</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>开/关</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>设置 UDP &lt;开&gt;/&lt;关&gt;。 默认为开。</translation>
     </message>
@@ -634,10 +622,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>设置代理设置。默认值为 NONE。</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(地址):(端口)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -605,14 +605,6 @@ which may lead to problems with video calls.</source>
         <translation>없음</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>디버그</translation>
     </message>
@@ -674,11 +666,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6를 &lt;on&gt;/&lt;off&gt;로 설정합니다. 기본값은 켜짐입니다.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">온/오프</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP를 &lt;on&gt;/&lt;off&gt;로 설정합니다. 기본값은 켜짐입니다.</translation>
@@ -692,11 +679,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">프록시 설정을 설정합니다. 기본값은 없음입니다.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/없음):(주소):(포트)</translation>
     </message>
     <message>
         <source>Error</source>

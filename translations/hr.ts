@@ -582,14 +582,6 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translation>Nema</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Ispravljanje grešaka</translation>
     </message>
@@ -646,11 +638,6 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translation type="unfinished">Postavlja IPv6 &lt;on&gt;/&lt;off&gt;. Zadana postavka je UKLJUČENO.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">uključivanje/isključivanje</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja UDP &lt;on&gt;/&lt;off&gt;. Zadana postavka je UKLJUČENO.</translation>
@@ -664,11 +651,6 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Postavlja proxy postavke. Zadana postavka je NIJEDAN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NIJEDAN):(ADRESA):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

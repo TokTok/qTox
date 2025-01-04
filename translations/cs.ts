@@ -563,14 +563,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Žádný</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Ladění</translation>
     </message>
@@ -624,10 +616,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Nastavuje IPv6 &lt;povoleno&gt;/&lt;zakázáno&gt;. Výchozí je POVOLENO.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>povoleno/zakázáno</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Nastavuje UDP &lt;povoleno&gt;/&lt;zakázáno&gt;. Výchozí je POVOLENO.</translation>
     </message>
@@ -638,10 +626,6 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Nastavení proxy serveru. Výchozí je NONE (žádný).</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

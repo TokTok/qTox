@@ -677,16 +677,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ಯಾವುದೂ ಇಲ್ಲ</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸಾಕ್ಸ್ 5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಡೀಬಗ್ ಮಾಡಿ</translation>
@@ -751,11 +741,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; ಅನ್ನು ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆನ್ ಆಗಿದೆ.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಆನ್/ಆಫ್</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP ಅನ್ನು &lt;on&gt;/&lt;off&gt; ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಆನ್ ಆಗಿದೆ.</translation>
@@ -769,11 +754,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಪ್ರಾಕ್ಸಿ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಹೊಂದಿಸುತ್ತದೆ. ಡೀಫಾಲ್ಟ್ ಅಲ್ಲ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/ಇಲ್ಲ):(ವಿಳಾಸ):(ಪೋರ್ಟ್)</translation>
     </message>
     <message>
         <source>Error</source>

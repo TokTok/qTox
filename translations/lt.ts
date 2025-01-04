@@ -563,14 +563,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Joks</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Derinimas</translation>
     </message>
@@ -624,10 +616,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Nustato IPv6 &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>įjungta/išjungta</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Nustato UDP &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
     </message>
@@ -638,10 +626,6 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Nustato įgaliotojo serverio nustatymus. Numatytoji reikšmė yra NĖRA.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NĖRA):(ADRESAS):(PRIEVADAS)</translation>
     </message>
     <message>
         <source>Error</source>

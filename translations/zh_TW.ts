@@ -623,16 +623,6 @@ which may lead to problems with video calls.</source>
         <translation>無</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">襪子5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP協定</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>偵錯</translation>
     </message>
@@ -694,11 +684,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">設定 IPv6 &lt;開&gt;/&lt;關&gt;。預設為開。</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">開/關</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">設定 UDP &lt;開&gt;/&lt;關&gt;。預設為開。</translation>
@@ -712,11 +697,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">設定代理設定。預設值為“無”。</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/無):(位址):(連接埠)</translation>
     </message>
     <message>
         <source>Error</source>

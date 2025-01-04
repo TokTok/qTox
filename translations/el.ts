@@ -587,14 +587,6 @@ which may lead to problems with video calls.</source>
         <translation>Κανένα</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Εντοπισμός σφαλμάτων</translation>
     </message>
@@ -652,11 +644,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Ορίζει το IPv6 &lt;on&gt;/&lt;off&gt;. Η προεπιλογή είναι ΟΝ.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ενεργοποίηση/απενεργοποίηση</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ρυθμίζει το UDP &lt;on&gt;/&lt;off&gt;. Η προεπιλογή είναι ΟΝ.</translation>
@@ -670,11 +657,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ορίζει ρυθμίσεις διακομιστή μεσολάβησης. Η προεπιλογή είναι ΚΑΝΕΝΑ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/ΚΑΜΙΑ):(ΔΙΕΥΘΥΝΣΗ):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -675,16 +675,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translation type="unfinished">no da</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">soks5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">nuncfagau</translation>
@@ -745,11 +735,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translation type="unfinished">&lt;on&gt;/&lt;off&gt;. lo&apos;e fadni cu akti</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">na/akti</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">&lt;on&gt;/&lt;off&gt;. lo&apos;e fadni cu akti</translation>
@@ -763,11 +748,6 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">.i tercu&apos;e lo proxy selcu&apos;i la&apos;oi NONE. se cuntu</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

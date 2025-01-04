@@ -717,16 +717,6 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translation type="unfinished">Gein</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Reset to default settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Reset nao de standaardinstellinge</translation>
@@ -760,11 +750,6 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translation type="unfinished">Stel IPv6 &lt;aan&gt;/&lt;aaf&gt; in. Standaard is AAN.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">aan/aaf</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stelt UDP &lt;aan&gt;/&lt;aaf&gt; in. Standaard is AAN.</translation>
@@ -778,11 +763,6 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stelt proxy-instellinge in. Standaard is GEEN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ADRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

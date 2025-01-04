@@ -659,16 +659,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">کوئی نہیں۔</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ڈیبگ</translation>
@@ -733,11 +723,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; سیٹ کرتا ہے۔ ڈیفالٹ آن ہے۔</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آن/آف</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP سیٹ کرتا ہے &lt;on&gt;/&lt;off&gt;۔ ڈیفالٹ آن ہے۔</translation>
@@ -751,11 +736,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پراکسی سیٹنگز سیٹ کرتا ہے۔ ڈیفالٹ کوئی نہیں ہے۔</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ایڈریس):(پورٹ)</translation>
     </message>
     <message>
         <source>Error</source>

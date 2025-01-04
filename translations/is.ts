@@ -665,16 +665,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Engin</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOKKA 5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Villuleit</translation>
@@ -739,11 +729,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Stillir IPv6 &lt;on&gt;/&lt;off&gt;. Sjálfgefið er ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kveikja/slökkva</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stillir UDP &lt;on&gt;/&lt;off&gt;. Sjálfgefið er ON.</translation>
@@ -757,11 +742,6 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Stillir proxy stillingar. Sjálfgefið er NONE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/ENGIN):(Heimilisfang):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

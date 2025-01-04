@@ -562,14 +562,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Nici unul</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
@@ -622,10 +614,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translation>Setați IPv6 &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>pornit/oprit</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Setați UDP &lt;pornit&gt;/&lt;oprit&gt;. Implicit este PORNIT.</translation>
     </message>
@@ -636,10 +624,6 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Setează setările proxy. Valoarea implicită este NIMIC.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

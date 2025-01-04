@@ -636,14 +636,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translation>Neniu</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Malcimigi</translation>
     </message>
@@ -706,11 +698,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translation type="unfinished">Agordas IPv6 &lt;on&gt;/&lt;off&gt;. Defaŭlte estas ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">on/off</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Agordas UDP &lt;on&gt;/&lt;off&gt;. Defaŭlte estas ON.</translation>
@@ -724,11 +711,6 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Agordas prokurajn agordojn. Defaŭlte estas NONE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ADRESO):(HAVENO)</translation>
     </message>
     <message>
         <source>Error</source>

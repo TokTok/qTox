@@ -683,16 +683,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">කිසිවක් නැත</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">දෝෂහරණය කරන්න</translation>
@@ -757,11 +747,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; සකසයි. පෙරනිමිය ක්‍රියාත්මකයි.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">on/off</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP &lt;on&gt;/&lt;off&gt; සකසයි. පෙරනිමිය ක්‍රියාත්මකයි.</translation>
@@ -775,11 +760,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ප්‍රොක්සි සැකසුම් සකසයි. පෙරනිමිය NONE වේ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ලිපිනය):(වරාය)</translation>
     </message>
     <message>
         <source>Error</source>

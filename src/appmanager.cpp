@@ -239,28 +239,14 @@ int AppManager::run()
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
-    parser.addOption(QCommandLineOption(QStringList() << "p"
-                                                      << "profile",
-                                        tr("Starts new instance and loads specified profile."),
-                                        tr("profile")));
-    parser.addOption(QCommandLineOption(QStringList() << "l"
-                                                      << "login",
-                                        tr("Starts new instance and opens the login screen.")));
-    parser.addOption(QCommandLineOption(QStringList() << "I"
-                                                      << "IPv6",
-                                        tr("Sets IPv6 <on>/<off>. Default is ON."), tr("on/off")));
-    parser.addOption(QCommandLineOption(QStringList() << "U"
-                                                      << "UDP",
-                                        tr("Sets UDP <on>/<off>. Default is ON."), tr("on/off")));
-    parser.addOption(
-        QCommandLineOption(QStringList() << "L"
-                                         << "LAN",
-                           tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."),
-                           tr("on/off")));
-    parser.addOption(QCommandLineOption(QStringList() << "P"
-                                                      << "proxy",
-                                        tr("Sets proxy settings. Default is NONE."),
-                                        tr("(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)")));
+    parser.addOptions({
+        {{"p", "profile"}, tr("Starts new instance and loads specified profile."), tr("profile")},
+        {{"l", "login"}, tr("Starts new instance and opens the login screen.")},
+        {{"I", "ipv6"}, tr("Sets IPv6 <on>/<off>. Default is ON."), "on/off"},
+        {{"U", "udp"}, tr("Sets UDP <on>/<off>. Default is ON."), "on/off"},
+        {{"L", "lan"}, tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON."), "on/off"},
+        {{"P", "proxy"}, tr("Sets proxy settings. Default is NONE."), "(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)"},
+    });
     parser.process(*qapp);
 
     if (ipc->isAttached()) {

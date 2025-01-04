@@ -665,16 +665,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵓⵍⴰⵛ</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">TIQRAYSIYIN5.</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⴷⴻⴱⵓⴳ</translation>
@@ -735,11 +725,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ IPv6 &lt;ⵢⴻⵙⴱⴻⴷⴷ&gt;/&lt;ⵢⴻⵙⴱⴻⴷⴷ&gt;. ⴰⵎⴻⵏⵣⵓ ⴷ ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⴰⵙ/ⴰⵅⴷⴻⵎ</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ UDP &lt;ⴰⴷ ⴷⵢⴻⵙⴱⴻⴷⴷ&gt;/&lt;ⵢⴻⵙⴱⴻⴷⴷ&gt;. ⴰⵎⴻⵏⵣⵓ ⴷ ON.</translation>
@@ -753,11 +738,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ ⵉⵙⴻⵖⵡⴰⵏ ⵏ proxy. ⵜⴰⵎⴻⵥⵍⴰ ⴷ NONE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(TIKKAR5/HTTP/ULAC):(TANSA):(ASAL)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -588,14 +588,6 @@ which may lead to problems with video calls.</source>
         <translation>Празно</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Дебагирање</translation>
     </message>
@@ -653,11 +645,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Поставува IPv6 &lt;вклучено&gt;/&lt;исклучено&gt;. Стандардно е ВКЛУЧЕНО.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">вклучување/исклучување</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставува UDP &lt;вклучено&gt;/&lt;исклучено&gt;. Стандардно е ВКЛУЧЕНО.</translation>
@@ -671,11 +658,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставува поставки за прокси. Стандардно е НИКОЈ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(чорапи 5/HTTP/НИЕ): (АДРЕСА): (ПОРТАН)</translation>
     </message>
     <message>
         <source>Error</source>

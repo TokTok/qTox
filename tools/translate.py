@@ -76,6 +76,7 @@ _LANGUAGES: tuple[Language, ...] = (
     Language("kn"),
     Language("mk"),
     Language("nl"),
+    Language("nl_BE"),
     Language("li", lupdate_code="nl_LI"),
     Language("nb_NO"),
     Language("pl"),
@@ -89,6 +90,7 @@ _LANGUAGES: tuple[Language, ...] = (
     Language("sl"),
     Language("sq"),
     Language("sr"),
+    Language("sr_Latn"),
     Language("sv"),
     Language("sw"),
     Language("ta"),
@@ -102,7 +104,7 @@ _LANGUAGES: tuple[Language, ...] = (
 )
 
 _BAIDU_LANGUAGES = ("jbo", )
-_IGNORE_LANGUAGES = ("pr", )
+_IGNORE_LANGUAGES = ("pr", "nl_BE", "sr_Latn")
 
 LOCK = multiprocessing.Lock()
 

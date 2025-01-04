@@ -563,14 +563,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Žiadny</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Ladenie</translation>
     </message>
@@ -624,10 +616,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Nastaví IPv6 na &lt;zapnuté&gt;/&lt;vypnuté&gt;. Predvolená hodnota je zapnuté.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>zapnuté/vypnuté</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Nastaví UDP na &lt;zapnuté&gt;/&lt;vypnuté&gt;. Predvolená hodnota je zapnuté.</translation>
     </message>
@@ -638,10 +626,6 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Nastaví nastavenia proxy. Predvolená hodnota je žiadne.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/ŽIADNE):(ADRESA):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

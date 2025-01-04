@@ -580,14 +580,6 @@ which may lead to problems with video calls.</source>
         <translation>هیچکدام</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>خطایابی</translation>
     </message>
@@ -644,11 +636,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6 را &lt;روشن&gt;/&lt;خاموش&gt; تنظیم می کند. پیش فرض روشن است.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">روشن/خاموش</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP را &lt;روشن&gt;/&lt;خاموش&gt; تنظیم می کند. پیش فرض روشن است.</translation>
@@ -662,11 +649,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">تنظیمات پراکسی را تنظیم می کند. پیش فرض هیچ است.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(آدرس):(پورت)</translation>
     </message>
     <message>
         <source>Error</source>

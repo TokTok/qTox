@@ -561,14 +561,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Geen</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
@@ -621,10 +613,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Stelt IPv6 &lt;aan&gt;/&lt;uit&gt; in. Standaard is AAN.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>aan/uit</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Zet UDP &lt;aan&gt;/&lt;uit&gt;. Standaard is AAN.</translation>
     </message>
@@ -635,10 +623,6 @@ wat kan leiden tot problemen met videogesprekken.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Stelt proxy-instellingen in. Standaard is GEEN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/GEEN):(ADRES):(POORT)</translation>
     </message>
     <message>
         <source>Error</source>

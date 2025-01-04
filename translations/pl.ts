@@ -569,14 +569,6 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Brak</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
@@ -630,10 +622,6 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Ustawia IPv6 &lt;włączone&gt;/&lt;wyłączone&gt;. Domyślnie jest WŁĄCZONE.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>włącz/wyłącz</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Ustawia UDP &lt;włączone&gt;/&lt;wyłączone&gt;. Domyślnie jest WŁĄCZONE.</translation>
     </message>
@@ -644,10 +632,6 @@ co może powodować problemy z rozmowami wideo.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Określa ustawienia serwera proxy. Wartość domyślna to BRAK.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/BRAK):(ADRES):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

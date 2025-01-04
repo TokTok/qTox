@@ -582,14 +582,6 @@ which may lead to problems with video calls.</source>
         <translation>Адсутнічае</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Адладка</translation>
     </message>
@@ -646,11 +638,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Усталёўвае IPv6 &lt;уключана&gt;/&lt;выключана&gt;. Па змаўчанні ўключана.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">укл/выкл</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Усталёўвае UDP &lt;уключана&gt;/&lt;выключана&gt;. Па змаўчанні ўключана.</translation>
@@ -664,11 +651,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Задае налады проксі. Па змаўчанні - НЯМА.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/НЯМА):(АДРАС):(ПОРТ)</translation>
     </message>
     <message>
         <source>Error</source>

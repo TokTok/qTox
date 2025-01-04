@@ -561,14 +561,6 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation>Kein Proxy</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
@@ -621,10 +613,6 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation>Stellt IPv6 &lt;on&gt;/&lt;off&gt;. Standardmäßig auf ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>ein/aus</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Legt UDP-&lt;on&gt;/&lt;off&gt; fest. Der Standardwert ist ON.</translation>
     </message>
@@ -635,10 +623,6 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Legt Proxy-Einstellungen fest. Der Standardwert ist KEINE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/KEINE):(ADRESSE):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

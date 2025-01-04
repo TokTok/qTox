@@ -566,14 +566,6 @@ kas var radīt video zvanu problēmas.</translation>
         <translation>Nav</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Atkļūdošana</translation>
     </message>
@@ -628,11 +620,6 @@ kas var radīt video zvanu problēmas.</translation>
         <translation type="unfinished">Iestata IPv6 &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ieslēgts/izslēgts</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata UDP &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
@@ -646,11 +633,6 @@ kas var radīt video zvanu problēmas.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iestata starpniekservera iestatījumus. Noklusējums ir NEVIENS.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NEVIENS):(ADRESE):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

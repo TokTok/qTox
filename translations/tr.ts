@@ -564,14 +564,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Yok</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Hata Ayıklama</translation>
     </message>
@@ -625,10 +617,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>IPv6&apos;yı &lt;açık&gt;/&lt;kapalı&gt; olarak ayarlar. Öntanımlı olarak AÇIK&apos;tır.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>açık/kapalı</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>UDP&apos;yi &lt;açık&gt;/&lt;kapalı&gt; olarak ayarlar. Öntanımlı olarak AÇIK&apos;tır.</translation>
     </message>
@@ -639,10 +627,6 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Vekil ayarlarını belirler. Öntanımlı olarak YOK&apos;tur.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/YOK):(ADRES):(BAĞLANTI NOKTASI)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -562,14 +562,6 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Määramata</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Veaotsing</translation>
     </message>
@@ -623,10 +615,6 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Saad IPv6 võrguprotokolli kasutamise &lt;sisse&gt;/&lt;välja&gt; lülitada. Vaikimisi on ta kasutusel.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>sisse/välja</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Saad UPD võrguprotokolli kasutamise &lt;sisse&gt;/&lt;välja&gt; lülitada. Vaikimisi on ta kasutusel.</translation>
     </message>
@@ -637,10 +625,6 @@ mis võib põhjustada probleeme videokõnedega.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Saad seadistada puhverserveri kasutamise. Vaikimisi on puhverserver seadistamata.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(aadress):(port)</translation>
     </message>
     <message>
         <source>Error</source>

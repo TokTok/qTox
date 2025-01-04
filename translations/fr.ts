@@ -562,14 +562,6 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <translation>Aucun(e)</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Déboguer</translation>
     </message>
@@ -623,10 +615,6 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <translation>Définit IPv6 &lt;on&gt;/&lt;off&gt;. La valeur par défaut est ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>marche/arrêt</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Définit UDP &lt;on&gt;/&lt;off&gt;. La valeur par défaut est ON.</translation>
     </message>
@@ -637,10 +625,6 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Définit les paramètres du proxy. La valeur par défaut est AUCUN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(ADRESSE):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

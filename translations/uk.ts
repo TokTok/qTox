@@ -562,14 +562,6 @@ which may lead to problems with video calls.</source>
         <translation>Немає</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Відладка</translation>
     </message>
@@ -622,10 +614,6 @@ which may lead to problems with video calls.</source>
         <translation>Встановлює IPv6 &lt;увімкнено&gt;/&lt;вимкнено&gt;. За замовчуванням УВІМКНЕНО.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>увімкнено/вимкнено</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Встановлює UDP &lt;увімкнено&gt;/&lt;вимкнено&gt;. За замовчуванням УВІМКНЕНО.</translation>
     </message>
@@ -636,10 +624,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Встановлює налаштування проксі-сервера. За замовчуванням НЕМАЄ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/НЕМАЄ):(АДРЕС):(ПОРТ)</translation>
     </message>
     <message>
         <source>Error</source>

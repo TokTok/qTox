@@ -557,14 +557,6 @@ which may lead to problems with video calls.</source>
         <translation>Geen</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation></translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation></translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation></translation>
     </message>
@@ -617,10 +609,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -630,10 +618,6 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

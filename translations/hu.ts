@@ -580,14 +580,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Nincs</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Hibakeresés</translation>
     </message>
@@ -644,11 +636,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation type="unfinished">Az IPv6 &lt;be&gt;/&lt;ki&gt; beállítása. Az alapértelmezés BE.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">be/ki</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Az UDP &lt;be&gt;/&lt;ki&gt; beállítása. Az alapértelmezés BE.</translation>
@@ -662,11 +649,6 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Megadja a proxy beállításait. Az alapértelmezés NINCS.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NINCS):(CÍM):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

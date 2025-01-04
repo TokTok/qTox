@@ -562,14 +562,6 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Depurar</translation>
     </message>
@@ -622,10 +614,6 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translation>Establece IPv6 &lt;on&gt;/&lt;off&gt;. El valor predeterminado es ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>encendido/apagado</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Establece UDP &lt;on&gt;/&lt;off&gt;. Por defecto es ON.</translation>
     </message>
@@ -636,10 +624,6 @@ lo que puede provocar problemas en las videollamadas.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Establece la configuración del proxy. Por defecto es NINGUNO.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/ NINGUNO):(DIRECCIÓN):(PUERTA)</translation>
     </message>
     <message>
         <source>Error</source>

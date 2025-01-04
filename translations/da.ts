@@ -614,16 +614,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Ingen</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOKKER5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Debug</translation>
@@ -688,11 +678,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Indstiller IPv6 &lt;on&gt;/&lt;off&gt;. Standard er ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">tænd/sluk</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Indstiller UDP &lt;on&gt;/&lt;off&gt;. Standard er ON.</translation>
@@ -706,11 +691,6 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Indstiller proxyindstillinger. Standard er INGEN.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/INGEN):(ADRESSE):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

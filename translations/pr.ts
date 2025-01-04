@@ -561,16 +561,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">Nary a one</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation type="unfinished">Squash th&apos; bugs</translation>
     </message>
@@ -623,10 +613,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation type="unfinished">hoist/lower</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation type="unfinished">Sets UDP &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
     </message>
@@ -637,10 +623,6 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation type="unfinished">Sets proxy settings. Default be NONE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

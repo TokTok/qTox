@@ -582,14 +582,6 @@ which may lead to problems with video calls.</source>
         <translation>Ништа</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Прочишћавање</translation>
     </message>
@@ -646,11 +638,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Поставља ИПв6 &lt;укључено&gt;/&lt;искључено&gt;. Подразумевано је УКЉУЧЕНО.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">он/офф</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Поставља УДП &lt;он&gt;/&lt;офф&gt;. Подразумевано је УКЉУЧЕНО.</translation>
@@ -664,11 +651,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Подешава подешавања проксија. Подразумевано је НОНЕ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(СОЦКС5/ХТТП/НЕМА):(АДРЕСА):(ПОРТ)</translation>
     </message>
     <message>
         <source>Error</source>

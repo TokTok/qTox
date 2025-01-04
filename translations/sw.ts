@@ -685,16 +685,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Hakuna</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOKSI5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tatua</translation>
@@ -759,11 +749,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Inaweka IPv6 &lt;on&gt;/&lt;off&gt;. Chaguomsingi IMEWASHWA.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">imewashwa/kuzima</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inaweka UDP &lt;on&gt;/&lt;off&gt;. Chaguomsingi IMEWASHWA.</translation>
@@ -777,11 +762,6 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inaweka mipangilio ya seva mbadala. Chaguomsingi ni HAKUNA.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/HAKUNA):(ANWANI):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -594,14 +594,6 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Brez</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Razhroščevanje</translation>
     </message>
@@ -660,11 +652,6 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Nastavi IPv6 &lt;on&gt;/&lt;off&gt;. Privzeto je VKLOPLJENO.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">vklop/izklop</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nastavi UDP &lt;on&gt;/&lt;off&gt;. Privzeto je VKLOPLJENO.</translation>
@@ -678,11 +665,6 @@ kar lahko povzroči težave z video klici.</translation>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nastavi nastavitve proxyja. Privzeto je NIČ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NI):(NASLOV):(VRTA)</translation>
     </message>
     <message>
         <source>Error</source>

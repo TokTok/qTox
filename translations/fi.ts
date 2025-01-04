@@ -562,14 +562,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translation>Ei mitään</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Virheenpoisto</translation>
     </message>
@@ -623,10 +615,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translation>Kytke IPv6 &lt;päälle&gt;/&lt;pois&gt;. IPv6 on oletuksenä PÄÄLLÄ.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>päällä/pois</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Kytke UDP &lt;päällä&gt;/&lt;pois&gt;. Oletukena PÄÄLLÄ.</translation>
     </message>
@@ -637,10 +625,6 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Aseta proxy-asetukset. Oletaksena proxy ei ole käytössä.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE:(osoite):(portti)</translation>
     </message>
     <message>
         <source>Error</source>

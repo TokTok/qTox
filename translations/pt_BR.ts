@@ -562,14 +562,6 @@ o que pode levar a problemas com as videochamadas.</translation>
         <translation>Nenhum</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Depurar</translation>
     </message>
@@ -623,10 +615,6 @@ o que pode levar a problemas com as videochamadas.</translation>
         <translation>Define IPv6 &lt;ativado&gt;/&lt;desativado&gt;. O padrão é ATIVADO.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>ligado/desligado</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Define UDP &lt;ativado&gt;/&lt;desativado&gt;. O padrão é ATIVADO.</translation>
     </message>
@@ -637,10 +625,6 @@ o que pode levar a problemas com as videochamadas.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Define as configurações de proxy. O padrão é NENHUM.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NENHUM):(ENDEREÇO):(PORTA)</translation>
     </message>
     <message>
         <source>Error</source>

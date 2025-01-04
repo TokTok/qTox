@@ -589,14 +589,6 @@ which may lead to problems with video calls.</source>
         <translation>なし</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>デバッグ</translation>
     </message>
@@ -654,11 +646,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6の&lt;on&gt;/&lt;off&gt;を設定します。デフォルトはオンです。</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">オン/オフ</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP &lt;オン&gt;/&lt;オフ&gt;を設定します。デフォルトはオンです。</translation>
@@ -672,11 +659,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">プロキシ設定を行います。デフォルトは「なし」です。</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(アドレス):(ポート)</translation>
     </message>
     <message>
         <source>Error</source>

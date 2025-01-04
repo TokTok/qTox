@@ -680,16 +680,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">কোনোটিই নয়</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ডিবাগ</translation>
@@ -754,11 +744,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; সেট করে। ডিফল্ট চালু আছে।</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">চালু/বন্ধ</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">UDP সেট করে &lt;on&gt;/&lt;off&gt;। ডিফল্ট চালু আছে।</translation>
@@ -772,11 +757,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">প্রক্সি সেটিংস সেট করে। ডিফল্ট নেই.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(ঠিকানা):(পোর্ট)</translation>
     </message>
     <message>
         <source>Error</source>

@@ -561,14 +561,6 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Không</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>Giao thức SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Gỡ lỗi</translation>
     </message>
@@ -622,10 +614,6 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Đặt IPv6 &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>bật/tắt</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Đặt UDP &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
     </message>
@@ -636,10 +624,6 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Đặt cài đặt proxy. Mặc định là KHÔNG.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</translation>
     </message>
     <message>
         <source>Error</source>

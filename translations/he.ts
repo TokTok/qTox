@@ -664,16 +664,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ללא</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">לְנַפּוֹת</translation>
@@ -738,11 +728,6 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">מגדיר את IPv6 &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הפעלה/כיבוי</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר את UDP &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
@@ -756,11 +741,6 @@ which may lead to problems with video calls.</source>
         <source>Sets proxy settings. Default is NONE.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מגדיר הגדרות פרוקסי. ברירת המחדל היא NONE.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">(SOCKS5/HTTP/NONE):(כתובת):(פורט)</translation>
     </message>
     <message>
         <source>Error</source>

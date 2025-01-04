@@ -563,14 +563,6 @@ which may lead to problems with video calls.</source>
         <translation>Отсутствует</translation>
     </message>
     <message>
-        <source>SOCKS5</source>
-        <translation>SOCKS5</translation>
-    </message>
-    <message>
-        <source>HTTP</source>
-        <translation>HTTP</translation>
-    </message>
-    <message>
         <source>Debug</source>
         <translation>Отладка</translation>
     </message>
@@ -623,10 +615,6 @@ which may lead to problems with video calls.</source>
         <translation>Устанавливает IPv6 &lt;включённым&gt;/&lt;выключенным&gt;. По стандарту он ВКЛЮЧЁН.</translation>
     </message>
     <message>
-        <source>on/off</source>
-        <translation>включено/выключено</translation>
-    </message>
-    <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <translation>Устанавливает UDP &lt;включённым&gt;/&lt;выключенным&gt;. По стандарту он ВКЛЮЧЁН.</translation>
     </message>
@@ -637,10 +625,6 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
         <translation>Устанавливает настройки прокси-сервера. По стандарту они ОТСУТСТВУЮТ.</translation>
-    </message>
-    <message>
-        <source>(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)</source>
-        <translation>(SOCKS5/HTTP/ОТСУТСТВУЕТ):(АДРЕС):(ПОРТ)</translation>
     </message>
     <message>
         <source>Error</source>

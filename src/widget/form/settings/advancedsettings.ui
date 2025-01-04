@@ -203,12 +203,12 @@
               </item>
               <item>
                <property name="text">
-                <string>SOCKS5</string>
+                <string notr="true">SOCKS5</string>
                </property>
               </item>
               <item>
                <property name="text">
-                <string>HTTP</string>
+                <string notr="true">HTTP</string>
                </property>
               </item>
              </widget>
