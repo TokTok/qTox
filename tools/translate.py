@@ -31,6 +31,11 @@ class Language:
     # only when running lupdate. Afterwards, we will replace it with the
     # weblate_code.
     lupdate_code: str
+    # Source language (if it's not English).
+    # This is useful iff Google Translate has a better direct translation
+    # from this language to the target language. Often, translation will go
+    # from source to English to target, which is usually worse.
+    source_code: Optional[str]
 
     def __init__(
         self,
@@ -38,11 +43,13 @@ class Language:
         baidu_code: Optional[str] = None,
         google_code: Optional[str] = None,
         lupdate_code: Optional[str] = None,
+        source_code: Optional[str] = None,
     ):
         self.weblate_code = weblate_code
         self.baidu_code = baidu_code or weblate_code
         self.google_code = google_code or weblate_code
         self.lupdate_code = lupdate_code or weblate_code
+        self.source_code = source_code
 
 
 _LANGUAGES: tuple[Language, ...] = (
@@ -70,6 +77,7 @@ _LANGUAGES: tuple[Language, ...] = (
     Language("hu"),
     Language("is"),
     Language("it"),
+    Language("li", lupdate_code="nl_LI"),
     Language("lt"),
     Language("lv"),
     Language("ko"),
@@ -77,7 +85,6 @@ _LANGUAGES: tuple[Language, ...] = (
     Language("mk"),
     Language("nl"),
     Language("nl_BE"),
-    Language("li", lupdate_code="nl_LI"),
     Language("nb_NO"),
     Language("pl"),
     Language("pr"),
@@ -271,7 +278,7 @@ def _translate(lang: Language, current: int, total: int, text: str) -> str:
         "https://translate.googleapis.com/translate_a/single",
         params={
             "client": "gtx",
-            "sl": "en",
+            "sl": lang.source_code or "en",
             "tl": lang.google_code,
             "dt": "t",
             "q": text,
@@ -355,7 +362,29 @@ class TemporaryLanguageCode:
             f.write(data)
 
 
+def _load_source_language(lang: Optional[str]) -> dict[str, str]:
+    if not lang:
+        return {}
+    with open(f"translations/{lang}.ts", "r") as f:
+        dom = minidom.parse(f)  # nosec
+    source_map: dict[str, str] = {}
+    for context in dom.getElementsByTagName("context"):
+        for message in context.getElementsByTagName("message"):
+            source = message.getElementsByTagName("source")[0].firstChild
+            if not isinstance(source, minidom.Text):
+                continue
+            translated = message.getElementsByTagName(
+                "translation")[0].firstChild
+            if not translated:
+                continue
+            if isinstance(translated,
+                          minidom.Text) and translated.data.strip() != "":
+                source_map[source.data] = translated.data
+    return source_map
+
+
 def _translate_todo_list(
+    source_map: dict[str, str],
     lang: Language,
     todo: list[tuple[str, minidom.Node, minidom.Element]],
     file: str,
@@ -366,7 +395,8 @@ def _translate_todo_list(
         with open(file, "w") as f:
             dom.writexml(f)
         for i, (source, translation, message) in enumerate(todo):
-            translated = _translate(lang, i, len(todo), source)
+            translated = _translate(lang, i, len(todo),
+                                    source_map.get(source, source))
             if not translated:
                 continue
             # Clear the translation node of any existing text.
@@ -376,9 +406,6 @@ def _translate_todo_list(
             # Add a <translatorcomment> node to the message to indicate
             # that the translation was automated.
             if not message.getElementsByTagName("translatorcomment"):
-                # Skip messages with translator comments. These are
-                # probably not meant to be translated.
-                # continue
                 comment = dom.createElement("translatorcomment")
                 comment.appendChild(dom.createTextNode(_AUTOMATED_TRANSLATION))
                 message.appendChild(comment)
@@ -409,7 +436,8 @@ def _translate_todo_list(
             )
 
 
-def _translate_ts_file(lang: Language, file: str) -> None:
+def _translate_ts_file(source_map: dict[str, str], lang: Language,
+                       file: str) -> None:
     """Fill in the untranslated translations in a .ts file.
 
     Doesn't touch anything other than completely empty translations. Empty
@@ -434,17 +462,29 @@ def _translate_ts_file(lang: Language, file: str) -> None:
             if not translation:
                 continue
             todo.append((source.data, translation[0], message))
-    _translate_todo_list(lang, todo, file, dom)
+    _translate_todo_list(source_map, lang, todo, file, dom)
 
 
-def _translate_language(lang: Language) -> None:
+def _translate_language(source_map: dict[str, str], lang: Language) -> None:
     """Translate the strings in the .ts files for a given language."""
-    _translate_ts_file(lang, f"translations/{lang.weblate_code}.ts")
+    _translate_ts_file(source_map, lang,
+                       f"translations/{lang.weblate_code}.ts")
 
 
 def main() -> None:
+    """Translate the strings in the .ts files for all languages."""
+    source_map: dict[Optional[str], dict[str, str]] = {}
+    for lang in _LANGUAGES:
+        if lang.source_code:
+            source_map[lang.source_code] = _load_source_language(
+                lang.source_code)
+
     with multiprocessing.Pool() as pool:
-        pool.map(_translate_language, _LANGUAGES)
+        pool.starmap(
+            _translate_language,
+            ((source_map.get(lang.source_code, {}), lang)
+             for lang in _LANGUAGES),
+        )
     _progress_done("Translation done.")
 
 
