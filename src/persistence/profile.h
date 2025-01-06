@@ -65,6 +65,7 @@ public:
 
     static const QStringList getAllProfileNames(Paths& paths);
 
+    static QString getProfilePath(const QString& name, const Paths& paths);
     static bool exists(QString name, Paths& paths);
     static bool isEncrypted(QString name, Paths& paths);
     static QString getDbPath(const QString& profileName, Paths& paths);

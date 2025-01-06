@@ -637,6 +637,11 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Controleert of dit programma de nieuwste qTox-versie gebruikt.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Start in draagbare modus; laadt profiel uit deze map.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

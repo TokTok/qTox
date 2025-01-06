@@ -636,6 +636,10 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <source>Checks whether this program is running the latest qTox version.</source>
         <translation>Checks if this here ship be runnin&apos; the freshest qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translation>Starts in stowaway mode; loads yer face from this here hold.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

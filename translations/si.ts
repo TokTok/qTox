@@ -776,6 +776,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මෙම වැඩසටහන නවතම qTox අනුවාදය ධාවනය කරන්නේ දැයි පරීක්ෂා කරයි.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">අතේ ගෙන යා හැකි ආකාරයෙන් ආරම්භ වේ; මෙම නාමාවලියෙන් පැතිකඩ පූරණය කරයි.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

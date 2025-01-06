@@ -648,6 +648,11 @@ kas var radīt video zvanu problēmas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pārbauda, ​​vai šajā programmā darbojas jaunākā qTox versija.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sākas portatīvajā režīmā; ielādē profilu no šī direktorija.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

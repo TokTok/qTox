@@ -762,6 +762,11 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko jundi lo du&apos;u xu le sampla ca&apos;o bajra le cnino qTox moi</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">cfari lo ka se bevri sazycimdytcini; cfari kibycpa lo nu samterci&apos;e lo vi karce</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

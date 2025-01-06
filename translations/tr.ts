@@ -641,6 +641,11 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bu programın en son qTox sürümünü çalıştırıp çalıştırmadığını kontrol eder.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Taşınabilir modda başlar; profili bu dizinden yükler.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

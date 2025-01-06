@@ -12,15 +12,12 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
+#include "src/platform/posixsignalnotifier.h"
 #include "src/version.h"
 #include "src/video/camerasource.h"
 #include "src/widget/tool/messageboxmanager.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
-
-#if defined(Q_OS_UNIX)
-#include "src/platform/posixsignalnotifier.h"
-#endif
 
 #include <QApplication>
 #include <QCommandLineParser>
@@ -253,7 +250,8 @@ int AppManager::startGui(QCommandLineParser& parser)
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
     qapp->addLibraryPath("platforms");
 
-    qDebug() << "commit:" << VersionInfo::gitVersion();
+    qDebug() << "Commit:" << VersionInfo::gitVersion();
+    qDebug() << "Process ID:" << QCoreApplication::applicationPid();
 
     QString profileName;
     bool autoLogin = settings->getAutoLogin();
@@ -366,13 +364,19 @@ int AppManager::startGui(QCommandLineParser& parser)
 
 int AppManager::run()
 {
-#if defined(Q_OS_UNIX)
-    // PosixSignalNotifier is used only for terminating signals,
-    // so it's connected directly to quit() without any filtering.
-    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::activated, qapp.get(),
-            &QApplication::quit);
+    // Terminating signals are connected directly to quit() without any filtering.
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::terminatingSignal,
+            qapp.get(), &QApplication::quit);
     PosixSignalNotifier::watchCommonTerminatingSignals();
-#endif
+
+    // User signal 1 is used to screenshot the application.
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::usrSignal, qapp.get(),
+            [this](PosixSignalNotifier::UserSignal signal) {
+                if (signal == PosixSignalNotifier::UserSignal::Screenshot) {
+                    nexus->screenshot();
+                }
+            });
+    PosixSignalNotifier::watchUsrSignals();
 
     qapp->setApplicationName("qTox");
     qapp->setDesktopFileName("io.github.qtox.qTox");
@@ -404,6 +408,7 @@ int AppManager::run()
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
     parser.addOptions({
         {{"p", "profile"}, tr("Starts new instance and loads specified profile."), tr("profile")},
+        {{"D", "portable"}, tr("Starts in portable mode; loads profile from this directory."), "dir"},
         {{"l", "login"}, tr("Starts new instance and opens the login screen.")},
         {{"I", "ipv6"}, tr("Sets IPv6 <on>/<off>. Default is ON."), "on/off"},
         {{"U", "udp"}, tr("Sets UDP <on>/<off>. Default is ON."), "on/off"},
@@ -415,13 +420,21 @@ int AppManager::run()
     });
     parser.process(*qapp);
 
+    if (parser.isSet("portable")) {
+        // We don't go through settings here, because we're not making qTox
+        // portable (which moves files around). Instead, we start up in
+        // portable mode as a one-off.
+        settings->getPaths().setPortable(true);
+        settings->getPaths().setPortablePath(parser.value("portable"));
+    }
+
     // If update-check is requested, do it and exit.
     if (parser.isSet("update-check")) {
         UpdateCheck* updateCheck = new UpdateCheck(*settings, qapp.get());
         updateCheck->checkForUpdate();
         connect(updateCheck, &UpdateCheck::updateCheckFailed, qapp.get(), &QApplication::quit);
         connect(updateCheck, &UpdateCheck::complete, this,
-                [this](QString currentVersion, QString latestVersion, QUrl link) {
+                [this](QString currentVersion, QString latestVersion, const QUrl& link) {
                     const QString message =
                         QStringLiteral("Current version: %1\nLatest version: %2\n%3\n")
                             .arg(currentVersion, latestVersion, link.toString());

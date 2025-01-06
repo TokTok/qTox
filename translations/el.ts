@@ -672,6 +672,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ελέγχει εάν αυτό το πρόγραμμα εκτελεί την πιο πρόσφατη έκδοση qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ξεκινά σε φορητή λειτουργία. φορτώνει το προφίλ από αυτόν τον κατάλογο.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

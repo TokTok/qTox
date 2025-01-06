@@ -712,6 +712,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">檢查該程式是否運行最新的 qTox 版本。</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">以便攜模式啟動；從此目錄載入設定檔。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

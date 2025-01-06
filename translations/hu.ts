@@ -663,6 +663,11 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ellenőrzi, hogy ez a program a legújabb qTox verziót futtatja-e.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hordozható módban indul; betölti a profilt ebből a könyvtárból.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -640,6 +640,11 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Patikrina, ar šioje programoje veikia naujausia qTox versija.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Paleidžiamas nešiojamuoju režimu; įkelia profilį iš šio katalogo.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

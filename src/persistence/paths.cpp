@@ -139,6 +139,17 @@ bool Paths::isPortable() const
     return portable;
 }
 
+/**
+ * @brief Set a path to override the profile path.
+ * @param path The path to use.
+ *
+ * TODO(iphydf): Get rid of this when we're TCS-compliant.
+ */
+void Paths::setPortablePath(const QString& path)
+{
+    overridePath = path;
+}
+
 #if PATHS_VERSION_TCS_COMPLIANT
 /**
  * @brief Returns the path to the global settings file "qtox.ini"
@@ -273,8 +284,16 @@ QStringList Paths::getThemeDirs() const
  */
 QString Paths::getSettingsDirPath() const
 {
-    if (portable)
+    if (!overridePath.isEmpty()) {
+        if (overridePath.endsWith(QDir::separator())) {
+            return overridePath;
+        }
+        return overridePath + QDir::separator();
+    }
+
+    if (portable) {
         return qApp->applicationDirPath() + QDir::separator();
+    }
 
 // workaround for https://bugreports.qt-project.org/browse/QTBUG-38845
 #ifdef Q_OS_WIN

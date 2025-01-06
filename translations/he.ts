@@ -757,6 +757,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">בודק אם תוכנית זו מפעילה את הגרסה העדכנית ביותר של qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">מתחיל במצב נייד; טוען פרופיל מהספרייה הזו.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

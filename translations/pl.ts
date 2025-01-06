@@ -646,6 +646,11 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sprawdza, czy na tym programie działa najnowsza wersja qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Uruchamia się w trybie przenośnym; ładuje profil z tego katalogu.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

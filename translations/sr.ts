@@ -665,6 +665,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Проверава да ли овај програм покреће најновију верзију кТок-а.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Покреће се у преносивом режиму; учитава профил из овог директоријума.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

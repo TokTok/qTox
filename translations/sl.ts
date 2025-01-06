@@ -680,6 +680,11 @@ kar lahko povzroči težave z video klici.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Preveri, ali ta program izvaja najnovejšo različico qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Zažene se v prenosnem načinu; naloži profil iz tega imenika.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

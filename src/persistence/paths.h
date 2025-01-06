@@ -25,6 +25,9 @@ public:
 
     bool setPortable(bool portable);
     bool isPortable() const;
+
+    void setPortablePath(const QString& path);
+
 #if PATHS_VERSION_TCS_COMPLIANT
     QString getGlobalSettingsPath() const;
     QString getProfilesDir() const;
@@ -45,5 +48,6 @@ public:
 
 private:
     QString basePath;
+    QString overridePath;
     std::atomic_bool portable{false};
 };

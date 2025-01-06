@@ -7,7 +7,6 @@
 
 #include <QObject>
 
-#ifndef Q_OS_WIN
 class QSocketNotifier;
 
 class PosixSignalNotifier : public QObject
@@ -15,16 +14,28 @@ class PosixSignalNotifier : public QObject
     Q_OBJECT
 
 public:
+    enum class UserSignal
+    {
+        Invalid = 0,
+        Screenshot,
+        Unused,
+    };
+    Q_ENUM(UserSignal)
+
     ~PosixSignalNotifier();
 
     static void watchSignal(int signum);
     static void watchSignals(std::initializer_list<int> signalSet);
     static void watchCommonTerminatingSignals();
+    static void watchUsrSignals();
+
+    static void unwatchSignal(int signum);
 
     static PosixSignalNotifier& globalInstance();
 
 signals:
-    void activated(int signal);
+    void terminatingSignal(int signal);
+    void usrSignal(UserSignal signal);
 
 private slots:
     void onSignalReceived();
@@ -35,4 +46,3 @@ private:
 private:
     QSocketNotifier* notifier{nullptr};
 };
-#endif

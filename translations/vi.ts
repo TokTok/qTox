@@ -638,6 +638,11 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kiểm tra xem chương trình này có đang chạy phiên bản qTox mới nhất hay không.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Bắt đầu ở chế độ di động; tải hồ sơ từ thư mục này.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

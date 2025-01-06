@@ -674,6 +674,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">このプログラムが最新の qTox バージョンを実行しているかどうかを確認します。</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ポータブル モードで起動します。このディレクトリからプロファイルをロードします。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

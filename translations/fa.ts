@@ -663,6 +663,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">بررسی می کند که آیا این برنامه آخرین نسخه qTox را اجرا می کند یا خیر.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">در حالت قابل حمل شروع می شود. نمایه را از این دایرکتوری بارگیری می کند.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

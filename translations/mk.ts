@@ -673,6 +673,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Проверува дали оваа програма ја извршува најновата верзија qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Започнува во пренослив режим; го вчитува профилот од овој директориум.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

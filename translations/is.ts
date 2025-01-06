@@ -758,6 +758,11 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Athugar hvort þetta forrit sé að keyra nýjustu qTox útgáfuna.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Byrjar í flytjanlegum ham; hleður prófíl úr þessari möppu.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -50,6 +50,9 @@ void signalHandler(int signum)
     g_signalSocketUsageFlag.clear();
 }
 
+constexpr std::initializer_list<int> terminatingSignals{SIGHUP, SIGINT, SIGQUIT, SIGTERM};
+constexpr std::initializer_list<int> usrSignals{SIGUSR1, SIGUSR2};
+
 } // namespace
 
 PosixSignalNotifier::~PosixSignalNotifier()
@@ -89,13 +92,25 @@ void PosixSignalNotifier::watchSignals(std::initializer_list<int> signalSet)
 
 void PosixSignalNotifier::watchCommonTerminatingSignals()
 {
-    watchSignals({SIGHUP, SIGINT, SIGQUIT, SIGTERM});
+    watchSignals(terminatingSignals);
 }
 
-PosixSignalNotifier& PosixSignalNotifier::globalInstance()
+void PosixSignalNotifier::watchUsrSignals()
 {
-    static PosixSignalNotifier instance;
-    return instance;
+    watchSignals(usrSignals);
+}
+
+void PosixSignalNotifier::unwatchSignal(int signum)
+{
+    struct sigaction action = {}; // all zeroes by default
+    action.sa_handler = [](int sig) {
+        qWarning("Signal %d received twice; terminating ungracefully", sig);
+        ::exit(EXIT_FAILURE);
+    };
+
+    if (::sigaction(signum, &action, nullptr)) {
+        qFatal("Failed to reset signal %d, error = %d", signum, errno);
+    }
 }
 
 void PosixSignalNotifier::onSignalReceived()
@@ -105,8 +120,19 @@ void PosixSignalNotifier::onSignalReceived()
         qFatal("Failed to read from signal socket, error = %d", errno);
     }
 
-    qDebug() << "Signal" << signum << "received";
-    emit activated(signum);
+    switch (signum) {
+    case SIGUSR1:
+        emit usrSignal(UserSignal::Screenshot);
+        break;
+    case SIGUSR2:
+        emit usrSignal(UserSignal::Unused);
+        break;
+    default:
+        qDebug() << "Terminating signal" << signum << "received";
+        emit terminatingSignal(signum);
+        unwatchSignal(signum);
+        break;
+    }
 }
 
 PosixSignalNotifier::PosixSignalNotifier()
@@ -118,4 +144,30 @@ PosixSignalNotifier::PosixSignalNotifier()
     notifier = new QSocketNotifier(g_signalSocketPair[1], QSocketNotifier::Read, this);
     connect(notifier, &QSocketNotifier::activated, this, &PosixSignalNotifier::onSignalReceived);
 }
-#endif
+#else  // Q_OS_WIN
+PosixSignalNotifier::~PosixSignalNotifier() = default;
+
+void PosixSignalNotifier::watchSignal(int signum)
+{
+    std::ignore = signum;
+}
+
+void PosixSignalNotifier::watchSignals(std::initializer_list<int> signalSet)
+{
+    std::ignore = signalSet;
+}
+
+void PosixSignalNotifier::watchCommonTerminatingSignals() {}
+
+void PosixSignalNotifier::watchUsrSignals() {}
+
+void PosixSignalNotifier::onSignalReceived() {}
+
+PosixSignalNotifier::PosixSignalNotifier() {}
+#endif // Q_OS_WIN
+
+PosixSignalNotifier& PosixSignalNotifier::globalInstance()
+{
+    static PosixSignalNotifier instance;
+    return instance;
+}

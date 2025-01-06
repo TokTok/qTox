@@ -640,6 +640,11 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sjekker om dette programmet kjører den nyeste qTox-versjonen.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Starter i bærbar modus; laster profilen fra denne katalogen.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

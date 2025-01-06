@@ -20,13 +20,13 @@ private slots:
     void checkTermSignalsHandling();
 };
 
-constexpr int TIMEOUT = 10;
+constexpr int TIMEOUT = 2;
 
 void TestPosixSignalNotifier::checkUsrSignalHandling()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
-    psn.watchSignal(SIGUSR1);
-    QSignalSpy spy(&psn, &PosixSignalNotifier::activated);
+    psn.watchUsrSignals();
+    QSignalSpy spy(&psn, &PosixSignalNotifier::usrSignal);
     kill(getpid(), SIGUSR1);
 
     for (int i = 0; i < TIMEOUT && spy.count() != 1; ++i) {
@@ -36,7 +36,8 @@ void TestPosixSignalNotifier::checkUsrSignalHandling()
 
     QCOMPARE(spy.count(), 1);
     const QList<QVariant>& args = spy.first();
-    QCOMPARE(args.first().toInt(), SIGUSR1);
+    QCOMPARE(static_cast<PosixSignalNotifier::UserSignal>(args.first().toInt()),
+             PosixSignalNotifier::UserSignal::Screenshot);
 }
 
 namespace {
@@ -50,7 +51,7 @@ void TestPosixSignalNotifier::checkIgnoreExtraSignals()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
     psn.watchSignal(SIGUSR1);
-    QSignalSpy spy(&psn, &PosixSignalNotifier::activated);
+    QSignalSpy spy(&psn, &PosixSignalNotifier::terminatingSignal);
 
     // To avoid killing
     signal(SIGUSR2, sighandler);
@@ -68,7 +69,7 @@ void TestPosixSignalNotifier::checkTermSignalsHandling()
 {
     PosixSignalNotifier& psn = PosixSignalNotifier::globalInstance();
     psn.watchCommonTerminatingSignals();
-    QSignalSpy spy(&psn, &PosixSignalNotifier::activated);
+    QSignalSpy spy(&psn, &PosixSignalNotifier::terminatingSignal);
 
     const std::initializer_list<int> termSignals = {SIGHUP, SIGINT, SIGQUIT, SIGTERM};
     for (int signal : termSignals) {

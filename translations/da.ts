@@ -706,6 +706,11 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontrollerer, om dette program kører den seneste qTox-version.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Starter i bærbar tilstand; indlæser profil fra denne mappe.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -726,6 +726,11 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontrolas ĉu ĉi tiu programo funkcias la plej novan qTox-version.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Komenciĝas en portebla reĝimo; ŝarĝas profilon el ĉi tiu dosierujo.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

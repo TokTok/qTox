@@ -636,6 +636,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">检查该程序是否运行最新的 qTox 版本。</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">以便携模式启动；从此目录加载配置文件。</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

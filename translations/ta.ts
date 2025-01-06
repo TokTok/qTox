@@ -694,6 +694,11 @@ qTox இல் தாங்கள் சிக்கலோ பாதுகாப
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">இந்த நிரல் சமீபத்திய qTox பதிப்பில் இயங்குகிறதா என்பதைச் சரிபார்க்கிறது.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">போர்ட்டபிள் பயன்முறையில் தொடங்குகிறது; இந்த கோப்பகத்திலிருந்து சுயவிவரத்தை ஏற்றுகிறது.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

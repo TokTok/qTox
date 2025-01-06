@@ -778,6 +778,11 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hukagua ikiwa programu hii ina toleo jipya zaidi la qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Huanza katika hali ya kubebeka; hupakia wasifu kutoka kwa saraka hii.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

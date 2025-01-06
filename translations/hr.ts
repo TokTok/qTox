@@ -665,6 +665,11 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Provjerava pokreće li ovaj program najnoviju verziju qTox-a.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokreće se u prijenosnom načinu rada; učitava profil iz ovog direktorija.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

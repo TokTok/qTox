@@ -640,6 +640,11 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zkontroluje, zda tento program používá nejnovější verzi qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Spustí se v přenosném režimu; načte profil z tohoto adresáře.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

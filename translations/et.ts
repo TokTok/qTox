@@ -639,6 +639,11 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kontrollib, kas see programm kasutab uusimat qToxi versiooni.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Käivitub kaasaskantavas režiimis; laadib profiili sellest kataloogist.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

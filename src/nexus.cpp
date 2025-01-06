@@ -14,7 +14,6 @@
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
 #include "src/widget/style.h"
-#include "src/widget/tool/messageboxmanager.h"
 #include "src/widget/widget.h"
 #include "video/camerasource.h"
 #include "widget/loginscreen.h"
@@ -22,6 +21,9 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDebug>
+#include <QDir>
+#include <QScreen>
+#include <QStandardPaths>
 #include <QThread>
 
 #include <vpx/vpx_image.h>
@@ -430,3 +432,26 @@ void Nexus::bringAllToFront()
     focused->raise();
 }
 #endif
+
+void Nexus::screenshot()
+{
+    if (widget == nullptr) {
+        qWarning() << "No widget to take screenshot of";
+        return;
+    }
+
+    // Paint the widget onto a pixmap. This makes sure the screenshot still
+    // works even if we don't have screen capture permissions.
+    QPixmap pixmap(widget->size());
+    widget->render(&pixmap);
+
+    QString path = QStandardPaths::writableLocation(QStandardPaths::PicturesLocation);
+    if (path.isEmpty()) {
+        path = QDir::currentPath();
+    }
+    path += "/qtox-screenshot.png";
+    qDebug() << "Saving screenshot to" << path;
+    if (!pixmap.save(path)) {
+        qWarning() << "Failed to save screenshot";
+    }
+}

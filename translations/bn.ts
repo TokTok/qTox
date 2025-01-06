@@ -773,6 +773,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">এই প্রোগ্রামটি সর্বশেষ qTox সংস্করণ চালাচ্ছে কিনা তা পরীক্ষা করে।</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">পোর্টেবল মোডে শুরু হয়; এই ডিরেক্টরি থেকে প্রোফাইল লোড করে।</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

@@ -315,7 +315,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: .ci-scripts
+          # Fetch tags if we're not already in a tag build.
+          fetch-tags: ${{ !contains(github.ref, 'refs/tags/v') }}
+          sparse-checkout: |
+            .ci-scripts
+            test/resources/profile
       - name: Download artifact from AppImage
         uses: actions/download-artifact@v4
         with:
@@ -326,6 +330,25 @@ jobs:
           .ci-scripts/smoke-test.sh xvfb-run --auto-servernum ./qTox-*.AppImage
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QTOX_SCREENSHOT: qtox-appimage.png
+      - name: Upload screenshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-appimage.png
+          path: qtox-appimage.png
+      - name: Upload screenshot to nightly release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qtox-appimage.png"
+
 
   build-android:
     name: Android
@@ -488,7 +511,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: .ci-scripts
+          # Fetch tags if we're not already in a tag build.
+          fetch-tags: ${{ !contains(github.ref, 'refs/tags/v') }}
+          sparse-checkout: |
+            .ci-scripts
+            test/resources/profile
       - name: Download artifact from Flatpak
         uses: actions/download-artifact@v4
         with:
@@ -498,7 +525,7 @@ jobs:
       - name: Install KDE runtime
         run: |
           flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-          flatpak install --user -y --noninteractive flathub org.kde.Platform/x86_64/6.7
+          flatpak install --user -y --noninteractive flathub org.kde.Platform/x86_64/6.8
       - name: Install flatpak
         run: flatpak install --user -y --bundle qtox.flatpak
       - name: Run flatpak
@@ -611,7 +638,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          sparse-checkout: .ci-scripts
+          # Fetch tags if we're not already in a tag build.
+          fetch-tags: ${{ !contains(github.ref, 'refs/tags/v') }}
+          sparse-checkout: |
+            .ci-scripts
+            test/resources/profile
       - name: Download artifact from macOS distributable (${{ matrix.arch }})
         uses: actions/download-artifact@v4
         with:
@@ -625,6 +656,24 @@ jobs:
         run: .ci-scripts/smoke-test.sh qtox.app/Contents/MacOS/qTox
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QTOX_SCREENSHOT: qtox-macos.png
+      - name: Upload screenshot artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: qtox-macos.png
+          path: qtox-macos.png
+      - name: Upload screenshot to nightly release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          tag: nightly
+          omitBodyDuringUpdate: true
+          omitNameDuringUpdate: true
+          prerelease: true
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: "qtox-macos.png"
 
   build-macos-user:
     name: macOS user
@@ -752,6 +801,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          # Fetch tags if we're not already in a tag build.
+          fetch-tags: ${{ !contains(github.ref, 'refs/tags/v') }}
           sparse-checkout: .ci-scripts
       - name: Download artifact from Windows
         uses: actions/download-artifact@v4

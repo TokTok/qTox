@@ -46,6 +46,8 @@ public:
     void registerIpcHandlers();
     bool handleToxSave(const QString& path);
 
+    void screenshot();
+
 #ifdef Q_OS_MAC
 public:
     QMenuBar* globalMenuBar;

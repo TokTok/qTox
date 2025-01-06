@@ -779,6 +779,11 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Controleert of dit programma de meis recente qTox-versie gebruuk.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Begint in draagbare modus; laad ‘t profiel oet deze map.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

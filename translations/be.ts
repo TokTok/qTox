@@ -666,6 +666,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Правярае, ці працуе гэтая праграма з апошняй версіяй qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Запускаецца ў партатыўным рэжыме; загружае профіль з гэтага каталога.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

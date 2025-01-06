@@ -639,6 +639,11 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Verifica se este programa está executando a versão mais recente do qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Inicia em modo portátil; carrega o perfil deste diretório.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

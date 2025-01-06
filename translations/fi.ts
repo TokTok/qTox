@@ -639,6 +639,11 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tarkistaa, onko tässä ohjelmassa uusin qTox-versio.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Käynnistyy kannettavassa tilassa; lataa profiilin tästä hakemistosta.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

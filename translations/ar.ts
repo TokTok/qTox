@@ -696,6 +696,11 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">يتحقق مما إذا كان هذا البرنامج يعمل بأحدث إصدار من qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">يبدأ في الوضع المحمول. تحميل الملف الشخصي من هذا الدليل.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

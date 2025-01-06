@@ -633,6 +633,10 @@ which may lead to problems with video calls.</source>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

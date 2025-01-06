@@ -638,6 +638,11 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Comprueba si este programa está ejecutando la última versión de qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Comienza en modo portátil; carga el perfil desde este directorio.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

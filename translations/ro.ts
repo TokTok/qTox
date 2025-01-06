@@ -638,6 +638,11 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Verifică dacă acest program rulează cea mai recentă versiune qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pornește în modul portabil; încarcă profilul din acest director.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>

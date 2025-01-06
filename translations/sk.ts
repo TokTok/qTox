@@ -640,6 +640,11 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Skontroluje, či tento program používa najnovšiu verziu qTox.</translation>
     </message>
+    <message>
+        <source>Starts in portable mode; loads profile from this directory.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Spustí sa v prenosnom režime; načíta profil z tohto adresára.</translation>
+    </message>
 </context>
 <context>
     <name>ChatForm</name>
