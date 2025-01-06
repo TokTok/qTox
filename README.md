@@ -113,6 +113,10 @@ idea of the general look and features.
 ![Screenshot 01](https://i.imgur.com/olb89CN.png)
 ![Screenshot 02](https://i.imgur.com/tmX8z9s.png)
 
+This screenshot is taken on every merged pull-request, so will be up-to-date, but less interesting:
+
+![Nightly screenshot](https://github.com/TokTok/qTox/releases/download/nightly/qtox-macos.png)
+
 ### Features
 
 - One to one chat with friends

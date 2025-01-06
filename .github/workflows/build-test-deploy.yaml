@@ -660,8 +660,8 @@ jobs:
       - name: Upload screenshot artifact
         uses: actions/upload-artifact@v4
         with:
-          name: qtox-macos.png
-          path: qtox-macos.png
+          name: qtox-macos-${{ matrix.arch }}.png
+          path: qtox-macos-${{ matrix.arch }}.png
       - name: Upload screenshot to nightly release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: ncipollo/release-action@v1
@@ -673,7 +673,7 @@ jobs:
           prerelease: true
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: "qtox-macos.png"
+          artifacts: "qtox-macos-${{ matrix.arch }}.png"
 
   build-macos-user:
     name: macOS user
