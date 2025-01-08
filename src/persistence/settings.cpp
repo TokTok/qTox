@@ -580,6 +580,10 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
             }
         });
     });
+
+    inGroup(ps, "Experimental", [this, &ps] {
+        experimentalSandbox = ps.value("sandbox", false).toBool();
+    });
 }
 
 void Settings::resetToDefault()
@@ -808,6 +812,11 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
     inGroup(ps, "Version", [this, &ps] { //
         ps.setValue("settingsVersion", personalSettingsVersion);
     });
+
+    inGroup(ps, "Experimental", [this, &ps] {
+        ps.setValue("sandbox", experimentalSandbox);
+    });
+
     ps.save();
 }
 
@@ -2175,6 +2184,19 @@ void Settings::setEnableConferencesColor(bool state)
 bool Settings::getEnableConferencesColor() const
 {
     return nameColors;
+}
+
+bool Settings::getExperimentalSandbox() const
+{
+    QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return experimentalSandbox;
+}
+
+void Settings::setExperimentalSandbox(bool newValue)
+{
+    if (setVal(experimentalSandbox, newValue)) {
+        emit experimentalSandboxChanged(newValue);
+    }
 }
 
 /**

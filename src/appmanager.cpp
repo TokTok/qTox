@@ -13,6 +13,8 @@
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
 #include "src/platform/posixsignalnotifier.h"
+#include "src/platform/sandboxclient.h"
+#include "src/platform/sandboxserver.h"
 #include "src/version.h"
 #include "src/video/camerasource.h"
 #include "src/widget/tool/messageboxmanager.h"
@@ -25,6 +27,7 @@
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <QObject>
+#include <QRemoteObjectHost>
 
 namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
@@ -189,7 +192,6 @@ AppManager::AppManager(int& argc, char** argv)
     : qapp((preConstructionInitialization(), new QApplication(argc, argv)))
     , messageBoxManager(new MessageBoxManager(nullptr))
     , settings(new Settings(*messageBoxManager))
-    , ipc(new IPC(settings->getCurrentProfileId()))
 {
 }
 
@@ -200,6 +202,37 @@ void AppManager::preConstructionInitialization()
 
 int AppManager::startGui(QCommandLineParser& parser)
 {
+    // Terminating signals are connected directly to quit() without any filtering.
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::terminatingSignal,
+            qapp.get(), &QApplication::quit);
+    PosixSignalNotifier::watchCommonTerminatingSignals();
+
+    // User signal 1 is used to screenshot the application.
+    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::usrSignal, qapp.get(),
+            [this](PosixSignalNotifier::UserSignal signal) {
+                if (signal == PosixSignalNotifier::UserSignal::Screenshot) {
+                    nexus->screenshot();
+                }
+            });
+    PosixSignalNotifier::watchUsrSignals();
+
+    // Install Unicode 6.1 supporting font
+    // Keep this as close to the beginning of `main()` as possible, otherwise
+    // on systems that have poor support for Unicode qTox will look bad.
+    if (QFontDatabase::addApplicationFont(":/font/DejaVuSans.ttf") == -1) {
+        qWarning() << "Couldn't load font";
+    }
+
+    if (parser.isSet("portable")) {
+        // We don't go through settings here, because we're not making qTox
+        // portable (which moves files around). Instead, we start up in
+        // portable mode as a one-off.
+        settings->getPaths().setPortable(true);
+        settings->getPaths().setPortablePath(parser.value("portable"));
+    }
+
+    ipc = std::make_unique<IPC>(settings->getCurrentProfileId());
+
     if (ipc->isAttached()) {
         connect(settings.get(), &Settings::currentProfileIdChanged, ipc.get(), &IPC::setProfileId);
     } else {
@@ -252,6 +285,14 @@ int AppManager::startGui(QCommandLineParser& parser)
 
     qDebug() << "Commit:" << VersionInfo::gitVersion();
     qDebug() << "Process ID:" << QCoreApplication::applicationPid();
+
+    if (settings->getExperimentalSandbox()) {
+        sandbox = std::make_unique<SandboxClient>(this);
+        qDebug() << "Sandbox ready:" << sandbox->isReady();
+    } else {
+        sandbox = std::make_unique<SandboxServer>(this);
+        qDebug() << "Sandbox disabled";
+    }
 
     QString profileName;
     bool autoLogin = settings->getAutoLogin();
@@ -317,7 +358,7 @@ int AppManager::startGui(QCommandLineParser& parser)
     //  note: Because Settings is shouldering global settings as well as model specific ones it
     //  cannot be integrated into a central model object yet
     cameraSource = std::unique_ptr<CameraSource>(new CameraSource{*settings});
-    nexus = std::unique_ptr<Nexus>(new Nexus{*settings, *messageBoxManager, *cameraSource, *ipc});
+    nexus = std::unique_ptr<Nexus>(new Nexus{*settings, *messageBoxManager, *cameraSource, *ipc, *sandbox});
     // Autologin
     // TODO (kriby): Shift responsibility of linking views to model objects from nexus
     // Further: generate view instances separately (loginScreen, mainGUI, audio)
@@ -364,20 +405,6 @@ int AppManager::startGui(QCommandLineParser& parser)
 
 int AppManager::run()
 {
-    // Terminating signals are connected directly to quit() without any filtering.
-    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::terminatingSignal,
-            qapp.get(), &QApplication::quit);
-    PosixSignalNotifier::watchCommonTerminatingSignals();
-
-    // User signal 1 is used to screenshot the application.
-    connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::usrSignal, qapp.get(),
-            [this](PosixSignalNotifier::UserSignal signal) {
-                if (signal == PosixSignalNotifier::UserSignal::Screenshot) {
-                    nexus->screenshot();
-                }
-            });
-    PosixSignalNotifier::watchUsrSignals();
-
     qapp->setApplicationName("qTox");
     qapp->setDesktopFileName("io.github.qtox.qTox");
     qapp->setApplicationVersion(QStringLiteral("%1, git commit %2 (%3)")
@@ -386,13 +413,6 @@ int AppManager::run()
                                     .arg(UpdateCheck::isCurrentVersionStable()
                                              ? QStringLiteral("stable")
                                              : QStringLiteral("unstable")));
-
-    // Install Unicode 6.1 supporting font
-    // Keep this as close to the beginning of `main()` as possible, otherwise
-    // on systems that have poor support for Unicode qTox will look bad.
-    if (QFontDatabase::addApplicationFont("://font/DejaVuSans.ttf") == -1) {
-        qWarning() << "Couldn't load font";
-    }
 
     QString locale = settings->getTranslation();
     // We need to init the resources in the translations_library explicitly.
@@ -417,16 +437,9 @@ int AppManager::run()
 #ifdef UPDATE_CHECK_ENABLED
         {{"u", "update-check"}, tr("Checks whether this program is running the latest qTox version.")},
 #endif // UPDATE_CHECK_ENABLED
+        {{"S", "sandbox"}, tr("Start the qTox sandbox process (internal, don't use).")},
     });
     parser.process(*qapp);
-
-    if (parser.isSet("portable")) {
-        // We don't go through settings here, because we're not making qTox
-        // portable (which moves files around). Instead, we start up in
-        // portable mode as a one-off.
-        settings->getPaths().setPortable(true);
-        settings->getPaths().setPortablePath(parser.value("portable"));
-    }
 
     // If update-check is requested, do it and exit.
     if (parser.isSet("update-check")) {
@@ -442,11 +455,20 @@ int AppManager::run()
                     QTextStream(stdout) << message;
                     qapp->quit();
                 });
-    } else {
-        const int result = startGui(parser);
-        if (result != 0) {
-            return result;
-        }
+        return qapp->exec();
+    }
+
+    if (parser.isSet("sandbox")) {
+        // Start the sandbox process.
+        SandboxServer sandboxServer;
+        QRemoteObjectHost srcNode(QUrl(QStringLiteral("local:replica")));
+        srcNode.enableRemoting(&sandboxServer);
+        return qapp->exec();
+    }
+
+    const int result = startGui(parser);
+    if (result != 0) {
+        return result;
     }
 
     return qapp->exec();

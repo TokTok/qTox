@@ -9,16 +9,18 @@
 ################################################################################
 
 # This should go into subdirectories later.
-find_package(PkgConfig        REQUIRED)
-find_package(Qt6Concurrent    REQUIRED)
-find_package(Qt6Core          REQUIRED)
-find_package(Qt6Gui           REQUIRED)
-find_package(Qt6Linguist      REQUIRED)
-find_package(Qt6Network       REQUIRED)
-find_package(Qt6Svg           REQUIRED)
-find_package(Qt6Test          REQUIRED)
-find_package(Qt6Widgets       REQUIRED)
-find_package(Qt6Xml           REQUIRED)
+find_package(PkgConfig REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS
+  Concurrent
+  Core
+  Gui
+  Linguist
+  Network
+  RemoteObjects
+  Svg
+  Test
+  Widgets
+  Xml)
 
 function(add_dependency)
   set(ALL_LIBRARIES ${ALL_LIBRARIES} ${ARGN} PARENT_SCOPE)
@@ -29,6 +31,7 @@ add_dependency(
   Qt6::Core
   Qt6::Gui
   Qt6::Network
+  Qt6::RemoteObjects
   Qt6::Svg
   Qt6::Widgets
   Qt6::Xml)
@@ -214,7 +217,7 @@ if(QT_FEATURE_static)
     find_library(KIMG_${fmt_lib}_LIBRARY kimg_${fmt}
                 PATHS "${QT6_INSTALL_PREFIX}/plugins/imageformats")
     if(KIMG_${fmt_lib}_LIBRARY)
-      message(STATUS "Found ${fmt_lib} imageformats plugin: ${KIMG_${fmt}_LIBRARY}")
+      message(STATUS "Found ${fmt_lib} imageformats plugin: ${KIMG_${fmt_lib}_LIBRARY}")
       add_dependency(${KIMG_${fmt_lib}_LIBRARY})
       set_property(SOURCE src/main.cpp APPEND PROPERTY COMPILE_DEFINITIONS QTOX_USE_KIMG_${fmt_lib})
     else()

@@ -14,4 +14,5 @@ install_deps \
   qttools \
   qtsvg \
   qtimageformats \
+  qtremoteobjects \
   qtwayland

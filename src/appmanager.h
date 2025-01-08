@@ -9,14 +9,15 @@
 
 #include <memory>
 
-class MessageBoxManager;
-class Settings;
+class CameraSource;
 class IPC;
+class MessageBoxManager;
+class Nexus;
 class QApplication;
 class QCommandLineParser;
+class Sandbox;
+class Settings;
 class ToxURIDialog;
-class Nexus;
-class CameraSource;
 
 class AppManager : public QObject
 {
@@ -42,4 +43,5 @@ private:
     std::unique_ptr<ToxURIDialog> uriDialog;
     std::unique_ptr<CameraSource> cameraSource;
     std::unique_ptr<Nexus> nexus;
+    std::unique_ptr<Sandbox> sandbox;
 };

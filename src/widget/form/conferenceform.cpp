@@ -8,21 +8,17 @@
 #include "tabcompleter.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/text.h"
-#include "src/core/conferenceid.h"
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
-#include "src/persistence/iconferencesettings.h"
 #include "src/persistence/settings.h"
 #include "src/widget/chatformheader.h"
 #include "src/widget/conferencewidget.h"
 #include "src/widget/flowlayout.h"
 #include "src/widget/form/chatform.h"
-#include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
-#include "src/widget/tool/croppinglabel.h"
 #include "src/widget/translator.h"
 
 #include <QDragEnterEvent>
@@ -70,11 +66,11 @@ QString editName(const QString& name)
 
 ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog& chatLog_,
                                IMessageDispatcher& messageDispatcher_, Settings& settings_,
-                               DocumentCache& documentCache_, SmileyPack& smileyPack_,
-                               Style& style_, IMessageBoxManager& messageBoxManager,
-                               FriendList& friendList_, ConferenceList& conferenceList_)
-    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_,
-                      smileyPack_, settings_, style_, messageBoxManager, friendList_, conferenceList_)
+                               DocumentCache& documentCache_, SmileyPack& smileyPack_, Style& style_,
+                               IMessageBoxManager& messageBoxManager, FriendList& friendList_,
+                               ConferenceList& conferenceList_, ImageLoader& imageLoader)
+    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_, smileyPack_,
+                      settings_, style_, messageBoxManager, friendList_, conferenceList_, imageLoader)
     , core{core_}
     , conference(chatConference)
     , inCall(false)
