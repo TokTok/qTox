@@ -13,17 +13,18 @@
 #include "chatmessage.h"
 #include "src/model/ichatlog.h"
 
-class QGraphicsScene;
-class QGraphicsRectItem;
-class QMouseEvent;
-class QTimer;
 class ChatLineContent;
-struct ToxFile;
-class SmileyPack;
-class Settings;
-class Style;
 class ChatLineStorage;
 class IMessageBoxManager;
+class QGraphicsRectItem;
+class QGraphicsScene;
+class QMouseEvent;
+class QTimer;
+class ImageLoader;
+class Settings;
+class SmileyPack;
+class Style;
+struct ToxFile;
 
 static const size_t DEF_NUM_MSG_TO_LOAD = 100;
 class ChatWidget : public QGraphicsView
@@ -32,7 +33,7 @@ class ChatWidget : public QGraphicsView
 public:
     ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache,
                SmileyPack& smileyPack, Settings& settings, Style& style,
-               IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
+               IMessageBoxManager& messageBoxManager, ImageLoader& imageLoader, QWidget* parent = nullptr);
     ~ChatWidget() override;
 
     void insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines);
@@ -216,4 +217,5 @@ private:
     Settings& settings;
     Style& style;
     IMessageBoxManager& messageBoxManager;
+    ImageLoader& imageLoader;
 };

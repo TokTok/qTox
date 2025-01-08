@@ -8,7 +8,6 @@
 #include <QTime>
 #include <QWidget>
 
-#include "src/chatlog/chatlinecontent.h"
 #include "src/core/toxfile.h"
 
 class CoreFile;
@@ -17,11 +16,12 @@ namespace Ui {
 class FileTransferWidget;
 }
 
-class QVariantAnimation;
+class IMessageBoxManager;
 class QPushButton;
+class QVariantAnimation;
+class ImageLoader;
 class Settings;
 class Style;
-class IMessageBoxManager;
 
 class FileTransferWidget : public QWidget
 {
@@ -29,7 +29,7 @@ class FileTransferWidget : public QWidget
 
 public:
     FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file, Settings& settings,
-                       Style& style, IMessageBoxManager& messageBoxManager);
+                       Style& style, IMessageBoxManager& messageBoxManager, ImageLoader& imageLoader);
     ~FileTransferWidget() override;
     bool isActive() const;
     void onFileTransferUpdate(ToxFile file);
@@ -81,4 +81,5 @@ private:
     Settings& settings;
     Style& style;
     IMessageBoxManager& messageBoxManager;
+    ImageLoader& imageLoader;
 };

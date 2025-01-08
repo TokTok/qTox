@@ -12,12 +12,13 @@
 #include <QDateTime>
 
 class CoreFile;
-class QGraphicsScene;
 class DocumentCache;
-class SmileyPack;
-class Settings;
-class Style;
 class IMessageBoxManager;
+class QGraphicsScene;
+class ImageLoader;
+class Settings;
+class SmileyPack;
+class Style;
 
 class ChatMessage : public ChatLine
 {
@@ -55,7 +56,7 @@ public:
                                                       ToxFile file, bool isMe, const QDateTime& date,
                                                       DocumentCache& documentCache,
                                                       Settings& settings, Style& style,
-                                                      IMessageBoxManager& messageBoxManager);
+                                                      IMessageBoxManager& messageBoxManager, ImageLoader& imageLoader);
     static ChatMessage::Ptr createTypingNotification(DocumentCache& documentCache,
                                                      Settings& settings, Style& style);
     static ChatMessage::Ptr createBusyNotification(DocumentCache& documentCache, Settings& settings,

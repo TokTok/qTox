@@ -4,7 +4,6 @@
  */
 
 #include "chatform.h"
-#include "src/chatlog/chatlinecontentproxy.h"
 #include "src/chatlog/chatmessage.h"
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/filetransferwidget.h"
@@ -16,7 +15,6 @@
 #include "src/model/status.h"
 #include "src/nexus.h"
 #include "src/persistence/history.h"
-#include "src/persistence/offlinemsgengine.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/video/netcamview.h"
@@ -24,7 +22,6 @@
 #include "src/widget/contentdialogmanager.h"
 #include "src/widget/form/loadhistorydialog.h"
 #include "src/widget/imagepreviewwidget.h"
-#include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/searchform.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/callconfirmwidget.h"
@@ -36,6 +33,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDragEnterEvent>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QMessageBox>
@@ -97,10 +95,10 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
                    SmileyPack& smileyPack_, CameraSource& cameraSource_, Settings& settings_,
                    Style& style_, IMessageBoxManager& messageBoxManager,
                    ContentDialogManager& contentDialogManager_, FriendList& friendList_,
-                   ConferenceList& conferenceList_, QWidget* parent_)
+                   ConferenceList& conferenceList_, ImageLoader& imageLoader, QWidget* parent_)
     : GenericChatForm(profile_.getCore(), chatFriend, chatLog_, messageDispatcher_, documentCache_,
                       smileyPack_, settings_, style_, messageBoxManager, friendList_,
-                      conferenceList_, parent_)
+                      conferenceList_, imageLoader, parent_)
     , core{profile_.getCore()}
     , f(chatFriend)
     , isTyping{false}

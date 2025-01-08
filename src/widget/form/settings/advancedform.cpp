@@ -13,7 +13,6 @@
 #include <QMessageBox>
 #include <QProcess>
 
-#include "src/model/status.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -56,6 +55,8 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->cbEnableUDP->setChecked(udpEnabled);
     bodyUI->cbEnableLanDiscovery->setChecked(settings.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
+
+    bodyUI->cbExperimentalSandbox->setChecked(settings.getExperimentalSandbox());
 
     QString warningBody =
         tr("Unless you %1 know what you are doing, "
@@ -148,10 +149,8 @@ void AdvancedForm::on_btnCopyDebug_clicked()
 void AdvancedForm::on_resetButton_clicked()
 {
     const QString title = tr("Reset settings");
-    bool result =
-        messageBoxManager.askQuestion(title,
-                                      tr("All settings will be reset to default. Are you sure?"),
-                                      tr("Yes"), tr("No"));
+    bool result = messageBoxManager.askQuestion( //
+        title, tr("All settings will be reset to default. Are you sure?"), tr("Yes"), tr("No"));
 
     if (!result)
         return;
@@ -211,6 +210,12 @@ void AdvancedForm::on_proxyType_currentIndexChanged(int index)
 
     settings.setProxyType(proxytype);
 }
+
+void AdvancedForm::on_cbExperimentalSandbox_stateChanged()
+{
+    settings.setExperimentalSandbox(bodyUI->cbExperimentalSandbox->isChecked());
+}
+
 
 /**
  * @brief Retranslate all elements in the form.

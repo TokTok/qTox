@@ -120,7 +120,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
                                  IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                                  SmileyPack& smileyPack_, Settings& settings_, Style& style_,
                                  IMessageBoxManager& messageBoxManager, FriendList& friendList_,
-                                 ConferenceList& conferenceList_, QWidget* parent_)
+                                 ConferenceList& conferenceList_, ImageLoader& imageLoader, QWidget* parent_)
     : QWidget(parent_, Qt::Window)
     , core{core_}
     , audioInputFlag(false)
@@ -138,7 +138,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     searchForm = new SearchForm(settings, style);
     dateInfo = new QLabel(this);
     chatWidget = new ChatWidget(chatLog_, core, documentCache, smileyPack, settings, style,
-                                messageBoxManager, this);
+                                messageBoxManager, imageLoader, this);
     searchForm->hide();
     dateInfo->setAlignment(Qt::AlignHCenter);
     dateInfo->setVisible(false);

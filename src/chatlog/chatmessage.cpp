@@ -4,7 +4,6 @@
  */
 
 #include "chatmessage.h"
-#include "chatlinecontentproxy.h"
 #include "textformatter.h"
 #include "content/broken.h"
 #include "content/filetransferwidget.h"
@@ -13,6 +12,7 @@
 #include "content/spinner.h"
 #include "content/text.h"
 #include "content/timestamp.h"
+#include "src/chatlog/chatlinecontentproxy.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/identicon.h"
 
@@ -165,7 +165,7 @@ ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, C
                                                         ToxFile file, bool isMe, const QDateTime& date,
                                                         DocumentCache& documentCache,
                                                         Settings& settings, Style& style,
-                                                        IMessageBoxManager& messageBoxManager)
+                                                        IMessageBoxManager& messageBoxManager, ImageLoader& imageLoader)
 {
     ChatMessage::Ptr msg = ChatMessage::Ptr(new ChatMessage(documentCache, settings, style));
 
@@ -178,7 +178,7 @@ ChatMessage::Ptr ChatMessage::createFileTransferMessage(const QString& sender, C
     msg->addColumn(new Text(documentCache, settings, style, sender, authorFont, true),
                    ColumnFormat(NAME_COL_WIDTH, ColumnFormat::FixedSize, ColumnFormat::Right));
     msg->addColumn(new ChatLineContentProxy(new FileTransferWidget(nullptr, coreFile, file, settings,
-                                                                   style, messageBoxManager),
+                                                                   style, messageBoxManager, imageLoader),
                                             320, 0.6f),
                    ColumnFormat(1.0, ColumnFormat::VariableSize));
     msg->addColumn(new Timestamp(date, settings.getTimestampFormat(), baseFont, documentCache,

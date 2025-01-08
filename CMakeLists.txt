@@ -59,7 +59,7 @@ execute_process(
   OUTPUT_VARIABLE QT_PREFIX_PATH
   OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-project(qtox)
+project(qtox LANGUAGES CXX)
 
 # C++ and C standards.
 set(CMAKE_CXX_STANDARD 20)
@@ -262,6 +262,8 @@ set(${PROJECT_NAME}_SOURCES
     src/chatlog/customtextdocument.h
     src/chatlog/documentcache.cpp
     src/chatlog/documentcache.h
+    src/chatlog/imageloader.cpp
+    src/chatlog/imageloader.h
     src/chatlog/pixmapcache.cpp
     src/chatlog/pixmapcache.h
     src/core/toxfileprogress.cpp
@@ -430,6 +432,12 @@ set(${PROJECT_NAME}_SOURCES
     src/platform/desktop_notifications/desktopnotifybackend.h
     src/platform/posixsignalnotifier.cpp
     src/platform/posixsignalnotifier.h
+    src/platform/sandbox.cpp
+    src/platform/sandbox.h
+    src/platform/sandboxclient.cpp
+    src/platform/sandboxclient.h
+    src/platform/sandboxserver.cpp
+    src/platform/sandboxserver.h
     src/platform/timer.h
     src/platform/timer_osx.cpp
     src/platform/timer_win.cpp
@@ -653,6 +661,8 @@ add_subdirectory(cmake/warnings)
 
 add_library(${PROJECT_NAME}_static STATIC ${${PROJECT_NAME}_FORMS}
                                           ${${PROJECT_NAME}_SOURCES})
+qt_add_repc_sources(${PROJECT_NAME}_static src/platform/sandbox.rep)
+qt_add_repc_replicas(${PROJECT_NAME}_static src/platform/sandbox.rep)
 target_link_libraries(${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                       ${ALL_LIBRARIES} coverage_config)
 
@@ -667,8 +677,8 @@ if(COMMAND qt_policy)
   qt_policy(SET QTP0002 NEW)
 endif()
 
-qt_add_executable(${PROJECT_NAME} WIN32 MACOSX_BUNDLE
-                  ${${PROJECT_NAME}_RESOURCES} ${SMILEY_RESOURCES} src/main.cpp)
+qt_add_executable(${PROJECT_NAME} ${${PROJECT_NAME}_RESOURCES} ${SMILEY_RESOURCES} src/main.cpp)
+set_target_properties(${PROJECT_NAME} PROPERTIES WIN32_EXECUTABLE TRUE MACOSX_BUNDLE TRUE)
 target_link_libraries(
   ${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                           ${ALL_LIBRARIES})

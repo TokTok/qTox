@@ -4,7 +4,7 @@
  */
 
 #include "imagepreviewwidget.h"
-#include "src/model/exiftransform.h"
+#include "src/platform/sandbox.h"
 
 #include <QApplication>
 #include <QBuffer>
@@ -14,18 +14,17 @@
 #include <QString>
 
 namespace {
-QPixmap pixmapFromFile(const QString& filename)
+static const QStringList previewExtensions = {
+    "gif",  // Graphics Interchange Format
+    "jpeg", // Joint Photographic Experts Group
+    "jpg",  // Joint Photographic Experts Group
+    "png",  // Portable Network Graphics
+    "qoi",  // Quite OK Image Format
+    "svg",  // Scalable Vector Graphics
+    "webp", // WebP
+};
+QPixmap pixmapFromFile(ImageLoader& imageLoader, const QString& filename)
 {
-    static const QStringList previewExtensions = {
-        "gif",  // Graphics Interchange Format
-        "jpeg", // Joint Photographic Experts Group
-        "jpg",  // Joint Photographic Experts Group
-        "png",  // Portable Network Graphics
-        "qoi",  // Quite OK Image Format
-        "svg",  // Scalable Vector Graphics
-        "webp", // WebP
-    };
-
     if (!previewExtensions.contains(QFileInfo(filename).suffix().toLower())) {
         return {};
     }
@@ -35,12 +34,7 @@ QPixmap pixmapFromFile(const QString& filename)
         return {};
     }
 
-    const QByteArray imageFileData = imageFile.readAll();
-    QImage image = QImage::fromData(imageFileData);
-    auto orientation = ExifTransform::getOrientation(imageFileData);
-    image = ExifTransform::applyTransformation(image, orientation);
-
-    return QPixmap::fromImage(image);
+    return imageLoader.loadImage(imageFile.readAll());
 }
 
 QPixmap scaleCropIntoSquare(const QPixmap& source, const int targetSize)
@@ -108,9 +102,9 @@ void ImagePreviewButton::initialize(const QPixmap& image)
     setToolTip(getToolTipDisplayingImage(image));
 }
 
-void ImagePreviewButton::setIconFromFile(const QString& filename)
+void ImagePreviewButton::setIconFromFile(ImageLoader& imageLoader, const QString& filename)
 {
-    initialize(pixmapFromFile(filename));
+    initialize(pixmapFromFile(imageLoader, filename));
 }
 
 void ImagePreviewButton::setIconFromPixmap(const QPixmap& pixmap)

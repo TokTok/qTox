@@ -7,7 +7,7 @@
 
 #include "genericchatform.h"
 #include "src/core/toxpk.h"
-#include "src/persistence/iconferencesettings.h"
+
 #include <QMap>
 
 namespace Ui {
@@ -36,7 +36,7 @@ public:
                    IMessageDispatcher& messageDispatcher_, Settings& settings_,
                    DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
                    IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                   ConferenceList& conferenceList);
+                   ConferenceList& conferenceList, ImageLoader& imageLoader);
     ~ConferenceForm() override;
 
     void peerAudioPlaying(ToxPk peerPk);

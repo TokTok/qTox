@@ -1,5 +1,5 @@
 load("@rules_cc//cc:defs.bzl", "cc_library", "objc_library")
-load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_uic")
+load("//third_party/qt:build_defs.bzl", "qt_moc", "qt_repc", "qt_uic")
 load("//tools/project:build_defs.bzl", "mkstamp")
 
 DEFINES = [
@@ -9,6 +9,20 @@ DEFINES = [
     "QT_MESSAGELOGCONTEXT",
     "UPDATE_CHECK_ENABLED",
 ]
+
+qt_repc(
+    name = "src_repc_source",
+    srcs = ["platform/sandbox.rep"],
+    tags = ["qt"],
+    type = "source",
+)
+
+qt_repc(
+    name = "src_repc_replica",
+    srcs = ["platform/sandbox.rep"],
+    tags = ["qt"],
+    type = "replica",
+)
 
 qt_moc(
     name = "src_moc",
@@ -24,6 +38,7 @@ qt_moc(
         "chatlog/content/text.h",
         "chatlog/content/timestamp.h",
         "chatlog/customtextdocument.h",
+        "chatlog/imageloader.h",
         "core/core.h",
         "core/coreav.h",
         "core/corefile.h",
@@ -60,6 +75,9 @@ qt_moc(
         "platform/desktop_notifications/desktopnotify.h",
         "platform/desktop_notifications/desktopnotifybackend.h",
         "platform/posixsignalnotifier.h",
+        "platform/sandbox.h",
+        "platform/sandboxclient.h",
+        "platform/sandboxserver.h",
         "video/camerasource.h",
         "video/corevideosource.h",
         "video/netcamview.h",
@@ -124,15 +142,19 @@ qt_moc(
         "widget/tool/screenshotgrabber.h",
         "widget/tool/toolboxgraphicsitem.h",
         "widget/widget.h",
+        ":src_repc_replica",
+        ":src_repc_source",
     ],
     hdrs = glob(["**/*.h"]),
     mocopts = [
         "-Iqtox",
+        "-Iqtox/src",
         "-Iqtox/util/include",
     ] + ["-D%s=1" % d for d in DEFINES],
     tags = ["qt"],
     deps = [
         "//qtox/util",
+        "@qt//:qt_remoteobjects",
         "@qt//:qt_widgets",
     ],
 )
@@ -166,6 +188,7 @@ mkstamp(
 COPTS = [
     "-Iqtox",
     "-I$(GENDIR)/qtox",
+    "-I$(GENDIR)/qtox/src/platform",
 ] + select({
     "//tools/config:freebsd": [],
     "//tools/config:linux": ["-fPIC"],
@@ -187,6 +210,8 @@ cc_library(
     name = "src",
     srcs = [":version"] + [
         ":src_moc",
+        ":src_repc_replica",
+        ":src_repc_source",
         ":src_ui",
     ] + glob(
         ["**/*.cpp"],
@@ -227,6 +252,7 @@ cc_library(
         "@qt//:qt_dbus",
         "@qt//:qt_gui",
         "@qt//:qt_network",
+        "@qt//:qt_remoteobjects",
         "@qt//:qt_svg",
         "@qt//:qt_widgets",
         "@qt//:qt_xml",
@@ -245,15 +271,7 @@ cc_library(
 cc_library(
     name = "main",
     srcs = ["main.cpp"],
-    copts = [
-        "-Iqtox",
-        "-I$(GENDIR)/qtox",
-    ] + select({
-        "//tools/config:freebsd": [],
-        "//tools/config:linux": ["-fPIC"],
-        "//tools/config:osx": [],
-        "//tools/config:windows": [],
-    }),
+    copts = COPTS,
     tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [

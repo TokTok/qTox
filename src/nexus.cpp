@@ -48,7 +48,7 @@
 Q_DECLARE_OPAQUE_POINTER(ToxAV*)
 
 Nexus::Nexus(Settings& settings_, IMessageBoxManager& messageBoxManager_,
-             CameraSource& cameraSource_, IPC& ipc_, QObject* parent)
+             CameraSource& cameraSource_, IPC& ipc_, ImageLoader& imageLoader_, QObject* parent)
     : QObject(parent)
     , profile{nullptr}
     , settings{settings_}
@@ -57,6 +57,7 @@ Nexus::Nexus(Settings& settings_, IMessageBoxManager& messageBoxManager_,
     , style{new Style()}
     , messageBoxManager{messageBoxManager_}
     , ipc{ipc_}
+    , imageLoader{imageLoader_}
 {
     QObject::connect(this, &Nexus::saveGlobal, &settings, &Settings::saveGlobal);
 }
@@ -220,8 +221,8 @@ void Nexus::showMainGUI()
     assert(profile);
 
     // Create GUI
-    widget =
-        std::make_unique<Widget>(*profile, *audioControl, cameraSource, settings, *style, ipc, *this);
+    widget = std::make_unique<Widget>(*profile, *audioControl, cameraSource, settings, *style, ipc,
+                                      imageLoader, *this);
 
     // Start GUI
     widget->init();

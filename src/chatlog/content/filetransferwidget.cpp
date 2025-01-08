@@ -7,7 +7,6 @@
 #include "ui_filetransferwidget.h"
 
 #include "src/core/corefile.h"
-#include "src/model/exiftransform.h"
 #include "src/persistence/settings.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -22,10 +21,10 @@
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
+#include <QPainterPath>
 #include <QVariantAnimation>
 
 #include <cassert>
-#include <math.h>
 
 
 // The leftButton is used to accept, pause, or resume a file transfer, as well as to open a
@@ -35,7 +34,8 @@
 
 FileTransferWidget::FileTransferWidget(QWidget* parent, CoreFile& _coreFile, ToxFile file,
                                        Settings& settings_, Style& style_,
-                                       IMessageBoxManager& messageBoxManager_)
+                                       IMessageBoxManager& messageBoxManager_,
+                                       ImageLoader& imageLoader_)
     : QWidget(parent)
     , coreFile{_coreFile}
     , ui(new Ui::FileTransferWidget)
@@ -47,6 +47,7 @@ FileTransferWidget::FileTransferWidget(QWidget* parent, CoreFile& _coreFile, Tox
     , settings(settings_)
     , style{style_}
     , messageBoxManager{messageBoxManager_}
+    , imageLoader{imageLoader_}
 {
     ui->setupUi(this);
 
@@ -195,7 +196,7 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
                                         buttonFieldWidth, buttonFieldWidth + lineWidth, 50, 50,
                                         Qt::RelativeSize);
         buttonBackground.addRect(width() - 2 * buttonFieldWidth - lineWidth * 2, 0,
-                                 buttonFieldWidth * 2, buttonFieldWidth / 2);
+                                 buttonFieldWidth * 2, static_cast<qreal>(buttonFieldWidth) / 2);
         buttonBackground.addRect(width() - 1.5 * buttonFieldWidth - lineWidth * 2, 0,
                                  buttonFieldWidth * 2, buttonFieldWidth + 1);
         buttonBackground.setFillRule(Qt::WindingFill);
@@ -208,7 +209,7 @@ void FileTransferWidget::paintEvent(QPaintEvent* event)
                                         buttonFieldWidth, buttonFieldWidth),
                                   50, 50, Qt::RelativeSize);
         leftButton.addRect(QRect(width() - 2 * buttonFieldWidth - lineWidth, 0,
-                                 buttonFieldWidth / 2, buttonFieldWidth / 2));
+                                 buttonFieldWidth / 2, static_cast<qreal>(buttonFieldWidth) / 2));
         leftButton.addRect(QRect(width() - 1.5 * buttonFieldWidth - lineWidth, 0,
                                  buttonFieldWidth / 2, buttonFieldWidth));
         leftButton.setFillRule(Qt::WindingFill);
@@ -478,7 +479,7 @@ void FileTransferWidget::handleButton(QPushButton* btn)
 
 void FileTransferWidget::showPreview(const QString& filename)
 {
-    ui->previewButton->setIconFromFile(filename);
+    ui->previewButton->setIconFromFile(imageLoader, filename);
     ui->previewButton->show();
 }
 
