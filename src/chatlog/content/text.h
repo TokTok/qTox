@@ -6,9 +6,10 @@
 #pragma once
 
 #include "src/widget/style.h"
-#include "../chatlinecontent.h"
 
 #include <QFont>
+
+#include "../chatlinecontent.h"
 
 class QTextDocument;
 class DocumentCache;

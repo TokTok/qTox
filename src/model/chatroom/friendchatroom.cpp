@@ -4,6 +4,7 @@
  */
 
 #include "src/model/chatroom/friendchatroom.h"
+
 #include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/model/conference.h"

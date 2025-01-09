@@ -6,6 +6,7 @@
 #pragma once
 
 #include "tool/adjustingscrollarea.h"
+
 #include <QHash>
 
 class GenericChatroomWidget;

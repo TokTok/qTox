@@ -6,7 +6,9 @@
 #pragma once
 
 #include "src/core/chatid.h"
+
 #include <QByteArray>
+
 #include <cstdint>
 
 class ToxPk : public ChatId

@@ -5,12 +5,12 @@
 
 #include "screengrabberoverlayitem.h"
 
+#include "screenshotgrabber.h"
+
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QPen>
 #include <QStyleOptionGraphicsItem>
-
-#include "screenshotgrabber.h"
 
 ScreenGrabberOverlayItem::ScreenGrabberOverlayItem(ScreenshotGrabber* grabber)
     : screenshotGrabber(grabber)

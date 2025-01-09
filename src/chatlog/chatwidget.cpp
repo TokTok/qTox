@@ -4,9 +4,11 @@
  */
 
 #include "chatwidget.h"
+
 #include "chatlinecontent.h"
 #include "chatlinecontentproxy.h"
 #include "chatmessage.h"
+
 #include "content/filetransferwidget.h"
 #include "content/text.h"
 #include "src/chatlog/chatlinestorage.h"

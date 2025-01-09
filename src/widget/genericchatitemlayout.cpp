@@ -4,9 +4,12 @@
  */
 
 #include "genericchatitemlayout.h"
+
 #include "genericchatitemwidget.h"
+
 #include <QBoxLayout>
 #include <QCollator>
+
 #include <cassert>
 
 // As this layout sorts widget, extra care must be taken when inserting widgets.

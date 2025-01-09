@@ -3,9 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "src/model/sessionchatlog.h"
+
 #include "src/model/ichatlog.h"
 #include "src/model/imessagedispatcher.h"
-#include "src/model/sessionchatlog.h"
 
 #include <QtTest/QtTest>
 

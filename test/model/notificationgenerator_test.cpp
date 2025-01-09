@@ -3,11 +3,11 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/friendlist.h"
 #include "src/model/notificationgenerator.h"
 
 #include "mock/mockconferencequery.h"
 #include "mock/mockcoreidhandler.h"
+#include "src/friendlist.h"
 
 #include <QObject>
 #include <QtTest/QtTest>

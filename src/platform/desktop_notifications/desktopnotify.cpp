@@ -5,6 +5,7 @@
 #include "desktopnotify.h"
 
 #include "desktopnotifybackend.h"
+
 #include "src/persistence/inotificationsettings.h"
 
 #include <QSystemTrayIcon>

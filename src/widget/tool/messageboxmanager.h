@@ -5,10 +5,10 @@
 
 #pragma once
 
+#include "src/widget/tool/imessageboxmanager.h"
+
 #include <QObject>
 #include <QWidget>
-
-#include "src/widget/tool/imessageboxmanager.h"
 
 class QFileInfo;
 

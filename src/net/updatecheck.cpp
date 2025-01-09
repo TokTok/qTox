@@ -15,6 +15,7 @@
 #include <QObject>
 #include <QRegularExpression>
 #include <QTimer>
+
 #include <cassert>
 
 namespace {

@@ -5,11 +5,11 @@
 
 #include "src/core/toxstring.h"
 
+#include "src/widget/form/settings/generalform.h" // getLocales
+
 #include <QByteArray>
 #include <QString>
 #include <QtTest/QtTest>
-
-#include "src/widget/form/settings/generalform.h" // getLocales
 
 class TestToxString : public QObject
 {

@@ -4,17 +4,8 @@
  */
 
 #include "userinterfaceform.h"
-#include "ui_userinterfacesettings.h"
 
-#include <QDebug>
-#include <QFileDialog>
-#include <QFont>
-#include <QMessageBox>
-#include <QRegularExpressionValidator>
-#include <QScreen>
-#include <QStyleFactory>
-#include <QTime>
-#include <QVector>
+#include "ui_userinterfacesettings.h"
 
 #include "src/core/core.h"
 #include "src/core/coreav.h"
@@ -26,6 +17,16 @@
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+
+#include <QDebug>
+#include <QFileDialog>
+#include <QFont>
+#include <QMessageBox>
+#include <QRegularExpressionValidator>
+#include <QScreen>
+#include <QStyleFactory>
+#include <QTime>
+#include <QVector>
 
 /**
  * @class UserInterfaceForm

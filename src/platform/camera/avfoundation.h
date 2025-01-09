@@ -5,6 +5,7 @@
 #pragma once
 
 #include "src/video/videomode.h"
+
 #include <QPair>
 #include <QString>
 #include <QVector>

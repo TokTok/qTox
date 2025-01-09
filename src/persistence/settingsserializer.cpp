@@ -4,6 +4,7 @@
  */
 
 #include "settingsserializer.h"
+
 #include "serialize.h"
 
 #include "src/core/toxencrypt.h"
@@ -12,6 +13,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QSaveFile>
+
 #include <cassert>
 #include <memory>
 

@@ -6,6 +6,7 @@
 #pragma once
 
 #include "genericchatroomwidget.h"
+
 #include "src/core/toxpk.h"
 #include "src/model/friendlist/ifriendlistitem.h"
 

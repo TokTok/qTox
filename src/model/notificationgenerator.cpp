@@ -4,6 +4,7 @@
  */
 
 #include "notificationgenerator.h"
+
 #include "src/chatlog/content/filetransferwidget.h"
 #include "util/display.h"
 

@@ -4,11 +4,13 @@
  */
 
 #include "toxsave.h"
+
 #include "src/ipc.h"
 #include "src/nexus.h"
 #include "src/persistence/settings.h"
 #include "src/widget/tool/profileimporter.h"
 #include "src/widget/widget.h"
+
 #include <QCoreApplication>
 #include <QString>
 

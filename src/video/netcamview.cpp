@@ -4,7 +4,9 @@
  */
 
 #include "netcamview.h"
+
 #include "camerasource.h"
+
 #include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/friend.h"

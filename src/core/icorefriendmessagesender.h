@@ -8,6 +8,7 @@
 #include "receiptnum.h"
 
 #include <QString>
+
 #include <cstdint>
 
 class ICoreFriendMessageSender

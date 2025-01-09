@@ -6,9 +6,11 @@
 #pragma once
 
 #include "chat.h"
+
 #include "src/core/chatid.h"
 #include "src/core/toxpk.h"
 #include "src/model/status.h"
+
 #include <QObject>
 #include <QString>
 

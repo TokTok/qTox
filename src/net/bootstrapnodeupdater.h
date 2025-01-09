@@ -5,13 +5,13 @@
 
 #pragma once
 
+#include "src/core/dhtserver.h"
+#include "src/model/ibootstraplistgenerator.h"
+
 #include <QList>
 #include <QNetworkAccessManager>
 #include <QNetworkProxy>
 #include <QObject>
-
-#include "src/core/dhtserver.h"
-#include "src/model/ibootstraplistgenerator.h"
 
 class QNetworkReply;
 class Paths;

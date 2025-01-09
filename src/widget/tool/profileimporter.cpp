@@ -5,13 +5,13 @@
 
 #include "profileimporter.h"
 
+#include "src/core/core.h"
+#include "src/persistence/paths.h"
+
 #include <QApplication>
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QPushButton>
-
-#include "src/core/core.h"
-#include "src/persistence/paths.h"
 
 /**
  * @class ProfileImporter

@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include <cstdint>
-
 #include <QHash>
+
+#include <cstdint>
 
 template <class T>
 class QList;

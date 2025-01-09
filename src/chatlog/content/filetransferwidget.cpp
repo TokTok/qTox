@@ -4,6 +4,7 @@
  */
 
 #include "filetransferwidget.h"
+
 #include "ui_filetransferwidget.h"
 
 #include "src/core/corefile.h"

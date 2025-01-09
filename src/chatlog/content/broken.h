@@ -5,10 +5,10 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
-
 #include <QObject>
 #include <QPixmap>
+
+#include "../chatlinecontent.h"
 
 class Broken : public ChatLineContent
 {

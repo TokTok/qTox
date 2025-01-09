@@ -4,12 +4,13 @@
  */
 
 #include "toxencrypt.h"
-#include <tox/toxencryptsave.h>
 
 #include <QByteArray>
 #include <QDebug>
 #include <QString>
+
 #include <memory>
+#include <tox/toxencryptsave.h>
 
 namespace {
 /**

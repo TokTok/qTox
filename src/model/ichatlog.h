@@ -6,6 +6,7 @@
 #pragma once
 
 #include "message.h"
+
 #include "src/conferencelist.h"
 #include "src/core/toxfile.h"
 #include "src/core/toxpk.h"

@@ -5,6 +5,7 @@
  */
 
 #include "core.h"
+
 #include "coreav.h"
 #include "corefile.h"
 
@@ -27,13 +28,12 @@
 #include <QStringBuilder>
 #include <QTimer>
 
-#include <tox/tox.h>
-
 #include <algorithm>
 #include <cassert>
 #include <chrono>
 #include <memory>
 #include <random>
+#include <tox/tox.h>
 
 const QString Core::TOX_EXT = ".tox";
 

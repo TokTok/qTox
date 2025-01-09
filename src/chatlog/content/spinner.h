@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
-
 #include <QObject>
 #include <QPixmap>
 #include <QTimer>
+
+#include "../chatlinecontent.h"
 
 class QVariantAnimation;
 

@@ -11,6 +11,7 @@
 #include <QMutex>
 #include <QObject>
 #include <QReadWriteLock>
+
 #include <atomic>
 #include <memory>
 #include <tox/toxav.h>

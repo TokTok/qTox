@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include <QMutex>
-#include <QObject>
-
 #include "audio/iaudiosink.h"
 #include "util/interface.h"
+
+#include <QMutex>
+#include <QObject>
 
 class OpenAL;
 class QMutex;

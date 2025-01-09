@@ -8,6 +8,7 @@
 #include <QPointF>
 #include <QRectF>
 #include <QVector>
+
 #include <memory>
 
 class ChatWidget;

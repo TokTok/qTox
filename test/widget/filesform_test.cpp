@@ -3,13 +3,14 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/friendlist.h"
-#include "src/model/friend.h"
 #include "src/widget/form/filesform.h"
 
-#include <QTest>
-#include <limits>
+#include "src/friendlist.h"
+#include "src/model/friend.h"
 
+#include <QTest>
+
+#include <limits>
 #include <tox/tox.h> // TOX_FILE_KIND_*
 
 class TestFileTransferList : public QObject

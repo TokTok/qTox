@@ -5,7 +5,9 @@
 
 
 #include "loginscreen.h"
+
 #include "ui_loginscreen.h"
+
 #include "src/persistence/profile.h"
 #include "src/persistence/profilelocker.h"
 #include "src/persistence/settings.h"
@@ -13,6 +15,7 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/profileimporter.h"
 #include "src/widget/translator.h"
+
 #include <QDebug>
 #include <QDialog>
 #include <QMessageBox>

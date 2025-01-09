@@ -3,9 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "src/core/core.h"
+
 #include "mock/mockbootstraplistgenerator.h"
 #include "mock/mockcoresettings.h"
-#include "src/core/core.h"
 #include "src/core/icoresettings.h"
 #include "src/core/toxoptions.h"
 #include "src/model/ibootstraplistgenerator.h"
@@ -15,9 +16,9 @@
 #include <QSignalSpy>
 #include <QtGlobal>
 #include <QtTest/QtTest>
-#include <limits>
 
 #include <iostream>
+#include <limits>
 #include <memory>
 
 Q_DECLARE_METATYPE(QList<DhtServer>)

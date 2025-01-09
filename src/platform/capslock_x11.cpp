@@ -10,6 +10,7 @@
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include "src/platform/x11_display.h"
+
 #include <X11/XKBlib.h>
 #undef KeyPress
 #undef KeyRelease

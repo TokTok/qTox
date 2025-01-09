@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include <memory>
-
 #include "src/persistence/db/rawdatabase.h"
+
+#include <memory>
 
 class RawDatabase;
 class IMessageBoxManager;

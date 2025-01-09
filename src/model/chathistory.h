@@ -7,6 +7,7 @@
 
 #include "ichatlog.h"
 #include "sessionchatlog.h"
+
 #include "src/model/brokenmessagereason.h"
 #include "src/persistence/history.h"
 

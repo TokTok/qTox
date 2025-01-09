@@ -5,13 +5,6 @@
 
 #include "avform.h"
 
-#include <cassert>
-#include <map>
-
-#include <QDebug>
-#include <QScreen>
-#include <QShowEvent>
-
 #include "audio/audio.h"
 #include "audio/iaudiosettings.h"
 #include "audio/iaudiosource.h"
@@ -25,6 +18,13 @@
 #include "src/widget/tool/screenshotgrabber.h"
 #include "src/widget/translator.h"
 #include "util/ranges.h"
+
+#include <QDebug>
+#include <QScreen>
+#include <QShowEvent>
+
+#include <cassert>
+#include <map>
 
 #ifndef ALC_ALL_DEVICES_SPECIFIER
 #define ALC_ALL_DEVICES_SPECIFIER ALC_DEVICE_SPECIFIER

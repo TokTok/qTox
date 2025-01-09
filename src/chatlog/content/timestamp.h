@@ -6,6 +6,7 @@
 #pragma once
 
 #include "text.h"
+
 #include <QDateTime>
 #include <QTextDocument>
 

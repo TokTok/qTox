@@ -3,9 +3,12 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 #include "notificationscrollarea.h"
+
 #include "genericchatroomwidget.h"
 #include "notificationedgewidget.h"
+
 #include <QScrollBar>
+
 #include <cassert>
 
 NotificationScrollArea::NotificationScrollArea(QWidget* parent)

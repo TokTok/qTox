@@ -4,6 +4,7 @@
  */
 
 #include "imagepreviewwidget.h"
+
 #include "src/model/exiftransform.h"
 
 #include <QApplication>

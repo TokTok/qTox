@@ -4,16 +4,18 @@
  */
 
 #include "categorywidget.h"
+
 #include "friendlistlayout.h"
 #include "friendlistwidget.h"
 #include "friendwidget.h"
+
 #include "src/model/status.h"
 #include "src/widget/style.h"
 #include "tool/croppinglabel.h"
-#include <QBoxLayout>
-#include <QMouseEvent>
 
 #include <QApplication>
+#include <QBoxLayout>
+#include <QMouseEvent>
 
 void CategoryWidget::emitChatroomWidget(QLayout* layout, int index)
 {

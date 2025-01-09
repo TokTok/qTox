@@ -6,6 +6,7 @@
 #pragma once
 
 #include "chatlinecontent.h"
+
 #include <QGraphicsProxyWidget>
 
 class FileTransferWidget;

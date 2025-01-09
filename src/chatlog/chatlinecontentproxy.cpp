@@ -4,7 +4,9 @@
  */
 
 #include "chatlinecontentproxy.h"
+
 #include "src/chatlog/content/filetransferwidget.h"
+
 #include <QDebug>
 #include <QLayout>
 #include <QPainter>

@@ -3,16 +3,16 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/persistence/ismileysettings.h"
 #include "src/persistence/smileypack.h"
+
+#include "src/persistence/ismileysettings.h"
 #include "util/interface.h"
 
+#include <QGuiApplication>
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QString>
 #include <QtTest/QtTest>
-
-#include <QGuiApplication>
 
 #include <memory>
 

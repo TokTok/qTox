@@ -4,6 +4,7 @@
  */
 
 #include "audio/src/backend/alsink.h"
+
 #include "audio/src/backend/openal.h"
 
 #include <QDebug>

@@ -6,7 +6,9 @@
 #pragma once
 
 #include "src/video/videosource.h"
+
 #include <QWidget>
+
 #include <atomic>
 #include <memory>
 

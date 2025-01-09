@@ -4,6 +4,7 @@
  */
 
 #include "searchform.h"
+
 #include "form/searchsettingsform.h"
 #include "src/widget/style.h"
 

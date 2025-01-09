@@ -6,6 +6,7 @@
 #pragma once
 
 #include "genericchatitemlayout.h"
+
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 

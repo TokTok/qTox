@@ -23,6 +23,7 @@
 #include <QPushButton>
 #include <QTableView>
 #include <QWindow>
+
 #include <cmath>
 
 namespace {

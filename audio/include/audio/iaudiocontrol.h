@@ -7,6 +7,7 @@
 
 #include <QObject>
 #include <QStringList>
+
 #include <memory>
 
 /**

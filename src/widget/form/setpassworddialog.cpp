@@ -4,6 +4,7 @@
  */
 
 #include "setpassworddialog.h"
+
 #include "ui_setpassworddialog.h"
 
 #include <QApplication>

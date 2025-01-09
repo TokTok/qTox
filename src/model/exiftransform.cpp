@@ -5,9 +5,9 @@
 
 #include "exiftransform.h"
 
-#include <libexif/exif-loader.h>
-
 #include <QDebug>
+
+#include <libexif/exif-loader.h>
 
 namespace ExifTransform {
 Orientation getOrientation(QByteArray imageData)

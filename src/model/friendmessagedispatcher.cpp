@@ -4,6 +4,7 @@
  */
 
 #include "friendmessagedispatcher.h"
+
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 

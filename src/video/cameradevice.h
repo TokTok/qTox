@@ -7,10 +7,12 @@
 #pragma once
 
 #include "videomode.h"
+
 #include <QHash>
 #include <QMutex>
 #include <QString>
 #include <QVector>
+
 #include <atomic>
 
 struct AVFormatContext;

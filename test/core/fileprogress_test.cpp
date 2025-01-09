@@ -6,6 +6,7 @@
 #include "src/core/toxfileprogress.h"
 
 #include <QTest>
+
 #include <limits>
 
 class TestFileProgress : public QObject

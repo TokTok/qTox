@@ -4,7 +4,9 @@
  */
 
 #include "broken.h"
+
 #include "src/chatlog/pixmapcache.h"
+
 #include <QPainter>
 
 class QStyleOptionGraphicsItem;

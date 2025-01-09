@@ -4,6 +4,7 @@
  */
 
 #include "profileinfo.h"
+
 #include "src/core/core.h"
 #include "src/model/toxclientstandards.h"
 #include "src/nexus.h"

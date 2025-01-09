@@ -7,11 +7,13 @@
 
 #include "src/video/videomode.h"
 #include "src/video/videosource.h"
+
 #include <QFuture>
 #include <QHash>
 #include <QReadWriteLock>
 #include <QString>
 #include <QVector>
+
 #include <atomic>
 
 class CameraDevice;

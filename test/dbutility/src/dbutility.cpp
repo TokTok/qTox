@@ -4,6 +4,7 @@
  */
 
 #include "dbutility/dbutility.h"
+
 #include "src/persistence/db/rawdatabase.h"
 
 #include <QTest>

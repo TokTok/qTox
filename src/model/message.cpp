@@ -4,7 +4,9 @@
  */
 
 #include "message.h"
+
 #include "friend.h"
+
 #include "src/core/core.h"
 
 #include <cassert>

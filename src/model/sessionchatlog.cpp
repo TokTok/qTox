@@ -4,11 +4,13 @@
  */
 
 #include "sessionchatlog.h"
+
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
 
 #include <QDebug>
 #include <QtGlobal>
+
 #include <mutex>
 
 namespace {

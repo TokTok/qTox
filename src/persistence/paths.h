@@ -7,6 +7,7 @@
 
 #include <QString>
 #include <QStringList>
+
 #include <atomic>
 
 #define PATHS_VERSION_TCS_COMPLIANT 0

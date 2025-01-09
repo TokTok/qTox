@@ -6,6 +6,7 @@
 #pragma once
 
 #include "audio/iaudiosource.h"
+
 #include <QMutex>
 #include <QObject>
 

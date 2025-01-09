@@ -10,7 +10,9 @@
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include "src/platform/x11_display.h"
+
 #include <QDebug>
+
 #include <X11/extensions/scrnsaver.h>
 
 uint32_t Platform::getIdleTime()

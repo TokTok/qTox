@@ -5,6 +5,12 @@
 
 #include "screenshotgrabber.h"
 
+#include "screengrabberchooserrectitem.h"
+#include "screengrabberoverlayitem.h"
+#include "toolboxgraphicsitem.h"
+
+#include "src/widget/widget.h"
+
 #include <QApplication>
 #include <QDebug>
 #include <QGraphicsPixmapItem>
@@ -14,11 +20,6 @@
 #include <QMouseEvent>
 #include <QScreen>
 #include <QTimer>
-
-#include "screengrabberchooserrectitem.h"
-#include "screengrabberoverlayitem.h"
-#include "toolboxgraphicsitem.h"
-#include "src/widget/widget.h"
 
 ScreenshotGrabber::ScreenshotGrabber()
     : QObject()

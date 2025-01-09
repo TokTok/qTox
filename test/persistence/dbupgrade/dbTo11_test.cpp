@@ -3,11 +3,11 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
-#include "src/core/toxpk.h"
-#include "src/persistence/db/rawdatabase.h"
 #include "src/persistence/db/upgrades/dbto11.h"
 
 #include "dbutility/dbutility.h"
+#include "src/core/toxpk.h"
+#include "src/persistence/db/rawdatabase.h"
 
 #include <QByteArray>
 #include <QTemporaryFile>

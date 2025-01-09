@@ -4,6 +4,7 @@
  */
 
 #include "documentcache.h"
+
 #include "customtextdocument.h"
 
 DocumentCache::DocumentCache(SmileyPack& smileyPack_, Settings& settings_)

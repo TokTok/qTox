@@ -4,6 +4,7 @@
  */
 
 #include "src/core/chatid.h"
+
 #include "src/core/conferenceid.h"
 #include "src/core/toxid.h"
 #include "src/core/toxpk.h"

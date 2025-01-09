@@ -5,13 +5,14 @@
 
 #pragma once
 
+#include "chatline.h"
+#include "chatmessage.h"
+
+#include "src/model/ichatlog.h"
+
 #include <QDateTime>
 #include <QGraphicsView>
 #include <QMargins>
-
-#include "chatline.h"
-#include "chatmessage.h"
-#include "src/model/ichatlog.h"
 
 class QGraphicsScene;
 class QGraphicsRectItem;

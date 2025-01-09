@@ -4,10 +4,12 @@
  */
 
 #include "friendlistwidget.h"
+
 #include "circlewidget.h"
 #include "conferencewidget.h"
 #include "friendwidget.h"
 #include "widget.h"
+
 #include "src/core/core.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
@@ -22,6 +24,7 @@
 #include <QGridLayout>
 #include <QMimeData>
 #include <QTimer>
+
 #include <cassert>
 
 namespace {

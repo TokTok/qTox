@@ -6,6 +6,7 @@
 #pragma once
 
 #include "genericsettings.h"
+
 #include "src/widget/form/settingswidget.h"
 
 #include <memory>

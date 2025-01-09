@@ -4,15 +4,17 @@
  */
 
 #include "conference.h"
+
 #include "friend.h"
+
 #include "src/core/chatid.h"
 #include "src/core/conferenceid.h"
 #include "src/core/toxpk.h"
 #include "src/friendlist.h"
 
-#include <cassert>
-
 #include <QDebug>
+
+#include <cassert>
 
 namespace {
 const int MAX_CONFERENCE_TITLE_LENGTH = 128;

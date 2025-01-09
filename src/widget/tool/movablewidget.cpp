@@ -4,8 +4,10 @@
  */
 
 #include "movablewidget.h"
+
 #include <QGraphicsOpacityEffect>
 #include <QMouseEvent>
+
 #include <cmath>
 
 MovableWidget::MovableWidget(QWidget* parent)

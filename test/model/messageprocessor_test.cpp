@@ -5,11 +5,11 @@
 
 #include "src/model/message.h"
 
-#include <tox/tox.h>
-
 #include <QObject>
 #include <QStringBuilder>
 #include <QtTest/QtTest>
+
+#include <tox/tox.h>
 
 namespace {
 bool messageHasSelfMention(const Message& message)

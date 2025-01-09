@@ -5,6 +5,13 @@
 
 #pragma once
 
+#include "src/core/toxfile.h"
+#include "src/core/toxpk.h"
+#include "src/model/brokenmessagereason.h"
+#include "src/model/systemmessage.h"
+#include "src/persistence/db/rawdatabase.h"
+#include "src/widget/searchtypes.h"
+
 #include <QDateTime>
 #include <QHash>
 #include <QPointer>
@@ -13,13 +20,6 @@
 #include <cassert>
 #include <cstdint>
 #include <tox/toxencryptsave.h>
-
-#include "src/core/toxfile.h"
-#include "src/core/toxpk.h"
-#include "src/model/brokenmessagereason.h"
-#include "src/model/systemmessage.h"
-#include "src/persistence/db/rawdatabase.h"
-#include "src/widget/searchtypes.h"
 
 class Profile;
 class HistoryKeeper;

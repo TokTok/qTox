@@ -7,6 +7,7 @@
 
 #include <QByteArray>
 #include <QDateTime>
+
 #include <cstdint>
 
 class ConferenceInvite

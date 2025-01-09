@@ -4,14 +4,8 @@
  */
 
 #include "advancedform.h"
-#include "ui_advancedsettings.h"
 
-#include <QApplication>
-#include <QClipboard>
-#include <QDir>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QProcess>
+#include "ui_advancedsettings.h"
 
 #include "src/model/status.h"
 #include "src/persistence/profile.h"
@@ -19,6 +13,13 @@
 #include "src/widget/tool/imessageboxmanager.h"
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
+
+#include <QApplication>
+#include <QClipboard>
+#include <QDir>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QProcess>
 
 /**
  * @class AdvancedForm

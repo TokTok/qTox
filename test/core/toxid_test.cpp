@@ -7,6 +7,7 @@
 
 #include <QString>
 #include <QtTest/QtTest>
+
 #include <ctime>
 
 const QString corrupted =

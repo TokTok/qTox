@@ -4,6 +4,7 @@
  */
 
 #include "aboutform.h"
+
 #include "ui_aboutsettings.h"
 
 #include "src/net/updatecheck.h"
@@ -13,12 +14,12 @@
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 
-#include <tox/tox.h>
-
 #include <QDebug>
 #include <QDesktopServices>
 #include <QPushButton>
 #include <QTimer>
+
+#include <tox/tox.h>
 
 // index of UI in the QStackedWidget
 enum class updateIndex

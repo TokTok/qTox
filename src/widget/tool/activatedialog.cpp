@@ -5,7 +5,9 @@
 
 
 #include "activatedialog.h"
+
 #include "src/widget/style.h"
+
 #include <QEvent>
 
 ActivateDialog::ActivateDialog(Style& style, QWidget* parent, Qt::WindowFlags f)

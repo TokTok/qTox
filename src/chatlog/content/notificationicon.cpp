@@ -4,12 +4,14 @@
  */
 
 #include "notificationicon.h"
+
 #include "src/widget/style.h"
-#include "../pixmapcache.h"
 
 #include <QGraphicsScene>
 #include <QPainter>
 #include <QTimer>
+
+#include "../pixmapcache.h"
 
 NotificationIcon::NotificationIcon(Settings& settings, Style& style, QSize Size)
     : size(Size)

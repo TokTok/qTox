@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
-
 #include <QLinearGradient>
 #include <QPixmap>
 #include <QTimer>
+
+#include "../chatlinecontent.h"
 
 class Settings;
 class Style;

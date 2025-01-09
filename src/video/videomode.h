@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QRect>
+
 #include <cstdint>
 
 struct VideoMode

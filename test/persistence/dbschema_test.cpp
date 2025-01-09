@@ -3,11 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "dbutility/dbutility.h"
 #include "src/core/toxfile.h"
 #include "src/persistence/db/rawdatabase.h"
 #include "src/persistence/db/upgrades/dbupgrader.h"
-
-#include "dbutility/dbutility.h"
 #include "src/widget/tool/imessageboxmanager.h"
 
 #include <QString>
