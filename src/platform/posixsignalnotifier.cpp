@@ -11,7 +11,6 @@
 
 #include <array>
 #include <atomic>
-
 #include <errno.h>
 #include <signal.h>     // sigaction()
 #include <sys/socket.h> // socketpair()

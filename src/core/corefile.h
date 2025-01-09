@@ -6,9 +6,8 @@
 
 #pragma once
 
-#include <tox/tox.h> // Tox_File_Control
-
 #include "toxfile.h"
+
 #include "src/core/toxpk.h"
 #include "src/model/status.h"
 
@@ -20,6 +19,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <memory>
+#include <tox/tox.h> // Tox_File_Control
 
 struct Tox;
 class Core;

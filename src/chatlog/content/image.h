@@ -5,9 +5,9 @@
 
 #pragma once
 
-#include "../chatlinecontent.h"
-
 #include <QPixmap>
+
+#include "../chatlinecontent.h"
 
 class Image : public ChatLineContent
 {

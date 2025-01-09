@@ -5,6 +5,7 @@
 
 
 #include "nexus.h"
+
 #include "audio/audio.h"
 #include "persistence/settings.h"
 #include "src/core/core.h"
@@ -26,9 +27,8 @@
 #include <QStandardPaths>
 #include <QThread>
 
-#include <vpx/vpx_image.h>
-
 #include <cassert>
+#include <vpx/vpx_image.h>
 
 #ifdef Q_OS_MAC
 #include <QActionGroup>

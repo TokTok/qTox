@@ -6,6 +6,7 @@
 #include "conferenceform.h"
 
 #include "tabcompleter.h"
+
 #include "src/chatlog/chatwidget.h"
 #include "src/chatlog/content/text.h"
 #include "src/core/conferenceid.h"

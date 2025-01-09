@@ -16,7 +16,9 @@ extern "C"
 #include "cameradevice.h"
 #include "camerasource.h"
 #include "videoframe.h"
+
 #include "src/persistence/settings.h"
+
 #include <QDebug>
 #include <QLoggingCategory>
 #include <QReadLocker>

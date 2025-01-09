@@ -6,11 +6,11 @@
 
 #include "tabcompleter.h"
 
-#include <QKeyEvent>
-#include <QRegularExpression>
-
 #include "src/model/conference.h"
 #include "src/widget/tool/chattextedit.h"
+
+#include <QKeyEvent>
+#include <QRegularExpression>
 
 /**
  * @file tabcompleter.h

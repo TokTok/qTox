@@ -4,11 +4,8 @@
  */
 
 #include "generalform.h"
-#include "ui_generalsettings.h"
 
-#include <QFileDialog>
-#include <QFontDatabase>
-#include <cmath>
+#include "ui_generalsettings.h"
 
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
@@ -18,6 +15,11 @@
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+
+#include <QFileDialog>
+#include <QFontDatabase>
+
+#include <cmath>
 
 namespace {
 const QStringList locales = {

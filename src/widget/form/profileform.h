@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/widget/qrwidget.h"
+
 #include <QLabel>
 #include <QLineEdit>
 #include <QTimer>

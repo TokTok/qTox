@@ -4,8 +4,10 @@
  */
 
 #include "src/core/toxfile.h"
+
 #include <QFile>
 #include <QRegularExpression>
+
 #include <tox/tox.h>
 
 #define TOX_HEX_ID_LENGTH 2 * TOX_ADDRESS_SIZE

@@ -5,13 +5,14 @@
 
 #pragma once
 
+#include "genericsettings.h"
+#include "ui_avform.h"
+
+#include "src/video/videomode.h"
+
 #include <QList>
 #include <QObject>
 #include <QString>
-
-#include "genericsettings.h"
-#include "ui_avform.h"
-#include "src/video/videomode.h"
 
 #include <memory>
 

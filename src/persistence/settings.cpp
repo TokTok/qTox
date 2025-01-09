@@ -5,6 +5,7 @@
  */
 
 #include "settings.h"
+
 #include "src/core/core.h"
 #include "src/nexus.h"
 #include "src/persistence/globalsettingsupgrader.h"

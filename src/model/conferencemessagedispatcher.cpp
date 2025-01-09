@@ -4,6 +4,7 @@
  */
 
 #include "conferencemessagedispatcher.h"
+
 #include "src/persistence/iconferencesettings.h"
 
 #include <QtCore>

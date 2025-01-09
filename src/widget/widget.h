@@ -5,15 +5,8 @@
 
 #pragma once
 
-#include "ui_mainwindow.h"
-
-#include <QFileInfo>
-#include <QMainWindow>
-#include <QPointer>
-#include <QSystemTrayIcon>
-#include <QUrl>
-
 #include "genericchatitemwidget.h"
+#include "ui_mainwindow.h"
 
 #include "audio/iaudiocontrol.h"
 #include "audio/iaudiosink.h"
@@ -26,6 +19,12 @@
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
 #include "src/widget/form/debugwidget.h"
+
+#include <QFileInfo>
+#include <QMainWindow>
+#include <QPointer>
+#include <QSystemTrayIcon>
+#include <QUrl>
 
 #define PIXELS_TO_ACT 7
 

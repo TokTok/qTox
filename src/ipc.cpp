@@ -4,6 +4,7 @@
  */
 
 #include "src/ipc.h"
+
 #include <QCoreApplication>
 #include <QDebug>
 #include <QThread>

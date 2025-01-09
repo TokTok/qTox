@@ -4,9 +4,10 @@
  */
 
 #include "image.h"
-#include "../pixmapcache.h"
 
 #include <QPainter>
+
+#include "../pixmapcache.h"
 
 Image::Image(QSize Size, const QString& filename)
     : size(Size)

@@ -5,15 +5,8 @@
 
 #include "conferencewidget.h"
 
-#include <QApplication>
-#include <QContextMenuEvent>
-#include <QDrag>
-#include <QDragEnterEvent>
-#include <QMenu>
-#include <QMimeData>
-#include <QPalette>
-
 #include "maskablepixmapwidget.h"
+
 #include "form/conferenceform.h"
 #include "src/conferencelist.h"
 #include "src/core/core.h"
@@ -26,6 +19,14 @@
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
 #include "tool/croppinglabel.h"
+
+#include <QApplication>
+#include <QContextMenuEvent>
+#include <QDrag>
+#include <QDragEnterEvent>
+#include <QMenu>
+#include <QMimeData>
+#include <QPalette>
 
 ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact_,
                                    Settings& settings_, Style& style_)

@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include <cassert>
+#include "util/interface.h"
 
 #include <QObject>
 
-#include "util/interface.h"
+#include <cassert>
 
 /**
  * @brief The IAudioSink class represents an interface to devices that can play audio.

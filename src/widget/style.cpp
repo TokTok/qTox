@@ -4,6 +4,7 @@
  */
 
 #include "style.h"
+
 #include "src/persistence/settings.h"
 
 #include <QDebug>

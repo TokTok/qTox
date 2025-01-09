@@ -9,7 +9,6 @@
 #include "audio/iaudiosink.h"
 #include "audio/iaudiosource.h"
 #include "src/core/toxpk.h"
-#include <tox/toxav.h>
 
 #include <QMap>
 #include <QMetaObject>
@@ -17,6 +16,7 @@
 
 #include <cstdint>
 #include <memory>
+#include <tox/toxav.h>
 
 class QTimer;
 class AudioFilterer;

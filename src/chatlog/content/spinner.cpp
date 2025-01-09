@@ -4,7 +4,6 @@
  */
 
 #include "spinner.h"
-#include "../pixmapcache.h"
 
 #include <QDebug>
 #include <QGraphicsScene>
@@ -12,6 +11,7 @@
 #include <QTime>
 #include <QVariantAnimation>
 
+#include "../pixmapcache.h"
 #include <math.h>
 
 Spinner::Spinner(const QString& img, QSize Size, qreal speed)

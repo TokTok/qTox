@@ -4,7 +4,9 @@
  */
 
 #include "personalsettingsupgrader.h"
+
 #include "settingsserializer.h"
+
 #include "src/core/toxpk.h"
 
 #include <QDebug>

@@ -4,9 +4,11 @@
  */
 
 #include "src/core/chatid.h"
+
 #include <QByteArray>
 #include <QHash>
 #include <QString>
+
 #include <cstdint>
 
 /**

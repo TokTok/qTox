@@ -7,6 +7,7 @@
 
 #include "src/core/core.h"
 #include "src/widget/tool/imessageboxmanager.h"
+
 #include <QByteArray>
 #include <QCoreApplication>
 #include <QDialogButtonBox>

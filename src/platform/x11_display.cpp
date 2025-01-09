@@ -10,6 +10,7 @@
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include <QMutex>
+
 #include <X11/Xlib.h>
 
 namespace Platform {

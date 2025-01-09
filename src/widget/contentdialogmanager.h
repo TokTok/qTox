@@ -6,6 +6,7 @@
 #pragma once
 
 #include "contentdialog.h"
+
 #include "src/core/chatid.h"
 #include "src/core/conferenceid.h"
 #include "src/core/toxpk.h"

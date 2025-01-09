@@ -5,11 +5,11 @@
 
 #include "src/persistence/paths.h"
 
-#include <ctime>
-
 #include <QStandardPaths>
 #include <QString>
 #include <QtTest/QtTest>
+
+#include <ctime>
 
 
 class TestPaths : public QObject

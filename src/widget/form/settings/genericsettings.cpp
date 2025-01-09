@@ -4,6 +4,7 @@
  */
 
 #include "genericsettings.h"
+
 #include "src/widget/style.h"
 
 #include <QCheckBox>

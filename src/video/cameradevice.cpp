@@ -16,6 +16,7 @@ extern "C"
 }
 #include "cameradevice.h"
 #include "scopedavdictionary.h"
+
 #include "src/persistence/settings.h"
 
 #include <QDebug>

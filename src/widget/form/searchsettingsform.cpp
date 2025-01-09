@@ -4,7 +4,9 @@
  */
 
 #include "searchsettingsform.h"
+
 #include "ui_searchsettingsform.h"
+
 #include "src/persistence/settings.h"
 #include "src/widget/form/loadhistorydialog.h"
 #include "src/widget/style.h"

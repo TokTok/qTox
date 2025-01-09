@@ -5,10 +5,10 @@
 
 #include "toxlogger.h"
 
-#include <tox/tox.h>
-
 #include <QDebug>
 #include <QLoggingCategory>
+
+#include <tox/tox.h>
 
 namespace ToxLogger {
 namespace {

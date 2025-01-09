@@ -7,7 +7,9 @@
 #pragma once
 
 #include "videosource.h"
+
 #include <QMutex>
+
 #include <atomic>
 #include <vpx/vpx_image.h>
 

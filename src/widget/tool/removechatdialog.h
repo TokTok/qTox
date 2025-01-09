@@ -7,7 +7,9 @@
 
 
 #include "ui_removechatdialog.h"
+
 #include "src/model/friend.h"
+
 #include <QDialog>
 
 

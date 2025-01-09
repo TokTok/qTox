@@ -5,9 +5,9 @@
 
 #include "passwordedit.h"
 
-#include <QCoreApplication>
-
 #include "src/platform/capslock.h"
+
+#include <QCoreApplication>
 
 std::unique_ptr<PasswordEdit::EventHandler> PasswordEdit::eventHandler{nullptr};
 

@@ -4,6 +4,7 @@
  */
 
 #include "globalsettingsupgrader.h"
+
 #include "src/persistence/paths.h"
 #include "src/persistence/settings.h"
 

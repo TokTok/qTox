@@ -4,7 +4,9 @@
  */
 
 #include "aboutfriendform.h"
+
 #include "ui_aboutfriendform.h"
+
 #include "src/core/core.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"

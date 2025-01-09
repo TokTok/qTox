@@ -3,6 +3,19 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "circlewidget.h"
+
+#include "contentdialog.h"
+#include "friendlistwidget.h"
+#include "friendwidget.h"
+#include "widget.h"
+
+#include "src/friendlist.h"
+#include "src/model/friend.h"
+#include "src/persistence/settings.h"
+#include "src/widget/form/chatform.h"
+#include "tool/croppinglabel.h"
+
 #include <QBoxLayout>
 #include <QDragEnterEvent>
 #include <QMenu>
@@ -11,18 +24,6 @@
 #include <QVariant>
 
 #include <cassert>
-
-#include "circlewidget.h"
-#include "contentdialog.h"
-#include "friendlistwidget.h"
-#include "friendwidget.h"
-#include "widget.h"
-#include "tool/croppinglabel.h"
-
-#include "src/friendlist.h"
-#include "src/model/friend.h"
-#include "src/persistence/settings.h"
-#include "src/widget/form/chatform.h"
 
 QHash<int, CircleWidget*> CircleWidget::circleList;
 

@@ -6,6 +6,7 @@
 #pragma once
 
 #include "genericchatitemwidget.h"
+
 #include "src/model/status.h"
 
 class FriendListLayout;

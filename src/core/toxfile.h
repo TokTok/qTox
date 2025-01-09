@@ -10,6 +10,7 @@
 
 #include <QCryptographicHash>
 #include <QString>
+
 #include <memory>
 
 class QFile;

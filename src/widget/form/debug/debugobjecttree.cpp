@@ -3,6 +3,7 @@
  */
 
 #include "debugobjecttree.h"
+
 #include "ui_debugobjecttree.h"
 
 #include "src/model/debug/debugobjecttreemodel.h"

@@ -4,8 +4,10 @@
  */
 
 #include "conferencelist.h"
+
 #include "src/core/core.h"
 #include "src/model/conference.h"
+
 #include <QDebug>
 #include <QHash>
 

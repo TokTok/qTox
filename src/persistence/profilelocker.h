@@ -7,6 +7,7 @@
 #pragma once
 
 #include <QLockFile>
+
 #include <memory>
 
 class Paths;

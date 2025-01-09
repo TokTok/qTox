@@ -10,7 +10,9 @@
 
 #ifdef Q_OS_WIN
 #include "src/persistence/settings.h"
+
 #include <QApplication>
+
 #include <string>
 #include <windows.h>
 

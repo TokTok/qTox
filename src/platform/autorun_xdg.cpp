@@ -10,6 +10,7 @@
 
 #if !defined(Q_OS_WIN) && !defined(Q_OS_MACOS)
 #include "src/persistence/settings.h"
+
 #include <QApplication>
 #include <QDir>
 #include <QProcessEnvironment>

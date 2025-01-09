@@ -4,6 +4,7 @@
  */
 
 #include "smileypack.h"
+
 #include "src/persistence/ismileysettings.h"
 
 #include <QDir>

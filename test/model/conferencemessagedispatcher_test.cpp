@@ -3,24 +3,23 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "src/model/conferencemessagedispatcher.h"
+
+#include "mock/mockconferencequery.h"
+#include "mock/mockcoreidhandler.h"
 #include "src/core/icoreconferencemessagesender.h"
 #include "src/friendlist.h"
 #include "src/model/conference.h"
-#include "src/model/conferencemessagedispatcher.h"
 #include "src/model/message.h"
 #include "src/persistence/iconferencesettings.h"
 #include "src/persistence/settings.h"
 #include "util/interface.h"
-
-#include "mock/mockconferencequery.h"
-#include "mock/mockcoreidhandler.h"
 
 #include <QObject>
 #include <QtTest/QtTest>
 
 #include <deque>
 #include <set>
-
 #include <tox/tox.h> // tox_max_message_length
 
 class MockConferenceMessageSender : public ICoreConferenceMessageSender

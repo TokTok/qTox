@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/core/chatid.h"
+
 #include <QObject>
 #include <QString>
 

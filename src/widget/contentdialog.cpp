@@ -4,15 +4,8 @@
  */
 
 #include "contentdialog.h"
-#include "splitterrestorer.h"
 
-#include <QBoxLayout>
-#include <QCloseEvent>
-#include <QDragEnterEvent>
-#include <QGuiApplication>
-#include <QMimeData>
-#include <QShortcut>
-#include <QSplitter>
+#include "splitterrestorer.h"
 
 #include "src/conferencelist.h"
 #include "src/core/core.h"
@@ -31,6 +24,14 @@
 #include "src/widget/tool/adjustingscrollarea.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+
+#include <QBoxLayout>
+#include <QCloseEvent>
+#include <QDragEnterEvent>
+#include <QGuiApplication>
+#include <QMimeData>
+#include <QShortcut>
+#include <QSplitter>
 
 namespace {
 const int minWidget = 220;

@@ -4,6 +4,7 @@
  */
 
 #include "friendlistmanager.h"
+
 #include "src/widget/genericchatroomwidget.h"
 
 FriendListManager::FriendListManager(int countContacts_, QObject* parent)

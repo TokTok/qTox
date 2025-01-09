@@ -17,7 +17,6 @@
 #include "toxpk.h"
 
 #include "src/model/status.h"
-#include <tox/tox.h>
 
 #include <QMutex>
 #include <QObject>
@@ -25,6 +24,7 @@
 #include <QTimer>
 
 #include <memory>
+#include <tox/tox.h>
 
 class CoreAV;
 class CoreFile;

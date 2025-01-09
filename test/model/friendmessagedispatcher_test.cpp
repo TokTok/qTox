@@ -3,9 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "src/model/friendmessagedispatcher.h"
+
 #include "src/core/icorefriendmessagesender.h"
 #include "src/model/friend.h"
-#include "src/model/friendmessagedispatcher.h"
 #include "src/model/message.h"
 
 #include <QObject>
@@ -13,7 +14,6 @@
 
 #include <deque>
 #include <set>
-
 #include <tox/tox.h> // tox_max_message_length
 
 class MockFriendMessageSender : public ICoreFriendMessageSender

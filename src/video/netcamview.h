@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/core/toxpk.h"
+
 #include <QVector>
 #include <QWidget>
 

@@ -5,18 +5,19 @@
 
 #pragma once
 
-#include <QElapsedTimer>
-#include <QLabel>
-#include <QSet>
-#include <QTimer>
-
 #include "genericchatform.h"
+
 #include "src/model/ichatlog.h"
 #include "src/model/imessagedispatcher.h"
 #include "src/model/status.h"
 #include "src/persistence/history.h"
 #include "src/video/netcamview.h"
 #include "src/widget/tool/screenshotgrabber.h"
+
+#include <QElapsedTimer>
+#include <QLabel>
+#include <QSet>
+#include <QTimer>
 
 class CallConfirmWidget;
 class ContentDialogManager;

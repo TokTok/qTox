@@ -4,6 +4,7 @@
  */
 
 #include "croppinglabel.h"
+
 #include <QKeyEvent>
 #include <QLineEdit>
 #include <QRegularExpression>

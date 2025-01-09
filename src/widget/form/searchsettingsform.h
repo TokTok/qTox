@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/widget/searchtypes.h"
+
 #include <QWidget>
 
 namespace Ui {

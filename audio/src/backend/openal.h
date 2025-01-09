@@ -8,22 +8,20 @@
 
 #include "alsink.h"
 #include "alsource.h"
+
 #include "audio/iaudiocontrol.h"
-
-#include <memory>
-#include <unordered_set>
-
-#include <atomic>
-#include <cmath>
 
 #include <QMutex>
 #include <QObject>
 #include <QTimer>
 
-#include <cassert>
-
 #include <AL/al.h>
 #include <AL/alc.h>
+#include <atomic>
+#include <cassert>
+#include <cmath>
+#include <memory>
+#include <unordered_set>
 
 #ifndef ALC_ALL_DEVICES_SPECIFIER
 // compatibility with older versions of OpenAL

@@ -4,7 +4,9 @@
  */
 
 #include "profileform.h"
+
 #include "ui_profileform.h"
+
 #include "src/core/core.h"
 #include "src/model/profile/iprofileinfo.h"
 #include "src/persistence/profile.h"
@@ -19,6 +21,7 @@
 #include "src/widget/tool/imessageboxmanager.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+
 #include <QApplication>
 #include <QBuffer>
 #include <QClipboard>

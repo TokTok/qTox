@@ -5,11 +5,11 @@
 
 #pragma once
 
-#include <QTime>
-#include <QWidget>
-
 #include "src/chatlog/chatlinecontent.h"
 #include "src/core/toxfile.h"
+
+#include <QTime>
+#include <QWidget>
 
 class CoreFile;
 

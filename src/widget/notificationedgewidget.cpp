@@ -4,12 +4,14 @@
  */
 
 #include "notificationedgewidget.h"
-#include "style.h"
-#include "src/persistence/settings.h"
-#include <QBoxLayout>
-#include <QLabel>
 
+#include "style.h"
+
+#include "src/persistence/settings.h"
+
+#include <QBoxLayout>
 #include <QDebug>
+#include <QLabel>
 
 NotificationEdgeWidget::NotificationEdgeWidget(Position position, Settings& settings, Style& style,
                                                QWidget* parent)

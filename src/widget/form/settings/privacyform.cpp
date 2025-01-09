@@ -4,11 +4,8 @@
  */
 
 #include "privacyform.h"
-#include "ui_privacysettings.h"
 
-#include <QDebug>
-#include <QFile>
-#include <QMessageBox>
+#include "ui_privacysettings.h"
 
 #include "src/core/core.h"
 #include "src/nexus.h"
@@ -20,6 +17,10 @@
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
+
+#include <QDebug>
+#include <QFile>
+#include <QMessageBox>
 
 #include <chrono>
 #include <random>

@@ -4,6 +4,7 @@
  */
 
 #include "src/chatlog/chatlinestorage.h"
+
 #include <QTest>
 
 namespace {

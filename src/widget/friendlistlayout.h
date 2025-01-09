@@ -6,7 +6,9 @@
 #pragma once
 
 #include "genericchatitemlayout.h"
+
 #include "src/model/status.h"
+
 #include <QBoxLayout>
 
 class FriendWidget;

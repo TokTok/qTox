@@ -4,6 +4,7 @@
  */
 
 #include "audio/audio.h"
+
 #include "audio/iaudiosettings.h"
 #include "backend/openal.h"
 

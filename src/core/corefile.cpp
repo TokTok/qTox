@@ -5,9 +5,11 @@
 
 
 #include "corefile.h"
+
 #include "core.h"
 #include "toxfile.h"
 #include "toxstring.h"
+
 #include "src/model/status.h"
 #include "src/model/toxclientstandards.h"
 #include "src/persistence/settings.h"
@@ -19,10 +21,9 @@
 #include <QRegularExpression>
 #include <QThread>
 
-#include <tox/tox.h>
-
 #include <cassert>
 #include <memory>
+#include <tox/tox.h>
 
 /**
  * @class CoreFile

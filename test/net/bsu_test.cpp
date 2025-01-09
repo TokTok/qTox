@@ -8,7 +8,6 @@
 
 #include <QNetworkProxy>
 #include <QSignalSpy>
-
 #include <QtTest/QtTest>
 
 // Needed to make this type known to Qt

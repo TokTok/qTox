@@ -5,9 +5,8 @@
 
 #pragma once
 
-#include <tox/tox.h>
-
 #include <cstdint>
+#include <tox/tox.h>
 
 namespace ToxLogger {
 

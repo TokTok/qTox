@@ -4,7 +4,6 @@
  */
 
 #include "text.h"
-#include "../documentcache.h"
 
 #include <QAbstractTextDocumentLayout>
 #include <QApplication>
@@ -16,6 +15,8 @@
 #include <QPalette>
 #include <QTextBlock>
 #include <QTextFragment>
+
+#include "../documentcache.h"
 
 Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, const QColor& custom,
            const QString& txt, const QFont& font, bool enableElide, const QString& rawText_,

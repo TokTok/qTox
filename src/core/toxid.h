@@ -10,6 +10,7 @@
 
 #include <QByteArray>
 #include <QString>
+
 #include <cstdint>
 
 class ToxId

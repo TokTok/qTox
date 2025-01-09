@@ -1,11 +1,11 @@
 #include "src/widget/loginscreen.h"
 
+#include "src/persistence/paths.h"
+#include "src/widget/style.h"
+
 #include <QDebug>
 #include <QProcessEnvironment>
 #include <QTest>
-
-#include "src/persistence/paths.h"
-#include "src/widget/style.h"
 
 class TestLoginScreen : public QObject
 {

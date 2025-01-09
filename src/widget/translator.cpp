@@ -5,6 +5,7 @@
 
 
 #include "translator.h"
+
 #include <QApplication>
 #include <QDebug>
 #include <QLibraryInfo>
@@ -12,6 +13,7 @@
 #include <QMutexLocker>
 #include <QString>
 #include <QTranslator>
+
 #include <algorithm>
 
 QTranslator* Translator::core_translator{nullptr};

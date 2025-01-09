@@ -9,6 +9,7 @@
 #include <QMutex>
 #include <QPair>
 #include <QVector>
+
 #include <functional>
 
 class QTranslator;

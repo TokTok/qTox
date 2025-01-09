@@ -4,8 +4,11 @@
  */
 
 #include "contentlayout.h"
+
 #include "style.h"
+
 #include "src/persistence/settings.h"
+
 #include <QFrame>
 #include <QStyle>
 #include <QStyleFactory>

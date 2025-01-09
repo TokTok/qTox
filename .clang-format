@@ -52,6 +52,8 @@ PenaltyReturnTypeOnItsOwnLine: 60
 
 # Includes
 SortIncludes: true
+IncludeIsMainRegex: '([-_](test|fuzz_test))?$'
+IncludeBlocks: Regroup
 IncludeCategories:
   # Match local headers
   - Regex: '^"[[:alnum:]_]+\.h"$'

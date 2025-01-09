@@ -4,15 +4,18 @@
  */
 
 #include "offlinemsgengine.h"
+
 #include "src/core/core.h"
 #include "src/model/friend.h"
 #include "src/model/status.h"
 #include "src/nexus.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
+
 #include <QCoreApplication>
 #include <QMutexLocker>
 #include <QTimer>
+
 #include <chrono>
 
 /**

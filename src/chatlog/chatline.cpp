@@ -4,6 +4,7 @@
  */
 
 #include "chatline.h"
+
 #include "chatlinecontent.h"
 
 #include <QDebug>

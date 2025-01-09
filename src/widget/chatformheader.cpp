@@ -6,7 +6,6 @@
 #include "chatformheader.h"
 
 #include "src/model/status.h"
-
 #include "src/widget/maskablepixmapwidget.h"
 #include "src/widget/style.h"
 #include "src/widget/tool/callconfirmwidget.h"

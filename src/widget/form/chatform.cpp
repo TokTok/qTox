@@ -4,6 +4,7 @@
  */
 
 #include "chatform.h"
+
 #include "src/chatlog/chatlinecontentproxy.h"
 #include "src/chatlog/chatmessage.h"
 #include "src/chatlog/chatwidget.h"

@@ -5,8 +5,10 @@
 
 
 #include "callconfirmwidget.h"
+
 #include "src/widget/style.h"
 #include "src/widget/widget.h"
+
 #include <QDialogButtonBox>
 #include <QFontMetrics>
 #include <QHBoxLayout>
@@ -17,6 +19,7 @@
 #include <QPushButton>
 #include <QRect>
 #include <QVBoxLayout>
+
 #include <assert.h>
 
 /**

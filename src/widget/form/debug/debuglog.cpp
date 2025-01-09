@@ -4,6 +4,7 @@
  */
 
 #include "debuglog.h"
+
 #include "ui_debuglog.h"
 
 #include "src/model/debug/debuglogmodel.h"
@@ -11,8 +12,6 @@
 #include "src/widget/style.h"
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
-
-#include <tox/tox.h>
 
 #include <QDebug>
 #include <QDesktopServices>
@@ -22,6 +21,7 @@
 #include <QTimer>
 
 #include <memory>
+#include <tox/tox.h>
 
 namespace {
 QStringList loadLogs(Paths& paths)

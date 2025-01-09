@@ -8,6 +8,7 @@
 #include "util/strongtype.h"
 
 #include <QMetaType>
+
 #include <cstdint>
 
 using ReceiptNum = NamedType<uint32_t, struct ReceiptNumTag, Orderable>;

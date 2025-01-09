@@ -16,6 +16,7 @@
 #include <QPixmap>
 #include <QString>
 #include <QVector>
+
 #include <memory>
 
 class CameraSource;

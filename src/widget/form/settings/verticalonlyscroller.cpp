@@ -3,10 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#include "verticalonlyscroller.h"
+
 #include <QResizeEvent>
 #include <QShowEvent>
-
-#include "verticalonlyscroller.h"
 
 VerticalOnlyScroller::VerticalOnlyScroller(QWidget* parent)
     : QScrollArea(parent)

@@ -4,6 +4,7 @@
  */
 
 #include "removechatdialog.h"
+
 #include "src/model/chat.h"
 
 #include <QPushButton>
