@@ -84,6 +84,7 @@ cc_library(
 ) for src in glob(
     ["**/*_test.cpp"],
     exclude = [
+        "model/exiftransform_test.cpp",
         "persistence/dbschema_test.cpp",
         "**/*_fuzz_test.cpp",
     ],
@@ -97,4 +98,23 @@ cc_fuzz_test(
     copts = COPTS,
     tags = ["qt"],
     deps = ["//qtox/src:serialize"],
+)
+
+qt_test(
+    name = "exiftransform_test",
+    size = "small",
+    src = "model/exiftransform_test.cpp",
+    copts = COPTS,
+    mocopts = ["-Iqtox"],
+    deps = ["//qtox/src:exiftransform"],
+)
+
+cc_fuzz_test(
+    name = "exiftransform_fuzz_test",
+    size = "small",
+    testonly = True,
+    srcs = ["model/exiftransform_fuzz_test.cpp"],
+    copts = COPTS,
+    tags = ["qt"],
+    deps = ["//qtox/src:exiftransform"],
 )

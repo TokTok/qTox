@@ -69,6 +69,7 @@ private slots:
     void testRightTop();
     void testRightBottom();
     void testLeftBottom();
+    void testInputTooShort();
 
 private:
     QImage inputImage;
@@ -145,6 +146,18 @@ void TestExifTransform::testLeftBottom()
         ExifTransform::applyTransformation(inputImage, ExifTransform::Orientation::LeftBottom);
     QVERIFY(getColor(image, Side::left) == rowColor);
     QVERIFY(getColor(image, Side::bottom) == colColor);
+}
+
+void TestExifTransform::testInputTooShort()
+{
+    const QByteArray garbage = QByteArray::fromBase64(
+        "AEV4aWYAAE1NACoAAAAA0v///7p6h2kAaWYAAAAAAABNeGlmAABRMAAjGEQAAAAAAAAAQAAAAAAA"
+        "/////////////////wEBASMBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBARIAAQAAAAEB"
+        "AAABAAEBAQEjAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAAAEBAADCwsLCwsLCwsLCwsLCwsLCwsLC"
+        "wsLCAQEBAQEBAQEBAQEBAQAAAQEAAAABAAEBAQEjAQEBAAAAAAAAAAD/////////////////BgD/"
+        "/////wAAAQABAQEBIwEBAQEjAQEB/////wEBAQEBAQEBAQEBAQEBAQEB");
+
+    ExifTransform::getOrientation(garbage.mid(1));
 }
 
 QTEST_APPLESS_MAIN(TestExifTransform)

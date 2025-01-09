@@ -184,6 +184,20 @@ cc_library(
 )
 
 cc_library(
+    name = "exiftransform",
+    srcs = ["model/exiftransform.cpp"],
+    hdrs = ["model/exiftransform.h"],
+    copts = COPTS,
+    tags = ["qt"],
+    visibility = ["//qtox:__subpackages__"],
+    deps = [
+        "@libexif",
+        "@qt//:qt_core",
+        "@qt//:qt_gui",
+    ],
+)
+
+cc_library(
     name = "src",
     srcs = [":version"] + [
         ":src_moc",
@@ -191,13 +205,17 @@ cc_library(
     ] + glob(
         ["**/*.cpp"],
         exclude = [
+            "model/exiftransform.cpp",
             "persistence/serialize.cpp",
             "main.cpp",
         ],
     ),
     hdrs = glob(
         ["**/*.h"],
-        exclude = ["persistence/serialize.h"],
+        exclude = [
+            "model/exiftransform.h",
+            "persistence/serialize.h",
+        ],
     ),
     copts = COPTS,
     defines = DEFINES,
@@ -211,13 +229,13 @@ cc_library(
     tags = ["qt"],
     visibility = ["//qtox:__subpackages__"],
     deps = [
+        ":exiftransform",
         ":serialize",
         "//c-toxcore",
         "//qtox:res_lib",
         "//qtox/audio",
         "//qtox/util",
         "@ffmpeg",
-        "@libexif",
         "@libqrencode",
         "@libsodium",
         "@libvpx",

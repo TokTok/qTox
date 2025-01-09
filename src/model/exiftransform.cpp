@@ -29,6 +29,11 @@ Orientation getOrientation(QByteArray imageData)
         return Orientation::TopLeft;
     }
 
+    if (exifEntry->size < 2) {
+        exif_data_free(exifData);
+        return Orientation::TopLeft;
+    }
+
     const int orientation = exif_get_short(exifEntry->data, byteOrder);
     exif_data_free(exifData);
 
@@ -50,7 +55,7 @@ Orientation getOrientation(QByteArray imageData)
     case 8:
         return Orientation::LeftBottom;
     default:
-        qWarning() << "Invalid exif orientation";
+        qWarning() << "Invalid exif orientation" << orientation;
         return Orientation::TopLeft;
     }
 }
