@@ -7,6 +7,7 @@
 #include "desktopnotifybackend.h"
 #include "src/persistence/inotificationsettings.h"
 
+#include <QDebug>
 #include <QSystemTrayIcon>
 
 struct DesktopNotify::Private
@@ -51,8 +52,16 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
         }
     }
 
-    // Fallback to QSystemTrayIcon.
-    if (d->icon) {
-        d->icon->showMessage(notificationData.title, notificationData.message, notificationData.pixmap);
+    if (!QSystemTrayIcon::supportsMessages()) {
+        qWarning() << "System does not support notifications.";
+        return;
     }
+
+    if (d->icon == nullptr) {
+        qWarning() << "System tray not yet initialised.";
+        return;
+    }
+
+    // Fallback to QSystemTrayIcon.
+    d->icon->showMessage(notificationData.title, notificationData.message, notificationData.pixmap);
 }
