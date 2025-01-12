@@ -12,5 +12,6 @@ struct NotificationData
 {
     QString title;
     QString message;
+    QString category;
     QPixmap pixmap;
 };

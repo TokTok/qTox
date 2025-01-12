@@ -15,8 +15,8 @@ class DesktopNotifyBackend : public QObject
 public:
     explicit DesktopNotifyBackend(QObject* parent);
     ~DesktopNotifyBackend() override;
-
-    bool showMessage(const QString& title, const QString& message, const QPixmap& pixmap);
+    bool showMessage(const QString& title, const QString& message, const QString& category,
+                     const QPixmap& pixmap);
 
 signals:
     void messageClicked();
