@@ -342,7 +342,7 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
             // app_name
             QApplication::applicationName(),
             // replaces_id
-            d->id,
+            static_cast<uint32_t>(0),
             // app_icon
             QStringLiteral("dialog-password"),
             // summary
