@@ -32,6 +32,10 @@ option(FULLY_STATIC
        "Produce a fully statically linked qTox binary (experimental)" OFF)
 option(GUI_TESTS
        "Enable GUI rendering tests, likely tied to a specific Qt version" OFF)
+option(
+  REPR_RCC
+  "Set the version of the Qt resource file format to 1 to help with reproducible builds"
+  OFF)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE
@@ -126,10 +130,12 @@ set(CMAKE_AUTORCC ON)
 # Enable maximum compression.
 set(AUTORCC_OPTIONS -compress 9)
 
-# Drop the file modification time of source files from generated files to help
-# with reproducible builds. We do not use QFileInfo.lastModified so this has no
-# unwanted side effects.
-set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1 --compress-algo zlib)
+if(REPR_RCC)
+  # Drop the file modification time of source files from generated files to help
+  # with reproducible builds. We do not use QFileInfo.lastModified so this has
+  # no unwanted side effects.
+  set(AUTORCC_OPTIONS ${AUTORCC_OPTIONS} -format-version 1 --compress-algo zlib)
+endif()
 
 # Apply resource compilation options.
 set(CMAKE_AUTORCC_OPTIONS ${AUTORCC_OPTIONS})
