@@ -1047,7 +1047,11 @@ void Widget::setStatusMessage(const QString& statusMessage)
  */
 void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
 {
-    if (!settings.getAudioOutDevEnabled()) {
+    bool isBusy = core->getStatus() == Status::Status::Busy;
+    bool busySound = settings.getBusySound();
+    bool notifySound = settings.getNotifySound();
+
+    if (!settings.getAudioOutDevEnabled() || !(notifySound && (!isBusy || busySound))) {
         // don't try to play sounds if audio is disabled
         return;
     }
@@ -1573,7 +1577,8 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
                     notificationData = notificationGenerator->friendMessageNotification(f, text);
                 }
             } else {
-                    notificationData = notificationGenerator->fileTransferNotification(f, filename, filesize);
+                notificationData =
+                    notificationGenerator->fileTransferNotification(f, filename, filesize);
             }
             notifier->notifyMessage(notificationData);
         }
@@ -1673,11 +1678,8 @@ bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, 
                 }
                 eventFlag = true;
             }
-            bool isBusy = core->getStatus() == Status::Status::Busy;
-            bool busySound = settings.getBusySound();
-            bool notifySound = settings.getNotifySound();
 
-            if (notifySound && sound && (!isBusy || busySound)) {
+            if (sound) {
                 playNotificationSound(IAudioSink::Sound::NewMessage);
             }
         }
