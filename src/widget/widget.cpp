@@ -1565,10 +1565,16 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
         widget->updateStatusLight();
         ui->friendList->trackWidget(settings, style, widget);
         if (notifier != nullptr) {
-            auto notificationData =
-                filename.isEmpty()
-                    ? notificationGenerator->friendMessageNotification(f, text)
-                    : notificationGenerator->fileTransferNotification(f, filename, filesize);
+            NotificationData notificationData;
+            if (filename.isEmpty()) {
+                if (text.isEmpty()) {
+                    notificationData = notificationGenerator->incomingCallNotification(f);
+                } else {
+                    notificationData = notificationGenerator->friendMessageNotification(f, text);
+                }
+            } else {
+                    notificationData = notificationGenerator->fileTransferNotification(f, filename, filesize);
+            }
             notifier->notifyMessage(notificationData);
         }
 

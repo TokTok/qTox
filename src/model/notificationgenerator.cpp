@@ -144,6 +144,26 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
     ret.title = generateTitle(friendNotifications, conferenceNotifications, f);
     ret.message =
         generateContent(friendNotifications, conferenceNotifications, message, f->getPublicKey());
+    ret.category = "im.received";
+    ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
+
+    return ret;
+}
+
+NotificationData NotificationGenerator::incomingCallNotification(const Friend* f)
+{
+    friendNotifications[f]++;
+
+    NotificationData ret;
+
+    if (notificationSettings.getNotifyHide()) {
+        ret.title = tr("Incoming call");
+        return ret;
+    }
+
+    ret.title = generateTitle(friendNotifications, conferenceNotifications, f);
+    ret.message = generateContent(friendNotifications, conferenceNotifications, "", f->getPublicKey());
+    ret.category = "call.incoming";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -195,6 +215,7 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
         ret.message = filename + " (" + getHumanReadableSize(fileSize) + ")";
     }
 
+    ret.category = "transfer";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -211,6 +232,7 @@ NotificationData NotificationGenerator::conferenceInvitationNotification(const F
 
     ret.title = tr("%1 invites you to join a conference.").arg(from->getDisplayedName());
     ret.message = "";
+    ret.category = "im";
     ret.pixmap = getSenderAvatar(profile, from->getPublicKey());
 
     return ret;
@@ -228,6 +250,7 @@ NotificationData NotificationGenerator::friendRequestNotification(const ToxPk& s
 
     ret.title = tr("Friend request received from %1").arg(sender.toString());
     ret.message = message;
+    ret.category = "im";
 
     return ret;
 }
