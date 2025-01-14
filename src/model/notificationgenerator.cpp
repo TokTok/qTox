@@ -11,11 +11,10 @@
 
 namespace {
 
-QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
-                        const QHash<const Conference*, size_t>& conferenceNotifications,
+QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifications,
                         QString lastMessage, const ToxPk& sender)
 {
-    assert(!friendNotifications.empty() || !conferenceNotifications.empty());
+    assert(!conferenceNotifications.empty());
 
     if (conferenceNotifications.size() == 1) {
         auto it = conferenceNotifications.begin();
@@ -95,7 +94,7 @@ NotificationData NotificationGenerator::conferenceMessageNotification(const Conf
     }
 
     ret.title = c->getDisplayedName();
-    ret.message = generateContent(friendNotifications, conferenceNotifications, message, sender);
+    ret.message = generateContent(conferenceNotifications, message, sender);
     ret.category = "im.received";
     ret.pixmap = getSenderAvatar(profile, sender);
 
