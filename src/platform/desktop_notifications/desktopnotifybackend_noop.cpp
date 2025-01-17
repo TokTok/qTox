@@ -16,10 +16,11 @@ DesktopNotifyBackend::DesktopNotifyBackend(QObject* parent)
 DesktopNotifyBackend::~DesktopNotifyBackend() = default;
 
 bool DesktopNotifyBackend::showMessage(const QString& title, const QString& message,
-                                       const QPixmap& pixmap)
+                                       const QString& category, const QPixmap& pixmap)
 {
     std::ignore = title;
     std::ignore = message;
+    std::ignore = category;
     std::ignore = pixmap;
     // Always fail, fall back to QSystemTrayIcon.
     return false;
