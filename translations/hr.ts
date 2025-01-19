@@ -2711,10 +2711,6 @@ Ovaj ID uključuje NoSpam kod (plavo) i kontrolni zbroj (sivo).</translation>
         <translation>prije datuma</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Razlikovanje veličine slova</translation>
     </message>
@@ -3097,6 +3093,40 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pregled slike</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalan broj poruka (po razgovoru) učitanih iz povijesti razgovora.
+Smanjite ovo za poboljšanje performansi. Premali broj ovdje može
+uzrokovati nestanak trake za pomicanje.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalna veličina
+prikaza dnevnika chata</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Broj poruka za učitavanje iz povijesti razgovora prilikom pomicanja.
+Premali broj ovdje može uzrokovati nestanak trake za pomicanje.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Veličina dijela
+dnevnika razgovora</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dnevnik r
+azgovora:</translation>
     </message>
 </context>
 <context>

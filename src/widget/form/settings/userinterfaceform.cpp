@@ -75,6 +75,9 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->notifySystemBackend->setEnabled(settings.getNotify() && settings.getDesktopNotify());
 
     bodyUI->showWindow->setChecked(settings.getShowWindow());
+
+    bodyUI->chatLogMaxTxt->setValue(settings.getChatMaxWindowSize());
+    bodyUI->chatLogChunkTxt->setValue(settings.getChatWindowChunkSize());
     bodyUI->cbImagePreview->setChecked(settings.getImagePreview());
 
     bodyUI->cbConferencePosition->setChecked(settings.getConferencePosition());
@@ -297,11 +300,6 @@ void UserInterfaceForm::on_showWindow_stateChanged()
     settings.setShowWindow(bodyUI->showWindow->isChecked());
 }
 
-void UserInterfaceForm::on_cbImagePreview_stateChanged()
-{
-    settings.setImagePreview(bodyUI->cbImagePreview->isChecked());
-}
-
 void UserInterfaceForm::on_conferenceOnlyNotifyWhenMentioned_stateChanged()
 {
     // Note: UI is boolean inverted from settings to maintain setting file backwards compatibility
@@ -394,4 +392,21 @@ void UserInterfaceForm::on_useNameColors_stateChanged(int value)
 void UserInterfaceForm::on_notifyHide_stateChanged(int value)
 {
     settings.setNotifyHide(value);
+}
+
+void UserInterfaceForm::on_cbImagePreview_stateChanged()
+{
+    settings.setImagePreview(bodyUI->cbImagePreview->isChecked());
+}
+
+void UserInterfaceForm::on_chatLogChunkTxt_valueChanged(int value)
+{
+    settings.setChatWindowChunkSize(value);
+}
+
+void UserInterfaceForm::on_chatLogMaxTxt_valueChanged(int value)
+{
+    // Chunk size should not be very close to the maximum size.
+    bodyUI->chatLogChunkTxt->setMaximum(value - 20);
+    settings.setChatMaxWindowSize(value);
 }

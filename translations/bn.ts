@@ -3178,11 +3178,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">তারিখের আগে</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">কেস সংবেদনশীল</translation>
@@ -3634,6 +3629,37 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ছবির পূর্বরূপ</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">চ্যাটের ইতিহাস থেকে সর্বাধিক সংখ্যক বার্তা (প্রতি কথোপকথন) লোড করা
+হয়েছে। কর্মক্ষমতা উন্নত করতে এটি হ্রাস করুন। এখানে খুব কম সংখ্যার কারণে
+স্ক্রোল বার অদৃশ্য হয়ে যেতে পারে।</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">সর্বোচ্চ চ্যাট লগ ভিউ সাইজ</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">স্ক্রল করার সময় চ্যাটের ইতিহাস থেকে লোড করা বার্তার সংখ্যা। এখানে খুব কম
+সংখ্যার কারণে স্ক্রোল বার অদৃশ্য হয়ে যেতে পারে।</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">চ্যাট লগ খণ্ড আকার</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">চ্যাট লগ:</translation>
     </message>
 </context>
 <context>

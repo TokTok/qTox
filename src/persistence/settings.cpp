@@ -191,7 +191,6 @@ void Settings::loadGlobal()
         separateWindow = s.value("separateWindow", false).toBool();
         dontGroupWindows = s.value("dontGroupWindows", false).toBool();
         showIdenticons = s.value("showIdenticons", true).toBool();
-        imagePreview = s.value("imagePreview", true).toBool();
 
         const QString DEFAULT_SMILEYS = ":/smileys/EmojiOne/emoticons.xml";
         smileyPack = s.value("smileyPack", DEFAULT_SMILEYS).toString();
@@ -231,6 +230,9 @@ void Settings::loadGlobal()
                 style = "None";
         }
         nameColors = s.value("nameColors", false).toBool();
+        imagePreview = s.value("imagePreview", true).toBool();
+        chatMaxWindowSize = s.value("chatMaxWindowSize", 100).toInt();
+        chatWindowChunkSize = s.value("chatWindowChunkSize", 50).toInt();
     });
 
     inGroup(s, "Chat", [this, &s] {
@@ -661,7 +663,6 @@ void Settings::saveGlobal()
         s.setValue("dontGroupWindows", dontGroupWindows);
         s.setValue("conferencePosition", conferencePosition);
         s.setValue("showIdenticons", showIdenticons);
-        s.setValue("imagePreview", imagePreview);
 
         s.setValue("smileyPack", smileyPack);
         s.setValue("emojiFontPointSize", emojiFontPointSize);
@@ -676,6 +677,10 @@ void Settings::saveGlobal()
         s.setValue("themeColor", themeColor);
         s.setValue("style", style);
         s.setValue("nameColors", nameColors);
+        s.setValue("imagePreview", imagePreview);
+        s.setValue("chatMaxWindowSize", chatMaxWindowSize);
+        s.setValue("chatWindowChunkSize", chatWindowChunkSize);
+
         s.setValue("statusChangeNotificationEnabled", statusChangeNotificationEnabled);
         s.setValue("showConferenceJoinLeaveMessages", showConferenceJoinLeaveMessages);
         s.setValue("spellCheckingEnabled", spellCheckingEnabled);
@@ -2019,19 +2024,6 @@ void Settings::setShowIdenticons(bool value)
     }
 }
 
-bool Settings::getImagePreview() const
-{
-    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
-    return imagePreview;
-}
-
-void Settings::setImagePreview(bool newValue)
-{
-    if (setVal(imagePreview, newValue)) {
-        emit imagePreviewChanged(newValue);
-    }
-}
-
 int Settings::getCircleCount() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
@@ -2190,6 +2182,45 @@ void Settings::setEnableConferencesColor(bool state)
 bool Settings::getEnableConferencesColor() const
 {
     return nameColors;
+}
+
+bool Settings::getImagePreview() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return imagePreview;
+}
+
+void Settings::setImagePreview(bool newValue)
+{
+    if (setVal(imagePreview, newValue)) {
+        emit imagePreviewChanged(newValue);
+    }
+}
+
+int Settings::getChatMaxWindowSize() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return chatMaxWindowSize;
+}
+
+void Settings::setChatMaxWindowSize(int value)
+{
+    if (setVal(chatMaxWindowSize, value)) {
+        emit chatMaxWindowSizeChanged(value);
+    }
+}
+
+int Settings::getChatWindowChunkSize() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return chatWindowChunkSize;
+}
+
+void Settings::setChatWindowChunkSize(int value)
+{
+    if (setVal(chatWindowChunkSize, value)) {
+        emit chatWindowChunkSizeChanged(value);
+    }
 }
 
 /**

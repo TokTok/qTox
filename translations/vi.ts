@@ -2633,10 +2633,6 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>trước ngày</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Phải nhập đúng kí tự viết hoa hay viết thường</translation>
     </message>
@@ -3009,6 +3005,41 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Xem trước hình ảnh</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Số tin nhắn tối đa (mỗi cuộc hội thoại) được tải từ lịch sử trò chuyện.
+Giảm điều này để cải thiện hiệu suất. Con số quá thấp ở đây có thể khiến
+thanh cuộn biến mất.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kích thước xem nhật ký trò
+chuyện tối đa</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Số lượng tin nhắn cần tải từ lịch sử trò chuyện khi cuộn. Con số quá thấp
+ở đây có thể khiến thanh cuộn biến mất.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kích thước đoạn
+nhật ký trò chuyện</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nhật ký
+trò
+chuyện:</translation>
     </message>
 </context>
 <context>

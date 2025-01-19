@@ -191,7 +191,6 @@ signals:
 
     // GUI
     void autoLoginChanged(bool enabled);
-    void nameColorsChanged(bool enabled);
     void separateWindowChanged(bool enabled);
     void showSystemTrayChanged(bool enabled);
     bool minimizeOnCloseChanged(bool enabled);
@@ -206,7 +205,10 @@ signals:
     void compactLayoutChanged(bool enabled);
     void sortingModeChanged(FriendListSortingMode mode);
     void showIdenticonsChanged(bool enabled);
+    void nameColorsChanged(bool enabled);
     void imagePreviewChanged(bool enabled);
+    void chatMaxWindowSizeChanged(int max);
+    void chatWindowChunkSizeChanged(int chunk);
 
     // ChatView
     void useEmoticonsChanged(bool enabled);
@@ -527,6 +529,14 @@ public:
     bool getImagePreview() const;
     void setImagePreview(bool newValue);
 
+    // Maximum number of rendered messages at any given time
+    int getChatMaxWindowSize() const;
+    void setChatMaxWindowSize(int value);
+
+    // Amount of messages to purge when removing messages
+    int getChatWindowChunkSize() const;
+    void setChatWindowChunkSize(int value);
+
     bool getAutoLogin() const;
     void setEnableConferencesColor(bool state);
     bool getEnableConferencesColor() const;
@@ -604,12 +614,14 @@ private:
     bool desktopNotify;
     bool notifySystemBackend;
     bool showWindow;
-    bool imagePreview;
     bool notifySound;
     bool notifyHide;
     bool busySound;
     bool conferenceAlwaysNotify;
     bool nameColors;
+    bool imagePreview;
+    int chatMaxWindowSize;
+    int chatWindowChunkSize;
 
     bool forceTCP;
     bool enableLanDiscovery;

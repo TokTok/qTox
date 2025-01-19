@@ -40,7 +40,7 @@
         <x>0</x>
         <y>0</y>
         <width>664</width>
-        <height>1079</height>
+        <height>993</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_4" stretch="0,0,0,0,0,0">
@@ -69,7 +69,7 @@
            <number>9</number>
           </property>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="lblChatFont">
             <property name="text">
              <string>Base font:</string>
             </property>
@@ -164,6 +164,70 @@ Hide formatting characters:
            <widget class="QCheckBox" name="useNameColors">
             <property name="text">
              <string>Use colored nicknames in conferences</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QCheckBox" name="cbImagePreview">
+            <property name="toolTip">
+             <string comment="tooltip for Image preview setting">Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</string>
+            </property>
+            <property name="text">
+             <string>Image preview</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="chatLogMaxLbl">
+              <property name="toolTip">
+               <string>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</string>
+              </property>
+              <property name="text">
+               <string>Maximum chat log view size</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="chatLogMaxTxt">
+              <property name="minimum">
+               <number>50</number>
+              </property>
+              <property name="maximum">
+               <number>500</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="chatLogChunkLbl">
+              <property name="toolTip">
+               <string>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</string>
+              </property>
+              <property name="text">
+               <string>Chat log chunk size</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="chatLogChunkTxt">
+              <property name="minimum">
+               <number>20</number>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>Chat log:</string>
             </property>
            </widget>
           </item>
@@ -274,16 +338,6 @@ Hide formatting characters:
             </property>
             <property name="text">
              <string>Open window</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="cbImagePreview">
-            <property name="toolTip">
-             <string comment="tooltip for Image preview setting">Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</string>
-            </property>
-            <property name="text">
-             <string>Image preview</string>
             </property>
            </widget>
           </item>

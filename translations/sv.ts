@@ -2655,10 +2655,6 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation>före datum</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Skiftlägeskänslig</translation>
     </message>
@@ -3041,6 +3037,39 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bildförhandsgranskning</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximalt antal meddelanden (per konversation) laddade från
+chatthistoriken. Minska detta för att förbättra prestandan. Ett för lågt
+nummer här kan göra att rullningslisten försvinner.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximal visningsstorlek
+för chattlogg</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Antal meddelanden som ska laddas från chatthistoriken när du rullar. Ett
+för lågt nummer här kan göra att rullningslisten försvinner.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chattloggstorlek</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chattlogg
+:</translation>
     </message>
 </context>
 <context>

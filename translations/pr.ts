@@ -411,7 +411,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation type="unfinished">Tox ID</translation>
+        <translation type="unfinished">Seafarer&apos;s Mark</translation>
     </message>
     <message>
         <source>Message</source>
@@ -822,7 +822,7 @@ so ye can stash th&apos; file on Windows.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick Up Matey&apos;s ID</translation>
     </message>
 </context>
 <context>
@@ -2617,11 +2617,6 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <translation type="unfinished">afore th&apos; date</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation type="unfinished">Matchin&apos; th&apos; case</translation>
     </message>
@@ -2992,6 +2987,32 @@ Hide formatting characters:
     <message>
         <source>Image preview</source>
         <translation type="unfinished">Glimpse at th&apos; image</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translation type="unfinished">Most messages (per chat) loaded from th&apos; chat history.
+Lower this ta make it faster. A number too low here may cause th&apos;
+scroll bar ta vanish.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translation type="unfinished">Biggest Message Log Size</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translation type="unfinished">Number o&apos; messages ta load from th&apos; chat history when scrollin&apos;. A number too low
+here may cause th&apos; scroll bar ta vanish.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translation type="unfinished">Th&apos; Message Log:</translation>
     </message>
 </context>
 <context>

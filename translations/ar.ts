@@ -2801,11 +2801,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">قبل التاريخ</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">حساسية الموضوع</translation>
@@ -3198,6 +3193,40 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">معاينة الصورة</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">الحد الأقصى لعدد الرسائل (لكل محادثة) التي تم تحميلها من سجل الدردشة. قم
+بتقليل هذا لتحسين الأداء. قد يؤدي الرقم المنخفض جدًا هنا إلى اختفاء شريط
+التمرير.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">الحد الأقصى لحجم عرض سجل
+الدردشة</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">عدد الرسائل التي سيتم تحميلها من سجل الدردشة عند التمرير. قد يؤدي الرقم
+المنخفض جدًا هنا إلى اختفاء شريط التمرير.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حجم قطعة سجل
+الدردشة</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">سجل
+الدردشة:</translation>
     </message>
 </context>
 <context>
