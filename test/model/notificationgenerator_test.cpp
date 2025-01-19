@@ -154,11 +154,11 @@ void TestNotificationGenerator::testMultipleFriendMessages()
     f.setName("friendName");
     notificationGenerator->friendMessageNotification(&f, "test");
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
-    QCOMPARE(notificationData.title, "2 message(s) from friendName");
+    QCOMPARE(notificationData.title, "friendName");
     QCOMPARE(notificationData.message, "test2");
 
     notificationData = notificationGenerator->friendMessageNotification(&f, "test3");
-    QCOMPARE(notificationData.title, "3 message(s) from friendName");
+    QCOMPARE(notificationData.title, "friendName");
     QCOMPARE(notificationData.message, "test3");
 }
 
@@ -203,7 +203,7 @@ void TestNotificationGenerator::testMultipleConferenceMessages()
     notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
 
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender2, "test2");
-    QCOMPARE(notificationData.title, "2 message(s) from conferenceName");
+    QCOMPARE(notificationData.title, "conferenceName");
     QCOMPARE(notificationData.message, "sender2: test2");
 }
 
@@ -218,8 +218,8 @@ void TestNotificationGenerator::testMultipleFriendSourceMessages()
     notificationGenerator->friendMessageNotification(&f, "test1");
     auto notificationData = notificationGenerator->friendMessageNotification(&f2, "test2");
 
-    QCOMPARE(notificationData.title, "2 message(s) from 2 chats");
-    QCOMPARE(notificationData.message, "friend1, friend2");
+    QCOMPARE(notificationData.title, "friend2");
+    QCOMPARE(notificationData.message, "test2");
 }
 
 void TestNotificationGenerator::testMultipleConferenceSourceMessages()
@@ -235,8 +235,8 @@ void TestNotificationGenerator::testMultipleConferenceSourceMessages()
     notificationGenerator->conferenceMessageNotification(&g, sender, "test1");
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g2, sender, "test1");
 
-    QCOMPARE(notificationData.title, "2 message(s) from 2 chats");
-    QCOMPARE(notificationData.message, "conferenceName, conferenceName2");
+    QCOMPARE(notificationData.title, "conferenceName2");
+    QCOMPARE(notificationData.message, "sender1: test1");
 }
 
 void TestNotificationGenerator::testMixedSourceMessages()
@@ -253,12 +253,12 @@ void TestNotificationGenerator::testMixedSourceMessages()
     notificationGenerator->friendMessageNotification(&f, "test1");
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test2");
 
-    QCOMPARE("2 message(s) from 2 chats", notificationData.title);
-    QCOMPARE("conference, friend", notificationData.message);
+    QCOMPARE("conference", notificationData.title);
+    QCOMPARE("sender1: test2", notificationData.message);
 
     notificationData = notificationGenerator->fileTransferNotification(&f, "file", 0);
-    QCOMPARE("3 message(s) from 2 chats", notificationData.title);
-    QCOMPARE("conference, friend", notificationData.message);
+    QCOMPARE("friend - file transfer", notificationData.title);
+    QCOMPARE("file (0B)", notificationData.message);
 }
 
 void TestNotificationGenerator::testFileTransfer()
@@ -282,8 +282,8 @@ void TestNotificationGenerator::testFileTransferAfterMessage()
     auto notificationData =
         notificationGenerator->fileTransferNotification(&f, "file", 5 * 1024 * 1024 /* 5MB */);
 
-    QCOMPARE(notificationData.title, "2 message(s) from friend");
-    QCOMPARE(notificationData.message, "Incoming file transfer");
+    QCOMPARE(notificationData.title, "friend - file transfer");
+    QCOMPARE(notificationData.message, "file (5.00MiB)");
 }
 
 void TestNotificationGenerator::testConferenceInvitation()
@@ -306,7 +306,7 @@ void TestNotificationGenerator::testConferenceInviteUncounted()
     notificationGenerator->conferenceInvitationNotification(&f);
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.title, "friend");
     QCOMPARE(notificationData.message, "test2");
 }
 
@@ -332,7 +332,7 @@ void TestNotificationGenerator::testFriendRequestUncounted()
     notificationGenerator->friendRequestNotification(sender, "request");
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.title, "friend");
     QCOMPARE(notificationData.message, "test2");
 }
 
@@ -413,7 +413,7 @@ void TestNotificationGenerator::testSimpleMessageToggle()
 
     auto notificationData = notificationGenerator->friendMessageNotification(&f, "test2");
 
-    QCOMPARE(notificationData.title, "2 message(s) from friend");
+    QCOMPARE(notificationData.title, "friend");
     QCOMPARE(notificationData.message, "test2");
 }
 
