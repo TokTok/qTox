@@ -16,14 +16,11 @@ QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifi
 {
     assert(!conferenceNotifications.empty());
 
-    if (conferenceNotifications.size() == 1) {
-        auto it = conferenceNotifications.begin();
-        if (it == conferenceNotifications.end()) {
-            qFatal("Concurrency error: conference notifications got cleared while reading");
-        }
-        return it.key()->getPeerList()[sender] + ": " + lastMessage;
+    auto it = conferenceNotifications.begin();
+    if (it == conferenceNotifications.end()) {
+        qFatal("Concurrency error: conference notifications got cleared while reading");
     }
-    return lastMessage;
+    return it.key()->getPeerList()[sender] + ": " + lastMessage;
 }
 
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)
