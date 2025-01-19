@@ -43,6 +43,7 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
     friendNotifications[f]++;
 
     NotificationData ret;
+    ret.category = "im.received";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("New message");
@@ -51,7 +52,6 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
 
     ret.title = f->getDisplayedName();
     ret.message = message;
-    ret.category = "im.received";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -62,16 +62,15 @@ NotificationData NotificationGenerator::incomingCallNotification(const Friend* f
     friendNotifications[f]++;
 
     NotificationData ret;
+    ret.category = "call.incoming";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Incoming call");
-        ret.category = "call.incoming";
         return ret;
     }
 
     ret.title = f->getDisplayedName();
     ret.message = tr("Incoming call");
-    ret.category = "call.incoming";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -84,6 +83,7 @@ NotificationData NotificationGenerator::conferenceMessageNotification(const Conf
     conferenceNotifications[c]++;
 
     NotificationData ret;
+    ret.category = "transfer";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("New conference message");
@@ -92,7 +92,6 @@ NotificationData NotificationGenerator::conferenceMessageNotification(const Conf
 
     ret.title = c->getDisplayedName();
     ret.message = generateContent(conferenceNotifications, message, sender);
-    ret.category = "im.received";
     ret.pixmap = getSenderAvatar(profile, sender);
 
     return ret;
@@ -105,6 +104,7 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
     friendNotifications[f]++;
 
     NotificationData ret;
+    ret.category = "transfer";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Incoming file transfer");
@@ -114,7 +114,6 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
     //: e.g. Bob - file transfer
     ret.title = tr("%1 - file transfer").arg(f->getDisplayedName());
     ret.message = filename + " (" + getHumanReadableSize(fileSize) + ")";
-    ret.category = "transfer";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -123,6 +122,7 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
 NotificationData NotificationGenerator::conferenceInvitationNotification(const Friend* from)
 {
     NotificationData ret;
+    ret.category = "im";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Conference invite received");
@@ -131,7 +131,6 @@ NotificationData NotificationGenerator::conferenceInvitationNotification(const F
 
     ret.title = tr("%1 invites you to join a conference.").arg(from->getDisplayedName());
     ret.message = "";
-    ret.category = "im";
     ret.pixmap = getSenderAvatar(profile, from->getPublicKey());
 
     return ret;
@@ -141,6 +140,7 @@ NotificationData NotificationGenerator::friendRequestNotification(const ToxPk& s
                                                                   const QString& message)
 {
     NotificationData ret;
+    ret.category = "im";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Friend request received");
@@ -149,7 +149,6 @@ NotificationData NotificationGenerator::friendRequestNotification(const ToxPk& s
 
     ret.title = tr("Friend request received from %1").arg(sender.toString());
     ret.message = message;
-    ret.category = "im";
 
     return ret;
 }
