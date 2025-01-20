@@ -14,6 +14,7 @@
 #include <cassert>
 #include <memory>
 #include <sodium.h>
+#include <tox/tox.h> // tox_public_key_size
 #include <utility>
 
 #include "profile.h"
