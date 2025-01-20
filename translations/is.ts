@@ -3152,11 +3152,6 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translation type="unfinished">fyrir dagsetningu</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hástafaviðkvæmur</translation>
@@ -3606,6 +3601,40 @@ Fela sniðstafi:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Forskoðun mynd</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hámarksfjöldi skilaboða (á hvert samtal) hlaðið úr spjallferli. Minnkaðu
+þetta til að bæta árangur. Of lág tala hér getur valdið því að
+skrunstikan hverfur.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hámarksstærð
+spjallskrárskoðunar</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Fjöldi skeyta til að hlaða úr spjallferlinum þegar skrunað er. Of lág tala
+hér getur valdið því að skrunstikan hverfur.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Stærð
+spjalldagskrár</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Spjallskr
+á:</translation>
     </message>
 </context>
 <context>

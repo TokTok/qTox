@@ -2631,10 +2631,6 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <translation>avant la date</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00/00/0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Sensible aux majuscules et minuscules</translation>
     </message>
@@ -3007,6 +3003,45 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aperçu de l&apos;image</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nombre maximum de messages (par conversation) chargés à partir de
+l&apos;historique des discussions. Diminuez-le pour améliorer les
+performances. Un nombre trop faible ici peut entraîner la disparition de
+la barre de défilement.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Taille maximale
+d&apos;affichage du journal de
+discussion</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nombre de messages à charger à partir de l&apos;historique des discussions lors
+du défilement. Un nombre trop faible ici peut entraîner la disparition de
+la barre de défilement.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Taille du segment
+du journal de
+discussion</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Journal
+de discus
+sion&#xa0;:</translation>
     </message>
 </context>
 <context>

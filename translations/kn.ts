@@ -3167,11 +3167,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">ದಿನಾಂಕದ ಮೊದಲು</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಕೇಸ್ ಸೆನ್ಸಿಟಿವ್</translation>
@@ -3621,6 +3616,40 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಚಿತ್ರ ಪೂರ್ವವೀಕ್ಷಣೆ</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಚಾಟ್ ಇತಿಹಾಸದಿಂದ ಗರಿಷ್ಠ ಸಂಖ್ಯೆಯ ಸಂದೇಶಗಳನ್ನು (ಪ್ರತಿ ಸಂಭಾಷಣೆಗೆ) ಲೋಡ್
+ಮಾಡಲಾಗಿದೆ. ಕಾರ್ಯಕ್ಷಮತೆಯನ್ನು ಸುಧಾರಿಸಲು ಇದನ್ನು ಕಡಿಮೆ ಮಾಡಿ. ಇಲ್ಲಿ ತುಂಬಾ
+ಕಡಿಮೆ ಸಂಖ್ಯೆಯು ಸ್ಕ್ರಾಲ್ ಬಾರ್ ಕಣ್ಮರೆಯಾಗಲು ಕಾರಣವಾಗಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಗರಿಷ್ಠ ಚಾಟ್ ಲಾಗ್ ವೀಕ್ಷಣೆ
+ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಸ್ಕ್ರೋಲಿಂಗ್ ಮಾಡುವಾಗ ಚಾಟ್ ಇತಿಹಾಸದಿಂದ ಲೋಡ್ ಮಾಡಬೇಕಾದ ಸಂದೇಶಗಳ ಸಂಖ್ಯೆ. ಇಲ್ಲಿ
+ತುಂಬಾ ಕಡಿಮೆ ಸಂಖ್ಯೆಯು ಸ್ಕ್ರಾಲ್ ಬಾರ್ ಕಣ್ಮರೆಯಾಗಲು ಕಾರಣವಾಗಬಹುದು.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಚಾಟ್ ಲಾಗ್ ಚಂಕ್
+ಗಾತ್ರ</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಚಾಟ್
+ಲಾಗ್:</translation>
     </message>
 </context>
 <context>

@@ -84,7 +84,7 @@
      <item>
       <widget class="QLabel" name="startDateLabel">
        <property name="text">
-        <string>00.00.0000</string>
+        <string notr="true">00.00.0000</string>
        </property>
       </widget>
      </item>

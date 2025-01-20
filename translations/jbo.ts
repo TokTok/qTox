@@ -3134,11 +3134,6 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <translation type="unfinished">in the last&quot; &quot;7 days</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">junta</translation>
@@ -3588,6 +3583,37 @@ e.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">pixra vitke</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">so&apos;i notci pe&apos;a fe lo nuncasnu
+ko jdika lo nu xamgu lo nunselpla dukse cmalu vi ka&apos;e rinka lo nu
+lo rokci bajra ku canci</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ni&apos;o ni&apos;o ni&apos;o ni&apos;o ni&apos;o sei casnu be lo xokau casnu</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">loi notci poi jai se cpedu fai lo nu cfagau fi lo nu casnu citri dukse cmalu
+lo nu vi cmima cu rinka lo nu lo rokci bajra cu canci</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ni&apos;o ni&apos;o ni&apos;o ni&apos;o ni&apos;o ni&apos;o ni&apos;o sei casnu be lo xotli cukta</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">fi&apos;o casnu log:</translation>
     </message>
 </context>
 <context>

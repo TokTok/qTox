@@ -2750,11 +2750,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>日付より前</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">大文字と小文字を区別</translation>
@@ -3156,6 +3151,35 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>画像プレビュー</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャット履歴からロードされるメッセージ (会話あたり)
+の最大数。パフォーマンスを向上させるには、これを減らします。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログの最大表示サイズ</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">スクロール時にチャット履歴から読み込むメッセージの数。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログのチャンクサイズ</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">チャットログ:</translation>
     </message>
 </context>
 <context>

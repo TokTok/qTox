@@ -2627,10 +2627,6 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>vor dem Datum</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Groß-/Kleinschreibung beachten</translation>
     </message>
@@ -3003,6 +2999,39 @@ Formatierungszeichen ausblenden:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bildvorschau</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale Anzahl von Nachrichten (pro Konversation), die aus dem
+Chatverlauf geladen werden. Verringern Sie diesen Wert, um die Leistung
+zu verbessern. Eine zu niedrige Zahl kann dazu führen, dass die
+Bildlaufleiste verschwindet.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale Größe der Chat-Protokollansicht</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Anzahl der Nachrichten, die beim Scrollen aus dem Chatverlauf geladen
+werden sollen. Eine zu niedrige Zahl kann dazu führen, dass die
+Bildlaufleiste verschwindet.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Blockgröße des Chat-Protokolls</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chatprotokoll:</translation>
     </message>
 </context>
 <context>

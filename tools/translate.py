@@ -5,6 +5,7 @@ import glob
 import json
 import multiprocessing
 import subprocess  # nosec
+import textwrap
 import xml.dom.minidom as minidom  # nosec
 from dataclasses import dataclass
 from functools import cache as memoize
@@ -257,6 +258,16 @@ def _baidu_translate(lang: Language, text: str) -> str:
     return attempt
 
 
+def _reflow(source: str, translation: str) -> str:
+    """Wrap translation text (single line) to the maximum source line length."""
+    if "\n" not in source:
+        return translation
+    # Find the maximum line length in the source text.
+    max_length = max(len(line) for line in source.split("\n"))
+    # Wrap the translation text to the maximum line length.
+    return textwrap.fill(translation, width=max_length, break_long_words=False)
+
+
 def _translate(lang: Language, current: int, total: int, text: str) -> str:
     """Uses the Google Translate API to translate text to a given language.
 
@@ -274,12 +285,12 @@ def _translate(lang: Language, current: int, total: int, text: str) -> str:
             "sl": "en",
             "tl": lang.google_code,
             "dt": "t",
-            "q": text,
+            "q": text.replace("\n", " "),
         },
     )
     response.raise_for_status()
-    return _fix_translation(lang, text,
-                            "".join([x[0] for x in response.json()[0]]))
+    return _fix_translation(
+        lang, text, _reflow(text, "".join([x[0] for x in response.json()[0]])))
 
 
 def _need_translation(lang: Language, source: str,

@@ -2648,10 +2648,6 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <translation>antes da data</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Sensível a maiúsculas</translation>
     </message>
@@ -3028,6 +3024,44 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pré-visualização da imagem</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Número máximo de mensagens (por conversa) carregadas do histórico de
+chat. Diminua isso para melhorar o desempenho. Um número muito baixo aqui
+pode fazer com que a barra de rolagem desapareça.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tamanho máximo de
+visualização do registro
+de bate-papo</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Número de mensagens a serem carregadas do histórico de bate-papo ao rolar.
+Um número muito baixo aqui pode fazer com que a barra de rolagem
+desapareça.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tamanho do bloco de
+registro de bate-
+papo</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Registro
+de bate-
+papo:</translation>
     </message>
 </context>
 <context>

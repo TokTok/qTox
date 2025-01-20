@@ -2746,11 +2746,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">πριν από την ημερομηνία</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Διάκριση πεζών-κεφαλαίων</translation>
@@ -3142,6 +3137,44 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Προεπισκόπηση εικόνας</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγιστος αριθμός μηνυμάτων (ανά συνομιλία) που φορτώθηκαν από το ιστορικό
+συνομιλιών. Μειώστε το για να βελτιώσετε την απόδοση. Ένας πολύ χαμηλός
+αριθμός εδώ μπορεί να προκαλέσει την εξαφάνιση της γραμμής κύλισης.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγιστο μέγεθος προβολής
+αρχείου καταγραφής
+συνομιλίας</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Αριθμός μηνυμάτων προς φόρτωση από το ιστορικό συνομιλιών κατά την κύλιση.
+Ένας πολύ χαμηλός αριθμός εδώ μπορεί να προκαλέσει την εξαφάνιση της
+γραμμής κύλισης.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγεθος κομματιού
+αρχείου καταγραφής
+συνομιλίας</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ημερολόγι
+ο συνομιλ
+ίας:</translation>
     </message>
 </context>
 <context>

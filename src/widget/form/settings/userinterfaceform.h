@@ -44,7 +44,6 @@ private slots:
     void on_notifyHide_stateChanged(int value);
     void on_busySound_stateChanged();
     void on_showWindow_stateChanged();
-    void on_cbImagePreview_stateChanged();
     void on_conferenceOnlyNotifyWhenMentioned_stateChanged();
     void on_cbCompactLayout_stateChanged();
     void on_cbSeparateWindow_stateChanged();
@@ -55,6 +54,9 @@ private slots:
     void on_txtChatFont_currentFontChanged(const QFont& f);
     void on_txtChatFontSize_valueChanged(int px);
     void on_useNameColors_stateChanged(int value);
+    void on_cbImagePreview_stateChanged();
+    void on_chatLogMaxTxt_valueChanged(int value);
+    void on_chatLogChunkTxt_valueChanged(int value);
 
 private:
     void retranslateUi();

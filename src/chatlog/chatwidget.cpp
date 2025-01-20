@@ -29,21 +29,6 @@
 
 namespace {
 
-// Maximum number of rendered messages at any given time
-int constexpr maxWindowSize = 300;
-// Amount of messages to purge when removing messages
-int constexpr windowChunkSize = 100;
-
-template <class T>
-T clamp(T x, T min, T max)
-{
-    if (x > max)
-        return max;
-    if (x < min)
-        return min;
-    return x;
-}
-
 ChatMessage::Ptr createDateMessage(QDateTime timestamp, DocumentCache& documentCache,
                                    Settings& settings, Style& style)
 {
@@ -283,7 +268,8 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
     connect(&chatLog_, &IChatLog::itemUpdated, this, &ChatWidget::onMessageUpdated);
     connect(verticalScrollBar(), &QScrollBar::valueChanged, this, &ChatWidget::onScrollValueChanged);
 
-    auto firstChatLogIdx = clampedAdd(chatLog_.getNextIdx(), -100, chatLog_);
+    auto firstChatLogIdx =
+        clampedAdd(chatLog_.getNextIdx(), -settings.getChatMaxWindowSize(), chatLog_);
     renderMessages(firstChatLogIdx, chatLog_.getNextIdx());
 }
 
@@ -343,8 +329,8 @@ void ChatWidget::layout(int start, int end, qreal width)
     if (start - 1 >= 0)
         h = (*chatLineStorage)[start - 1]->sceneBoundingRect().bottom() + lineSpacing;
 
-    start = clamp<int>(start, 0, chatLineStorage->size());
-    end = clamp<int>(end + 1, 0, chatLineStorage->size());
+    start = std::clamp<int>(start, 0, chatLineStorage->size());
+    end = std::clamp<int>(end + 1, 0, chatLineStorage->size());
 
     for (int i = start; i < end; ++i) {
         ChatLine* l = (*chatLineStorage)[i].get();
@@ -997,8 +983,8 @@ void ChatWidget::removeLines(ChatLogIdx begin, ChatLogIdx end)
         return;
     }
 
-    begin = clamp<ChatLogIdx>(begin, chatLineStorage->firstIdx(), chatLineStorage->lastIdx());
-    end = clamp<ChatLogIdx>(end, chatLineStorage->firstIdx(), chatLineStorage->lastIdx()) + 1;
+    begin = std::clamp<ChatLogIdx>(begin, chatLineStorage->firstIdx(), chatLineStorage->lastIdx());
+    end = std::clamp<ChatLogIdx>(end, chatLineStorage->firstIdx(), chatLineStorage->lastIdx()) + 1;
 
     // NOTE: Optimization potential if this find proves to be too expensive.
     // Batching all our erases into one call would be more efficient
@@ -1125,7 +1111,7 @@ void ChatWidget::setRenderedWindowStart(ChatLogIdx begin)
 {
     // End of the window is pre-determined as a hardcoded window size relative
     // to the start
-    auto end = clampedAdd(begin, maxWindowSize, chatLog);
+    auto end = clampedAdd(begin, settings.getChatMaxWindowSize(), chatLog);
 
     // Use invalid + equal ChatLogIdx to force a full re-render if we do not
     // have an indexed message to compare to
@@ -1165,7 +1151,7 @@ void ChatWidget::setRenderedWindowStart(ChatLogIdx begin)
 void ChatWidget::setRenderedWindowEnd(ChatLogIdx end)
 {
     // Off by 1 since the maxWindowSize is not inclusive
-    auto start = clampedAdd(end, -maxWindowSize + 1, chatLog);
+    auto start = clampedAdd(end, -settings.getChatMaxWindowSize() + 1, chatLog);
 
     setRenderedWindowStart(start);
 }
@@ -1216,7 +1202,7 @@ void ChatWidget::onScrollValueChanged(int value)
 
     if (value == verticalScrollBar()->minimum()) {
         auto idx =
-            clampedAdd(chatLineStorage->firstIdx(), -static_cast<int>(windowChunkSize), chatLog);
+            clampedAdd(chatLineStorage->firstIdx(), -settings.getChatWindowChunkSize(), chatLog);
 
         if (idx != chatLineStorage->firstIdx()) {
             auto currentTop = (*chatLineStorage)[chatLineStorage->firstIdx()];
@@ -1231,7 +1217,7 @@ void ChatWidget::onScrollValueChanged(int value)
         }
 
     } else if (value == verticalScrollBar()->maximum()) {
-        auto idx = clampedAdd(chatLineStorage->lastIdx(), static_cast<int>(windowChunkSize), chatLog);
+        auto idx = clampedAdd(chatLineStorage->lastIdx(), settings.getChatWindowChunkSize(), chatLog);
 
         if (idx != chatLineStorage->lastIdx() + 1) {
             // FIXME: This should be the top line
@@ -1298,6 +1284,7 @@ void ChatWidget::hideEvent(QHideEvent* event)
     // one friend this could end up accumulating chat logs until they restart
     // qTox, but that isn't a regression from previously released behavior.
 
+    const std::size_t maxWindowSize = settings.getChatMaxWindowSize();
     auto numLinesToRemove =
         chatLineStorage->size() > maxWindowSize ? chatLineStorage->size() - maxWindowSize : 0;
 
@@ -1522,6 +1509,7 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
     // If the chat log is empty it's likely the user has just cleared. In this
     // case it makes more sense to present the jump as if we're coming from the
     // bottom
+    const int windowChunkSize = settings.getChatWindowChunkSize();
     if (chatLineStorage->hasIndexedMessage() && idx > chatLineStorage->lastIdx()) {
         setRenderedWindowEnd(clampedAdd(idx, windowChunkSize, chatLog));
     } else {

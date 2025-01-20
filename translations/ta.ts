@@ -2937,11 +2937,6 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">தேதிக்கு முன்</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">கேஸ் சென்சிட்டிவ்</translation>
@@ -3386,6 +3381,41 @@ Hide formatting characters:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">பட முன்னோட்டம்</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அரட்டை வரலாற்றில் இருந்து ஏற்றப்பட்ட செய்திகளின் அதிகபட்ச எண்ணிக்கை (ஒரு
+உரையாடலுக்கு). செயல்திறனை மேம்படுத்த இதை குறைக்கவும். இங்கு மிகக் குறைந்த
+எண் இருந்தால், ஸ்க்ரோல் பார் காணாமல் போகலாம்.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அதிகபட்ச அரட்டை பதிவு
+காட்சி அளவு</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ஸ்க்ரோலிங் செய்யும் போது அரட்டை வரலாற்றில் இருந்து ஏற்ற வேண்டிய
+செய்திகளின் எண்ணிக்கை. இங்கு மிகக் குறைந்த எண் இருந்தால், ஸ்க்ரோல் பார்
+காணாமல் போகலாம்.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அரட்டை பதிவு துண்டு
+அளவு</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அரட்டை
+பதிவு:</translation>
     </message>
 </context>
 <context>

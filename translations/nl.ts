@@ -2622,10 +2622,6 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <translation>vóór datum</translation>
     </message>
     <message>
-        <source>00.00.0000</source>
-        <translation>00.00.0000</translation>
-    </message>
-    <message>
         <source>Case sensitive</source>
         <translation>Hoofdlettergevoelig</translation>
     </message>
@@ -2998,6 +2994,41 @@ Opmaaktekens verbergen:
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Afbeeldingsvoorbeeld</translation>
+    </message>
+    <message>
+        <source>Maximum number of messages (per conversation) loaded from chat history.
+Decrease this to improve performance. A too low number here may cause the
+scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximaal aantal berichten (per gesprek) geladen vanuit de
+chatgeschiedenis. Verlaag dit om de prestaties te verbeteren. Een te laag
+getal hier kan ervoor zorgen dat de schuifbalk verdwijnt.</translation>
+    </message>
+    <message>
+        <source>Maximum chat log view size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale weergavegrootte
+van chatlogboek</translation>
+    </message>
+    <message>
+        <source>Number of messages to load from the chat history when scrolling. A too low
+number here may cause the scroll bar to disappear.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Aantal berichten dat moet worden geladen uit de chatgeschiedenis tijdens
+het scrollen. Een te laag getal hier kan ervoor zorgen dat de schuifbalk
+verdwijnt.</translation>
+    </message>
+    <message>
+        <source>Chat log chunk size</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Grootte van het
+chatlogboek</translation>
+    </message>
+    <message>
+        <source>Chat log:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chatlogbo
+ek:</translation>
     </message>
 </context>
 <context>
