@@ -32,6 +32,13 @@ struct Version
     int patch;
 };
 
+QDebug& operator<<(QDebug& stream, const Version& version)
+{
+    stream.noquote()
+        << QStringLiteral("v%1.%2.%3").arg(version.major).arg(version.minor).arg(version.patch);
+    return stream.quote();
+}
+
 Version tagToVersion(const QString& tagName)
 {
     // capture tag name to avoid showing update available on dev builds which include hash as part of describe
@@ -150,17 +157,16 @@ void UpdateCheck::handleResponse(QNetworkReply* reply)
         qWarning() << "Currently running an untested/unstable version of qTox";
         emit versionIsUnstable();
         reply->deleteLater();
-        return;
     }
 
     const auto currentVer = tagToVersion(VersionInfo::gitDescribe());
     const auto availableVer = tagToVersion(latestVersion);
 
     if (isUpdateAvailable(currentVer, availableVer)) {
-        qInfo() << "Update available to version" << latestVersion;
+        qInfo() << "Update available from version" << currentVer << "to" << availableVer;
         emit updateAvailable(latestVersion, link);
     } else {
-        qInfo() << "qTox is up to date";
+        qInfo() << "qTox is up to date:" << currentVer;
         emit upToDate();
     }
 
