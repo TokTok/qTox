@@ -196,6 +196,7 @@ qt6_wrap_ui(
   src/mainwindow.ui
   src/widget/about/aboutfriendform.ui
   src/widget/form/debug/debuglog.ui
+  src/widget/form/debug/debugnetprof.ui
   src/widget/form/debug/debugobjecttree.ui
   src/widget/form/loadhistorydialog.ui
   src/widget/form/profileform.ui
@@ -503,6 +504,8 @@ set(${PROJECT_NAME}_SOURCES
     src/widget/form/chatform.h
     src/widget/form/debug/debuglog.cpp
     src/widget/form/debug/debuglog.h
+    src/widget/form/debug/debugnetprof.cpp
+    src/widget/form/debug/debugnetprof.h
     src/widget/form/debug/debugobjecttree.cpp
     src/widget/form/debug/debugobjecttree.h
     src/widget/form/debugwidget.cpp
