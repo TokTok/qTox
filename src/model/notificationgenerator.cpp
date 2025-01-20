@@ -117,7 +117,7 @@ QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
 
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)
 {
-    return profile ? profile->loadAvatar(sender) : QPixmap();
+    return profile != nullptr ? profile->loadAvatar(sender) : QPixmap();
 }
 } // namespace
 

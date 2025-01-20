@@ -16,6 +16,7 @@ Checks: "-*
 , performance-move-const-arg
 , readability-container-*
 , readability-else-after-return
+, readability-implicit-bool-conversion
 , readability-isolate-declaration
 , readability-make-member-function-const
 , readability-named-parameter

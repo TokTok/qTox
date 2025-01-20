@@ -89,7 +89,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
 
     QAction* selectedItem = menu.exec(mapToGlobal(event->pos()));
 
-    if (selectedItem) {
+    if (selectedItem != nullptr) {
         if (selectedItem == renameAction) {
             editName();
         } else if (selectedItem == removeAction) {
@@ -162,7 +162,7 @@ void CircleWidget::dropEvent(QDropEvent* event)
     // Check, that the element is dropped from qTox
     QObject* o = event->source();
     FriendWidget* widget = qobject_cast<FriendWidget*>(o);
-    if (!widget)
+    if (widget == nullptr)
         return;
 
     if (!event->mimeData()->hasFormat("toxPk")) {
@@ -171,7 +171,7 @@ void CircleWidget::dropEvent(QDropEvent* event)
     // Check, that the user has a friend with the same ToxId
     const ToxPk toxPk{event->mimeData()->data("toxPk")};
     Friend* f = friendList.findFriend(toxPk);
-    if (!f)
+    if (f == nullptr)
         return;
 
     // Save CircleWidget before changing the Id
@@ -222,7 +222,7 @@ void CircleWidget::updateID(int index)
         const QWidget* w = friendOnlineLayout()->itemAt(i)->widget();
         const FriendWidget* friendWidget = qobject_cast<const FriendWidget*>(w);
 
-        if (friendWidget) {
+        if (friendWidget != nullptr) {
             const Friend* f = friendWidget->getFriend();
             settings.setFriendCircleID(f->getPublicKey(), id);
         }
@@ -232,7 +232,7 @@ void CircleWidget::updateID(int index)
         const QWidget* w = friendOfflineLayout()->itemAt(i)->widget();
         const FriendWidget* friendWidget = qobject_cast<const FriendWidget*>(w);
 
-        if (friendWidget) {
+        if (friendWidget != nullptr) {
             const Friend* f = friendWidget->getFriend();
             settings.setFriendCircleID(f->getPublicKey(), id);
         }

@@ -159,7 +159,7 @@ void SettingsSerializer::setArrayIndex(int i)
 void SettingsSerializer::setValue(const QString& key, const QVariant& value)
 {
     Value* v = findValue(key);
-    if (v) {
+    if (v != nullptr) {
         v->value = value;
     } else {
         const Value nv{group, array, arrayIndex, key, value};
@@ -172,7 +172,7 @@ void SettingsSerializer::setValue(const QString& key, const QVariant& value)
 QVariant SettingsSerializer::value(const QString& key, const QVariant& defaultValue) const
 {
     const Value* v = findValue(key);
-    if (v)
+    if (v != nullptr)
         return v->value;
     return defaultValue;
 }
@@ -216,7 +216,8 @@ bool SettingsSerializer::isSerializedFormat(QString filePath)
     char fmagic[8];
     if (f.read(fmagic, sizeof(fmagic)) != sizeof(fmagic))
         return false;
-    return !memcmp(fmagic, magic, 4) || tox_is_data_encrypted(reinterpret_cast<uint8_t*>(fmagic));
+    return (memcmp(fmagic, magic, 4) == 0)
+           || tox_is_data_encrypted(reinterpret_cast<uint8_t*>(fmagic));
 }
 
 /**
@@ -285,7 +286,7 @@ void SettingsSerializer::save()
     }
 
     // Encrypt
-    if (passKey) {
+    if (passKey != nullptr) {
         data = passKey->encrypt(data);
     }
 
@@ -312,7 +313,7 @@ void SettingsSerializer::readSerialized()
 
     // Decrypt
     if (ToxEncrypt::isEncrypted(data)) {
-        if (!passKey) {
+        if (passKey == nullptr) {
             qCritical() << "The settings file is encrypted, but we don't have a passkey!";
             return;
         }
@@ -323,11 +324,11 @@ void SettingsSerializer::readSerialized()
             return;
         }
     } else {
-        if (passKey)
+        if (passKey != nullptr)
             qWarning() << "We have a password, but the settings file is not encrypted";
     }
 
-    if (memcmp(data.data(), magic, 4)) {
+    if (memcmp(data.data(), magic, 4) != 0) {
         qWarning() << "Bad magic!";
         return;
     }
@@ -501,7 +502,7 @@ void SettingsSerializer::readIni()
     std::sort(std::begin(groupsToKill), std::end(groupsToKill), std::greater_equal<int>());
 
     for (const int g : groupsToKill) {
-        if (groupSizes[static_cast<size_t>(g)])
+        if (groupSizes[static_cast<size_t>(g)] != 0)
             continue;
 
         removeGroup(g);

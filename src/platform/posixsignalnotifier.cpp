@@ -97,7 +97,7 @@ void installCrashHandler()
     };
 
     for (auto s : crashSignals) {
-        if (::sigaction(s, &action, nullptr)) {
+        if (::sigaction(s, &action, nullptr) != 0) {
             qFatal("Failed to setup crash signal %d, error = %d", s, errno);
         }
     }
@@ -128,7 +128,7 @@ void PosixSignalNotifier::watchSignal(int signum)
     action.sa_handler = signalHandler;
     action.sa_mask = blockMask; // allow old signal to finish before new is raised
 
-    if (::sigaction(signum, &action, nullptr)) {
+    if (::sigaction(signum, &action, nullptr) != 0) {
         qFatal("Failed to setup signal %d, error = %d", signum, errno);
     }
 }
@@ -158,7 +158,7 @@ void PosixSignalNotifier::unwatchSignal(int signum)
         ::exit(EXIT_FAILURE);
     };
 
-    if (::sigaction(signum, &action, nullptr)) {
+    if (::sigaction(signum, &action, nullptr) != 0) {
         qFatal("Failed to reset signal %d, error = %d", signum, errno);
     }
 }
@@ -187,7 +187,7 @@ void PosixSignalNotifier::onSignalReceived()
 
 PosixSignalNotifier::PosixSignalNotifier()
 {
-    if (::socketpair(AF_UNIX, SOCK_STREAM, 0, g_signalSocketPair.data())) {
+    if (::socketpair(AF_UNIX, SOCK_STREAM, 0, g_signalSocketPair.data()) != 0) {
         qFatal("Failed to create socket pair, error = %d", errno);
     }
 

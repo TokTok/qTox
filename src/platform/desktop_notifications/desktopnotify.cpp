@@ -26,7 +26,7 @@ DesktopNotify::DesktopNotify(INotificationSettings& settings, QObject* parent)
       })}
 {
     connect(d->dbus, &DesktopNotifyBackend::messageClicked, this, &DesktopNotify::notificationClosed);
-    if (d->icon) {
+    if (d->icon != nullptr) {
         connect(d->icon, &QSystemTrayIcon::messageClicked, this, &DesktopNotify::notificationClosed);
     }
 }

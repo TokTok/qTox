@@ -191,7 +191,7 @@ getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
     const auto pk = frnd->getPublicKey();
     const auto circleId = settings.getFriendCircleID(pk);
     auto circleWidget = CircleWidget::getFromID(circleId);
-    auto w = circleWidget ? static_cast<QWidget*>(circleWidget) : static_cast<QWidget*>(fw);
+    auto w = circleWidget != nullptr ? static_cast<QWidget*>(circleWidget) : static_cast<QWidget*>(fw);
     auto friendList = qobject_cast<FriendListWidget*>(w->parentWidget());
     return std::make_tuple(circleWidget, friendList);
 }
@@ -248,7 +248,7 @@ void FriendWidget::moveToCircle(int newCircleId)
     auto oldCircleWidget = CircleWidget::getFromID(oldCircleId);
     auto newCircleWidget = CircleWidget::getFromID(newCircleId);
 
-    if (newCircleWidget) {
+    if (newCircleWidget != nullptr) {
         newCircleWidget->addFriendWidget(this, frnd->getStatus());
         newCircleWidget->setExpanded(true);
         s.savePersonal();
@@ -256,7 +256,7 @@ void FriendWidget::moveToCircle(int newCircleId)
         s.setFriendCircleID(pk, newCircleId);
     }
 
-    if (oldCircleWidget) {
+    if (oldCircleWidget != nullptr) {
         oldCircleWidget->updateStatus();
     }
 }
@@ -315,7 +315,7 @@ void FriendWidget::updateStatusLight()
         const Settings& s = settings;
         const uint32_t circleId = s.getFriendCircleID(frnd->getPublicKey());
         CircleWidget* circleWidget = CircleWidget::getFromID(circleId);
-        if (circleWidget) {
+        if (circleWidget != nullptr) {
             circleWidget->setExpanded(true);
         }
 

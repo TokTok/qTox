@@ -153,7 +153,7 @@ void ConferenceInviteForm::deleteInviteWidget(const ConferenceInvite& inviteInfo
 void ConferenceInviteForm::retranslateUi()
 {
     headLabel->setText(tr("Conferences"));
-    if (createButton) {
+    if (createButton != nullptr) {
         createButton->setText(tr("Create new conference"));
     }
     inviteBox->setTitle(tr("Conference invites"));

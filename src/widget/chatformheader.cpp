@@ -221,8 +221,8 @@ void ChatFormHeader::removeCallConfirm()
 
 void ChatFormHeader::updateCallButtons(bool online, bool audio, bool video)
 {
-    const bool audioAvailable = online && (mode & Mode::Audio);
-    const bool videoAvailable = online && (mode & Mode::Video);
+    const bool audioAvailable = online && ((mode & Mode::Audio) != 0);
+    const bool videoAvailable = online && ((mode & Mode::Video) != 0);
     if (!audioAvailable) {
         callState = CallButtonState::Disabled;
     } else if (video) {

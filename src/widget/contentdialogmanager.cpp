@@ -56,7 +56,7 @@ FriendWidget* ContentDialogManager::addFriendToDialog(ContentDialog* dialog,
     const auto& friendPk = friendWidget->getFriend()->getPublicKey();
 
     ContentDialog* lastDialog = getFriendDialog(friendPk);
-    if (lastDialog) {
+    if (lastDialog != nullptr) {
         lastDialog->removeFriend(friendPk);
     }
 
@@ -72,7 +72,7 @@ ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dia
     const auto& conferenceId = conferenceWidget->getConference()->getPersistentId();
 
     ContentDialog* lastDialog = getConferenceDialog(conferenceId);
-    if (lastDialog) {
+    if (lastDialog != nullptr) {
         lastDialog->removeConference(conferenceId);
     }
 
@@ -103,7 +103,7 @@ ContentDialog* ContentDialogManager::focusDialog(
     }
 
     ContentDialog* dialog = *iter;
-    if (dialog->windowState() & Qt::WindowMinimized) {
+    if (dialog->windowState() & Qt::WindowMinimized != 0u) {
         dialog->showNormal();
     }
 

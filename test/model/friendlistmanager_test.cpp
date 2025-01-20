@@ -147,7 +147,7 @@ public:
                               "user with long nickname two"};
 
         for (int i = 0; i < testNames.size(); ++i) {
-            int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1; // Mixes positions
+            int unsortedIndex = (i % 2) != 0 ? i - 1 : testNames.size() - i - 1; // Mixes positions
             int sortedByActivityIndex = testNames.size() - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOfflineFriends.append(testNames[i]);
@@ -171,7 +171,7 @@ public:
                               "user with long nickname two online"};
 
         for (int i = 0; i < testNames.size(); ++i) {
-            int unsortedIndex = i % 2 ? i - 1 : testNames.size() - i - 1;
+            int unsortedIndex = (i % 2) != 0 ? i - 1 : testNames.size() - i - 1;
             int sortedByActivityIndex = testNames.size() - i - 1;
             unsortedAllFriends.append(testNames[unsortedIndex]);
             sortedByNameOnlineFriends.append(testNames[i]);

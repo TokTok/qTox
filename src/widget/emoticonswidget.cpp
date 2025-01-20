@@ -114,7 +114,7 @@ void EmoticonsWidget::onSmileyClicked()
 {
     // emit insert emoticon
     QWidget* sender = qobject_cast<QWidget*>(QObject::sender());
-    if (sender) {
+    if (sender != nullptr) {
         const QString sequence =
             sender->property("sequence").toString().replace("&lt;", "<").replace("&gt;", ">");
         emit insertEmoticon(sequence);
@@ -124,7 +124,7 @@ void EmoticonsWidget::onSmileyClicked()
 void EmoticonsWidget::onPageButtonClicked()
 {
     QWidget* sender = qobject_cast<QRadioButton*>(QObject::sender());
-    if (sender) {
+    if (sender != nullptr) {
         const int page = sender->property("pageIndex").toInt();
         stack.setCurrentIndex(page);
     }

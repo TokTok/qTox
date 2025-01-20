@@ -325,7 +325,7 @@ void Style::repolish(QWidget* w)
 
     for (QObject* o : w->children()) {
         QWidget* c = qobject_cast<QWidget*>(o);
-        if (c) {
+        if (c != nullptr) {
             c->style()->unpolish(c);
             c->style()->polish(c);
         }

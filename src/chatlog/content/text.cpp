@@ -46,7 +46,7 @@ Text::Text(DocumentCache& documentCache_, Settings& settings_, Style& style_, co
 
 Text::~Text()
 {
-    if (doc)
+    if (doc != nullptr)
         documentCache.push(doc);
 }
 
@@ -60,7 +60,7 @@ void Text::selectText(const QString& txt, const std::pair<int, int>& point)
 {
     regenerate();
 
-    if (!doc) {
+    if (doc == nullptr) {
         return;
     }
 
@@ -73,7 +73,7 @@ void Text::selectText(const QRegularExpression& exp, const std::pair<int, int>& 
 {
     regenerate();
 
-    if (!doc) {
+    if (doc == nullptr) {
         return;
     }
 
@@ -99,7 +99,7 @@ void Text::setWidth(float w)
 
 void Text::selectionMouseMove(QPointF scenePos)
 {
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     const int cur = cursorFromPos(scenePos);
@@ -133,7 +133,7 @@ void Text::selectionCleared()
 
 void Text::selectionDoubleClick(QPointF scenePos)
 {
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     const int cur = cursorFromPos(scenePos);
@@ -154,7 +154,7 @@ void Text::selectionDoubleClick(QPointF scenePos)
 
 void Text::selectionTripleClick(QPointF scenePos)
 {
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     const int cur = cursorFromPos(scenePos);
@@ -211,7 +211,7 @@ void Text::paint(QPainter* painter, const QStyleOptionGraphicsItem* option, QWid
     std::ignore = option;
     std::ignore = widget;
 
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     painter->setClipRect(boundingRect());
@@ -267,7 +267,7 @@ void Text::mousePressEvent(QGraphicsSceneMouseEvent* event)
 
 void Text::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 {
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     const QString anchor = doc->documentLayout()->anchorAt(event->pos());
@@ -279,7 +279,7 @@ void Text::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
 
 void Text::hoverMoveEvent(QGraphicsSceneHoverEvent* event)
 {
-    if (!doc)
+    if (doc == nullptr)
         return;
 
     const QString anchor = doc->documentLayout()->anchorAt(event->pos());
@@ -312,7 +312,7 @@ QString Text::getLinkAt(QPointF scenePos) const
 
 void Text::regenerate()
 {
-    if (!doc) {
+    if (doc == nullptr) {
         doc = documentCache.pop();
         dirty = true;
     }
@@ -366,7 +366,7 @@ void Text::freeResources()
 
 QSizeF Text::idealSize()
 {
-    if (doc)
+    if (doc != nullptr)
         return doc->size();
 
     return size;
@@ -374,7 +374,7 @@ QSizeF Text::idealSize()
 
 int Text::cursorFromPos(QPointF scenePos, bool fuzzy) const
 {
-    if (doc)
+    if (doc != nullptr)
         return doc->documentLayout()->hitTest(mapFromScene(scenePos),
                                               fuzzy ? Qt::FuzzyHit : Qt::ExactHit);
 
@@ -398,7 +398,7 @@ bool Text::hasSelection() const
 
 QString Text::extractSanitizedText(int from, int to) const
 {
-    if (!doc)
+    if (doc == nullptr)
         return "";
 
     QString txt;

@@ -86,7 +86,7 @@ using char_ptr = std::unique_ptr<char, FreeDeleter>;
 const char* pathBasename(const char* path)
 {
     const char* base = std::strrchr(path, '/');
-    return base ? base + 1 : path;
+    return (base != nullptr) ? base + 1 : path;
 }
 
 char_ptr demangle(const char* name)

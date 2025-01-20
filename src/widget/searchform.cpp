@@ -306,7 +306,7 @@ void LineEdit::keyPressEvent(QKeyEvent* event)
     const int key = event->key();
 
     if ((key == Qt::Key_Enter || key == Qt::Key_Return)) {
-        if ((event->modifiers() & Qt::ShiftModifier)) {
+        if ((event->modifiers() & Qt::ShiftModifier) != 0u) {
             emit clickShiftEnter();
         } else {
             emit clickEnter();

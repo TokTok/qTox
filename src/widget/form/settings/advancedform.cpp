@@ -127,7 +127,7 @@ void AdvancedForm::on_btnCopyDebug_clicked()
     }
 
     QClipboard* clipboard = QApplication::clipboard();
-    if (clipboard) {
+    if (clipboard != nullptr) {
         QString debugtext;
         if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
             QTextStream in(&file);

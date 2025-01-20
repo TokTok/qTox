@@ -81,7 +81,7 @@ firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
 QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, const ToxPk& pk)
 {
     Friend* f = friendList.findFriend(pk);
-    if (f) {
+    if (f != nullptr) {
         return f->getDisplayedName();
     }
 

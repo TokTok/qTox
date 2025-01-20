@@ -157,21 +157,21 @@ bool FriendChatroom::possibleToOpenInNewWindow() const
 {
     const auto friendPk = frnd->getPublicKey();
     const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
-    return !dialogs || dialogs->chatroomCount() > 1;
+    return (dialogs == nullptr) || dialogs->chatroomCount() > 1;
 }
 
 bool FriendChatroom::canBeRemovedFromWindow() const
 {
     const auto friendPk = frnd->getPublicKey();
     const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
-    return dialogs && dialogs->hasChat(friendPk);
+    return (dialogs != nullptr) && dialogs->hasChat(friendPk);
 }
 
 bool FriendChatroom::friendCanBeRemoved() const
 {
     const auto friendPk = frnd->getPublicKey();
     const auto dialogs = dialogsManager->getFriendDialogs(friendPk);
-    return !dialogs || !dialogs->hasChat(friendPk);
+    return (dialogs == nullptr) || !dialogs->hasChat(friendPk);
 }
 
 void FriendChatroom::removeFriendFromDialogs()

@@ -65,14 +65,14 @@ bool ConferenceRoom::possibleToOpenInNewWindow() const
 {
     const auto conferenceId = conference->getPersistentId();
     const auto dialogs = dialogsManager->getConferenceDialogs(conferenceId);
-    return !dialogs || dialogs->chatroomCount() > 1;
+    return (dialogs == nullptr) || dialogs->chatroomCount() > 1;
 }
 
 bool ConferenceRoom::canBeRemovedFromWindow() const
 {
     const auto conferenceId = conference->getPersistentId();
     const auto dialogs = dialogsManager->getConferenceDialogs(conferenceId);
-    return dialogs && dialogs->hasChat(conferenceId);
+    return (dialogs != nullptr) && dialogs->hasChat(conferenceId);
 }
 
 void ConferenceRoom::removeConferenceFromDialogs()

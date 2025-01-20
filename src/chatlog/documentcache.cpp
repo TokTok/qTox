@@ -27,7 +27,7 @@ QTextDocument* DocumentCache::pop()
 
 void DocumentCache::push(QTextDocument* doc)
 {
-    if (doc) {
+    if (doc != nullptr) {
         doc->clear();
         documents.push(doc);
     }
