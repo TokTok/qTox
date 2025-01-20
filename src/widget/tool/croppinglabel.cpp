@@ -165,7 +165,7 @@ void CroppingLabel::editingFinished()
 {
     hideTextEdit();
     const QString newText =
-        textEdit->text().trimmed().remove(QRegularExpression("[\\t\\n\\v\\f\\r\\x0000]"));
+        textEdit->text().trimmed().remove(QRegularExpression(R"([\t\n\v\f\r\x0000])"));
 
     if (origText != newText)
         emit editFinished(textEdit->text());
