@@ -324,13 +324,13 @@ DesktopNotifyBackend::DesktopNotifyBackend(QObject* parent)
 DesktopNotifyBackend::~DesktopNotifyBackend() = default;
 
 bool DesktopNotifyBackend::showMessage(const QString& title, const QString& message,
-                                       const QPixmap& pixmap)
+                                       const QString& category, const QPixmap& pixmap)
 {
     // Try Notify first.
     if (d->notifyInterface.isValid()) {
         QVariantMap hints{
             {QStringLiteral("action-icons"), true},
-            {QStringLiteral("category"), QStringLiteral("im.received")},
+            {QStringLiteral("category"), category},
             {QStringLiteral("sender-pid"),
              QVariant::fromValue<quint64>(QCoreApplication::applicationPid())},
         };
@@ -342,7 +342,7 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
             // app_name
             QApplication::applicationName(),
             // replaces_id
-            d->id,
+            static_cast<uint32_t>(0),
             // app_icon
             QStringLiteral("dialog-password"),
             // summary

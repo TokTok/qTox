@@ -10,109 +10,17 @@
 #include <QCollator>
 
 namespace {
-size_t getNumMessages(const QHash<const Friend*, size_t>& friendNotifications,
-                      const QHash<const Conference*, size_t>& conferenceNotifications)
-{
-    auto numMessages = std::accumulate(friendNotifications.begin(), friendNotifications.end(), 0);
-    numMessages =
-        std::accumulate(conferenceNotifications.begin(), conferenceNotifications.end(), numMessages);
 
-    return numMessages;
-}
-
-size_t getNumChats(const QHash<const Friend*, size_t>& friendNotifications,
-                   const QHash<const Conference*, size_t>& conferenceNotifications)
-{
-    return friendNotifications.size() + conferenceNotifications.size();
-}
-
-QString generateMultiChatTitle(size_t numChats, size_t numMessages)
-{
-    //: e.g. 3 messages from 2 chats
-    return QObject::tr("%1 message(s) from %2 chats").arg(numMessages).arg(numChats);
-}
-
-template <typename T>
-QString generateSingleChatTitle(const QHash<T, size_t> numNotifications, T contact)
-{
-    if (numNotifications[contact] > 1) {
-        //: e.g. 2 messages from Bob
-        return QObject::tr("%1 message(s) from %2")
-            .arg(numNotifications[contact])
-            .arg(contact->getDisplayedName());
-    }
-    return contact->getDisplayedName();
-}
-
-QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
-                      const QHash<const Conference*, size_t>& conferenceNotifications, const Friend* f)
-{
-    auto numChats = getNumChats(friendNotifications, conferenceNotifications);
-    if (numChats > 1) {
-        return generateMultiChatTitle(numChats,
-                                      getNumMessages(friendNotifications, conferenceNotifications));
-    }
-    return generateSingleChatTitle(friendNotifications, f);
-}
-
-QString generateTitle(const QHash<const Friend*, size_t>& friendNotifications,
-                      const QHash<const Conference*, size_t>& conferenceNotifications,
-                      const Conference* c)
-{
-    auto numChats = getNumChats(friendNotifications, conferenceNotifications);
-    if (numChats > 1) {
-        return generateMultiChatTitle(numChats,
-                                      getNumMessages(friendNotifications, conferenceNotifications));
-    }
-    return generateSingleChatTitle(conferenceNotifications, c);
-}
-
-QString generateContent(const QHash<const Friend*, size_t>& friendNotifications,
-                        const QHash<const Conference*, size_t>& conferenceNotifications,
+QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifications,
                         QString lastMessage, const ToxPk& sender)
 {
-    assert(!friendNotifications.empty() || !conferenceNotifications.empty());
+    assert(!conferenceNotifications.empty());
 
-    auto numChats = getNumChats(friendNotifications, conferenceNotifications);
-    if (numChats > 1) {
-        // Copy all names into a vector to simplify formatting logic between
-        // multiple lists
-        std::vector<QString> displayNames;
-        displayNames.reserve(numChats);
-
-        for (auto it = friendNotifications.begin(); it != friendNotifications.end(); ++it) {
-            displayNames.push_back(it.key()->getDisplayedName());
-        }
-
-        for (auto it = conferenceNotifications.begin(); it != conferenceNotifications.end(); ++it) {
-            displayNames.push_back(it.key()->getDisplayedName());
-        }
-
-        assert(!displayNames.empty());
-
-        // Lexicographically sort all display names to ensure consistent formatting
-        QCollator collator;
-        std::sort(displayNames.begin(), displayNames.end(),
-                  [&](const QString& a, const QString& b) { return collator.compare(a, b) < 1; });
-
-        auto it = displayNames.begin();
-
-        QString ret = *it;
-
-        while (++it != displayNames.end()) {
-            ret += ", " + *it;
-        }
-
-        return ret;
+    auto it = conferenceNotifications.begin();
+    if (it == conferenceNotifications.end()) {
+        qFatal("Concurrency error: conference notifications got cleared while reading");
     }
-    if (conferenceNotifications.size() == 1) {
-        auto it = conferenceNotifications.begin();
-        if (it == conferenceNotifications.end()) {
-            qFatal("Concurrency error: conference notifications got cleared while reading");
-        }
-        return it.key()->getPeerList()[sender] + ": " + lastMessage;
-    }
-    return lastMessage;
+    return it.key()->getPeerList()[sender] + ": " + lastMessage;
 }
 
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)
@@ -135,15 +43,34 @@ NotificationData NotificationGenerator::friendMessageNotification(const Friend* 
     friendNotifications[f]++;
 
     NotificationData ret;
+    ret.category = "im.received";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("New message");
         return ret;
     }
 
-    ret.title = generateTitle(friendNotifications, conferenceNotifications, f);
-    ret.message =
-        generateContent(friendNotifications, conferenceNotifications, message, f->getPublicKey());
+    ret.title = f->getDisplayedName();
+    ret.message = message;
+    ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
+
+    return ret;
+}
+
+NotificationData NotificationGenerator::incomingCallNotification(const Friend* f)
+{
+    friendNotifications[f]++;
+
+    NotificationData ret;
+    ret.category = "call.incoming";
+
+    if (notificationSettings.getNotifyHide()) {
+        ret.title = tr("Incoming call");
+        return ret;
+    }
+
+    ret.title = f->getDisplayedName();
+    ret.message = tr("Incoming call");
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -156,14 +83,15 @@ NotificationData NotificationGenerator::conferenceMessageNotification(const Conf
     conferenceNotifications[c]++;
 
     NotificationData ret;
+    ret.category = "transfer";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("New conference message");
         return ret;
     }
 
-    ret.title = generateTitle(friendNotifications, conferenceNotifications, c);
-    ret.message = generateContent(friendNotifications, conferenceNotifications, message, sender);
+    ret.title = c->getDisplayedName();
+    ret.message = generateContent(conferenceNotifications, message, sender);
     ret.pixmap = getSenderAvatar(profile, sender);
 
     return ret;
@@ -176,25 +104,16 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
     friendNotifications[f]++;
 
     NotificationData ret;
+    ret.category = "transfer";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Incoming file transfer");
         return ret;
     }
 
-    auto numChats = getNumChats(friendNotifications, conferenceNotifications);
-    auto numMessages = getNumMessages(friendNotifications, conferenceNotifications);
-
-    if (numChats > 1 || numMessages > 1) {
-        ret.title = generateTitle(friendNotifications, conferenceNotifications, f);
-        ret.message = generateContent(friendNotifications, conferenceNotifications,
-                                      tr("Incoming file transfer"), f->getPublicKey());
-    } else {
-        //: e.g. Bob - file transfer
-        ret.title = tr("%1 - file transfer").arg(f->getDisplayedName());
-        ret.message = filename + " (" + getHumanReadableSize(fileSize) + ")";
-    }
-
+    //: e.g. Bob - file transfer
+    ret.title = tr("%1 - file transfer").arg(f->getDisplayedName());
+    ret.message = filename + " (" + getHumanReadableSize(fileSize) + ")";
     ret.pixmap = getSenderAvatar(profile, f->getPublicKey());
 
     return ret;
@@ -203,6 +122,7 @@ NotificationData NotificationGenerator::fileTransferNotification(const Friend* f
 NotificationData NotificationGenerator::conferenceInvitationNotification(const Friend* from)
 {
     NotificationData ret;
+    ret.category = "im";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Conference invite received");
@@ -220,6 +140,7 @@ NotificationData NotificationGenerator::friendRequestNotification(const ToxPk& s
                                                                   const QString& message)
 {
     NotificationData ret;
+    ret.category = "im";
 
     if (notificationSettings.getNotifyHide()) {
         ret.title = tr("Friend request received");

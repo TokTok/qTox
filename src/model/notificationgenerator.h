@@ -33,6 +33,7 @@ public:
     NotificationGenerator& operator=(NotificationGenerator&&) = delete;
 
     NotificationData friendMessageNotification(const Friend* f, const QString& message);
+    NotificationData incomingCallNotification(const Friend* f);
     NotificationData conferenceMessageNotification(const Conference* c, const ToxPk& sender,
                                                    const QString& message);
     NotificationData fileTransferNotification(const Friend* f, const QString& filename,

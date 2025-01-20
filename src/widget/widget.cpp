@@ -1048,7 +1048,11 @@ void Widget::setStatusMessage(const QString& statusMessage)
  */
 void Widget::playNotificationSound(IAudioSink::Sound sound, bool loop)
 {
-    if (!settings.getAudioOutDevEnabled()) {
+    bool isBusy = core->getStatus() == Status::Status::Busy;
+    bool busySound = settings.getBusySound();
+    bool notifySound = settings.getNotifySound();
+
+    if (!settings.getAudioOutDevEnabled() || !(notifySound && (!isBusy || busySound))) {
         // don't try to play sounds if audio is disabled
         return;
     }
@@ -1566,10 +1570,17 @@ bool Widget::newFriendMessageAlert(const ToxPk& friendId, const QString& text, b
         widget->updateStatusLight();
         ui->friendList->trackWidget(settings, style, widget);
         if (notifier != nullptr) {
-            auto notificationData =
-                filename.isEmpty()
-                    ? notificationGenerator->friendMessageNotification(f, text)
-                    : notificationGenerator->fileTransferNotification(f, filename, filesize);
+            NotificationData notificationData;
+            if (filename.isEmpty()) {
+                if (text.isEmpty()) {
+                    notificationData = notificationGenerator->incomingCallNotification(f);
+                } else {
+                    notificationData = notificationGenerator->friendMessageNotification(f, text);
+                }
+            } else {
+                notificationData =
+                    notificationGenerator->fileTransferNotification(f, filename, filesize);
+            }
             notifier->notifyMessage(notificationData);
         }
 
@@ -1668,11 +1679,8 @@ bool Widget::newMessageAlert(QWidget* currentWindow, bool isActive, bool sound, 
                 }
                 eventFlag = true;
             }
-            const bool isBusy = core->getStatus() == Status::Status::Busy;
-            const bool busySound = settings.getBusySound();
-            const bool notifySound = settings.getNotifySound();
 
-            if (notifySound && sound && (!isBusy || busySound)) {
+            if (sound) {
                 playNotificationSound(IAudioSink::Sound::NewMessage);
             }
         }

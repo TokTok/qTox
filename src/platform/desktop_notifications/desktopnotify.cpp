@@ -47,7 +47,7 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
     // Try system-backends first.
     if (d->settings.getNotifySystemBackend()) {
         if (d->dbus->showMessage(notificationData.title, notificationData.message,
-                                 notificationData.pixmap)) {
+                                 notificationData.category, notificationData.pixmap)) {
             return;
         }
     }
