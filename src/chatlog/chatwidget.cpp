@@ -223,7 +223,7 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
     addAction(copyAction);
 
     // Ctrl+Insert shortcut
-    QShortcut* copyCtrlInsShortcut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Insert), this);
+    auto* copyCtrlInsShortcut = new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_Insert), this);
     connect(copyCtrlInsShortcut, &QShortcut::activated, this, [this]() { copySelectedText(); });
 
     // select all action (ie. Ctrl+A)
@@ -1351,12 +1351,12 @@ bool ChatWidget::isActiveFileTransfer(ChatLine::Ptr l)
     const int count = l->getColumnCount();
     for (int i = 0; i < count; ++i) {
         ChatLineContent* content = l->getContent(i);
-        ChatLineContentProxy* proxy = qobject_cast<ChatLineContentProxy*>(content);
+        auto* proxy = qobject_cast<ChatLineContentProxy*>(content);
         if (proxy == nullptr)
             continue;
 
         QWidget* widget = proxy->getWidget();
-        FileTransferWidget* transferWidget = qobject_cast<FileTransferWidget*>(widget);
+        auto* transferWidget = qobject_cast<FileTransferWidget*>(widget);
         if ((transferWidget != nullptr) && transferWidget->isActive())
             return true;
     }

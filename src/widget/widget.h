@@ -26,8 +26,6 @@
 #include <QSystemTrayIcon>
 #include <QUrl>
 
-#define PIXELS_TO_ACT 7
-
 namespace Ui {
 class MainWindow;
 }

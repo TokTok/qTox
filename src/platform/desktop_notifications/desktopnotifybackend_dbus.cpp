@@ -129,7 +129,7 @@ const QDBusArgument& operator>>(const QDBusArgument& argument, DBusPortalImage& 
         // Unpack the DBus variant.
         QDBusVariant variant;
         argument >> variant;
-        const QByteArray data = variant.variant().value<QByteArray>();
+        const auto data = variant.variant().value<QByteArray>();
         image = DBusPortalImage{QImage::fromData(data, "PNG")};
     }
     argument.endStructure();

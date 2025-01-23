@@ -26,8 +26,8 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
     setLayout(&layout);
     layout.addWidget(&stack);
 
-    QWidget* pageButtonsContainer = new QWidget;
-    QHBoxLayout* buttonLayout = new QHBoxLayout;
+    auto* pageButtonsContainer = new QWidget;
+    auto* buttonLayout = new QHBoxLayout;
     pageButtonsContainer->setLayout(buttonLayout);
 
     layout.addWidget(pageButtonsContainer);
@@ -51,19 +51,19 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
     // create pages
     buttonLayout->addStretch();
     for (int i = 0; i < pageCount; ++i) {
-        QGridLayout* pageLayout = new QGridLayout;
+        auto* pageLayout = new QGridLayout;
         pageLayout->addItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding),
                             maxRows, 0);
         pageLayout->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Minimum), 0,
                             maxCols);
 
-        QWidget* page = new QWidget;
+        auto* page = new QWidget;
         page->setLayout(pageLayout);
         stack.addWidget(page);
 
         // page buttons are only needed if there is more than 1 page
         if (pageCount > 1) {
-            QRadioButton* pageButton = new QRadioButton;
+            auto* pageButton = new QRadioButton;
             pageButton->setProperty("pageIndex", i);
             pageButton->setCursor(Qt::PointingHandCursor);
             pageButton->setChecked(i == 0);
@@ -75,7 +75,7 @@ EmoticonsWidget::EmoticonsWidget(SmileyPack& smileyPack, Settings& settings, Sty
     buttonLayout->addStretch();
 
     for (const QStringList& set : emoticons) {
-        QPushButton* button = new QPushButton;
+        auto* button = new QPushButton;
         const std::shared_ptr<QIcon> icon = smileyPack.getAsIcon(set[0]);
         emoticonsIcons.append(icon);
         button->setIcon(icon->pixmap(size));

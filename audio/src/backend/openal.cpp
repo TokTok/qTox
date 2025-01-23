@@ -620,7 +620,7 @@ void OpenAL::cleanupOutput()
 qreal OpenAL::getVolume()
 {
     const quint32 samples = AUDIO_FRAME_SAMPLE_COUNT_TOTAL;
-    const qreal rootTwo = 1.414213562; // sqrt(2), but sqrt is not constexpr
+    constexpr qreal sqrt2 = 1.41421356237; // std::numbers::sqrt2
     // calculate volume as the root mean squared of amplitudes in the sample
     qreal sumOfSquares = 0;
     for (quint32 i = 0; i < samples; i++) {
@@ -629,7 +629,7 @@ qreal OpenAL::getVolume()
     }
     const qreal rms = std::sqrt(sumOfSquares / samples);
     // our calculated normalized volume could possibly be above 1 because our RMS assumes a sinusoidal wave
-    const qreal normalizedVolume = std::min(rms * rootTwo, 1.0);
+    const qreal normalizedVolume = std::min(rms * sqrt2, 1.0);
     return normalizedVolume;
 }
 

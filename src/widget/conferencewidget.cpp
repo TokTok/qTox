@@ -123,12 +123,12 @@ void ConferenceWidget::mouseMoveEvent(QMouseEvent* ev)
     }
 
     if ((dragStartPos - ev->pos()).manhattanLength() > QApplication::startDragDistance()) {
-        QMimeData* mdata = new QMimeData;
+        auto* mdata = new QMimeData;
         const Conference* conference = getConference();
         mdata->setText(conference->getName());
         mdata->setData("conferenceId", conference->getPersistentId().getByteArray());
 
-        QDrag* drag = new QDrag(this);
+        auto* drag = new QDrag(this);
         drag->setMimeData(mdata);
         drag->setPixmap(avatar->getPixmap());
         drag->exec(Qt::CopyAction | Qt::MoveAction);

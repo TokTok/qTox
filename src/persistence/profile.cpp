@@ -323,7 +323,7 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
         return nullptr;
     }
 
-    Profile* p = new Profile(name, std::move(tmpKey), paths, settings);
+    auto* p = new Profile(name, std::move(tmpKey), paths, settings);
 
     // Core settings are saved per profile, need to load them before starting Core
     constexpr bool isNewProfile = false;
@@ -357,7 +357,7 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
     }
 
     Settings::createPersonal(paths, name);
-    Profile* p = new Profile(name, std::move(tmpKey), paths, settings);
+    auto* p = new Profile(name, std::move(tmpKey), paths, settings);
 
     constexpr bool isNewProfile = true;
     settings.updateProfileData(p, parser, isNewProfile);

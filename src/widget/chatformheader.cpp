@@ -67,7 +67,7 @@ const QString MIC_TOOL_TIP[] = {
 template <class T, class Fun>
 QPushButton* createButton(const QString& name, T* self, Fun onClickSlot, Settings& settings, Style& style)
 {
-    QPushButton* btn = new QPushButton();
+    auto* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
@@ -102,7 +102,7 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     , settings{settings_}
     , style{style_}
 {
-    QHBoxLayout* headLayout = new QHBoxLayout();
+    auto* headLayout = new QHBoxLayout();
     avatar = new MaskablePixmapWidget(this, AVATAR_SIZE, ":/img/avatar_mask.svg");
     avatar->setObjectName("avatar");
 
@@ -129,12 +129,12 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     videoButton =
         createButton("videoButton", this, &ChatFormHeader::videoCallTriggered, settings, style);
 
-    QVBoxLayout* micButtonsLayout = new QVBoxLayout();
+    auto* micButtonsLayout = new QVBoxLayout();
     micButtonsLayout->setSpacing(MIC_BUTTONS_LAYOUT_SPACING);
     micButtonsLayout->addWidget(micButton, Qt::AlignTop | Qt::AlignRight);
     micButtonsLayout->addWidget(volButton, Qt::AlignTop | Qt::AlignRight);
 
-    QGridLayout* buttonsLayout = new QGridLayout();
+    auto* buttonsLayout = new QGridLayout();
     buttonsLayout->addLayout(micButtonsLayout, 0, 0, 2, 1, Qt::AlignTop | Qt::AlignRight);
     buttonsLayout->addWidget(callButton, 0, 1, 2, 1, Qt::AlignTop);
     buttonsLayout->addWidget(videoButton, 0, 2, 2, 1, Qt::AlignTop);

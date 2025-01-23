@@ -108,7 +108,7 @@ void Core::registerCallbacks(Tox* tox)
 ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
                              IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err)
 {
-    QThread* thread = new QThread();
+    auto* thread = new QThread();
     if (thread == nullptr) {
         qCritical() << "Could not allocate Core thread";
         return {};
@@ -1179,7 +1179,7 @@ uint32_t Core::joinConference(const ConferenceInvite& inviteInfo)
     const uint32_t friendId = inviteInfo.getFriendId();
     const uint8_t confType = inviteInfo.getType();
     const QByteArray invite = inviteInfo.getInvite();
-    const uint8_t* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
+    const auto* const cookie = reinterpret_cast<const uint8_t*>(invite.data());
     const size_t cookieLength = invite.length();
     uint32_t conferenceNum{std::numeric_limits<uint32_t>::max()};
     switch (confType) {

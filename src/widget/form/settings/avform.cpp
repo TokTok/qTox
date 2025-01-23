@@ -198,7 +198,7 @@ void AVForm::on_videoModesComboBox_currentIndexChanged(int index)
         // selection. We don't actually need a screenshot to be taken.
         //
         // Note: grabber is self-managed and will destroy itself when done.
-        ScreenshotGrabber* screenshotGrabber = new ScreenshotGrabber(this);
+        auto* screenshotGrabber = new ScreenshotGrabber(this);
 
         connect(screenshotGrabber, &ScreenshotGrabber::regionChosen, this, onGrabbed,
                 Qt::QueuedConnection);

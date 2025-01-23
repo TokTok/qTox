@@ -96,7 +96,7 @@ void jsonNodeToDhtServer(const QJsonObject& node, QList<DhtServer>& outList)
         qDebug() << "Invalid port in nodes list:" << udp_port;
         return;
     }
-    const quint16 udp_port_u16 = static_cast<quint16>(udp_port);
+    const auto udp_port_u16 = static_cast<quint16>(udp_port);
 
     if (!public_key.contains(ToxPkRegEx)) {
         qDebug() << "Invalid public key in nodes list" << public_key;

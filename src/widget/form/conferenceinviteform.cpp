@@ -40,17 +40,17 @@ ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
     , settings{settings_}
     , core{core_}
 {
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    auto* layout = new QVBoxLayout(this);
     connect(createButton, &QPushButton::clicked, this,
             [this]() { emit conferenceCreate(TOX_CONFERENCE_TYPE_AV); });
 
-    QWidget* innerWidget = new QWidget(scroll);
+    auto* innerWidget = new QWidget(scroll);
     innerWidget->setLayout(new QVBoxLayout());
     innerWidget->layout()->setAlignment(Qt::AlignTop);
     scroll->setWidget(innerWidget);
     scroll->setWidgetResizable(true);
 
-    QVBoxLayout* inviteLayout = new QVBoxLayout(inviteBox);
+    auto* inviteLayout = new QVBoxLayout(inviteBox);
     inviteLayout->addWidget(scroll);
 
     layout->addWidget(createButton);
@@ -60,7 +60,7 @@ ConferenceInviteForm::ConferenceInviteForm(Settings& settings_, Core& core_)
     bold.setBold(true);
 
     headLabel->setFont(bold);
-    QHBoxLayout* headLayout = new QHBoxLayout(headWidget);
+    auto* headLayout = new QHBoxLayout(headWidget);
     headLayout->addWidget(headLabel);
 
     retranslateUi();
@@ -111,7 +111,7 @@ bool ConferenceInviteForm::addConferenceInvite(const ConferenceInvite& inviteInf
         }
     }
 
-    ConferenceInviteWidget* widget = new ConferenceInviteWidget(this, inviteInfo, settings, core);
+    auto* widget = new ConferenceInviteWidget(this, inviteInfo, settings, core);
     scroll->widget()->layout()->addWidget(widget);
     invites.append(widget);
     connect(widget, &ConferenceInviteWidget::accepted, this,

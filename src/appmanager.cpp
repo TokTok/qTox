@@ -202,7 +202,7 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
 
 bool toxURIEventHandler(const QByteArray& eventData, void* userData)
 {
-    ToxURIDialog* uriDialog = static_cast<ToxURIDialog*>(userData);
+    auto* uriDialog = static_cast<ToxURIDialog*>(userData);
     if (!eventData.startsWith("tox:")) {
         return false;
     }
@@ -470,7 +470,7 @@ int AppManager::run()
 
     // If update-check is requested, do it and exit.
     if (parser.isSet("update-check")) {
-        UpdateCheck* updateCheck = new UpdateCheck(*settings, qapp.get());
+        auto* updateCheck = new UpdateCheck(*settings, qapp.get());
         updateCheck->checkForUpdate();
         connect(updateCheck, &UpdateCheck::updateCheckFailed, qapp.get(), &QApplication::quit);
         connect(updateCheck, &UpdateCheck::complete, this,

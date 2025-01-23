@@ -79,11 +79,11 @@ ToxURIDialog::ToxURIDialog(QWidget* parent, Core& core_, IMessageBoxManager& mes
     userIdEdit->setCursorPosition(0);
     userIdEdit->setReadOnly(true);
 
-    QLabel* userIdLabel = new QLabel(tr("User ID:"), this);
-    QLabel* messageLabel = new QLabel(tr("Friend request message:"), this);
+    auto* userIdLabel = new QLabel(tr("User ID:"), this);
+    auto* messageLabel = new QLabel(tr("Friend request message:"), this);
     messageEdit = new QPlainTextEdit(message, this);
 
-    QDialogButtonBox* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
+    auto* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
 
     buttonBox->addButton(tr("Send", "Send a friend request"), QDialogButtonBox::AcceptRole);
     buttonBox->addButton(tr("Cancel", "Don't send a friend request"), QDialogButtonBox::RejectRole);
@@ -91,7 +91,7 @@ ToxURIDialog::ToxURIDialog(QWidget* parent, Core& core_, IMessageBoxManager& mes
     connect(buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
-    QVBoxLayout* layout = new QVBoxLayout(this);
+    auto* layout = new QVBoxLayout(this);
 
     layout->addWidget(friendsLabel);
     layout->addSpacing(12);

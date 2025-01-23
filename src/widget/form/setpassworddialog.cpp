@@ -32,7 +32,7 @@ SetPasswordDialog::SetPasswordDialog(QString body_, QString extraButton, QWidget
     cancel->setText(QApplication::tr("Cancel"));
 
     if (!extraButton.isEmpty()) {
-        QPushButton* third = new QPushButton(extraButton);
+        auto* third = new QPushButton(extraButton);
         ui->buttonBox->addButton(third, QDialogButtonBox::YesRole);
         connect(third, &QPushButton::clicked, this, [&]() { done(Tertiary); });
     }

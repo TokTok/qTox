@@ -103,7 +103,7 @@ namespace {
 template <class T, class Fun>
 QPushButton* createButton(const QString& name, T* self, Fun onClickSlot, Settings& settings, Style& style)
 {
-    QPushButton* btn = new QPushButton();
+    auto* btn = new QPushButton();
     // Fix for incorrect layouts on macOS as per
     // https://bugreports.qt-project.org/browse/QTBUG-14591
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
@@ -166,7 +166,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     //       and call here to set tooltips.
 
     fileFlyout = new FlyoutOverlayWidget;
-    QHBoxLayout* fileLayout = new QHBoxLayout(fileFlyout);
+    auto* fileLayout = new QHBoxLayout(fileFlyout);
     fileLayout->addWidget(screenshotButton);
     fileLayout->setContentsMargins(0, 0, 0, 0);
     fileLayout->setSpacing(0);
@@ -176,21 +176,21 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     msgEdit->setFrameStyle(QFrame::NoFrame);
 
     bodySplitter = new QSplitter(Qt::Vertical, this);
-    QWidget* contentWidget = new QWidget(this);
+    auto* contentWidget = new QWidget(this);
     bodySplitter->addWidget(contentWidget);
 
-    QVBoxLayout* mainLayout = new QVBoxLayout();
+    auto* mainLayout = new QVBoxLayout();
     mainLayout->addWidget(bodySplitter);
     mainLayout->setContentsMargins(0, 0, 0, 0);
 
     setLayout(mainLayout);
 
-    QVBoxLayout* footButtonsSmall = new QVBoxLayout();
+    auto* footButtonsSmall = new QVBoxLayout();
     footButtonsSmall->setSpacing(FOOT_BUTTONS_SPACING);
     footButtonsSmall->addWidget(emoteButton);
     footButtonsSmall->addWidget(fileButton);
 
-    QHBoxLayout* mainFootLayout = new QHBoxLayout();
+    auto* mainFootLayout = new QHBoxLayout();
     mainFootLayout->addWidget(msgEdit);
     mainFootLayout->addLayout(footButtonsSmall);
     mainFootLayout->addSpacing(MAIN_FOOT_LAYOUT_SPACING);
@@ -397,7 +397,7 @@ bool GenericChatForm::event(QEvent* e)
 {
     // If the user accidentally starts typing outside of the msgEdit, focus it automatically
     if (e->type() == QEvent::KeyPress) {
-        QKeyEvent* ke = static_cast<QKeyEvent*>(e);
+        auto* ke = static_cast<QKeyEvent*>(e);
         if ((ke->modifiers() == Qt::NoModifier || ke->modifiers() == Qt::ShiftModifier)
             && !ke->text().isEmpty()) {
             if (searchForm->isHidden()) {
@@ -414,7 +414,7 @@ bool GenericChatForm::event(QEvent* e)
 
 void GenericChatForm::onChatContextMenuRequested(QPoint pos)
 {
-    QWidget* sender = static_cast<QWidget*>(QObject::sender());
+    auto* sender = static_cast<QWidget*>(QObject::sender());
     pos = sender->mapToGlobal(pos);
 
     // If we right-clicked on a link, give the option to copy it
@@ -519,7 +519,7 @@ void GenericChatForm::addSystemInfoMessage(const QDateTime& datetime, SystemMess
 QDateTime GenericChatForm::getTime(const ChatLine::Ptr& chatLine)
 {
     if (chatLine) {
-        Timestamp* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
+        auto* const timestamp = qobject_cast<Timestamp*>(chatLine->getContent(2));
 
         if (timestamp != nullptr) {
             return timestamp->getTime();
@@ -573,9 +573,9 @@ void GenericChatForm::resizeEvent(QResizeEvent* event)
 
 bool GenericChatForm::eventFilter(QObject* object, QEvent* event)
 {
-    EmoticonsWidget* ev = qobject_cast<EmoticonsWidget*>(object);
+    auto* ev = qobject_cast<EmoticonsWidget*>(object);
     if ((ev != nullptr) && event->type() == QEvent::KeyPress) {
-        QKeyEvent* key = static_cast<QKeyEvent*>(event);
+        auto* key = static_cast<QKeyEvent*>(event);
         msgEdit->sendKeyEvent(key);
         msgEdit->setFocus();
         return false;

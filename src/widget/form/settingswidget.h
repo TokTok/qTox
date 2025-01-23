@@ -47,7 +47,7 @@ public:
     void showAbout();
 
 public slots:
-    void onUpdateAvailable(void);
+    void onUpdateAvailable();
 
 private slots:
     void onTabChanged(int index);

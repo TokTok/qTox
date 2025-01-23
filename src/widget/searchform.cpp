@@ -27,11 +27,11 @@ SearchForm::SearchForm(Settings& settings_, Style& style_, QWidget* parent)
     , settings{settings_}
     , style{style_}
 {
-    QVBoxLayout* layout = new QVBoxLayout();
-    QHBoxLayout* layoutNavigation = new QHBoxLayout();
-    QHBoxLayout* layoutMessage = new QHBoxLayout();
-    QSpacerItem* lSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
-    QSpacerItem* rSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
+    auto* layout = new QVBoxLayout();
+    auto* layoutNavigation = new QHBoxLayout();
+    auto* layoutMessage = new QHBoxLayout();
+    auto* lSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
+    auto* rSpacer = new QSpacerItem(20, 20, QSizePolicy::Expanding, QSizePolicy::Ignored);
     searchLine = new LineEdit();
     searchSettingsForm = new SearchSettingsForm(settings, style);
     messageLabel = new QLabel();
@@ -129,7 +129,7 @@ void SearchForm::showEvent(QShowEvent* event)
 
 QPushButton* SearchForm::createButton(const QString& name, const QString& state)
 {
-    QPushButton* btn = new QPushButton();
+    auto* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setProperty("state", state);

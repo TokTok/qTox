@@ -138,7 +138,7 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
     circleMenu->addSeparator();
 
     for (const auto& circle : chatroom->getOtherCircles()) {
-        QAction* action = new QAction(tr("Move to circle \"%1\"").arg(circle.name), circleMenu);
+        auto* action = new QAction(tr("Move to circle \"%1\"").arg(circle.name), circleMenu);
         connect(action, &QAction::triggered, this, [this, circle] { moveToCircle(circle.circleId); });
         circleMenu->addAction(action);
     }
@@ -442,12 +442,12 @@ void FriendWidget::mouseMoveEvent(QMouseEvent* ev)
 
     const int distance = (dragStartPos - ev->pos()).manhattanLength();
     if (distance > QApplication::startDragDistance()) {
-        QMimeData* mdata = new QMimeData;
+        auto* mdata = new QMimeData;
         const Friend* frnd = getFriend();
         mdata->setText(frnd->getDisplayedName());
         mdata->setData("toxPk", frnd->getPublicKey().getByteArray());
 
-        QDrag* drag = new QDrag(this);
+        auto* drag = new QDrag(this);
         drag->setMimeData(mdata);
         drag->setPixmap(avatar->getPixmap());
         drag->exec(Qt::CopyAction | Qt::MoveAction);

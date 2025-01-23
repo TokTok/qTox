@@ -822,7 +822,7 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
 uint32_t Settings::makeProfileId(const QString& profile)
 {
     const QByteArray data = QCryptographicHash::hash(profile.toUtf8(), QCryptographicHash::Md5);
-    const uint32_t* dwords = reinterpret_cast<const uint32_t*>(data.constData());
+    const auto* dwords = reinterpret_cast<const uint32_t*>(data.constData());
     return dwords[0] ^ dwords[1] ^ dwords[2] ^ dwords[3];
 }
 

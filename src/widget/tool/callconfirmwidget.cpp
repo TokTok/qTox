@@ -56,8 +56,8 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
     palette.setColor(QPalette::WindowText, Qt::white);
     setPalette(palette);
 
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    QLabel* callLabel = new QLabel(QObject::tr("Incoming call..."), this);
+    auto* layout = new QVBoxLayout(this);
+    auto* callLabel = new QLabel(QObject::tr("Incoming call..."), this);
     callLabel->setStyleSheet("QLabel{color: white;} QToolTip{color: black;}");
     callLabel->setAlignment(Qt::AlignHCenter);
     callLabel->setToolTip(callLabel->text());
@@ -73,9 +73,9 @@ CallConfirmWidget::CallConfirmWidget(Settings& settings, Style& style, const QWi
         fontMetrics.elidedText(callLabel->text(), elideMode, rectW - marginSize * 2 - 4);
     callLabel->setText(elidedText);
 
-    QDialogButtonBox* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
-    QPushButton* accept = new QPushButton(this);
-    QPushButton* reject = new QPushButton(this);
+    auto* buttonBox = new QDialogButtonBox(Qt::Horizontal, this);
+    auto* accept = new QPushButton(this);
+    auto* reject = new QPushButton(this);
     accept->setFlat(true);
     reject->setFlat(true);
     accept->setStyleSheet("QPushButton{border:none;}");

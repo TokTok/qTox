@@ -19,14 +19,14 @@ NotificationEdgeWidget::NotificationEdgeWidget(Position position, Settings& sett
 {
     setAttribute(Qt::WA_StyledBackground); // Show background.
     setStyleSheet(style.getStylesheet("notificationEdge/notificationEdge.qss", settings));
-    QHBoxLayout* layout = new QHBoxLayout(this);
+    auto* layout = new QHBoxLayout(this);
     layout->addStretch();
 
     textLabel = new QLabel(this);
     textLabel->setMinimumHeight(textLabel->sizeHint().height()); // Prevent cut-off text.
     layout->addWidget(textLabel);
 
-    QLabel* arrowLabel = new QLabel(this);
+    auto* arrowLabel = new QLabel(this);
 
     if (position == Top)
         arrowLabel->setPixmap(QPixmap(style.getImagePath("chatArea/scrollBarUpArrow.svg", settings)));

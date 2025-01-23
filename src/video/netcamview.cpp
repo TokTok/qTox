@@ -70,7 +70,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
     buttonPanel->setStyleSheet(style.getStylesheet(BTN_STYLE_SHEET_PATH, settings));
     buttonPanel->setGeometry(0, 0, BTN_PANEL_WIDTH, BTN_PANEL_HEIGHT);
 
-    QHBoxLayout* buttonPanelLayout = new QHBoxLayout(buttonPanel);
+    auto* buttonPanelLayout = new QHBoxLayout(buttonPanel);
     buttonPanelLayout->setContentsMargins(20, 0, 20, 0);
 
     videoPreviewButton = createButton("videoPreviewButton", "none");
@@ -115,7 +115,7 @@ NetCamView::NetCamView(ToxPk friendPk_, CameraSource& cameraSource_, Settings& s
     selfFrame = new MovableWidget(videoSurface);
     selfFrame->show();
 
-    QHBoxLayout* frameLayout = new QHBoxLayout(selfFrame);
+    auto* frameLayout = new QHBoxLayout(selfFrame);
     frameLayout->addWidget(selfVideoSurface);
     frameLayout->setContentsMargins(0, 0, 0, 0);
 
@@ -284,7 +284,7 @@ void NetCamView::toggleVideoPreview()
 
 QPushButton* NetCamView::createButton(const QString& name, const QString& state)
 {
-    QPushButton* btn = new QPushButton();
+    auto* btn = new QPushButton();
     btn->setAttribute(Qt::WA_LayoutUsesWidgetRect);
     btn->setObjectName(name);
     btn->setProperty("state", QVariant(state));

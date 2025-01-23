@@ -168,13 +168,13 @@ void ContentDialogManager::addContentDialog(ContentDialog& dialog)
 
 void ContentDialogManager::onDialogActivate()
 {
-    ContentDialog* dialog = qobject_cast<ContentDialog*>(sender());
+    auto* dialog = qobject_cast<ContentDialog*>(sender());
     currentDialog = dialog;
 }
 
 void ContentDialogManager::onDialogClose()
 {
-    ContentDialog* dialog = qobject_cast<ContentDialog*>(sender());
+    auto* dialog = qobject_cast<ContentDialog*>(sender());
     if (currentDialog == dialog) {
         currentDialog = nullptr;
     }

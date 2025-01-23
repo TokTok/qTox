@@ -166,7 +166,7 @@ void FriendListWidget::sortByMode()
                 CircleWidget* circleWgt = CircleWidget::getFromID(i->getCircleId());
                 if (circleWgt != nullptr) {
                     // Place a friend in the circle and continue
-                    FriendWidget* frndTmp = qobject_cast<FriendWidget*>((i)->getWidget());
+                    auto* frndTmp = qobject_cast<FriendWidget*>(i->getWidget());
                     circleWgt->addFriendWidget(frndTmp, frndTmp->getFriend()->getStatus());
                     continue;
                 }
@@ -243,7 +243,7 @@ void FriendListWidget::sortByMode()
         activityLayout = new QVBoxLayout();
         const bool compact = settings.getCompactLayout();
         for (const Time t : names.keys()) {
-            CategoryWidget* category = new CategoryWidget(compact, settings, style, this);
+            auto* category = new CategoryWidget(compact, settings, style, this);
             category->setName(names[t]);
             activityLayout->addWidget(category);
         }
@@ -256,8 +256,8 @@ void FriendListWidget::sortByMode()
             if (i->isFriend()) {
                 const int timeIndex = static_cast<int>(getTimeBucket(i->getLastActivity()));
                 QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
-                CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
-                FriendWidget* frnd = qobject_cast<FriendWidget*>((i)->getWidget());
+                auto* categoryWidget = qobject_cast<CategoryWidget*>(widget);
+                auto* frnd = qobject_cast<FriendWidget*>(i->getWidget());
                 if (!isVisible() || (isVisible() && frnd->isVisible())) {
                     categoryWidget->addFriendWidget(frnd, frnd->getFriend()->getStatus());
                 }
@@ -267,7 +267,7 @@ void FriendListWidget::sortByMode()
         // Hide empty categories
         for (int i = 0; i < activityLayout->count(); ++i) {
             QWidget* widget = activityLayout->itemAt(i)->widget();
-            CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget);
+            auto* categoryWidget = qobject_cast<CategoryWidget*>(widget);
             categoryWidget->setVisible(categoryWidget->hasChatRooms());
         }
 
@@ -446,7 +446,7 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
     }
 
     int index = -1;
-    FriendWidget* friendWidget = qobject_cast<FriendWidget*>(activeChatroomWidget);
+    auto* friendWidget = qobject_cast<FriendWidget*>(activeChatroomWidget);
 
     if (mode == SortingMode::Activity) {
         if (friendWidget == nullptr) {
@@ -456,7 +456,7 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
         const auto activityTime = getActiveTimeFriend(friendWidget->getFriend(), settings);
         index = static_cast<int>(getTimeBucket(activityTime));
         QWidget* widget_ = activityLayout->itemAt(index)->widget();
-        CategoryWidget* categoryWidget = qobject_cast<CategoryWidget*>(widget_);
+        auto* categoryWidget = qobject_cast<CategoryWidget*>(widget_);
 
         if (categoryWidget == nullptr || categoryWidget->cycleChats(friendWidget, forward)) {
             return;
@@ -497,11 +497,11 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
     if (friendWidget != nullptr) {
         wgt = getNextWidgetForName(friendWidget, forward);
     } else {
-        ConferenceWidget* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget);
+        auto* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget);
         wgt = getNextWidgetForName(conferenceWidget, forward);
     }
 
-    FriendWidget* friendTmp = qobject_cast<FriendWidget*>(wgt);
+    auto* friendTmp = qobject_cast<FriendWidget*>(wgt);
     if (friendTmp != nullptr) {
         CircleWidget* circleWidget = CircleWidget::getFromID(friendTmp->getCircleId());
         if (circleWidget != nullptr) {
@@ -509,7 +509,7 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
         }
     }
 
-    GenericChatroomWidget* chatWidget = qobject_cast<GenericChatroomWidget*>(wgt);
+    auto* chatWidget = qobject_cast<GenericChatroomWidget*>(wgt);
     if (chatWidget != nullptr)
         emit chatWidget->chatroomWidgetClicked(chatWidget);
 }
@@ -529,7 +529,7 @@ void FriendListWidget::dropEvent(QDropEvent* event)
 {
     // Check, that the element is dropped from qTox
     QObject* o = event->source();
-    FriendWidget* widget = qobject_cast<FriendWidget*>(o);
+    auto* widget = qobject_cast<FriendWidget*>(o);
     if (widget == nullptr)
         return;
 
@@ -598,7 +598,7 @@ void FriendListWidget::updateActivityTime(const QDateTime& time)
 
     const int timeIndex = static_cast<int>(getTimeBucket(time));
     QWidget* widget = activityLayout->itemAt(timeIndex)->widget();
-    CategoryWidget* categoryWidget = static_cast<CategoryWidget*>(widget);
+    auto* categoryWidget = static_cast<CategoryWidget*>(widget);
     categoryWidget->updateStatus();
 
     categoryWidget->setVisible(categoryWidget->hasChatRooms());
@@ -613,8 +613,8 @@ CircleWidget* FriendListWidget::createCircleWidget(int id)
         return CircleWidget::getFromID(id);
     }
 
-    CircleWidget* circleWidget = new CircleWidget(core, this, id, settings, style, messageBoxManager,
-                                                  friendList, conferenceList, profile);
+    auto* circleWidget = new CircleWidget(core, this, id, settings, style, messageBoxManager,
+                                          friendList, conferenceList, profile);
     emit connectCircleWidget(*circleWidget);
     connect(this, &FriendListWidget::onCompactChanged, circleWidget, &CircleWidget::onCompactChanged);
     connect(circleWidget, &CircleWidget::renameRequested, this, &FriendListWidget::renameCircleWidget);

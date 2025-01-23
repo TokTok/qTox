@@ -100,7 +100,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_, Style&
     toxId->setFont(Style::getFont(Style::Font::Small));
     toxId->setToolTip(bodyUI->toxId->toolTip());
 
-    QVBoxLayout* toxIdGroup = qobject_cast<QVBoxLayout*>(bodyUI->toxGroup->layout());
+    auto* toxIdGroup = qobject_cast<QVBoxLayout*>(bodyUI->toxGroup->layout());
     delete toxIdGroup->replaceWidget(bodyUI->toxId, toxId); // Original toxId is in heap, delete it
     bodyUI->toxId->hide();
 
@@ -119,7 +119,7 @@ ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_, Style&
     connect(profilePicture, &MaskablePixmapWidget::customContextMenuRequested, this,
             &ProfileForm::showProfilePictureContextMenu);
 
-    QHBoxLayout* publicGrouplayout = qobject_cast<QHBoxLayout*>(bodyUI->publicGroup->layout());
+    auto* publicGrouplayout = qobject_cast<QHBoxLayout*>(bodyUI->publicGroup->layout());
     publicGrouplayout->insertWidget(0, profilePicture);
     publicGrouplayout->insertSpacing(1, 7);
 
@@ -212,7 +212,7 @@ void ProfileForm::show(ContentLayout* contentLayout)
 bool ProfileForm::eventFilter(QObject* object, QEvent* event)
 {
     if (object == static_cast<QObject*>(profilePicture) && event->type() == QEvent::MouseButtonPress) {
-        QMouseEvent* mouseEvent = static_cast<QMouseEvent*>(event);
+        auto* mouseEvent = static_cast<QMouseEvent*>(event);
         if (mouseEvent->button() == Qt::RightButton)
             return true;
     }
@@ -430,7 +430,7 @@ void ProfileForm::onDeletePassClicked()
 void ProfileForm::onChangePassClicked()
 {
     const QString title = tr("Please enter a new password.");
-    SetPasswordDialog* dialog = new SetPasswordDialog(title, QString{}, nullptr);
+    auto* dialog = new SetPasswordDialog(title, QString{}, nullptr);
     if (dialog->exec() == QDialog::Rejected) {
         return;
     }

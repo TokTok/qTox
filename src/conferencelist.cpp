@@ -21,8 +21,8 @@ Conference* ConferenceList::addConference(Core& core, int conferenceNum,
         qWarning() << "addConference: conferenceId already taken";
     }
 
-    Conference* newConference = new Conference(conferenceNum, conferenceId, name, isAvConference,
-                                               selfName, core, core, friendList);
+    auto* newConference = new Conference(conferenceNum, conferenceId, name, isAvConference,
+                                         selfName, core, core, friendList);
     conferenceList[conferenceId] = newConference;
     id2key[conferenceNum] = conferenceId;
     return newConference;

@@ -229,7 +229,7 @@ void MovableWidget::mouseDoubleClickEvent(QMouseEvent* event)
         return;
 
     if (graphicsEffect() == nullptr) {
-        QGraphicsOpacityEffect* opacityEffect = new QGraphicsOpacityEffect(this);
+        auto* opacityEffect = new QGraphicsOpacityEffect(this);
         opacityEffect->setOpacity(0.5);
         setGraphicsEffect(opacityEffect);
     } else {

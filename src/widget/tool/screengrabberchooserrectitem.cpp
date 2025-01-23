@@ -258,7 +258,7 @@ void ScreenGrabberChooserRectItem::updateHandlePositions()
 
 QGraphicsRectItem* ScreenGrabberChooserRectItem::createHandleItem(QGraphicsScene* scene)
 {
-    QGraphicsRectItem* handle = new QGraphicsRectItem(0, 0, HandleSize, HandleSize);
+    auto* handle = new QGraphicsRectItem(0, 0, HandleSize, HandleSize);
     handle->setPen(QPen(Qt::blue));
     handle->setBrush(Qt::NoBrush);
 
@@ -281,7 +281,7 @@ bool ScreenGrabberChooserRectItem::sceneEventFilter(QGraphicsItem* watched, QEve
 
 void ScreenGrabberChooserRectItem::forwardMainRectEvent(QEvent* event)
 {
-    QGraphicsSceneMouseEvent* mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
+    auto* mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
 
     switch (event->type()) {
     case QEvent::GraphicsSceneMousePress:
@@ -299,7 +299,7 @@ void ScreenGrabberChooserRectItem::forwardMainRectEvent(QEvent* event)
 
 void ScreenGrabberChooserRectItem::forwardHandleEvent(QGraphicsItem* watched, QEvent* event)
 {
-    QGraphicsSceneMouseEvent* mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
+    auto* mouseEvent = static_cast<QGraphicsSceneMouseEvent*>(event);
     const QPoint multiplier = getHandleMultiplier(watched);
 
     if (multiplier.isNull())

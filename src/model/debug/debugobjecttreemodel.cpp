@@ -144,8 +144,7 @@ int DebugObjectTreeModel::rowCount(const QModelIndex& parent) const
 
 int DebugObjectTreeModel::columnCount(const QModelIndex& parent) const
 {
-    if (parent.isValid())
-        return DebugObjectTreeModel::TreeItem::columnCount();
+    std::ignore = parent;
     return DebugObjectTreeModel::TreeItem::columnCount();
 }
 

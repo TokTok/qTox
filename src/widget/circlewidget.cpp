@@ -94,7 +94,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
         if (selectedItem == renameAction) {
             editName();
         } else if (selectedItem == removeAction) {
-            FriendListWidget* friendListWidget = static_cast<FriendListWidget*>(parentWidget());
+            auto* friendListWidget = static_cast<FriendListWidget*>(parentWidget());
             moveFriendWidgets(friendListWidget);
 
             FriendListWidget::removeCircleWidget(this);
@@ -109,12 +109,12 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
 
             circleList.remove(replacedCircle);
         } else if (selectedItem == openAction) {
-            ContentDialog* dialog = new ContentDialog(core, settings, style, messageBoxManager,
-                                                      friendList, conferenceList, profile);
+            auto* dialog = new ContentDialog(core, settings, style, messageBoxManager, friendList,
+                                             conferenceList, profile);
             emit newContentDialog(*dialog);
             for (int i = 0; i < friendOnlineLayout()->count(); ++i) {
                 QWidget* const widget = friendOnlineLayout()->itemAt(i)->widget();
-                FriendWidget* const friendWidget = qobject_cast<FriendWidget*>(widget);
+                auto* const friendWidget = qobject_cast<FriendWidget*>(widget);
 
                 if (friendWidget != nullptr) {
                     friendWidget->activate();
@@ -122,7 +122,7 @@ void CircleWidget::contextMenuEvent(QContextMenuEvent* event)
             }
             for (int i = 0; i < friendOfflineLayout()->count(); ++i) {
                 QWidget* const widget = friendOfflineLayout()->itemAt(i)->widget();
-                FriendWidget* const friendWidget = qobject_cast<FriendWidget*>(widget);
+                auto* const friendWidget = qobject_cast<FriendWidget*>(widget);
 
                 if (friendWidget != nullptr) {
                     friendWidget->activate();
@@ -162,7 +162,7 @@ void CircleWidget::dropEvent(QDropEvent* event)
 
     // Check, that the element is dropped from qTox
     QObject* o = event->source();
-    FriendWidget* widget = qobject_cast<FriendWidget*>(o);
+    auto* widget = qobject_cast<FriendWidget*>(o);
     if (widget == nullptr)
         return;
 
@@ -221,7 +221,7 @@ void CircleWidget::updateID(int index)
 
     for (int i = 0; i < friendOnlineLayout()->count(); ++i) {
         const QWidget* w = friendOnlineLayout()->itemAt(i)->widget();
-        const FriendWidget* friendWidget = qobject_cast<const FriendWidget*>(w);
+        const auto* friendWidget = qobject_cast<const FriendWidget*>(w);
 
         if (friendWidget != nullptr) {
             const Friend* f = friendWidget->getFriend();
@@ -231,7 +231,7 @@ void CircleWidget::updateID(int index)
 
     for (int i = 0; i < friendOfflineLayout()->count(); ++i) {
         const QWidget* w = friendOfflineLayout()->itemAt(i)->widget();
-        const FriendWidget* friendWidget = qobject_cast<const FriendWidget*>(w);
+        const auto* friendWidget = qobject_cast<const FriendWidget*>(w);
 
         if (friendWidget != nullptr) {
             const Friend* f = friendWidget->getFriend();

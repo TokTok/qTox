@@ -190,7 +190,7 @@ void ConferenceForm::updateUserNames()
     for (const auto& peerPk : peers.keys()) {
         const QString peerName = peers.value(peerPk);
         const QString editedName = editName(peerName);
-        QLabel* const label = new QLabel(editedName + QLatin1String(", "));
+        auto* const label = new QLabel(editedName + QLatin1String(", "));
         if (editedName != peerName) {
             label->setToolTip(peerName + " (" + peerPk.toString() + ")");
         } else if (peerName != peerPk.toString()) {
@@ -391,7 +391,7 @@ void ConferenceForm::retranslateUi()
 
 void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
 {
-    QLabel* label = static_cast<QLabel*>(QObject::sender());
+    auto* label = static_cast<QLabel*>(QObject::sender());
 
     if (label == nullptr) {
         return;
@@ -401,7 +401,7 @@ void ConferenceForm::onLabelContextMenuRequested(const QPoint& localPos)
     const QString muteString = tr("mute");
     const QString unmuteString = tr("unmute");
     QStringList blockList = settings.getBlockList();
-    QMenu* const contextMenu = new QMenu(this);
+    auto* const contextMenu = new QMenu(this);
     const ToxPk selfPk = core.getSelfPublicKey();
     ToxPk peerPk;
 

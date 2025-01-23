@@ -498,7 +498,7 @@ void SettingsSerializer::readIni()
     }
 
     // Clean up spurious array element groups
-    std::sort(std::begin(groupsToKill), std::end(groupsToKill), std::greater_equal<int>());
+    std::sort(std::begin(groupsToKill), std::end(groupsToKill), std::greater_equal<>());
 
     for (const int g : groupsToKill) {
         if (groupSizes[static_cast<size_t>(g)] != 0)

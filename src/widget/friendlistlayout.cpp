@@ -74,14 +74,14 @@ void FriendListLayout::moveFriendWidgets(FriendListWidget* listWidget)
     while (!friendOnlineLayout.getLayout()->isEmpty()) {
         QWidget* getWidget = friendOnlineLayout.getLayout()->takeAt(0)->widget();
 
-        FriendWidget* friendWidget = qobject_cast<FriendWidget*>(getWidget);
+        auto* friendWidget = qobject_cast<FriendWidget*>(getWidget);
         const Friend* f = friendWidget->getFriend();
         listWidget->moveWidget(friendWidget, f->getStatus(), true);
     }
     while (!friendOfflineLayout.getLayout()->isEmpty()) {
         QWidget* getWidget = friendOfflineLayout.getLayout()->takeAt(0)->widget();
 
-        FriendWidget* friendWidget = qobject_cast<FriendWidget*>(getWidget);
+        auto* friendWidget = qobject_cast<FriendWidget*>(getWidget);
         const Friend* f = friendWidget->getFriend();
         listWidget->moveWidget(friendWidget, f->getStatus(), true);
     }

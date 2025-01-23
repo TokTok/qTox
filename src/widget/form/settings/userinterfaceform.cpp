@@ -126,7 +126,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->timestamp->addItems(timeFormats);
 
     const QRegularExpression re(QString("^[^\\n]{0,%0}$").arg(MAX_FORMAT_LENGTH));
-    QRegularExpressionValidator* validator = new QRegularExpressionValidator(re, this);
+    auto* validator = new QRegularExpressionValidator(re, this);
     QString timeFormat = settings.getTimestampFormat();
 
     if (!re.match(timeFormat).hasMatch())
@@ -210,8 +210,7 @@ void UserInterfaceForm::on_useEmoticons_stateChanged()
 
 void UserInterfaceForm::on_textStyleComboBox_currentTextChanged()
 {
-    const Settings::StyleType styleType =
-        static_cast<Settings::StyleType>(bodyUI->textStyleComboBox->currentIndex());
+    const auto styleType = static_cast<Settings::StyleType>(bodyUI->textStyleComboBox->currentIndex());
     settings.setStylePreference(styleType);
 }
 

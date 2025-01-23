@@ -143,7 +143,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
     imagePreview->hide();
 
     auto cancelIcon = QIcon(style.getImagePath("rejectCall/rejectCall.svg", settings));
-    QPushButton* cancelButton = new QPushButton(imagePreview);
+    auto* cancelButton = new QPushButton(imagePreview);
     cancelButton->setFixedSize(20, 20);
     cancelButton->move(QPoint(80, 0));
     cancelButton->setIcon(cancelIcon);
@@ -183,7 +183,7 @@ ChatForm::ChatForm(Profile& profile_, Friend* chatFriend, IChatLog& chatLog_,
     connect(statusMessageLabel, &CroppingLabel::customContextMenuRequested, this,
             [&](const QPoint& pos) {
                 if (!statusMessageLabel->text().isEmpty()) {
-                    QWidget* sender_ = static_cast<QWidget*>(sender());
+                    auto* sender_ = static_cast<QWidget*>(sender());
                     statusMessageMenu.exec(sender_->mapToGlobal(pos));
                 }
             });

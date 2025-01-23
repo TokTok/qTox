@@ -238,7 +238,7 @@ void CameraSource::setupDefault()
 {
     const QString deviceName_ = CameraDevice::getDefaultDeviceName(settings);
     const bool isScreen = CameraDevice::isScreen(deviceName_);
-    VideoMode mode_ = VideoMode(settings.getScreenRegion());
+    auto mode_ = VideoMode(settings.getScreenRegion());
     if (!isScreen) {
         mode_ = VideoMode(settings.getCamVideoRes());
         mode_.fps = settings.getCamVideoFPS();

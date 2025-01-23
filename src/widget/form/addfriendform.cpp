@@ -83,8 +83,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     importContactsLayout.addWidget(&importSendButton);
     tabWidget->addTab(importContacts, QString());
 
-    QScrollArea* scrollArea = new QScrollArea(tabWidget);
-    QWidget* requestWidget = new QWidget(tabWidget);
+    auto* scrollArea = new QScrollArea(tabWidget);
+    auto* requestWidget = new QWidget(tabWidget);
     scrollArea->setWidget(requestWidget);
     scrollArea->setWidgetResizable(true);
     requestsLayout = new QVBoxLayout(requestWidget);
@@ -314,7 +314,7 @@ void AddFriendForm::deleteFriendRequest(const ToxId& toxId_)
 
 void AddFriendForm::onFriendRequestAccepted()
 {
-    QPushButton* acceptButton = static_cast<QPushButton*>(sender());
+    auto* acceptButton = static_cast<QPushButton*>(sender());
     QWidget* friendWidget = acceptButton->parentWidget();
     const int index = requestsLayout->indexOf(friendWidget);
     removeFriendRequestWidget(friendWidget);
@@ -327,7 +327,7 @@ void AddFriendForm::onFriendRequestAccepted()
 
 void AddFriendForm::onFriendRequestRejected()
 {
-    QPushButton* rejectButton = static_cast<QPushButton*>(sender());
+    auto* rejectButton = static_cast<QPushButton*>(sender());
     QWidget* friendWidget = rejectButton->parentWidget();
     const int index = requestsLayout->indexOf(friendWidget);
     removeFriendRequestWidget(friendWidget);
@@ -383,31 +383,31 @@ void AddFriendForm::retranslateUi()
 
 void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const QString& message_)
 {
-    QWidget* friendWidget = new QWidget(tabWidget);
-    QHBoxLayout* friendLayout = new QHBoxLayout(friendWidget);
-    QVBoxLayout* horLayout = new QVBoxLayout();
+    auto* friendWidget = new QWidget(tabWidget);
+    auto* friendLayout = new QHBoxLayout(friendWidget);
+    auto* horLayout = new QVBoxLayout();
     horLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->addLayout(horLayout);
 
-    CroppingLabel* friendLabel = new CroppingLabel(friendWidget);
+    auto* friendLabel = new CroppingLabel(friendWidget);
     friendLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
     friendLabel->setText("<b>" + friendAddress_ + "</b>");
     horLayout->addWidget(friendLabel);
 
-    QLabel* messageLabel_ = new QLabel(message_);
+    auto* messageLabel_ = new QLabel(message_);
     // allow to select text, but treat links as plaintext to prevent phishing
     messageLabel_->setTextInteractionFlags(Qt::TextSelectableByMouse | Qt::TextSelectableByKeyboard);
     messageLabel_->setTextFormat(Qt::PlainText);
     messageLabel_->setWordWrap(true);
     horLayout->addWidget(messageLabel_, 1);
 
-    QPushButton* acceptButton = new QPushButton(friendWidget);
+    auto* acceptButton = new QPushButton(friendWidget);
     acceptButtons.append(acceptButton);
     connect(acceptButton, &QPushButton::released, this, &AddFriendForm::onFriendRequestAccepted);
     friendLayout->addWidget(acceptButton);
     retranslateAcceptButton(acceptButton);
 
-    QPushButton* rejectButton = new QPushButton(friendWidget);
+    auto* rejectButton = new QPushButton(friendWidget);
     rejectButtons.append(rejectButton);
     connect(rejectButton, &QPushButton::released, this, &AddFriendForm::onFriendRequestRejected);
     friendLayout->addWidget(rejectButton);

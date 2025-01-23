@@ -196,7 +196,7 @@ void AdvancedForm::on_proxyPort_valueChanged(int port)
 
 void AdvancedForm::on_proxyType_currentIndexChanged(int index)
 {
-    const Settings::ProxyType proxytype = static_cast<Settings::ProxyType>(index);
+    const auto proxytype = static_cast<Settings::ProxyType>(index);
     const bool proxyEnabled = proxytype != Settings::ProxyType::ptNone;
 
     bodyUI->proxyAddr->setEnabled(proxyEnabled);

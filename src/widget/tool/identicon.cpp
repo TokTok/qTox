@@ -61,7 +61,7 @@ Identicon::Identicon(const QByteArray& data)
         colors[colorIndex].setHslF(hue, sat, lig);
     }
 
-    const uint8_t* const hashBytes = reinterpret_cast<const uint8_t*>(hash.constData());
+    const auto* const hashBytes = reinterpret_cast<const uint8_t*>(hash.constData());
     // compute the block colors from the hash
     for (int row = 0; row < IDENTICON_ROWS; ++row) {
         for (int col = 0; col < ACTIVE_COLS; ++col) {
@@ -80,7 +80,7 @@ Identicon::Identicon(const QByteArray& data)
 qreal Identicon::bytesToColor(QByteArray bytes)
 {
     static_assert(IDENTICON_COLOR_BYTES <= 8, "IDENTICON_COLOR max value is 8");
-    const uint8_t* const bytesChr = reinterpret_cast<const uint8_t*>(bytes.constData());
+    const auto* const bytesChr = reinterpret_cast<const uint8_t*>(bytes.constData());
     assert(bytes.length() == IDENTICON_COLOR_BYTES);
 
     // get foreground color

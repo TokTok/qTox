@@ -65,7 +65,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
         layouts.swapItemsAt(0, 1);
     }
 
-    QWidget* friendWidget = new QWidget();
+    auto* friendWidget = new QWidget();
     friendWidget->setSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed);
     friendWidget->setAutoFillBackground(true);
     friendWidget->setLayout(friendLayout);
@@ -80,7 +80,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     friendScroll->setWidgetResizable(true);
     friendScroll->setWidget(friendWidget);
 
-    QWidget* contentWidget = new QWidget(this);
+    auto* contentWidget = new QWidget(this);
     contentWidget->setAutoFillBackground(true);
 
     contentLayout = new ContentLayout(settings, style, contentWidget);
@@ -92,7 +92,7 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     splitter->setStretchFactor(1, 1);
     splitter->setCollapsible(1, false);
 
-    QVBoxLayout* boxLayout = new QVBoxLayout(this);
+    auto* boxLayout = new QVBoxLayout(this);
     boxLayout->setContentsMargins(0, 0, 0, 0);
     boxLayout->setSpacing(0);
     boxLayout->addWidget(splitter);
@@ -338,7 +338,7 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
     }
 
     QWidget* widget = currentLayout->itemAt(index)->widget();
-    GenericChatroomWidget* chatWidget = qobject_cast<GenericChatroomWidget*>(widget);
+    auto* chatWidget = qobject_cast<GenericChatroomWidget*>(widget);
     if ((chatWidget != nullptr) && chatWidget != activeChatroomWidget) {
         // FIXME: emit should be removed
         emit chatWidget->chatroomWidgetClicked(chatWidget);
@@ -464,8 +464,8 @@ bool ContentDialog::event(QEvent* event)
 void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
 {
     QObject* o = event->source();
-    FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
-    ConferenceWidget* conference = qobject_cast<ConferenceWidget*>(o);
+    auto* frnd = qobject_cast<FriendWidget*>(o);
+    auto* conference = qobject_cast<ConferenceWidget*>(o);
     if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxPk{event->mimeData()->data("toxPk")};
@@ -497,8 +497,8 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
 void ContentDialog::dropEvent(QDropEvent* event)
 {
     QObject* o = event->source();
-    FriendWidget* frnd = qobject_cast<FriendWidget*>(o);
-    ConferenceWidget* conference = qobject_cast<ConferenceWidget*>(o);
+    auto* frnd = qobject_cast<FriendWidget*>(o);
+    auto* conference = qobject_cast<ConferenceWidget*>(o);
     if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxId(event->mimeData()->data("toxPk"));
@@ -637,7 +637,7 @@ void ContentDialog::updateFriendWidget(const ToxPk& friendPk, QString alias)
 {
     std::ignore = alias;
     Friend* f = friendList.findFriend(friendPk);
-    FriendWidget* friendWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
+    auto* friendWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
 
     const Status::Status status = f->getStatus();
     friendLayout->addFriendWidget(friendWidget, status);

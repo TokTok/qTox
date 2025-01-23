@@ -58,7 +58,7 @@ bool ProfileLocker::lock(QString profile, Paths& paths)
     if (lockfile && curLockName == profile)
         return true;
 
-    QLockFile* newLock = new QLockFile(lockPathFromName(profile, paths));
+    auto* newLock = new QLockFile(lockPathFromName(profile, paths));
     newLock->setStaleLockTime(0);
     if (!newLock->tryLock()) {
         delete newLock;

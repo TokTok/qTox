@@ -273,7 +273,7 @@ void Widget::init()
 
     ui->statusLabel->setEditable(true);
 
-    QMenu* statusButtonMenu = new QMenu(ui->statusButton);
+    auto* statusButtonMenu = new QMenu(ui->statusButton);
     statusButtonMenu->addAction(statusOnline);
     statusButtonMenu->addAction(statusAway);
     statusButtonMenu->addAction(statusBusy);
@@ -809,7 +809,7 @@ void Widget::onSeparateWindowChanged(bool separate, bool clicked)
             }
         }
 
-        QWidget* contentWidget = new QWidget(this);
+        auto* contentWidget = new QWidget(this);
         contentWidget->setObjectName("contentWidget");
 
         contentLayout = new ContentLayout(settings, style, contentWidget);
@@ -1313,7 +1313,7 @@ void Widget::onFriendStatusMessageChanged(uint32_t friendId, const QString& mess
 
 void Widget::onFriendDisplayedNameChanged(const QString& displayed)
 {
-    Friend* f = qobject_cast<Friend*>(sender());
+    auto* f = qobject_cast<Friend*>(sender());
     const auto& friendPk = f->getPublicKey();
     for (Conference* c : conferenceList->getAllConferences()) {
         if (c->getPeerList().contains(friendPk)) {
@@ -1819,8 +1819,8 @@ void Widget::onUpdateAvailable()
 
 ContentDialog* Widget::createContentDialog() const
 {
-    ContentDialog* contentDialog = new ContentDialog(*core, settings, style, *messageBoxManager,
-                                                     *friendList, *conferenceList, profile);
+    auto* contentDialog = new ContentDialog(*core, settings, style, *messageBoxManager, *friendList,
+                                            *conferenceList, profile);
     registerContentDialog(*contentDialog);
     return contentDialog;
 }
@@ -1909,9 +1909,9 @@ ContentLayout* Widget::createContentDialog(DialogType type) const
         Style& style;
     };
 
-    Dialog* dialog = new Dialog(type, settings, core, style);
+    auto* dialog = new Dialog(type, settings, core, style);
     dialog->setAttribute(Qt::WA_DeleteOnClose);
-    ContentLayout* contentLayoutDialog = new ContentLayout(settings, style, dialog);
+    auto* contentLayoutDialog = new ContentLayout(settings, style, dialog);
 
     dialog->setObjectName("detached");
     dialog->setLayout(contentLayoutDialog);

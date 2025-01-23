@@ -52,7 +52,7 @@ SettingsWidget::SettingsWidget(UpdateCheck& updateCheck, IAudioControl& audio, C
     std::unique_ptr<PrivacyForm> pfrm(new PrivacyForm(core, settings, style, profile));
     connect(pfrm.get(), &PrivacyForm::clearAllReceipts, parent, &Widget::clearAllReceipts);
 
-    AVForm* rawAvfrm = new AVForm(audio, coreAV, cameraSource, audioSettings, videoSettings, style);
+    auto* rawAvfrm = new AVForm(audio, coreAV, cameraSource, audioSettings, videoSettings, style);
     std::unique_ptr<AVForm> avfrm(rawAvfrm);
     std::unique_ptr<AdvancedForm> expfrm(new AdvancedForm(settings, style, messageBoxManager));
     std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, core->getSelfId().toString(), style));
@@ -106,7 +106,7 @@ void SettingsWidget::onTabChanged(int index)
     settingsWidgets->setCurrentIndex(index);
 }
 
-void SettingsWidget::onUpdateAvailable(void)
+void SettingsWidget::onUpdateAvailable()
 {
     settingsWidgets->tabBar()->setProperty("update-available", true);
     settingsWidgets->tabBar()->style()->unpolish(settingsWidgets->tabBar());

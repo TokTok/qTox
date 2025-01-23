@@ -3,6 +3,10 @@
  * Copyright © 2024-2025 The TokTok team.
  */
 
+#ifdef TOX_HIDE_DEPRECATED
+#undef TOX_HIDE_DEPRECATED
+#endif
+
 #include "toxoptions.h"
 
 #include "src/core/icoresettings.h"

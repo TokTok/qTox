@@ -593,7 +593,7 @@ bool CoreAV::sendConferenceCallAudio(int conferenceNum, const int16_t* pcm, size
 {
     const QReadLocker locker{&callsLock};
 
-    const std::map<int, ToxConferenceCallPtr>::const_iterator it = conferenceCalls.find(conferenceNum);
+    const auto it = conferenceCalls.find(conferenceNum);
     if (it == conferenceCalls.end()) {
         return false;
     }
@@ -732,7 +732,7 @@ void CoreAV::sendNoVideo()
 
 void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool video, void* vSelf)
 {
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
 
     QWriteLocker locker{&self->callsLock};
 
@@ -771,7 +771,7 @@ void CoreAV::callCallback(ToxAV* toxav, uint32_t friendNum, bool audio, bool vid
 void CoreAV::stateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t state, void* vSelf)
 {
     std::ignore = toxav;
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
 
     // we must unlock this lock before emitting any signals
     QWriteLocker locker{&self->callsLock};
@@ -830,7 +830,7 @@ void CoreAV::stateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t state, voi
 void CoreAV::bitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t audioRate,
                              uint32_t videoRate, void* vSelf)
 {
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
     std::ignore = self;
     std::ignore = toxav;
 
@@ -841,7 +841,7 @@ void CoreAV::bitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t audioRat
 // This is only a dummy implementation for now
 void CoreAV::audioBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rate, void* vSelf)
 {
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
     std::ignore = self;
     std::ignore = toxav;
 
@@ -851,7 +851,7 @@ void CoreAV::audioBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rat
 // This is only a dummy implementation for now
 void CoreAV::videoBitrateCallback(ToxAV* toxav, uint32_t friendNum, uint32_t rate, void* vSelf)
 {
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
     std::ignore = self;
     std::ignore = toxav;
 
@@ -863,7 +863,7 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
                                 void* vSelf)
 {
     std::ignore = toxAV;
-    CoreAV* self = static_cast<CoreAV*>(vSelf);
+    auto* self = static_cast<CoreAV*>(vSelf);
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreAvThread.get());
     const QReadLocker locker{&self->callsLock};

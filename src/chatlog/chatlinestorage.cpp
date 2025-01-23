@@ -97,7 +97,7 @@ void ChatLineStorage::erase(ChatLogIdx idx)
 
 ChatLineStorage::iterator ChatLineStorage::erase(iterator it)
 {
-    iterator prevIt = it;
+    auto prevIt = it;
 
     do {
         it = prevIt;
