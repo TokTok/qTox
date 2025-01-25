@@ -36,9 +36,12 @@ build_qtox() {
 
   # Explicitly include with -isystem to avoid warnings from system headers.
   # CMake will use -I instead of -isystem, so we need to set it manually.
+  #
+  # UBSAN is OFF for now, because it seems to crash inside Qt.
+  # https://github.com/TokTok/qTox/issues/474
   "$CMAKE" \
     -DCMAKE_CXX_FLAGS="-isystem/usr/local/include" \
-    -DUBSAN=ON \
+    -DUBSAN=OFF \
     -DUPDATE_CHECK=ON \
     -DSPELL_CHECK=OFF \
     -DSTRICT_OPTIONS=ON \
