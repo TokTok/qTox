@@ -619,6 +619,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>பிழைத்திருத்த கருவிகளை இயக்கவும் (டெவலப்பர்கள் மட்டும்)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;பிழைத்திருத்தப் பதிவை நகலெடு&quot; என்பதை அழுத்தும் போது, ​​கிளிப்போர்டில் நகலெடுக்க வேண்டிய வரிகளின் அதிகபட்ச எண்ணிக்கை.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> வரிகள்</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;பிழைத்திருத்தப் பதிவை நகலெடு&quot; என்பதை அழுத்தும் போது கிளிப்போர்டில் நகலெடுக்க பதிவு வரிகளின் அதிகபட்ச வயது (மணி/நிமிடங்களில்).</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">அதிகபட்ச வயது:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

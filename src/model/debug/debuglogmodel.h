@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QAbstractListModel>
+#include <QDateTime>
 #include <QLoggingCategory>
 
 class DebugLogModel : public QAbstractListModel
@@ -29,7 +30,7 @@ public:
         /// Index in the original log list.
         int index;
 
-        QString time;
+        QDateTime time;
         QString category;
         QString file;
         int line;
@@ -51,6 +52,21 @@ public:
      * @brief Given the index in the filtered list, return the index in the original list.
      */
     int originalIndex(const QModelIndex& index) const;
+
+    /**
+     * @brief Parse a list of log lines into LogEntry objects.
+     */
+    static QList<LogEntry> parse(const QStringList& logs);
+
+    /**
+     * @brief Render a LogEntry object into a string.
+     */
+    static QString render(const LogEntry& entry, bool includeDate = false);
+
+    static QString renderWithDate(const LogEntry& entry)
+    {
+        return render(entry, true);
+    }
 
 private:
     void recomputeFilter();

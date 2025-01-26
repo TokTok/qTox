@@ -575,6 +575,26 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Activar herramientas de depuración (solo para desarrolladores)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Número máximo de líneas para copiar en el portapapeles al presionar &quot;Copiar registro de depuración&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> pauta</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Antigüedad máxima (en horas/minutos) de las líneas de registro para copiar en el portapapeles al presionar &quot;Copiar registro de depuración&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Edad máxima:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

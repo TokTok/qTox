@@ -654,6 +654,26 @@ kio povas konduki al problemoj kun videovokoj.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ebligu Sencimigajn Ilojn (nur programistoj)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimuma nombro da linioj por kopii en la tondujo premante &quot;Kopii Sencimigan Protokolon&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linioj</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimuma aĝo (en horoj/minutoj) de logaj linioj por kopii en la klipo kiam oni premas &quot;Kopiu Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max Age:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1403,7 +1423,7 @@ do vi povas konservi la dosieron en Vindozo.</translation>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,

@@ -604,6 +604,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ھەل قىلىش قوراللىرىنى قوزغىتىڭ (ئاچقۇچىلارلا)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">«خاتالىق خاتىرىسىنى كۆچۈرۈش» نى باسقاندا چاپلاش تاختىسىغا كۆچۈرمەكچى بولغان ئەڭ كۆپ قۇر.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> قۇر</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ئەڭ يۇقىرى ياش (بىر نەچچە سائەت / مىنۇت) لىنىيىسى (سائەتلىك / مىنۇتلۇق ۋاقىت) ئارقىلىق «بىر نەچچە سائەت / مىنۇتلۇق ۋاقىت» نى چېكىپ, «بىر نەچچە سائەت / مىنۇتلۇق ۋاقىت» نى چېكىپ, چاپلاش تاختىسى ئارقىلىق چاپلاش تاختىسىغا يۆتكىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ئەڭ چوڭ يېشى:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1299,7 +1319,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,

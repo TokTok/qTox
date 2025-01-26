@@ -610,6 +610,26 @@ kar lahko povzroči težave z video klici.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Omogoči orodja za odpravljanje napak (samo za razvijalce)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Največje število vrstic za kopiranje v odložišče, ko pritisnete &quot;Kopiraj dnevnik odpravljanja napak&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> črte</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Največja starost (v urah/minutah) dnevnikov, ki jih lahko kopirate v odložišče, ko pritisnete &quot;Kopiraj dnevnik napak&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Največja starost:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1309,7 +1329,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,

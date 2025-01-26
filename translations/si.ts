@@ -696,6 +696,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නිදොස් කිරීමේ මෙවලම් සබල කරන්න (සංවර්ධකයින් පමණි)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;පිටපත් ඩ්රග් ලොග්&quot; එබූ විට ක්ලිප් පුවරුවට පිටපත් කිරීමට උපරිම පේළි ගණන.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> රේඛා</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;නිදොස් ලොගය පිටපත් කරන්න&quot; එබූ විට පසුරු පුවරුවට පිටපත් කිරීමට ලොග් රේඛාවල උපරිම වයස (පැය/විනාඩි වලින්).</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">උපරිම වයස:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1498,7 +1518,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3416,7 +3436,7 @@ Hide formatting characters:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

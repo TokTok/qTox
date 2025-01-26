@@ -576,6 +576,26 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Activer les outils de débogage (développeurs uniquement)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nombre maximum de lignes à copier dans le presse-papiers en appuyant sur &quot;Copier le journal de débogage&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> lignes</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Âge maximum (en heures/minutes) des lignes de journal à copier dans le presse-papiers en appuyant sur &quot;Copier le journal de débogage&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Âge maximum:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
