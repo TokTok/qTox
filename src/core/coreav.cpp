@@ -67,6 +67,7 @@ CoreAV::CoreAV(std::unique_ptr<ToxAV, ToxAVDeleter> toxav_, QRecursiveMutex& tox
                IAudioSettings& audioSettings_, IConferenceSettings& conferenceSettings_,
                CameraSource& cameraSource_)
     : audio{nullptr}
+    , isCancelling(false)
     , toxav{std::move(toxav_)}
     , coreAvThread{new QThread{this}}
     , iterateTimer{new QTimer{this}}
@@ -295,6 +296,7 @@ bool CoreAV::startCall(uint32_t friendNum, bool video)
 
 bool CoreAV::cancelCall(uint32_t friendNum)
 {
+    isCancelling = true;
     QWriteLocker locker{&callsLock};
     const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
 
@@ -309,6 +311,7 @@ bool CoreAV::cancelCall(uint32_t friendNum)
     locker.unlock();
 
     emit avEnd(friendNum);
+    isCancelling = false;
     return true;
 }
 
@@ -864,6 +867,9 @@ void CoreAV::audioFrameCallback(ToxAV* toxAV, uint32_t friendNum, const int16_t*
 {
     std::ignore = toxAV;
     auto* self = static_cast<CoreAV*>(vSelf);
+    // If call is cancelling just return
+    if (self->isCancelling)
+        return;
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreAvThread.get());
     const QReadLocker locker{&self->callsLock};
@@ -888,6 +894,9 @@ void CoreAV::videoFrameCallback(ToxAV* toxAV, uint32_t friendNum, uint16_t w, ui
 {
     std::ignore = toxAV;
     auto* self = static_cast<CoreAV*>(vSelf);
+    // If call is cancelling just return
+    if (self->isCancelling)
+        return;
     // This callback should come from the CoreAV thread
     assert(QThread::currentThread() == self->coreAvThread.get());
     const QReadLocker locker{&self->callsLock};
