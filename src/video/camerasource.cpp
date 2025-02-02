@@ -357,7 +357,7 @@ void CameraSource::openDevice()
     }
 
     const QWriteLocker locker{&streamMutex};
-    if (subscriptions == 0) {
+    if (subscriptions == 0 || QString::compare(deviceName, "none", Qt::CaseInsensitive) == 0) {
         return;
     }
 
