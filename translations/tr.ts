@@ -1301,6 +1301,11 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Çeviriye yardım edin</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">İşaret dili</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2535,6 +2540,24 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translation>Veri tabanı sürümü (%1) şu anda desteklediğimizden (%2) daha yeni. Lütfen qTox&apos;u yükseltin.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown Sembollerini Göster</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown sembollerini göstermeyin</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kapalı</translation>
     </message>
 </context>
 <context>

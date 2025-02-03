@@ -1304,6 +1304,11 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Padėkite išversti</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown kalba</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2558,6 +2563,24 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Duomenų bazės versija (%1) yra naujesnė nei šiuo metu palaikome (%2). Atnaujinkite qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Rodyti žymėjimo simbolius</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nerodykite žymėjimo simbolių</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Išjungtas</translation>
     </message>
 </context>
 <context>

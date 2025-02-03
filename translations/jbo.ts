@@ -1540,6 +1540,11 @@ mu&apos;i nai lo nu mulno ganlo</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ko sidju lo ka fanva</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">la markdown</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3022,6 +3027,24 @@ le samselcmi cu mapti le blanu zoi gy. NoSpam .gy. joi le checksum zoi gy. gray<
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">jitro</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ko jarco tu&apos;a lo marce sinxa</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ko na jarco lo markdown sinxa</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">desakti</translation>
     </message>
 </context>
 <context>

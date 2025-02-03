@@ -1334,6 +1334,11 @@ ahelyett, hogy teljesen bezárná.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Segíts fordítani</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown nyelv</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2607,6 +2612,24 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel) és az ellenőrző
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Az adatbázis verziója (%1) újabb, mint a jelenleg támogatott (%2). Kérjük, frissítse a qToxot.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mutasd meg a Markdown szimbólumokat</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ne mutasd meg a markdown szimbólumokat</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Le</translation>
     </message>
 </context>
 <context>

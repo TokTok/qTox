@@ -1300,6 +1300,11 @@ au lieu de fermer entièrement.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aidez à traduire</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Langue de marque</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2535,6 +2540,24 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translation>La version de la base de données (%1) est plus récente que celle que nous supportons actuellement (%2). Veuillez mettre à jour qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Afficher les symboles de marque</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ne montrez pas les symboles de marque</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Désactivé</translation>
     </message>
 </context>
 <context>

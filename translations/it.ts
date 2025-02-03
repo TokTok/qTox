@@ -1300,6 +1300,11 @@ invece di chiudersi completamente.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aiuta a tradurre</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Lingua di markdown</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2535,6 +2540,24 @@ Questo ID include una sezione NoSpam (in colore blu) e il controllo checksum (in
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translation>La versione del database (%1) è più recente di quella attualmente supportata (%2). Si prega di aggiornare qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mostra simboli di markdown</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Non mostrare simboli di markdown</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Spento</translation>
     </message>
 </context>
 <context>

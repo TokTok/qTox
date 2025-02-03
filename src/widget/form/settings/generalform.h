@@ -47,6 +47,7 @@ private slots:
     void on_maxAutoAcceptSizeMB_editingFinished();
     void on_autoSaveFilesDir_clicked();
     void on_checkUpdates_stateChanged();
+    void on_markdownComboBox_currentIndexChanged(int index);
 
 private:
     void retranslateUi();

@@ -229,6 +229,16 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style_)
                                           / 1024 / 1024);
     bodyUI->autoacceptFiles->setChecked(settings.getAutoSaveEnabled());
 
+    bodyUI->markdownComboBox->insertItem(static_cast<int>(Settings::StyleType::NONE),
+                                         QObject::tr("Off", "Do not interpret Markdown language."));
+    bodyUI->markdownComboBox->insertItem(static_cast<int>(Settings::StyleType::WITH_CHARS),
+                                         QObject::tr("Show Markdown symbols",
+                                                     "Interpret Markdown and show symbols."));
+    bodyUI->markdownComboBox->insertItem(
+        static_cast<int>(Settings::StyleType::WITHOUT_CHARS),
+        QObject::tr("Don't show Markdown symbols", "Interpret Markdown and do not show symbols."));
+    bodyUI->markdownComboBox->setCurrentIndex(static_cast<int>(settings.getStylePreference()));
+
 #ifndef QTOX_PLATFORM_EXT
     bodyUI->autoAwayLabel->setEnabled(false); // these don't seem to change the appearance of the widgets,
     bodyUI->autoAwaySpinBox->setEnabled(false); // though they are unusable
@@ -344,4 +354,21 @@ void GeneralForm::retranslateUi()
     bodyUI->transWeblate->setText(
         TextCompose::createLink(style, QStringLiteral("https://hosted.weblate.org/projects/qtox/qtox/"),
                                 bodyUI->transWeblate->text()));
+}
+
+void GeneralForm::on_markdownComboBox_currentIndexChanged(int index)
+{
+    switch (index) {
+    case 0:
+        settings.setStylePreference(Settings::StyleType::NONE);
+        break;
+    case 1:
+        settings.setStylePreference(Settings::StyleType::WITH_CHARS);
+        break;
+    case 2:
+        settings.setStylePreference(Settings::StyleType::WITHOUT_CHARS);
+        break;
+    default:
+        qCritical() << "Invalid index value for markdown combo box: " << index;
+    }
 }

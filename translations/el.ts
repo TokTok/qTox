@@ -1348,6 +1348,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Βοηθήστε στη μετάφραση</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Γλωσσική γλώσσα</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2641,6 +2646,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Η έκδοση της βάσης δεδομένων (%1) είναι νεότερη από αυτήν που υποστηρίζουμε αυτήν τη στιγμή (%2). Αναβαθμίστε το qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Εμφάνιση συμβόλων Markdown</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μην εμφανίζετε σύμβολα Markdown</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μακριά από</translation>
     </message>
 </context>
 <context>

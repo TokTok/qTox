@@ -1534,6 +1534,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵄⵉⵡⴻⵏ ⴰⵙⵓⵇⴻⵍ</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵜⵓⵜⵍⴰⵢⵜ ⵏ ⵎⴰⵔⴽⵏ .</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3007,6 +3012,24 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ⵜⵃⴻⴽⵎ</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵙⵙⴽⵏ-ⴷ ⵉⵣⵡⴰⵍ ⵏ ⵎⴰⵔⴽⴷⵓⵏ</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵓⵔ ⴷⴰ ⵙⵙⴽⴰⵏⵖ ⵉⵣⵡⴰⵍ ⵏ ⵎⴰⵔⴽⴷⵓⵏ</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵢⴻⴼⴼⴻⵖ</translation>
     </message>
 </context>
 <context>

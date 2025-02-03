@@ -1570,6 +1570,11 @@ in plaats vaan gans te slete.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Help vertaole</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markonder taol</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3073,6 +3078,24 @@ Deze ID umvat de NoSpam-code (in blauw) en de checksum (in gries).</translation>
         <source>Incoming call...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inkomende oproep...</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown-symbole toene</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Toon Markdown symbole neet</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Oet</translation>
     </message>
 </context>
 <context>

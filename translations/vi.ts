@@ -1300,6 +1300,11 @@ thay vì đóng hoàn toàn.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Trợ giúp dịch</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ngôn ngữ đánh dấu</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2537,6 +2542,24 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Phiên bản cơ sở dữ liệu (%1) mới hơn phiên bản chúng tôi hiện hỗ trợ (%2). Vui lòng nâng cấp qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hiển thị biểu tượng Markdown</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Không hiển thị các biểu tượng đánh dấu</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tắt</translation>
     </message>
 </context>
 <context>

@@ -1306,6 +1306,11 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomôžte s prekladom</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Jazyk</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2545,6 +2550,24 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Verzia databázy (%1) je novšia ako v súčasnosti podporujeme (%2). Aktualizujte qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Zobraziť symboly zrážania</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nezobrazujte symboly Markdown</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vypnutý</translation>
     </message>
 </context>
 <context>

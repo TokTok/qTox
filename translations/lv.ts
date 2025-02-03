@@ -1318,6 +1318,11 @@ vietā pilnīgi aizveroties.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Palīdziet tulkot</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Marķējuma valoda</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2604,6 +2609,24 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Datu bāzes versija (%1) ir jaunāka, nekā mēs pašlaik atbalstām (%2). Lūdzu, jauniniet qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Parādīt marķējuma simbolus</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Neuzrāda marķējuma simbolus</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ārpus</translation>
     </message>
 </context>
 <context>

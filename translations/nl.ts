@@ -1293,6 +1293,11 @@ in plaats van volledig te sluiten.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Help vertalen</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown -taal</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2526,6 +2531,24 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translation>Databaseversie (%1) is nieuwer dan we momenteel ondersteunen (%2). Upgrade qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Toon markdown -symbolen</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Toon geen markdown -symbolen</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Uit</translation>
     </message>
 </context>
 <context>

@@ -1438,6 +1438,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">번역을 도와주세요</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">마크 다운 언어</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2892,6 +2897,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">데이터베이스 버전(%1)은 현재 지원하는 버전(%2)보다 최신 버전입니다. qTox를 업그레이드해주세요.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">마크 다운 기호를 보여줍니다</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">마크 다운 기호를 표시하지 마십시오</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">끄다</translation>
     </message>
 </context>
 <context>

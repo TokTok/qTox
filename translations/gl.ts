@@ -1338,6 +1338,11 @@ en lugar de pechar por completo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Axuda a traducir</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Linguaxe de marcas</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2613,6 +2618,24 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">A versión da base de datos (%1) é máis recente que a que admitimos actualmente (%2). Actualiza qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mostrar símbolos de Markdown</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Non mostre os símbolos de Markdown</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Off</translation>
     </message>
 </context>
 <context>

@@ -1377,6 +1377,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">மொழிபெயர்க்க உதவுங்கள்</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">மார்க் டவுன் மொழி</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2823,6 +2828,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">தரவுத்தள பதிப்பு (%1) நாங்கள் தற்போது ஆதரிக்கும் (%2) விட புதியது. தயவுசெய்து qTox ஐ மேம்படுத்தவும்.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">மார்க் டவுன் சின்னங்களைக் காட்டு</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">மார்க் டவுன் சின்னங்களைக் காட்ட வேண்டாம்</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ஆஃப்</translation>
     </message>
 </context>
 <context>

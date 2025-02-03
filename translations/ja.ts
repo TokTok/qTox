@@ -1354,6 +1354,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>翻訳を手伝ってください</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">マークダウン言語</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2645,6 +2650,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>データベースのバージョン (%1) は、現在サポートされているバージョン (%2) よりも新しいです。 qTox を更新してください。</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">マークダウンシンボルを表示します</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">マークダウンシンボルを表示しないでください</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">オフ</translation>
     </message>
 </context>
 <context>

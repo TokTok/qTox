@@ -1289,6 +1289,10 @@ instead of closing entirely.</source>
         <source>Help translate</source>
         <translation type="unfinished">Lend a hand translatin&apos;</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2520,6 +2524,21 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     <message>
         <source>Control</source>
         <translation type="unfinished">Th&apos; Helm</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

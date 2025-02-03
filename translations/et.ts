@@ -1302,6 +1302,11 @@ jätab ta tööle teavituste alal.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aidake tõlkida</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Märgistamiskeel</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2554,6 +2559,24 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Andmebaasi versioon (%1) on uuem, kui me praegu toetame (%2). Palun uuendage qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Näita märgistamise sümboleid</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ära näita märgistus sümboleid</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ära</translation>
     </message>
 </context>
 <context>

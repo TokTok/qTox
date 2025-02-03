@@ -1565,6 +1565,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පරිවර්තනයට උදව් කරන්න</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">මාර්ක්ඩවුන් භාෂාව</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3065,6 +3070,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">දත්ත සමුදා අනුවාදය (%1) අපි දැනට සහය දක්වන (%2) ට වඩා අලුත් ය. කරුණාකර qTox උත්ශ්‍රේණි කරන්න.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">මාර්ක්ඩවුන් සංකේත පෙන්වන්න</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">මාර්ක්ඩවුන් සංකේත පෙන්වන්න එපා</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">අක්රිය කරන්න</translation>
     </message>
 </context>
 <context>

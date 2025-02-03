@@ -1567,6 +1567,11 @@ badala ya kufunga kabisa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Saidia kutafsiri</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Lugha ya Markdown</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3067,6 +3072,24 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Toleo la hifadhidata (%1) ni jipya kuliko tunalotumia sasa (%2). Tafadhali pata toleo jipya la qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Onyesha alama za alama</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Usionyeshe alama za alama</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mbali</translation>
     </message>
 </context>
 <context>

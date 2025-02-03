@@ -1445,6 +1445,11 @@ i stedet for at lukke helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hjælp med at oversætte</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown -sprog</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2879,6 +2884,24 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Databaseversionen (%1) er nyere, end vi i øjeblikket understøtter (%2). Opgrader venligst qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vis Markdown -symboler</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vis ikke Markdown -symboler</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Slukket</translation>
     </message>
 </context>
 <context>

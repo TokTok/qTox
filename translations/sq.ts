@@ -1560,6 +1560,11 @@ në vend që të mbyllet plotësisht.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ndihmoni përkthimin</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Gjuhë e shenjtë</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3060,6 +3065,24 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Versioni i bazës së të dhënave (%1) është më i ri nga sa mbështesim aktualisht (%2). Ju lutemi përditësoni qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Trego simbolet e shënjestrës</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mos i tregoni simbolet e shënjestrës</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">I largët</translation>
     </message>
 </context>
 <context>

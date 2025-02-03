@@ -1302,6 +1302,11 @@ istedenfor å lukke seg helt.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hjelp til å oversette</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown -språk</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2539,6 +2544,24 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Databaseversjonen (%1) er nyere enn vi støtter for øyeblikket (%2). Vennligst oppgrader qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vis markdown -symboler</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ikke vis markdown -symboler</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Av</translation>
     </message>
 </context>
 <context>

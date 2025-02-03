@@ -1365,6 +1365,11 @@ namesto da bi se popolnoma zaprl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pomagajte prevesti</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown jezik</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2735,6 +2740,24 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Različica zbirke podatkov (%1) je novejša od trenutno podprte (%2). Prosimo, nadgradite qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Pokažite simbole označevanja</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ne prikazujte simbolov označevanja</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">OFF</translation>
     </message>
 </context>
 <context>

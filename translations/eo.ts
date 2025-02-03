@@ -1464,6 +1464,11 @@ anstataŭ tute fermi.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Helpu traduki</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Markdown Lingvo</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -2891,6 +2896,24 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Datumbaza versio (%1) estas pli nova ol ni nuntempe subtenas (%2). Bonvolu ĝisdatigi qTox.</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Montri markajn simbolojn</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ne montru markajn simbolojn</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">For</translation>
     </message>
 </context>
 <context>

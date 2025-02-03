@@ -1541,6 +1541,11 @@ instead of closing entirely.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ترجمہ کرنے میں مدد کریں۔</translation>
     </message>
+    <message>
+        <source>Markdown language</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">مارک ڈاون زبان</translation>
+    </message>
 </context>
 <context>
     <name>GenericChatForm</name>
@@ -3041,6 +3046,24 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ڈیٹا بیس ورژن (%1) اس سے نیا ہے جو ہم فی الحال سپورٹ کرتے ہیں (%2)۔ براہ کرم qTox کو اپ گریڈ کریں۔</translation>
+    </message>
+    <message>
+        <source>Show Markdown symbols</source>
+        <comment>Interpret Markdown and show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">مارک ڈاون علامتیں دکھائیں</translation>
+    </message>
+    <message>
+        <source>Don&apos;t show Markdown symbols</source>
+        <comment>Interpret Markdown and do not show symbols.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">مارک ڈاون علامتیں نہ دکھائیں</translation>
+    </message>
+    <message>
+        <source>Off</source>
+        <comment>Do not interpret Markdown language.</comment>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">آف</translation>
     </message>
 </context>
 <context>
