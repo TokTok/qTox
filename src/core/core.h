@@ -48,15 +48,16 @@ class Core : public QObject,
 public:
     enum class ToxCoreErrors
     {
+        OK,
         BAD_PROXY,
         INVALID_SAVE,
         FAILED_TO_START,
-        ERROR_ALLOC
+        ERROR_ALLOC,
     };
 
-    static ToxCorePtr makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
-                                  IBootstrapListGenerator& bootstrapNodes,
-                                  ToxCoreErrors* err = nullptr);
+    static std::pair<ToxCorePtr, Core::ToxCoreErrors>
+    makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
+                IBootstrapListGenerator& bootstrapNodes);
     const CoreAV* getAv() const;
     CoreAV* getAv();
     void setAv(CoreAV* coreAv);

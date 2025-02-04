@@ -162,7 +162,7 @@ public slots:
     void saveGlobal();
     void sync();
     void setAutoLogin(bool state);
-    void updateProfileData(Profile* profile, const QCommandLineParser* parser, bool newProfile);
+    void updateProfileData(Profile& profile, const QCommandLineParser* parser, bool newProfile);
 
 signals:
     // General

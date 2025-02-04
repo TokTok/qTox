@@ -7,6 +7,7 @@
 
 #include "ui_advancedsettings.h"
 
+#include "src/net/toxuri.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/widget/tool/imessageboxmanager.h"
@@ -191,7 +192,7 @@ void AdvancedForm::on_proxyAddr_editingFinished()
 
 void AdvancedForm::on_proxyPort_valueChanged(int port)
 {
-    settings.setProxyPort(std::max(port, 0));
+    settings.setProxyPort(std::clamp(port, 1, 65535));
 }
 
 void AdvancedForm::on_proxyType_currentIndexChanged(int index)

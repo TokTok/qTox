@@ -13,6 +13,7 @@
 #include "src/persistence/profile.h"
 #include "src/persistence/profilelocker.h"
 #include "src/persistence/settingsserializer.h"
+
 #ifdef QTOX_PLATFORM_EXT
 #include "src/platform/autorun.h"
 #endif
@@ -26,6 +27,7 @@
 #include <QErrorMessage>
 #include <QFile>
 #include <QFont>
+#include <QHostAddress>
 #include <QList>
 #include <QMutexLocker>
 #include <QNetworkProxy>
@@ -272,17 +274,13 @@ void Settings::loadGlobal()
     loaded = true;
 }
 
-void Settings::updateProfileData(Profile* profile, const QCommandLineParser* parser, bool newProfile)
+void Settings::updateProfileData(Profile& profile, const QCommandLineParser* parser, bool newProfile)
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
-    if (profile == nullptr) {
-        qWarning() << QString("Could not load new settings (profile change to nullptr)");
-        return;
-    }
-    setCurrentProfile(profile->getName());
+    setCurrentProfile(profile.getName());
     saveGlobal();
-    loadPersonal(*profile, newProfile);
+    loadPersonal(profile, newProfile);
     if (parser != nullptr) {
         applyCommandLineOptions(*parser);
     }
@@ -296,9 +294,9 @@ void Settings::updateProfileData(Profile* profile, const QCommandLineParser* par
  */
 bool Settings::verifyProxySettings(const QCommandLineParser& parser)
 {
-    const QString IPv6SettingString = parser.value("I").toLower();
-    const QString LANSettingString = parser.value("L").toLower();
-    const QString UDPSettingString = parser.value("U").toLower();
+    const QString ipv6SettingString = parser.value("I").toLower();
+    const QString lanSettingString = parser.value("L").toLower();
+    const QString udpSettingString = parser.value("U").toLower();
     const QString proxySettingString = parser.value("proxy").toLower();
     QStringList proxySettingStrings = proxySettingString.split(":");
 
@@ -316,39 +314,39 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
     }
 
     if (parser.isSet("I")) {
-        if (!(IPv6SettingString == ON || IPv6SettingString == OFF)) {
-            qCritical() << "Unable to parse IPv6 setting (-I was" << IPv6SettingString
+        if (!(ipv6SettingString == ON || ipv6SettingString == OFF)) {
+            qCritical() << "Unable to parse IPv6 setting (-I was" << ipv6SettingString
                         << "but should be on/off).";
             return false;
         }
     }
 
     if (parser.isSet("U")) {
-        if (!(UDPSettingString == ON || UDPSettingString == OFF)) {
-            qCritical() << "Unable to parse UDP setting (-U was" << UDPSettingString
+        if (!(udpSettingString == ON || udpSettingString == OFF)) {
+            qCritical() << "Unable to parse UDP setting (-U was" << udpSettingString
                         << "but should be on/off).";
             return false;
         }
     }
 
     if (parser.isSet("L")) {
-        if (!(LANSettingString == ON || LANSettingString == OFF)) {
-            qCritical() << "Unable to parse LAN setting (-L was" << LANSettingString
+        if (!(lanSettingString == ON || lanSettingString == OFF)) {
+            qCritical() << "Unable to parse LAN setting (-L was" << lanSettingString
                         << "but should be on/off).";
             return false;
         }
     }
-    if (activeProxyType && UDPSettingString == ON) {
+    if (activeProxyType && udpSettingString == ON) {
         qCritical() << "Cannot set UDP on with proxy.";
         return false;
     }
 
-    if (activeProxyType && LANSettingString == ON) {
+    if (activeProxyType && lanSettingString == ON) {
         qCritical() << "Cannot use LAN discovery with proxy.";
         return false;
     }
 
-    if (LANSettingString == ON && UDPSettingString == OFF) {
+    if (lanSettingString == ON && udpSettingString == OFF) {
         qCritical() << "Incompatible UDP/LAN settings: LAN discovery requires UDP.";
         return false;
     }
@@ -371,7 +369,7 @@ bool Settings::verifyProxySettings(const QCommandLineParser& parser)
             return false;
         }
 
-        // TODO(Kriby): Sanity check IPv4/IPv6 addresses/hostnames?
+        // TODO(iphydf): Sanity check IPv4/IPv6 addresses/hostnames
 
         const int portNumber = proxySettingStrings[2].toInt();
         if (portNumber < 1 || portNumber > 65535) {

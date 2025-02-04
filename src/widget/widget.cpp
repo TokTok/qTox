@@ -22,7 +22,6 @@
 #ifdef Q_OS_MAC
 #include <QMenuBar>
 #include <QSignalMapper>
-#include <QWindow>
 #endif
 
 #include "circlewidget.h"
@@ -453,7 +452,7 @@ void Widget::init()
         settingsWidget->showAbout();
     });
 
-    QMenu* dockChangeStatusMenu = new QMenu(tr("Status"), this);
+    auto* dockChangeStatusMenu = new QMenu(tr("Status"), this);
     dockChangeStatusMenu->addAction(statusOnline);
     statusOnline->setIconVisibleInMenu(true);
     dockChangeStatusMenu->addSeparator();
@@ -775,6 +774,7 @@ void Widget::onFailedToStartCore()
 
 void Widget::onBadProxyCore()
 {
+    qDebug() << "Bad proxy settings, asking user to change settings";
     settings.setProxyType(Settings::ProxyType::ptNone);
     QMessageBox critical(this);
     critical.setText(tr("Toxcore failed to start with your proxy settings. "

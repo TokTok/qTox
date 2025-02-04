@@ -360,8 +360,10 @@ int AppManager::startGui(QCommandLineParser& parser)
     Profile* profile = nullptr;
     if (autoLogin && Profile::exists(profileName, settings->getPaths())
         && !Profile::isEncrypted(profileName, settings->getPaths())) {
+        // Release ownership temporarily because we're calling Qt slot bootstrapWithProfile below.
         profile = Profile::loadProfile(profileName, QString(), *settings, &parser, *cameraSource,
-                                       *messageBoxManager);
+                                       *messageBoxManager)
+                      .release();
         if (profile == nullptr) {
             QMessageBox::information(nullptr, tr("Error"), tr("Failed to load profile automatically."));
         }

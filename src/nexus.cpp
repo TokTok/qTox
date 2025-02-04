@@ -137,7 +137,7 @@ void Nexus::start()
     frontAction = windowMenu->addAction(QString());
     connect(frontAction, &QAction::triggered, this, &Nexus::bringAllToFront);
 
-    QAction* quitAction = new QAction(globalMenuBar);
+    auto* quitAction = new QAction(globalMenuBar);
     quitAction->setMenuRole(QAction::QuitRole);
     connect(quitAction, &QAction::triggered, qApp, &QApplication::quit);
 
@@ -285,7 +285,7 @@ void Nexus::onLoadProfile(const QString& name, const QString& pass)
  * Changes the loaded profile and notifies listeners.
  * @param p
  */
-void Nexus::setProfile(Profile* p)
+void Nexus::setProfile(std::unique_ptr<Profile> p)
 {
     if (p == nullptr) {
         emit profileLoadFailed();
@@ -294,8 +294,8 @@ void Nexus::setProfile(Profile* p)
     }
     emit profileLoaded();
 
-
-    emit currentProfileChanged(p);
+    // Pushing Profile ownership to the receiver of this signal.
+    emit currentProfileChanged(p.release());
 }
 
 void Nexus::setParser(QCommandLineParser* parser_)
@@ -315,7 +315,7 @@ bool Nexus::handleToxSave(const QString& path)
 }
 
 #ifdef Q_OS_MAC
-void Nexus::retranslateUi()
+void Nexus::retranslateUi() const
 {
     viewMenu->menuAction()->setText(tr("View", "macOS Menu bar"));
     windowMenu->menuAction()->setText(tr("Window", "macOS Menu bar"));
@@ -328,10 +328,10 @@ void Nexus::onWindowStateChanged(Qt::WindowStates state)
     minimizeAction->setEnabled(QApplication::activeWindow() != nullptr);
 
     if (QApplication::activeWindow() != nullptr && sender() == QApplication::activeWindow()) {
-        if (state & Qt::WindowFullScreen)
+        if ((state & Qt::WindowFullScreen) != 0u)
             minimizeAction->setEnabled(false);
 
-        if (state & Qt::WindowFullScreen)
+        if ((state & Qt::WindowFullScreen) != 0u)
             fullScreenAction->setText(tr("Exit Full Screen"));
         else
             fullScreenAction->setText(tr("Enter Full Screen"));
@@ -363,7 +363,7 @@ void Nexus::updateWindowsArg(QWindow* closedWindow)
 
     QWindow* activeWindow;
 
-    if (QApplication::activeWindow())
+    if (QApplication::activeWindow() != nullptr)
         activeWindow = QApplication::activeWindow()->windowHandle();
     else
         activeWindow = nullptr;
@@ -380,7 +380,7 @@ void Nexus::updateWindowsArg(QWindow* closedWindow)
         dockMenu->insertAction(dockLast, action);
     }
 
-    if (dockLast && !dockLast->isSeparator())
+    if (dockLast != nullptr && !dockLast->isSeparator())
         dockMenu->insertSeparator(dockLast);
 }
 
@@ -389,7 +389,7 @@ void Nexus::updateWindowsClosed()
     updateWindowsArg(static_cast<QWidget*>(sender())->windowHandle());
 }
 
-void Nexus::updateWindowsStates()
+void Nexus::updateWindowsStates() const
 {
     bool exists = false;
     QWindowList windowList = QApplication::topLevelWindows();
@@ -406,9 +406,9 @@ void Nexus::updateWindowsStates()
 
 void Nexus::onOpenWindow(QObject* object)
 {
-    QWindow* window = static_cast<QWindow*>(object);
+    auto* window = static_cast<QWindow*>(object);
 
-    if (window->windowState() & QWindow::Minimized)
+    if ((window->windowState() & QWindow::Minimized) != 0)
         window->showNormal();
 
     window->raise();

@@ -32,12 +32,14 @@ class Profile : public QObject
     Q_OBJECT
 
 public:
-    static Profile* loadProfile(const QString& name, const QString& password, Settings& settings,
-                                const QCommandLineParser* parser, CameraSource& cameraSource,
-                                IMessageBoxManager& messageBoxManager);
-    static Profile* createProfile(const QString& name, const QString& password, Settings& settings,
-                                  const QCommandLineParser* parser, CameraSource& cameraSource,
-                                  IMessageBoxManager& messageBoxManager);
+    static std::unique_ptr<Profile> loadProfile(const QString& name, const QString& password,
+                                                Settings& settings, const QCommandLineParser* parser,
+                                                CameraSource& cameraSource,
+                                                IMessageBoxManager& messageBoxManager);
+    static std::unique_ptr<Profile> createProfile(const QString& name, const QString& password,
+                                                  Settings& settings, const QCommandLineParser* parser,
+                                                  CameraSource& cameraSource,
+                                                  IMessageBoxManager& messageBoxManager);
     void save();
     ~Profile() override;
 
@@ -101,7 +103,7 @@ private:
     static QStringList getFilesByExt(QString extension, Paths& paths);
     QString avatarPath(const ToxPk& owner, bool forceUnencrypted = false);
     bool saveToxSave(QByteArray data);
-    void initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
+    bool initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
                   CameraSource& cameraSource);
 
 private:

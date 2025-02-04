@@ -105,31 +105,26 @@ void Core::registerCallbacks(Tox* tox)
  * @param settings Settings specific to Core
  * @return nullptr or a Core object ready to start
  */
-ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& settings,
-                             IBootstrapListGenerator& bootstrapNodes, ToxCoreErrors* err)
+std::pair<ToxCorePtr, Core::ToxCoreErrors> Core::makeToxCore(const QByteArray& savedata,
+                                                             const ICoreSettings& settings,
+                                                             IBootstrapListGenerator& bootstrapNodes)
 {
     auto* thread = new QThread();
     if (thread == nullptr) {
         qCritical() << "Could not allocate Core thread";
-        return {};
+        return {nullptr, ToxCoreErrors::ERROR_ALLOC};
     }
     thread->setObjectName("qTox Core");
 
     auto toxOptions = ToxOptions::makeToxOptions(savedata, settings);
     if (toxOptions == nullptr) {
         qCritical() << "Could not allocate ToxOptions data structure";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::ERROR_ALLOC;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::ERROR_ALLOC};
     }
 
     ToxCorePtr core(new Core(thread, bootstrapNodes, settings));
     if (core == nullptr) {
-        if (err != nullptr) {
-            *err = ToxCoreErrors::ERROR_ALLOC;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::ERROR_ALLOC};
     }
 
     Tox_Err_New tox_err;
@@ -141,10 +136,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
 
     case TOX_ERR_NEW_LOAD_BAD_FORMAT:
         qCritical() << "Failed to parse Tox save data";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::BAD_PROXY;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::INVALID_SAVE};
 
     case TOX_ERR_NEW_PORT_ALLOC:
         if (toxOptions->getIPv6Enabled()) {
@@ -158,54 +150,33 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
         }
 
         qCritical() << "Can't to bind the port";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::FAILED_TO_START;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::FAILED_TO_START};
 
     case TOX_ERR_NEW_PROXY_BAD_HOST:
     case TOX_ERR_NEW_PROXY_BAD_PORT:
     case TOX_ERR_NEW_PROXY_BAD_TYPE:
         qCritical() << "Bad proxy, error code:" << tox_err;
-        if (err != nullptr) {
-            *err = ToxCoreErrors::BAD_PROXY;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::BAD_PROXY};
 
     case TOX_ERR_NEW_PROXY_NOT_FOUND:
         qCritical() << "Proxy not found";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::BAD_PROXY;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::BAD_PROXY};
 
     case TOX_ERR_NEW_LOAD_ENCRYPTED:
         qCritical() << "Attempted to load encrypted Tox save data";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::INVALID_SAVE;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::INVALID_SAVE};
 
     case TOX_ERR_NEW_MALLOC:
         qCritical() << "Memory allocation failed";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::ERROR_ALLOC;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::ERROR_ALLOC};
 
     case TOX_ERR_NEW_NULL:
         qCritical() << "A parameter was null";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::FAILED_TO_START;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::FAILED_TO_START};
 
     default:
         qCritical() << "Toxcore failed to start, unknown error code:" << tox_err;
-        if (err != nullptr) {
-            *err = ToxCoreErrors::FAILED_TO_START;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::FAILED_TO_START};
     }
 
     // tox should be valid by now
@@ -215,10 +186,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
     core->file = CoreFile::makeCoreFile(core.get(), core->tox.get(), core->coreLoopLock);
     if (!core->file) {
         qCritical() << "CoreFile failed to start";
-        if (err != nullptr) {
-            *err = ToxCoreErrors::FAILED_TO_START;
-        }
-        return {};
+        return {nullptr, ToxCoreErrors::FAILED_TO_START};
     }
 
     registerCallbacks(core->tox.get());
@@ -229,7 +197,7 @@ ToxCorePtr Core::makeToxCore(const QByteArray& savedata, const ICoreSettings& se
 
     // when leaving this function 'core' should be ready for it's start() action or
     // a nullptr
-    return core;
+    return {std::move(core), ToxCoreErrors::OK};
 }
 
 void Core::onStarted()

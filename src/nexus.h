@@ -59,11 +59,11 @@ public:
     QMenu* dockMenu;
 
 public slots:
-    void retranslateUi();
+    void retranslateUi() const;
     void onWindowStateChanged(Qt::WindowStates state);
     void updateWindows();
     void updateWindowsClosed();
-    void updateWindowsStates();
+    void updateWindowsStates() const;
     void onOpenWindow(QObject* object);
     void toggleFullScreen();
     void bringAllToFront();
@@ -87,7 +87,7 @@ public slots:
 
 private:
     void connectLoginScreen(const LoginScreen& loginScreen);
-    void setProfile(Profile* p);
+    void setProfile(std::unique_ptr<Profile> p);
 
 private:
     std::unique_ptr<Profile> profile;
