@@ -7,6 +7,7 @@
 
 #include "ui_advancedsettings.h"
 
+#include "src/net/toxuri.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/widget/tool/imessageboxmanager.h"

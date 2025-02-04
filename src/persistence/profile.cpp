@@ -61,8 +61,8 @@ enum class CreateToxDataError
  * @param error A LoadToxDataError enum value indicating operation result.
  * @return Pointer to the tox encryption key.
  */
-std::unique_ptr<ToxEncrypt> loadToxData(const QString& password, const QString& filePath,
-                                        QByteArray& data, LoadToxDataError& error)
+std::tuple<std::unique_ptr<ToxEncrypt>, const QByteArray, const LoadToxDataError>
+loadToxData(const QString& password, const QString& filePath)
 {
     std::unique_ptr<ToxEncrypt> tmpKey;
     qint64 fileSize = 0;
@@ -71,43 +71,36 @@ std::unique_ptr<ToxEncrypt> loadToxData(const QString& password, const QString& 
     qDebug() << "Loading tox save" << filePath;
 
     if (!saveFile.exists()) {
-        error = LoadToxDataError::FILE_NOT_FOUND;
-        return nullptr;
+        return {nullptr, QByteArray{}, LoadToxDataError::FILE_NOT_FOUND};
     }
 
     if (!saveFile.open(QIODevice::ReadOnly)) {
-        error = LoadToxDataError::COULD_NOT_READ_FILE;
-        return nullptr;
+        return {nullptr, QByteArray{}, LoadToxDataError::COULD_NOT_READ_FILE};
     }
 
     fileSize = saveFile.size();
     if (fileSize <= 0) {
-        error = LoadToxDataError::FILE_IS_EMPTY;
-        return nullptr;
+        return {nullptr, QByteArray{}, LoadToxDataError::FILE_IS_EMPTY};
     }
 
-    data = saveFile.readAll();
+    auto data = saveFile.readAll();
     if (ToxEncrypt::isEncrypted(data)) {
         if (password.isEmpty()) {
-            error = LoadToxDataError::ENCRYPTED_NO_PASSWORD;
-            return nullptr;
+            return {nullptr, QByteArray{}, LoadToxDataError::ENCRYPTED_NO_PASSWORD};
         }
 
         tmpKey = ToxEncrypt::makeToxEncrypt(password, data);
         if (!tmpKey) {
-            error = LoadToxDataError::COULD_NOT_DERIVE_KEY;
-            return nullptr;
+            return {nullptr, QByteArray{}, LoadToxDataError::COULD_NOT_DERIVE_KEY};
         }
 
         data = tmpKey->decrypt(data);
         if (data.isEmpty()) {
-            error = LoadToxDataError::DECRYPTION_FAILED;
-            return nullptr;
+            return {nullptr, QByteArray{}, LoadToxDataError::DECRYPTION_FAILED};
         }
     }
 
-    error = LoadToxDataError::OK;
-    return tmpKey;
+    return {std::move(tmpKey), data, LoadToxDataError::OK};
 }
 
 /**
@@ -219,7 +212,7 @@ bool logCreateToxDataError(const CreateToxDataError& error, const QString& userN
 
 QStringList Profile::profiles;
 
-void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
+bool Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile,
                        CameraSource& cameraSource)
 {
     if (toxSave.isEmpty() && !isNewProfile) {
@@ -234,29 +227,30 @@ void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
 
     bootstrapNodes = std::make_unique<BootstrapNodeUpdater>(s.getProxy(), paths);
 
-    Core::ToxCoreErrors err;
-    core = Core::makeToxCore(toxSave, s, *bootstrapNodes, &err);
-    if (!core) {
-        switch (err) {
-        case Core::ToxCoreErrors::BAD_PROXY:
-            emit badProxy();
-            break;
-        case Core::ToxCoreErrors::ERROR_ALLOC:
-        case Core::ToxCoreErrors::FAILED_TO_START:
-        case Core::ToxCoreErrors::INVALID_SAVE:
-        default:
-            emit failedToStart();
-        }
-
+    auto [newCore, err] = Core::makeToxCore(toxSave, s, *bootstrapNodes);
+    switch (err) {
+    case Core::ToxCoreErrors::OK:
+        qDebug() << "Toxcore started";
+        core = std::move(newCore);
+        break;
+    case Core::ToxCoreErrors::BAD_PROXY:
+        qDebug() << "Bad proxy";
+        emit badProxy();
+        return false;
+    case Core::ToxCoreErrors::ERROR_ALLOC:
+    case Core::ToxCoreErrors::FAILED_TO_START:
+    case Core::ToxCoreErrors::INVALID_SAVE:
+    default:
         qDebug() << "Failed to start Toxcore";
-        return;
+        emit failedToStart();
+        return false;
     }
 
     coreAv = CoreAV::makeCoreAV(core->getTox(), core->getCoreLoopLock(), s, s, cameraSource);
     if (!coreAv) {
         qDebug() << "Failed to start ToxAV";
         emit failedToStart();
-        return;
+        return false;
     }
 
     // Tell Core that we run with AV before doing anything else
@@ -278,6 +272,8 @@ void Profile::initCore(const QByteArray& toxSave, Settings& s, bool isNewProfile
             Qt::ConnectionType::QueuedConnection);
     // broadcast our own avatar
     avatarBroadcaster = std::make_unique<AvatarBroadcaster>(*core);
+
+    return true;
 }
 
 Profile::Profile(QString name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& paths_, Settings& settings_)
@@ -298,9 +294,10 @@ Profile::Profile(QString name_, std::unique_ptr<ToxEncrypt> passkey_, Paths& pat
  *
  * @note If the profile is already in use return nullptr.
  */
-Profile* Profile::loadProfile(const QString& name, const QString& password, Settings& settings,
-                              const QCommandLineParser* parser, CameraSource& cameraSource,
-                              IMessageBoxManager& messageBoxManager)
+std::unique_ptr<Profile> Profile::loadProfile(const QString& name, const QString& password,
+                                              Settings& settings, const QCommandLineParser* parser,
+                                              CameraSource& cameraSource,
+                                              IMessageBoxManager& messageBoxManager)
 {
     if (ProfileLocker::hasLock()) {
         qCritical().nospace() << "Tried to load profile " << name
@@ -314,22 +311,24 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
         return nullptr;
     }
 
-    LoadToxDataError error;
-    QByteArray toxSave = QByteArray();
     const QString path = paths.getSettingsDirPath() + name + ".tox";
-    std::unique_ptr<ToxEncrypt> tmpKey = loadToxData(password, path, toxSave, error);
+    auto [tmpKey, toxSave, error] = loadToxData(password, path);
     if (logLoadToxDataError(error, path)) {
         ProfileLocker::unlock();
         return nullptr;
     }
 
-    auto* p = new Profile(name, std::move(tmpKey), paths, settings);
+    auto p = std::unique_ptr<Profile>(new Profile(name, std::move(tmpKey), paths, settings));
 
     // Core settings are saved per profile, need to load them before starting Core
     constexpr bool isNewProfile = false;
-    settings.updateProfileData(p, parser, isNewProfile);
+    settings.updateProfileData(*p, parser, isNewProfile);
 
-    p->initCore(toxSave, settings, isNewProfile, cameraSource);
+    if (!p->initCore(toxSave, settings, isNewProfile, cameraSource)) {
+        ProfileLocker::unlock();
+        return nullptr;
+    }
+
     p->loadDatabase(password, messageBoxManager);
 
     return p;
@@ -343,9 +342,10 @@ Profile* Profile::loadProfile(const QString& name, const QString& password, Sett
  *
  * @note If the profile is already in use return nullptr.
  */
-Profile* Profile::createProfile(const QString& name, const QString& password, Settings& settings,
-                                const QCommandLineParser* parser, CameraSource& cameraSource,
-                                IMessageBoxManager& messageBoxManager)
+std::unique_ptr<Profile> Profile::createProfile(const QString& name, const QString& password,
+                                                Settings& settings, const QCommandLineParser* parser,
+                                                CameraSource& cameraSource,
+                                                IMessageBoxManager& messageBoxManager)
 {
     CreateToxDataError error;
     Paths& paths = settings.getPaths();
@@ -357,10 +357,10 @@ Profile* Profile::createProfile(const QString& name, const QString& password, Se
     }
 
     Settings::createPersonal(paths, name);
-    auto* p = new Profile(name, std::move(tmpKey), paths, settings);
+    auto p = std::unique_ptr<Profile>(new Profile(name, std::move(tmpKey), paths, settings));
 
     constexpr bool isNewProfile = true;
-    settings.updateProfileData(p, parser, isNewProfile);
+    settings.updateProfileData(*p, parser, isNewProfile);
 
     p->initCore(QByteArray(), settings, isNewProfile, cameraSource);
     p->loadDatabase(password, messageBoxManager);

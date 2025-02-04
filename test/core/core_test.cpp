@@ -43,7 +43,6 @@ private slots:
 
 private:
     /* Test Variables */
-    Core::ToxCoreErrors* err = nullptr;
     MockSettings settings;
     ToxCorePtr alice;
     ToxCorePtr bob;
@@ -77,9 +76,10 @@ void TestCore::startup_with_invalid_socks5_proxy()
     settings.setProxyPort(9985);
     settings.setProxyType(MockSettings::ProxyType::ptSOCKS5);
 
-    alice = Core::makeToxCore({}, settings, alicesNodes, err);
+    auto [core, err] = Core::makeToxCore({}, settings, alicesNodes);
 
-    QVERIFY(!alice);
+    QVERIFY(!core);
+    QCOMPARE(err, Core::ToxCoreErrors::BAD_PROXY);
 }
 
 void TestCore::startup_with_invalid_http_proxy()
@@ -88,9 +88,10 @@ void TestCore::startup_with_invalid_http_proxy()
     settings.setProxyPort(9985);
     settings.setProxyType(MockSettings::ProxyType::ptHTTP);
 
-    alice = Core::makeToxCore({}, settings, alicesNodes, err);
+    auto [core, err] = Core::makeToxCore({}, settings, alicesNodes);
 
-    QVERIFY(!alice);
+    QVERIFY(!core);
+    QCOMPARE(err, Core::ToxCoreErrors::BAD_PROXY);
 }
 
 void TestCore::bootstrap()
@@ -100,10 +101,13 @@ void TestCore::bootstrap()
     settings.setProxyPort(0);
     settings.setProxyType(MockSettings::ProxyType::ptNone);
 
-    alice = Core::makeToxCore({}, settings, alicesNodes, err);
-    bob = Core::makeToxCore({}, settings, bobsNodes, err);
-    QVERIFY(!!alice);
-    QVERIFY(!!bob);
+    auto [aliceCore, aliceErr] = Core::makeToxCore({}, settings, alicesNodes);
+    auto [bobCore, bobErr] = Core::makeToxCore({}, settings, bobsNodes);
+    QVERIFY(aliceCore != nullptr);
+    QVERIFY(bobCore != nullptr);
+
+    alice = std::move(aliceCore);
+    bob = std::move(bobCore);
 
     bootstrapToxes(*alice, alicesNodes, *bob, bobsNodes);
 }
