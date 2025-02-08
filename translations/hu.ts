@@ -3088,6 +3088,11 @@ naplódarab mérete</translation>
         <translation type="unfinished">Csevegési
 napló:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Elrejteni a trifa utótagot</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3090,6 +3090,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">گزارش چت:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">پسوند Trifa را مخفی کنید</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

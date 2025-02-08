@@ -3275,6 +3275,11 @@ dnevnika klepeta</translation>
         <translation type="unfinished">Dnevnik
 klepeta:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skrij Trifa pripona</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

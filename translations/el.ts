@@ -3142,6 +3142,11 @@ number here may cause the scroll bar to disappear.</source>
 ο συνομιλ
 ίας:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Απόκρυψη Trifa Suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

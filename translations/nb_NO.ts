@@ -3014,6 +3014,11 @@ størrelse</translation>
         <translation type="unfinished">Chat-
 logg:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skjul Trifa -suffiks</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -260,6 +260,54 @@ const QVector<QPair<QString, QString>> URL_CASES{
         "[&quot;" MAKE_LINK("https://en.wikipedia.org/wiki/Seal_(East_Asia)") "&quot;]?"),
 };
 
+const QVector<StringPair> TRIFA_CASE{
+    // Test case when user decided to hide TRIfA suffixes.
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Hello<font color=#228B22>[...]</font>"),
+    PAIR_FORMAT("Hello[TRIfA_SUFFIX]xxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/"
+                "TRIfA_SUFFIX]",
+                "Hello<font color=#228B22>[...]</font>"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Hello<font color=#228B22>[...]</font>"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Hello<font color=#228B22>[...]</font>"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Hello<font color=#228B22>[...]</font>")};
+
+const QVector<StringPair> TRIFA_CASE_OPT_OUT{
+    // Test case when user decided to show TRIfA suffixes as is.
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Helloxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
+    PAIR_FORMAT("Hello[TRIfA_SUFFIX]xxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/"
+                "TRIfA_SUFFIX]",
+                "Helloxxxxxxxxxxxxx[/HTML]xxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Helloxxxxxxx\nxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Helloxxxxxxx\rxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]",
+        "Helloxxxxxxx\n\rxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z")};
+
+const QVector<StringPair> TRIFA_CASES_NEGATIVE{
+    // Test cases when TRIfA suffix is not formed correctly
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]x",
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]x"),
+    PAIR_FORMAT(
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[TRIfA_SUFFIX]",
+        "Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[TRIfA_SUFFIX]")};
+
+const QVector<StringPair> ALL_TRIFA_CASES = concat(TRIFA_CASE, TRIFA_CASES_NEGATIVE);
+const QVector<StringPair> ALL_TRIFA_OPT_OUT_CASES = concat(TRIFA_CASE_OPT_OUT, TRIFA_CASES_NEGATIVE);
+
 #undef PAIR_FORMAT
 
 using MarkdownFunction = QString (*)(const QString&, bool);
@@ -290,6 +338,19 @@ void workCasesTest(MarkdownFunction applyMarkdown, const QVector<MarkdownToTags>
             QString result = applyMarkdown(input, showSymbols);
             QVERIFY(output == result);
         }
+    }
+}
+
+/*
+ * @brief Testing cases for TRIfA suffix.
+ * @param testData Test data - string pairs "Source message - Message after formatting"
+ * @param True if suffixes  should be replaced by [...]
+ */
+void trifaCasesTest(const QVector<StringPair>& testData, bool hideTrifaSuffix)
+{
+    for (const StringPair& data : testData) {
+        QString result = TextFormatter::processTrifaSuffixes(data.first, hideTrifaSuffix);
+        QCOMPARE(data.second, result);
     }
 }
 
@@ -409,6 +470,8 @@ private slots:
     void singleAndDoubleMarkdownExceptionsShowSymbols();
     void singleAndDoubleMarkdownExceptionsHideSymbols();
     void mixedFormattingSpecialCases();
+    void trifaTags();
+    void trifaTagsOptOut();
     void urlTest();
 
 private:
@@ -504,6 +567,16 @@ void TestTextFormatter::mixedFormattingSpecialCases()
 void TestTextFormatter::urlTest()
 {
     urlHighlightTest(urlHighlightFunction, URL_CASES);
+}
+
+void TestTextFormatter::trifaTags()
+{
+    trifaCasesTest(ALL_TRIFA_CASES, true);
+}
+
+void TestTextFormatter::trifaTagsOptOut()
+{
+    trifaCasesTest(ALL_TRIFA_OPT_OUT_CASES, false);
 }
 
 QTEST_GUILESS_MAIN(TestTextFormatter)

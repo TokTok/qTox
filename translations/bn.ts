@@ -3607,6 +3607,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">চ্যাট লগ:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ট্রাইফা প্রত্যয় লুকান</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

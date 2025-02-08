@@ -3428,6 +3428,11 @@ de babilejo</translation>
         <translation type="unfinished">Babilprot
 okolo:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kaŝi Trifa Sufikson</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

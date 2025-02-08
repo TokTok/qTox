@@ -2977,6 +2977,10 @@ here may cause th&apos; scroll bar ta vanish.</translation>
         <source>Chat log:</source>
         <translation type="unfinished">Th&apos; Message Log:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

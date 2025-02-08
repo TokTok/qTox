@@ -3108,6 +3108,11 @@ gabala lielums</translation>
 s
 žurnāls:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Paslēpt trifa piedēkli</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

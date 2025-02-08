@@ -3014,6 +3014,11 @@ discussion</translation>
 de discus
 sion&#xa0;:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Masquer le suffixe Trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

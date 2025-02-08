@@ -30,6 +30,7 @@ private slots:
     void combiningCharacterTest();
     void multiLineTest();
     void tabTest();
+    void trifaFormatTest();
 
 private:
     /* Test Strings */
@@ -350,6 +351,33 @@ void TestToxString::combiningCharacterTest()
 
     for (const auto& testCase : testCases) {
         QCOMPARE(ToxString(testCase.input).getQString(), testCase.expected);
+    }
+}
+
+/**
+ * @brief Check that we trim TRIfA suffix only if it has a right shape and user set this option.
+ */
+void TestToxString::trifaFormatTest()
+{
+    const struct TestCase
+    {
+        const uint8_t* text;
+        const size_t length;
+        const bool fix_trifa;
+        const QString expected;
+    } testCases[] = {
+        {reinterpret_cast<const uint8_t*>("Hello\0\0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444"), 43,
+         true, QStringLiteral("Hello[TRIfA_SUFFIX]xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1997-10-02T23:54:28Z[/TRIfA_SUFFIX]")},
+        {reinterpret_cast<const uint8_t*>("Hello\0\0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444"), 43,
+         false, QStringLiteral("Helloxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444")},
+        {reinterpret_cast<const uint8_t*>("Hello\0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444"), 42, true,
+         QStringLiteral("Helloxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444")},
+        {reinterpret_cast<const uint8_t*>("Hello\0\0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444"), 42, true,
+         QStringLiteral("Helloxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4444")},
+    };
+    for (const auto& testCase : testCases) {
+        QCOMPARE(ToxString(testCase.text, testCase.length, testCase.fix_trifa).getQString(),
+                 testCase.expected);
     }
 }
 

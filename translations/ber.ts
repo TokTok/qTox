@@ -3549,6 +3549,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ⴰⵖⵎⵉⵙ ⵏ
 ⵓⵎⴻⵙⵍⴰⵢ:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">… TRIfA suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

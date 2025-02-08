@@ -3418,6 +3418,11 @@ størrelse</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chatlog:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skjul trifa -suffiks</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

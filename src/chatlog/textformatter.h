@@ -11,4 +11,6 @@ namespace TextFormatter {
 QString highlightURI(const QString& message);
 
 QString applyMarkdown(const QString& message, bool showFormattingSymbols);
+
+QString processTrifaSuffixes(const QString& message, bool hideTrifaSuffix);
 } // namespace TextFormatter

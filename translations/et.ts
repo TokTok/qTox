@@ -3032,6 +3032,11 @@ suurus</translation>
         <translation type="unfinished">Vestluse
 logi:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Peida trifa järelliide</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

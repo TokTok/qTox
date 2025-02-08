@@ -3145,6 +3145,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">پاراڭ
 خاتىرىسى:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Trifa غا يوشۇرۇن</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

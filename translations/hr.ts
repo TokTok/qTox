@@ -3094,6 +3094,11 @@ dnevnika razgovora</translation>
         <translation type="unfinished">Dnevnik r
 azgovora:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sakrij trifa sufiks</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

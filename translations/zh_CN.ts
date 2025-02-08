@@ -2989,6 +2989,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">聊天记录：</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">隐藏Trifa后缀</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

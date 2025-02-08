@@ -3105,6 +3105,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">Журнал
 чата:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Схаваць суфікс Trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

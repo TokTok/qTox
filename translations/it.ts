@@ -3012,6 +3012,11 @@ della chat</translation>
 della
 chat:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nascondi il suffisso trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

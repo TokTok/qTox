@@ -3148,6 +3148,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">チャットログ:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">トリファの接尾辞を非表示にします</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

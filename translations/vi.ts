@@ -3009,6 +3009,11 @@ nhật ký trò chuyện</translation>
 trò
 chuyện:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ẩn hậu tố Trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

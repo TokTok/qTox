@@ -3007,6 +3007,11 @@ de chat</translation>
         <translation type="unfinished">Jurnal de
 chat:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ascunde sufixul trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

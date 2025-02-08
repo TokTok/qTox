@@ -3001,6 +3001,11 @@ Bildlaufleiste verschwindet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chatprotokoll:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Trifa -Suffix verstecken</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

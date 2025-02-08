@@ -3590,6 +3590,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">יומן
 צ&apos;אט:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">הסתר סיומת טריפה</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

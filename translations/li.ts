@@ -3621,6 +3621,11 @@ chatlogboek</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chatlog:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Verberg TREF-suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

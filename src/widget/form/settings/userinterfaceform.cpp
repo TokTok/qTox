@@ -80,6 +80,7 @@ UserInterfaceForm::UserInterfaceForm(SmileyPack& smileyPack_, Settings& settings
     bodyUI->chatLogMaxTxt->setValue(settings.getChatMaxWindowSize());
     bodyUI->chatLogChunkTxt->setValue(settings.getChatWindowChunkSize());
     bodyUI->cbImagePreview->setChecked(settings.getImagePreview());
+    bodyUI->cbHideTrifaSuffix->setChecked(settings.getHideTrifaSuffix());
 
     bodyUI->cbConferencePosition->setChecked(settings.getConferencePosition());
     bodyUI->cbCompactLayout->setChecked(settings.getCompactLayout());
@@ -397,6 +398,11 @@ void UserInterfaceForm::on_notifyHide_stateChanged(int value)
 void UserInterfaceForm::on_cbImagePreview_stateChanged()
 {
     settings.setImagePreview(bodyUI->cbImagePreview->isChecked());
+}
+
+void UserInterfaceForm::on_cbHideTrifaSuffix_stateChanged()
+{
+    settings.setHideTrifaSuffix(bodyUI->cbHideTrifaSuffix->isChecked());
 }
 
 void UserInterfaceForm::on_chatLogChunkTxt_valueChanged(int value)

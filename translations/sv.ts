@@ -3038,6 +3038,11 @@ för lågt nummer här kan göra att rullningslisten försvinner.</translation>
         <translation type="unfinished">Chattlogg
 :</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Dölj Trifa Suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

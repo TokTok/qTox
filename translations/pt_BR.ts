@@ -3015,6 +3015,11 @@ papo</translation>
 de bate-
 papo:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ocultar sufixo Trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

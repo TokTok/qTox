@@ -3371,6 +3371,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>அரட்டை பதிவு:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ட்ரிஃபா பின்னொட்டை மறைக்கவும்</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3561,6 +3561,11 @@ lo nu vi cmima cu rinka lo nu lo rokci bajra cu canci</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">fi&apos;o casnu log:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">mipri lo cukta be la&apos;o gy TRIfA gy</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

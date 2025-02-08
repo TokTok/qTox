@@ -3583,6 +3583,11 @@ spjalldagskrár</translation>
         <translation type="unfinished">Spjallskr
 á:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Fela TRIFA viðskeyti</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

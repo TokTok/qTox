@@ -3035,6 +3035,11 @@ protokolu chatu</translation>
         <translation type="unfinished">Protokol
 chatu:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skrýt příponu Trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

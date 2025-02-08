@@ -3096,6 +3096,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">Дневник
 ћаскања:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Сакриј Трифа Суфикс</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

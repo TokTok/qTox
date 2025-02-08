@@ -3599,6 +3599,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ಚಾಟ್
 ಲಾಗ್:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಟ್ರಿಫಾ ಪ್ರತ್ಯಯವನ್ನು ಮರೆಮಾಡಿ</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

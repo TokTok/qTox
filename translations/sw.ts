@@ -3616,6 +3616,11 @@ gumzo</translation>
         <translation type="unfinished">logi ya
 gumzo:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ficha Trifa Suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

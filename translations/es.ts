@@ -3002,6 +3002,11 @@ registro de chat</translation>
 de conver
 saciones:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ocultar sufijo trifa</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

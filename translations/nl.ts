@@ -3000,6 +3000,11 @@ chatlogboek</translation>
         <translation type="unfinished">Chatlogbo
 ek:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Verberg Trifa Suffix</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

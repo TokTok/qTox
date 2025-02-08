@@ -3009,6 +3009,11 @@ yığın boyutu</translation>
         <translation type="unfinished">Sohbet
 günlüğü:</translation>
     </message>
+    <message>
+        <source>Hide TRIfA suffix</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Trifa son ekini gizle</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
