@@ -3094,6 +3094,11 @@ do rexistro de chat</translation>
         <translation type="unfinished">Rexistro
 de chat:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ocultar o sufixo despois do símbolo nulo</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

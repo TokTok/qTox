@@ -3611,6 +3611,11 @@ bisedës</translation>
         <translation type="unfinished">Ditari i
 bisedës:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Fshih prapashtesë pas simbolit të pavlefshëm</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

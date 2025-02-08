@@ -3587,6 +3587,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">چیٹ لاگ:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">کالعدم علامت کے بعد لاحقہ چھپائیں</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3007,6 +3007,11 @@ de chat</translation>
         <translation type="unfinished">Jurnal de
 chat:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ascunde sufixul după simbolul nul</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

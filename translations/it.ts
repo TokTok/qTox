@@ -3012,6 +3012,11 @@ della chat</translation>
 della
 chat:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Nascondere il suffisso dopo il simbolo null</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -16,10 +16,12 @@ public:
     explicit ToxString(const QString& text);
     explicit ToxString(QByteArray text);
     ToxString(const uint8_t* text, size_t length);
+    ToxString(const uint8_t* text, size_t length, bool fix_trifa);
 
     const uint8_t* data() const;
     size_t size() const;
     QString getQString() const;
+    QString getQString(QByteArray stringVal) const;
     const QByteArray& getBytes() const;
 
 private:

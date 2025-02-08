@@ -3009,6 +3009,11 @@ nhật ký trò chuyện</translation>
 trò
 chuyện:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ẩn hậu tố sau ký hiệu null</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

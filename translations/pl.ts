@@ -3041,6 +3041,11 @@ dziennika czatu</translation>
         <translation type="unfinished">Dziennik
 czatu:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ukryj sufiks po zerowym symbolu</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

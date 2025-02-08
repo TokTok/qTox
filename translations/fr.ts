@@ -3014,6 +3014,11 @@ discussion</translation>
 de discus
 sion&#xa0;:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Masquer le suffixe après le symbole nul</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

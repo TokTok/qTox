@@ -56,6 +56,7 @@ private slots:
     void on_txtChatFontSize_valueChanged(int px);
     void on_useNameColors_stateChanged(int value);
     void on_cbImagePreview_stateChanged();
+    void on_cbHideTrifaSuffix_stateChanged();
     void on_chatLogMaxTxt_valueChanged(int value);
     void on_chatLogChunkTxt_valueChanged(int value);
 

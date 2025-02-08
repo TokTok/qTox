@@ -3583,6 +3583,11 @@ spjalldagskrár</translation>
         <translation type="unfinished">Spjallskr
 á:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Fela viðskeyti eftir núll tákn</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
