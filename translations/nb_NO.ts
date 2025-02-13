@@ -577,6 +577,26 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aktiver feilsøkingsverktøy (bare utviklere)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalt antall linjer å kopiere til utklippstavlen når du trykker &quot;Kopier feilsøkingslogg&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linjer</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimal alder (i timer/minutter) på logglinjer som skal kopieres til utklippstavlen når du trykker på &quot;Kopier feilsøkingslogg&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maks alder:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

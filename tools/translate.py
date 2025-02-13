@@ -181,6 +181,8 @@ def _fix_translation(lang: Language, source: str, text: str) -> str:
                     f"'{source}': '{text}'")
     if "%" in source:
         text = text.replace("%%", "%")
+    if source.startswith(" ") and not text.startswith(" "):
+        text = " " + text
     return text
 
 
