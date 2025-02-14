@@ -52,6 +52,12 @@ the encrypted peer-to-peer Tox protocol.
 **[Mailing list] |**
 **IRC:** [#qtox@libera.chat]
 
+Come join us in the dev chat! We're running a GroupBot with Tox ID
+648BF2EEE794E94444B848F8FC6AD3BA029C9BC2649BA761EF556DA17F549022A8D7596E7DBA.
+When you add it, it will invite you to the TokTok Dev conference, which is
+linked to the dev group chat with Chat ID
+360497DA684BCE2A500C1AF9B3A5CE949BBB9F6FB1F91589806FB04CA039E313.
+
 ---
 
 | Windows                                          | Linux                                                                              | macOS (Apple silicon)                                     | macOS (Intel)                                             | FreeBSD              |
