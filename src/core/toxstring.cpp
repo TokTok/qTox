@@ -44,8 +44,18 @@ ToxString::ToxString(QByteArray text)
  */
 ToxString::ToxString(const uint8_t* text, size_t length)
 {
-    assert(length <= INT_MAX);
-    string = QByteArray(reinterpret_cast<const char*>(text), length);
+    if (length > SIZE_MAX){
+        qCritical() << "The string has invalid length!";
+        return;
+    }
+    // Some clients does not send the correct string end. Starting from  Qt6 we need to
+    // make sure that we trim the string to its actual size.
+    size_t actualLength = 0;
+    for (actualLength=0; actualLength<length; actualLength++){
+        if(*(text + actualLength) == 0)
+            break;
+    }
+    string = QByteArray(reinterpret_cast<const char*>(text), actualLength);
 }
 
 /**
