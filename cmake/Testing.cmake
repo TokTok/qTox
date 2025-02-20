@@ -59,6 +59,7 @@ auto_test(model exiftransform "" "")
 auto_test(model notificationgenerator "" "mock_library")
 auto_test(widget filesform "" "")
 auto_test(widget/form/settings generalform "" "")
+auto_test(widget/tool identicon "" "")
 
 # GUI tests, run only when requested using the offscreen platform.
 # These are heavily dependent on specific Qt versions to be pixel-perfect, so
