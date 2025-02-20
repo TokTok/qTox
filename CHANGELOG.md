@@ -1,3 +1,39 @@
+<a name="v1.18.3-rc.1"></a>
+
+## v1.18.3-rc.1 (2025-02-20)
+
+### Release notes
+
+Release candidate. We'll write proper release notes in the production release.
+
+#### Bug Fixes
+
+- **About:** Retranslate the important message when changing language. ([3b6b821c](https://github.com/TokTok/qTox/commit/3b6b821c83ae95a956dde710dfe3db8392ef147c))
+- **Clipboard:** Improve "copy link to clipboard" on Linux. ([8b1ac36a](https://github.com/TokTok/qTox/commit/8b1ac36adc9a838b26d67975fb1f53875b74beb5))
+- **Notify:**
+  - Always put username in conference notifications. ([3c42042b](https://github.com/TokTok/qTox/commit/3c42042b5eedb328ca11cb037c902494ad85ef2a))
+  - Notify sound setting disables all sounds. ([6f75c720](https://github.com/TokTok/qTox/commit/6f75c7208db5c721a0e3785f9a028d3796060bd2))
+  - Ungroup dbus notifications. ([becaa39d](https://github.com/TokTok/qTox/commit/becaa39d25769c23eaa868b1da530517f2db3ea1))
+  - Use notification categories on Linux. ([10c124a1](https://github.com/TokTok/qTox/commit/10c124a1bf5278c818232abeae2e78c727aa2ecc), closes [#424](https://github.com/TokTok/qTox/issues/424))
+- **Settings:** Don't allow invalid proxy hosts in settings. ([63eb1f02](https://github.com/TokTok/qTox/commit/63eb1f02166ed00fff290138addd3e3c6a8e5407))
+- **Translations:** Various improvements on the UI strings. ([4a81049b](https://github.com/TokTok/qTox/commit/4a81049bfa6bcbf65924c3393807fe0be6fb9fa6))
+- **chatform:**
+  - fix the status button alignment ([e4c03765](https://github.com/TokTok/qTox/commit/e4c0376523870b4c7b2d1c2b88c5d91d3869802b))
+  - Remove assertion that history is on when the friend details is being called. ([9785e439](https://github.com/TokTok/qTox/commit/9785e439f9741efb4bc6578b287894956e642988))
+- **video:**
+  - fix the way camera devices are taken, remove warning, when no device is selected ([6d6d83ee](https://github.com/TokTok/qTox/commit/6d6d83eed68c2c5b740c60938141582894939582))
+  - fix rare deadlock during call cancelation ([2c5d899f](https://github.com/TokTok/qTox/commit/2c5d899f362c7dcb870dd10cd9e4fe97722dd14f))
+
+#### Features
+
+- **About:** Show update available in nightly builds. ([5d6087a5](https://github.com/TokTok/qTox/commit/5d6087a5192b5e5fe0ac780098db58a6b8d94644))
+- **Chat:** Allow user to control chat log chunk size. ([3ae47ec6](https://github.com/TokTok/qTox/commit/3ae47ec6b596daee44a2cf9cef011655134aa689))
+- **Debug:** Add stack trace logging on crash. ([c31c09c1](https://github.com/TokTok/qTox/commit/c31c09c1ed7d7377528a74ab0d78f0ed6a5869b6))
+- **Groups:** Add a "copy peer ID" context menu action in conferences. ([8cd886a0](https://github.com/TokTok/qTox/commit/8cd886a04e756a4c3d98e74c5823e3eb6a80e150))
+- **Screenshot:** Add Freedesktop portal screenshot support. ([fdb860f8](https://github.com/TokTok/qTox/commit/fdb860f8c6df1631e14cc4628829e10264b67d62))
+- **Web:** Preliminary support for running qTox in the browser. ([b5994646](https://github.com/TokTok/qTox/commit/b59946467ff9ad2e7d6a0ecce950d758bbb08c63))
+- **ci:** add CI/CD pipeline, creating rpm package on fedora ([7c46b01c](https://github.com/TokTok/qTox/commit/7c46b01c3e2f44276d73cc27f0391a1374caf1ac))
+
 <a name="v1.18.2"></a>
 
 ## v1.18.2 (2025-01-13)

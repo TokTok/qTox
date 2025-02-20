@@ -64,7 +64,7 @@ execute_process(
 
 project(
   qTox
-  VERSION 1.18.2
+  VERSION 1.18.3
   LANGUAGES CXX)
 set(PROJECT_ORG "io.github.qtox")
 

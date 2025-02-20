@@ -58,3 +58,4 @@ target/
 # IDE support
 /compile_commands.json
 /.lsp_tidy_cache
+/third_party/ci-tools
