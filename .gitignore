@@ -21,6 +21,7 @@ build-*-Debug
 # Folders
 /.cache
 /.vscode
+/_site
 _[Bb]uild*/
 _obj
 _test

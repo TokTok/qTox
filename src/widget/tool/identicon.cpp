@@ -12,34 +12,10 @@
 
 #include <cassert>
 
-// The following constants change the appearance of the identicon
-// they have been choosen by trying to make the output look nice.
-/**
- * @var Identicon::IDENTICON_COLOR_BYTES
- * Specifies how many bytes should define the foreground color
- * must be smaller than 8, else there'll be overflows
- */
-
-/**
- * @var Identicon::COLORS
- * Number of colors to use for the identicon
- */
-
-/**
- * @var Identicon::IDENTICON_ROWS
- * Specifies how many rows of blocks the identicon should have
- */
-
-/**
- * @var Identicon::ACTIVE_COLS
- * Width from the center to the outside, for 5 columns it's 3, 6 -> 3, 7 -> 4
- */
-
-/**
- * @var Identicon::HASH_MIN_LEN
- * Min length of the hash in bytes, 7 bytes control the color,
- * the rest controls the pixel placement
- */
+namespace {
+constexpr uint64_t COLOR_INT_MAX =
+    (static_cast<uint64_t>(1) << (8 * Identicon::IDENTICON_COLOR_BYTES)) - 1;
+}
 
 /**
  * @brief Creates an Identicon, that visualizes a hash in graphical form.
@@ -93,17 +69,28 @@ qreal Identicon::bytesToColor(QByteArray bytes)
     }
 
     // normalize to 0.0 ... 1.0
-    return (static_cast<qreal>(hue))
-           / (static_cast<qreal>(((static_cast<uint64_t>(1)) << (8 * IDENTICON_COLOR_BYTES)) - 1));
+    return static_cast<qreal>(hue) / static_cast<qreal>(COLOR_INT_MAX);
 }
 
 /**
- * @brief Writes the Identicon to a QImage
- * @param scaleFactor the image will be a square with scaleFactor * IDENTICON_ROWS pixels,
- *                    must be >= 1
- * @return a QImage with the identicon
+ * @brief Prepares the color matrix for the identicon.
+ * @return The identicon color matrix.
  */
-QImage Identicon::toImage(int scaleFactor)
+Identicon::Matrix Identicon::toMatrix() const
+{
+    Matrix matrix{colors, {}};
+    for (int row = 0; row < IDENTICON_ROWS; ++row) {
+        for (int col = 0; col < IDENTICON_ROWS; ++col) {
+            // mirror on vertical axis
+            const int columnIdx = abs((col * 2 - (IDENTICON_ROWS - 1)) / 2);
+            const int colorIdx = identiconColors[row][columnIdx];
+            matrix.identicon[row][col] = colorIdx;
+        }
+    }
+    return matrix;
+}
+
+QImage Identicon::Matrix::toImage(int scaleFactor) const
 {
     if (scaleFactor < 1) {
         qDebug() << "Can't scale with values <1, clamping to 1";
@@ -116,13 +103,61 @@ QImage Identicon::toImage(int scaleFactor)
 
     for (int row = 0; row < IDENTICON_ROWS; ++row) {
         for (int col = 0; col < IDENTICON_ROWS; ++col) {
-            // mirror on vertical axis
-            const int columnIdx = abs((col * 2 - (IDENTICON_ROWS - 1)) / 2);
-            const int colorIdx = identiconColors[row][columnIdx];
-            pixels.setPixel(col, row, colors[colorIdx].rgb());
+            pixels.setPixel(col, row, colors[identicon[row][col]].rgb());
         }
     }
 
     // scale up without smoothing to make it look sharp
     return pixels.scaled(scaleFactor, scaleFactor, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+}
+
+/**
+ * @brief Writes the Identicon to a QImage.
+ * @param scaleFactor the image will be a square with scaleFactor * IDENTICON_ROWS pixels,
+ *                    must be >= 1
+ * @return a QImage with the identicon.
+ */
+QImage Identicon::toImage(int scaleFactor) const
+{
+    return toMatrix().toImage(scaleFactor);
+}
+
+bool operator==(const Identicon::Matrix& lhs, const Identicon::Matrix& rhs)
+{
+    return lhs.colors == rhs.colors && lhs.identicon == rhs.identicon;
+}
+
+QDebug operator<<(QDebug debug, const Identicon::Matrix& matrix)
+{
+    debug << "Colors: " << matrix.colors[0] << ", " << matrix.colors[1] << "\n";
+    for (int row = 0; row < Identicon::IDENTICON_ROWS; ++row) {
+        for (int col = 0; col < Identicon::IDENTICON_ROWS; ++col) {
+            debug << matrix.identicon[row][col];
+        }
+        debug << '\n';
+    }
+    return debug;
+}
+
+Identicon::Matrix Identicon::Matrix::parse(std::array<QColor, COLORS> colors, const QString& str)
+{
+    if (str.length() != IDENTICON_ROWS * IDENTICON_ROWS) {
+        qWarning() << "Invalid string length, must be" << IDENTICON_ROWS * IDENTICON_ROWS
+                   << "but is" << str.length();
+        return {};
+    }
+
+    Data<int> matrix;
+    for (int row = 0; row < IDENTICON_ROWS; ++row) {
+        for (int col = 0; col < IDENTICON_ROWS; ++col) {
+            const int value = str.at(row * IDENTICON_ROWS + col).digitValue();
+            if (value < 0 || value >= COLORS) {
+                qWarning() << "Invalid value" << value << "at" << row << ":" << col
+                           << "must be between 0 and" << (COLORS - 1);
+                return {};
+            }
+            matrix[row][col] = value;
+        }
+    }
+    return {colors, matrix};
 }
