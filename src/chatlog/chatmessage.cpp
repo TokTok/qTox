@@ -51,6 +51,9 @@ ChatMessage::Ptr ChatMessage::createChatMessage(const QString& sender, const QSt
     QString senderText = sender;
 
     auto textType = Text::NORMAL;
+    // TRIfA suffixes
+    text = TextFormatter::processTrifaSuffixes(text, settings.getHideTrifaSuffix());
+
     // smileys
     if (settings.getUseEmoticons())
         text = smileyPack.smileyfied(text);

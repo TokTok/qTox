@@ -3009,6 +3009,11 @@ yığın boyutu</translation>
         <translation type="unfinished">Sohbet
 günlüğü:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">NULL SEMBOLUSUNDAN SONRA SAKIM GEMİN</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

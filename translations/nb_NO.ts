@@ -3014,6 +3014,11 @@ størrelse</translation>
         <translation type="unfinished">Chat-
 logg:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skjul suffiks etter nullsymbol</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

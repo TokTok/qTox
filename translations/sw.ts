@@ -3616,6 +3616,11 @@ gumzo</translation>
         <translation type="unfinished">logi ya
 gumzo:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ficha kiambishi baada ya alama null</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

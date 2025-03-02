@@ -382,7 +382,7 @@ void Core::onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
 {
     std::ignore = tox;
     const bool isAction = (type == TOX_MESSAGE_TYPE_ACTION);
-    const QString msg = ToxString(cMessage, cMessageSize).getQString();
+    const QString msg = ToxString(cMessage, cMessageSize, true).getQString();
     emit static_cast<Core*>(core)->friendMessageReceived(friendId, msg, isAction);
 }
 
@@ -492,7 +492,7 @@ void Core::onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId,
     std::ignore = tox;
     Core* core = static_cast<Core*>(vCore);
     const bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
-    const QString message = ToxString(cMessage, length).getQString();
+    const QString message = ToxString(cMessage, length, true).getQString();
     emit core->conferenceMessageReceived(conferenceId, peerId, message, isAction);
 }
 

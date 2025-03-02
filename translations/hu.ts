@@ -3088,6 +3088,11 @@ naplódarab mérete</translation>
         <translation type="unfinished">Csevegési
 napló:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Elrejtse az utótagot null szimbólum után</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

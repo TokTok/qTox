@@ -3015,6 +3015,11 @@ papo</translation>
 de bate-
 papo:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Ocultar sufixo após símbolo nulo</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

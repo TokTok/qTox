@@ -3035,6 +3035,11 @@ protokolu chatu</translation>
         <translation type="unfinished">Protokol
 chatu:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skrýt příponu po nulovém symbolu</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

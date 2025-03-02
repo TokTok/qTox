@@ -3094,6 +3094,11 @@ dnevnika razgovora</translation>
         <translation type="unfinished">Dnevnik r
 azgovora:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sakrij sufiks nakon nultog simbola</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

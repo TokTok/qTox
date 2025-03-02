@@ -3418,6 +3418,11 @@ størrelse</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chatlog:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skjul suffiks efter nullsymbol</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

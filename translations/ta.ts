@@ -3371,6 +3371,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>அரட்டை பதிவு:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">பூஜ்ய சின்னத்திற்குப் பிறகு பின்னொட்டு மறைக்கவும்</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
