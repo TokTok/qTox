@@ -543,7 +543,7 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
 
                 if (getEnableLogging())
                     fp.activity = ps.value("activity", QDateTime()).toDateTime();
-                friendLst.insert(ToxPk(fp.addr).getByteArray(), fp);
+                friendLst.insert(ToxPk(fp.addr.mid(0, ToxPk::numHexChars)).getByteArray(), fp);
             }
         });
     });
