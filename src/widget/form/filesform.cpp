@@ -25,6 +25,7 @@
 #include <QWindow>
 
 #include <cmath>
+#include <tox/tox.h> // TOX_FILE_KIND
 
 namespace {
 QRect pauseRect(const QStyleOptionViewItem& option)
