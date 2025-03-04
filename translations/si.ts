@@ -3613,6 +3613,11 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">කතාබස්
 ලොගය:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ශුන්ය සංකේතයෙන් පසු උපසර්ගය සඟවන්න</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

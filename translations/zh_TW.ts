@@ -3483,6 +3483,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">聊天記錄：</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">在null符號之後隱藏後綴</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3108,6 +3108,11 @@ gabala lielums</translation>
 s
 žurnāls:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Paslēpt piedēkli pēc nulles simbola</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

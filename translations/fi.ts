@@ -3028,6 +3028,11 @@ saattaa aiheuttaa vierityspalkin katoamisen.</translation>
         <translation type="unfinished">Chat-
 loki:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Piilota jälkiliite NULL -symbolin jälkeen</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

@@ -3148,6 +3148,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">チャットログ:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ヌル記号の後に接尾辞を非表示にします</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

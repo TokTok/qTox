@@ -3018,6 +3018,11 @@ denníka rozhovoru</translation>
         <translation type="unfinished">Denník ro
 zhovoru:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Skryť príponu po nulovom symbole</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

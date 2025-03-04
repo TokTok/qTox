@@ -3036,6 +3036,11 @@ gabalo dydis</translation>
         <translation type="unfinished">Pokalbių
 žurnalas:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Paslėpti priesagą po nulinio simbolio</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

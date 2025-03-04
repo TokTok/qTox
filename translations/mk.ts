@@ -3152,6 +3152,11 @@ number here may cause the scroll bar to disappear.</source>
 на разгов
 ори:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Скријте го суфиксот по нулта симбол</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

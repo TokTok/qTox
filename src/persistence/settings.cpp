@@ -236,6 +236,7 @@ void Settings::loadGlobal()
         imagePreview = s.value("imagePreview", true).toBool();
         chatMaxWindowSize = s.value("chatMaxWindowSize", 100).toInt();
         chatWindowChunkSize = s.value("chatWindowChunkSize", 50).toInt();
+        hideTrifaSuffix = s.value("hideTrifaSuffix", true).toBool();
     });
 
     inGroup(s, "Chat", [this, &s] {
@@ -690,6 +691,7 @@ void Settings::saveGlobal()
         s.setValue("statusChangeNotificationEnabled", statusChangeNotificationEnabled);
         s.setValue("showConferenceJoinLeaveMessages", showConferenceJoinLeaveMessages);
         s.setValue("spellCheckingEnabled", spellCheckingEnabled);
+        s.setValue("hideTrifaSuffix", hideTrifaSuffix);
     });
 
     inGroup(s, "Chat", [this, &s] { //
@@ -1440,6 +1442,19 @@ void Settings::setChatMessageFont(const QFont& font)
 {
     if (setVal(chatMessageFont, font)) {
         emit chatMessageFontChanged(font);
+    }
+}
+
+bool Settings::getHideTrifaSuffix() const
+{
+    const QMutexLocker<QRecursiveMutex> locker(&bigLock);
+    return hideTrifaSuffix;
+}
+
+void Settings::setHideTrifaSuffix(bool hide)
+{
+    if (setVal(hideTrifaSuffix, hide)) {
+        emit hideTrifaSuffixChanged(hide);
     }
 }
 

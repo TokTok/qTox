@@ -3001,6 +3001,11 @@ Bildlaufleiste verschwindet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chatprotokoll:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Suffix nach Nullsymbol verbergen</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

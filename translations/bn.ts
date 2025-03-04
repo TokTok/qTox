@@ -3607,6 +3607,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">চ্যাট লগ:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">নাল প্রতীক পরে প্রত্যয় লুকান</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

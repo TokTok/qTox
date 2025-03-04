@@ -3004,6 +3004,11 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Журнал чата:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Скрыть суффикс после нулевого символа</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>

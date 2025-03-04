@@ -3428,6 +3428,11 @@ de babilejo</translation>
         <translation type="unfinished">Babilprot
 okolo:</translation>
     </message>
+    <message>
+        <source>Hide suffix after NULL symbol</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kaŝi Sufikson Post Nula Simbolo</translation>
+    </message>
 </context>
 <context>
     <name>Widget</name>
