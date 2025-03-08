@@ -16,9 +16,6 @@
 #include <QString>
 #include <QSvgRenderer>
 #include <QWindow>
-
-#include <cassert>
-#include <memory>
 #ifdef Q_OS_MAC
 #include <QMenuBar>
 #include <QSignalMapper>
@@ -69,6 +66,10 @@
 #include "src/widget/tool/messageboxmanager.h"
 #include "src/widget/translator.h"
 #include "tool/removechatdialog.h"
+
+#include <cassert>
+#include <memory>
+#include <tox/tox.h> // TOX_CONFERENCE_TYPE_TEXT
 
 namespace {
 
@@ -1947,8 +1948,8 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
     const Friend* f = friendList->findFriend(friendPk);
     updateFriendActivity(*f);
 
-    const uint8_t confType = inviteInfo.getType();
-    if (confType == TOX_CONFERENCE_TYPE_TEXT || confType == TOX_CONFERENCE_TYPE_AV) {
+    const ConferenceType confType = inviteInfo.getType();
+    if (confType == ConferenceType::TEXT || confType == ConferenceType::AV) {
         if (settings.getAutoConferenceInvite(f->getPublicKey())) {
             onConferenceInviteAccepted(inviteInfo);
         } else {
@@ -1965,7 +1966,7 @@ void Widget::onConferenceInviteReceived(const ConferenceInvite& inviteInfo)
             }
         }
     } else {
-        qWarning() << "onConferenceInviteReceived: Unknown conference type:" << confType;
+        qWarning() << "onConferenceInviteReceived: Unknown conference type";
         return;
     }
 }
