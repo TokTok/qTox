@@ -580,6 +580,26 @@ kas var radīt video zvanu problēmas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Iespējot atkļūdošanas rīkus (tikai izstrādātājiem)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimālais rindu skaits, ko kopēt starpliktuvē, nospiežot &quot;Kopēt atkļūdošanas žurnālu&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> līnijas</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimālais žurnāla līniju vecums (stundās/minūtēs), ko kopēt starpliktuvē, nospiežot &quot;Kopēt atkļūdošanas žurnālu&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimālais vecums:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -2910,7 +2930,7 @@ Hide formatting characters:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

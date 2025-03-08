@@ -698,6 +698,26 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Washa Zana za Utatuzi (wasanidi pekee)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idadi ya juu ya mistari ya kunakili kwenye clipboard wakati wa kubonyeza &quot;Nakala ya Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> mistari</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Umri wa juu zaidi (katika saa/dakika) wa mistari ya kumbukumbu ili kunakili kwenye ubao wa kunakili unapobofya &quot;Nakili Rekodi ya Utatuzi&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Umri wa juu zaidi:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1500,7 +1520,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3418,7 +3438,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

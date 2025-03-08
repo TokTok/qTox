@@ -639,6 +639,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">啟用調試工具（僅限開發人員）</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">按下“複製調試日誌”時，將最大數量複製到剪貼板中。</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> 線</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">按下「複製偵錯日誌」時複製到剪貼簿的日誌行的最長期限（以小時/分鐘為單位）。</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">最大年齡：</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1405,7 +1425,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3293,7 +3313,7 @@ Hide formatting characters:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">像素</translation>
+        <translation type="unfinished"> 像素</translation>
     </message>
     <message>
         <source>Theme</source>

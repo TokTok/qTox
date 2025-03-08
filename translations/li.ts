@@ -699,6 +699,26 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Reset nao de standaardinstellinge</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximaal aantal regels um in ‘t klembord te kopiëre es geer op &quot;Debug Log kopiëre&quot; weurt ingedruk.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> lijne</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale leeftied (in oere/minute) vaan loglijne um in ‘t klembord te kopiëre bij ‘Coppy Debug Log’.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max leeftied:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1530,7 +1550,7 @@ in plaats vaan gans te slete.</translation>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -3539,7 +3559,7 @@ Opmaakteikens verberge:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

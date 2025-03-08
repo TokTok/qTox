@@ -688,6 +688,26 @@ so&apos;o roi lo nu do jungau cu na banzu xamgu lo ka zgana lo nu zgana lo vidni
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">fau na akti ti cumki e&apos;u la toks pe la tort ki&apos;u nai ko&apos;a jmina lo kargu be la toks. net gi&apos;e ku&apos;i toljundi ca lo nu sarcu</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">so&apos;i loi lerni poi sarcu lo nu fukpi fi lo bifygau ca lo nu danre lu kopi la debug logu li&apos;u</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> lerseltcidu</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">lo tcika be li cacra/mentu ku lo logji linji noi sarji lo nu fukyzgau lo bixycpa ca lo nu danre lu kopi la debug logu li&apos;u</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">li makcu nanca:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1473,7 +1493,7 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3373,7 +3393,7 @@ e.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

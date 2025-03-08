@@ -693,6 +693,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ডিবাগ টুল সক্ষম করুন (শুধুমাত্র বিকাশকারীরা)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;অনুলিপি ডিবাগ লগ&quot; টিপানোর সময় ক্লিপবোর্ডে অনুলিপি করার জন্য সর্বাধিক সংখ্যক লাইন।</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> লাইন</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;অনুলিপি ডিবাগ লগ&quot; টিপানোর সময় ক্লিপবোর্ডে অনুলিপি করতে সর্বাধিক বয়স (ঘন্টা/মিনিটে) লগ লাইনের অনুলিপি করতে।</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">সর্বাধিক বয়স:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1495,7 +1515,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এমবি</translation>
+        <translation type="unfinished"> এমবি</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3413,7 +3433,7 @@ Hide formatting characters:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>

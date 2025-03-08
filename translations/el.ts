@@ -603,6 +603,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ενεργοποίηση εργαλείων εντοπισμού σφαλμάτων (μόνο για προγραμματιστές)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγιστος αριθμός γραμμών για αντιγραφή στο πρόχειρο όταν πατάτε &quot;Αντιγραφή αρχείου καταγραφής εντοπισμού σφαλμάτων&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> γραμμές</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγιστη ηλικία (σε ώρες/λεπτά) γραμμών καταγραφής για αντιγραφή στο πρόχειρο όταν πατάτε &quot;Αντιγραφή αρχείου καταγραφής εντοπισμού σφαλμάτων&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Μέγιστη ηλικία:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1292,7 +1312,7 @@ so you can save the file on Windows.</source>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,

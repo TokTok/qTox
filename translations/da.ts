@@ -631,6 +631,26 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aktiver fejlretningsværktøjer (kun udviklere)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalt antal linjer, der skal kopieres til udklipsholderen, når du trykker på &quot;Kopier fejlretningslog&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linjer</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimal alder (i timer/minutter) af loglinjer, der skal kopieres til udklipsholderen, når du trykker på &quot;Kopi -debug -log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max alder:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
@@ -1382,7 +1402,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source> MB</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MB</translation>
+        <translation type="unfinished"> MB</translation>
     </message>
     <message>
         <source>After pressing minimize (_) qTox will minimize to tray,
@@ -3224,7 +3244,7 @@ Skjul formateringstegn:
     <message>
         <source> px</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">px</translation>
+        <translation type="unfinished"> px</translation>
     </message>
     <message>
         <source>Theme</source>
