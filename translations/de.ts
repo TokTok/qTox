@@ -574,6 +574,26 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Debug-Tools einschalten (nur Entwickler)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale Anzahl der Zeilen, die in die Zwischenablage kopiert werden sollen, wenn Sie auf „Debug-Protokoll kopieren“ klicken.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation> Zeilen</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximales Alter (in Stunden/Minuten) der Protokollzeilen, die in die Zwischenablage kopiert werden sollen, wenn Sie auf „Debug-Protokoll kopieren“ klicken.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximales Alter:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
