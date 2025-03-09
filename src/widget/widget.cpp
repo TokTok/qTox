@@ -1180,7 +1180,8 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
         new FriendChatroom(newFriend, contentDialogManager.get(), *core, settings, *conferenceList);
     const std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
     const auto compact = settings.getCompactLayout();
-    auto* widget = new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile);
+    auto* widget =
+        new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile, this);
     connectFriendWidget(*widget);
     auto* history = profile.getHistory();
 
@@ -2133,7 +2134,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
     const std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
 
     const auto compact = settings.getCompactLayout();
-    auto* widget = new ConferenceWidget(chatroom, compact, settings, style);
+    auto* widget = new ConferenceWidget(chatroom, compact, settings, style, this);
     auto messageDispatcher =
         std::make_shared<ConferenceMessageDispatcher>(*newConference,
                                                       MessageProcessor(*sharedMessageProcessorParams),

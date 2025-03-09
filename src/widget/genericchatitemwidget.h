@@ -14,15 +14,9 @@ class Style;
 class GenericChatItemWidget : public QFrame
 {
     Q_OBJECT
-public:
-    enum ItemType
-    {
-        ConferenceItem,
-        FriendOfflineItem,
-        FriendOnlineItem
-    };
 
-    GenericChatItemWidget(bool compact_, Style& style, QWidget* parent = nullptr);
+public:
+    GenericChatItemWidget(bool compact_, Style& style, QWidget* parent);
 
     bool isCompact() const;
     void setCompact(bool compact_);

@@ -22,7 +22,7 @@ class GenericChatroomWidget : public GenericChatItemWidget
 {
     Q_OBJECT
 public:
-    GenericChatroomWidget(bool compact, Settings& settings, Style& style, QWidget* parent = nullptr);
+    GenericChatroomWidget(bool compact, Settings& settings, Style& style, QWidget* parent);
 
 public slots:
     virtual void setAsActiveChatroom() = 0;

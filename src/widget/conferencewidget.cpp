@@ -27,8 +27,8 @@
 #include <QPalette>
 
 ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact_,
-                                   Settings& settings_, Style& style_)
-    : GenericChatroomWidget(compact_, settings_, style_)
+                                   Settings& settings_, Style& style_, QWidget* parent)
+    : GenericChatroomWidget(compact_, settings_, style_, parent)
     , conferenceId{chatroom_->getConference()->getPersistentId()}
     , chatroom{chatroom_}
 {

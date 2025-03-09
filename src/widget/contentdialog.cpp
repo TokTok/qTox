@@ -148,7 +148,7 @@ FriendWidget* ContentDialog::addFriend(std::shared_ptr<FriendChatroom> chatroom,
     auto* frnd = chatroom->getFriend();
     const auto& friendPk = frnd->getPublicKey();
     auto* friendWidget =
-        new FriendWidget(chatroom, compact, settings, style, messageBoxManager, profile);
+        new FriendWidget(chatroom, compact, settings, style, messageBoxManager, profile, this);
     emit connectFriendWidget(*friendWidget);
     chatWidgets[friendPk] = friendWidget;
     friendLayout->addFriendWidget(friendWidget, frnd->getStatus());
@@ -171,7 +171,7 @@ ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> c
     auto* const g = chatroom->getConference();
     const auto& conferenceId = g->getPersistentId();
     const auto compact = settings.getCompactLayout();
-    auto* conferenceWidget = new ConferenceWidget(chatroom, compact, settings, style);
+    auto* conferenceWidget = new ConferenceWidget(chatroom, compact, settings, style, this);
     chatWidgets[conferenceId] = conferenceWidget;
     conferenceLayout.addSortedWidget(conferenceWidget);
     chatForms[conferenceId] = form;

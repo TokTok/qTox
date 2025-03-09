@@ -44,8 +44,8 @@
  */
 FriendWidget::FriendWidget(std::shared_ptr<FriendChatroom> chatroom_, bool compact_,
                            Settings& settings_, Style& style_,
-                           IMessageBoxManager& messageBoxManager_, Profile& profile_)
-    : GenericChatroomWidget(compact_, settings_, style_)
+                           IMessageBoxManager& messageBoxManager_, Profile& profile_, QWidget* parent)
+    : GenericChatroomWidget(compact_, settings_, style_, parent)
     , chatroom{std::move(chatroom_)}
     , isDefaultAvatar{true}
     , settings{settings_}
