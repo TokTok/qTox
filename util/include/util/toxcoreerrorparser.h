@@ -8,6 +8,7 @@
 #include <QDebug>
 
 #include <tox/tox.h>
+#include <tox/tox_events.h>
 #include <tox/toxav.h>
 
 /**
@@ -46,4 +47,5 @@ bool parseErr(Toxav_Err_Bit_Rate_Set error, const char* file, int line, const ch
 bool parseErr(Toxav_Err_Call_Control error, const char* file, int line, const char* func);
 bool parseErr(Toxav_Err_Call error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_Options_New error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Events_Iterate error, const char* file, int line, const char* func);
 } // namespace ToxcoreErrorParser
