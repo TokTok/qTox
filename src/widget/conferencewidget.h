@@ -59,9 +59,9 @@ private slots:
     void updateTitle(const QString& author, const QString& newName);
     void updateUserCount(int numPeers);
 
-public:
-    ConferenceId conferenceId;
-
 private:
     std::shared_ptr<ConferenceRoom> chatroom;
+
+public:
+    ConferenceId conferenceId;
 };
