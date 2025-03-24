@@ -189,7 +189,7 @@ kas var radīt video zvanu problēmas.</translation>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">izstrādātāji</translation>
+        <translation>līdzautori</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -3085,8 +3085,7 @@ izraisīt ritjoslas pazušanu.</translation>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maksimālais tērzēšanas
-žurnāla skata lielums</translation>
+        <translation>Maksimālais tērzēšanas žurnāla lielums</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
@@ -3104,9 +3103,7 @@ gabala lielums</translation>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tērzēšana
-s
-žurnāls:</translation>
+        <translation>Tērzēšanas žurnāls:</translation>
     </message>
     <message>
         <source>Hide suffix after NULL symbol</source>
@@ -3262,10 +3259,10 @@ s
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n jauns draudzības pieprasījums</numerusform>
+            <numerusform>%n jauni draudzības pieprasījumi</numerusform>
+            <numerusform>%n jauni draudzības pieprasījumi</numerusform>
         </translation>
     </message>
     <message numerus="yes">
