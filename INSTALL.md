@@ -100,11 +100,7 @@ Easy qTox install is provided for variety of distributions:
 
 #### Arch
 
-PKGBUILD is available in the `community` repo, to install:
-
-```bash
-pacman -S qtox
-```
+PKGBUILD is available in the [AUR](https://aur.archlinux.org/packages/qtox-toktok), install `qtox-toktok` with your AUR helper.
 
 <a name="debian-easy" />
 
