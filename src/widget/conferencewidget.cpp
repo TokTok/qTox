@@ -29,8 +29,8 @@
 ConferenceWidget::ConferenceWidget(std::shared_ptr<ConferenceRoom> chatroom_, bool compact_,
                                    Settings& settings_, Style& style_, QWidget* parent)
     : GenericChatroomWidget(compact_, settings_, style_, parent)
-    , conferenceId{chatroom_->getConference()->getPersistentId()}
-    , chatroom{chatroom_}
+    , chatroom{std::move(chatroom_)}
+    , conferenceId{chatroom->getConference()->getPersistentId()}
 {
     avatar->setPixmap(Style::scaleSvgImage(":img/conference.svg", avatar->width(), avatar->height()));
     statusPic.setPixmap(QPixmap(Status::getIconPath(Status::Status::Online)));
