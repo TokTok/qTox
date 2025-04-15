@@ -17,7 +17,7 @@
     </message>
     <message>
         <source>Select region</source>
-        <translation>Izvēlieties reģionu</translation>
+        <translation>Atlasiet reģionu</translation>
     </message>
     <message>
         <source>Screen %1</source>
@@ -58,10 +58,10 @@ Note though that with better video quality there is needed better internet conne
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Iestatiet kameras izšķirtspēju.
-Jo lielāka vērtība, jo augstākā kvalitātē video varēs redzēt Jūsu draugi.
-Ņemiet vērā, jo labāka ir video kvalitāte, jo ir nepieciešams labāks interneta pieslēgums.
-Nosūtot augstas kvalitātes video, dažreiz savienojums var būt nepietiekami labs,
-kas var radīt video zvanu problēmas.</translation>
+Jo lielāka vērtība, jo augstākas kvalitātes video varēs redzēt Jūsu draugi.
+Ņemiet vērā, jo labāka ir video kvalitāte, jo labāks interneta pieslēgums ir nepieciešams.
+Dažreiz savienojums var nebūt pietiekami labs, lai varētu pārraidīt augstas kvalitātes video,
+kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -69,7 +69,7 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation>Pārskenēt ierīces</translation>
+        <translation>Meklēt ierīces pa jaunu</translation>
     </message>
     <message>
         <source>Test Sound</source>
@@ -81,19 +81,19 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>High (64 kBps)</source>
-        <translation>Augsts (64 kBps)</translation>
+        <translation>Augsta (64 kBit/s)</translation>
     </message>
     <message>
         <source>Medium (32 kBps)</source>
-        <translation>Vidējs (32 kBps)</translation>
+        <translation>Vidēja (32 kBit/s)</translation>
     </message>
     <message>
         <source>Low (16 kBps)</source>
-        <translation>Zems (16 kBps)</translation>
+        <translation>Zema (16 kBit/s)</translation>
     </message>
     <message>
         <source>Very low (8 kBps)</source>
-        <translation>Ļoti zems (8 kBps)</translation>
+        <translation>Ļoti zema (8 kBit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -101,12 +101,12 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>Ar slīdni iestatiet skaļumu skaļrunī.</translation>
+        <translation>Ar slīdni pielāgojiet skaļumu skaļrunī.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pārraidītā audio kvalitāte. Samaziniet šo iestatījumu, ja joslas platums nav pietiekami liels vai ja vēlaties samazināt joslas platuma lietojumu.</translation>
+        <translation>Pārraidītās skaņas kvalitāte. Samaziniet šo vērtību, ja jūsu interneta joslas platums nav pietiekami liels, vai arī vēlaties samazināt tā lietojumu.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -115,14 +115,14 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Iestatiet kameras izšķirtspēju.
-Jo lielāka vērtība, jo augstākā kvalitātē video varēs redzēt Jūsu draugi.
-Ņemiet vērā, jo labāka ir video kvalitāte, jo ir nepieciešams labāks interneta pieslēgums.
-Nosūtot augstas kvalitātes video, dažreiz savienojums var būt nepietiekami labs,
-kas var radīt video zvanu problēmas.</translation>
+Jo lielāka vērtība, jo augstākas kvalitātes video varēs redzēt Jūsu draugi.
+Ņemiet vērā, jo labāka ir video kvalitāte, jo labāks interneta pieslēgums ir nepieciešams.
+Dažreiz savienojums var nebūt pietiekami labs, lai varētu pārraidīt augstas kvalitātes video,
+kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation>Pārbaudīt skaņas izvadi atskaņojot paraugskaņu.</translation>
+        <translation type="unfinished">Pārbaudīt skaņas izvadi atskaņojot paraugskaņu.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
@@ -147,15 +147,15 @@ kas var radīt video zvanu problēmas.</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation>Jūs lietojat qTox versiju %1.</translation>
+        <translation>Jūs lietojat qTox %1 versiju.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>Saistības kešs: %1</translation>
+        <translation>Veikto izmaiņu kontrolsumma: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation>Tox kodola versija: %1</translation>
+        <translation>toxcore versija: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
@@ -165,7 +165,7 @@ kas var radīt video zvanu problēmas.</translation>
         <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Visu zināmo problēmu sarakstu Jūs varat atrast mūsu %1 vietnē Github. Ja Jūs atklājat kādu kļūdu vai neaizsargātību qTox drošības jomā, lūdzu ziņojiet par to saskaņā ar mūsu %2 wiki raksta vadlīnijām.</translation>
+        <translation>Visu zināmo problēmu sarakstu Jūs varat atrast mūsu %1 GitHub vietnē. Ja Jūs atklājat kādu qTox kļūdu vai drošības problēmu, lūdzu ziņojiet par to saskaņā ar mūsu %2 wiki raksta vadlīnijām.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -635,7 +635,7 @@ kas var radīt video zvanu problēmas.</translation>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pārbauda, ​​vai šajā programmā darbojas jaunākā qTox versija.</translation>
+        <translation>Pārbauda, vai tiek izmantota jaunākā qTox versija.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
@@ -829,10 +829,10 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
         </translation>
     </message>
     <message>
@@ -901,10 +901,10 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
         </translation>
     </message>
     <message>
@@ -1533,7 +1533,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.</translation>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ielādes vēsture no:</translation>
+        <translation>Ielādēt vēsturi no:</translation>
     </message>
 </context>
 <context>
@@ -1674,8 +1674,8 @@ Jūs varat izveidot jaunu.</translation>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jūsu ievadītās paroles atšķiras.
-Lūdzu, divreiz ievadiet vienu un to pašu paroli.</translation>
+        <translation>Jūsu ievadītās paroles nesakrīt.
+Lūdzu, pārbaudiet, ka divreiz ievadījāt to pašu paroli.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
@@ -1691,7 +1691,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Paroles ievades lauks, ar vismaz 6 rakstzīmēm</translation>
+        <translation>Paroles ievades lauks, minimālais garums 6 rakstzīmes</translation>
     </message>
 </context>
 <context>
@@ -1898,10 +1898,10 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <name>NotificationEdgeWidget</name>
     <message numerus="yes">
         <source>Unread message(s)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Nelasīts ziņojums</numerusform>
+            <numerusform>Nelasīti ziņojumi</numerusform>
+            <numerusform>Nelasīti ziņojumi</numerusform>
         </translation>
     </message>
 </context>
@@ -3097,8 +3097,7 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tērzēšanas žurnāla
-gabala lielums</translation>
+        <translation type="unfinished">Tērzēšanas žurnāla gabala (fragments) izmērs</translation>
     </message>
     <message>
         <source>Chat log:</source>
