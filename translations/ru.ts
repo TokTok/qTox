@@ -3007,7 +3007,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Hide suffix after NULL symbol</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Скрыть суффикс после нулевого символа</translation>
+        <translation>Скрыть суффикс после нулевого символа</translation>
     </message>
 </context>
 <context>
