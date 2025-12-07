@@ -182,8 +182,8 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 [Contributing]: /CONTRIBUTING.md#how-to-start-contributing
 [Debian]: https://packages.debian.org/search?keywords=qtox
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
-[Latest ARM64 release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.3/qTox-arm64.dmg
-[Latest Intel release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.3/qTox-x86_64.dmg
+[Latest ARM64 release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.3/qTox-v1.18.3.arm64-12.0.dmg
+[Latest Intel release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.3/qTox-v1.18.3.x86_64-12.0.dmg
 [Latest ARM64 nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-12.0.dmg
 [Latest Intel nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-12.0.dmg
 [Latest ARM64 nightly 10.15+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-10.15.dmg
