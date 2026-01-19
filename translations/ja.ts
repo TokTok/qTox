@@ -1200,6 +1200,11 @@ Windows にファイルを保存できるようになります。</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>%1 (フォントなし)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">自動選択</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

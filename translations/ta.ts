@@ -1220,6 +1220,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>%1 (எழுத்துருக்கள் இல்லை)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">தானியங்கு தேர்வு</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

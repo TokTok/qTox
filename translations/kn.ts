@@ -1371,6 +1371,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (ಫಾಂಟ್‌ಗಳಿಲ್ಲ)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಸ್ವಯಂ ಆಯ್ಕೆ</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

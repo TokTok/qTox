@@ -1155,6 +1155,11 @@ så att du kan spara filen i Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (inga teckensnitt)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Autoval</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

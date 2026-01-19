@@ -184,6 +184,8 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style_)
 
     bodyUI->checkUpdates->setChecked(settings.getCheckUpdates());
 
+    bodyUI->transComboBox->insertItem(0, tr("Auto select"));
+
     for (int i = 0; i < locales.size(); ++i) {
         QString langName;
 
@@ -204,10 +206,10 @@ GeneralForm::GeneralForm(Settings& settings_, Style& style_)
             }
         }
 
-        bodyUI->transComboBox->insertItem(i, langName);
+        bodyUI->transComboBox->insertItem(i + 1, langName);
     }
 
-    bodyUI->transComboBox->setCurrentIndex(locales.indexOf(settings.getTranslation()));
+    bodyUI->transComboBox->setCurrentIndex(locales.indexOf(settings.getTranslation()) + 1);
 
     bodyUI->cbAutorun->setChecked(settings.getAutorun());
 
@@ -248,9 +250,9 @@ GeneralForm::~GeneralForm()
 
 void GeneralForm::on_transComboBox_currentIndexChanged(int index)
 {
-    const QString& locale = locales[index];
+    const QString& locale = index == 0 ? QString{} : locales[index - 1];
     settings.setTranslation(locale);
-    Translator::translate(locale);
+    Translator::translate(settings.getTranslationInUse());
 }
 
 void GeneralForm::on_cbAutorun_stateChanged()

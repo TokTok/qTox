@@ -1160,6 +1160,11 @@ so you can save the file on Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (žiadne písma)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automatický výber</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

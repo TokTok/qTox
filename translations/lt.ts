@@ -1158,6 +1158,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (nėra šriftų)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automatinis pasirinkimas</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

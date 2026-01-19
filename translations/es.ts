@@ -1148,6 +1148,11 @@ para que puedas guardar el archivo en windows.</translation>
         <source>%1 (no fonts)</source>
         <translation>%1 (no hay fuentes)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Selección automática</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1143,6 +1143,10 @@ so ye can stash th&apos; file on Windows.</translation>
         <source>%1 (no fonts)</source>
         <translation type="unfinished">%1 (no fancy letters)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1147,6 +1147,11 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <source>%1 (no fonts)</source>
         <translation>%1 (geen lettertypen)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automatische selectie</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>
