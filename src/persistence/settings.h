@@ -263,6 +263,8 @@ public:
     uint32_t getCurrentProfileId() const;
     void setCurrentProfile(const QString& profile);
 
+    static QString getSysyemTranslation();
+    QString getTranslationInUse() const;
     QString getTranslation() const;
     void setTranslation(const QString& newValue);
 
@@ -609,6 +611,7 @@ private:
     bool showIdenticons;
     bool enableIPv6;
     QString translation;
+    QString translationInUse;
     bool autostartInTray;
     bool closeToTray;
     bool minimizeToTray;

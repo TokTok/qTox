@@ -1363,6 +1363,11 @@ svo þú getur vistað skrána á Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (engin leturgerð)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sjálfvirkt val</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

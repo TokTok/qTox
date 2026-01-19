@@ -1152,6 +1152,11 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
         <source>%1 (no fonts)</source>
         <translation>%1 (fără fonturi)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Selectare automată</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

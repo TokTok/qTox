@@ -1154,6 +1154,11 @@ so you can save the file on Windows.</source>
         <source>%1 (no fonts)</source>
         <translation>%1 (нет шрифтов)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Автоматический выбор</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1170,6 +1170,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (nav fontu)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automātiska atlase</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

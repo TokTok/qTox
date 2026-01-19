@@ -431,7 +431,7 @@ int AppManager::run()
         qWarning() << "Couldn't load font";
     }
 
-    const QString locale = settings->getTranslation();
+    const QString locale = settings->getTranslationInUse();
     // We need to init the resources in the translations_library explicitly.
     // See https://doc.qt.io/qt-5/resources.html#using-resources-in-a-library
     Q_INIT_RESOURCE(translations);

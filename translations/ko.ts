@@ -1266,6 +1266,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (글꼴 없음)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">자동 선택</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

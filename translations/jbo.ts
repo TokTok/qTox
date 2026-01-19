@@ -1355,6 +1355,10 @@ e&apos;u do ka&apos;e sfaile lo nu sfaile bu&apos;u la .Windows.zoi ke&apos;a nu
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (no fonta)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

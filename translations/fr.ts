@@ -1155,6 +1155,11 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>%1 (pas de polices)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Sélection automatique</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

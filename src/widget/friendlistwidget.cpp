@@ -214,7 +214,7 @@ void FriendListWidget::sortByMode()
         }
         cleanMainLayout();
 
-        const QLocale ql(settings.getTranslation());
+        const QLocale ql(settings.getTranslationInUse());
         const QDate today = QDate::currentDate();
 #define COMMENT "Category for sorting friends by activity"
         // clang-format off

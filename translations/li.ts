@@ -1385,6 +1385,10 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Algemein</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

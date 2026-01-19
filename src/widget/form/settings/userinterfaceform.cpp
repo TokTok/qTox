@@ -189,7 +189,7 @@ void UserInterfaceForm::on_timestamp_editTextChanged(const QString& format)
     bodyUI->timeExample->setText(timeExample);
 
     settings.setTimestampFormat(format);
-    const QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslationInUse();
     Translator::translate(locale);
 }
 
@@ -199,7 +199,7 @@ void UserInterfaceForm::on_dateFormats_editTextChanged(const QString& format)
     bodyUI->dateExample->setText(dateExample);
 
     settings.setDateFormat(format);
-    const QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslationInUse();
     Translator::translate(locale);
 }
 

@@ -17,6 +17,7 @@
 #ifdef QTOX_PLATFORM_EXT
 #include "src/platform/autorun.h"
 #endif
+#include "src/widget/form/settings/generalform.h" // getLocales
 #include "src/widget/style.h"
 #include "src/widget/tool/imessageboxmanager.h"
 
@@ -156,7 +157,8 @@ void Settings::loadGlobal()
     });
 
     inGroup(s, "General", [this, &s] {
-        translation = s.value("translation", "en").toString();
+        translation = s.value("translation", "").toString();
+        translationInUse = translation.isEmpty() ? getSysyemTranslation() : translation;
         showSystemTray = s.value("showSystemTray", true).toBool();
         autostartInTray = s.value("autostartInTray", false).toBool();
         closeToTray = s.value("closeToTray", true).toBool();
@@ -1097,6 +1099,32 @@ void Settings::setConferenceAlwaysNotify(bool newValue)
     }
 }
 
+QString Settings::getSysyemTranslation()
+{
+    const QStringList& locales = GeneralForm::getLocales();
+    QString locale = QLocale::system().name();
+
+    // try to find an exact match (e.g. pt_BR)
+    if (locales.indexOf(locale) >= 0) {
+        return locale;
+    }
+
+    // try to find the language only (e.g. pt)
+    locale = locale.section('_', 0, 0);
+    if (locales.indexOf(locale) >= 0) {
+        return locale;
+    }
+
+    // fallback
+    return "en";
+}
+
+QString Settings::getTranslationInUse() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return translationInUse;
+}
+
 QString Settings::getTranslation() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
@@ -1106,6 +1134,7 @@ QString Settings::getTranslation() const
 void Settings::setTranslation(const QString& newValue)
 {
     if (setVal(translation, newValue)) {
+        translationInUse = newValue.isEmpty() ? getSysyemTranslation() : newValue;
         emit translationChanged(newValue);
     }
 }

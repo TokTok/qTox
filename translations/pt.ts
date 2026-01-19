@@ -1154,6 +1154,11 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (sem fontes)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Seleção automática</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

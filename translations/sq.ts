@@ -1375,6 +1375,11 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (pa shkronja)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Zgjedhja automatike</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

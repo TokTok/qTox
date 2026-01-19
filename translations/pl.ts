@@ -1167,6 +1167,11 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (bez czcionek)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Wybór automatyczny</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

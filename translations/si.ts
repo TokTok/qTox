@@ -1380,6 +1380,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (අකුරු නොමැත)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ස්වයංක්‍රීය තේරීම</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>
