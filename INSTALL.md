@@ -397,6 +397,17 @@ cmake --install _build
 `qTox.dmg` should be in your `_build` directory. You can install qTox from the dmg
 to your Applications folder, or run qTox directly from the dmg.
 
+### Troubleshooting on macOS
+
+If you get the error: **"qTox" is damaged and can't be opened. You should move it to the Trash.** This usually happens because macOS **Gatekeeper** security blocks the unsigned application. You can fix this by removing the "quarantine" flag from the app bundle using the terminal.
+
+Run the following command, adjusting the path if you haven't moved it to `/Applications`:
+
+```bash
+xattr -drs com.apple.quarantine /Applications/qtox.app
+
+```
+
 <a name="windows" />
 
 ## Windows
