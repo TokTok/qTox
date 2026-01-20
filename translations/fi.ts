@@ -1154,6 +1154,11 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (ei fontteja)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automaattinen valinta</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -1156,6 +1156,11 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (fonte pole)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Automaatne valimine</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

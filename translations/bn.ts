@@ -1377,6 +1377,11 @@ so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (কোন ফন্ট নেই)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">স্বয়ংক্রিয় নির্বাচন করুন</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

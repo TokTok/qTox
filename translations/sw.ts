@@ -1382,6 +1382,11 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (hakuna fonti)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Chagua kiotomatiki</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

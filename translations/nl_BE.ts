@@ -1138,6 +1138,10 @@ so you can save the file on Windows.</source>
         <source>%1 (no fonts)</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>

@@ -151,7 +151,7 @@ Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSou
     , nexus{nexus_}
 {
     installEventFilter(this);
-    const QString locale = settings.getTranslation();
+    const QString locale = settings.getTranslationInUse();
     Translator::translate(locale);
 }
 

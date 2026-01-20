@@ -1156,6 +1156,11 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 (yazı tipi yok)</translation>
     </message>
+    <message>
+        <source>Auto select</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Otomatik seç</translation>
+    </message>
 </context>
 <context>
     <name>GeneralSettings</name>
