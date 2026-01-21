@@ -583,6 +583,26 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Włącz narzędzia debugowania (tylko programiści)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksymalna liczba linii do skopiowania do schowka podczas nacisku „Kopiuj dziennik debugowania”.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> kwestia</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksymalny wiek (w godzinach/minutach) linii dziennika do skopiowania do schowka podczas nacisku „Kopiuj dziennik debugowania”.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksymalny wiek:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

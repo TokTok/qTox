@@ -575,6 +575,26 @@ ceea ce poate duce la probleme cu apelurile video.</translation>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Activați instrumentele de depanare (numai pentru dezvoltatori)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numărul maxim de linii de copiat în clipboard atunci când apăsați „Copy Debug Log”.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linii</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vârsta maximă (în ore/minute) a liniilor de jurnal pentru a copia în clipboard atunci când apăsați „Copiați jurnalul de depanare”.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Vârsta maximă:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
