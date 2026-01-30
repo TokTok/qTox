@@ -53,7 +53,8 @@ private:
 
 void TestLoginScreen::testLoginScreen()
 {
-    LoginScreen loginScreen(paths, style, themeColor, profileName); // NOLINT(misc-const-correctness)
+    // NOLINTNEXTLINE(misc-const-correctness)
+    LoginScreen loginScreen(paths, style, themeColor, profileName);
 
     COMPARE_GRAB(&loginScreen, "loginscreen_empty.png");
 }

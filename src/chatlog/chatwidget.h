@@ -8,6 +8,7 @@
 #include "chatline.h"
 #include "chatmessage.h"
 
+#include "src/core/icoreidhandler.h"
 #include "src/model/ichatlog.h"
 
 #include <QDateTime>
@@ -20,6 +21,7 @@ class QMouseEvent;
 class QTimer;
 class ChatLineContent;
 struct ToxFile;
+class CoreFile;
 class SmileyPack;
 class Settings;
 class Style;
@@ -31,9 +33,9 @@ class ChatWidget : public QGraphicsView
 {
     Q_OBJECT
 public:
-    ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache,
-               SmileyPack& smileyPack, Settings& settings, Style& style,
-               IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
+    ChatWidget(IChatLog& chatLog_, const ICoreIdHandler& idHandler_, CoreFile* coreFile_,
+               DocumentCache& documentCache, SmileyPack& smileyPack, Settings& settings,
+               Style& style, IMessageBoxManager& messageBoxManager, QWidget* parent = nullptr);
     ~ChatWidget() override;
 
     void insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines);
@@ -59,6 +61,9 @@ public:
     }
     void jumpToDate(QDate date);
     void jumpToIdx(ChatLogIdx idx);
+
+    ChatLogIdx getRenderedStartIdx() const;
+    ChatLogIdx getRenderedEndIdx() const;
 
 signals:
     void selectionChanged();
@@ -90,6 +95,7 @@ private slots:
 
     void onRenderFinished();
     void onScrollValueChanged(int value);
+    void onScrollRangeChanged(int min, int max);
 
 protected:
     QRectF calculateSceneRect() const;
@@ -127,9 +133,11 @@ protected:
 
     void removeLines(ChatLogIdx begin, ChatLogIdx end);
 
+protected:
+    virtual bool isActiveFileTransfer(ChatLine::Ptr l);
+
 private:
     void retranslateUi();
-    static bool isActiveFileTransfer(ChatLine::Ptr l);
     void handleMultiClickEvent();
     void moveSelectionRectUpIfSelected(int offset);
     void moveSelectionRectDownIfSelected(int offset);
@@ -197,6 +205,7 @@ private:
     // worker vars
     size_t workerLastIndex = 0;
     bool workerStb = false;
+    bool stbLocked = true;
     ChatLine::Ptr workerAnchorLine;
 
     // layout
@@ -205,8 +214,10 @@ private:
 
     IChatLog& chatLog;
     bool colorizeNames = false;
+    uint32_t layoutGeneration = 0;
     SearchPos searchPos;
-    const Core& core;
+    const ICoreIdHandler& idHandler;
+    CoreFile* coreFile;
     bool scrollMonitoringEnabled = true;
 
     std::unique_ptr<ChatLineStorage> chatLineStorage;
