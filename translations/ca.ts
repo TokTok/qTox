@@ -5,27 +5,27 @@
     <name>AVForm</name>
     <message>
         <source>Default resolution</source>
-        <translation type="unfinished"></translation>
+        <translation>Resolució per defecte</translation>
     </message>
     <message>
         <source>Audio/Video</source>
-        <translation type="unfinished"></translation>
+        <translation>Àudio/Vídeo</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Desactivat</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona la regió</translation>
     </message>
     <message>
         <source>Screen %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Pantalla %1</translation>
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuració d&apos;àudio</translation>
     </message>
     <message>
         <source>Gain</source>
