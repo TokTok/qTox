@@ -37,6 +37,7 @@ set(TEST_RESOURCES test/resources/test_data.qrc ${${BINARY_NAME}_RESOURCES})
 
 # keep-sorted start
 auto_test(chatlog chatlinestorage "" "")
+auto_test(chatlog chatwidget "" "")
 auto_test(chatlog textformatter "" "")
 auto_test(core chatid "" "")
 auto_test(core core "${${BINARY_NAME}_RESOURCES}" "mock_library")

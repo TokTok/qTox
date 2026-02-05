@@ -177,13 +177,14 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 } // namespace
 
 
-ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache_,
-                       SmileyPack& smileyPack_, Settings& settings_, Style& style_,
-                       IMessageBoxManager& messageBoxManager_, QWidget* parent)
+ChatWidget::ChatWidget(IChatLog& chatLog_, const ICoreIdHandler& idHandler_, CoreFile* coreFile_,
+                       DocumentCache& documentCache_, SmileyPack& smileyPack_, Settings& settings_,
+                       Style& style_, IMessageBoxManager& messageBoxManager_, QWidget* parent)
     : QGraphicsView(parent)
     , selectionRectColor{style_.getColor(Style::ColorPalette::SelectText)}
     , chatLog(chatLog_)
-    , core(core_)
+    , idHandler(idHandler_)
+    , coreFile(coreFile_)
     , chatLineStorage(new ChatLineStorage())
     , documentCache(documentCache_)
     , smileyPack{smileyPack_}
@@ -270,6 +271,7 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
     connect(this, &ChatWidget::renderFinished, this, &ChatWidget::onRenderFinished);
     connect(&chatLog_, &IChatLog::itemUpdated, this, &ChatWidget::onMessageUpdated);
     connect(verticalScrollBar(), &QScrollBar::valueChanged, this, &ChatWidget::onScrollValueChanged);
+    connect(verticalScrollBar(), &QScrollBar::rangeChanged, this, &ChatWidget::onScrollRangeChanged);
 
     auto firstChatLogIdx =
         clampedAdd(chatLog_.getNextIdx(), -settings.getChatMaxWindowSize(), chatLog_);
@@ -325,21 +327,22 @@ void ChatWidget::layout(int start, int end, qreal width)
     if (chatLineStorage->empty())
         return;
 
+    const int storageSize = static_cast<int>(chatLineStorage->size());
+    if (start >= storageSize)
+        return;
+
     qreal h = 0.0;
 
     // Line at start-1 is considered to have the correct position. All following lines are
     // positioned in respect to this line.
     if (start - 1 >= 0) {
-        if (static_cast<size_t>(start - 1) >= chatLineStorage->size()) {
-            qCritical() << "ChatWidget::layout: start index out of bounds:" << start - 1
-                        << ">=" << chatLineStorage->size();
-            return;
+        if (start - 1 < storageSize) {
+            h = (*chatLineStorage)[start - 1]->sceneBoundingRect().bottom() + lineSpacing;
         }
-        h = (*chatLineStorage)[start - 1]->sceneBoundingRect().bottom() + lineSpacing;
     }
 
-    start = std::clamp<int>(start, 0, chatLineStorage->size());
-    end = std::clamp<int>(end + 1, 0, chatLineStorage->size());
+    start = std::clamp<int>(start, 0, storageSize);
+    end = std::clamp<int>(end, 0, storageSize);
 
     for (int i = start; i < end; ++i) {
         ChatLine* l = (*chatLineStorage)[i].get();
@@ -503,8 +506,11 @@ qreal ChatWidget::useableWidth() const
 
 void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
 {
-    if (chatLines.empty())
+    if (chatLines.empty()) {
+        scrollMonitoringEnabled = true;
+        emit renderFinished();
         return;
+    }
 
     const bool allLinesAtEnd = !chatLineStorage->hasIndexedMessage()
                                || chatLines.begin()->first > chatLineStorage->lastIdx();
@@ -561,6 +567,7 @@ void ChatWidget::insertChatlines(std::map<ChatLogIdx, ChatLine::Ptr> chatLines)
         updateTypingNotification();
         updateMultiSelectionRect();
 
+        scrollMonitoringEnabled = true;
         emit renderFinished();
     } else {
         startResizeWorker();
@@ -574,17 +581,23 @@ bool ChatWidget::stickToBottom() const
 
 void ChatWidget::scrollToBottom()
 {
+    stbLocked = true;
     updateSceneRect();
     verticalScrollBar()->setValue(verticalScrollBar()->maximum());
 }
 
 void ChatWidget::startResizeWorker()
 {
-    if (chatLineStorage->empty())
+    if (chatLineStorage->empty()) {
+        scrollMonitoringEnabled = true;
+        emit renderFinished();
         return;
+    }
 
     // (re)start the worker
-    if (!workerTimer->isActive()) {
+    if (workerTimer->isActive()) {
+        workerTimer->stop();
+    } else {
         // these values must not be reevaluated while the worker is running
         workerStb = stickToBottom();
 
@@ -605,9 +618,8 @@ void ChatWidget::startResizeWorker()
         setScene(busyScene);
 
     workerLastIndex = 0;
+    layoutGeneration++;
     workerTimer->start();
-
-    verticalScrollBar()->hide();
 }
 
 void ChatWidget::mouseDoubleClickEvent(QMouseEvent* ev)
@@ -693,7 +705,14 @@ void ChatWidget::clear()
 {
     clearSelection();
 
-    const QVector<ChatLine::Ptr> savedLines;
+    if (workerTimer->isActive()) {
+        workerTimer->stop();
+        workerAnchorLine = ChatLine::Ptr();
+    }
+
+    setScene(scene);
+    scrollMonitoringEnabled = true;
+    renderCompletionFns.clear();
 
     for (auto it = chatLineStorage->begin(); it != chatLineStorage->end();) {
         if (!isActiveFileTransfer(*it)) {
@@ -705,9 +724,12 @@ void ChatWidget::clear()
     }
 
     visibleLines.clear();
+    stbLocked = true;
 
     checkVisibility();
     updateSceneRect();
+
+    emit renderFinished();
 }
 
 void ChatWidget::copySelectedText(bool toSelectionBuffer) const
@@ -1044,16 +1066,28 @@ void ChatWidget::onSelectionTimerTimeout()
 
 void ChatWidget::onWorkerTimeout()
 {
-    // Fairly arbitrary but
-    // large values will make the UI unresponsive
+    const uint32_t generation = layoutGeneration;
     const int stepSize = 50;
 
-    layout(workerLastIndex, workerLastIndex + stepSize, useableWidth());
-    workerLastIndex += stepSize;
+    for (int i = 0; i < stepSize; ++i) {
+        if (generation != layoutGeneration) {
+            workerTimer->stop();
+            return;
+        }
+
+        if (static_cast<size_t>(workerLastIndex) >= chatLineStorage->size()) {
+            break;
+        }
+
+        layout(workerLastIndex, workerLastIndex + 1, useableWidth());
+        workerLastIndex++;
+    }
 
     // done?
-    if (workerLastIndex >= chatLineStorage->size()) {
+    if (workerLastIndex >= chatLineStorage->size() || generation != layoutGeneration) {
         workerTimer->stop();
+        if (generation != layoutGeneration)
+            return;
 
         // switch back to the scene containing the chat messages
         setScene(scene);
@@ -1073,8 +1107,7 @@ void ChatWidget::onWorkerTimeout()
         // don't keep a Ptr to the anchor line
         workerAnchorLine = ChatLine::Ptr();
 
-        // hidden during busy screen
-        verticalScrollBar()->show();
+        scrollMonitoringEnabled = true;
 
         emit renderFinished();
     }
@@ -1100,6 +1133,16 @@ void ChatWidget::renderMessage(ChatLogIdx idx)
 void ChatWidget::renderMessages(ChatLogIdx begin, ChatLogIdx end)
 {
     auto linesToRender = std::map<ChatLogIdx, ChatLine::Ptr>();
+
+    const ChatLogIdx nextIdx = chatLog.getNextIdx();
+    if (begin >= nextIdx) {
+        emit renderFinished();
+        return;
+    }
+
+    if (end > nextIdx) {
+        end = nextIdx;
+    }
 
     for (auto i = begin; i < end; ++i) {
         const bool alreadyRendered = chatLineStorage->contains(i);
@@ -1134,6 +1177,7 @@ void ChatWidget::setRenderedWindowStart(ChatLogIdx begin)
 
     // If the window is already where we have no work to do
     if (currentStart == begin) {
+        scrollMonitoringEnabled = true;
         emit renderFinished();
         return;
     }
@@ -1194,6 +1238,8 @@ void ChatWidget::onRenderFinished()
 
 void ChatWidget::onScrollValueChanged(int value)
 {
+    stbLocked = (value == verticalScrollBar()->maximum());
+
     if (!chatLineStorage->hasIndexedMessage()) {
         // This could be a little better. On a cleared screen we should probably
         // be able to scroll, but this makes the rest of this function easier
@@ -1223,6 +1269,8 @@ void ChatWidget::onScrollValueChanged(int value)
 
             scrollMonitoringEnabled = false;
             setRenderedWindowStart(idx);
+        } else {
+            emit renderFinished();
         }
 
     } else if (value == verticalScrollBar()->maximum()) {
@@ -1240,13 +1288,22 @@ void ChatWidget::onScrollValueChanged(int value)
                 if (it != chatLineStorage->end()) {
                     updateSceneRect();
                     verticalScrollBar()->setValue((*it)->sceneBoundingRect().bottom() - bottomOffset);
-                    scrollMonitoringEnabled = true;
                 }
+                scrollMonitoringEnabled = true;
             });
 
             scrollMonitoringEnabled = false;
             setRenderedWindowEnd(idx);
+        } else {
+            emit renderFinished();
         }
+    }
+}
+
+void ChatWidget::onScrollRangeChanged(int /*min*/, int max)
+{
+    if (stbLocked) {
+        verticalScrollBar()->setValue(max);
     }
 }
 
@@ -1386,7 +1443,7 @@ void ChatWidget::renderItem(const ChatLogItem& item, bool hideName, bool coloriz
 {
     const auto& sender = item.getSender();
 
-    const bool isSelf = sender == core.getSelfPublicKey();
+    const bool isSelf = sender == idHandler.getSelfPublicKey();
 
     switch (item.getContentType()) {
     case ChatLogItem::ContentType::message: {
@@ -1425,7 +1482,6 @@ void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDat
                             ChatLine::Ptr& chatMessage)
 {
     if (!chatMessage) {
-        CoreFile* coreFile = core.getCoreFile();
         assert(coreFile);
         chatMessage = ChatMessage::createFileTransferMessage(displayName, *coreFile, file, isSelf,
                                                              timestamp, documentCache, settings,
@@ -1524,4 +1580,20 @@ void ChatWidget::jumpToIdx(ChatLogIdx idx)
     } else {
         setRenderedWindowStart(clampedAdd(idx, -windowChunkSize, chatLog));
     }
+}
+
+ChatLogIdx ChatWidget::getRenderedStartIdx() const
+{
+    if (!chatLineStorage->hasIndexedMessage()) {
+        return ChatLogIdx(-1);
+    }
+    return chatLineStorage->firstIdx();
+}
+
+ChatLogIdx ChatWidget::getRenderedEndIdx() const
+{
+    if (!chatLineStorage->hasIndexedMessage()) {
+        return ChatLogIdx(-1);
+    }
+    return chatLineStorage->lastIdx();
 }

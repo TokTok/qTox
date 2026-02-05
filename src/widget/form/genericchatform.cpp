@@ -137,8 +137,8 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     headWidget = new ChatFormHeader(settings, style);
     searchForm = new SearchForm(settings, style);
     dateInfo = new QLabel(this);
-    chatWidget = new ChatWidget(chatLog_, core, documentCache, smileyPack, settings, style,
-                                messageBoxManager, this);
+    chatWidget = new ChatWidget(chatLog_, core, core.getCoreFile(), documentCache, smileyPack,
+                                settings, style, messageBoxManager, this);
     searchForm->hide();
     dateInfo->setAlignment(Qt::AlignHCenter);
 
