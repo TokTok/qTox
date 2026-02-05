@@ -14,8 +14,7 @@ class IdxChatLine : public ChatLine
 {
 public:
     explicit IdxChatLine(ChatLogIdx idx_)
-        : ChatLine()
-        , idx(idx_)
+        : idx(idx_)
     {
     }
 
@@ -32,8 +31,7 @@ class TimestampChatLine : public ChatLine
 {
 public:
     explicit TimestampChatLine(QDateTime dateTime)
-        : ChatLine()
-        , timestamp(std::move(dateTime))
+        : timestamp(std::move(dateTime))
     {
     }
 

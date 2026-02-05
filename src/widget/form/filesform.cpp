@@ -420,8 +420,7 @@ View::~View() = default;
 
 FilesForm::FilesForm(CoreFile& coreFile, Settings& settings, Style& style,
                      IMessageBoxManager& messageBoxManager_, FriendList& friendList)
-    : QObject()
-    , messageBoxManager{messageBoxManager_}
+    : messageBoxManager{messageBoxManager_}
 {
     head = new QWidget();
     QFont bold;
