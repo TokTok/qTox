@@ -9,6 +9,8 @@
 #include <QPushButton>
 #include <QString>
 
+class ImageLoader;
+
 class ImagePreviewButton : public QPushButton
 {
 public:
@@ -22,7 +24,7 @@ public:
     ImagePreviewButton(ImagePreviewButton&&) = delete;
     ImagePreviewButton& operator=(ImagePreviewButton&&) = delete;
 
-    void setIconFromFile(const QString& filename);
+    void setIconFromFile(ImageLoader& imageLoader, const QString& filename);
     void setIconFromPixmap(const QPixmap& pixmap);
 
 private:

@@ -12,16 +12,17 @@
 
 #include <memory>
 
-class Widget;
-class Profile;
-class Settings;
-class LoginScreen;
-class Core;
-class QCommandLineParser;
 class CameraSource;
-class Style;
+class Core;
+class ImageLoader;
 class IMessageBoxManager;
 class IPC;
+class LoginScreen;
+class Profile;
+class QCommandLineParser;
+class Settings;
+class Style;
+class Widget;
 
 #ifdef Q_OS_MAC
 class QMenuBar;
@@ -37,7 +38,7 @@ class Nexus : public QObject
     Q_OBJECT
 public:
     Nexus(Settings& settings, IMessageBoxManager& messageBoxManager, CameraSource& cameraSource,
-          IPC& ipc, QObject* parent = nullptr);
+          IPC& ipc, ImageLoader& imageLoader, QObject* parent = nullptr);
     ~Nexus() override;
     void start();
     void showMainGUI();
@@ -99,4 +100,5 @@ private:
     std::unique_ptr<Style> style;
     IMessageBoxManager& messageBoxManager;
     IPC& ipc;
+    ImageLoader& imageLoader;
 };

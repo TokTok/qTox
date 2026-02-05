@@ -34,6 +34,7 @@ class Profile;
 class QHideEvent;
 class QMoveEvent;
 class QPixmap;
+class ImageLoader;
 class Settings;
 class SmileyPack;
 class Style;
@@ -46,7 +47,7 @@ public:
              IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
              SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings, Style& style,
              IMessageBoxManager& messageBoxManager, ContentDialogManager& contentDialogManager,
-             FriendList& friendList, ConferenceList& conferenceList, QWidget* parent = nullptr);
+             FriendList& friendList, ConferenceList& conferenceList, ImageLoader& imageLoader, QWidget* parent = nullptr);
     ~ChatForm() override;
     void setStatusMessage(const QString& newMessage);
 

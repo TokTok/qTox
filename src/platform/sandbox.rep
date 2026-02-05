@@ -1,0 +1,6 @@
+#include <QPixmap>
+
+class Sandbox
+{
+    SLOT(QPixmap loadImage(const QByteArray& data));
+}

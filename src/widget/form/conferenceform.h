@@ -37,7 +37,7 @@ public:
                    IMessageDispatcher& messageDispatcher_, Settings& settings_,
                    DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
                    IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                   ConferenceList& conferenceList);
+                   ConferenceList& conferenceList, ImageLoader& imageLoader);
     ~ConferenceForm() override;
 
     void peerAudioPlaying(ToxPk peerPk);

@@ -179,7 +179,7 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 
 ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& documentCache_,
                        SmileyPack& smileyPack_, Settings& settings_, Style& style_,
-                       IMessageBoxManager& messageBoxManager_, QWidget* parent)
+                       IMessageBoxManager& messageBoxManager_, ImageLoader& imageLoader_, QWidget* parent)
     : QGraphicsView(parent)
     , selectionRectColor{style_.getColor(Style::ColorPalette::SelectText)}
     , chatLog(chatLog_)
@@ -190,6 +190,7 @@ ChatWidget::ChatWidget(IChatLog& chatLog_, const Core& core_, DocumentCache& doc
     , settings(settings_)
     , style{style_}
     , messageBoxManager{messageBoxManager_}
+    , imageLoader{imageLoader_}
 {
     // Create the scene
     busyScene = new QGraphicsScene(this);
@@ -1429,7 +1430,7 @@ void ChatWidget::renderFile(QString displayName, ToxFile file, bool isSelf, QDat
         assert(coreFile);
         chatMessage = ChatMessage::createFileTransferMessage(displayName, *coreFile, file, isSelf,
                                                              timestamp, documentCache, settings,
-                                                             style, messageBoxManager);
+                                                             style, messageBoxManager, imageLoader);
     } else {
         auto* proxy = static_cast<ChatLineContentProxy*>(chatMessage->getContent(1));
         assert(proxy->getWidgetType() == ChatLineContentProxy::FileTransferWidgetType);

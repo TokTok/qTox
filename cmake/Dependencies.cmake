@@ -16,6 +16,7 @@ find_package(Qt6 REQUIRED COMPONENTS
   Gui
   Linguist
   Network
+  RemoteObjects
   Svg
   Test
   Widgets
@@ -32,6 +33,7 @@ add_dependency(
   Qt6::Core
   Qt6::Gui
   Qt6::Network
+  Qt6::RemoteObjects
   Qt6::Svg
   Qt6::Widgets
   Qt6::Xml)

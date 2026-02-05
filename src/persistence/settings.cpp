@@ -680,6 +680,10 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
             circleLst.push_back(cp);
         });
     });
+
+    inGroup(ps, "Experimental", [this, &ps] {
+        experimentalSandbox = ps.value("sandbox", false).toBool();
+    });
 }
 
 void Settings::resetToDefault()
@@ -896,6 +900,11 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
     inGroup(ps, "Version", [this, &ps] { //
         ps.setValue("settingsVersion", personalSettingsVersion);
     });
+
+    inGroup(ps, "Experimental", [this, &ps] {
+        ps.setValue("sandbox", experimentalSandbox);
+    });
+
     ps.save();
 }
 
@@ -2341,6 +2350,19 @@ void Settings::setChatWindowChunkSize(int value)
 {
     if (setVal(chatWindowChunkSize, value)) {
         emit chatWindowChunkSizeChanged(value);
+    }
+}
+
+bool Settings::getExperimentalSandbox() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return experimentalSandbox;
+}
+
+void Settings::setExperimentalSandbox(bool newValue)
+{
+    if (setVal(experimentalSandbox, newValue)) {
+        emit experimentalSandboxChanged(newValue);
     }
 }
 
