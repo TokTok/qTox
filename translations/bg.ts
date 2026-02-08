@@ -1158,7 +1158,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto select</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Автоматичен избор</translation>
+        <translation>Автоматичен избор</translation>
     </message>
 </context>
 <context>
