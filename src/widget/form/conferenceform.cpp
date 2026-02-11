@@ -69,11 +69,11 @@ QString editName(const QString& name)
 
 ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog& chatLog_,
                                IMessageDispatcher& messageDispatcher_, Settings& settings_,
-                               DocumentCache& documentCache_, SmileyPack& smileyPack_,
-                               Style& style_, IMessageBoxManager& messageBoxManager,
-                               FriendList& friendList_, ConferenceList& conferenceList_)
-    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_,
-                      smileyPack_, settings_, style_, messageBoxManager, friendList_, conferenceList_)
+                               DocumentCache& documentCache_, SmileyPack& smileyPack_, Style& style_,
+                               IMessageBoxManager& messageBoxManager, FriendList& friendList_,
+                               ConferenceList& conferenceList_, ImageLoader& imageLoader)
+    : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_, smileyPack_,
+                      settings_, style_, messageBoxManager, friendList_, conferenceList_, imageLoader)
     , core{core_}
     , conference(chatConference)
     , inCall(false)

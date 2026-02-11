@@ -61,6 +61,8 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     bodyUI->cbEnableLanDiscovery->setChecked(settings.getEnableLanDiscovery() && udpEnabled);
     bodyUI->cbEnableLanDiscovery->setEnabled(udpEnabled);
 
+    bodyUI->cbExperimentalSandbox->setChecked(settings.getExperimentalSandbox());
+
     eventsInit();
 
     retranslateUi();
@@ -222,6 +224,10 @@ bool AdvancedForm::validateProxyAddr()
     return true;
 }
 
+void AdvancedForm::on_cbExperimentalSandbox_stateChanged()
+{
+    settings.setExperimentalSandbox(bodyUI->cbExperimentalSandbox->isChecked());
+}
 /**
  * @brief Retranslate all elements in the form.
  */

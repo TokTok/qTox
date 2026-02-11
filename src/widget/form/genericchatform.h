@@ -18,32 +18,30 @@
  *        - Even a different font is not enough – TODO #1307 ~~zetok
  */
 
-class ChatFormHeader;
-class ChatWidget;
-class ChatTextEdit;
 class Chat;
+class ChatFormHeader;
+class ChatTextEdit;
+class ChatWidget;
 class ContentLayout;
 class CroppingLabel;
+class DocumentCache;
 class FlyoutOverlayWidget;
+class FriendList;
 class GenericNetCamView;
+class IMessageBoxManager;
+class IMessageDispatcher;
 class MaskablePixmapWidget;
-class SearchForm;
-class Widget;
-
 class QLabel;
 class QPushButton;
 class QSplitter;
 class QToolButton;
 class QVBoxLayout;
-
-class IMessageDispatcher;
-struct Message;
-class DocumentCache;
-class SmileyPack;
+class SearchForm;
 class Settings;
+class SmileyPack;
 class Style;
-class IMessageBoxManager;
-class FriendList;
+class Widget;
+struct Message;
 
 namespace Ui {
 class MainWindow;
@@ -63,7 +61,7 @@ public:
                     IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                     SmileyPack& smileyPack, Settings& settings, Style& style,
                     IMessageBoxManager& messageBoxmanager, FriendList& friendList,
-                    ConferenceList& conferenceList, QWidget* parent_ = nullptr);
+                    ConferenceList& conferenceList, ImageLoader& imageLoader, QWidget* parent_ = nullptr);
     ~GenericChatForm() override;
 
     void setName(const QString& newName);

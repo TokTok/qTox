@@ -5,6 +5,9 @@
 
 #include "widget.h"
 
+#include <QtCore/qlogging.h>
+#include <cassert>
+
 #include <QActionGroup>
 #include <QClipboard>
 #include <QDebug>
@@ -128,7 +131,8 @@ void Widget::acceptFileTransfer(const ToxFile& file, const QString& path)
 Widget* Widget::instance{nullptr};
 
 Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource_,
-               Settings& settings_, Style& style_, IPC& ipc_, Nexus& nexus_, QWidget* parent)
+               Settings& settings_, Style& style_, IPC& ipc_, ImageLoader& imageLoader_,
+               Nexus& nexus_, QWidget* parent)
     : QMainWindow(parent)
     , profile{profile_}
     , trayMenu{nullptr}
@@ -148,6 +152,7 @@ Widget::Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSou
     , contentDialogManager(new ContentDialogManager(*friendList))
     , ipc{ipc_}
     , toxSave(new ToxSave{settings, ipc, this})
+    , imageLoader(imageLoader_)
     , nexus{nexus_}
 {
     installEventFilter(this);
@@ -1254,7 +1259,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     auto* friendForm =
         new ChatForm(profile, newFriend, *chatHistory, *friendMessageDispatcher, *documentCache,
                      *smileyPack, cameraSource, settings, style, *messageBoxManager,
-                     *contentDialogManager, *friendList, *conferenceList, this);
+                     *contentDialogManager, *friendList, *conferenceList, imageLoader, this);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;
@@ -1365,8 +1370,19 @@ void Widget::onFriendStatusMessageChanged(uint32_t friendId, const QString& mess
     str.replace('\n', ' ').remove('\r').remove(QChar('\0'));
     f->setStatusMessage(str);
 
-    friendWidgets[friendPk]->setStatusMsg(str);
-    chatForms[friendPk]->setStatusMessage(str);
+    FriendWidget* friendWidget = friendWidgets[friendPk];
+    if (friendWidget == nullptr) {
+        qCritical() << "FriendWidget not found for friend" << friendId;
+    } else {
+        friendWidget->setStatusMsg(str);
+    }
+
+    ChatForm* chatForm = chatForms[friendPk];
+    if (chatForm == nullptr) {
+        qCritical() << "ChatForm not found for friend" << friendId;
+    } else {
+        chatForm->setStatusMessage(str);
+    }
 }
 
 void Widget::onFriendDisplayedNameChanged(const QString& displayed)
@@ -2218,7 +2234,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
 
     auto* form = new ConferenceForm(*core, newConference, *chatHistory, *messageDispatcher,
                                     settings, *documentCache, *smileyPack, style,
-                                    *messageBoxManager, *friendList, *conferenceList);
+                                    *messageBoxManager, *friendList, *conferenceList, imageLoader);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableConferencesColor());
     conferenceMessageDispatchers[conferenceId] = messageDispatcher;

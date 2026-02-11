@@ -33,25 +33,35 @@ class MainWindow;
 class AddFriendForm;
 class AlSink;
 class Camera;
+class CameraSource;
 class ChatForm;
+class ChatHistory;
 class CircleWidget;
+class Conference;
+class ConferenceForm;
+class ConferenceInvite;
+class ConferenceInviteForm;
+class ConferenceList;
+class ConferenceRoom;
+class ConferenceWidget;
 class ContentDialog;
+class ContentDialogManager;
 class ContentLayout;
 class Core;
 class FilesForm;
 class Friend;
 class FriendChatroom;
+class FriendList;
 class FriendListWidget;
 class FriendWidget;
 class GenericChatroomWidget;
-class Conference;
-class ConferenceForm;
-class ConferenceRoom;
-class ConferenceInvite;
-class ConferenceInviteForm;
-class ConferenceWidget;
 class DocumentCache;
+class IChatLog;
+class ImageLoader;
+class IMessageBoxManager;
+class IPC;
 class MaskablePixmapWidget;
+class Nexus;
 class ProfileForm;
 class ProfileInfo;
 class QActionGroup;
@@ -59,23 +69,14 @@ class QMenu;
 class QPushButton;
 class QSplitter;
 class QTimer;
-class SettingsWidget;
-class SystemTrayIcon;
-class VideoSurface;
-class UpdateCheck;
 class Settings;
-class IChatLog;
-class ChatHistory;
+class SettingsWidget;
 class SmileyPack;
-class CameraSource;
 class Style;
-class IMessageBoxManager;
-class ContentDialogManager;
-class FriendList;
-class ConferenceList;
-class IPC;
+class SystemTrayIcon;
 class ToxSave;
-class Nexus;
+class UpdateCheck;
+class VideoSurface;
 
 class Widget final : public QMainWindow
 {
@@ -113,7 +114,7 @@ private:
 
 public:
     Widget(Profile& profile_, IAudioControl& audio_, CameraSource& cameraSource, Settings& settings,
-           Style& style, IPC& ipc, Nexus& nexus, QWidget* parent = nullptr);
+           Style& style, IPC& ipc, ImageLoader& imageLoader_, Nexus& nexus, QWidget* parent = nullptr);
     ~Widget() override;
     void init();
     void setCentralWidget(QWidget* widget, const QString& widgetName);
@@ -367,7 +368,6 @@ private:
     QMap<ConferenceId, QSharedPointer<ConferenceForm>> conferenceForms;
     Core* core = nullptr;
 
-
     std::unique_ptr<MessageProcessor::SharedParams> sharedMessageProcessorParams;
     std::unique_ptr<NotificationGenerator> notificationGenerator;
     std::unique_ptr<DesktopNotify> notifier;
@@ -393,5 +393,6 @@ private:
     std::unique_ptr<ContentDialogManager> contentDialogManager;
     IPC& ipc;
     std::unique_ptr<ToxSave> toxSave;
+    ImageLoader& imageLoader;
     Nexus& nexus;
 };

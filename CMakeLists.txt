@@ -287,6 +287,8 @@ set(${BINARY_NAME}_SOURCES
     src/chatlog/customtextdocument.h
     src/chatlog/documentcache.cpp
     src/chatlog/documentcache.h
+    src/chatlog/imageloader.cpp
+    src/chatlog/imageloader.h
     src/chatlog/pixmapcache.cpp
     src/chatlog/pixmapcache.h
     src/core/toxfileprogress.cpp
@@ -459,6 +461,12 @@ set(${BINARY_NAME}_SOURCES
     src/platform/desktop_notifications/desktopnotifybackend.h
     src/platform/posixsignalnotifier.cpp
     src/platform/posixsignalnotifier.h
+    src/platform/sandbox.cpp
+    src/platform/sandbox.h
+    src/platform/sandboxclient.cpp
+    src/platform/sandboxclient.h
+    src/platform/sandboxserver.cpp
+    src/platform/sandboxserver.h
     src/platform/screenshot_dbus.cpp
     src/platform/screenshot.cpp
     src/platform/screenshot.h
@@ -691,6 +699,8 @@ add_subdirectory(cmake/warnings)
 
 add_library(${BINARY_NAME}_static STATIC ${${BINARY_NAME}_FORMS}
                                          ${${BINARY_NAME}_SOURCES})
+qt_add_repc_sources(${BINARY_NAME}_static src/platform/sandbox.rep)
+qt_add_repc_replicas(${BINARY_NAME}_static src/platform/sandbox.rep)
 target_link_libraries(${BINARY_NAME}_static ${CMAKE_REQUIRED_LIBRARIES}
                       ${ALL_LIBRARIES} coverage_config)
 
