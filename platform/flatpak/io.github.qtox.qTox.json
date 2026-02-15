@@ -83,8 +83,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/TokTok/c-toxcore/releases/download/v0.2.20/c-toxcore-0.2.20.tar.gz",
-          "sha256": "a9c89a8daea745d53e5d78e7aacb99c7b4792c4400a5a69c71238f45d6164f4c"
+          "url": "https://github.com/TokTok/c-toxcore/releases/download/v0.2.22/c-toxcore-v0.2.22.tar.gz",
+          "sha256": "276d447eb94e9d76e802cecc5ca7660c6c15128a83dfbe4353b678972aeb950a"
         }
       ]
     },

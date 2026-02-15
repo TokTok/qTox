@@ -1,3 +1,41 @@
+<a name="v1.18.4-rc.1"></a>
+
+## v1.18.4-rc.1 (2026-02-15)
+
+### Release notes
+
+We are pleased to present the first release candidate of qTox 1.18.4 with a number of significant fixes and quality of life improvements.
+Communicate privately, love, and take care of each other.
+❤️‍🩹
+
+#### Bug Fixes
+
+- `QImage::mirrored()` is deprecated in Qt 6.9 ([f06e66e5](https://github.com/TokTok/qTox/commit/f06e66e556843057871339142935b7d34126bc6f))
+- Call the correct `QString::args()` overload in Qt 6.9 ([5e09f325](https://github.com/TokTok/qTox/commit/5e09f325d31e649831e7a0b25676e4c5d0097d6d))
+- Don't crash on chat log layout errors. ([c2d63dae](https://github.com/TokTok/qTox/commit/c2d63dae1346efd558ddaa8aef9f94b7a130bf2e))
+- **Startup:** Allow Tox Address in the friend address settings. ([cab4cee0](https://github.com/TokTok/qTox/commit/cab4cee05d82a75379fc3764ef5a4656fde13307), closes [#562](https://github.com/TokTok/qTox/issues/562), closes [#567](https://github.com/TokTok/qTox/issues/567))
+- **apparmor:** Import nvidia abstraction ([ceff71f0](https://github.com/TokTok/qTox/commit/ceff71f0e37ca82233d23802a6cd4f55ff2c0936))
+- **chatform:**
+  - stop call notification if the friend is going offline. ([56465c53](https://github.com/TokTok/qTox/commit/56465c53f307157ef3a47bd3c48f2bec4ef38cec))
+  - sanitize the toxstring to remove characters after the \0 ([2ce5a135](https://github.com/TokTok/qTox/commit/2ce5a135c650056631c96152e28bb95864a65bcb))
+- **chatlog:** Handle null document in Text item when right-clicking. ([5273f53e](https://github.com/TokTok/qTox/commit/5273f53e66e727396804ce1834643aba508adfd6))
+- **core:** Improve filename sanitization and error handling. ([8d7a4773](https://github.com/TokTok/qTox/commit/8d7a47734631ab370782e9008831071760cb793a))
+- **downloads:** Correct 404 download links for macOS 10.12 files ([87f1f842](https://github.com/TokTok/qTox/commit/87f1f842b2f7796231ac1c27f0c2fd4166e00fa3))
+- **ui:**
+  - Prevent Undefined Behavior when receiving non-mouse events. ([46aa07c5](https://github.com/TokTok/qTox/commit/46aa07c5126d51d202b3a6cdbdcf7ace62ebbec5))
+  - Stabilize ChatWidget rendering and fix scrolling bugs ([f93d7c23](https://github.com/TokTok/qTox/commit/f93d7c2354e48ad2a0b7cbc59f05a26495e4fddb))
+- **video:**
+  - Prevent race condition when scaling video frames concurrently. ([a93ed99d](https://github.com/TokTok/qTox/commit/a93ed99d104501adbd685a43e866cbaaf1e700d9))
+  - Handle empty frame dimensions when screen grabs are denied. ([cb02666a](https://github.com/TokTok/qTox/commit/cb02666a9b476274b29b2ee8ea806882eec60644))
+
+#### Features
+
+- Added translation using Weblate (Catalan) ([bbfcea8c](https://github.com/TokTok/qTox/commit/bbfcea8cb4dea1f0bbf43ae5ad5f6907e4a25f34))
+- Added translation using Weblate (Venetian) ([0f4c3592](https://github.com/TokTok/qTox/commit/0f4c359232cdf9b5c82fc4cbad72ed30812a17bf))
+- Added translation using Weblate (Kurdish (Northern)) ([91fe78f7](https://github.com/TokTok/qTox/commit/91fe78f7efde39936cc221c8c2d64708790552f3))
+- **Security:** Add indicator of active call with user. ([309bce31](https://github.com/TokTok/qTox/commit/309bce317ef3fd2e9fe75187f3e63dd431ffd02d))
+- **Settings:** Allow "Auto select" language ([bfecb4b3](https://github.com/TokTok/qTox/commit/bfecb4b34a1b4b5e70de6cf6d981880ffbe17efe))
+
 <a name="v1.18.3"></a>
 
 ## v1.18.3 (2025-02-25)
