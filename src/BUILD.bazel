@@ -81,6 +81,7 @@ qt_moc(
         "widget/form/conferenceinviteform.h",
         "widget/form/conferenceinvitewidget.h",
         "widget/form/debug/debuglog.h",
+        "widget/form/debug/debugnetprof.h",
         "widget/form/debug/debugobjecttree.h",
         "widget/form/debugwidget.h",
         "widget/form/filesform.h",
