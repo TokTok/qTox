@@ -58,7 +58,7 @@ Note though that with better video quality there is needed better internet conne
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Wähle deine Kameraauflösung.
-Höhere Werte führen zu einem schärferen Bild für deine Freunde, allerdings wird eine bessere
+Höhere Werte führen zu einem schärferen Bild für deine Kontakte, allerdings wird eine bessere
 Internetverbindung benötigt.
 Zu hohe Auflösungen können daher zu Problemen in Videoanrufen führen, wenn die Verbindung nicht
 schnell und stabil genug ist.</translation>
@@ -125,11 +125,11 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation>Verwenden Sie den Schieberegler, um die Verstärkung Ihres Eingangsgeräts im Bereich von %1dB bis %2dB einzustellen.</translation>
+        <translation>Verwende den Schieberegler, um die Verstärkung deines Eingangsgeräts im Bereich von %1dB bis %2dB einzustellen.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation>Verwenden Sie den Schieberegler, um die Aktivierungslautstärke für Ihr Eingabegerät einzustellen.</translation>
+        <translation>Verwende den Schieberegler, um die Aktivierungslautstärke für dein Eingabegerät einzustellen.</translation>
     </message>
 </context>
 <context>
@@ -237,7 +237,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Dies ist der öffentliche Schlüssel deines Freundes; verwende diesen, um seine Identität über einen anderen Kanal zu überprüfen. Diesen Schlüssel kann man nicht an andere Personen schicken, damit sie diesen Kontakt hinzufügen können.</translation>
+        <translation>Dies ist der öffentliche Schlüssel deines Kontakts; verwende diesen, um seine Identität über einen anderen Kanal zu überprüfen. Diesen Schlüssel kann man nicht an andere Personen schicken, damit sie diesen Kontakt hinzufügen können.</translation>
     </message>
     <message>
         <source>Public key (not ToxID):</source>
@@ -273,7 +273,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
-        <translation>Sie können Kommentare über diesen Kontakt hier speichern.</translation>
+        <translation>Du kannst Kommentare über diesen Kontakt hier speichern.</translation>
     </message>
 </context>
 <context>
@@ -315,7 +315,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation>Freunde hinzufügen</translation>
+        <translation>Kontakte hinzufügen</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
@@ -323,11 +323,11 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>Freundschaftsanfrage senden</translation>
+        <translation>Kontaktanfrage senden</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>Freundschaftsanfragen</translation>
+        <translation>Kontaktanfragen</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -339,24 +339,24 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Freund konnte nicht hinzugefügt werden</translation>
+        <translation>Kontakt konnte nicht hinzugefügt werden</translation>
     </message>
     <message>
         <source>Type in Tox ID of your friend</source>
-        <translation>Tox-ID deines Freundes eingeben</translation>
+        <translation>Tox-ID deines Kontakts eingeben</translation>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>Nachricht deiner Freundschaftsanfrage</translation>
+        <translation>Nachricht deiner Kontaktanfrage</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation>Nachricht eingeben, die mit der Freundschaftsanfrage gesendet werden soll (optional)</translation>
+        <translation>Nachricht eingeben, die mit der Kontaktanfrage gesendet werden soll (optional)</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation>Du kannst dich nicht selbst als Freund hinzufügen!</translation>
+        <translation>Du kannst dich nicht selbst als Kontakt hinzufügen!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -396,7 +396,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Freundschaftsanfragen senden</translation>
+        <translation>Kontaktanfragen senden</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -410,8 +410,8 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>%n Kontakt wird importiert. Klicken Sie auf Senden, um den Import zu bestätigen</numerusform>
-            <numerusform>%n Kontakte werden importiert. Kicken Sie auf Senden, um den Import zu bestätigen</numerusform>
+            <numerusform>%n Kontakt wird importiert. Klicke auf Senden, um den Import zu bestätigen</numerusform>
+            <numerusform>%n Kontakte werden importiert. Klicke auf Senden, um den Import zu bestätigen</numerusform>
         </translation>
     </message>
     <message>
@@ -434,7 +434,7 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">FreundIn hinzufügen</translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -489,13 +489,11 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Invalid proxy address</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ungültige Proxy -Adresse</translation>
+        <translation>Ungültige Proxy-Adresse</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bitte geben Sie eine gültige IP -Adresse oder einen gültigen Hostnamen für die Proxy -Einstellung ein.</translation>
+        <translation>Bitte gib eine gültige IP-Adresse oder einen gültigen Hostnamen für die Proxy-Einstellung ein.</translation>
     </message>
 </context>
 <context>
@@ -623,19 +621,16 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Überprüft, ob dieses Programm die neueste qTox-Version ausführt.</translation>
+        <translation>Überprüft, ob dieses Programm die neueste qTox-Version ausführt.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Startet im tragbaren Modus; lädt das Profil aus diesem Verzeichnis.</translation>
+        <translation>Startet im portablen Modus; lädt das Profil aus diesem Verzeichnis.</translation>
     </message>
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pfad</translation>
+        <translation>Pfad</translation>
     </message>
 </context>
 <context>
@@ -804,12 +799,12 @@ um sie in Windows speichern zu können.</translation>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Keine Schreibrechte für diesen Ordner</translation>
+        <translation>Keine Schreibrechte für diesen Ordner</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Du scheinst nicht die nötigen Rechte zu haben, um hier eine Datei zu speichern. Wähle doch ein anderes Verzeichnis.</translation>
+        <translation>Du scheinst nicht die nötigen Rechte zu haben, um hier eine Datei zu speichern. Wähle doch ein anderes Verzeichnis.</translation>
     </message>
 </context>
 <context>
@@ -832,8 +827,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Peer-ID kopieren</translation>
+        <translation>Peer-ID kopieren</translation>
     </message>
 </context>
 <context>
@@ -906,7 +900,7 @@ um sie in Windows speichern zu können.</translation>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me macht eine Freundschaftsanfrage: „%1“</translation>
+        <translation>/me macht eine Kontaktanfrage: „%1“</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -930,7 +924,7 @@ um sie in Windows speichern zu können.</translation>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation>Dieser Freund wurde bereits hinzugefügt</translation>
+        <translation>Dieser Kontakt wurde bereits hinzugefügt</translation>
     </message>
 </context>
 <context>
@@ -1065,15 +1059,15 @@ um sie in Windows speichern zu können.</translation>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation>Verschieben in Freundeskreis...</translation>
+        <translation>Verschieben in Kontaktgruppe...</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>Zu neuem Freundeskreis</translation>
+        <translation>Zu neuem Kontaktgruppe</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Aus Freundeskreis „%1“ entfernen</translation>
+        <translation>Aus Kontaktgruppe „%1“ entfernen</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1098,7 +1092,7 @@ um sie in Windows speichern zu können.</translation>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation>Dateien von diesem Freund automatisch annehmen</translation>
+        <translation>Dateien von diesem Kontakt automatisch annehmen</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1126,12 +1120,12 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation>In Freundeskreis „%1“ verschieben</translation>
+        <translation>In Kontaktgruppe „%1“ verschieben</translation>
     </message>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
-        <translation>Freund entfernen</translation>
+        <translation>Kontakt entfernen</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1150,8 +1144,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>Auto select</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Automatische Auswahl</translation>
+        <translation>Automatische Auswahl</translation>
     </message>
 </context>
 <context>
@@ -1224,7 +1217,7 @@ um sie in Windows speichern zu können.</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
-        <translation>Statusänderungen deiner Freunde anzeigen</translation>
+        <translation>Statusänderungen deiner Kontakte anzeigen</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
@@ -1275,18 +1268,15 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Klicken Sie hier, wenn Sie Fehler in einer Übersetzung finden und bei der Behebung helfen möchten.</translation>
+        <translation>Klicke hier, wenn du Fehler in einer Übersetzung findest und bei der Behebung helfen möchtest.</translation>
     </message>
     <message>
         <source>Help translate</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Helfen Sie beim Übersetzen</translation>
+        <translation>Beim Übersetzen helfen</translation>
     </message>
     <message>
         <source> min</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> min</translation>
+        <translation> min</translation>
     </message>
 </context>
 <context>
@@ -1309,7 +1299,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation>Gesprächsverlauf speichern</translation>
+        <translation>Chatverlauf speichern</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1337,7 +1327,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation>Gesprächsverlauf laden...</translation>
+        <translation>Chatverlauf laden...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1345,7 +1335,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation>Sind Sie sich sicher, dass Sie alle angezeigten Nachrichten löschen wollen?</translation>
+        <translation>Bist du sicher, dass du alle angezeigten Nachrichten löschen willst?</translation>
     </message>
 </context>
 <context>
@@ -1391,7 +1381,7 @@ anstatt ganz zu schließen.</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>Dieser QR-Code enthält deine Tox-ID. So kannst du sie auch mit deinen Freunden teilen.</translation>
+        <translation>Dieser QR-Code enthält deine Tox-ID. So kannst du sie auch mit deinen Kontakten teilen.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1416,7 +1406,7 @@ anstatt ganz zu schließen.</translation>
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
         <translation>Speichert dein Tox Profil in eine Datei.
-Das Profil beinhaltet keine Gesprächsverläufe.</translation>
+Das Profil beinhaltet keine Chatverläufe.</translation>
     </message>
     <message>
         <source>Export</source>
@@ -1493,12 +1483,12 @@ Das Profil beinhaltet keine Gesprächsverläufe.</translation>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation>Diese ID erlaubt es anderen Tox Benutzern, Sie als einen Kontakt hinzuzufügen.
-Teilen Sie Ihre ID mit Ihren Freunden um mit ihnen zu chatten.</translation>
+        <translation>Diese ID erlaubt es anderen Tox Benutzern, dich als einen Kontakt hinzuzufügen.
+Teile deine ID mit deinen Kontakten um mit ihnen zu chatten.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Status-Nachricht eingeben, die bei Anderen angezeigt werden soll</translation>
+        <translation>Status-Nachricht eingeben, die bei Anderen angezeigt werden soll</translation>
     </message>
 </context>
 <context>
@@ -1656,17 +1646,17 @@ Bitte gib in beide Felder das gleiche Passwort ein.</translation>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">Dieses optionale Passwort wird zum Verschlüsseln lokaler Nachrichtendaten und Ihres Profils verwendet.
-Wenn Sie dieses Passwort verlieren, gibt es keine Möglichkeit, es wiederherzustellen.
-Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
+        <translation>Dieses optionale Passwort wird zum Verschlüsseln lokaler Nachrichtendaten und deines Profils verwendet.
+Wenn du dieses Passwort verlierst, gibt es keine Möglichkeit, es wiederherzustellen.
+Drücke Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Das hier eingegebene Passwort ist optional und verschlüsselt Nachrichtendaten und Ihren geheimen Tox-Schlüssel. Empfangene Dateien werden nicht verschlüsselt. Ihre Profildaten werden niemals an Server gesendet. Dies ist keine Remote-Anmeldung, sondern nur lokal auf Ihrem Computer. qTox-Entwickler können Ihr Passwort nicht wiederherstellen, wenn es verloren geht.</translation>
+        <translation>Das hier eingegebene Passwort ist optional und verschlüsselt Nachrichtendaten und deinen geheimen Tox-Schlüssel. Empfangene Dateien werden nicht verschlüsselt. Deine Profildaten werden niemals an Server gesendet. Dies ist keine Remote-Anmeldung, sondern nur lokal auf deinem Computer. qTox-Entwickler können dein Passwort nicht wiederherstellen, wenn es verloren geht.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Passworteingabefeld, mindestens 6 Zeichen lang</translation>
+        <translation>Passworteingabefeld, mindestens 6 Zeichen lang</translation>
     </message>
 </context>
 <context>
@@ -1725,7 +1715,7 @@ Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>Suche nach bekannten Freunde</translation>
+        <translation>Suche nach bekannten Kontakten</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1733,11 +1723,11 @@ Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation>Sortierung und Sichtbarkeit deiner Freunde einstellen</translation>
+        <translation>Sortierung und Sichtbarkeit deiner Kontakte einstellen</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation>Seite „Freunde hinzufügen” öffnen</translation>
+        <translation>Seite „Kontakte hinzufügen” öffnen</translation>
     </message>
     <message>
         <source>Conference</source>
@@ -1777,7 +1767,7 @@ Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">FreundIn hinzufügen</translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -1902,16 +1892,15 @@ Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation>Freundschaftsanfrage erhalten</translation>
+        <translation>Kontaktanfrage erhalten</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation>Freundschaftsanfrage von %1 erhalten</translation>
+        <translation>Kontaktanfrage von %1 erhalten</translation>
     </message>
     <message>
         <source>Incoming call</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Eingehender Anruf</translation>
+        <translation>Eingehender Anruf</translation>
     </message>
 </context>
 <context>
@@ -1933,7 +1922,7 @@ Drücken Sie Umschalt+F1, um weitere Informationen zu erhalten.</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation>Möchtest du den kompletten Gesprächsverlauf endgültig löschen?</translation>
+        <translation>Möchtest du den kompletten Chatverlauf endgültig löschen?</translation>
     </message>
 </context>
 <context>
@@ -1957,8 +1946,8 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translation>NoSpam ist ein Teil deiner Tox-ID.
-Wenn du mit Freundesanfragen überhäuft wirst, solltest du den NoSpam-Wert ändern.
-Deine jetzigen Freunde bleiben erhalten, aber mit deiner alten Tox-ID kann dich dann niemand mehr hinzufügen.</translation>
+Wenn du mit Kontaktanfragen überhäuft wirst, solltest du den NoSpam-Wert ändern.
+Deine jetzigen Kontakte bleiben erhalten, aber mit deiner alten Tox-ID kann dich dann niemand mehr hinzufügen.</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -1967,8 +1956,8 @@ Deine jetzigen Freunde bleiben erhalten, aber mit deiner alten Tox-ID kann dich 
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>NoSpam ist ein Teil deiner Tox-ID. Wenn du mit Freundesanfragen überhäuft wirst, solltest du den
-NoSpam-Wert ändern. Deine jetzigen Freunde bleiben erhalten, aber mit deiner alten Tox-ID kann
+        <translation>NoSpam ist ein Teil deiner Tox-ID. Wenn du mit Kontaktanfragen überhäuft wirst, solltest du den
+NoSpam-Wert ändern. Deine jetzigen Kontakte bleiben erhalten, aber mit deiner alten Tox-ID kann
 dich dann niemand mehr hinzufügen.</translation>
     </message>
     <message>
@@ -1979,7 +1968,7 @@ dich dann niemand mehr hinzufügen.</translation>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation>Wenn aktiviert, wird der Gesprächsverlauf dauerhaft gesichert.
+        <translation>Wenn aktiviert, wird der Chatverlauf dauerhaft gesichert.
 Die Sicherung des Verlaufs ist noch in Entwicklung. Formatierungsänderungen beim Speichern sind möglich, die zu Datenverlust führen können.</translation>
     </message>
     <message>
@@ -2187,15 +2176,15 @@ Bitte verwende ein anderes.</translation>
     <message>
         <source>Are you sure you want to remove your password?</source>
         <extracomment>deletion confirmation text</extracomment>
-        <translation>Sind Sie sich sicher, dass Sie ihr Passwort entfernen wollen?</translation>
+        <translation>Bist du sicher, dass du dein Passwort entfernen willst?</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>Diese ID ermöglicht es anderen Tox-Benutzern, Sie hinzuzufügen und zu kontaktieren.
-Teilen Sie sie mit Ihren Freunden, um den Chat zu beginnen.
+        <translation>Diese ID ermöglicht es anderen Tox-Benutzern, dich hinzuzufügen und zu kontaktieren.
+Teile sie mit deinen Kontakten, um den Chat zu beginnen.
 
 Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</translation>
     </message>
@@ -2278,19 +2267,19 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Wähle einen Ordner aus, in dem die automatisch akzeptierten Dateien gespeichert werden sollen</translation>
+        <translation>Wähle einen Ordner aus, in dem die automatisch akzeptierten Dateien gespeichert werden sollen</translation>
     </message>
 </context>
 <context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Freund konnte nicht hinzugefügt werden</translation>
+        <translation>Kontakt konnte nicht hinzugefügt werden</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation>Du kannst dich nicht selbst als Freund hinzufügen!</translation>
+        <translation>Du kannst dich nicht selbst als Kontakt hinzufügen!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2344,7 +2333,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>qTox konnte Ihr Gesprächsprotokoll nicht öffnen. Das Speichern der Gespräche wird deaktiviert.</translation>
+        <translation>qTox konnte dein Chatprotokoll nicht öffnen. Das Speichern der Chats wird deaktiviert.</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -2447,8 +2436,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>%1 went offline during the call attempt</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ist während des Anrufversuchs offline gegangen</translation>
+        <translation>%1 ist während des Anrufversuchs offline gegangen</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2527,15 +2515,15 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     <name>RemoveChatDialog</name>
     <message>
         <source>Remove friend</source>
-        <translation>Freund entfernen</translation>
+        <translation>Kontakt entfernen</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Löscht den gesamten Chatverlauf mit diesem Freund, wenn aktiviert</translation>
+        <translation>Löscht den gesamten Chatverlauf mit diesem Kontakt, wenn aktiviert</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation>Gesprächsverlauf ebenfalls löschen</translation>
+        <translation>Chatverlauf ebenfalls löschen</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -2668,7 +2656,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Profilpasswort festlegen</translation>
+        <translation>Profilpasswort festlegen</translation>
     </message>
 </context>
 <context>
@@ -2702,7 +2690,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation>Freundschaftsanfrage:</translation>
+        <translation>Kontaktanfrage:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2717,7 +2705,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">FreundIn hinzufügen</translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -2872,7 +2860,7 @@ Formatierungszeichen ausblenden:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht, einen neuen Anruf oder eine Freundschaftsanfrage erhaltest und das Fenster nicht den Fokus hat.</translation>
+        <translation>Zeigt eine Benachrichtigung an, wenn du eine neue Nachricht, einen neuen Anruf oder eine Kontaktanfrage erhaltest und das Fenster nicht den Fokus hat.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2936,7 +2924,7 @@ Formatierungszeichen ausblenden:
     </message>
     <message>
         <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation>Freundesliste und Chatfenster in separat verschiebbare Fenster aufteilen.</translation>
+        <translation>Kontaktliste und Chatfenster in separat verschiebbare Fenster aufteilen.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
@@ -2969,51 +2957,43 @@ Formatierungszeichen ausblenden:
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vorschauen für gesendete und empfangene Bilder in Chats anzeigen. Bewegen Sie den Mauszeiger über die Inline-Vorschau, um eine größere Vorschau anzuzeigen.</translation>
+        <translation>Vorschauen für gesendete und empfangene Bilder in Chats anzeigen. Bewege den Mauszeiger über die Inline-Vorschau, um eine größere Vorschau anzuzeigen.</translation>
     </message>
     <message>
         <source>Image preview</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bildvorschau</translation>
+        <translation>Bildvorschau</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
 Decrease this to improve performance. A too low number here may cause the
 scroll bar to disappear.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maximale Anzahl von Nachrichten (pro Konversation), die aus dem
-Chatverlauf geladen werden. Verringern Sie diesen Wert, um die Leistung
+        <translation>Maximale Anzahl von Nachrichten (pro Konversation), die aus dem
+Chatverlauf geladen werden. Verringere diesen Wert, um die Leistung
 zu verbessern. Eine zu niedrige Zahl kann dazu führen, dass die
 Bildlaufleiste verschwindet.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maximale Größe der Chat-Protokollansicht</translation>
+        <translation>Maximale Größe der Chat-Protokollansicht</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
 number here may cause the scroll bar to disappear.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Anzahl der Nachrichten, die beim Scrollen aus dem Chatverlauf geladen
+        <translation>Anzahl der Nachrichten, die beim Scrollen aus dem Chatverlauf geladen
 werden sollen. Eine zu niedrige Zahl kann dazu führen, dass die
 Bildlaufleiste verschwindet.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Blockgröße des Chat-Protokolls</translation>
+        <translation>Blockgröße des Chat-Protokolls</translation>
     </message>
     <message>
         <source>Chat log:</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chatprotokoll:</translation>
+        <translation>Chatprotokoll:</translation>
     </message>
     <message>
         <source>Hide suffix after NULL symbol</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Suffix nach Nullsymbol verbergen</translation>
+        <translation>Suffix nach Nullsymbol verbergen</translation>
     </message>
 </context>
 <context>
@@ -3092,7 +3072,7 @@ Bildlaufleiste verschwindet.</translation>
     </message>
     <message>
         <source>Friends</source>
-        <translation>Freunde</translation>
+        <translation>Kontakte</translation>
     </message>
     <message>
         <source>Conferences</source>
@@ -3114,7 +3094,7 @@ Bildlaufleiste verschwindet.</translation>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
-        <translation>FreundIn hinzufügen</translation>
+        <translation>Kontakt hinzufügen</translation>
     </message>
     <message>
         <source>Conference invites</source>
@@ -3138,22 +3118,22 @@ Bildlaufleiste verschwindet.</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
-        <translation>Toxcore konnte nicht gestartet werden, die Applikation wird beendet nachdem Sie diese Nachricht schließen.</translation>
+        <translation>Toxcore konnte nicht gestartet werden, die Applikation wird beendet nachdem du diese Nachricht schließt.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation>Toxcore konnte nicht mit Ihren Proxy Einstellungen gestartet werden. qTox kann nicht starten; bitte ändern Sie Ihre Einstellungen und starten Sie erneut.</translation>
+        <translation>Toxcore konnte nicht mit deinen Proxy Einstellungen gestartet werden. qTox kann nicht starten; bitte ändere deine Einstellungen und starte erneut.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation>Freundschaftsanfrage konnte nicht gesendet werden</translation>
+        <translation>Kontaktanfrage konnte nicht gesendet werden</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
-            <numerusform>%n neue Freundschaftsanfrage</numerusform>
-            <numerusform>%n neue Freundschaftsanfragen</numerusform>
+            <numerusform>%n neue Kontaktanfrage</numerusform>
+            <numerusform>%n neue Kontaktanfragen</numerusform>
         </translation>
     </message>
     <message numerus="yes">
