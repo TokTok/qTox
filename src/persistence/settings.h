@@ -31,6 +31,7 @@
 class Profile;
 class QCommandLineParser;
 class IMessageBoxManager;
+class QTimer;
 
 namespace Db {
 enum class syncType;
@@ -135,10 +136,13 @@ public:
     };
 
 public:
-    explicit Settings(IMessageBoxManager& messageBoxManager);
+    explicit Settings(IMessageBoxManager& messageBoxManager,
+                      Paths::Portable mode = Paths::Portable::Auto);
     ~Settings() override;
     Settings(Settings& settings) = delete;
     Settings& operator=(const Settings&) = delete;
+
+    void setSaveTimerInterval(int ms);
 
     Paths& getPaths();
     void createSettingsDir();
@@ -594,8 +598,10 @@ private:
 
 private slots:
     void savePersonal(QString profileName, const ToxEncrypt* passkey);
+    void requestSave();
 
 private:
+    QTimer* saveTimer{nullptr};
     bool loaded;
 
     bool useCustomDhtList;

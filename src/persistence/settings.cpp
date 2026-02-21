@@ -36,6 +36,7 @@
 #include <QStyleFactory>
 #include <QStyleHints>
 #include <QThread>
+#include <QTimer>
 #include <QtCore/QCommandLineParser>
 
 namespace {
@@ -88,8 +89,9 @@ QRecursiveMutex Settings::bigLock;
 QThread* Settings::settingsThread{nullptr};
 static constexpr int GLOBAL_SETTINGS_VERSION = 1;
 static constexpr int PERSONAL_SETTINGS_VERSION = 1;
+static constexpr int SAVE_TIMER_INTERVAL_MS = 500;
 
-Settings::Settings(IMessageBoxManager& messageBoxManager_)
+Settings::Settings(IMessageBoxManager& messageBoxManager_, Paths::Portable mode)
     : loaded{false}
     , useCustomDhtList{false}
     , dhtServerId{-1}
@@ -176,7 +178,7 @@ Settings::Settings(IMessageBoxManager& messageBoxManager_)
     , screenGrabbed{false}
     , camVideoFPS{0}
     , themeColor{0}
-    , paths{}
+    , paths{mode}
     , globalSettingsVersion{0}
     , personalSettingsVersion{0}
     , messageBoxManager{messageBoxManager_}
@@ -186,6 +188,15 @@ Settings::Settings(IMessageBoxManager& messageBoxManager_)
     settingsThread->setObjectName("qTox Settings");
     settingsThread->start(QThread::LowPriority);
     qRegisterMetaType<const ToxEncrypt*>("const ToxEncrypt*");
+
+    saveTimer = new QTimer(this);
+    saveTimer->setInterval(SAVE_TIMER_INTERVAL_MS);
+    saveTimer->setSingleShot(true);
+    connect(saveTimer, &QTimer::timeout, this, [this]() {
+        saveGlobal();
+        savePersonal();
+    });
+
     moveToThread(settingsThread);
     loadGlobal();
 }
@@ -196,6 +207,11 @@ Settings::~Settings()
     settingsThread->exit(0);
     settingsThread->wait();
     delete settingsThread;
+}
+
+void Settings::setSaveTimerInterval(int ms)
+{
+    QMetaObject::invokeMethod(this, [this, ms]() { saveTimer->setInterval(ms); }, Qt::BlockingQueuedConnection);
 }
 
 void Settings::loadGlobal()
@@ -1570,6 +1586,7 @@ void Settings::setWidgetData(const QString& uniqueName, const QByteArray& data)
         }
     }
     if (updated) {
+        requestSave();
         emit widgetDataChanged(uniqueName);
     }
 }
@@ -2425,12 +2442,22 @@ ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType 
     }
 }
 
+void Settings::requestSave()
+{
+    if (QThread::currentThread() != thread()) {
+        QMetaObject::invokeMethod(this, "requestSave", Qt::QueuedConnection);
+        return;
+    }
+    saveTimer->start();
+}
+
 template <typename T>
 bool Settings::setVal(T& savedVal, T newVal)
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     if (savedVal != newVal) {
         savedVal = newVal;
+        requestSave();
         return true;
     }
     return false;

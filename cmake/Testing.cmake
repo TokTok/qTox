@@ -60,6 +60,7 @@ auto_test(persistence dbschema "" "dbutility_library")
 auto_test(persistence/dbupgrade dbTo11 "" "dbutility_library")
 auto_test(persistence offlinemsgengine "" "")
 auto_test(persistence paths "" "")
+auto_test(persistence settings "" "")
 if("EmojiOne" IN_LIST SMILEY_PACKS)
   auto_test(persistence smileypack "${SMILEY_RESOURCES}" "") # needs emojione
 endif()
