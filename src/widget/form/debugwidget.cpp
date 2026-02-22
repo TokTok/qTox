@@ -6,6 +6,7 @@
 
 #include "src/widget/contentlayout.h"
 #include "src/widget/form/debug/debuglog.h"
+#include "src/widget/form/debug/debugnetprof.h"
 #include "src/widget/form/debug/debugobjecttree.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
@@ -29,6 +30,7 @@ DebugWidget::DebugWidget(Paths& paths, Style& style, Widget* parent)
     dbgForms = {
         new DebugLogForm(paths, style, this),
         new DebugObjectTree(style, this),
+        new DebugNetProfForm(style, this),
     };
 
     for (auto* dbgForm : dbgForms)
