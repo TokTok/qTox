@@ -242,8 +242,9 @@ void SettingsSerializer::save()
         return;
     }
 
-    QByteArray data(magic, 4);
-    QDataStream stream(&data, QIODevice::ReadWrite | QIODevice::Append);
+    QByteArray data;
+    QDataStream stream(&data, QIODevice::WriteOnly);
+    stream.writeRawData(magic, 4);
     stream.setVersion(QDataStream::Qt_5_0);
 
     // prevent signed overflow and the associated warning
