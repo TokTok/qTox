@@ -577,6 +577,26 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Įgalinti derinimo įrankius (tik kūrėjams)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Didžiausias eilučių, kurias reikia nukopijuoti į mainų sritį, skaičius paspaudus „Kopijuoti derinimo žurnalą“.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linijos</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalus žurnalo linijų amžius (valandomis/minutėmis), kad galėtumėte nukopijuoti į mainų sritį, paspausdami „Kopijuoti derinimo žurnalą“.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalus amžius:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

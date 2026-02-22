@@ -691,6 +691,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಡೀಬಗ್ ಪರಿಕರಗಳನ್ನು ಸಕ್ರಿಯಗೊಳಿಸಿ (ಡೆವಲಪರ್‌ಗಳು ಮಾತ್ರ)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;ನಕಲಿಸಿ ಡೀಬಗ್ ಲಾಗ್&quot; ಅನ್ನು ಒತ್ತುವಾಗ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲು ಗರಿಷ್ಠ ಸಂಖ್ಯೆಯ ಸಾಲುಗಳು.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> ಸಾಲುಗಳು</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;ಡೀಬಗ್ ಲಾಗ್ ನಕಲಿಸಿ&quot; ಅನ್ನು ಒತ್ತಿದಾಗ ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲು ಲಾಗ್ ಲೈನ್‌ಗಳ ಗರಿಷ್ಠ ವಯಸ್ಸು (ಗಂಟೆಗಳು/ನಿಮಿಷಗಳಲ್ಲಿ).</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ಗರಿಷ್ಠ ವಯಸ್ಸು:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

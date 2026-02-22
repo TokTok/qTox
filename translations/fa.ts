@@ -595,6 +595,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">فعال کردن ابزار Debug Tools (فقط توسعه دهندگان)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حداکثر تعداد خطوط برای کپی در کلیپ بورد هنگام فشار دادن &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> خط</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حداکثر سن (به ساعت/دقیقه) خطوط گزارش برای کپی در کلیپ بورد هنگام فشار دادن &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">حداکثر سن:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

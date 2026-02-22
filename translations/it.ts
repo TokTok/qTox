@@ -572,6 +572,26 @@ il che può portare a problemi con le videochiamate.</translation>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Abilita strumenti di debug (solo sviluppatori)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numero massimo di righe da copiare negli appunti quando si preme &quot;Copia il registro di debug&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linee</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Età massima (in ore/minuti) delle righe di registro da copiare negli appunti quando si preme &quot;Copia il registro di debug&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Età massima:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

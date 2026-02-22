@@ -595,6 +595,26 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hibakereső eszközök engedélyezése (csak fejlesztőknek)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">A vágólapra másolható sorok maximális száma, amikor megnyomja a &quot;Hibakeresési napló másolása&quot; gombot.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> vonalak</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">A vágólapra másolható naplósorok maximális kora (órában/percben), amikor megnyomja a &quot;Hibakeresési napló másolása&quot; gombot.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max életkor:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
