@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "src/core/icorecallcontrol.h"
 #include "src/core/toxcall.h"
 
 #include <QMutex>
@@ -30,7 +31,7 @@ class VideoFrame;
 class Core;
 struct vpx_image;
 
-class CoreAV : public QObject
+class CoreAV : public QObject, public ICoreCallControl
 {
     Q_OBJECT
 
@@ -44,11 +45,11 @@ public:
 
     ~CoreAV() override;
 
-    bool isCallStarted(const Friend* f) const;
+    bool isCallStarted(const Friend* f) const override;
     bool isCallStarted(const Conference* c) const;
-    bool isCallActive(const Friend* f) const;
+    bool isCallActive(const Friend* f) const override;
     bool isCallActive(const Conference* c) const;
-    bool isCallVideoEnabled(const Friend* f) const;
+    bool isCallVideoEnabled(const Friend* f) const override;
     bool sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, uint8_t chans,
                        uint32_t rate) const;
     void sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> frame);
@@ -65,10 +66,10 @@ public:
     bool isConferenceCallInputMuted(const Conference* c) const;
     bool isConferenceCallOutputMuted(const Conference* c) const;
 
-    bool isCallInputMuted(const Friend* f) const;
-    bool isCallOutputMuted(const Friend* f) const;
-    void toggleMuteCallInput(const Friend* f);
-    void toggleMuteCallOutput(const Friend* f);
+    bool isCallInputMuted(const Friend* f) const override;
+    bool isCallOutputMuted(const Friend* f) const override;
+    void toggleMuteCallInput(const Friend* f) override;
+    void toggleMuteCallOutput(const Friend* f) override;
     static void conferenceCallCallback(void* tox, uint32_t conference, uint32_t peer,
                                        const int16_t* data, unsigned samples, uint8_t channels,
                                        uint32_t sample_rate, void* core);
@@ -76,9 +77,9 @@ public:
     bool isAnyCallActive() const;
 
 public slots:
-    bool startCall(uint32_t friendNum, bool video);
-    bool answerCall(uint32_t friendNum, bool video);
-    bool cancelCall(uint32_t friendNum);
+    bool startCall(uint32_t friendNum, bool video) override;
+    bool answerCall(uint32_t friendNum, bool video) override;
+    bool cancelCall(uint32_t friendNum) override;
     void timeoutCall(uint32_t friendNum);
     void start();
 

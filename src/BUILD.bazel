@@ -38,6 +38,7 @@ qt_moc(
         "model/debug/debuglogmodel.h",
         "model/debug/debugobjecttreemodel.h",
         "model/friend.h",
+        "model/friendchatstate.h",
         "model/friendlist/friendlistmanager.h",
         "model/friendmessagedispatcher.h",
         "model/ichatlog.h",
@@ -156,6 +157,7 @@ objc_library(
     non_arc_srcs = ["platform/camera/avfoundation.mm"],
     sdk_frameworks = ["AVFoundation"],
     tags = ["macos"],
+    target_compatible_with = ["@platforms//os:macos"],
     deps = ["@qt//:qt_core"],
 )
 

@@ -43,4 +43,10 @@ public:
 
     virtual bool getHidePostNullSuffix() const = 0;
     virtual void setHidePostNullSuffix(bool newValue) = 0;
+
+    virtual bool getTypingNotification() const = 0;
+    virtual void setTypingNotification(bool enabled) = 0;
+
+    virtual bool getStatusChangeNotificationEnabled() const = 0;
+    virtual void setStatusChangeNotificationEnabled(bool newValue) = 0;
 };
