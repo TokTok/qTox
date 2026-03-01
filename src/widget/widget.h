@@ -42,6 +42,7 @@ class Core;
 class FilesForm;
 class Friend;
 class FriendChatroom;
+class FriendChatState;
 class FriendListWidget;
 class FriendWidget;
 class GenericChatroomWidget;
@@ -242,7 +243,7 @@ private slots:
 
     void onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroom> chatroom,
                             std::shared_ptr<FriendMessageDispatcher> dispatcher,
-                            std::shared_ptr<ChatHistory> chatHistory);
+                            std::shared_ptr<ChatHistory> chatHistory, FriendChatState* chatState);
     void onConferenceModelAdded(Conference* newConference, std::shared_ptr<ConferenceRoom> chatroom,
                                 std::shared_ptr<ConferenceMessageDispatcher> dispatcher,
                                 std::shared_ptr<IChatLog> chatHistory);
