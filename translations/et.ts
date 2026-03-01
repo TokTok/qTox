@@ -758,6 +758,13 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Grupivestlus #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3129,10 +3136,6 @@ logi:</translation>
     <message>
         <source>Contacts</source>
         <translation>Kontaktid</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Grupivestlus #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

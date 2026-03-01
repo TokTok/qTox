@@ -824,6 +824,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">그룹채팅 #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3547,10 +3554,6 @@ number here may cause the scroll bar to disappear.</source>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">연락처 검색</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">그룹채팅 #%1</translation>
     </message>
     <message>
         <source>Show</source>

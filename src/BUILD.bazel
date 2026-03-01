@@ -30,6 +30,7 @@ qt_moc(
         "model/about/aboutfriend.h",
         "model/chat.h",
         "model/chathistory.h",
+        "model/chatmanager.h",
         "model/chatroom/conferenceroom.h",
         "model/chatroom/friendchatroom.h",
         "model/conference.h",

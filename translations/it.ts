@@ -751,6 +751,13 @@ in modo da poter salvare il file su Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Gruppo #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3080,10 +3087,6 @@ chat:</translation>
     <message>
         <source>Your name</source>
         <translation>qTox User</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Gruppo #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

@@ -759,6 +759,13 @@ więc możesz zapisać ten plik na systemie Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Konferencja #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3093,10 +3100,6 @@ Zbyt mała liczba może spowodować zniknięcie paska przewijania.</translation>
     <message>
         <source>Contacts</source>
         <translation>Kontakty</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Konferencja #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

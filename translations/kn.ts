@@ -910,6 +910,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>ಸಮ್ಮೇಳನ #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3717,11 +3724,6 @@ number here may cause the scroll bar to disappear.</source>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ಸಂಪರ್ಕಗಳನ್ನು ಹುಡುಕಿ</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ಸಮ್ಮೇಳನ #%1</translation>
     </message>
     <message>
         <source>Show</source>

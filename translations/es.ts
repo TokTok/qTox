@@ -752,6 +752,13 @@ para que puedas guardar el archivo en windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Grupo #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3081,10 +3088,6 @@ desplazamiento.</translation>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
         <translation>Cerrar sesión</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Grupo #%1</translation>
     </message>
     <message>
         <source>Show</source>

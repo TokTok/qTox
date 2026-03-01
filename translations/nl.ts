@@ -756,6 +756,13 @@ zodat u het bestand op Windows kunt opslaan.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Conferentie #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3092,10 +3099,6 @@ ek:</translation>
     <message>
         <source>Your name</source>
         <translation>Je naam</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Conferentie #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

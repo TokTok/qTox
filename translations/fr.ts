@@ -751,6 +751,13 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>conférence #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3075,10 +3082,6 @@ Un nombre trop faible ici peut entraîner la disparition de la barre de défilem
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
         <translation>Déconnexion</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>conférence #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

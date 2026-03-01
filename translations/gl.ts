@@ -784,6 +784,13 @@ para que poida gardar o ficheiro en Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Grupo de charla #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3196,10 +3203,6 @@ de chat:</translation>
     <message>
         <source>Search Contacts</source>
         <translation>Buscar contactos</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Grupo de charla #%1</translation>
     </message>
     <message>
         <source>Show</source>

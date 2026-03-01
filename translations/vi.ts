@@ -758,6 +758,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Nhómchat #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3111,10 +3118,6 @@ chuyện:</translation>
     <message>
         <source>Search Contacts</source>
         <translation>Tìm kiếm liên hệ</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Nhómchat #%1</translation>
     </message>
     <message>
         <source>Show</source>

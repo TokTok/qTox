@@ -759,6 +759,13 @@ så att du kan spara filen i Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Gruppchatt #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3078,10 +3085,6 @@ för lågt nummer här kan göra att rullningslisten försvinner.</translation>
     <message>
         <source>Your name</source>
         <translation>Ditt namn</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Gruppchatt #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

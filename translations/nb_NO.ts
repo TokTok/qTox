@@ -760,6 +760,13 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Gruppesludring #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3106,10 +3113,6 @@ logg:</translation>
     <message>
         <source>Your name</source>
         <translation>Ditt navn</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Gruppesludring #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

@@ -758,6 +758,13 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Ryhmäkeskustelu #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3124,10 +3131,6 @@ loki:</translation>
     <message>
         <source>Contacts</source>
         <translation>Yhteystiedot</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Ryhmäkeskustelu #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

@@ -340,6 +340,8 @@ set(${BINARY_NAME}_SOURCES
     src/model/about/iaboutfriend.h
     src/model/chathistory.cpp
     src/model/chathistory.h
+    src/model/chatmanager.cpp
+    src/model/chatmanager.h
     src/model/chatlogitem.cpp
     src/model/chatlogitem.h
     src/model/chatroom/friendchatroom.cpp

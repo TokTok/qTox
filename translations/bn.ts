@@ -912,6 +912,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>সম্মেলন #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3728,11 +3735,6 @@ number here may cause the scroll bar to disappear.</source>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">পরিচিতি অনুসন্ধান করুন</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সম্মেলন #%1</translation>
     </message>
     <message>
         <source>Show</source>

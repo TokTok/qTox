@@ -801,6 +801,13 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Konferenca #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3315,11 +3322,6 @@ klepeta:</translation>
     <message>
         <source>Your name</source>
         <translation type="unfinished">Tvoje ime</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konferenca #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

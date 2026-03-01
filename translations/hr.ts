@@ -784,6 +784,13 @@ tako da možete spremiti datoteku na Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Grupno čavrljanje br. %1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3134,10 +3141,6 @@ azgovora:</translation>
     <message>
         <source>Your name</source>
         <translation>Tvoje ime</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Grupno čavrljanje br. %1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

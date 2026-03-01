@@ -760,6 +760,13 @@ so you can save the file on Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Skupinový chat %1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3120,10 +3127,6 @@ zhovoru:</translation>
     <message>
         <source>Search Contacts</source>
         <translation>Vyhľadávanie kontaktov</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Skupinový chat %1</translation>
     </message>
     <message>
         <source>Show</source>

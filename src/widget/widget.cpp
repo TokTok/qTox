@@ -44,6 +44,7 @@
 #include "src/friendlist.h"
 #include "src/ipc.h"
 #include "src/model/chathistory.h"
+#include "src/model/chatmanager.h"
 #include "src/model/chatroom/conferenceroom.h"
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/conference.h"
@@ -258,8 +259,12 @@ void Widget::init()
 
     core = &profile.getCore();
 
-    sharedMessageProcessorParams =
-        std::make_unique<MessageProcessor::SharedParams>(Core::getMaxMessageSize());
+    chatManager = std::make_unique<ChatManager>(profile, settings, *friendList, *conferenceList,
+                                                contentDialogManager.get(), this);
+    connect(chatManager.get(), &ChatManager::friendAdded, this, &Widget::onFriendModelAdded);
+    connect(chatManager.get(), &ChatManager::conferenceCreated, this,
+            &Widget::onConferenceModelCreated);
+    connect(chatManager.get(), &ChatManager::conferenceNeedsName, this, &Widget::onConferenceNeedsName);
 
     chatListWidget =
         new FriendListWidget(*core, this, settings, style, *messageBoxManager, *friendList,
@@ -717,27 +722,20 @@ void Widget::onSelfAvatarLoaded(const QPixmap& pic)
 void Widget::onCoreChanged(Core& core_)
 {
     core = &core_;
+
+    // Model signal handlers are connected via ChatManager.
+    chatManager->connectToCore(core_);
+
+    // UI-specific Core signal connections.
     connect(core, &Core::connected, this, &Widget::onConnected);
     connect(core, &Core::disconnected, this, &Widget::onDisconnected);
     connect(core, &Core::statusSet, this, &Widget::onStatusSet);
     connect(core, &Core::usernameSet, this, &Widget::setUsername);
     connect(core, &Core::statusMessageSet, this, &Widget::setStatusMessage);
-    connect(core, &Core::friendAdded, this, &Widget::addFriend);
     connect(core, &Core::failedToAddFriend, this, &Widget::addFriendFailed);
-    connect(core, &Core::friendUsernameChanged, this, &Widget::onFriendUsernameChanged);
-    connect(core, &Core::friendStatusChanged, this, &Widget::onCoreFriendStatusChanged);
-    connect(core, &Core::friendStatusMessageChanged, this, &Widget::onFriendStatusMessageChanged);
     connect(core, &Core::friendRequestReceived, this, &Widget::onFriendRequestReceived);
-    connect(core, &Core::friendMessageReceived, this, &Widget::onFriendMessageReceived);
-    connect(core, &Core::receiptReceived, this, &Widget::onReceiptReceived);
     connect(core, &Core::conferenceInviteReceived, this, &Widget::onConferenceInviteReceived);
-    connect(core, &Core::conferenceMessageReceived, this, &Widget::onConferenceMessageReceived);
-    connect(core, &Core::conferencePeerlistChanged, this, &Widget::onConferencePeerlistChanged);
-    connect(core, &Core::conferencePeerNameChanged, this, &Widget::onConferencePeerNameChanged);
-    connect(core, &Core::conferenceTitleChanged, this, &Widget::onConferenceTitleChanged);
     connect(core, &Core::conferencePeerAudioPlaying, this, &Widget::onConferencePeerAudioPlaying);
-    connect(core, &Core::emptyConferenceCreated, this, &Widget::onEmptyConferenceCreated);
-    connect(core, &Core::conferenceJoined, this, &Widget::onConferenceJoined);
     connect(core, &Core::friendTypingChanged, this, &Widget::onFriendTypingChanged);
     connect(core, &Core::conferenceSentFailed, this, &Widget::onConferenceSendFailed);
     connect(core, &Core::usernameSet, this, &Widget::refreshPeerListsLocal);
@@ -746,8 +744,6 @@ void Widget::onCoreChanged(Core& core_)
     connect(this, &Widget::friendRequested, core, &Core::requestFriendship);
     connect(this, &Widget::friendRequestAccepted, core, &Core::acceptFriendRequest);
     connect(this, &Widget::changeConferenceTitle, core, &Core::changeConferenceTitle);
-
-    sharedMessageProcessorParams->setPublicKey(core->getSelfPublicKey().toString());
 }
 
 void Widget::onConnected()
@@ -1025,7 +1021,7 @@ void Widget::setUsername(const QString& username)
             Qt::convertFromPlainText(username, Qt::WhiteSpaceNormal)); // for overlength names
     }
 
-    sharedMessageProcessorParams->onUserNameSet(username);
+    chatManager->getSharedMessageProcessorParams().onUserNameSet(username);
 }
 
 void Widget::onStatusMessageChanged(const QString& newStatusMessage)
@@ -1196,7 +1192,7 @@ void Widget::dispatchFile(ToxFile file)
     }
 
     const auto senderPk = (file.direction == ToxFile::SENDING) ? core->getSelfPublicKey() : pk;
-    friendChatLogs[pk]->onFileUpdated(senderPk, file);
+    chatManager->getFriendChatLog(pk)->onFileUpdated(senderPk, file);
 
     filesForm->onFileUpdated(file);
 }
@@ -1226,40 +1222,23 @@ void Widget::onRejectCall(uint32_t friendId)
     av->cancelCall(friendId);
 }
 
-void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
+void Widget::onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroom> chatroom,
+                                std::shared_ptr<FriendMessageDispatcher> friendMessageDispatcher,
+                                std::shared_ptr<ChatHistory> chatHistory)
 {
-    assert(core != nullptr);
-    settings.updateFriendAddress(friendPk.toString());
+    const ToxPk& friendPk = newFriend->getPublicKey();
 
-    Friend* newFriend = friendList->addFriend(friendId, friendPk, settings);
-    auto* rawChatroom =
-        new FriendChatroom(newFriend, contentDialogManager.get(), *core, settings, *conferenceList);
-    const std::shared_ptr<FriendChatroom> chatroom(rawChatroom);
     const auto compact = settings.getCompactLayout();
     auto* widget =
         new FriendWidget(chatroom, compact, settings, style, *messageBoxManager, profile, this);
     connectFriendWidget(*widget);
-    auto* history = profile.getHistory();
 
-    auto friendMessageDispatcher =
-        std::make_shared<FriendMessageDispatcher>(*newFriend,
-                                                  MessageProcessor(*sharedMessageProcessorParams),
-                                                  *core);
-
-    // Note: We do not have to connect the message dispatcher signals since
-    // ChatHistory hooks them up in a very specific order
-    auto chatHistory =
-        std::make_shared<ChatHistory>(*newFriend, history, *core, settings,
-                                      *friendMessageDispatcher, *friendList, *conferenceList);
     auto* friendForm =
         new ChatForm(profile, newFriend, *chatHistory, *friendMessageDispatcher, *documentCache,
                      *smileyPack, cameraSource, settings, style, *messageBoxManager,
                      *contentDialogManager, *friendList, *conferenceList, this);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
-    friendMessageDispatchers[friendPk] = friendMessageDispatcher;
-    friendChatLogs[friendPk] = chatHistory;
-    friendChatRooms[friendPk] = chatroom;
     friendWidgets[friendPk] = widget;
     chatForms[friendPk] = friendForm;
 
@@ -1282,6 +1261,7 @@ void Widget::addFriend(uint32_t friendId, const ToxPk& friendPk)
     connect(newFriend, &Friend::aliasChanged, this, &Widget::onFriendAliasChanged);
     connect(newFriend, &Friend::displayedNameChanged, this, &Widget::onFriendDisplayedNameChanged);
     connect(newFriend, &Friend::statusChanged, this, &Widget::onFriendStatusChanged);
+    connect(newFriend, &Friend::statusMessageChanged, this, &Widget::onFriendStatusMessageUpdated);
 
     connect(friendForm, &ChatForm::incomingNotification, this, &Widget::incomingNotification);
     connect(friendForm, &ChatForm::outgoingNotification, this, &Widget::outgoingNotification);
@@ -1321,20 +1301,6 @@ void Widget::addFriendFailed(const ToxPk& userId, const QString& errorInfo)
     QMessageBox::critical(nullptr, "Error", info);
 }
 
-void Widget::onCoreFriendStatusChanged(uint32_t friendId, Status::Status status)
-{
-    const auto& friendPk = friendList->id2Key(friendId);
-    Friend* f = friendList->findFriend(friendPk);
-    if (f == nullptr) {
-        return;
-    }
-
-    f->setStatus(status);
-
-    // Any widget behavior will be triggered based off of the status
-    // transformations done by the Friend class
-}
-
 void Widget::onFriendStatusChanged(const ToxPk& friendPk, Status::Status status)
 {
     FriendWidget* widget = friendWidgets[friendPk];
@@ -1353,20 +1319,10 @@ void Widget::onFriendStatusChanged(const ToxPk& friendPk, Status::Status status)
     contentDialogManager->updateFriendStatus(friendPk);
 }
 
-void Widget::onFriendStatusMessageChanged(uint32_t friendId, const QString& message)
+void Widget::onFriendStatusMessageUpdated(const ToxPk& friendPk, const QString& message)
 {
-    const auto& friendPk = friendList->id2Key(friendId);
-    Friend* f = friendList->findFriend(friendPk);
-    if (f == nullptr) {
-        return;
-    }
-
-    QString str = message;
-    str.replace('\n', ' ').remove('\r').remove(QChar('\0'));
-    f->setStatusMessage(str);
-
-    friendWidgets[friendPk]->setStatusMsg(str);
-    chatForms[friendPk]->setStatusMessage(str);
+    friendWidgets[friendPk]->setStatusMsg(message);
+    chatForms[friendPk]->setStatusMessage(message);
 }
 
 void Widget::onFriendDisplayedNameChanged(const QString& displayed)
@@ -1385,19 +1341,6 @@ void Widget::onFriendDisplayedNameChanged(const QString& displayed)
     }
 
     chatListWidget->itemsChanged();
-}
-
-void Widget::onFriendUsernameChanged(uint32_t friendId, const QString& username)
-{
-    const auto& friendPk = friendList->id2Key(friendId);
-    Friend* f = friendList->findFriend(friendPk);
-    if (f == nullptr) {
-        return;
-    }
-
-    QString str = username;
-    str.replace('\n', ' ').remove('\r').remove(QChar('\0'));
-    f->setName(str);
 }
 
 void Widget::onFriendAliasChanged(const ToxPk& friendId, const QString& alias)
@@ -1472,28 +1415,6 @@ void Widget::openDialog(GenericChatroomWidget* widget, bool newWindow)
     }
 }
 
-void Widget::onFriendMessageReceived(uint32_t friendNumber, const QString& message, bool isAction)
-{
-    const auto& friendId = friendList->id2Key(friendNumber);
-    Friend* f = friendList->findFriend(friendId);
-    if (f == nullptr) {
-        return;
-    }
-
-    friendMessageDispatchers[f->getPublicKey()]->onMessageReceived(isAction, message);
-}
-
-void Widget::onReceiptReceived(uint32_t friendId, ReceiptNum receipt)
-{
-    const auto& friendKey = friendList->id2Key(friendId);
-    Friend* f = friendList->findFriend(friendKey);
-    if (f == nullptr) {
-        return;
-    }
-
-    friendMessageDispatchers[f->getPublicKey()]->onReceiptReceived(receipt);
-}
-
 void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
 {
     const ToxPk& friendPk = frnd->getPublicKey();
@@ -1506,7 +1427,7 @@ void Widget::addFriendDialog(const Friend* frnd, ContentDialog* dialog)
     }
 
     auto* form = chatForms[friendPk];
-    auto chatroom = friendChatRooms[friendPk];
+    auto chatroom = chatManager->getFriendChatroom(friendPk);
     FriendWidget* friendWidget = contentDialogManager->addFriendToDialog(dialog, chatroom, form);
 
     friendWidget->setStatusMsg(widget->getStatusMsg());
@@ -1559,7 +1480,7 @@ void Widget::addConferenceDialog(const Conference* conference, ContentDialog* di
     }
 
     auto* chatForm = conferenceForms[conferenceId].data();
-    auto chatroom = conferenceRooms[conferenceId];
+    auto chatroom = chatManager->getConferenceRoom(conferenceId);
     auto* conferenceWidget = contentDialogManager->addConferenceToDialog(dialog, chatroom, chatForm);
 
     auto removeConference = qOverload<const ConferenceId&>(&Widget::removeConference);
@@ -1811,16 +1732,12 @@ void Widget::removeFriend(Friend* f, bool fake)
         lastDialog->removeFriend(friendPk);
     }
 
-    friendList->removeFriend(friendPk, settings, fake);
     if (!fake) {
-        core->removeFriend(f->getId());
-        // aliases aren't supported for non-friend peers in conferences, revert to basic username
-        for (Conference* c : conferenceList->getAllConferences()) {
-            if (c->getPeerList().contains(friendPk)) {
-                c->updateUsername(friendPk, f->getUserName());
-            }
-        }
+        chatManager->removeFriend(friendPk);
+    } else {
+        chatManager->removeFriendModel(friendPk);
     }
+    friendList->removeFriend(friendPk, settings, fake);
 
     friendWidgets.remove(friendPk);
 
@@ -2037,52 +1954,6 @@ void Widget::onConferenceInviteAccepted(const ConferenceInvite& inviteInfo)
     }
 }
 
-void Widget::onConferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,
-                                         const QString& message, bool isAction)
-{
-    const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
-    assert(conferenceList->findConference(conferenceId));
-
-    const ToxPk author = core->getConferencePeerPk(conferencenumber, peernumber);
-
-    conferenceMessageDispatchers[conferenceId]->onMessageReceived(author, isAction, message);
-}
-
-void Widget::onConferencePeerlistChanged(uint32_t conferencenumber)
-{
-    const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
-    Conference* c = conferenceList->findConference(conferenceId);
-    assert(c);
-    c->regeneratePeerList();
-}
-
-void Widget::onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
-                                         const QString& newName)
-{
-    const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
-    Conference* c = conferenceList->findConference(conferenceId);
-    assert(c);
-
-    const QString setName = friendList->decideNickname(peerPk, newName);
-    c->updateUsername(peerPk, newName);
-}
-
-void Widget::onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
-                                      const QString& title)
-{
-    const ConferenceId& conferenceId = conferenceList->id2Key(conferencenumber);
-    Conference* c = conferenceList->findConference(conferenceId);
-    assert(c);
-
-    ConferenceWidget* widget = conferenceWidgets[conferenceId];
-    if (widget->isActive()) {
-        formatWindowTitle(title);
-    }
-
-    c->setTitle(author, title);
-    chatListWidget->itemsChanged();
-}
-
 void Widget::titleChangedByUser(const QString& title)
 {
     const auto* conference = qobject_cast<Conference*>(sender());
@@ -2130,15 +2001,18 @@ void Widget::removeConference(Conference* c, bool fake)
         onAddClicked();
     }
 
+    if (!fake) {
+        chatManager->removeConference(conferenceId);
+    } else {
+        chatManager->removeConferenceModel(conferenceId);
+    }
     conferenceList->removeConference(conferenceId, fake);
+
     ContentDialog* contentDialog = contentDialogManager->getConferenceDialog(conferenceId);
     if (contentDialog != nullptr) {
         contentDialog->removeConference(conferenceId);
     }
 
-    if (!fake) {
-        core->removeConference(conferencenumber);
-    }
     chatListWidget->removeConferenceWidget(widget); // deletes widget
 
     conferenceWidgets.remove(conferenceId);
@@ -2162,46 +2036,15 @@ void Widget::removeConference(const ConferenceId& conferenceId)
     removeConference(conferenceList->findConference(conferenceId));
 }
 
-Conference* Widget::createConference(uint32_t conferencenumber, const ConferenceId& conferenceId)
+void Widget::onConferenceModelCreated(Conference* newConference,
+                                      std::shared_ptr<ConferenceRoom> chatroom,
+                                      std::shared_ptr<ConferenceMessageDispatcher> messageDispatcher,
+                                      std::shared_ptr<IChatLog> chatHistory)
 {
-    assert(core != nullptr);
-
-    Conference* c = conferenceList->findConference(conferenceId);
-    if (c != nullptr) {
-        qWarning() << "Conference already exists";
-        return c;
-    }
-
-    const auto conferenceName = tr("Conference #%1").arg(conferencenumber);
-    const bool enabled = core->getConferenceAvEnabled(conferencenumber);
-    Conference* newConference =
-        conferenceList->addConference(*core, conferencenumber, conferenceId, conferenceName,
-                                      enabled, core->getUsername(), *friendList);
-    assert(newConference);
-
-    if (enabled) {
-        connect(newConference, &Conference::userLeft, this, [this, newConference](const ToxPk& user) {
-            CoreAV* av = core->getAv();
-            assert(av);
-            av->invalidateConferenceCallPeerSource(*newConference, user);
-        });
-    }
-    auto* rawChatroom =
-        new ConferenceRoom(newConference, contentDialogManager.get(), *core, *friendList);
-    const std::shared_ptr<ConferenceRoom> chatroom(rawChatroom);
+    const ConferenceId& conferenceId = newConference->getPersistentId();
 
     const auto compact = settings.getCompactLayout();
     auto* widget = new ConferenceWidget(chatroom, compact, settings, style, this);
-    auto messageDispatcher =
-        std::make_shared<ConferenceMessageDispatcher>(*newConference,
-                                                      MessageProcessor(*sharedMessageProcessorParams),
-                                                      *core, *core, settings);
-
-    auto* history = profile.getHistory();
-    // Note: We do not have to connect the message dispatcher signals since
-    // ChatHistory hooks them up in a very specific order
-    auto chatHistory = std::make_shared<ChatHistory>(*newConference, history, *core, settings,
-                                                     *messageDispatcher, *friendList, *conferenceList);
 
     auto notifyReceivedConnection =
         connect(messageDispatcher.get(), &IMessageDispatcher::messageReceived, this,
@@ -2221,10 +2064,7 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
                                     *messageBoxManager, *friendList, *conferenceList);
     connect(&settings, &Settings::nameColorsChanged, form, &GenericChatForm::setColorizedNames);
     form->setColorizedNames(settings.getEnableConferencesColor());
-    conferenceMessageDispatchers[conferenceId] = messageDispatcher;
-    conferenceLogs[conferenceId] = chatHistory;
     conferenceWidgets[conferenceId] = widget;
-    conferenceRooms[conferenceId] = chatroom;
     conferenceForms[conferenceId] = QSharedPointer<ConferenceForm>(form);
 
     chatListWidget->addConferenceWidget(widget);
@@ -2239,35 +2079,28 @@ Conference* Widget::createConference(uint32_t conferencenumber, const Conference
             [this, conferenceId]() { removeConference(conferenceId); });
     connect(widget, &ConferenceWidget::chatroomWidgetClicked, form, &GenericChatForm::focusInput);
     connect(newConference, &Conference::titleChangedByUser, this, &Widget::titleChangedByUser);
-    connect(core, &Core::usernameSet, newConference, &Conference::setSelfName);
+    connect(newConference, &Conference::titleChanged, this,
+            [this, conferenceId](const QString& /* author */, const QString& title) {
+                ConferenceWidget* w = conferenceWidgets[conferenceId];
+                if (w->isActive()) {
+                    formatWindowTitle(title);
+                }
+                chatListWidget->itemsChanged();
+            });
 
     connect(form, &ConferenceForm::startConferenceCallNotification, this,
             &Widget::onStartConferenceCall);
     connect(form, &ConferenceForm::endConferenceCallNotification, this, &Widget::onEndConferenceCall);
-
-    return newConference;
 }
 
-void Widget::onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
-                                      const QString& title)
+void Widget::onConferenceNeedsName(const ConferenceId& conferenceId)
 {
-    Conference* conference = createConference(conferencenumber, conferenceId);
-    if (conference == nullptr) {
-        return;
-    }
-    if (title.isEmpty()) {
-        // Only rename conference if conferences are visible.
-        if (conferencesVisible()) {
-            conferenceWidgets[conferenceId]->editName();
+    if (conferencesVisible()) {
+        auto it = conferenceWidgets.find(conferenceId);
+        if (it != conferenceWidgets.end()) {
+            it.value()->editName();
         }
-    } else {
-        conference->setTitle(QString(), title);
     }
-}
-
-void Widget::onConferenceJoined(uint32_t conferenceNum, const ConferenceId& conferenceId)
-{
-    createConference(conferenceNum, conferenceId);
 }
 
 /**
@@ -2513,7 +2346,10 @@ void Widget::clearAllReceipts()
 {
     const QList<Friend*> friends = friendList->getAllFriends();
     for (Friend* f : friends) {
-        friendMessageDispatchers[f->getPublicKey()]->clearOutgoingMessages();
+        auto* dispatcher = chatManager->getFriendDispatcher(f->getPublicKey());
+        if (dispatcher != nullptr) {
+            dispatcher->clearOutgoingMessages();
+        }
     }
 }
 

@@ -758,6 +758,13 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Conferința #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3109,10 +3116,6 @@ chat:</translation>
     <message>
         <source>Search Contacts</source>
         <translation>Căutare contacte</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Conferința #%1</translation>
     </message>
     <message>
         <source>Show</source>

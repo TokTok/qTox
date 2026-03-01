@@ -14,8 +14,6 @@
 #include "src/core/toxfile.h"
 #include "src/core/toxid.h"
 #include "src/core/toxpk.h"
-#include "src/model/conferencemessagedispatcher.h"
-#include "src/model/friendmessagedispatcher.h"
 #include "src/model/notificationgenerator.h"
 #include "src/platform/desktop_notifications/desktopnotify.h"
 #include "src/widget/form/debugwidget.h"
@@ -26,11 +24,14 @@
 #include <QSystemTrayIcon>
 #include <QUrl>
 
+#include <memory>
+
 namespace Ui {
 class MainWindow;
 }
 
 class AddFriendForm;
+class ChatManager;
 class AlSink;
 class Camera;
 class ChatForm;
@@ -50,7 +51,9 @@ class ConferenceRoom;
 class ConferenceInvite;
 class ConferenceInviteForm;
 class ConferenceWidget;
+class ConferenceMessageDispatcher;
 class DocumentCache;
+class FriendMessageDispatcher;
 class MaskablePixmapWidget;
 class ProfileForm;
 class ProfileInfo;
@@ -161,30 +164,15 @@ public slots:
     void onSelfAvatarLoaded(const QPixmap& pic);
     void setUsername(const QString& username);
     void setStatusMessage(const QString& statusMessage);
-    void addFriend(uint32_t friendId, const ToxPk& friendPk);
     void addFriendFailed(const ToxPk& userId, const QString& errorInfo = QString());
-    void onCoreFriendStatusChanged(uint32_t friendId, Status::Status status);
     void onFriendStatusChanged(const ToxPk& friendPk, Status::Status status);
-    void onFriendStatusMessageChanged(uint32_t friendId, const QString& message);
+    void onFriendStatusMessageUpdated(const ToxPk& friendPk, const QString& message);
     void onFriendDisplayedNameChanged(const QString& displayed);
-    void onFriendUsernameChanged(uint32_t friendId, const QString& username);
     void onFriendAliasChanged(const ToxPk& friendId, const QString& alias);
-    void onFriendMessageReceived(uint32_t friendNumber, const QString& message, bool isAction);
-    void onReceiptReceived(uint32_t friendId, ReceiptNum receipt);
     void onFriendRequestReceived(const ToxPk& friendPk, const QString& message);
     void onFileReceiveRequested(const ToxFile& file);
-    void onEmptyConferenceCreated(uint32_t conferencenumber, const ConferenceId& conferenceId,
-                                  const QString& title);
-    void onConferenceJoined(uint32_t conferenceNum, const ConferenceId& conferenceId);
     void onConferenceInviteReceived(const ConferenceInvite& inviteInfo);
     void onConferenceInviteAccepted(const ConferenceInvite& inviteInfo);
-    void onConferenceMessageReceived(uint32_t conferencenumber, uint32_t peernumber,
-                                     const QString& message, bool isAction);
-    void onConferencePeerlistChanged(uint32_t conferencenumber);
-    void onConferencePeerNameChanged(uint32_t conferencenumber, const ToxPk& peerPk,
-                                     const QString& newName);
-    void onConferenceTitleChanged(uint32_t conferencenumber, const QString& author,
-                                  const QString& title);
     void titleChangedByUser(const QString& title);
     void onConferencePeerAudioPlaying(uint32_t conferencenumber, ToxPk peerPk);
     void onConferenceSendFailed(uint32_t conferencenumber);
@@ -252,6 +240,14 @@ private slots:
     void updateFriendActivity(const Friend& frnd);
     void registerContentDialog(ContentDialog& contentDialog) const;
 
+    void onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroom> chatroom,
+                            std::shared_ptr<FriendMessageDispatcher> dispatcher,
+                            std::shared_ptr<ChatHistory> chatHistory);
+    void onConferenceModelCreated(Conference* newConference, std::shared_ptr<ConferenceRoom> chatroom,
+                                  std::shared_ptr<ConferenceMessageDispatcher> dispatcher,
+                                  std::shared_ptr<IChatLog> chatHistory);
+    void onConferenceNeedsName(const ConferenceId& conferenceId);
+
 private:
     // QMainWindow overrides
     bool eventFilter(QObject* obj, QEvent* event) final;
@@ -264,7 +260,6 @@ private:
     bool newMessageAlert(QWidget* currentWindow, bool isActive, bool sound = true, bool notify = true);
     void setActiveToolMenuButton(ActiveToolMenuButton newActiveButton);
     void hideMainForms(GenericChatroomWidget* chatroomWidget);
-    Conference* createConference(uint32_t conferencenumber, const ConferenceId& conferenceId);
     void removeFriend(Friend* f, bool fake = false);
     void removeConference(Conference* c, bool fake = false);
     void saveWindowGeometry();
@@ -343,32 +338,23 @@ private:
     Settings& settings;
 
     QMap<ToxPk, FriendWidget*> friendWidgets;
-    // Shared pointer because QMap copies stuff all over the place
-    QMap<ToxPk, std::shared_ptr<FriendMessageDispatcher>> friendMessageDispatchers;
     // Stop gap method of linking our friend messages back to a conference id.
     // Eventual goal is to have a notification manager that works on
     // Messages hooked up to message dispatchers but we aren't there
     // yet
     QMap<ToxPk, QMetaObject::Connection> friendAlertConnections;
-    QMap<ToxPk, std::shared_ptr<ChatHistory>> friendChatLogs;
-    QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatRooms;
     QMap<ToxPk, ChatForm*> chatForms;
 
     QMap<ConferenceId, ConferenceWidget*> conferenceWidgets;
-    QMap<ConferenceId, std::shared_ptr<ConferenceMessageDispatcher>> conferenceMessageDispatchers;
-
     // Stop gap method of linking our conference messages back to a conference id.
     // Eventual goal is to have a notification manager that works on
     // Messages hooked up to message dispatchers but we aren't there
     // yet
     QMap<ConferenceId, QMetaObject::Connection> conferenceAlertConnections;
-    QMap<ConferenceId, std::shared_ptr<IChatLog>> conferenceLogs;
-    QMap<ConferenceId, std::shared_ptr<ConferenceRoom>> conferenceRooms;
     QMap<ConferenceId, QSharedPointer<ConferenceForm>> conferenceForms;
     Core* core = nullptr;
 
-
-    std::unique_ptr<MessageProcessor::SharedParams> sharedMessageProcessorParams;
+    std::unique_ptr<ChatManager> chatManager;
     std::unique_ptr<NotificationGenerator> notificationGenerator;
     std::unique_ptr<DesktopNotify> notifier;
 

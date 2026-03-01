@@ -68,26 +68,34 @@ cc_library(
 
 UI_TESTS = ["loginscreen_test"]
 
+MEDIUM_TESTS = [
+    "chatwidget_test",
+    "core_test",
+    "posixsignalnotifier_test",
+]
+
+TEST_DEPS = [
+    ":dbutility",
+    ":mock",
+    "//c-toxcore",
+    "//qtox:res_lib",
+    "//qtox/src",
+    "//qtox/src:core",
+    "//qtox/util",
+    "@qt//:qt_core",
+    "@qt//:qt_gui",
+    "@qt//:qt_network",
+    "@qt//:qt_widgets",
+]
+
 [qt_test(
     name = src[src.rindex("/") + 1:-4],
-    size = "small",
+    size = "medium" if src[src.rindex("/") + 1:-4] in MEDIUM_TESTS else "small",
     src = src,
     copts = COPTS,
     mocopts = ["-Iqtox"],
     tags = ["ui"] if src[src.rindex("/") + 1:-4] in UI_TESTS else [],
-    deps = [
-        ":dbutility",
-        ":mock",
-        "//c-toxcore",
-        "//qtox:res_lib",
-        "//qtox/src",
-        "//qtox/src:core",
-        "//qtox/util",
-        "@qt//:qt_core",
-        "@qt//:qt_gui",
-        "@qt//:qt_network",
-        "@qt//:qt_widgets",
-    ],
+    deps = TEST_DEPS,
 ) for src in glob(
     ["**/*_test.cpp"],
     exclude = [

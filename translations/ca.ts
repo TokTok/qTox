@@ -912,6 +912,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Conferència #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3737,11 +3744,6 @@ aquí pot fer que la barra de desplaçament desaparegui.</translation>
         <source>Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Contactes</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Conferència #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

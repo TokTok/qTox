@@ -760,6 +760,13 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Grup sohbeti #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3106,10 +3113,6 @@ günlüğü:</translation>
     <message>
         <source>Contacts</source>
         <translation>Kişiler</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Grup sohbeti #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

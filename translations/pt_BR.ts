@@ -752,6 +752,13 @@ de forma que você possa salvar o arquivo no Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Conferência #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3082,10 +3089,6 @@ Um número muito baixo aqui pode fazer com que a barra de rolagem desapareça.</
     <message>
         <source>Search Contacts</source>
         <translation>Buscar Contatos</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Conferência #%1</translation>
     </message>
     <message>
         <source>Show</source>

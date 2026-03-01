@@ -796,6 +796,13 @@ zodat ge het bestand op Windows kunt opslaan.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Groepsgesprek #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3281,10 +3288,6 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Search Contacts</source>
         <translation>Contacten doorzoeken</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Groepsgesprek #%1</translation>
     </message>
     <message>
         <source>Show</source>

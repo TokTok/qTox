@@ -898,6 +898,13 @@ svo þú getur vistað skrána á Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Ráðstefna #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3704,11 +3711,6 @@ spjalldagskrár</translation>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Leita í tengiliðum</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ráðstefna #%1</translation>
     </message>
     <message>
         <source>Show</source>

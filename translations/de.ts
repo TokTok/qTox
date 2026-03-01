@@ -752,6 +752,13 @@ um die Datei unter Windows speichern zu können.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>Konferenz #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3081,10 +3088,6 @@ Bildlaufleiste verschwindet.</translation>
     <message>
         <source>Search Contacts</source>
         <translation>Kontakte durchsuchen</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>Konferenz #%1</translation>
     </message>
     <message>
         <source>Show</source>

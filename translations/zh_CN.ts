@@ -755,6 +755,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation>会议 #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3046,10 +3053,6 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Status</source>
         <translation>状态</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation>会议 #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>

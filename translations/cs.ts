@@ -759,6 +759,13 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
 </context>
 <context>
+    <name>ChatManager</name>
+    <message>
+        <source>Conference #%1</source>
+        <translation type="unfinished">Skupinová konverzace #%1</translation>
+    </message>
+</context>
+<context>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
@@ -3127,10 +3134,6 @@ chatu:</translation>
     <message>
         <source>Your name</source>
         <translation>Vaše jméno</translation>
-    </message>
-    <message>
-        <source>Conference #%1</source>
-        <translation type="unfinished">Skupinová konverzace #%1</translation>
     </message>
     <message>
         <source>Create new conference...</source>
