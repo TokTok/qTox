@@ -571,6 +571,26 @@ lo ka zmadu be lo nitcila cu rinka lo ka xagmau fa lo vidni ckaji poi lo do pend
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation type="unfinished">lo nu ti tolakti cu curmi lo nu la&apos;oi Tox bajra ta&apos;i la&apos;oi Tor .i ku&apos;i la&apos;edi&apos;u jmina lo nu kargu be lo la&apos;oi Tox nunji&apos;i gi&apos;e sarcu lo nu toljundi ca lo nu sarcu po&apos;o</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">so&apos;i loi lerni poi sarcu lo nu fukpi fi lo bifygau ca lo nu danre lu kopi la debug logu li&apos;u</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> lerseltcidu</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">lo tcika be li cacra/mentu ku lo logji linji noi sarji lo nu fukyzgau lo bixycpa ca lo nu danre lu kopi la debug logu li&apos;u</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">li makcu nanca:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

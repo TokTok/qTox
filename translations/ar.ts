@@ -624,6 +624,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">تمكين أدوات التصحيح (للمطورين فقط)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">الحد الأقصى لعدد الأسطر التي سيتم نسخها إلى الحافظة عند الضغط على &quot;نسخ سجل التصحيح&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> خطوط</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">الحد الأقصى للسن (في الساعات/الدقائق) من خطوط السجل للنسخ في الحافظة عند الضغط على &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">أقصى سن:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
