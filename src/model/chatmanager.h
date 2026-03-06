@@ -9,12 +9,14 @@
 #include "src/core/receiptnum.h"
 #include "src/core/toxpk.h"
 #include "src/model/conferencemessagedispatcher.h"
+#include "src/model/friendchatstate.h"
 #include "src/model/friendmessagedispatcher.h"
 #include "src/model/message.h"
 
 #include <QMap>
 #include <QObject>
 
+#include <map>
 #include <memory>
 
 class ChatHistory;
@@ -44,6 +46,7 @@ public:
     FriendMessageDispatcher* getFriendDispatcher(const ToxPk& friendPk) const;
     ChatHistory* getFriendChatLog(const ToxPk& friendPk) const;
     std::shared_ptr<FriendChatroom> getFriendChatroom(const ToxPk& friendPk) const;
+    FriendChatState* getFriendChatState(const ToxPk& friendPk) const;
     ConferenceMessageDispatcher* getConferenceDispatcher(const ConferenceId& id) const;
     IChatLog* getConferenceChatLog(const ConferenceId& id) const;
     std::shared_ptr<ConferenceRoom> getConferenceRoom(const ConferenceId& id) const;
@@ -58,7 +61,7 @@ public:
 signals:
     void friendAdded(Friend* f, std::shared_ptr<FriendChatroom> chatroom,
                      std::shared_ptr<FriendMessageDispatcher> dispatcher,
-                     std::shared_ptr<ChatHistory> chatLog);
+                     std::shared_ptr<ChatHistory> chatLog, FriendChatState* chatState);
     void friendRemoved(const ToxPk& friendPk);
     void conferenceAdded(Conference* c, std::shared_ptr<ConferenceRoom> chatroom,
                          std::shared_ptr<ConferenceMessageDispatcher> dispatcher,
@@ -99,6 +102,7 @@ private:
     QMap<ToxPk, std::shared_ptr<FriendMessageDispatcher>> friendMessageDispatchers;
     QMap<ToxPk, std::shared_ptr<ChatHistory>> friendChatLogs;
     QMap<ToxPk, std::shared_ptr<FriendChatroom>> friendChatRooms;
+    std::map<ToxPk, std::unique_ptr<FriendChatState>> friendChatStates;
 
     QMap<ConferenceId, std::shared_ptr<ConferenceMessageDispatcher>> conferenceMessageDispatchers;
     QMap<ConferenceId, std::shared_ptr<IChatLog>> conferenceLogs;

@@ -50,6 +50,7 @@
 #include "src/model/conference.h"
 #include "src/model/conferenceinvite.h"
 #include "src/model/friend.h"
+#include "src/model/friendchatstate.h"
 #include "src/model/profile/profileinfo.h"
 #include "src/model/status.h"
 #include "src/net/updatecheck.h"
@@ -1223,7 +1224,7 @@ void Widget::onRejectCall(uint32_t friendId)
 
 void Widget::onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroom> chatroom,
                                 std::shared_ptr<FriendMessageDispatcher> friendMessageDispatcher,
-                                std::shared_ptr<ChatHistory> chatHistory)
+                                std::shared_ptr<ChatHistory> chatHistory, FriendChatState* chatState)
 {
     const ToxPk& friendPk = newFriend->getPublicKey();
 
@@ -1233,8 +1234,8 @@ void Widget::onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroo
     connectFriendWidget(*widget);
 
     auto* friendForm =
-        new ChatForm(profile, newFriend, *chatHistory, *friendMessageDispatcher, *documentCache,
-                     *smileyPack, cameraSource, settings, style, *messageBoxManager,
+        new ChatForm(profile, newFriend, *chatState, *chatHistory, *friendMessageDispatcher,
+                     *documentCache, *smileyPack, cameraSource, settings, style, *messageBoxManager,
                      *contentDialogManager, *friendList, *conferenceList, this);
     connect(friendForm, &ChatForm::updateFriendActivity, this, &Widget::updateFriendActivity);
 
@@ -1262,12 +1263,12 @@ void Widget::onFriendModelAdded(Friend* newFriend, std::shared_ptr<FriendChatroo
     connect(newFriend, &Friend::statusChanged, this, &Widget::onFriendStatusChanged);
     connect(newFriend, &Friend::statusMessageChanged, this, &Widget::onFriendStatusMessageUpdated);
 
-    connect(friendForm, &ChatForm::incomingNotification, this, &Widget::incomingNotification);
-    connect(friendForm, &ChatForm::outgoingNotification, this, &Widget::outgoingNotification);
-    connect(friendForm, &ChatForm::stopNotification, this, &Widget::onStopNotification);
-    connect(friendForm, &ChatForm::startCallNotification, this, &Widget::onCallStart);
-    connect(friendForm, &ChatForm::endCallNotification, this, &Widget::onCallEnd);
-    connect(friendForm, &ChatForm::rejectCall, this, &Widget::onRejectCall);
+    connect(chatState, &FriendChatState::incomingNotification, this, &Widget::incomingNotification);
+    connect(chatState, &FriendChatState::outgoingNotification, this, &Widget::outgoingNotification);
+    connect(chatState, &FriendChatState::stopNotification, this, &Widget::onStopNotification);
+    connect(chatState, &FriendChatState::startCallNotification, this, &Widget::onCallStart);
+    connect(chatState, &FriendChatState::endCallNotification, this, &Widget::onCallEnd);
+    connect(chatState, &FriendChatState::rejectCallRequested, this, &Widget::onRejectCall);
 
     connect(widget, &FriendWidget::newWindowOpened, this, &Widget::openNewDialog);
     connect(widget, &FriendWidget::chatroomWidgetClicked, this, &Widget::onChatroomWidgetClicked);

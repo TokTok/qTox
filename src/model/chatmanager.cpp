@@ -14,6 +14,7 @@
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
+#include "src/model/friendchatstate.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 
@@ -82,6 +83,15 @@ std::shared_ptr<FriendChatroom> ChatManager::getFriendChatroom(const ToxPk& frie
     return *it;
 }
 
+FriendChatState* ChatManager::getFriendChatState(const ToxPk& friendPk) const
+{
+    auto it = friendChatStates.find(friendPk);
+    if (it == friendChatStates.end()) {
+        return nullptr;
+    }
+    return it->second.get();
+}
+
 ConferenceMessageDispatcher* ChatManager::getConferenceDispatcher(const ConferenceId& id) const
 {
     auto it = conferenceMessageDispatchers.find(id);
@@ -133,6 +143,7 @@ void ChatManager::removeFriend(const ToxPk& friendPk)
     friendMessageDispatchers.remove(friendPk);
     friendChatLogs.remove(friendPk);
     friendChatRooms.remove(friendPk);
+    friendChatStates.erase(friendPk);
 }
 
 void ChatManager::removeConference(const ConferenceId& conferenceId)
@@ -154,6 +165,7 @@ void ChatManager::removeFriendModel(const ToxPk& friendPk)
     friendMessageDispatchers.remove(friendPk);
     friendChatLogs.remove(friendPk);
     friendChatRooms.remove(friendPk);
+    friendChatStates.erase(friendPk);
 }
 
 void ChatManager::removeConferenceModel(const ConferenceId& conferenceId)
@@ -181,11 +193,26 @@ void ChatManager::onFriendAdded(uint32_t friendId, const ToxPk& friendPk)
         std::make_shared<ChatHistory>(*newFriend, history, *core, settings,
                                       *friendMessageDispatcher, friendList, conferenceList);
 
+    CoreAV* av = core->getAv();
+    auto chatState =
+        std::make_unique<FriendChatState>(*newFriend, *av, *chatHistory, settings, settings, this);
+
+    connect(av, &CoreAV::avInvite, chatState.get(), &FriendChatState::onAvInvite);
+    connect(av, &CoreAV::avStart, chatState.get(), &FriendChatState::onAvStart);
+    connect(av, &CoreAV::avEnd, chatState.get(), &FriendChatState::onAvEnd);
+    connect(newFriend, &Friend::statusChanged, chatState.get(),
+            &FriendChatState::onFriendStatusChanged);
+    connect(core, &Core::friendTypingChanged, chatState.get(), &FriendChatState::onFriendTypingChanged);
+    connect(chatState.get(), &FriendChatState::sendTypingRequested, core, &Core::sendTyping);
+
+    FriendChatState* chatStatePtr = chatState.get();
+
     friendMessageDispatchers[friendPk] = friendMessageDispatcher;
     friendChatLogs[friendPk] = chatHistory;
     friendChatRooms[friendPk] = chatroom;
+    friendChatStates[friendPk] = std::move(chatState);
 
-    emit friendAdded(newFriend, chatroom, friendMessageDispatcher, chatHistory);
+    emit friendAdded(newFriend, chatroom, friendMessageDispatcher, chatHistory, chatStatePtr);
 }
 
 void ChatManager::onFriendStatusChanged(uint32_t friendId, Status::Status status)
