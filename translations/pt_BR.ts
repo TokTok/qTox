@@ -1153,7 +1153,7 @@ de forma que você possa salvar o arquivo no Windows.</translation>
     <message>
         <source>Auto select</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Seleção automática</translation>
+        <translation>Seleção automática</translation>
     </message>
 </context>
 <context>
@@ -2445,7 +2445,7 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ficou offline durante a tentativa de chamada</translation>
+        <translation>%1 ficou offline durante a tentativa de chamada</translation>
     </message>
     <message>
         <source>Initializing</source>
