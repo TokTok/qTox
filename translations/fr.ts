@@ -1151,7 +1151,7 @@ afin que vous puissiez enregistrer le fichier sur windows.</translation>
     <message>
         <source>Auto select</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sélection automatique</translation>
+        <translation>Sélection automatique</translation>
     </message>
 </context>
 <context>
@@ -2443,7 +2443,7 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 s&apos;est déconnecté pendant la tentative d&apos;appel</translation>
+        <translation>%1 s&apos;est déconnecté pendant la tentative d&apos;appel</translation>
     </message>
     <message>
         <source>Initializing</source>
