@@ -10,4 +10,14 @@ restylers:
       enabled: false
   - clazy:
       enabled: false
+  # Disable conflicting python linters.
+  # Conflicts with "isort"
+  - reorder-python-imports:
+      enabled: false
+  # Conflicts with "black"
+  - yapf:
+      enabled: false
+  # Fix compatibilitry with "black" for "autopep8"
+  - autopep8:
+      arguments: ["--max-line-length", "88"]
   - "*"
