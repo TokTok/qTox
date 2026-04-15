@@ -14,6 +14,7 @@
 #include <QSaveFile>
 
 #include <cassert>
+#include <climits>
 #include <memory>
 #include <tox/toxencryptsave.h>
 #include <utility>
@@ -76,10 +77,22 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
     int num = 0;
     int num2 = 0;
     do {
+        if (dataStream.status() != QDataStream::Ok) {
+            data.clear();
+            return dataStream;
+        }
         dataStream.readRawData(&num3, 1);
         num |= (num3 & 0x7f) << num2;
         num2 += 7;
+        if (num2 > static_cast<int>(sizeof(int) * CHAR_BIT)) {
+            data.clear();
+            return dataStream;
+        }
     } while ((num3 & 0x80) != 0);
+    if (num <= 0 || dataStream.status() != QDataStream::Ok) {
+        data.clear();
+        return dataStream;
+    }
     data.resize(num);
     dataStream.readRawData(data.data(), num);
     return dataStream;
