@@ -635,14 +635,9 @@ struct PassKeyDeleter
 {
     void operator()(Tox_Pass_Key* pass_key)
     {
-        // Securely wipe key material before freeing to prevent
-        // recovery from memory dumps or swap.
-        if (pass_key != nullptr) {
-            volatile uint8_t* p = reinterpret_cast<volatile uint8_t*>(pass_key);
-            for (size_t i = 0; i < sizeof(Tox_Pass_Key); ++i) {
-                p[i] = 0;
-            }
-        }
+        // Note: Tox_Pass_Key is an opaque type, so we cannot wipe its
+        // contents directly. Key material wiping for intermediate buffers
+        // is done in deriveKey() instead.
         tox_pass_key_free(pass_key);
     }
 };
