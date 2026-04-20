@@ -204,8 +204,10 @@ std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* so
         // Re-check after lock upgrade to handle race where another thread
         // inserted between our unlock and lock-for-write.
         if (!refsMap.contains(sourceID)) {
-            refsMap[sourceID] = {};
-            mutexMap[sourceID] = {};
+            // operator[] default-constructs the entries in-place.
+            // QMutex is non-copyable so we cannot use assignment.
+            refsMap[sourceID];
+            mutexMap[sourceID];
         }
     }
 
