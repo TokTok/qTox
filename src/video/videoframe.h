@@ -78,7 +78,7 @@ public:
     }
 
 private:
-    QReadWriteLock* lock_;
+    QReadWriteLock* lock_ = nullptr;
 };
 
 struct ToxYUVFrame

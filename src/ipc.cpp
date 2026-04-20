@@ -16,6 +16,9 @@
 #ifndef _MSC_VER
 #include <unistd.h>
 #endif
+#if !defined(Q_OS_WIN) && !defined(_MSC_VER)
+#include <pwd.h>
+#endif
 
 namespace {
 #if QT_CONFIG(sharedmemory)
@@ -27,6 +30,12 @@ const char* getCurUsername()
 #else
 const char* getCurUsername()
 {
+    // Prefer getpwuid over getenv("USER") since environment variables
+    // can be unset or spoofed.
+    const struct passwd* pw = getpwuid(getuid());
+    if (pw != nullptr) {
+        return pw->pw_name;
+    }
     return getenv("USER");
 }
 #endif
@@ -235,15 +244,17 @@ bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
 {
     bool result = false;
     const time_t start = time(nullptr);
+    // Cap infinite wait to 30 seconds to prevent unbounded blocking
+    const int32_t effectiveTimeout = (timeout <= 0) ? 30 : timeout;
     forever
     {
         result = isEventAccepted(postTime);
-        if (result || (timeout > 0 && difftime(time(nullptr), start) >= timeout)) {
+        if (result || (difftime(time(nullptr), start) >= effectiveTimeout)) {
             break;
         }
 
         qApp->processEvents();
-        QThread::msleep(0);
+        QThread::msleep(50); // Avoid busy-wait: sleep 50ms between polls
     }
     return result;
 }

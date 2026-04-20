@@ -288,10 +288,13 @@ void CameraDevice::open()
  */
 bool CameraDevice::close()
 {
-    if (--refcount > 0)
-        return false;
-
+    // Acquire lock before decrementing to prevent another thread from finding
+    // this device in openDevices while we're about to delete it.
     openDeviceLock.lock();
+    if (--refcount > 0) {
+        openDeviceLock.unlock();
+        return false;
+    }
     openDevices.remove(devName);
     openDeviceLock.unlock();
     avformat_close_input(&context);

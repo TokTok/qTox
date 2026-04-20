@@ -74,13 +74,17 @@ const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     // Note: This does not match only strictly valid URLs, but we broaden search to any string following scheme to
     // allow UTF-8 "IRI"s instead of ASCII-only URLs
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((((http[s]?)|ftp)://)\S+))")),
-    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((file|smb)://([\S| ]*)))")),
+    // file:// and smb:// removed: dangerous schemes that enable NTLM hash theft
+    // and local file probing from remote messages. See also URL scheme allowlist
+    // in text.cpp mouseReleaseEvent().
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(tox:[a-zA-Z\d]{76}))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(mailto:\S+@\S+\.\S+))")),
+    // Fixed: [\S| ] was matching any character (pipe literal inside char class).
+    // Changed to \S+ with a length cap via {1,2048} to prevent ReDoS.
     QRegularExpression(QStringLiteral(
-        R"((?<=^|\s)\S*(magnet:[?]((xt(.\d)?=urn:)|(mt=)|(kt=)|(tr=)|(dn=)|(xl=)|(xs=)|(as=)|(x.))[\S| ]+))")),
+        R"((?<=^|\s)\S*(magnet:[?]((xt(.\d)?=urn:)|(mt=)|(kt=)|(tr=)|(dn=)|(xl=)|(xs=)|(as=)|(x.))\S{1,2048}))")),
     QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(gemini://\S+))")),
-    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*(ed2k://\|file\|\S+))")),
+    // ed2k:// removed: dangerous external protocol handler invocation.
 };
 
 

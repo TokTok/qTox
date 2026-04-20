@@ -55,6 +55,12 @@ void CoreVideoSource::pushFrame(const vpx_image_t* vpxFrame)
     const int width = vpxFrame->d_w;
     const int height = vpxFrame->d_h;
 
+    // Validate dimensions: must be positive, even (YUV420), and within reasonable bounds
+    if (width <= 0 || height <= 0 || (width % 2) != 0 || (height % 2) != 0
+        || width > 4096 || height > 4096) {
+        return;
+    }
+
     if (subscribers <= 0)
         return;
 
@@ -99,16 +105,15 @@ void CoreVideoSource::subscribe()
 
 void CoreVideoSource::unsubscribe()
 {
-    biglock.lock();
+    const QMutexLocker<QMutex> locker(&biglock);
     if (--subscribers == 0) {
         if (deleteOnClose) {
-            biglock.unlock();
-            // DANGEROUS: No member access after this point, that's why we manually unlock
-            delete this;
+            // Defer deletion to event loop to avoid destroying the mutex
+            // while other threads may be waiting on it.
+            deleteLater();
             return;
         }
     }
-    biglock.unlock();
 }
 
 /**
