@@ -1915,7 +1915,7 @@ Presione Mayús+F1 para obtener más información.</translation>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation>BLOQ MAYÚS ACTIVO</translation>
+        <translation>BLOQUEO DE MAYÚSCULAS ACTIVADO</translation>
     </message>
 </context>
 <context>
