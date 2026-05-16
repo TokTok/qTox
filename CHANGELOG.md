@@ -1,3 +1,15 @@
+<a name="v1.18.5-rc.1"></a>
+
+## v1.18.5-rc.1 (2026-05-16)
+
+### Release notes
+
+Another release with a focus on stability.
+
+#### Bug Fixes
+
+- Fix crash on shutdown when conference join/leave messages are enabled. ([aeef7e24](https://github.com/TokTok/qTox/commit/aeef7e241c4c994661c32109f78c9458771f425a))
+
 <a name="v1.18.4"></a>
 
 ## v1.18.4 (2026-02-24)
