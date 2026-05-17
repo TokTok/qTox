@@ -156,6 +156,7 @@ objc_library(
     non_arc_srcs = ["platform/camera/avfoundation.mm"],
     sdk_frameworks = ["AVFoundation"],
     tags = ["macos"],
+    target_compatible_with = ["@platforms//os:macos"],
     deps = ["@qt//:qt_core"],
 )
 
