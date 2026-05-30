@@ -36,6 +36,6 @@ private:
 private:
     QVBoxLayout* bodyLayout;
     QTabWidget* debugWidgets;
-    std::array<GenericForm*, 2> dbgForms;
+    std::array<GenericForm*, 3> dbgForms;
     int currentIndex;
 };
