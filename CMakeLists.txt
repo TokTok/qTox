@@ -303,6 +303,8 @@ set(${BINARY_NAME}_SOURCES
     src/core/dhtserver.h
     src/core/icoresettings.cpp
     src/core/icoresettings.h
+    src/core/icorecallcontrol.cpp
+    src/core/icorecallcontrol.h
     src/core/icorefriendmessagesender.cpp
     src/core/icorefriendmessagesender.h
     src/core/icoreconferencemessagesender.cpp
@@ -364,6 +366,8 @@ set(${BINARY_NAME}_SOURCES
     src/model/friendlist/friendlistmanager.h
     src/model/friendlist/ifriendlistitem.cpp
     src/model/friendlist/ifriendlistitem.h
+    src/model/friendchatstate.cpp
+    src/model/friendchatstate.h
     src/model/friendmessagedispatcher.cpp
     src/model/friendmessagedispatcher.h
     src/model/friend.cpp
