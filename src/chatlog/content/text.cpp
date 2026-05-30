@@ -10,6 +10,9 @@
 #include <QDebug>
 #include <QDesktopServices>
 #include <QFontMetrics>
+#include <QMessageBox>
+#include <QSet>
+#include <QUrl>
 #include <QGraphicsSceneMouseEvent>
 #include <QPainter>
 #include <QPalette>
@@ -269,10 +272,47 @@ void Text::mouseReleaseEvent(QGraphicsSceneMouseEvent* event)
         return;
 
     const QString anchor = doc->documentLayout()->anchorAt(event->pos());
+    if (anchor.isEmpty())
+        return;
 
-    // open anchor in browser
-    if (!anchor.isEmpty())
-        QDesktopServices::openUrl(QUrl(anchor));
+    const QUrl url(anchor);
+    const QString scheme = url.scheme().toLower();
+
+    // Block dangerous schemes that trigger OS-level protocol handlers:
+    // - smb:// leaks NTLM hashes on Windows
+    // - file:// probes local filesystem
+    // - ed2k://, magnet: etc. invoke arbitrary external applications
+    static const QSet<QString> blockedSchemes = {
+        QStringLiteral("file"),   QStringLiteral("smb"),    QStringLiteral("ed2k"),
+        QStringLiteral("ms-msdt"), QStringLiteral("search-ms"),
+    };
+
+    if (blockedSchemes.contains(scheme)) {
+        qWarning() << "Blocked URL with dangerous scheme:" << scheme;
+        return;
+    }
+
+    // For tox: URIs, open directly (handled internally)
+    if (scheme == QStringLiteral("tox")) {
+        QDesktopServices::openUrl(url);
+        return;
+    }
+
+    // For all external URLs (http, https, ftp, mailto, gemini, etc.),
+    // show a confirmation dialog. This is critical for Tor/proxy users:
+    // opening a URL in the system browser bypasses the Tox proxy and
+    // reveals the user's real IP address to the destination server.
+    const auto answer = QMessageBox::question(
+        nullptr, tr("Open URL"),
+        tr("Opening this link in your browser may reveal your IP address.\n\n"
+           "URL: %1\n\n"
+           "Do you want to open it?")
+            .arg(url.toDisplayString()),
+        QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
+
+    if (answer == QMessageBox::Yes) {
+        QDesktopServices::openUrl(url);
+    }
 }
 
 void Text::hoverMoveEvent(QGraphicsSceneHoverEvent* event)

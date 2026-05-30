@@ -5,6 +5,7 @@
 
 #pragma once
 
+#include <QFile>
 #include <QString>
 #include <QStringList>
 
@@ -46,6 +47,19 @@ public:
     QString getUserNodesFilePath() const;
     QString getBackupUserNodesFilePath() const;
 #endif
+
+    /**
+     * @brief Set restrictive permissions (owner-only read/write) on a sensitive file.
+     * No-op on Windows (relies on NTFS ACLs).
+     */
+    static void setSecureFilePermissions(const QString& filePath)
+    {
+#ifndef Q_OS_WIN
+        QFile::setPermissions(filePath, QFile::ReadOwner | QFile::WriteOwner);
+#else
+        Q_UNUSED(filePath);
+#endif
+    }
 
 private:
     QString basePath;

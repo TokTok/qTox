@@ -587,6 +587,7 @@ void OpenAL::cleanupInput()
     }
 
     delete[] inputBuffer;
+    inputBuffer = nullptr;
 }
 
 /**

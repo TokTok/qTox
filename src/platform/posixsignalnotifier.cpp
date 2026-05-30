@@ -87,12 +87,12 @@ void installCrashHandler()
         constexpr struct sigaction default_action = {};
         ::sigaction(sig, &default_action, nullptr);
 
-        // Print to qCritical, which will write to the log file, if possible.
-        // This might crash more or fail allocations. It's best effort.
-        qCritical("Crash signal %d received", sig);
-        Stacktrace::process([](const Stacktrace::Frame& frame) { qCritical() << frame; });
+        // Only use async-signal-safe functions here.
+        // write() and _exit() are safe; qCritical/Stacktrace are NOT.
+        const char msg[] = "Fatal: crash signal received\n";
+        (void)::write(STDERR_FILENO, msg, sizeof(msg) - 1);
 
-        // We let the handler return to trigger the default action.
+        // Re-raise to trigger default handler (core dump).
     };
 
     for (auto s : crashSignals) {
@@ -152,9 +152,11 @@ void PosixSignalNotifier::watchUsrSignals()
 void PosixSignalNotifier::unwatchSignal(int signum)
 {
     struct sigaction action = {}; // all zeroes by default
-    action.sa_handler = [](int sig) {
-        qWarning("Signal %d received twice; terminating ungracefully", sig);
-        ::exit(EXIT_FAILURE);
+    action.sa_handler = [](int) {
+        // Only async-signal-safe functions: write() and _exit().
+        const char msg[] = "Signal received twice; terminating ungracefully\n";
+        (void)::write(STDERR_FILENO, msg, sizeof(msg) - 1);
+        _exit(EXIT_FAILURE);
     };
 
     if (::sigaction(signum, &action, nullptr) != 0) {

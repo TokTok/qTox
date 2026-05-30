@@ -24,6 +24,7 @@
 #include <QFileInfo>
 #include <QObject>
 #include <QSaveFile>
+#include <QSet>
 #include <QThread>
 
 #include <cassert>
@@ -347,6 +348,11 @@ std::unique_ptr<Profile> Profile::createProfile(const QString& name, const QStri
                                                 CameraSource& cameraSource,
                                                 IMessageBoxManager& messageBoxManager)
 {
+    if (!isValidProfileName(name)) {
+        qWarning() << "Invalid profile name rejected:" << name;
+        return nullptr;
+    }
+
     CreateToxDataError error;
     Paths& paths = settings.getPaths();
     const QString path = paths.getSettingsDirPath() + name + ".tox";
@@ -510,6 +516,7 @@ bool Profile::saveToxSave(QByteArray data)
     // check if everything got written
     if (saveFile.flush()) {
         saveFile.commit();
+        Paths::setSecureFilePermissions(path);
     } else {
         saveFile.cancelWriting();
         qCritical() << "Failed to write, can't save";
@@ -800,6 +807,34 @@ void Profile::removeAvatar(const ToxPk& owner)
     } else {
         setFriendAvatar(owner, {});
     }
+}
+
+/**
+ * @brief Validates that a profile name is safe for use in file paths.
+ * Rejects names containing path separators, traversal sequences, control
+ * characters, and Windows reserved device names.
+ */
+bool Profile::isValidProfileName(const QString& name)
+{
+    if (name.isEmpty() || name.trimmed().isEmpty()) {
+        return false;
+    }
+    // Reject path separators, traversal, and dangerous characters
+    if (name.contains('/') || name.contains('\\') || name.contains("..") || name.contains('\0')) {
+        return false;
+    }
+    // Reject Windows reserved device names
+    static const QSet<QString> reserved = {
+        QStringLiteral("CON"),  QStringLiteral("PRN"),  QStringLiteral("AUX"),
+        QStringLiteral("NUL"),  QStringLiteral("COM1"), QStringLiteral("COM2"),
+        QStringLiteral("COM3"), QStringLiteral("COM4"), QStringLiteral("COM5"),
+        QStringLiteral("COM6"), QStringLiteral("COM7"), QStringLiteral("COM8"),
+        QStringLiteral("COM9"), QStringLiteral("LPT1"), QStringLiteral("LPT2"),
+        QStringLiteral("LPT3"), QStringLiteral("LPT4"), QStringLiteral("LPT5"),
+        QStringLiteral("LPT6"), QStringLiteral("LPT7"), QStringLiteral("LPT8"),
+        QStringLiteral("LPT9"),
+    };
+    return !reserved.contains(name.toUpper());
 }
 
 bool Profile::exists(QString name, Paths& paths)
