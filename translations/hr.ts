@@ -597,6 +597,26 @@ Ponekad vaša veza možda nije dovoljno dobra da podnese višu kvalitetu videa,
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Omogući alate za otklanjanje pogrešaka (samo za programere)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalan broj redaka za kopiranje u međuspremnik kada se pritisne &quot;Kopiraj dnevnik otklanjanja pogrešaka&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> crta</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maksimalna starost (u satima/minutama) redaka dnevnika za kopiranje u međuspremnik kada se pritisne &quot;Kopiraj dnevnik otklanjanja pogrešaka&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max Age:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

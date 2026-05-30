@@ -596,6 +596,26 @@ o que pode provocar problemas coas videochamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Activar ferramentas de depuración (só para programadores)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Número máximo de liñas para copiar no portapapeis ao premer &quot;Copiar rexistro de depuración&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> liñas</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">A idade máxima (en horas/minutos) das liñas de rexistro para copiar no portapapeis ao premer &quot;Copiar rexistro de depuración&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idade máxima:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

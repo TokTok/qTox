@@ -576,6 +576,26 @@ mikä voi johtaa ongelmiin videopuheluissa.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ota virheenkorjaustyökalut käyttöön (vain kehittäjät)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Leikepöydälle kopioitavien rivien enimmäismäärä, kun painetaan &quot;Kopioi virheenkorjausloki&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> rivit</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Suurin ikä (tunteina/minuutteina) lokiviivoja kopioidaksesi leikepöydälle painamalla &quot;Kopioi Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max Age:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

@@ -576,6 +576,26 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Habilitar ferramentas de depuração (somente desenvolvedores)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Número máximo de linhas para copiar para a área de transferência ao pressionar &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linhas</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idade máxima (em horas/minutos) de linhas de log para copiar na área de transferência ao pressionar &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Idade máxima:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

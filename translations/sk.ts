@@ -577,6 +577,26 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Povoliť nástroje na ladenie (len pre vývojárov)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximálny počet riadkov na skopírovanie do schránky pri stlačení „Kopírujte debug protokol“.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> čiarka</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximálny vek (v hodinách/minútach) riadkov denníka, ktoré sa majú skopírovať do schránky pri stlačení tlačidla „Kopírovať denník ladenia“.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximálny vek:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

@@ -573,6 +573,26 @@ which may lead to problems with video calls.</source>
         <source>Enable Debug Tools (developers only)</source>
         <translation>启用调试工具（仅限开发人员）</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">按“复制调试日志”时复制到剪贴板的最大行数。</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> 线</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">按“复制调试日志”时复制到剪贴板的日志行的最长期限（以小时/分钟为单位）。</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">最大年龄：</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

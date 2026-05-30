@@ -574,6 +574,26 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Debugtools inschakelen (alleen voor ontwikkelaars)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximaal aantal regels om naar het klembord te kopiëren bij het drukken op &quot;Debug logboek kopiëren&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> lijnen</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale leeftijd (in uren/minuten) van logregels die naar het klembord moeten worden gekopieerd wanneer op &quot;Copy Debug Log&quot; wordt gedrukt.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximale leeftijd:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

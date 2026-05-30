@@ -605,6 +605,22 @@ wat tot problemen met videogesprekken kan leiden.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Debug-tools inschakelen (enkel voor ontwikkelaars)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

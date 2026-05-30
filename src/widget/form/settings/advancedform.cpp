@@ -7,12 +7,14 @@
 
 #include "ui_advancedsettings.h"
 
+#include "src/model/debug/debuglogmodel.h"
 #include "src/net/toxuri.h"
 #include "src/persistence/profile.h"
 #include "src/persistence/settings.h"
 #include "src/widget/tool/imessageboxmanager.h"
 #include "src/widget/tool/recursivesignalblocker.h"
 #include "src/widget/translator.h"
+#include "util/fileutil.h"
 #include "util/network.h"
 
 #include <QApplication>
@@ -22,6 +24,8 @@
 #include <QHostInfo>
 #include <QMessageBox>
 #include <QProcess>
+
+#include <algorithm>
 
 /**
  * @class AdvancedForm
@@ -108,29 +112,36 @@ void AdvancedForm::on_btnCopyDebug_clicked()
     const QString logFileDir = settings.getPaths().getAppCacheDirPath();
     const QString logfile = logFileDir + "qtox.log";
 
-    QFile file(logfile);
-    if (!file.exists()) {
-        qDebug() << "No debug file found";
+    QClipboard* clipboard = QApplication::clipboard();
+    if (clipboard == nullptr) {
+        qDebug() << "Unable to access clipboard";
         return;
     }
 
-    QClipboard* clipboard = QApplication::clipboard();
-    if (clipboard != nullptr) {
-        QString debugtext;
-        if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-            QTextStream in(&file);
-            debugtext = in.readAll();
-            file.close();
-        } else {
-            qDebug() << "Unable to open file for copying to clipboard";
-            return;
-        }
+    // Maximum number of lines to copy to clipboard.
+    const int maxDebugLogLines = bodyUI->maxLogLines->value();
+    const QStringList lines = FileUtil::tail(logfile, maxDebugLogLines);
 
-        clipboard->setText(debugtext, QClipboard::Clipboard);
-        qDebug() << "Debug log copied to clipboard";
-    } else {
-        qDebug() << "Unable to access clipboard";
+    if (lines.isEmpty()) {
+        return;
     }
+
+    // Parse the log entries and remove entries that are too old.
+    QList<DebugLogModel::LogEntry> logEntries = DebugLogModel::parse(lines);
+    std::reverse(logEntries.begin(), logEntries.end());
+    const QDateTime now = QDateTime::currentDateTimeUtc();
+    const int maxDebugLogAge =
+        bodyUI->maxLogAge->time().hour() * 3600 + bodyUI->maxLogAge->time().minute() * 60;
+    while (!logEntries.isEmpty() && logEntries.last().time.secsTo(now) > maxDebugLogAge) {
+        logEntries.removeLast();
+    }
+
+    QStringList debugText;
+    std::transform(logEntries.rbegin(), logEntries.rend(), std::back_inserter(debugText),
+                   DebugLogModel::renderWithDate);
+
+    clipboard->setText(debugText.join('\n'), QClipboard::Clipboard);
+    qDebug() << "Copied" << debugText.size() << "debug log entries to clipboard";
 }
 
 void AdvancedForm::on_resetButton_clicked()

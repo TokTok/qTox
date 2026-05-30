@@ -557,20 +557,36 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation type="unfinished">Find other ships nearby</translation>
+        <translation>Find other ships nearby</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation type="unfinished">Enable Debug Tools (fer th&apos; shipwrights only)</translation>
+        <translation>Enable Debug Tools (fer th&apos; shipwrights only)</translation>
     </message>
     <message>
         <source>Connection settings</source>
-        <translation type="unfinished">How ye connect</translation>
+        <translation>How ye connect</translation>
     </message>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translation>Disablin&apos; this allows Toxin&apos; over Tor, but it adds load to yer Toxmates. Be thoughtful.</translation>
+    </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translation>Limit o&apos; lines to copy when pressin&apos; &quot;Pick up Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translation> lines</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translation>Oldest age (in hours/minutes) o&apos; log lines to copy when pressin&apos; &quot;Pick up Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translation>Oldest age:</translation>
     </message>
 </context>
 <context>

@@ -94,7 +94,6 @@ DebugLogForm::~DebugLogForm()
 
 void DebugLogForm::showEvent(QShowEvent* event)
 {
-    qDebug() << "Loading logs for debug log view";
     debugLogModel_->reload(loadLogs(paths_));
 
     GenericForm::showEvent(event);

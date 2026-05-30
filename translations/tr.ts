@@ -578,6 +578,26 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hata Ayıklama Araçlarını Etkinleştir (yalnızca geliştiriciler)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;Hata Ayıklama Günlüğünü Kopyala&quot;ya basıldığında panoya kopyalanacak maksimum satır sayısı.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> çizgiler</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;Hata Ayıklama Günlüğünü Kopyala&quot; düğmesine basıldığında panoya kopyalanacak günlük satırlarının maksimum yaşı (saat/dakika cinsinden).</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max Age:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
