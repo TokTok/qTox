@@ -7,6 +7,7 @@
 #pragma once
 
 #include "conferenceid.h"
+#include "conferencetype.h"
 #include "icoreconferencemessagesender.h"
 #include "icoreconferencequery.h"
 #include "icorefriendmessagesender.h"
@@ -35,6 +36,21 @@ class Profile;
 class Core;
 class IBootstrapListGenerator;
 struct DhtServer;
+struct Tox;
+struct Tox_Event;
+struct Tox_Event_Conference_Invite;
+struct Tox_Event_Conference_Message;
+struct Tox_Event_Friend_Request;
+struct Tox_Event_Friend_Message;
+struct Tox_Event_Friend_Name;
+struct Tox_Event_Friend_Typing;
+struct Tox_Event_Friend_Status_Message;
+struct Tox_Event_Friend_Status;
+struct Tox_Event_Friend_Connection_Status;
+struct Tox_Event_Conference_Peer_List_Changed;
+struct Tox_Event_Conference_Peer_Name;
+struct Tox_Event_Conference_Title;
+struct Tox_Event_Friend_Read_Receipt;
 
 using ToxCorePtr = std::unique_ptr<Core>;
 
@@ -45,7 +61,21 @@ class Core : public QObject,
              public ICoreConferenceQuery
 {
     Q_OBJECT
+
+private:
+    struct Tox_Deleter
+    {
+        void operator()(Tox* tox) const;
+    };
+    using ToxPtr = std::unique_ptr<Tox, Tox_Deleter>;
+
 public:
+    enum class MessageType
+    {
+        NORMAL,
+        ACTION,
+    };
+
     enum class ToxCoreErrors
     {
         OK,
@@ -103,7 +133,7 @@ public slots:
     void acceptFriendRequest(const ToxPk& friendPk);
     void requestFriendship(const ToxId& friendId, const QString& message);
     void conferenceInviteFriend(uint32_t friendId, int conferenceId);
-    int createConference(uint8_t type = TOX_CONFERENCE_TYPE_AV);
+    int createConference(ConferenceType type = ConferenceType::AV);
 
     void removeFriend(uint32_t friendId);
     void removeConference(int conferenceId);
@@ -185,38 +215,26 @@ private:
     Core(QThread* coreThread_, IBootstrapListGenerator& bootstrapListGenerator_,
          const ICoreSettings& settings_);
 
-    static void onFriendRequest(Tox* tox, const uint8_t* cFriendPk, const uint8_t* cMessage,
-                                size_t cMessageSize, void* core);
-    static void onFriendMessage(Tox* tox, uint32_t friendId, Tox_Message_Type type,
-                                const uint8_t* cMessage, size_t cMessageSize, void* core);
-    static void onFriendNameChange(Tox* tox, uint32_t friendId, const uint8_t* cName,
-                                   size_t cNameSize, void* core);
-    static void onFriendTypingChange(Tox* tox, uint32_t friendId, bool isTyping, void* core);
-    static void onStatusMessageChanged(Tox* tox, uint32_t friendId, const uint8_t* cMessage,
-                                       size_t cMessageSize, void* core);
-    static void onUserStatusChanged(Tox* tox, uint32_t friendId, Tox_User_Status userstatus,
-                                    void* core);
-    static void onConnectionStatusChanged(Tox* tox, uint32_t friendId, Tox_Connection status,
-                                          void* vCore);
-    static void onConferenceInvite(Tox* tox, uint32_t friendId, Tox_Conference_Type type,
-                                   const uint8_t* cookie, size_t length, void* vCore);
-    static void onConferenceMessage(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                    Tox_Message_Type type, const uint8_t* cMessage, size_t length,
-                                    void* vCore);
-    static void onConferencePeerListChange(Tox* tox, uint32_t conferenceId, void* core);
-    static void onConferencePeerNameChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                           const uint8_t* name, size_t length, void* core);
-    static void onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
-                                        const uint8_t* cTitle, size_t length, void* vCore);
+    static void onFriendRequest(const Tox_Event_Friend_Request* event, void* vCore);
+    static void onFriendMessage(const Tox_Event_Friend_Message* event, void* vCore);
+    static void onFriendName(const Tox_Event_Friend_Name* event, void* vCore);
+    static void onFriendTyping(const Tox_Event_Friend_Typing* event, void* vCore);
+    static void onFriendStatusMessage(const Tox_Event_Friend_Status_Message* event, void* vCore);
+    static void onFriendStatus(const Tox_Event_Friend_Status* event, void* vCore);
+    static void onFriendConnectionStatus(const Tox_Event_Friend_Connection_Status* event, void* vCore);
+    static void onConferenceInvite(const Tox_Event_Conference_Invite* event, void* vCore);
+    static void onConferenceMessage(const Tox_Event_Conference_Message* event, void* vCore);
+    static void onConferencePeerListChanged(const Tox_Event_Conference_Peer_List_Changed* event,
+                                            void* vCore);
+    static void onConferencePeerName(const Tox_Event_Conference_Peer_Name* event, void* vCore);
+    static void onConferenceTitle(const Tox_Event_Conference_Title* event, void* vCore);
+    static void onFriendReadReceipt(const Tox_Event_Friend_Read_Receipt* event, void* vCore);
 
-    static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
-
-    void sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type);
-    bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
+    void sendConferenceMessageWithType(int conferenceId, const QString& message, MessageType type);
+    bool sendMessageWithType(uint32_t friendId, const QString& message, MessageType type,
                              ReceiptNum& receipt);
     bool checkConnection();
 
-    void makeTox(QByteArray savedata, ICoreSettings* s);
     void loadFriends();
     void loadConferences();
     void bootstrapDht();
@@ -224,20 +242,14 @@ private:
     void checkLastOnline(uint32_t friendId);
 
     QString getFriendRequestErrorMessage(const ToxId& friendId, const QString& message) const;
-    static void registerCallbacks(Tox* tox);
+
+    void dispatchEvent(const Tox_Event* event);
 
 private slots:
     void process();
     void onStarted();
 
 private:
-    struct ToxDeleter
-    {
-        void operator()(Tox* tox_)
-        {
-            tox_kill(tox_);
-        }
-    };
 /* Using the now commented out statements in checkConnection(), I watched how
  * many ticks disconnects-after-initial-connect lasted. Out of roughly 15 trials,
  * 5 disconnected; 4 were DCd for less than 20 ticks, while the 5th was ~50 ticks.
@@ -247,7 +259,6 @@ private:
  */
 #define CORE_DISCONNECT_TOLERANCE 30
 
-    using ToxPtr = std::unique_ptr<Tox, ToxDeleter>;
     ToxPtr tox;
 
     std::unique_ptr<CoreFile> file;
