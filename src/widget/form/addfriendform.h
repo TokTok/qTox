@@ -8,6 +8,7 @@
 #include "src/core/toxid.h"
 
 #include <QHBoxLayout>
+#include <QHash>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPushButton>
@@ -98,8 +99,10 @@ private:
     QString lastUsername;
     QTabWidget* tabWidget;
     QVBoxLayout* requestsLayout;
-    QList<QPushButton*> acceptButtons;
-    QList<QPushButton*> rejectButtons;
+    // Buttons are keyed by their request widget so removal cannot desync
+    // from the (newest-first) layout ordering.
+    QHash<QWidget*, QPushButton*> acceptButtons;
+    QHash<QWidget*, QPushButton*> rejectButtons;
     QList<QString> contactsToImport;
 
     ToxId ownId;
