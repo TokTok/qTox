@@ -7,6 +7,7 @@
 #include "src/conferencelist.h"
 #include "src/core/icoreidhandler.h"
 #include "src/friendlist.h"
+#include "src/grouplist.h"
 #include "src/model/friend.h"
 #include "src/persistence/db/rawdatabase.h"
 #include "src/persistence/db/upgrades/dbupgrader.h"
@@ -121,6 +122,7 @@ private:
     std::unique_ptr<MockMessageDispatcher> messageDispatcher;
     std::unique_ptr<FriendList> friendList;
     std::unique_ptr<ConferenceList> conferenceList;
+    std::unique_ptr<GroupList> groupList;
     std::unique_ptr<Friend> f;
 };
 
@@ -140,6 +142,7 @@ void TestChatHistory::init()
     messageDispatcher = std::make_unique<MockMessageDispatcher>();
     friendList = std::make_unique<FriendList>();
     conferenceList = std::make_unique<ConferenceList>();
+    groupList = std::make_unique<GroupList>();
     f = std::make_unique<Friend>(
         0, ToxPk(QString("FE34BC6D87B66E958C57BBF205F9B79B62BE0AB8A4EFC1F1BB9EC4D0D8FB0663")));
 }
@@ -147,6 +150,7 @@ void TestChatHistory::init()
 void TestChatHistory::cleanup()
 {
     f.reset();
+    groupList.reset();
     conferenceList.reset();
     friendList.reset();
     messageDispatcher.reset();
@@ -171,7 +175,7 @@ void TestChatHistory::testHistoryLoading()
     db->sync();
 
     const ChatHistory chatHistory(*f, history.get(), *idHandler, *settings, *messageDispatcher,
-                                  *friendList, *conferenceList);
+                                  *friendList, *conferenceList, *groupList);
 
     QCOMPARE(chatHistory.getNextIdx(), ChatLogIdx(2));
     QCOMPARE(chatHistory.at(ChatLogIdx(0)).getContentAsMessage().message.content, QString("msg1"));
@@ -189,7 +193,7 @@ void TestChatHistory::testHistorySearch()
     db->sync();
 
     const ChatHistory chatHistory(*f, history.get(), *idHandler, *settings, *messageDispatcher,
-                                  *friendList, *conferenceList);
+                                  *friendList, *conferenceList, *groupList);
 
     const SearchPos startPos{chatHistory.getNextIdx(), 0};
     const SearchResult result = chatHistory.searchBackward(startPos, "needle", ParameterSearch());
