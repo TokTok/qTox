@@ -17,6 +17,7 @@ class ICoreIdHandler;
 class Settings;
 class FriendList;
 class ConferenceList;
+class GroupList;
 
 class ChatHistory : public IChatLog
 {
@@ -24,7 +25,7 @@ class ChatHistory : public IChatLog
 public:
     ChatHistory(Chat& chat_, History* history_, const ICoreIdHandler& coreIdHandler_,
                 const Settings& settings_, IMessageDispatcher& messageDispatcher,
-                FriendList& friendList, ConferenceList& conferenceList);
+                FriendList& friendList, ConferenceList& conferenceList, GroupList& groupList);
     const ChatLogItem& at(ChatLogIdx idx) const override;
     SearchResult searchForward(SearchPos startIdx, const QString& phrase,
                                const ParameterSearch& parameter) const override;

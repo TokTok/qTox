@@ -1054,6 +1054,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Група %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1111,6 +1118,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>Покана в групов разговор „%1“</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Покана в група</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">В нова група</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Покана в група „%1“</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1367,6 +1387,270 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Желаете ли да бъдат премахнати всички показани съобщения?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Група %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Няма тема</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n събеседник</numerusform>
+            <numerusform>%n събеседници</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">заглушаване</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">премахване на зглушаването</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">копиране идентификатора на възела</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">повишаване в модератор</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">понижаване до потребител</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">изгонване от групата</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">лично съобщение</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Копиране на темата</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Копиране на ID на групата</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Задаване на тема…</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Задаване на псевдоним…</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Моето състояние</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">На линия</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Отсъства</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Зает</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Премахване на паролата на групата</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Задаване на парола на групата…</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Задаване на ограничение на участниците…</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Заключване на темата</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Кой може да пише</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Всички</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Модератори и основател</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Само основателят</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Видимост на групата</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Публична (присъединяване чрез връзка)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Частна (само с покана)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Задаване на парола на групата</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Парола:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Задаване на псевдоним</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Псевдоним:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Задаване на ограничение на участниците</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Ограничение на участниците:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Задаване на тема на групата</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Тема:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Лично съобщение до: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Създаване на група</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Въведете име за групата</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Името на групата не може да е празно.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Присъединяване към група чрез ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Въведете ID на групата (64 шестнайсетични знака):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Невалиден ID на групата. Очакват се 64 шестнайсетични знака.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Парола на групата (по избор)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Парола:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID на групата не може да е празен.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Групи</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Създаване на нова група</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Покани за групи</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Покана от %1 в %2 на %3 в %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Присъединяване</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Отказване</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Преместване в отделен прозорец</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Връщане в главния прозорец</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Задаване на заглавие…</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Изход от групата</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n събеседник</numerusform>
+            <numerusform>%n събеседници</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Ново съобщение</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">На линия</translation>
     </message>
 </context>
 <context>
@@ -1770,6 +2054,18 @@ Press Shift+F1 for more information.</source>
         <translation>Отваря формуляра за управление на групови разговори</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Създаване на група</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Група</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Отваряне на страницата за управление на групи</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Хронология на прехвърлените файлове</translation>
     </message>
@@ -1906,6 +2202,10 @@ Press Shift+F1 for more information.</source>
         <translation>Ново съобщение в групов разговор</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Ново съобщение в група</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Получаване на файл</translation>
     </message>
@@ -1921,6 +2221,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 ви кани да се присъедините към групов разговор.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Получена покана за група</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 ви кани да се присъедините към група.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2410,6 +2718,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>блокиран</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">лично</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3058,12 +3371,32 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Вашето име</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Покани за групи</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Парола на групата (по избор)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Парола:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>Създаване на групов разговор…</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Създаване на списък…</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n нова покана за група</numerusform>
+            <numerusform>%n нови покани за групи</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3092,6 +3425,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation>Групови разговори</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Групи</translation>
     </message>
     <message>
         <source>Search Contacts</source>

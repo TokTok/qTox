@@ -991,8 +991,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
         </translation>
     </message>
     <message>
@@ -1074,8 +1074,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
         </translation>
     </message>
     <message>
@@ -1241,6 +1241,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گروپ %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1316,6 +1323,19 @@ so you can save the file on Windows.</source>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">کانفرنس &apos;%1&apos; میں مدعو کریں</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">گروپ میں مدعو کریں</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">نئے گروپ میں</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; گروپ میں مدعو کریں</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1626,6 +1646,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">کیا آپ واقعی تمام دکھائے گئے پیغامات کو صاف کرنا چاہتے ہیں؟</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گروپ %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">کوئی موضوع نہیں</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">خاموش</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">چالو</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">ہم مرتبہ کی شناخت کاپی کریں۔</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ماڈریٹر بنائیں</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">صارف بنا دیں</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">گروپ سے نکالیں</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">نجی پیغام</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">موضوع کاپی کریں</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">گروپ ID کاپی کریں</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">موضوع مقرر کریں...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">عرفیت مقرر کریں...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">میری حیثیت</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">آن لائن</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">دور</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">مصروف</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">گروپ کا پاس ورڈ ہٹائیں</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">گروپ کا پاس ورڈ مقرر کریں...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">اراکین کی حد مقرر کریں...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">موضوع مقفل کریں</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">کون لکھ سکتا ہے</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">سب</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">ماڈریٹرز اور بانی</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">صرف بانی</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">گروپ کی مرئیت</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">عوامی (لنک کے ذریعے شمولیت)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">نجی (صرف دعوت پر)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">گروپ کا پاس ورڈ مقرر کریں</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاس ورڈ:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">عرفیت مقرر کریں</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">عرفیت:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">اراکین کی حد مقرر کریں</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">اراکین کی حد:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">گروپ کا موضوع مقرر کریں</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">موضوع:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">نجی پیغام برائے: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">گروپ بنائیں</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">گروپ کے لیے نام درج کریں</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">گروپ کا نام خالی نہیں ہو سکتا۔</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ID کے ذریعے گروپ میں شامل ہوں</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">گروپ کی چیٹ ID درج کریں (64 ہیکس حروف):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">گروپ ID غلط ہے۔ 64 ہیکس حروف درکار ہیں۔</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">گروپ کا پاس ورڈ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاس ورڈ:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">گروپ ID خالی نہیں ہو سکتی۔</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گروپس</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">نیا گروپ بنائیں</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">گروپ کی دعوتیں</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 نے %3 کو %4 بجے %2 میں مدعو کیا۔</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">شمولیت</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">رد کرنا</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں۔</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں۔</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">عنوان سیٹ کریں...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">گروپ چھوڑیں</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">نیا پیغام</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">آن لائن</translation>
     </message>
 </context>
 <context>
@@ -2115,6 +2399,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">کانفرنس مینجمنٹ کا صفحہ کھولیں۔</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">ایک گروپ بنائیں</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">گروپ</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">گروپ کے انتظام کا صفحہ کھولیں</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">فائل کی منتقلی کی تاریخ</translation>
@@ -2277,6 +2573,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">کانفرنس کا نیا پیغام</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">نیا گروپ پیغام</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">آنے والی فائل ٹرانسفر</translation>
@@ -2296,6 +2596,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 آپ کو کانفرنس میں شامل ہونے کی دعوت دیتا ہے۔</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">گروپ کی دعوت موصول ہوئی</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 آپ کو ایک گروپ میں شامل ہونے کی دعوت دیتا ہے۔</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2885,6 +3193,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">مسدود</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">نجی</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3695,6 +4008,19 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">آپ کا نام</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">گروپ کی دعوتیں</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">گروپ کا پاس ورڈ (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاس ورڈ:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">نئی کانفرنس بنائیں...</translation>
@@ -3703,6 +4029,13 @@ number here may cause the scroll bar to disappear.</source>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">نیا حلقہ شامل کریں...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n نئی گروپ دعوت</numerusform>
+            <numerusform>%n نئی گروپ دعوتیں</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3738,6 +4071,10 @@ number here may cause the scroll bar to disappear.</source>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">کانفرنسیں</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گروپس</translation>
     </message>
     <message>
         <source>Search Contacts</source>

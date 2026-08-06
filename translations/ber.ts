@@ -1053,6 +1053,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">ⴰⴳⵔⴰⵡ %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1114,6 +1121,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">ⴰⵙⵏⴻⴱⴳⵉ ⵖⴻⵔ ⵓⵙⴰⵔⴰⴳ &apos;%1&apos;.</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">ⴰⵙⵏⴻⴱⴳⵉ ⵖⴻⵔ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">ⵖⴻⵔ ⵓⴳⵔⴰⵡ ⴰⵎⴰⵢⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">ⴰⵙⵏⴻⴱⴳⵉ ⵖⴻⵔ ⵓⴳⵔⴰⵡ &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1366,6 +1386,270 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation type="unfinished">ⵜⴻⵜⵜⵡⴰⵍⵉⴹ ⴱⴻⵍⵍⵉ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⴻⵙⴼⴻⴹ ⴰⴽⴽ ⵉⵣⴻⵏ ⵢⴻⵜⵜⵡⴰⵙⴱⴻⴳⵏⴻⵏ?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">ⴰⴳⵔⴰⵡ %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">ⵓⵍⴰⵛ ⴰⵙⴻⵏⵜⴻⵍ</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n ⵓⵙⴻⵇⴷⴰⵛ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+            <numerusform>%n ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">ⴷ ⴰⵙⵓⵙⵎⴰⵏ</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">ⵙⵙⵓⵙⴻⵎ</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">ⵏⵖⵍ ID ⵏ ⵓⵎⴷⴰⴽⴽⴻⵍ</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ⵙⵏⴻⴼⵍⴻⴹ ⵖⴻⵔ ⵓⵙⵎⴻⵖⵔⴰⵙ</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">ⵙⵓⵖⴻⵍ ⵖⴻⵔ ⵓⵙⴻⵇⴷⴰⵛ</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">ⵙⵓⴼⴻⵖ ⵙⴻⴳ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵓⵙⵍⵉⴳ</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">ⵏⵖⴻⵍ ⴰⵙⴻⵏⵜⴻⵍ</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">ⵏⵖⴻⵍ ID ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵙⴻⵏⵜⴻⵍ...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵉⵙⴻⵎ ⵏ ⵜⴻⵎⵖⴰⵔⵜ...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">ⴰⴷⴷⴰⴷ ⵉⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ⵢⵍⵍⴰ</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">ⵉⴱⵄⴷ</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">ⵢⵛⵖⵍ</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">ⴽⴽⴻⵙ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">ⵙⴻⴽⵍⴻⵏ ⴰⵙⴻⵏⵜⴻⵍ</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">ⵡⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴰⵔⴻⵎ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">ⴽⵓⵍⵍⴻⵛ</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">ⵉⵎⵙⴻⵎⵖⴻⵔⵙⴻⵏ ⴷ ⵓⵎⵙⴻⵏⵍⴻⴼ</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">ⴰⵎⵙⴻⵏⵍⴻⴼ ⴽⴰⵏ</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">ⴰⵎⴰⵜⴰⵢ (ⴰⴽⵛⴰⵎ ⵙ ⵓⵙⴻⵖⵡⴻⵏ)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">ⵓⵙⵍⵉⴳ (ⵙ ⵜⴻⵏⴱⴳⵉⵡⵜ ⴽⴰⵏ)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵉⵙⴻⵎ ⵏ ⵜⴻⵎⵖⴰⵔⵜ</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⴻⵎⵖⴰⵔⵜ:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵙⴻⵏⵜⴻⵍ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">ⴰⵙⴻⵏⵜⴻⵍ:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵓⵙⵍⵉⴳ ⵉ: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓⴷ ⴰⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">ⵙⴽⵛⴻⵎ ⵉⵙⴻⵎ ⵉ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵓⴳⵔⴰⵡ ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⵉⵍⵉ ⴷ ⵉⵍⴻⵎ.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ ⵓⴳⵔⴰⵡ ⵙ ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">ⵙⴽⵛⴻⵎ ID ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⴳⵔⴰⵡ (64 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ hex):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">ID ⵏ ⵓⴳⵔⴰⵡ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵇⴱⴰⵍ ⴰⵔⴰ. ⵢⴻⵙⵙⴻⴼⴽ 64 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ hex.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ (ⴰⵎⴻⵏⴷⴰⵢ)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID ⵏ ⵓⴳⵔⴰⵡ ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⵉⵍⵉ ⴷ ⵉⵍⴻⵎ.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓⴷ ⴰⴳⵔⴰⵡ ⴰⵎⴰⵢⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">ⵢⴻⵜⵜⵡⴰⵄⵔⴻⴹ ⵙⵖⵓⵔ %1 ⵖⴻⵔ %2 ⴰⵙⵙ ⵏ %3 ⴳ %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">ⴰⴳⵉ</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵎⵙⴰⵡⴰⵍ ⴷⴻⴳ ⵟⵟⴰⵇ ⴰⵎⴰⵢⵏⵓⵜ</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">ⴽⴽⵙ ⴰⵎⵙⴰⵡⴰⵍ ⵙⴳ ⵟⵟⴰⵇⴰ</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵣⵡⴻⵍ...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">ⴼⴼⴻⵖ ⵙⴻⴳ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n ⵓⵙⴻⵇⴷⴰⵛ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+            <numerusform>%n ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⴰⵎⴰⵢⵏⵓ</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ⵢⵍⵍⴰ</translation>
     </message>
 </context>
 <context>
@@ -1768,6 +2052,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">ⵍⴷⵉ ⴰⵙⴱⵜⵔ ⵏ ⵓⵙⵡⵓⴷⴷⵓ ⵏ ⵓⵙⴰⵔⴰⴳ</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">ⵙⵏⵓⵍⴼⵓⴷ ⴰⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">ⴰⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">ⵍⴷⵉ ⴰⵙⴱⵜⵔ ⵏ ⵓⵙⵡⵓⴷⴷⵓ ⵏ ⵢⵉⴳⵔⴰⵡⴻⵏ</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation type="unfinished">ⴰⵎⵣⵔⵓⵢ ⵏ ⵉⵙⵉⵡⴹⵏ ⵏ ⵉⴼⵓⵢⵍⴰ</translation>
     </message>
@@ -1904,6 +2200,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">ⵉⵣⴻⵏ ⵏ ⵓⵙⴰⵔⴰⴳ ⴰⵎⴰⵢⵏⵓⵜ</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵏ ⵓⴳⵔⴰⵡ ⴰⵎⴰⵢⵏⵓ</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation type="unfinished">ⴰⵙⵉⵡⴻⴹ ⵏ ⵓⴼⴰⵢⵍⵓ ⵉⴷ ⵉⴽⴻⵞⵞⵎⴻⵏ</translation>
     </message>
@@ -1919,6 +2219,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 ⵢⴻⵜⵜⵙⵏⵓⴱⴳⵓⴽ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⴷⴻⴳ ⵓⵙⴰⵔⴰⴳ.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">ⵜⴰⵏⴱⴳⵉⵡⵜ ⵏ ⵓⴳⵔⴰⵡ ⵜⴻⵡⵡⴻⴹⴷ</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 ⵢⴻⵜⵜⵙⵏⵓⴱⴳⵓⴽ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⴷⴻⴳ ⵓⴳⵔⴰⵡ.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2408,6 +2716,11 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <source>blocked</source>
         <comment>contact status</comment>
         <translation type="unfinished">ⵉⵜⵜⵡⴰⴳⴷⵍ</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">ⵓⵙⵍⵉⴳ</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3078,12 +3391,32 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ⵉⵙⴻⵎ ⵏⵏⴽ</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⴳⵔⴰⵡ</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ (ⴰⵎⴻⵏⴷⴰⵢ)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ ⴰⵙⴰⵔⴰⴳ ⴰⵎⴰⵢⵏⵓⵜ...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation type="unfinished">ⵙⵏⵓⵍⴼⵓ ⵜⴰⵔⴱⴰⵄⵜ ⵜⴰⵎⴰⵢⵏⵓⵜ...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n ⵜⴰⵏⴱⴳⵉⵡⵜ ⵏ ⵓⴳⵔⴰⵡ ⵜⴰⵎⴰⵢⵏⵓⵜ</numerusform>
+            <numerusform>%n ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵢⵉⴳⵔⴰⵡⴻⵏ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3112,6 +3445,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation type="unfinished">ⵉⵙⴰⵔⴰⴳⴻⵏ</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">ⵉⴳⵔⴰⵡⴻⵏ</translation>
     </message>
     <message>
         <source>Search Contacts</source>

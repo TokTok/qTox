@@ -1059,6 +1059,13 @@ zodat u het bestand op Windows kunt opslaan.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Groep %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1091,6 +1098,19 @@ zodat u het bestand op Windows kunt opslaan.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>Uitnodigen voor groep</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Uitnodigen voor groep</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Voor nieuwe groep</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Uitnodigen voor groep ‘%1’</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1376,6 +1396,270 @@ in plaats van volledig te sluiten.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Weet je zeker dat je alle weergegeven berichten wilt wissen?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Groep %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Geen onderwerp</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n gebruiker in de chat</numerusform>
+            <numerusform>%n gebruikers in de chat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">dempen</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">ontdempen</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopieer peer-ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">promoveren tot moderator</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">degraderen tot gebruiker</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">uit de groep zetten</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privébericht</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Onderwerp kopiëren</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Groeps-ID kopiëren</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Onderwerp instellen…</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Bijnaam instellen…</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Mijn status</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Afwezig</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Bezet</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Groepswachtwoord verwijderen</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Groepswachtwoord instellen…</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Ledenlimiet instellen…</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Onderwerp vergrendelen</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Wie mag schrijven</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Iedereen</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderators en oprichter</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Alleen oprichter</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Zichtbaarheid van de groep</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Openbaar (deelnemen via link)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privé (alleen op uitnodiging)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Groepswachtwoord instellen</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Wachtwoord:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Bijnaam instellen</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Bijnaam:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Ledenlimiet instellen</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Ledenlimiet:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Groepsonderwerp instellen</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Onderwerp:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privébericht aan: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Groep aanmaken</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Voer een naam in voor de groep</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">De groepsnaam mag niet leeg zijn.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Deelnemen aan groep via ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Voer de chat-ID van de groep in (64 hexadecimale tekens):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Ongeldige groeps-ID. 64 hexadecimale tekens verwacht.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Groepswachtwoord (optioneel)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Wachtwoord:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">De groeps-ID mag niet leeg zijn.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Groepen</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Nieuwe groep aanmaken</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Groepsuitnodigingen</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Uitgenodigd door %1 voor %2 op %3 om %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Deelnemen</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Weigeren</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Chat openen in nieuw venster</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Chat verwijderen uit dit venster</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Stel titel in…</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Groep verlaten</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n gebruiker in de chat</numerusform>
+            <numerusform>%n gebruikers in de chat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nieuw bericht</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
     </message>
 </context>
 <context>
@@ -1778,6 +2062,18 @@ Druk op Shift+F1 voor meer informatie.</translation>
         <translation>Conferentie-beheerpagina openen</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Een groep aanmaken</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Groep</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Groepsbeheerpagina openen</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Bestandsoverdrachtgeschiedenis</translation>
     </message>
@@ -1914,6 +2210,10 @@ Druk op Shift+F1 voor meer informatie.</translation>
         <translation>Nieuw conferentie-bericht</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nieuw groepsbericht</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Inkomende bestandsoverdracht</translation>
     </message>
@@ -1929,6 +2229,14 @@ Druk op Shift+F1 voor meer informatie.</translation>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 nodigt je uit om deel te nemen aan een conferentie.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Groepsuitnodiging ontvangen</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 nodigt je uit om deel te nemen aan een groep.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2419,6 +2727,11 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>geblokkeerd</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privé</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3181,6 +3494,19 @@ ek:</translation>
         <source>Couldn&apos;t send friend request</source>
         <translation>Kon geen vriendschapsverzoek verzenden</translation>
     </message>
+    <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Groepsuitnodigingen</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Groepswachtwoord (optioneel)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Wachtwoord:</translation>
+    </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
@@ -3194,6 +3520,17 @@ ek:</translation>
             <numerusform>%n nieuwe conferentie-uitnodiging</numerusform>
             <numerusform>%n nieuwe conferentie-uitnodigingen</numerusform>
         </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n nieuwe groepsuitnodiging</numerusform>
+            <numerusform>%n nieuwe groepsuitnodigingen</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Groepen</translation>
     </message>
     <message>
         <source>Exit</source>

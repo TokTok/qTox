@@ -1056,6 +1056,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">群组 %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1092,6 +1099,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Open chat in new window</source>
         <translation>在新窗口打开</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">邀请加入群组</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">加入新群组</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">邀请加入群组 &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1373,6 +1393,268 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>是否确实要清除所有显示的消息？</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">群组 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">无主题</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">静音</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">取消静音</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">复制对等 ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">提升为管理员</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">降为普通用户</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">踢出群组</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">私信</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">复制主题</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">复制群组 ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">设置主题...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">设置昵称...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">我的状态</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">在线</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">离开</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">忙碌</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">移除群组密码</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">设置群组密码...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">设置成员上限...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">锁定主题</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">谁可以发言</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">所有人</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">管理员和创建者</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">仅创建者</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">群组可见性</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">公开（通过链接加入）</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">私密（仅限邀请）</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">设置群组密码</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">密码：</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">设置昵称</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">昵称：</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">设置成员上限</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">成员上限：</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">设置群组主题</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">主题：</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">私信给：%1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">创建群组</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">请输入群组名称</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">群组名称不能为空。</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">通过 ID 加入群组</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">请输入群组聊天 ID（64 个十六进制字符）：</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">群组 ID 无效。应为 64 个十六进制字符。</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">群组密码（可选）</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">密码：</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">群组 ID 不能为空。</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">群组</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">创建新群组</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">群组邀请</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 于 %3 %4 邀请加入 %2。</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">加入</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">拒绝</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">在新窗口打开会话</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">从这个窗口中删除会话</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">设置名称...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">退出群组</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n 位用户正在聊天</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">新消息</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">在线</translation>
     </message>
 </context>
 <context>
@@ -1775,6 +2057,18 @@ Press Shift+F1 for more information.</source>
         <translation>打开会议管理页面</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">创建群组</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">群组</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">打开群组管理页面</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>文件传输历史记录</translation>
     </message>
@@ -1910,6 +2204,10 @@ Press Shift+F1 for more information.</source>
         <translation>新会议消息</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">新群组消息</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>传入文件传输</translation>
     </message>
@@ -1925,6 +2223,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1邀请您加入会议。</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">收到群组邀请</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 邀请您加入群组。</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2415,6 +2721,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>已屏蔽</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">私信</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3084,12 +3395,31 @@ number here may cause the scroll bar to disappear.</source>
         <translation>状态</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">群组邀请</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">群组密码（可选）</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">密码：</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>创建新会议...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>添加新圈子...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n 个新群组邀请</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3106,6 +3436,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Friends</source>
         <translation>好友</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">群组</translation>
     </message>
     <message>
         <source>Search Contacts</source>

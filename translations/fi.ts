@@ -1065,6 +1065,13 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Ryhmä %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1105,6 +1112,19 @@ joten voit tallentaa tiedoston Windowsissa.</translation>
     <message>
         <source>Remove chat from this window</source>
         <translation>Poista keskustelu tästä ikkunasta</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Kutsu ryhmään</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Uuteen ryhmään</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Kutsu ryhmään &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1384,6 +1404,270 @@ eikä sulkeudu kokonaan.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Oletko varma, että haluat tyhjentää kaikki näytetyt viestit?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Ryhmä %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Ei aihetta</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n käyttäjä keskustelussa</numerusform>
+            <numerusform>%n käyttäjää keskustelussa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">mykistä</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">poista mykistys</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopioi vertaistunnus</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ylennä moderaattoriksi</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">alenna käyttäjäksi</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">poista ryhmästä</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">yksityisviesti</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopioi aihe</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopioi ryhmän tunniste</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Aseta aihe...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Aseta lempinimi...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Oma tila</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Paikalla</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Poissa</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Kiireinen</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Poista ryhmän salasana</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Aseta ryhmän salasana...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Aseta jäsenraja...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Lukitse aihe</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kuka saa kirjoittaa</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Kaikki</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderaattorit ja perustaja</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Vain perustaja</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Ryhmän näkyvyys</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Julkinen (liittyminen linkillä)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Yksityinen (vain kutsulla)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Aseta ryhmän salasana</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasana:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Aseta lempinimi</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Lempinimi:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Aseta jäsenraja</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Jäsenraja:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Aseta ryhmän aihe</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Aihe:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Yksityisviesti vastaanottajalle: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Luo ryhmä</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Anna ryhmälle nimi</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Ryhmän nimi ei voi olla tyhjä.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Liity ryhmään tunnisteella</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Anna ryhmän keskustelutunniste (64 heksadesimaalimerkkiä):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Virheellinen ryhmän tunniste. Odotettiin 64 heksadesimaalimerkkiä.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Ryhmän salasana (valinnainen)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasana:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Ryhmän tunniste ei voi olla tyhjä.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Ryhmät</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Luo uusi ryhmä</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Ryhmäkutsut</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Kutsu henkilöltä %1 ryhmään %2, %3 kello %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Liity</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Kieltäydy</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Avaa keskustelu uudessa ikkunassa</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Poista keskustelu tästä ikkunasta</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Aseta otsikko...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Poistu ryhmästä</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n käyttäjä keskustelussa</numerusform>
+            <numerusform>%n käyttäjää keskustelussa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Uusi viesti</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Paikalla</translation>
     </message>
 </context>
 <context>
@@ -1787,6 +2071,18 @@ Saat lisätietoja painamalla Shift+F1.</translation>
         <translation type="unfinished">Avaa ryhmäkeskustelun hallinta -sivu</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Luo ryhmä</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Ryhmä</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Avaa ryhmien hallintasivu</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Tiedostonsiirtohistoria</translation>
     </message>
@@ -1925,6 +2221,10 @@ Saat lisätietoja painamalla Shift+F1.</translation>
         <translation type="unfinished">Uusi ryhmäviesti</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Uusi ryhmäviesti</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Saapuva tiedostonsiirto</translation>
     </message>
@@ -1939,6 +2239,14 @@ Saat lisätietoja painamalla Shift+F1.</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
+        <translation type="unfinished">%1 kutsuu sinut liittymään ryhmään.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Ryhmäkutsu vastaanotettu</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
         <translation type="unfinished">%1 kutsuu sinut liittymään ryhmään.</translation>
     </message>
     <message>
@@ -2430,6 +2738,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>estetty</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">yksityinen</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3105,8 +3418,28 @@ loki:</translation>
         <translation>Tila</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Ryhmäkutsut</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Ryhmän salasana (valinnainen)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasana:</translation>
+    </message>
+    <message>
         <source>Create new circle...</source>
         <translation>Lisää uusi piiri...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n uusi ryhmäkutsu</numerusform>
+            <numerusform>%n uutta ryhmäkutsua</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3134,6 +3467,10 @@ loki:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Ryhmät</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Ryhmät</translation>
     </message>
     <message>

@@ -996,8 +996,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
         </translation>
     </message>
     <message>
@@ -1079,8 +1079,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
         </translation>
     </message>
     <message>
@@ -1246,6 +1246,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">קבוצה %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1311,6 +1318,19 @@ so you can save the file on Windows.</source>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הסר את הצ&apos;אט מחלון זה</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">הזמנה לקבוצה</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">לקבוצה חדשה</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">הזמנה לקבוצה &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1631,6 +1651,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">האם אתה בטוח שברצונך למחוק את כל ההודעות המוצגות?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">קבוצה %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">אין נושא</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">לְהַשְׁתִיק</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">בטל השתקה</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">העתק מזהה עמיתים</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">קידום למנחה</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">הורדה למשתמש</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">הרחקה מהקבוצה</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">הודעה פרטית</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">העתקת הנושא</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">העתקת מזהה הקבוצה</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">הגדרת נושא...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">הגדרת כינוי...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">המצב שלי</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">באינטרנט</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">רָחוֹק</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">עָסוּק</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">הסרת סיסמת הקבוצה</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">הגדרת סיסמת הקבוצה...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">הגדרת מגבלת חברים...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">נעילת הנושא</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">מי יכול לכתוב</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">כולם</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">מנחים ומייסד</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">המייסד בלבד</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">נראות הקבוצה</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">ציבורית (הצטרפות בקישור)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">פרטית (בהזמנה בלבד)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">הגדרת סיסמת הקבוצה</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">סִיסמָה:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">הגדרת כינוי</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">כינוי:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">הגדרת מגבלת חברים</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">מגבלת חברים:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">הגדרת נושא הקבוצה</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">נושא:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">הודעה פרטית אל: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">יצירת קבוצה</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">נא להזין שם לקבוצה</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">שם הקבוצה לא יכול להיות ריק.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">הצטרפות לקבוצה לפי מזהה</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">נא להזין את מזהה הצ&apos;אט של הקבוצה (64 תווים הקסדצימליים):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">מזהה קבוצה שגוי. נדרשים 64 תווים הקסדצימליים.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">סיסמת הקבוצה (רשות)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">סִיסמָה:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">מזהה הקבוצה לא יכול להיות ריק.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">קבוצות</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">יצירת קבוצה חדשה</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">הזמנות לקבוצות</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">הוזמנת על ידי %1 אל %2 ב־%3 בשעה %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">לְהִצְטַרֵף</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">יְרִידָה</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">פתח צ&apos;אט בחלון חדש</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">הסר את הצ&apos;אט מחלון זה</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">הגדר כותרת...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">עזיבת הקבוצה</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">הודעה חדשה</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">באינטרנט</translation>
     </message>
 </context>
 <context>
@@ -2120,6 +2404,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">פתח את דף ניהול הכנס</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">יצירת קבוצה</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">קבוצה</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">פתיחת עמוד ניהול הקבוצות</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">היסטוריית העברות קבצים</translation>
@@ -2282,6 +2578,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">הודעת ועידה חדשה</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">הודעה חדשה בקבוצה</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">העברת קבצים נכנסת</translation>
@@ -2301,6 +2601,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 מזמין אותך להצטרף לוועידה.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">התקבלה הזמנה לקבוצה</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 מזמין אותך להצטרף לקבוצה.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2889,6 +3197,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">חָסוּם</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">פרטי</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3800,6 +4113,19 @@ number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">לא ניתן לשלוח בקשת חברות</translation>
     </message>
+    <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">הזמנות לקבוצות</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">סיסמת הקבוצה (רשות)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">סִיסמָה:</translation>
+    </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
@@ -3813,6 +4139,17 @@ number here may cause the scroll bar to disappear.</source>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n הזמנה חדשה לקבוצה</numerusform>
+            <numerusform>%n הזמנות חדשות לקבוצות</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">קבוצות</translation>
     </message>
     <message>
         <source>Exit</source>

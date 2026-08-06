@@ -1070,6 +1070,13 @@ so you can save the file on Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Skupina %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1131,6 +1138,19 @@ so you can save the file on Windows.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Pozvať do skupiny &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Pozvať do skupiny</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Do novej skupiny</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Pozvať do skupiny „%1“</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1389,6 +1409,272 @@ namiesto toho, že by sa zavrel úplne.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Ste si istí, že chcete vymazať všetky zobrazené správy?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Skupina %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Bez témy</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n používateľ v chate</numerusform>
+            <numerusform>%n používatelia v chate</numerusform>
+            <numerusform>%n používateľov v chate</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">stlmiť</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">zrušiť stlmenie</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopírovať ID partnera</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">povýšiť na moderátora</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">degradovať na používateľa</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">vyhodiť zo skupiny</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">súkromná správa</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopírovať tému</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopírovať ID skupiny</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Nastaviť tému...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Nastaviť prezývku...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Môj stav</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Preč</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Zaneprázdnený</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Odstrániť heslo skupiny</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Nastaviť heslo skupiny...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Nastaviť limit členov...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Zamknúť tému</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kto môže písať</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Všetci</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderátori a zakladateľ</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Iba zakladateľ</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Viditeľnosť skupiny</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Verejná (pripojenie odkazom)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Súkromná (iba na pozvanie)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Nastaviť heslo skupiny</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Heslo:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Nastaviť prezývku</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Prezývka:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Nastaviť limit členov</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Limit členov:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Nastaviť tému skupiny</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Téma:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Súkromná správa pre: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Vytvoriť skupinu</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Zadajte názov skupiny</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Názov skupiny nemôže byť prázdny.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Pripojiť sa ku skupine podľa ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Zadajte ID chatu skupiny (64 hexadecimálnych znakov):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Neplatné ID skupiny. Očakáva sa 64 hexadecimálnych znakov.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Heslo skupiny (voliteľné)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Heslo:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID skupiny nemôže byť prázdne.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Skupiny</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Vytvoriť novú skupinu</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Pozvánky do skupín</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Pozvánka od %1 do %2 dňa %3 o %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Pripojiť sa</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Odmietnuť</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Zobraziť chat v novom okne</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Odstrániť chat z tohto okna</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Zmeniť názov...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Opustiť skupinu</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n používateľ v chate</numerusform>
+            <numerusform>%n používatelia v chate</numerusform>
+            <numerusform>%n používateľov v chate</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nová správa</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
     </message>
 </context>
 <context>
@@ -1791,6 +2077,18 @@ Ak toto heslo stratíte, neexistuje spôsob, ako ho obnoviť.
         <translation type="unfinished">Otvoriť stránku na správu skupinového chatu</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Vytvoriť skupinu</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Skupina</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Otvoriť stránku správy skupín</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>História prenosov súborov</translation>
     </message>
@@ -1930,6 +2228,10 @@ Ak toto heslo stratíte, neexistuje spôsob, ako ho obnoviť.
         <translation type="unfinished">Nová skupinová správa</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nová správa v skupine</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Prichádzajúci prenos súborov</translation>
     </message>
@@ -1945,6 +2247,14 @@ Ak toto heslo stratíte, neexistuje spôsob, ako ho obnoviť.
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 vás pozýva, aby ste sa pridali do skupiny.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Prijatá pozvánka do skupiny</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 vás pozýva do skupiny.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2435,6 +2745,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>blokovaný/á</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">súkromné</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3117,12 +3432,33 @@ zhovoru:</translation>
         <translation>Vaše meno</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Pozvánky do skupín</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Heslo skupiny (voliteľné)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Heslo:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">Vytvoriť novú skupinu...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Vytvoriť nový kruh...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n nová pozvánka do skupiny</numerusform>
+            <numerusform>%n nové pozvánky do skupín</numerusform>
+            <numerusform>%n nových pozvánok do skupín</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3151,6 +3487,10 @@ zhovoru:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Skupiny</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Skupiny</translation>
     </message>
     <message>

@@ -1248,6 +1248,13 @@ svo þú getur vistað skrána á Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Hópur %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1323,6 +1330,19 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Boða á ráðstefnu &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Bjóða í hóp</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Í nýjan hóp</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Bjóða í hópinn &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1633,6 +1653,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ertu viss um að þú viljir hreinsa öll birt skilaboð?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Hópur %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Ekkert umræðuefni</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%1 notandi í spjalli</numerusform>
+            <numerusform>%1 notendur í spjalli</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">hljóðlaus</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">slökkva á hljóði</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">afrita jafningjaauðkenni</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">gera að stjórnanda</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">lækka í notanda</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">sparka úr hópnum</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">einkaskilaboð</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Afrita umræðuefni</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Afrita auðkenni hóps</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Stilla umræðuefni...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Stilla gælunafn...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Staðan mín</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Á netinu</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Burt</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Upptekinn</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Fjarlægja lykilorð hóps</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Stilla lykilorð hóps...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Stilla hámarksfjölda meðlima...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Læsa umræðuefni</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Hverjir mega skrifa</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Allir</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Stjórnendur og stofnandi</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Aðeins stofnandi</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Sýnileiki hóps</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Opinn (aðild með tengli)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Lokaður (aðeins með boði)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Stilla lykilorð hóps</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Aðgangsorð:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Stilla gælunafn</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Gælunafn:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Stilla hámarksfjölda meðlima</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Hámarksfjöldi meðlima:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Stilla umræðuefni hóps</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Umræðuefni:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Einkaskilaboð til: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Búa til hóp</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Sláðu inn heiti á hópinn</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Heiti hóps má ekki vera tómt.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Ganga í hóp með auðkenni</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Sláðu inn spjallauðkenni hópsins (64 sextándakerfisstafir):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Ógilt auðkenni hóps. Búist var við 64 sextándakerfisstöfum.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Lykilorð hóps (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Aðgangsorð:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Auðkenni hóps má ekki vera tómt.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Hópar</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Búa til nýjan hóp</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Boð í hópa</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Boðið af %1 í %2 þann %3 kl. %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Vertu með</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Afneita</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Opnaðu spjall í nýjum glugga</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Fjarlægðu spjall úr þessum glugga</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Stilla titil...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Yfirgefa hóp</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%1 notandi í spjalli</numerusform>
+            <numerusform>%1 notendur í spjalli</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Ný skilaboð</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Á netinu</translation>
     </message>
 </context>
 <context>
@@ -2113,6 +2397,18 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <translation type="unfinished">Opna ráðstefnustjórnunarsíðu</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Búa til hóp</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Hópur</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Opna umsjónarsíðu hópa</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Skráaflutningsferill</translation>
@@ -2275,6 +2571,10 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <translation type="unfinished">Ný ráðstefnuboð</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Ný hópskilaboð</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Skráaflutningur á innleið</translation>
@@ -2294,6 +2594,14 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 býður þér að taka þátt í ráðstefnu.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Boð í hóp móttekið</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 býður þér að ganga í hóp.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2881,6 +3189,11 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">læst</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">einka</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3692,6 +4005,19 @@ spjalldagskrár</translation>
         <translation type="unfinished">Nafnið þitt</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Boð í hópa</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Lykilorð hóps (valfrjálst)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Aðgangsorð:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Búa til nýja ráðstefnu...</translation>
@@ -3700,6 +4026,13 @@ spjalldagskrár</translation>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bæta við nýjum hring...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n nýtt boð í hóp</numerusform>
+            <numerusform>%n ný boð í hópa</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3735,6 +4068,10 @@ spjalldagskrár</translation>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ráðstefnur</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Hópar</translation>
     </message>
     <message>
         <source>Search Contacts</source>

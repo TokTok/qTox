@@ -345,7 +345,7 @@ void Test10to11::test10to11()
     appendAddAliasesQueries(setupQueries);
     appendAddHistoryQueries(setupQueries);
     QVERIFY(db->execNow(std::move(setupQueries)));
-    QVERIFY(DbTo11::dbSchema10to11(*db));
+    QVERIFY(DbUpgrader::dbSchema10to11(*db));
     verifyDb(db, DbUtility::schema11);
     std::vector<RawDatabase::Query> verifyQueries;
     appendVerifyChatsQueries(verifyQueries);

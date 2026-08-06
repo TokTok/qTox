@@ -1066,6 +1066,13 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grup %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1106,6 +1113,19 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>Gruba davet et</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Gruba davet et</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Yeni gruba</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; grubuna davet et</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1385,6 +1405,268 @@ tamamen kapanmak yerine tepsiye kapanacak.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Görüntülenen tüm iletileri temizlemek istediğinizden emin misiniz?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grup %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Konu yok</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n kullanıcı sohbette</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">sesi kapat</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">sesi aç</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">eş kimliğini kopyala</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">moderatörlüğe yükselt</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">kullanıcılığa düşür</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">gruptan at</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">özel mesaj</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Konuyu kopyala</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Grup kimliğini kopyala</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Konu ayarla...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Takma ad ayarla...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Durumum</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Çevrimiçi</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Uzakta</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Meşgul</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Grup parolasını kaldır</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Grup parolası ayarla...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Üye sınırı ayarla...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Konuyu kilitle</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kimler yazabilir</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Herkes</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatörler ve kurucu</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Yalnızca kurucu</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Grup görünürlüğü</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Herkese açık (bağlantıyla katılım)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Özel (yalnızca davetle)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Grup parolası ayarla</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Takma ad ayarla</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Takma ad:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Üye sınırı ayarla</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Üye sınırı:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Grup konusunu ayarla</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Konu:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Özel mesaj alıcısı: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Grup oluştur</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Grup için bir ad girin</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Grup adı boş olamaz.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Kimlikle gruba katıl</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Grubun sohbet kimliğini girin (64 onaltılık karakter):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Geçersiz grup kimliği. 64 onaltılık karakter bekleniyordu.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grup parolası (isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Grup kimliği boş olamaz.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Gruplar</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Yeni grup oluştur</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Grup davetleri</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 sizi %3 %4 tarihinde %2 grubuna davet etti.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Katıl</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Reddet</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Sohbeti yeni pencerede aç</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Sohbeti bu pencereden kaldır</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Başlık ayarla...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Gruptan çık</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n kullanıcı sohbette</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Yeni İleti</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Çevrimiçi</translation>
     </message>
 </context>
 <context>
@@ -1787,6 +2069,18 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
         <translation type="unfinished">Grup sohbeti yönetim sayfasını aç</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Bir grup oluştur</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grup</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Grup yönetim sayfasını aç</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Dosya aktarım geçmişi</translation>
     </message>
@@ -1924,6 +2218,10 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
         <translation type="unfinished">Yeni grup mesajı</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Yeni grup mesajı</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Gelen dosya aktarımı</translation>
     </message>
@@ -1938,6 +2236,14 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
+        <translation type="unfinished">%1 sizi bir gruba katılmaya davet ediyor.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Grup daveti alındı</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
         <translation type="unfinished">%1 sizi bir gruba katılmaya davet ediyor.</translation>
     </message>
     <message>
@@ -2429,6 +2735,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>engellendi</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">özel</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3072,8 +3383,27 @@ günlüğü:</translation>
         <translation>Adınız</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Grup davetleri</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grup parolası (isteğe bağlı)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
         <source>Create new circle...</source>
         <translation>Yeni çevre ekle...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n yeni grup daveti</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3101,6 +3431,10 @@ günlüğü:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Gruplar</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Gruplar</translation>
     </message>
     <message>

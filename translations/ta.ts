@@ -1054,6 +1054,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">குழு %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1115,6 +1122,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>&apos;%1&apos; மாநாட்டிற்கு அழைக்கவும்</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">குழுவிற்கு அழைக்கவும்</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">புதிய குழுவிற்கு</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; குழுவிற்கு அழைக்கவும்</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1369,6 +1389,270 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>காண்பிக்கப்படும் அனைத்து செய்திகளையும் அழிக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">குழு %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">தலைப்பு இல்லை</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>அரட்டையில் %n பயனர்</numerusform>
+            <numerusform>அரட்டையில் %n பயனர்கள்</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">முடக்கு</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">ஊன்</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">பியர் ஐடியை நகலெடுக்கவும்</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">மட்டுறுத்துநராக உயர்த்து</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">பயனராகக் குறை</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">குழுவிலிருந்து வெளியேற்று</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">தனிப்பட்ட செய்தி</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">தலைப்பை நகலெடு</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">குழு ID-ஐ நகலெடு</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">தலைப்பை அமை...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">புனைப்பெயரை அமை...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">எனது நிலை</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ஆன்லைனில்</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">விலகியுள்ளார்</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">வேறுவினையேற்றுள்ளார்</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">குழு கடவுச்சொல்லை நீக்கு</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">குழு கடவுச்சொல்லை அமை...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">உறுப்பினர் வரம்பை அமை...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">தலைப்பைப் பூட்டு</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">யார் எழுதலாம்</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">அனைவரும்</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">மட்டுறுத்துநர்களும் நிறுவனரும்</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">நிறுவனர் மட்டும்</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">குழுவின் தெரிவுநிலை</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">பொது (இணைப்பு மூலம் சேரலாம்)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">தனிப்பட்டது (அழைப்பு மூலம் மட்டும்)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">குழு கடவுச்சொல்லை அமை</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">கடவுச்சொல்:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">புனைப்பெயரை அமை</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">புனைப்பெயர்:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">உறுப்பினர் வரம்பை அமை</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">உறுப்பினர் வரம்பு:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">குழு தலைப்பை அமை</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">தலைப்பு:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">தனிப்பட்ட செய்தி பெறுநர்: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">குழுவை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">குழுவிற்கு ஒரு பெயரை உள்ளிடவும்</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">குழுவின் பெயர் காலியாக இருக்கக்கூடாது.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ID மூலம் குழுவில் சேர்</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">குழுவின் அரட்டை ID-ஐ உள்ளிடவும் (64 பதினறும எழுத்துகள்):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">தவறான குழு ID. 64 பதினறும எழுத்துகள் தேவை.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">குழு கடவுச்சொல் (விருப்பத்தேர்வு)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">கடவுச்சொல்:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">குழு ID காலியாக இருக்கக்கூடாது.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">குழுக்கள்</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">புதிய குழுவை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">குழு அழைப்புகள்</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 %3 அன்று %4 மணிக்கு %2 குழுவிற்கு விடுத்த அழைப்பு.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">சேர்</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">மறு</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">அரட்டையைப் புதிய சாளரத்தில் திற</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">அரட்டையை இச்சாளரத்திலிருந்து நீக்கு</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">தலைப்பு வை...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">குழுவிலிருந்து வெளியேறு</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>அரட்டையில் %n பயனர்</numerusform>
+            <numerusform>அரட்டையில் %n பயனர்கள்</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">புதிய செய்தி</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ஆன்லைனில்</translation>
     </message>
 </context>
 <context>
@@ -1771,6 +2055,18 @@ Press Shift+F1 for more information.</source>
         <translation>மாநாட்டு மேலாண்மை பக்கத்தைத் திறக்கவும்</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">ஒரு குழுவை உருவாக்கு</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">குழு</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">குழு மேலாண்மை பக்கத்தைத் திறக்கவும்</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>கோப்பு இடமாற்றம் வரலாறு</translation>
     </message>
@@ -1907,6 +2203,10 @@ Press Shift+F1 for more information.</source>
         <translation>புதிய மாநாட்டு செய்தி</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">புதிய குழு செய்தி</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>உள்வரும் கோப்பு பரிமாற்றம்</translation>
     </message>
@@ -1922,6 +2222,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 ஒரு மாநாட்டில் சேர உங்களை அழைக்கிறது.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">குழு அழைப்பு பெறப்பட்டது</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 ஒரு குழுவில் சேர உங்களை அழைக்கிறார்.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2411,6 +2719,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>தடுக்கப்பட்டது</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">தனிப்பட்டது</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3079,12 +3392,32 @@ number here may cause the scroll bar to disappear.</source>
         <translation>உங்கள் பெயர்</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">குழு அழைப்புகள்</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">குழு கடவுச்சொல் (விருப்பத்தேர்வு)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">கடவுச்சொல்:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>புதிய மாநாட்டை உருவாக்கவும் ...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>புதிய வட்டத்தைச் சேர்க்கவும் ...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n புதிய குழு அழைப்பு</numerusform>
+            <numerusform>%n புதிய குழு அழைப்புகள்</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3114,6 +3447,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation>மாநாடுகள்</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">குழுக்கள்</translation>
     </message>
     <message>
         <source>Search Contacts</source>

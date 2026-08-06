@@ -130,7 +130,7 @@ private slots:
     // test8to9 omitted, data corruption correction upgrade with no schema change
     void test9to10();
     // test10to11 handled in dbTo11_test
-    // test suite
+    void test11to12();
 
 private:
     std::unique_ptr<QTemporaryFile> testDatabaseFile;
@@ -155,7 +155,7 @@ void TestDbSchema::testCreation()
     const QVector<RawDatabase::Query> queries;
     auto db = RawDatabase::open(testDatabaseFile->fileName(), {}, {});
     QVERIFY(DbUpgrader::createCurrentSchema(*db));
-    DbUtility::verifyDb(db, DbUtility::schema11);
+    DbUtility::verifyDb(db, DbUtility::schema12);
 }
 
 void TestDbSchema::testIsNewDb()
@@ -420,6 +420,14 @@ void TestDbSchema::test9to10()
     QVERIFY(numHealed == 2);
     QVERIFY(numUnchanged == 3);
     verifyDb(db, DbUtility::schema10);
+}
+
+void TestDbSchema::test11to12()
+{
+    auto db = RawDatabase::open(testDatabaseFile->fileName(), {}, {});
+    createSchemaAtVersion(db, DbUtility::schema11);
+    QVERIFY(DbUpgrader::dbSchema11to12(*db));
+    DbUtility::verifyDb(db, DbUtility::schema12);
 }
 
 QTEST_GUILESS_MAIN(TestDbSchema)

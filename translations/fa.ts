@@ -1093,6 +1093,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گروه %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1154,6 +1161,19 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
+        <translation type="unfinished">دعوت به گروه «%1»</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">دعوت به گروه</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">به گروه جدید</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
         <translation type="unfinished">دعوت به گروه «%1»</translation>
     </message>
     <message>
@@ -1420,6 +1440,268 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">آیا مطمئن هستید که می خواهید همه پیام های نمایش داده شده را پاک کنید؟</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گروه %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">بدون موضوع</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n کاربر در گپ</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">بی‌صدا</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">رفع حالت بی‌صدا</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">شناسه همتا را کپی کنید</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ارتقا به ناظر</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">تنزل به کاربر</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">اخراج از گروه</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">پیام خصوصی</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">کپی موضوع</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">کپی شناسه گروه</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">تنظیم موضوع...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">تنظیم نام مستعار...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">وضعیت من</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">آنلاین</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">پای سیستم نیست</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">سرش شلوغه</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">حذف رمز عبور گروه</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">تنظیم رمز عبور گروه...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">تنظیم حداکثر اعضا...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">قفل کردن موضوع</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">چه کسی می‌تواند بنویسد</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">همه</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">ناظران و بنیان‌گذار</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">فقط بنیان‌گذار</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">نمایانی گروه</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">عمومی (پیوستن با پیوند)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">خصوصی (فقط با دعوت)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">تنظیم رمز عبور گروه</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ورود رمز:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">تنظیم نام مستعار</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">نام مستعار:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">تنظیم حداکثر اعضا</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">حداکثر اعضا:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">تنظیم موضوع گروه</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">موضوع:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">پیام خصوصی به: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">ایجاد گروه</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">نامی برای گروه وارد کنید</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">نام گروه نمی‌تواند خالی باشد.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">پیوستن به گروه با شناسه</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">شناسه گفتگوی گروه را وارد کنید (۶۴ نویسه هگزادسیمال):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">شناسه گروه نامعتبر است. ۶۴ نویسه هگزادسیمال لازم است.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">رمز عبور گروه (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ورود رمز:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">شناسه گروه نمی‌تواند خالی باشد.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گروه‌ها</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">ایجاد گروه جدید</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">دعوت‌نامه‌های گروه</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">توسط %1 به %2 در %3 ساعت %4 دعوت شدید.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">ملحق شدن</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">رد کردن</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">باز کردن گفت و گو در یک پنجره جدید</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">حذف چت از این پنجره</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">تخصیص عنوان...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">خروج از گروه</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n کاربر در گپ</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">پیام جدید</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">آنلاین</translation>
     </message>
 </context>
 <context>
@@ -1826,6 +2108,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">باز کردن صفحه مدیریت چت گروهی</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">ایجاد یک گروه</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">گروه</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">باز کردن صفحه مدیریت گروه‌ها</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>تاریخچه انتقال فایل</translation>
     </message>
@@ -1965,6 +2259,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">پیام گروهی جدید</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">پیام گروهی جدید</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation type="unfinished">انتقال فایل ورودی</translation>
     </message>
@@ -1982,6 +2280,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 شما را به پیوستن به یک کنفرانس دعوت می کند.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">دعوت به گروه دریافت شد</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 شما را به پیوستن به یک گروه دعوت می‌کند.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2484,6 +2790,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>مسدود</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">خصوصی</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3189,12 +3500,31 @@ number here may cause the scroll bar to disappear.</source>
         <translation>نام شما</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">دعوت‌نامه‌های گروه</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">رمز عبور گروه (اختیاری)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">ورود رمز:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">ساخت یک گروه جدید...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>اضافه کردن یک حلقه جدید...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n دعوت جدید به گروه</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3224,6 +3554,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation type="unfinished">گروه ها</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گروه‌ها</translation>
     </message>
     <message>
         <source>Search Contacts</source>

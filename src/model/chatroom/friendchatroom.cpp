@@ -7,9 +7,11 @@
 
 #include "src/conferencelist.h"
 #include "src/core/core.h"
+#include "src/grouplist.h"
 #include "src/model/conference.h"
 #include "src/model/dialogs/idialogsmanager.h"
 #include "src/model/friend.h"
+#include "src/model/group.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/contentdialog.h"
@@ -31,12 +33,14 @@ QString getShortName(const QString& name)
 } // namespace
 
 FriendChatroom::FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
-                               Settings& settings_, ConferenceList& conferenceList_)
+                               Settings& settings_, ConferenceList& conferenceList_,
+                               GroupList& groupList_)
     : frnd{frnd_}
     , dialogsManager{dialogsManager_}
     , core{core_}
     , settings{settings_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
 {
 }
 
@@ -110,6 +114,21 @@ void FriendChatroom::inviteFriend(const Conference* conference)
     core.conferenceInviteFriend(friendId, conferenceId);
 }
 
+void FriendChatroom::inviteToNewGroup()
+{
+    const auto friendId = frnd->getId();
+    const auto groupId = core.createGroup(tr("Group %1").arg(groupList.getAllGroups().size() + 1));
+    if (groupId >= 0) {
+        core.groupInviteFriend(friendId, groupId);
+    }
+}
+
+void FriendChatroom::inviteFriend(const Group* group)
+{
+    const auto friendId = frnd->getId();
+    core.groupInviteFriend(friendId, group->getId());
+}
+
 QVector<ConferenceToDisplay> FriendChatroom::getConferences() const
 {
     QVector<ConferenceToDisplay> conferences;
@@ -120,6 +139,18 @@ QVector<ConferenceToDisplay> FriendChatroom::getConferences() const
     }
 
     return conferences;
+}
+
+QVector<GroupToDisplay> FriendChatroom::getGroups() const
+{
+    QVector<GroupToDisplay> groups;
+    for (auto* const group : groupList.getAllGroups()) {
+        const auto name = getShortName(group->getDisplayedName());
+        const GroupToDisplay groupToDisplay = {name, group};
+        groups.push_back(groupToDisplay);
+    }
+
+    return groups;
 }
 
 /**

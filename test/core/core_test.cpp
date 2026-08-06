@@ -20,6 +20,7 @@ Q_DECLARE_METATYPE(QList<DhtServer>)
 Q_DECLARE_METATYPE(ToxPk)
 Q_DECLARE_METATYPE(uint32_t)
 Q_DECLARE_METATYPE(Status::Status)
+Q_DECLARE_METATYPE(GroupId)
 
 class TestCore : public QObject
 {
@@ -30,6 +31,7 @@ public:
         qRegisterMetaType<ToxPk>("ToxPk");
         qRegisterMetaType<uint32_t>("uint32_t");
         qRegisterMetaType<Status::Status>("Status::Status");
+        qRegisterMetaType<GroupId>("GroupId");
     }
 
 private slots:
@@ -40,6 +42,7 @@ private slots:
     void change_name();
     void change_status_message();
     void change_status();
+    void unsynced_group_survives_restart();
 
 private:
     /* Test Variables */
@@ -242,6 +245,32 @@ void TestCore::change_status()
     // unchanged status, so QTRY_VERIFY_WITH_TIMEOUT would return immediately.
     QTest::qSleep(connected_message_wait);
     QVERIFY(bobStatusChangeReceived.count() == 1);
+}
+
+void TestCore::unsynced_group_survives_restart()
+{
+    // Toxcore doesn't save a group before its first sync, so our own list
+    // brings it back.
+    const GroupId groupId = alice->getGroupPersistentId(
+        static_cast<uint32_t>(alice->createGroup(QStringLiteral("Quiet"))));
+    MockSettings carolsSettings;
+    MockBootstrapListGenerator carolsNodes{};
+    QByteArray savedata;
+    {
+        auto [carol, err] = Core::makeToxCore({}, carolsSettings, carolsNodes);
+        QVERIFY(carol != nullptr);
+        carol->setUsername(QStringLiteral("Carol"));
+        QVERIFY(carol->joinGroup(groupId) >= 0);
+        savedata = carol->getToxSaveData();
+    }
+    carolsSettings.setSavedGroups({groupId.toString()});
+
+    auto [carol, err] = Core::makeToxCore(savedata, carolsSettings, carolsNodes);
+    QVERIFY(carol != nullptr);
+    QSignalSpy carolJoined(carol.get(), &Core::groupJoined);
+    carol->start();
+    QTRY_VERIFY_WITH_TIMEOUT(carolJoined.count() == 1, connected_message_wait);
+    QCOMPARE(qvariant_cast<GroupId>(carolJoined[0][1]), groupId);
 }
 
 QTEST_GUILESS_MAIN(TestCore)

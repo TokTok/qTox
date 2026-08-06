@@ -1158,6 +1158,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">그룹 %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1228,6 +1235,19 @@ so you can save the file on Windows.</source>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">&apos;%1&apos; 회의에 초대</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">그룹에 초대</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">새 그룹으로</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; 그룹에 초대</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1529,6 +1549,268 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">표시된 메시지를 모두 지우시겠습니까?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">그룹 %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">주제 없음</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n명의 사용자가 채팅 중입니다.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">무음</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">음소거 해제</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">피어 ID 복사</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">모더레이터로 승격</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">사용자로 강등</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">그룹에서 추방</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">비공개 메시지</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">주제 복사</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">그룹 ID 복사</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">주제 설정...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">닉네임 설정...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">내 상태</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">온라인</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">떨어져 있는</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">바쁘다</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">그룹 비밀번호 제거</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">그룹 비밀번호 설정...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">인원 제한 설정...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">주제 잠금</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">발언 가능한 사람</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">모두</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">모더레이터와 창설자</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">창설자만</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">그룹 공개 범위</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">공개 (링크로 참여)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">비공개 (초대 전용)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">그룹 비밀번호 설정</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">비밀번호:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">닉네임 설정</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">닉네임:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">인원 제한 설정</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">인원 제한:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">그룹 주제 설정</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">주제:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">비공개 메시지 받는 사람: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">그룹 만들기</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">그룹 이름을 입력하세요</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">그룹 이름은 비워 둘 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ID로 그룹 참여</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">그룹 대화 ID를 입력하세요 (16진수 64자):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">잘못된 그룹 ID입니다. 16진수 64자가 필요합니다.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">그룹 비밀번호 (선택 사항)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">비밀번호:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">그룹 ID는 비워 둘 수 없습니다.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">그룹</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">새 그룹 만들기</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">그룹 초대</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1님이 %3 %4에 %2(으)로 초대함.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">가입하다</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">감소</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">새 창에서 채팅 열기</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">이 창에서 채팅 삭제</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">제목 설정...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">그룹 나가기</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n명의 사용자가 채팅 중입니다.</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">새 메시지</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">온라인</translation>
     </message>
 </context>
 <context>
@@ -1998,6 +2280,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">컨퍼런스 관리 페이지 열기</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">그룹 만들기</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">그룹</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">그룹 관리 페이지 열기</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">파일 전송 내역</translation>
@@ -2155,6 +2449,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">새 회의 메시지</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">새 그룹 메시지</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">수신 파일 전송</translation>
@@ -2174,6 +2472,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1님이 귀하를 회의에 초대했습니다.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">그룹 초대를 받았습니다</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1님이 그룹에 초대했습니다.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2749,6 +3055,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">막힌</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">비공개</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3540,6 +3851,19 @@ number here may cause the scroll bar to disappear.</source>
         <translation>이름</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">그룹 초대</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">그룹 비밀번호 (선택 사항)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">비밀번호:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">새 그룹 만들기...</translation>
     </message>
@@ -3547,6 +3871,12 @@ number here may cause the scroll bar to disappear.</source>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">새 서클 추가...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>새 그룹 초대 %n개</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3577,6 +3907,10 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">그룹</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">그룹</translation>
     </message>
     <message>

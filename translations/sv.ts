@@ -1066,6 +1066,13 @@ så att du kan spara filen i Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupp %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1123,6 +1130,19 @@ så att du kan spara filen i Windows.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Bjud in till grupp &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Bjud in till grupp</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Till ny grupp</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Bjud in till gruppen &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1387,6 +1407,270 @@ istället för att stänga helt.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Är du säker på att du vill rensa alla visade meddelanden?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupp %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Inget ämne</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n användare i chatten</numerusform>
+            <numerusform>%n användare i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">tysta</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">slå på ljud</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopiera peer-ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">befordra till moderator</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">degradera till användare</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">sparka ut ur gruppen</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privat meddelande</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopiera ämne</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopiera grupp-ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Ange ämne...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Ange smeknamn...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Min status</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Tillgänglig</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Borta</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Upptagen</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Ta bort gruppens lösenord</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Ange gruppens lösenord...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Ange medlemsgräns...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Lås ämne</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Vem får skriva</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Alla</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatorer och grundare</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Endast grundare</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Gruppens synlighet</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Offentlig (gå med via länk)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privat (endast via inbjudan)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Ange gruppens lösenord</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Lösenord:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Ange smeknamn</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Smeknamn:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Ange medlemsgräns</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Medlemsgräns:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Ange gruppens ämne</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Ämne:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privat meddelande till: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Skapa grupp</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Ange ett namn för gruppen</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Gruppens namn får inte vara tomt.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Gå med i grupp via ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Ange gruppens chatt-ID (64 hexadecimala tecken):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Ogiltigt grupp-ID. 64 hexadecimala tecken förväntades.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Gruppens lösenord (valfritt)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Lösenord:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Grupp-ID får inte vara tomt.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupper</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Skapa ny grupp</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Gruppinbjudningar</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Inbjuden av %1 till %2 den %3 kl. %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Gå med</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Avböj</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Öppna chatt i nytt fönster</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Ta bort chatt från detta fönster</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Ange titel...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Lämna grupp</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n användare i chatten</numerusform>
+            <numerusform>%n användare i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nytt meddelande</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Tillgänglig</translation>
     </message>
 </context>
 <context>
@@ -1791,6 +2075,18 @@ Tryck på Skift+F1 för mer information.</translation>
         <translation type="unfinished">Öppna gruppchatt-hanteringssidan</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Skapa en grupp</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupp</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Öppna sidan för grupphantering</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Filöverföringshistorik</translation>
     </message>
@@ -1929,6 +2225,10 @@ Tryck på Skift+F1 för mer information.</translation>
         <translation type="unfinished">Nytt gruppmeddelande</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nytt gruppmeddelande</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Inkommande filöverföring</translation>
     </message>
@@ -1943,6 +2243,14 @@ Tryck på Skift+F1 för mer information.</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
+        <translation type="unfinished">%1 bjuder in dig till en grupp.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Gruppinbjudan mottagen</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
         <translation type="unfinished">%1 bjuder in dig till en grupp.</translation>
     </message>
     <message>
@@ -2434,6 +2742,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>blockerad</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privat</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3116,12 +3429,32 @@ för lågt nummer här kan göra att rullningslisten försvinner.</translation>
         <translation>Ditt namn</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Gruppinbjudningar</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Gruppens lösenord (valfritt)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Lösenord:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">Skapa ny grupp...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Lägg till ny cirkel...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n ny gruppinbjudan</numerusform>
+            <numerusform>%n nya gruppinbjudningar</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3149,6 +3482,10 @@ för lågt nummer här kan göra att rullningslisten försvinner.</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Grupper</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Grupper</translation>
     </message>
     <message>

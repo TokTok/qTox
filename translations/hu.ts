@@ -1091,6 +1091,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">%1. csoport</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1149,6 +1156,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>Meghívás a(z) &apos;%1&apos; csoportba</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Meghívás csoportba</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Új csoportba</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Meghívás a(z) &apos;%1&apos; csoportba</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1417,6 +1437,268 @@ ahelyett, hogy teljesen bezárná.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Biztosan törölni szeretné az összes megjelenített üzenetet?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">%1. csoport</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Nincs téma</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n felhasználó a csevegésben</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">némítás</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">némítás feloldása</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">társazonosító másolása</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">előléptetés moderátorrá</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">lefokozás felhasználóvá</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">kirúgás a csoportból</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privát üzenet</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Téma másolása</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Csoportazonosító másolása</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Téma beállítása...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Becenév beállítása...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Saját állapot</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Elérhető</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Távol</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Elfoglalt</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Csoportjelszó eltávolítása</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Csoportjelszó beállítása...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Taglétszám-korlát beállítása...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Téma zárolása</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Ki írhat</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Mindenki</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderátorok és alapító</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Csak az alapító</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Csoport láthatósága</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Nyilvános (csatlakozás hivatkozással)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privát (csak meghívással)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Csoportjelszó beállítása</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Jelszó:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Becenév beállítása</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Becenév:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Taglétszám-korlát beállítása</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Taglétszám-korlát:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Csoport témájának beállítása</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Téma:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privát üzenet neki: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Csoport létrehozása</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Adja meg a csoport nevét</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">A csoport neve nem lehet üres.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Csatlakozás csoporthoz azonosítóval</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Adja meg a csoport csevegésazonosítóját (64 hexadecimális karakter):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Érvénytelen csoportazonosító. 64 hexadecimális karakter szükséges.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Csoportjelszó (nem kötelező)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Jelszó:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">A csoportazonosító nem lehet üres.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Csoportok</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Új csoport létrehozása</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Csoportmeghívások</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 meghívta a(z) %2 csoportba ekkor: %3, %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Csatlakozás</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Elutasítás</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Csevegés megnyitása új ablakban</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Csevegés eltávolítása ebből az ablakból</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Cím beállítása...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Kilépés a csoportból</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n felhasználó a csevegésben</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Új üzenet</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Elérhető</translation>
     </message>
 </context>
 <context>
@@ -1823,6 +2105,18 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <translation>Csoportkezelési oldal megnyitása</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Csoport létrehozása</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Csoport</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Csoportkezelési oldal megnyitása</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Fájlátviteli előzmények</translation>
     </message>
@@ -1962,6 +2256,10 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <translation>Új csoportüzenet</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Új csoportüzenet</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Bejövő fájlátvitel</translation>
     </message>
@@ -1979,6 +2277,14 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>%1 meghívja Önt egy csoportba.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Csoportmeghívás érkezett</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 meghívja Önt egy csoportba.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2481,6 +2787,11 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>letiltva</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privát</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3174,12 +3485,31 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
         <translation>Saját név</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Csoportmeghívások</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Csoportjelszó (nem kötelező)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Jelszó:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>Új csoport létrehozása...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Új kör hozzáadása...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n új csoportmeghívás</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3208,6 +3538,10 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
     <message>
         <source>Conferences</source>
         <translation>Csoportok</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Csoportok</translation>
     </message>
     <message>
         <source>Search Contacts</source>

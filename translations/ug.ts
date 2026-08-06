@@ -887,8 +887,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
         </translation>
     </message>
     <message>
@@ -960,8 +960,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
         </translation>
     </message>
     <message>
@@ -1107,6 +1107,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گۇرۇپپا %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1169,6 +1176,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">&apos;%1&apos; توپقا تەكلىپ قىلىش</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">گۇرۇپپىغا تەكلىپ قىلىش</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">يېڭى گۇرۇپپىغا</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; گۇرۇپپىسىغا تەكلىپ قىلىش</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1440,6 +1460,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">كۆرسىتىلگەن بارلىق ئۇچۇرلارنى ئۆچۈرمەكچىمۇ؟</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">گۇرۇپپا %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">تېما يوق</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">mute</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">unmute</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">تورداشلارنىڭ كىملىكىنى كۆپەيتىڭ</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">باشقۇرغۇچىلىققا ئۆستۈرۈش</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">ئىشلەتكۈچىلىككە چۈشۈرۈش</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">گۇرۇپپىدىن چىقىرىۋېتىش</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">شەخسىي ئۇچۇر</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">تېمىنى كۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">گۇرۇپپا ID سىنى كۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">تېما تەڭشەش...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">لەقەم تەڭشەش...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">ھالىتىم</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">توردا</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">ئايرىلىش</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">ئالدىراش</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">گۇرۇپپا پارولىنى ئۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">گۇرۇپپا پارولى تەڭشەش...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">ئەزا چېكى تەڭشەش...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">تېمىنى قۇلۇپلاش</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">كىم يازالايدۇ</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">ھەممەيلەن</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">باشقۇرغۇچىلار ۋە قۇرغۇچى</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">پەقەت قۇرغۇچى</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">گۇرۇپپىنىڭ كۆرۈنۈشچانلىقى</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">ئاممىۋى (ئۇلانما ئارقىلىق قوشۇلۇش)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">شەخسىي (پەقەت تەكلىپ بىلەن)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">گۇرۇپپا پارولى تەڭشەش</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاورل:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">لەقەم تەڭشەش</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">لەقەم:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">ئەزا چېكى تەڭشەش</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">ئەزا چېكى:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">گۇرۇپپا تېمىسى تەڭشەش</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">تېما:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">شەخسىي ئۇچۇر تاپشۇرۇۋالغۇچى: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">گۇرۇپپا قۇرۇش</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">گۇرۇپپىغا ئىسىم كىرگۈزۈڭ</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">گۇرۇپپا ئىسمى بوش بولسا بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ID ئارقىلىق گۇرۇپپىغا قوشۇلۇش</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">گۇرۇپپىنىڭ پاراڭ ID سىنى كىرگۈزۈڭ (64 ئون ئالتىلىك ھەرپ):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">گۇرۇپپا ID سى ئىناۋەتسىز. 64 ئون ئالتىلىك ھەرپ كېرەك.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">گۇرۇپپا پارولى (ئىختىيارىي)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاورل:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">گۇرۇپپا ID سى بوش بولسا بولمايدۇ.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گۇرۇپپىلار</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">يېڭى گۇرۇپپا قۇرۇش</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">گۇرۇپپا تەكلىپلىرى</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 %3 كۈنى %4 دە %2 گە تەكلىپ قىلدى.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">قېتىلىش</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">رەت قىلىش</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">سۆھبەتنى يېڭى كۆزنەكتە ئېچىش</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">بۇ كۆزنەكتىن سۆھبەتنى ئۆچۈرۈش</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">ماۋزۇ تەڭشەش...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">گۇرۇپپىدىن چېكىنىش</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+            <numerusform>پاراڭدا %n ئىشلەتكۈچى</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">يېڭى ئۇچۇر</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">توردا</translation>
     </message>
 </context>
 <context>
@@ -1846,6 +2130,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">توپ باشقۇرۇش بېتىنى ئېچىش</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">بىر گۇرۇپپا قۇرۇش</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">گۇرۇپپا</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">گۇرۇپپا باشقۇرۇش بېتىنى ئېچىش</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>ھۆججەت يوللاش خاتىرىسى</translation>
     </message>
@@ -1991,6 +2287,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">يېڭى يىغىن ئۇچۇرى</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">يېڭى گۇرۇپپا ئۇچۇرى</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">كەلگەن ھۆججەت يوللاش</translation>
@@ -2010,6 +2310,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 سىزنى يىغىنغا قاتنىشىشقا تەكلىپ قىلىدۇ.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">گۇرۇپپا تەكلىپى تاپشۇرۇۋېلىندى</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 سىزنى بىر گۇرۇپپىغا قوشۇلۇشقا تەكلىپ قىلدى.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2519,6 +2827,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">توسۇلۇپ قالدى</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">شەخسىي</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3244,12 +3557,32 @@ number here may cause the scroll bar to disappear.</source>
         <translation>ئاتىڭىز</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">گۇرۇپپا تەكلىپلىرى</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">گۇرۇپپا پارولى (ئىختىيارىي)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">پاورل:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">توپ قۇرۇش...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>چەمبىرەككە چىقىرىش...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n يېڭى گۇرۇپپا تەكلىپى</numerusform>
+            <numerusform>%n يېڭى گۇرۇپپا تەكلىپى</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3279,6 +3612,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation type="unfinished">توپلار</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">گۇرۇپپىلار</translation>
     </message>
     <message>
         <source>Search Contacts</source>

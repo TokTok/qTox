@@ -1077,6 +1077,13 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupa %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1138,6 +1145,19 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Uzaicināt uz grupu &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Uzaicināt grupā</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Uz jaunu grupu</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Uzaicināt grupā “%1”</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1401,6 +1421,272 @@ vietā pilnīgi aizveroties.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vai tiešām vēlaties notīrīt visus parādītos ziņojumus?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupa %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Nav tēmas</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">izslēgt skaņu</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">ieslēgt skaņu</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopēt vienaudžu&#xa0;ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">paaugstināt par moderatoru</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">pazemināt par lietotāju</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">izmest no grupas</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privāta ziņa</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopēt tēmu</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopēt grupas ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Iestatīt tēmu ...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Iestatīt segvārdu ...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Mans statuss</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Tiešsaistē</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Nav šeit</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Aizņemts</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Noņemt grupas paroli</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Iestatīt grupas paroli ...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Iestatīt dalībnieku ierobežojumu ...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Bloķēt tēmu</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kas drīkst rakstīt</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Visi</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatori un dibinātājs</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Tikai dibinātājs</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Grupas redzamība</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Publiska (pievienošanās ar saiti)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privāta (tikai ar uzaicinājumu)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Iestatīt grupas paroli</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parole:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Iestatīt segvārdu</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Segvārds:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Iestatīt dalībnieku ierobežojumu</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Dalībnieku ierobežojums:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Iestatīt grupas tēmu</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Tēma:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privāta ziņa saņēmējam: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Izveidot grupu</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Ievadiet grupas nosaukumu</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Grupas nosaukums nevar būt tukšs.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Pievienoties grupai pēc ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Ievadiet grupas tērzēšanas ID (64 heksadecimālas rakstzīmes):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Nederīgs grupas ID. Gaidītas 64 heksadecimālas rakstzīmes.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupas parole (nav obligāta)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parole:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Grupas ID nevar būt tukšs.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupas</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Izveidot jaunu grupu</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Uzaicinājumi grupās</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 uzaicināja uz %2 %3 plkst. %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Pievienoties</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Atteikties</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Atvērt tērzēšanu jaunā logā</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Noņemt tērzēšanu no šī loga</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Uzstādīt nosaukumu ...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Iziet no grupas</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Jauns ziņojums</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Tiešsaistē</translation>
     </message>
 </context>
 <context>
@@ -1805,6 +2091,18 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <translation type="unfinished">Atvērt grupas tērzēšanas iestatījumu lapu</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Izveidot grupu</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupa</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Atvērt grupu pārvaldības lapu</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Failu pārsūtīšanas vēsture</translation>
     </message>
@@ -1949,6 +2247,10 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <translation type="unfinished">Jauns konferences ziņojums</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Jauna grupas ziņa</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ienākošo failu pārsūtīšana</translation>
@@ -1968,6 +2270,14 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 aicina jūs pievienoties konferencei.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Saņemts uzaicinājums grupā</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 aicina jūs pievienoties grupai.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2473,6 +2783,11 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <source>blocked</source>
         <comment>contact status</comment>
         <translation type="unfinished">bloķēts</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privāta</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3198,6 +3513,19 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
         <translation type="unfinished">Jūsu vārds</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Uzaicinājumi grupās</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupas parole (nav obligāta)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parole:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Izveidot jaunu konferenci...</translation>
@@ -3206,6 +3534,14 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pievienot jaunu loku...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n jauns uzaicinājums grupā</numerusform>
+            <numerusform>%n jauni uzaicinājumi grupās</numerusform>
+            <numerusform>%n jaunu uzaicinājumu grupās</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3236,6 +3572,10 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Grupas</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Grupas</translation>
     </message>
     <message>

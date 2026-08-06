@@ -1063,6 +1063,13 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupul %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1124,6 +1131,19 @@ astfel încât să puteți salva fișierul pe Windows.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>Invitați la conferința „%1”</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Invitați în grup</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Într-un grup nou</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Invitați în grupul „%1”</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1381,6 +1401,272 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Sigur doriți să ștergeți toate mesajele afișate?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupul %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Fără subiect</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n utilizator în chat</numerusform>
+            <numerusform>%n utilizatori în chat</numerusform>
+            <numerusform>%n de utilizatori în chat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">mut</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">cu sunet</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">copiați ID-ul de peer</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">promovați la moderator</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">retrogradați la utilizator</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">dați afară din grup</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">mesaj privat</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Copiați subiectul</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Copiați ID-ul grupului</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Setați subiectul...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Setați porecla...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Starea mea</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Conectat</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Departe</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Ocupat</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Eliminați parola grupului</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Setați parola grupului...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Setați limita de membri...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Blocați subiectul</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Cine poate scrie</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Toată lumea</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatori și fondator</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Doar fondatorul</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Vizibilitatea grupului</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Public (intrare prin link)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privat (doar prin invitație)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Setați parola grupului</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Setați porecla</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Poreclă:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Setați limita de membri</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Limita de membri:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Setați subiectul grupului</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Subiect:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Mesaj privat către: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Creați grup</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Introduceți un nume pentru grup</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Numele grupului nu poate fi gol.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Alăturați-vă unui grup după ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Introduceți ID-ul de chat al grupului (64 de caractere hexazecimale):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">ID de grup nevalid. Se așteptau 64 de caractere hexazecimale.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Parola grupului (opțional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID-ul grupului nu poate fi gol.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupuri</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Creați un grup nou</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Invitații în grupuri</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Invitat de %1 în %2 pe %3 la %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Aderă</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Refuză</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Deschideți discuția în fereastră nouă</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Eliminați discuția din această fereastră</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Setați titlul...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Părăsiți grupul</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n utilizator în chat</numerusform>
+            <numerusform>%n utilizatori în chat</numerusform>
+            <numerusform>%n de utilizatori în chat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Mesaj nou</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Conectat</translation>
     </message>
 </context>
 <context>
@@ -1783,6 +2069,18 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
         <translation>Deschideți pagina de gestionare a conferinței</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Creați un grup</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grup</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Deschideți pagina de gestionare a grupurilor</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Fișier de istorie transferuri</translation>
     </message>
@@ -1920,6 +2218,10 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
         <translation>Mesaj de conferință nou</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Mesaj nou în grup</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Venire transfer de fișiere</translation>
     </message>
@@ -1935,6 +2237,14 @@ Apăsați Shift+F1 pentru mai multe informații.</translation>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 vă invită să participați la o conferință.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Invitație în grup primită</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 vă invită să vă alăturați unui grup.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2425,6 +2735,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>blocat</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privat</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3106,12 +3421,33 @@ chat:</translation>
         <translation>Numele dvs</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Invitații în grupuri</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Parola grupului (opțional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Parola:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>Creați o nouă conferință...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Adăugați un cerc nou...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n invitație nouă în grup</numerusform>
+            <numerusform>%n invitații noi în grupuri</numerusform>
+            <numerusform>%n de invitații noi în grupuri</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3141,6 +3477,10 @@ chat:</translation>
     <message>
         <source>Conferences</source>
         <translation>Conferințe</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupuri</translation>
     </message>
     <message>
         <source>Search Contacts</source>

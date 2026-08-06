@@ -47,8 +47,9 @@ public:
     static ChatMessage::Ptr createChatMessage(const QString& sender, const QString& rawMessage,
                                               MessageType type, bool isMe, MessageState state,
                                               const QDateTime& date, DocumentCache& documentCache,
-                                              SmileyPack& smileyPack, Settings& settings,
-                                              Style& style, bool colorizeName = false);
+                                              SmileyPack& smileyPack, Settings& settings, Style& style,
+                                              bool colorizeName = false, bool isPrivate = false,
+                                              const QString& recipientName = QString());
     static ChatMessage::Ptr createChatInfoMessage(const QString& rawMessage, SystemMessageType type,
                                                   const QDateTime& date, DocumentCache& documentCache,
                                                   Settings& settings, Style& style);

@@ -1065,6 +1065,13 @@ de forma que possa guardar o ficheiro no Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupo %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1097,6 +1104,19 @@ de forma que possa guardar o ficheiro no Windows.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>Convidar para grupo</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Convidar para grupo</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Para um novo grupo</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Convidar para o grupo &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1384,6 +1404,270 @@ em vez de fechar.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Tem certeza de que deseja limpar todas as mensagens mostradas?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupo %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Sem tópico</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n utilizador na conversa</numerusform>
+            <numerusform>%n utilizadores na conversa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">sem som</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">com som</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">copiar ID do par</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">promover a moderador</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">despromover a utilizador</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">expulsar do grupo</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">mensagem privada</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Copiar tópico</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Copiar ID do grupo</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Definir o tópico...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Definir a alcunha...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">O meu estado</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Conectado</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Ausente</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Ocupado</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Remover a palavra-passe do grupo</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Definir a palavra-passe do grupo...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Definir o limite de membros...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Bloquear o tópico</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Quem pode escrever</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Todos</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderadores e fundador</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Apenas o fundador</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Visibilidade do grupo</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Público (entrada por ligação)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privado (apenas por convite)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Definir a palavra-passe do grupo</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Palavra-passe:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Definir a alcunha</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Alcunha:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Definir o limite de membros</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Limite de membros:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Definir o tópico do grupo</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Tópico:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Mensagem privada para: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Criar grupo</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Introduza um nome para o grupo</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">O nome do grupo não pode estar vazio.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Entrar num grupo por ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Introduza o ID de conversa do grupo (64 caracteres hexadecimais):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">ID de grupo inválido. Esperavam-se 64 caracteres hexadecimais.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Palavra-passe do grupo (opcional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Palavra-passe:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">O ID do grupo não pode estar vazio.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupos</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Criar um novo grupo</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Convites para grupos</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Convidado por %1 para %2 em %3 às %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Entrar na conversa</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Recusar</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Abrir conversa noutra janela</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Remover conversa desta janela</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Definir o título...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Sair do grupo</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n utilizador na conversa</numerusform>
+            <numerusform>%n utilizadores na conversa</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nova mensagem</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Conectado</translation>
     </message>
 </context>
 <context>
@@ -1786,6 +2070,18 @@ Pressione Shift+F1 para obter mais informações.</translation>
         <translation>Abrir a página de gestão de conferências</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Criar um grupo</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupo</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Abrir a página de gestão de grupos</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Histórico de transferências de ficheiros</translation>
     </message>
@@ -1924,6 +2220,10 @@ Pressione Shift+F1 para obter mais informações.</translation>
         <translation>Nova mensagem de conferência</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nova mensagem de grupo</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>A receber a transferência de ficheiro</translation>
     </message>
@@ -1939,6 +2239,14 @@ Pressione Shift+F1 para obter mais informações.</translation>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 convida-o a participar de uma conferência.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Convite para grupo recebido</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 convida-o a entrar num grupo.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2429,6 +2737,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinzento).</translatio
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>bloqueado</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privada</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3080,6 +3393,26 @@ Um número muito baixo aqui pode fazer com que a barra de rolagem desapareça.</
         <translation>Adicionar círculo novo...</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Convites para grupos</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Palavra-passe do grupo (opcional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Palavra-passe:</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n novo convite para grupo</numerusform>
+            <numerusform>%n novos convites para grupos</numerusform>
+        </translation>
+    </message>
+    <message>
         <source>By Name</source>
         <translation>Por nome</translation>
     </message>
@@ -3102,6 +3435,10 @@ Um número muito baixo aqui pode fazer com que a barra de rolagem desapareça.</
     <message>
         <source>Conferences</source>
         <translation>Conferências</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupos</translation>
     </message>
     <message>
         <source>Search Contacts</source>
