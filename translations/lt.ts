@@ -1073,6 +1073,13 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupė %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1126,6 +1133,19 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>Remove chat from this window</source>
         <translation>Pašalinti pokalbį iš šio lango</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Pakviesti į grupę</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Į naują grupę</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Pakviesti į grupę „%1“</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1392,6 +1412,272 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Ar tikrai norite išvalyti visas rodomas žinutes?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupė %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Nėra temos</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>Pokalbyje yra %n naudotojas</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojai</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojų</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">nutildyti</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">įjungti garsą</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">nukopijuoti kolegos ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">paaukštinti iki moderatoriaus</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">pažeminti iki naudotojo</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">išmesti iš grupės</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privati žinutė</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopijuoti temą</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopijuoti grupės ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Nustatyti temą...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Nustatyti slapyvardį...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Mano būsena</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Prisijungęs(-usi)</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Pasišalinęs</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Užsiėmęs</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Pašalinti grupės slaptažodį</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Nustatyti grupės slaptažodį...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Nustatyti narių limitą...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Užrakinti temą</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kas gali rašyti</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Visi</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatoriai ir įkūrėjas</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Tik įkūrėjas</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Grupės matomumas</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Vieša (prisijungimas per nuorodą)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privati (tik su pakvietimu)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Nustatyti grupės slaptažodį</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Slaptažodis:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Nustatyti slapyvardį</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Slapyvardis:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Nustatyti narių limitą</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Narių limitas:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Nustatyti grupės temą</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Tema:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privati žinutė gavėjui: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Sukurti grupę</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Įveskite grupės pavadinimą</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Grupės pavadinimas negali būti tuščias.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Prisijungti prie grupės pagal ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Įveskite grupės pokalbio ID (64 šešioliktainiai simboliai):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Neteisingas grupės ID. Tikimasi 64 šešioliktainių simbolių.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupės slaptažodis (neprivaloma)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Slaptažodis:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Grupės ID negali būti tuščias.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupės</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Sukurti naują grupę</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Pakvietimai į grupes</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Pakvietė %1 į %2, %3, %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Prisijungti</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Atmesti</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Atverti pokalbį atskirame lange</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Pašalinti pokalbį iš šio lango</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Nustatyti pavadinimą...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Palikti grupę</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>Pokalbyje yra %n naudotojas</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojai</numerusform>
+            <numerusform>Pokalbyje yra %n naudotojų</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nauja žinutė</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Prisijungęs(-usi)</translation>
     </message>
 </context>
 <context>
@@ -1795,6 +2081,18 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
         <translation type="unfinished">Atverti konferencijų tvarkymo puslapį</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Sukurti grupę</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupė</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Atverti grupių valdymo puslapį</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Failų persiuntimų istorija</translation>
     </message>
@@ -1936,6 +2234,10 @@ Plural:10–20,30,40,..</translatorcomment>
         <translation type="unfinished">Nauja konferencijos žinutė</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nauja grupės žinutė</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Gaunamo failo persiuntimas</translation>
     </message>
@@ -1951,6 +2253,14 @@ Plural:10–20,30,40,..</translatorcomment>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 kviečia jus prisijungti prie konferencijos.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Gautas pakvietimas į grupę</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 kviečia jus prisijungti prie grupės.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2437,6 +2747,11 @@ Pasidalykite juo su draugais, kad pradėtumėte kalbėtis.
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>užblokuota(-s)</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privati</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3107,6 +3422,27 @@ Dėl per mažo skaičiaus slinkties juosta gali išnykti.</translation>
         <translation>Sukurti naują draugų ratą...</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Pakvietimai į grupes</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupės slaptažodis (neprivaloma)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Slaptažodis:</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n naujas pakvietimas į grupę</numerusform>
+            <numerusform>%n nauji pakvietimai į grupes</numerusform>
+            <numerusform>%n naujų pakvietimų į grupes</numerusform>
+        </translation>
+    </message>
+    <message>
         <source>By Name</source>
         <translation>pagal vardą</translation>
     </message>
@@ -3129,6 +3465,10 @@ Dėl per mažo skaičiaus slinkties juosta gali išnykti.</translation>
     <message>
         <source>Conferences</source>
         <translation type="unfinished">Konferencijos</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupės</translation>
     </message>
     <message>
         <source>Search Contacts</source>

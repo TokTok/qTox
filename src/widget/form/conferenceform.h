@@ -28,6 +28,7 @@ class Style;
 class IMessageBoxManager;
 class FriendList;
 class ConferenceList;
+class GroupList;
 
 class ConferenceForm : public GenericChatForm
 {
@@ -37,7 +38,7 @@ public:
                    IMessageDispatcher& messageDispatcher_, Settings& settings_,
                    DocumentCache& documentCache, SmileyPack& smileyPack, Style& style,
                    IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                   ConferenceList& conferenceList);
+                   ConferenceList& conferenceList, GroupList& groupList);
     ~ConferenceForm() override;
 
     void peerAudioPlaying(ToxPk peerPk);

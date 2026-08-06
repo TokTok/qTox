@@ -26,6 +26,16 @@ QLineEdit
     font-size:12px;
 }
 
+#topicLabel
+{
+    color: @mainText;
+}
+
+#topicLabel[empty="true"]
+{
+    color: @statusActive;
+}
+
 QLabel[peerType="our"]
 {
     color: green;

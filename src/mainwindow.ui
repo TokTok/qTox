@@ -967,6 +967,47 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="groupButton">
+             <property name="minimumSize">
+              <size>
+               <width>55</width>
+               <height>35</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="toolTip">
+              <string>Create a group</string>
+             </property>
+             <property name="accessibleName">
+              <string>Group</string>
+             </property>
+             <property name="accessibleDescription">
+              <string>Open group management page</string>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="../res.qrc">
+               <normaloff>:/img/group.svg</normaloff>:/img/group.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>15</width>
+               <height>15</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="transferButton">
              <property name="minimumSize">
               <size>

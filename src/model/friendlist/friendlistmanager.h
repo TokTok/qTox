@@ -32,7 +32,7 @@ public:
     void sortByActivity();
     void resetParents();
     void setFilter(const QString& searchString, bool hideOnline, bool hideOffline,
-                   bool hideConferences);
+                   bool hideConferences, bool hideGroups);
     void applyFilter();
     void updatePositions();
     void setSortRequired();
@@ -49,6 +49,7 @@ private:
         bool hideOnline = false;
         bool hideOffline = false;
         bool hideConferences = false;
+        bool hideGroups = false;
     } filterParams;
 
     void removeAll(IFriendListItem* item);
