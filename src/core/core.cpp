@@ -550,6 +550,28 @@ void Core::acceptFriendRequest(const ToxPk& friendPk)
 }
 
 /**
+ * @brief Add Friend Without Request
+ * @param friendPk
+ *        Tox Public Key of the friend we want to add.
+ *        Friendship will be established when our friend also adds us with or without request.
+ */
+void Core::addFriendWithoutRequest(const ToxPk& friendPk)
+{
+    // this function may be indentical to `Core::acceptFriendRequest()`, but that does not change
+    // the fact that it is used for different reason. keep it here for the sake of understanding
+    // of what can be achieved by it: adding friend without request.
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+    Tox_Err_Friend_Add error;
+    const uint32_t friendId = tox_friend_add_norequest(tox.get(), friendPk.getData(), &error);
+    if (PARSE_ERR(error)) {
+        emit saveRequest();
+        emit friendAdded(friendId, friendPk);
+    } else {
+        emit failedToAddFriend(friendPk);
+    }
+}
+
+/**
  * @brief Checks that sending friendship request is correct and returns error message accordingly
  * @param friendId Id of a friend which request is destined to
  * @param message Friendship request message

@@ -48,14 +48,17 @@ public:
 
 signals:
     void friendRequested(const ToxId& friendAddress, const QString& message);
+    void friendAddedWithoutRequest(const ToxPk& friendAddress);
     void friendRequestAccepted(const ToxPk& friendAddress);
     void friendRequestsSeen();
+    void friendRequestsUpdate();
 
 public slots:
     void onUsernameSet(const QString& userName);
 
 private slots:
     void onSendTriggered();
+    void onAddWithoutRequestTriggered();
     void onIdChanged(const QString& id);
     void onImportSendClicked();
     void onImportOpenClicked();
@@ -65,12 +68,14 @@ private slots:
 
 private:
     void addFriend(const QString& idText);
+    void addFriendWithoutRequest(const QString& idText);
     void retranslateUi();
     void addFriendRequestWidget(const QString& friendAddress_, const QString& message_);
     void removeFriendRequestWidget(QWidget* friendWidget);
     static void retranslateAcceptButton(QPushButton* acceptButton);
     static void retranslateRejectButton(QPushButton* rejectButton);
     void deleteFriendRequest(const ToxId& toxId_);
+    bool removeFriendRequest(const ToxPk& friendPk);
     void setIdFromClipboard();
     QString getMessage() const;
     QString getImportMessage() const;
@@ -83,6 +88,7 @@ private:
     QLabel importMessageLabel;
 
     QPushButton sendButton;
+    QPushButton addWithoutRequestButton;
     QPushButton importFileButton;
     QPushButton importSendButton;
     QLineEdit toxId;
