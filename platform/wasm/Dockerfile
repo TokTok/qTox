@@ -1,4 +1,4 @@
-FROM toxchat/qtox:wasm-builder AS builder
+FROM ghcr.io/toktok/qtox:wasm-builder AS builder
 
 COPY . .
 RUN platform/wasm/build.sh

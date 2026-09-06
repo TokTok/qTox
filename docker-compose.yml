@@ -22,58 +22,58 @@ x-shared-params: &shared_params
 
 services:
   alpine:
-    image: toxchat/qtox:alpine
+    image: ghcr.io/toktok/qtox:alpine
     <<: *shared_params
   alpine-appimage:
-    image: toxchat/qtox:alpine-appimage
+    image: ghcr.io/toktok/qtox:alpine-appimage
     <<: *shared_params
   alpine-static:
-    image: toxchat/qtox:alpine-static
+    image: ghcr.io/toktok/qtox:alpine-static
     <<: *shared_params
   android_builder.armeabi-v7a.debug_6.2.4:
-    image: toxchat/qtox:android-builder.armeabi-v7a.debug_6.2.4
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.debug_6.2.4
     <<: *shared_params
   android_builder.armeabi-v7a.release_6.2.4:
-    image: toxchat/qtox:android-builder.armeabi-v7a.release_6.2.4
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.release_6.2.4
     <<: *shared_params
   android_builder.arm64-v8a.debug_6.2.4:
-    image: toxchat/qtox:android-builder.arm64-v8a.debug_6.2.4
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.debug_6.2.4
     <<: *shared_params
   android_builder.arm64-v8a.release_6.2.4:
-    image: toxchat/qtox:android-builder.arm64-v8a.release_6.2.4
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.release_6.2.4
     <<: *shared_params
   android_builder.armeabi-v7a.debug_6.8.1:
-    image: toxchat/qtox:android-builder.armeabi-v7a.debug_6.8.1
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.debug_6.8.1
     <<: *shared_params
   android_builder.armeabi-v7a.release_6.8.1:
-    image: toxchat/qtox:android-builder.armeabi-v7a.release_6.8.1
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.release_6.8.1
     <<: *shared_params
   android_builder.arm64-v8a.debug_6.8.1:
-    image: toxchat/qtox:android-builder.arm64-v8a.debug_6.8.1
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.debug_6.8.1
     <<: *shared_params
   android_builder.arm64-v8a.release_6.8.1:
-    image: toxchat/qtox:android-builder.arm64-v8a.release_6.8.1
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.release_6.8.1
     <<: *shared_params
   debian:
-    image: toxchat/qtox:debian
+    image: ghcr.io/toktok/qtox:debian
     <<: *shared_params
   fedora:
-    image: toxchat/qtox:fedora
+    image: ghcr.io/toktok/qtox:fedora
     <<: *shared_params
   flatpak:
-    image: toxchat/qtox:flatpak-builder
+    image: ghcr.io/toktok/qtox:flatpak-builder
     # Flatpak build uses pivot_root() in tcl build
     privileged: true
     <<: *shared_params
   ubuntu_lts:
-    image: toxchat/qtox:ubuntu-lts
+    image: ghcr.io/toktok/qtox:ubuntu-lts
     <<: *shared_params
   windows_builder.i686:
-    image: toxchat/qtox:windows-builder.i686
+    image: ghcr.io/toktok/qtox:windows-builder.i686
     <<: *shared_params
   windows_builder.x86_64:
-    image: toxchat/qtox:windows-builder.x86_64
+    image: ghcr.io/toktok/qtox:windows-builder.x86_64
     <<: *shared_params
   wasm_builder:
-    image: toxchat/qtox:wasm-builder
+    image: ghcr.io/toktok/qtox:wasm-builder
     <<: *shared_params

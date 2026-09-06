@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>已禁用</translation>
+        <translation>禁用</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -101,7 +101,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>拖动滑块调整音量.</translation>
+        <translation>拖动滑块调整音量。</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
@@ -221,7 +221,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
-        <translation>删除历史记录（操作无法撤消！）</translation>
+        <translation>删除历史记录（此操作无法撤消！）</translation>
     </message>
     <message>
         <source>Notes</source>
@@ -245,7 +245,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>证实</translation>
+        <translation>确认</translation>
     </message>
     <message>
         <source>Are you sure to remove %1 chat history?</source>
@@ -319,11 +319,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>发送好友请求</translation>
+        <translation>发送好友申请</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>好友请求</translation>
+        <translation>好友申请</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -347,11 +347,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>好友请求消息</translation>
+        <translation>好友申请消息</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation>输入消息后随好友请求一起发送或者留空以发送默认消息</translation>
+        <translation>输入消息后随好友申请一起发送或者留空以发送默认消息</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -396,12 +396,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>发送好友邀请</translation>
+        <translation>发送好友申请</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>我是 %1！我们用 Tox 聊天吧？</translation>
+        <translation>我是 %1！我们使用 Tox 聊天吧？</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -433,7 +433,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">添加好友</translation>
+        <translation>添加好友</translation>
     </message>
 </context>
 <context>
@@ -448,11 +448,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>really</source>
-        <translation>真的</translation>
+        <translation type="unfinished">真的</translation>
     </message>
     <message>
         <source>not</source>
-        <translation>不要</translation>
+        <translation type="unfinished">不要</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -489,12 +489,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">无效的代理地址</translation>
+        <translation>无效的代理地址</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">请为代理设置输入有效的IP地址或主机名。</translation>
+        <translation>请为代理设置输入有效的IP地址或主机名。</translation>
     </message>
 </context>
 <context>
@@ -506,7 +506,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>使 Tox 可移动化</translation>
+        <translation>使 Tox 便携化</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -514,7 +514,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Portable</source>
-        <translation>可移动</translation>
+        <translation>便携模式</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
@@ -567,7 +567,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>禁用这些会允许，例如 Tor 协议上的 Tox。它会增加 Tox 网络负担，因此只有在必要时才取消选中。</translation>
+        <translation>禁用此选项可以支持某些功能，例如通过 Tor 使用 Tox。但这也将增加 Tox 网络的负担，所以仅在必要时取消勾选。</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -595,17 +595,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置 IPv6 &lt;开&gt;/&lt;关&gt;。 默认为开。</translation>
+        <translation>设置 IPv6 &lt;on&gt;/&lt;off&gt;。 默认为开。</translation>
     </message>
     <message>
         <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置 UDP &lt;开&gt;/&lt;关&gt;。 默认为开。</translation>
+        <translation>设置 UDP &lt;on&gt;/&lt;off&gt;。 默认为开。</translation>
     </message>
     <message>
         <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
         <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置局域网发现 &lt;开&gt;/&lt;关&gt;。 UDP 关 重写。 默认为开。</translation>
+        <translation>设置局域网发现 &lt;on&gt;/&lt;off&gt;。 UDP 关 重写。 默认为开。</translation>
     </message>
     <message>
         <source>Sets proxy settings. Default is NONE.</source>
@@ -623,18 +623,18 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">检查该程序是否运行最新的 qTox 版本。</translation>
+        <translation>检查该程序是否运行最新的 qTox 版本。</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">以便携模式启动；从此目录加载配置文件。</translation>
+        <translation>以便携模式启动；从此目录加载配置文件。</translation>
     </message>
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">路径</translation>
+        <translation>路径</translation>
     </message>
 </context>
 <context>
@@ -674,7 +674,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>您正在尝试发送顺序文件，这不起作用！</translation>
+        <translation>您正在尝试发送一个顺序文件，该操作可能无法正常执行！</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -809,12 +809,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">目录无法写入</translation>
+        <translation>目录无法写入</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">您没有写入该位置的权限。选择另一个，或取消“保存”对话框。</translation>
+        <translation>您没有写入该位置的权限。选择其它路径，或取消保存。</translation>
     </message>
 </context>
 <context>
@@ -837,7 +837,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">复制对等 ID</translation>
+        <translation>复制对等 ID</translation>
     </message>
 </context>
 <context>
@@ -883,7 +883,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>退出群组</translation>
+        <translation>退出会议</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -928,7 +928,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation>你的消息太长了！</translation>
+        <translation>消息过长！</translation>
     </message>
     <message>
         <source>Friend is already added</source>
@@ -963,7 +963,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation>正在等待发送...</translation>
+        <translation>等待发送...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
@@ -1063,7 +1063,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>邀请加入群组</translation>
+        <translation>邀请加入会议</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1104,7 +1104,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>到新建群组</translation>
+        <translation>前往新建会议</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1117,7 +1117,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>到新建圈子</translation>
+        <translation>前往新建圈子</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1154,7 +1154,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto select</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">自动选择</translation>
+        <translation>自动选择</translation>
     </message>
 </context>
 <context>
@@ -1279,17 +1279,17 @@ instead of closing entirely.</source>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">如果您发现翻译错误并希望帮助修复它，请单击此处。</translation>
+        <translation>如果您发现翻译错误并希望帮助修复它，请单击此处。</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">帮忙翻译</translation>
+        <translation>帮忙翻译</translation>
     </message>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> 分钟</translation>
+        <translation> 分钟</translation>
     </message>
 </context>
 <context>
@@ -1501,7 +1501,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">设置您要展示给他人的个人状态消息</translation>
+        <translation>设置您要展示给他人的个人状态信息</translation>
     </message>
 </context>
 <context>
@@ -1659,17 +1659,17 @@ Please make sure to enter the same password twice.</source>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">此可选密码用于加密本地消息数据和您的个人资料。
+        <translation>此可选密码用于加密本地消息数据和您的个人资料。
 如果您丢失该密码，则无法恢复。
 按 Shift+F1 了解更多信息。</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">您在此处输入的密码是可选的，它会对消息数据和您的 Tox 密钥进行加密。它不会加密收到的文件。您的个人资料数据永远不会发送到任何服务器。这不是远程登录，它仅适用于您的计算机本地。如果您的密码丢失，qTox 开发人员将无法恢复。</translation>
+        <translation>您在此处输入的密码是可选的，它会对消息数据和您的 Tox 密钥进行加密。它不会加密收到的文件。您的个人资料数据永远不会发送到任何服务器。这不是远程登录，它仅适用于您的计算机本地。如果您的密码丢失，qTox 开发人员将无法恢复。</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">密码输入框，最小长度为 6 个字符</translation>
+        <translation>密码输入框，最小长度为 6 个字符</translation>
     </message>
 </context>
 <context>
@@ -1728,7 +1728,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>搜索已知好友的联系人搜索输入框</translation>
+        <translation>搜索已知好友的输入框</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1780,7 +1780,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">添加好友</translation>
+        <translation>添加好友</translation>
     </message>
 </context>
 <context>
@@ -1863,7 +1863,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation>进入全屏模式</translation>
+        <translation>进入全屏</translation>
     </message>
 </context>
 <context>
@@ -1904,16 +1904,16 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation>收到了好友请求</translation>
+        <translation>收到了好友申请</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation>从 %1 收到的加好友请求</translation>
+        <translation>从 %1 收到的加好友申请</translation>
     </message>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">来电</translation>
+        <translation>来电</translation>
     </message>
 </context>
 <context>
@@ -1966,7 +1966,7 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translation>NoSpam 是您的 Tox ID 一部分。
-如果您被垃圾好友请求骚扰，您应该改变您的 NoSpam。
+如果您被垃圾好友申请骚扰，您应该改变您的 NoSpam。
 他人将无法使用旧 ID 添加您，但会保留您当前已添加的好友。</translation>
     </message>
     <message>
@@ -1977,7 +1977,7 @@ People will be unable to add you with your old ID, but you will keep your curren
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation>NoSpam 混淆码是您的 Tox ID 中可以随意改变的一部分。
-如果您收到骚扰的好友请求，那就改变您的 NoSpam 混淆码。</translation>
+如果您收到骚扰的好友申请，那就改变您的 NoSpam 混淆码。</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2279,7 +2279,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">选择一个自动接受目录</translation>
+        <translation>选择一个自动接受目录</translation>
     </message>
 </context>
 <context>
@@ -2449,7 +2449,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 在呼叫尝试期间离线</translation>
+        <translation>%1 在呼叫尝试期间离线</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2669,7 +2669,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">设置账户密码</translation>
+        <translation>设置账户密码</translation>
     </message>
 </context>
 <context>
@@ -2703,7 +2703,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation>好友请求消息：</translation>
+        <translation>好友申请消息：</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2718,7 +2718,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">添加好友</translation>
+        <translation>添加好友</translation>
     </message>
 </context>
 <context>
@@ -2971,45 +2971,45 @@ Hide formatting characters:
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">显示聊天中发送和接收的图像的预览。将鼠标悬停在内联预览上可显示更大的预览。</translation>
+        <translation>显示聊天中发送和接收的图像的预览。将鼠标悬停在内联预览上可显示更大的预览。</translation>
     </message>
     <message>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">图像预览</translation>
+        <translation>图像预览</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
 Decrease this to improve performance. A too low number here may cause the
 scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">从聊天历史记录加载的最大消息数（每个对话）。减少此值以提高性能。这里的数字太低可能会导致滚动条消失。</translation>
+        <translation>从聊天历史记录加载的最大消息数（每个对话）。减少此值以提高性能。这里的数字太低可能会导致滚动条消失。</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">最大聊天日志视图大小</translation>
+        <translation>最大聊天日志视图大小</translation>
     </message>
     <message>
         <source>Number of messages to load from the chat history when scrolling. A too low
 number here may cause the scroll bar to disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">滚动时从聊天历史记录加载的消息数。这里的数字太低可能会导致滚动条消失。</translation>
+        <translation>滚动时从聊天历史记录加载的消息数。这里的数字太低可能会导致滚动条消失。</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">聊天日志块大小</translation>
+        <translation>聊天日志块大小</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">聊天记录：</translation>
+        <translation>聊天记录：</translation>
     </message>
     <message>
         <source>Hide suffix after NULL symbol</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">在null符号之后隐藏后缀</translation>
+        <translation>在null符号之后隐藏后缀</translation>
     </message>
 </context>
 <context>
@@ -3139,12 +3139,12 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation>无法发送好友请求</translation>
+        <translation>无法发送好友申请</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
-            <numerusform>%n 个新加好友请求</numerusform>
+            <numerusform>%n 个新加好友申请</numerusform>
         </translation>
     </message>
     <message numerus="yes">

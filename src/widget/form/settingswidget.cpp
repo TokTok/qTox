@@ -45,17 +45,20 @@ SettingsWidget::SettingsWidget(UpdateCheck& updateCheck, IAudioControl& audio, C
     settingsWidgets->setTabPosition(QTabWidget::North);
     bodyLayout->addWidget(settingsWidgets.get());
 
-    std::unique_ptr<GeneralForm> gfrm(new GeneralForm(settings, style));
+    std::unique_ptr<GeneralForm> gfrm = std::make_unique<GeneralForm>(settings, style);
     connect(gfrm.get(), &GeneralForm::updateIcons, parent, &Widget::updateIcons);
 
-    std::unique_ptr<UserInterfaceForm> uifrm(new UserInterfaceForm(smileyPack, settings, style, this));
-    std::unique_ptr<PrivacyForm> pfrm(new PrivacyForm(core, settings, style, profile));
+    std::unique_ptr<UserInterfaceForm> uifrm =
+        std::make_unique<UserInterfaceForm>(smileyPack, settings, style, this);
+    std::unique_ptr<PrivacyForm> pfrm = std::make_unique<PrivacyForm>(core, settings, style, profile);
     connect(pfrm.get(), &PrivacyForm::clearAllReceipts, parent, &Widget::clearAllReceipts);
 
-    auto* rawAvfrm = new AVForm(audio, coreAV, cameraSource, audioSettings, videoSettings, style);
-    std::unique_ptr<AVForm> avfrm(rawAvfrm);
-    std::unique_ptr<AdvancedForm> expfrm(new AdvancedForm(settings, style, messageBoxManager));
-    std::unique_ptr<AboutForm> abtfrm(new AboutForm(updateCheck, core->getSelfId().toString(), style));
+    std::unique_ptr<AVForm> avfrm =
+        std::make_unique<AVForm>(audio, coreAV, cameraSource, audioSettings, videoSettings, style);
+    std::unique_ptr<AdvancedForm> expfrm =
+        std::make_unique<AdvancedForm>(settings, style, messageBoxManager);
+    std::unique_ptr<AboutForm> abtfrm =
+        std::make_unique<AboutForm>(updateCheck, core->getSelfId().toString(), style);
 
     connect(&updateCheck, &UpdateCheck::updateAvailable, this, &SettingsWidget::onUpdateAvailable);
 

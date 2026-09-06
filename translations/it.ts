@@ -217,7 +217,7 @@ il che può portare a problemi con le videochiamate.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Accetta automaticamente inviti per chat di gruppo da questo contatto.</translation>
+        <translation>Accetta automaticamente inviti per chat di gruppo da questo contatto.</translation>
     </message>
     <message>
         <source>Remove history (operation can not be undone!)</source>
@@ -269,7 +269,7 @@ il che può portare a problemi con le videochiamate.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Accettare automaticamente gli inviti di gruppi</translation>
+        <translation>Accettare automaticamente gli inviti di gruppo</translation>
     </message>
     <message>
         <source>You can save comments about this contact here.</source>
@@ -754,7 +754,7 @@ in modo da poter salvare il file su Windows.</translation>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Gruppo #%1</translation>
+        <translation>Gruppo #%1</translation>
     </message>
 </context>
 <context>

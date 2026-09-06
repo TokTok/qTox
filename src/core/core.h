@@ -16,6 +16,7 @@
 #include "toxid.h"
 #include "toxpk.h"
 
+#include "src/model/conferenceinvite.h"
 #include "src/model/status.h"
 
 #include <QMutex>
@@ -30,7 +31,6 @@ class CoreAV;
 class CoreFile;
 class IAudioControl;
 class ICoreSettings;
-class ConferenceInvite;
 class Profile;
 class Core;
 class IBootstrapListGenerator;

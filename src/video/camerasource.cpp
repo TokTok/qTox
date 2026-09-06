@@ -97,6 +97,9 @@ Q_LOGGING_CATEGORY(ffmpegDeviceAudioOutput, "ffmpeg.device.audio_output")
 Q_LOGGING_CATEGORY(ffmpegDeviceAudioInput, "ffmpeg.device.audio_input")
 Q_LOGGING_CATEGORY(ffmpegDeviceOutput, "ffmpeg.device.output")
 Q_LOGGING_CATEGORY(ffmpegDeviceInput, "ffmpeg.device.input")
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(60, 2, 100)
+Q_LOGGING_CATEGORY(ffmpegHWDevice, "ffmpeg.hwdevice")
+#endif
 } // namespace logcat
 
 const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
@@ -141,6 +144,10 @@ const QLoggingCategory& (*avLogCategory(const AVClass* avc))()
         return logcat::ffmpegDeviceOutput;
     case AV_CLASS_CATEGORY_DEVICE_INPUT:
         return logcat::ffmpegDeviceInput;
+#if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(60, 2, 100)
+    case AV_CLASS_CATEGORY_HWDEVICE:
+        return logcat::ffmpegHWDevice;
+#endif
     }
     return logcat::ffmpeg;
 }

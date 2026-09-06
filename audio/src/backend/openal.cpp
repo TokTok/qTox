@@ -115,16 +115,12 @@ OpenAL::OpenAL(IAudioSettings& _settings)
     captureTimer.setInterval(AUDIO_FRAME_DURATION / 2);
     captureTimer.setSingleShot(false);
     captureTimer.moveToThread(audioThread);
-    // TODO for Qt 5.6+: use qOverload
-    connect(audioThread, &QThread::started, &captureTimer,
-            static_cast<void (QTimer::*)(void)>(&QTimer::start));
+    connect(audioThread, &QThread::started, &captureTimer, qOverload<>(&QTimer::start));
 
     cleanupTimer.setInterval(1000);
     cleanupTimer.setSingleShot(false);
     connect(&cleanupTimer, &QTimer::timeout, this, &OpenAL::cleanupSound);
-    // TODO for Qt 5.6+: use qOverload
-    connect(audioThread, &QThread::started, &cleanupTimer,
-            static_cast<void (QTimer::*)(void)>(&QTimer::start));
+    connect(audioThread, &QThread::started, &cleanupTimer, qOverload<>(&QTimer::start));
 
     audioThread->start();
 }

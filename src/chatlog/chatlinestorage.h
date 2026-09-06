@@ -77,6 +77,7 @@ public:
     }
 
     bool contains(QDateTime timestamp) const;
+    bool contains(ChatLine::Ptr line) const;
 
     iterator find(ChatLogIdx idx);
     iterator find(ChatLine::Ptr line);

@@ -72,6 +72,11 @@ bool ChatLineStorage::contains(QDateTime timestamp) const
     return it != dateMap.end();
 }
 
+bool ChatLineStorage::contains(ChatLine::Ptr line) const
+{
+    return std::find(lines.cbegin(), lines.cend(), line) != lines.cend();
+}
+
 ChatLineStorage::iterator ChatLineStorage::find(ChatLogIdx idx)
 {
     auto infoIt = infoIteratorForIdx(idx);

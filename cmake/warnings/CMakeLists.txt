@@ -86,6 +86,9 @@ target_compile_options(
     $<$<BOOL:${STRICT_OPTIONS}>:
     -Werror;
     >
+    $<$<AND:$<CXX_COMPILER_ID:GNU>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,15.0>>:
+    -Wno-sfinae-incomplete; # false positive SFINAE checks
+    >
     $<$<BOOL:${COMPILER_SUPPORTS_WARNING_WEAK_VTABLES}>:
     -Wweak-vtables; # https://llvm.org/docs/CodingStandards.html#provide-a-virtual-method-anchor-for-classes-in-headers
     >

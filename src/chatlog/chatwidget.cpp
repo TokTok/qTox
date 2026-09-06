@@ -1228,9 +1228,8 @@ void ChatWidget::onRenderFinished()
     // invalidated. This could be improved in the future but for now I  do not
     // believe this is a serious usage impediment. Chats can be exported if a
     // user really needs more than 300 messages to be copied
-    if (chatLineStorage->find(selFirstRow) == chatLineStorage->end()
-        || chatLineStorage->find(selLastRow) == chatLineStorage->end()
-        || chatLineStorage->find(selClickedRow) == chatLineStorage->end()) {
+    if (!chatLineStorage->contains(selFirstRow) || !chatLineStorage->contains(selLastRow)
+        || !chatLineStorage->contains(selClickedRow)) {
         // FIXME: Segfault when selecting while scrolling down
         clearSelection();
     }
