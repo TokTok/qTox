@@ -2446,6 +2446,11 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
         <translation>%1 ist während des Anrufversuchs offline gegangen</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 ist während des Anrufs offline gegangen. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Initialisierung</translation>
     </message>

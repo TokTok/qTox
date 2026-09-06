@@ -332,6 +332,7 @@ QDateTime GenericChatForm::getLatestTime() const
         case SystemMessageType::outgoingCall:
         case SystemMessageType::callEnd:
         case SystemMessageType::unexpectedCallEnd:
+        case SystemMessageType::userWentOfflineDuringCall:
             return true;
         case SystemMessageType::cleared:
         case SystemMessageType::titleChanged:

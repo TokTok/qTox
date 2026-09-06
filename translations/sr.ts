@@ -2527,6 +2527,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">%1 је био ван мреже током покушаја позива</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 је био ван мреже током позива. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Иницијализација</translation>

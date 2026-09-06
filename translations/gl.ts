@@ -2523,6 +2523,11 @@ Este ID inclúe o código NoSpam (en azul) e a suma de verificación (en gris).<
         <translation type="unfinished">%1 quedou sen conexión durante o intento de chamada</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 estivo sen conexión durante a chamada. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicialización</translation>

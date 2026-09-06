@@ -2471,6 +2471,11 @@ ID:t innehåller NoSpam-koden (i blått) och kontrollsumman (i grått).</transla
         <translation type="unfinished">%1 gick offline under samtalsförsöket</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 gick offline under samtalet. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Initierar</translation>

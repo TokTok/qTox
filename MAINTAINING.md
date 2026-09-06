@@ -146,8 +146,9 @@ To generate the translations, please follow the next steps:
   **Note:** `lupdate` is a part of `qt6-linguist` (Fedora) or `qt6-tools-dev` (Ubuntu) packages.
   The executable may be called `lupdate-qt6`, in this case crteate the symbolic link to `lupdate`
   `ln -s /usr/bin/lupdate-qt6 /usr/bin/lupdate`
-- Run the utility `ci-tools/tools/translate.py`. During the first run it will parse all literals in the source
-  code and will generate the templates for consequent translation.
+- Run the utility `ci-tools/tools/translate.py` in the qTox repository root. During the first run
+  it will parse all literals in the source code and will generate the templates for consequent
+  translation.
 - Run `ci-tools/tools/translate.py` for the second time to generate the actual translations using
   Baidu translate API.
 

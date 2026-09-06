@@ -2472,6 +2472,11 @@ ID zahrnuje kód NoSpam (modře) a kontrolní součet (šedě).</translation>
         <translation type="unfinished">%1 přešel během pokusu o volání do režimu offline</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 přešel během hovoru do režimu offline. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicializace</translation>

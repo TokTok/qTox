@@ -2452,6 +2452,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>%1 вышел из сети во время попытки звонка</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 отключился от сети во время разговора. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Подготовка к работе</translation>
     </message>

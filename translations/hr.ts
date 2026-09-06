@@ -2525,6 +2525,11 @@ Ovaj ID uključuje NoSpam kod (plavo) i kontrolni zbroj (sivo).</translation>
         <translation type="unfinished">%1 je bio izvan mreže tijekom pokušaja poziva</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 je bio izvan mreže tijekom poziva. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicijaliziranje</translation>

@@ -2512,6 +2512,11 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <translation type="unfinished">%1 zvanīšanas mēģinājuma laikā pārgāja bezsaistē</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 zvana laikā pārgāja bezsaistē. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicializēšana</translation>

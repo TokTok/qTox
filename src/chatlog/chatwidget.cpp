@@ -98,6 +98,7 @@ ChatMessage::SystemMessageType getChatMessageType(const SystemMessage& systemMes
     case SystemMessageType::messageSendFailed:
     case SystemMessageType::unexpectedCallEnd:
     case SystemMessageType::userWentOffline:
+    case SystemMessageType::userWentOfflineDuringCall:
         return ChatMessage::ERROR;
     case SystemMessageType::userJoinedConference:
     case SystemMessageType::userLeftConference:

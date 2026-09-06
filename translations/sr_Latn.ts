@@ -2437,6 +2437,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation type="unfinished"></translation>
     </message>

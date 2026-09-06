@@ -2446,6 +2446,11 @@ Cet identifiant comprend le code NoSpam (en bleu) et la somme de contrôle (en g
         <translation>%1 s&apos;est déconnecté pendant la tentative d&apos;appel</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 s&apos;est déconnecté pendant l&apos;appel. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Initialisation</translation>
     </message>

@@ -2519,6 +2519,11 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
         <translation>%1 offline állapotba került a hívási kísérlet során</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 offline állapotba került a hívás közben. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Inicializálás</translation>

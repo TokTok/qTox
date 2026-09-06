@@ -2448,6 +2448,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">%1 は通話試行中にオフラインになりました</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 は通話中にオフラインになりました。 %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>初期化中</translation>
     </message>

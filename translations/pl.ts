@@ -2475,6 +2475,11 @@ To ID zawiera kod NoSpam (w kolorze niebieskim) oraz sumę kontrolną (w kolorze
         <translation>%1 przeszedł w tryb offline podczas próby połączenia</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 przeszedł w tryb offline podczas połączenia. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Inicjowanie</translation>
     </message>

@@ -2931,6 +2931,11 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translation type="unfinished">%1 fór án nettengingar meðan á símtalstilrauninni stóð</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 fór án nettengingar meðan á símtalinu stóð. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Frumstillir</translation>

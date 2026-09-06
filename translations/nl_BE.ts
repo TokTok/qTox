@@ -2580,6 +2580,10 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <translation type="unfinished">%1 ging offline tijdens de oproeppoging</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Initialiseren</translation>

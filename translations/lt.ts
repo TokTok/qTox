@@ -2474,6 +2474,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <translation type="unfinished">%1 atsijungė per bandymą skambinti</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 atsijungė pokalbio metu. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicijuoja</translation>

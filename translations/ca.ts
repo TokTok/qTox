@@ -2968,6 +2968,10 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <translation type="unfinished">%1 s&apos;ha desconnectat durant l&apos;intent de trucada</translation>
     </message>
     <message>
+        <source>%1 went offline during the call. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">S&apos;està inicialitzant</translation>

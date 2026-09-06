@@ -459,10 +459,19 @@ void ChatForm::onFriendStatusChanged(const ToxPk& friendPk, Status::Status statu
         // Handle the edge case when we are calling friend, who is going offline.
         CoreAV* av = core.getAv();
         if (av->isCallStarted(f)) {
+            bool isActive = av->isCallActive(f);
+            const QString dhms = isActive ? secondsToDHMS(timeElapsed.elapsed() / 1000) : "";
+            deleteCounter();
             av->cancelCall(f->getId());
             emit stopNotification();
-            addSystemInfoMessage(QDateTime::currentDateTime(), SystemMessageType::userWentOffline,
-                                 {f->getDisplayedName()});
+            if (isActive) {
+                addSystemInfoMessage(QDateTime::currentDateTime(),
+                                     SystemMessageType::userWentOfflineDuringCall,
+                                     {f->getDisplayedName(), dhms});
+            } else {
+                addSystemInfoMessage(QDateTime::currentDateTime(),
+                                     SystemMessageType::userWentOffline, {f->getDisplayedName()});
+            }
         }
     }
 
@@ -691,6 +700,14 @@ void ChatForm::stopCounter(bool error)
     // TODO: add notification once notifications are implemented
 
     addSystemInfoMessage(QDateTime::currentDateTime(), messageType, {name, dhms});
+    deleteCounter();
+}
+
+void ChatForm::deleteCounter()
+{
+    if (callDurationTimer == nullptr) {
+        return;
+    }
     callDurationTimer->stop();
     callDuration->setText("");
     callDuration->hide();
