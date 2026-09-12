@@ -38,6 +38,7 @@ qt_moc(
         "model/debug/debuglogmodel.h",
         "model/debug/debugobjecttreemodel.h",
         "model/friend.h",
+        "model/friendchatstate.h",
         "model/friendlist/friendlistmanager.h",
         "model/friendmessagedispatcher.h",
         "model/ichatlog.h",

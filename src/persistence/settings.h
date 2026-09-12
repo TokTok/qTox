@@ -459,8 +459,8 @@ public:
     bool getMinimizeOnClose() const;
     void setMinimizeOnClose(bool newValue);
 
-    bool getStatusChangeNotificationEnabled() const;
-    void setStatusChangeNotificationEnabled(bool newValue);
+    bool getStatusChangeNotificationEnabled() const override;
+    void setStatusChangeNotificationEnabled(bool newValue) override;
 
     bool getSpellCheckingEnabled() const;
     void setSpellCheckingEnabled(bool newValue);
@@ -469,8 +469,8 @@ public:
     void setHidePostNullSuffix(bool hide) override;
 
     // Privacy
-    bool getTypingNotification() const;
-    void setTypingNotification(bool enabled);
+    bool getTypingNotification() const override;
+    void setTypingNotification(bool enabled) override;
 
     QStringList getBlockList() const override;
     void setBlockList(const QStringList& blist) override;

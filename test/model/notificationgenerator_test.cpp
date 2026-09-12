@@ -97,6 +97,24 @@ class MockNotificationSettings : public INotificationSettings
         std::ignore = newValue;
     }
 
+    bool getTypingNotification() const override
+    {
+        return true;
+    }
+    void setTypingNotification(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
+
+    bool getStatusChangeNotificationEnabled() const override
+    {
+        return true;
+    }
+    void setStatusChangeNotificationEnabled(bool newValue) override
+    {
+        std::ignore = newValue;
+    }
+
 private:
     bool notifyHide = false;
 };

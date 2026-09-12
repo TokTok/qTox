@@ -10,13 +10,12 @@
 #include "src/model/ichatlog.h"
 #include "src/model/imessagedispatcher.h"
 #include "src/model/status.h"
+#include "src/model/systemmessage.h"
 #include "src/persistence/history.h"
 #include "src/video/netcamview.h"
 
-#include <QElapsedTimer>
 #include <QLabel>
 #include <QSet>
-#include <QTimer>
 
 class CallConfirmWidget;
 class ContentDialogManager;
@@ -24,6 +23,7 @@ class Core;
 class DocumentCache;
 class FileTransferInstance;
 class Friend;
+class FriendChatState;
 class FriendList;
 class ConferenceList;
 class History;
@@ -42,7 +42,7 @@ class ChatForm : public GenericChatForm
 {
     Q_OBJECT
 public:
-    ChatForm(Profile& profile, Friend* chatFriend, IChatLog& chatLog_,
+    ChatForm(Profile& profile, Friend* chatFriend, FriendChatState& chatState, IChatLog& chatLog_,
              IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
              SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings, Style& style,
              IMessageBoxManager& messageBoxManager, ContentDialogManager& contentDialogManager,
@@ -57,20 +57,9 @@ public:
     static const QString ACTION_PREFIX;
 
 signals:
-
-    void incomingNotification(uint32_t friendId);
-    void outgoingNotification();
-    void stopNotification();
-    void startCallNotification(uint32_t friendId);
-    void endCallNotification(uint32_t friendId);
-    void rejectCall(uint32_t friendId);
-    void acceptCall(uint32_t friendId);
     void updateFriendActivity(Friend& frnd);
 
 public slots:
-    void onAvInvite(uint32_t friendId, bool video);
-    void onAvStart(uint32_t friendId, bool video);
-    void onAvEnd(uint32_t friendId, bool error);
     void onAvatarChanged(const ToxPk& friendPk, const QPixmap& pic);
     void onFileNameChanged(const ToxPk& friendPk);
     void onShowMessagesClicked();
@@ -82,19 +71,8 @@ private slots:
     void onAttachClicked() override;
     void onScreenshotClicked() override;
 
-    void onTextEditChanged();
-    void onCallTriggered();
-    void onVideoCallTriggered();
-    void onAnswerCallTriggered(bool video);
-    void onRejectCallTriggered();
-    void onMicMuteToggle();
-    void onVolMuteToggle();
-
-    void onFriendStatusChanged(const ToxPk& friendPk, Status::Status status);
-    void onFriendTypingChanged(quint32 friendId, bool isTyping_);
     void onFriendNameChanged(const QString& name);
     void onStatusMessage(const QString& message);
-    void onUpdateTime();
     void previewImage(const QPixmap& pixmap);
     void cancelImagePreview();
     void sendImageFromPreview();
@@ -104,13 +82,7 @@ private slots:
     void callUpdateFriendActivity();
 
 private:
-    void updateMuteMicButton();
-    void updateMuteVolButton();
     void retranslateUi();
-    void showOutgoingCall(bool video);
-    void startCounter();
-    void stopCounter(bool error = false);
-    void updateCallButtons();
     void showNetcam();
     void hideNetcam();
 
@@ -124,17 +96,13 @@ protected:
 private:
     Core& core;
     Friend* f;
+    FriendChatState& chatState;
     CroppingLabel* statusMessageLabel;
     QMenu statusMessageMenu;
     QLabel* callDuration;
-    QTimer* callDurationTimer;
-    QTimer typingTimer;
-    QElapsedTimer timeElapsed;
     QAction* copyStatusAction;
     QPixmap imagePreviewSource;
     ImagePreviewButton* imagePreview;
-    bool isTyping;
-    bool lastCallIsVideo;
     std::unique_ptr<NetCamView> netcam;
     CameraSource& cameraSource;
     Settings& settings;
