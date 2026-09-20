@@ -2759,6 +2759,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>%1 вышел из сети во время попытки звонка</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Вызов был прерван, поскольку %1 неожиданно отключился от сети. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Подготовка к работе</translation>
     </message>

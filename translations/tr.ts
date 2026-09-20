@@ -2466,6 +2466,11 @@ Bu kimlik NoSpam kodunu (mavi) ve sağlama toplamını (gri) içerir.</translati
         <translation type="unfinished">%1 arama girişimi sırasında çevrimdışı oldu</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 beklenmedik bir şekilde çevrimdışı olduğundan çağrı sonlandırıldı. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Başlatılıyor</translation>
     </message>

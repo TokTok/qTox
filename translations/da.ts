@@ -2779,6 +2779,11 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <translation type="unfinished">%1 gik offline under opkaldsforsøget</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Opkaldet blev afsluttet, fordi %1 uventet gik offline. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Initialiserer</translation>

@@ -2463,6 +2463,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation type="unfinished">%1 ngoại tuyến trong khi thử cuộc gọi</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Cuộc gọi đã bị chấm dứt vì %1 bất ngờ ngoại tuyến. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Khởi tạo</translation>
     </message>

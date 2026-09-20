@@ -2956,6 +2956,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">কল করার সময় %1 অফলাইন হয়ে গেছে</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">কলটি বন্ধ করা হয়েছে কারণ %1 অপ্রত্যাশিতভাবে অফলাইনে চলে গেছে৷ %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">শুরু করা হচ্ছে</translation>

@@ -2467,6 +2467,11 @@ Tämä ID sisältää spammin estävän koodin(joka on sinisellä), ja tarkistus
         <translation type="unfinished">%1 siirtyi offline-tilaan soittoyrityksen aikana</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Puhelu lopetettiin, koska %1 meni odottamatta offline-tilaan. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Alustus</translation>

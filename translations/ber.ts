@@ -2452,6 +2452,11 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translation type="unfinished">%1 ⵓⵔ ⵢⴻⵍⵍⵉ ⴷⴳ ⵓⵣⵎⵣ ⵏ ⵓⵔⵣⵣⵓ ⵏ ⵜⵖⵓⵔⵉ</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">ⵜⵉⵖⵔⵉ ⵜⴻⵜⵜⵡⴰⴽⴽⴻⵙ ⴰⵛⴽⵓ %1 ⵢⴻⴼⴼⴻⵖⴷ ⵙ ⵜⵖⴰⵡⵍⴰ. %2.</translation>
+    </message>
+    <message>
         <source>Failed to load chat history</source>
         <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵔⵥⴻⵎ ⴰⵎⵣⵔⵓⵢ ⵏ ⵓⵎⵙⴰⵡⴰⵍ</translation>
     </message>

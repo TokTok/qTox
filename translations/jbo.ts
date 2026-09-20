@@ -2438,6 +2438,10 @@ ko snatci lo do pendo ko lo nu co&apos;a casnu
         <translation type="unfinished">la&apos;oi %1. jorne pu cliva va va&apos;o lo nu fonjorne troci</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translation type="unfinished">lo nu caca&apos;o tavla cu sisti mu&apos;i lo nu la %1 na kaxre cu binxo lo nu na jai gasnu .i  %2</translation>
+    </message>
+    <message>
         <source>Failed to load chat history</source>
         <translation type="unfinished">pu fliba lo nu kargau lo casnu citri</translation>
     </message>

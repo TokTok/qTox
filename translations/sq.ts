@@ -2954,6 +2954,11 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <translation type="unfinished">%1 doli jashtë linje gjatë përpjekjes së telefonatës</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Telefonata u ndërpre sepse %1 papritur doli jashtë linje. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Duke inicializuar</translation>

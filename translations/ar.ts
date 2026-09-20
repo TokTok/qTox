@@ -2606,6 +2606,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">%1 انقطع الاتصال أثناء محاولة الاتصال</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">تم إنهاء المكالمة بسبب انقطاع اتصال %1 بشكل غير متوقع. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">التهيئة</translation>

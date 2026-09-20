@@ -2472,6 +2472,11 @@ Toto ID obsahuje kód NoSpam (modrou) a kontrolný súčet (šedou).</translatio
         <translation type="unfinished">%1 prešlo počas pokusu o volanie do režimu offline</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hovor bol ukončený, pretože %1 sa neočakávane prepol do režimu offline. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Inicializácia</translation>
     </message>

@@ -2457,6 +2457,11 @@ Questo ID include una sezione NoSpam (in colore blu) e il controllo checksum (in
         <translation type="unfinished">%1 è andato offline durante il tentativo di chiamata</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">La chiamata è stata terminata perché %1 è andato inaspettatamente offline. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Inizializzando</translation>
     </message>

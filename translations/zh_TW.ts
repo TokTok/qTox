@@ -2828,6 +2828,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">%1 在呼叫嘗試期間離線</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">由於 %1 意外離線，通話被終止。 %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">正在初始化</translation>

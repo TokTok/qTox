@@ -15,6 +15,8 @@
 #include <QDebug>
 #include <QtGlobal>
 
+#include <exception>
+
 namespace {
 
 constexpr QDate invalidDate;

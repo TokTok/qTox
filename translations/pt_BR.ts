@@ -2448,6 +2448,11 @@ Este ID inclui o código NoSpam (em azul) e o checkum (em cinza).</translation>
         <translation>%1 ficou offline durante a tentativa de chamada</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">A chamada foi encerrada porque %1 ficou offline inesperadamente. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Inicializando</translation>
     </message>

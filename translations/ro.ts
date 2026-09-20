@@ -2462,6 +2462,11 @@ Acest ID include codul NoSpam (în albastru) și suma de control (în gri).</tra
         <translation type="unfinished">%1 a fost offline în timpul încercării de apel</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Apelul a fost încheiat deoarece %1 a fost offline în mod neașteptat. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Inițializare</translation>
     </message>

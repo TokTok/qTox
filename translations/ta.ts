@@ -2448,6 +2448,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">அழைப்பு முயற்சியின் போது %1 ஆஃப்லைனில் சென்றார்</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 எதிர்பாராத விதமாக ஆஃப்லைனில் சென்றதால் அழைப்பு நிறுத்தப்பட்டது. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>துவக்குதல்</translation>
     </message>

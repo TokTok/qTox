@@ -2535,6 +2535,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">%1 выйшаў у аўтаномны рэжым падчас спробы выкліку</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Выклік быў спынены, таму што %1 нечакана выйшаў з сеткі. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ініцыялізацыя</translation>

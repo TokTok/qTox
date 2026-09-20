@@ -2456,6 +2456,11 @@ Deze ID bevat de NoSpam-code (in het blauw) en de checksum (in het grijs).</tran
         <translation type="unfinished">%1 ging offline tijdens de oproeppoging</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">De oproep is beëindigd omdat %1 onverwacht offline is gegaan. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Initialiseren</translation>
     </message>

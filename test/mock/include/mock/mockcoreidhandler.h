@@ -7,6 +7,8 @@
 
 #include "src/core/icoreidhandler.h"
 
+#include <exception>
+
 class MockCoreIdHandler : public ICoreIdHandler
 {
 public:

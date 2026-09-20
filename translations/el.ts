@@ -2553,6 +2553,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">Το %1 βγήκε εκτός σύνδεσης κατά την προσπάθεια κλήσης</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Η κλήση τερματίστηκε επειδή το %1 τέθηκε απροσδόκητα εκτός σύνδεσης. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Αρχικοποίηση</translation>

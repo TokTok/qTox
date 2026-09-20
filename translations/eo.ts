@@ -2793,6 +2793,11 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
         <translation type="unfinished">%1 malkonektas dum la vokoprovo</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">La voko estis ĉesigita ĉar %1 neatendite malkonektas. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicializante</translation>

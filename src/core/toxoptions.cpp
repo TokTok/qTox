@@ -103,6 +103,9 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
     // every start and the founder role is lost.
     tox_options_set_experimental_groups_persistence(toxOptions->get(), true);
 
+    // required for threaded toxav
+    tox_options_set_experimental_thread_safety(toxOptions->get(), true);
+
     // IPv6 needed for LAN discovery, but can crash some weird routers. On by default, can be
     // disabled in options.
     const bool enableIPv6 = s.getEnableIPv6();

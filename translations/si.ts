@@ -2959,6 +2959,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">ඇමතුම් උත්සාහයේදී %1 නොබැඳි විය</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">%1 අනපේක්ෂිත ලෙස නොබැඳි වූ නිසා ඇමතුම අවසන් විය. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ආරම්භ කිරීම</translation>

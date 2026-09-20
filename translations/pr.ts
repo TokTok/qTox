@@ -2450,6 +2450,10 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Failed to load chat history</source>
         <translation type="unfinished">Couldn&apos;t hoist th&apos; ol&apos; messages</translation>
     </message>

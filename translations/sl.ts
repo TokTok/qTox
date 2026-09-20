@@ -2646,6 +2646,11 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <translation type="unfinished">%1 je bil med poskusom klica brez povezave</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Klic je bil prekinjen, ker je %1 nepričakovano prekinil povezavo. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Inicializacija</translation>

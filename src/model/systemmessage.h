@@ -31,6 +31,7 @@ enum class SystemMessageType
     selfJoinedConference,
     selfLeftConference,
     userWentOffline,
+    userWentOfflineDuringCall,
 };
 
 struct SystemMessage
@@ -73,6 +74,10 @@ struct SystemMessage
             return QObject::tr("You have left the conference");
         case SystemMessageType::userWentOffline:
             return QObject::tr("%1 went offline during the call attempt").arg(args[0]);
+        case SystemMessageType::userWentOfflineDuringCall:
+            return QObject::tr("The call was terminated because %1 unexpectedly went offline. %2")
+                .arg(args[0])
+                .arg(args[1]);
         }
         return {};
     }

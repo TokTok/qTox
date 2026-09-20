@@ -2468,6 +2468,11 @@ Denne ID-en inkluderer NoSpam-koden (i blått), og sjekksummen (i grått).</tran
         <translation type="unfinished">%1 gikk frakoblet under oppringingsforsøket</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Samtalen ble avsluttet fordi %1 uventet ble frakoblet. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation type="unfinished">Igangsetter</translation>
     </message>

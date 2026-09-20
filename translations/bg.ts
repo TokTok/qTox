@@ -2446,6 +2446,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>%1 е без мрежа по време на опита за обаждане</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Обаждането беше прекратено, защото %1 неочаквано излезе офлайн. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Подготвяне</translation>
     </message>

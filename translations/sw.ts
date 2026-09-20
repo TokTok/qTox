@@ -2961,6 +2961,11 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <translation type="unfinished">%1 aliondoka mtandaoni wakati wa jaribio la kupiga simu</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Simu ilikatishwa kwa sababu %1 aliondoka mtandaoni bila kutarajiwa. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kuanzisha</translation>

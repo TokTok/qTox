@@ -2458,6 +2458,11 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <translation>%1 вийшов з мережі під час спроби дзвінка</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Дзвінок було перервано, оскільки %1 несподівано вийшов з мережі. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translation>Підготовка до роботи</translation>
     </message>

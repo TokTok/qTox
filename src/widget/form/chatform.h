@@ -112,6 +112,7 @@ private:
     void showOutgoingCall(bool video);
     void startCounter();
     void stopCounter(bool error = false);
+    void deleteCounter();
     void updateCallButtons();
     void showNetcam();
     void hideNetcam();

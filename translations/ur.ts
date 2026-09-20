@@ -2934,6 +2934,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">کال کی کوشش کے دوران %1 آف لائن گیا&apos;</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">کال بند کر دی گئی کیونکہ %1 غیر متوقع طور پر آف لائن ہو گیا۔ %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">شروع کر رہا ہے۔</translation>

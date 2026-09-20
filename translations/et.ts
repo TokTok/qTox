@@ -2470,6 +2470,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <translation type="unfinished">%1 läks helistamiskatse ajal võrguühenduseta</translation>
     </message>
     <message>
+        <source>The call was terminated because %1 unexpectedly went offline. %2</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Kõne lõpetati, kuna %1 läks ootamatult võrguühenduseta. %2</translation>
+    </message>
+    <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Initsialiseerimine</translation>
