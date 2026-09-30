@@ -305,6 +305,10 @@ void FriendListWidget::cleanMainLayout()
 
 QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, bool forward) const
 {
+    if (currentPos == nullptr) {
+        return nullptr;
+    }
+
     const int pos = currentPos->getNameSortedPos();
     int nextPos = forward ? pos + 1 : pos - 1;
     if (nextPos >= manager->getItems().size()) {
@@ -516,9 +520,10 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
 
     if (friendWidget != nullptr) {
         wgt = getNextWidgetForName(friendWidget, forward);
-    } else {
-        auto* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget);
+    } else if (auto* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget)) {
         wgt = getNextWidgetForName(conferenceWidget, forward);
+    } else if (auto* groupWidget = qobject_cast<GroupWidget*>(activeChatroomWidget)) {
+        wgt = getNextWidgetForName(groupWidget, forward);
     }
 
     auto* friendTmp = qobject_cast<FriendWidget*>(wgt);
