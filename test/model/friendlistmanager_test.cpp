@@ -270,6 +270,20 @@ public:
         return this;
     }
 
+    FriendItemsBuilder* addGroups()
+    {
+        unsortedGroups.append("Zeta Group");
+        unsortedGroups.append("beta group");
+        unsortedGroups.append("Alpha Group");
+        unsortedGroups.append("000 group");
+
+        sortedByNameGroups = unsortedGroups;
+        std::sort(sortedByNameGroups.begin(), sortedByNameGroups.end(),
+                  [](const QString& a, const QString& b) { return a.toUpper() < b.toUpper(); });
+
+        return this;
+    }
+
     FriendItemsBuilder* setConferencesOnTop(bool val)
     {
         conferencesOnTop = val;
@@ -297,6 +311,9 @@ public:
         for (auto name : unsortedConferences) {
             vec.push_back(new MockConference(name));
         }
+        for (auto name : unsortedGroups) {
+            vec.push_back(new MockGroup(name));
+        }
         clear();
         return vec;
     }
@@ -315,12 +332,12 @@ public:
                     new MockFriend(name, true, QDateTime::currentDateTime())));
             }
 
-            for (auto name : sortedByNameConferences) {
-                vec.push_back(std::shared_ptr<IFriendListItem>(new MockConference(name)));
+            for (const auto& item : buildGroupChats()) {
+                vec.push_back(item);
             }
         } else {
-            for (auto name : sortedByNameConferences) {
-                vec.push_back(std::shared_ptr<IFriendListItem>(new MockConference(name)));
+            for (const auto& item : buildGroupChats()) {
+                vec.push_back(item);
             }
 
             for (auto name : sortedByNameOnlineFriends) {
@@ -346,9 +363,9 @@ public:
     {
         QVector<std::shared_ptr<IFriendListItem>> vec;
 
-        // Add conferences on top
-        for (auto name : sortedByNameConferences) {
-            vec.push_back(std::shared_ptr<IFriendListItem>(new MockConference(name)));
+        // Add conferences and groups on top
+        for (const auto& item : buildGroupChats()) {
+            vec.push_back(item);
         }
 
         // Add friends and set the date of the last activity by index
@@ -362,15 +379,36 @@ public:
     }
 
 private:
+    /**
+     * @brief buildGroupChats Builds all group chats (conferences and NGCs) as a
+     * single block sorted by name.
+     */
+    QVector<std::shared_ptr<IFriendListItem>> buildGroupChats()
+    {
+        QVector<std::shared_ptr<IFriendListItem>> vec;
+        for (auto name : sortedByNameConferences) {
+            vec.push_back(std::shared_ptr<IFriendListItem>(new MockConference(name)));
+        }
+        for (auto name : sortedByNameGroups) {
+            vec.push_back(std::shared_ptr<IFriendListItem>(new MockGroup(name)));
+        }
+        std::stable_sort(vec.begin(), vec.end(), [](const auto& a, const auto& b) {
+            return a->getNameItem().toUpper() < b->getNameItem().toUpper();
+        });
+        return vec;
+    }
+
     void clear()
     {
         sortedByNameOfflineFriends.clear();
         sortedByNameOnlineFriends.clear();
         sortedByNameConferences.clear();
+        sortedByNameGroups.clear();
         sortedByActivityFriends.clear();
         sortedByActivityConferences.clear();
         unsortedAllFriends.clear();
         unsortedConferences.clear();
+        unsortedGroups.clear();
         conferencesOnTop = true;
     }
 
@@ -408,10 +446,12 @@ private:
     QStringList sortedByNameOfflineFriends;
     QStringList sortedByNameOnlineFriends;
     QStringList sortedByNameConferences;
+    QStringList sortedByNameGroups;
     QStringList sortedByActivityFriends;
     QStringList sortedByActivityConferences;
     QStringList unsortedAllFriends;
     QStringList unsortedConferences;
+    QStringList unsortedGroups;
     bool conferencesOnTop = true;
 };
 
@@ -426,6 +466,9 @@ private slots:
     void testApplyFilterSearchString();
     void testApplyFilterByStatus();
     void testSetConferencesOnTop();
+    void testSortGroupsOnTopByName();
+    void testSortGroupsOnTopByNameWithoutConferencesOnTop();
+    void testSortGroupsOnTopByActivity();
 
 private:
     std::unique_ptr<FriendListManager> createManagerWithItems(QVector<IFriendListItem*> itemsVec);
@@ -681,6 +724,84 @@ void TestFriendListManager::testSetConferencesOnTop()
     for (int i = 0; i < manager->getItems().size(); ++i) {
         auto fromManager = manager->getItems().at(i);
         auto fromSortedVec = sortedVecConferencesOnTop.at(i);
+        QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
+    }
+}
+
+void TestFriendListManager::testSortGroupsOnTopByName()
+{
+    FriendItemsBuilder listBuilder;
+    auto unsortedVec = listBuilder.addOfflineFriends()
+                           ->addOnlineFriends()
+                           ->addConferences()
+                           ->addGroups()
+                           ->buildUnsorted();
+    auto sortedVec = listBuilder.addOfflineFriends()
+                         ->addOnlineFriends()
+                         ->addConferences()
+                         ->addGroups()
+                         ->buildSortedByName();
+    auto manager = createManagerWithItems(unsortedVec);
+
+    manager->setConferencesOnTop(true);
+    manager->sortByName();
+
+    QCOMPARE(manager->getItems().size(), sortedVec.size());
+    for (int i = 0; i < sortedVec.size(); ++i) {
+        auto fromManager = manager->getItems().at(i);
+        auto fromSortedVec = sortedVec.at(i);
+        QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
+    }
+}
+
+void TestFriendListManager::testSortGroupsOnTopByNameWithoutConferencesOnTop()
+{
+    FriendItemsBuilder listBuilder;
+    auto unsortedVec = listBuilder.addOfflineFriends()
+                           ->addOnlineFriends()
+                           ->addConferences()
+                           ->addGroups()
+                           ->buildUnsorted();
+    auto sortedVec = listBuilder.addOfflineFriends()
+                         ->addOnlineFriends()
+                         ->addConferences()
+                         ->addGroups()
+                         ->setConferencesOnTop(false)
+                         ->buildSortedByName();
+    auto manager = createManagerWithItems(unsortedVec);
+
+    manager->setConferencesOnTop(false);
+    manager->sortByName();
+
+    QCOMPARE(manager->getItems().size(), sortedVec.size());
+    for (int i = 0; i < sortedVec.size(); ++i) {
+        auto fromManager = manager->getItems().at(i);
+        auto fromSortedVec = sortedVec.at(i);
+        QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
+    }
+}
+
+void TestFriendListManager::testSortGroupsOnTopByActivity()
+{
+    FriendItemsBuilder listBuilder;
+    auto unsortedVec = listBuilder.addOfflineFriends()
+                           ->addOnlineFriends()
+                           ->addConferences()
+                           ->addGroups()
+                           ->buildUnsorted();
+    auto sortedVec = listBuilder.addOfflineFriends()
+                         ->addOnlineFriends()
+                         ->addConferences()
+                         ->addGroups()
+                         ->buildSortedByActivity();
+    auto manager = createManagerWithItems(unsortedVec);
+
+    manager->sortByActivity();
+
+    QCOMPARE(manager->getItems().size(), sortedVec.size());
+    for (int i = 0; i < sortedVec.size(); ++i) {
+        auto fromManager = manager->getItems().at(i);
+        auto fromSortedVec = sortedVec.at(i);
         QCOMPARE(fromManager->getNameItem(), fromSortedVec->getNameItem());
     }
 }

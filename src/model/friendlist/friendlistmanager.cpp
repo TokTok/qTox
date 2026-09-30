@@ -7,6 +7,20 @@
 
 #include <QWidget>
 
+namespace {
+
+/**
+ * @brief Checks whether the item is a group chat, i.e. either a legacy conference
+ * (toxconferences) or a new group chat (toxgroups, "NGC").
+ * Both kinds are kept together at the top of the contact list and sorted by name.
+ */
+bool isGroupChat(const IFriendListItem& item)
+{
+    return item.isConference() || item.isGroup();
+}
+
+} // namespace
+
 FriendListManager::FriendListManager(int countContacts_, QObject* parent)
     : QObject(parent)
 {
@@ -181,18 +195,19 @@ void FriendListManager::removeAll(IFriendListItem* item)
 
 bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendListItemPtr& b) const
 {
-    if (a->isConference() && !b->isConference()) {
+    const bool aIsGroupChat = isGroupChat(*a);
+    const bool bIsGroupChat = isGroupChat(*b);
+
+    if (aIsGroupChat != bIsGroupChat) {
         if (conferencesOnTop) {
-            return true;
+            return aIsGroupChat;
         }
-        return !b->isOnline();
+        // Group chats are placed below online friends, but above offline ones.
+        return aIsGroupChat ? !b->isOnline() : a->isOnline();
     }
 
-    if (!a->isConference() && b->isConference()) {
-        if (conferencesOnTop) {
-            return false;
-        }
-        return a->isOnline();
+    if (aIsGroupChat) {
+        return a->getNameItem().toUpper() < b->getNameItem().toUpper();
     }
 
     if (a->isOnline() && !b->isOnline()) {
@@ -208,14 +223,14 @@ bool FriendListManager::cmpByName(const IFriendListItemPtr& a, const IFriendList
 
 bool FriendListManager::cmpByActivity(const IFriendListItemPtr& a, const IFriendListItemPtr& b)
 {
-    if (a->isConference() || b->isConference()) {
-        if (a->isConference() && !b->isConference()) {
-            return true;
-        }
+    const bool aIsGroupChat = isGroupChat(*a);
+    const bool bIsGroupChat = isGroupChat(*b);
 
-        if (!a->isConference() && b->isConference()) {
-            return false;
-        }
+    if (aIsGroupChat != bIsGroupChat) {
+        return aIsGroupChat;
+    }
+
+    if (aIsGroupChat) {
         return a->getNameItem().toUpper() < b->getNameItem().toUpper();
     }
 
