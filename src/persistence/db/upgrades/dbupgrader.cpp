@@ -18,7 +18,7 @@
 #include <utility>
 
 namespace {
-constexpr int SCHEMA_VERSION = 11;
+constexpr int SCHEMA_VERSION = 12;
 
 std::vector<DbUpgrader::BadEntry> getInvalidPeers(RawDatabase& db)
 {
@@ -247,9 +247,9 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
 
     using DbSchemaUpgradeFn = bool (*)(RawDatabase&);
     std::vector<DbSchemaUpgradeFn> upgradeFns = {dbSchema0to1,  dbSchema1to2,          dbSchema2to3,
-                                                 dbSchema3to4,  dbSchema4to5,          dbSchema5to6,
-                                                 dbSchema6to7,  dbSchema7to8,          dbSchema8to9,
-                                                 dbSchema9to10, DbTo11::dbSchema10to11};
+                                                  dbSchema3to4,  dbSchema4to5,          dbSchema5to6,
+                                                  dbSchema6to7,  dbSchema7to8,          dbSchema8to9,
+                                                  dbSchema9to10, DbTo11::dbSchema10to11, dbSchema11to12};
 
     assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
     assert(upgradeFns.size() == SCHEMA_VERSION);
@@ -301,6 +301,8 @@ bool DbUpgrader::createCurrentSchema(RawDatabase& db)
         // ensure that our blob vector always has the right number of fields. Better to just
         // leave this as NOT NULL for now.
         "message BLOB NOT NULL, "
+        "recipient BLOB, "
+        "recipient_name BLOB, "
         "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type), "
         "FOREIGN KEY (sender_alias) REFERENCES aliases(id)); "
         "CREATE TABLE file_transfers "
@@ -620,6 +622,19 @@ bool DbUpgrader::dbSchema9to10(RawDatabase& db)
             "UPDATE file_transfers SET file_restart_id = ? WHERE LENGTH(file_restart_id) != 32;"),
         QVector<QByteArray>{dummyResumeId});
     upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 10;"));
+    return db.execNow(std::move(upgradeQueries));
+}
+
+bool DbUpgrader::dbSchema11to12(RawDatabase& db)
+{
+    std::vector<RawDatabase::Query> upgradeQueries;
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "ALTER TABLE text_messages "
+        "ADD COLUMN recipient BLOB;"));
+    upgradeQueries.emplace_back(QStringLiteral( //
+        "ALTER TABLE text_messages "
+        "ADD COLUMN recipient_name BLOB;"));
+    upgradeQueries.emplace_back(QStringLiteral("PRAGMA user_version = 12;"));
     return db.execNow(std::move(upgradeQueries));
 }
 

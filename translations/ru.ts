@@ -1034,6 +1034,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation>Группа %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1087,6 +1094,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>Пригласить в конференцию &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation>Пригласить в группу</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation>Пригласить в группу &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation>В новую группу</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1349,6 +1369,264 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Вы уверены, что вы хотите удалить все отображаемые сообщения?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation>Группа %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>promote to moderator</source>
+        <translation>сделать модератором</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation>снять модератора</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation>исключить из группы</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation>Скопировать идентификатор группы</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation>Скопировать тему</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation>Все</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation>Видимость группы</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation>Заблокировать тему</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation>Модераторы и основатель</translation>
+    </message>
+    <message>
+        <source>No topic</source>
+        <translation>Тема отсутствует</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation>Только основатель</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation>Пароль:</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation>Лимит участников:</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation>Приватная (только по приглашению)</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation>Публичная (вступление по ссылке)</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation>Убрать пароль группы</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation>Установить пароль группы</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation>Установить пароль группы...</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation>Установить тему группы</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation>Установить лимит участников</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation>Установить лимит участников...</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation>Установить тему...</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation>Тема:</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation>Кто может говорить</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n пользователь в чате</numerusform>
+            <numerusform>%n пользователя в чате</numerusform>
+            <numerusform>%n пользователей в чате</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation>выключить звук</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation>включить звук</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation>скопировать идентификатор узла</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation>Установить никнейм...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation>Мой статус</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>В сети</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation>Отошёл</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation>Занят</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation>Установить никнейм</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation>Никнейм:</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation>личное сообщение</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation>Личное сообщение для: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation>Создать группу</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation>Создать новую группу</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation>Введите имя группы</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation>Введите Chat ID группы (64 шестнадцатеричных символа):</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation>Приглашения в группы</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation>Группы</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation>Недопустимый идентификатор группы. Ожидается 64 шестнадцатеричных символа.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation>Присоединиться к группе по ID</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation>Имя группы не может быть пустым.</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation>ID группы не может быть пустым.</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation>Приглашён %1 в %2 от %3 в %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation>Присоединиться</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation>Отказаться</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation>Перенести разговор в новое окно</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation>Исключить разговор из этого окна</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation>Установить заголовок...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation>Покинуть группу</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation>
+            <numerusform>%n пользователь в чате</numerusform>
+            <numerusform>%n пользователя в чате</numerusform>
+            <numerusform>%n пользователей в чате</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation>Новое сообщение</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation>В сети</translation>
     </message>
 </context>
 <context>
@@ -1751,6 +2029,18 @@ Press Shift+F1 for more information.</source>
         <translation>Открыть страницу управления конференцией</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation>Создать группу</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation>Группа</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation>Открыть страницу управления группой</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>История передачи файлов</translation>
     </message>
@@ -1915,6 +2205,18 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Incoming call</source>
         <translation>Входящий звонок</translation>
+    </message>
+    <message>
+        <source>New group message</source>
+        <translation>Новое сообщение в группе</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation>Получено приглашение в группу</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation>%1 приглашает вас вступить в группу.</translation>
     </message>
 </context>
 <context>
@@ -2301,6 +2603,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 </context>
 <context>
     <name>QObject</name>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation>приват</translation>
+    </message>
     <message>
         <source>Default</source>
         <translation>По умолчанию</translation>
@@ -3071,6 +3378,10 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Конференции</translation>
     </message>
     <message>
+        <source>Groups</source>
+        <translation>Группы</translation>
+    </message>
+    <message>
         <source>Search Contacts</source>
         <translation>Поиск контактов</translation>
     </message>
@@ -3156,6 +3467,19 @@ number here may cause the scroll bar to disappear.</source>
             <numerusform>%n новое приглашение в конференцию</numerusform>
             <numerusform>%n новых приглашения в конференции</numerusform>
             <numerusform>%n новых приглашений в конференции</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation>Приглашения в группы</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation>
+            <numerusform>%n новое приглашение в группу</numerusform>
+            <numerusform>%n новых приглашения в группы</numerusform>
+            <numerusform>%n новых приглашений в группы</numerusform>
         </translation>
     </message>
     <message>

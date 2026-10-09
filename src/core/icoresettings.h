@@ -48,6 +48,8 @@ public:
 
     virtual QNetworkProxy getProxy() const = 0;
 
+    virtual QStringList getSavedGroups() const = 0;
+
     DECLARE_SIGNAL(enableIPv6Changed, bool enabled);
     DECLARE_SIGNAL(forceTCPChanged, bool enabled);
     DECLARE_SIGNAL(enableLanDiscoveryChanged, bool enabled);

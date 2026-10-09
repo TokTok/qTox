@@ -46,4 +46,15 @@ bool parseErr(Toxav_Err_Bit_Rate_Set error, const char* file, int line, const ch
 bool parseErr(Toxav_Err_Call_Control error, const char* file, int line, const char* func);
 bool parseErr(Toxav_Err_Call error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_Options_New error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_New error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Join error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Leave error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Peer_Query error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Self_Query error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_State_Query error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Topic_Set error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Send_Message error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Send_Private_Message error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Invite_Friend error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_Group_Invite_Accept error, const char* file, int line, const char* func);
 } // namespace ToxcoreErrorParser

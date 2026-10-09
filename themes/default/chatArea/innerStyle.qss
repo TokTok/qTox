@@ -30,6 +30,11 @@ p {
     font: @bigBold;
 }
 
+.private-badge {
+    color: @orange;
+    font-size: small;
+}
+
 a {
     color: @link;
 }

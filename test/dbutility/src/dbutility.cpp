@@ -13,10 +13,10 @@
 #include <array>
 #include <vector>
 
-const std::array<QString, 11> DbUtility::testFileList = {
+const std::array<QString, 12> DbUtility::testFileList = {
     "testCreation.db", "testIsNewDbTrue.db", "testIsNewDbFalse.db", "test0to1.db",
     "test1to2.db",     "test2to3.db",        "test3to4.db",         "test4to5.db",
-    "test5to6.db",     "test6to7.db",        "test9to10.db",
+    "test5to6.db",     "test6to7.db",        "test9to10.db",        "test11to12.db",
 };
 
 // db schemas can be select with "SELECT name, sql FROM sqlite_master;" on the database.
@@ -173,6 +173,39 @@ const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema11{
                       "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
                       "BLOB NOT NULL, FOREIGN KEY (id, message_type) REFERENCES history(id, "
                       "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))"},
+    {"chats", "CREATE TABLE chats (id INTEGER PRIMARY KEY, uuid BLOB NOT NULL UNIQUE)"},
+    {"authors", "CREATE TABLE authors (id INTEGER PRIMARY KEY, public_key BLOB NOT NULL UNIQUE)"},
+    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
+                        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
+    {"system_messages",
+     "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+     "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 BLOB, "
+     "arg4 BLOB, "
+     "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type))"},
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+
+const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema12{
+    {"aliases",
+     "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+     "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES authors(id))"},
+    {"faux_offline_pending",
+     "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER NOT "
+     "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
+    {"file_transfers",
+     "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+     "(message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
+     "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER "
+     "NOT NULL, direction INTEGER NOT NULL, file_state INTEGER NOT NULL, FOREIGN KEY (id, "
+     "message_type) REFERENCES history(id, message_type), FOREIGN KEY (sender_alias) REFERENCES "
+     "aliases(id))"},
+    {"history",
+     "CREATE TABLE history (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT 'T' "
+     "CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER NOT NULL, "
+     "UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES chats(id))"},
+    {"text_messages", "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) "
+                       "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
+                       "BLOB NOT NULL, recipient BLOB, recipient_name BLOB, FOREIGN KEY (id, message_type) REFERENCES history(id, "
+                       "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))"},
     {"chats", "CREATE TABLE chats (id INTEGER PRIMARY KEY, uuid BLOB NOT NULL UNIQUE)"},
     {"authors", "CREATE TABLE authors (id INTEGER PRIMARY KEY, public_key BLOB NOT NULL UNIQUE)"},
     {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "

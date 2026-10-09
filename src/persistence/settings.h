@@ -446,6 +446,9 @@ public:
     bool getAutoConferenceInvite(const ToxPk& id) const override;
     void setAutoConferenceInvite(const ToxPk& id, bool accept) override;
 
+    bool getAutoGroupInvite(const ToxPk& id) const override;
+    void setAutoGroupInvite(const ToxPk& id, bool accept) override;
+
     // ChatView
     const QFont& getChatMessageFont() const;
     void setChatMessageFont(const QFont& font);
@@ -479,6 +482,19 @@ public:
     bool getShowConferenceJoinLeaveMessages() const override;
     void setShowConferenceJoinLeaveMessages(bool newValue) override;
     SIGNAL_IMPL(Settings, showConferenceJoinLeaveMessagesChanged, bool show)
+
+    // Groups
+    QStringList getSavedGroups() const override;
+    void setSavedGroups(const QStringList& glist);
+    void addSavedGroup(const QString& groupIdHex);
+    void removeSavedGroup(const QString& groupIdHex);
+    QString getGroupName(const QString& groupIdHex) const;
+    void setGroupName(const QString& groupIdHex, const QString& name);
+    void removeGroupAlias(const QString& groupIdHex);
+    QString getGroupNickname(const QString& groupIdHex) const;
+    void setGroupNickname(const QString& groupIdHex, const QString& nickname);
+    QString getGroupTopic(const QString& groupIdHex) const;
+    void setGroupTopic(const QString& groupIdHex, const QString& topic);
 
     // State
     QByteArray getWindowGeometry() const;
@@ -516,6 +532,7 @@ public:
     SIGNAL_IMPL(Settings, autoAcceptCallChanged, const ToxPk& id,
                 IFriendSettings::AutoAcceptCallFlags accept)
     SIGNAL_IMPL(Settings, autoConferenceInviteChanged, const ToxPk& id, bool accept)
+    SIGNAL_IMPL(Settings, autoGroupInviteChanged, const ToxPk& id, bool accept)
     SIGNAL_IMPL(Settings, autoAcceptDirChanged, const ToxPk& id, const QString& dir)
     SIGNAL_IMPL(Settings, contactNoteChanged, const ToxPk& id, const QString& note)
 
@@ -691,6 +708,12 @@ private:
     Db::syncType dbSyncType;
     QStringList blockList;
 
+    // Groups
+    QStringList savedGroups;
+    QHash<QString, QString> groupNames;
+    QHash<QString, QString> groupNicknames;
+    QHash<QString, QString> groupTopics;
+
     // Audio
     QString inDev;
     bool audioInDevEnabled;
@@ -724,6 +747,7 @@ private:
         QDateTime activity = QDateTime();
         AutoAcceptCallFlags autoAcceptCall;
         bool autoConferenceInvite = false;
+        bool autoGroupInvite = false;
     };
 
     struct CircleProp

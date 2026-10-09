@@ -10,6 +10,8 @@ add_library(
   src/mockcoreidhandler.cpp
   include/mock/mockconferencequery.h
   src/mockconferencequery.cpp
+  include/mock/mockgroupquery.h
+  src/mockgroupquery.cpp
   include/mock/mockcoresettings.h
   src/mockcoresettings.cpp
   include/mock/mockbootstraplistgenerator.h

@@ -7,6 +7,7 @@
 
 class ChatId;
 class ConferenceId;
+class GroupId;
 class ToxPk;
 
 class IDialogs
@@ -24,6 +25,7 @@ public:
 
     virtual void removeFriend(const ToxPk& friendPk) = 0;
     virtual void removeConference(const ConferenceId& conferenceId) = 0;
+    virtual void removeGroup(const GroupId& groupId) = 0;
 
     virtual int chatroomCount() const = 0;
 };

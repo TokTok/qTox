@@ -45,7 +45,7 @@ public:
     ToxPk getConferencePeerPk(int conferenceId, int peerId) const override
     {
         std::ignore = conferenceId;
-        uint8_t id[ToxPk::size] = {static_cast<uint8_t>(peerId)};
+        uint8_t id[TOX_PUBLIC_KEY_SIZE] = {static_cast<uint8_t>(peerId)};
         return ToxPk(id);
     }
 
