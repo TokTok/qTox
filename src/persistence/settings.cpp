@@ -2214,7 +2214,7 @@ bool Settings::addFriendRequest(const QString& friendAddress, const QString& mes
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
 
-    for (auto queued : friendRequests) {
+    for (auto& queued : friendRequests) {
         if (queued.address == friendAddress) {
             queued.message = message;
             queued.read = false;
