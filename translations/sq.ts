@@ -691,6 +691,26 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Aktivizo mjetet e korrigjimit (vetëm për zhvilluesit)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Numri maksimal i rreshtave për t&apos;u kopjuar në kujtesën e fragmenteve kur shtypni &quot;Copy Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> linjat</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mosha maksimale (në orë/minuta) e linjave log për të kopjuar në clipboard kur shtypni &quot;Kopjoni Log Debug Log&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Mosha Max:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

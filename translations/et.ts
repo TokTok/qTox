@@ -576,6 +576,26 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Silumistööriistade lubamine (ainult arendajatele)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;Kopeerige silumislogi&quot; vajutamisel lõikelauale maksimaalne arv ridasid.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> read</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Lõikepuhvrisse kopeeritavate logiridade maksimaalne vanus (tundides/minutites), kui vajutate nuppu &quot;Kopeeri silumislogi&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max vanus:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

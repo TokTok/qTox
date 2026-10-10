@@ -672,6 +672,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ڈیبگ ٹولز کو فعال کریں (صرف ڈویلپرز)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;کاپی ڈیبگ لاگ&quot; دبانے پر کلپ بورڈ میں کاپی کرنے کے لیے لائنوں کی زیادہ سے زیادہ تعداد۔</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> لائنیں</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">&quot;کاپی ڈیبگ لاگ&quot; دبانے پر کلپ بورڈ میں کاپی کرنے کے لیے لاگ لائنوں کی زیادہ سے زیادہ عمر (گھنٹوں/منٹ میں)۔</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">زیادہ سے زیادہ عمر:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
