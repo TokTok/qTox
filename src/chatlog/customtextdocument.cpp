@@ -33,5 +33,11 @@ QVariant CustomTextDocument::loadResource(int type, const QUrl& name)
         return icon->pixmap(size);
     }
 
-    return QTextDocument::loadResource(type, name);
+    // Block remote resource loading to prevent IP tracking via injected <img> tags.
+    // Only allow Qt resource files and local resources.
+    if (name.scheme() == QStringLiteral("qrc") || name.scheme().isEmpty()) {
+        return QTextDocument::loadResource(type, name);
+    }
+    qWarning() << "Blocked resource load for scheme:" << name.scheme();
+    return QVariant();
 }

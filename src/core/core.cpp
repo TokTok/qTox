@@ -29,6 +29,8 @@
 #include <cassert>
 #include <chrono>
 #include <memory>
+#include <QRandomGenerator>
+
 #include <random>
 #include <tox/tox.h>
 
@@ -40,7 +42,7 @@ namespace {
 
 QList<DhtServer> shuffleBootstrapNodes(QList<DhtServer> bootstrapNodes)
 {
-    std::mt19937 rng(std::chrono::high_resolution_clock::now().time_since_epoch().count());
+    std::mt19937 rng(std::random_device{}());
     std::shuffle(bootstrapNodes.begin(), bootstrapNodes.end(), rng);
     return bootstrapNodes;
 }
@@ -360,7 +362,7 @@ void Core::bootstrapDht()
         }
         if (dhtServer.statusTcp) {
             const auto ports = dhtServer.tcpPorts.size();
-            const auto tcpPort = dhtServer.tcpPorts[rand() % ports];
+            const auto tcpPort = dhtServer.tcpPorts[QRandomGenerator::global()->bounded(static_cast<quint32>(ports))];
             tox_add_tcp_relay(tox.get(), address.constData(), tcpPort, pkPtr, &error);
             PARSE_ERR(error);
         }
@@ -958,7 +960,7 @@ void Core::loadConferences()
         const size_t titleSize = tox_conference_get_title_size(tox.get(), conferenceNumber, &error);
         const ConferenceId persistentId = getConferencePersistentId(conferenceNumber);
         const QString defaultName = tr("Conference %1").arg(persistentId.toString().left(8));
-        if (PARSE_ERR(error) || (titleSize == 0u)) {
+        if (PARSE_ERR(error) && (titleSize != 0u)) {
             std::vector<uint8_t> nameBuf(titleSize);
             tox_conference_get_title(tox.get(), conferenceNumber, nameBuf.data(), &error);
             if (PARSE_ERR(error)) {

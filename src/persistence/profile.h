@@ -66,6 +66,7 @@ public:
 
     bool rename(QString newName);
 
+    static bool isValidProfileName(const QString& name);
     static QStringList getAllProfileNames(Paths& paths);
 
     static QString getProfilePath(const QString& name, const Paths& paths);

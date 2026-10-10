@@ -12,6 +12,8 @@
 #include <QMutexLocker>
 
 #include <cassert>
+#include <cerrno>
+#include <cstring>
 #include <tox/toxencryptsave.h>
 #include <utility>
 
@@ -535,12 +537,26 @@ bool RawDatabaseImpl::decryptDatabase()
 
 bool RawDatabaseImpl::commitDbSwap(const QString& hexKey)
 {
-    // This is racy as hell, but nobody will race with us since we hold the profile lock
-    // If we crash or die here, the rename should be atomic, so we can recover no matter
-    // what
+    // We hold the profile lock so no other qTox instance will race with us.
+    // On POSIX, rename() is atomic when src and dst are on the same filesystem,
+    // so we skip the remove() step -- rename replaces the target atomically.
     close();
-    QFile::remove(path);
-    QFile::rename(path + ".tmp", path);
+#if defined(Q_OS_UNIX)
+    const QByteArray srcPath = (path + ".tmp").toUtf8();
+    const QByteArray dstPath = path.toUtf8();
+    if (::rename(srcPath.constData(), dstPath.constData()) != 0) {
+        qCritical() << "Atomic rename failed:" << strerror(errno);
+        return false;
+    }
+#else
+    if (!QFile::remove(path)) {
+        qCritical() << "Failed to remove old database:" << path;
+    }
+    if (!QFile::rename(path + ".tmp", path)) {
+        qCritical() << "Failed to rename temp database:" << path;
+        return false;
+    }
+#endif
     currentHexKey = hexKey;
     if (!open(path, currentHexKey)) {
         qCritical() << "Failed to swap db";
@@ -619,6 +635,9 @@ struct PassKeyDeleter
 {
     void operator()(Tox_Pass_Key* pass_key)
     {
+        // Note: Tox_Pass_Key is an opaque type, so we cannot wipe its
+        // contents directly. Key material wiping for intermediate buffers
+        // is done in deriveKey() instead.
         tox_pass_key_free(pass_key);
     }
 };
@@ -644,7 +663,10 @@ QString RawDatabaseImpl::deriveKey(const QString& password)
         tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
                                       static_cast<std::size_t>(passData.size()), expandConstant,
                                       nullptr));
-    return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
+    QByteArray rawKey(reinterpret_cast<char*>(key.get()) + 32, 32);
+    QString hexKey = QString::fromUtf8(rawKey.toHex());
+    rawKey.fill('\0'); // Wipe raw key bytes
+    return hexKey;
 }
 
 /**
@@ -672,7 +694,10 @@ QString RawDatabaseImpl::deriveKey(const QString& password, const QByteArray& sa
         tox_pass_key_derive_with_salt(reinterpret_cast<const uint8_t*>(passData.data()),
                                       static_cast<std::size_t>(passData.size()),
                                       reinterpret_cast<const uint8_t*>(salt.constData()), nullptr));
-    return QString::fromUtf8(QByteArray(reinterpret_cast<char*>(key.get()) + 32, 32).toHex());
+    QByteArray rawKey(reinterpret_cast<char*>(key.get()) + 32, 32);
+    QString hexKey = QString::fromUtf8(rawKey.toHex());
+    rawKey.fill('\0'); // Wipe raw key bytes
+    return hexKey;
 }
 
 void RawDatabaseImpl::compileAndExecute(Transaction& trans)

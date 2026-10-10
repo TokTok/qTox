@@ -7,6 +7,8 @@
 
 #include <QList>
 
+#include <limits>
+
 extern "C"
 {
 #pragma GCC diagnostic push
@@ -198,6 +200,15 @@ std::shared_ptr<VideoFrame> VideoFrame::fromAVFrame(IDType sourceID, AVFrame* so
         // We need to add a new source to our reference map, obtain write lock
         refsLock.unlock();
         refsLock.lockForWrite();
+
+        // Re-check after lock upgrade to handle race where another thread
+        // inserted between our unlock and lock-for-write.
+        if (!refsMap.contains(sourceID)) {
+            // operator[] default-constructs the entries in-place.
+            // QMutex is non-copyable so we cannot use assignment.
+            refsMap[sourceID];
+            mutexMap[sourceID];
+        }
     }
 
     const auto frame = [sourceID, sourceFrame] {
@@ -317,6 +328,12 @@ std::pair<ToxYUVFrame, ReadWriteLocker> VideoFrame::toToxYUVFrame()
     const QSize frameSize = sourceDimensions.size();
 
     if (frameSize.isEmpty()) {
+        return {ToxYUVFrame{}, ReadWriteLocker()};
+    }
+
+    // Validate dimensions fit in uint16_t to prevent silent wraparound
+    if (frameSize.width() > std::numeric_limits<std::uint16_t>::max()
+        || frameSize.height() > std::numeric_limits<std::uint16_t>::max()) {
         return {ToxYUVFrame{}, ReadWriteLocker()};
     }
 
