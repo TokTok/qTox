@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "src/core/conferencetype.h"
+
 #include <QByteArray>
 #include <QDateTime>
 
@@ -14,17 +16,17 @@ class ConferenceInvite
 {
 public:
     ConferenceInvite() = default;
-    ConferenceInvite(uint32_t friendId_, uint8_t inviteType, QByteArray data);
+    ConferenceInvite(uint32_t friendId_, ConferenceType inviteType, QByteArray data);
     bool operator==(const ConferenceInvite& other) const;
 
     uint32_t getFriendId() const;
-    uint8_t getType() const;
+    ConferenceType getType() const;
     QByteArray getInvite() const;
     QDateTime getInviteDate() const;
 
 private:
     uint32_t friendId{0};
-    uint8_t type{0};
+    ConferenceType type{ConferenceType::TEXT};
     QByteArray invite;
     QDateTime date;
 };

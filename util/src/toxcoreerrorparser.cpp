@@ -685,3 +685,18 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Options_New error, const char* file, i
     qCriticalFrom(file, line, func) << "Unknown Tox_Err_Options_New error code:" << error;
     return false;
 }
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Events_Iterate error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_EVENTS_ITERATE_OK:
+        return true;
+
+    case TOX_ERR_EVENTS_ITERATE_MALLOC:
+        qCriticalFrom(file, line, func) << ": Failed to allocate memory";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Events_Iterate error code:" << error;
+    return false;
+}
