@@ -20,6 +20,7 @@
 
 #include <QCoreApplication>
 #include <QDateTime>
+#include <QRandomGenerator>
 #include <QRegularExpression>
 #include <QString>
 #include <QStringBuilder>
@@ -360,7 +361,8 @@ void Core::bootstrapDht()
         }
         if (dhtServer.statusTcp) {
             const auto ports = dhtServer.tcpPorts.size();
-            const auto tcpPort = dhtServer.tcpPorts[rand() % ports];
+            const auto tcpPort =
+                dhtServer.tcpPorts[QRandomGenerator::global()->bounded(static_cast<qint32>(ports))];
             tox_add_tcp_relay(tox.get(), address.constData(), tcpPort, pkPtr, &error);
             PARSE_ERR(error);
         }
