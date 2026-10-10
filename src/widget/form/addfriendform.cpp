@@ -41,6 +41,14 @@ bool checkIsValidId(const QString& id)
 {
     return ToxId::isToxId(id);
 }
+
+bool checkIsValidPublicKey(const QString& id)
+{
+    // benevolently allow length of Public Key up to length of Tox ID for convenience
+    // as long as there is enough to match ToxPk::ToxPkRegEx
+    return id.length() <= ToxId::numHexChars
+           && id.left(ToxPk::numHexChars).contains(ToxPk::ToxPkRegEx);
+}
 } // namespace
 
 /**
@@ -70,6 +78,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     layout.addWidget(&messageLabel);
     layout.addWidget(&message);
     layout.addWidget(&sendButton);
+    layout.addWidget(&addWithoutRequestButton);
     tabWidget->addTab(main, QString());
 
     importContacts = new QWidget(tabWidget);
@@ -98,6 +107,8 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
     connect(&toxId, &QLineEdit::textChanged, this, &AddFriendForm::onIdChanged);
     connect(tabWidget, &QTabWidget::currentChanged, this, &AddFriendForm::onCurrentChanged);
     connect(&sendButton, &QPushButton::clicked, this, &AddFriendForm::onSendTriggered);
+    connect(&addWithoutRequestButton, &QPushButton::clicked, this,
+            &AddFriendForm::onAddWithoutRequestTriggered);
     connect(&importSendButton, &QPushButton::clicked, this, &AddFriendForm::onImportSendClicked);
     connect(&importFileButton, &QPushButton::clicked, this, &AddFriendForm::onImportOpenClicked);
     connect(&core, &Core::usernameSet, this, &AddFriendForm::onUsernameSet);
@@ -208,6 +219,31 @@ void AddFriendForm::addFriend(const QString& idText)
     }
 }
 
+void AddFriendForm::addFriendWithoutRequest(const QString& idText)
+{
+    if (!checkIsValidPublicKey(idText)) {
+        messageBoxManager.showWarning(tr("Couldn't add friend"),
+                                      tr("%1 Tox ID is invalid", "Tox address error").arg(idText));
+        return;
+    }
+
+    const ToxPk friendPk(idText.left(ToxPk::numHexChars));
+
+    // take care of possibly pending requests that may be for the same friend
+    const bool requestCancelled = removeFriendRequest(friendPk);
+    if (friendPk == ownId.getPublicKey()) {
+        messageBoxManager.showWarning(tr("Couldn't add friend"),
+                                      //: When trying to add your own Tox ID as friend
+                                      tr("You can't add yourself as a friend!"));
+    } else {
+        emit friendAddedWithoutRequest(friendPk);
+    }
+
+    if (requestCancelled) {
+        emit friendRequestsUpdate();
+    }
+}
+
 void AddFriendForm::onSendTriggered()
 {
     const QString id = getToxId(toxId.text());
@@ -215,6 +251,16 @@ void AddFriendForm::onSendTriggered()
 
     toxId.clear();
     message.clear();
+}
+
+void AddFriendForm::onAddWithoutRequestTriggered()
+{
+    // accepting both Tox ID as well as Tox Public Key
+    const QString pk = getToxId(toxId.text());
+    addFriendWithoutRequest(pk);
+
+    toxId.clear();
+    // do not clear the message since we did not used use it
 }
 
 void AddFriendForm::onImportSendClicked()
@@ -272,21 +318,42 @@ void AddFriendForm::onIdChanged(const QString& id)
     const QString strippedId = getToxId(id);
 
     const bool isValidId = checkIsValidId(strippedId);
-    const bool isValidOrEmpty = strippedId.isEmpty() || isValidId;
+    const bool isValidPublicKey = checkIsValidPublicKey(strippedId);
+    const bool isValidOrEmpty = strippedId.isEmpty() || isValidId || isValidPublicKey;
+    const bool isFullyValid = isValidId && isValidPublicKey;
 
     //: Tox ID of the person you're sending a friend request to
     const QString toxIdText(tr("Tox ID"));
     //: Tox ID format description
     const QString toxIdComment(tr("76 hexadecimal characters"));
 
+    //: Tox Public Key of the person you're sending a friend request to
+    const QString publicKeyText(tr("Tox Public Key"));
+    //: Tox Public Key format description
+    const QString publicKeyComment(tr("64 hexadecimal characters"));
+
+    // take care of highlights based on different validity
+    const QString idComment = isValidId
+        ? QStringLiteral("(%1)").arg(toxIdComment)
+        : QStringLiteral("<font color='red'>(%1)</font>").arg(toxIdComment);
+    const QString publicKeyCommentColored = isValidPublicKey
+        ? QStringLiteral("(%1)").arg(publicKeyComment)
+        : QStringLiteral("<font color='red'>(%1)</font>").arg(publicKeyComment);
+
     const QString labelText =
-        isValidId ? QStringLiteral("%1 (%2)") : QStringLiteral("%1 <font color='red'>(%2)</font>");
-    toxIdLabel.setText(labelText.arg(toxIdText, toxIdComment));
+        QStringLiteral("%1 %2 or %3 %4").arg(toxIdText, idComment, publicKeyText, publicKeyCommentColored);
+    toxIdLabel.setText(labelText);
     toxId.setStyleSheet(isValidOrEmpty ? QStringLiteral("")
                                        : style.getStylesheet("addFriendForm/toxId.qss", settings));
-    toxId.setToolTip(isValidOrEmpty ? QStringLiteral("") : tr("Invalid Tox ID format"));
+    const QString toolTip =
+        (strippedId.isEmpty() ? QStringLiteral("")
+                              : isFullyValid ? QStringLiteral("")
+                                             : isValidPublicKey ? tr("Valid Tox Public Key format only")
+                                                                : tr("Invalid Tox ID or Tox Public Key format")); 
+    toxId.setToolTip(toolTip);
 
     sendButton.setEnabled(isValidId);
+    addWithoutRequestButton.setEnabled(isValidPublicKey);
 }
 
 void AddFriendForm::setIdFromClipboard()
@@ -310,6 +377,33 @@ void AddFriendForm::deleteFriendRequest(const ToxId& toxId_)
             return;
         }
     }
+}
+
+bool AddFriendForm::removeFriendRequest(const ToxPk& friendPk)
+{
+    const QString address = friendPk.toString();
+
+    // clean up visible request widget if there is one that match
+    const int widgetCount = requestsLayout->count();
+    for (int i = 0; i < widgetCount; ++i) {
+        auto* friendWidget = qobject_cast<QWidget*>(requestsLayout->itemAt(i)->widget());
+        if (friendWidget && friendWidget->property("toxId").toString() == address) {
+            removeFriendRequestWidget(friendWidget);
+            break;
+        }
+    }
+
+    // clean up persistent request record if there is one that match
+    const int size = settings.getFriendRequestSize();
+    for (int i = 0; i < size; ++i) {
+        if (ToxPk(settings.getFriendRequest(i).address) == friendPk) {
+            settings.removeFriendRequest(i);
+            settings.savePersonal();
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void AddFriendForm::onFriendRequestAccepted()
@@ -356,6 +450,7 @@ void AddFriendForm::retranslateUi()
     importFileButton.setText(tr("Open"));
     importSendButton.setText(tr("Send friend requests"));
     sendButton.setText(tr("Send friend request"));
+    addWithoutRequestButton.setText(tr("Add friend without request"));
     //: Default message in friend requests if the field is left blank. Write something appropriate!
     message.setPlaceholderText(tr("%1 here! Tox me maybe?").arg(lastUsername));
     importMessage.setPlaceholderText(message.placeholderText());
@@ -384,6 +479,7 @@ void AddFriendForm::retranslateUi()
 void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const QString& message_)
 {
     auto* friendWidget = new QWidget(tabWidget);
+    friendWidget->setProperty("toxId", friendAddress_);
     auto* friendLayout = new QHBoxLayout(friendWidget);
     auto* horLayout = new QVBoxLayout();
     horLayout->setContentsMargins(0, 0, 0, 0);

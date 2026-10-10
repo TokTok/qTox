@@ -328,6 +328,8 @@ void Widget::init()
     connect(ui->statusLabel, &CroppingLabel::editFinished, this, &Widget::onStatusMessageChanged);
     connect(ui->mainSplitter, &QSplitter::splitterMoved, this, &Widget::onSplitterMoved);
     connect(addFriendForm, &AddFriendForm::friendRequested, this, &Widget::friendRequested);
+    connect(addFriendForm, &AddFriendForm::friendAddedWithoutRequest, this,
+            &Widget::friendAddedWithoutRequest);
     connect(conferenceInviteForm, &ConferenceInviteForm::conferenceCreate, core,
             &Core::createConference);
     connect(timer, &QTimer::timeout, this, &Widget::onUserAwayCheck);
@@ -492,7 +494,10 @@ void Widget::init()
 
     connect(addFriendForm, &AddFriendForm::friendRequested, this, &Widget::friendRequestsUpdate);
     connect(addFriendForm, &AddFriendForm::friendRequestsSeen, this, &Widget::friendRequestsUpdate);
-    connect(addFriendForm, &AddFriendForm::friendRequestAccepted, this, &Widget::friendRequestAccepted);
+    connect(addFriendForm, &AddFriendForm::friendRequestsUpdate, this,
+            &Widget::friendRequestsUpdate);
+    connect(addFriendForm, &AddFriendForm::friendRequestAccepted, this,
+            &Widget::friendRequestAccepted);
     connect(conferenceInviteForm, &ConferenceInviteForm::conferenceInvitesSeen, this,
             &Widget::conferenceInvitesClear);
     connect(conferenceInviteForm, &ConferenceInviteForm::conferenceInviteAccepted, this,
@@ -741,6 +746,8 @@ void Widget::onCoreChanged(Core& core_)
 
     connect(this, &Widget::statusSet, core, &Core::setStatus);
     connect(this, &Widget::friendRequested, core, &Core::requestFriendship);
+    connect(this, &Widget::friendAddedWithoutRequest, core,
+            &Core::addFriendWithoutRequest);
     connect(this, &Widget::friendRequestAccepted, core, &Core::acceptFriendRequest);
     connect(this, &Widget::changeConferenceTitle, core, &Core::changeConferenceTitle);
 }
