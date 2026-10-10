@@ -116,7 +116,7 @@ sudo apt install qtox
 
 #### Fedora
 
-qTox is available in the [RPM Fusion](https://rpmfusion.org/) repo, to install:
+qTox is available in the [official](https://packages.fedoraproject.org/pkgs/qtox/qtox/) repo, to install:
 
 ```bash
 dnf install qtox
