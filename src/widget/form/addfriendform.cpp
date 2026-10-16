@@ -402,13 +402,13 @@ void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const 
     horLayout->addWidget(messageLabel_, 1);
 
     auto* acceptButton = new QPushButton(friendWidget);
-    acceptButtons.append(acceptButton);
+    acceptButtons.insert(friendWidget, acceptButton);
     connect(acceptButton, &QPushButton::released, this, &AddFriendForm::onFriendRequestAccepted);
     friendLayout->addWidget(acceptButton);
     retranslateAcceptButton(acceptButton);
 
     auto* rejectButton = new QPushButton(friendWidget);
-    rejectButtons.append(rejectButton);
+    rejectButtons.insert(friendWidget, rejectButton);
     connect(rejectButton, &QPushButton::released, this, &AddFriendForm::onFriendRequestRejected);
     friendLayout->addWidget(rejectButton);
     retranslateRejectButton(rejectButton);
@@ -418,10 +418,9 @@ void AddFriendForm::addFriendRequestWidget(const QString& friendAddress_, const 
 
 void AddFriendForm::removeFriendRequestWidget(QWidget* friendWidget)
 {
-    const int index = requestsLayout->indexOf(friendWidget);
     requestsLayout->removeWidget(friendWidget);
-    acceptButtons.removeAt(index);
-    rejectButtons.removeAt(index);
+    acceptButtons.remove(friendWidget);
+    rejectButtons.remove(friendWidget);
     friendWidget->deleteLater();
 }
 
