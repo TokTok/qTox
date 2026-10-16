@@ -16,7 +16,6 @@
 #include <QDesktopServices>
 #include <QFile>
 #include <QMetaEnum>
-#include <QPushButton>
 #include <QTimer>
 
 #include <memory>
