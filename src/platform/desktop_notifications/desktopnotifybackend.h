@@ -17,6 +17,7 @@ public:
     ~DesktopNotifyBackend() override;
     bool showMessage(const QString& title, const QString& message, const QString& category,
                      const QPixmap& pixmap);
+    bool supportsBodyMarkup() const;
 
 signals:
     void messageClicked();

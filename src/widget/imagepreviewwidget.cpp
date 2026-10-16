@@ -5,6 +5,7 @@
 
 #include "imagepreviewwidget.h"
 
+#include "src/core/untrustedimage.h"
 #include "src/model/exiftransform.h"
 
 #include <QApplication>
@@ -37,7 +38,7 @@ QPixmap pixmapFromFile(const QString& filename)
     }
 
     const QByteArray imageFileData = imageFile.readAll();
-    QImage image = QImage::fromData(imageFileData);
+    QImage image = UntrustedImage::decode(imageFileData);
     auto orientation = ExifTransform::getOrientation(imageFileData);
     image = ExifTransform::applyTransformation(image, orientation);
 

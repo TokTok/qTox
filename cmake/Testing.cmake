@@ -47,6 +47,7 @@ auto_test(core fileprogress "" "")
 auto_test(core toxfile "" "")
 auto_test(core toxid "" "")
 auto_test(core toxstring "" "")
+auto_test(core untrustedimage "" "")
 auto_test(model chathistory "" "")
 auto_test(model conferencemessagedispatcher "" "mock_library")
 auto_test(model exiftransform "" "")
@@ -80,6 +81,10 @@ auto_test(widget/tool identicon "" "")
 # TODO(iphydf): Add an easier way to regenerate golden images.
 if(GUI_TESTS)
   auto_test(widget loginscreen "${TEST_RESOURCES}" "")
+endif()
+
+if(QT_FEATURE_dbus)
+  auto_test(platform desktopnotifybackend "" "")
 endif()
 
 if(UNIX)

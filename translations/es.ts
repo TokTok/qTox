@@ -2449,7 +2449,7 @@ Este ID incluye el código NoSpam (en azul), y la suma de comprobación (en gris
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">La llamada finalizó porque %1 se desconectó inesperadamente. %2</translation>
+        <translation>La llamada finalizó porque %1 se desconectó inesperadamente. %2</translation>
     </message>
     <message>
         <source>Initializing</source>

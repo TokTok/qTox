@@ -69,5 +69,7 @@ void DesktopNotify::notifyMessage(const NotificationData& notificationData)
     }
 
     // Fallback to QSystemTrayIcon.
-    d->icon->showMessage(notificationData.title, message, notificationData.pixmap);
+    d->icon->showMessage(notificationData.title,
+                         d->dbus->supportsBodyMarkup() ? message.toHtmlEscaped() : message,
+                         notificationData.pixmap);
 }

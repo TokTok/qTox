@@ -1924,7 +1924,7 @@ Press Shift+F1 for more information.</source>
     <name>PasswordEdit</name>
     <message>
         <source>Caps-lock enabled</source>
-        <translation>CAPS-LOCK УВІМКНЕНИЙ</translation>
+        <translation>Сaps-lock увімкнений</translation>
     </message>
 </context>
 <context>
@@ -2443,7 +2443,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Calling %1</source>
-        <translation>Виклик %1</translation>
+        <translation>Дзвінок %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2460,7 +2460,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Дзвінок було перервано, оскільки %1 несподівано вийшов з мережі. %2</translation>
+        <translation>Дзвінок був перерваний, оскільки %1 несподівано вийшов з мережі. %2</translation>
     </message>
     <message>
         <source>Initializing</source>

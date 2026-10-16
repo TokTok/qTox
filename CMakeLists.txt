@@ -342,6 +342,8 @@ set(${BINARY_NAME}_SOURCES
     src/core/chatid.h
     src/core/toxstring.cpp
     src/core/toxstring.h
+    src/core/untrustedimage.cpp
+    src/core/untrustedimage.h
     src/model/about/aboutfriend.cpp
     src/model/about/aboutfriend.h
     src/model/about/iaboutfriend.cpp

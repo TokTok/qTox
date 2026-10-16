@@ -323,6 +323,11 @@ DesktopNotifyBackend::DesktopNotifyBackend(QObject* parent)
 
 DesktopNotifyBackend::~DesktopNotifyBackend() = default;
 
+bool DesktopNotifyBackend::supportsBodyMarkup() const
+{
+    return d->capabilities.contains(QStringLiteral("body-markup"));
+}
+
 bool DesktopNotifyBackend::showMessage(const QString& title, const QString& message,
                                        const QString& category, const QPixmap& pixmap)
 {
@@ -348,7 +353,7 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
             // summary
             title,
             // body
-            message,
+            supportsBodyMarkup() ? message.toHtmlEscaped() : message,
             // actions
             QStringList{"default", "Close"},
             // hints

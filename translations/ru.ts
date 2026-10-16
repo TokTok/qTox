@@ -2630,7 +2630,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation>Входящий вызов...</translation>
+        <translation>Входящий звонок...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -2744,7 +2744,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation>Вызов %1</translation>
+        <translation>Звонок %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2761,7 +2761,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Вызов был прерван, поскольку %1 неожиданно отключился от сети. %2</translation>
+        <translation>Звонок был прерван, поскольку %1 неожиданно отключился от сети. %2</translation>
     </message>
     <message>
         <source>Initializing</source>

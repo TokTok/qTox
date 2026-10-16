@@ -15,6 +15,11 @@ DesktopNotifyBackend::DesktopNotifyBackend(QObject* parent)
 }
 DesktopNotifyBackend::~DesktopNotifyBackend() = default;
 
+bool DesktopNotifyBackend::supportsBodyMarkup() const
+{
+    return false;
+}
+
 bool DesktopNotifyBackend::showMessage(const QString& title, const QString& message,
                                        const QString& category, const QPixmap& pixmap)
 {

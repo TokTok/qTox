@@ -101,12 +101,28 @@ TEST_DEPS = [
     exclude = [
         "model/exiftransform_test.cpp",
         "persistence/dbschema_test.cpp",
+        "platform/desktopnotifybackend_test.cpp",
         "platform/stacktrace_test.cpp",
         "video/videoframe_test.cpp",
         "chatlog/text_test.cpp",
         "**/*_fuzz_test.cpp",
     ],
 )]
+
+qt_test(
+    name = "desktopnotifybackend_test",
+    size = "small",
+    src = "platform/desktopnotifybackend_test.cpp",
+    copts = COPTS,
+    mocopts = ["-Iqtox"],
+    deps = [
+        "//qtox/src",
+        "@qt//:qt_core",
+        "@qt//:qt_dbus",
+        "@qt//:qt_gui",
+        "@qt//:qt_widgets",
+    ],
+)
 
 qt_test(
     name = "text_test",
@@ -177,7 +193,7 @@ qt_test(
 
 qt_test(
     name = "dbschema_test",
-    size = "small",
+    size = "medium",
     src = "persistence/dbschema_test.cpp",
     copts = COPTS,
     mocopts = ["-Iqtox"],

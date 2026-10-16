@@ -194,7 +194,8 @@ void ConferenceForm::updateUserNames()
         const QString editedName = editName(peerName);
         auto* const label = new QLabel(editedName + QLatin1String(", "));
         if (editedName != peerName) {
-            label->setToolTip(peerName + " (" + peerPk.toString() + ")");
+            label->setToolTip(Qt::convertFromPlainText(peerName + " (" + peerPk.toString() + ")",
+                                                       Qt::WhiteSpaceNormal));
         } else if (peerName != peerPk.toString()) {
             label->setToolTip(peerPk.toString());
         } // else their name is just their Pk, no tooltip needed

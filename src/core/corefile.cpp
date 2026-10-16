@@ -9,6 +9,7 @@
 #include "core.h"
 #include "toxfile.h"
 #include "toxstring.h"
+#include "untrustedimage.h"
 
 #include "src/model/status.h"
 #include "src/model/toxclientstandards.h"
@@ -543,11 +544,11 @@ void CoreFile::onFileRecvChunkCallback(Tox* tox, uint32_t friendId, uint32_t fil
     if (length == 0u) {
         file->status = ToxFile::FINISHED;
         if (file->fileKind == TOX_FILE_KIND_AVATAR) {
-            QPixmap pic;
-            pic.loadFromData(file->avatarData);
-            if (!pic.isNull()) {
+            if (!UntrustedImage::decode(file->avatarData).isNull()) {
                 qDebug() << "Got" << file->avatarData.size() << "bytes of avatar data from" << friendId;
                 emit core->friendAvatarChanged(core->getFriendPublicKey(friendId), file->avatarData);
+            } else {
+                qWarning() << "Discarding invalid avatar data from" << friendId;
             }
         } else {
             emit coreFile->fileTransferFinished(*file);

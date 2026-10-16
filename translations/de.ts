@@ -2448,7 +2448,7 @@ Diese ID enthält den NoSpam-Code (in blau) und die Prüfsumme (in grau).</trans
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Der Anruf wurde beendet, da %1 unerwartet offline ging. %2</translation>
+        <translation>Der Anruf wurde beendet, da %1 unerwartet offline ging. %2</translation>
     </message>
     <message>
         <source>Initializing</source>

@@ -11,6 +11,7 @@
 #include "src/core/core.h"
 #include "src/core/coreav.h"
 #include "src/core/corefile.h"
+#include "src/core/untrustedimage.h"
 #include "src/net/avatarbroadcaster.h"
 #include "src/net/bootstrapnodeupdater.h"
 #include "src/nexus.h"
@@ -563,20 +564,10 @@ QPixmap Profile::loadAvatar()
  */
 QPixmap Profile::loadAvatar(const ToxPk& owner)
 {
-    QPixmap pic;
-    if (settings.getShowIdenticons()) {
-
-        const QByteArray avatarData = loadAvatarData(owner);
-        if (avatarData.isEmpty()) {
-            pic = QPixmap::fromImage(Identicon(owner.getByteArray()).toImage(16));
-        } else {
-            pic.loadFromData(avatarData);
-        }
-
-    } else {
-        pic.loadFromData(loadAvatarData(owner));
+    const QPixmap pic = QPixmap::fromImage(UntrustedImage::decode(loadAvatarData(owner)));
+    if (pic.isNull() && settings.getShowIdenticons()) {
+        return QPixmap::fromImage(Identicon(owner.getByteArray()).toImage(16));
     }
-
     return pic;
 }
 
@@ -681,7 +672,12 @@ void Profile::setFriendAvatar(const ToxPk& owner, QByteArray pic)
     QPixmap pixmap;
     QByteArray avatarData;
     if (!pic.isEmpty()) {
-        pixmap.loadFromData(pic);
+        pixmap = QPixmap::fromImage(UntrustedImage::decode(pic));
+        if (pixmap.isNull()) {
+            qWarning() << "Ignoring invalid avatar for" << owner.toString();
+        }
+    }
+    if (!pixmap.isNull()) {
         avatarData = pic;
         emit friendAvatarSet(owner, pixmap);
     } else if (settings.getShowIdenticons()) {
