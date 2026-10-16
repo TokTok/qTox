@@ -9,6 +9,10 @@
 
 #include <QByteArray>
 #include <QString>
+#include <QRegularExpression>
+
+const QRegularExpression
+    ToxPk::ToxPkRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ToxPk::numHexChars));
 
 /**
  * @class ToxPk
