@@ -679,6 +679,26 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Virkja villuleitarverkfæri (aðeins forritarar)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hámarksfjöldi lína til að afrita á klemmuspjaldið þegar ýtt er á „Afritaðu kembiforrit“.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> línur</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hámarksaldur (á klukkustundum/mínútum) af timburlínum til að afrita á klemmuspjaldið þegar ýtt er á „Afritaðu kembiforrit“.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Hámarksaldur:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

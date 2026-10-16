@@ -597,6 +597,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Уключыць інструменты адладкі (толькі для распрацоўшчыкаў)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максімальная колькасць радкоў, каб скапіяваць у буфер абмену пры націску &quot;Скапіруйце часопіс адладкі&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> ліній</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максімальны ўзрост (у гадзінах/хвілінах) радкоў часопісаў, каб скапіяваць у буфер абмену пры націску &quot;Скапіруйце часопіс адладкі&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максімальны ўзрост:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

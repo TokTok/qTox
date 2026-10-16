@@ -10,9 +10,11 @@ add_library(
   src/algorithm.cpp
   include/util/display.h
   src/display.cpp
+  include/util/fileutil.h
+  src/fileutil.cpp
+  include/util/interface.h
   include/util/network.h
   src/network.cpp
-  include/util/interface.h
   include/util/ranges.h
   src/ranges.cpp
   include/util/strongtype.h

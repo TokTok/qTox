@@ -575,6 +575,26 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bật Công cụ gỡ lỗi (chỉ dành cho nhà phát triển)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Số dòng tối đa để sao chép vào bảng nhớ tạm khi nhấn &quot;Sao chép nhật ký gỡ lỗi&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> dòng</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tuổi tối đa (tính bằng giờ/phút) của các dòng nhật ký để sao chép vào bảng tạm khi nhấn &quot;Bản sao bản gỡ lỗi bản sao&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Tuổi tối đa:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
