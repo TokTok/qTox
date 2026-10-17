@@ -9,6 +9,7 @@
 
 #include <QList>
 #include <QObject>
+#include <QStringList>
 
 class MockSettings : public QObject, public ICoreSettings
 {
@@ -80,6 +81,11 @@ public:
         return {QNetworkProxy::ProxyType::NoProxy};
     }
 
+    QStringList getSavedGroups() const override
+    {
+        return savedGroups;
+    }
+
     SIGNAL_IMPL(MockSettings, enableIPv6Changed, bool enabled)
     SIGNAL_IMPL(MockSettings, forceTCPChanged, bool enabled)
     SIGNAL_IMPL(MockSettings, enableLanDiscoveryChanged, bool enabled)
@@ -91,4 +97,5 @@ private:
     QString addr;
     ProxyType type;
     quint16 port;
+    QStringList savedGroups;
 };

@@ -44,6 +44,8 @@ class Settings;
 class Style;
 class IMessageBoxManager;
 class FriendList;
+class ConferenceList;
+class GroupList;
 
 namespace Ui {
 class MainWindow;
@@ -63,7 +65,7 @@ public:
                     IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                     SmileyPack& smileyPack, Settings& settings, Style& style,
                     IMessageBoxManager& messageBoxmanager, FriendList& friendList,
-                    ConferenceList& conferenceList, QWidget* parent_ = nullptr);
+                    ConferenceList& conferenceList, GroupList& groupList, QWidget* parent_ = nullptr);
     ~GenericChatForm() override;
 
     void setName(const QString& newName);
@@ -87,7 +89,7 @@ public slots:
 protected slots:
     void onChatContextMenuRequested(QPoint pos);
     virtual void onScreenshotClicked() = 0;
-    void onSendTriggered();
+    virtual void onSendTriggered();
     virtual void onAttachClicked() = 0;
     void onEmoteButtonClicked();
     void onEmoteInsertRequested(QString str);
@@ -159,4 +161,5 @@ protected:
     Style& style;
     FriendList& friendList;
     ConferenceList& conferenceList;
+    GroupList& groupList;
 };

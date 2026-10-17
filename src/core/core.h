@@ -7,9 +7,12 @@
 #pragma once
 
 #include "conferenceid.h"
+#include "groupid.h"
 #include "icoreconferencemessagesender.h"
 #include "icoreconferencequery.h"
 #include "icorefriendmessagesender.h"
+#include "icoregroupmessagesender.h"
+#include "icoregroupquery.h"
 #include "icoreidhandler.h"
 #include "receiptnum.h"
 #include "toxfile.h"
@@ -19,6 +22,7 @@
 #include "src/model/conferenceinvite.h"
 #include "src/model/status.h"
 
+#include <QHash>
 #include <QMutex>
 #include <QObject>
 #include <QThread>
@@ -31,6 +35,8 @@ class CoreAV;
 class CoreFile;
 class IAudioControl;
 class ICoreSettings;
+class ConferenceInvite;
+class GroupInvite;
 class Profile;
 class Core;
 class IBootstrapListGenerator;
@@ -42,7 +48,9 @@ class Core : public QObject,
              public ICoreFriendMessageSender,
              public ICoreIdHandler,
              public ICoreConferenceMessageSender,
-             public ICoreConferenceQuery
+             public ICoreConferenceQuery,
+             public ICoreGroupMessageSender,
+             public ICoreGroupQuery
 {
     Q_OBJECT
 public:
@@ -81,10 +89,31 @@ public:
     ToxPk getFriendPublicKey(uint32_t friendNumber) const;
     QString getFriendUsername(uint32_t friendNumber) const;
 
+    uint32_t getGroupNumberPeers(int groupNumber) const;
+    uint32_t getGroupSelfPeerId(int groupNumber) const override;
+    QString getGroupPeerName(int groupNumber, int peerId) const override;
+    ToxPk getGroupPeerPk(int groupNumber, int peerId) const override;
+    ToxPk getGroupSelfPk(int groupNumber) const override;
+    QString getGroupTitle(int groupNumber) const override;
+    QString getGroupTopic(int groupNumber) const override;
+    QString getGroupSelfName(int groupNumber) const override;
+    bool setGroupSelfName(int groupNumber, const QString& name) override;
+    Status::Status getGroupSelfStatus(int groupNumber) const override;
+    bool setGroupSelfStatus(int groupNumber, Status::Status status) override;
+    Status::Status getGroupPeerStatus(int groupNumber, int peerId) const override;
+    GroupRole getGroupPeerRole(int groupNumber, int peerId) const override;
+    bool setGroupPeerRole(int groupNumber, int peerId, GroupRole role) override;
+    bool kickGroupPeer(int groupNumber, int peerId) override;
+    GroupId getGroupPersistentId(uint32_t groupNumber) const;
+    bool reconnectGroup(uint32_t groupNumber);
+
     bool isFriendOnline(uint32_t friendId) const;
     bool hasFriendWithPublicKey(const ToxPk& publicKey) const;
     uint32_t joinConference(const ConferenceInvite& inviteInfo);
     void quitConference(int conferenceId) const;
+
+    uint32_t joinGroup(const GroupInvite& inviteInfo);
+    int joinGroup(const GroupId& groupId);
 
     QString getUsername() const override;
     Status::Status getStatus() const;
@@ -105,6 +134,21 @@ public slots:
     void conferenceInviteFriend(uint32_t friendId, int conferenceId);
     int createConference(uint8_t type = TOX_CONFERENCE_TYPE_AV);
 
+    void groupInviteFriend(uint32_t friendId, int groupNumber);
+    int createGroup(const QString& groupName);
+    void quitGroup(int groupNumber);
+    void changeGroupTopic(uint32_t groupNumber, const QString& topic);
+    bool setGroupPassword(int groupNumber, const QByteArray& password) override;
+    bool setGroupPeerLimit(int groupNumber, uint16_t peerLimit) override;
+    bool setGroupTopicLock(int groupNumber, GroupTopicLock topicLock) override;
+    bool setGroupVoiceState(int groupNumber, GroupVoiceState voiceState) override;
+    bool setGroupPrivacyState(int groupNumber, GroupPrivacyState privacyState) override;
+    bool getGroupHasPassword(int groupNumber) const override;
+    uint16_t getGroupPeerLimit(int groupNumber) const override;
+    GroupTopicLock getGroupTopicLock(int groupNumber) const override;
+    GroupVoiceState getGroupVoiceState(int groupNumber) const override;
+    GroupPrivacyState getGroupPrivacyState(int groupNumber) const override;
+
     void removeFriend(uint32_t friendId);
     void removeConference(int conferenceId);
 
@@ -118,6 +162,11 @@ public slots:
     void changeConferenceTitle(uint32_t conferenceId, const QString& title);
     bool sendAction(uint32_t friendId, const QString& action, ReceiptNum& receipt) override;
     void sendTyping(uint32_t friendId, bool typing);
+
+    void sendGroupMessage(uint32_t groupNumber, const QString& message) override;
+    void sendGroupAction(uint32_t groupNumber, const QString& message) override;
+    void sendGroupPrivateMessage(uint32_t groupNumber, uint32_t peerId,
+                                 const QString& message, Tox_Message_Type type) override;
 
     void setNospam(uint32_t nospam);
 
@@ -177,6 +226,30 @@ signals:
     void conferenceJoined(uint32_t conferencenumber, ConferenceId conferenceId);
     void actionSentResult(uint32_t friendId, const QString& action, int success);
 
+    void emptyGroupCreated(uint32_t groupNumber, GroupId groupId, const QString& groupName);
+    void groupInviteReceived(const GroupInvite& inviteInfo);
+    void groupMessageReceived(uint32_t groupNumber, uint32_t peerId, const QString& message,
+                              bool isAction);
+    void groupPrivateMessageReceived(uint32_t groupNumber, uint32_t peerId, const QString& message,
+                                      bool isAction);
+    void groupPeerJoined(uint32_t groupNumber, uint32_t peerId);
+    void groupPeerExited(uint32_t groupNumber, uint32_t peerId);
+    void groupPeerNameChanged(uint32_t groupNumber, uint32_t peerId, const QString& newName);
+    void groupPeerStatusChanged(uint32_t groupNumber, uint32_t peerId, Status::Status status);
+    void groupTitleChanged(uint32_t groupNumber, const QString& author, const QString& title);
+    void groupTopicChanged(uint32_t groupNumber, const QString& topic);
+    void groupSentFailed(uint32_t groupNumber);
+    void groupJoined(uint32_t groupNumber, GroupId groupId);
+    void groupSelfJoined(uint32_t groupNumber);
+    void groupSelfDisconnected(uint32_t groupNumber);
+    void groupJoinFailed(uint32_t groupNumber, Tox_Group_Join_Fail failType);
+    void groupPeerRolesChanged(uint32_t groupNumber);
+    void groupPasswordChanged(uint32_t groupNumber, bool hasPassword);
+    void groupPeerLimitChanged(uint32_t groupNumber, uint16_t peerLimit);
+    void groupTopicLockChanged(uint32_t groupNumber, GroupTopicLock topicLock);
+    void groupVoiceStateChanged(uint32_t groupNumber, GroupVoiceState voiceState);
+    void groupPrivacyStateChanged(uint32_t groupNumber, GroupPrivacyState privacyState);
+
     void receiptReceived(uint32_t friendId, ReceiptNum receipt);
 
     void failedToRemoveFriend(uint32_t friendId);
@@ -209,9 +282,44 @@ private:
     static void onConferenceTitleChange(Tox* tox, uint32_t conferenceId, uint32_t peerId,
                                         const uint8_t* cTitle, size_t length, void* vCore);
 
+    static void onGroupInvite(Tox* tox, uint32_t friendId, const uint8_t* inviteData,
+                              size_t length, const uint8_t* groupName, size_t groupNameLength,
+                              void* vCore);
+    static void onGroupMessage(Tox* tox, uint32_t groupNumber, uint32_t peerId,
+                               Tox_Message_Type type, const uint8_t* cMessage, size_t length,
+                               Tox_Group_Message_Id messageId, void* vCore);
+    static void onGroupPrivateMessage(Tox* tox, uint32_t groupNumber, uint32_t peerId,
+                                       Tox_Message_Type type, const uint8_t* cMessage, size_t length,
+                                       Tox_Group_Message_Id messageId, void* vCore);
+    static void onGroupPeerJoin(Tox* tox, uint32_t groupNumber, uint32_t peerId, void* vCore);
+    static void onGroupPeerExit(Tox* tox, uint32_t groupNumber, uint32_t peerId,
+                                Tox_Group_Exit_Type exitType, const uint8_t* name, size_t nameLength,
+                                const uint8_t* partMessage, size_t partMessageLength, void* vCore);
+    static void onGroupPeerNameChange(Tox* tox, uint32_t groupNumber, uint32_t peerId,
+                                      const uint8_t* name, size_t length, void* vCore);
+    static void onGroupPeerStatusChange(Tox* tox, uint32_t groupNumber, uint32_t peerId,
+                                        Tox_User_Status status, void* vCore);
+    static void onGroupSelfJoin(Tox* tox, uint32_t groupNumber, void* vCore);
+    static void onGroupTopic(Tox* tox, uint32_t groupNumber, uint32_t peerId, const uint8_t* topic,
+                             size_t length, void* vCore);
+    static void onGroupJoinFail(Tox* tox, uint32_t groupNumber, Tox_Group_Join_Fail failType,
+                                void* vCore);
+    static void onGroupModeration(Tox* tox, uint32_t groupNumber, uint32_t sourcePeerId,
+                                  uint32_t targetPeerId, Tox_Group_Mod_Event modType, void* vCore);
+    static void onGroupPassword(Tox* tox, uint32_t groupNumber, const uint8_t* password,
+                                size_t length, void* vCore);
+    static void onGroupPeerLimit(Tox* tox, uint32_t groupNumber, uint32_t peerLimit, void* vCore);
+    static void onGroupTopicLock(Tox* tox, uint32_t groupNumber, Tox_Group_Topic_Lock topicLock,
+                                 void* vCore);
+    static void onGroupVoiceState(Tox* tox, uint32_t groupNumber, Tox_Group_Voice_State voiceState,
+                                  void* vCore);
+    static void onGroupPrivacyState(Tox* tox, uint32_t groupNumber,
+                                    Tox_Group_Privacy_State privacyState, void* vCore);
+
     static void onReadReceiptCallback(Tox* tox, uint32_t friendId, uint32_t receipt, void* core);
 
     void sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type);
+    void sendGroupMessageWithType(uint32_t groupNumber, const QString& message, Tox_Message_Type type);
     bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
                              ReceiptNum& receipt);
     bool checkConnection();
@@ -219,9 +327,14 @@ private:
     void makeTox(QByteArray savedata, ICoreSettings* s);
     void loadFriends();
     void loadConferences();
+    void loadGroups();
     void bootstrapDht();
 
     void checkLastOnline(uint32_t friendId);
+
+    void startGroupReconnectTimer(uint32_t groupNumber);
+    void stopGroupReconnectTimer(uint32_t groupNumber);
+    void retryGroupReconnect(uint32_t groupNumber);
 
     QString getFriendRequestErrorMessage(const ToxId& friendId, const QString& message) const;
     static void registerCallbacks(Tox* tox);
@@ -261,4 +374,10 @@ private:
     const ICoreSettings& settings;
     bool isConnected = false;
     int tolerance = CORE_DISCONNECT_TOLERANCE;
+
+    QHash<uint32_t, GroupId> numberToGroupId;
+    QHash<GroupId, uint32_t> groupIdToNumber;
+    QHash<uint32_t, QTimer*> groupReconnectTimers;
+    // number of group members other than ourselves
+    QHash<uint32_t, uint32_t> groupPeerCounts;
 };

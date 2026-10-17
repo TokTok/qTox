@@ -122,6 +122,20 @@ void FriendWidget::onContextMenuCalled(QContextMenuEvent* event)
                 [this, conference] { chatroom->inviteFriend(conference.conference); });
     }
 
+    QMenu* groupMenu =
+        menu.addMenu(tr("Invite to group", "Menu to invite a friend to a group"));
+    groupMenu->setEnabled(chatroom->canBeInvited());
+    auto* const newGroupAction = groupMenu->addAction(tr("To new group"));
+    connect(newGroupAction, &QAction::triggered, chatroom.get(),
+            &FriendChatroom::inviteToNewGroup);
+    groupMenu->addSeparator();
+
+    for (const auto& group : chatroom->getGroups()) {
+        auto* const groupAction = groupMenu->addAction(tr("Invite to group '%1'").arg(group.name));
+        connect(groupAction, &QAction::triggered, this,
+                [this, group] { chatroom->inviteFriend(group.group); });
+    }
+
     const auto circleId = chatroom->getCircleId();
     auto* circleMenu =
         menu.addMenu(tr("Move to circle...", "Menu to move a friend into a different circle"));
@@ -374,6 +388,11 @@ bool FriendWidget::isFriend() const
 }
 
 bool FriendWidget::isConference() const
+{
+    return false;
+}
+
+bool FriendWidget::isGroup() const
 {
     return false;
 }

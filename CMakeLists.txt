@@ -253,6 +253,8 @@ set(${BINARY_NAME}_SOURCES
     src/friendlist.h
     src/conferencelist.cpp
     src/conferencelist.h
+    src/grouplist.cpp
+    src/grouplist.h
     src/ipc.cpp
     src/ipc.h
     src/nexus.cpp
@@ -309,6 +311,10 @@ set(${BINARY_NAME}_SOURCES
     src/core/icoreconferencemessagesender.h
     src/core/icoreconferencequery.cpp
     src/core/icoreconferencequery.h
+    src/core/icoregroupmessagesender.cpp
+    src/core/icoregroupmessagesender.h
+    src/core/icoregroupquery.cpp
+    src/core/icoregroupquery.h
     src/core/icoreidhandler.cpp
     src/core/icoreidhandler.h
     src/core/idebugsettings.cpp
@@ -324,6 +330,8 @@ set(${BINARY_NAME}_SOURCES
     src/core/toxid.h
     src/core/conferenceid.cpp
     src/core/conferenceid.h
+    src/core/groupid.cpp
+    src/core/groupid.h
     src/core/toxlogger.cpp
     src/core/toxlogger.h
     src/core/toxoptions.cpp
@@ -350,6 +358,8 @@ set(${BINARY_NAME}_SOURCES
     src/model/chatroom/friendchatroom.h
     src/model/chatroom/conferenceroom.cpp
     src/model/chatroom/conferenceroom.h
+    src/model/chatroom/grouproom.cpp
+    src/model/chatroom/grouproom.h
     src/model/chat.cpp
     src/model/chat.h
     src/model/debug/debuglogmodel.cpp
@@ -376,6 +386,12 @@ set(${BINARY_NAME}_SOURCES
     src/model/conferencemessagedispatcher.h
     src/model/conference.cpp
     src/model/conference.h
+    src/model/group.cpp
+    src/model/group.h
+    src/model/groupinvite.cpp
+    src/model/groupinvite.h
+    src/model/groupmessagedispatcher.cpp
+    src/model/groupmessagedispatcher.h
     src/model/ibootstraplistgenerator.cpp
     src/model/ibootstraplistgenerator.h
     src/model/ichatlog.h
@@ -539,6 +555,12 @@ set(${BINARY_NAME}_SOURCES
     src/widget/form/conferenceinviteform.h
     src/widget/form/conferenceinvitewidget.cpp
     src/widget/form/conferenceinvitewidget.h
+    src/widget/form/groupform.cpp
+    src/widget/form/groupform.h
+    src/widget/form/groupinviteform.cpp
+    src/widget/form/groupinviteform.h
+    src/widget/form/groupinvitewidget.cpp
+    src/widget/form/groupinvitewidget.h
     src/widget/form/loadhistorydialog.cpp
     src/widget/form/loadhistorydialog.h
     src/widget/form/profileform.cpp
@@ -583,6 +605,8 @@ set(${BINARY_NAME}_SOURCES
     src/widget/genericchatroomwidget.h
     src/widget/conferencewidget.cpp
     src/widget/conferencewidget.h
+    src/widget/groupwidget.cpp
+    src/widget/groupwidget.h
     src/widget/loginscreen.cpp
     src/widget/loginscreen.h
     src/widget/maskablepixmapwidget.cpp

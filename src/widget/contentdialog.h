@@ -6,6 +6,7 @@
 #pragma once
 
 #include "src/core/conferenceid.h"
+#include "src/core/groupid.h"
 #include "src/core/toxpk.h"
 #include "src/model/dialogs/idialogs.h"
 #include "src/model/status.h"
@@ -28,6 +29,9 @@ class GenericChatroomWidget;
 class Conference;
 class ConferenceRoom;
 class ConferenceWidget;
+class Group;
+class GroupRoom;
+class GroupWidget;
 class QCloseEvent;
 class QSplitter;
 class QScrollArea;
@@ -36,6 +40,7 @@ class Style;
 class IMessageBoxManager;
 class FriendList;
 class ConferenceList;
+class GroupList;
 class Profile;
 
 class ContentDialog : public ActivateDialog, public IDialogs
@@ -44,13 +49,16 @@ class ContentDialog : public ActivateDialog, public IDialogs
 public:
     ContentDialog(const Core& core, Settings& settings, Style& style,
                   IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                  ConferenceList& conferenceList, Profile& profile, QWidget* parent = nullptr);
+                  ConferenceList& conferenceList, GroupList& groupList, Profile& profile,
+                  QWidget* parent = nullptr);
     ~ContentDialog() override;
 
     FriendWidget* addFriend(std::shared_ptr<FriendChatroom> chatroom, GenericChatForm* form);
     ConferenceWidget* addConference(std::shared_ptr<ConferenceRoom> chatroom, GenericChatForm* form);
+    GroupWidget* addGroup(std::shared_ptr<GroupRoom> chatroom, GenericChatForm* form);
     void removeFriend(const ToxPk& friendPk) override;
     void removeConference(const ConferenceId& conferenceId) override;
+    void removeGroup(const GroupId& groupId) override;
     int chatroomCount() const override;
     void ensureSplitterVisible();
     void updateTitleAndStatusIcon();
@@ -74,8 +82,10 @@ public:
 signals:
     void friendDialogShown(const Friend* f);
     void conferenceDialogShown(Conference* c);
+    void groupDialogShown(Group* g);
     void addFriendDialog(Friend* frnd, ContentDialog* contentDialog);
     void addConferenceDialog(Conference* conference, ContentDialog* contentDialog);
+    void addGroupDialog(Group* group, ContentDialog* contentDialog);
     void activated();
     void willClose();
     void connectFriendWidget(FriendWidget& friendWidget);
@@ -121,6 +131,7 @@ private:
     QScrollArea* friendScroll;
     FriendListLayout* friendLayout;
     GenericChatItemLayout conferenceLayout;
+    GenericChatItemLayout groupLayout;
     ContentLayout* contentLayout;
     GenericChatroomWidget* activeChatroomWidget;
     QSize videoSurfaceSize;
@@ -135,5 +146,6 @@ private:
     IMessageBoxManager& messageBoxManager;
     FriendList& friendList;
     ConferenceList& conferenceList;
+    GroupList& groupList;
     Profile& profile;
 };

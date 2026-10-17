@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "src/core/toxpk.h"
+
 #include <QDateTime>
 #include <QRegularExpression>
 #include <QString>
@@ -37,6 +39,8 @@ struct Message
     QString content;
     QDateTime timestamp;
     std::vector<MessageMetadata> metadata;
+    ToxPk recipient;
+    QString recipientName;
 };
 
 

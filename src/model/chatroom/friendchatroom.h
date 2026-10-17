@@ -11,8 +11,10 @@
 
 class Chat;
 class Core;
-class IDialogsManager;
 class Friend;
+class Group;
+class GroupList;
+class IDialogsManager;
 class Conference;
 class Settings;
 class ConferenceList;
@@ -21,6 +23,12 @@ struct ConferenceToDisplay
 {
     QString name;
     Conference* conference;
+};
+
+struct GroupToDisplay
+{
+    QString name;
+    Group* group;
 };
 
 struct CircleToDisplay
@@ -34,7 +42,7 @@ class FriendChatroom final : public QObject
     Q_OBJECT
 public:
     FriendChatroom(Friend* frnd_, IDialogsManager* dialogsManager_, Core& core_,
-                   Settings& settings_, ConferenceList& conferenceList);
+                   Settings& settings_, ConferenceList& conferenceList, GroupList& groupList);
 
     Chat* getChat();
 
@@ -52,12 +60,16 @@ public slots:
     void inviteToNewConference();
     void inviteFriend(const Conference* conference);
 
+    void inviteToNewGroup();
+    void inviteFriend(const Group* group);
+
     bool autoAcceptEnabled() const;
     QString getAutoAcceptDir() const;
     void disableAutoAccept();
     void setAutoAcceptDir(const QString& dir);
 
     QVector<ConferenceToDisplay> getConferences() const;
+    QVector<GroupToDisplay> getGroups() const;
     QVector<CircleToDisplay> getOtherCircles() const;
 
     void resetEventFlags();
@@ -77,4 +89,5 @@ private:
     Core& core;
     Settings& settings;
     ConferenceList& conferenceList;
+    GroupList& groupList;
 };

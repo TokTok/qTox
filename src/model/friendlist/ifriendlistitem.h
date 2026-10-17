@@ -21,6 +21,7 @@ public:
 
     virtual bool isFriend() const = 0;
     virtual bool isConference() const = 0;
+    virtual bool isGroup() const = 0;
     virtual bool isOnline() const = 0;
     virtual void startCall() = 0;
     virtual void stopCall() = 0;
