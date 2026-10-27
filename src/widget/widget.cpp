@@ -2153,7 +2153,7 @@ void Widget::onGroupInviteAccepted(const GroupInvite& inviteInfo)
     // Store the password so we can rejoin later
     const QByteArray inviteData = inviteInfo.getInviteData();
     if (inviteData.size() >= TOX_GROUP_CHAT_ID_SIZE && !passwordBytes.isEmpty()) {
-        const GroupId groupId(inviteData);
+        const GroupId groupId(reinterpret_cast<const uint8_t*>(inviteData.constData()));
         settings.setGroupPassword(groupId.toString(), passwordBytes);
     }
 }
