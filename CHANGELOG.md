@@ -1,3 +1,27 @@
+<a name="v1.18.6-rc.1"></a>
+
+## v1.18.6-rc.1 (2026-10-17)
+
+### Release notes
+
+maintenance
+
+#### Bug Fixes
+
+- enable experimental toxcore thread safety This is currently required for thread safe toxav operations. ([5b5f4682](https://github.com/TokTok/qTox/commit/5b5f46821d145882916f80636a902d783c82adb0))
+- missing includes uncovered by clang-23 ([515dcc74](https://github.com/TokTok/qTox/commit/515dcc741b2473419263a647ff932a74486bf406))
+- various clang tidy reports ([cc17033f](https://github.com/TokTok/qTox/commit/cc17033faa423f7ff0c2f1ad9f9c177334bdbd9d))
+- Fix OOM crash in SettingsSerializer readStream() VInt decoder. ([7d46ee26](https://github.com/TokTok/qTox/commit/7d46ee2629784a9430d20deae29754eba3a50981))
+- **avatar:** Add some checks for SVG avatars. ([ec3a0bab](https://github.com/TokTok/qTox/commit/ec3a0babc8b4b7052c1b9f366023c62735122cec))
+- **chatform:**
+  - diagnose friend going offline during call. ([92e78693](https://github.com/TokTok/qTox/commit/92e78693d150269a01b66f5a21e43535c0548086))
+  - Do not interpret 祝 and 秘 as smileys. ([d76ed925](https://github.com/TokTok/qTox/commit/d76ed925de38df13c31c0ccbd94ceef1cbdf95c2))
+- **cmake:** nix shell command was sensitive to cwd ([3f3033f2](https://github.com/TokTok/qTox/commit/3f3033f2e930da8a22bf1ef4c13aa2f5dae5e4f2))
+- **core:** Make DHT port selection truly random. ([f6387e04](https://github.com/TokTok/qTox/commit/f6387e042384e40d3839875ff3c69419f2e9ab48))
+- **gcc:** gcc related failed sfinae warnings ([264f35b3](https://github.com/TokTok/qTox/commit/264f35b3ee3a0074114e7ee78077cbe446214b6d))
+- **notify:** Treat nicks and notifications as plain text. ([8813ac90](https://github.com/TokTok/qTox/commit/8813ac90a7fe78d63893171e04193bad19642bab))
+- **video:** uninitialized lock ([fd47971b](https://github.com/TokTok/qTox/commit/fd47971bb3346029bcd02d3ead9c2ed91fb3b3b2))
+
 <a name="v1.18.5"></a>
 
 ## v1.18.5 (2026-06-02)
