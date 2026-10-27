@@ -226,6 +226,7 @@ void ChatManager::removeGroup(const GroupId& groupId)
     groupLogs.remove(groupId);
     groupRooms.remove(groupId);
     settings.removeSavedGroup(groupId.toString());
+    settings.removeGroupPassword(groupId.toString());
 }
 
 void ChatManager::removeGroupModel(const GroupId& groupId)
@@ -570,6 +571,7 @@ void ChatManager::onGroupJoinFailed(uint32_t groupNumber, Tox_Group_Join_Fail fa
         if (failType == TOX_GROUP_JOIN_FAIL_INVALID_PASSWORD) {
             core->quitGroup(g->getId());
             settings.removeSavedGroup(groupId.toString());
+            settings.removeGroupPassword(groupId.toString());
             // The UI must be torn down before the model, otherwise the GroupForm
             // keeps a dangling reference to the chat log.
             emit groupRemoved(groupId);

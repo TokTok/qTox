@@ -47,11 +47,11 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
             this, tr("Create group"), tr("Enter a name for the group"), QLineEdit::Normal,
             QString(), &ok);
         if (ok) {
-            if (!groupName.isEmpty()) {
-                emit groupCreate(groupName);
-            } else {
+            if (groupName.isEmpty()) {
                 QMessageBox::warning(this, tr("Create group"), tr("Group name cannot be empty."));
+                return;
             }
+            emit groupCreate(groupName);
         }
     });
     connect(joinButton, &QPushButton::clicked, this, [this]() {
@@ -68,7 +68,11 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
                                          tr("Invalid group ID. Expected 64 hex characters."));
                     return;
                 }
-                core.joinGroup(GroupId(rawId));
+                bool okPassword = false;
+                const QString password = QInputDialog::getText(
+                    this, tr("Group password (optional)"), tr("Password:"), QLineEdit::Password,
+                    QString(), &okPassword);
+                core.joinGroup(GroupId(rawId), password.toUtf8());
             } else {
                 QMessageBox::warning(this, tr("Join group by ID"), tr("Group ID cannot be empty."));
                 return;

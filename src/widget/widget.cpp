@@ -9,6 +9,8 @@
 #include <QClipboard>
 #include <QDebug>
 #include <QDesktopServices>
+#include <QInputDialog>
+#include <QLineEdit>
 #include <QMessageBox>
 #include <QMouseEvent>
 #include <QPainter>
@@ -2137,10 +2139,22 @@ void Widget::onGroupInviteReceived(const GroupInvite& inviteInfo)
 
 void Widget::onGroupInviteAccepted(const GroupInvite& inviteInfo)
 {
-    const uint32_t groupNumber = core->joinGroup(inviteInfo);
+    bool okPassword = false;
+    const QString password = QInputDialog::getText(
+        this, tr("Group password (optional)"), tr("Password:"), QLineEdit::Password, QString(),
+        &okPassword);
+    const QByteArray passwordBytes = password.toUtf8();
+    const uint32_t groupNumber = core->joinGroup(inviteInfo, passwordBytes);
     if (groupNumber == std::numeric_limits<uint32_t>::max()) {
         qWarning() << "onGroupInviteAccepted: Unable to accept group invite";
         return;
+    }
+
+    // Store the password so we can rejoin later
+    const QByteArray inviteData = inviteInfo.getInviteData();
+    if (inviteData.size() >= TOX_GROUP_CHAT_ID_SIZE && !passwordBytes.isEmpty()) {
+        const GroupId groupId(inviteData);
+        settings.setGroupPassword(groupId.toString(), passwordBytes);
     }
 }
 

@@ -112,8 +112,8 @@ public:
     uint32_t joinConference(const ConferenceInvite& inviteInfo);
     void quitConference(int conferenceId) const;
 
-    uint32_t joinGroup(const GroupInvite& inviteInfo);
-    int joinGroup(const GroupId& groupId);
+    uint32_t joinGroup(const GroupInvite& inviteInfo, const QByteArray& password = {});
+    int joinGroup(const GroupId& groupId, const QByteArray& password = {});
 
     QString getUsername() const override;
     Status::Status getStatus() const;

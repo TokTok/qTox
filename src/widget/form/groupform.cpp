@@ -620,7 +620,9 @@ void GroupForm::setPassword()
                                                    tr("Password:"), QLineEdit::Password, QString(),
                                                    &ok);
     if (ok) {
-        group->setGroupPassword(password.toUtf8());
+        const QByteArray passwordBytes = password.toUtf8();
+        group->setGroupPassword(passwordBytes);
+        settings.setGroupPassword(group->getPersistentId().toString(), passwordBytes);
     }
 }
 
@@ -638,6 +640,7 @@ void GroupForm::setNickname()
 void GroupForm::clearPassword()
 {
     group->setGroupPassword({});
+    settings.removeGroupPassword(group->getPersistentId().toString());
 }
 
 void GroupForm::setPeerLimit()

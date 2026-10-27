@@ -496,6 +496,11 @@ public:
     QString getGroupTopic(const QString& groupIdHex) const;
     void setGroupTopic(const QString& groupIdHex, const QString& topic);
 
+    // Group passwords
+    QByteArray getGroupPassword(const QString& groupIdHex) const;
+    void setGroupPassword(const QString& groupIdHex, const QByteArray& password);
+    void removeGroupPassword(const QString& groupIdHex);
+
     // State
     QByteArray getWindowGeometry() const;
     void setWindowGeometry(const QByteArray& value);
@@ -713,6 +718,7 @@ private:
     QHash<QString, QString> groupNames;
     QHash<QString, QString> groupNicknames;
     QHash<QString, QString> groupTopics;
+    QHash<QString, QByteArray> groupPasswords;
 
     // Audio
     QString inDev;

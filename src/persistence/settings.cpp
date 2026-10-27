@@ -666,6 +666,12 @@ void Settings::loadPersonal(const Profile& profile, bool newProfile)
         for (auto it = nicknames.constBegin(); it != nicknames.constEnd(); ++it) {
             groupNicknames.insert(it.key(), it.value().toString());
         }
+        const QJsonObject passwords =
+            QJsonDocument::fromJson(ps.value("groupPasswords").toString().toUtf8()).object();
+        groupPasswords.clear();
+        for (auto it = passwords.constBegin(); it != passwords.constEnd(); ++it) {
+            groupPasswords.insert(it.key(), QByteArray::fromBase64(it.value().toString().toUtf8()));
+        }
     });
 
     inGroup(ps, "Friends", [this, &ps] {
@@ -955,6 +961,12 @@ void Settings::savePersonal(QString profileName, const ToxEncrypt* passkey)
         }
         ps.setValue("groupNicknames",
                     QString::fromUtf8(QJsonDocument(nicknames).toJson(QJsonDocument::Compact)));
+        QJsonObject passwords;
+        for (auto it = groupPasswords.cbegin(); it != groupPasswords.cend(); ++it) {
+            passwords.insert(it.key(), QString::fromUtf8(it.value().toBase64()));
+        }
+        ps.setValue("groupPasswords",
+                    QString::fromUtf8(QJsonDocument(passwords).toJson(QJsonDocument::Compact)));
     });
 
     inGroup(ps, "Version", [this, &ps] { //
@@ -2010,6 +2022,30 @@ void Settings::setGroupTopic(const QString& groupIdHex, const QString& topic)
     } else {
         groupTopics.insert(groupIdHex, topic);
     }
+    requestSave();
+}
+
+QByteArray Settings::getGroupPassword(const QString& groupIdHex) const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return groupPasswords.value(groupIdHex);
+}
+
+void Settings::setGroupPassword(const QString& groupIdHex, const QByteArray& password)
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    if (password.isEmpty()) {
+        groupPasswords.remove(groupIdHex);
+    } else {
+        groupPasswords.insert(groupIdHex, password);
+    }
+    requestSave();
+}
+
+void Settings::removeGroupPassword(const QString& groupIdHex)
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    groupPasswords.remove(groupIdHex);
     requestSave();
 }
 

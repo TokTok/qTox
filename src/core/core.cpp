@@ -1305,10 +1305,13 @@ void Core::loadGroups()
         }
 
         const ToxString cSelfName(getUsername());
+        const QByteArray storedPassword = settings.getGroupPassword(groupIdHex);
+        const auto* passData =
+            storedPassword.isEmpty() ? nullptr : reinterpret_cast<const uint8_t*>(storedPassword.constData());
         Tox_Err_Group_Join error;
         const uint32_t groupNumber =
-            tox_group_join(tox.get(), groupId.getData(), cSelfName.data(), cSelfName.size(), nullptr,
-                           0, &error);
+            tox_group_join(tox.get(), groupId.getData(), cSelfName.data(), cSelfName.size(), passData,
+                           storedPassword.size(), &error);
         if (!PARSE_ERR(error)) {
             qWarning() << "loadGroups: failed to rejoin group" << groupIdHex;
             continue;
@@ -2043,7 +2046,7 @@ int Core::createGroup(const QString& groupName)
  *
  * @return Group number on success, UINT32_MAX on failure.
  */
-uint32_t Core::joinGroup(const GroupInvite& inviteInfo)
+uint32_t Core::joinGroup(const GroupInvite& inviteInfo, const QByteArray& password)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
@@ -2064,12 +2067,14 @@ uint32_t Core::joinGroup(const GroupInvite& inviteInfo)
     }
 
     const ToxString cSelfName(getUsername());
+    const auto* passData =
+        password.isEmpty() ? nullptr : reinterpret_cast<const uint8_t*>(password.constData());
 
     qDebug() << "Trying to accept invite for group sent by friend" << friendId;
     Tox_Err_Group_Invite_Accept error;
     const uint32_t groupNumber =
         tox_group_invite_accept(tox.get(), friendId, inviteData, inviteLength, cSelfName.data(),
-                                cSelfName.size(), nullptr, 0, &error);
+                                cSelfName.size(), passData, password.size(), &error);
     if (!PARSE_ERR(error)) {
         qWarning() << "Failed to accept group invite from friend" << friendId;
         return std::numeric_limits<uint32_t>::max();
@@ -2089,7 +2094,7 @@ uint32_t Core::joinGroup(const GroupInvite& inviteInfo)
  * @param groupId Chat ID of the group to join.
  * @return Group number on success, -1 on failure.
  */
-int Core::joinGroup(const GroupId& groupId)
+int Core::joinGroup(const GroupId& groupId, const QByteArray& password)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
@@ -2103,10 +2108,12 @@ int Core::joinGroup(const GroupId& groupId)
     }
 
     const ToxString cSelfName(getUsername());
+    const auto* passData =
+        password.isEmpty() ? nullptr : reinterpret_cast<const uint8_t*>(password.constData());
     Tox_Err_Group_Join error;
     const uint32_t groupNumber =
-        tox_group_join(tox.get(), groupId.getData(), cSelfName.data(), cSelfName.size(), nullptr, 0,
-                       &error);
+        tox_group_join(tox.get(), groupId.getData(), cSelfName.data(), cSelfName.size(), passData,
+                       password.size(), &error);
     if (!PARSE_ERR(error)) {
         qWarning() << "Failed to join group" << groupId.toString();
         return -1;
