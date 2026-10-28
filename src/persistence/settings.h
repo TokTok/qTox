@@ -497,9 +497,9 @@ public:
     void setGroupTopic(const QString& groupIdHex, const QString& topic);
 
     // Group passwords
-    QByteArray getGroupPassword(const QString& groupIdHex) const;
-    void setGroupPassword(const QString& groupIdHex, const QByteArray& password);
-    void removeGroupPassword(const QString& groupIdHex);
+    QByteArray getGroupPassword(const QString& groupIdHex) const override;
+    void setGroupPassword(const QString& groupIdHex, const QByteArray& password) override;
+    void removeGroupPassword(const QString& groupIdHex) override;
 
     // State
     QByteArray getWindowGeometry() const;
