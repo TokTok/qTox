@@ -6,6 +6,7 @@
 #include "appmanager.h"
 
 #include "src/ipc.h"
+#include "src/model/debug/debuglogmodel.h"
 #include "src/net/toxuri.h"
 #include "src/net/updatecheck.h"
 #include "src/nexus.h"
@@ -61,8 +62,8 @@ namespace {
 // inability to register a void* to get back to a class
 #ifdef LOG_TO_FILE
 QAtomicPointer<FILE> logFileFile = nullptr;
-QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages until log file opened
-QMutex* logBufferMutex = new QMutex();
+auto logBuffer = std::make_unique<QList<QByteArray>>(); // Store log messages until log file opened
+auto logBufferMutex = std::make_unique<QMutex>();
 #endif
 
 constexpr std::string_view sourceRootPath()
@@ -130,73 +131,56 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
         return;
     }
 
-    const QString file = canonicalLogFilePath(ctxt.file);
-    const QString category =
-        (ctxt.category != nullptr) ? QString::fromUtf8(ctxt.category) : QStringLiteral("default");
-    if ((type == QtDebugMsg && category == QStringLiteral("tox.core")
-         && (file == QStringLiteral("rtp.c") || file == QStringLiteral("video.c")))
-        || (file == QStringLiteral("bwcontroller.c") && msg.contains("update"))) {
+    // Time should be in UTC to save user privacy on log sharing.
+    DebugLogModel::LogEntry entry{
+        -1,
+        QDateTime::currentDateTime().toUTC(),
+        ctxt.category != nullptr ? QString::fromUtf8(ctxt.category) : QStringLiteral("default"),
+        canonicalLogFilePath(ctxt.file),
+        ctxt.line,
+        type,
+        "",
+    };
+
+    if ((entry.type == QtDebugMsg && entry.category == QStringLiteral("tox.core")
+         && (entry.file == QStringLiteral("rtp.c") || entry.file == QStringLiteral("video.c")))
+        || (entry.file == QStringLiteral("bwcontroller.c") && msg.contains("update"))) {
         // Don't log verbose toxav messages.
         return;
     }
 
-    // Time should be in UTC to save user privacy on log sharing
-    const QTime time = QDateTime::currentDateTime().toUTC().time();
-    QString logPrefix =
-        QStringLiteral("[%1 UTC] (%2) %3:%4 : ")
-            .arg(time.toString("HH:mm:ss.zzz"), category, file, QString::number(ctxt.line));
-    switch (type) {
-    case QtDebugMsg:
-        logPrefix += "Debug";
-        break;
-    case QtInfoMsg:
-        logPrefix += "Info";
-        break;
-    case QtWarningMsg:
-        logPrefix += "Warning";
-        break;
-    case QtCriticalMsg:
-        logPrefix += "Critical";
-        break;
-    case QtFatalMsg:
-        logPrefix += "Fatal";
-        break;
-    default:
-        break;
-    }
-
     QString logMsg;
     for (const auto& line : msg.split('\n')) {
-        logMsg += logPrefix + ": " + canonicalLogMessage(line) + "\n";
+        entry.message = canonicalLogMessage(line);
+        logMsg += DebugLogModel::render(entry);
+        logMsg += '\n';
     }
 
-    const QByteArray LogMsgBytes = logMsg.toUtf8();
-    fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
+    const QByteArray logMsgBytes = logMsg.toUtf8();
+    fwrite(logMsgBytes.constData(), 1, logMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
-    FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
+    FILE* const logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
     if (logFilePtr == nullptr) {
-        logBufferMutex->lock();
-        if (logBuffer != nullptr)
-            logBuffer->append(LogMsgBytes);
-
-        logBufferMutex->unlock();
-    } else {
-        logBufferMutex->lock();
+        const QMutexLocker<QMutex> locker(logBufferMutex.get());
         if (logBuffer != nullptr) {
-            // empty logBuffer to file
-            for (const QByteArray& bufferedMsg : *logBuffer) {
-                fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
-            }
-
-            delete logBuffer; // no longer needed
-            logBuffer = nullptr;
+            logBuffer->append(logMsgBytes);
         }
-        logBufferMutex->unlock();
-
-        fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), logFilePtr);
-        fflush(logFilePtr);
+        return;
     }
+
+    const QMutexLocker<QMutex> locker(logBufferMutex.get());
+    if (logBuffer != nullptr) {
+        // empty logBuffer to file
+        for (const QByteArray& bufferedMsg : *logBuffer) {
+            fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
+        }
+
+        logBuffer = nullptr; // no longer needed
+    }
+
+    fwrite(logMsgBytes.constData(), 1, logMsgBytes.size(), logFilePtr);
+    fflush(logFilePtr);
 #endif
 }
 

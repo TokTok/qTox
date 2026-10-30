@@ -577,6 +577,26 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Povolit nástroje ladění (pouze pro vývojáře)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximální počet řádků, které se mají kopírovat do schránky při stisknutí „Kopírovat protokol ladění“.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> řádky</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Maximální věk (v hodinách/minutách) linek protokolu pro kopírování do schránky při stisknutí „Kopírovat protokol debug“.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Max Age:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

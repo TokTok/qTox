@@ -574,6 +574,26 @@ which may lead to problems with video calls.</source>
         <source>Enable Debug Tools (developers only)</source>
         <translation>Включить Инструменты Отладки (только для разработчиков)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимальное количество строк для копирования в буфер обмена при нажатии «Журнал отладки копирования».</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> линии</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимальный возраст (в часах/минутах) строк журнала, которые можно скопировать в буфер обмена при нажатии «Копировать журнал отладки».</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">Максимальный возраст:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>

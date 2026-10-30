@@ -677,6 +677,26 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הפעל כלי ניפוי באגים (למפתחים בלבד)</translation>
     </message>
+    <message>
+        <source>Maximum number of lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">המספר המרבי של השורות להעתקה בלוח הלוח כאשר לוחצים על &quot;העתק יומן באגים&quot;.</translation>
+    </message>
+    <message>
+        <source> lines</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished"> קווים</translation>
+    </message>
+    <message>
+        <source>Maximum age (in hours/minutes) of log lines to copy into the clipboard when pressing &quot;Copy Debug Log&quot;.</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">הגיל המרבי (בשעות/דקות) של שורות יומן להעתקה ללוח בעת לחיצה על &quot;העתק יומן ניפוי באגים&quot;.</translation>
+    </message>
+    <message>
+        <source>Max age:</source>
+        <translatorcomment>Automated translation.</translatorcomment>
+        <translation type="unfinished">גיל מקסימום:</translation>
+    </message>
 </context>
 <context>
     <name>AppManager</name>
