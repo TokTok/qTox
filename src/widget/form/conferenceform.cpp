@@ -71,9 +71,11 @@ ConferenceForm::ConferenceForm(Core& core_, Conference* chatConference, IChatLog
                                IMessageDispatcher& messageDispatcher_, Settings& settings_,
                                DocumentCache& documentCache_, SmileyPack& smileyPack_,
                                Style& style_, IMessageBoxManager& messageBoxManager,
-                               FriendList& friendList_, ConferenceList& conferenceList_)
+                               FriendList& friendList_, ConferenceList& conferenceList_,
+                               GroupList& groupList_)
     : GenericChatForm(core_, chatConference, chatLog_, messageDispatcher_, documentCache_,
-                      smileyPack_, settings_, style_, messageBoxManager, friendList_, conferenceList_)
+                      smileyPack_, settings_, style_, messageBoxManager, friendList_,
+                      conferenceList_, groupList_)
     , core{core_}
     , conference(chatConference)
     , inCall(false)

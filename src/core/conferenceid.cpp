@@ -26,11 +26,11 @@ ConferenceId::ConferenceId()
 /**
  * @brief Constructs a ConferenceId from bytes.
  * @param rawId The bytes to construct the ConferenceId from. The length must be exactly
- *              ConferenceId::size, else the ConferenceId will be empty.
+ *              TOX_CONFERENCE_ID_SIZE, else the ConferenceId will be empty.
  */
 ConferenceId::ConferenceId(const QByteArray& rawId)
     : ChatId([rawId]() {
-        assert(rawId.length() == size);
+        assert(rawId.length() == TOX_CONFERENCE_ID_SIZE);
         return rawId;
     }())
 {
@@ -39,10 +39,10 @@ ConferenceId::ConferenceId(const QByteArray& rawId)
 /**
  * @brief Constructs a ConferenceId from bytes.
  * @param rawId The bytes to construct the ConferenceId from, will read exactly
- * ConferenceId::size from the specified buffer.
+ * TOX_CONFERENCE_ID_SIZE from the specified buffer.
  */
 ConferenceId::ConferenceId(const uint8_t* rawId)
-    : ChatId(QByteArray(reinterpret_cast<const char*>(rawId), size))
+    : ChatId(QByteArray(reinterpret_cast<const char*>(rawId), TOX_CONFERENCE_ID_SIZE))
 {
 }
 
@@ -52,7 +52,7 @@ ConferenceId::ConferenceId(const uint8_t* rawId)
  */
 int ConferenceId::getSize() const
 {
-    return size;
+    return TOX_CONFERENCE_ID_SIZE;
 }
 
 std::unique_ptr<ChatId> ConferenceId::clone() const

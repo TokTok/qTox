@@ -288,6 +288,11 @@ void ChatFormHeader::reloadTheme()
     micButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
 }
 
+void ChatFormHeader::setNameEditable(bool editable)
+{
+    nameLabel->setEditable(editable);
+}
+
 void ChatFormHeader::addWidget(QWidget* widget, int stretch, Qt::Alignment alignment)
 {
     headTextLayout->addWidget(widget, stretch, alignment);

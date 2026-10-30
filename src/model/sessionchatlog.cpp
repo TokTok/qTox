@@ -7,8 +7,10 @@
 
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
+#include "src/grouplist.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
+#include "src/model/group.h"
 
 #include <QDebug>
 #include <QtGlobal>
@@ -82,7 +84,8 @@ firstItemAfterDate(QDate date, const std::map<ChatLogIdx, ChatLogItem>& items)
                                const QDateTime& b) { return toDate(a) < b.date(); });
 }
 
-QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, const ToxPk& pk)
+QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, GroupList& groupList,
+                     const ToxPk& pk)
 {
     Friend* f = friendList.findFriend(pk);
     if (f != nullptr) {
@@ -96,15 +99,23 @@ QString resolveToxPk(FriendList& friendList, ConferenceList& conferenceList, con
         }
     }
 
+    for (Group* it : groupList.getAllGroups()) {
+        QString res = it->resolveToxPk(pk);
+        if (!res.isEmpty()) {
+            return res;
+        }
+    }
+
     return pk.toString();
 }
 } // namespace
 
 SessionChatLog::SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList& friendList_,
-                               ConferenceList& conferenceList_)
+                               ConferenceList& conferenceList_, GroupList& groupList_)
     : coreIdHandler(coreIdHandler_)
     , friendList{friendList_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
 {
 }
 
@@ -112,11 +123,13 @@ SessionChatLog::SessionChatLog(const ICoreIdHandler& coreIdHandler_, FriendList&
  * @brief Alternate constructor that allows for an initial index to be set
  */
 SessionChatLog::SessionChatLog(ChatLogIdx initialIdx, const ICoreIdHandler& coreIdHandler_,
-                               FriendList& friendList_, ConferenceList& conferenceList_)
+                               FriendList& friendList_, ConferenceList& conferenceList_,
+                               GroupList& groupList_)
     : coreIdHandler(coreIdHandler_)
     , nextIdx(initialIdx)
     , friendList{friendList_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
 {
 }
 
@@ -128,7 +141,7 @@ QString SessionChatLog::resolveSenderNameFromSender(const ToxPk& sender)
     const QString myNickName =
         coreIdHandler.getUsername().isEmpty() ? sender.toString() : coreIdHandler.getUsername();
 
-    return isSelf ? myNickName : resolveToxPk(friendList, conferenceList, sender);
+    return isSelf ? myNickName : resolveToxPk(friendList, conferenceList, groupList, sender);
 }
 
 const ChatLogItem& SessionChatLog::at(ChatLogIdx idx) const

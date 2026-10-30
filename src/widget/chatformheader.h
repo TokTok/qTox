@@ -50,6 +50,7 @@ public:
     ~ChatFormHeader() override;
 
     void setName(const QString& newName);
+    void setNameEditable(bool editable);
     void setMode(Mode mode_);
 
     void showOutgoingCall(bool video);

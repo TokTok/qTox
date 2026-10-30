@@ -10,11 +10,11 @@
 #include <QByteArray>
 
 #include <cstdint>
+#include <tox/tox.h>
 
 class ConferenceId : public ChatId
 {
 public:
-    static constexpr int size = 32;
     ConferenceId();
     explicit ConferenceId(const QByteArray& rawId);
     explicit ConferenceId(const uint8_t* rawId);

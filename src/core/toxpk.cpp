@@ -23,24 +23,24 @@ ToxPk::ToxPk() = default;
 /**
  * @brief Constructs a ToxPk from bytes.
  * @param rawId The bytes to construct the ToxPk from. The length must be exactly
- *              ToxPk::size, else the ToxPk will be empty.
+ *              TOX_PUBLIC_KEY_SIZE, else the ToxPk will be empty.
  */
 ToxPk::ToxPk(QByteArray rawId)
     : ChatId(std::move(rawId))
 {
-    if (id.length() != size) {
+    if (id.length() != TOX_PUBLIC_KEY_SIZE) {
         qCritical("ToxPk constructed with invalid length (%u instead of %d)",
-                  static_cast<uint>(id.length()), size);
+                  static_cast<uint>(id.length()), TOX_PUBLIC_KEY_SIZE);
     }
 }
 
 /**
  * @brief Constructs a ToxPk from bytes.
  * @param rawId The bytes to construct the ToxPk from, will read exactly
- * ToxPk::size from the specified buffer.
+ * TOX_PUBLIC_KEY_SIZE from the specified buffer.
  */
 ToxPk::ToxPk(const uint8_t* rawId)
-    : ToxPk(QByteArray(reinterpret_cast<const char*>(rawId), size))
+    : ToxPk(QByteArray(reinterpret_cast<const char*>(rawId), TOX_PUBLIC_KEY_SIZE))
 {
 }
 
@@ -53,9 +53,9 @@ ToxPk::ToxPk(const uint8_t* rawId)
  */
 ToxPk::ToxPk(const QString& pk)
     : ToxPk([&pk]() {
-        if (pk.length() != numHexChars) {
+        if (pk.length() != TOX_PUBLIC_KEY_SIZE * 2) {
             qCritical("ToxPk constructed with invalid length string (%u instead of %d)",
-                      static_cast<uint>(pk.length()), numHexChars);
+                      static_cast<uint>(pk.length()), TOX_PUBLIC_KEY_SIZE * 2);
         }
         return QByteArray::fromHex(pk.toLatin1());
     }())
@@ -68,7 +68,7 @@ ToxPk::ToxPk(const QString& pk)
  */
 int ToxPk::getSize() const
 {
-    return size;
+    return TOX_PUBLIC_KEY_SIZE;
 }
 
 std::unique_ptr<ChatId> ToxPk::clone() const

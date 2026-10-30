@@ -8,6 +8,7 @@
 #include "circlewidget.h"
 #include "conferencewidget.h"
 #include "friendwidget.h"
+#include "groupwidget.h"
 #include "widget.h"
 
 #include "src/core/core.h"
@@ -92,7 +93,7 @@ qint64 timeUntilTomorrow()
 FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& settings_,
                                    Style& style_, IMessageBoxManager& messageBoxManager_,
                                    FriendList& friendList_, ConferenceList& conferenceList_,
-                                   Profile& profile_, bool conferencesOnTop)
+                                   GroupList& groupList_, Profile& profile_, bool conferencesOnTop)
     : QWidget(parent)
     , core{core_}
     , settings{settings_}
@@ -100,6 +101,7 @@ FriendListWidget::FriendListWidget(const Core& core_, Widget* parent, Settings& 
     , messageBoxManager{messageBoxManager_}
     , friendList{friendList_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
     , profile{profile_}
 {
     const int countContacts = core.getFriendList().size();
@@ -303,6 +305,10 @@ void FriendListWidget::cleanMainLayout()
 
 QWidget* FriendListWidget::getNextWidgetForName(IFriendListItem* currentPos, bool forward) const
 {
+    if (currentPos == nullptr) {
+        return nullptr;
+    }
+
     const int pos = currentPos->getNameSortedPos();
     int nextPos = forward ? pos + 1 : pos - 1;
     if (nextPos >= manager->getItems().size()) {
@@ -362,7 +368,25 @@ void FriendListWidget::addFriendWidget(FriendWidget* w)
     manager->addFriendListItem(w);
 }
 
+void FriendListWidget::addGroupWidget(GroupWidget* widget)
+{
+    Group* g = widget->getGroup();
+    connect(g, &Group::titleChanged, this,
+            [this, widget](const QString& author, const QString& name) {
+                std::ignore = author;
+                widget->setName(name);
+                itemsChanged();
+            });
+
+    manager->addFriendListItem(widget);
+}
+
 void FriendListWidget::removeConferenceWidget(ConferenceWidget* w)
+{
+    manager->removeFriendListItem(w);
+}
+
+void FriendListWidget::removeGroupWidget(GroupWidget* w)
 {
     manager->removeFriendListItem(w);
 }
@@ -408,9 +432,9 @@ void FriendListWidget::removeCircleWidget(CircleWidget* widget)
 }
 
 void FriendListWidget::searchChatRooms(const QString& searchString, bool hideOnline,
-                                       bool hideOffline, bool hideConferences)
+                                       bool hideOffline, bool hideConferences, bool hideGroups)
 {
-    manager->setFilter(searchString, hideOnline, hideOffline, hideConferences);
+    manager->setFilter(searchString, hideOnline, hideOffline, hideConferences, hideGroups);
 }
 
 void FriendListWidget::renameConferenceWidget(ConferenceWidget* conferenceWidget, const QString& newName)
@@ -496,9 +520,10 @@ void FriendListWidget::cycleChats(GenericChatroomWidget* activeChatroomWidget, b
 
     if (friendWidget != nullptr) {
         wgt = getNextWidgetForName(friendWidget, forward);
-    } else {
-        auto* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget);
+    } else if (auto* conferenceWidget = qobject_cast<ConferenceWidget*>(activeChatroomWidget)) {
         wgt = getNextWidgetForName(conferenceWidget, forward);
+    } else if (auto* groupWidget = qobject_cast<GroupWidget*>(activeChatroomWidget)) {
+        wgt = getNextWidgetForName(groupWidget, forward);
     }
 
     auto* friendTmp = qobject_cast<FriendWidget*>(wgt);
@@ -614,7 +639,7 @@ CircleWidget* FriendListWidget::createCircleWidget(int id)
     }
 
     auto* circleWidget = new CircleWidget(core, this, id, settings, style, messageBoxManager,
-                                          friendList, conferenceList, profile);
+                                          friendList, conferenceList, groupList, profile);
     emit connectCircleWidget(*circleWidget);
     connect(this, &FriendListWidget::onCompactChanged, circleWidget, &CircleWidget::onCompactChanged);
     connect(circleWidget, &CircleWidget::renameRequested, this, &FriendListWidget::renameCircleWidget);
