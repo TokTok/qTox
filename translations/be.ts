@@ -538,6 +538,30 @@ which may lead to problems with video calls.</source>
         <translation>Партатыўнасць</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Запісваць журнал адладкі ў файл</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Узровень журнала Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Трасіроўка</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Інфармацыя</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Папярэджанне</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Памылка</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Уключыць IPv6 (рэкамендуецца)</translation>

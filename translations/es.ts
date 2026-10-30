@@ -517,6 +517,30 @@ lo que puede provocar problemas en las videollamadas.</translation>
         <translation>Portable</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Escribir el registro de depuración en un archivo</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Nivel de registro de Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Traza</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Información</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advertencia</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Error</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Habilitar IPv6 (recomendado)</translation>

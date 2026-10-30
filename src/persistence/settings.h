@@ -280,6 +280,16 @@ public:
     void setEnableDebug(bool newValue) override;
     bool getEnableDebug() const override;
 
+    SIGNAL_IMPL(Settings, toxcoreLogLevelChanged, IDebugSettings::ToxcoreLogLevel level)
+
+    void setToxcoreLogLevel(ToxcoreLogLevel newValue) override;
+    ToxcoreLogLevel getToxcoreLogLevel() const override;
+
+    SIGNAL_IMPL(Settings, logToFileChanged, bool enabled)
+
+    void setLogToFile(bool newValue) override;
+    bool getLogToFile() const override;
+
     // ICoreSettings
     bool getEnableIPv6() const override;
     void setEnableIPv6(bool enabled) override;
@@ -592,6 +602,7 @@ private:
     struct FriendProp;
     FriendProp& getOrInsertFriendPropRef(const ToxPk& id);
     static ICoreSettings::ProxyType fixInvalidProxyType(ICoreSettings::ProxyType proxyType);
+    static ToxcoreLogLevel fixInvalidToxcoreLogLevel(int level);
 
     template <typename T>
     bool setVal(T& savedVal, T newVal);
@@ -652,6 +663,8 @@ private:
     int autoAwayTime;
 
     bool enableDebug;
+    ToxcoreLogLevel toxcoreLogLevel;
+    bool logToFile;
 
     QHash<QString, QByteArray> widgetSettings;
     QHash<QString, QString> autoAccept;

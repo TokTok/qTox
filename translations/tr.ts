@@ -521,6 +521,30 @@ bu da video görüşmelerinde sorunlara yol açabilir.</translation>
         <translation>Taşınabilir</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Hata ayıklama günlüğünü dosyaya yaz</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore günlük düzeyi:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">İzleme</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Bilgi</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Uyarı</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Hata</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6&apos;yı etkinleştir (önerilen)</translation>

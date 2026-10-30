@@ -520,6 +520,30 @@ může dojít během video hovoru k výpadkům či jiným problémům.</translat
         <translation>Přenositelnost</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Zapisovat protokol ladění do souboru</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Úroveň protokolu Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trasování</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informace</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varování</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Povolit IPv6 (doporučeno)</translation>

@@ -603,6 +603,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">پورٹیبل</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">ڈیبگ لاگ فائل میں لکھیں</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore لاگ کی سطح:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">ٹریس</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">معلومات</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">انتباہ</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خرابی</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

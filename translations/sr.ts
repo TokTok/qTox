@@ -538,6 +538,30 @@ which may lead to problems with video calls.</source>
         <translation>Преносивост</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Записуј дневник прочишћавања у датотеку</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Ниво дневника Toxcore-а:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Праћење</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Информације</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Упозорење</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Грешка</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Омогући ИПв6 (препоручено)</translation>

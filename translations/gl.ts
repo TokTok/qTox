@@ -537,6 +537,30 @@ o que pode provocar problemas coas videochamadas.</translation>
         <translation>Portable</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Escribir o rexistro de depuración nun ficheiro</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Nivel de rexistro de Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Rastrexo</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Información</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Activar IPv6 (recomendado)</translation>

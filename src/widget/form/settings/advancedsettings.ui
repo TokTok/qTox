@@ -100,6 +100,56 @@
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QCheckBox" name="cbLogToFile">
+              <property name="text">
+               <string>Write debug log to file</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="toxcoreLogLevelLayout" stretch="0,1">
+              <item>
+               <widget class="QLabel" name="toxcoreLogLevelLabel">
+                <property name="text">
+                 <string>Toxcore log level:</string>
+                </property>
+                <property name="buddy">
+                 <cstring>toxcoreLogLevel</cstring>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="toxcoreLogLevel">
+                <item>
+                 <property name="text">
+                  <string>Trace</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Debug</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Info</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Warning</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Error</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+             </layout>
+            </item>
            </layout>
           </item>
          </layout>

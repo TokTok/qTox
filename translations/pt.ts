@@ -519,6 +519,30 @@ o que pode levar a problemas com as vídeo-chamadas.</translation>
         <translation>Portável</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Escrever o registo de depuração num ficheiro</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Nível de registo do Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Rastreio</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informação</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Aviso</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erro</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Ativar IPv6 (recomendado)</translation>

@@ -543,6 +543,30 @@ which may lead to problems with video calls.</source>
         <translation>Φορητό</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Αποθήκευση καταγραφής εντοπισμού σφαλμάτων σε αρχείο</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Επίπεδο καταγραφής Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Ανίχνευση</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Πληροφορίες</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Προειδοποίηση</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Σφάλμα</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Ενεργοποίηση IPv6 (συνιστάται)</translation>

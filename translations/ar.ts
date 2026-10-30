@@ -564,6 +564,30 @@ which may lead to problems with video calls.</source>
         <translation>متنقل</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">كتابة سجل تصحيح الأخطاء في ملف</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">مستوى سجل Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">تتبع</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">معلومات</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">تحذير</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خطأ</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>تفعيل IPv6 (موصى به )</translation>

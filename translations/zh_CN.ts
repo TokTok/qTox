@@ -517,6 +517,30 @@ which may lead to problems with video calls.</source>
         <translation>便携模式</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">将调试日志写入文件</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore 日志级别：</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">跟踪</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">信息</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">错误</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>启用 IPv6 （推荐）</translation>

@@ -609,6 +609,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">נייד</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">כתיבת יומן ניפוי שגיאות לקובץ</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">רמת היומן של Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">מעקב</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">מידע</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">אזהרה</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">שגיאה</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -516,6 +516,30 @@ dadurch kann es zu Problemen bei Videoanrufen kommen.</translation>
         <translation>Portabel</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Debug-Protokoll in Datei schreiben</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore-Protokollstufe:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trace</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Warnung</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fehler</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6 aktivieren (empfohlen)</translation>

@@ -520,6 +520,30 @@ Rýchlosť vášho pripojenia nemusí byť vždy dostačujúca pre vyššiu kval
         <translation>Prenosný Tox</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Zapisovať denník ladenia do súboru</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Úroveň denníka Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trasovanie</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informácie</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varovanie</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Chyba</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Povoliť IPv6 (odporúča sa)</translation>

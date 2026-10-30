@@ -513,6 +513,30 @@ which may lead to problems with video calls.</source>
         <translation>Prenosivost</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Zapisuj dnevnik ispravljanja grešaka u datoteku</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Nivo dnevnika Toxcore-a:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Praćenje</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informacije</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Upozorenje</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Greška</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Omogući IPv6 (preporučeno)</translation>

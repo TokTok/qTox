@@ -550,6 +550,30 @@ kar lahko povzroči težave z video klici.</translation>
         <translation>Prenosni</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Zapiši dnevnik razhroščevanja v datoteko</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Raven dnevnika Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Sledenje</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informacije</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Opozorilo</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Napaka</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation type="unfinished">Omogoči IPv6 (priporočeno)</translation>

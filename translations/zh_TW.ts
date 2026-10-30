@@ -569,6 +569,30 @@ which may lead to problems with video calls.</source>
         <translation>可攜式</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">將偵錯記錄寫入檔案</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore 記錄層級：</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">追蹤</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">資訊</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">錯誤</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

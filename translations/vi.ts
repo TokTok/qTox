@@ -518,6 +518,30 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Portable</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Ghi nhật ký gỡ lỗi vào tệp</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Mức nhật ký Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Theo dõi</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Thông tin</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Cảnh báo</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Lỗi</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Bật IPv6 (khuyên dùng)</translation>

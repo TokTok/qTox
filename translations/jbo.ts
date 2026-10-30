@@ -515,6 +515,30 @@ lo ka zmadu be lo nitcila cu rinka lo ka xagmau fa lo vidni ckaji poi lo do pend
         <translation type="unfinished">bevri</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">ciska lo cfisisku vreji lo datnyvei</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">la .toxcore. vreji ke cnano:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">sisku</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">datni</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">kajde</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">srera</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation type="unfinished">akti lo IPv6 (se stidi)</translation>

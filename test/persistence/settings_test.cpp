@@ -68,6 +68,7 @@ class TestSettings : public QObject
 private slots:
     void testAutoSaveGlobal();
     void testAutoSaveDebounce();
+    void testLogSettings();
 };
 
 void TestSettings::testAutoSaveGlobal()
@@ -137,6 +138,30 @@ void TestSettings::testAutoSaveDebounce()
     QTest::qWait(300);
     settings.sync();
     QVERIFY(QFile::exists(filePath));
+}
+
+void TestSettings::testLogSettings()
+{
+    const QTemporaryDir tempDir;
+    QVERIFY(tempDir.isValid());
+
+    MockMessageBoxManager messageBoxManager;
+    Settings settings(messageBoxManager, Paths::Portable::Portable);
+    settings.getPaths().setPortablePath(tempDir.path());
+    settings.setSaveTimerInterval(0);
+
+    QCOMPARE(settings.getToxcoreLogLevel(), Settings::ToxcoreLogLevel::Debug);
+    QVERIFY(settings.getLogToFile());
+
+    settings.setToxcoreLogLevel(Settings::ToxcoreLogLevel::Trace);
+    settings.setLogToFile(false);
+    QTest::qWait(250);
+    settings.sync();
+
+    QSettings s(settings.getPaths().getSettingsDirPath() + "qtox.ini", QSettings::IniFormat);
+    s.beginGroup("Advanced");
+    QCOMPARE(s.value("toxcoreLogLevel").toInt(), static_cast<int>(Settings::ToxcoreLogLevel::Trace));
+    QVERIFY(!s.value("logToFile", true).toBool());
 }
 
 QTEST_MAIN(TestSettings)

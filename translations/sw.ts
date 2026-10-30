@@ -629,6 +629,30 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Inabebeka</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Andika kumbukumbu za utatuzi kwenye faili</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Kiwango cha kumbukumbu cha Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Ufuatiliaji</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Taarifa</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Onyo</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Hitilafu</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

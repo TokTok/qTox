@@ -614,6 +614,30 @@ wat kin leie tot probleme mit videogesprekke.</translation>
         <translation type="unfinished">Draagbaar</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Debuglogbook nao &apos;n bestand sjrieve</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore-logniveau:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trace</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Waorsjuwing</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
         <source>Save settings to the working directory instead of the usual conf dir</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

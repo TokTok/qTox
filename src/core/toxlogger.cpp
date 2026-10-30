@@ -8,6 +8,8 @@
 #include <QDebug>
 #include <QLoggingCategory>
 
+#include <atomic>
+#include <cstdint>
 #include <tox/tox.h>
 
 namespace ToxLogger {
@@ -15,7 +17,8 @@ namespace {
 
 Q_LOGGING_CATEGORY(toxcore, "tox.core")
 
-} // namespace
+// trace level generates too much noise to enable by default
+std::atomic<Tox_Log_Level> minLevel{TOX_LOG_LEVEL_DEBUG};
 
 /**
  * @brief Log message handler for toxcore log messages
@@ -27,11 +30,12 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
     std::ignore = tox;
     std::ignore = user_data;
 
+    if (level < minLevel) {
+        return;
+    }
+
     switch (level) {
     case TOX_LOG_LEVEL_TRACE:
-        // trace level generates too much noise to enable by default
-        QMessageLogger(file, line, func).debug(toxcore) << message;
-        return;
     case TOX_LOG_LEVEL_DEBUG:
         QMessageLogger(file, line, func).debug(toxcore) << message;
         break;
@@ -45,6 +49,40 @@ void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line
         QMessageLogger(file, line, func).critical(toxcore) << message;
         break;
     }
+}
+
+} // namespace
+
+/**
+ * @brief Sets the least severe toxcore messages to log.
+ */
+void setMinLevel(IDebugSettings::ToxcoreLogLevel level)
+{
+    switch (level) {
+    case IDebugSettings::ToxcoreLogLevel::Trace:
+        minLevel = TOX_LOG_LEVEL_TRACE;
+        return;
+    case IDebugSettings::ToxcoreLogLevel::Debug:
+        minLevel = TOX_LOG_LEVEL_DEBUG;
+        return;
+    case IDebugSettings::ToxcoreLogLevel::Info:
+        minLevel = TOX_LOG_LEVEL_INFO;
+        return;
+    case IDebugSettings::ToxcoreLogLevel::Warning:
+        minLevel = TOX_LOG_LEVEL_WARNING;
+        return;
+    case IDebugSettings::ToxcoreLogLevel::Error:
+        minLevel = TOX_LOG_LEVEL_ERROR;
+        return;
+    }
+}
+
+/**
+ * @brief Makes toxcore log through qTox's message handler.
+ */
+void setLogCallback(Tox_Options* options)
+{
+    tox_options_set_log_callback(options, onLogMessage);
 }
 
 } // namespace ToxLogger

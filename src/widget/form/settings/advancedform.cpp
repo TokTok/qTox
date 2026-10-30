@@ -42,6 +42,8 @@ AdvancedForm::AdvancedForm(Settings& settings_, Style& style, IMessageBoxManager
     const RecursiveSignalBlocker signalBlocker(this);
 
     bodyUI->cbEnableDebug->setChecked(settings.getEnableDebug());
+    bodyUI->cbLogToFile->setChecked(settings.getLogToFile());
+    bodyUI->toxcoreLogLevel->setCurrentIndex(static_cast<int>(settings.getToxcoreLogLevel()));
 
     bodyUI->cbEnableIPv6->setChecked(settings.getEnableIPv6());
     bodyUI->cbMakeToxPortable->setChecked(settings.getMakeToxPortable());
@@ -153,6 +155,16 @@ void AdvancedForm::on_cbEnableDebug_stateChanged()
     settings.setEnableDebug(bodyUI->cbEnableDebug->isChecked());
 }
 
+void AdvancedForm::on_cbLogToFile_stateChanged()
+{
+    settings.setLogToFile(bodyUI->cbLogToFile->isChecked());
+}
+
+void AdvancedForm::on_toxcoreLogLevel_currentIndexChanged(int index)
+{
+    settings.setToxcoreLogLevel(static_cast<Settings::ToxcoreLogLevel>(index));
+}
+
 void AdvancedForm::on_cbEnableIPv6_stateChanged()
 {
     settings.setEnableIPv6(bodyUI->cbEnableIPv6->isChecked());
@@ -245,6 +257,8 @@ void AdvancedForm::retranslateUi()
     bodyUI->warningLabel->setText(warning);
 
     const int proxyType = bodyUI->proxyType->currentIndex();
+    const int toxcoreLogLevel = bodyUI->toxcoreLogLevel->currentIndex();
     bodyUI->retranslateUi(this);
     bodyUI->proxyType->setCurrentIndex(proxyType);
+    bodyUI->toxcoreLogLevel->setCurrentIndex(toxcoreLogLevel);
 }

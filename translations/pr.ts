@@ -516,6 +516,30 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Portable</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Scribble th&apos; debug log into a scroll</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore chatter level:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trackin&apos;</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Scuttlebutt</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Avast</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Shiver me timbers!</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation type="unfinished">Enable IPv6 (best be doin&apos; this)</translation>

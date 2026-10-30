@@ -544,6 +544,30 @@ which may lead to problems with video calls.</source>
         <translation>Преносно</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Запиши дневник за дебагирање во датотека</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Ниво на дневникот на Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Следење</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Информации</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Предупредување</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Грешка</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Овозможи IPv6 (препорачано)</translation>

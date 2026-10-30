@@ -544,6 +544,30 @@ which may lead to problems with video calls.</source>
         <translation>كۆچمە ئۈسكىنە</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">چاتاق خاتىرىسىنى ھۆججەتكە يېزىش</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore خاتىرە دەرىجىسى:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">ئىز قوغلاش</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">ئۇچۇر</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">ئاگاھلاندۇرۇش</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خاتا</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6 نى قوزغىتىش (تەۋسىيە)</translation>

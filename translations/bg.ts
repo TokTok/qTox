@@ -517,6 +517,30 @@ which may lead to problems with video calls.</source>
         <translation>Преносимост</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Записване на дневника за отстраняване на дефекти във файл</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Ниво на дневника на Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Проследяване</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Информация</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Предупреждение</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Грешка</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Включване на IPv6 (препоръчително)</translation>

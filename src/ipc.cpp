@@ -354,6 +354,7 @@ void IPC::processEvents()
         } else {
             qDebug() << "Received event:" << name << "without handler";
             qDebug() << "Available handlers:" << eventHandlers.keys();
+            evt->processed = time(nullptr);
         }
     }
 

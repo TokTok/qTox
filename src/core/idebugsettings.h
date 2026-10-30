@@ -9,6 +9,15 @@
 class IDebugSettings
 {
 public:
+    // Stored in qtox.ini and used as combo box indices.
+    enum class ToxcoreLogLevel
+    {
+        Trace = 0,
+        Debug = 1,
+        Info = 2,
+        Warning = 3,
+        Error = 4
+    };
     IDebugSettings() = default;
     virtual ~IDebugSettings();
     IDebugSettings(const IDebugSettings&) = default;
@@ -20,4 +29,14 @@ public:
     virtual void setEnableDebug(bool enable) = 0;
 
     DECLARE_SIGNAL(enableDebugChanged, bool enabled);
+
+    virtual ToxcoreLogLevel getToxcoreLogLevel() const = 0;
+    virtual void setToxcoreLogLevel(ToxcoreLogLevel level) = 0;
+
+    DECLARE_SIGNAL(toxcoreLogLevelChanged, IDebugSettings::ToxcoreLogLevel level);
+
+    virtual bool getLogToFile() const = 0;
+    virtual void setLogToFile(bool enabled) = 0;
+
+    DECLARE_SIGNAL(logToFileChanged, bool enabled);
 };

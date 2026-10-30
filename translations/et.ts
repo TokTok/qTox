@@ -519,6 +519,30 @@ mis võib põhjustada probleeme videokõnedega.</translation>
         <translation>Teisaldatav</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Kirjuta veaotsingu logi faili</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore&apos;i logitase:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Jälitus</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Teave</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Hoiatus</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Viga</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Toeta IPv6 protokolli (soovitatav)</translation>

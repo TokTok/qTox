@@ -622,6 +622,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ಪೋರ್ಟಬಲ್</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">ಡೀಬಗ್ ಲಾಗ್ ಅನ್ನು ಫೈಲ್‌ಗೆ ಬರೆಯಿರಿ</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore ಲಾಗ್ ಮಟ್ಟ:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">ಟ್ರೇಸ್</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">ಮಾಹಿತಿ</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">ಎಚ್ಚರಿಕೆ</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ದೋಷ</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

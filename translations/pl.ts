@@ -523,6 +523,30 @@ co może powodować problemy z rozmowami wideo.</translation>
         <translation>Przenośny</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Zapisuj dziennik debugowania do pliku</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Poziom logowania Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Śledzenie</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informacje</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Ostrzeżenie</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Błąd</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Używaj IPv6 (zalecane)</translation>

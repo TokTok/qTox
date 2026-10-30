@@ -5,6 +5,7 @@
 
 #include "appmanager.h"
 
+#include "src/core/toxlogger.h"
 #include "src/ipc.h"
 #include "src/net/toxuri.h"
 #include "src/net/updatecheck.h"
@@ -22,10 +23,13 @@
 #include <QApplication>
 #include <QCommandLineParser>
 #include <QDir>
+#include <QFileInfo>
 #include <QFontDatabase>
 #include <QMessageBox>
 #include <QObject>
 
+#include <cstdio>
+#include <ctime>
 #include <memory>
 
 #ifdef Q_OS_WASM
@@ -60,9 +64,48 @@ namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
 // inability to register a void* to get back to a class
 #ifdef LOG_TO_FILE
-QAtomicPointer<FILE> logFileFile = nullptr;
+constexpr qint64 maxLogFileBytes = 1000000;
+
+FILE* logFileFile = nullptr;
+time_t logFileOpenedAt = 0;
+QString logFilePath;
 QList<QByteArray>* logBuffer = new QList<QByteArray>(); // Store log messages until log file opened
 QMutex* logBufferMutex = new QMutex();
+
+// Opens qtox.log, first moving it to qtox.log.1 if it is too big. Other
+// instances share and move the file too, hence the regular reopening. Must not
+// log, as the caller holds logBufferMutex.
+FILE* openLogFile()
+{
+    const QByteArray path = logFilePath.toLocal8Bit();
+    if (QFileInfo(logFilePath).size() > maxLogFileBytes) {
+        // Fails while another instance has the file open on Windows.
+        const QByteArray old = (logFilePath + ".1").toLocal8Bit();
+        std::remove(old.constData());
+        std::rename(path.constData(), old.constData());
+    }
+    logFileOpenedAt = std::time(nullptr);
+    return fopen(path.constData(), "a");
+}
+
+// Returns whether the log file is open.
+bool setLogToFile(bool enabled)
+{
+    const QMutexLocker<QMutex> locker{logBufferMutex};
+    if (!enabled) {
+        if (logFileFile != nullptr) {
+            fclose(logFileFile);
+        }
+        logFileFile = nullptr;
+        delete logBuffer;
+        logBuffer = nullptr;
+        return false;
+    }
+    if (logFileFile == nullptr) {
+        logFileFile = openLogFile();
+    }
+    return logFileFile != nullptr;
+}
 #endif
 
 constexpr std::string_view sourceRootPath()
@@ -174,28 +217,30 @@ void logMessageHandler(QtMsgType type, const QMessageLogContext& ctxt, const QSt
     fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), stderr);
 
 #ifdef LOG_TO_FILE
-    FILE* logFilePtr = logFileFile.loadRelaxed(); // atomically load the file pointer
+    const QMutexLocker<QMutex> locker{logBufferMutex};
+    FILE* logFilePtr = logFileFile;
     if (logFilePtr == nullptr) {
-        logBufferMutex->lock();
         if (logBuffer != nullptr)
             logBuffer->append(LogMsgBytes);
+        return;
+    }
 
-        logBufferMutex->unlock();
-    } else {
-        logBufferMutex->lock();
-        if (logBuffer != nullptr) {
-            // empty logBuffer to file
-            for (const QByteArray& bufferedMsg : *logBuffer) {
-                fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
-            }
-
-            delete logBuffer; // no longer needed
-            logBuffer = nullptr;
+    if (logBuffer != nullptr) {
+        // empty logBuffer to file
+        for (const QByteArray& bufferedMsg : *logBuffer) {
+            fwrite(bufferedMsg.constData(), 1, bufferedMsg.size(), logFilePtr);
         }
-        logBufferMutex->unlock();
 
-        fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), logFilePtr);
-        fflush(logFilePtr);
+        delete logBuffer; // no longer needed
+        logBuffer = nullptr;
+    }
+
+    fwrite(LogMsgBytes.constData(), 1, LogMsgBytes.size(), logFilePtr);
+    fflush(logFilePtr);
+
+    if (std::time(nullptr) != logFileOpenedAt) {
+        fclose(logFilePtr);
+        logFileFile = openLogFile();
     }
 #endif
 }
@@ -238,43 +283,23 @@ int AppManager::startGui(QCommandLineParser& parser)
                       "functionality.";
     }
 
+    ToxLogger::setMinLevel(settings->getToxcoreLogLevel());
+    connect(settings.get(), &Settings::toxcoreLogLevelChanged, this, &ToxLogger::setMinLevel);
+
 #ifdef LOG_TO_FILE
     const QString logFileDir = settings->getPaths().getAppCacheDirPath();
     QDir(logFileDir).mkpath(".");
+    logFilePath = logFileDir + "qtox.log";
 
-    const QString logfile = logFileDir + "qtox.log";
-    FILE* mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
-
-    // Trim log file if over 1MB
-    if (QFileInfo(logfile).size() > 1000000) {
-        qDebug() << "Log file over 1MB, rotating...";
-
-        // close old logfile (need for windows)
-        if (mainLogFilePtr != nullptr)
-            fclose(mainLogFilePtr);
-
-        QDir dir(logFileDir);
-
-        // Check if log.1 already exists, and if so, delete it
-        if (dir.remove(logFileDir + "qtox.log.1"))
-            qDebug() << "Removed old log successfully";
-        else
-            qWarning() << "Unable to remove old log file";
-
-        if (!dir.rename(logFileDir + "qtox.log", logFileDir + "qtox.log.1"))
-            qCritical() << "Unable to move logs";
-
-        // open a new logfile
-        mainLogFilePtr = fopen(logfile.toLocal8Bit().constData(), "a");
-    }
-
-    if (mainLogFilePtr == nullptr) {
-        qCritical() << "Couldn't open logfile" << logfile;
-    } else {
-        qDebug() << "Logging to" << logfile;
-    }
-
-    logFileFile.storeRelaxed(mainLogFilePtr); // atomically set the logFile
+    const auto applyLogToFile = [](bool enabled) {
+        if (setLogToFile(enabled)) {
+            qDebug() << "Logging to" << logFilePath;
+        } else if (enabled) {
+            qCritical() << "Couldn't open logfile" << logFilePath;
+        }
+    };
+    applyLogToFile(settings->getLogToFile());
+    connect(settings.get(), &Settings::logToFileChanged, this, applyLogToFile);
 #endif
 
 #ifdef Q_OS_WASM
@@ -525,10 +550,6 @@ void AppManager::cleanup()
     qDebug() << "Cleanup success";
 
 #ifdef LOG_TO_FILE
-    FILE* f = logFileFile.loadRelaxed();
-    if (f != nullptr) {
-        fclose(f);
-        logFileFile.storeRelaxed(nullptr); // atomically disable logging to file
-    }
+    setLogToFile(false);
 #endif
 }

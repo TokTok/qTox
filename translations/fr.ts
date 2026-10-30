@@ -516,6 +516,30 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
         <translation>Portable</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Écrire le journal de débogage dans un fichier</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Niveau de journalisation de Toxcore :</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trace</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Avertissement</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Erreur</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Activer IPv6 (recommandé)</translation>

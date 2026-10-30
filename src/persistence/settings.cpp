@@ -133,6 +133,8 @@ Settings::Settings(IMessageBoxManager& messageBoxManager_, Paths::Portable mode)
     , enableLogging{true}
     , autoAwayTime{10}
     , enableDebug{false}
+    , toxcoreLogLevel{ToxcoreLogLevel::Debug}
+    , logToFile{true}
     , widgetSettings{}
     , autoAccept{}
     , autoSaveEnabled{false}
@@ -293,6 +295,9 @@ void Settings::loadGlobal()
         forceTCP = s.value("forceTCP", forceTCP).toBool();
         enableLanDiscovery = s.value("enableLanDiscovery", enableLanDiscovery).toBool();
         enableDebug = s.value("enableDebug", enableDebug).toBool();
+        toxcoreLogLevel = fixInvalidToxcoreLogLevel(
+            s.value("toxcoreLogLevel", static_cast<int>(toxcoreLogLevel)).toInt());
+        logToFile = s.value("logToFile", logToFile).toBool();
     });
 
     inGroup(s, "Widgets", [this, &s] {
@@ -758,6 +763,8 @@ void Settings::saveGlobal()
         s.setValue("enableLanDiscovery", enableLanDiscovery);
         s.setValue("dbSyncType", static_cast<int>(dbSyncType));
         s.setValue("enableDebug", enableDebug);
+        s.setValue("toxcoreLogLevel", static_cast<int>(toxcoreLogLevel));
+        s.setValue("logToFile", logToFile);
     });
 
     inGroup(s, "Widgets", [this, &s] {
@@ -1068,6 +1075,32 @@ bool Settings::getEnableDebug() const
 {
     const QMutexLocker<QRecursiveMutex> locker{&bigLock};
     return enableDebug;
+}
+
+void Settings::setToxcoreLogLevel(ToxcoreLogLevel newValue)
+{
+    if (setVal(toxcoreLogLevel, newValue)) {
+        emit toxcoreLogLevelChanged(newValue);
+    }
+}
+
+IDebugSettings::ToxcoreLogLevel Settings::getToxcoreLogLevel() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return toxcoreLogLevel;
+}
+
+void Settings::setLogToFile(bool newValue)
+{
+    if (setVal(logToFile, newValue)) {
+        emit logToFileChanged(newValue);
+    }
+}
+
+bool Settings::getLogToFile() const
+{
+    const QMutexLocker<QRecursiveMutex> locker{&bigLock};
+    return logToFile;
 }
 
 void Settings::setAutostartInTray(bool newValue)
@@ -2440,6 +2473,16 @@ ICoreSettings::ProxyType Settings::fixInvalidProxyType(ICoreSettings::ProxyType 
         qWarning() << "Repairing invalid ProxyType, UDP will be enabled";
         return ICoreSettings::ProxyType::ptNone;
     }
+}
+
+IDebugSettings::ToxcoreLogLevel Settings::fixInvalidToxcoreLogLevel(int level)
+{
+    if (level < static_cast<int>(ToxcoreLogLevel::Trace)
+        || level > static_cast<int>(ToxcoreLogLevel::Error)) {
+        qWarning() << "Repairing invalid toxcore log level" << level;
+        return ToxcoreLogLevel::Debug;
+    }
+    return static_cast<ToxcoreLogLevel>(level);
 }
 
 void Settings::requestSave()

@@ -519,6 +519,30 @@ vilket kan leda till problem med videosamtal.</translation>
         <translation>Bärbar</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Skriv felsökningslogg till fil</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Loggnivå för Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Spårning</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varning</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fel</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Aktivera IPv6 (rekommenderat)</translation>

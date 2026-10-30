@@ -91,7 +91,7 @@ std::unique_ptr<ToxOptions> ToxOptions::makeToxOptions(const QByteArray& savedat
         proxyAddrResolved.toUtf8(),
     }};
     // register log first, to get messages as early as possible
-    tox_options_set_log_callback(toxOptions->get(), ToxLogger::onLogMessage);
+    ToxLogger::setLogCallback(toxOptions->get());
 
     // savedata
     tox_options_set_savedata_type(toxOptions->get(), savedata.isNull() ? TOX_SAVEDATA_TYPE_NONE

@@ -37,6 +37,8 @@ private slots:
     void on_btnCopyDebug_clicked();
     void on_btnExportLog_clicked();
     void on_cbEnableDebug_stateChanged();
+    void on_cbLogToFile_stateChanged();
+    void on_toxcoreLogLevel_currentIndexChanged(int index);
     // Connection
     void on_cbEnableIPv6_stateChanged();
     void on_cbEnableUDP_stateChanged();

@@ -627,6 +627,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">අතේ ගෙන යා හැකි</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">නිදොස් කිරීමේ ලොගය ගොනුවකට ලියන්න</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore ලොග් මට්ටම:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">අනුරේඛනය</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">තොරතුරු</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">අවවාදය</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">දෝෂයකි</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

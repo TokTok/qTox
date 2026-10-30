@@ -536,6 +536,30 @@ which may lead to problems with video calls.</source>
         <translation>پرتابل</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">نوشتن لاگ خطایابی در فایل</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">سطح لاگ Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">ردیابی</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">اطلاعات</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">هشدار</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">خطا</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>فعال سازی IPv6 (توصیه میشود)</translation>

@@ -516,6 +516,30 @@ which may lead to problems with video calls.</source>
         <translation>திரட்டிச்செல்லுமை</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">பிழைத்திருத்தப் பதிவைக் கோப்பில் எழுது</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore பதிவு நிலை:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">தடமறிதல்</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">தகவல்</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">எச்சரிக்கை</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">பிழை</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6 செயல்பாட்டை அனுமதி (பரிந்துரைக்கப்படுகிறது)</translation>

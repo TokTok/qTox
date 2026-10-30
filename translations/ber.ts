@@ -516,6 +516,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⴰⵣⵉⵣⴷⴰⵏ</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">ⴰⵔⵓ ⴰⵖⵎⵉⵙ ⵏ ⵓⵙⵖⵜⵉ ⴳ ⵓⴼⴰⵢⵍⵓ</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">ⴰⵙⵡⵉⵔ ⵏ ⵓⵖⵎⵉⵙ ⵏ Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">ⴰⴹⴼⴼⵓⵔ</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">ⵜⵉⵏⵖⵎⵉⵙⵉⵏ</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">ⴰⵙⵍⵖⵓ</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">ⵜⴰⵣⴳⵍⵜ</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation type="unfinished">ⵔⵎⴷ IPv6 (ⵢⴻⵜⵜⵡⴰⵙⵎⵢⴰⵔ)</translation>

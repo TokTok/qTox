@@ -518,6 +518,30 @@ wat kan leiden tot problemen met videogesprekken.</translation>
         <translation>Portabel</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Debuglogboek naar bestand schrijven</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore-logniveau:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trace</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Waarschuwing</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fout</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Gebruik IPv6 (aanbevolen)</translation>

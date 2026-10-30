@@ -557,6 +557,30 @@ el che&apos;l pol portar ronje co łe to video ciamade.</translation>
         <translation>Damenà</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Scrivi el Debug Log so un file</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Liveło de log de Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Trace</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Avertimento</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Eror</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Far sù IPv6 (recommended)</translation>

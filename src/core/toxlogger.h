@@ -5,12 +5,13 @@
 
 #pragma once
 
-#include <cstdint>
-#include <tox/tox.h>
+#include "src/core/idebugsettings.h"
+
+struct Tox_Options;
 
 namespace ToxLogger {
 
-void onLogMessage(Tox* tox, Tox_Log_Level level, const char* file, uint32_t line, const char* func,
-                  const char* message, void* user_data);
+void setMinLevel(IDebugSettings::ToxcoreLogLevel level);
+void setLogCallback(Tox_Options* options);
 
 } // namespace ToxLogger

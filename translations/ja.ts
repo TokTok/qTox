@@ -517,6 +517,30 @@ which may lead to problems with video calls.</source>
         <translation>ポータブル</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">デバッグログをファイルに書き込む</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore のログレベル:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">トレース</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">情報</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">警告</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">エラー</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6 を有効にする (推奨)</translation>

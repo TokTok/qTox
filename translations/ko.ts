@@ -561,6 +561,30 @@ which may lead to problems with video calls.</source>
         <translation>이동가능</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">디버그 로그를 파일에 기록</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore 로그 수준:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">추적</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">정보</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">경고</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">오류</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>IPv6사용 (권장)</translation>

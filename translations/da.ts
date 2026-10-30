@@ -566,6 +566,30 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Transportabel</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Skriv fejlsøgningslog til fil</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Logniveau for Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Sporing</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advarsel</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Fejl</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Aktiver IPv6 (andbefalet)</translation>

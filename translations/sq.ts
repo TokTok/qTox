@@ -622,6 +622,30 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Portativ</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Shkruaj regjistrin e diagnostikimit në skedar</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Niveli i regjistrit të Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Gjurmim</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informacion</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Paralajmërim</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Gabim</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

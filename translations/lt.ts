@@ -520,6 +520,30 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Perkeliama</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Rašyti derinimo žurnalą į failą</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Toxcore žurnalo lygis:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Sekimas</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Informacija</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Įspėjimas</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Klaida</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Įjungti IPv6 (rekomenduojama)</translation>

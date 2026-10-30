@@ -610,6 +610,30 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Færanlegt</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Skrifa villuleitarannál í skrá</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Annálsstig Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Rakning</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Upplýsingar</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Viðvörun</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Villa</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>

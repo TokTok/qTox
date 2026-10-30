@@ -558,6 +558,30 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Guhêzbar</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Qeyda debugê li pelê binivîse</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Asta qeydê ya Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Şopandin</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Agahî</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Hişyarî</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Çewtî</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation type="unfinished">IPv6 çalak bike (tê pêşniyarkirin)</translation>

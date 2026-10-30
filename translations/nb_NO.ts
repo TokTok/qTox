@@ -520,6 +520,30 @@ noe som kan forårsake problemer i videosamtaler.</translation>
         <translation>Bærbar</translation>
     </message>
     <message>
+        <source>Write debug log to file</source>
+        <translation type="unfinished">Skriv feilrettingslogg til fil</translation>
+    </message>
+    <message>
+        <source>Toxcore log level:</source>
+        <translation type="unfinished">Loggnivå for Toxcore:</translation>
+    </message>
+    <message>
+        <source>Trace</source>
+        <translation type="unfinished">Sporing</translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished">Info</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Advarsel</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Feil</translation>
+    </message>
+    <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
         <translation>Skru på IPv6 (anbefalt)</translation>
