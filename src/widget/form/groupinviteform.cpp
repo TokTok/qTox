@@ -23,6 +23,7 @@
 #include <QWindow>
 
 #include <algorithm>
+#include <limits>
 
 /**
  * @class GroupInviteForm
@@ -72,7 +73,11 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
                 const QString password = QInputDialog::getText(
                     this, tr("Group password (optional)"), tr("Password:"), QLineEdit::Password,
                     QString(), &okPassword);
-                core.joinGroup(GroupId(rawId), password.toUtf8());
+                const QByteArray passwordBytes = password.toUtf8();
+                const uint32_t groupNumber = core.joinGroup(GroupId(rawId), passwordBytes);
+                if (groupNumber != std::numeric_limits<uint32_t>::max() && !passwordBytes.isEmpty()) {
+                    settings.setGroupPassword(clean, passwordBytes);
+                }
             } else {
                 QMessageBox::warning(this, tr("Join group by ID"), tr("Group ID cannot be empty."));
                 return;

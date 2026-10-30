@@ -621,8 +621,9 @@ void GroupForm::setPassword()
                                                    &ok);
     if (ok) {
         const QByteArray passwordBytes = password.toUtf8();
-        group->setGroupPassword(passwordBytes);
-        settings.setGroupPassword(group->getPersistentId().toString(), passwordBytes);
+        if (group->setGroupPassword(passwordBytes)) {
+            settings.setGroupPassword(group->getPersistentId().toString(), passwordBytes);
+        }
     }
 }
 
@@ -639,8 +640,9 @@ void GroupForm::setNickname()
 
 void GroupForm::clearPassword()
 {
-    group->setGroupPassword({});
-    settings.removeGroupPassword(group->getPersistentId().toString());
+    if (group->setGroupPassword({})) {
+        settings.removeGroupPassword(group->getPersistentId().toString());
+    }
 }
 
 void GroupForm::setPeerLimit()
