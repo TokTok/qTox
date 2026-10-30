@@ -408,7 +408,7 @@ void Nexus::onOpenWindow(QObject* object)
 {
     auto* window = static_cast<QWindow*>(object);
 
-    if ((window->windowState() & QWindow::Minimized) != 0)
+    if ((window->windowState() & Qt::WindowMinimized) != 0)
         window->showNormal();
 
     window->raise();
