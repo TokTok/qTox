@@ -537,27 +537,27 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
-        <translation type="unfinished">Hibakeresési napló írása fájlba</translation>
+        <translation>Hibakeresési napló írása fájlba</translation>
     </message>
     <message>
         <source>Toxcore log level:</source>
-        <translation type="unfinished">Toxcore naplózási szint:</translation>
+        <translation>Toxcore naplózási szint:</translation>
     </message>
     <message>
         <source>Trace</source>
-        <translation type="unfinished">Nyomkövetés</translation>
+        <translation>Nyomkövetés</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished">Információ</translation>
+        <translation>Információ</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Figyelmeztetés</translation>
+        <translation>Figyelmeztetés</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Hiba</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
