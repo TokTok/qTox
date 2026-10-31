@@ -1198,6 +1198,26 @@ zodet geer ut bestand op Windows kin opsjlaon.</translation>
         <translation type="unfinished">Pauze euverdrach</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Download hervatte?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">‘n Kleinder bestand mit dees naam besteit al. Wat wilste doen?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Hervatte</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Euversjrieve</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annulere</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Overdrach annulere</translation>

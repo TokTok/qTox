@@ -989,6 +989,26 @@ afin que vous puissiez enregistrer le fichier sous Windows.</translation>
         <translation>Mettre en pause le transfert</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Reprendre le téléchargement ?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Un fichier plus petit portant ce nom existe déjà. Que voulez-vous faire ?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Reprendre</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Écraser</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuler</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>En pause</translation>

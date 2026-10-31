@@ -990,6 +990,26 @@ para que puedas guardar el archivo en Windows.</translation>
         <translation>Pausar transferencia</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">¿Reanudar descarga?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Ya existe un archivo más pequeño con este nombre. ¿Qué quieres hacer?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Reanudar</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Sobrescribir</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>En pausa</translation>

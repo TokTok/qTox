@@ -1000,6 +1000,26 @@ so you can save the file on Windows.</source>
         <translation>転送を一時停止</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">ダウンロードを再開しますか？</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">この名前の小さいファイルが既にあります。どうしますか？</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">再開</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">上書き</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">キャンセル</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>転送をキャンセル</translation>
     </message>

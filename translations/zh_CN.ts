@@ -1001,6 +1001,26 @@ so you can save the file on Windows.</source>
         <translation>暂停传输</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">继续下载？</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">已存在同名的较小文件。您要怎么做？</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">继续</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">覆盖</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">取消</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>取消传输</translation>
     </message>

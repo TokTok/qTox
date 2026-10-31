@@ -1044,6 +1044,26 @@ da lahko datoteko shranite v sistemu Windows.</translation>
         <translation>Zaustavljeno</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Nadaljujem prenos?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Manjša datoteka s tem imenom že obstaja. Kaj želite storiti?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Nadaljuj</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Prepiši</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Prekliči</translation>
+    </message>
+    <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
         <translation>Nadaljevanje...</translation>

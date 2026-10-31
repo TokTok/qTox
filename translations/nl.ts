@@ -1004,6 +1004,26 @@ zodat je het bestand op Windows kunt opslaan.</translation>
         <translation>Bestandsoverdracht pauzeren</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Download hervatten?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Er bestaat al een kleiner bestand met deze naam. Wat wil je doen?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Hervatten</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Overschrijven</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annuleren</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>Bestandsoverdracht annuleren</translation>
     </message>

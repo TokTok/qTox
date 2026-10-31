@@ -1041,6 +1041,26 @@ so you can save the file on Windows.</source>
         <translation>Παύση μεταφοράς</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Συνέχιση λήψης;</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Υπάρχει ήδη μικρότερο αρχείο με αυτό το όνομα. Τι θέλετε να κάνετε;</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Συνέχιση</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Αντικατάσταση</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Άκυρο</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>Ακύρωση μεταφοράς</translation>
     </message>

@@ -1026,6 +1026,26 @@ so you can save the file on Windows.</source>
         <translation>Паузирај пренос</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Наставити преузимање?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Мања датотека са овим именом већ постоји. Шта желите да урадите?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Настави</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Препиши</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Откажи</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Паузиран</translation>

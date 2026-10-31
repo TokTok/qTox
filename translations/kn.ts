@@ -1180,6 +1180,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ವರ್ಗಾವಣೆಯನ್ನು ವಿರಾಮಗೊಳಿಸಿ</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">ಡೌನ್‌ಲೋಡ್ ಪುನರಾರಂಭಿಸಬೇಕೇ?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">ಈ ಹೆಸರಿನ ಚಿಕ್ಕ ಫೈಲ್ ಈಗಾಗಲೇ ಇದೆ. ನೀವು ಏನು ಮಾಡಲು ಬಯಸುವಿರಿ?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">ಪುನರಾರಂಭಿಸಿ</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">ಮೇಲ್ಬರಹ ಮಾಡಿ</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">ರದ್ದುಮಾಡಿ</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

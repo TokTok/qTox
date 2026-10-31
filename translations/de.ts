@@ -990,6 +990,26 @@ um die Datei unter Windows speichern zu können.</translation>
         <translation>Übertragung anhalten</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Download fortsetzen?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Eine kleinere Datei mit diesem Namen existiert bereits. Was möchtest du tun?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Fortsetzen</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Überschreiben</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Angehalten</translation>

@@ -1167,6 +1167,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">השהה העברה</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">להמשיך את ההורדה?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">כבר קיים קובץ קטן יותר בשם הזה. מה ברצונך לעשות?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">המשך</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">החלף</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">ביטול</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

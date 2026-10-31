@@ -1089,6 +1089,26 @@ så du kan gemme filen på Windows.</translation>
         <translation type="unfinished">Sæt overførsel på pause</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Genoptag download?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Der findes allerede en mindre fil med dette navn. Hvad vil du gøre?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Genoptag</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Overskriv</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Annullér</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

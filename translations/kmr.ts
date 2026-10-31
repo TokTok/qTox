@@ -1058,6 +1058,26 @@ da ku tu bikaribî pelî li Windowsê tomar bikî.</translation>
         <translation type="unfinished">Veguheztinê bide sekinandin</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Daxistinê berdewam bike?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Pelek piçûktir bi vî navî jixwe heye. Tu dixwazî çi bikî?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Berdewam bike</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Li ser binivîse</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Betal bike</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation type="unfinished">Veguheztinê betal bike</translation>
     </message>

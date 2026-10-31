@@ -999,6 +999,26 @@ pentru a putea salva fișierul pe Windows.</translation>
         <translation>Pauză la transfer</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Reluați descărcarea?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Există deja un fișier mai mic cu acest nume. Ce doriți să faceți?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Reluați</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Suprascrieți</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Anulați</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>În pauză</translation>

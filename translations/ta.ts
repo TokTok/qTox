@@ -990,6 +990,26 @@ so you can save the file on Windows.</source>
         <translation>கோப்பிடமாற்றத்தை இடைநிறுத்து</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">பதிவிறக்கத்தைத் தொடரவா?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">இந்தப் பெயரில் சிறிய கோப்பு ஏற்கனவே உள்ளது. என்ன செய்ய விரும்புகிறீர்கள்?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">தொடர்</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">மேலெழுது</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">ரத்துசெய்</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>இடைநிறுத்தப்பட்டுள்ளது</translation>

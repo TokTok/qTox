@@ -1008,6 +1008,26 @@ lai failu varētu saglabāt Windows operētājsistēmā.</translation>
         <translation>Apturēt pārsūtīšanu</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Turpināt lejupielādi?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Mazāks fails ar šādu nosaukumu jau pastāv. Ko vēlaties darīt?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Turpināt</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Pārrakstīt</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Atcelt</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Apturēts</translation>

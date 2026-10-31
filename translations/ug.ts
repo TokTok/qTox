@@ -1037,6 +1037,26 @@ so you can save the file on Windows.</source>
         <translation>يوللاشنى توختۇتۇش</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">چۈشۈرۈشنى داۋاملاشتۇرامسىز؟</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">بۇ نامدا تېخىمۇ كىچىك ھۆججەت بار. نېمە قىلىسىز؟</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">داۋاملاشتۇرۇش</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">قاپلاش</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">بىكار قىلىش</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>توختىدى</translation>

@@ -1002,6 +1002,26 @@ aby można było zapisać plik w systemie Windows.</translation>
         <translation>Wstrzymaj transfer</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Wznowić pobieranie?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Mniejszy plik o tej nazwie już istnieje. Co chcesz zrobić?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Wznów</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Nadpisz</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Anuluj</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Wstrzymany</translation>

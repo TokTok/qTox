@@ -1186,6 +1186,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">මාරු කිරීම විරාම කරන්න</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">බාගැනීම නැවත ආරම්භ කරන්නද?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">මෙම නමින් කුඩා ගොනුවක් දැනටමත් ඇත. ඔබට කුමක් කිරීමට අවශ්‍යද?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">නැවත ආරම්භ කරන්න</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">උඩින් ලියන්න</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">අවලංගු කරන්න</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

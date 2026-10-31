@@ -1011,6 +1011,26 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
         <translation>Aktarımı duraklat</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">İndirme sürdürülsün mü?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Bu adla daha küçük bir dosya zaten var. Ne yapmak istersiniz?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Sürdür</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Üzerine yaz</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">İptal</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>Aktarımı iptal et</translation>
     </message>

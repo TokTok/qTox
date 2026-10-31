@@ -1023,6 +1023,26 @@ so you can save the file on Windows.</source>
         <translation>مکث کردن در انتقال</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">ادامهٔ دانلود؟</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">فایل کوچک‌تری با این نام از قبل وجود دارد. چه کاری می‌خواهید انجام دهید؟</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">ادامه</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">بازنویسی</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">لغو</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>متوقف شده</translation>

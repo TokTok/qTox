@@ -1005,6 +1005,26 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translation>Pristabdyti siuntimą</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Tęsti atsisiuntimą?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Mažesnis failas tokiu pavadinimu jau yra. Ką norite daryti?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Tęsti</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Perrašyti</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Atsisakyti</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Pristabdyta</translation>

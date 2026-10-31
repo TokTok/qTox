@@ -998,6 +998,26 @@ så att du kan spara filen i Windows.</translation>
         <translation>Pausad</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Återuppta nedladdningen?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">En mindre fil med det här namnet finns redan. Vad vill du göra?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Återuppta</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Skriv över</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
+    </message>
+    <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
         <translation>Återupptar...</translation>

@@ -986,6 +986,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">zasysti lo nu benji</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">xu toldicra lo nu kibycpa</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">lo cmalu datnyvei poi se cmene ti cu xa&apos;o zasti .i do djica lo nu mo</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">toldicra</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">basygau</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">sisti</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation type="unfinished">zasysti</translation>

@@ -6,6 +6,7 @@
 #include "src/core/toxfile.h"
 
 #include <QFile>
+#include <QFileInfo>
 #include <QRegularExpression>
 
 #include <tox/tox.h>
@@ -61,13 +62,33 @@ bool ToxFile::operator!=(const ToxFile& other) const
     return !(*this == other);
 }
 
+uint64_t ToxFile::partialSizeOnDisk(const QString& path, uint64_t expectedSize)
+{
+    const QFileInfo fi(path);
+    if (!fi.exists() || !fi.isFile()) {
+        return 0;
+    }
+    const auto size = static_cast<uint64_t>(fi.size());
+    return (size > 0 && size < expectedSize) ? size : 0;
+}
+
 void ToxFile::setFilePath(QString path)
 {
     filePath = path;
     file->setFileName(path);
 }
 
-bool ToxFile::open(bool write)
+bool ToxFile::open(bool write, bool resume)
 {
-    return write ? file->open(QIODevice::ReadWrite) : file->open(QIODevice::ReadOnly);
+    if (write) {
+        if (resume) {
+            // Append always writes to EOF (seek is ignored); this is intentional
+            // for resume so new chunks are appended after the partial data.
+            return file->open(QIODevice::WriteOnly | QIODevice::Append);
+        }
+        // ReadWrite does not truncate; the caller is expected to have removed
+        // the existing file (tryRemoveFile) or to seek before writing.
+        return file->open(QIODevice::ReadWrite);
+    }
+    return file->open(QIODevice::ReadOnly);
 }

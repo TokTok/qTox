@@ -1012,6 +1012,26 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <translation>Pane ülekanne pausile</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Jätkata allalaadimist?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Selle nimega väiksem fail on juba olemas. Mida soovid teha?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Jätka</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Kirjuta üle</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Katkesta</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>Katkesta ülekanne</translation>
     </message>

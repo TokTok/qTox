@@ -1078,6 +1078,26 @@ so you can save the file on Windows.</source>
         <translation>ايقاف النقل</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">استئناف التنزيل؟</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">يوجد ملف أصغر بهذا الاسم. ماذا تريد أن تفعل؟</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">استئناف</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">استبدال</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">إلغاء</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>الغاء النقل</translation>
     </message>

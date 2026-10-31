@@ -1004,6 +1004,26 @@ slik at du kan lagre filen på Windows.</translation>
         <translation>Pause filoverføring</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Gjenoppta nedlasting?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">En mindre fil med dette navnet finnes allerede. Hva vil du gjøre?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Gjenoppta</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Overskriv</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Avbryt</translation>
+    </message>
+    <message>
         <source>Resume transfer</source>
         <translation>Gjenoppta filoverføring</translation>
     </message>

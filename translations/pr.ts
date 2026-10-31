@@ -990,6 +990,26 @@ so ye can stash th&apos; file on Windows.</translation>
         <translation>Put on hold</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Pick back up th&apos; haul?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">A smaller parcel wit&apos; this name be already in th&apos; hold. What&apos;ll it be?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Pick back up</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Scuttle it</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Belay that</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Awaitin&apos; yer word</translation>

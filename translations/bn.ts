@@ -1183,6 +1183,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">স্থানান্তর বিরাম দিন</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">ডাউনলোড আবার শুরু করবেন?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">এই নামে একটি ছোট ফাইল আগে থেকেই আছে। আপনি কী করতে চান?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">আবার শুরু করুন</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">ওভাররাইট করুন</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">বাতিল করুন</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

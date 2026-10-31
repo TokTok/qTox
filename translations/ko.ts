@@ -1085,6 +1085,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">전송 일시중지</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">다운로드를 재개하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">이 이름의 더 작은 파일이 이미 있습니다. 어떻게 하시겠습니까?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">재개</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">덮어쓰기</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">취소</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

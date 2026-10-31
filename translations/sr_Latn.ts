@@ -993,6 +993,26 @@ da biste mogli da sačuvate fajl na Windowsu.</translation>
         <translation>Pauziraj prenos</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Nastaviti preuzimanje?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Manji fajl sa ovim imenom već postoji. Šta želite da uradite?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Nastavi</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Prepiši</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Otkaži</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translation>Pauzirano</translation>

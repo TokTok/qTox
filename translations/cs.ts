@@ -1005,6 +1005,26 @@ takže můžete soubor uložit i v systému Windows.</translation>
         <translation>Pozastavit přenos</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Navázat stahování?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Menší soubor s tímto názvem už existuje. Co chcete udělat?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Navázat</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Přepsat</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Zrušit</translation>
+    </message>
+    <message>
         <source>Resume transfer</source>
         <translation>Navázat přenos</translation>
     </message>

@@ -1058,6 +1058,26 @@ so you can save the file on Windows.</source>
         <translation>Fermar traslocasion</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Tornar ła traslocasion?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Gh&apos;è belche un arcivo pì picenin co isteso nome. Cosa vuto far?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Tornar</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Scrivarghe sora</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Scancełar</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translation>Scancełar traslocasion</translation>
     </message>

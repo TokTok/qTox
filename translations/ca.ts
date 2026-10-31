@@ -1198,6 +1198,26 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">Pausa la transferència</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Reprendre la baixada?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Ja existeix un fitxer més petit amb aquest nom. Què voleu fer?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Reprèn</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Sobreescriu</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancel·la</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Cancel·la la transferència</translation>

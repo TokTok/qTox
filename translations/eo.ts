@@ -1122,6 +1122,26 @@ por ke vi povu konservi la dosieron en Vindozo.</translation>
         <translation type="unfinished">Paŭzi transigon</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Ĉu daŭrigi elŝuton?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Pli malgranda dosiero kun ĉi tiu nomo jam ekzistas. Kion vi volas fari?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Daŭrigi</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Anstataŭigi</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Nuligi</translation>
+    </message>
+    <message>
         <source>Cancel transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nuligi transigon</translation>

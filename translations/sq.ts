@@ -1181,6 +1181,26 @@ që ta ruani dot skedarin në Windows.</translation>
         <translation type="unfinished">Pezullo transferimin</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Të rifillohet shkarkimi?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Ekziston tashmë një skedar më i vogël me këtë emër. Çfarë doni të bëni?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Rifillo</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Mbishkruaj</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Anulo</translation>
+    </message>
+    <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>

@@ -1001,6 +1001,26 @@ para que possa guardar o ficheiro no Windows.</translation>
         <translation>Pausar transferência</translation>
     </message>
     <message>
+        <source>Resume download?</source>
+        <translation type="unfinished">Continuar a transferência?</translation>
+    </message>
+    <message>
+        <source>A smaller file with this name already exists. What would you like to do?</source>
+        <translation type="unfinished">Já existe um ficheiro mais pequeno com este nome. O que quer fazer?</translation>
+    </message>
+    <message>
+        <source>Resume</source>
+        <translation type="unfinished">Continuar</translation>
+    </message>
+    <message>
+        <source>Overwrite</source>
+        <translation type="unfinished">Substituir</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Cancelar</translation>
+    </message>
+    <message>
         <source>Resume transfer</source>
         <translation>Continuar transferência</translation>
     </message>
