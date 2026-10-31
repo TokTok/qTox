@@ -39,6 +39,8 @@
 #include <QMouseEvent>
 #include <QWindow>
 
+#include <tox/tox.h> // tox_max_name_length
+
 namespace {
 const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
     {IProfileInfo::SetAvatarResult::CanNotOpen, ProfileForm::tr("Unable to open this file.")},

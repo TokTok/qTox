@@ -5,6 +5,8 @@
 
 #pragma once
 
+#include "src/core/conferencetype.h"
+
 #include <QWidget>
 
 class ContentLayout;
@@ -35,7 +37,7 @@ public:
     bool isShown() const;
 
 signals:
-    void conferenceCreate(uint8_t type);
+    void conferenceCreate(ConferenceType type);
     void conferenceInviteAccepted(const ConferenceInvite& inviteInfo);
     void conferenceInvitesSeen();
 
