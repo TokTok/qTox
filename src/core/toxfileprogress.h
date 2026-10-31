@@ -17,6 +17,7 @@ public:
     QTime lastSampleTime() const;
     bool addSample(uint64_t bytesSent, QTime now = QTime::currentTime());
     void resetSpeed();
+    void resetTo(uint64_t bytesSent_);
 
     uint64_t getBytesSent() const;
     uint64_t getFileSize() const

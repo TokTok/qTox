@@ -131,15 +131,23 @@ void FileTransferWidget::acceptTransfer(const QString& filepath)
         return;
     }
 
+    const uint64_t fileSize = fileInfo.progress.getFileSize();
+    bool resume = false;
+    if (ToxFile::partialSizeOnDisk(filepath, fileSize) > 0) {
+        resume = messageBoxManager.askQuestion(tr("Resume download?"),
+            tr("A smaller file with this name already exists. Resume the download into it? "
+               "Choose No to overwrite it."));
+    }
+
     // test if writable
-    if (!tryRemoveFile(filepath)) {
+    if (!resume && !tryRemoveFile(filepath)) {
         const auto text = CommonDialogs::NoWritePermission();
         messageBoxManager.showWarning(text.first, text.second);
         return;
     }
 
     // everything ok!
-    coreFile.acceptFileRecvRequest(fileInfo.friendId, fileInfo.fileNum, filepath);
+    coreFile.acceptFileRecvRequest(fileInfo.friendId, fileInfo.fileNum, filepath, resume);
 }
 
 void FileTransferWidget::setBackgroundColor(const QColor& c, bool whiteFont)
