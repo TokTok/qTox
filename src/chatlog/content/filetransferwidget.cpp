@@ -140,10 +140,20 @@ void FileTransferWidget::acceptTransfer(const QString& filepath)
     }
 
     // test if writable
-    if (!resume && !tryRemoveFile(filepath)) {
-        const auto text = CommonDialogs::NoWritePermission();
-        messageBoxManager.showWarning(text.first, text.second);
-        return;
+    if (!resume) {
+        if (!tryRemoveFile(filepath)) {
+            const auto text = CommonDialogs::NoWritePermission();
+            messageBoxManager.showWarning(text.first, text.second);
+            return;
+        }
+    } else {
+        // For resume, check that the partial file is writable.
+        const QFileInfo fi(filepath);
+        if (!fi.isWritable()) {
+            const auto text = CommonDialogs::NoWritePermission();
+            messageBoxManager.showWarning(text.first, text.second);
+            return;
+        }
     }
 
     // everything ok!
