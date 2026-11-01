@@ -1,10 +1,12 @@
-<a name="v1.18.6-rc.1"></a>
+<a name="v1.18.6"></a>
 
-## v1.18.6-rc.1 (2026-10-17)
+## v1.18.6 (2026-11-01)
 
 ### Release notes
 
-maintenance
+A maintenance release fixing many bugs.
+
+Also thanks to contributors, including translators for your continued support.
 
 #### Bug Fixes
 
@@ -12,6 +14,7 @@ maintenance
 - missing includes uncovered by clang-23 ([515dcc74](https://github.com/TokTok/qTox/commit/515dcc741b2473419263a647ff932a74486bf406))
 - various clang tidy reports ([cc17033f](https://github.com/TokTok/qTox/commit/cc17033faa423f7ff0c2f1ad9f9c177334bdbd9d))
 - Fix OOM crash in SettingsSerializer readStream() VInt decoder. ([7d46ee26](https://github.com/TokTok/qTox/commit/7d46ee2629784a9430d20deae29754eba3a50981))
+- **FriendRequests:** Key request buttons by widget to prevent use-after-free ([22a97df1](https://github.com/TokTok/qTox/commit/22a97df1ead01c84362fa01c5ef7a42c4d50b5d5))
 - **avatar:** Add some checks for SVG avatars. ([ec3a0bab](https://github.com/TokTok/qTox/commit/ec3a0babc8b4b7052c1b9f366023c62735122cec))
 - **chatform:**
   - diagnose friend going offline during call. ([92e78693](https://github.com/TokTok/qTox/commit/92e78693d150269a01b66f5a21e43535c0548086))
@@ -21,6 +24,10 @@ maintenance
 - **gcc:** gcc related failed sfinae warnings ([264f35b3](https://github.com/TokTok/qTox/commit/264f35b3ee3a0074114e7ee78077cbe446214b6d))
 - **notify:** Treat nicks and notifications as plain text. ([8813ac90](https://github.com/TokTok/qTox/commit/8813ac90a7fe78d63893171e04193bad19642bab))
 - **video:** uninitialized lock ([fd47971b](https://github.com/TokTok/qTox/commit/fd47971bb3346029bcd02d3ead9c2ed91fb3b3b2))
+
+#### Features
+
+- **logging:** Add toxcore log level and log-to-file settings. ([6f502bac](https://github.com/TokTok/qTox/commit/6f502bac264ea566970d5c4820b6311070c9fe11))
 
 <a name="v1.18.5"></a>
 
