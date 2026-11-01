@@ -72,11 +72,11 @@ void ToxFileProgress::resetSpeed()
     }
 }
 
-void ToxFileProgress::resetTo(uint64_t bytesSent_)
+void ToxFileProgress::resetTo(uint64_t bytesSent)
 {
     resetSpeed();
-    samples[0].bytesSent = bytesSent_;
-    samples[1].bytesSent = bytesSent_;
+    samples[0].bytesSent = bytesSent;
+    samples[1].bytesSent = bytesSent;
 }
 
 uint64_t ToxFileProgress::getBytesSent() const
