@@ -102,6 +102,7 @@ public slots:
 
     void acceptFriendRequest(const ToxPk& friendPk);
     void requestFriendship(const ToxId& friendId, const QString& message);
+    void addFriendWithoutRequest(const ToxPk& friendPk);
     void conferenceInviteFriend(uint32_t friendId, int conferenceId);
     int createConference(uint8_t type = TOX_CONFERENCE_TYPE_AV);
 
