@@ -223,11 +223,11 @@ void TestConferenceMessageDispatcher::testEmptyConference()
  */
 void TestConferenceMessageDispatcher::testSelfReceive()
 {
-    uint8_t selfId[ToxPk::size] = {0};
+    uint8_t selfId[TOX_PUBLIC_KEY_SIZE] = {0};
     conferenceMessageDispatcher->onMessageReceived(ToxPk(selfId), false, "Test");
     QVERIFY(receivedMessages.empty());
 
-    uint8_t id[ToxPk::size] = {1};
+    uint8_t id[TOX_PUBLIC_KEY_SIZE] = {1};
     conferenceMessageDispatcher->onMessageReceived(ToxPk(id), false, "Test");
     QVERIFY(receivedMessages.size() == 1);
 }
@@ -237,7 +237,7 @@ void TestConferenceMessageDispatcher::testSelfReceive()
  */
 void TestConferenceMessageDispatcher::testBlockList()
 {
-    uint8_t id[ToxPk::size] = {1};
+    uint8_t id[TOX_PUBLIC_KEY_SIZE] = {1};
     auto otherPk = ToxPk(id);
     conferenceMessageDispatcher->onMessageReceived(otherPk, false, "Test");
     QVERIFY(receivedMessages.size() == 1);

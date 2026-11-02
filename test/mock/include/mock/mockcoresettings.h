@@ -9,6 +9,7 @@
 
 #include <QList>
 #include <QObject>
+#include <QStringList>
 
 class MockSettings : public QObject, public ICoreSettings
 {
@@ -80,6 +81,28 @@ public:
         return {QNetworkProxy::ProxyType::NoProxy};
     }
 
+    QStringList getSavedGroups() const override
+    {
+        return savedGroups;
+    }
+
+    QByteArray getGroupPassword(const QString& groupIdHex) const override
+    {
+        return groupPasswords.value(groupIdHex);
+    }
+    void setGroupPassword(const QString& groupIdHex, const QByteArray& password) override
+    {
+        if (password.isEmpty()) {
+            groupPasswords.remove(groupIdHex);
+        } else {
+            groupPasswords.insert(groupIdHex, password);
+        }
+    }
+    void removeGroupPassword(const QString& groupIdHex) override
+    {
+        groupPasswords.remove(groupIdHex);
+    }
+
     SIGNAL_IMPL(MockSettings, enableIPv6Changed, bool enabled)
     SIGNAL_IMPL(MockSettings, forceTCPChanged, bool enabled)
     SIGNAL_IMPL(MockSettings, enableLanDiscoveryChanged, bool enabled)
@@ -91,4 +114,6 @@ private:
     QString addr;
     ProxyType type;
     quint16 port;
+    QStringList savedGroups;
+    QHash<QString, QByteArray> groupPasswords;
 };

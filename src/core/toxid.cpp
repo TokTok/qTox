@@ -15,7 +15,7 @@
 #include <cstdint>
 
 const QRegularExpression
-    ToxId::ToxIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ToxId::numHexChars));
+    ToxId::ToxIdRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(TOX_ADDRESS_SIZE * 2));
 
 /**
  * @class ToxId
@@ -92,8 +92,8 @@ ToxId::ToxId(const QByteArray& rawId)
  * If the given rawId isn't a valid Public Key or Tox ID a ToxId with all zero bytes is created.
  *
  * @param rawId Pointer to bytes to convert to ToxId object
- * @param len Number of bytes to read. Must be ToxPk::size for a Public Key or
- *            ToxId::size for a Tox ID.
+ * @param len Number of bytes to read. Must be TOX_PUBLIC_KEY_SIZE for a Public Key or
+ *            TOX_ADDRESS_SIZE for a Tox ID.
  */
 ToxId::ToxId(const uint8_t* rawId, int len)
 {
@@ -104,7 +104,7 @@ ToxId::ToxId(const uint8_t* rawId, int len)
 
 void ToxId::constructToxId(const QByteArray& rawId)
 {
-    if (rawId.length() == ToxId::size && isToxId(QString::fromUtf8(rawId.toHex()).toUpper())) {
+    if (rawId.length() == TOX_ADDRESS_SIZE && isToxId(QString::fromUtf8(rawId.toHex()).toUpper())) {
         toxId = QByteArray(rawId); // construct from full tox id
     } else {
         assert(!"ToxId constructed with invalid input");
@@ -169,7 +169,7 @@ const uint8_t* ToxId::getBytes() const
  */
 ToxPk ToxId::getPublicKey() const
 {
-    const auto pkBytes = toxId.left(ToxPk::size);
+    const auto pkBytes = toxId.left(TOX_PUBLIC_KEY_SIZE);
     if (pkBytes.isEmpty()) {
         return ToxPk{};
     }
@@ -182,8 +182,8 @@ ToxPk ToxId::getPublicKey() const
  */
 QString ToxId::getNoSpamString() const
 {
-    if (toxId.length() == ToxId::size) {
-        return QString::fromUtf8(toxId.mid(ToxPk::size, ToxId::nospamSize).toHex()).toUpper();
+    if (toxId.length() == TOX_ADDRESS_SIZE) {
+        return QString::fromUtf8(toxId.mid(TOX_PUBLIC_KEY_SIZE, TOX_NOSPAM_SIZE).toHex()).toUpper();
     }
 
     return {};
@@ -208,7 +208,7 @@ bool ToxId::isValidToxId(const QString& id)
  */
 bool ToxId::isToxId(const QString& id)
 {
-    return id.length() == ToxId::numHexChars && id.contains(ToxIdRegEx);
+    return id.length() == TOX_ADDRESS_SIZE * 2 && id.contains(ToxIdRegEx);
 }
 
 /**
@@ -217,15 +217,16 @@ bool ToxId::isToxId(const QString& id)
  */
 bool ToxId::isValid() const
 {
-    if (toxId.length() != ToxId::size) {
+    if (toxId.length() != TOX_ADDRESS_SIZE) {
         return false;
     }
 
-    const int pkAndChecksum = ToxPk::size + ToxId::nospamSize;
+    constexpr int checksumSize = TOX_ADDRESS_SIZE - TOX_PUBLIC_KEY_SIZE - TOX_NOSPAM_SIZE;
+    const int pkAndChecksum = TOX_PUBLIC_KEY_SIZE + TOX_NOSPAM_SIZE;
 
     QByteArray data = toxId.left(pkAndChecksum);
-    const QByteArray checksum = toxId.right(ToxId::checksumSize);
-    QByteArray calculated(ToxId::checksumSize, 0x00);
+    const QByteArray checksum = toxId.right(checksumSize);
+    QByteArray calculated(checksumSize, 0x00);
 
     for (int i = 0; i < pkAndChecksum; i++) {
         calculated[i % 2] = calculated[i % 2] ^ data[i];

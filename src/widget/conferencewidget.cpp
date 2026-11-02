@@ -68,7 +68,7 @@ void ConferenceWidget::contextMenuEvent(QContextMenuEvent* event)
 
     installEventFilter(this); // Disable leave event.
 
-    QMenu menu(this);
+    QMenu menu;
 
     QAction* openChatWindow = nullptr;
     if (chatroom->possibleToOpenInNewWindow()) {
@@ -83,7 +83,11 @@ void ConferenceWidget::contextMenuEvent(QContextMenuEvent* event)
     menu.addSeparator();
 
     QAction* setTitle = menu.addAction(tr("Set title..."));
-    QAction* quitConference = menu.addAction(tr("Quit conference", "Menu to quit a conference"));
+    auto* quitConference = menu.addAction(tr("Quit conference", "Menu to quit a conference"));
+    // Deleting the widget from inside the menu handler would destroy the
+    // stack-allocated QMenu while it is still a child, so defer the removal.
+    connect(quitConference, &QAction::triggered, this, [this]() { emit removeConference(conferenceId); },
+            Qt::QueuedConnection);
 
     QAction* selectedItem = menu.exec(event->globalPos());
 
@@ -97,9 +101,7 @@ void ConferenceWidget::contextMenuEvent(QContextMenuEvent* event)
         return;
     }
 
-    if (selectedItem == quitConference) {
-        emit removeConference(conferenceId);
-    } else if (selectedItem == openChatWindow) {
+    if (selectedItem == openChatWindow) {
         emit newWindowOpened(this);
     } else if (selectedItem == removeChatWindow) {
         chatroom->removeConferenceFromDialogs();
@@ -206,6 +208,11 @@ bool ConferenceWidget::isFriend() const
 bool ConferenceWidget::isConference() const
 {
     return true;
+}
+
+bool ConferenceWidget::isGroup() const
+{
+    return false;
 }
 
 QString ConferenceWidget::getNameItem() const

@@ -10,9 +10,11 @@
 #include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
+#include "src/grouplist.h"
 #include "src/model/chatroom/friendchatroom.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
+#include "src/model/group.h"
 #include "src/model/status.h"
 #include "src/persistence/settings.h"
 #include "src/widget/conferencewidget.h"
@@ -20,6 +22,7 @@
 #include "src/widget/form/chatform.h"
 #include "src/widget/friendlistlayout.h"
 #include "src/widget/friendwidget.h"
+#include "src/widget/groupwidget.h"
 #include "src/widget/style.h"
 #include "src/widget/translator.h"
 #include "src/widget/widget.h"
@@ -32,6 +35,8 @@
 #include <QShortcut>
 #include <QSplitter>
 
+#include <algorithm>
+
 namespace {
 const int minWidget = 220;
 const int minHeight = 220;
@@ -41,7 +46,8 @@ const QSize defaultSize(720, 400);
 
 ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style_,
                              IMessageBoxManager& messageBoxManager_, FriendList& friendList_,
-                             ConferenceList& conferenceList_, Profile& profile_, QWidget* parent)
+                             ConferenceList& conferenceList_, GroupList& groupList_, Profile& profile_,
+                             QWidget* parent)
     : ActivateDialog(style_, parent, Qt::Window)
     , splitter{new QSplitter(this)}
     , friendLayout{new FriendListLayout(this)}
@@ -52,13 +58,14 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     , messageBoxManager{messageBoxManager_}
     , friendList{friendList_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
     , profile{profile_}
 {
     friendLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->setSpacing(0);
 
     layouts = {friendLayout->getLayoutOnline(), conferenceLayout.getLayout(),
-               friendLayout->getLayoutOffline()};
+               friendLayout->getLayoutOffline(), groupLayout.getLayout()};
 
     if (settings.getConferencePosition()) {
         layouts.swapItemsAt(0, 1);
@@ -70,6 +77,8 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     friendWidget->setLayout(friendLayout);
 
     onConferencePositionChanged(settings.getConferencePosition());
+
+    friendLayout->addLayout(groupLayout.getLayout());
 
     friendScroll = new QScrollArea(this);
     friendScroll->setMinimumWidth(minWidget);
@@ -183,6 +192,24 @@ ConferenceWidget* ContentDialog::addConference(std::shared_ptr<ConferenceRoom> c
     return conferenceWidget;
 }
 
+GroupWidget* ContentDialog::addGroup(std::shared_ptr<GroupRoom> chatroom, GenericChatForm* form)
+{
+    auto* const g = chatroom->getGroup();
+    const auto& groupId = g->getPersistentId();
+    const auto compact = settings.getCompactLayout();
+    auto* groupWidget = new GroupWidget(chatroom, compact, settings, style, this);
+    chatWidgets[groupId] = groupWidget;
+    groupLayout.addSortedWidget(groupWidget);
+    chatForms[groupId] = form;
+
+    connect(groupWidget, &GroupWidget::chatroomWidgetClicked, this, &ContentDialog::activate);
+
+    // FIXME: emit should be removed
+    emit groupWidget->chatroomWidgetClicked(groupWidget);
+
+    return groupWidget;
+}
+
 void ContentDialog::removeFriend(const ToxPk& friendPk)
 {
     auto* chatroomWidget = qobject_cast<FriendWidget*>(chatWidgets[friendPk]);
@@ -236,6 +263,30 @@ void ContentDialog::removeConference(const ConferenceId& conferenceId)
     closeIfEmpty();
 }
 
+void ContentDialog::removeGroup(const GroupId& groupId)
+{
+    auto* chatroomWidget = qobject_cast<GroupWidget*>(chatWidgets[groupId]);
+    // Need to find replacement to show here instead.
+    if (activeChatroomWidget == chatroomWidget) {
+        cycleChats(true, false);
+    }
+
+    groupLayout.removeSortedWidget(chatroomWidget);
+    chatroomWidget->deleteLater();
+
+    if (chatroomCount() == 0) {
+        contentLayout->clear();
+        activeChatroomWidget = nullptr;
+        deleteLater();
+    } else {
+        update();
+    }
+
+    chatWidgets.remove(groupId);
+    chatForms.remove(groupId);
+    closeIfEmpty();
+}
+
 void ContentDialog::closeIfEmpty()
 {
     if (chatWidgets.isEmpty()) {
@@ -245,7 +296,8 @@ void ContentDialog::closeIfEmpty()
 
 int ContentDialog::chatroomCount() const
 {
-    return friendLayout->friendTotalCount() + conferenceLayout.getLayout()->count();
+    return friendLayout->friendTotalCount() + conferenceLayout.getLayout()->count()
+        + groupLayout.getLayout()->count();
 }
 
 void ContentDialog::ensureSplitterVisible()
@@ -284,6 +336,12 @@ int ContentDialog::getCurrentLayout(QLayout*& layout)
         return index;
     }
 
+    layout = groupLayout.getLayout();
+    index = groupLayout.indexOfSortedWidget(activeChatroomWidget);
+    if (index != -1) {
+        return index;
+    }
+
     layout = nullptr;
     return -1;
 }
@@ -302,19 +360,11 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
     }
 
     if (!inverse && index == currentLayout->count() - 1) {
-        const bool conferencesOnTop = settings.getConferencePosition();
-        const bool offlineEmpty = friendLayout->getLayoutOffline()->isEmpty();
-        const bool onlineEmpty = friendLayout->getLayoutOnline()->isEmpty();
-        const bool conferencesEmpty = conferenceLayout.getLayout()->isEmpty();
-        const bool isCurOffline = currentLayout == friendLayout->getLayoutOffline();
-        const bool isCurOnline = currentLayout == friendLayout->getLayoutOnline();
-        const bool isCurConference = currentLayout == conferenceLayout.getLayout();
-        const bool nextIsEmpty =
-            (isCurOnline && offlineEmpty && (conferencesEmpty || conferencesOnTop))
-            || (isCurConference && offlineEmpty && (onlineEmpty || !conferencesOnTop))
-            || (isCurOffline);
-
-        if (nextIsEmpty) {
+        const bool allOthersEmpty =
+            std::all_of(layouts.begin(), layouts.end(), [currentLayout](const QLayout* l) {
+                return l == currentLayout || l->count() == 0;
+            });
+        if (allOthersEmpty) {
             forward = !forward;
         }
     }
@@ -387,6 +437,12 @@ void ContentDialog::updateTitleAndStatusIcon()
         return;
     }
 
+    const bool isGroup = activeChatroomWidget->getGroup() != nullptr;
+    if (isGroup) {
+        setWindowIcon(QIcon(":/img/group.svg"));
+        return;
+    }
+
     const Status::Status currentStatus = activeChatroomWidget->getFriend()->getStatus();
     setWindowIcon(QIcon{Status::getIconPath(currentStatus)});
 }
@@ -444,11 +500,14 @@ bool ContentDialog::event(QEvent* event)
 
             const Friend* frnd = activeChatroomWidget->getFriend();
             Conference* conference = activeChatroomWidget->getConference();
+            Group* group = activeChatroomWidget->getGroup();
 
             if (frnd != nullptr) {
                 emit friendDialogShown(frnd);
             } else if (conference != nullptr) {
                 emit conferenceDialogShown(conference);
+            } else if (group != nullptr) {
+                emit groupDialogShown(group);
             }
         }
 
@@ -465,6 +524,7 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
     QObject* o = event->source();
     auto* frnd = qobject_cast<FriendWidget*>(o);
     auto* conference = qobject_cast<ConferenceWidget*>(o);
+    auto* group = qobject_cast<GroupWidget*>(o);
     if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxPk{event->mimeData()->data("toxPk")};
@@ -490,6 +550,17 @@ void ContentDialog::dragEnterEvent(QDragEnterEvent* event)
         if (!hasChat(conferenceId)) {
             event->acceptProposedAction();
         }
+    } else if (group != nullptr) {
+        assert(event->mimeData()->hasFormat("groupId"));
+        const GroupId groupId = GroupId{event->mimeData()->data("groupId")};
+        Group* contact = groupList.findGroup(groupId);
+        if (contact == nullptr) {
+            return;
+        }
+
+        if (!hasChat(groupId)) {
+            event->acceptProposedAction();
+        }
     }
 }
 
@@ -498,6 +569,7 @@ void ContentDialog::dropEvent(QDropEvent* event)
     QObject* o = event->source();
     auto* frnd = qobject_cast<FriendWidget*>(o);
     auto* conference = qobject_cast<ConferenceWidget*>(o);
+    auto* group = qobject_cast<GroupWidget*>(o);
     if (frnd != nullptr) {
         assert(event->mimeData()->hasFormat("toxPk"));
         const ToxPk toxId(event->mimeData()->data("toxPk"));
@@ -517,6 +589,16 @@ void ContentDialog::dropEvent(QDropEvent* event)
         }
 
         emit addConferenceDialog(contact, this);
+        ensureSplitterVisible();
+    } else if (group != nullptr) {
+        assert(event->mimeData()->hasFormat("groupId"));
+        const GroupId groupId(event->mimeData()->data("groupId"));
+        Group* contact = groupList.findGroup(groupId);
+        if (contact == nullptr) {
+            return;
+        }
+
+        emit addGroupDialog(contact, this);
         ensureSplitterVisible();
     }
 }

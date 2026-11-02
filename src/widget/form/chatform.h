@@ -26,6 +26,7 @@ class FileTransferInstance;
 class Friend;
 class FriendList;
 class ConferenceList;
+class GroupList;
 class History;
 class ImagePreviewButton;
 class IMessageBoxManager;
@@ -46,7 +47,8 @@ public:
              IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
              SmileyPack& smileyPack, CameraSource& cameraSource, Settings& settings, Style& style,
              IMessageBoxManager& messageBoxManager, ContentDialogManager& contentDialogManager,
-             FriendList& friendList, ConferenceList& conferenceList, QWidget* parent = nullptr);
+             FriendList& friendList, ConferenceList& conferenceList, GroupList& groupList,
+             QWidget* parent = nullptr);
     ~ChatForm() override;
     void setStatusMessage(const QString& newMessage);
 

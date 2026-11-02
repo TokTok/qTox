@@ -10,12 +10,11 @@
 #include <QByteArray>
 
 #include <cstdint>
+#include <tox/tox.h>
 
 class ToxPk : public ChatId
 {
 public:
-    static constexpr int size = 32;
-    static constexpr int numHexChars = size * 2;
     ToxPk();
     explicit ToxPk(QByteArray rawId);
     explicit ToxPk(const uint8_t* rawId);

@@ -14,6 +14,7 @@ class Style;
 class IMessageBoxManager;
 class FriendList;
 class ConferenceList;
+class GroupList;
 class Profile;
 
 class CircleWidget final : public CategoryWidget
@@ -22,7 +23,7 @@ class CircleWidget final : public CategoryWidget
 public:
     CircleWidget(const Core& core_, FriendListWidget* parent, int id_, Settings& settings,
                  Style& style, IMessageBoxManager& messageboxManager, FriendList& friendList,
-                 ConferenceList& conferenceList, Profile& profile);
+                 ConferenceList& conferenceList, GroupList& groupList, Profile& profile);
     ~CircleWidget() override;
 
     void editName();
@@ -53,5 +54,6 @@ private:
     IMessageBoxManager& messageBoxManager;
     FriendList& friendList;
     ConferenceList& conferenceList;
+    GroupList& groupList;
     Profile& profile;
 };

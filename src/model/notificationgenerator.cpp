@@ -23,6 +23,18 @@ QString generateContent(const QHash<const Conference*, size_t>& conferenceNotifi
     return it.key()->getPeerList()[sender] + ": " + lastMessage;
 }
 
+QString generateContent(const QHash<const Group*, size_t>& groupNotifications,
+                        QString lastMessage, const ToxPk& sender)
+{
+    assert(!groupNotifications.empty());
+
+    auto it = groupNotifications.begin();
+    if (it == groupNotifications.end()) {
+        qFatal("Concurrency error: group notifications got cleared while reading");
+    }
+    return it.key()->getPeerList()[sender] + ": " + lastMessage;
+}
+
 QPixmap getSenderAvatar(Profile* profile, const ToxPk& sender)
 {
     return profile != nullptr ? profile->loadAvatar(sender) : QPixmap();
@@ -97,6 +109,27 @@ NotificationData NotificationGenerator::conferenceMessageNotification(const Conf
     return ret;
 }
 
+NotificationData NotificationGenerator::groupMessageNotification(const Group* g,
+                                                                 const ToxPk& sender,
+                                                                 const QString& message)
+{
+    groupNotifications[g]++;
+
+    NotificationData ret;
+    ret.category = "transfer";
+
+    if (notificationSettings.getNotifyHide()) {
+        ret.title = tr("New group message");
+        return ret;
+    }
+
+    ret.title = g->getDisplayedName();
+    ret.message = generateContent(groupNotifications, message, sender);
+    ret.pixmap = getSenderAvatar(profile, sender);
+
+    return ret;
+}
+
 NotificationData NotificationGenerator::fileTransferNotification(const Friend* f,
                                                                  const QString& filename,
                                                                  size_t fileSize)
@@ -136,6 +169,23 @@ NotificationData NotificationGenerator::conferenceInvitationNotification(const F
     return ret;
 }
 
+NotificationData NotificationGenerator::groupInvitationNotification(const Friend* from)
+{
+    NotificationData ret;
+    ret.category = "im";
+
+    if (notificationSettings.getNotifyHide()) {
+        ret.title = tr("Group invite received");
+        return ret;
+    }
+
+    ret.title = tr("%1 invites you to join a group.").arg(from->getDisplayedName());
+    ret.message = "";
+    ret.pixmap = getSenderAvatar(profile, from->getPublicKey());
+
+    return ret;
+}
+
 NotificationData NotificationGenerator::friendRequestNotification(const ToxPk& sender,
                                                                   const QString& message)
 {
@@ -157,4 +207,5 @@ void NotificationGenerator::onNotificationActivated()
 {
     friendNotifications = {};
     conferenceNotifications = {};
+    groupNotifications = {};
 }

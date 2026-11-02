@@ -685,3 +685,329 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_Options_New error, const char* file, i
     qCriticalFrom(file, line, func) << "Unknown Tox_Err_Options_New error code:" << error;
     return false;
 }
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_New error, const char* file, int line, const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_NEW_OK:
+        return true;
+
+    case TOX_ERR_GROUP_NEW_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Group name exceeds maximum length";
+        return false;
+
+    case TOX_ERR_GROUP_NEW_EMPTY:
+        qCriticalFrom(file, line, func) << "Group name is empty";
+        return false;
+
+    case TOX_ERR_GROUP_NEW_INIT:
+        qCriticalFrom(file, line, func) << "Failed to initialize group";
+        return false;
+
+    case TOX_ERR_GROUP_NEW_STATE:
+        qCriticalFrom(file, line, func) << "Group state invalid";
+        return false;
+
+    case TOX_ERR_GROUP_NEW_ANNOUNCE:
+        qCriticalFrom(file, line, func) << "Failed to announce new group";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_New error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Join error, const char* file, int line, const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_JOIN_OK:
+        return true;
+
+    case TOX_ERR_GROUP_JOIN_INIT:
+        qCriticalFrom(file, line, func) << "Failed to initialize group join";
+        return false;
+
+    case TOX_ERR_GROUP_JOIN_BAD_CHAT_ID:
+        qCriticalFrom(file, line, func) << "Invalid group chat ID";
+        return false;
+
+    case TOX_ERR_GROUP_JOIN_EMPTY:
+        qCriticalFrom(file, line, func) << "Group chat ID is empty";
+        return false;
+
+    case TOX_ERR_GROUP_JOIN_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Group chat ID is too long";
+        return false;
+
+    case TOX_ERR_GROUP_JOIN_PASSWORD:
+        qCriticalFrom(file, line, func) << "Group requires a password";
+        return false;
+
+    case TOX_ERR_GROUP_JOIN_CORE:
+        qCriticalFrom(file, line, func) << "Failed to initialize group from core";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Join error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Leave error, const char* file, int line, const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_LEAVE_OK:
+        return true;
+
+    case TOX_ERR_GROUP_LEAVE_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_LEAVE_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Group name exceeds maximum length";
+        return false;
+
+    case TOX_ERR_GROUP_LEAVE_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send leave packet";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Leave error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Peer_Query error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_PEER_QUERY_OK:
+        return true;
+
+    case TOX_ERR_GROUP_PEER_QUERY_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_PEER_QUERY_PEER_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Peer not found";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Peer_Query error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Self_Query error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_SELF_QUERY_OK:
+        return true;
+
+    case TOX_ERR_GROUP_SELF_QUERY_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Self_Query error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_State_Query error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_STATE_QUERY_OK:
+        return true;
+
+    case TOX_ERR_GROUP_STATE_QUERY_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_State_Query error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Topic_Set error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_TOPIC_SET_OK:
+        return true;
+
+    case TOX_ERR_GROUP_TOPIC_SET_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_TOPIC_SET_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Topic exceeds maximum length";
+        return false;
+
+    case TOX_ERR_GROUP_TOPIC_SET_PERMISSIONS:
+        qCriticalFrom(file, line, func) << "Not enough permissions to set topic";
+        return false;
+
+    case TOX_ERR_GROUP_TOPIC_SET_FAIL_CREATE:
+        qCriticalFrom(file, line, func) << "Failed to create topic packet";
+        return false;
+
+    case TOX_ERR_GROUP_TOPIC_SET_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send topic packet";
+        return false;
+
+    case TOX_ERR_GROUP_TOPIC_SET_DISCONNECTED:
+        qCriticalFrom(file, line, func) << "Group is disconnected";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Topic_Set error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Send_Message error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_SEND_MESSAGE_OK:
+        return true;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Message is too long";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_EMPTY:
+        qCriticalFrom(file, line, func) << "Message is empty";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_BAD_TYPE:
+        qCriticalFrom(file, line, func) << "Invalid message type";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_PERMISSIONS:
+        qCriticalFrom(file, line, func) << "Not enough permissions to send message";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send message";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_MESSAGE_DISCONNECTED:
+        qCriticalFrom(file, line, func) << "Group is disconnected";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Send_Message error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Send_Private_Message error, const char* file,
+                                  int line, const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_OK:
+        return true;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_PEER_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Peer not found";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Message is too long";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_EMPTY:
+        qCriticalFrom(file, line, func) << "Message is empty";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_BAD_TYPE:
+        qCriticalFrom(file, line, func) << "Invalid message type";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_PERMISSIONS:
+        qCriticalFrom(file, line, func) << "Not enough permissions to send message";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send message";
+        return false;
+
+    case TOX_ERR_GROUP_SEND_PRIVATE_MESSAGE_DISCONNECTED:
+        qCriticalFrom(file, line, func) << "Group is disconnected";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Send_Private_Message error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Invite_Friend error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_INVITE_FRIEND_OK:
+        return true;
+
+    case TOX_ERR_GROUP_INVITE_FRIEND_GROUP_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Group not found";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_FRIEND_FRIEND_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Friend not found";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_FRIEND_INVITE_FAIL:
+        qCriticalFrom(file, line, func) << "Failed to create invite";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_FRIEND_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send invite";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_FRIEND_DISCONNECTED:
+        qCriticalFrom(file, line, func) << "Friend is disconnected";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Invite_Friend error code:" << error;
+    return false;
+}
+
+bool ToxcoreErrorParser::parseErr(Tox_Err_Group_Invite_Accept error, const char* file, int line,
+                                  const char* func)
+{
+    switch (error) {
+    case TOX_ERR_GROUP_INVITE_ACCEPT_OK:
+        return true;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_BAD_INVITE:
+        qCriticalFrom(file, line, func) << "Invalid invite data";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_INIT_FAILED:
+        qCriticalFrom(file, line, func) << "Failed to initialize group join";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_TOO_LONG:
+        qCriticalFrom(file, line, func) << "Invite data is too long";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_EMPTY:
+        qCriticalFrom(file, line, func) << "Invite data is empty";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_PASSWORD:
+        qCriticalFrom(file, line, func) << "Group requires a password";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_FRIEND_NOT_FOUND:
+        qCriticalFrom(file, line, func) << "Friend not found";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_FAIL_SEND:
+        qCriticalFrom(file, line, func) << "Failed to send join packet";
+        return false;
+
+    case TOX_ERR_GROUP_INVITE_ACCEPT_NULL:
+        qCriticalFrom(file, line, func) << "A required argument was NULL";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << "Unknown Tox_Err_Group_Invite_Accept error code:" << error;
+    return false;
+}

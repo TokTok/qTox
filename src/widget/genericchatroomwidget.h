@@ -14,6 +14,7 @@ class QHBoxLayout;
 class ContentLayout;
 class Friend;
 class Conference;
+class Group;
 class Settings;
 class Chat;
 class Style;
@@ -36,6 +37,10 @@ public slots:
         return nullptr;
     }
     virtual Conference* getConference() const
+    {
+        return nullptr;
+    }
+    virtual Group* getGroup() const
     {
         return nullptr;
     }

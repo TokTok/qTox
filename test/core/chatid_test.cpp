@@ -40,7 +40,7 @@ private slots:
 
 void TestChatId::toStringTest()
 {
-    QCOMPARE(testPk.size(), ToxPk::size);
+    QCOMPARE(testPk.size(), TOX_PUBLIC_KEY_SIZE);
     const ToxPk pk(testPk);
     QVERIFY(testStr == pk.toString());
 }
@@ -83,8 +83,8 @@ void TestChatId::sizeTest()
 {
     const ToxPk pk;
     const ConferenceId id;
-    QVERIFY(pk.getSize() == ToxPk::size);
-    QVERIFY(id.getSize() == ConferenceId::size);
+    QVERIFY(pk.getSize() == TOX_PUBLIC_KEY_SIZE);
+    QVERIFY(id.getSize() == TOX_CONFERENCE_ID_SIZE);
 }
 
 void TestChatId::hashableTest()

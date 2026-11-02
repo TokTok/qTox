@@ -7,7 +7,7 @@
 
 #include "settingsserializer.h"
 
-#include "src/core/toxpk.h"
+#include <tox/tox.h>
 
 #include <QDebug>
 
@@ -22,7 +22,7 @@ bool version0to1(SettingsSerializer& ps)
         for (int i = 0; i < size; i++) {
             ps.setArrayIndex(i);
             const auto oldFriendAddr = ps.value("addr").toString();
-            auto newFriendAddr = oldFriendAddr.left(ToxPk::numHexChars);
+            auto newFriendAddr = oldFriendAddr.left(TOX_PUBLIC_KEY_SIZE * 2);
             ps.setValue("addr", newFriendAddr);
         }
         ps.endArray();

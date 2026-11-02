@@ -22,6 +22,8 @@ class FriendWidget;
 class GenericChatroomWidget;
 class ConferenceList;
 class ConferenceWidget;
+class GroupList;
+class GroupWidget;
 class IFriendListItem;
 class IMessageBoxManager;
 class Profile;
@@ -39,20 +41,24 @@ public:
     using SortingMode = Settings::FriendListSortingMode;
     FriendListWidget(const Core& core, Widget* parent, Settings& settings, Style& style,
                      IMessageBoxManager& messageBoxManager, FriendList& friendList,
-                     ConferenceList& conferenceList, Profile& profile, bool conferencesOnTop = true);
+                     ConferenceList& conferenceList, GroupList& groupList, Profile& profile,
+                     bool conferencesOnTop = true);
     ~FriendListWidget() override;
     void setMode(SortingMode mode);
     [[nodiscard]] SortingMode getMode() const;
 
     void addConferenceWidget(ConferenceWidget* widget);
     void addFriendWidget(FriendWidget* w);
+    void addGroupWidget(GroupWidget* widget);
     void removeConferenceWidget(ConferenceWidget* w);
     void removeFriendWidget(FriendWidget* w);
+    void removeGroupWidget(GroupWidget* w);
     void addCircleWidget(int id);
     void addCircleWidget(FriendWidget* widget = nullptr);
     static void removeCircleWidget(CircleWidget* widget);
     void searchChatRooms(const QString& searchString, bool hideOnline = false,
-                         bool hideOffline = false, bool hideConferences = false);
+                         bool hideOffline = false, bool hideConferences = false,
+                         bool hideGroups = false);
 
     void cycleChats(GenericChatroomWidget* activeChatroomWidget, bool forward);
 
@@ -97,5 +103,6 @@ private:
     IMessageBoxManager& messageBoxManager;
     FriendList& friendList;
     ConferenceList& conferenceList;
+    GroupList& groupList;
     Profile& profile;
 };

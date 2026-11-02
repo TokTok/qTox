@@ -7,6 +7,7 @@
 
 #include "mock/mockconferencequery.h"
 #include "mock/mockcoreidhandler.h"
+#include "mock/mockgroupquery.h"
 #include "src/friendlist.h"
 
 #include <QObject>
@@ -117,6 +118,10 @@ private slots:
     void testMultipleFriendSourceMessages();
     void testMultipleConferenceSourceMessages();
     void testMixedSourceMessages();
+    void testGroupMessage();
+    void testMultipleGroupMessages();
+    void testMultipleGroupSourceMessages();
+    void testSimpleGroupMessage();
     void testFileTransfer();
     void testFileTransferAfterMessage();
     void testConferenceInvitation();
@@ -134,6 +139,7 @@ private:
     std::unique_ptr<INotificationSettings> notificationSettings;
     std::unique_ptr<NotificationGenerator> notificationGenerator;
     std::unique_ptr<MockConferenceQuery> conferenceQuery;
+    std::unique_ptr<MockGroupQuery> groupQuery;
     std::unique_ptr<MockCoreIdHandler> coreIdHandler;
     std::unique_ptr<FriendList> friendList;
 };
@@ -144,6 +150,7 @@ void TestNotificationGenerator::init()
     notificationSettings = std::make_unique<MockNotificationSettings>();
     notificationGenerator = std::make_unique<NotificationGenerator>(*notificationSettings, nullptr);
     conferenceQuery = std::make_unique<MockConferenceQuery>();
+    groupQuery = std::make_unique<MockGroupQuery>();
     coreIdHandler = std::make_unique<MockCoreIdHandler>();
 }
 
@@ -377,7 +384,7 @@ void TestNotificationGenerator::testSimpleFileTransfer()
 void TestNotificationGenerator::testSimpleConferenceMessage()
 {
     Conference g(0, ConferenceId(nullptr), "conferenceName", false, "selfName", *conferenceQuery,
-                 *coreIdHandler, *friendList);
+                  *coreIdHandler, *friendList);
     auto sender = conferenceQuery->getConferencePeerPk(0, 0);
     g.updateUsername(sender, "sender1");
 
@@ -385,6 +392,67 @@ void TestNotificationGenerator::testSimpleConferenceMessage()
 
     auto notificationData = notificationGenerator->conferenceMessageNotification(&g, sender, "test");
     QCOMPARE(notificationData.title, "New conference message");
+    QCOMPARE(notificationData.message, "");
+}
+
+void TestNotificationGenerator::testGroupMessage()
+{
+    Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
+    auto sender = groupQuery->getGroupPeerPk(0, 1);
+    g.onPeerJoin(1);
+
+    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test");
+    QCOMPARE(notificationData.title, "groupName");
+    QCOMPARE(notificationData.message, "peer1: test");
+}
+
+void TestNotificationGenerator::testMultipleGroupMessages()
+{
+    Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
+
+    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    g.onPeerJoin(0);
+
+    auto sender2 = groupQuery->getGroupPeerPk(0, 1);
+    g.onPeerJoin(1);
+
+    notificationGenerator->groupMessageNotification(&g, sender, "test1");
+
+    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender2, "test2");
+    QCOMPARE(notificationData.title, "groupName");
+    QCOMPARE(notificationData.message, "peer1: test2");
+}
+
+void TestNotificationGenerator::testMultipleGroupSourceMessages()
+{
+    Group g1(0, GroupId(QByteArray(32, 0)), "groupName1", "selfName", *groupQuery, *coreIdHandler,
+             *friendList);
+    Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", "selfName", *groupQuery, *coreIdHandler,
+             *friendList);
+
+    auto sender_g1 = groupQuery->getGroupPeerPk(0, 1);
+    g1.onPeerJoin(1);
+
+    auto sender_g2 = groupQuery->getGroupPeerPk(1, 1);
+    g2.onPeerJoin(1);
+
+    notificationGenerator->groupMessageNotification(&g1, sender_g1, "test1");
+    auto notificationData = notificationGenerator->groupMessageNotification(&g2, sender_g2, "test1");
+
+    QCOMPARE(notificationData.title, "groupName2");
+    QCOMPARE(notificationData.message, "peer1: test1");
+}
+
+void TestNotificationGenerator::testSimpleGroupMessage()
+{
+    Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
+    auto sender = groupQuery->getGroupPeerPk(0, 0);
+    g.onPeerJoin(0);
+
+    notificationSettings->setNotifyHide(true);
+
+    auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test");
+    QCOMPARE(notificationData.title, "New group message");
     QCOMPARE(notificationData.message, "");
 }
 
