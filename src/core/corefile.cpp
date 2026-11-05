@@ -274,6 +274,14 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
     }
 
     if (partialSize > 0) {
+        // Hash the existing partial content so the final hash covers the whole file.
+        QFile partialFile(path);
+        if (partialFile.open(QIODevice::ReadOnly)) {
+            const QByteArray partialData = partialFile.read(static_cast<qint64>(partialSize));
+            file->hashGenerator->addData(partialData);
+            partialFile.close();
+        }
+
         Tox_Err_File_Seek seekErr;
         tox_file_seek(tox, file->friendId, file->fileNum, partialSize, &seekErr);
         if (!PARSE_ERR(seekErr)) {
