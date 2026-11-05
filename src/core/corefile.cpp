@@ -281,6 +281,13 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
             file->file->close();
             return;
         }
+
+        // Hash the existing partial content so the final hash covers the whole file.
+        QFile partialFile(path);
+        if (partialFile.open(QIODevice::ReadOnly)) {
+            file->hashGenerator->addData(&partialFile);
+        }
+
         file->progress.resetTo(partialSize);
         qDebug() << "Resuming file transfer from" << partialSize << "bytes";
     }
