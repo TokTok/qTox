@@ -121,7 +121,7 @@ void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
         "sh",  "src", "vb",     "vbe",  "vbs",     "ws",   "wsc",     "wsf",    "wsh",
     };
 
-    if (dangerousExtensions.contains(file.suffix())) {
+    if (dangerousExtensions.contains(file.suffix(), Qt::CaseInsensitive)) {
         const bool answer = askQuestion(tr("Executable file", "popup title"),
                                         tr("You have asked qTox to open an executable file. "
                                            "Executable files can potentially damage your computer. "
