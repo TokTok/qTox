@@ -53,6 +53,20 @@ public:
         std::ignore = warning;
         return true;
     }
+    IMessageBoxManager::Answer askQuestion(const QString& title, const QString& msg,
+                                           const QString& button1, const QString& button2,
+                                           const QString& button3, bool defaultAns,
+                                           bool warning) override
+    {
+        std::ignore = title;
+        std::ignore = msg;
+        std::ignore = button1;
+        std::ignore = button2;
+        std::ignore = button3;
+        std::ignore = defaultAns;
+        std::ignore = warning;
+        return IMessageBoxManager::Answer::Accepted;
+    }
     void confirmExecutableOpen(const QFileInfo& file) override
     {
         std::ignore = file;

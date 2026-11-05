@@ -74,6 +74,20 @@ public:
         Q_UNUSED(warning);
         return defaultAns;
     }
+    IMessageBoxManager::Answer askQuestion(const QString& title, const QString& msg,
+                                           const QString& button1, const QString& button2,
+                                           const QString& button3, bool defaultAns = false,
+                                           bool warning = true) override
+    {
+        Q_UNUSED(title);
+        Q_UNUSED(msg);
+        Q_UNUSED(button1);
+        Q_UNUSED(button2);
+        Q_UNUSED(button3);
+        Q_UNUSED(warning);
+        return defaultAns ? IMessageBoxManager::Answer::Accepted
+                          : IMessageBoxManager::Answer::Rejected;
+    }
     void confirmExecutableOpen(const QFileInfo& file) override
     {
         Q_UNUSED(file);

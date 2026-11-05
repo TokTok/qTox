@@ -112,6 +112,37 @@ bool MessageBoxManager::askQuestion(const QString& title, const QString& msg, co
     return ret;
 }
 
+/**
+ * @brief Asks the user a question with three buttons.
+ *
+ * The text for the displayed buttons can be specified.
+ * @param title Title of question window.
+ * @param msg Text in question window.
+ * @param button1 Text of first (positive) button.
+ * @param button2 Text of second (neutral) button.
+ * @param button3 Text of third (cancel) button.
+ * @param defaultAns If is true, default was the first button. Otherwise the second.
+ * @param warning If is true, we will use a special warning style.
+ * @return Answer indicating which button was clicked.
+ */
+IMessageBoxManager::Answer
+MessageBoxManager::askQuestion(const QString& title, const QString& msg, const QString& button1,
+                               const QString& button2, const QString& button3, bool defaultAns,
+                               bool warning)
+{
+    if (QThread::currentThread() == qApp->thread()) {
+        return _askQuestion(title, msg, button1, button2, button3, defaultAns, warning);
+    }
+    IMessageBoxManager::Answer ret;
+    QMetaObject::invokeMethod(this, "_askQuestion", Qt::BlockingQueuedConnection,
+                              Q_RETURN_ARG(IMessageBoxManager::Answer, ret),
+                              Q_ARG(const QString&, title), Q_ARG(const QString&, msg),
+                              Q_ARG(const QString&, button1), Q_ARG(const QString&, button2),
+                              Q_ARG(const QString&, button3), Q_ARG(bool, defaultAns),
+                              Q_ARG(bool, warning));
+    return ret;
+}
+
 void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
 {
     static const QStringList dangerousExtensions = {
@@ -179,4 +210,28 @@ bool MessageBoxManager::_askQuestion(const QString& title, const QString& msg, c
 
     box.exec();
     return box.clickedButton() == pushButton1;
+}
+
+IMessageBoxManager::Answer
+MessageBoxManager::_askQuestion(const QString& title, const QString& msg, const QString& button1,
+                                const QString& button2, const QString& button3, bool defaultAns,
+                                bool warning)
+{
+    const QMessageBox::Icon icon = warning ? QMessageBox::Warning : QMessageBox::Question;
+    QMessageBox box(icon, title, msg, QMessageBox::NoButton, this);
+    QPushButton* pushButton1 = box.addButton(button1, QMessageBox::AcceptRole);
+    QPushButton* pushButton2 = box.addButton(button2, QMessageBox::ActionRole);
+    QPushButton* pushButton3 = box.addButton(button3, QMessageBox::RejectRole);
+    box.setDefaultButton(defaultAns ? pushButton1 : pushButton2);
+    box.setEscapeButton(pushButton3);
+
+    box.exec();
+    QAbstractButton* clicked = box.clickedButton();
+    if (clicked == pushButton1) {
+        return IMessageBoxManager::Answer::Accepted;
+    }
+    if (clicked == pushButton3) {
+        return IMessageBoxManager::Answer::Cancelled;
+    }
+    return IMessageBoxManager::Answer::Rejected;
 }

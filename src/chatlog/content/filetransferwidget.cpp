@@ -134,9 +134,15 @@ void FileTransferWidget::acceptTransfer(const QString& filepath)
     const uint64_t fileSize = fileInfo.progress.getFileSize();
     bool resume = false;
     if (ToxFile::partialSizeOnDisk(filepath, fileSize) > 0) {
-        resume = messageBoxManager.askQuestion(tr("Resume download?"),
-            tr("A smaller file with this name already exists. Resume the download into it? "
-               "Choose No to overwrite it."));
+        const IMessageBoxManager::Answer answer = messageBoxManager.askQuestion(
+            tr("Resume download?"),
+            tr("A smaller file with this name already exists. What would you like to do?"),
+            tr("Resume"), tr("Overwrite"), tr("Cancel"));
+        if (answer == IMessageBoxManager::Answer::Accepted) {
+            resume = true;
+        } else if (answer == IMessageBoxManager::Answer::Cancelled) {
+            return;
+        }
     }
 
     // test if writable
