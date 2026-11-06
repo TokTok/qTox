@@ -43,7 +43,8 @@ public:
 
     void cancelFileRecv(uint32_t friendId, uint32_t fileId);
     void rejectFileRecvRequest(uint32_t friendId, uint32_t fileId);
-    void acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path);
+    void acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path,
+                               bool resume = false);
 
     unsigned corefileIterationInterval();
 
