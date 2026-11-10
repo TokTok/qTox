@@ -26,6 +26,7 @@ public:
     AppManager(int& argc, char** argv);
     ~AppManager() override;
     int run();
+    static void terminate();
 
 private:
     int startGui(QCommandLineParser& parser);
