@@ -529,15 +529,15 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished">Info</translation>
+        <translation>Info</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Avertissement</translation>
+        <translation>Avertissement</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Erreur</translation>
+        <translation>Erreur</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
