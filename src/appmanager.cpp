@@ -424,11 +424,19 @@ int AppManager::startGui(QCommandLineParser& parser)
     return 0;
 }
 
+void AppManager::terminate()
+{
+    // Close the windows and quit.
+    QApplication::quit();
+    // quit() does nothing before the main event loop runs (e.g. on the login screen), and a
+    // window can refuse it. exit() leaves whatever loops are running.
+    QApplication::exit();
+}
+
 int AppManager::run()
 {
-    // Terminating signals are connected directly to quit() without any filtering.
     connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::terminatingSignal,
-            qapp.get(), &QApplication::quit);
+            qapp.get(), &AppManager::terminate);
     PosixSignalNotifier::watchCommonTerminatingSignals();
 
     // User signal 1 is used to screenshot the application.
