@@ -518,27 +518,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Write debug log to file</source>
-        <translation type="unfinished">Записувати журнал відладки у файл</translation>
+        <translation>Записувати журнал налагодження у файл</translation>
     </message>
     <message>
         <source>Toxcore log level:</source>
-        <translation type="unfinished">Рівень журналу Toxcore:</translation>
+        <translation>Рівень журналу Toxcore:</translation>
     </message>
     <message>
         <source>Trace</source>
-        <translation type="unfinished">Трасування</translation>
+        <translation>Трасування</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished">Інформація</translation>
+        <translation>Інформація</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation type="unfinished">Попередження</translation>
+        <translation>Попередження</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation type="unfinished">Помилка</translation>
+        <translation>Помилка</translation>
     </message>
     <message>
         <source>Enable IPv6 (recommended)</source>
