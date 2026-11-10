@@ -27,9 +27,10 @@ protected:
     static const int EVENT_TIMER_MS = 1000;
     static const int EVENT_GC_TIMEOUT = 5;
     static const int EVENT_QUEUE_SIZE = 32;
-    static const int OWNERSHIP_TIMEOUT_S = 5;
 
 public:
+    static constexpr int OWNERSHIP_TIMEOUT_S = 5;
+
     explicit IPC(uint32_t profileId_);
     ~IPC() override;
 

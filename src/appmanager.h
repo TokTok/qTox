@@ -17,6 +17,7 @@ class QCommandLineParser;
 class ToxURIDialog;
 class Nexus;
 class CameraSource;
+class StallWatchdog;
 
 class AppManager : public QObject
 {
@@ -43,4 +44,5 @@ private:
     std::unique_ptr<ToxURIDialog> uriDialog;
     std::unique_ptr<CameraSource> cameraSource;
     std::unique_ptr<Nexus> nexus;
+    std::unique_ptr<StallWatchdog> stallWatchdog;
 };
