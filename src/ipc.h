@@ -14,6 +14,7 @@
 #include <ctime>
 #include <functional>
 #include <mutex>
+#include <set>
 
 using IPCEventHandler = std::function<bool(const QByteArray&, void*)>;
 
@@ -68,7 +69,7 @@ public slots:
 private:
     IPCMemory* global();
     bool runEventHandler(IPCEventHandler handler, const QByteArray& arg, void* userData);
-    IPCEvent* fetchEvent();
+    IPCEvent* fetchEvent(const std::set<QString>& passByEvents);
     void processEvents();
     bool isCurrentOwnerNoLock();
 

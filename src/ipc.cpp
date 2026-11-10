@@ -150,6 +150,11 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
 
     IPCEvent* evt = nullptr;
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return 0;
+    }
     time_t result = 0;
 
     for (uint32_t i = 0; (evt == nullptr) && i < EVENT_QUEUE_SIZE; ++i) {
@@ -216,8 +221,13 @@ bool IPC::isEventAccepted(time_t time)
         return result;
     }
 
-    if (difftime(global()->lastProcessed, time) > 0) {
-        IPCMemory* mem = global();
+    IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return result;
+    }
+    if (difftime(mem->lastProcessed, time) > 0) {
         for (auto& event : mem->events) {
             if (event.posted == time && (event.processed != 0)) {
                 result = event.accepted;
@@ -243,7 +253,7 @@ bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
         }
 
         qApp->processEvents();
-        QThread::msleep(0);
+        QThread::msleep(1);
     }
     return result;
 }
@@ -264,11 +274,16 @@ void IPC::setProfileId(uint32_t profileId_)
 
 /**
  * @brief Only called when global memory IS LOCKED.
+ * @param passByEvents the global events, submitted to event handlers, but not marked as accepted.
  * @return nullptr if no events present, IPC event otherwise
  */
-IPC::IPCEvent* IPC::fetchEvent()
+IPC::IPCEvent* IPC::fetchEvent(const std::set<QString>& passByEvents)
 {
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        return nullptr;
+    }
     for (auto& event : mem->events) {
         IPCEvent* evt = &event;
 
@@ -280,8 +295,10 @@ IPC::IPCEvent* IPC::fetchEvent()
             memset(evt, 0, sizeof(IPCEvent));
         }
 
+        const QString name = QString::fromUtf8(evt->name);
         if ((evt->posted != 0) && (evt->processed == 0) && evt->sender != getpid()
-            && (evt->dest == profileId || (evt->dest == 0 && isCurrentOwnerNoLock()))) {
+            && (evt->dest == profileId
+                || (evt->dest == 0 && isCurrentOwnerNoLock() && !passByEvents.contains(name)))) {
             return evt;
         }
     }
@@ -315,6 +332,11 @@ void IPC::processEvents()
     }
 
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return;
+    }
 
     if (mem->globalId == globalId) {
         // We're the owner, let's process those events
@@ -334,7 +356,8 @@ void IPC::processEvents()
     }
 
     const std::scoped_lock<std::mutex> lock(eventHandlersMutex);
-    while (IPCEvent* evt = fetchEvent()) {
+    std::set<QString> passedByEvents;
+    while (IPCEvent* evt = fetchEvent(passedByEvents)) {
         const QString name = QString::fromUtf8(evt->name);
         auto it = eventHandlers.find(name);
         if (it != eventHandlers.end()) {
@@ -347,6 +370,8 @@ void IPC::processEvents()
                 // event would be consumed by very first instance that gets to check it.
                 if (evt->accepted) {
                     evt->processed = time(nullptr);
+                } else {
+                    passedByEvents.insert(name);
                 }
             } else {
                 evt->processed = time(nullptr);
@@ -386,6 +411,9 @@ IPC::IPCMemory* IPC::global()
 #if !QT_CONFIG(sharedmemory)
     return nullptr;
 #else
+    if (globalMemory.data() == nullptr) {
+        qWarning() << "Global data is empty";
+    }
     return static_cast<IPCMemory*>(globalMemory.data());
 #endif
 }
