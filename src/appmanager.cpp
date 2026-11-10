@@ -14,6 +14,7 @@
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
 #include "src/platform/posixsignalnotifier.h"
+#include "src/platform/stallwatchdog.h"
 #include "src/version.h"
 #include "src/video/camerasource.h"
 #include "src/widget/tool/messageboxmanager.h"
@@ -312,6 +313,11 @@ int AppManager::startGui(QCommandLineParser& parser)
 
     qDebug() << "Commit:" << VersionInfo::gitVersion();
     qDebug() << "Process ID:" << QCoreApplication::applicationPid();
+
+#ifndef Q_OS_WASM
+    // Other qTox processes take over IPC when we stall this long.
+    stallWatchdog = std::make_unique<StallWatchdog>(std::chrono::seconds(IPC::OWNERSHIP_TIMEOUT_S));
+#endif
 
     QString profileName;
     bool autoLogin = settings->getAutoLogin();
