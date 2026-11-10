@@ -147,7 +147,7 @@ void TestDbSchema::init()
 
 void TestDbSchema::cleanup()
 {
-    testDatabaseFile.reset();
+    testDatabaseFile = nullptr;
 }
 
 void TestDbSchema::testCreation()

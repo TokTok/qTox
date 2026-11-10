@@ -16,7 +16,7 @@ public:
         Debug = 1,
         Info = 2,
         Warning = 3,
-        Error = 4
+        Error = 4,
     };
     IDebugSettings() = default;
     virtual ~IDebugSettings();

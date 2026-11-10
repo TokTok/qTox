@@ -21,11 +21,11 @@ struct DesktopNotify::Private
 
 DesktopNotify::DesktopNotify(INotificationSettings& settings, QObject* parent)
     : QObject(parent)
-    , d{std::make_unique<Private>(Private{
+    , d(std::make_unique<Private>(Private{
           settings,
           nullptr,
           new DesktopNotifyBackend(this),
-      })}
+      }))
 {
     connect(d->dbus, &DesktopNotifyBackend::messageClicked, this, &DesktopNotify::notificationClosed);
     if (d->icon != nullptr) {

@@ -48,7 +48,7 @@ RowId getValidPeerRow(RawDatabase& db, const ChatId& chatId)
         return validPeerRow;
     }
 
-    db.execNow(RawDatabase::Query(("SELECT id FROM peers ORDER BY id DESC LIMIT 1;"),
+    db.execNow(RawDatabase::Query("SELECT id FROM peers ORDER BY id DESC LIMIT 1;",
                                   [&](const QVector<QVariant>& row) {
                                       const int64_t maxPeerId = row[0].toInt();
                                       validPeerRow = RowId{maxPeerId + 1};
@@ -246,10 +246,11 @@ bool DbUpgrader::dbSchemaUpgrade(std::shared_ptr<RawDatabase>& db, IMessageBoxMa
     }
 
     using DbSchemaUpgradeFn = bool (*)(RawDatabase&);
-    std::vector<DbSchemaUpgradeFn> upgradeFns = {dbSchema0to1,  dbSchema1to2,          dbSchema2to3,
-                                                 dbSchema3to4,  dbSchema4to5,          dbSchema5to6,
-                                                 dbSchema6to7,  dbSchema7to8,          dbSchema8to9,
-                                                 dbSchema9to10, DbTo11::dbSchema10to11};
+    std::vector<DbSchemaUpgradeFn> upgradeFns = {
+        dbSchema0to1, dbSchema1to2,  dbSchema2to3,           dbSchema3to4,
+        dbSchema4to5, dbSchema5to6,  dbSchema6to7,           dbSchema7to8,
+        dbSchema8to9, dbSchema9to10, DbTo11::dbSchema10to11,
+    };
 
     assert(databaseSchemaVersion < static_cast<int>(upgradeFns.size()));
     assert(upgradeFns.size() == SCHEMA_VERSION);

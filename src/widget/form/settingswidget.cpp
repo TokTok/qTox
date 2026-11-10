@@ -62,8 +62,16 @@ SettingsWidget::SettingsWidget(UpdateCheck& updateCheck, IAudioControl& audio, C
 
     connect(&updateCheck, &UpdateCheck::updateAvailable, this, &SettingsWidget::onUpdateAvailable);
 
-    cfgForms = {{std::move(gfrm), std::move(uifrm), std::move(pfrm), std::move(avfrm),
-                 std::move(expfrm), std::move(abtfrm)}};
+    cfgForms = {
+        {
+            std::move(gfrm),
+            std::move(uifrm),
+            std::move(pfrm),
+            std::move(avfrm),
+            std::move(expfrm),
+            std::move(abtfrm),
+        },
+    };
     for (auto& cfgForm : cfgForms)
         settingsWidgets->addTab(cfgForm.get(), cfgForm->getFormIcon(), cfgForm->getFormName());
 

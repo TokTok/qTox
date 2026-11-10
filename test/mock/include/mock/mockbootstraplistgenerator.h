@@ -21,13 +21,13 @@ public:
 
     QList<DhtServer> getBootstrapNodes() const override
     {
-        const std::lock_guard<std::mutex> lock(mutex);
+        const std::scoped_lock<std::mutex> lock(mutex);
         return bootstrapNodes;
     }
 
     void setBootstrapNodes(QList<DhtServer> list)
     {
-        const std::lock_guard<std::mutex> lock(mutex);
+        const std::scoped_lock<std::mutex> lock(mutex);
         bootstrapNodes = list;
     }
 

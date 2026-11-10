@@ -62,8 +62,11 @@ void appendVerifyChatsQueries(std::vector<RawDatabase::Query>& verifyQueries)
 
     struct Functor
     {
-        const std::vector<QByteArray> chatIds{aPk.getByteArray(), bPk.getByteArray(),
-                                              cPk.getByteArray()};
+        const std::vector<QByteArray> chatIds{
+            aPk.getByteArray(),
+            bPk.getByteArray(),
+            cPk.getByteArray(),
+        };
         void operator()(const QVector<QVariant>& row)
         {
             QVERIFY(std::find(chatIds.begin(), chatIds.end(), row[0].toByteArray()) != chatIds.end());
@@ -81,8 +84,11 @@ void appendVerifyAuthorsQueries(std::vector<RawDatabase::Query>& verifyQueries)
 
     struct Functor
     {
-        const std::vector<QByteArray> authorIds{selfPk.getByteArray(), aPk.getByteArray(),
-                                                bPk.getByteArray()};
+        const std::vector<QByteArray> authorIds{
+            selfPk.getByteArray(),
+            aPk.getByteArray(),
+            bPk.getByteArray(),
+        };
         void operator()(const QVector<QVariant>& row)
         {
             QVERIFY(std::find(authorIds.begin(), authorIds.end(), row[0].toByteArray())

@@ -70,9 +70,8 @@ QString fileStatusString(ToxFile file)
     case ToxFile::PAUSED:
         if (file.pauseStatus.localPaused()) {
             return QObject::tr("Paused");
-        } else {
-            return QObject::tr("Remote paused");
         }
+        return QObject::tr("Remote paused");
     }
 
     qWarning("Corrupt file status %d", file.status);

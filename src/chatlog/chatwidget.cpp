@@ -28,6 +28,7 @@
 
 #include <algorithm>
 #include <cassert>
+#include <utility>
 
 namespace {
 
@@ -161,14 +162,14 @@ ChatLogIdx clampedAdd(ChatLogIdx idx, int val, IChatLog& chatLog)
 {
     if (val < 0) {
         const auto distToEnd = idx - chatLog.getFirstIdx();
-        if (static_cast<size_t>(std::abs(val)) > distToEnd) {
+        if (std::cmp_greater(std::abs(val), distToEnd)) {
             return chatLog.getFirstIdx();
         }
 
         return idx - std::abs(val);
     }
     const auto distToEnd = chatLog.getNextIdx() - idx;
-    if (static_cast<size_t>(val) > distToEnd) {
+    if (std::cmp_greater(val, distToEnd)) {
         return chatLog.getNextIdx();
     }
 
@@ -1076,7 +1077,7 @@ void ChatWidget::onWorkerTimeout()
             return;
         }
 
-        if (static_cast<size_t>(workerLastIndex) >= chatLineStorage->size()) {
+        if (workerLastIndex >= chatLineStorage->size()) {
             break;
         }
 
@@ -1527,7 +1528,8 @@ bool ChatWidget::needsToHideName(ChatLogIdx idx, bool prevIdxRendered) const
     }
 
     const qint64 messagesTimeDiff = prevItem.getTimestamp().secsTo(currentItem.getTimestamp());
-    return currentItem.getSender() == prevItem.getSender() && messagesTimeDiff < repNameAfter;
+    return currentItem.getSender() == prevItem.getSender()
+           && std::cmp_less(messagesTimeDiff, repNameAfter);
 }
 
 bool ChatWidget::shouldRenderMessage(ChatLogIdx idx) const

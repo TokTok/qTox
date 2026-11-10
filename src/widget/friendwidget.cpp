@@ -202,9 +202,7 @@ getCircleAndFriendList(const Friend* frnd, FriendWidget* fw, Settings& settings)
 void FriendWidget::moveToNewCircle()
 {
     auto* const frnd = chatroom->getFriend();
-    CircleWidget* circleWidget;
-    FriendListWidget* friendList;
-    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
+    auto [circleWidget, friendList] = getCircleAndFriendList(frnd, this, settings);
 
     if (circleWidget != nullptr) {
         circleWidget->updateStatus();
@@ -223,9 +221,7 @@ void FriendWidget::moveToNewCircle()
 void FriendWidget::removeFromCircle()
 {
     auto* const frnd = chatroom->getFriend();
-    CircleWidget* circleWidget;
-    FriendListWidget* friendList;
-    std::tie(circleWidget, friendList) = getCircleAndFriendList(frnd, this, settings);
+    auto [circleWidget, friendList] = getCircleAndFriendList(frnd, this, settings);
 
     if (friendList != nullptr) {
         friendList->moveWidget(this, frnd->getStatus(), true);

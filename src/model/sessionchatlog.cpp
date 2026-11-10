@@ -14,6 +14,7 @@
 #include <QtGlobal>
 
 #include <exception>
+#include <utility>
 
 namespace {
 
@@ -168,13 +169,13 @@ SearchResult SessionChatLog::searchForward(SearchPos startPos, const QString& ph
 
         auto numMatches = 0;
         QRegularExpressionMatch lastMatch;
-        while (match.isValid() && numMatches <= static_cast<int>(currentPos.numMatches)
+        while (match.isValid() && std::cmp_less_equal(numMatches, currentPos.numMatches)
                && match.hasNext()) {
             lastMatch = match.next();
             numMatches++;
         }
 
-        if (numMatches > static_cast<int>(currentPos.numMatches)) {
+        if (std::cmp_greater(numMatches, currentPos.numMatches)) {
             SearchResult res;
             res.found = true;
             res.pos.logIdx = key;
@@ -233,13 +234,13 @@ SearchResult SessionChatLog::searchBackward(SearchPos startPos, const QString& p
         while (match.isValid() && match.hasNext()) {
             auto currentMatch = match.next();
             if (currentPos.numMatches == 0
-                || static_cast<int>(currentPos.numMatches) > numMatchesBeforePos) {
+                || std::cmp_greater(currentPos.numMatches, numMatchesBeforePos)) {
                 lastMatch = currentMatch;
                 numMatchesBeforePos++;
             }
         }
 
-        if ((numMatchesBeforePos < static_cast<int>(currentPos.numMatches) || currentPos.numMatches == 0)
+        if ((std::cmp_less(numMatchesBeforePos, currentPos.numMatches) || currentPos.numMatches == 0)
             && numMatchesBeforePos > 0) {
             SearchResult res;
             res.found = true;

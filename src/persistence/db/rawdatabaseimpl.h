@@ -67,7 +67,7 @@ public:
               // databases to 4.0 defaults even when using SQLCipher 3.x, but might as well keep
               // using these for people with SQLCipher 3.x.
         halfUpgradedTo4,
-        p4_0 // SQLCipher 4.0 default encryption params
+        p4_0, // SQLCipher 4.0 default encryption params
     };
 
     RawDatabaseImpl(QString path_, const QString& password, QByteArray salt);

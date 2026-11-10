@@ -17,7 +17,7 @@ enum class Side
     top,
     bottom,
     left,
-    right
+    right,
 };
 
 QPoint getPosition(Side side)

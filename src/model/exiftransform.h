@@ -22,7 +22,7 @@ enum class Orientation
     LeftTop,
     RightTop,
     RightBottom,
-    LeftBottom
+    LeftBottom,
 };
 
 Orientation getOrientation(QByteArray imageData);

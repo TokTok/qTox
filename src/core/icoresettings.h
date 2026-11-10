@@ -19,7 +19,7 @@ public:
         // If changed, don't forget to update Settings::fixInvalidProxyType
         ptNone = 0,
         ptSOCKS5 = 1,
-        ptHTTP = 2
+        ptHTTP = 2,
     };
     ICoreSettings() = default;
     virtual ~ICoreSettings();

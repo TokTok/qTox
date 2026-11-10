@@ -40,7 +40,7 @@ enum class Time
     Month4Ago,
     Month5Ago,
     LongAgo,
-    Never
+    Never,
 };
 
 const int LAST_TIME = static_cast<int>(Time::Never);

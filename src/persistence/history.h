@@ -120,7 +120,7 @@ enum class MessageState
 {
     complete,
     pending,
-    broken
+    broken,
 };
 
 class History : public QObject, public std::enable_shared_from_this<History>

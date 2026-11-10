@@ -17,9 +17,9 @@ class Paths
 public:
     enum class Portable
     {
-        Auto,       /** Auto detect if portable or non-portable */
-        Portable,   /** Force portable mode */
-        NonPortable /** Force non-portable mode */
+        Auto,        /** Auto detect if portable or non-portable */
+        Portable,    /** Force portable mode */
+        NonPortable, /** Force non-portable mode */
     };
 
     explicit Paths(Portable mode = Portable::Auto);

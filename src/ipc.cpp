@@ -195,13 +195,13 @@ bool IPC::isCurrentOwner()
  */
 void IPC::registerEventHandler(const QString& name, IPCEventHandler handler, void* userData)
 {
-    const std::lock_guard<std::mutex> lock(eventHandlersMutex);
+    const std::scoped_lock<std::mutex> lock(eventHandlersMutex);
     eventHandlers[name] = {handler, userData};
 }
 
 void IPC::unregisterEventHandler(const QString& name)
 {
-    const std::lock_guard<std::mutex> lock(eventHandlersMutex);
+    const std::scoped_lock<std::mutex> lock(eventHandlersMutex);
     eventHandlers.remove(name);
 }
 
@@ -333,7 +333,7 @@ void IPC::processEvents()
         // Non-main instance is limited to events destined for specific profile it runs
     }
 
-    const std::lock_guard<std::mutex> lock(eventHandlersMutex);
+    const std::scoped_lock<std::mutex> lock(eventHandlersMutex);
     while (IPCEvent* evt = fetchEvent()) {
         const QString name = QString::fromUtf8(evt->name);
         auto it = eventHandlers.find(name);

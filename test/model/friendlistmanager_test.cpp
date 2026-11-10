@@ -140,16 +140,18 @@ class FriendItemsBuilder
 public:
     FriendItemsBuilder* addOfflineFriends()
     {
-        QStringList testNames{".test",
-                              "123",
-                              "A test user",
-                              "Aatest user",
-                              "atest",
-                              "btest",
-                              "ctest",
-                              "Test user",
-                              "user with long nickname one",
-                              "user with long nickname two"};
+        QStringList testNames{
+            ".test",
+            "123",
+            "A test user",
+            "Aatest user",
+            "atest",
+            "btest",
+            "ctest",
+            "Test user",
+            "user with long nickname one",
+            "user with long nickname two",
+        };
 
         for (int i = 0; i < testNames.size(); ++i) {
             const int unsortedIndex =
@@ -165,16 +167,18 @@ public:
 
     FriendItemsBuilder* addOnlineFriends()
     {
-        QStringList testNames{".test online",
-                              "123 online",
-                              "A test user online",
-                              "Aatest user online",
-                              "atest online",
-                              "btest online",
-                              "ctest online",
-                              "Test user online",
-                              "user with long nickname one online",
-                              "user with long nickname two online"};
+        QStringList testNames{
+            ".test online",
+            "123 online",
+            "A test user online",
+            "Aatest user online",
+            "atest online",
+            "btest online",
+            "ctest online",
+            "Test user online",
+            "user with long nickname one online",
+            "user with long nickname two online",
+        };
 
         for (int i = 0; i < testNames.size(); ++i) {
             const int unsortedIndex = (i % 2) != 0 ? i - 1 : testNames.size() - i - 1;

@@ -35,7 +35,7 @@ private:
         ResizeRight = 0x04,
         ResizeUp = 0x08,
         ResizeDown = 0x10,
-        Resize = ResizeLeft | ResizeRight | ResizeUp | ResizeDown
+        Resize = ResizeLeft | ResizeRight | ResizeUp | ResizeDown,
     };
 
     Modes mode = 0;

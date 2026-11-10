@@ -57,8 +57,11 @@ ContentDialog::ContentDialog(const Core& core, Settings& settings_, Style& style
     friendLayout->setContentsMargins(0, 0, 0, 0);
     friendLayout->setSpacing(0);
 
-    layouts = {friendLayout->getLayoutOnline(), conferenceLayout.getLayout(),
-               friendLayout->getLayoutOffline()};
+    layouts = {
+        friendLayout->getLayoutOnline(),
+        conferenceLayout.getLayout(),
+        friendLayout->getLayoutOffline(),
+    };
 
     if (settings.getConferencePosition()) {
         layouts.swapItemsAt(0, 1);
@@ -312,7 +315,7 @@ void ContentDialog::cycleChats(bool forward, bool inverse)
         const bool nextIsEmpty =
             (isCurOnline && offlineEmpty && (conferencesEmpty || conferencesOnTop))
             || (isCurConference && offlineEmpty && (onlineEmpty || !conferencesOnTop))
-            || (isCurOffline);
+            || isCurOffline;
 
         if (nextIsEmpty) {
             forward = !forward;

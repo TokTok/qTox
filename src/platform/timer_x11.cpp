@@ -38,8 +38,9 @@ uint32_t Platform::getIdleTime()
 #pragma GCC diagnostic pop
             idleTime = info->idle;
             XFree(info);
-        } else
+        } else {
             qDebug() << "XScreenSaverAllocInfo() failed";
+        }
     }
     X11Display::unlock();
     return idleTime;

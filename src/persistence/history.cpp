@@ -871,7 +871,7 @@ QList<History::DateIdx> History::getNumMessagesForChatBeforeDateBoundaries(const
         "AND countHistory.id <= history.id" // and filter that our unfiltered table history id only has elements up to history.id
     );
 
-    auto limitString = ((maxNum) != 0u) ? QString("LIMIT %1").arg(maxNum) : QString("");
+    auto limitString = (maxNum != 0u) ? QString("LIMIT %1").arg(maxNum) : QString("");
 
     db->execNow(RawDatabase::Query( //
         QStringLiteral(             //

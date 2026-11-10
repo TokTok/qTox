@@ -43,7 +43,7 @@ public:
         None = 0,
         Audio = 1,
         Video = 2,
-        AV = Audio | Video
+        AV = Audio | Video,
     };
 
     ChatFormHeader(Settings& settings, Style& style, QWidget* parent = nullptr);

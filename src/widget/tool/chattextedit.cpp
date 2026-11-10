@@ -39,9 +39,9 @@ void ChatTextEdit::keyPressEvent(QKeyEvent* event)
         return;
     }
     if (key == Qt::Key_Tab) {
-        if (event->modifiers() != 0u)
+        if (event->modifiers() != 0u) {
             event->ignore();
-        else {
+        } else {
             emit tabPressed();
             event->ignore();
         }

@@ -43,20 +43,32 @@ namespace {
 const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
     {IProfileInfo::SetAvatarResult::CanNotOpen, ProfileForm::tr("Unable to open this file.")},
     {IProfileInfo::SetAvatarResult::CanNotRead, ProfileForm::tr("Unable to read this image.")},
-    {IProfileInfo::SetAvatarResult::TooLarge,
-     ProfileForm::tr("The supplied image is too large.\nPlease use another image.")},
+    {
+        IProfileInfo::SetAvatarResult::TooLarge,
+        ProfileForm::tr("The supplied image is too large.\nPlease use another image."),
+    },
     {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("Empty path is unavailable")},
 };
 
 const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
-    {IProfileInfo::RenameResult::Error,
-     {ProfileForm::tr("Failed to rename"),
-      ProfileForm::tr("Couldn't rename the profile to \"%1\"")}},
-    {IProfileInfo::RenameResult::ProfileAlreadyExists,
-     {ProfileForm::tr("Profile already exists"),
-      ProfileForm::tr("A profile named \"%1\" already exists.")}},
-    {IProfileInfo::RenameResult::EmptyName,
-     {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavailable")}},
+    {
+        IProfileInfo::RenameResult::Error,
+        {
+            ProfileForm::tr("Failed to rename"),
+            ProfileForm::tr("Couldn't rename the profile to \"%1\""),
+        },
+    },
+    {
+        IProfileInfo::RenameResult::ProfileAlreadyExists,
+        {
+            ProfileForm::tr("Profile already exists"),
+            ProfileForm::tr("A profile named \"%1\" already exists."),
+        },
+    },
+    {
+        IProfileInfo::RenameResult::EmptyName,
+        {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavailable")},
+    },
 };
 
 // TODO(iphydf): These should be functions, not static maps. qTox does this a lot
@@ -66,11 +78,17 @@ const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
         IProfileInfo::SaveResult::NoWritePermission,
         CommonDialogs::NoWritePermission(),
     },
-    {IProfileInfo::SaveResult::Error,
-     {ProfileForm::tr("Failed to save file"),
-      ProfileForm::tr("The file you chose could not be saved.")}},
-    {IProfileInfo::SaveResult::EmptyPath,
-     {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavailable.")}},
+    {
+        IProfileInfo::SaveResult::Error,
+        {
+            ProfileForm::tr("Failed to save file"),
+            ProfileForm::tr("The file you chose could not be saved."),
+        },
+    },
+    {
+        IProfileInfo::SaveResult::EmptyPath,
+        {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavailable.")},
+    },
 };
 
 const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD =

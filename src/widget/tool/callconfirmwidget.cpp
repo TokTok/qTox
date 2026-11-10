@@ -120,9 +120,11 @@ void CallConfirmWidget::reposition()
 
     mainRect = {0, spikeH, rectW, rectH};
     brush = QBrush(QColor(65, 65, 65));
-    spikePoly = QPolygon({{(rectW - spikeW) / 2 + xOverflow, spikeH},
-                          {rectW / 2 + xOverflow, 0},
-                          {(rectW + spikeW) / 2 + xOverflow, spikeH}});
+    spikePoly = QPolygon({
+        {(rectW - spikeW) / 2 + xOverflow, spikeH},
+        {rectW / 2 + xOverflow, 0},
+        {(rectW + spikeW) / 2 + xOverflow, spikeH},
+    });
 
     move(pos);
     update();

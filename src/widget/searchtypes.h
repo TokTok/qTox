@@ -15,7 +15,7 @@ enum class FilterSearch
     WordsOnly,
     Regular,
     RegisterAndWordsOnly,
-    RegisterAndRegular
+    RegisterAndRegular,
 };
 
 enum class PeriodSearch
@@ -24,13 +24,13 @@ enum class PeriodSearch
     WithTheEnd,
     WithTheFirst,
     AfterDate,
-    BeforeDate
+    BeforeDate,
 };
 
 enum class SearchDirection
 {
     Up,
-    Down
+    Down,
 };
 
 struct ParameterSearch

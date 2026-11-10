@@ -24,7 +24,7 @@ public:
     {
         NORMAL,
         ACTION,
-        CUSTOM
+        CUSTOM,
     };
 
     Text(DocumentCache& documentCache, Settings& settings, Style& style, const QColor& custom,

@@ -73,13 +73,15 @@ void TestIdenticon::testParseMatrix()
 
     constexpr auto expected = Identicon::Matrix{
         {{QColor(), QColor()}},
-        {{
-            {{1, 0, 0, 0, 1}},
-            {{1, 0, 1, 0, 1}},
-            {{0, 0, 1, 0, 0}},
-            {{0, 1, 1, 1, 0}},
-            {{1, 1, 0, 1, 1}},
-        }},
+        {
+            {
+                {{1, 0, 0, 0, 1}},
+                {{1, 0, 1, 0, 1}},
+                {{0, 0, 1, 0, 0}},
+                {{0, 1, 1, 1, 0}},
+                {{1, 1, 0, 1, 1}},
+            },
+        },
     };
     QCOMPARE(parsed, expected);
 }

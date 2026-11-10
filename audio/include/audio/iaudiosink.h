@@ -61,7 +61,7 @@ public:
         Test,
         IncomingCall,
         OutgoingCall,
-        CallEnd
+        CallEnd,
     };
 
     static QString getSound(Sound s)

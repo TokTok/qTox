@@ -5,12 +5,14 @@
 
 #include "message.h"
 
+#include <utility>
+
 namespace {
 QStringList splitMessage(const QString& message, uint64_t maxLength)
 {
     QStringList splittedMsgs;
     QByteArray ba_message{message.toUtf8()};
-    while (static_cast<uint64_t>(ba_message.size()) > maxLength) {
+    while (std::cmp_greater(ba_message.size(), maxLength)) {
         int splitPos = ba_message.lastIndexOf('\n', maxLength - 1);
 
         if (splitPos <= 0) {

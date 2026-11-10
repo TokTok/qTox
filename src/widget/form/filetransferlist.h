@@ -26,7 +26,7 @@ enum class Column : int
     speed,
     status,
     control,
-    invalid
+    invalid,
 };
 
 Column toFileTransferListColumn(int in);

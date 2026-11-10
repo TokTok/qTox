@@ -84,11 +84,11 @@ bool ScreenshotGrabber::handleKeyPress(QKeyEvent* event)
     if (mKeysBlocked)
         return false;
 
-    if (event->key() == Qt::Key_Escape)
+    if (event->key() == Qt::Key_Escape) {
         reject();
-    else if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter)
+    } else if (event->key() == Qt::Key_Return || event->key() == Qt::Key_Enter) {
         acceptRegion();
-    else if (event->key() == Qt::Key_Space) {
+    } else if (event->key() == Qt::Key_Space) {
         mKeysBlocked = true;
 
         if (mQToxVisible)
@@ -98,8 +98,9 @@ bool ScreenshotGrabber::handleKeyPress(QKeyEvent* event)
 
         window->hide();
         QTimer::singleShot(350, this, &ScreenshotGrabber::reInit);
-    } else
+    } else {
         return false;
+    }
 
     return true;
 }

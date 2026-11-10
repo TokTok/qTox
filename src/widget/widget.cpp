@@ -842,7 +842,7 @@ void Widget::onSeparateWindowChanged(bool separate, bool clicked)
             resize(width, height());
 
             if (settingsWidget != nullptr) {
-                ContentLayout* contentLayout_ = createContentDialog((DialogType::SettingDialog));
+                ContentLayout* contentLayout_ = createContentDialog(DialogType::SettingDialog);
                 contentLayout_->parentWidget()->resize(size);
                 contentLayout_->parentWidget()->move(pos);
                 settingsWidget->show(contentLayout_);

@@ -31,6 +31,7 @@ bool version0to1(Settings& settings)
 } // namespace
 
 #include <cassert>
+#include <utility>
 
 bool GlobalSettingsUpgrader::doUpgrade(Settings& settings, int fromVer, int toVer)
 {
@@ -48,10 +49,10 @@ bool GlobalSettingsUpgrader::doUpgrade(Settings& settings, int fromVer, int toVe
     using SettingsUpgradeFn = bool (*)(Settings&);
     std::vector<SettingsUpgradeFn> upgradeFns = {version0to1};
 
-    assert(fromVer < static_cast<int>(upgradeFns.size()));
-    assert(toVer == static_cast<int>(upgradeFns.size()));
+    assert(std::cmp_less(fromVer, upgradeFns.size()));
+    assert(std::cmp_equal(toVer, upgradeFns.size()));
 
-    for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
+    for (int i = fromVer; std::cmp_less(i, upgradeFns.size()); ++i) {
         const auto newSettingsVersion = i + 1;
         if (!upgradeFns[i](settings)) {
             qCritical() << "Failed to upgrade settings to version" << newSettingsVersion << "aborting";

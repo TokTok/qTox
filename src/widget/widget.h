@@ -111,7 +111,7 @@ private:
         Online,
         Offline,
         Friends,
-        Conferences
+        Conferences,
     };
 
 public:

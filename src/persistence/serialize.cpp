@@ -34,7 +34,7 @@ int dataToVInt(const QByteArray& data)
             return 0;
         }
         num3 = data[i++];
-        num |= static_cast<int>(num3 & 0x7f) << num2;
+        num |= (num3 & 0x7f) << num2;
         num2 += 7;
         if (num2 > intWidth) {
             return 0;

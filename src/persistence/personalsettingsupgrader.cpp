@@ -12,6 +12,7 @@
 #include <QDebug>
 
 #include <cassert>
+#include <utility>
 
 namespace {
 bool version0to1(SettingsSerializer& ps)
@@ -49,10 +50,10 @@ bool PersonalSettingsUpgrader::doUpgrade(SettingsSerializer& settingsSerializer,
     using SettingsUpgradeFn = bool (*)(SettingsSerializer&);
     std::vector<SettingsUpgradeFn> upgradeFns = {version0to1};
 
-    assert(fromVer < static_cast<int>(upgradeFns.size()));
-    assert(toVer == static_cast<int>(upgradeFns.size()));
+    assert(std::cmp_less(fromVer, upgradeFns.size()));
+    assert(std::cmp_equal(toVer, upgradeFns.size()));
 
-    for (int i = fromVer; i < static_cast<int>(upgradeFns.size()); ++i) {
+    for (int i = fromVer; std::cmp_less(i, upgradeFns.size()); ++i) {
         const auto newSettingsVersion = i + 1;
         if (!upgradeFns[i](settingsSerializer)) {
             qCritical() << "Failed to upgrade settings to version" << newSettingsVersion

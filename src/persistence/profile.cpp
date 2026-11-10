@@ -42,7 +42,7 @@ enum class LoadToxDataError
     ENCRYPTED_NO_PASSWORD,
     COULD_NOT_DERIVE_KEY,
     DECRYPTION_FAILED,
-    DECRYPT_UNENCRYPTED_FILE
+    DECRYPT_UNENCRYPTED_FILE,
 };
 
 enum class CreateToxDataError
@@ -51,7 +51,7 @@ enum class CreateToxDataError
     COULD_NOT_DERIVE_KEY,
     PROFILE_LOCKED,
     ALREADY_EXISTS,
-    LOCK_FAILED
+    LOCK_FAILED,
 };
 
 /**

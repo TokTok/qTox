@@ -19,7 +19,7 @@ public:
         OK,
         EmptyName,
         ProfileAlreadyExists,
-        Error
+        Error,
     };
 
     enum class SaveResult
@@ -27,7 +27,7 @@ public:
         OK,
         EmptyPath,
         NoWritePermission,
-        Error
+        Error,
     };
 
     enum class SetAvatarResult
@@ -36,7 +36,7 @@ public:
         EmptyPath,
         CanNotOpen,
         CanNotRead,
-        TooLarge
+        TooLarge,
     };
 
     IProfileInfo() = default;

@@ -155,7 +155,7 @@ void TestChatHistory::cleanup()
     settings.reset();
     messageBoxManager.reset();
     db.reset();
-    dbFile.reset();
+    dbFile = nullptr;
 }
 
 void TestChatHistory::testHistoryLoading()

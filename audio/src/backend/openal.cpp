@@ -17,6 +17,7 @@
 #include <QtMath>
 
 #include <cassert>
+#include <utility>
 
 #if defined(QT_STATIC) && !defined(Q_OS_WASM)
 extern "C"
@@ -542,7 +543,7 @@ void OpenAL::playAudioBuffer(uint sourceId, const int16_t* data, int samples, un
     alSourcei(sourceId, AL_LOOPING, AL_FALSE);
 
     if (processed == 0) {
-        if (static_cast<ALuint>(queued) >= BUFFER_COUNT) {
+        if (std::cmp_greater_equal(queued, BUFFER_COUNT)) {
             // reached limit, drop audio
             return;
         }
@@ -647,7 +648,7 @@ void OpenAL::doInput()
 {
     ALint curSamples = 0;
     alcGetIntegerv(alInDev, ALC_CAPTURE_SAMPLES, sizeof(curSamples), &curSamples);
-    if (curSamples < static_cast<ALint>(AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL)) {
+    if (std::cmp_less(curSamples, AUDIO_FRAME_SAMPLE_COUNT_PER_CHANNEL)) {
         return;
     }
 

@@ -68,7 +68,8 @@ const QString HREF_WRAPPER = QStringLiteral(R"(<a href="%1">%1</a>)");
 const QString WWW_WRAPPER = QStringLiteral(R"(<a href="http://%1">%1</a>)");
 
 const QVector<QRegularExpression> WWW_WORD_PATTERN = {
-    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www\.)\S+))"))};
+    QRegularExpression(QStringLiteral(R"((?<=^|\s)\S*((www\.)\S+))")),
+};
 
 const QVector<QRegularExpression> URI_WORD_PATTERNS = {
     // Note: This does not match only strictly valid URLs, but we broaden search to any string following scheme to

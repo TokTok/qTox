@@ -15,7 +15,7 @@
 #include <QTimer>
 #include <QtConcurrent/QtConcurrentRun>
 
-#if defined(Q_OS_FREEBSD)
+#ifdef Q_OS_FREEBSD
 #include <locale.h>
 #endif
 
@@ -57,14 +57,18 @@ constexpr int CLEANUP_TIMEOUT = 5 * 60 * 1000; // 5 minutes
  */
 QStringList loadDefaultPaths()
 {
-#if defined(Q_OS_FREEBSD)
+#ifdef Q_OS_FREEBSD
     // TODO: Remove when will be fixed.
     // Workaround to fix https://bugreports.qt.io/browse/QTBUG-57522
     setlocale(LC_ALL, "");
 #endif
     const QString EMOTICONS_SUB_PATH = QDir::separator() + QStringLiteral("emoticons");
-    QStringList paths{":/smileys", "~/.kde4/share/emoticons", "~/.kde/share/emoticons",
-                      EMOTICONS_SUB_PATH};
+    QStringList paths{
+        ":/smileys",
+        "~/.kde4/share/emoticons",
+        "~/.kde/share/emoticons",
+        EMOTICONS_SUB_PATH,
+    };
 
     // qTox exclusive emoticons
     QStandardPaths::StandardLocation location;

@@ -222,7 +222,7 @@ private:
 
     std::unique_ptr<ChatLineStorage> chatLineStorage;
 
-    std::vector<std::function<void(void)>> renderCompletionFns;
+    std::vector<std::function<void()>> renderCompletionFns;
     DocumentCache& documentCache;
     SmileyPack& smileyPack;
     Settings& settings;

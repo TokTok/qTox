@@ -32,6 +32,7 @@
 #include <memory>
 #include <random>
 #include <tox/tox.h>
+#include <utility>
 
 const QString Core::TOX_EXT = ".tox";
 
@@ -1090,7 +1091,7 @@ QStringList Core::getConferencePeerNames(int conferenceId) const
     }
 
     QStringList names;
-    for (int i = 0; i < static_cast<int>(nPeers); ++i) {
+    for (int i = 0; std::cmp_less(i, nPeers); ++i) {
         Tox_Err_Conference_Peer_Query error;
         const size_t length = tox_conference_peer_get_name_size(tox.get(), conferenceId, i, &error);
 

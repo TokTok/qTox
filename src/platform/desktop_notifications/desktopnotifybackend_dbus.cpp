@@ -179,13 +179,15 @@ const QDBusArgument& operator>>(const QDBusArgument& argument, DBusNotifyImage& 
     argument >> channels;
     argument >> data;
     argument.endStructure();
-    image = DBusNotifyImage{QImage{
-        reinterpret_cast<const uchar*>(data.constData()),
-        width,
-        height,
-        rowStride,
-        channels == 4 ? QImage::Format_RGBA8888 : QImage::Format_RGB888,
-    }};
+    image = DBusNotifyImage{
+        QImage{
+            reinterpret_cast<const uchar*>(data.constData()),
+            width,
+            height,
+            rowStride,
+            channels == 4 ? QImage::Format_RGBA8888 : QImage::Format_RGB888,
+        },
+    };
     return argument;
 }
 
@@ -220,11 +222,9 @@ const QFile* getIconFile(const QImage& image, QMutex& iconMutex,
 {
     const QMutexLocker<QMutex> lock(&iconMutex);
     const qint64 iconKey = image.cacheKey();
-    iconFile = std::make_unique<QTemporaryFile>(
-        QStringList{QDir::tempPath(),
-                    QStringLiteral("%1-notification-%2-XXXXXX.png")
-                        .arg(QCoreApplication::applicationName(), QString::number(iconKey))}
-            .join(QDir::separator()));
+    const QString fileName = QStringLiteral("%1-notification-%2-XXXXXX.png")
+                                 .arg(QCoreApplication::applicationName(), QString::number(iconKey));
+    iconFile = std::make_unique<QTemporaryFile>(QDir::tempPath() + QDir::separator() + fileName);
     if (!iconFile->open()) {
         return nullptr;
     }
@@ -336,8 +336,10 @@ bool DesktopNotifyBackend::showMessage(const QString& title, const QString& mess
         QVariantMap hints{
             {QStringLiteral("action-icons"), true},
             {QStringLiteral("category"), category},
-            {QStringLiteral("sender-pid"),
-             QVariant::fromValue<quint64>(QCoreApplication::applicationPid())},
+            {
+                QStringLiteral("sender-pid"),
+                QVariant::fromValue<quint64>(QCoreApplication::applicationPid()),
+            },
         };
         hints.insert(getIconHint(pixmap, d->specVersion, d->capabilities, d->iconMutex, d->iconFile,
                                  QTOX_NOTIFY_TEMP_FILE));

@@ -8,7 +8,7 @@
 
 #include "v4l2.h" // IWYU pragma: keep
 
-#if defined(USING_V4L)
+#ifdef USING_V4L
 #include "src/video/videomode.h"
 
 #include <QDebug>

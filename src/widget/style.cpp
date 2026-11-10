@@ -265,8 +265,10 @@ QString Style::resolve(const QString& filename, int themeColor, const QFont& bas
 
     if (dictFont.isEmpty()) {
         dictFont = {
-            {"@baseFont",
-             QString::fromUtf8("'%1' %2px").arg(baseFont.family()).arg(QFontInfo(baseFont).pixelSize())},
+            {
+                "@baseFont",
+                QString::fromUtf8("'%1' %2px").arg(baseFont.family()).arg(QFontInfo(baseFont).pixelSize()),
+            },
             {"@extraBig", qssifyFont(Style::getFont(Font::ExtraBig))},
             {"@big", qssifyFont(Style::getFont(Font::Big))},
             {"@bigBold", qssifyFont(Style::getFont(Font::BigBold))},
@@ -425,21 +427,23 @@ void Style::initPalette(int themeColor)
 
 void Style::initDictColor()
 {
-    dictColor = {{"@transferGood", Style::getColor(ColorPalette::TransferGood).name()},
-                 {"@transferWait", Style::getColor(ColorPalette::TransferWait).name()},
-                 {"@transferBad", Style::getColor(ColorPalette::TransferBad).name()},
-                 {"@transferMiddle", Style::getColor(ColorPalette::TransferMiddle).name()},
-                 {"@mainText", Style::getColor(ColorPalette::MainText).name()},
-                 {"@nameActive", Style::getColor(ColorPalette::NameActive).name()},
-                 {"@statusActive", Style::getColor(ColorPalette::StatusActive).name()},
-                 {"@groundExtra", Style::getColor(ColorPalette::GroundExtra).name()},
-                 {"@groundBase", Style::getColor(ColorPalette::GroundBase).name()},
-                 {"@orange", Style::getColor(ColorPalette::Orange).name()},
-                 {"@yellow", Style::getColor(ColorPalette::Yellow).name()},
-                 {"@action", Style::getColor(ColorPalette::Action).name()},
-                 {"@link", Style::getColor(ColorPalette::Link).name()},
-                 {"@searchHighlighted", Style::getColor(ColorPalette::SearchHighlighted).name()},
-                 {"@selectText", Style::getColor(ColorPalette::SelectText).name()}};
+    dictColor = {
+        {"@transferGood", Style::getColor(ColorPalette::TransferGood).name()},
+        {"@transferWait", Style::getColor(ColorPalette::TransferWait).name()},
+        {"@transferBad", Style::getColor(ColorPalette::TransferBad).name()},
+        {"@transferMiddle", Style::getColor(ColorPalette::TransferMiddle).name()},
+        {"@mainText", Style::getColor(ColorPalette::MainText).name()},
+        {"@nameActive", Style::getColor(ColorPalette::NameActive).name()},
+        {"@statusActive", Style::getColor(ColorPalette::StatusActive).name()},
+        {"@groundExtra", Style::getColor(ColorPalette::GroundExtra).name()},
+        {"@groundBase", Style::getColor(ColorPalette::GroundBase).name()},
+        {"@orange", Style::getColor(ColorPalette::Orange).name()},
+        {"@yellow", Style::getColor(ColorPalette::Yellow).name()},
+        {"@action", Style::getColor(ColorPalette::Action).name()},
+        {"@link", Style::getColor(ColorPalette::Link).name()},
+        {"@searchHighlighted", Style::getColor(ColorPalette::SearchHighlighted).name()},
+        {"@selectText", Style::getColor(ColorPalette::SelectText).name()},
+    };
 }
 
 QString Style::getThemePath(int themeColor)

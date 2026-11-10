@@ -126,7 +126,7 @@ public:
     {
         NONE = 0,
         WITH_CHARS = 1,
-        WITHOUT_CHARS = 2
+        WITHOUT_CHARS = 2,
     };
 
     enum class FriendListSortingMode

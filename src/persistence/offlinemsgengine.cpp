@@ -52,8 +52,11 @@ void OfflineMsgEngine::addSentCoreMessage(ReceiptNum receipt, const Message& mes
                                           CompletionFn completionCallback)
 {
     const QMutexLocker<QRecursiveMutex> ml(&mutex);
-    receiptResolver.notifyMessageSent(receipt, {message, std::chrono::steady_clock::now(),
-                                                completionCallback});
+    receiptResolver.notifyMessageSent(receipt, {
+                                                   message,
+                                                   std::chrono::steady_clock::now(),
+                                                   completionCallback,
+                                               });
 }
 
 /**

@@ -21,168 +21,279 @@ const std::array<QString, 11> DbUtility::testFileList = {
 
 // db schemas can be select with "SELECT name, sql FROM sqlite_master;" on the database.
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema0{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name))",
+    },
     {"faux_offline_pending", "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY)"},
-    {"history", "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id "
-                "INTEGER NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL)"},
-    {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"}};
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id "
+        "INTEGER NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL)",
+    },
+    {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
+};
 
 // added file transfer history
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema1{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name))",
+    },
     {"faux_offline_pending", "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY)"},
-    {"file_transfers", "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
-                       "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
-                       "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
-                       "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
-     "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)"},
-    {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"}};
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
+        "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
+        "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
+        "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)",
+    },
+    {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
+};
 
 // move stuck faux offline messages do a table of "broken" messages
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema2{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name))",
+    },
     {"faux_offline_pending", "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY)"},
-    {"file_transfers", "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
-                       "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
-                       "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
-                       "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
-     "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)"},
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
+        "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
+        "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
+        "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)",
+    },
     {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
-    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY)"}};
+    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY)"},
+};
 
 // move stuck 0-length action messages to the existing "broken_messages" table. Not a real schema upgrade.
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema3 = DbUtility::schema2;
 
 // create index in history table on chat_id to improve query speed. Not a real schema upgrade.
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema4{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name))",
+    },
     {"faux_offline_pending", "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY)"},
-    {"file_transfers", "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
-                       "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
-                       "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
-                       "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
-     "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)"},
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
+        "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
+        "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
+        "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER)",
+    },
     {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
     {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY)"},
-    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"},
+};
 
 // added foreign keys
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema5{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))"},
-    {"faux_offline_pending", "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, FOREIGN "
-                             "KEY (id) REFERENCES history(id))"},
-    {"file_transfers", "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
-                       "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
-                       "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
-                       "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
-     "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER, FOREIGN KEY "
-     "(file_id) REFERENCES file_transfers(id), FOREIGN KEY (chat_id) REFERENCES peers(id), FOREIGN "
-     "KEY (sender_alias) REFERENCES aliases(id))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))",
+    },
+    {
+        "faux_offline_pending",
+        "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, FOREIGN "
+        "KEY (id) REFERENCES history(id))",
+    },
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
+        "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
+        "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
+        "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER, FOREIGN "
+        "KEY "
+        "(file_id) REFERENCES file_transfers(id), FOREIGN KEY (chat_id) REFERENCES peers(id), "
+        "FOREIGN "
+        "KEY (sender_alias) REFERENCES aliases(id))",
+    },
     {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
-    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, FOREIGN KEY (id) "
-                        "REFERENCES history(id))"},
-    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+    {
+        "broken_messages",
+        "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, FOREIGN KEY (id) "
+        "REFERENCES history(id))",
+    },
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"},
+};
 
 // added toxext extensions
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema6{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))"},
-    {"faux_offline_pending",
-     "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER NOT "
-     "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"file_transfers", "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
-                       "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
-                       "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
-                       "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
-     "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER, FOREIGN KEY "
-     "(file_id) REFERENCES file_transfers(id), FOREIGN KEY (chat_id) REFERENCES peers(id), FOREIGN "
-     "KEY (sender_alias) REFERENCES aliases(id))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))",
+    },
+    {
+        "faux_offline_pending",
+        "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER "
+        "NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, chat_id INTEGER NOT "
+        "NULL, file_restart_id BLOB NOT NULL, file_name BLOB NOT NULL, file_path "
+        "BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER NOT NULL, "
+        "direction INTEGER NOT NULL, file_state INTEGER NOT NULL)",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, timestamp INTEGER NOT NULL, chat_id INTEGER "
+        "NOT NULL, sender_alias INTEGER NOT NULL, message BLOB NOT NULL, file_id INTEGER, FOREIGN "
+        "KEY "
+        "(file_id) REFERENCES file_transfers(id), FOREIGN KEY (chat_id) REFERENCES peers(id), "
+        "FOREIGN "
+        "KEY (sender_alias) REFERENCES aliases(id))",
+    },
     {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
-    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
-                        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+    {
+        "broken_messages",
+        "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"},
+};
 
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema7{
-    {"aliases", "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-                "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))"},
-    {"faux_offline_pending",
-     "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER NOT "
-     "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"file_transfers",
-     "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
-     "(message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
-     "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER "
-     "NOT NULL, direction INTEGER NOT NULL, file_state INTEGER NOT NULL, FOREIGN KEY (id, "
-     "message_type) REFERENCES history(id, message_type), FOREIGN KEY (sender_alias) REFERENCES "
-     "aliases(id))"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT 'T' "
-     "CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER NOT NULL, "
-     "UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES peers(id))"},
-    {"text_messages", "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) "
-                      "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
-                      "BLOB NOT NULL, FOREIGN KEY (id, message_type) REFERENCES history(id, "
-                      "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES peers(id))",
+    },
+    {
+        "faux_offline_pending",
+        "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER "
+        "NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+        "(message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
+        "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size "
+        "INTEGER "
+        "NOT NULL, direction INTEGER NOT NULL, file_state INTEGER NOT NULL, FOREIGN KEY (id, "
+        "message_type) REFERENCES history(id, message_type), FOREIGN KEY (sender_alias) REFERENCES "
+        "aliases(id))",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT 'T' "
+        "CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER NOT "
+        "NULL, "
+        "UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES peers(id))",
+    },
+    {
+        "text_messages",
+        "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) "
+        "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
+        "BLOB NOT NULL, FOREIGN KEY (id, message_type) REFERENCES history(id, "
+        "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))",
+    },
     {"peers", "CREATE TABLE peers (id INTEGER PRIMARY KEY, public_key TEXT NOT NULL UNIQUE)"},
-    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
-                        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"system_messages",
-     "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
-     "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 BLOB, "
-     "arg4 BLOB, "
-     "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type))"},
-    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+    {
+        "broken_messages",
+        "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {
+        "system_messages",
+        "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+        "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 "
+        "BLOB, "
+        "arg4 BLOB, "
+        "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type))",
+    },
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"},
+};
 
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema9 = DbUtility::schema7;
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema10 = DbUtility::schema9;
 
 const std::vector<DbUtility::SqliteMasterEntry> DbUtility::schema11{
-    {"aliases",
-     "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
-     "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES authors(id))"},
-    {"faux_offline_pending",
-     "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER NOT "
-     "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"file_transfers",
-     "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
-     "(message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
-     "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size INTEGER "
-     "NOT NULL, direction INTEGER NOT NULL, file_state INTEGER NOT NULL, FOREIGN KEY (id, "
-     "message_type) REFERENCES history(id, message_type), FOREIGN KEY (sender_alias) REFERENCES "
-     "aliases(id))"},
-    {"history",
-     "CREATE TABLE history (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT 'T' "
-     "CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER NOT NULL, "
-     "UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES chats(id))"},
-    {"text_messages", "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) "
-                      "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
-                      "BLOB NOT NULL, FOREIGN KEY (id, message_type) REFERENCES history(id, "
-                      "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))"},
+    {
+        "aliases",
+        "CREATE TABLE aliases (id INTEGER PRIMARY KEY, owner INTEGER, display_name BLOB "
+        "NOT NULL, UNIQUE(owner, display_name), FOREIGN KEY (owner) REFERENCES authors(id))",
+    },
+    {
+        "faux_offline_pending",
+        "CREATE TABLE faux_offline_pending (id INTEGER PRIMARY KEY, required_extensions INTEGER "
+        "NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {
+        "file_transfers",
+        "CREATE TABLE file_transfers (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+        "(message_type = 'F'), sender_alias INTEGER NOT NULL, file_restart_id BLOB NOT NULL, "
+        "file_name BLOB NOT NULL, file_path BLOB NOT NULL, file_hash BLOB NOT NULL, file_size "
+        "INTEGER "
+        "NOT NULL, direction INTEGER NOT NULL, file_state INTEGER NOT NULL, FOREIGN KEY (id, "
+        "message_type) REFERENCES history(id, message_type), FOREIGN KEY (sender_alias) REFERENCES "
+        "aliases(id))",
+    },
+    {
+        "history",
+        "CREATE TABLE history (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL DEFAULT 'T' "
+        "CHECK (message_type in ('T','F','S')), timestamp INTEGER NOT NULL, chat_id INTEGER NOT "
+        "NULL, "
+        "UNIQUE (id, message_type), FOREIGN KEY (chat_id) REFERENCES chats(id))",
+    },
+    {
+        "text_messages",
+        "CREATE TABLE text_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) "
+        "NOT NULL CHECK (message_type = 'T'), sender_alias INTEGER NOT NULL, message "
+        "BLOB NOT NULL, FOREIGN KEY (id, message_type) REFERENCES history(id, "
+        "message_type), FOREIGN KEY (sender_alias) REFERENCES aliases(id))",
+    },
     {"chats", "CREATE TABLE chats (id INTEGER PRIMARY KEY, uuid BLOB NOT NULL UNIQUE)"},
     {"authors", "CREATE TABLE authors (id INTEGER PRIMARY KEY, public_key BLOB NOT NULL UNIQUE)"},
-    {"broken_messages", "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
-                        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))"},
-    {"system_messages",
-     "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
-     "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 BLOB, "
-     "arg4 BLOB, "
-     "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type))"},
-    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"}};
+    {
+        "broken_messages",
+        "CREATE TABLE broken_messages (id INTEGER PRIMARY KEY, reason INTEGER NOT "
+        "NULL DEFAULT 0, FOREIGN KEY (id) REFERENCES history(id))",
+    },
+    {
+        "system_messages",
+        "CREATE TABLE system_messages (id INTEGER PRIMARY KEY, message_type CHAR(1) NOT NULL CHECK "
+        "(message_type = 'S'), system_message_type INTEGER NOT NULL, arg1 BLOB, arg2 BLOB, arg3 "
+        "BLOB, "
+        "arg4 BLOB, "
+        "FOREIGN KEY (id, message_type) REFERENCES history(id, message_type))",
+    },
+    {"chat_id_idx", "CREATE INDEX chat_id_idx on history (chat_id)"},
+};
 
 void DbUtility::createSchemaAtVersion(std::shared_ptr<RawDatabase> db,
                                       std::vector<DbUtility::SqliteMasterEntry> schema)

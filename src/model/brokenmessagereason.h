@@ -9,5 +9,5 @@
 enum class BrokenMessageReason : int
 {
     unknown = 0,
-    unsupportedExtensions = 1
+    unsupportedExtensions = 1,
 };

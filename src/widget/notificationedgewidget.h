@@ -18,7 +18,7 @@ public:
     enum Position : uint8_t
     {
         Top,
-        Bottom
+        Bottom,
     };
 
     NotificationEdgeWidget(Position position, Settings& settings, Style& style,

@@ -27,7 +27,7 @@ enum class updateIndex
 {
     available = 0,
     upToDate = 1,
-    failed = 2
+    failed = 2,
 };
 
 /**

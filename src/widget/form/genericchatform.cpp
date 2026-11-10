@@ -694,8 +694,8 @@ void GenericChatForm::onExportChat()
         QString author = item.getDisplayName();
 
         buffer = buffer
-                 % QString{datestamp % '\t' % timestamp % '\t' % author % '\t'
-                           % item.getContentAsMessage().message.content % '\n'};
+                 % QString(datestamp % '\t' % timestamp % '\t' % author % '\t'
+                           % item.getContentAsMessage().message.content % '\n');
     }
     file.write(buffer.toUtf8());
     file.close();

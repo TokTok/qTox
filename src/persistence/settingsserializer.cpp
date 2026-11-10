@@ -84,7 +84,7 @@ QDataStream& readStream(QDataStream& dataStream, QByteArray& data)
         dataStream.readRawData(&num3, 1);
         num |= (num3 & 0x7f) << num2;
         num2 += 7;
-        if (num2 > static_cast<int>(sizeof(int) * CHAR_BIT)) {
+        if (std::cmp_greater(num2, sizeof(int) * CHAR_BIT)) {
             data.clear();
             return dataStream;
         }
@@ -227,7 +227,7 @@ bool SettingsSerializer::isSerializedFormat(QString filePath)
     if (!f.open(QIODevice::ReadOnly))
         return false;
     char fmagic[8];
-    if (f.read(fmagic, sizeof(fmagic)) != sizeof(fmagic))
+    if (std::cmp_not_equal(f.read(fmagic, sizeof(fmagic)), sizeof(fmagic)))
         return false;
     return (memcmp(fmagic, magic, 4) == 0)
            || tox_is_data_encrypted(reinterpret_cast<uint8_t*>(fmagic));

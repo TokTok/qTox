@@ -32,7 +32,7 @@ public:
     {
         AddFriend = 0,
         ImportContacts = 1,
-        FriendRequest = 2
+        FriendRequest = 2,
     };
 
     AddFriendForm(ToxId ownId_, Settings& settings, Style& style,

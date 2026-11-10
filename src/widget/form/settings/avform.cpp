@@ -218,16 +218,18 @@ void AVForm::selectBestModes(QVector<VideoMode>& allVideoModes)
     }
 
     // Identify the best resolutions available for the supposed XXXXp resolutions.
-    constexpr std::array<std::pair<int, VideoMode>, 8> idealModes{{
-        {120, VideoMode(160, 120)},    // 1
-        {240, VideoMode(430, 240)},    // 2
-        {360, VideoMode(640, 360)},    // 3
-        {480, VideoMode(854, 480)},    // 4
-        {720, VideoMode(1280, 720)},   // 5
-        {1080, VideoMode(1920, 1080)}, // 6
-        {1440, VideoMode(2560, 1440)}, // 7
-        {2160, VideoMode(3840, 2160)}, // 8
-    }};
+    constexpr std::array<std::pair<int, VideoMode>, 8> idealModes{
+        {
+            {120, VideoMode(160, 120)},    // 1
+            {240, VideoMode(430, 240)},    // 2
+            {360, VideoMode(640, 360)},    // 3
+            {480, VideoMode(854, 480)},    // 4
+            {720, VideoMode(1280, 720)},   // 5
+            {1080, VideoMode(1920, 1080)}, // 6
+            {1440, VideoMode(2560, 1440)}, // 7
+            {2160, VideoMode(3840, 2160)}, // 8
+        },
+    };
 
     std::map<int, int> bestModeIndices;
     for (int i = 0; i < allVideoModes.size(); ++i) {

@@ -38,7 +38,7 @@ public:
         Action,
         Link,
         SearchHighlighted,
-        SelectText
+        SelectText,
     };
 
     enum class Font
@@ -49,13 +49,13 @@ public:
         Medium,
         MediumBold,
         Small,
-        SmallLight
+        SmallLight,
     };
 
     enum class MainTheme
     {
         Light,
-        Dark
+        Dark,
     };
     Q_ENUM(MainTheme)
 

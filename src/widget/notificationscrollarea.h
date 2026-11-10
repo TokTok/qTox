@@ -36,7 +36,7 @@ private:
     {
         Visible,
         Above,
-        Below
+        Below,
     };
     Visibility widgetVisible(QWidget* widget) const;
     void recalculateTopEdge();
