@@ -150,6 +150,11 @@ time_t IPC::postEvent(const QString& name, const QByteArray& data, uint32_t dest
 
     IPCEvent* evt = nullptr;
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return 0;
+    }
     time_t result = 0;
 
     for (uint32_t i = 0; (evt == nullptr) && i < EVENT_QUEUE_SIZE; ++i) {
@@ -216,8 +221,13 @@ bool IPC::isEventAccepted(time_t time)
         return result;
     }
 
-    if (difftime(global()->lastProcessed, time) > 0) {
-        IPCMemory* mem = global();
+    IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return result;
+    }
+    if (difftime(mem->lastProcessed, time) > 0) {
         for (auto& event : mem->events) {
             if (event.posted == time && (event.processed != 0)) {
                 result = event.accepted;
@@ -243,7 +253,7 @@ bool IPC::waitUntilAccepted(time_t postTime, int32_t timeout /*=-1*/)
         }
 
         qApp->processEvents();
-        QThread::msleep(0);
+        QThread::msleep(1);
     }
     return result;
 }
@@ -269,6 +279,10 @@ void IPC::setProfileId(uint32_t profileId_)
 IPC::IPCEvent* IPC::fetchEvent()
 {
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        return nullptr;
+    }
     for (auto& event : mem->events) {
         IPCEvent* evt = &event;
 
@@ -315,6 +329,11 @@ void IPC::processEvents()
     }
 
     IPCMemory* mem = global();
+    if (mem == nullptr) {
+        qDebug() << "Failed to cast global memory to IPCMemory";
+        globalMemory.unlock();
+        return;
+    }
 
     if (mem->globalId == globalId) {
         // We're the owner, let's process those events
@@ -386,6 +405,9 @@ IPC::IPCMemory* IPC::global()
 #if !QT_CONFIG(sharedmemory)
     return nullptr;
 #else
+    if (globalMemory.data() == nullptr) {
+        qWarning() << "Global data is empty";
+    }
     return static_cast<IPCMemory*>(globalMemory.data());
 #endif
 }
