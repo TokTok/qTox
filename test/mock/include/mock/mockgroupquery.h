@@ -17,19 +17,6 @@ public:
     MockGroupQuery(MockGroupQuery&&) = default;
     MockGroupQuery& operator=(MockGroupQuery&&) = default;
 
-    QString getGroupPeerName(int groupNumber, int peerId) const override
-    {
-        std::ignore = groupNumber;
-        return QString("peer").append(QString::number(peerId));
-    }
-
-    ToxPk getGroupPeerPk(int groupNumber, int peerId) const override
-    {
-        std::ignore = groupNumber;
-        uint8_t id[ToxPk::size] = {static_cast<uint8_t>(peerId)};
-        return ToxPk(id);
-    }
-
     ToxPk getGroupSelfPk(int groupNumber) const override
     {
         std::ignore = groupNumber;
@@ -62,12 +49,6 @@ public:
         return true;
     }
 
-    uint32_t getGroupSelfPeerId(int groupNumber) const override
-    {
-        std::ignore = groupNumber;
-        return 0;
-    }
-
     Status::Status getGroupSelfStatus(int groupNumber) const override
     {
         std::ignore = groupNumber;
@@ -81,32 +62,25 @@ public:
         return true;
     }
 
-    Status::Status getGroupPeerStatus(int groupNumber, int peerId) const override
+    GroupRole getGroupPeerRole(int groupNumber, const ToxPk& peer) const override
     {
         std::ignore = groupNumber;
-        std::ignore = peerId;
-        return Status::Status::Online;
-    }
-
-    GroupRole getGroupPeerRole(int groupNumber, int peerId) const override
-    {
-        std::ignore = groupNumber;
-        std::ignore = peerId;
+        std::ignore = peer;
         return GroupRole::User;
     }
 
-    bool setGroupPeerRole(int groupNumber, int peerId, GroupRole role) override
+    bool setGroupPeerRole(int groupNumber, const ToxPk& peer, GroupRole role) override
     {
         std::ignore = groupNumber;
-        std::ignore = peerId;
+        std::ignore = peer;
         std::ignore = role;
         return true;
     }
 
-    bool kickGroupPeer(int groupNumber, int peerId) override
+    bool kickGroupPeer(int groupNumber, const ToxPk& peer) override
     {
         std::ignore = groupNumber;
-        std::ignore = peerId;
+        std::ignore = peer;
         return true;
     }
 

@@ -54,20 +54,16 @@ public:
     ICoreGroupQuery(ICoreGroupQuery&&) = default;
     ICoreGroupQuery& operator=(ICoreGroupQuery&&) = default;
 
-    virtual QString getGroupPeerName(int groupNumber, int peerId) const = 0;
-    virtual ToxPk getGroupPeerPk(int groupNumber, int peerId) const = 0;
     virtual ToxPk getGroupSelfPk(int groupNumber) const = 0;
     virtual QString getGroupTitle(int groupNumber) const = 0;
     virtual QString getGroupTopic(int groupNumber) const = 0;
     virtual QString getGroupSelfName(int groupNumber) const = 0;
     virtual bool setGroupSelfName(int groupNumber, const QString& name) = 0;
-    virtual uint32_t getGroupSelfPeerId(int groupNumber) const = 0;
     virtual Status::Status getGroupSelfStatus(int groupNumber) const = 0;
     virtual bool setGroupSelfStatus(int groupNumber, Status::Status status) = 0;
-    virtual Status::Status getGroupPeerStatus(int groupNumber, int peerId) const = 0;
-    virtual GroupRole getGroupPeerRole(int groupNumber, int peerId) const = 0;
-    virtual bool setGroupPeerRole(int groupNumber, int peerId, GroupRole role) = 0;
-    virtual bool kickGroupPeer(int groupNumber, int peerId) = 0;
+    virtual GroupRole getGroupPeerRole(int groupNumber, const ToxPk& peer) const = 0;
+    virtual bool setGroupPeerRole(int groupNumber, const ToxPk& peer, GroupRole role) = 0;
+    virtual bool kickGroupPeer(int groupNumber, const ToxPk& peer) = 0;
     virtual bool setGroupPassword(int groupNumber, const QByteArray& password) = 0;
     virtual bool setGroupPeerLimit(int groupNumber, uint16_t peerLimit) = 0;
     virtual bool setGroupTopicLock(int groupNumber, GroupTopicLock topicLock) = 0;
