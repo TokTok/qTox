@@ -99,16 +99,17 @@ private slots:
                                      const QString& newName);
     void onConferenceTitleChanged(uint32_t conferenceNum, const QString& author, const QString& title);
 
-    void onGroupMessageReceived(uint32_t groupNumber, uint32_t peerId, const QString& message,
+    void onGroupMessageReceived(uint32_t groupNumber, const ToxPk& sender, const QString& message,
                                 bool isAction);
-    void onGroupPrivateMessageReceived(uint32_t groupNumber, uint32_t peerId,
+    void onGroupPrivateMessageReceived(uint32_t groupNumber, const ToxPk& sender,
                                        const QString& message, bool isAction);
     void onEmptyGroupCreated(uint32_t groupNumber, const GroupId& groupId, const QString& groupName);
     void onGroupJoined(uint32_t groupNumber, const GroupId& groupId);
-    void onGroupPeerJoined(uint32_t groupNumber, uint32_t peerId);
-    void onGroupPeerExited(uint32_t groupNumber, uint32_t peerId);
-    void onGroupPeerNameChanged(uint32_t groupNumber, uint32_t peerId, const QString& newName);
-    void onGroupPeerStatusChanged(uint32_t groupNumber, uint32_t peerId, Status::Status status);
+    void onGroupPeerJoined(uint32_t groupNumber, const ToxPk& peer, const QString& name,
+                           GroupRole role, Status::Status status);
+    void onGroupPeerExited(uint32_t groupNumber, const ToxPk& peer);
+    void onGroupPeerNameChanged(uint32_t groupNumber, const ToxPk& peer, const QString& newName);
+    void onGroupPeerStatusChanged(uint32_t groupNumber, const ToxPk& peer, Status::Status status);
     void onGroupTopicChanged(uint32_t groupNumber, const QString& topic);
     void onGroupSelfJoined(uint32_t groupNumber);
     void onGroupSelfDisconnected(uint32_t groupNumber);

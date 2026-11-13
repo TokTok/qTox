@@ -4,14 +4,14 @@
 
 #include "groupmessagedispatcher.h"
 
-#include "src/persistence/settings.h"
+#include "src/persistence/iconferencesettings.h"
 
 #include <QtCore>
 
 GroupMessageDispatcher::GroupMessageDispatcher(Group& g_, MessageProcessor processor_,
                                                ICoreIdHandler& idHandler_,
                                                ICoreGroupMessageSender& messageSender_,
-                                               Settings& settings_)
+                                               IConferenceSettings& settings_)
     : group(g_)
     , processor(processor_)
     , idHandler(idHandler_)
@@ -45,24 +45,23 @@ GroupMessageDispatcher::sendMessage(bool isAction, const QString& content)
 }
 
 std::pair<DispatchedMessageId, DispatchedMessageId>
-GroupMessageDispatcher::sendPrivateMessage(uint32_t peerId, bool isAction, const QString& content)
+GroupMessageDispatcher::sendPrivateMessage(const ToxPk& recipient, bool isAction, const QString& content)
 {
     const auto firstMessageId = nextMessageId;
     auto lastMessageId = firstMessageId;
-    const ToxPk recipientPk = group.resolvePeerPk(peerId);
-    const QString recipientName = group.getDisplayedName(recipientPk);
+    const QString recipientName = group.getDisplayedName(recipient);
 
     for (const auto& message : processor.processOutgoingMessage(isAction, content)) {
         auto messageId = nextMessageId++;
         lastMessageId = messageId;
         if (message.isAction) {
-            messageSender.sendGroupPrivateAction(group.getId(), peerId, message.content);
+            messageSender.sendGroupPrivateAction(group.getId(), recipient, message.content);
         } else {
-            messageSender.sendGroupPrivateMessage(group.getId(), peerId, message.content);
+            messageSender.sendGroupPrivateMessage(group.getId(), recipient, message.content);
         }
 
         Message messageWithRecipient = message;
-        messageWithRecipient.recipient = recipientPk;
+        messageWithRecipient.recipient = recipient;
         messageWithRecipient.recipientName = recipientName;
         emit messageSent(messageId, messageWithRecipient);
         emit messageComplete(messageId);

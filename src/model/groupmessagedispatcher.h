@@ -13,20 +13,20 @@
 #include <QObject>
 #include <QString>
 
-class Settings;
+class IConferenceSettings;
 
 class GroupMessageDispatcher : public IMessageDispatcher
 {
     Q_OBJECT
 public:
     GroupMessageDispatcher(Group& g_, MessageProcessor processor, ICoreIdHandler& idHandler,
-                           ICoreGroupMessageSender& messageSender, Settings& settings);
+                           ICoreGroupMessageSender& messageSender, IConferenceSettings& settings);
 
     std::pair<DispatchedMessageId, DispatchedMessageId> sendMessage(bool isAction,
                                                                     const QString& content) override;
 
     std::pair<DispatchedMessageId, DispatchedMessageId>
-    sendPrivateMessage(uint32_t peerId, bool isAction, const QString& content);
+    sendPrivateMessage(const ToxPk& recipient, bool isAction, const QString& content);
 
     void onMessageReceived(const ToxPk& sender, bool isAction, const QString& content);
     void onPrivateMessageReceived(const ToxPk& sender, bool isAction, const QString& content);
@@ -36,6 +36,6 @@ private:
     MessageProcessor processor;
     ICoreIdHandler& idHandler;
     ICoreGroupMessageSender& messageSender;
-    Settings& settings;
+    IConferenceSettings& settings;
     DispatchedMessageId nextMessageId{0};
 };

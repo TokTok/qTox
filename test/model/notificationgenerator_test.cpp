@@ -102,6 +102,14 @@ private:
     bool notifyHide = false;
 };
 
+/**
+ * @brief A group member's key, as MockGroupQuery has ours as the one of 0.
+ */
+ToxPk groupPeer(uint8_t first)
+{
+    uint8_t key[ToxPk::size] = {first};
+    return ToxPk(key);
+}
 } // namespace
 
 class TestNotificationGenerator : public QObject
@@ -398,8 +406,8 @@ void TestNotificationGenerator::testSimpleConferenceMessage()
 void TestNotificationGenerator::testGroupMessage()
 {
     Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
-    auto sender = groupQuery->getGroupPeerPk(0, 1);
-    g.onPeerJoin(1);
+    auto sender = groupPeer(1);
+    g.onPeerJoin(sender, QStringLiteral("peer1"), GroupRole::User, Status::Status::Online);
 
     auto notificationData = notificationGenerator->groupMessageNotification(&g, sender, "test");
     QCOMPARE(notificationData.title, "groupName");
@@ -410,11 +418,11 @@ void TestNotificationGenerator::testMultipleGroupMessages()
 {
     Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
 
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
-    g.onPeerJoin(0);
+    auto sender = groupPeer(0);
+    g.onPeerJoin(sender, QStringLiteral("peer0"), GroupRole::User, Status::Status::Online);
 
-    auto sender2 = groupQuery->getGroupPeerPk(0, 1);
-    g.onPeerJoin(1);
+    auto sender2 = groupPeer(1);
+    g.onPeerJoin(sender2, QStringLiteral("peer1"), GroupRole::User, Status::Status::Online);
 
     notificationGenerator->groupMessageNotification(&g, sender, "test1");
 
@@ -430,11 +438,11 @@ void TestNotificationGenerator::testMultipleGroupSourceMessages()
     Group g2(1, GroupId(QByteArray(32, 1)), "groupName2", "selfName", *groupQuery, *coreIdHandler,
              *friendList);
 
-    auto sender_g1 = groupQuery->getGroupPeerPk(0, 1);
-    g1.onPeerJoin(1);
+    auto sender_g1 = groupPeer(1);
+    g1.onPeerJoin(sender_g1, QStringLiteral("peer1"), GroupRole::User, Status::Status::Online);
 
-    auto sender_g2 = groupQuery->getGroupPeerPk(1, 1);
-    g2.onPeerJoin(1);
+    auto sender_g2 = groupPeer(1);
+    g2.onPeerJoin(sender_g2, QStringLiteral("peer1"), GroupRole::User, Status::Status::Online);
 
     notificationGenerator->groupMessageNotification(&g1, sender_g1, "test1");
     auto notificationData = notificationGenerator->groupMessageNotification(&g2, sender_g2, "test1");
@@ -446,8 +454,8 @@ void TestNotificationGenerator::testMultipleGroupSourceMessages()
 void TestNotificationGenerator::testSimpleGroupMessage()
 {
     Group g(0, GroupId(nullptr), "groupName", "selfName", *groupQuery, *coreIdHandler, *friendList);
-    auto sender = groupQuery->getGroupPeerPk(0, 0);
-    g.onPeerJoin(0);
+    auto sender = groupPeer(0);
+    g.onPeerJoin(sender, QStringLiteral("peer0"), GroupRole::User, Status::Status::Online);
 
     notificationSettings->setNotifyHide(true);
 

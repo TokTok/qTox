@@ -4,6 +4,8 @@
 
 #pragma once
 
+#include "toxpk.h"
+
 #include <QString>
 
 #include <cstdint>
@@ -20,8 +22,8 @@ public:
 
     virtual void sendGroupAction(uint32_t groupNumber, const QString& message) = 0;
     virtual void sendGroupMessage(uint32_t groupNumber, const QString& message) = 0;
-    virtual void sendGroupPrivateMessage(uint32_t groupNumber, uint32_t peerId,
+    virtual void sendGroupPrivateMessage(uint32_t groupNumber, const ToxPk& recipient,
                                          const QString& message) = 0;
-    virtual void sendGroupPrivateAction(uint32_t groupNumber, uint32_t peerId,
+    virtual void sendGroupPrivateAction(uint32_t groupNumber, const ToxPk& recipient,
                                         const QString& message) = 0;
 };

@@ -8,6 +8,7 @@
 #include "mock/mockbootstraplistgenerator.h"
 #include "mock/mockcoresettings.h"
 #include "src/core/icoresettings.h"
+#include "src/model/groupinvite.h"
 #include "src/model/ibootstraplistgenerator.h"
 
 #include <QSignalSpy>
@@ -20,6 +21,8 @@ Q_DECLARE_METATYPE(QList<DhtServer>)
 Q_DECLARE_METATYPE(ToxPk)
 Q_DECLARE_METATYPE(uint32_t)
 Q_DECLARE_METATYPE(Status::Status)
+Q_DECLARE_METATYPE(GroupInvite)
+Q_DECLARE_METATYPE(GroupRole)
 Q_DECLARE_METATYPE(GroupId)
 
 class TestCore : public QObject
@@ -31,6 +34,8 @@ public:
         qRegisterMetaType<ToxPk>("ToxPk");
         qRegisterMetaType<uint32_t>("uint32_t");
         qRegisterMetaType<Status::Status>("Status::Status");
+        qRegisterMetaType<GroupInvite>("GroupInvite");
+        qRegisterMetaType<GroupRole>("GroupRole");
         qRegisterMetaType<GroupId>("GroupId");
     }
 
@@ -42,6 +47,7 @@ private slots:
     void change_name();
     void change_status_message();
     void change_status();
+    void group_members_by_key();
     void unsynced_group_survives_restart();
 
 private:
@@ -56,6 +62,7 @@ private:
 namespace {
 const int bootstrap_timeout = 20000;
 const int connected_message_wait = 5000;
+const int group_join_wait = 30000;
 
 void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& bob,
                     MockBootstrapListGenerator& bobsNodes)
@@ -245,6 +252,42 @@ void TestCore::change_status()
     // unchanged status, so QTRY_VERIFY_WITH_TIMEOUT would return immediately.
     QTest::qSleep(connected_message_wait);
     QVERIFY(bobStatusChangeReceived.count() == 1);
+}
+
+
+/**
+ * @brief Members reach the GUI by their key in the group, never by toxcore's
+ * peer number: toxcore gives a new peer the lowest free number, so a number
+ * can be someone else's by the time the GUI handles it.
+ */
+void TestCore::group_members_by_key()
+{
+    // Toxcore takes no group nickname that's empty.
+    bob->setUsername(QStringLiteral("Bob"));
+
+    QSignalSpy bobInvited(bob.get(), &Core::groupInviteReceived);
+    QSignalSpy aliceMetBob(alice.get(), &Core::groupPeerJoined);
+    QSignalSpy bobMetAlice(bob.get(), &Core::groupPeerJoined);
+    QSignalSpy alicePrivate(alice.get(), &Core::groupPrivateMessageReceived);
+
+    const int aliceGroup = alice->createGroup(QStringLiteral("Lab"));
+    QVERIFY(aliceGroup >= 0);
+    alice->groupInviteFriend(alice->getFriendList().first(), aliceGroup);
+    QTRY_VERIFY_WITH_TIMEOUT(bobInvited.count() == 1, connected_message_wait);
+
+    const uint32_t bobGroup = bob->joinGroup(qvariant_cast<GroupInvite>(bobInvited[0][0]));
+    QVERIFY(bobGroup != std::numeric_limits<uint32_t>::max());
+    const ToxPk bobInGroup = bob->getGroupSelfPk(static_cast<int>(bobGroup));
+    const ToxPk aliceInGroup = alice->getGroupSelfPk(aliceGroup);
+
+    QTRY_VERIFY_WITH_TIMEOUT(aliceMetBob.count() >= 1 && bobMetAlice.count() >= 1, group_join_wait);
+    QCOMPARE(qvariant_cast<ToxPk>(aliceMetBob[0][1]), bobInGroup);
+    QCOMPARE(qvariant_cast<ToxPk>(bobMetAlice[0][1]), aliceInGroup);
+
+    bob->sendGroupPrivateMessage(bobGroup, aliceInGroup, QStringLiteral("psst"));
+    QTRY_VERIFY_WITH_TIMEOUT(alicePrivate.count() == 1, connected_message_wait);
+    QCOMPARE(qvariant_cast<ToxPk>(alicePrivate[0][1]), bobInGroup);
+    QCOMPARE(alicePrivate[0][2].toString(), QStringLiteral("psst"));
 }
 
 void TestCore::unsynced_group_survives_restart()

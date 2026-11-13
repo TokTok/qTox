@@ -90,9 +90,6 @@ public:
     QString getFriendUsername(uint32_t friendNumber) const;
 
     uint32_t getGroupNumberPeers(int groupNumber) const;
-    uint32_t getGroupSelfPeerId(int groupNumber) const override;
-    QString getGroupPeerName(int groupNumber, int peerId) const override;
-    ToxPk getGroupPeerPk(int groupNumber, int peerId) const override;
     ToxPk getGroupSelfPk(int groupNumber) const override;
     QString getGroupTitle(int groupNumber) const override;
     QString getGroupTopic(int groupNumber) const override;
@@ -100,10 +97,9 @@ public:
     bool setGroupSelfName(int groupNumber, const QString& name) override;
     Status::Status getGroupSelfStatus(int groupNumber) const override;
     bool setGroupSelfStatus(int groupNumber, Status::Status status) override;
-    Status::Status getGroupPeerStatus(int groupNumber, int peerId) const override;
-    GroupRole getGroupPeerRole(int groupNumber, int peerId) const override;
-    bool setGroupPeerRole(int groupNumber, int peerId, GroupRole role) override;
-    bool kickGroupPeer(int groupNumber, int peerId) override;
+    GroupRole getGroupPeerRole(int groupNumber, const ToxPk& peer) const override;
+    bool setGroupPeerRole(int groupNumber, const ToxPk& peer, GroupRole role) override;
+    bool kickGroupPeer(int groupNumber, const ToxPk& peer) override;
     GroupId getGroupPersistentId(uint32_t groupNumber) const;
     bool reconnectGroup(uint32_t groupNumber);
 
@@ -165,8 +161,10 @@ public slots:
 
     void sendGroupMessage(uint32_t groupNumber, const QString& message) override;
     void sendGroupAction(uint32_t groupNumber, const QString& message) override;
-    void sendGroupPrivateMessage(uint32_t groupNumber, uint32_t peerId, const QString& message) override;
-    void sendGroupPrivateAction(uint32_t groupNumber, uint32_t peerId, const QString& message) override;
+    void sendGroupPrivateMessage(uint32_t groupNumber, const ToxPk& recipient,
+                                 const QString& message) override;
+    void sendGroupPrivateAction(uint32_t groupNumber, const ToxPk& recipient,
+                                const QString& message) override;
 
     void setNospam(uint32_t nospam);
 
@@ -228,14 +226,15 @@ signals:
 
     void emptyGroupCreated(uint32_t groupNumber, GroupId groupId, const QString& groupName);
     void groupInviteReceived(const GroupInvite& inviteInfo);
-    void groupMessageReceived(uint32_t groupNumber, uint32_t peerId, const QString& message,
+    void groupMessageReceived(uint32_t groupNumber, const ToxPk& sender, const QString& message,
                               bool isAction);
-    void groupPrivateMessageReceived(uint32_t groupNumber, uint32_t peerId, const QString& message,
-                                     bool isAction);
-    void groupPeerJoined(uint32_t groupNumber, uint32_t peerId);
-    void groupPeerExited(uint32_t groupNumber, uint32_t peerId);
-    void groupPeerNameChanged(uint32_t groupNumber, uint32_t peerId, const QString& newName);
-    void groupPeerStatusChanged(uint32_t groupNumber, uint32_t peerId, Status::Status status);
+    void groupPrivateMessageReceived(uint32_t groupNumber, const ToxPk& sender,
+                                     const QString& message, bool isAction);
+    void groupPeerJoined(uint32_t groupNumber, const ToxPk& peer, const QString& name,
+                         GroupRole role, Status::Status status);
+    void groupPeerExited(uint32_t groupNumber, const ToxPk& peer);
+    void groupPeerNameChanged(uint32_t groupNumber, const ToxPk& peer, const QString& newName);
+    void groupPeerStatusChanged(uint32_t groupNumber, const ToxPk& peer, Status::Status status);
     void groupTitleChanged(uint32_t groupNumber, const QString& author, const QString& title);
     void groupTopicChanged(uint32_t groupNumber, const QString& topic);
     void groupSentFailed(uint32_t groupNumber);
@@ -319,7 +318,7 @@ private:
 
     void sendConferenceMessageWithType(int conferenceId, const QString& message, Tox_Message_Type type);
     void sendGroupMessageWithType(uint32_t groupNumber, const QString& message, Tox_Message_Type type);
-    void sendGroupPrivateMessageWithType(uint32_t groupNumber, uint32_t peerId,
+    void sendGroupPrivateMessageWithType(uint32_t groupNumber, const ToxPk& recipient,
                                          const QString& message, Tox_Message_Type type);
     bool sendMessageWithType(uint32_t friendId, const QString& message, Tox_Message_Type type,
                              ReceiptNum& receipt);
@@ -332,6 +331,14 @@ private:
     void bootstrapDht();
 
     void checkLastOnline(uint32_t friendId);
+
+    uint32_t getGroupSelfPeerId(int groupNumber) const;
+    QString getGroupPeerName(int groupNumber, int peerId) const;
+    ToxPk getGroupPeerPk(int groupNumber, int peerId) const;
+    Status::Status getGroupPeerStatus(int groupNumber, int peerId) const;
+    GroupRole getGroupPeerRole(int groupNumber, int peerId) const;
+    ToxPk groupPeerKey(uint32_t groupNumber, uint32_t peerId) const;
+    uint32_t groupPeerNumber(uint32_t groupNumber, const ToxPk& peer) const;
 
     void startGroupReconnectTimer(uint32_t groupNumber);
     void stopGroupReconnectTimer(uint32_t groupNumber);
@@ -379,6 +386,8 @@ private:
     QHash<uint32_t, GroupId> numberToGroupId;
     QHash<GroupId, uint32_t> groupIdToNumber;
     QHash<uint32_t, QTimer*> groupReconnectTimers;
-    // number of group members other than ourselves
-    QHash<uint32_t, uint32_t> groupPeerCounts;
+    // Each group's members other than ourselves, by their peer number now.
+    // Toxcore gives a new peer the lowest free number, so numbers never
+    // leave the core thread: everything else knows members by key.
+    QHash<uint32_t, QHash<uint32_t, ToxPk>> groupPeers;
 };

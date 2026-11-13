@@ -265,9 +265,9 @@ bool Group::setGroupNickname(const QString& nickname_)
     if (groupQuery.setGroupSelfName(toxGroupNum, nameToSet)) {
         nickname = nickname_;
         emit nicknameChanged(nickname);
-        const uint32_t selfPeerId = groupQuery.getGroupSelfPeerId(toxGroupNum);
-        if (selfPeerId != std::numeric_limits<uint32_t>::max()) {
-            onPeerNameChanged(selfPeerId, nameToSet);
+        const ToxPk self = getSelfPeerPk();
+        if (!self.isEmpty()) {
+            onPeerNameChanged(self, nameToSet);
         }
         return true;
     }
@@ -283,9 +283,9 @@ bool Group::setGroupStatus(Status::Status status)
 {
     if (groupQuery.setGroupSelfStatus(toxGroupNum, status)) {
         selfStatus = status;
-        const uint32_t selfPeerId = groupQuery.getGroupSelfPeerId(toxGroupNum);
-        if (selfPeerId != std::numeric_limits<uint32_t>::max()) {
-            onPeerStatusChanged(selfPeerId, status);
+        const ToxPk self = getSelfPeerPk();
+        if (!self.isEmpty()) {
+            onPeerStatusChanged(self, status);
         }
         return true;
     }
@@ -297,24 +297,19 @@ Status::Status Group::getGroupStatus() const
     return selfStatus;
 }
 
-QString Group::resolvePeerName(uint32_t peerId) const
+QString Group::displayName(const ToxPk& pk, const QString& peerName) const
 {
-    const ToxPk pk = groupQuery.getGroupPeerPk(toxGroupNum, peerId);
     if (pk == getSelfPeerPk()) {
         return idHandler.getUsername();
     }
-
-    const QString peerName = groupQuery.getGroupPeerName(toxGroupNum, peerId);
     return friendList.decideNickname(pk, peerName);
 }
 
-void Group::onPeerJoin(uint32_t peerId)
+void Group::onPeerJoin(const ToxPk& pk, const QString& peerName, GroupRole role, Status::Status status)
 {
-    const ToxPk pk = groupQuery.getGroupPeerPk(toxGroupNum, peerId);
-    peerIdToPk[peerId] = pk;
-    peerRoles[pk] = groupQuery.getGroupPeerRole(toxGroupNum, peerId);
-    peerStatuses[pk] = groupQuery.getGroupPeerStatus(toxGroupNum, peerId);
-    const QString name = resolvePeerName(peerId);
+    peerRoles[pk] = role;
+    peerStatuses[pk] = status;
+    const QString name = displayName(pk, peerName);
     if (peerDisplayNames.contains(pk)) {
         if (peerDisplayNames[pk] != name) {
             const QString oldName = peerDisplayNames[pk];
@@ -329,10 +324,8 @@ void Group::onPeerJoin(uint32_t peerId)
     emit numPeersChanged(peerDisplayNames.size());
 }
 
-void Group::onPeerExit(uint32_t peerId)
+void Group::onPeerExit(const ToxPk& pk)
 {
-    const ToxPk pk = resolvePeerPk(peerId);
-    peerIdToPk.remove(peerId);
     peerStatuses.remove(pk);
     peerRoles.remove(pk);
     auto it = peerDisplayNames.find(pk);
@@ -348,44 +341,37 @@ void Group::onPeerExit(uint32_t peerId)
 
 void Group::clearPeers()
 {
-    peerIdToPk.clear();
     peerStatuses.clear();
     peerRoles.clear();
     peerDisplayNames.clear();
     emit numPeersChanged(0);
 }
 
-void Group::onPeerNameChanged(uint32_t peerId, const QString& newName)
+void Group::onPeerNameChanged(const ToxPk& pk, const QString& newName)
 {
-    const ToxPk pk = groupQuery.getGroupPeerPk(toxGroupNum, peerId);
-    peerIdToPk[peerId] = pk;
-
-    const QString displayName = friendList.decideNickname(pk, newName);
+    const QString shownName = friendList.decideNickname(pk, newName);
     if (!peerDisplayNames.contains(pk)) {
-        peerDisplayNames[pk] = displayName;
+        peerDisplayNames[pk] = shownName;
         if (pk == getSelfPeerPk()) {
-            selfName = displayName;
+            selfName = shownName;
         }
-        emit userJoined(pk, displayName);
+        emit userJoined(pk, shownName);
         emit numPeersChanged(peerDisplayNames.size());
         return;
     }
 
-    if (peerDisplayNames[pk] != displayName) {
+    if (peerDisplayNames[pk] != shownName) {
         const auto oldName = peerDisplayNames[pk];
-        peerDisplayNames[pk] = displayName;
+        peerDisplayNames[pk] = shownName;
         if (pk == getSelfPeerPk()) {
-            selfName = displayName;
+            selfName = shownName;
         }
-        emit peerNameChanged(pk, oldName, displayName);
+        emit peerNameChanged(pk, oldName, shownName);
     }
 }
 
-void Group::onPeerStatusChanged(uint32_t peerId, Status::Status status)
+void Group::onPeerStatusChanged(const ToxPk& pk, Status::Status status)
 {
-    const ToxPk pk = groupQuery.getGroupPeerPk(toxGroupNum, peerId);
-    peerIdToPk[peerId] = pk;
-
     if (pk == getSelfPeerPk()) {
         selfStatus = status;
     }
@@ -399,10 +385,10 @@ void Group::onPeerStatusChanged(uint32_t peerId, Status::Status status)
 void Group::updatePeerRoles()
 {
     bool changed = false;
-    for (auto it = peerIdToPk.cbegin(); it != peerIdToPk.cend(); ++it) {
-        const GroupRole role = groupQuery.getGroupPeerRole(toxGroupNum, it.key());
-        if (peerRoles.value(it.value(), GroupRole::Unknown) != role) {
-            peerRoles[it.value()] = role;
+    for (const ToxPk& pk : peerDisplayNames.keys()) {
+        const GroupRole role = groupQuery.getGroupPeerRole(toxGroupNum, pk);
+        if (peerRoles.value(pk, GroupRole::Unknown) != role) {
+            peerRoles[pk] = role;
             changed = true;
         }
     }
@@ -423,41 +409,14 @@ Status::Status Group::getPeerStatus(const ToxPk& pk) const
 
 bool Group::setPeerRole(const ToxPk& pk, GroupRole role)
 {
-    for (auto it = peerIdToPk.cbegin(); it != peerIdToPk.cend(); ++it) {
-        if (it.value() == pk) {
-            return groupQuery.setGroupPeerRole(toxGroupNum, it.key(), role);
-        }
-    }
-    qWarning() << "setPeerRole: unknown peer" << pk.toString();
-    return false;
+    return groupQuery.setGroupPeerRole(toxGroupNum, pk, role);
 }
 
 bool Group::kickPeer(const ToxPk& pk)
 {
-    for (auto it = peerIdToPk.cbegin(); it != peerIdToPk.cend(); ++it) {
-        if (it.value() == pk) {
-            if (groupQuery.kickGroupPeer(toxGroupNum, it.key())) {
-                onPeerExit(it.key());
-                return true;
-            }
-            return false;
-        }
+    if (!groupQuery.kickGroupPeer(toxGroupNum, pk)) {
+        return false;
     }
-    qWarning() << "kickPeer: unknown peer" << pk.toString();
-    return false;
-}
-
-ToxPk Group::resolvePeerPk(uint32_t peerId) const
-{
-    return peerIdToPk.value(peerId, ToxPk{});
-}
-
-uint32_t Group::getPeerId(const ToxPk& pk) const
-{
-    for (auto it = peerIdToPk.cbegin(); it != peerIdToPk.cend(); ++it) {
-        if (it.value() == pk) {
-            return it.key();
-        }
-    }
-    return std::numeric_limits<uint32_t>::max();
+    onPeerExit(pk);
+    return true;
 }

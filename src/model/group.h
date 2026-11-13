@@ -73,18 +73,16 @@ public:
     bool setGroupStatus(Status::Status status);
     Status::Status getGroupStatus() const;
 
-    void onPeerJoin(uint32_t peerId);
-    void onPeerExit(uint32_t peerId);
+    void onPeerJoin(const ToxPk& pk, const QString& name, GroupRole role, Status::Status status);
+    void onPeerExit(const ToxPk& pk);
     void clearPeers();
-    void onPeerNameChanged(uint32_t peerId, const QString& newName);
-    void onPeerStatusChanged(uint32_t peerId, Status::Status status);
+    void onPeerNameChanged(const ToxPk& pk, const QString& newName);
+    void onPeerStatusChanged(const ToxPk& pk, Status::Status status);
     void updatePeerRoles();
     GroupRole getPeerRole(const ToxPk& pk) const;
     Status::Status getPeerStatus(const ToxPk& pk) const;
     bool setPeerRole(const ToxPk& pk, GroupRole role);
     bool kickPeer(const ToxPk& pk);
-    ToxPk resolvePeerPk(uint32_t peerId) const;
-    uint32_t getPeerId(const ToxPk& pk) const;
 
 signals:
     void titleChanged(const QString& author, const QString& title);
@@ -104,7 +102,7 @@ signals:
     void nicknameChanged(const QString& nickname);
 
 private:
-    QString resolvePeerName(uint32_t peerId) const;
+    QString displayName(const ToxPk& pk, const QString& peerName) const;
 
 private:
     ICoreGroupQuery& groupQuery;
@@ -122,7 +120,6 @@ private:
     GroupPrivacyState privacyState = GroupPrivacyState::Unknown;
     QMap<ToxPk, QString> peerDisplayNames;
     QMap<ToxPk, Status::Status> peerStatuses;
-    QMap<uint32_t, ToxPk> peerIdToPk;
     QMap<ToxPk, GroupRole> peerRoles;
     bool hasNewMessages;
     bool userWasMentioned;

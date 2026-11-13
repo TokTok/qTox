@@ -259,7 +259,8 @@ void GroupForm::updateUserNames()
         }
         label->setProperty("peerSortName", editedName.toLower());
         if (editedName != peerName) {
-            label->setToolTip(peerName + " (" + peerPk.toString() + ")");
+            label->setToolTip(Qt::convertFromPlainText(peerName + " (" + peerPk.toString() + ")",
+                                                       Qt::WhiteSpaceNormal));
         } else if (peerName != peerPk.toString()) {
             label->setToolTip(peerPk.toString());
         } // else their name is just their Pk, no tooltip needed
@@ -732,8 +733,7 @@ void GroupForm::onSendTriggered()
             return;
         }
 
-        const uint32_t peerId = group->getPeerId(privateMessageTarget);
-        if (peerId == std::numeric_limits<uint32_t>::max()) {
+        if (!group->getPeerList().contains(privateMessageTarget)) {
             const auto curTime = QDateTime::currentDateTime();
             addSystemInfoMessage(curTime, SystemMessageType::messageSendFailed, {});
             cancelPrivateMessage();
@@ -742,7 +742,7 @@ void GroupForm::onSendTriggered()
 
         msgEdit->setLastMessage(msg);
         msgEdit->clear();
-        groupDispatcher->sendPrivateMessage(peerId, isAction, msg);
+        groupDispatcher->sendPrivateMessage(privateMessageTarget, isAction, msg);
     } else {
         msgEdit->setLastMessage(msg);
         msgEdit->clear();

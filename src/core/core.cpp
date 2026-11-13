@@ -579,7 +579,8 @@ void Core::onGroupMessage(Tox* tox, uint32_t groupNumber, uint32_t peerId, Tox_M
     Core* core = static_cast<Core*>(vCore);
     const bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
     const QString message = ToxString(cMessage, length).getQString();
-    emit core->groupMessageReceived(groupNumber, peerId, message, isAction);
+    emit core->groupMessageReceived(groupNumber, core->groupPeerKey(groupNumber, peerId), message,
+                                    isAction);
 }
 
 void Core::onGroupPrivateMessage(Tox* tox, uint32_t groupNumber, uint32_t peerId,
@@ -591,7 +592,8 @@ void Core::onGroupPrivateMessage(Tox* tox, uint32_t groupNumber, uint32_t peerId
     Core* core = static_cast<Core*>(vCore);
     const bool isAction = type == TOX_MESSAGE_TYPE_ACTION;
     const QString message = ToxString(cMessage, length).getQString();
-    emit core->groupPrivateMessageReceived(groupNumber, peerId, message, isAction);
+    emit core->groupPrivateMessageReceived(groupNumber, core->groupPeerKey(groupNumber, peerId),
+                                           message, isAction);
 }
 
 void Core::onGroupPeerJoin(Tox* tox, uint32_t groupNumber, uint32_t peerId, void* vCore)
@@ -599,9 +601,18 @@ void Core::onGroupPeerJoin(Tox* tox, uint32_t groupNumber, uint32_t peerId, void
     std::ignore = tox;
     auto* const core = static_cast<Core*>(vCore);
     qDebug("Group %u peer %u joined", groupNumber, peerId);
-    ++core->groupPeerCounts[groupNumber];
+    const ToxPk peer = core->getGroupPeerPk(groupNumber, peerId);
+    if (peer.isEmpty()) {
+        return;
+    }
+    // A rejoin can give a peer another number.
+    auto& peers = core->groupPeers[groupNumber];
+    peers.removeIf([&peer](const auto& it) { return it.value() == peer; });
+    peers[peerId] = peer;
     core->stopGroupReconnectTimer(groupNumber);
-    emit core->groupPeerJoined(groupNumber, peerId);
+    emit core->groupPeerJoined(groupNumber, peer, core->getGroupPeerName(groupNumber, peerId),
+                               core->getGroupPeerRole(groupNumber, peerId),
+                               core->getGroupPeerStatus(groupNumber, peerId));
 }
 
 void Core::onGroupPeerExit(Tox* tox, uint32_t groupNumber, uint32_t peerId,
@@ -615,16 +626,16 @@ void Core::onGroupPeerExit(Tox* tox, uint32_t groupNumber, uint32_t peerId,
     std::ignore = partMessageLength;
     auto* const core = static_cast<Core*>(vCore);
     qDebug("Group %u peer %u left, exit type %d", groupNumber, peerId, static_cast<int>(exitType));
-    auto it = core->groupPeerCounts.find(groupNumber);
-    if (it != core->groupPeerCounts.end() && it.value() > 0) {
-        if (it.value() == 1) {
-            core->startGroupReconnectTimer(groupNumber);
-            core->groupPeerCounts.erase(it);
-        } else {
-            --it.value();
-        }
+    auto group = core->groupPeers.find(groupNumber);
+    if (group == core->groupPeers.end() || !group->contains(peerId)) {
+        return;
     }
-    emit core->groupPeerExited(groupNumber, peerId);
+    const ToxPk peer = group->take(peerId);
+    if (group->isEmpty()) {
+        core->groupPeers.erase(group);
+        core->startGroupReconnectTimer(groupNumber);
+    }
+    emit core->groupPeerExited(groupNumber, peer);
 }
 
 void Core::onGroupPeerNameChange(Tox* tox, uint32_t groupNumber, uint32_t peerId,
@@ -634,7 +645,7 @@ void Core::onGroupPeerNameChange(Tox* tox, uint32_t groupNumber, uint32_t peerId
     const auto newName = ToxString(name, length).getQString();
     qDebug().nospace() << "Group " << groupNumber << ", peer " << peerId << ", name " << newName;
     auto* core = static_cast<Core*>(vCore);
-    emit core->groupPeerNameChanged(groupNumber, peerId, newName);
+    emit core->groupPeerNameChanged(groupNumber, core->groupPeerKey(groupNumber, peerId), newName);
 }
 
 void Core::onGroupPeerStatusChange(Tox* tox, uint32_t groupNumber, uint32_t peerId,
@@ -644,7 +655,8 @@ void Core::onGroupPeerStatusChange(Tox* tox, uint32_t groupNumber, uint32_t peer
     qDebug().nospace() << "Group " << groupNumber << ", peer " << peerId << ", status "
                        << static_cast<int>(status);
     auto* core = static_cast<Core*>(vCore);
-    emit core->groupPeerStatusChanged(groupNumber, peerId, static_cast<Status::Status>(status));
+    emit core->groupPeerStatusChanged(groupNumber, core->groupPeerKey(groupNumber, peerId),
+                                      static_cast<Status::Status>(status));
 }
 
 void Core::onGroupSelfJoin(Tox* tox, uint32_t groupNumber, void* vCore)
@@ -679,7 +691,7 @@ void Core::onGroupJoinFail(Tox* tox, uint32_t groupNumber, Tox_Group_Join_Fail f
     auto* const core = static_cast<Core*>(vCore);
     qWarning() << "Group join failed for group" << groupNumber << "with error:" << failType;
     core->stopGroupReconnectTimer(groupNumber);
-    core->groupPeerCounts.remove(groupNumber);
+    core->groupPeers.remove(groupNumber);
     const auto groupIdIt = core->numberToGroupId.find(groupNumber);
     if (groupIdIt != core->numberToGroupId.end()) {
         core->groupIdToNumber.remove(*groupIdIt);
@@ -947,10 +959,17 @@ void Core::sendGroupAction(uint32_t groupNumber, const QString& message)
     sendGroupMessageWithType(groupNumber, message, TOX_MESSAGE_TYPE_ACTION);
 }
 
-void Core::sendGroupPrivateMessageWithType(uint32_t groupNumber, uint32_t peerId,
+void Core::sendGroupPrivateMessageWithType(uint32_t groupNumber, const ToxPk& recipient,
                                            const QString& message, Tox_Message_Type type)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+
+    const uint32_t peerId = groupPeerNumber(groupNumber, recipient);
+    if (peerId == std::numeric_limits<uint32_t>::max()) {
+        qWarning() << "Not sending a private message to a peer who left group" << groupNumber;
+        emit groupSentFailed(groupNumber);
+        return;
+    }
 
     const int size = message.toUtf8().size();
     const auto maxSize = static_cast<int>(tox_group_max_message_length());
@@ -969,14 +988,14 @@ void Core::sendGroupPrivateMessageWithType(uint32_t groupNumber, uint32_t peerId
     }
 }
 
-void Core::sendGroupPrivateMessage(uint32_t groupNumber, uint32_t peerId, const QString& message)
+void Core::sendGroupPrivateMessage(uint32_t groupNumber, const ToxPk& recipient, const QString& message)
 {
-    sendGroupPrivateMessageWithType(groupNumber, peerId, message, TOX_MESSAGE_TYPE_NORMAL);
+    sendGroupPrivateMessageWithType(groupNumber, recipient, message, TOX_MESSAGE_TYPE_NORMAL);
 }
 
-void Core::sendGroupPrivateAction(uint32_t groupNumber, uint32_t peerId, const QString& message)
+void Core::sendGroupPrivateAction(uint32_t groupNumber, const ToxPk& recipient, const QString& message)
 {
-    sendGroupPrivateMessageWithType(groupNumber, peerId, message, TOX_MESSAGE_TYPE_ACTION);
+    sendGroupPrivateMessageWithType(groupNumber, recipient, message, TOX_MESSAGE_TYPE_ACTION);
 }
 
 void Core::changeGroupTopic(uint32_t groupNumber, const QString& topic)
@@ -1611,9 +1630,32 @@ GroupRole Core::getGroupPeerRole(int groupNumber, int peerId) const
     return static_cast<GroupRole>(role);
 }
 
-bool Core::setGroupPeerRole(int groupNumber, int peerId, GroupRole role)
+GroupRole Core::getGroupPeerRole(int groupNumber, const ToxPk& peer) const
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+
+    if (peer == getGroupSelfPk(groupNumber)) {
+        Tox_Err_Group_Self_Query error;
+        const Tox_Group_Role role = tox_group_self_get_role(tox.get(), groupNumber, &error);
+        return PARSE_ERR(error) ? static_cast<GroupRole>(role) : GroupRole::Unknown;
+    }
+
+    const uint32_t peerId = groupPeerNumber(groupNumber, peer);
+    if (peerId == std::numeric_limits<uint32_t>::max()) {
+        return GroupRole::Unknown;
+    }
+    return getGroupPeerRole(groupNumber, static_cast<int>(peerId));
+}
+
+bool Core::setGroupPeerRole(int groupNumber, const ToxPk& peer, GroupRole role)
+{
+    const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+
+    const uint32_t peerId = groupPeerNumber(groupNumber, peer);
+    if (peerId == std::numeric_limits<uint32_t>::max()) {
+        qWarning() << "Not setting the role of a peer who left group" << groupNumber;
+        return false;
+    }
 
     const auto toxRole = static_cast<Tox_Group_Role>(role);
     Tox_Err_Group_Set_Role error;
@@ -1628,9 +1670,15 @@ bool Core::setGroupPeerRole(int groupNumber, int peerId, GroupRole role)
     return true;
 }
 
-bool Core::kickGroupPeer(int groupNumber, int peerId)
+bool Core::kickGroupPeer(int groupNumber, const ToxPk& peer)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
+
+    const uint32_t peerId = groupPeerNumber(groupNumber, peer);
+    if (peerId == std::numeric_limits<uint32_t>::max()) {
+        qWarning() << "Not kicking a peer who left group" << groupNumber;
+        return false;
+    }
 
     Tox_Err_Group_Kick_Peer error;
     const bool success = tox_group_kick_peer(tox.get(), groupNumber, peerId, &error);
@@ -2154,7 +2202,7 @@ void Core::quitGroup(int groupNumber)
             numberToGroupId.erase(groupIdIt);
         }
         stopGroupReconnectTimer(groupNumber);
-        groupPeerCounts.remove(groupNumber);
+        groupPeers.remove(groupNumber);
         emit saveRequest();
         emit groupSelfDisconnected(groupNumber);
     }
@@ -2207,12 +2255,30 @@ void Core::retryGroupReconnect(uint32_t groupNumber)
     }
 
     // group has other members, toxcore keeps it connected on its own
-    if (groupPeerCounts.value(groupNumber, 0) > 0) {
+    if (!groupPeers.value(groupNumber).isEmpty()) {
         stopGroupReconnectTimer(groupNumber);
         return;
     }
 
     reconnectGroup(groupNumber);
+}
+
+ToxPk Core::groupPeerKey(uint32_t groupNumber, uint32_t peerId) const
+{
+    const ToxPk known = groupPeers.value(groupNumber).value(peerId);
+    return known.isEmpty() ? getGroupPeerPk(static_cast<int>(groupNumber), static_cast<int>(peerId))
+                           : known;
+}
+
+uint32_t Core::groupPeerNumber(uint32_t groupNumber, const ToxPk& peer) const
+{
+    const auto peers = groupPeers.value(groupNumber);
+    for (auto it = peers.cbegin(); it != peers.cend(); ++it) {
+        if (it.value() == peer) {
+            return it.key();
+        }
+    }
+    return std::numeric_limits<uint32_t>::max();
 }
 
 void Core::startGroupReconnectTimer(uint32_t groupNumber)
