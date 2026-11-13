@@ -36,6 +36,7 @@ add_subdirectory(test/dbutility)
 set(TEST_RESOURCES test/resources/test_data.qrc ${${BINARY_NAME}_RESOURCES})
 
 # keep-sorted start
+auto_test(app appmanager "" "")
 auto_test(chatlog chatlinecontentproxy "" "")
 auto_test(chatlog chatlinestorage "" "")
 auto_test(chatlog chatwidget "" "")
@@ -67,6 +68,7 @@ auto_test(persistence settings "" "")
 if("EmojiOne" IN_LIST SMILEY_PACKS)
   auto_test(persistence smileypack "${SMILEY_RESOURCES}" "") # needs emojione
 endif()
+auto_test(platform stallwatchdog "" "")
 auto_test(video videomode "" "")
 auto_test(video videoframe "" "${LIBAVUTIL_LIBRARIES}")
 auto_test(widget filesform "" "")

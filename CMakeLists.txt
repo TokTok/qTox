@@ -468,6 +468,8 @@ set(${BINARY_NAME}_SOURCES
     src/platform/screenshot.h
     src/platform/stacktrace.cpp
     src/platform/stacktrace.h
+    src/platform/stallwatchdog.cpp
+    src/platform/stallwatchdog.h
     src/platform/timer.h
     src/platform/timer_osx.cpp
     src/platform/timer_win.cpp

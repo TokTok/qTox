@@ -2205,6 +2205,9 @@ void Widget::onTryCreateTrayIcon()
 
             if (settings.getShowSystemTray()) {
                 icon->show();
+                if (settings.getAutostartInTray()) {
+                    qDebug() << "Starting in the system tray, main window hidden";
+                }
                 setHidden(settings.getAutostartInTray());
             } else {
                 show();
