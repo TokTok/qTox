@@ -49,8 +49,6 @@ class Settings : public QObject,
 {
     Q_OBJECT
 
-    Q_ENUMS(StyleType)
-
     // general
     Q_PROPERTY(bool compactLayout READ getCompactLayout WRITE setCompactLayout NOTIFY compactLayoutChanged FINAL)
     Q_PROPERTY(bool autorun READ getAutorun WRITE setAutorun NOTIFY autorunChanged FINAL)
@@ -128,6 +126,7 @@ public:
         WITH_CHARS = 1,
         WITHOUT_CHARS = 2,
     };
+    Q_ENUM(StyleType)
 
     enum class FriendListSortingMode
     {

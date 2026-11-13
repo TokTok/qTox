@@ -42,17 +42,17 @@ services:
   android_builder.arm64-v8a.release_6.2.4:
     image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.release_6.2.4
     <<: *shared_params
-  android_builder.armeabi-v7a.debug_6.8.1:
-    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.debug_6.8.1
+  android_builder.armeabi-v7a.debug_6.12.0:
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.debug_6.12.0
     <<: *shared_params
-  android_builder.armeabi-v7a.release_6.8.1:
-    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.release_6.8.1
+  android_builder.armeabi-v7a.release_6.12.0:
+    image: ghcr.io/toktok/qtox:android-builder.armeabi-v7a.release_6.12.0
     <<: *shared_params
-  android_builder.arm64-v8a.debug_6.8.1:
-    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.debug_6.8.1
+  android_builder.arm64-v8a.debug_6.12.0:
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.debug_6.12.0
     <<: *shared_params
-  android_builder.arm64-v8a.release_6.8.1:
-    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.release_6.8.1
+  android_builder.arm64-v8a.release_6.12.0:
+    image: ghcr.io/toktok/qtox:android-builder.arm64-v8a.release_6.12.0
     <<: *shared_params
   debian:
     image: ghcr.io/toktok/qtox:debian

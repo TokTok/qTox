@@ -34,11 +34,11 @@ libKF6SonnetUi.dll
 libhunspell-1.7-0.dll
 # Other qTox dependencies.
 OpenAL32.dll
-avcodec-61.dll
-avdevice-61.dll
-avformat-61.dll
-avutil-59.dll
+avcodec-63.dll
+avdevice-63.dll
+avformat-63.dll
+avutil-61.dll
 libexif-12.dll
 libqrencode.dll
 libsqlcipher-0.dll
-swscale-8.dll
+swscale-10.dll

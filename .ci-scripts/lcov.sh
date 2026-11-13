@@ -5,6 +5,6 @@
 # Copyright © 2024-2025 The TokTok team
 
 # Create lcov report
-lcov --directory . --capture --output-file coverage.info
+lcov --ignore-errors inconsistent --directory . --capture --output-file coverage.info
 # Filter out system headers and test sources
-lcov --remove coverage.info '/usr/*' '*/test/*' '*/*_autogen/*' --output-file coverage.info
+lcov --ignore-errors inconsistent --remove coverage.info '/usr/*' '*/test/*' '*/*_autogen/*' --output-file coverage.info
