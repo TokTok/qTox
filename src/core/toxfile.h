@@ -45,8 +45,10 @@ struct ToxFile
     bool operator==(const ToxFile& other) const;
     bool operator!=(const ToxFile& other) const;
 
+    static uint64_t partialSizeOnDisk(const QString& path, uint64_t expectedSize);
+
     void setFilePath(QString path);
-    bool open(bool write);
+    bool open(bool write, bool resume = false);
 
     uint8_t fileKind;
     uint32_t fileNum;

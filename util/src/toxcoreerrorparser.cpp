@@ -496,6 +496,44 @@ bool ToxcoreErrorParser::parseErr(Tox_Err_File_Get error, const char* file, int 
     return false;
 }
 
+bool ToxcoreErrorParser::parseErr(Tox_Err_File_Seek error, const char* file, int line, const char* func)
+{
+    switch (error) {
+    case TOX_ERR_FILE_SEEK_OK:
+        return true;
+
+    case TOX_ERR_FILE_SEEK_FRIEND_NOT_FOUND:
+        qCriticalFrom(file, line, func)
+            << ": The friend_number passed did not designate a valid friend.";
+        return false;
+
+    case TOX_ERR_FILE_SEEK_FRIEND_NOT_CONNECTED:
+        qCriticalFrom(file, line, func)
+            << ": This client is currently not connected to the friend.";
+        return false;
+
+    case TOX_ERR_FILE_SEEK_NOT_FOUND:
+        qCriticalFrom(file, line, func)
+            << ": No file transfer with the given file number was found for the given friend.";
+        return false;
+
+    case TOX_ERR_FILE_SEEK_DENIED:
+        qCriticalFrom(file, line, func)
+            << ": File was not in a state where it could be seeked.";
+        return false;
+
+    case TOX_ERR_FILE_SEEK_INVALID_POSITION:
+        qCriticalFrom(file, line, func) << ": Seek position was invalid.";
+        return false;
+
+    case TOX_ERR_FILE_SEEK_SENDQ:
+        qCriticalFrom(file, line, func) << ": Packet queue is full.";
+        return false;
+    }
+    qCriticalFrom(file, line, func) << ": Unknown Tox_Err_File_Seek error code:" << error;
+    return false;
+}
+
 bool ToxcoreErrorParser::parseErr(Tox_Err_File_Send error, const char* file, int line, const char* func)
 {
     switch (error) {
