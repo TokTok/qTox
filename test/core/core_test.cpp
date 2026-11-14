@@ -63,6 +63,8 @@ namespace {
 const int bootstrap_timeout = 20000;
 const int connected_message_wait = 5000;
 const int group_join_wait = 30000;
+// Core's group reconnect interval and then some for the rejoin.
+const int group_rejoin_wait = 15000;
 
 void bootstrapToxes(Core& alice, MockBootstrapListGenerator& alicesNodes, Core& bob,
                     MockBootstrapListGenerator& bobsNodes)
@@ -288,6 +290,14 @@ void TestCore::group_members_by_key()
     QTRY_VERIFY_WITH_TIMEOUT(alicePrivate.count() == 1, connected_message_wait);
     QCOMPARE(qvariant_cast<ToxPk>(alicePrivate[0][1]), bobInGroup);
     QCOMPARE(alicePrivate[0][2].toString(), QStringLiteral("psst"));
+
+    // A kicked member stays out.
+    QSignalSpy bobLostAlice(bob.get(), &Core::groupPeerExited);
+    QSignalSpy aliceMetBobAgain(alice.get(), &Core::groupPeerJoined);
+    QVERIFY(alice->kickGroupPeer(aliceGroup, bobInGroup));
+    QTRY_VERIFY_WITH_TIMEOUT(bobLostAlice.count() == 1, connected_message_wait);
+    QTest::qWait(group_rejoin_wait);
+    QCOMPARE(aliceMetBobAgain.count(), 0);
 }
 
 void TestCore::unsynced_group_survives_restart()
