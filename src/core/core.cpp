@@ -707,10 +707,13 @@ void Core::onGroupModeration(Tox* tox, uint32_t groupNumber, uint32_t sourcePeer
 {
     std::ignore = tox;
     std::ignore = sourcePeerId;
-    std::ignore = targetPeerId;
-    std::ignore = modType;
     auto* const core = static_cast<Core*>(vCore);
     qDebug() << "Group" << groupNumber << "moderation event, refreshing peer roles";
+    if (modType == TOX_GROUP_MOD_EVENT_KICK
+        && targetPeerId == core->getGroupSelfPeerId(static_cast<int>(groupNumber))) {
+        core->kickedFrom.insert(groupNumber);
+        core->stopGroupReconnectTimer(groupNumber);
+    }
     emit core->groupPeerRolesChanged(groupNumber);
 }
 
@@ -2203,6 +2206,7 @@ void Core::quitGroup(int groupNumber)
         }
         stopGroupReconnectTimer(groupNumber);
         groupPeers.remove(groupNumber);
+        kickedFrom.remove(groupNumber);
         emit saveRequest();
         emit groupSelfDisconnected(groupNumber);
     }
@@ -2249,7 +2253,7 @@ void Core::retryGroupReconnect(uint32_t groupNumber)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    if (!numberToGroupId.contains(groupNumber)) {
+    if (!numberToGroupId.contains(groupNumber) || kickedFrom.contains(groupNumber)) {
         stopGroupReconnectTimer(groupNumber);
         return;
     }

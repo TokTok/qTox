@@ -26,6 +26,7 @@
 #include <QHash>
 #include <QMutex>
 #include <QObject>
+#include <QSet>
 #include <QThread>
 #include <QTimer>
 
@@ -390,4 +391,7 @@ private:
     // Toxcore gives a new peer the lowest free number, so numbers never
     // leave the core thread: everything else knows members by key.
     QHash<uint32_t, QHash<uint32_t, ToxPk>> groupPeers;
+    // Groups we were kicked from. Toxcore keeps us disconnected, and so does
+    // the reconnect timer.
+    QSet<uint32_t> kickedFrom;
 };
