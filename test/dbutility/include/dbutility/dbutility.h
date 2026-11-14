@@ -21,7 +21,7 @@ struct SqliteMasterEntry
     bool operator==(const DbUtility::SqliteMasterEntry& rhs) const;
 };
 
-extern const std::array<QString, 11> testFileList;
+extern const std::array<QString, 12> testFileList;
 extern const std::vector<SqliteMasterEntry> schema0;
 extern const std::vector<SqliteMasterEntry> schema1;
 extern const std::vector<SqliteMasterEntry> schema2;
@@ -33,6 +33,7 @@ extern const std::vector<SqliteMasterEntry> schema7;
 extern const std::vector<SqliteMasterEntry> schema9;
 extern const std::vector<SqliteMasterEntry> schema10;
 extern const std::vector<SqliteMasterEntry> schema11;
+extern const std::vector<SqliteMasterEntry> schema12;
 
 void createSchemaAtVersion(std::shared_ptr<RawDatabase> db,
                            std::vector<DbUtility::SqliteMasterEntry> schema);

@@ -931,8 +931,8 @@ så du kan gemme filen på Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
         </translation>
     </message>
     <message>
@@ -1008,8 +1008,8 @@ så du kan gemme filen på Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
         </translation>
     </message>
     <message>
@@ -1163,6 +1163,13 @@ så du kan gemme filen på Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Gruppe %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1220,6 +1227,19 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Remove chat from this window</source>
         <translation>Fjern chat fra dette vindue</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Inviter til gruppe</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Til ny gruppe</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Inviter til gruppen &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1531,6 +1551,270 @@ i stedet for at lukke helt.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Er du sikker på, at du vil rydde alle viste meddelelser?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Gruppe %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Intet emne</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">stum</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">slå lyden til</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopier peer-id</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">forfrem til moderator</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">degrader til bruger</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">smid ud af gruppen</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privat besked</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopiér emne</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopiér gruppe-ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Angiv emne...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Angiv kaldenavn...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Min status</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Væk</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Optaget</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Fjern gruppeadgangskode</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Angiv gruppeadgangskode...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Angiv medlemsgrænse...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Lås emne</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Hvem må skrive</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Alle</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatorer og stifter</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Kun stifter</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Gruppens synlighed</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Offentlig (tilmelding via link)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privat (kun ved invitation)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Angiv gruppeadgangskode</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Kodeord:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Angiv kaldenavn</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Kaldenavn:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Angiv medlemsgrænse</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Medlemsgrænse:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Angiv gruppens emne</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Emne:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privat besked til: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Opret gruppe</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Angiv et navn til gruppen</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Gruppens navn må ikke være tomt.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Deltag i gruppe via ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Angiv gruppens chat-ID (64 hex-tegn):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Ugyldigt gruppe-ID. Forventede 64 hex-tegn.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Gruppeadgangskode (valgfri)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Kodeord:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Gruppe-ID må ikke være tomt.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupper</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Opret ny gruppe</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Gruppeinvitationer</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Inviteret af %1 til %2 den %3 kl. %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Deltag</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Nedgang</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Åben chat i nyt vindue</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Fjern chat fra dette vindue</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Angiv titel...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Forlad gruppe</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Ny besked</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
     </message>
 </context>
 <context>
@@ -1994,6 +2278,18 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <translation type="unfinished">Åbn konferencestyringssiden</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Opret en gruppe</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Gruppe</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Åbn siden for gruppeadministration</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Filoverførselshistorik</translation>
@@ -2148,6 +2444,10 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <translation type="unfinished">Ny konferencemeddelelse</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Ny gruppebesked</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Indgående filoverførsel</translation>
@@ -2167,6 +2467,14 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 inviterer dig til at deltage i en konference.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Gruppeinvitation modtaget</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 inviterer dig til at deltage i en gruppe.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2732,6 +3040,11 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">blokeret</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privat</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3610,6 +3923,19 @@ størrelse</translation>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kunne ikke sende venneanmodning</translation>
     </message>
+    <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Gruppeinvitationer</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Gruppeadgangskode (valgfri)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Kodeord:</translation>
+    </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
@@ -3623,6 +3949,17 @@ størrelse</translation>
             <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n ny gruppeinvitation</numerusform>
+            <numerusform>%n nye gruppeinvitationer</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupper</translation>
     </message>
     <message>
         <source>Exit</source>

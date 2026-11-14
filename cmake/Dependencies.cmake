@@ -52,7 +52,7 @@ endif()
 
 include(CMakeParseArguments)
 
-set(TOXCORE_MINIMUM_VERSION "0.2.20")
+set(TOXCORE_MINIMUM_VERSION "0.2.23")
 
 function(search_dependency pkg)
   set(options OPTIONAL STATIC_PACKAGE)

@@ -954,8 +954,8 @@ do vi povas konservi la dosieron en Vindozo.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uzanto en la babilejo</numerusform>
+            <numerusform>%n uzantoj en la babilejo</numerusform>
         </translation>
     </message>
     <message>
@@ -1032,8 +1032,8 @@ do vi povas konservi la dosieron en Vindozo.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uzanto en la babilejo</numerusform>
+            <numerusform>%n uzantoj en la babilejo</numerusform>
         </translation>
     </message>
     <message>
@@ -1187,6 +1187,13 @@ do vi povas konservi la dosieron en Vindozo.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupo %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1238,6 +1245,19 @@ do vi povas konservi la dosieron en Vindozo.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Inviti al la grupo &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Inviti al grupo</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Al nova grupo</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Inviti al grupo „%1“</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1553,6 +1573,270 @@ anstataŭ tute fermi.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ĉu vi certas, ke vi volas forigi ĉiujn montritajn mesaĝojn?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupo %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Neniu temo</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n uzanto en la babilejo</numerusform>
+            <numerusform>%n uzantoj en la babilejo</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">muta</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">malmute</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopii samran ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">promocii al moderiganto</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">malpromocii al uzanto</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">forpeli el la grupo</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privata mesaĝo</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopii temon</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopii identigilon de grupo</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Agordi temon...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Agordi kromnomon...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Mia stato</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Enrete</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Fore</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Okupite</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Forigi pasvorton de grupo</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Agordi pasvorton de grupo...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Agordi limon de membroj...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Ŝlosi temon</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kiu rajtas skribi</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Ĉiuj</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderigantoj kaj fondinto</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Nur fondinto</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Videbleco de grupo</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Publika (aliĝo per ligilo)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privata (nur per invito)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Agordi pasvorton de grupo</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Pasvorto:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Agordi kromnomon</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Kromnomo:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Agordi limon de membroj</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Limo de membroj:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Agordi temon de grupo</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Temo:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privata mesaĝo al: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Krei grupon</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Enigu nomon por la grupo</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Nomo de grupo ne povas esti malplena.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Aliĝi al grupo per identigilo</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Enigu la babilejan identigilon de la grupo (64 deksesumaj signoj):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Nevalida identigilo de grupo. Atendataj 64 deksesumaj signoj.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Pasvorto de grupo (nedeviga)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Pasvorto:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Identigilo de grupo ne povas esti malplena.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupoj</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Krei novan grupon</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Grupaj invitoj</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Invitita de %1 al %2 je %3 je %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Aliĝu</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Malkresko</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Malfermi babilejon en nova fenestro</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Forigu babilejon el ĉi tiu fenestro</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Titoli...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Forlasi grupon</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n uzanto en la babilejo</numerusform>
+            <numerusform>%n uzantoj en la babilejo</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Nova mesaĝo</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Enrete</translation>
     </message>
 </context>
 <context>
@@ -2018,6 +2302,18 @@ Premu Shift+F1 por pliaj informoj.</translation>
         <translation type="unfinished">Malfermu paĝon pri administrado de konferenco</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Krei grupon</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupo</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Malfermi paĝon por administri grupojn</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dosiera translokado historio</translation>
@@ -2172,6 +2468,10 @@ Premu Shift+F1 por pliaj informoj.</translation>
         <translation type="unfinished">Nova konferenca mesaĝo</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Nova grupa mesaĝo</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Envenanta dosiertransigo</translation>
@@ -2191,6 +2491,14 @@ Premu Shift+F1 por pliaj informoj.</translation>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 invitas vin aliĝi al konferenco.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Grupa invito ricevita</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 invitas vin aliĝi al grupo.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2747,6 +3055,11 @@ Kunhavigu ĝin kun viaj amikoj por komenci babili.
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">blokita</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privata</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3492,12 +3805,32 @@ okolo:</translation>
         <translation>Via nomo</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Grupaj invitoj</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Pasvorto de grupo (nedeviga)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Pasvorto:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">Krei novan grupon...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Aldoni novan rondon...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n nova grupa invito</numerusform>
+            <numerusform>%n novaj grupaj invitoj</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3525,6 +3858,10 @@ okolo:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Grupoj</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Grupoj</translation>
     </message>
     <message>

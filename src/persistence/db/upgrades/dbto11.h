@@ -12,8 +12,7 @@
 
 class ToxPk;
 
-namespace DbTo11 {
-bool dbSchema10to11(RawDatabase& db);
+namespace DbUpgrader {
 bool appendDeduplicatePeersQueries(RawDatabase& db, std::vector<RawDatabase::Query>& upgradeQueries);
 bool getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>& badPeers);
 bool appendSplitPeersQueries(RawDatabase& db, std::vector<RawDatabase::Query>& upgradeQueries);
@@ -41,4 +40,4 @@ void appendUpdateFauxOfflinePendingFkQueries(std::vector<RawDatabase::Query>& up
 void appendUpdateTextMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries);
 void appendUpdateFileTransfersFkQueries(std::vector<RawDatabase::Query>& upgradeQueries);
 void appendDropPeersQueries(std::vector<RawDatabase::Query>& upgradeQueries);
-} // namespace DbTo11
+} // namespace DbUpgrader

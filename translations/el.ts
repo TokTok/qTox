@@ -884,8 +884,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n χρήστης στη συνομιλία</numerusform>
+            <numerusform>%n χρήστες στη συνομιλία</numerusform>
         </translation>
     </message>
     <message>
@@ -955,8 +955,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n χρήστης στη συνομιλία</numerusform>
+            <numerusform>%n χρήστες στη συνομιλία</numerusform>
         </translation>
     </message>
     <message>
@@ -1102,6 +1102,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Ομάδα %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1143,6 +1150,19 @@ so you can save the file on Windows.</source>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>Πρόσκληση στην ομάδα</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Πρόσκληση σε ομάδα</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Σε νέα ομάδα</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Πρόσκληση στην ομάδα «%1»</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1433,6 +1453,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Είστε βέβαιοι ότι θέλετε να διαγράψετε όλα τα μηνύματα που εμφανίζονται;</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Ομάδα %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Χωρίς θέμα</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n χρήστης στη συνομιλία</numerusform>
+            <numerusform>%n χρήστες στη συνομιλία</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">σίγαση</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">Άρση σίγασης</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">αντιγράψτε το peer ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">προαγωγή σε συντονιστή</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">υποβιβασμός σε χρήστη</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">αποβολή από την ομάδα</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">ιδιωτικό μήνυμα</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Αντιγραφή θέματος</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Αντιγραφή ID ομάδας</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Ορισμός θέματος...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Ορισμός ψευδωνύμου...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Η κατάστασή μου</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Συνδεδεμένος/η</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Απών</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Απασχολημένος/η</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Αφαίρεση κωδικού ομάδας</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Ορισμός κωδικού ομάδας...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Ορισμός ορίου μελών...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Κλείδωμα θέματος</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Ποιος μπορεί να γράφει</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Όλοι</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Συντονιστές και ιδρυτής</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Μόνο ο ιδρυτής</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Ορατότητα ομάδας</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Δημόσια (συμμετοχή μέσω συνδέσμου)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Ιδιωτική (μόνο με πρόσκληση)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Ορισμός κωδικού ομάδας</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Κωδικός πρόσβασης:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Ορισμός ψευδωνύμου</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Ψευδώνυμο:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Ορισμός ορίου μελών</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Όριο μελών:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Ορισμός θέματος ομάδας</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Θέμα:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Ιδιωτικό μήνυμα προς: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Δημιουργία ομάδας</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Εισαγάγετε ένα όνομα για την ομάδα</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Το όνομα της ομάδας δεν μπορεί να είναι κενό.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Συμμετοχή σε ομάδα μέσω ID</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Εισαγάγετε το ID συνομιλίας της ομάδας (64 δεκαεξαδικοί χαρακτήρες):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Μη έγκυρο ID ομάδας. Αναμένονται 64 δεκαεξαδικοί χαρακτήρες.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Κωδικός ομάδας (προαιρετικός)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Κωδικός πρόσβασης:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Το ID της ομάδας δεν μπορεί να είναι κενό.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Ομάδες</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Δημιουργία νέας ομάδας</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Προσκλήσεις σε ομάδες</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Πρόσκληση από %1 στην ομάδα %2 στις %3, ώρα %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Συμμετοχή</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Απόρριψη</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Άνοιγμα συνομιλίας σε νέο παράθυρο</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Αφαίρεση συνομιλίας απ&apos; αυτό το παράθυρο</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Ορίστε τίτλο...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Αποχώρηση από την ομάδα</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n χρήστης στη συνομιλία</numerusform>
+            <numerusform>%n χρήστες στη συνομιλία</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Νέο μήνυμα</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Συνδεδεμένος/η</translation>
     </message>
 </context>
 <context>
@@ -1839,6 +2123,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">Άνοιγμα σελίδας διαχείρισης ομαδικής συνομιλίας</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Δημιουργία ομάδας</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Ομάδα</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Άνοιγμα σελίδας διαχείρισης ομάδων</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Ιστορικό αρχείου μεταφορών</translation>
     </message>
@@ -1984,6 +2280,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">Νέο μήνυμα συνεδρίου</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Νέο μήνυμα ομάδας</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Εισερχόμενη μεταφορά αρχείων</translation>
@@ -2003,6 +2303,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Το %1 σας προσκαλεί να συμμετάσχετε σε μια διάσκεψη.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Λήφθηκε πρόσκληση σε ομάδα</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">Ο/Η %1 σας προσκαλεί να συμμετάσχετε σε μια ομάδα.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2512,6 +2820,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">μπλοκαριστεί</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">ιδιωτικό</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3205,8 +3518,28 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Το όνομα σας</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Προσκλήσεις σε ομάδες</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Κωδικός ομάδας (προαιρετικός)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Κωδικός πρόσβασης:</translation>
+    </message>
+    <message>
         <source>Create new circle...</source>
         <translation>Προσθέστε νέο κύκλο...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n νέα πρόσκληση σε ομάδα</numerusform>
+            <numerusform>%n νέες προσκλήσεις σε ομάδες</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3234,6 +3567,10 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Ομάδες</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Ομάδες</translation>
     </message>
     <message>

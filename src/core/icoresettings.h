@@ -48,6 +48,12 @@ public:
 
     virtual QNetworkProxy getProxy() const = 0;
 
+    virtual QStringList getSavedGroups() const = 0;
+
+    virtual QByteArray getGroupPassword(const QString& groupIdHex) const = 0;
+    virtual void setGroupPassword(const QString& groupIdHex, const QByteArray& password) = 0;
+    virtual void removeGroupPassword(const QString& groupIdHex) = 0;
+
     DECLARE_SIGNAL(enableIPv6Changed, bool enabled);
     DECLARE_SIGNAL(forceTCPChanged, bool enabled);
     DECLARE_SIGNAL(enableLanDiscoveryChanged, bool enabled);

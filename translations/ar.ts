@@ -911,12 +911,12 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>%n مستخدمين في الدردشة</numerusform>
+            <numerusform>%n مستخدمًا في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
         </translation>
     </message>
     <message>
@@ -988,12 +988,12 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>%n مستخدمين في الدردشة</numerusform>
+            <numerusform>%n مستخدمًا في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
         </translation>
     </message>
     <message>
@@ -1139,6 +1139,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">المجموعة %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1181,6 +1188,19 @@ so you can save the file on Windows.</source>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>دعوة لمجموعة</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">دعوة إلى مجموعة</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">إلى مجموعة جديدة</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">دعوة إلى المجموعة &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1473,6 +1493,278 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">هل أنت متأكد أنك تريد مسح كافة الرسائل المعروضة؟</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">المجموعة %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">لا يوجد موضوع</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>%n مستخدمين في الدردشة</numerusform>
+            <numerusform>%n مستخدمًا في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">صامت</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">إلغاء كتم الصوت</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">نسخ معرف النظير</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ترقية إلى مشرف</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">تخفيض إلى مستخدم</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">طرد من المجموعة</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">رسالة خاصة</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">نسخ الموضوع</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">نسخ معرّف المجموعة</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">تعيين الموضوع...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">تعيين الاسم المستعار...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">حالتي</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">متصل</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">في الخارج</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">مشغول</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">إزالة كلمة مرور المجموعة</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">تعيين كلمة مرور المجموعة...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">تعيين حد الأعضاء...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">قفل الموضوع</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">من يمكنه التحدث</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">الجميع</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">المشرفون والمؤسس</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">المؤسس فقط</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">ظهور المجموعة</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">عامة (الانضمام عبر رابط)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">خاصة (بالدعوة فقط)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">تعيين كلمة مرور المجموعة</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">كلمة المرور:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">تعيين الاسم المستعار</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">الاسم المستعار:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">تعيين حد الأعضاء</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">حد الأعضاء:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">تعيين موضوع المجموعة</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">الموضوع:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">رسالة خاصة إلى: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">إنشاء مجموعة</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">أدخل اسمًا للمجموعة</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">لا يمكن أن يكون اسم المجموعة فارغًا.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">الانضمام إلى مجموعة بالمعرّف</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">أدخل معرّف دردشة المجموعة (64 حرفًا ست عشريًا):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">معرّف المجموعة غير صالح. المتوقع 64 حرفًا ست عشريًا.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">كلمة مرور المجموعة (اختيارية)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">كلمة المرور:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">لا يمكن أن يكون معرّف المجموعة فارغًا.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">المجموعات</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">إنشاء مجموعة جديدة</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">دعوات المجموعات</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">دعاك %1 إلى %2 في %3 الساعة %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">انضم</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">انخفاض</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">فتح المحادثة في نافذة مستقلة</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">ازالة المحادثة من هذه النافذة</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">ضع عنواناً...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">مغادرة المجموعة</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>%n مستخدمين في الدردشة</numerusform>
+            <numerusform>%n مستخدمًا في الدردشة</numerusform>
+            <numerusform>%n مستخدم في الدردشة</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">رسالة جديدة</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">متصل</translation>
     </message>
 </context>
 <context>
@@ -1879,6 +2171,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">فتح صفحة ادارة الدردشة الجماعية</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">إنشاء مجموعة</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">مجموعة</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">فتح صفحة إدارة المجموعات</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>تاريخ نقل الملف</translation>
     </message>
@@ -2029,6 +2333,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">رسالة المؤتمر الجديدة</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">رسالة جديدة في مجموعة</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">نقل الملفات الواردة</translation>
@@ -2048,6 +2356,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 يدعوك للانضمام إلى مؤتمر.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">تم استلام دعوة إلى مجموعة</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">يدعوك %1 للانضمام إلى مجموعة.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2564,6 +2880,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">محظور</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">خاصة</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3255,8 +3576,32 @@ number here may cause the scroll bar to disappear.</source>
         <translation>اسمك</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">دعوات المجموعات</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">كلمة مرور المجموعة (اختيارية)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">كلمة المرور:</translation>
+    </message>
+    <message>
         <source>Create new circle...</source>
         <translation>اضافة قائمة جديدة...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
+            <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
+            <numerusform>%n دعوتان جديدتان إلى مجموعة</numerusform>
+            <numerusform>%n دعوات جديدة إلى مجموعة</numerusform>
+            <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
+            <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3284,6 +3629,10 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">المجموعات</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">المجموعات</translation>
     </message>
     <message>

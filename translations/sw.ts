@@ -1017,8 +1017,8 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
         </translation>
     </message>
     <message>
@@ -1100,8 +1100,8 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
         </translation>
     </message>
     <message>
@@ -1267,6 +1267,13 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Kikundi %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1342,6 +1349,19 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Alika kwenye mkutano &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Alika kwenye kikundi</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Kwenye kikundi kipya</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Alika kwenye kikundi &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1652,6 +1672,270 @@ badala ya kufunga kabisa.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Je, una uhakika kuwa unataka kufuta ujumbe wote unaoonyeshwa?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Kikundi %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Hakuna mada</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">bubu</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">acha kunyamazisha</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">nakala kitambulisho cha rika</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">pandisha kuwa msimamizi</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">shusha kuwa mtumiaji</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">fukuza kutoka kikundi</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">ujumbe wa faragha</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Nakili mada</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Nakili kitambulisho cha kikundi</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Weka mada...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Weka jina la utani...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Hali yangu</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Mtandaoni</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Mbali</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Shughuli</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Ondoa nenosiri la kikundi</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Weka nenosiri la kikundi...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Weka kikomo cha wanachama...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Funga mada</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Nani anaweza kuandika</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Kila mtu</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Wasimamizi na mwanzilishi</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Mwanzilishi pekee</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Mwonekano wa kikundi</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Wazi (jiunge kwa kiungo)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Faragha (kwa mwaliko tu)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Weka nenosiri la kikundi</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Nenosiri:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Weka jina la utani</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Jina la utani:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Weka kikomo cha wanachama</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Kikomo cha wanachama:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Weka mada ya kikundi</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Mada:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Ujumbe wa faragha kwa: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Unda kikundi</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Weka jina la kikundi</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Jina la kikundi haliwezi kuwa tupu.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Jiunge na kikundi kwa kitambulisho</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Weka kitambulisho cha gumzo cha kikundi (herufi 64 za heksadesimali):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Kitambulisho cha kikundi si sahihi. Herufi 64 za heksadesimali zinahitajika.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Nenosiri la kikundi (si lazima)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Nenosiri:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Kitambulisho cha kikundi hakiwezi kuwa tupu.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Vikundi</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Unda kikundi kipya</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Mialiko ya vikundi</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Umealikwa na %1 kwenye %2 tarehe %3 saa %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Jiunge</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Kataa</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Fungua gumzo katika dirisha jipya</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Ondoa gumzo kwenye dirisha hili</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Weka kichwa...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Ondoka kwenye kikundi</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Ujumbe mpya</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Mtandaoni</translation>
     </message>
 </context>
 <context>
@@ -2141,6 +2425,18 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <translation type="unfinished">Fungua ukurasa wa usimamizi wa mkutano</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Unda kikundi</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Kikundi</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Fungua ukurasa wa usimamizi wa vikundi</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Historia ya uhamishaji faili</translation>
@@ -2303,6 +2599,10 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <translation type="unfinished">Ujumbe mpya wa mkutano</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Ujumbe mpya wa kikundi</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Uhamisho wa faili unaoingia</translation>
@@ -2322,6 +2622,14 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 anakualika kujiunga na mkutano.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Mwaliko wa kikundi umepokelewa</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 anakualika ujiunge na kikundi.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2911,6 +3219,11 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">imezuiwa</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">faragha</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3725,6 +4038,19 @@ gumzo:</translation>
         <translation type="unfinished">Jina lako</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Mialiko ya vikundi</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Nenosiri la kikundi (si lazima)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Nenosiri:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Unda mkutano mpya...</translation>
@@ -3733,6 +4059,13 @@ gumzo:</translation>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ongeza mduara mpya...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>Mwaliko %n mpya wa kikundi</numerusform>
+            <numerusform>Mialiko %n mipya ya vikundi</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3768,6 +4101,10 @@ gumzo:</translation>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Mikutano</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Vikundi</translation>
     </message>
     <message>
         <source>Search Contacts</source>

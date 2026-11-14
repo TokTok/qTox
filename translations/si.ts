@@ -1015,8 +1015,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1098,8 +1098,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1265,6 +1265,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">කණ්ඩායම %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1340,6 +1347,19 @@ so you can save the file on Windows.</source>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">&apos;%1&apos; සම්මන්ත්‍රණයට ආරාධනා කරන්න</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">කණ්ඩායමට ආරාධනා කරන්න</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">නව කණ්ඩායමකට</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">&apos;%1&apos; කණ්ඩායමට ආරාධනා කරන්න</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1650,6 +1670,270 @@ instead of closing entirely.</source>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඔබට පෙන්වන සියලුම පණිවිඩ හිස් කිරීමට අවශ්‍ය බව ඔබට විශ්වාසද?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">කණ්ඩායම %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">මාතෘකාවක් නැත</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">නිශ්ශබ්ද කරන්න</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">නිහඬ නොකරන්න</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">peer ID පිටපත් කරන්න</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">මධ්‍යස්ථකරුවෙකු ලෙස උසස් කරන්න</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">පරිශීලකයෙකු ලෙස පහත් කරන්න</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">කණ්ඩායමෙන් ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">පෞද්ගලික පණිවිඩය</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">මාතෘකාව පිටපත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">කණ්ඩායම් හැඳුනුම්පත පිටපත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">මාතෘකාව සකසන්න...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">අන්වර්ථ නාමය සකසන්න...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">මගේ තත්ත්වය</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ඔන්ලයින්</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">ඉවතට</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">කාර්යබහුල</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">කණ්ඩායම් මුරපදය ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">කණ්ඩායම් මුරපදය සකසන්න...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">සාමාජික සීමාව සකසන්න...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">මාතෘකාව අගුළු දමන්න</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">ලිවිය හැක්කේ කාටද</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">සියලු දෙනා</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">මධ්‍යස්ථකරුවන් සහ ආරම්භකයා</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">ආරම්භකයා පමණි</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">කණ්ඩායමේ දෘශ්‍යතාව</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">පොදු (සබැඳිය හරහා එක්වන්න)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">පෞද්ගලික (ආරාධනයෙන් පමණි)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">කණ්ඩායම් මුරපදය සකසන්න</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">මුරපදය:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">අන්වර්ථ නාමය සකසන්න</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">අන්වර්ථ නාමය:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">සාමාජික සීමාව සකසන්න</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">සාමාජික සීමාව:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">කණ්ඩායම් මාතෘකාව සකසන්න</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">මාතෘකාව:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">පෞද්ගලික පණිවිඩය වෙත: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">කණ්ඩායමක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">කණ්ඩායම සඳහා නමක් ඇතුළත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">කණ්ඩායමේ නම හිස් විය නොහැක.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">හැඳුනුම්පත මඟින් කණ්ඩායමට එක්වන්න</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">කණ්ඩායමේ කතාබහ හැඳුනුම්පත ඇතුළත් කරන්න (ෂඩ් දශම අක්ෂර 64):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">වලංගු නොවන කණ්ඩායම් හැඳුනුම්පතකි. ෂඩ් දශම අක්ෂර 64ක් අවශ්‍යයි.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">කණ්ඩායම් මුරපදය (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">මුරපදය:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">කණ්ඩායම් හැඳුනුම්පත හිස් විය නොහැක.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">කණ්ඩායම්</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">නව කණ්ඩායමක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">කණ්ඩායම් ආරාධනා</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%1 විසින් %3 දින %4 ට %2 වෙත ආරාධනා කරන ලදී.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">එක්වන්න</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">ප්රතික්ෂේප කරන්න</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">නව කවුළුවක කතාබස් විවෘත කරන්න</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">මෙම කවුළුවෙන් කතාබස් ඉවත් කරන්න</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">මාතෘකාව සකසන්න...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">කණ්ඩායමෙන් ඉවත් වන්න</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">නව පණිවිඩයක්</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">ඔන්ලයින්</translation>
     </message>
 </context>
 <context>
@@ -2139,6 +2423,18 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">සම්මන්ත්‍රණ කළමනාකරණ පිටුව විවෘත කරන්න</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">කණ්ඩායමක් සාදන්න</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">කණ්ඩායම</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">කණ්ඩායම් කළමනාකරණ පිටුව විවෘත කරන්න</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ගොනු මාරු ඉතිහාසය</translation>
@@ -2301,6 +2597,10 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">නව සම්මන්ත්‍රණ පණිවිඩය</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">නව කණ්ඩායම් පණිවිඩය</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">එන ගොනු හුවමාරුව</translation>
@@ -2320,6 +2620,14 @@ Press Shift+F1 for more information.</source>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 ඔබට සම්මන්ත්‍රණයකට සම්බන්ධ වීමට ආරාධනා කරයි.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">කණ්ඩායම් ආරාධනාවක් ලැබුණි</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 ඔබට කණ්ඩායමකට එක්වීමට ආරාධනා කරයි.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2909,6 +3217,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">අවහිර කර ඇත</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">පෞද්ගලික</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3722,6 +4035,19 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">ඔයාගේ නම</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">කණ්ඩායම් ආරාධනා</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">කණ්ඩායම් මුරපදය (විකල්ප)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">මුරපදය:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නව සම්මන්ත්‍රණයක් සාදන්න...</translation>
@@ -3730,6 +4056,13 @@ number here may cause the scroll bar to disappear.</source>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">නව කවයක් එක් කරන්න...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>නව කණ්ඩායම් ආරාධනා %n</numerusform>
+            <numerusform>නව කණ්ඩායම් ආරාධනා %n</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3765,6 +4098,10 @@ number here may cause the scroll bar to disappear.</source>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">සම්මන්ත්රණ</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">කණ්ඩායම්</translation>
     </message>
     <message>
         <source>Search Contacts</source>

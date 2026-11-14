@@ -893,10 +893,10 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
         </translation>
     </message>
     <message>
@@ -968,10 +968,10 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
         </translation>
     </message>
     <message>
@@ -1117,6 +1117,13 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Skupina %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1175,6 +1182,19 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Povabi v skupino &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Povabi v skupino</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">V novo skupino</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Povabi v skupino »%1«</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1451,6 +1471,274 @@ namesto da bi se popolnoma zaprl.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ali ste prepričani, da želite počistiti vsa prikazana sporočila?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Skupina %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Ni teme</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">nemo</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">vklopi zvok</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopiraj ID vrstnika</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">povišaj v moderatorja</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">znižaj v uporabnika</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">vrzi iz skupine</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">zasebno sporočilo</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopiraj temo</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopiraj ID skupine</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Nastavi temo...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Nastavi vzdevek...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Moje stanje</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Dosegljiv</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Odsoten</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Zaseden</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Odstrani geslo skupine</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Nastavi geslo skupine...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Nastavi omejitev članov...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Zakleni temo</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kdo lahko piše</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Vsi</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatorji in ustanovitelj</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Samo ustanovitelj</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Vidnost skupine</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Javna (pridružitev s povezavo)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Zasebna (samo s povabilom)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Nastavi geslo skupine</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Geslo:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Nastavi vzdevek</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Vzdevek:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Nastavi omejitev članov</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Omejitev članov:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Nastavi temo skupine</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Tema:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Zasebno sporočilo za: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Ustvari skupino</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Vnesite ime skupine</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Ime skupine ne sme biti prazno.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Pridruži se skupini z ID-jem</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Vnesite ID klepeta skupine (64 šestnajstiških znakov):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Neveljaven ID skupine. Pričakovanih je 64 šestnajstiških znakov.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Geslo skupine (neobvezno)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Geslo:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID skupine ne sme biti prazen.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Skupine</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Ustvari novo skupino</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Povabila v skupine</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Povabil(a) %1 v %2 dne %3 ob %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Pridruži se</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Zavrni</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Odpri klepet v novem oknu</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Zapri klepet v tem oknu</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Nastavi naslov...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Zapusti skupino</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Novo sporočilo</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Dosegljiv</translation>
     </message>
 </context>
 <context>
@@ -1880,6 +2168,18 @@ Za več informacij pritisnite Shift+F1.</translation>
         <translation type="unfinished">Odpri stran za upravljanje konference</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Ustvari skupino</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Skupina</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Odpri stran za upravljanje skupin</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Zgodovina prenosov datotek</translation>
@@ -2036,6 +2336,10 @@ Za več informacij pritisnite Shift+F1.</translation>
         <translation type="unfinished">Novo konferenčno sporočilo</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Novo sporočilo v skupini</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dohodni prenos datotek</translation>
@@ -2055,6 +2359,14 @@ Za več informacij pritisnite Shift+F1.</translation>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 vas vabi, da se pridružite konferenci.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Prejeto povabilo v skupino</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 vas vabi, da se pridružite skupini.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2605,6 +2917,11 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">blokiran</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">zasebno</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3353,6 +3670,19 @@ klepeta:</translation>
         <translation type="unfinished">Tvoje ime</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Povabila v skupine</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Geslo skupine (neobvezno)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Geslo:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ustvari novo konferenco ...</translation>
@@ -3361,6 +3691,15 @@ klepeta:</translation>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Dodaj nov krog ...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n novo povabilo v skupino</numerusform>
+            <numerusform>%n novi povabili v skupine</numerusform>
+            <numerusform>%n nova povabila v skupine</numerusform>
+            <numerusform>%n novih povabil v skupine</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3392,6 +3731,10 @@ klepeta:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Skupine</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Skupine</translation>
     </message>
     <message>

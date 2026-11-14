@@ -7,10 +7,13 @@
 
 #include "src/conferencelist.h"
 #include "src/friendlist.h"
+#include "src/model/chatroom/grouproom.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
+#include "src/model/group.h"
 #include "src/widget/conferencewidget.h"
 #include "src/widget/friendwidget.h"
+#include "src/widget/groupwidget.h"
 
 namespace {
 void removeDialog(ContentDialog* dialog,
@@ -78,6 +81,22 @@ ConferenceWidget* ContentDialogManager::addConferenceToDialog(ContentDialog* dia
     return conferenceWidget;
 }
 
+GroupWidget* ContentDialogManager::addGroupToDialog(ContentDialog* dialog,
+                                                    std::shared_ptr<GroupRoom> chatroom,
+                                                    GenericChatForm* form)
+{
+    auto* groupWidget = dialog->addGroup(chatroom, form);
+    const auto& groupId = groupWidget->getGroup()->getPersistentId();
+
+    ContentDialog* lastDialog = getGroupDialog(groupId);
+    if (lastDialog != nullptr) {
+        lastDialog->removeGroup(groupId);
+    }
+
+    chatDialogs[groupId] = dialog;
+    return groupWidget;
+}
+
 void ContentDialogManager::focusChat(const ChatId& chatId)
 {
     auto* dialog = focusDialog(chatId, chatDialogs);
@@ -139,6 +158,19 @@ void ContentDialogManager::updateConferenceStatus(const ConferenceId& conference
     }
 }
 
+void ContentDialogManager::updateGroupStatus(const GroupId& groupId)
+{
+    auto* dialog = chatDialogs.value(groupId);
+    if (dialog == nullptr) {
+        return;
+    }
+
+    dialog->updateChatStatusLight(groupId);
+    if (dialog->isChatActive(groupId)) {
+        dialog->updateTitleAndStatusIcon();
+    }
+}
+
 bool ContentDialogManager::isChatActive(const ChatId& chatId)
 {
     auto* const dialog = chatDialogs.value(chatId);
@@ -157,6 +189,11 @@ ContentDialog* ContentDialogManager::getFriendDialog(const ToxPk& friendPk) cons
 ContentDialog* ContentDialogManager::getConferenceDialog(const ConferenceId& conferenceId) const
 {
     return chatDialogs.value(conferenceId);
+}
+
+ContentDialog* ContentDialogManager::getGroupDialog(const GroupId& groupId) const
+{
+    return chatDialogs.value(groupId);
 }
 
 void ContentDialogManager::addContentDialog(ContentDialog& dialog)
@@ -190,4 +227,9 @@ IDialogs* ContentDialogManager::getFriendDialogs(const ToxPk& friendPk) const
 IDialogs* ContentDialogManager::getConferenceDialogs(const ConferenceId& conferenceId) const
 {
     return getConferenceDialog(conferenceId);
+}
+
+IDialogs* ContentDialogManager::getGroupDialogs(const GroupId& groupId) const
+{
+    return getGroupDialog(groupId);
 }

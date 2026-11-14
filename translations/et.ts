@@ -1067,6 +1067,13 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupp %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1107,6 +1114,19 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translation>Kutsu gruppi</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Kutsu gruppi</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Uude gruppi</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Kutsu gruppi „%1“</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1386,6 +1406,270 @@ jätab ta tööle teavituste alal.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Kas sa kindlasti soovid eemaldada kõik kuvatud sõnumid?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupp %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Teema puudub</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>vestlemas on %n kasutaja</numerusform>
+            <numerusform>vestlemas on %n kasutajat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">vaigista</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">lülita heli sisse</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopeeri partneri ID</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ülenda moderaatoriks</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">alanda kasutajaks</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">viska grupist välja</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">privaatsõnum</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopeeri teema</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopeeri grupi ID</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Sea teema...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Sea hüüdnimi...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Minu olek</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Vestlusvalmis</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Eemal</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Hõivatud</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Eemalda grupi parool</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Sea grupi parool...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Sea liikmete piirang...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Lukusta teema</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kes saavad kirjutada</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Kõik</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderaatorid ja asutaja</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Ainult asutaja</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Grupi nähtavus</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Avalik (liitumine lingiga)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privaatne (ainult kutsega)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Sea grupi parool</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasõna:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Sea hüüdnimi</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Hüüdnimi:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Sea liikmete piirang</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Liikmete piirang:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Sea grupi teema</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Teema:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Privaatsõnum kasutajale: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Loo grupp</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Sisesta grupi nimi</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Grupi nimi ei tohi olla tühi.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Liitu grupiga ID järgi</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Sisesta grupi vestluse ID (64 kuueteistkümnendsümbolit):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">Vigane grupi ID. Oodati 64 kuueteistkümnendsümbolit.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupi parool (valikuline)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasõna:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">Grupi ID ei tohi olla tühi.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupid</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Loo uus grupp</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Grupikutsed</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Kutse edastas %1 gruppi %2 kuupäeval %3 kl %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Ühine</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Keeldu</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Ava vestlus uues aknas</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Haagi vestlus sellest aknast lahti</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Sea pealkiri...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Lahku grupist</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>vestlemas on %n kasutaja</numerusform>
+            <numerusform>vestlemas on %n kasutajat</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Uus sõnum</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Vestlusvalmis</translation>
     </message>
 </context>
 <context>
@@ -1789,6 +2073,18 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
         <translation type="unfinished">Ava grupivestluste haldamise leht</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Loo grupp</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grupp</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Ava grupihalduse leht</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Failide edastamise ajalugu</translation>
     </message>
@@ -1928,6 +2224,10 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
         <translation type="unfinished">Uus grupisõnum</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Uus grupisõnum</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Sissetulev failiedastus</translation>
     </message>
@@ -1943,6 +2243,14 @@ Lisateabe saamiseks vajutage klahvikombinatsiooni Shift+F1.</translation>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 kustub sind grupiga liituma.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Saadi grupikutse</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 kutsub sind gruppi.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2433,6 +2741,11 @@ See ID sisaldab NoSpam koodi (sinine) ja kontrollsumma (hall).</translation>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>blokeeritud</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privaatne</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3095,8 +3408,28 @@ logi:</translation>
         <translation>Sinu nimi</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Grupikutsed</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Grupi parool (valikuline)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Salasõna:</translation>
+    </message>
+    <message>
         <source>Create new circle...</source>
         <translation>Lisa uus suhtlusring...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n uus grupikutse</numerusform>
+            <numerusform>%n uut grupikutset</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3124,6 +3457,10 @@ logi:</translation>
     </message>
     <message>
         <source>Conferences</source>
+        <translation type="unfinished">Grupid</translation>
+    </message>
+    <message>
+        <source>Groups</source>
         <translation type="unfinished">Grupid</translation>
     </message>
     <message>

@@ -6,6 +6,7 @@
 #include "src/model/sessionchatlog.h"
 
 #include "src/core/icoreidhandler.h"
+#include "src/grouplist.h"
 #include "src/model/ichatlog.h"
 #include "src/model/imessagedispatcher.h"
 
@@ -65,6 +66,7 @@ private:
     std::unique_ptr<SessionChatLog> chatLog;
     std::unique_ptr<FriendList> friendList;
     std::unique_ptr<ConferenceList> conferenceList;
+    std::unique_ptr<GroupList> groupList;
 };
 
 /**
@@ -74,7 +76,8 @@ void TestSessionChatLog::init()
 {
     friendList = std::make_unique<FriendList>();
     conferenceList = std::make_unique<ConferenceList>();
-    chatLog = std::make_unique<SessionChatLog>(idHandler, *friendList, *conferenceList);
+    groupList = std::make_unique<GroupList>();
+    chatLog = std::make_unique<SessionChatLog>(idHandler, *friendList, *conferenceList, *groupList);
 }
 
 /**

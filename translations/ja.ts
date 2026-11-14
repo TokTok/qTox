@@ -1055,6 +1055,13 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">グループ %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1103,6 +1110,19 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation>グループ &apos;%1&apos; に招待</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">グループに招待</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">新しいグループへ</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">グループ &apos;%1&apos; に招待</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1370,6 +1390,268 @@ instead of closing entirely.</source>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>表示されているメッセージをすべて消去してもよろしいですか?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">グループ %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">トピックなし</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n 人のユーザーがチャット中</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">ミュート</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">ミュート解除</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">ピアIDをコピーする</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">モデレーターに昇格</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">ユーザーに降格</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">グループからキック</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">プライベートメッセージ</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">トピックをコピー</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">グループ ID をコピー</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">トピックを設定…</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">ニックネームを設定…</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">自分の状態</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">オンライン</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">退席中</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">多忙</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">グループのパスワードを削除</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">グループのパスワードを設定…</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">メンバー上限を設定…</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">トピックをロック</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">発言できるユーザー</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">全員</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">モデレーターと創設者</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">創設者のみ</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">グループの公開範囲</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">公開（リンクで参加）</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">非公開（招待のみ）</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">グループのパスワードを設定</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">パスワード:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">ニックネームを設定</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">ニックネーム:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">メンバー上限を設定</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">メンバー上限:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">グループのトピックを設定</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">トピック:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">プライベートメッセージの宛先: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">グループを作成</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">グループの名前を入力してください</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">グループ名は空にできません。</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">ID でグループに参加</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">グループのチャット ID を入力してください (16 進数 64 文字):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">グループ ID が無効です。16 進数 64 文字が必要です。</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">グループのパスワード (任意)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">パスワード:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">グループ ID は空にできません。</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">グループ</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">新しいグループを作成</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">グループへの招待</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">%3 %4 に %1 さんから %2 に招待されました。</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">参加</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">辞退</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">新しいウィンドウでチャットを開く</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">このウィンドウからチャットを削除</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">タイトルを設定…</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">グループから退出</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n 人のユーザーがチャット中</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">新しいメッセージ</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">オンライン</translation>
     </message>
 </context>
 <context>
@@ -1771,6 +2053,18 @@ Press Shift+F1 for more information.</source>
         <translation>グループチャットメッセージページを開く</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">グループを作成</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">グループ</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">グループ管理ページを開く</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>ファイル転送履歴</translation>
     </message>
@@ -1906,6 +2200,10 @@ Press Shift+F1 for more information.</source>
         <translation>新しいグループメッセージ</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">新しいグループメッセージ</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>受信ファイル転送</translation>
     </message>
@@ -1921,6 +2219,14 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation>%1 があなたをグループに招待しています。</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">グループへの招待を受信しました</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 さんがあなたをグループに招待しています。</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2411,6 +2717,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>ブロックされています</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">プライベート</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3048,12 +3359,31 @@ number here may cause the scroll bar to disappear.</source>
         <translation>名前</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">グループへの招待</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">グループのパスワード (任意)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">パスワード:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation>新しいグループを作成…</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>新しいサークルを追加…</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n 件の新しいグループへの招待</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3082,6 +3412,10 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translation>グループ</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">グループ</translation>
     </message>
     <message>
         <source>Search Contacts</source>

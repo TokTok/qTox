@@ -1010,8 +1010,8 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
         </translation>
     </message>
     <message>
@@ -1093,8 +1093,8 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
         </translation>
     </message>
     <message>
@@ -1260,6 +1260,13 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupi %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1335,6 +1342,19 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fto në konferencën &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Ftoje në grup</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Në grup të ri</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Ftoje në grupin &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1645,6 +1665,270 @@ në vend që të mbyllet plotësisht.</translation>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jeni i sigurt se doni të pastroni të gjitha mesazhet e shfaqura?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Grupi %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Pa temë</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">memec</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">anuloj zërin</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">kopjoni ID-në e kolegëve</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">ngrije në moderator</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">ule në përdorues</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">përjashtoje nga grupi</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">mesazh privat</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Kopjo temën</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Kopjo ID-në e grupit</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Cakto temën...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Cakto nofkën...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Gjendja ime</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Larg</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">I zënë</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Hiq fjalëkalimin e grupit</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Cakto fjalëkalimin e grupit...</translation>
+    </message>
+    <message>
+        <source>Set peer limit...</source>
+        <translation type="unfinished">Cakto kufirin e anëtarëve...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Kyç temën</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Kush mund të shkruajë</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Të gjithë</translation>
+    </message>
+    <message>
+        <source>Moderators and Founder</source>
+        <translation type="unfinished">Moderatorët dhe themeluesi</translation>
+    </message>
+    <message>
+        <source>Only Founder</source>
+        <translation type="unfinished">Vetëm themeluesi</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Dukshmëria e grupit</translation>
+    </message>
+    <message>
+        <source>Public (join by link)</source>
+        <translation type="unfinished">Publik (hyrje me lidhje)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Privat (vetëm me ftesë)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Cakto fjalëkalimin e grupit</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Fjalëkalimi:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Cakto nofkën</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Nofka:</translation>
+    </message>
+    <message>
+        <source>Set peer limit</source>
+        <translation type="unfinished">Cakto kufirin e anëtarëve</translation>
+    </message>
+    <message>
+        <source>Peer limit:</source>
+        <translation type="unfinished">Kufiri i anëtarëve:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Cakto temën e grupit</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Tema:</translation>
+    </message>
+    <message>
+        <source>Private message to: %1</source>
+        <translation type="unfinished">Mesazh privat për: %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Krijo grup</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Jepni një emër për grupin</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Emri i grupit nuk mund të jetë bosh.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Bashkohu me grup sipas ID-së</translation>
+    </message>
+    <message>
+        <source>Enter the group Chat ID (64 hex characters):</source>
+        <translation type="unfinished">Jepni ID-në e bisedës së grupit (64 shenja heksadecimale):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">ID grupi e pavlefshme. Priten 64 shenja heksadecimale.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Fjalëkalimi i grupit (opsional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Fjalëkalimi:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID-ja e grupit nuk mund të jetë bosh.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupe</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Krijo grup të ri</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Ftesa për në grupe</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Ftuar nga %1 në %2 më %3 në %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Bashkohu</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Rënia</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Hapni bisedën në një dritare të re</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Hiq bisedën nga kjo dritare</translation>
+    </message>
+    <message>
+        <source>Set title...</source>
+        <translation type="unfinished">Cakto titullin...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Dil nga grupi</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Mesazh i ri</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Online</translation>
     </message>
 </context>
 <context>
@@ -2134,6 +2418,18 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <translation type="unfinished">Hapni faqen e menaxhimit të konferencës</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Krijo një grup</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Grup</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Hap faqen e administrimit të grupeve</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Historia e transferimit të skedarëve</translation>
@@ -2296,6 +2592,10 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <translation type="unfinished">Mesazh i ri i konferencës</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Mesazh i ri grupi</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Transferimi i skedarëve në hyrje</translation>
@@ -2315,6 +2615,14 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">%1 ju fton të bashkoheni në një konferencë.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">U mor ftesë për në grup</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 ju fton të bashkoheni me një grup.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2904,6 +3212,11 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">bllokuar</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">privat</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3720,6 +4033,19 @@ bisedës:</translation>
         <translation type="unfinished">Emri juaj</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Ftesa për në grupe</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Fjalëkalimi i grupit (opsional)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Fjalëkalimi:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Krijo një konferencë të re...</translation>
@@ -3728,6 +4054,13 @@ bisedës:</translation>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Shto rreth të ri...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n ftesë e re për në grup</numerusform>
+            <numerusform>%n ftesa të reja për në grupe</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3763,6 +4096,10 @@ bisedës:</translation>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Konferenca</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Grupe</translation>
     </message>
     <message>
         <source>Search Contacts</source>
