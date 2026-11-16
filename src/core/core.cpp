@@ -2198,18 +2198,18 @@ void Core::quitGroup(int groupNumber)
 
     Tox_Err_Group_Leave error;
     tox_group_leave(tox.get(), groupNumber, nullptr, 0, &error);
-    if (PARSE_ERR(error)) {
-        const auto groupIdIt = numberToGroupId.find(groupNumber);
-        if (groupIdIt != numberToGroupId.end()) {
-            groupIdToNumber.remove(*groupIdIt);
-            numberToGroupId.erase(groupIdIt);
-        }
-        stopGroupReconnectTimer(groupNumber);
-        groupPeers.remove(groupNumber);
-        kickedFrom.remove(groupNumber);
-        emit saveRequest();
-        emit groupSelfDisconnected(groupNumber);
+    // Toxcore deletes the group even when no peer got our leave.
+    PARSE_ERR(error);
+    const auto groupIdIt = numberToGroupId.find(groupNumber);
+    if (groupIdIt != numberToGroupId.end()) {
+        groupIdToNumber.remove(*groupIdIt);
+        numberToGroupId.erase(groupIdIt);
     }
+    stopGroupReconnectTimer(groupNumber);
+    groupPeers.remove(groupNumber);
+    kickedFrom.remove(groupNumber);
+    emit saveRequest();
+    emit groupSelfDisconnected(groupNumber);
 }
 
 bool Core::reconnectGroup(uint32_t groupNumber)
