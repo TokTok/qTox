@@ -31,7 +31,6 @@
 #include <QMimeData>
 #include <QPushButton>
 #include <QRegularExpression>
-#include <QTextDocument>
 #include <QToolButton>
 #include <QVBoxLayout>
 
@@ -162,15 +161,15 @@ GroupForm::~GroupForm()
     Translator::unregister(this);
 }
 
-QString GroupForm::roleIcon(GroupRole role)
+GroupForm::RoleMark GroupForm::roleMark(GroupRole role)
 {
     switch (role) {
     case GroupRole::Founder:
-        return QStringLiteral("<font color=\"#FFD700\">★</font> ");
+        return {QStringLiteral("★"), QStringLiteral("#FFD700")};
     case GroupRole::Moderator:
-        return QStringLiteral("<font color=\"#FFD700\">☆</font> ");
+        return {QStringLiteral("☆"), QStringLiteral("#FFD700")};
     case GroupRole::Observer:
-        return QStringLiteral("<font color=\"#9E9E9E\">◉</font> ");
+        return {QStringLiteral("◉"), QStringLiteral("#9E9E9E")};
     default:
         return {};
     }
@@ -244,19 +243,17 @@ void GroupForm::updateUserNames()
     for (const auto& peerPk : peers.keys()) {
         const QString peerName = peers.value(peerPk);
         const QString editedName = editName(peerName);
-        const QString roleIconStr = roleIcon(group->getPeerRole(peerPk));
+        const RoleMark role = roleMark(group->getPeerRole(peerPk));
+        const QString roleIcon =
+            role.mark.isEmpty()
+                ? QString()
+                : QString("<font color=\"%1\">%2</font> ").arg(role.colour, role.mark);
         const Status::Status status = group->getPeerStatus(peerPk);
         const QString statusIcon =
             QString("<img src='%1' width='12' height='12'/> ").arg(Status::getIconPath(status));
-        QLabel* label;
-        if (roleIconStr.isEmpty()) {
-            label = new QLabel(statusIcon + editedName.toHtmlEscaped() + QLatin1String(", "));
-            label->setTextFormat(Qt::RichText);
-        } else {
-            label = new QLabel(statusIcon + roleIconStr + editedName.toHtmlEscaped()
-                               + QLatin1String(", "));
-            label->setTextFormat(Qt::RichText);
-        }
+        auto* const label =
+            new QLabel(statusIcon + roleIcon + editedName.toHtmlEscaped() + QLatin1String(", "));
+        label->setTextFormat(Qt::RichText);
         label->setProperty("peerSortName", editedName.toLower());
         if (editedName != peerName) {
             label->setToolTip(Qt::convertFromPlainText(peerName + " (" + peerPk.toString() + ")",
@@ -416,17 +413,11 @@ void GroupForm::onLabelContextMenuRequested(const QPoint& localPos)
     }
 
     const bool isPeerBlocked = blockList.contains(peerPk.toString());
-    QString menuTitle = label->text();
-    if (menuTitle.endsWith(QLatin1String(", "))) {
-        menuTitle.chop(2);
-    }
-
-    // remove HTML tags from the title, if any, so that it's displayed correctly in the menu
-    QTextDocument doc;
-    doc.setHtml(menuTitle);
-    menuTitle = doc.toPlainText();
-
-    QAction* menuTitleAction = contextMenu->addAction(menuTitle);
+    const GroupRole peerRole = group->getPeerRole(peerPk);
+    const QString mark = roleMark(peerRole).mark;
+    const QString peerName = editName(group->getPeerList().value(peerPk));
+    QAction* menuTitleAction =
+        contextMenu->addAction(mark.isEmpty() ? peerName : mark + QLatin1Char(' ') + peerName);
     menuTitleAction->setEnabled(false); // make sure the title is not clickable
     contextMenu->addSeparator();
 
@@ -441,7 +432,6 @@ void GroupForm::onLabelContextMenuRequested(const QPoint& localPos)
     auto* copyIdAction = contextMenu->addAction(tr("copy peer ID"));
 
     const GroupRole selfRole = group->getPeerRole(selfPk);
-    const GroupRole peerRole = group->getPeerRole(peerPk);
     QAction* promoteAction = nullptr;
     QAction* demoteAction = nullptr;
     QAction* kickAction = nullptr;
