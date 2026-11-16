@@ -77,7 +77,13 @@ private:
     void updateUserCount(int numPeers);
     void updateUserNames();
     void updateTopicLabel();
-    static QString roleIcon(GroupRole role);
+    // What we put before a peer's name for their role, in its colour in the member list.
+    struct RoleMark
+    {
+        QString mark;
+        QString colour;
+    };
+    static RoleMark roleMark(GroupRole role);
     bool canSetTopic() const;
     void updatePrivateMessageIndicator();
 
