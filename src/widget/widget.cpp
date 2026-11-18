@@ -2247,10 +2247,12 @@ void Widget::removeGroup(Group* g, bool fake)
 {
     assert(g);
     if (!fake) {
+        // The group can go while the dialog is open.
+        const GroupId asked = g->getPersistentId();
         RemoveChatDialog ask(this, *g);
         ask.exec();
 
-        if (!ask.accepted()) {
+        if (!ask.accepted() || groupList->findGroup(asked) != g) {
             return;
         }
 

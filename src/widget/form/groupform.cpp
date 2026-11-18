@@ -29,6 +29,7 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMimeData>
+#include <QPointer>
 #include <QPushButton>
 #include <QRegularExpression>
 #include <QToolButton>
@@ -448,8 +449,10 @@ void GroupForm::onLabelContextMenuRequested(const QPoint& localPos)
     auto* privateMessageAction = contextMenu->addAction(tr("private message"));
     contextMenu->addSeparator();
 
+    // The group can go while the menu is open.
+    const QPointer<GroupForm> self{this};
     const QAction* selectedItem = contextMenu->exec(pos);
-    if (selectedItem == nullptr) {
+    if (self.isNull() || selectedItem == nullptr) {
         return;
     }
     if (selectedItem == toggleMuteAction) {
@@ -562,8 +565,10 @@ void GroupForm::onTopicContextMenuRequested(const QPoint& localPos)
         privacyPrivateAction->setChecked(privacyState == GroupPrivacyState::Private);
     }
 
+    // The group can go while the menu is open.
+    const QPointer<GroupForm> self{this};
     const QAction* selectedItem = contextMenu->exec(pos);
-    if (selectedItem == nullptr) {
+    if (self.isNull() || selectedItem == nullptr) {
         return;
     }
     if (selectedItem == copyTopicAction) {
@@ -613,9 +618,11 @@ void GroupForm::onTopicContextMenuRequested(const QPoint& localPos)
 void GroupForm::setPassword()
 {
     bool ok = false;
+    // The group can go while the dialog is open.
+    const QPointer<GroupForm> self{this};
     const QString password = QInputDialog::getText(this, tr("Set group password"), tr("Password:"),
                                                    QLineEdit::Password, QString(), &ok);
-    if (ok) {
+    if (!self.isNull() && ok) {
         const QByteArray passwordBytes = password.toUtf8();
         if (group->setGroupPassword(passwordBytes)) {
             settings.setGroupPassword(group->getPersistentId().toString(), passwordBytes);
@@ -626,9 +633,11 @@ void GroupForm::setPassword()
 void GroupForm::setNickname()
 {
     bool ok = false;
+    // The group can go while the dialog is open.
+    const QPointer<GroupForm> self{this};
     const QString nickname = QInputDialog::getText(this, tr("Set nickname"), tr("Nickname:"),
                                                    QLineEdit::Normal, group->getGroupNickname(), &ok);
-    if (ok) {
+    if (!self.isNull() && ok) {
         group->setGroupNickname(nickname);
     }
 }
@@ -643,9 +652,11 @@ void GroupForm::clearPassword()
 void GroupForm::setPeerLimit()
 {
     bool ok = false;
+    // The group can go while the dialog is open.
+    const QPointer<GroupForm> self{this};
     const int peerLimit = QInputDialog::getInt(this, tr("Set peer limit"), tr("Peer limit:"),
                                                group->getPeerLimit(), 0, 65535, 1, &ok);
-    if (ok) {
+    if (!self.isNull() && ok) {
         group->setGroupPeerLimit(static_cast<uint16_t>(peerLimit));
     }
 }
@@ -657,9 +668,11 @@ void GroupForm::editTopic()
     }
 
     bool ok = false;
+    // The group can go while the dialog is open.
+    const QPointer<GroupForm> self{this};
     const QString topic = QInputDialog::getMultiLineText(this, tr("Set group topic"), tr("Topic:"),
                                                          group->getTopic(), &ok);
-    if (ok) {
+    if (!self.isNull() && ok) {
         core.changeGroupTopic(group->getId(), topic);
     }
 }

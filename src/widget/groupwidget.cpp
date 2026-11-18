@@ -21,6 +21,7 @@
 #include <QMenu>
 #include <QMimeData>
 #include <QPalette>
+#include <QPointer>
 
 GroupWidget::GroupWidget(std::shared_ptr<GroupRoom> chatroom_, bool compact_, Settings& settings_,
                          Style& style_, QWidget* parent)
@@ -83,7 +84,12 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
     // stack-allocated QMenu while it is still a child, so defer the removal.
     connect(quitGroup, &QAction::triggered, this, [this]() { emit removeGroup(groupId); }, Qt::QueuedConnection);
 
+    // The group can go while the menu is open.
+    const QPointer<GroupWidget> self{this};
     QAction* selectedItem = menu.exec(event->globalPos());
+    if (self.isNull()) {
+        return;
+    }
 
     removeEventFilter(this);
 
