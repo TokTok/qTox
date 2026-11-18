@@ -338,6 +338,7 @@ private:
     ToxPk getGroupPeerPk(int groupNumber, int peerId) const;
     Status::Status getGroupPeerStatus(int groupNumber, int peerId) const;
     GroupRole getGroupPeerRole(int groupNumber, int peerId) const;
+    QString groupSelfName() const;
     ToxPk groupPeerKey(uint32_t groupNumber, uint32_t peerId) const;
     uint32_t groupPeerNumber(uint32_t groupNumber, const ToxPk& peer) const;
 

@@ -49,6 +49,7 @@ private slots:
     void change_status();
     void group_members_by_key();
     void unsynced_group_survives_restart();
+    void group_without_user_name();
 
 private:
     /* Test Variables */
@@ -298,6 +299,17 @@ void TestCore::group_members_by_key()
     QTRY_VERIFY_WITH_TIMEOUT(bobLostAlice.count() == 1, connected_message_wait);
     QTest::qWait(group_rejoin_wait);
     QCOMPARE(aliceMetBobAgain.count(), 0);
+}
+
+void TestCore::group_without_user_name()
+{
+    // Toxcore takes no group nickname that's empty.
+    MockSettings davesSettings;
+    MockBootstrapListGenerator davesNodes{};
+    auto [dave, err] = Core::makeToxCore({}, davesSettings, davesNodes);
+    QVERIFY(dave != nullptr);
+    QVERIFY(dave->getUsername().isEmpty());
+    QVERIFY(dave->createGroup(QStringLiteral("Lab")) >= 0);
 }
 
 void TestCore::unsynced_group_survives_restart()

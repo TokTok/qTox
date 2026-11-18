@@ -1337,7 +1337,7 @@ void Core::loadGroups()
             continue;
         }
 
-        const ToxString cSelfName(getUsername());
+        const ToxString cSelfName(groupSelfName());
         const QByteArray storedPassword = settings.getGroupPassword(groupIdHex);
         const auto* passData = storedPassword.isEmpty()
                                    ? nullptr
@@ -1923,7 +1923,7 @@ bool Core::setGroupSelfName(int groupNumber, const QString& name)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
-    const ToxString toxName(name);
+    const ToxString toxName(name.isEmpty() ? groupSelfName() : name);
     Tox_Err_Group_Self_Name_Set error;
     const bool success =
         tox_group_self_set_name(tox.get(), groupNumber, toxName.data(), toxName.size(), &error);
@@ -2085,7 +2085,7 @@ int Core::createGroup(const QString& groupName)
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const ToxString cName(groupName);
-    const ToxString cSelfName(getUsername());
+    const ToxString cSelfName(groupSelfName());
     Tox_Err_Group_New error;
     const uint32_t groupNumber =
         tox_group_new(tox.get(), TOX_GROUP_PRIVACY_STATE_PUBLIC, cName.data(), cName.size(),
@@ -2131,7 +2131,7 @@ uint32_t Core::joinGroup(const GroupInvite& inviteInfo, const QByteArray& passwo
         return groupIdToNumber[groupId];
     }
 
-    const ToxString cSelfName(getUsername());
+    const ToxString cSelfName(groupSelfName());
     const auto* passData =
         password.isEmpty() ? nullptr : reinterpret_cast<const uint8_t*>(password.constData());
 
@@ -2172,7 +2172,7 @@ int Core::joinGroup(const GroupId& groupId, const QByteArray& password)
         return groupIdToNumber[groupId];
     }
 
-    const ToxString cSelfName(getUsername());
+    const ToxString cSelfName(groupSelfName());
     const auto* passData =
         password.isEmpty() ? nullptr : reinterpret_cast<const uint8_t*>(password.constData());
     Tox_Err_Group_Join error;
@@ -2232,7 +2232,7 @@ bool Core::reconnectGroup(uint32_t groupNumber)
     }
     QString selfName = getGroupSelfName(static_cast<int>(groupNumber));
     if (selfName.isEmpty()) {
-        selfName = getUsername();
+        selfName = groupSelfName();
     }
     const ToxString cSelfName(selfName);
 
@@ -2267,6 +2267,13 @@ void Core::retryGroupReconnect(uint32_t groupNumber)
     reconnectGroup(groupNumber);
 }
 
+QString Core::groupSelfName() const
+{
+    // Toxcore takes no group nickname that's empty.
+    const QString name = getUsername();
+    return name.isEmpty() ? QStringLiteral("Tox User") : name;
+}
+
 ToxPk Core::groupPeerKey(uint32_t groupNumber, uint32_t peerId) const
 {
     const ToxPk known = groupPeers.value(groupNumber).value(peerId);
@@ -2296,6 +2303,8 @@ void Core::startGroupReconnectTimer(uint32_t groupNumber)
         timer->setInterval(GROUP_RECONNECT_INTERVAL_MS);
         connect(timer, &QTimer::timeout, this,
                 [this, groupNumber] { retryGroupReconnect(groupNumber); });
+        // A timer can only be stopped in its thread, which is gone by the time Core is.
+        connect(coreThread.get(), &QThread::finished, timer, &QTimer::stop);
         groupReconnectTimers[groupNumber] = timer;
         timer->start();
     });
