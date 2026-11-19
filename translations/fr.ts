@@ -517,11 +517,11 @@ ce qui peut entraîner des problèmes lors des appels vidéo.</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
-        <translation type="unfinished">Écrire le journal de débogage dans un fichier</translation>
+        <translation>Écrire le journal de débogage dans un fichier</translation>
     </message>
     <message>
         <source>Toxcore log level:</source>
-        <translation type="unfinished">Niveau de journalisation de Toxcore :</translation>
+        <translation>Niveau de journalisation de Toxcore&#xa0;:</translation>
     </message>
     <message>
         <source>Trace</source>
