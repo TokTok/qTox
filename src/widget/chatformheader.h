@@ -65,6 +65,8 @@ public:
     void setAvatar(const QPixmap& img);
     QSize getAvatarSize() const;
 
+    void setMoreButtonVisible(bool visible);
+
     // TODO: Remove
     void addWidget(QWidget* widget, int stretch = 0, Qt::Alignment alignment = Qt::Alignment());
     void addLayout(QLayout* layout);
@@ -84,6 +86,8 @@ signals:
     void callAccepted();
     void callRejected();
 
+    void moreClicked();
+
 private slots:
     void retranslateUi();
     void updateButtonsView();
@@ -91,6 +95,7 @@ private slots:
 private:
     Mode mode;
     MaskablePixmapWidget* avatar;
+    QToolButton* moreButton;
     QVBoxLayout* headTextLayout;
     QHBoxLayout* nameLine;
     CroppingLabel* nameLabel;

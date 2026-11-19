@@ -56,7 +56,7 @@ private slots:
     void onTitleChanged(const QString& author, const QString& title);
     void onTopicChanged(const QString& author, const QString& topic);
     void onLabelContextMenuRequested(const QPoint& localPos);
-    void onTopicContextMenuRequested(const QPoint& localPos);
+    void onMoreClicked();
     void editTopic();
     void setPassword();
     void setNickname();

@@ -81,6 +81,7 @@ GroupForm::GroupForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
     fileButton->setProperty("state", "");
     headWidget->setMode(ChatFormHeader::Mode::None);
     headWidget->setNameEditable(false);
+    headWidget->setMoreButtonVisible(true);
     setName(group->getDisplayedName());
 
     nusersLabel->setFont(Style::getFont(Style::Font::Medium));
@@ -98,7 +99,6 @@ GroupForm::GroupForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
     topicLabel = new CroppingLabel(this);
     topicLabel->setObjectName("topicLabel");
     topicLabel->setTextFormat(Qt::PlainText);
-    topicLabel->setContextMenuPolicy(Qt::CustomContextMenu);
     headWidget->addWidget(topicLabel);
     updateTopicLabel();
 
@@ -139,9 +139,8 @@ GroupForm::GroupForm(Core& core_, Group* chatGroup, IChatLog& chatLog_,
     connect(group, &Group::peerStatusChanged, this, &GroupForm::onPeerStatusChanged);
     connect(group, &Group::numPeersChanged, this, &GroupForm::updateUserCount);
     connect(group, &Group::peerRolesChanged, this, &GroupForm::updateUserNames);
-    connect(topicLabel, &CroppingLabel::customContextMenuRequested, this,
-            &GroupForm::onTopicContextMenuRequested);
     connect(topicLabel, &CroppingLabel::clicked, this, &GroupForm::editTopic);
+    connect(headWidget, &ChatFormHeader::moreClicked, this, &GroupForm::onMoreClicked);
     settings.connectTo_blockListChanged(this, [this](const QStringList&) { updateUserNames(); });
 
     if (settings.getShowConferenceJoinLeaveMessages()) {
@@ -389,103 +388,9 @@ void GroupForm::retranslateUi()
     updatePrivateMessageIndicator();
 }
 
-void GroupForm::onLabelContextMenuRequested(const QPoint& localPos)
+void GroupForm::onMoreClicked()
 {
-    auto* label = static_cast<QLabel*>(QObject::sender());
-
-    if (label == nullptr) {
-        return;
-    }
-
-    const QPoint pos = label->mapToGlobal(localPos);
-    const QString muteString = tr("mute");
-    const QString unmuteString = tr("unmute");
-    QStringList blockList = settings.getBlockList();
-    auto* const contextMenu = new QMenu(this);
-    const ToxPk selfPk = core.getGroupSelfPk(group->getId());
-    ToxPk peerPk;
-
-    // delete menu after it stops being used
-    connect(contextMenu, &QMenu::aboutToHide, contextMenu, &QObject::deleteLater);
-
-    peerPk = peerLabels.key(label);
-    if (peerPk.isEmpty() || peerPk == selfPk) {
-        return;
-    }
-
-    const bool isPeerBlocked = blockList.contains(peerPk.toString());
-    const GroupRole peerRole = group->getPeerRole(peerPk);
-    const QString mark = roleMark(peerRole).mark;
-    const QString peerName = editName(group->getPeerList().value(peerPk));
-    QAction* menuTitleAction =
-        contextMenu->addAction(mark.isEmpty() ? peerName : mark + QLatin1Char(' ') + peerName);
-    menuTitleAction->setEnabled(false); // make sure the title is not clickable
-    contextMenu->addSeparator();
-
-    const QAction* toggleMuteAction;
-    if (isPeerBlocked) {
-        toggleMuteAction = contextMenu->addAction(unmuteString);
-    } else {
-        toggleMuteAction = contextMenu->addAction(muteString);
-    }
-    contextMenu->setStyleSheet(style.getStylesheet(PEER_LABEL_STYLE_SHEET_PATH, settings));
-
-    auto* copyIdAction = contextMenu->addAction(tr("copy peer ID"));
-
-    const GroupRole selfRole = group->getPeerRole(selfPk);
-    QAction* promoteAction = nullptr;
-    QAction* demoteAction = nullptr;
-    QAction* kickAction = nullptr;
-    if (selfRole == GroupRole::Founder || selfRole == GroupRole::Moderator) {
-        if (peerRole == GroupRole::User || peerRole == GroupRole::Observer) {
-            promoteAction = contextMenu->addAction(tr("promote to moderator"));
-        }
-        if (peerRole == GroupRole::Moderator) {
-            demoteAction = contextMenu->addAction(tr("demote to user"));
-        }
-        kickAction = contextMenu->addAction(tr("kick from group"));
-    }
-
-    auto* privateMessageAction = contextMenu->addAction(tr("private message"));
-    contextMenu->addSeparator();
-
-    // The group can go while the menu is open.
-    const QPointer<GroupForm> self{this};
-    const QAction* selectedItem = contextMenu->exec(pos);
-    if (self.isNull() || selectedItem == nullptr) {
-        return;
-    }
-    if (selectedItem == toggleMuteAction) {
-        if (isPeerBlocked) {
-            const int index = blockList.indexOf(peerPk.toString());
-            if (index != -1) {
-                blockList.removeAt(index);
-            }
-        } else {
-            blockList << peerPk.toString();
-        }
-
-        settings.setBlockList(blockList);
-    } else if (selectedItem == copyIdAction) {
-        auto* clipboard = QApplication::clipboard();
-        clipboard->setText(peerPk.toString(), QClipboard::Clipboard);
-        if (clipboard->supportsSelection()) {
-            clipboard->setText(peerPk.toString(), QClipboard::Selection);
-        }
-    } else if (selectedItem == promoteAction) {
-        group->setPeerRole(peerPk, GroupRole::Moderator);
-    } else if (selectedItem == demoteAction) {
-        group->setPeerRole(peerPk, GroupRole::User);
-    } else if (selectedItem == kickAction) {
-        group->kickPeer(peerPk);
-    } else if (selectedItem == privateMessageAction) {
-        startPrivateMessage(peerPk);
-    }
-}
-
-void GroupForm::onTopicContextMenuRequested(const QPoint& localPos)
-{
-    const QPoint pos = topicLabel->mapToGlobal(localPos);
+    const QPoint pos = headWidget->mapToGlobal(QPoint(0, headWidget->height()));
     auto* const contextMenu = new QMenu(this);
     contextMenu->setStyleSheet(style.getStylesheet("chatArea/chatHead.qss", settings));
 
@@ -612,6 +517,100 @@ void GroupForm::onTopicContextMenuRequested(const QPoint& localPos)
         group->setGroupPrivacyState(GroupPrivacyState::Public);
     } else if (selectedItem == privacyPrivateAction) {
         group->setGroupPrivacyState(GroupPrivacyState::Private);
+    }
+}
+
+void GroupForm::onLabelContextMenuRequested(const QPoint& localPos)
+{
+    auto* label = static_cast<QLabel*>(QObject::sender());
+
+    if (label == nullptr) {
+        return;
+    }
+
+    const QPoint pos = label->mapToGlobal(localPos);
+    const QString muteString = tr("mute");
+    const QString unmuteString = tr("unmute");
+    QStringList blockList = settings.getBlockList();
+    auto* const contextMenu = new QMenu(this);
+    const ToxPk selfPk = core.getGroupSelfPk(group->getId());
+    ToxPk peerPk;
+
+    // delete menu after it stops being used
+    connect(contextMenu, &QMenu::aboutToHide, contextMenu, &QObject::deleteLater);
+
+    peerPk = peerLabels.key(label);
+    if (peerPk.isEmpty() || peerPk == selfPk) {
+        return;
+    }
+
+    const bool isPeerBlocked = blockList.contains(peerPk.toString());
+    const GroupRole peerRole = group->getPeerRole(peerPk);
+    const QString mark = roleMark(peerRole).mark;
+    const QString peerName = editName(group->getPeerList().value(peerPk));
+    QAction* menuTitleAction =
+        contextMenu->addAction(mark.isEmpty() ? peerName : mark + QLatin1Char(' ') + peerName);
+    menuTitleAction->setEnabled(false); // make sure the title is not clickable
+    contextMenu->addSeparator();
+
+    const QAction* toggleMuteAction;
+    if (isPeerBlocked) {
+        toggleMuteAction = contextMenu->addAction(unmuteString);
+    } else {
+        toggleMuteAction = contextMenu->addAction(muteString);
+    }
+    contextMenu->setStyleSheet(style.getStylesheet(PEER_LABEL_STYLE_SHEET_PATH, settings));
+
+    auto* copyIdAction = contextMenu->addAction(tr("copy peer ID"));
+
+    const GroupRole selfRole = group->getPeerRole(selfPk);
+    QAction* promoteAction = nullptr;
+    QAction* demoteAction = nullptr;
+    QAction* kickAction = nullptr;
+    if (selfRole == GroupRole::Founder || selfRole == GroupRole::Moderator) {
+        if (peerRole == GroupRole::User || peerRole == GroupRole::Observer) {
+            promoteAction = contextMenu->addAction(tr("promote to moderator"));
+        }
+        if (peerRole == GroupRole::Moderator) {
+            demoteAction = contextMenu->addAction(tr("demote to user"));
+        }
+        kickAction = contextMenu->addAction(tr("kick from group"));
+    }
+
+    auto* privateMessageAction = contextMenu->addAction(tr("private message"));
+    contextMenu->addSeparator();
+
+    // The group can go while the menu is open.
+    const QPointer<GroupForm> self{this};
+    const QAction* selectedItem = contextMenu->exec(pos);
+    if (self.isNull() || selectedItem == nullptr) {
+        return;
+    }
+    if (selectedItem == toggleMuteAction) {
+        if (isPeerBlocked) {
+            const int index = blockList.indexOf(peerPk.toString());
+            if (index != -1) {
+                blockList.removeAt(index);
+            }
+        } else {
+            blockList << peerPk.toString();
+        }
+
+        settings.setBlockList(blockList);
+    } else if (selectedItem == copyIdAction) {
+        auto* clipboard = QApplication::clipboard();
+        clipboard->setText(peerPk.toString(), QClipboard::Clipboard);
+        if (clipboard->supportsSelection()) {
+            clipboard->setText(peerPk.toString(), QClipboard::Selection);
+        }
+    } else if (selectedItem == promoteAction) {
+        group->setPeerRole(peerPk, GroupRole::Moderator);
+    } else if (selectedItem == demoteAction) {
+        group->setPeerRole(peerPk, GroupRole::User);
+    } else if (selectedItem == kickAction) {
+        group->kickPeer(peerPk);
+    } else if (selectedItem == privateMessageAction) {
+        startPrivateMessage(peerPk);
     }
 }
 
