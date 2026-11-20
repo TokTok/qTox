@@ -3,8 +3,9 @@
 !audio/
 !cmake/
 !img/
-!platform/wasm/_headers
 !platform/wasm/build.sh
+!platform/wasm/cross-origin-isolation.js
+!platform/wasm/tox-gateway.js
 !res/**/*
 !themes/
 !translations/
