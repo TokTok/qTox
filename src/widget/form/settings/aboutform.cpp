@@ -95,7 +95,7 @@ void AboutForm::replaceVersions()
     bodyUI->qtVersion->setText(tr("Qt version: %1").arg(QT_VERSION_STR));
 
     bodyUI->knownIssues->setText(
-        tr("A list of all known issues may be found at our %1 at Github."
+        tr("A list of all known issues may be found on our %1 on GitHub."
            " If you discover a bug or security vulnerability within"
            " qTox, please report it according to the guidelines in our"
            " %2 wiki article.",
@@ -103,7 +103,7 @@ void AboutForm::replaceVersions()
            "`%1` is replaced by translation of `bug tracker`"
            "\n`%2` is replaced by translation of `Writing Useful Bug Reports`")
             .arg(createLink("https://github.com/TokTok/qTox/issues",
-                            tr("bug-tracker", "Replaces `%1` in the `A list of all known…`")))
+                            tr("bug tracker", "Replaces `%1` in the `A list of all known…`")))
             .arg(createLink("https://github.com/TokTok/qTox/wiki/Writing-Useful-Bug-Reports",
                             tr("Writing Useful Bug Reports",
                                "Replaces `%2` in the `A list of all known…`"))));
@@ -130,7 +130,7 @@ void AboutForm::replaceVersions()
     const QString authorInfo =
         QStringLiteral("<p>%1</p><p>%2</p><p>%3</p>")
             .arg(tr("Original author: %1").arg(createLink("https://github.com/tux3", "tux3")),
-                 tr("See a full list of %1 at Github",
+                 tr("See a full list of %1 on GitHub",
                     "`%1` is replaced with translation of word `contributors`")
                      .arg(createLink("https://github.com/TokTok/qTox/graphs/contributors",
                                      tr("contributors", "Replaces `%1` in `See a full list of…`"))),

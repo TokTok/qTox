@@ -2576,7 +2576,7 @@ void Widget::retranslateUi()
     statusAway->setText(tr("Away", "Button to set your status to 'Away'"));
     statusBusy->setText(tr("Busy", "Button to set your status to 'Busy'"));
     actionLogout->setText(tr("Logout", "Tray action menu to logout user"));
-    actionQuit->setText(tr("Exit", "Tray action menu to exit Tox"));
+    actionQuit->setText(tr("Exit", "Tray action menu to exit qTox"));
     actionShow->setText(tr("Show", "Tray action menu to show qTox window"));
 
     if (!settings.getSeparateWindow() && ((settingsWidget != nullptr) && settingsWidget->isShown())) {

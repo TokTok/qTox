@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Default resolution</source>
-        <translation>সহজাত আকার</translation>
+        <translation>ডিফল্ট রেজোলিউশন</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -31,7 +31,7 @@
     <message>
         <source>Gain</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">লাভ</translation>
+        <translation type="unfinished">গেইন</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -46,7 +46,7 @@
     <message>
         <source>Volume</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আয়তন</translation>
+        <translation type="unfinished">ভলিউম</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -57,19 +57,6 @@
         <source>Video device</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ভিডিও ডিভাইস</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনার ক্যামেরার রেজোলিউশন সেট করুন।
-উচ্চতর মান, আপনার বন্ধুরা তত ভাল ভিডিও গুণমান পেতে পারে।
-উল্লেখ্য, যদিও ভালো ভিডিও মানের সাথে আরও ভালো ইন্টারনেট সংযোগ প্রয়োজন।
-কখনও কখনও আপনার সংযোগ উচ্চতর ভিডিও গুণমান পরিচালনা করার জন্য যথেষ্ট ভাল নাও হতে পারে,
-যা ভিডিও কলে সমস্যা হতে পারে।</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -92,24 +79,24 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">অডিও গুণমান</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">উচ্চ (64 kBps)</translation>
+        <translation type="unfinished">উচ্চ (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">মাঝারি (32 kBps)</translation>
+        <translation type="unfinished">মাঝারি (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">কম (16 kBps)</translation>
+        <translation type="unfinished">কম (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খুব কম (8 kBps)</translation>
+        <translation type="unfinished">খুব কম (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -147,7 +134,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1dB থেকে %2dB পর্যন্ত আপনার ইনপুট ডিভাইসের লাভ সেট করতে স্লাইডার ব্যবহার করুন।</translation>
+        <translation type="unfinished">%1dB থেকে %2dB পর্যন্ত আপনার ইনপুট ডিভাইসের গেইন সেট করতে স্লাইডার ব্যবহার করুন।</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -180,7 +167,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>toxcore version: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্সকোর সংস্করণ: %1</translation>
+        <translation type="unfinished">toxcore সংস্করণ: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
@@ -188,11 +175,11 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Qt সংস্করণ: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সমস্ত পরিচিত সমস্যার একটি তালিকা আমাদের Github এ %1 এ পাওয়া যেতে পারে। আপনি যদি qTox-এর মধ্যে কোনো বাগ বা নিরাপত্তার দুর্বলতা খুঁজে পান, তাহলে অনুগ্রহ করে আমাদের %2 উইকি নিবন্ধের নির্দেশিকা অনুযায়ী রিপোর্ট করুন।</translation>
+        <translation type="unfinished">সমস্ত পরিচিত সমস্যার একটি তালিকা আমাদের GitHub এ %1 এ পাওয়া যেতে পারে। আপনি যদি qTox-এর মধ্যে কোনো বাগ বা নিরাপত্তার দুর্বলতা খুঁজে পান, তাহলে অনুগ্রহ করে আমাদের %2 উইকি নিবন্ধের নির্দেশিকা অনুযায়ী রিপোর্ট করুন।</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -200,13 +187,13 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">একটি বাগ রিপোর্ট করতে এখানে ক্লিক করুন.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Github-এ %1 এর সম্পূর্ণ তালিকা দেখুন</translation>
+        <translation type="unfinished">GitHub-এ %1 এর সম্পূর্ণ তালিকা দেখুন</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">বাগ-ট্র্যাকার</translation>
@@ -262,7 +249,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">সেট থাকলে স্বয়ংক্রিয়ভাবে এই পরিচিতি থেকে সম্মেলনের আমন্ত্রণ গ্রহণ করুন।</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ইতিহাস সরান (অপারেশন পূর্বাবস্থায় ফেরানো যাবে না!)</translation>
     </message>
@@ -282,14 +269,14 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ইতিহাস মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এটি আপনার বন্ধুর সর্বজনীন কী, অন্য চ্যানেলের মাধ্যমে তাদের পরিচয় যাচাই করতে এটি ব্যবহার করুন৷ আপনি এটি অন্য লোকেদের কাছে পাঠাতে পারবেন না যাতে তারা এই পরিচিতি যোগ করতে পারে৷৷</translation>
+        <translation type="unfinished">এটি আপনার বন্ধুর সর্বজনীন কী, অন্য চ্যানেলের মাধ্যমে তাদের পরিচয় যাচাই করতে এটি ব্যবহার করুন৷ অন্যরা এটি দিয়ে এই পরিচিতি যোগ করতে পারবে না৷</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সর্বজনীন কী (টক্সআইডি নয়):</translation>
+        <translation type="unfinished">সর্বজনীন কী (Tox ID নয়):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -297,9 +284,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">নিশ্চিতকরণ</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনি কি %1 চ্যাট ইতিহাস মুছে ফেলার ব্যাপারে নিশ্চিত?</translation>
+        <translation type="unfinished">আপনি কি নিশ্চিত যে %1-এর সাথে চ্যাট ইতিহাস মুছে ফেলতে চান?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -327,9 +314,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">সম্মেলনের আমন্ত্রণগুলি স্বয়ংক্রিয়ভাবে গ্রহণ করুন৷</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনি এখানে এই পরিচিতি সম্পর্কে মন্তব্য সংরক্ষণ করতে পারেন.</translation>
+        <translation type="unfinished">আপনি এখানে এই পরিচিতি সম্পর্কে নোট সংরক্ষণ করতে পারেন।</translation>
     </message>
 </context>
 <context>
@@ -367,7 +354,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>qTox is up to date ✓</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox আপ টু ডেট ✓৷</translation>
+        <translation type="unfinished">qTox আপ টু ডেট ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
@@ -385,7 +372,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid Tox ID format</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">অবৈধ টক্স আইডি বিন্যাস</translation>
+        <translation type="unfinished">অবৈধ Tox ID বিন্যাস</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -413,9 +400,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">বন্ধু যোগ করা যায়নি</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনার বন্ধুর টক্স আইডি টাইপ করুন</translation>
+        <translation type="unfinished">আপনার বন্ধুর Tox ID টাইপ করুন</translation>
     </message>
     <message>
         <source>Friend request message</source>
@@ -463,7 +450,7 @@ which may lead to problems with video calls.</source>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স আইডি</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -475,7 +462,7 @@ which may lead to problems with video calls.</source>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খোলা</translation>
+        <translation type="unfinished">খুলুন</translation>
     </message>
     <message>
         <source>Send friend requests</source>
@@ -486,18 +473,18 @@ which may lead to problems with video calls.</source>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 এখানে! আমাকে টক্স করতে পারে?</translation>
+        <translation type="unfinished">%1 এখানে! Tox-এ কথা বলবেন?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">পরিচিতির একটি তালিকা আমদানি করুন, প্রতি লাইনে একটি টক্স আইডি</translation>
+        <translation type="unfinished">পরিচিতির একটি তালিকা আমদানি করুন, প্রতি লাইনে একটি Tox ID</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%nটি পরিচিতি আমদানির জন্য প্রস্তুত, নিশ্চিত করতে পাঠান-এ ক্লিক করুন</numerusform>
+            <numerusform>%nটি পরিচিতি আমদানির জন্য প্রস্তুত, নিশ্চিত করতে পাঠান-এ ক্লিক করুন</numerusform>
         </translation>
     </message>
     <message>
@@ -508,13 +495,13 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স আইডি, 76 হেক্সাডেসিমেল অক্ষর</translation>
+        <translation type="unfinished">Tox ID, 76 হেক্সাডেসিমেল অক্ষর</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 টক্স আইডি অবৈধ</translation>
+        <translation type="unfinished">%1 একটি বৈধ Tox ID নয়</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -572,12 +559,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Logs (*.log)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">লগ (*. লগ)</translation>
+        <translation type="unfinished">লগ (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">যদি না আপনি %1 জানেন যে আপনি কি করছেন, অনুগ্রহ করে %2 এখানে কিছু পরিবর্তন করুন। এখানে করা পরিবর্তনগুলি qTox এর সাথে সমস্যা হতে পারে, এমনকি আপনার ডেটা হারাতে পারে, যেমন ইতিহাস।%3</translation>
+        <translation type="unfinished">আপনি কী করছেন তা যদি %1 না জানেন, তবে দয়া করে এখানে কিছুই পরিবর্তন করবেন %2। এখানে করা পরিবর্তন qTox-এ সমস্যা, এমনকি আপনার ডেটা (যেমন ইতিহাস) হারানোর কারণও হতে পারে।%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -603,15 +590,15 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সাধারণ conf dir-এর পরিবর্তে কার্যকারী ডিরেক্টরিতে সেটিংস সংরক্ষণ করুন</translation>
+        <translation type="unfinished">সাধারণ সেটিংস ডিরেক্টরির পরিবর্তে কার্যকারী ডিরেক্টরিতে সেটিংস সংরক্ষণ করুন</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স পোর্টেবল করুন</translation>
+        <translation type="unfinished">Tox পোর্টেবল করুন</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -674,7 +661,7 @@ which may lead to problems with video calls.</source>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">বন্দর:</translation>
+        <translation type="unfinished">পোর্ট:</translation>
     </message>
     <message>
         <source>None</source>
@@ -710,7 +697,7 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এটি নিষ্ক্রিয় করা অনুমতি দেয়, যেমন, টক্স ওভার টর। এটি টক্স নেটওয়ার্কে লোড যোগ করে, তাই প্রয়োজন হলেই টিক চিহ্ন সরিয়ে দিন।</translation>
+        <translation type="unfinished">এটি নিষ্ক্রিয় করলে, যেমন, Tor-এর মাধ্যমে Tox ব্যবহার করা যায়। তবে এটি Tox নেটওয়ার্কে লোড বাড়ায়, তাই প্রয়োজন হলেই টিক চিহ্ন সরিয়ে দিন।</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -723,7 +710,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox URI to parse</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">পার্স করার জন্য URI টক্স করুন</translation>
+        <translation type="unfinished">পার্স করার জন্য Tox URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
@@ -741,28 +728,20 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">নতুন উদাহরণ শুরু করে এবং লগইন স্ক্রিন খোলে।</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; সেট করে। ডিফল্ট চালু আছে।</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6 চালু বা বন্ধ করে: %1। ডিফল্ট: %2।</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP সেট করে &lt;on&gt;/&lt;off&gt;। ডিফল্ট চালু আছে।</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP চালু বা বন্ধ করে: %1। ডিফল্ট: %2।</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN আবিষ্কার &lt;on&gt;/&lt;off&gt; সেট করে। UDP বন্ধ ওভাররাইড। ডিফল্ট চালু আছে।</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN আবিষ্কার চালু বা বন্ধ করে: %1। UDP বন্ধ থাকলে কোনো প্রভাব নেই। ডিফল্ট: %2।</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">প্রক্সি সেটিংস সেট করে। ডিফল্ট নেই.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">প্রক্সি সেট করে। ডিফল্ট: %1।</translation>
     </message>
     <message>
         <source>Error</source>
@@ -827,7 +806,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">কলের সময়কাল:</translation>
+        <translation type="unfinished">কলের সময়কাল: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -837,7 +816,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনি একটি অনুক্রমিক ফাইল পাঠানোর চেষ্টা করছেন, যা কাজ করছে না!</translation>
+        <translation type="unfinished">আপনি একটি অনুক্রমিক ফাইল পাঠানোর চেষ্টা করছেন, যা কাজ করবে না!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -1012,24 +991,24 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>চ্যাটে %n জন ব্যবহারকারী</numerusform>
+            <numerusform>চ্যাটে %n জন ব্যবহারকারী</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নিঃশব্দ</translation>
+        <translation type="unfinished">নিঃশব্দ করুন</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নিঃশব্দ</translation>
+        <translation type="unfinished">শব্দ চালু করুন</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">পিয়ার আইডি কপি করুন</translation>
+        <translation type="unfinished">অংশগ্রহণকারীর আইডি কপি করুন</translation>
     </message>
 </context>
 <context>
@@ -1095,8 +1074,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>চ্যাটে %n জন ব্যবহারকারী</numerusform>
+            <numerusform>চ্যাটে %n জন ব্যবহারকারী</numerusform>
         </translation>
     </message>
     <message>
@@ -1115,7 +1094,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/আমি বন্ধুত্ব অফার করি, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me বন্ধুত্বের প্রস্তাব দিচ্ছে, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -1126,7 +1105,7 @@ so you can save the file on Windows.</source>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">অবৈধ টক্স আইডি</translation>
+        <translation type="unfinished">অবৈধ Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1236,10 +1215,10 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">একটি ফাইল সংরক্ষণ করুন</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">রিমোট পজ করা হয়েছে</translation>
+        <translation type="unfinished">অন্য পক্ষ বিরতি দিয়েছে</translation>
     </message>
 </context>
 <context>
@@ -1316,7 +1295,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">চেনাশোনা &apos;%1&apos; থেকে সরান</translation>
+        <translation type="unfinished">বৃত্ত &apos;%1&apos; থেকে সরান</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1377,12 +1356,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
+        <translation>অফলাইন</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&quot;%1&quot; চেনাশোনাতে যান</translation>
+        <translation type="unfinished">&quot;%1&quot; বৃত্তে সরান</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1461,7 +1440,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ট্রের কাছে</translation>
+        <translation type="unfinished">বন্ধ করলে ট্রেতে</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
@@ -1489,9 +1468,9 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">নিষ্ক্রিয় করতে 0 এ সেট করুন</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নিষ্ক্রিয়তার নির্দিষ্ট সময়ের পরে আপনার স্ট্যাটাস Away এ পরিবর্তন করা হয়েছে।</translation>
+        <translation type="unfinished">নির্দিষ্ট সময় নিষ্ক্রিয় থাকলে আপনার স্ট্যাটাস দূরে হয়ে যায়।</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
@@ -1538,7 +1517,7 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">minimize চাপার পর (_) qTox ট্রেতে মিনিমাইজ হবে,
+        <translation type="unfinished">ছোট করুন (_) চাপার পর qTox ট্রেতে ছোট হবে,
 সিস্টেম টাস্কবারের পরিবর্তে।</translation>
     </message>
     <message>
@@ -1550,15 +1529,15 @@ instead of closing entirely.</source>
 সম্পূর্ণরূপে বন্ধ করার পরিবর্তে।</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনি স্বতন্ত্র বন্ধুদের ডান ক্লিক করে এটি প্রতি-বন্ধু ভিত্তিতে সেট করতে পারেন।</translation>
+        <translation type="unfinished">প্রতিটি বন্ধুর উপর ডান ক্লিক করে এটি আলাদাভাবে সেট করতে পারেন।</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">যখন একজন ব্যবহারকারী একটি কনফারেন্সে যোগ দেয় বা ছেড়ে যায় তখন একটি চ্যাট বার্তা যোগ করুন</translation>
+        <translation type="unfinished">যখন একজন ব্যবহারকারী একটি সম্মেলনে যোগ দেয় বা ছেড়ে যায় তখন একটি চ্যাট বার্তা যোগ করুন</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1659,12 +1638,12 @@ instead of closing entirely.</source>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স আইডি</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনার টক্স আইডি (কপি করতে ক্লিক করুন)</translation>
+        <translation type="unfinished">আপনার Tox ID (কপি করতে ক্লিক করুন)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1685,7 +1664,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">লগআউট</translation>
     </message>
@@ -1702,7 +1681,7 @@ instead of closing entirely.</source>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এই QR কোডে আপনার টক্স আইডি রয়েছে। আপনি এটি আপনার বন্ধুদের সাথেও শেয়ার করতে পারেন।</translation>
+        <translation type="unfinished">এই QR কোডে আপনার Tox ID রয়েছে। আপনি এটি আপনার বন্ধুদের সাথেও শেয়ার করতে পারেন।</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1731,7 +1710,7 @@ instead of closing entirely.</source>
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনাকে একটি ফাইলে আপনার টক্স প্রোফাইল রপ্তানি করার অনুমতি দেয়।
+        <translation type="unfinished">আপনাকে একটি ফাইলে আপনার Tox প্রোফাইল রপ্তানি করার অনুমতি দেয়।
 প্রোফাইল আপনার ইতিহাস ধারণ করে না.</translation>
     </message>
     <message>
@@ -1770,7 +1749,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনার টক্স আইডি</translation>
+        <translation type="unfinished">আপনার Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1827,7 +1806,7 @@ Profile does not contain your history.</source>
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এই আইডি অন্যান্য টক্স ব্যবহারকারীদের যোগ করতে এবং আপনার সাথে যোগাযোগ করার অনুমতি দেয়।
+        <translation type="unfinished">এই আইডি দিয়ে অন্য Tox ব্যবহারকারীরা আপনাকে যোগ করতে ও যোগাযোগ করতে পারে।
 চ্যাটিং শুরু করতে আপনার বন্ধুদের সাথে শেয়ার করুন।</translation>
     </message>
     <message>
@@ -1972,7 +1951,7 @@ You may want to create one.</source>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">একটি নতুন প্রোফাইল বোতাম তৈরি করুন</translation>
+        <translation type="unfinished">নতুন প্রোফাইল তৈরির বোতাম</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1992,7 +1971,7 @@ You may want to create one.</source>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">স্বয়ংক্রিয়ভাবে চেকবক্স লোড করুন</translation>
+        <translation type="unfinished">স্বয়ংক্রিয়ভাবে লোড করার চেকবক্স</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -2002,7 +1981,7 @@ You may want to create one.</source>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নির্বাচিত প্রোফাইল বোতাম লোড করুন</translation>
+        <translation type="unfinished">নির্বাচিত প্রোফাইল লোড করার বোতাম</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -2012,7 +1991,7 @@ You may want to create one.</source>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">বিদ্যমান প্রোফাইল পৃষ্ঠা লোড হচ্ছে৷</translation>
+        <translation type="unfinished">বিদ্যমান প্রোফাইল লোড করার পৃষ্ঠা</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -2031,7 +2010,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">আপনি এখানে যে পাসওয়ার্ডটি লিখছেন সেটি ঐচ্ছিক এবং বার্তা ডেটা এবং আপনার টক্স গোপন কী এনক্রিপ্ট করে। এটি প্রাপ্ত ফাইল এনক্রিপ্ট করে না। আপনার প্রোফাইল ডেটা কখনই কোনো সার্ভারে পাঠানো হয় না। এটি একটি দূরবর্তী লগইন নয়, এটি শুধুমাত্র আপনার কম্পিউটারে স্থানীয়। qTox বিকাশকারীরা আপনার পাসওয়ার্ড হারিয়ে গেলে পুনরুদ্ধার করতে সক্ষম হবে না।</translation>
+        <translation type="unfinished">আপনি এখানে যে পাসওয়ার্ডটি লিখছেন সেটি ঐচ্ছিক এবং বার্তা ডেটা এবং আপনার Tox গোপন কী এনক্রিপ্ট করে। এটি প্রাপ্ত ফাইল এনক্রিপ্ট করে না। আপনার প্রোফাইল ডেটা কখনই কোনো সার্ভারে পাঠানো হয় না। এটি একটি দূরবর্তী লগইন নয়, এটি শুধুমাত্র আপনার কম্পিউটারে স্থানীয়। qTox বিকাশকারীরা আপনার পাসওয়ার্ড হারিয়ে গেলে পুনরুদ্ধার করতে সক্ষম হবে না।</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -2184,7 +2163,7 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">এক্সিকিউটেবল ফাইল</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">আপনি qTox কে একটি এক্সিকিউটেবল ফাইল খুলতে বলেছেন। এক্সিকিউটেবল ফাইলগুলি আপনার কম্পিউটারের সম্ভাব্য ক্ষতি করতে পারে। আপনি কি এই ফাইলটি খুলতে চান?</translation>
@@ -2195,7 +2174,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স ভিডিও</translation>
+        <translation type="unfinished">Tox ভিডিও</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2250,7 +2229,7 @@ Press Shift+F1 for more information.</source>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">জানালা</translation>
+        <translation type="unfinished">উইন্ডো</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -2262,7 +2241,7 @@ Press Shift+F1 for more information.</source>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সকলকে সামনে আনুন</translation>
+        <translation type="unfinished">সবকিছু সামনে আনুন</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -2280,8 +2259,8 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>অপঠিত বার্তা</numerusform>
+            <numerusform>অপঠিত বার্তা</numerusform>
         </translation>
     </message>
 </context>
@@ -2311,7 +2290,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সম্মেলনের আমন্ত্রণ গৃহীত হয়েছে</translation>
+        <translation type="unfinished">সম্মেলনের আমন্ত্রণ পাওয়া গেছে</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2321,12 +2300,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">বন্ধুর অনুরোধ গৃহীত হয়েছে</translation>
+        <translation type="unfinished">বন্ধুর অনুরোধ পাওয়া গেছে</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 থেকে বন্ধুর অনুরোধ গৃহীত হয়েছে</translation>
+        <translation type="unfinished">%1 থেকে বন্ধুর অনুরোধ পাওয়া গেছে</translation>
     </message>
     <message>
         <source>Incoming call</source>
@@ -2337,9 +2316,9 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ক্যাপ-লক সক্ষম</translation>
+        <translation type="unfinished">Caps Lock চালু আছে</translation>
     </message>
 </context>
 <context>
@@ -2384,7 +2363,7 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নোস্প্যাম আপনার টক্স আইডির অংশ।
+        <translation type="unfinished">নোস্প্যাম আপনার Tox IDর অংশ।
 যদি আপনাকে বন্ধুর অনুরোধে স্প্যাম করা হয়, তাহলে আপনার NoSpam পরিবর্তন করা উচিত।
 লোকেরা আপনাকে আপনার পুরানো আইডি দিয়ে যুক্ত করতে পারবে না, তবে আপনি আপনার বর্তমান বন্ধুদের রাখবেন।</translation>
     </message>
@@ -2410,8 +2389,8 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">চ্যাট ইতিহাস রাখা এখনও উন্নয়নশীল.
-বিন্যাস পরিবর্তনগুলি সংরক্ষণ করা সম্ভব, যার ফলে ডেটা ক্ষতি হতে পারে।</translation>
+        <translation type="unfinished">চ্যাট ইতিহাস রাখা এখনও উন্নয়নাধীন।
+সংরক্ষণের বিন্যাস বদলাতে পারে, যার ফলে ডেটা হারাতে পারে।</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2426,7 +2405,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">কনফারেন্স সদস্যদের পাবলিক কী দ্বারা সম্মেলনের বার্তাগুলি ফিল্টার করুন৷ এখানে পাবলিক কী রাখুন, প্রতি লাইনে একটি।</translation>
+        <translation type="unfinished">সম্মেলন সদস্যদের পাবলিক কী দ্বারা সম্মেলনের বার্তাগুলি ফিল্টার করুন৷ এখানে পাবলিক কী রাখুন, প্রতি লাইনে একটি।</translation>
     </message>
 </context>
 <context>
@@ -2439,12 +2418,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox-এ টক্সিং</translation>
+        <translation type="unfinished">qTox-এ Tox করছি</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ডাটাবেস পাসওয়ার্ড পরিবর্তন করা যায়নি, এটি দূষিত হতে পারে বা পুরানো পাসওয়ার্ড ব্যবহার করতে পারে।</translation>
+        <translation type="unfinished">ডাটাবেসের পাসওয়ার্ড পরিবর্তন করা যায়নি। ডাটাবেসটি দূষিত হতে পারে বা এখনও পুরানো পাসওয়ার্ড ব্যবহার করছে।</translation>
     </message>
 </context>
 <context>
@@ -2473,7 +2452,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">বর্তমান প্রোফাইল:</translation>
+        <translation type="unfinished">বর্তমান প্রোফাইল: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2525,10 +2504,10 @@ Please use another image.</source>
         <translation type="unfinished">সংরক্ষণ করুন</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QrCode সংরক্ষণ করুন (*.png)</translation>
+        <translation type="unfinished">QR code সংরক্ষণ করুন (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2559,11 +2538,6 @@ Please use another image.</source>
         <translation type="unfinished">পাসওয়ার্ড পরিবর্তন করা যায়নি</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খালি পথ অনুপলব্ধ</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">নাম পরিবর্তন করতে ব্যর্থ হয়েছে৷</translation>
@@ -2584,9 +2558,9 @@ Please use another image.</source>
         <translation type="unfinished">খালি নাম</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খালি নাম অনুপলব্ধ</translation>
+        <translation type="unfinished">নাম খালি রাখা যাবে না।</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2603,7 +2577,7 @@ Please use another image.</source>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স সেভ ফাইল (*.tox)</translation>
+        <translation type="unfinished">Tox সেভ ফাইল (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2634,19 +2608,19 @@ Please use another image.</source>
         <translation type="unfinished">আপনার নির্বাচিত ফাইলটি সংরক্ষণ করা যায়নি৷</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খালি পথ অনুপলব্ধ.</translation>
+        <translation type="unfinished">পথ খালি রাখা যাবে না।</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ডাটাবেস পাসওয়ার্ড পরিবর্তন করা যায়নি, এটি দূষিত হতে পারে বা পুরানো পাসওয়ার্ড ব্যবহার করতে পারে।</translation>
+        <translation type="unfinished">ডাটাবেসের পাসওয়ার্ড পরিবর্তন করা যায়নি। ডাটাবেসটি দূষিত হতে পারে বা এখনও পুরানো পাসওয়ার্ড ব্যবহার করছে।</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স ব্যবহারকারীর নাম %1 অক্ষরের বেশি হতে পারে না।</translation>
+        <translation type="unfinished">Tox ব্যবহারকারীর নাম %1 অক্ষরের বেশি হতে পারে না।</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2672,7 +2646,7 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">এই আইডি অন্যান্য টক্স ব্যবহারকারীদের যোগ করতে এবং আপনার সাথে যোগাযোগ করার অনুমতি দেয়।
+        <translation type="unfinished">এই আইডি দিয়ে অন্য Tox ব্যবহারকারীরা আপনাকে যোগ করতে ও আপনার সাথে যোগাযোগ করতে পারে।
 চ্যাটিং শুরু করতে আপনার বন্ধুদের সাথে শেয়ার করুন।
 
 এই আইডিতে NoSpam কোড (নীল রঙে) এবং চেকসাম (ধূসর রঙে) অন্তর্ভুক্ত রয়েছে।</translation>
@@ -2690,19 +2664,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">টক্স সেভ ফাইল (*.tox)</translation>
+        <translation type="unfinished">Tox সেভ ফাইল (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নন-টক্স ফাইল উপেক্ষা করা</translation>
+        <translation type="unfinished">নন-Tox ফাইল উপেক্ষা করা</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সতর্কতা: আপনি এমন একটি ফাইল বেছে নিয়েছেন যা টক্স সেভ ফাইল নয়; উপেক্ষা করা</translation>
+        <translation type="unfinished">সতর্কতা: আপনি এমন একটি ফাইল বেছে নিয়েছেন যা Tox সেভ ফাইল নয়; উপেক্ষা করা</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2711,10 +2685,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">প্রোফাইল ইতিমধ্যেই বিদ্যমান</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&quot;%1&quot; নামের একটি প্রোফাইল ইতিমধ্যেই বিদ্যমান। আপনি এটা মুছে ফেলতে চান?</translation>
+        <translation type="unfinished">&quot;%1&quot; নামের একটি প্রোফাইল ইতিমধ্যেই বিদ্যমান। আপনি কি এটি প্রতিস্থাপন করতে চান?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2740,7 +2714,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ঠিক আছে</translation>
     </message>
@@ -2789,7 +2763,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 একটি বৈধ টক্স ঠিকানা নয়।</translation>
+        <translation type="unfinished">%1 একটি বৈধ Tox ঠিকানা নয়।</translation>
     </message>
 </context>
 <context>
@@ -2828,7 +2802,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 এখানে! আমাকে টক্স করতে পারে?</translation>
+        <translation type="unfinished">%1 এখানে! আমাকে Tox করতে পারে?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2967,7 +2941,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 কলিং</translation>
+        <translation type="unfinished">%1 কল করছে</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2992,7 +2966,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ট্রান্সমিটিং</translation>
+        <translation type="unfinished">পাঠানো হচ্ছে</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -3002,7 +2976,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ভাঙ্গা</translation>
+        <translation type="unfinished">বিচ্ছিন্ন</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -3015,9 +2989,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">বিরতি দেওয়া হয়েছে</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">রিমোট পজ করা হয়েছে</translation>
+        <translation type="unfinished">অন্য পক্ষ বিরতি দিয়েছে</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3027,7 +3001,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">যোগাযোগ</translation>
+        <translation type="unfinished">পরিচিতি</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -3115,13 +3089,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">স্থান</translation>
+        <translation type="unfinished">Space</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">পলায়ন</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -3133,7 +3107,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">প্রবেশ করুন</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3194,7 +3168,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">তারিখ ডায়ালগ নির্বাচন করুন</translation>
+        <translation type="unfinished">তারিখ নির্বাচনের ডায়ালগ</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3340,7 +3314,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আকার:</translation>
+        <translation type="unfinished">আকার: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3361,7 +3335,7 @@ Hide formatting characters:
 
 প্লেইনটেক্সট:
     বার্তাগুলিতে কোনো বিন্যাস প্রয়োগ করবেন না।
-    যেমন &quot;**টেক্সট**&quot; &quot;**পাঠ্য**&quot; হিসেবে দেখাবে, বোল্ড নয়।
+    যেমন &quot;**টেক্সট**&quot; &quot;**টেক্সট**&quot; হিসেবে দেখাবে, বোল্ড নয়।
 ফর্ম্যাটিং অক্ষর দেখান:
     বিন্যাস প্রয়োগ করুন এবং অক্ষর দেখান।
     যেমন &quot;**টেক্সট**&quot; দেখাবে &quot;**টেক্সট**&quot;, বোল্ড হিসেবে।
@@ -3403,12 +3377,12 @@ Hide formatting characters:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনি একটি নতুন বার্তা পেলে qTox এর উইন্ডো খুলুন এবং এখনও কোন উইন্ডো খোলা নেই।</translation>
+        <translation type="unfinished">নতুন বার্তা এলে এবং কোনো উইন্ডো খোলা না থাকলে qTox-এর উইন্ডো খুলুন।</translation>
     </message>
     <message>
         <source>Open window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">খোলা জানালা</translation>
+        <translation type="unfinished">উইন্ডো খুলুন</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -3505,7 +3479,7 @@ Hide formatting characters:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সম্মেলন শুধুমাত্র যখন উল্লেখ করা হয়</translation>
+        <translation type="unfinished">সম্মেলনে শুধু উল্লেখ করা হলে বিজ্ঞপ্তি দিন</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3530,25 +3504,25 @@ Hide formatting characters:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">কনফারেন্সে রঙিন ডাকনাম ব্যবহার করুন</translation>
+        <translation type="unfinished">সম্মেলনে রঙিন ডাকনাম ব্যবহার করুন</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">আপনার ডাকনাম উল্লেখ করা হলেই কনফারেন্সে নতুন বার্তা সম্পর্কে অবহিত করুন।</translation>
+        <translation type="unfinished">আপনার ডাকনাম উল্লেখ করা হলেই সম্মেলনে নতুন বার্তা সম্পর্কে অবহিত করুন।</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">চেক করা হলে, কনফারেন্সগুলিকে বন্ধু তালিকার শীর্ষে রাখা হবে, অন্যথায়, সেগুলিকে অনলাইন বন্ধুদের নীচে রাখা হবে৷</translation>
+        <translation type="unfinished">চেক করা হলে, সম্মেলনগুলিকে বন্ধু তালিকার শীর্ষে রাখা হবে, অন্যথায়, সেগুলিকে অনলাইন বন্ধুদের নীচে রাখা হবে৷</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">সক্ষম হলে, অবতার ছাড়া প্রতিটি পরিচিতির ডিফল্ট ছবির পরিবর্তে তাদের টক্স আইডির উপর ভিত্তি করে একটি তৈরি আইকন থাকবে৷ আবেদন করার জন্য পুনরায় চালু করতে হবে।</translation>
+        <translation type="unfinished">সক্ষম হলে, অবতার ছাড়া প্রতিটি পরিচিতির ডিফল্ট ছবির পরিবর্তে তাদের Tox IDর উপর ভিত্তি করে একটি তৈরি আইকন থাকবে৷ প্রয়োগ করতে পুনরায় চালু করতে হবে।</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
@@ -3572,7 +3546,7 @@ Hide formatting characters:
         <translation type="unfinished">ডেস্কটপ বিজ্ঞপ্তিতে সম্ভাব্য গোপন তথ্য না দেখিয়ে শুধুমাত্র &quot;নতুন বার্তা&quot; দেখান৷</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ফ্রেন্ড লিস্ট এবং চ্যাট উইন্ডোকে আলাদাভাবে সরানো যায় এমন উইন্ডোতে বিভক্ত করুন।</translation>
     </message>
@@ -3624,8 +3598,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">চ্যাটের ইতিহাস থেকে সর্বাধিক সংখ্যক বার্তা (প্রতি কথোপকথন) লোড করা
 হয়েছে। কর্মক্ষমতা উন্নত করতে এটি হ্রাস করুন। এখানে খুব কম সংখ্যার কারণে
@@ -3637,8 +3611,8 @@ scroll bar to disappear.</source>
         <translation type="unfinished">সর্বোচ্চ চ্যাট লগ ভিউ সাইজ</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">স্ক্রল করার সময় চ্যাটের ইতিহাস থেকে লোড করা বার্তার সংখ্যা। এখানে খুব কম
 সংখ্যার কারণে স্ক্রোল বার অদৃশ্য হয়ে যেতে পারে।</translation>
@@ -3654,9 +3628,9 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">চ্যাট লগ:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নাল প্রতীক পরে প্রত্যয় লুকান</translation>
+        <translation type="unfinished">NUL অক্ষরের পরের লেখা লুকান</translation>
     </message>
 </context>
 <context>
@@ -3713,7 +3687,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Your name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">তোমার নাম</translation>
+        <translation type="unfinished">আপনার নাম</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3723,7 +3697,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">নতুন চেনাশোনা যোগ করুন...</translation>
+        <translation type="unfinished">নতুন বৃত্ত যোগ করুন...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3748,7 +3722,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation></translation>
+        <translation>অফলাইন</translation>
     </message>
     <message>
         <source>Friends</source>
@@ -3820,20 +3794,20 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%nটি নতুন বন্ধুত্বের অনুরোধ</numerusform>
+            <numerusform>%nটি নতুন বন্ধুত্বের অনুরোধ</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%nটি নতুন সম্মেলনের আমন্ত্রণ</numerusform>
+            <numerusform>%nটি নতুন সম্মেলনের আমন্ত্রণ</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">প্রস্থান করুন</translation>
     </message>

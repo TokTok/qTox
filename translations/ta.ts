@@ -9,7 +9,7 @@
     </message>
     <message>
         <source>Default resolution</source>
-        <translation>இயல்புநிலை தீர்மானம்</translation>
+        <translation>இயல்புநிலை தெளிவுத்திறன்</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -37,11 +37,11 @@
     </message>
     <message>
         <source>Capture device</source>
-        <translation>சாதனத்தைப் பிடிக்கவும்</translation>
+        <translation>பதிவு சாதனம்</translation>
     </message>
     <message>
         <source>Volume</source>
-        <translation>தொகுதி</translation>
+        <translation>ஒலியளவு</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -52,24 +52,12 @@
         <translation>வீடியோ சாதனம்</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>உங்கள் கேமராவின் தெளிவுத்திறனை அமைக்கவும்.
- அதிக மதிப்புகள், உங்கள் நண்பர்கள் பெறக்கூடிய சிறந்த வீடியோ தரம்.
- சிறந்த வீடியோ தரத்துடன் சிறந்த இணைய இணைப்பு தேவை என்பதை நினைவில் கொள்க.
- சில நேரங்களில் உங்கள் இணைப்பு உயர் வீடியோ தரத்தைக் கையாள போதுமானதாக இருக்காது,
- இது வீடியோ அழைப்புகளில் சிக்கல்களுக்கு வழிவகுக்கும்.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
-        <translation>பகுத்தல்</translation>
+        <translation>தெளிவுத்திறன்</translation>
     </message>
     <message>
         <source>Rescan devices</source>
-        <translation>ரெசான் சாதனங்கள்</translation>
+        <translation>சாதனங்களை மீண்டும் தேடு</translation>
     </message>
     <message>
         <source>Test Sound</source>
@@ -80,19 +68,19 @@ which may lead to problems with video calls.</source>
         <translation>ஒலித்தரம்</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>உயர் (64 கே.பி.பி.எச்)</translation>
+        <source>High (64 kbps)</source>
+        <translation>உயர் (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>நடுத்தர (32 கி.பி.பி.எச்)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>நடுத்தர (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translation>குறைந்த (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translation>மிகக் குறைந்த (8 kbps)</translation>
     </message>
     <message>
@@ -101,7 +89,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>உங்கள் பேச்சாளர்களின் அளவை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
+        <translation>உங்கள் ஒலிபெருக்கிகளின் ஒலியளவை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
@@ -114,10 +102,10 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>உங்கள் கேமராவின் தெளிவுத்திறனை அமைக்கவும்.
- அதிக மதிப்புகள், உங்கள் நண்பர்கள் பெறக்கூடிய சிறந்த வீடியோ தரம்.
- சிறந்த வீடியோ தரத்துடன், நீங்கள் அதிக அலைவரிசையைப் பயன்படுத்துகிறீர்கள் என்பதை நினைவில் கொள்க.
- சில நேரங்களில் உங்கள் இணைப்பு உயர் வீடியோ தரத்தைக் கையாள போதுமானதாக இருக்காது,
- இது வீடியோ அழைப்புகளில் சிக்கல்களுக்கு வழிவகுக்கும்.</translation>
+அதிக மதிப்புகள், உங்கள் நண்பர்கள் பெறக்கூடிய சிறந்த வீடியோ தரம்.
+சிறந்த வீடியோ தரத்துடன், நீங்கள் அதிக அலைவரிசையைப் பயன்படுத்துகிறீர்கள் என்பதை நினைவில் கொள்க.
+சில நேரங்களில் உங்கள் இணைப்பு உயர் வீடியோ தரத்தைக் கையாள போதுமானதாக இருக்காது,
+இது வீடியோ அழைப்புகளில் சிக்கல்களுக்கு வழிவகுக்கும்.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -125,11 +113,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation>%1dB முதல் %2db வரையிலான உங்கள் உள்ளீட்டு சாதனத்தின் ஆதாயத்தை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
+        <translation>%1dB முதல் %2dB வரை உங்கள் உள்ளீட்டு சாதனத்தின் பெருக்கத்தை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
-        <translation>உங்கள் உள்ளீட்டு சாதனத்திற்கான செயல்படுத்தும் அளவை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
+        <translation>உங்கள் உள்ளீட்டு சாதனத்திற்கான செயல்படுத்தும் ஒலியளவை அமைக்க ச்லைடரைப் பயன்படுத்தவும்.</translation>
     </message>
 </context>
 <context>
@@ -144,37 +132,37 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation>நீங்கள் QTOX பதிப்பு %1 ஐப் பயன்படுத்துகிறீர்கள்.</translation>
+        <translation>நீங்கள் qTox பதிப்பு %1 ஐப் பயன்படுத்துகிறீர்கள்.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>கமிட் ஆச்: %1</translation>
+        <translation>கமிட் ஹாஷ்: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
-        <translation>toxcore பதி்ப்பு: %1</translation>
+        <translation>toxcore பதிப்பு: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
-        <translation>Qt பதி்ப்பு: %1</translation>
+        <translation>Qt பதிப்பு: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>அறியப்பட்ட அனைத்து சிக்கல்களின் பட்டியலும் கிட்அப்பில் எங்கள் %1 இல் காணப்படலாம். QTOX க்குள் ஒரு பிழை அல்லது பாதுகாப்பு பாதிப்பைக் கண்டறிந்தால், தயவுசெய்து எங்கள் %2 விக்கி கட்டுரையில் உள்ள வழிகாட்டுதல்களின்படி அதைப் புகாரளிக்கவும்.</translation>
+        <translation>அறியப்பட்ட அனைத்து சிக்கல்களின் பட்டியலும் கிட்அப்பில் எங்கள் %1 இல் காணப்படலாம். qTox க்குள் ஒரு பிழை அல்லது பாதுகாப்பு பாதிப்பைக் கண்டறிந்தால், தயவுசெய்து எங்கள் %2 விக்கி கட்டுரையில் உள்ள வழிகாட்டுதல்களின்படி அதைப் புகாரளிக்கவும்.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>நிரற்பிழை ஒன்றனை பதிய இங்கு சொடுக்குக.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>%1 முழுப்பட்டியலை Github இல் காண்க</translation>
+        <translation>%1 முழுப்பட்டியலை GitHub இல் காண்க</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation>பிழை-கண்காணிப்பு</translation>
     </message>
@@ -190,7 +178,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
-        <translation>QTOX இன் இந்த பதிப்பை அசல் QTOX திட்டத்தின் காப்பகத்தைத் தொடர்ந்து TOKTOK குழுவால் பராமரிக்கப்படுகிறது.</translation>
+        <translation>qTox இன் இந்தப் பதிப்பு, அசல் qTox திட்டம் காப்பகப்படுத்தப்பட்டதைத் தொடர்ந்து TokTok குழுவால் பராமரிக்கப்படுகிறது.</translation>
     </message>
 </context>
 <context>
@@ -205,7 +193,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Manual</source>
-        <translation>கையேடு</translation>
+        <translation>கைமுறை</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -220,7 +208,7 @@ which may lead to problems with video calls.</source>
         <translation>அமைக்கப்பட்டால் இந்த தொடர்பிலிருந்து மாநாட்டு அழைப்புகளை தானாக ஏற்றுக்கொள்ளுங்கள்.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>வரலாற்றை அகற்று (செயல்பாட்டை செயல்தவிர்க்க முடியாது!)</translation>
     </message>
     <message>
@@ -236,20 +224,20 @@ which may lead to problems with video calls.</source>
         <translation>வரலாறு நீக்கப்பட்டது</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>இது உங்கள் நண்பரின் பொது திறவுகோல், மற்றொரு சேனல் வழியாக அவர்களின் அடையாளத்தை சரிபார்க்க இதைப் பயன்படுத்தவும். இதை நீங்கள் மற்றவர்களிடம் அனுப்ப முடியாது, எனவே அவர்கள் இந்த தொடர்பைச் சேர்க்கலாம்.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>இது உங்கள் நண்பரின் பொது திறவுகோல்; மற்றொரு வழியில் அவரது அடையாளத்தைச் சரிபார்க்க இதைப் பயன்படுத்தவும். மற்றவர்கள் இதைக் கொண்டு இந்தத் தொடர்பைச் சேர்க்க முடியாது.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>பொது விசை (நச்சுத்தன்மையல்ல):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>பொது திறவுகோல் (Tox ID அல்ல):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>உறுதிப்படுத்தல்</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
-        <translation>%1 அரட்டை வரலாற்றை அகற்றுவது உறுதி?</translation>
+        <source>Are you sure you want to remove the chat history with %1?</source>
+        <translation>%1 உடனான அரட்டை வரலாற்றை அகற்ற விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -261,7 +249,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation>இந்த தொடர்புக்கு தானாக ஏற்றுக்கொள்ளப்பட்டால் முடக்கப்பட்டுள்ளது</translation>
+        <translation>இந்தத் தொடர்புக்குத் தானியங்கு ஏற்பு முடக்கப்பட்டுள்ளது</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -269,11 +257,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>தானாக ஏற்றுக்கொள்ளும் மாநாடு அழைக்கிறது</translation>
+        <translation>மாநாட்டு அழைப்புகளைத் தானாக ஏற்றுக்கொள்</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>இந்த தொடர்பு குறித்த கருத்துகளை இங்கே சேமிக்கலாம்.</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>இந்த தொடர்பு குறித்த குறிப்புகளை இங்கே சேமிக்கலாம்.</translation>
     </message>
 </context>
 <context>
@@ -304,11 +292,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation>Qtox புதுப்பித்த நிலையில் உள்ளது</translation>
+        <translation>qTox புதுப்பித்த நிலையில் உள்ளது ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation>தற்போது QTOX இன் சோதிக்கப்படாத/நிலையற்ற பதிப்பை இயக்குகிறது</translation>
+        <translation>தற்போது qTox இன் சோதிக்கப்படாத/நிலையற்ற பதிப்பை இயக்குகிறது</translation>
     </message>
 </context>
 <context>
@@ -319,7 +307,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation>தவறான நச்சு ஐடி வடிவம்</translation>
+        <translation>தவறான Tox ID வடிவம்</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -342,7 +330,7 @@ which may lead to problems with video calls.</source>
         <translation>தோழரைச் சேர்க்க இயலவில்லை</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>தங்கள் தோழரின் Tox அடையாளச்சரத்தை உள்ளிடுக</translation>
     </message>
     <message>
@@ -360,7 +348,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Open contact list</source>
-        <translation>தொடர்பு பட்டியல் திறந்த</translation>
+        <translation>தொடர்புப் பட்டியலைத் திற</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
@@ -382,7 +370,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation>நச்சு ஐடி</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -401,17 +389,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>%1 இங்கே! என்னை நச்சுத்தன்மையுள்ளதா?</translation>
+        <translation>%1 இங்கே! Tox-இல் பேசலாமா?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>தொடர்புகளின் பட்டியலை இறக்குமதி செய்யுங்கள், ஒரு வரிக்கு ஒரு நச்சு ஐடி</translation>
+        <translation>தொடர்புகளின் பட்டியலை இறக்குமதி செய்யுங்கள், ஒரு வரிக்கு ஒரு Tox ID</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>%N தொடர்பை இறக்குமதி செய்யத் தயாராக, உறுதிப்படுத்த அனுப்பு என்பதைக் சொடுக்கு செய்க</numerusform>
-            <numerusform>%N தொடர்புகளை இறக்குமதி செய்யத் தயாராக, உறுதிப்படுத்த அனுப்பு என்பதைக் சொடுக்கு செய்க</numerusform>
+            <numerusform>%n தொடர்பை இறக்குமதி செய்யத் தயார், உறுதிப்படுத்த அனுப்பு என்பதைச் சொடுக்கவும்</numerusform>
+            <numerusform>%n தொடர்புகளை இறக்குமதி செய்யத் தயார், உறுதிப்படுத்த அனுப்பு என்பதைச் சொடுக்கவும்</numerusform>
         </translation>
     </message>
     <message>
@@ -420,12 +408,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation>டாக்ச் ஐடி, 76 எக்சாடெசிமல் எழுத்துக்கள்</translation>
+        <translation>Tox ID, 76 எக்சாடெசிமல் எழுத்துக்கள்</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 டக்ச் ஐடி தவறானது</translation>
+        <translation>%1 சரியான Tox ID அல்ல</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -445,11 +433,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>really</source>
-        <translation>நன்கு</translation>
+        <translation>உண்மையில்</translation>
     </message>
     <message>
         <source>not</source>
-        <translation>வேண்டாம்</translation>
+        <translation>எதையும்</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -477,11 +465,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>நீங்கள் என்ன செய்கிறீர்கள் என்று %1 தெரியாவிட்டால், தயவுசெய்து %2 ஐ இங்கே மாற்றவும். இங்கே செய்யப்பட்ட மாற்றங்கள் QTOX உடனான சிக்கல்களுக்கு வழிவகுக்கும், மேலும் உங்கள் தரவின் இழப்புக்கு கூட வழிவகுக்கும், எ.கா. வரலாறு.%3</translation>
+        <translation>நீங்கள் என்ன செய்கிறீர்கள் என்று %1 தெரியாவிட்டால், தயவுசெய்து இங்கே %2 மாற்ற வேண்டாம். இங்கே செய்யப்படும் மாற்றங்கள் qTox-இல் சிக்கல்களையும், உங்கள் தரவு இழப்பையும்கூட (எ.கா. வரலாறு) ஏற்படுத்தலாம்.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation>QTOX ஐ மறுதொடக்கம் செய்த பின்னரே இங்கே மாற்றங்கள் பயன்படுத்தப்படுகின்றன.</translation>
+        <translation>qTox ஐ மறுதொடக்கம் செய்த பின்னரே இங்கே மாற்றங்கள் பயன்படுத்தப்படுகின்றன.</translation>
     </message>
     <message>
         <source>Save file</source>
@@ -493,15 +481,15 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
-        <translation>பதிலாள் அமைப்பிற்கு செல்லுபடியாகும் ஐபி முகவரி அல்லது ஓச்ட்பெயரை உள்ளிடவும்.</translation>
+        <translation>பதிலாள் அமைப்பிற்குச் செல்லுபடியாகும் IP முகவரி அல்லது ஓச்ட்பெயரை உள்ளிடவும்.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>வழக்கமான கான்ஃப் டிர் பதிலாக பணிபுரியும் கோப்பகத்திற்கு அமைப்புகளை சேமிக்கவும்</translation>
+        <translation>அமைப்புகளை வழக்கமான கோப்பகத்துக்குப் பதிலாகப் பணிக் கோப்பகத்தில் சேமி</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -561,7 +549,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
-        <translation>முகவரி நுழைவு எண்:</translation>
+        <translation>போர்ட்:</translation>
     </message>
     <message>
         <source>None</source>
@@ -569,7 +557,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation>பிழைதேடு</translation>
+        <translation>பிழைத்திருத்தம்</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -590,7 +578,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>இதை முடக்குவது, எ.கா., டோர் மீது டாக்ச் அனுமதிக்கிறது. இருப்பினும் இது டாக்ச் நெட்வொர்க்கில் சுமை சேர்க்கிறது, எனவே தேவைப்படும்போது மட்டுமே தேர்வு செய்யவும்.</translation>
+        <translation>இதை முடக்கினால், எ.கா., Tor வழியாக Tox பயன்படுத்தலாம். இருப்பினும் இது Tox வலையமைப்பில் சுமையைக் கூட்டும், எனவே தேவைப்படும்போது மட்டும் தேர்வை நீக்கவும்.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -601,7 +589,7 @@ which may lead to problems with video calls.</source>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>பாகுபடுத்த டக்ச் யூரி</translation>
+        <translation>பாகுபடுத்த Tox யூரி</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
@@ -616,24 +604,20 @@ which may lead to problems with video calls.</source>
         <translation>புதிய நிகழ்வைத் தொடங்கி உள்நுழைவுத் திரையைத் திறக்கிறது.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>IPv6 &lt;ins&gt;/&lt;off&gt; ஐ அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6-ஐ இயக்கும் அல்லது முடக்கும்: %1. இயல்புநிலை: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>யுடிபி &lt;ஆன்&gt;/&lt;off&gt; ஐ அமைக்கிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP-ஐ இயக்கும் அல்லது முடக்கும்: %1. இயல்புநிலை: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>லேன் டிச்கவரி &lt;ஆன்&gt;/&lt;off&gt; ஐ அமைக்கிறது. UDP அணை மேலெழுகிறது. இயல்புநிலை இயக்கத்தில் உள்ளது.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN கண்டுபிடிப்பை இயக்கும் அல்லது முடக்கும்: %1. UDP முடக்கப்பட்டிருந்தால் விளைவு இல்லை. இயல்புநிலை: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>பதிலாள் அமைப்புகளை அமைக்கிறது. இயல்புநிலை எதுவுமில்லை.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">பதிலாளை அமைக்கும். இயல்புநிலை: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -645,7 +629,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
-        <translation>இந்த நிரல் அண்மைக் கால QTOX பதிப்பை இயக்குகிறதா என்பதை சரிபார்க்கிறது.</translation>
+        <translation>இந்த நிரல் அண்மைக் கால qTox பதிப்பை இயக்குகிறதா என்பதை சரிபார்க்கிறது.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
@@ -665,7 +649,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation>Qtox %1 ஐ திறக்க முடியவில்லை</translation>
+        <translation>qTox %1 ஐ திறக்க முடியவில்லை</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -699,13 +683,13 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
-        <translation>கோப்பு பெயரில் சட்டவிரோத கதாபாத்திரங்கள் இருந்தன</translation>
+        <translation>கோப்புப் பெயரில் அனுமதிக்கப்படாத எழுத்துக்கள் இருந்தன</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation>சட்டவிரோத எழுத்துக்கள் _ என மாற்றப்பட்டுள்ளன
- எனவே நீங்கள் சாளரங்களில் கோப்பைச் சேமிக்கலாம்.</translation>
+        <translation>அனுமதிக்கப்படாத எழுத்துக்கள் _ என மாற்றப்பட்டுள்ளன,
+எனவே நீங்கள் Windows-இல் கோப்பைச் சேமிக்கலாம்.</translation>
     </message>
 </context>
 <context>
@@ -720,7 +704,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End audio call</source>
-        <translation>ஆடியோ அழைப்பு இறுதி</translation>
+        <translation>ஆடியோ அழைப்பை முடி</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
@@ -740,7 +724,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation>முடிவு வீடியோ அழைப்பு</translation>
+        <translation>வீடியோ அழைப்பை முடி</translation>
     </message>
     <message>
         <source>Cancel video call</source>
@@ -756,11 +740,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation>மாறாத அழைப்பு</translation>
+        <translation>அழைப்பின் ஒலியை இயக்கு</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>முடக்கு அழைப்பு</translation>
+        <translation>அழைப்பை ஒலியடக்கு</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -768,11 +752,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Unmute microphone</source>
-        <translation>இயக்க மைக்ரோஃபோன்</translation>
+        <translation>மைக்ரோஃபோனை இயக்கு</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation>முடக்கு மைக்ரோஃபோன்</translation>
+        <translation>மைக்ரோஃபோனை முடக்கு</translation>
     </message>
 </context>
 <context>
@@ -797,7 +781,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation>%1 தட்டச்சு செய்கிறது</translation>
+        <translation>%1 தட்டச்சு செய்கிறார்</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -835,7 +819,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமி உரையாடலை நீக்கறல்.</translation>
+        <translation>அந்த இடத்திற்கு எழுத உங்களுக்கு இசைவு இல்லை. மற்றொன்றைத் தேர்வுசெய்க, அல்லது சேமிப்பதை ரத்துசெய்.</translation>
     </message>
 </context>
 <context>
@@ -854,11 +838,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>unmute</source>
-        <translation>ஊன்</translation>
+        <translation>ஒலியை இயக்கு</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation>பியர் ஐடியை நகலெடுக்கவும்</translation>
+        <translation>பங்கேற்பாளர் ஐடியை நகலெடு</translation>
     </message>
 </context>
 <context>
@@ -873,7 +857,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>மாநாடு அழைக்கிறது</translation>
+        <translation>மாநாட்டு அழைப்புகள்</translation>
     </message>
 </context>
 <context>
@@ -908,7 +892,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>தோழர்க்குழுவை நீங்கு</translation>
+        <translation>மாநாட்டை விட்டு வெளியேறு</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -931,7 +915,7 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me தோழராக விரும்புகிறார் , &quot;%1&quot;</translation>
+        <translation>/me தோழராக விரும்புகிறார், &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -940,7 +924,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation>தவறான நச்சு ஐடி</translation>
+        <translation>தவறான Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1032,9 +1016,9 @@ so you can save the file on Windows.</source>
         <translation>கோப்பொன்று சேமி</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
-        <translation>தொலைநிலை இடைநிறுத்தப்பட்டது</translation>
+        <translation>மறுமுனை இடைநிறுத்தியது</translation>
     </message>
 </context>
 <context>
@@ -1073,7 +1057,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Never</source>
-        <translation>ஏற்காதே</translation>
+        <translation>ஒருபோதும் இல்லை</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
@@ -1085,7 +1069,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>தோழர்க்குழுவில் சேர அழைப்பளி</translation>
+        <translation>மாநாட்டுக்கு அழை</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1196,7 +1180,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation>கணிணியமைப்பியக்கியின் பின்னணிப் பெட்டகத்தில் மென்பொருள் சின்னத்தைக் காட்டு</translation>
+        <translation>கணினித் தட்டில் சின்னத்தைக் காட்டு</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
@@ -1214,23 +1198,23 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>தோற்றத்தில் பின்னணிப் பெட்டகத்தில் மறைந்தியங்கு</translation>
+        <translation>தட்டில் தொடங்கு</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>தட்டுக்கு அருகில்</translation>
+        <translation>மூடினால் தட்டுக்குச் செல்</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>தட்டில் குறைக்கவும்</translation>
+        <translation>குறைத்தால் தட்டுக்குச் செல்</translation>
     </message>
     <message>
         <source>Autostart</source>
-        <translation>தான்தோற்றம்</translation>
+        <translation>தானியங்கு தொடக்கம்</translation>
     </message>
     <message>
         <source>Set where files will be saved.</source>
-        <translation>கோப்புகள் சேமிக்குமிடத்தைத் தேர்ந்தெடுந்தெடுங்கள்.</translation>
+        <translation>கோப்புகள் சேமிக்குமிடத்தைத் தேர்ந்தெடுங்கள்.</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
@@ -1241,7 +1225,7 @@ so you can save the file on Windows.</source>
         <translation>இச்செயல்பாட்டை முடக்க 0 என மாற்றியமைக்கவும்</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation>ஒரு குறிப்பிட்ட நேரத்திற்கு செயலற்றிருப்பின் தங்கள் நிலை &apos;விலகியுள்ளார்&apos; என மாற்றப்படும்.</translation>
     </message>
     <message>
@@ -1254,7 +1238,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>கணிணியமைப்பியக்கியின் தொடக்கத்தில் qTox உம் தான்தொடங்கட்டும் (தற்போதைய பயனர் விவரமமைப்புத்தொகுப்பு).</translation>
+        <translation>கணினி தொடங்கும்போது qTox-ஐத் தொடங்கு (தற்போதைய சுயவிவரம்).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1270,7 +1254,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation>அதிகபட்ச ஆட்டோஆக்செப்ட் கோப்பு அளவு (முடக்க 0):</translation>
+        <translation>தானாக ஏற்கும் அதிகபட்ச கோப்பு அளவு (முடக்க 0):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1280,20 +1264,20 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>குறைத்த பிறகு (_) Qtox தட்டில் குறையும்,
- கணினி பணிப்பட்டிக்கு பதிலாக.</translation>
+        <translation>குறை (_) அழுத்தியதும் qTox பணிப்பட்டிக்குப் பதிலாக
+தட்டுக்குக் குறையும்.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>நெருக்கமான (x) Qtox தட்டுக்கு மூடப்பட்ட பிறகு,
- முழுவதுமாக மூடுவதற்கு பதிலாக.</translation>
+        <translation>மூடு (X) அழுத்தியதும் qTox முழுவதுமாக மூடுவதற்குப் பதிலாக
+தட்டுக்குக் குறையும்.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation>தனிப்பட்ட நண்பர்களை வலது சொடுக்கு செய்வதன் மூலம் இதை ஒரு நட்பு அடிப்படையில் அமைக்கலாம்.</translation>
+        <translation>ஒவ்வொரு நண்பரையும் வலது சொடுக்கு செய்து இதைத் தனித்தனியாக அமைக்கலாம்.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
@@ -1301,7 +1285,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
-        <translation>மொழிபெயர்ப்பில் பிழைகள் இருப்பதைக் கண்டால் இங்கே சொடுக்கு செய்க, அதை சரிசெய்ய உதவ விரும்பினால்.</translation>
+        <translation>மொழிபெயர்ப்பில் பிழைகளைக் கண்டு திருத்த உதவ விரும்பினால், இங்கே சொடுக்கவும்.</translation>
     </message>
     <message>
         <source>Help translate</source>
@@ -1340,7 +1324,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Quote selected text</source>
-        <translation>தேர்ந்தெடுக்கப்பட்ட சொற்சரத்தை மேற்கோள் காட்டியனுப்பு</translation>
+        <translation>தேர்ந்தெடுத்த உரையை மேற்கோள் காட்டு</translation>
     </message>
     <message>
         <source>Copy link address</source>
@@ -1360,7 +1344,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation>அரட்டை வரலாற்றை ஏற்றவும் ...</translation>
+        <translation>அரட்டை வரலாற்றை ஏற்று...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1368,31 +1352,31 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
-        <translation>காண்பிக்கப்படும் அனைத்து செய்திகளையும் அழிக்க விரும்புகிறீர்கள் என்பதில் உறுதியாக இருக்கிறீர்களா?</translation>
+        <translation>காட்டப்படும் எல்லாச் செய்திகளையும் அழிக்கவா?</translation>
     </message>
 </context>
 <context>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation>பொதுவிற்த்தகவல்கள்</translation>
+        <translation>பொதுத் தகவல்</translation>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation>நச்சு ஐடி</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>தங்கள் அடையாளச்சரம் (இடைப்பிரதியெடுக்க சொடுக்குக)</translation>
+        <translation>உங்கள் Tox ID (நகலெடுக்கச் சொடுக்கவும்)</translation>
     </message>
     <message>
         <source>Profile</source>
-        <translation>விவரமமைப்புத்தொகுப்பு</translation>
+        <translation>சுயவிவரம்</translation>
     </message>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation>விவரமமைப்புத்தொகுப்பை மறுபெயரிடு.</translation>
+        <translation>சுயவிவரத்தை மறுபெயரிடு.</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
@@ -1401,8 +1385,8 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
-        <translation>வெளியே கடவு</translation>
+        <comment>logout button</comment>
+        <translation>வெளியேறு</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -1432,14 +1416,14 @@ instead of closing entirely.</source>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation>விவரமமைப்புத்தொகுப்பை அழி.</translation>
+        <translation>சுயவிவரத்தை அழி.</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>தங்கள் விவரமமைப்புத்தொகுப்பைத் தனிக்கோப்பாக்கும்.
-விவரமமைப்புத்தொகுப்பில் தங்கள் அரட்டைப் பதிவு இராது.</translation>
+        <translation>தங்கள் சுயவிவரத்தைத் தனிக்கோப்பாக்கும்.
+சுயவிவரத்தில் தங்கள் அரட்டைப் பதிவு இராது.</translation>
     </message>
     <message>
         <source>Export</source>
@@ -1470,7 +1454,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Your Tox ID</source>
-        <translation>உங்கள் டாக்ச் ஐடி</translation>
+        <translation>உங்கள் Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1490,7 +1474,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Export profile</source>
-        <translation>ஏற்றுமதி சுயவிவரம்</translation>
+        <translation>சுயவிவரத்தை ஏற்றுமதி செய்</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
@@ -1516,8 +1500,8 @@ Profile does not contain your history.</source>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation>இந்த ஐடி மற்ற டக்ச் பயனர்களை உங்களைச் சேர்க்கவும் தொடர்பு கொள்ளவும் அனுமதிக்கிறது.
- அரட்டையடிக்கத் தொடங்க அதை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.</translation>
+        <translation>இந்த ஐடி மற்ற Tox பயனர்களை உங்களைச் சேர்க்கவும் தொடர்பு கொள்ளவும் அனுமதிக்கிறது.
+அரட்டையடிக்கத் தொடங்க அதை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1532,7 +1516,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Load history from:</source>
-        <translation>வரலாற்றை ஏற்றவும்:</translation>
+        <translation>இதிலிருந்து வரலாற்றை ஏற்று:</translation>
     </message>
 </context>
 <context>
@@ -1559,7 +1543,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation>சுயவிவரத்தில் கடவுச்சொல் இல்லையென்றால், QTOX உள்நுழைவுத் திரையைத் தவிர்க்கலாம்</translation>
+        <translation>சுயவிவரத்தில் கடவுச்சொல் இல்லையென்றால், qTox உள்நுழைவுத் திரையைத் தவிர்க்கலாம்</translation>
     </message>
     <message>
         <source>Load automatically</source>
@@ -1567,7 +1551,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Load</source>
-        <translation>சுமை</translation>
+        <translation>ஏற்று</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1603,7 +1587,7 @@ Share it with your friends to begin chatting.</source>
 You may want to create one.</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட சுயவிவரம் இல்லை.
 
- நீங்கள் ஒன்றை உருவாக்க விரும்பலாம்.</translation>
+நீங்கள் ஒன்றை உருவாக்க விரும்பலாம்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1635,7 +1619,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>புதிய சுயவிவர பொத்தானை உருவாக்கவும்</translation>
+        <translation>புதிய சுயவிவரம் உருவாக்கும் பொத்தான்</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1651,7 +1635,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation>தானாகவே தேர்வுப்பெட்டியை ஏற்றவும்</translation>
+        <translation>தானாக ஏற்றும் தேர்வுப்பெட்டி</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1659,7 +1643,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>தேர்ந்தெடுக்கப்பட்ட சுயவிவர பொத்தானை ஏற்றவும்</translation>
+        <translation>தேர்ந்தெடுத்த சுயவிவரத்தை ஏற்றும் பொத்தான்</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1667,25 +1651,25 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>இருக்கும் சுயவிவரப் பக்கத்தை ஏற்றுகிறது</translation>
+        <translation>இருக்கும் சுயவிவரத்தை ஏற்றும் பக்கம்</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translation>நீங்கள் உள்ளிட்ட கடவுச்சொற்கள் வேறுபட்டவை.
- அதே கடவுச்சொல்லை இரண்டு முறை உள்ளிடவும்.</translation>
+அதே கடவுச்சொல்லை இரண்டு முறை உள்ளிடவும்.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
         <translation>உள்ளக செய்தி தரவு மற்றும் உங்கள் சுயவிவரத்தை குறியாக்க இந்த விருப்ப கடவுச்சொல் பயன்படுத்தப்படுகிறது.
- இந்த கடவுச்சொல்லை நீங்கள் இழந்தால், அதை மீட்டெடுக்க வழி இல்லை.
- மேலும் தகவலுக்கு Shift+F1 ஐ அழுத்தவும்.</translation>
+இந்த கடவுச்சொல்லை நீங்கள் இழந்தால், அதை மீட்டெடுக்க வழி இல்லை.
+மேலும் தகவலுக்கு Shift+F1 ஐ அழுத்தவும்.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation>நீங்கள் இங்கே உள்ளிடும் கடவுச்சொல் விருப்பமானது மற்றும் செய்தி தரவு மற்றும் உங்கள் டக்ச் ரகசிய விசையை குறியாக்குகிறது. இது பெறப்பட்ட கோப்புகளை குறியாக்காது. உங்கள் சுயவிவர தரவு ஒருபோதும் எந்த சேவையகங்களுக்கும் அனுப்பப்படாது. இது தொலைநிலை உள்நுழைவு அல்ல, இது உங்கள் கணினிக்கு மட்டுமே உள்ளக. QTOX உருவாக்குபவர்கள் இழந்தால் உங்கள் கடவுச்சொல்லை மீட்டெடுக்க முடியாது.</translation>
+        <translation>நீங்கள் இங்கே உள்ளிடும் கடவுச்சொல் விருப்பமானது; அது செய்தித் தரவையும் உங்கள் Tox ரகசிய விசையையும் குறியாக்குகிறது. பெறப்பட்ட கோப்புகளை அது குறியாக்காது. உங்கள் சுயவிவரத் தரவு எந்தச் சேவையகத்துக்கும் அனுப்பப்படுவதில்லை. இது தொலைநிலை உள்நுழைவு அல்ல; உங்கள் கணினியில் மட்டுமே. கடவுச்சொல் தொலைந்தால் qTox உருவாக்குநர்களால் அதை மீட்டெடுக்க முடியாது.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1720,7 +1704,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open profile</source>
-        <translation>திறந்த சுயவிவரம்</translation>
+        <translation>சுயவிவரத்தைத் திற</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
@@ -1748,7 +1732,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>அறியப்பட்ட நண்பர்களுக்கான தேடல் உள்ளீட்டைத் தொடர்பு கொள்ளுங்கள்</translation>
+        <translation>அறியப்பட்ட நண்பர்களுக்கான தொடர்புத் தேடல் உள்ளீடு</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1760,7 +1744,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation>நண்பர்களின் பக்கத்தைத் திறக்கவும்</translation>
+        <translation>நண்பர்களைச் சேர் பக்கத்தைத் திற</translation>
     </message>
     <message>
         <source>Conference</source>
@@ -1776,7 +1760,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation>திறந்த கோப்பு இடமாற்றம் வரலாறு</translation>
+        <translation>கோப்பு இடமாற்ற வரலாற்றைத் திற</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1784,7 +1768,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation>திறந்த அமைப்புகள்</translation>
+        <translation>அமைப்புகளைத் திற</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
@@ -1796,7 +1780,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation>திறந்த பிழைத்திருத்தம்</translation>
+        <translation>பிழைத்திருத்தியைத் திற</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -1811,16 +1795,16 @@ Press Shift+F1 for more information.</source>
         <translation>இயங்கக்கூடிய கோப்பு</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation>இயங்கக்கூடிய கோப்பைத் திறக்க QTOX ஐ கேட்டுள்ளீர்கள். இயங்கக்கூடிய கோப்புகள் உங்கள் கணினியை சேதப்படுத்தும். இந்த கோப்பை நீங்கள் நிச்சயமாக திறக்க விரும்புகிறீர்களா?</translation>
+        <translation>இயங்கக்கூடிய கோப்பைத் திறக்க qTox ஐ கேட்டுள்ளீர்கள். இயங்கக்கூடிய கோப்புகள் உங்கள் கணினியை சேதப்படுத்தும். இந்த கோப்பை நீங்கள் நிச்சயமாக திறக்க விரும்புகிறீர்களா?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation>நச்சு வீடியோ</translation>
+        <translation>Tox வீடியோ</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1832,19 +1816,19 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation>முடக்கு ஆடியோ</translation>
+        <translation>ஆடியோவை முடக்கு</translation>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation>முடக்கு மைக்ரோஃபோன்</translation>
+        <translation>மைக்ரோஃபோனை முடக்கு</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation>முடிவு வீடியோ அழைப்பு</translation>
+        <translation>வீடியோ அழைப்பை முடி</translation>
     </message>
     <message>
         <source>Exit full screen</source>
-        <translation>முழுத் திரையில் வெளியேறவும்</translation>
+        <translation>முழுத் திரையிலிருந்து வெளியேறு</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -1879,11 +1863,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation>முழுத் திரையில் வெளியேறவும்</translation>
+        <translation>முழுத் திரையிலிருந்து வெளியேறு</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
-        <translation>முழுத் திரையை உள்ளிடவும்</translation>
+        <translation>முழுத் திரைக்குச் செல்</translation>
     </message>
 </context>
 <context>
@@ -1939,8 +1923,8 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>கேப்ச்-லாக் இயக்கப்பட்டது</translation>
+        <source>Caps Lock is on</source>
+        <translation>Caps Lock இயக்கத்தில் உள்ளது</translation>
     </message>
 </context>
 <context>
@@ -1978,30 +1962,30 @@ Press Shift+F1 for more information.</source>
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>நோச்பாம் உங்கள் நச்சு ஐடியின் ஒரு பகுதியாகும்.
- நண்பர் கோரிக்கைகளுடன் நீங்கள் ச்பேம் செய்யப்பட்டால், உங்கள் நோச்பாம் மாற்ற வேண்டும்.
- உங்கள் பழைய ஐடியை மக்கள் சேர்க்க முடியாது, ஆனால் உங்கள் தற்போதைய நண்பர்களை நீங்கள் வைத்திருப்பீர்கள்.</translation>
+        <translation>நோச்பாம் உங்கள் Tox IDயின் ஒரு பகுதியாகும்.
+நண்பர் கோரிக்கைகளுடன் நீங்கள் ச்பேம் செய்யப்பட்டால், உங்கள் நோச்பாம் மாற்ற வேண்டும்.
+உங்கள் பழைய ஐடியை மக்கள் சேர்க்க முடியாது, ஆனால் உங்கள் தற்போதைய நண்பர்களை நீங்கள் வைத்திருப்பீர்கள்.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation>நோச்பாம்</translation>
+        <translation>NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation>நோச்பாம் உங்கள் ஐடியின் ஒரு பகுதியாகும், இது விருப்பப்படி மாற்றப்படலாம்.
- நண்பர் கோரிக்கைகளுடன் நீங்கள் ச்பேம் பெறுகிறீர்கள் என்றால், நோச்பாம் மாற்றவும்.</translation>
+நண்பர் கோரிக்கைகளுடன் நீங்கள் ச்பேம் பெறுகிறீர்கள் என்றால், நோச்பாம் மாற்றவும்.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation>சீரற்ற நோச்பாம் உருவாக்கு</translation>
+        <translation>சீரற்ற NoSpam உருவாக்கு</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translation>அரட்டை வரலாறு வைத்திருப்பது இன்னும் வளர்ச்சியில் உள்ளது.
- வடிவமைப்பு மாற்றங்களைச் சேமிக்கவும் சாத்தியமாகும், இது தரவு இழப்பை ஏற்படுத்தக்கூடும்.</translation>
+சேமிப்பு வடிவம் மாறக்கூடும்; அதனால் தரவு இழக்கப்படலாம்.</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2009,11 +1993,11 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>மாநாட்டு தொகுதி பட்டியல்</translation>
+        <translation>மாநாட்டுத் தடைப் பட்டியல்</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>மாநாட்டு உறுப்பினர்களின் பொது விசைகள் மாநாட்டு செய்திகளை வடிகட்டவும். பொது விசைகளை இங்கே வைக்கவும், ஒரு வரிக்கு ஒன்று.</translation>
+        <translation>மாநாட்டு உறுப்பினர்களின் பொது விசைகள் மூலம் மாநாட்டுச் செய்திகளை வடிகட்டு. பொது விசைகளை இங்கே வைக்கவும், ஒரு வரிக்கு ஒன்று.</translation>
     </message>
 </context>
 <context>
@@ -2024,11 +2008,11 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation>Qtox இல் நச்சுத்தன்மை</translation>
+        <translation>qTox-இல் Tox செய்கிறேன்</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை, அது சிதைக்கப்படலாம் அல்லது பழைய கடவுச்சொல்லைப் பயன்படுத்தலாம்.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை. தரவுத்தளம் சிதைந்திருக்கலாம் அல்லது இன்னும் பழைய கடவுச்சொல்லையே பயன்படுத்தக்கூடும்.</translation>
     </message>
 </context>
 <context>
@@ -2044,7 +2028,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation>&quot;%1&quot; என மறுபெயரிடுங்கள்</translation>
+        <translation>&quot;%1&quot; ஐ மறுபெயரிடு</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
@@ -2066,7 +2050,7 @@ Save format changes are possible, which may result in data loss.</source>
         <source>The supplied image is too large.
 Please use another image.</source>
         <translation>வழங்கப்பட்ட படம் மிகப் பெரியது.
- மற்றொரு படத்தைப் பயன்படுத்தவும்.</translation>
+மற்றொரு படத்தைப் பயன்படுத்தவும்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
@@ -2095,9 +2079,9 @@ Please use another image.</source>
         <translation>சேமி</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation>Qrcode (*.png) ஐ சேமிக்கவும்</translation>
+        <translation>QR code (*.png) ஐ சேமிக்கவும்</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2123,10 +2107,6 @@ Please use another image.</source>
         <translation>கடவுச்சொல்லை மாற்ற முடியவில்லை</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>வெற்று பாதை கிடைக்கவில்லை</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>மறுபெயரிடுவதில் தோல்வி</translation>
     </message>
@@ -2143,8 +2123,8 @@ Please use another image.</source>
         <translation>வெற்று பெயர்</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>வெற்று பெயர் கிடைக்கவில்லை</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>பெயர் காலியாக இருக்கக்கூடாது.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2153,12 +2133,12 @@ Please use another image.</source>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation>ஏற்றுமதி சுயவிவரம்</translation>
+        <translation>சுயவிவரத்தை ஏற்றுமதி செய்</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>டாக்ச் சேமி கோப்பு (*.tox)</translation>
+        <translation>Tox சேமி கோப்பு (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2184,16 +2164,16 @@ Please use another image.</source>
         <translation>நீங்கள் தேர்ந்தெடுத்த கோப்பை சேமிக்க முடியாது.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
-        <translation>வெற்று பாதை கிடைக்கவில்லை.</translation>
+        <source>The path can&apos;t be empty.</source>
+        <translation>பாதை காலியாக இருக்கக்கூடாது.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை, அது சிதைக்கப்படலாம் அல்லது பழைய கடவுச்சொல்லைப் பயன்படுத்தலாம்.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>தரவுத்தள கடவுச்சொல்லை மாற்ற முடியவில்லை. தரவுத்தளம் சிதைந்திருக்கலாம் அல்லது இன்னும் பழைய கடவுச்சொல்லையே பயன்படுத்தக்கூடும்.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation>டக்ச் பயனர் பெயர்கள் %1 எழுத்துக்களைத் தாண்டக்கூடாது.</translation>
+        <translation>Tox பயனர் பெயர்கள் %1 எழுத்துக்களைத் தாண்டக்கூடாது.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2215,10 +2195,10 @@ Please use another image.</source>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>இந்த ஐடி மற்ற டக்ச் பயனர்களை உங்களைச் சேர்க்கவும் தொடர்பு கொள்ளவும் அனுமதிக்கிறது.
- அரட்டையடிக்கத் தொடங்க அதை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.
+        <translation>இந்த ஐடி மற்ற Tox பயனர்களை உங்களைச் சேர்க்கவும் தொடர்பு கொள்ளவும் அனுமதிக்கிறது.
+அரட்டையடிக்கத் தொடங்க அதை உங்கள் நண்பர்களுடன் பகிர்ந்து கொள்ளுங்கள்.
 
- இந்த ஐடியில் நோச்பாம் குறியீடு (நீல நிறத்தில்), மற்றும் செக்சம் (சாம்பல் நிறத்தில்) ஆகியவை அடங்கும்.</translation>
+இந்த ஐடியில் நோச்பாம் குறியீடு (நீல நிறத்தில்), மற்றும் செக்சம் (சாம்பல் நிறத்தில்) ஆகியவை அடங்கும்.</translation>
     </message>
 </context>
 <context>
@@ -2231,17 +2211,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>டாக்ச் சேமி கோப்பு (*.tox)</translation>
+        <translation>Tox சேமி கோப்பு (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>டாக்ச் அல்லாத கோப்பை புறக்கணித்தல்</translation>
+        <translation>Tox அல்லாத கோப்பை புறக்கணித்தல்</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>எச்சரிக்கை: ஒரு டாக்ச் சேமிக்கும் கோப்பு இல்லாத கோப்பை நீங்கள் தேர்ந்தெடுத்துள்ளீர்கள்; புறக்கணித்தல்.</translation>
+        <translation>எச்சரிக்கை: ஒரு Tox சேமிக்கும் கோப்பு இல்லாத கோப்பை நீங்கள் தேர்ந்தெடுத்துள்ளீர்கள்; புறக்கணித்தல்.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2249,9 +2229,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>சுயவிவரம் ஏற்கனவே உள்ளது</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>&quot;%1&quot; என்ற சுயவிவரம் ஏற்கனவே உள்ளது. நீங்கள் அதை அழிக்க விரும்புகிறீர்களா?</translation>
+        <translation>&quot;%1&quot; என்ற சுயவிவரம் ஏற்கனவே உள்ளது. நீங்கள் அதை மாற்ற விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2267,13 +2247,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation>%1. டாக்ச் வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது</translation>
+        <translation>%1.tox வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>சரி</translation>
     </message>
     <message>
@@ -2315,7 +2295,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>%1 என்பது செல்லுபடியாகும் நச்சு முகவரி அல்ல.</translation>
+        <translation>%1 என்பது செல்லுபடியாகும் Tox முகவரி அல்ல.</translation>
     </message>
 </context>
 <context>
@@ -2338,16 +2318,16 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Violet</source>
-        <translation>கத்தரி</translation>
+        <translation>ஊதா</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation>உள்வரும் அழைப்பு ...</translation>
+        <translation>உள்வரும் அழைப்பு...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>%1 இங்கே! என்னை நச்சுத்தன்மையுள்ளதா?</translation>
+        <translation>%1 இங்கே! Tox-இல் பேசலாமா?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2365,7 +2345,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>Qtox உங்கள் அரட்டை பதிவுகளைத் திறக்க முடியவில்லை, அவை முடக்கப்படும்.</translation>
+        <translation>qTox உங்கள் அரட்டை பதிவுகளைத் திறக்க முடியவில்லை, அவை முடக்கப்படும்.</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -2385,7 +2365,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation>இருண்ட வயலட்</translation>
+        <translation>இருண்ட ஊதா</translation>
     </message>
     <message>
         <source>online</source>
@@ -2415,7 +2395,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation>உரை மறுவடிவமைப்பு ...</translation>
+        <translation>உரை மறுவடிவமைப்பு...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2427,7 +2407,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 மாநாட்டை விட்டு வெளியேறுகிறது</translation>
+        <translation>%1 மாநாட்டை விட்டு வெளியேறியது</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2447,7 +2427,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation>%1 உடன் அழைக்கவும். %2</translation>
+        <translation>%1 உடனான அழைப்பு முடிந்தது. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2460,7 +2440,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation>%1 அழைப்பு</translation>
+        <translation>%1 அழைக்கிறார்</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2490,7 +2470,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Broken</source>
-        <translation>உடைந்த</translation>
+        <translation>தடைபட்டது</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2501,8 +2481,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>இடைநிறுத்தப்பட்டது</translation>
     </message>
     <message>
-        <source>Remote paused</source>
-        <translation>தொலைநிலை இடைநிறுத்தப்பட்டது</translation>
+        <source>Paused by the other side</source>
+        <translation>மறுமுனை இடைநிறுத்தியது</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2546,7 +2526,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation>தரவுத்தள பதிப்பு (%1) நாம் தற்போது ஆதரிப்பதை விட புதியது (%2). Qtox ஐ மேம்படுத்தவும்.</translation>
+        <translation>தரவுத்தள பதிப்பு (%1) நாம் தற்போது ஆதரிப்பதை விட புதியது (%2). qTox ஐ மேம்படுத்தவும்.</translation>
     </message>
 </context>
 <context>
@@ -2577,27 +2557,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation>ஒரு பகுதியைத் தேர்ந்தெடுக்க சொடுக்கு செய்து இழுக்கவும். QTOX சாளரத்தை மறைக்க/காட்ட %1 ஐ அழுத்தவும் அல்லது ரத்து செய்ய %2 ஐ அழுத்தவும்.</translation>
+        <translation>ஒரு பகுதியைத் தேர்ந்தெடுக்க சொடுக்கு செய்து இழுக்கவும். qTox சாளரத்தை மறைக்க/காட்ட %1 ஐ அழுத்தவும் அல்லது ரத்து செய்ய %2 ஐ அழுத்தவும்.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation>இடைவெளி</translation>
+        <translation>Space</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>தப்பிக்கும்</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation>தேர்வின் திரை சாட்டை அனுப்ப %1 ஐ அழுத்தவும், QTOX சாளரத்தை மறைக்க/காட்ட %2 அல்லது ரத்து செய்ய %3 ஐ அழுத்தவும்.</translation>
+        <translation>தேர்வின் திரை சாட்டை அனுப்ப %1 ஐ அழுத்தவும், qTox சாளரத்தை மறைக்க/காட்ட %2 அல்லது ரத்து செய்ய %3 ஐ அழுத்தவும்.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation>உள்ளிடவும்</translation>
+        <translation>Enter</translation>
     </message>
 </context>
 <context>
@@ -2635,19 +2615,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>வழக்கு உணர்திறன்</translation>
+        <translation>எழுத்துவடிவம் உணர்வு</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation>முழு வார்த்தைகளும் மட்டுமே</translation>
+        <translation>முழு வார்த்தைகள் மட்டும்</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation>வழக்கமான வெளிப்பாடுகளைப் பயன்படுத்துங்கள்</translation>
+        <translation>ரெகுலர் எக்ஸ்பிரஷன்களைப் பயன்படுத்து</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation>தேதி உரையாடலைத் தேர்ந்தெடுக்கவும்</translation>
+        <translation>தேதி தேர்வு உரையாடல்</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2709,7 +2689,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
-        <translation>பதிப்பு %1 முதல் பதிப்பு %2 வரை அமைப்புகளை மேம்படுத்த முடியவில்லை. Qtox ஐத் தொடங்க முடியாது.</translation>
+        <translation>பதிப்பு %1 முதல் பதிப்பு %2 வரை அமைப்புகளை மேம்படுத்த முடியவில்லை. qTox ஐத் தொடங்க முடியாது.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
@@ -2784,18 +2764,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation>QTOX மறுதொடக்கம் செய்யும் வரை புதிய உரை ச்டைலிங் விருப்பம் அரட்டை வரலாற்றில் ஏற்றப்படாது.
-இது உடனடியாகப் புதிய செய்திகளைப் பாதிக்கும்.
+        <translation>qTox மறுதொடக்கம் செய்யும் வரை புதிய உரை ச்டைலிங் விருப்பம் அரட்டை வரலாற்றில் ஏற்றப்படாமல் இருக்கலாம்.
+இது புதிய செய்திகளை உடனடியாகப் பாதிக்கும்.
 
 எளிய உரை:
     செய்திகளுக்கு எந்த வடிவமைப்பையும் பயன்படுத்த வேண்டாம்.
-    எ.கா. &quot;**உரை**&quot; என்பது &quot;** உரை **&quot; என்று காண்பிக்கப்படும், தடியாக இல்லை.
-வடிவமைக்கும் எழுத்துக்களைக் காட்டு:
-    வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்டுங்கள்.
-    எ.கா. &quot;** உரை **&quot; என்பது &quot;** உரை **&quot;, தைரியமாகக் காண்பிக்கப்படும்.
-வடிவ எழுத்துக்களை மறைக்க:
-    வடிவமைப்பைப் பயன்படுத்துங்கள் மற்றும் எழுத்துக்களைக் காட்ட வேண்டாம்.
-    எ.கா. &quot;** உரை **&quot; என்பது &quot;உரை&quot; என்று காண்பிக்கப்படும், தைரியமாக இருக்கும்.</translation>
+    எ.கா. &quot;**உரை**&quot; என்பது &quot;**உரை**&quot; என்று காட்டப்படும், தடித்து அல்ல.
+வடிவமைப்பு எழுத்துக்களைக் காட்டு:
+    வடிவமைப்பைப் பயன்படுத்தி எழுத்துக்களைக் காட்டு.
+    எ.கா. &quot;**உரை**&quot; என்பது &quot;**உரை**&quot; என்று தடித்துக் காட்டப்படும்.
+வடிவமைப்பு எழுத்துக்களை மறைக்கவும்:
+    வடிவமைப்பைப் பயன்படுத்தி எழுத்துக்களைக் காட்ட வேண்டாம்.
+    எ.கா. &quot;**உரை**&quot; என்பது &quot;உரை&quot; என்று தடித்துக் காட்டப்படும்.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2824,11 +2804,11 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation>நீங்கள் ஒரு புதிய செய்தியைப் பெறும்போது QTOX இன் சாளரத்தைத் திறக்கவும், சாளரமும் இன்னும் திறக்கப்படவில்லை.</translation>
+        <translation>புதிய செய்தி வரும்போது எந்தச் சாளரமும் திறந்திருக்காவிட்டால் qTox சாளரத்தைத் திற.</translation>
     </message>
     <message>
         <source>Open window</source>
-        <translation>திறந்த சாளரம்</translation>
+        <translation>சாளரத்தைத் திற</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -2869,7 +2849,7 @@ Hide formatting characters:
     </message>
     <message>
         <source> px</source>
-        <translation> பி.எக்ச்</translation>
+        <translation> px</translation>
     </message>
     <message>
         <source>Theme</source>
@@ -2898,7 +2878,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>நீங்கள் ஒரு புதிய செய்தி, அழைப்பு அல்லது நண்பர் கோரிக்கையைப் பெறும்போது அறிவிப்பைக் காட்டுங்கள், சாளரம் தேர்ந்தெடுக்கப்படவில்லை.</translation>
+        <translation>சாளரம் தேர்ந்தெடுக்கப்படாத நிலையில் புதிய செய்தி, அழைப்பு அல்லது நண்பர் கோரிக்கை வந்தால் அறிவிப்பைக் காட்டு.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2910,11 +2890,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Play sound</source>
-        <translation>ஒலி விளையாடுங்கள்</translation>
+        <translation>ஒலி இயக்கு</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>பிசியாக இருக்கும்போது ஒலி விளையாடுங்கள்</translation>
+        <translation>பிசியாக இருக்கும்போது ஒலி இயக்கு</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -2936,12 +2916,12 @@ Hide formatting characters:
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>சரிபார்க்கப்பட்டால், மாநாடுகள் நண்பர்கள் பட்டியலில் முதலிடத்தில் வைக்கப்படும், இல்லையெனில், அவை நிகழ்நிலை நண்பர்களுக்கு கீழே வைக்கப்படும்.</translation>
+        <translation>தேர்வுசெய்யப்பட்டால், மாநாடுகள் நண்பர்கள் பட்டியலில் முதலிடத்தில் வைக்கப்படும், இல்லையெனில், அவை நிகழ்நிலை நண்பர்களுக்கு கீழே வைக்கப்படும்.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
-        <translation>இயக்கப்பட்டால், அவதாரம் இல்லாத ஒவ்வொரு தொடர்பும் இயல்புநிலை படத்திற்கு பதிலாக அவர்களின் நச்சு ஐடியின் அடிப்படையில் உருவாக்கப்பட்ட ஐகானைக் கொண்டிருக்கும். விண்ணப்பிக்க மறுதொடக்கம் தேவை.</translation>
+        <translation>இயக்கப்பட்டால், அவதாரம் இல்லாத ஒவ்வொரு தொடர்பும் இயல்புநிலை படத்திற்கு பதிலாக அவர்களின் Tox IDயின் அடிப்படையில் உருவாக்கப்பட்ட ஐகானைக் கொண்டிருக்கும். செயல்படுத்த மறுதொடக்கம் தேவை.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
@@ -2950,7 +2930,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation>முடக்கப்பட்டால், நிலை பிசியாக இருக்கும்போது முடக்கு அறிவிப்பு ஒலிக்கிறது (ஆனால் இன்னும் ஒரு அறிவிப்பைக் காட்டுங்கள்)</translation>
+        <translation>முடக்கப்பட்டால், நிலை பிசியாக இருக்கும்போது அறிவிப்பு ஒலிகளை அமைதியாக்கு (ஆனால் அறிவிப்பைக் காட்டு)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
@@ -2961,7 +2941,7 @@ Hide formatting characters:
         <translation>டெச்க்டாப் அறிவிப்புகளில் ரகசிய தகவல்களைக் காட்டாமல் &quot;புதிய செய்தியை&quot; மட்டுமே காட்டுங்கள்.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translation>நண்பர் பட்டியல் மற்றும் அரட்டை சாளரத்தை தனித்தனியாக நகரக்கூடிய சாளரங்களாக பிரிக்கவும்.</translation>
     </message>
     <message>
@@ -2978,7 +2958,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation>இடைமுகம் க்கு பயன்படுத்த அடிப்படை நடை. QTOX THEMING உடன் சிறப்பாக செயல்படுவதால் இணைவு பரிந்துரைக்கப்படுகிறது.</translation>
+        <translation>இடைமுகத்துக்கான அடிப்படை நடை. qTox கருப்பொருள்களுடன் சிறப்பாக வேலை செய்வதால் Fusion பரிந்துரைக்கப்படுகிறது.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -2986,11 +2966,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation>முடக்கப்பட்டால், அடிப்படை கணினி தட்டு அறிவிப்புகளைப் பயன்படுத்தவும். இல்லையெனில், உங்கள் டெச்க்டாப் சூழலின் அறிவிப்பு பின்தளத்தில் பயன்படுத்த முயற்சிக்கவும். டெச்க்டாப் அறிவிப்புகளுடன் சிக்கல்களைக் கவனித்தால் இதை முடக்கு.</translation>
+        <translation>முடக்கப்பட்டால், அடிப்படை கணினி தட்டு அறிவிப்புகளைப் பயன்படுத்தவும். இல்லையெனில், உங்கள் டெச்க்டாப் சூழலின் அறிவிப்பு பின்தளத்தைப் பயன்படுத்த முயற்சிக்கவும். டெச்க்டாப் அறிவிப்புகளுடன் சிக்கல்களைக் கவனித்தால் இதை முடக்கு.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation>கிடைத்தால் கணினி-குறிப்பிட்ட அறிவிப்பு பின்தளத்தில் பயன்படுத்தவும்</translation>
+        <translation>கிடைத்தால் கணினி-குறிப்பிட்ட அறிவிப்பு பின்தளத்தைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
@@ -3003,21 +2983,21 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
-        <translation>அரட்டை வரலாற்றிலிருந்து ஏற்றப்பட்ட அதிகபட்ச செய்திகள் (உரையாடலுக்கு).
- செயல்திறனை மேம்படுத்த இதைக் குறைக்கவும். இங்கே மிகக் குறைந்த எண்ணிக்கையானது காரணமாக இருக்கலாம்
- மறைந்து போக உருள்.</translation>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
+        <translation>அரட்டை வரலாற்றிலிருந்து ஏற்றப்படும் அதிகபட்ச செய்திகள் (உரையாடலுக்கு).
+செயல்திறனை மேம்படுத்த இதைக் குறைக்கவும். மிகக் குறைந்த எண்ணால்
+உருள் பட்டி மறைந்துவிடலாம்.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translation>அதிகபட்ச அரட்டை பதிவு பார்வை அளவு</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
-        <translation>ச்க்ரோலிங் செய்யும் போது அரட்டை வரலாற்றிலிருந்து ஏற்ற வேண்டிய செய்திகளின் எண்ணிக்கை. மிகக் குறைவு
- இங்கே எண் உருள் பட்டி மறைந்துவிடும்.</translation>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
+        <translation>உருட்டும்போது அரட்டை வரலாற்றிலிருந்து ஏற்ற வேண்டிய செய்திகளின் எண்ணிக்கை. மிகக் குறைந்த
+எண்ணால் உருள் பட்டி மறைந்துவிடலாம்.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
@@ -3028,8 +3008,8 @@ number here may cause the scroll bar to disappear.</source>
         <translation>அரட்டை பதிவு:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
-        <translation>சுழிய சின்னத்திற்குப் பிறகு பின்னொட்டு மறைக்கவும்</translation>
+        <source>Hide text after a NUL character</source>
+        <translation>NUL எழுத்துக்குப் பின் உள்ள உரையை மறை</translation>
     </message>
 </context>
 <context>
@@ -3060,11 +3040,11 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>வெளியேற்றம்</translation>
+        <translation>வெளியேறு</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation>வடிகட்டி ...</translation>
+        <translation>வடிகட்டு...</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -3080,11 +3060,11 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>புதிய மாநாட்டை உருவாக்கவும் ...</translation>
+        <translation>புதிய மாநாட்டை உருவாக்கவும்...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>புதிய வட்டத்தைச் சேர்க்கவும் ...</translation>
+        <translation>புதிய வட்டத்தைச் சேர்க்கவும்...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3132,7 +3112,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>மாநாடு அழைக்கிறது</translation>
+        <translation>மாநாட்டு அழைப்புகள்</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3156,7 +3136,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation>உங்கள் பதிலாள் அமைப்புகளுடன் தொடங்க டாக்ச்கோர் தோல்வியுற்றது. QTOX ஐ இயக்க முடியாது; தயவுசெய்து உங்கள் அமைப்புகளை மாற்றியமைத்து மறுதொடக்கம் செய்யுங்கள்.</translation>
+        <translation>உங்கள் பதிலாள் அமைப்புகளுடன் தொடங்க Toxcore தோல்வியுற்றது. qTox ஐ இயக்க முடியாது; தயவுசெய்து உங்கள் அமைப்புகளை மாற்றியமைத்து மறுதொடக்கம் செய்யுங்கள்.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3173,12 +3153,12 @@ number here may cause the scroll bar to disappear.</source>
         <source>%n new conference invite(s)</source>
         <translation>
             <numerusform>%n புதிய மாநாட்டு அழைப்பு</numerusform>
-            <numerusform>%n புதிய மாநாடு அழைக்கிறது</numerusform>
+            <numerusform>%n புதிய மாநாட்டு அழைப்புகள்</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>வெளியேறு</translation>
     </message>
     <message>
@@ -3191,11 +3171,11 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Logout</source>
-        <translation>வெளியேற்றம்</translation>
+        <translation>வெளியேறு</translation>
     </message>
     <message>
         <source>Add contact...</source>
-        <translation>தொடர்பைச் சேர்க்கவும் ...</translation>
+        <translation>தொடர்பைச் சேர்க்கவும்...</translation>
     </message>
     <message>
         <source>Next conversation</source>

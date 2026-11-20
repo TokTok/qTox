@@ -182,7 +182,7 @@
               <property name="toolTip">
                <string>Set resolution of your camera.
 The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
+Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</string>
               </property>

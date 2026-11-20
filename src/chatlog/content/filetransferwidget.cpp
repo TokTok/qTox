@@ -259,7 +259,7 @@ void FileTransferWidget::updateWidgetText(const ToxFile& file)
         if (file.pauseStatus.localPaused()) {
             ui->progressLabel->setText(tr("Paused", "file transfer widget"));
         } else {
-            ui->progressLabel->setText(tr("Remote paused", "file transfer widget"));
+            ui->progressLabel->setText(tr("Paused by the other side", "file transfer widget"));
         }
         break;
     case ToxFile::TRANSMITTING:

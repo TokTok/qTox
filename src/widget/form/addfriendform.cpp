@@ -104,7 +104,7 @@ AddFriendForm::AddFriendForm(ToxId ownId_, Settings& settings_, Style& style_,
 
     // accessibility stuff
     toxIdLabel.setAccessibleDescription(tr("Tox ID, 76 hexadecimal characters"));
-    toxId.setAccessibleDescription(tr("Type in Tox ID of your friend"));
+    toxId.setAccessibleDescription(tr("Type in your friend's Tox ID"));
     messageLabel.setAccessibleDescription(tr("Friend request message"));
     message.setAccessibleDescription(tr(
         "Type message to send with the friend request or leave empty to send a default message"));
@@ -194,7 +194,7 @@ void AddFriendForm::addFriend(const QString& idText)
 
     if (!friendId.isValid()) {
         messageBoxManager.showWarning(tr("Couldn't add friend"),
-                                      tr("%1 Tox ID is invalid", "Tox address error").arg(idText));
+                                      tr("%1 is not a valid Tox ID", "Tox address error").arg(idText));
         return;
     }
 

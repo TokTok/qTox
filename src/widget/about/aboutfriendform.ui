@@ -112,13 +112,13 @@
      <item row="0" column="0">
       <widget class="QLabel" name="label_5">
        <property name="toolTip">
-        <string>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</string>
+        <string>This is your friend's public key. Use it to verify their identity through another channel. Others can't use it to add this contact.</string>
        </property>
        <property name="layoutDirection">
         <enum>Qt::LeftToRight</enum>
        </property>
        <property name="text">
-        <string>Public key (not ToxID):</string>
+        <string>Public key (not Tox ID):</string>
        </property>
       </widget>
      </item>
@@ -219,7 +219,7 @@
    <item>
     <widget class="QPushButton" name="removeHistory">
      <property name="text">
-      <string>Remove history (operation can not be undone!)</string>
+      <string>Remove history (operation cannot be undone!)</string>
      </property>
     </widget>
    </item>
@@ -238,7 +238,7 @@
          <string/>
         </property>
         <property name="placeholderText">
-         <string>You can save comments about this contact here.</string>
+         <string>You can save notes about this contact here.</string>
         </property>
        </widget>
       </item>

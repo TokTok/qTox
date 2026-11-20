@@ -5,7 +5,7 @@
     <name>AVForm</name>
     <message>
         <source>Default resolution</source>
-        <translation type="unfinished">Çareseriya standard</translation>
+        <translation type="unfinished">Rezolûsyona standard</translation>
     </message>
     <message>
         <source>Audio/Video</source>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation type="unfinished">Hêz</translation>
+        <translation type="unfinished">Bihêzkirin</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -52,19 +52,8 @@
         <translation type="unfinished">Amûra vîdyoyê</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation type="unfinished">Çareseriya kameraya xwe hilbijêre.
-Nirxên bilindtir dibin sedema kalîteya vîdyoyê çêtir ji bo hevalên te.
-Lê baldar be ku kalîteya bilindtir pêwendiya înternetê ya baştir hewce dike.
-Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiyên vîdyoyî de.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
-        <translation type="unfinished">Çareserî</translation>
+        <translation type="unfinished">Rezolûsyon</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -80,24 +69,24 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Kalîteya dengî</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bilind (64 kBps)</translation>
+        <translation type="unfinished">Bilind (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Navîn (32 kBps)</translation>
+        <translation type="unfinished">Navîn (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nizm (16 kBps)</translation>
+        <translation type="unfinished">Nizm (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gelek nizm (8 kBps)</translation>
+        <translation type="unfinished">Gelek nizm (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -121,7 +110,7 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Çareseriya kameraya xwe hilbijêre.
+        <translation type="unfinished">Rezolûsyona kameraya xwe hilbijêre.
 Nirxên bilindtir dibin sedema kalîteya vîdyoyê çêtir ji bo hevalên te.
 Lê baldar be ku kalîteya bilindtir zêdetir firehiya xetê dixwe.
 Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiyên vîdyoyî de.</translation>
@@ -169,22 +158,22 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Guhertoya Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation type="unfinished">Lîsteyek ji hemû pirsgirêkên naskirî dikare li %1 ya me ya li Github were dîtin. Heke tu xeletiyek an qelsiyek ewlehiyê di qTox de bibînî, ji kerema xwe li gorî rêbernameyên di gotara wîkiya me ya %2 de ragihîne.</translation>
+        <translation type="unfinished">Lîsteyek ji hemû pirsgirêkên naskirî dikare li %1 ya me ya li GitHub were dîtin. Heke tu xeletiyek an qelsiyek ewlehiyê di qTox de bibînî, ji kerema xwe li gorî rêbernameyên di gotara wîkiya me ya %2 de ragihîne.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation type="unfinished">Ji bo ragihandina xeletiyekê li vir bitikîne.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation type="unfinished">Lîsteyek tije ya %1 li Github bibîne</translation>
+        <translation type="unfinished">Lîsteyek tije ya %1 li GitHub bibîne</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation type="unfinished">şopînera xeletiyan</translation>
     </message>
@@ -216,7 +205,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">Manuwel</translation>
+        <translation type="unfinished">Bi destan</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -232,7 +221,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Ger hatibe mîhengkirin, dawetên konferansê yên ji vê têkiliyê bixweber qebûl bike.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation type="unfinished">Dîrokê jê bibe (ev kiryar venagere!)</translation>
     </message>
     <message>
@@ -248,21 +237,21 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Dîrok hate jêbirin</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ev mifteya giştî ya hevalê te ye, wê bikar bîne da ku nasnameya wî bi rêya kanaleke din verast bikî. Tu nikarî vê ji kesên din re bişînî da ku ew vê têkiliyê zêde bikin.</translation>
+        <translation type="unfinished">Ev mifteya giştî ya hevalê te ye, wê bikar bîne da ku nasnameya wî bi rêya kanaleke din verast bikî. Kesên din nikarin bi vê mifteyê vê têkiliyê zêde bikin.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mifteya giştî (ne ToxID ye):</translation>
+        <translation type="unfinished">Mifteya giştî (ne Tox ID ye):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation type="unfinished">Pejirandin</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tu ewle yî ku dixwazî dîroka axaftina %1 jê bibî?</translation>
     </message>
@@ -292,9 +281,9 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Dawetên konferansê bixweber qebûl bike</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tu dikarî şîroveyan derbarê vê têkiliyê li vir tomar bikî.</translation>
+        <translation type="unfinished">Tu dikarî têbîniyan derbarê vê têkiliyê li vir tomar bikî.</translation>
     </message>
 </context>
 <context>
@@ -367,7 +356,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Red bike</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation type="unfinished">Tox ID ya hevalê xwe binivîse</translation>
     </message>
     <message>
@@ -433,7 +422,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">%1 li vir e! Dibe ku tu bixwazî Tox bikî?</translation>
+        <translation type="unfinished">%1 li vir e! Em li ser Tox biaxivin?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -443,7 +432,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform>Amade ye ji bo îtxalkirina %n têkiliyê, bitikîne bişîne ji bo pejirandinê</numerusform>
+            <numerusform>Amade ye ji bo îtxalkirinê: %n têkilî, bitikîne bişîne ji bo pejirandinê</numerusform>
             <numerusform>Amade ye ji bo îtxalkirina %n têkiliyan, bitikîne bişîne ji bo pejirandinê</numerusform>
         </translation>
     </message>
@@ -458,10 +447,10 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Tox ID, 76 karakterên heksadesîmal</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID nederbasdar e</translation>
+        <translation type="unfinished">%1 ne Tox ID-yeke derbasdar e</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -486,7 +475,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
     </message>
     <message>
         <source>not</source>
-        <translation type="unfinished">ne</translation>
+        <translation type="unfinished">tu tiştî</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -510,12 +499,12 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation type="unfinished">Teyt (*.log)</translation>
+        <translation type="unfinished">Qeyd (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Heke tu %1 nezanî çi dikî, ji kerema xwe li vir tiştekî %2 neguherîne. Guhertinên li vir dibe ku bibin sedema pirsgirêkan bi qTox, û heta windabûna daneyên te, mînak dîrok.%3</translation>
+        <translation type="unfinished">Heke tu %1 nezanî çi dikî, ji kerema xwe li vir %2 neguherîne. Guhertinên li vir dibe ku bibin sedema pirsgirêkan bi qTox, û heta windabûna daneyên te, mînak dîrok.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -541,7 +530,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation type="unfinished">Mîhengan li peldanka xebatê tomar bike li şûna peldanka mîhengê ya asayî</translation>
     </message>
@@ -663,28 +652,20 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <translation type="unfinished">Nimûneyek nû destpê dike û ekrana têketinê vedike.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; dike. Standard ON e.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6 çalak an neçalak dike: %1. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP &lt;on&gt;/&lt;off&gt; dike. Standard ON e.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP çalak an neçalak dike: %1. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lêgerîna LAN &lt;on&gt;/&lt;off&gt; dike. UDP off serdest e. Standard ON e.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Lêgerîna LAN çalak an neçalak dike: %1. Heke UDP neçalak be, bandora wê tune. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mîhengên proxyê dike. Standard NONE ye.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Proxyê mîheng dike. Standard: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -709,7 +690,7 @@ Heke pêwendiya te ne baş be, dibe ku ev bibe sedema pirsgirêkan di pêwendiy�
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">rê</translation>
+        <translation type="unfinished">rêç</translation>
     </message>
 </context>
 <context>
@@ -1094,10 +1075,10 @@ da ku tu bikaribî pelî li Windowsê tomar bikî.</translation>
         <translation type="unfinished">Pelek tomar bike</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ji dûr ve hate sekinandin</translation>
+        <translation type="unfinished">Aliyê din sekinand</translation>
     </message>
 </context>
 <context>
@@ -1138,7 +1119,7 @@ da ku tu bikaribî pelî li Windowsê tomar bikî.</translation>
     <message>
         <source>Never</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Qet</translation>
+        <translation type="unfinished">Tu carî</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
@@ -1268,11 +1249,11 @@ da ku tu bikaribî pelî li Windowsê tomar bikî.</translation>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation type="unfinished">Îkona tepsiya ronahî çalak bike.</translation>
+        <translation type="unfinished">Îkona tepsiyê ya ronî bi kar bîne.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation type="unfinished">Îkona ronahî</translation>
+        <translation type="unfinished">Îkona ronî</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
@@ -1296,7 +1277,7 @@ da ku tu bikaribî pelî li Windowsê tomar bikî.</translation>
         <translation type="unfinished">Li tepsiyê bigire</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation type="unfinished">Rewşa te piştî demekî diyarkirî yê bêçalakiyê dibe &apos;Dûr&apos;.</translation>
     </message>
     <message>
@@ -1360,7 +1341,7 @@ instead of closing entirely.</source>
 li tepsiyê bigire.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tu dikarî vê yekê bi tikandina rastê li ser hevalan, ji bo her hevalekî cuda mîheng bikî.</translation>
@@ -1518,7 +1499,7 @@ Profîl dîroka te nahewîne.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation type="unfinished">Derkeve</translation>
     </message>
     <message>
@@ -1895,7 +1876,7 @@ Ji bo bêtir agahî Shift+F1 bitikîne.</translation>
         <translation type="unfinished">Pelê xebitandinê (Executable)</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translation type="unfinished">Te ji qTox xwestiye ku pelek xebitandinê veke. Pelên xebitandinê dikarin zirarê bidin kompûtera te. Tu ewle yî ku dixwazî vî pelî vekî?</translation>
     </message>
@@ -1982,7 +1963,7 @@ Ji bo bêtir agahî Shift+F1 bitikîne.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform>Peyama nexwendî</numerusform>
+            <numerusform>Peyamên nexwendî</numerusform>
             <numerusform>Peyamên nexwendî</numerusform>
         </translation>
     </message>
@@ -2038,8 +2019,8 @@ Ji bo bêtir agahî Shift+F1 bitikîne.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation type="unfinished">Caps-lock çalak e</translation>
+        <source>Caps Lock is on</source>
+        <translation type="unfinished">Caps Lock çalak e</translation>
     </message>
 </context>
 <context>
@@ -2126,10 +2107,10 @@ Heke tu bi spamên daxwaza hevaltiyê re rûbirû dibî, NoSpam biguherîne.</tr
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation type="unfinished">Toxing li ser qTox</translation>
+        <translation type="unfinished">Li ser qTox im</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Şîfreya daneyarê nehat guhertin, dibe ku xera bûbe yan jî şîfreya kevin bikar tîne.</translation>
     </message>
@@ -2186,9 +2167,9 @@ Ji kerema xwe wêneyekî din bikar bîne.</translation>
         <translation type="unfinished">Tomar bike</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished">QrCode tomar bike (*.png)</translation>
+        <translation type="unfinished">QR code tomar bike (*.png)</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2227,11 +2208,6 @@ Ji kerema xwe wêneyekî din bikar bîne.</translation>
         <translation type="unfinished">Şîfre nehat guhertin</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rêya vala ne berdest e</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation type="unfinished">Nav nehat guhertin</translation>
     </message>
@@ -2249,9 +2225,9 @@ Ji kerema xwe wêneyekî din bikar bîne.</translation>
         <translation type="unfinished">Navê vala</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Navê vala ne berdest e</translation>
+        <translation type="unfinished">Nav nikare vala be.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2294,12 +2270,12 @@ Ji kerema xwe wêneyekî din bikar bîne.</translation>
         <translation type="unfinished">Pelê ku te hilbijart nehat tomarkirin.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rêya vala ne berdest e.</translation>
+        <translation type="unfinished">Rê nikare vala be.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Şîfreya daneyarê nehat guhertin, dibe ku xera bûbe yan jî şîfreya kevin bikar tîne.</translation>
     </message>
@@ -2365,9 +2341,9 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
         <translation type="unfinished">Profîl jixwe heye</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished">Profîlek bi navê &quot;%1&quot; jixwe heye. Tu dixwazî jê bibî?</translation>
+        <translation type="unfinished">Profîlek bi navê &quot;%1&quot; jixwe heye. Tu dixwazî wî biguherînî?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2394,7 +2370,7 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
         <translation type="unfinished">LTR</translation>
     </message>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation type="unfinished">Temam</translation>
     </message>
     <message>
@@ -2440,7 +2416,7 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished">%1 li vir e! Dibe ku tu bixwazî Tox bikî?</translation>
+        <translation type="unfinished">%1 li vir e! Em li ser Tox biaxivin?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2584,7 +2560,7 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">%1 digere</translation>
+        <translation type="unfinished">Bang li %1 tê kirin</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2612,7 +2588,7 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Xerabûyî</translation>
+        <translation type="unfinished">Qut bû</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2624,9 +2600,9 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
         <translation type="unfinished">Sekinandî</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ji dûr ve hate sekinandin</translation>
+        <translation type="unfinished">Aliyê din sekinand</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2716,12 +2692,12 @@ Ev ID koda NoSpam (şîn) û checksum (gewr) dihewîne.</translation>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation type="unfinished">Space (Valahî)</translation>
+        <translation type="unfinished">Space</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation type="unfinished">Escape (Derketin)</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2991,11 +2967,11 @@ Karakterên formatkirinê veşêre:
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Lîsteya têkiliyên te dê di moda tevlihev de (avatarên biçûk, dîtina tabloyî) were nîşandan.</translation>
+        <translation type="unfinished">Lîsteya têkiliyên te dê di moda kompakt de (avatarên biçûk, dîtina tabloyî) were nîşandan.</translation>
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation type="unfinished">Lîsteya têkiliyan a tevlihev</translation>
+        <translation type="unfinished">Lîsteya têkiliyan a kompakt</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
@@ -3023,7 +2999,7 @@ Karakterên formatkirinê veşêre:
     </message>
     <message>
         <source>Theme</source>
-        <translation type="unfinished">Temaya</translation>
+        <translation type="unfinished">Tema</translation>
     </message>
     <message>
         <source>Style:</source>
@@ -3125,7 +3101,7 @@ Karakterên formatkirinê veşêre:
         <translation type="unfinished">Di agahdariyên sermaseyê de bêyî nîşandana agahiyên veşartî, tenê &quot;peyama nû&quot; nîşan bide.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Lîsteya hevalan û pencereya axaftinê bike du pencereyên cihê ku dikarin werin veguheztin.</translation>
     </message>
@@ -3177,8 +3153,8 @@ Karakterên formatkirinê veşêre:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hejmara herî zêde ya peyamên ku ji dîroka axaftinê têne barkirin (ji bo her axaftinekê).
 Ji bo baştirkirina performansê vê kêm bike. Hejmareke pir kêm dikare bibe sedema
@@ -3190,8 +3166,8 @@ windabûna çîbûka şemitandinê.</translation>
         <translation type="unfinished">Mezinahiya herî zêde ya dîtina tomara axaftinê</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hejmara peyamên ku dema şemitandinê ji dîroka axaftinê têne barkirin. Hejmareke pir kêm
 dikare bibe sedema windabûna çîbûka şemitandinê.</translation>
@@ -3207,9 +3183,9 @@ dikare bibe sedema windabûna çîbûka şemitandinê.</translation>
         <translation type="unfinished">Tomara axaftinê:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paşgira piştî sembola NULL veşêre</translation>
+        <translation type="unfinished">Nivîsa piştî tîpa NUL veşêre</translation>
     </message>
 </context>
 <context>
@@ -3351,20 +3327,20 @@ dikare bibe sedema windabûna çîbûka şemitandinê.</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform>%n daxwaza hevaltiyê ya nû</numerusform>
+            <numerusform>Daxwazên hevaltiyê yên nû: %n</numerusform>
             <numerusform>%n daxwazên hevaltiyê yên nû</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform>%n daweta konferansê ya nû</numerusform>
+            <numerusform>Dawetên konferansê yên nû: %n</numerusform>
             <numerusform>%n dawetên konferansê yên nû</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation type="unfinished">Derkeve</translation>
     </message>
     <message>

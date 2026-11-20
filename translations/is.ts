@@ -30,7 +30,7 @@
     <message>
         <source>Gain</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hagnaður</translation>
+        <translation type="unfinished">Mögnun</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -39,7 +39,7 @@
     <message>
         <source>Capture device</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Handtaka tæki</translation>
+        <translation type="unfinished">Upptökutæki</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -52,19 +52,6 @@
     <message>
         <source>Video device</source>
         <translation>Myndtæki</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu upplausn myndavélarinnar þinnar.
-Því hærri gildi, því betri myndgæði gætu vinir þínir fengið.
-Athugaðu þó að með betri myndgæðum þarf betri nettengingu.
-Stundum er tengingin þín ekki nógu góð til að takast á við meiri myndgæði,
-sem getur leitt til vandræða með myndsímtöl.</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -83,20 +70,20 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation>Hljóðgæði</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Hátt (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Hátt (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Miðlungs (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Miðlungs (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Lágt (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Lágt (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Mjög lágt (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Mjög lágt (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -111,7 +98,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendt hljóðgæði. Lækkaðu þessa stillingu ef bandbreiddin þín er ekki nógu mikil eða ef þú vilt draga úr bandbreiddarnotkun.</translation>
+        <translation type="unfinished">Gæði sends hljóðs. Lækkaðu þessa stillingu ef bandbreiddin þín er ekki nógu mikil eða ef þú vilt nota minni bandbreidd.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -129,17 +116,17 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Play a test sound while changing the output volume.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Spilaðu prufuhljóð á meðan þú breytir hljóðstyrknum.</translation>
+        <translation type="unfinished">Spila prufuhljóð á meðan hljóðstyrk úttaks er breytt.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu sleðann til að stilla aukningu inntakstækisins á bilinu %1dB til %2dB.</translation>
+        <translation type="unfinished">Notaðu sleðann til að stilla mögnun inntakstækisins á bilinu %1dB til %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu sleðann til að stilla virkjunarstyrkinn fyrir inntakstækið þitt.</translation>
+        <translation type="unfinished">Notaðu sleðann til að stilla virkjunarstyrk inntakstækisins.</translation>
     </message>
 </context>
 <context>
@@ -162,7 +149,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Senda kjötkássa: %1</translation>
+        <translation type="unfinished">Tætigildi útgáfu (commit): %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -175,11 +162,11 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Qt útgáfa: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Listi yfir öll þekkt vandamál má finna á %1 okkar á Github. Ef þú uppgötvar villu eða öryggisveikleika innan qTox, vinsamlegast tilkynntu það samkvæmt leiðbeiningunum í %2 wiki greininni okkar.</translation>
+        <translation type="unfinished">Listi yfir öll þekkt vandamál má finna á %1 okkar á GitHub. Ef þú uppgötvar villu eða öryggisveikleika innan qTox, vinsamlegast tilkynntu það samkvæmt leiðbeiningunum í %2 wiki greininni okkar.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -187,16 +174,16 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Smelltu hér til að tilkynna villu.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjáðu allan lista yfir %1 á Github</translation>
+        <translation type="unfinished">Sjáðu allan lista yfir %1 á GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">villu-tracker</translation>
+        <translation type="unfinished">villurakningarkerfi</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -208,12 +195,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">þátttakendur</translation>
+        <translation type="unfinished">þátttakenda</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þessi útgáfa af qTox er viðhaldið af TokTok teyminu í kjölfar geymslu á upprunalega qTox verkefninu.</translation>
+        <translation type="unfinished">TokTok-teymið viðheldur þessari útgáfu af qTox eftir að upprunalega qTox-verkefnið var sett í geymslu.</translation>
     </message>
 </context>
 <context>
@@ -221,17 +208,17 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Samþykkja sjálfkrafa skrár frá tengilið ef stillt er</translation>
+        <translation type="unfinished">Samþykkja sjálfkrafa skrár frá tengiliðnum ef valið</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfgefin skrá til að vista skrár:</translation>
+        <translation type="unfinished">Sjálfgefin mappa til að vista skrár:</translation>
     </message>
     <message>
         <source>Manual</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Handbók</translation>
+        <translation type="unfinished">Handvirkt</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -241,22 +228,22 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Audio + Video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hljóð + myndskeið</translation>
+        <translation type="unfinished">Hljóð + mynd</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Samþykkja sjálfkrafa ráðstefnuboð frá þessum tengilið ef valið er.</translation>
+        <translation type="unfinished">Samþykkja sjálfkrafa ráðstefnuboð frá þessum tengilið ef valið.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fjarlægja feril (ekki hægt að afturkalla aðgerð!)</translation>
     </message>
     <message>
         <source>Notes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skýringar</translation>
+        <translation type="unfinished">Athugasemdir</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
@@ -266,17 +253,17 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>History removed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Saga fjarlægð</translation>
+        <translation type="unfinished">Ferill fjarlægður</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þetta er almenningslykill vinar þíns, notaðu hann til að staðfesta auðkenni hans í gegnum aðra rás. Þú getur ekki sent þetta til annarra svo þeir geti bætt þessum tengilið við.</translation>
+        <translation type="unfinished">Þetta er dreifilykill vinar þíns; notaðu hann til að staðfesta auðkenni hans eftir annarri leið. Aðrir geta ekki notað hann til að bæta þessum tengilið við.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opinn lykill (ekki ToxID):</translation>
+        <translation type="unfinished">Dreifilykill (ekki Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -284,14 +271,14 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Staðfesting</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ertu viss um að fjarlægja %1 spjallferil?</translation>
+        <translation type="unfinished">Ertu viss um að þú viljir fjarlægja spjallferilinn við %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mistókst að fjarlægja spjallferil með %1!</translation>
+        <translation type="unfinished">Mistókst að fjarlægja spjallferilinn við %1!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -301,7 +288,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfvirk samþykki fyrir þennan tengilið er óvirk</translation>
+        <translation type="unfinished">Sjálfvirk samþykkt er óvirk fyrir þennan tengilið</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -314,7 +301,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Samþykkja ráðstefnuboð sjálfkrafa</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Þú getur vistað athugasemdir um þennan tengilið hér.</translation>
     </message>
@@ -339,12 +326,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Known Issues</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þekkt mál</translation>
+        <translation type="unfinished">Þekkt vandamál</translation>
     </message>
     <message>
         <source>Open update download link</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu hlekk til að hlaða niður uppfærslu</translation>
+        <translation type="unfinished">Opna niðurhalstengil uppfærslu</translation>
     </message>
     <message>
         <source>Update available</source>
@@ -359,14 +346,14 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Keyrir nú óprófaða/óstöðuga útgáfu af qTox</translation>
+        <translation type="unfinished">Óprófuð/óstöðug útgáfa af qTox er í keyrslu</translation>
     </message>
 </context>
 <context>
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation>Bæta Við Vinum</translation>
+        <translation>Bæta við vinum</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
@@ -376,7 +363,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Send friend request</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu vinabeiðni</translation>
+        <translation type="unfinished">Senda vinabeiðni</translation>
     </message>
     <message>
         <source>Friend requests</source>
@@ -399,7 +386,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <translation type="unfinished">Gat ekki bætt við vini</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sláðu inn Tox ID vinar þíns</translation>
     </message>
@@ -449,7 +436,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox auðkenni</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -461,18 +448,18 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opið</translation>
+        <translation type="unfinished">Opna</translation>
     </message>
     <message>
         <source>Send friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu vinabeiðnir</translation>
+        <translation type="unfinished">Senda vinabeiðnir</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 hér! Eitra mig kannski?</translation>
+        <translation type="unfinished">Hæ, þetta er %1! Spjöllum saman á Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -482,8 +469,8 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tilbúið að flytja inn %n tengilið, smelltu á Senda til að staðfesta</numerusform>
+            <numerusform>Tilbúið að flytja inn %n tengiliði, smelltu á Senda til að staðfesta</numerusform>
         </translation>
     </message>
     <message>
@@ -494,19 +481,19 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox ID, 76 sextánsstafir</translation>
+        <translation type="unfinished">Tox ID, 76 sextándastafir</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID er ógilt</translation>
+        <translation type="unfinished">%1 er ekki gilt Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">76 sextánstafir</translation>
+        <translation type="unfinished">76 sextándastafir</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -518,12 +505,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Advanced</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ítarlegri</translation>
+        <translation type="unfinished">Ítarlegt</translation>
     </message>
     <message>
         <source>really</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">í alvöru</translation>
+        <translation type="unfinished">virkilega</translation>
     </message>
     <message>
         <source>not</source>
@@ -533,7 +520,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>IMPORTANT NOTE</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">MIKILVÆG ATHUGIÐ</translation>
+        <translation type="unfinished">MIKILVÆG ATHUGASEMD</translation>
     </message>
     <message>
         <source>Reset settings</source>
@@ -558,17 +545,17 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Logs (*.log)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Logs (*.log)</translation>
+        <translation type="unfinished">Annálar (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nema þú %1 vitir hvað þú ert að gera, vinsamlegast gerðu %2 breytingar hér. Breytingar sem gerðar eru hér geta leitt til vandamála með qTox, og jafnvel til taps á gögnum þínum, t.d. saga.%3</translation>
+        <translation type="unfinished">Nema þú %1 vitir hvað þú ert að gera, skaltu %2 breyta neinu hér. Breytingar hér geta valdið vandræðum í qTox og jafnvel gagnatapi, t.d. á spjallferli.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Breytingar hér eru aðeins notaðar eftir að qTox er endurræst.</translation>
+        <translation type="unfinished">Breytingar hér taka aðeins gildi eftir að qTox er endurræst.</translation>
     </message>
     <message>
         <source>Save file</source>
@@ -578,26 +565,26 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ógilt umboð heimilisfang</translation>
+        <translation type="unfinished">Ógilt vistfang milliþjóns</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinsamlegast sláðu inn gilt IP -tölu eða hýsingarheiti fyrir proxy stillinguna.</translation>
+        <translation type="unfinished">Sláðu inn gilt IP-vistfang eða vélarheiti fyrir milliþjóninn.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vistaðu stillingar í vinnuskránni í stað venjulegs conf dir</translation>
+        <translation type="unfinished">Vista stillingar í vinnumöppunni í stað venjulegu stillingamöppunnar</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gerðu Tox færanlegan</translation>
+        <translation type="unfinished">Gera Tox færanlegt</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -648,19 +635,19 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Proxy type:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gerð proxy:</translation>
+        <translation type="unfinished">Gerð milliþjóns:</translation>
     </message>
     <message>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Heimilisfang:</translation>
+        <translation type="unfinished">Vistfang:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Höfn:</translation>
+        <translation type="unfinished">Gátt:</translation>
     </message>
     <message>
         <source>None</source>
@@ -675,12 +662,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Export Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Flytja út villuleitarskrá</translation>
+        <translation type="unfinished">Flytja út villuleitarannál</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afritaðu villuleitarskrá</translation>
+        <translation type="unfinished">Afrita villuleitarannál</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
@@ -696,7 +683,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Að slökkva á þessu leyfir t.d. Tox over Tor. Það bætir þó álag á Tox netið, svo hakið aðeins af þegar nauðsyn krefur.</translation>
+        <translation type="unfinished">Ef slökkt er á þessu er t.d. hægt að nota Tox yfir Tor. Það eykur þó álag á Tox-netið, svo taktu hakið aðeins af ef nauðsyn krefur.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -709,12 +696,12 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Tox URI to parse</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox URI til að flokka</translation>
+        <translation type="unfinished">Tox URI til að vinna úr</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjar nýtt tilvik og hleður tilgreint snið.</translation>
+        <translation type="unfinished">Ræsir nýtt tilvik og hleður inn tilgreindum prófíl.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -724,31 +711,23 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjar nýtt tilvik og opnar innskráningarskjáinn.</translation>
+        <translation type="unfinished">Ræsir nýtt tilvik og opnar innskráningarskjáinn.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stillir IPv6 &lt;on&gt;/&lt;off&gt;. Sjálfgefið er ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Kveikir eða slekkur á IPv6: %1. Sjálfgefið: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stillir UDP &lt;on&gt;/&lt;off&gt;. Sjálfgefið er ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Kveikir eða slekkur á UDP: %1. Sjálfgefið: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stillir staðarnetsuppgötvun &lt;on&gt;/&lt;off&gt;. UDP off hnekkir. Sjálfgefið er ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Kveikir eða slekkur á leit á staðarneti: %1. Virkar ekki ef slökkt er á UDP. Sjálfgefið: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stillir proxy stillingar. Sjálfgefið er NONE.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Stillir milliþjón. Sjálfgefið: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -763,18 +742,18 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Athugar hvort þetta forrit sé að keyra nýjustu qTox útgáfuna.</translation>
+        <translation type="unfinished">Athugar hvort þetta sé nýjasta útgáfa qTox.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjar í flytjanlegum ham; hleður prófíl úr þessari möppu.</translation>
+        <translation type="unfinished">Ræsir í færanlegum ham; hleður inn prófíl úr þessari möppu.</translation>
     </message>
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Slóð</translation>
+        <translation type="unfinished">slóð</translation>
     </message>
 </context>
 <context>
@@ -782,7 +761,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Send a file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu skrá</translation>
+        <translation type="unfinished">Senda skrá</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
@@ -813,7 +792,7 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lengd símtals:</translation>
+        <translation type="unfinished">Lengd símtals: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -823,19 +802,19 @@ sem getur leitt til vandræða með myndsímtöl.</translation>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þú ert að reyna að senda raðskrá, sem er ekki að fara að virka!</translation>
+        <translation type="unfinished">Þú ert að reyna að senda raðskrá, en það mun ekki virka!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skráarnafnið innihélt ólöglega stafi</translation>
+        <translation type="unfinished">Skráarnafnið innihélt óleyfilega stafi</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ólöglegum stöfum hefur verið breytt í _
-svo þú getur vistað skrána á Windows.</translation>
+        <translation type="unfinished">Óleyfilegum stöfum hefur verið breytt í _
+svo hægt sé að vista skrána á Windows.</translation>
     </message>
 </context>
 <context>
@@ -903,7 +882,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Mute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þagga símtal</translation>
+        <translation type="unfinished">Slökkva á hljóði í símtali</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -956,7 +935,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Select all</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu allt</translation>
+        <translation type="unfinished">Velja allt</translation>
     </message>
 </context>
 <context>
@@ -971,12 +950,12 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu hring</translation>
+        <translation type="unfinished">Fjarlægja hring</translation>
     </message>
     <message>
         <source>Open all in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu allt í nýjum glugga</translation>
+        <translation type="unfinished">Opna allt í nýjum glugga</translation>
     </message>
 </context>
 <context>
@@ -984,12 +963,12 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Staðsetning ekki skrifanleg</translation>
+        <translation type="unfinished">Ekki hægt að skrifa á staðsetningu</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Þú hefur ekki leyfi til að skrifa á þá staðsetningu. Veldu annan eða hættu við vistunargluggann.</translation>
+        <translation type="unfinished">Þú hefur ekki heimild til að skrifa á þessa staðsetningu. Veldu aðra eða hættu við vistun.</translation>
     </message>
 </context>
 <context>
@@ -998,24 +977,24 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
-            <numerusform>%1 notandi í spjalli</numerusform>
-            <numerusform>%1 notendur í spjalli</numerusform>
+            <numerusform>%n notandi í spjalli</numerusform>
+            <numerusform>%n notendur í spjalli</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">hljóðlaus</translation>
+        <translation type="unfinished">þagga</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">slökkva á hljóði</translation>
+        <translation type="unfinished">kveikja á hljóði</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">afrita jafningjaauðkenni</translation>
+        <translation type="unfinished">afrita auðkenni þátttakanda</translation>
     </message>
 </context>
 <context>
@@ -1028,7 +1007,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Create new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Búðu til nýja ráðstefnu</translation>
+        <translation type="unfinished">Búa til nýja ráðstefnu</translation>
     </message>
     <message>
         <source>Conference invites</source>
@@ -1041,17 +1020,17 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Boðið af %1 á %2 á %3.</translation>
+        <translation type="unfinished">%1 bauð þér %2 kl. %3.</translation>
     </message>
     <message>
         <source>Join</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vertu með</translation>
+        <translation type="unfinished">Taka þátt</translation>
     </message>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afneita</translation>
+        <translation type="unfinished">Hafna</translation>
     </message>
 </context>
 <context>
@@ -1064,25 +1043,25 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Open chat in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu spjall í nýjum glugga</translation>
+        <translation type="unfinished">Opna spjall í nýjum glugga</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu spjall úr þessum glugga</translation>
+        <translation type="unfinished">Fjarlægja spjall úr þessum glugga</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hætta ráðstefnu</translation>
+        <translation type="unfinished">Yfirgefa ráðstefnu</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%1 notandi í spjalli</numerusform>
-            <numerusform>%1 notendur í spjalli</numerusform>
+            <numerusform>%n notandi í spjalli</numerusform>
+            <numerusform>%n notendur í spjalli</numerusform>
         </translation>
     </message>
     <message>
@@ -1101,7 +1080,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/me býður upp á vináttu, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me býður vináttu, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -1130,7 +1109,7 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinur er þegar bætt við</translation>
+        <translation type="unfinished">Vininum hefur þegar verið bætt við</translation>
     </message>
 </context>
 <context>
@@ -1138,17 +1117,17 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Villuleitarskrá</translation>
+        <translation type="unfinished">Villuleitarannáll</translation>
     </message>
     <message>
         <source>Auto-reload</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfvirk endurhlaða</translation>
+        <translation type="unfinished">Endurhlaða sjálfkrafa</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfvirk skrunun</translation>
+        <translation type="unfinished">Skruna sjálfkrafa</translation>
     </message>
 </context>
 <context>
@@ -1156,7 +1135,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Villuleitarskrá</translation>
+        <translation type="unfinished">Villuleitarannáll</translation>
     </message>
 </context>
 <context>
@@ -1165,13 +1144,13 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bíður eftir að senda...</translation>
+        <translation type="unfinished">Bíður eftir sendingu...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Samþykkja að fá þessa skrá</translation>
+        <translation type="unfinished">Samþykktu til að taka við þessari skrá</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1203,7 +1182,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Open file directory</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu skráasafn</translation>
+        <translation type="unfinished">Opna möppu skrárinnar</translation>
     </message>
     <message>
         <source>Resume transfer</source>
@@ -1219,13 +1198,13 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vistaðu skrá</translation>
+        <translation type="unfinished">Vista skrá</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hlé gert á fjarstýringunni</translation>
+        <translation type="unfinished">Hinn aðilinn gerði hlé</translation>
     </message>
 </context>
 <context>
@@ -1286,7 +1265,7 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Boð til ráðstefnu</translation>
+        <translation type="unfinished">Bjóða á ráðstefnu</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1297,7 +1276,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>To new circle</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Til nýjan hring</translation>
+        <translation type="unfinished">Í nýjan hring</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1307,27 +1286,27 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Open chat in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu spjall í nýjum glugga</translation>
+        <translation type="unfinished">Opna spjall í nýjum glugga</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu spjall úr þessum glugga</translation>
+        <translation type="unfinished">Fjarlægja spjall úr þessum glugga</translation>
     </message>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Til nýrrar ráðstefnu</translation>
+        <translation type="unfinished">Á nýja ráðstefnu</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Boða á ráðstefnu &apos;%1&apos;</translation>
+        <translation type="unfinished">Bjóða á ráðstefnuna &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Setja samnefni...</translation>
+        <translation type="unfinished">Setja gælunafn...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1353,7 +1332,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Away</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Burt</translation>
+        <translation type="unfinished">Fjarverandi</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1374,12 +1353,12 @@ svo þú getur vistað skrána á Windows.</translation>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu vin</translation>
+        <translation type="unfinished">Fjarlægja vin</translation>
     </message>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lokað</translation>
+        <translation type="unfinished">Útilokaður</translation>
     </message>
 </context>
 <context>
@@ -1392,7 +1371,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>%1 (no fonts)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 (engin leturgerð)</translation>
+        <translation type="unfinished">%1 (engin letur)</translation>
     </message>
     <message>
         <source>Auto select</source>
@@ -1410,7 +1389,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>The translation may not load until qTox restarts.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þýðingin gæti ekki hlaðast fyrr en qTox endurræsir.</translation>
+        <translation type="unfinished">Þýðingin hleðst hugsanlega ekki inn fyrr en qTox er endurræst.</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1420,39 +1399,39 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Show system tray icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sýna kerfisbakka táknið</translation>
+        <translation type="unfinished">Sýna tákn í kerfisbakka</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Virkja ljósbakkatákn.</translation>
+        <translation type="unfinished">Nota ljóst tákn í kerfisbakka.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ljóstákn</translation>
+        <translation type="unfinished">Ljóst tákn</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox mun byrja lágmarkað í bakka.</translation>
+        <translation type="unfinished">qTox ræsist falið í kerfisbakka.</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjaðu í bakka</translation>
+        <translation type="unfinished">Ræsa í kerfisbakka</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nálægt bakka</translation>
+        <translation type="unfinished">Loka í kerfisbakka</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lágmarka í bakka</translation>
+        <translation type="unfinished">Lágmarka í kerfisbakka</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1462,7 +1441,7 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Set where files will be saved.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu hvar skrár verða vistaðar.</translation>
+        <translation type="unfinished">Veldu hvar skrár verða vistaðar.</translation>
     </message>
     <message>
         <source>Autoaccept files</source>
@@ -1472,17 +1451,17 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Set to 0 to disable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu á 0 til að slökkva á</translation>
+        <translation type="unfinished">Stilltu á 0 til að gera óvirkt</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Staðan þín er breytt í Fjarverandi eftir ákveðið tímabil óvirkni.</translation>
+        <translation type="unfinished">Staðan þín breytist í Fjarverandi eftir tiltekinn tíma án virkni.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfvirk fjarlæging eftir (0 til að slökkva á):</translation>
+        <translation type="unfinished">Sjálfkrafa fjarverandi eftir (0 til að gera óvirkt):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1492,27 +1471,27 @@ svo þú getur vistað skrána á Windows.</translation>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ræstu qTox við ræsingu stýrikerfisins (núverandi snið).</translation>
+        <translation type="unfinished">Ræsa qTox þegar stýrikerfið ræsist (núverandi prófíll).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sjálfgefin skrá til að vista skrár:</translation>
+        <translation type="unfinished">Sjálfgefin mappa til að vista skrár:</translation>
     </message>
     <message>
         <source>Check for updates</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Leitaðu að uppfærslum</translation>
+        <translation type="unfinished">Leita að uppfærslum</translation>
     </message>
     <message>
         <source>Spell checking</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Villuleit</translation>
+        <translation type="unfinished">Stafsetningarleiðrétting</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hámarksstærð sjálfvirkrar samþykkis (0 til að slökkva á):</translation>
+        <translation type="unfinished">Hámarksstærð sjálfkrafa samþykktra skráa (0 til að gera óvirkt):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1524,27 +1503,27 @@ svo þú getur vistað skrána á Windows.</translation>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Eftir að hafa ýtt á lágmarka (_) mun qTox minnka í bakka,
-í stað verkefnastikunnar kerfisins.</translation>
+        <translation type="unfinished">Þegar ýtt er á lágmarka (_) fer qTox í kerfisbakkann
+en ekki á verkefnastikuna.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Eftir að hafa ýtt á loka (X) mun qTox loka bakka,
-í stað þess að loka alveg.</translation>
+        <translation type="unfinished">Þegar ýtt er á loka (X) fer qTox í kerfisbakkann
+en lokast ekki alveg.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þú getur stillt þetta fyrir hvern vin með því að hægrismella á einstaka vini.</translation>
+        <translation type="unfinished">Þú getur stillt þetta fyrir hvern vin fyrir sig með því að hægrismella á hann.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bættu við spjallskilaboðum þegar notandi gengur í eða yfirgefur ráðstefnu</translation>
+        <translation type="unfinished">Bæta við skilaboðum í spjallið þegar notandi tekur þátt í ráðstefnu eða yfirgefur hana</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1554,7 +1533,7 @@ instead of closing entirely.</source>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hjálpaðu til við að þýða</translation>
+        <translation type="unfinished">Hjálpa til við þýðingu</translation>
     </message>
     <message>
         <source> min</source>
@@ -1567,7 +1546,7 @@ instead of closing entirely.</source>
     <message>
         <source>Send message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu skilaboð</translation>
+        <translation type="unfinished">Senda skilaboð</translation>
     </message>
     <message>
         <source>Smileys</source>
@@ -1582,17 +1561,17 @@ instead of closing entirely.</source>
     <message>
         <source>Send a screenshot</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu skjáskot</translation>
+        <translation type="unfinished">Senda skjámynd</translation>
     </message>
     <message>
         <source>Save chat log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vista spjallskrá</translation>
+        <translation type="unfinished">Vista spjallannál</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hreinsaðu birt skilaboð</translation>
+        <translation type="unfinished">Hreinsa birt skilaboð</translation>
     </message>
     <message>
         <source>Quote selected text</source>
@@ -1602,7 +1581,7 @@ instead of closing entirely.</source>
     <message>
         <source>Copy link address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afritaðu heimilisfang tengils</translation>
+        <translation type="unfinished">Afrita slóð tengils</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1612,12 +1591,12 @@ instead of closing entirely.</source>
     <message>
         <source>Search in text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Leitaðu í texta</translation>
+        <translation type="unfinished">Leita í texta</translation>
     </message>
     <message>
         <source>Go to current date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Farðu á núverandi dagsetningu</translation>
+        <translation type="unfinished">Fara á núverandi dagsetningu</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1645,12 +1624,12 @@ instead of closing entirely.</source>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox auðkenni</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox auðkenni þitt (smelltu til að afrita)</translation>
+        <translation type="unfinished">Tox ID þitt (smelltu til að afrita)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1667,26 +1646,26 @@ instead of closing entirely.</source>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Farðu aftur á innskráningarskjáinn</translation>
+        <translation type="unfinished">Fara aftur á innskráningarskjáinn</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Útskrá</translation>
     </message>
     <message>
         <source>Remove password</source>
-        <translation>Fjarlægja aðgangsorð</translation>
+        <translation>Fjarlægja lykilorð</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>Breyta aðgangsorði</translation>
+        <translation>Breyta lykilorði</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þessi QR kóða inniheldur Tox ID þitt. Þú mátt líka deila þessu með vinum þínum.</translation>
+        <translation type="unfinished">Þessi QR-kóði inniheldur Tox ID þitt. Þú getur líka deilt honum með vinum þínum.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1696,7 +1675,7 @@ instead of closing entirely.</source>
     <message>
         <source>Copy image</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afritaðu mynd</translation>
+        <translation type="unfinished">Afrita mynd</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1722,7 +1701,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
         <source>Export</source>
         <comment>export profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Útflutningur</translation>
+        <translation type="unfinished">Flytja út</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1734,7 +1713,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu lykilorðið þitt og dulkóðun af prófílnum þínum.</translation>
+        <translation type="unfinished">Fjarlægja lykilorðið og dulkóðunina af prófílnum þínum.</translation>
     </message>
     <message>
         <source>Name input</source>
@@ -1754,7 +1733,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox auðkenni þitt</translation>
+        <translation type="unfinished">Tox ID þitt</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1764,7 +1743,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
     <message>
         <source>Copy QR image to clipboard</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afritaðu QR mynd á klemmuspjald</translation>
+        <translation type="unfinished">Afrita QR-mynd á klippiborð</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1784,7 +1763,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
     <message>
         <source>Remove password from profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu lykilorð af prófílnum</translation>
+        <translation type="unfinished">Fjarlægja lykilorð af prófílnum</translation>
     </message>
     <message>
         <source>Change profile password</source>
@@ -1811,7 +1790,7 @@ Prófíllinn inniheldur ekki ferilinn þinn.</translation>
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þetta auðkenni gerir öðrum Tox notendum kleift að bæta við og hafa samband við þig.
+        <translation type="unfinished">Þetta auðkenni gerir öðrum Tox-notendum kleift að bæta þér við og hafa samband við þig.
 Deildu því með vinum þínum til að byrja að spjalla.</translation>
     </message>
     <message>
@@ -1824,12 +1803,12 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hlaða söguglugga</translation>
+        <translation type="unfinished">Gluggi til að hlaða inn ferli</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hleðsluferill frá:</translation>
+        <translation type="unfinished">Hlaða inn ferli frá:</translation>
     </message>
 </context>
 <context>
@@ -1840,7 +1819,7 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Aðgangsorð:</translation>
+        <translation>Lykilorð:</translation>
     </message>
     <message>
         <source>Confirm:</source>
@@ -1849,12 +1828,12 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>Styrkur aðgangsorðs: %p%</translation>
+        <translation>Styrkur lykilorðs: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Búðu til prófíl</translation>
+        <translation type="unfinished">Búa til prófíl</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
@@ -1878,11 +1857,11 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation>Nýr Aðgangur</translation>
+        <translation>Nýr prófíll</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation>Ekki tókst að búa til nýjan aðgang</translation>
+        <translation>Ekki tókst að búa til nýjan prófíl</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
@@ -1891,7 +1870,7 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation>Aðgangsorðið verður að vera að minnsta kosti 6 stafir að lengd.</translation>
+        <translation>Lykilorðið verður að vera að minnsta kosti 6 stafir að lengd.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
@@ -1901,21 +1880,21 @@ Deildu því með vinum þínum til að byrja að spjalla.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ekki er hægt að hlaða sniðum með lykilorði sjálfkrafa.</translation>
+        <translation type="unfinished">Ekki er hægt að hlaða inn lykilorðsvörðum prófílum sjálfkrafa.</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Það er enginn valinn prófíll.
+        <translation type="unfinished">Enginn prófíll er valinn.
 
-Þú gætir viljað búa til einn.</translation>
+Þú gætir viljað búa til nýjan.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ekki tókst að hlaða þessum prófíl</translation>
+        <translation type="unfinished">Ekki tókst að hlaða inn þessum prófíl</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
@@ -1924,12 +1903,12 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation>Rangt aðgangsorð.</translation>
+        <translation>Rangt lykilorð.</translation>
     </message>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Innflutningur</translation>
+        <translation type="unfinished">Flytja inn</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1939,7 +1918,7 @@ You may want to create one.</source>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Innsláttarreitur lykilorðs, þú getur skilið hann eftir tóman (ekkert lykilorð) eða skrifað að minnsta kosti 6 stafi</translation>
+        <translation type="unfinished">Innsláttarreitur lykilorðs; þú getur skilið hann eftir tóman (ekkert lykilorð) eða slegið inn að minnsta kosti 6 stafi</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1949,7 +1928,7 @@ You may want to create one.</source>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Búðu til nýjan prófílhnapp</translation>
+        <translation type="unfinished">Hnappur til að búa til nýjan prófíl</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1969,7 +1948,7 @@ You may want to create one.</source>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hlaða sjálfkrafa gátreit</translation>
+        <translation type="unfinished">Gátreitur fyrir sjálfvirka hleðslu</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1979,36 +1958,36 @@ You may want to create one.</source>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hlaða valinn prófílhnapp</translation>
+        <translation type="unfinished">Hnappur til að hlaða inn völdum prófíl</translation>
     </message>
     <message>
         <source>New profile creation page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ný síðu til að búa til prófíl</translation>
+        <translation type="unfinished">Síða til að búa til nýjan prófíl</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hleður núverandi prófílsíðu</translation>
+        <translation type="unfinished">Síða til að hlaða inn fyrirliggjandi prófíl</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lykilorðin sem þú hefur slegið inn eru mismunandi.
-Vinsamlegast vertu viss um að slá inn sama lykilorðið tvisvar.</translation>
+        <translation type="unfinished">Lykilorðin sem þú slóst inn eru ekki eins.
+Gættu þess að slá sama lykilorðið inn tvisvar.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
         <translation type="unfinished">Þetta valfrjálsa lykilorð er notað til að dulkóða staðbundin skilaboðagögn og prófílinn þinn.
-Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
+Ef þú glatar lykilorðinu er engin leið að endurheimta það.
 Ýttu á Shift+F1 til að fá frekari upplýsingar.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Lykilorðið sem þú slærð inn hér er valfrjálst og dulkóðar skilaboðagögn og Tox leynilykilinn þinn. Það dulkóðar ekki skrár sem berast. Prófílgögnin þín eru aldrei send á neina netþjóna. Þetta er ekki fjarinnskráning, hún er aðeins staðbundin fyrir tölvuna þína. qTox forritarar munu ekki geta endurheimt lykilorðið þitt ef það glatast.</translation>
+        <translation type="unfinished">Lykilorðið sem þú slærð inn hér er valfrjálst og dulkóðar skilaboðagögn og leynilykilinn þinn í Tox. Það dulkóðar ekki mótteknar skrár. Prófílgögnin þín eru aldrei send á neina netþjóna. Þetta er ekki fjarinnskráning, lykilorðið gildir aðeins á tölvunni þinni. Forritarar qTox geta ekki endurheimt lykilorðið þitt ef það glatast.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -2030,17 +2009,17 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Create a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Búðu til ráðstefnu</translation>
+        <translation type="unfinished">Búa til ráðstefnu</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skoða lokið skráaflutning</translation>
+        <translation type="unfinished">Skoða lokna skráaflutninga</translation>
     </message>
     <message>
         <source>Change your settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Breyttu stillingunum þínum</translation>
+        <translation type="unfinished">Breyta stillingum</translation>
     </message>
     <message>
         <source>Close</source>
@@ -2055,7 +2034,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Open profile page when clicked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu prófílsíðuna þegar smellt er á hana</translation>
+        <translation type="unfinished">Opnar prófílsíðuna þegar smellt er</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -2065,7 +2044,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Set your status message that will be shown to others</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu stöðuskilaboðin þín sem verða sýnd öðrum</translation>
+        <translation type="unfinished">Stilltu stöðuskilaboðin sem verða sýnd öðrum</translation>
     </message>
     <message>
         <source>Status</source>
@@ -2075,7 +2054,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Set availability status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu framboðsstöðu</translation>
+        <translation type="unfinished">Stilla tiltækileika</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -2085,7 +2064,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hafðu samband við leitarinntak fyrir þekkta vini</translation>
+        <translation type="unfinished">Leitarreitur fyrir þekkta vini</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2095,12 +2074,12 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu vinaflokkun og sýnileika</translation>
+        <translation type="unfinished">Stilla röðun og sýnileika vina</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu síðuna Bæta við vinum</translation>
+        <translation type="unfinished">Opna síðuna Bæta við vinum</translation>
     </message>
     <message>
         <source>Conference</source>
@@ -2110,7 +2089,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opna ráðstefnustjórnunarsíðu</translation>
+        <translation type="unfinished">Opna síðu til að stjórna ráðstefnum</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2120,7 +2099,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Open File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu feril skráaflutninga</translation>
+        <translation type="unfinished">Opna feril skráaflutninga</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -2130,12 +2109,12 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Open Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu Stillingar</translation>
+        <translation type="unfinished">Opna stillingar</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu innri villuleitarverkfæri</translation>
+        <translation type="unfinished">Opna innri villuleitartól</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -2145,7 +2124,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu Debugger</translation>
+        <translation type="unfinished">Opna villuleitara</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -2161,10 +2140,10 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <translation type="unfinished">Keyranleg skrá</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þú hefur beðið qTox að opna keyrsluskrá. Keyranlegar skrár geta hugsanlega skemmt tölvuna þína. Ertu viss um að þú viljir opna þessa skrá?</translation>
+        <translation type="unfinished">Þú hefur beðið qTox um að opna keyranlega skrá. Keyranlegar skrár geta skaðað tölvuna þína. Ertu viss um að þú viljir opna þessa skrá?</translation>
     </message>
 </context>
 <context>
@@ -2172,17 +2151,17 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox myndband</translation>
+        <translation type="unfinished">Tox-myndband</translation>
     </message>
     <message>
         <source>Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fullur skjár</translation>
+        <translation type="unfinished">Allur skjárinn</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skiptu um forskoðun myndbanda</translation>
+        <translation type="unfinished">Kveikja/slökkva á forskoðun myndar</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -2202,7 +2181,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Exit full screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hætta á öllum skjánum</translation>
+        <translation type="unfinished">Hætta í heilskjá</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -2221,7 +2200,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>View</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skoða</translation>
+        <translation type="unfinished">Sýn</translation>
     </message>
     <message>
         <source>Window</source>
@@ -2239,17 +2218,17 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Komdu öllu fram</translation>
+        <translation type="unfinished">Færa allt fremst</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hætta á öllum skjánum</translation>
+        <translation type="unfinished">Hætta í heilskjá</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sláðu inn allan skjáinn</translation>
+        <translation type="unfinished">Heilskjár</translation>
     </message>
 </context>
 <context>
@@ -2257,8 +2236,8 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ólesin skilaboð</numerusform>
+            <numerusform>Ólesin skilaboð</numerusform>
         </translation>
     </message>
 </context>
@@ -2272,12 +2251,12 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>New conference message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ný ráðstefnuboð</translation>
+        <translation type="unfinished">Ný skilaboð á ráðstefnu</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skráaflutningur á innleið</translation>
+        <translation type="unfinished">Skrá berst</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -2288,7 +2267,7 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ráðstefnuboð móttekið</translation>
+        <translation type="unfinished">Ráðstefnuboð barst</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2298,25 +2277,25 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinabeiðni móttekin</translation>
+        <translation type="unfinished">Vinabeiðni barst</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinabeiðni móttekin frá %1</translation>
+        <translation type="unfinished">Vinabeiðni barst frá %1</translation>
     </message>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Móttekið símtal</translation>
+        <translation type="unfinished">Símtal berst</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock virkt</translation>
+        <translation type="unfinished">Kveikt er á hástafalás</translation>
     </message>
 </context>
 <context>
@@ -2348,12 +2327,12 @@ Ef þú tapar þessu lykilorði er engin leið til að endurheimta það.
     <message>
         <source>Send typing notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sendu innsláttartilkynningar</translation>
+        <translation type="unfinished">Senda tilkynningar um innslátt</translation>
     </message>
     <message>
         <source>Keep chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haltu spjallferli</translation>
+        <translation type="unfinished">Geyma spjallferil</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
@@ -2362,25 +2341,25 @@ People will be unable to add you with your old ID, but you will keep your curren
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">NoSpam er hluti af Tox ID þínu.
-Ef þú færð ruslpóst með vinabeiðnum ættirðu að breyta NoSpam þínum.
-Fólk mun ekki geta bætt þér við með gamla skilríkjunum þínum, en þú heldur núverandi vinum þínum.</translation>
+Ef þú færð mikið af óumbeðnum vinabeiðnum skaltu breyta NoSpam.
+Fólk getur þá ekki bætt þér við með gamla auðkenninu, en þú heldur núverandi vinum.</translation>
     </message>
     <message>
         <source>NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Enginn ruslpóstur</translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">NoSpam er hluti af auðkenni þínu sem hægt er að breyta að vild.
-Ef þú færð ruslpóst með vinabeiðnum skaltu breyta NoSpam.</translation>
+Ef þú færð mikið af óumbeðnum vinabeiðnum skaltu breyta NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Búðu til af handahófi NoSpam</translation>
+        <translation type="unfinished">Búa til slembið NoSpam</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
@@ -2388,7 +2367,7 @@ Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Geymsla spjallferils er enn í þróun.
-Hægt er að breyta vistunarsniði sem getur leitt til taps á gögnum.</translation>
+Vistunarsniðið gæti breyst, sem getur valdið gagnatapi.</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2398,12 +2377,12 @@ Hægt er að breyta vistunarsniði sem getur leitt til taps á gögnum.</transla
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Listi yfir ráðstefnublokkir</translation>
+        <translation type="unfinished">Bannlisti ráðstefna</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sía út ráðstefnuskilaboð eftir opinberum lyklum ráðstefnumeðlima. Settu opinbera lykla hér, einn í hverja línu.</translation>
+        <translation type="unfinished">Sía burt ráðstefnuskilaboð eftir dreifilyklum þátttakenda. Settu dreifilykla hér, einn í hverja línu.</translation>
     </message>
 </context>
 <context>
@@ -2411,17 +2390,17 @@ Hægt er að breyta vistunarsniði sem getur leitt til taps á gögnum.</transla
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mistókst að fá lykil úr lykilorði, prófíllinn mun ekki nota nýja lykilorðið.</translation>
+        <translation type="unfinished">Mistókst að leiða lykil af lykilorðinu, prófíllinn mun ekki nota nýja lykilorðið.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxing á qTox</translation>
+        <translation type="unfinished">Spjalla á qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gat ekki breytt lykilorði gagnagrunnsins, hann gæti verið skemmdur eða notað gamla lykilorðið.</translation>
+        <translation type="unfinished">Ekki tókst að breyta lykilorði gagnagrunnsins; hann gæti verið skemmdur eða notað gamla lykilorðið.</translation>
     </message>
 </context>
 <context>
@@ -2450,7 +2429,7 @@ Hægt er að breyta vistunarsniði sem getur leitt til taps á gögnum.</transla
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Núverandi prófíll:</translation>
+        <translation type="unfinished">Núverandi prófíll: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2460,19 +2439,19 @@ Hægt er að breyta vistunarsniði sem getur leitt til taps á gögnum.</transla
     <message>
         <source>Unable to read this image.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Get ekki lesið þessa mynd.</translation>
+        <translation type="unfinished">Ekki tókst að lesa þessa mynd.</translation>
     </message>
     <message>
         <source>The supplied image is too large.
 Please use another image.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Myndin sem fylgir er of stór.
-Vinsamlegast notaðu aðra mynd.</translation>
+        <translation type="unfinished">Myndin er of stór.
+Notaðu aðra mynd.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gat ekki endurnefna prófílinn í &quot;%1&quot;</translation>
+        <translation type="unfinished">Ekki tókst að endurnefna prófílinn í „%1“</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2487,7 +2466,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
     <message>
         <source>Please enter a new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinsamlegast sláðu inn nýtt lykilorð.</translation>
+        <translation type="unfinished">Sláðu inn nýtt lykilorð.</translation>
     </message>
     <message>
         <source>Are you sure you want to delete this profile?</source>
@@ -2502,27 +2481,27 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <translation type="unfinished">Vista</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vista QRCode (*.png)</translation>
+        <translation type="unfinished">Vista QR-kóða (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
         <comment>deletion failed title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ekki var hægt að eyða skrám!</translation>
+        <translation type="unfinished">Ekki tókst að eyða skrám!</translation>
     </message>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished">Breyta aðgangsorði</translation>
+        <translation type="unfinished">Breyta lykilorði</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stilltu lykilorð fyrir prófíl</translation>
+        <translation type="unfinished">Stilla lykilorð prófíls</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
@@ -2532,12 +2511,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
     <message>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gat ekki breytt lykilorði</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tóm slóð er ekki tiltæk</translation>
+        <translation type="unfinished">Ekki tókst að breyta lykilorði</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2552,7 +2526,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prófíll sem heitir &quot;%1&quot; er þegar til.</translation>
+        <translation type="unfinished">Prófíll sem heitir „%1“ er þegar til.</translation>
     </message>
     <message>
         <source>Empty name</source>
@@ -2560,14 +2534,14 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <translation type="unfinished">Tómt nafn</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tómt nafn er ekki tiltækt</translation>
+        <translation type="unfinished">Nafn má ekki vera tómt</translation>
     </message>
     <message>
         <source>Empty path</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tóm leið</translation>
+        <translation type="unfinished">Tóm slóð</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -2579,7 +2553,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox vistunarskrá (*.tox)</translation>
+        <translation type="unfinished">Tox-prófílskrá (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2591,7 +2565,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <source>Please manually remove them.</source>
         <extracomment>deletion failed text part 2</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vinsamlegast fjarlægðu þau handvirkt.</translation>
+        <translation type="unfinished">Fjarlægðu þær handvirkt.</translation>
     </message>
     <message>
         <source>Images (%1)</source>
@@ -2610,14 +2584,14 @@ Vinsamlegast notaðu aðra mynd.</translation>
         <translation type="unfinished">Ekki var hægt að vista skrána sem þú valdir.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tóm slóð er ekki tiltæk.</translation>
+        <translation type="unfinished">Slóð má ekki vera tóm.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gat ekki breytt lykilorði gagnagrunnsins, hann gæti verið skemmdur eða notað gamla lykilorðið.</translation>
+        <translation type="unfinished">Ekki tókst að breyta lykilorði gagnagrunnsins; hann gæti verið skemmdur eða notað gamla lykilorðið.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2633,7 +2607,7 @@ Vinsamlegast notaðu aðra mynd.</translation>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">Fjarlægja aðgangsorð</translation>
+        <translation type="unfinished">Fjarlægja lykilorð</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2647,10 +2621,10 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þetta auðkenni gerir öðrum Tox notendum kleift að bæta við og hafa samband við þig.
+        <translation type="unfinished">Þetta auðkenni gerir öðrum Tox-notendum kleift að bæta þér við og hafa samband við þig.
 Deildu því með vinum þínum til að byrja að spjalla.
 
-Þetta auðkenni inniheldur NoSpam kóðann (í bláu) og eftirlitssumman (í gráu).</translation>
+Auðkennið inniheldur NoSpam-kóðann (blár) og gátsummuna (grá).</translation>
     </message>
 </context>
 <context>
@@ -2665,19 +2639,19 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox vistunarskrá (*.tox)</translation>
+        <translation type="unfinished">Tox-prófílskrá (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hunsa skrá sem ekki er Tox</translation>
+        <translation type="unfinished">Hunsa skrá sem er ekki frá Tox</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Viðvörun: Þú hefur valið skrá sem er ekki Tox vistunarskrá; hunsa.</translation>
+        <translation type="unfinished">Viðvörun: Þú valdir skrá sem er ekki Tox-prófílskrá; hún er hunsuð.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2686,10 +2660,10 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translation type="unfinished">Prófíll er þegar til</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prófíll sem heitir &quot;%1&quot; er þegar til. Viltu eyða því?</translation>
+        <translation type="unfinished">Prófíll sem heitir „%1“ er þegar til. Viltu skipta honum út?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2715,9 +2689,9 @@ Deildu því með vinum þínum til að byrja að spjalla.
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Allt í lagi</translation>
+        <translation type="unfinished">Í lagi</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2745,7 +2719,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Veldu sjálfvirka samþykkisskrá</translation>
+        <translation type="unfinished">Veldu möppu fyrir sjálfvirka móttöku</translation>
     </message>
 </context>
 <context>
@@ -2764,7 +2738,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 er ekki gilt Tox heimilisfang.</translation>
+        <translation type="unfinished">%1 er ekki gilt Tox-vistfang.</translation>
     </message>
 </context>
 <context>
@@ -2782,7 +2756,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ólífa</translation>
+        <translation type="unfinished">Ólífugrænn</translation>
     </message>
     <message>
         <source>Red</source>
@@ -2792,7 +2766,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjólublá</translation>
+        <translation type="unfinished">Fjólublár</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2803,7 +2777,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 hér! Eitra mig kannski?</translation>
+        <translation type="unfinished">Hæ, þetta er %1! Spjöllum saman á Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2815,7 +2789,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>Desktop</source>
         <comment>Desktop as a camera input for screen sharing</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skrifborð</translation>
+        <translation type="unfinished">Skjáborð</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2825,12 +2799,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox gat ekki opnað spjallskrárnar þínar, þær verða óvirkar.</translation>
+        <translation type="unfinished">qTox gat ekki opnað spjallannálana þína; slökkt verður á þeim.</translation>
     </message>
     <message>
         <source>Dark</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Myrkur</translation>
+        <translation type="unfinished">Dökkt</translation>
     </message>
     <message>
         <source>Dark blue</source>
@@ -2840,7 +2814,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dökk ólífuolía</translation>
+        <translation type="unfinished">Dökk-ólífugrænn</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2850,7 +2824,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Dark violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dökkfjólublátt</translation>
+        <translation type="unfinished">Dökkfjólublár</translation>
     </message>
     <message>
         <source>online</source>
@@ -2862,7 +2836,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>away</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">í burtu</translation>
+        <translation type="unfinished">fjarverandi</translation>
     </message>
     <message>
         <source>busy</source>
@@ -2880,7 +2854,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">læst</translation>
+        <translation type="unfinished">útilokaður</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -2896,7 +2870,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>%1 has joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 hefur gengið í ráðstefnuna</translation>
+        <translation type="unfinished">%1 kom inn á ráðstefnuna</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
@@ -2921,12 +2895,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Símtali með %1 lauk óvænt. %2</translation>
+        <translation type="unfinished">Símtali við %1 lauk óvænt. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Símtali með %1 lokið. %2</translation>
+        <translation type="unfinished">Símtali við %1 lauk. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2952,12 +2926,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 fór án nettengingar meðan á símtalstilrauninni stóð</translation>
+        <translation type="unfinished">%1 aftengdist á meðan reynt var að hringja</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Símtalinu var slitið vegna þess að %1 fór óvænt án nettengingar. %2</translation>
+        <translation type="unfinished">Símtalinu var slitið vegna þess að %1 aftengdist óvænt. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2977,7 +2951,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Brotið</translation>
+        <translation type="unfinished">Rofið</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2990,9 +2964,9 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <translation type="unfinished">Gert hlé</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hlé gert á fjarstýringunni</translation>
+        <translation type="unfinished">Hinn aðilinn gerði hlé</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3002,12 +2976,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hafðu samband</translation>
+        <translation type="unfinished">Tengiliður</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Framfarir</translation>
+        <translation type="unfinished">Framvinda</translation>
     </message>
     <message>
         <source>Size</source>
@@ -3027,7 +3001,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stjórna</translation>
+        <translation type="unfinished">Stjórnun</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
@@ -3055,17 +3029,17 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Remove friend</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu vin</translation>
+        <translation type="unfinished">Fjarlægja vin</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu allan spjallferil við vininn ef hann er stilltur</translation>
+        <translation type="unfinished">Fjarlægja allan spjallferil við vininn ef valið</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjarlægðu einnig spjallferil</translation>
+        <translation type="unfinished">Fjarlægja líka spjallferil</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -3090,13 +3064,13 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rými</translation>
+        <translation type="unfinished">Bilslá</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Flýja</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -3108,7 +3082,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sláðu inn</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3121,7 +3095,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjaðu</translation>
+        <translation type="unfinished">Byrja</translation>
     </message>
 </context>
 <context>
@@ -3129,7 +3103,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Byrjaðu leit:</translation>
+        <translation type="unfinished">Hefja leit:</translation>
     </message>
     <message>
         <source>from the end</source>
@@ -3154,7 +3128,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hástafaviðkvæmur</translation>
+        <translation type="unfinished">Gera greinarmun á há- og lágstöfum</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -3164,12 +3138,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu reglulegar orðasambönd</translation>
+        <translation type="unfinished">Nota reglulegar segðir</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu Dagsetningarglugga</translation>
+        <translation type="unfinished">Gluggi til að velja dagsetningu</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3186,26 +3160,26 @@ Deildu því með vinum þínum til að byrja að spjalla.
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Aðgangsorð:</translation>
+        <translation type="unfinished">Lykilorð:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation type="unfinished">Styrkur aðgangsorðs: %p%</translation>
+        <translation type="unfinished">Styrkur lykilorðs: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lykilorðið passar ekki.</translation>
+        <translation type="unfinished">Lykilorðin passa ekki saman.</translation>
     </message>
     <message>
         <source>Confirm password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Staðfestu lykilorð</translation>
+        <translation type="unfinished">Staðfesta lykilorð</translation>
     </message>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Staðfestu innslátt lykilorðs</translation>
+        <translation type="unfinished">Staðfesting lykilorðs</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -3224,7 +3198,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Stilltu lykilorð fyrir prófíl</translation>
+        <translation type="unfinished">Stilla lykilorð prófíls</translation>
     </message>
 </context>
 <context>
@@ -3247,7 +3221,7 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mistókst að hlaða alþjóðlegum stillingum</translation>
+        <translation type="unfinished">Mistókst að hlaða inn almennum stillingum</translation>
     </message>
 </context>
 <context>
@@ -3308,12 +3282,12 @@ Deildu því með vinum þínum til að byrja að spjalla.
     <message>
         <source>Base font:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Grunn leturgerð:</translation>
+        <translation type="unfinished">Grunnletur:</translation>
     </message>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stærð:</translation>
+        <translation type="unfinished">Stærð: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3329,28 +3303,28 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ekki er víst að nýjar textastillingar hleðst inn í spjallferil fyrr en qTox endurræsir.
+        <translation type="unfinished">Nýtt textasnið gæti ekki tekið gildi í spjallferlinum fyrr en qTox er endurræst.
 Það hefur strax áhrif á ný skilaboð.
 
 Einfaldur texti:
-    Ekki nota nein snið á skilaboð.
-    T.d. „**texti**“ mun birtast sem „**texti**“, ekki feitletrað.
+    Engu sniði er beitt á skilaboð.
+    T.d. birtist &quot;**texti**&quot; sem &quot;**texti**&quot;, ekki feitletrað.
 Sýna sniðstafi:
-    Notaðu snið og sýndu stafi.
-    T.d. „**texti**“ mun birtast sem „**texti**“, feitletrað.
+    Sniði er beitt og stafirnir sýndir.
+    T.d. birtist &quot;**texti**&quot; sem &quot;**texti**&quot;, feitletrað.
 Fela sniðstafi:
-    Notaðu snið og sýndu ekki stafi.
-    T.d. „**texti**“ mun birtast sem „texti“, feitletrað.</translation>
+    Sniði er beitt en stafirnir ekki sýndir.
+    T.d. birtist &quot;**texti**&quot; sem &quot;texti&quot;, feitletrað.</translation>
     </message>
     <message>
         <source>Text styling:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Textagerð:</translation>
+        <translation type="unfinished">Textasnið:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu textagerð.</translation>
+        <translation type="unfinished">Veldu textasnið.</translation>
     </message>
     <message>
         <source>Plaintext</source>
@@ -3376,7 +3350,7 @@ Fela sniðstafi:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu glugga qTox þegar þú færð ný skilaboð og enginn gluggi er opinn ennþá.</translation>
+        <translation type="unfinished">Opna glugga qTox þegar ný skilaboð berast og enginn gluggi er opinn.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -3391,43 +3365,43 @@ Fela sniðstafi:
     <message>
         <source>Place conferences at top of friend list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Settu ráðstefnur efst á vinalistann</translation>
+        <translation type="unfinished">Setja ráðstefnur efst á vinalistann</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tengiliðalistinn þinn verður sýndur í samsettri stillingu (lítil avatar, töflumynd).</translation>
+        <translation type="unfinished">Tengiliðalistinn verður sýndur í þéttri framsetningu (litlar notandamyndir, töfluyfirlit).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Samningur tengiliðalisti</translation>
+        <translation type="unfinished">Þéttur tengiliðalisti</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Margfeldi gluggahamur</translation>
+        <translation type="unfinished">Fjölgluggahamur</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opnaðu hvert spjall í einstökum glugga</translation>
+        <translation type="unfinished">Opna hvert spjall í sérstökum glugga</translation>
     </message>
     <message>
         <source>Emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emoticons</translation>
+        <translation type="unfinished">Tjáningartákn</translation>
     </message>
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu broskörlum</translation>
+        <translation type="unfinished">Nota tjáningartákn</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emoticon stærð:</translation>
+        <translation type="unfinished">Stærð tjáningartákna:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3447,7 +3421,7 @@ Fela sniðstafi:
     <message>
         <source>Theme color:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Þema litur:</translation>
+        <translation type="unfinished">Litur þema:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
@@ -3462,13 +3436,13 @@ Fela sniðstafi:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu auðkenni í stað tómra avatara</translation>
+        <translation type="unfinished">Nota auðkennismyndir í stað tómra notandamynda</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sýndu tilkynningu þegar þú færð ný skilaboð, símtal eða vinabeiðni og glugginn er ekki valinn.</translation>
+        <translation type="unfinished">Sýna tilkynningu þegar ný skilaboð, símtal eða vinabeiðni berast og glugginn er ekki valinn.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -3478,7 +3452,7 @@ Fela sniðstafi:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ráðstefnur tilkynna aðeins þegar þess er getið</translation>
+        <translation type="unfinished">Ráðstefnur tilkynna aðeins þegar minnst er á þig</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3488,7 +3462,7 @@ Fela sniðstafi:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Spilaðu hljóð á meðan á tali stendur</translation>
+        <translation type="unfinished">Spila hljóð þegar staðan er Upptekinn</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3503,41 +3477,41 @@ Fela sniðstafi:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu lituð gælunöfn á ráðstefnum</translation>
+        <translation type="unfinished">Nota lituð gælunöfn á ráðstefnum</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Láttu aðeins vita um ný skilaboð á ráðstefnum þegar gælunafn þitt er nefnt.</translation>
+        <translation type="unfinished">Tilkynna aðeins um ný skilaboð á ráðstefnum þegar gælunafnið þitt er nefnt.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ef hakað er við þá verða ráðstefnur settar efst á vinalistann, annars verða þeir settir fyrir neðan netvini.</translation>
+        <translation type="unfinished">Ef hakað er við eru ráðstefnur settar efst á vinalistann, annars fyrir neðan vini sem eru á netinu.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ef það er virkt mun hver tengiliður án avatars hafa myndað tákn byggt á Tox ID þeirra í stað sjálfgefna myndarinnar. Krefst endurræsingar til að sækja um.</translation>
+        <translation type="unfinished">Ef virkt fær hver tengiliður án notandamyndar tákn sem er búið til út frá Tox ID hans í stað sjálfgefnu myndarinnar. Krefst endurræsingar.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Brosbros pakki:</translation>
+        <translation type="unfinished">Broskarlapakki:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ef slökkt er á því, hljóðar tilkynning þegar staðan er á tali (en sýnir samt tilkynningu)</translation>
+        <translation type="unfinished">Ef óvirkt er hljóð tilkynninga þaggað þegar staðan er Upptekinn (tilkynningin birtist samt)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu skjáborðstilkynningar, t.d. í tilkynningamiðstöð eða á kerfisbakkanum. Án þessa mun tilkynningin aðeins vera sýnileg sem blikkandi bakkatákn.</translation>
+        <translation type="unfinished">Nota skjáborðstilkynningar, t.d. í tilkynningamiðstöð eða kerfisbakka. Án þessa sést tilkynningin aðeins sem blikkandi tákn í kerfisbakka.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3545,94 +3519,91 @@ Fela sniðstafi:
         <translation type="unfinished">Sýndu aðeins „ný skilaboð“ án þess að sýna hugsanlega leynilegar upplýsingar í skjáborðstilkynningum.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skiptu vinalista og spjallglugga í sérstaka hreyfanlega glugga.</translation>
+        <translation type="unfinished">Skipta vinalista og spjallglugga í aðskilda glugga sem hægt er að færa.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Birtu texta-emoji sem litríkar myndir í stað texta eða svart/hvítu leturgerða emojis.</translation>
+        <translation type="unfinished">Birta texta-emoji sem litríkar myndir í stað texta eða svarthvítra leturtákna.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Veldu hvaða sett af myndum á að nota þegar þú endurgerir emojis.</translation>
+        <translation type="unfinished">Veldu hvaða myndasett er notað til að birta emoji.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stærð í pixlum af emoji mynd. Veldu eitthvað svipað grunnleturstærðinni þinni.</translation>
+        <translation type="unfinished">Stærð emoji-myndar í dílum. Veldu eitthvað svipað stærð grunnletursins.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Grunnstíll til að nota fyrir notendaviðmótið. Mælt er með Fusion þar sem það virkar best með qTox þema.</translation>
+        <translation type="unfinished">Grunnstíll viðmótsins. Mælt er með Fusion þar sem hann virkar best með þemum qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">HÍ litaþema. Notaðu þetta til að velja dökka stillingu.</translation>
+        <translation type="unfinished">Litaþema viðmótsins. Notaðu þetta til að velja dökkan ham.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ef það er óvirkt skaltu nota grunntilkynningar í kerfisbakkanum. Annars, reyndu að nota tilkynningabakhluta skjáborðsumhverfisins. Slökktu á þessu ef þú sérð vandamál með skjáborðstilkynningar.</translation>
+        <translation type="unfinished">Ef óvirkt eru einfaldar tilkynningar í kerfisbakka notaðar. Annars er reynt að nota tilkynningakerfi skjáborðsumhverfisins. Gerðu þetta óvirkt ef vandamál koma upp með skjáborðstilkynningar.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Notaðu kerfissértæka bakenda tilkynninga ef það er til staðar</translation>
+        <translation type="unfinished">Nota tilkynningakerfi stýrikerfisins ef það er til staðar</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sýna forskoðun fyrir sendar og mótteknar myndir í spjalli. Farðu yfir innbyggðu forskoðunina til að sýna stærri forskoðun.</translation>
+        <translation type="unfinished">Sýna forskoðun sendra og móttekinna mynda í spjalli. Haltu músinni yfir forskoðuninni til að sjá stærri mynd.</translation>
     </message>
     <message>
         <source>Image preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Forskoðun mynd</translation>
+        <translation type="unfinished">Forskoðun mynda</translation>
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hámarksfjöldi skilaboða (á hvert samtal) hlaðið úr spjallferli. Minnkaðu
-þetta til að bæta árangur. Of lág tala hér getur valdið því að
-skrunstikan hverfur.</translation>
+        <translation type="unfinished">Hámarksfjöldi skilaboða (í hverju samtali) sem hlaðið er inn úr spjallferli.
+Lækkaðu þetta til að bæta afköst. Of lág tala getur valdið því
+að skrunstikan hverfi.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hámarksstærð
-spjallskrárskoðunar</translation>
+        <translation type="unfinished">Hámarksstærð spjallannáls</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjöldi skeyta til að hlaða úr spjallferlinum þegar skrunað er. Of lág tala
-hér getur valdið því að skrunstikan hverfur.</translation>
+        <translation type="unfinished">Fjöldi skilaboða sem hlaðið er inn úr spjallferli við skrun. Of lág
+tala getur valdið því að skrunstikan hverfi.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stærð
-spjalldagskrár</translation>
+        <translation type="unfinished">Stærð hluta spjallannáls</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Spjallskr
-á:</translation>
+        <translation type="unfinished">Spjallannáll:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fela viðskeyti eftir núll tákn</translation>
+        <translation type="unfinished">Fela texta á eftir NUL-staf</translation>
     </message>
 </context>
 <context>
@@ -3647,7 +3618,7 @@ spjalldagskrár</translation>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Burt</translation>
+        <translation type="unfinished">Fjarverandi</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -3704,7 +3675,7 @@ spjalldagskrár</translation>
     <message>
         <source>By Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Að nafni</translation>
+        <translation type="unfinished">Eftir nafni</translation>
     </message>
     <message>
         <source>By Activity</source>
@@ -3780,13 +3751,13 @@ spjalldagskrár</translation>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore tókst ekki að ræsa, forritið mun hætta eftir að þú lokar þessum skilaboðum.</translation>
+        <translation type="unfinished">Ekki tókst að ræsa Toxcore; forritinu verður lokað þegar þú lokar þessum skilaboðum.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore tókst ekki að byrja með proxy stillingunum þínum. qTox getur ekki keyrt; vinsamlegast breyttu stillingunum þínum og endurræstu.</translation>
+        <translation type="unfinished">Ekki tókst að ræsa Toxcore með milliþjónsstillingunum þínum. qTox getur ekki keyrt; breyttu stillingunum og endurræstu.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3796,20 +3767,20 @@ spjalldagskrár</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ný vinabeiðni</numerusform>
+            <numerusform>%n nýjar vinabeiðnir</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n nýtt ráðstefnuboð</numerusform>
+            <numerusform>%n ný ráðstefnuboð</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hætta</translation>
     </message>

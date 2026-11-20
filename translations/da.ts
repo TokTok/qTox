@@ -52,19 +52,8 @@
         <translation>Videoenhed</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Vælg opløsningen på dit kamera.
-Jo højere værdi, jo bedre videokvalitet vil dine venner modtage.
-Bemærk, at ved bedre videokvalitet, kræves en bedre internetforbindelse,
-hvilket kan give problemer ved videoopkald.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
-        <translation>Kameraopløsning</translation>
+        <translation>Opløsning</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -72,27 +61,27 @@ hvilket kan give problemer ved videoopkald.</translation>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation>Test Lyd</translation>
+        <translation>Test lyd</translation>
     </message>
     <message>
         <source>Audio quality</source>
         <translation>Lydkvalitet</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Høj (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Høj (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Middel (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Middel (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Lav (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Lav (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Meget Lav (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Meget lav (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -127,7 +116,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Brug skyderen til at indstille forstærkningen af ​​din inputenhed, der spænder fra %1dB til %2dB.</translation>
+        <translation type="unfinished">Brug skyderen til at indstille forstærkningen af din inputenhed fra %1 dB til %2 dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -152,7 +141,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bekræft hash: %1</translation>
+        <translation type="unfinished">Commit-hash: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -163,31 +152,31 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation>Qt version: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">En liste over alle kendte problemer kan findes på vores %1 på Github. Hvis du opdager en fejl eller sikkerhedssårbarhed i qTox, bedes du rapportere det i henhold til retningslinjerne i vores %2 wiki-artikel.</translation>
+        <translation type="unfinished">En liste over alle kendte problemer findes på vores %1 på GitHub. Hvis du opdager en fejl eller sikkerhedssårbarhed i qTox, bedes du rapportere den i henhold til retningslinjerne i vores wikiartikel %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Klik her for at rapportere en fejl.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Se en fuld liste af %1 på Github</translation>
+        <translation>Se en fuld liste over %1 på GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">bug-tracker</translation>
+        <translation type="unfinished">fejlsporer</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Skriv Brugbare Fejlrapporter</translation>
+        <translation type="unfinished">Sådan skriver du brugbare fejlrapporter</translation>
     </message>
     <message>
         <source>contributors</source>
@@ -198,7 +187,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Denne version af qTox vedligeholdes af TokTok-teamet efter arkiveringen af ​​det originale qTox-projekt.</translation>
+        <translation type="unfinished">Denne version af qTox vedligeholdes af TokTok-teamet efter arkiveringen af det originale qTox-projekt.</translation>
     </message>
 </context>
 <context>
@@ -206,7 +195,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Accepter automatisk filer fra kontakt, hvis indstillet</translation>
+        <translation type="unfinished">Accepter automatisk filer fra denne kontakt, hvis markeret</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -229,10 +218,10 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Accepter automatisk konferenceinvitationer fra denne kontakt, hvis det er angivet.</translation>
+        <translation type="unfinished">Accepter automatisk konferenceinvitationer fra denne kontakt, hvis markeret.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation type="unfinished">Fjern historik (kan ikke fortrydes!)</translation>
     </message>
     <message>
@@ -249,14 +238,14 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Historik fjernet</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dette er din vens offentlige nøgle. Brug den til at bekræfte deres identitet via en anden kanal. Du kan ikke sende dette til andre personer, så de kan tilføje denne kontakt.</translation>
+        <translation type="unfinished">Dette er din vens offentlige nøgle. Brug den til at bekræfte vennens identitet via en anden kanal. Andre kan ikke bruge den til at tilføje denne kontakt.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Offentlig nøgle (ikke ToxID):</translation>
+        <translation type="unfinished">Offentlig nøgle (ikke Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -264,9 +253,9 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Bekræftelse</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Er du sikker på at fjerne %1 chathistorik?</translation>
+        <translation type="unfinished">Er du sikker på, at du vil fjerne chathistorikken med %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -276,7 +265,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Auto-accept files</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Autoaccepter filer</translation>
+        <translation type="unfinished">Accepter filer automatisk</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
@@ -294,9 +283,9 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Accepter automatisk konferenceinvitationer</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du kan gemme kommentarer om denne kontakt her.</translation>
+        <translation type="unfinished">Du kan gemme noter om denne kontakt her.</translation>
     </message>
 </context>
 <context>
@@ -346,7 +335,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
-        <translation>Ugyldigt Tox id-format</translation>
+        <translation>Ugyldigt Tox ID-format</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -358,7 +347,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>Venneanmodning</translation>
+        <translation>Venneanmodninger</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -369,7 +358,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation>Afvis</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Indtast din vens Tox ID</translation>
     </message>
@@ -381,7 +370,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skriv besked for at sende med venneanmodningen, eller lad tom for at sende en standardbesked</translation>
+        <translation type="unfinished">Skriv en besked, der sendes med venneanmodningen, eller lad feltet være tomt for at sende en standardbesked</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -424,17 +413,17 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
-        <translation>Åben</translation>
+        <translation>Åbn</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Send venneanmodning</translation>
+        <translation>Send venneanmodninger</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 her! Tox mig måske?</translation>
+        <translation type="unfinished">%1 her! Skal vi tales ved på Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -444,8 +433,8 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Klar til at importere %n kontakt, klik på send for at bekræfte</numerusform>
+            <numerusform>Klar til at importere %n kontakter, klik på send for at bekræfte</numerusform>
         </translation>
     </message>
     <message>
@@ -458,10 +447,10 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Tox ID, 76 hexadecimale tegn</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox-id er ugyldigt</translation>
+        <translation type="unfinished">%1 er ikke et gyldigt Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -540,21 +529,21 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indtast en gyldig IP -adresse eller værtsnavn for proxyindstillingen.</translation>
+        <translation type="unfinished">Indtast en gyldig IP-adresse eller et værtsnavn for proxyindstillingen.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gem indstillinger i arbejdsbiblioteket i stedet for den sædvanlige conf dir</translation>
+        <translation type="unfinished">Gem indstillinger i arbejdsmappen i stedet for den sædvanlige konfigurationsmappe</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gør Tox bærbar</translation>
+        <translation type="unfinished">Gør Tox portabel</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -563,7 +552,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Transportabel</translation>
+        <translation type="unfinished">Portabel</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
@@ -592,12 +581,12 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation>Aktiver IPv6 (andbefalet)</translation>
+        <translation>Aktiver IPv6 (anbefalet)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation>Aktiver UDP (andbefalet)</translation>
+        <translation>Aktiver UDP (anbefalet)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
@@ -607,13 +596,13 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
-        <translation>Addresse:</translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Havn:</translation>
+        <translation type="unfinished">Port:</translation>
     </message>
     <message>
         <source>None</source>
@@ -622,17 +611,17 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debug</translation>
+        <translation type="unfinished">Fejlsøgning</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Eksporter fejlretningslog</translation>
+        <translation type="unfinished">Eksporter fejlsøgningslog</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kopiér fejlretningslog</translation>
+        <translation type="unfinished">Kopiér fejlsøgningslog</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
@@ -653,7 +642,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Enable Debug Tools (developers only)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aktiver fejlretningsværktøjer (kun udviklere)</translation>
+        <translation type="unfinished">Aktiver fejlsøgningsværktøjer (kun udviklere)</translation>
     </message>
 </context>
 <context>
@@ -661,7 +650,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Tox URI to parse</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox URI til at parse</translation>
+        <translation type="unfinished">Tox URI, der skal fortolkes</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
@@ -679,28 +668,20 @@ hvilket kan føre til problemer med videoopkald.</translation>
         <translation type="unfinished">Starter ny instans og åbner login-skærmen.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indstiller IPv6 &lt;on&gt;/&lt;off&gt;. Standard er ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Slår IPv6 til eller fra: %1. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indstiller UDP &lt;on&gt;/&lt;off&gt;. Standard er ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Slår UDP til eller fra: %1. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indstiller LAN-opdagelse &lt;on&gt;/&lt;off&gt;. UDP off tilsidesættelse. Standard er ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Slår LAN-opdagelse til eller fra: %1. Har ingen virkning, når UDP er slået fra. Standard: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indstiller proxyindstillinger. Standard er INGEN.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Indstiller proxy. Standard: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -719,7 +700,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Starter i bærbar tilstand; indlæser profil fra denne mappe.</translation>
+        <translation type="unfinished">Starter i portabel tilstand; indlæser profil fra denne mappe.</translation>
     </message>
     <message>
         <source>path</source>
@@ -761,7 +742,7 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opkaldets varighed:</translation>
+        <translation type="unfinished">Opkaldets varighed: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -770,18 +751,18 @@ hvilket kan føre til problemer med videoopkald.</translation>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du prøver at sende en sekventiel fil, som ikke kommer til at virke!</translation>
+        <translation type="unfinished">Du prøver at sende en sekventiel fil, og det kommer ikke til at virke!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filnavnet indeholdt ulovlige tegn</translation>
+        <translation type="unfinished">Filnavnet indeholdt ugyldige tegn</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ulovlige tegn er blevet ændret til _
+        <translation type="unfinished">Ugyldige tegn er blevet ændret til _
 så du kan gemme filen på Windows.</translation>
     </message>
 </context>
@@ -814,11 +795,11 @@ så du kan gemme filen på Windows.</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Start video opkald</translation>
+        <translation type="unfinished">Start videoopkald</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation>Alfsut videoopkald</translation>
+        <translation>Afslut videoopkald</translation>
     </message>
     <message>
         <source>Cancel video call</source>
@@ -836,12 +817,12 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Unmute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Slå opkald til</translation>
+        <translation type="unfinished">Slå lyd til i opkald</translation>
     </message>
     <message>
         <source>Mute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Slå opkald fra</translation>
+        <translation type="unfinished">Slå lyd fra i opkald</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -909,7 +890,7 @@ så du kan gemme filen på Windows.</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation type="unfinished">Åben alt i nyt vindue</translation>
+        <translation type="unfinished">Åbn alt i nyt vindue</translation>
     </message>
 </context>
 <context>
@@ -917,12 +898,12 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Stedet kan ikke skrives</translation>
+        <translation type="unfinished">Kan ikke skrive til placeringen</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Du har ikke tilladelse til at skrive til det pågældende sted. Vælg en anden, eller annuller gem-dialogen.</translation>
+        <translation type="unfinished">Du har ikke tilladelse til at skrive til den placering. Vælg en anden, eller annuller gemningen.</translation>
     </message>
 </context>
 <context>
@@ -931,14 +912,14 @@ så du kan gemme filen på Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">stum</translation>
+        <translation type="unfinished">slå lyd fra</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -948,22 +929,22 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kopier peer-id</translation>
+        <translation type="unfinished">kopier deltager-id</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupper</translation>
+        <translation type="unfinished">Konferencer</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Opret ny gruppe</translation>
+        <translation type="unfinished">Opret ny konference</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Gruppeinvitationer</translation>
+        <translation type="unfinished">Konferenceinvitationer</translation>
     </message>
 </context>
 <context>
@@ -971,7 +952,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inviteret af %1 på %2 kl. %3.</translation>
+        <translation type="unfinished">Inviteret af %1 den %2 kl. %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -981,7 +962,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nedgang</translation>
+        <translation type="unfinished">Afvis</translation>
     </message>
 </context>
 <context>
@@ -993,7 +974,7 @@ så du kan gemme filen på Windows.</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">Åben chat i nyt vindue</translation>
+        <translation type="unfinished">Åbn chat i nyt vindue</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
@@ -1002,14 +983,14 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Forlad gruppe</translation>
+        <translation>Forlad konference</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n bruger i chatten</numerusform>
+            <numerusform>%n brugere i chatten</numerusform>
         </translation>
     </message>
     <message>
@@ -1060,7 +1041,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debug log</translation>
+        <translation type="unfinished">Fejlsøgningslog</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -1070,7 +1051,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Auto-scroll</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Auto-scroll</translation>
+        <translation type="unfinished">Rul automatisk</translation>
     </message>
 </context>
 <context>
@@ -1078,7 +1059,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debug log</translation>
+        <translation type="unfinished">Fejlsøgningslog</translation>
     </message>
 </context>
 <context>
@@ -1111,15 +1092,15 @@ så du kan gemme filen på Windows.</translation>
         <source>Paused</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pause</translation>
+        <translation type="unfinished">Sat på pause</translation>
     </message>
     <message>
         <source>Open file</source>
-        <translation>Åben fil</translation>
+        <translation>Åbn fil</translation>
     </message>
     <message>
         <source>Open file directory</source>
-        <translation>Åben mappe</translation>
+        <translation>Åbn mappe</translation>
     </message>
     <message>
         <source>Resume transfer</source>
@@ -1137,10 +1118,10 @@ så du kan gemme filen på Windows.</translation>
         <translation>Gem en fil</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjernbetjening sat på pause</translation>
+        <translation type="unfinished">Sat på pause af modparten</translation>
     </message>
 </context>
 <context>
@@ -1195,7 +1176,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Inviter til gruppe</translation>
+        <translation>Inviter til konference</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1211,11 +1192,11 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjern fra cirkel &apos;%1&apos;</translation>
+        <translation type="unfinished">Fjern fra cirkel &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation>Åben chat i nyt vindue</translation>
+        <translation>Åbn chat i nyt vindue</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
@@ -1262,12 +1243,12 @@ så du kan gemme filen på Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Til ny gruppe</translation>
+        <translation type="unfinished">Til ny konference</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inviter til konference &apos;%1&apos;</translation>
+        <translation type="unfinished">Inviter til konference &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1291,7 +1272,7 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Generel</translation>
+        <translation type="unfinished">Generelt</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1308,7 +1289,7 @@ så du kan gemme filen på Windows.</translation>
     <name>GeneralSettings</name>
     <message>
         <source>General Settings</source>
-        <translation>Generelle Indstillinger</translation>
+        <translation>Generelle indstillinger</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
@@ -1322,39 +1303,39 @@ så du kan gemme filen på Windows.</translation>
     <message>
         <source>Show system tray icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vis systembakkeikon</translation>
+        <translation type="unfinished">Vis ikon i systembakken</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aktiver lysbakkeikon.</translation>
+        <translation type="unfinished">Brug lyst bakkeikon.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lys ikon</translation>
+        <translation type="unfinished">Lyst ikon</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox starter minimeret i bakken.</translation>
+        <translation type="unfinished">qTox starter minimeret i systembakken.</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Start i bakken</translation>
+        <translation type="unfinished">Start i systembakken</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tæt på bakken</translation>
+        <translation type="unfinished">Luk til systembakken</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Minimer til bakke</translation>
+        <translation type="unfinished">Minimer til systembakken</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1377,7 +1358,7 @@ så du kan gemme filen på Windows.</translation>
         <translation type="unfinished">Indstil til 0 for at deaktivere</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Din status ændres til Væk efter en angivet periode med inaktivitet.</translation>
     </message>
@@ -1425,22 +1406,22 @@ så du kan gemme filen på Windows.</translation>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Efter at have trykket på minimer (_) vil qTox minimere til bakke,
-i stedet for systemets proceslinje.</translation>
+        <translation type="unfinished">Når du trykker på minimer (_), minimeres qTox til systembakken
+i stedet for proceslinjen.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Efter at have trykket på luk (X) vil qTox lukke til bakken,
+        <translation type="unfinished">Når du trykker på luk (X), minimeres qTox til systembakken
 i stedet for at lukke helt.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du kan indstille dette på en per-ven-basis ved at højreklikke på individuelle venner.</translation>
+        <translation type="unfinished">Du kan indstille dette for hver ven ved at højreklikke på vennen.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
@@ -1480,7 +1461,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
-        <translation>Send er skærmbillede</translation>
+        <translation>Send et skærmbillede</translation>
     </message>
     <message>
         <source>Save chat log</source>
@@ -1567,7 +1548,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Log ud</translation>
     </message>
     <message>
@@ -1577,7 +1558,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation type="unfinished">Ændre dit kodeord</translation>
+        <translation type="unfinished">Skift adgangskode</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
@@ -1629,11 +1610,11 @@ Profilen indeholder ikke din historie.</translation>
     <message>
         <source>Name input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Navn input</translation>
+        <translation type="unfinished">Navneindtastning</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation>Navn synligt til kontakter</translation>
+        <translation>Navn synligt for kontakter</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1710,12 +1691,12 @@ Del det med dine venner for at begynde at chatte.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dialogboksen Indlæs historik</translation>
+        <translation type="unfinished">Dialogboks til indlæsning af historik</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indlæsningshistorik fra:</translation>
+        <translation type="unfinished">Indlæs historik fra:</translation>
     </message>
 </context>
 <context>
@@ -1727,12 +1708,12 @@ Del det med dine venner for at begynde at chatte.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Kodeord:</translation>
+        <translation type="unfinished">Adgangskode:</translation>
     </message>
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bekræfte:</translation>
+        <translation type="unfinished">Bekræft:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -1741,7 +1722,7 @@ Del det med dine venner for at begynde at chatte.</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation>Opret Profil</translation>
+        <translation>Opret profil</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
@@ -1764,7 +1745,7 @@ Del det med dine venner for at begynde at chatte.</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation>Ny Profil</translation>
+        <translation>Ny profil</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
@@ -1778,7 +1759,7 @@ Del det med dine venner for at begynde at chatte.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
-        <translation>Kodeordet skal være mindst 6 tegn.</translation>
+        <translation>Adgangskoden skal være mindst 6 tegn.</translation>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
@@ -1806,12 +1787,12 @@ Du vil måske oprette en.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
-        <translation>Forkert kodeord</translation>
+        <translation>Forkert adgangskode.</translation>
     </message>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Importere</translation>
+        <translation type="unfinished">Importer</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
@@ -1826,17 +1807,17 @@ Du vil måske oprette en.</translation>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Adgangskodeindtastningsfelt, du kan lade det være tomt (ingen adgangskode) eller skrive mindst 6 tegn</translation>
+        <translation type="unfinished">Indtastningsfelt for adgangskode; du kan lade det være tomt (ingen adgangskode) eller skrive mindst 6 tegn</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kodeordsbekræftelsesfelt</translation>
+        <translation type="unfinished">Felt til bekræftelse af adgangskode</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opret en ny profilknap</translation>
+        <translation type="unfinished">Knap til at oprette en ny profil</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1856,7 +1837,7 @@ Du vil måske oprette en.</translation>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afkrydsningsfeltet Indlæs automatisk</translation>
+        <translation type="unfinished">Afkrydsningsfelt for automatisk indlæsning</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1866,17 +1847,17 @@ Du vil måske oprette en.</translation>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indlæs valgt profilknap</translation>
+        <translation type="unfinished">Knap til at indlæse valgt profil</translation>
     </message>
     <message>
         <source>New profile creation page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ny profiloprettelsesside</translation>
+        <translation type="unfinished">Side til oprettelse af ny profil</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indlæser eksisterende profilside</translation>
+        <translation type="unfinished">Side til indlæsning af eksisterende profil</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1895,7 +1876,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Adgangskoden, du indtaster her, er valgfri og krypterer beskeddata og din hemmelige Tox-nøgle. Det krypterer ikke modtagne filer. Dine profildata sendes aldrig til nogen servere. Dette er ikke et fjernlogin, det er kun lokalt på din computer. qTox-udviklere vil ikke være i stand til at gendanne din adgangskode, hvis den går tabt.</translation>
+        <translation type="unfinished">Adgangskoden, du indtaster her, er valgfri og krypterer beskeddata og din hemmelige Tox-nøgle. Den krypterer ikke modtagne filer. Dine profildata sendes aldrig til nogen servere. Dette er ikke et fjernlogin; alt foregår lokalt på din computer. qTox-udviklerne kan ikke gendanne din adgangskode, hvis du mister den.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1939,7 +1920,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Open profile page when clicked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Åbn profilsiden, når du klikker på den</translation>
+        <translation type="unfinished">Åbn profilsiden ved klik</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1967,7 +1948,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontakt søgeinput for kendte venner</translation>
+        <translation type="unfinished">Søg blandt kendte venner</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1986,7 +1967,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Gruppechat</translation>
+        <translation type="unfinished">Konference</translation>
     </message>
     <message>
         <source>Open conference management page</source>
@@ -2015,17 +1996,17 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Åbn interne fejlfindingsværktøjer</translation>
+        <translation type="unfinished">Åbn interne fejlsøgningsværktøjer</translation>
     </message>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debug</translation>
+        <translation type="unfinished">Fejlsøgning</translation>
     </message>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Åbn Debugger</translation>
+        <translation type="unfinished">Åbn fejlsøger</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -2037,12 +2018,12 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Udførbar fil</translation>
+        <translation type="unfinished">Eksekverbar fil</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Du har bedt qTox at åbne en udførbar fil. Udførbare filer kan potentielt skade din computer. Er du sikker på, st du ønsker at udføre denne fil?</translation>
+        <translation type="unfinished">Du har bedt qTox om at åbne en eksekverbar fil. Eksekverbare filer kan potentielt skade din computer. Er du sikker på, at du vil åbne denne fil?</translation>
     </message>
 </context>
 <context>
@@ -2060,7 +2041,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skift videoeksempel</translation>
+        <translation type="unfinished">Vis/skjul videoeksempel</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -2074,7 +2055,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Alfsut videoopkald</translation>
+        <translation type="unfinished">Afslut videoopkald</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -2097,7 +2078,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation>Se</translation>
+        <translation>Vis</translation>
     </message>
     <message>
         <source>Window</source>
@@ -2113,7 +2094,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bring alle foran</translation>
+        <translation type="unfinished">Hent alle frem</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -2123,7 +2104,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gå ind i fuld skærm</translation>
+        <translation type="unfinished">Fuld skærm</translation>
     </message>
 </context>
 <context>
@@ -2131,8 +2112,8 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ulæst besked</numerusform>
+            <numerusform>Ulæste beskeder</numerusform>
         </translation>
     </message>
 </context>
@@ -2187,9 +2168,9 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock aktiveret</translation>
+        <translation type="unfinished">Caps Lock er slået til</translation>
     </message>
 </context>
 <context>
@@ -2221,7 +2202,7 @@ Tryk på Shift+F1 for at få flere oplysninger.</translation>
     <message>
         <source>Send typing notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Send skrivebeskeder</translation>
+        <translation type="unfinished">Send skriveindikator</translation>
     </message>
     <message>
         <source>Keep chat history</source>
@@ -2241,7 +2222,7 @@ Folk vil ikke kunne tilføje dig med dit gamle ID, men du beholder dine nuværen
     <message>
         <source>NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ingen spam</translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
@@ -2260,8 +2241,8 @@ Hvis du bliver spammet med venneanmodninger, skal du ændre NoSpam.</translation
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opbevaring af chathistorik er stadig under udvikling.
-Ændringer i gemmeformat er mulige, hvilket kan resultere i tab af data.</translation>
+        <translation type="unfinished">Lagring af chathistorik er stadig under udvikling.
+Gemmeformatet kan ændre sig, hvilket kan føre til tab af data.</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2276,7 +2257,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filtrer konferencebeskeder fra konferencemedlemmers offentlige nøgler. Sæt offentlige nøgler her, en pr. linje.</translation>
+        <translation type="unfinished">Filtrer konferencebeskeder efter medlemmernes offentlige nøgler. Skriv offentlige nøgler her, én pr. linje.</translation>
     </message>
 </context>
 <context>
@@ -2289,12 +2270,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toksing på qTox</translation>
+        <translation type="unfinished">Toxer på qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kunne ikke ændre databaseadgangskoden, den kan være beskadiget eller bruge den gamle adgangskode.</translation>
+        <translation type="unfinished">Kunne ikke ændre databasens adgangskode; databasen kan være beskadiget eller bruge den gamle adgangskode.</translation>
     </message>
 </context>
 <context>
@@ -2320,7 +2301,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nuværende profil:</translation>
+        <translation type="unfinished">Nuværende profil: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2335,8 +2316,8 @@ Save format changes are possible, which may result in data loss.</source>
         <source>The supplied image is too large.
 Please use another image.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Det medfølgende billede er for stort.
-Brug venligst et andet billede.</translation>
+        <translation type="unfinished">Det valgte billede er for stort.
+Brug et andet billede.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
@@ -2350,7 +2331,7 @@ Brug venligst et andet billede.</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>Din profil har ikke et kodeord!</translation>
+        <translation>Din profil har ikke en adgangskode!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2369,9 +2350,9 @@ Brug venligst et andet billede.</translation>
         <translation>Gem</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation>Gem QrCode (*.png)</translation>
+        <translation>Gem QR-kode (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2382,7 +2363,7 @@ Brug venligst et andet billede.</translation>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation>Ændre dit kodeord</translation>
+        <translation>Skift adgangskode</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2399,11 +2380,6 @@ Brug venligst et andet billede.</translation>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Adgangskoden kunne ikke ændres</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tom sti er ikke tilgængelig</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2424,9 +2400,9 @@ Brug venligst et andet billede.</translation>
         <translation>Tomt navn</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tomt navn er ikke tilgængeligt</translation>
+        <translation type="unfinished">Navnet må ikke være tomt</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2442,7 +2418,7 @@ Brug venligst et andet billede.</translation>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox-gemmefil (*.tox)</translation>
+        <translation type="unfinished">Tox-profilfil (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2472,14 +2448,14 @@ Brug venligst et andet billede.</translation>
         <translation type="unfinished">Den valgte fil kunne ikke gemmes.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tom sti er ikke tilgængelig.</translation>
+        <translation type="unfinished">Stien må ikke være tom.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kunne ikke ændre databaseadgangskoden, den kan være beskadiget eller bruge den gamle adgangskode.</translation>
+        <translation type="unfinished">Kunne ikke ændre databasens adgangskode; databasen kan være beskadiget eller bruge den gamle adgangskode.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2528,7 +2504,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox-gemmefil (*.tox)</translation>
+        <translation type="unfinished">Tox-profilfil (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
@@ -2540,7 +2516,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Advarsel: Du har valgt en fil, der ikke er en Tox-gemmefil; ignorerer.</translation>
+        <translation type="unfinished">Advarsel: Du har valgt en fil, der ikke er en Tox-profilfil; den ignoreres.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2548,10 +2524,10 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <translation>Profilen eksisterer allerede</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">En profil med navnet &quot;%1&quot; eksisterer allerede. Vil du slette det?</translation>
+        <translation type="unfinished">En profil med navnet &quot;%1&quot; eksisterer allerede. Vil du overskrive den?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2577,8 +2553,8 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
-        <translation>Ok</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2603,7 +2579,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Vælg en auto-accept mappe</translation>
+        <translation type="unfinished">Vælg en mappe til automatisk accepterede filer</translation>
     </message>
 </context>
 <context>
@@ -2628,7 +2604,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Default</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Misligholdelse</translation>
+        <translation type="unfinished">Standard</translation>
     </message>
     <message>
         <source>Blue</source>
@@ -2657,7 +2633,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 her! Tox mig måske?</translation>
+        <translation type="unfinished">%1 her! Skal vi tales ved på Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2747,7 +2723,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>%1 has joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 har deltaget i konferencen</translation>
+        <translation type="unfinished">%1 har tilsluttet sig konferencen</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
@@ -2761,7 +2737,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 har sat titlen til %2</translation>
+        <translation type="unfinished">%1 har ændret titlen til %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2795,7 +2771,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     </message>
     <message>
         <source>Message failed to send</source>
-        <translation type="unfinished">Meddelelse kunne ikke afsendes</translation>
+        <translation type="unfinished">Beskeden kunne ikke sendes</translation>
     </message>
     <message>
         <source>%1 went offline during the call attempt</source>
@@ -2825,7 +2801,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ødelagt</translation>
+        <translation type="unfinished">Afbrudt</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2835,12 +2811,12 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Paused</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pause</translation>
+        <translation type="unfinished">På pause</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjernbetjening sat på pause</translation>
+        <translation type="unfinished">Sat på pause af modparten</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2850,12 +2826,12 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontakte</translation>
+        <translation type="unfinished">Kontakt</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fremskridt</translation>
+        <translation type="unfinished">Fremdrift</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2874,12 +2850,12 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontrollere</translation>
+        <translation type="unfinished">Styring</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Du har deltaget i konferencen</translation>
+        <translation type="unfinished">Du har tilsluttet dig konferencen</translation>
     </message>
     <message>
         <source>You have left the conference</source>
@@ -2907,7 +2883,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Remove all chat history with the friend if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjern al chathistorik med vennen, hvis den er indstillet</translation>
+        <translation type="unfinished">Fjern al chathistorik med vennen, hvis markeret</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2941,7 +2917,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Flugt</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2953,7 +2929,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Indtast</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -2966,7 +2942,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Starte</translation>
+        <translation type="unfinished">Start</translation>
     </message>
 </context>
 <context>
@@ -2999,7 +2975,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Der skelnes mellem store og små bogstaver</translation>
+        <translation type="unfinished">Skeln mellem store og små bogstaver</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -3014,7 +2990,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vælg Dato Dialog</translation>
+        <translation type="unfinished">Dialogboks til datovalg</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3027,11 +3003,11 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bekræfte:</translation>
+        <translation type="unfinished">Bekræft:</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation>Kodeord:</translation>
+        <translation>Adgangskode:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -3041,7 +3017,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>The password doesn&apos;t match.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Adgangskoden stemmer ikke overens.</translation>
+        <translation type="unfinished">Adgangskoderne stemmer ikke overens.</translation>
     </message>
     <message>
         <source>Confirm password</source>
@@ -3051,7 +3027,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bekræft indtastning af adgangskode</translation>
+        <translation type="unfinished">Bekræftelse af adgangskode</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -3117,7 +3093,7 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
         <source>Send</source>
         <comment>Send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sende</translation>
+        <translation type="unfinished">Send</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -3146,11 +3122,11 @@ Dette ID inkluderer NoSpam-koden (i blåt) og kontrolsummen (i gråt).</translat
     <message>
         <source>Chat</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Snak</translation>
+        <translation type="unfinished">Chat</translation>
     </message>
     <message>
         <source>Base font:</source>
-        <translation>Standard Skrifttype:</translation>
+        <translation>Grundskrifttype:</translation>
     </message>
     <message>
         <source>Size: </source>
@@ -3170,18 +3146,18 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ny præference for tekststil indlæses muligvis ikke på chathistorikken, før qTox genstarter.
-Det vil påvirke nye beskeder med det samme.
+        <translation type="unfinished">Ny præference for tekststil indlæses muligvis ikke i chathistorikken, før qTox genstarter.
+Den påvirker nye beskeder med det samme.
 
-Klartekst:
-    Anvend ikke nogen formatering på meddelelser.
-    F.eks. &quot;**tekst**&quot; vises som &quot;**tekst**&quot;, ikke fed.
+Ren tekst:
+    Anvend ingen formatering på beskeder.
+    F.eks. vises &quot;**tekst**&quot; som &quot;**tekst**&quot;, ikke fed.
 Vis formateringstegn:
-    Anvend formatering og vis tegn.
-    F.eks. &quot;**tekst**&quot; vises som &quot;**tekst**&quot;, fed.
+    Anvend formatering og vis tegnene.
+    F.eks. vises &quot;**tekst**&quot; som &quot;**tekst**&quot;, fed.
 Skjul formateringstegn:
-    Anvend formatering og vis ikke tegn.
-    F.eks. &quot;**tekst**&quot; vises som &quot;tekst&quot;, fed.</translation>
+    Anvend formatering og vis ikke tegnene.
+    F.eks. vises &quot;**tekst**&quot; som &quot;tekst&quot;, fed.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3196,7 +3172,7 @@ Skjul formateringstegn:
     <message>
         <source>Plaintext</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Klartekst</translation>
+        <translation type="unfinished">Ren tekst</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
@@ -3245,12 +3221,12 @@ Skjul formateringstegn:
     <message>
         <source>Multiple windows mode</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Flere vinduer tilstand</translation>
+        <translation type="unfinished">Tilstand med flere vinduer</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Åbn hver chat i et individuelt vindue</translation>
+        <translation type="unfinished">Åbn hver chat i sit eget vindue</translation>
     </message>
     <message>
         <source>Emoticons</source>
@@ -3299,7 +3275,7 @@ Skjul formateringstegn:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Brug identiteter i stedet for tomme avatarer</translation>
+        <translation type="unfinished">Brug identicons i stedet for tomme avatarer</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3310,12 +3286,12 @@ Skjul formateringstegn:
     <message>
         <source>Notify</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Underrette</translation>
+        <translation type="unfinished">Giv besked</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konferencer giver kun besked, når de er nævnt</translation>
+        <translation type="unfinished">Konferencer giver kun besked, når du bliver nævnt</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3324,7 +3300,7 @@ Skjul formateringstegn:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afspil lyd, mens du er optaget</translation>
+        <translation type="unfinished">Afspil lyd, når status er Optaget</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3357,7 +3333,7 @@ Skjul formateringstegn:
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hvis det er aktiveret, vil hver kontakt uden en avatar have et genereret ikon baseret på deres Tox ID i stedet for standardbilledet. Kræver genstart for at ansøge.</translation>
+        <translation type="unfinished">Hvis aktiveret, får hver kontakt uden avatar et genereret ikon baseret på deres Tox ID i stedet for standardbilledet. Kræver genstart for at træde i kraft.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
@@ -3368,12 +3344,12 @@ Skjul formateringstegn:
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hvis den er deaktiveret, lyder meddelelsen mute, når status er optaget (men viser stadig en meddelelse)</translation>
+        <translation type="unfinished">Hvis deaktiveret, slås lyden for notifikationer fra, når status er Optaget (notifikationen vises stadig)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Brug skrivebordsnotifikationer, f.eks. i et meddelelsescenter eller på proceslinjen. Uden dette vil meddelelsen kun være synlig som et blinkende bakkeikon.</translation>
+        <translation type="unfinished">Brug skrivebordsnotifikationer, f.eks. i et notifikationscenter eller i systembakken. Uden dette vises notifikationen kun som et blinkende bakkeikon.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3381,7 +3357,7 @@ Skjul formateringstegn:
         <translation type="unfinished">Vis kun &quot;ny besked&quot; uden at vise potentielt hemmelige oplysninger i skrivebordsmeddelelser.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Opdel venneliste og chatvindue i separate flytbare vinduer.</translation>
     </message>
@@ -3413,7 +3389,7 @@ Skjul formateringstegn:
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hvis den er deaktiveret, skal du bruge grundlæggende systembakkemeddelelser. Ellers kan du prøve at bruge notifikations-backend af dit skrivebordsmiljø. Deaktiver dette, hvis du observerer problemer med skrivebordsmeddelelser.</translation>
+        <translation type="unfinished">Hvis deaktiveret, bruges grundlæggende notifikationer i systembakken. Ellers forsøger qTox at bruge notifikationssystemet i dit skrivebordsmiljø. Deaktiver dette, hvis du oplever problemer med skrivebordsnotifikationer.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
@@ -3433,8 +3409,8 @@ Skjul formateringstegn:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Maksimalt antal beskeder (pr. samtale) indlæst fra chathistorik. Reducer
 dette for at forbedre ydeevnen. Et for lavt tal her kan få rullebjælken
@@ -3443,12 +3419,11 @@ til at forsvinde.</translation>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maksimal
-chatlogvisningsstørrelse</translation>
+        <translation type="unfinished">Maksimal visningsstørrelse for chatlog</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Antal beskeder, der skal indlæses fra chathistorikken, når du ruller. Et
 for lavt tal her kan få rullebjælken til at forsvinde.</translation>
@@ -3456,8 +3431,7 @@ for lavt tal her kan få rullebjælken til at forsvinde.</translation>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chat log chunk
-størrelse</translation>
+        <translation type="unfinished">Chatlogs blokstørrelse</translation>
     </message>
     <message>
         <source>Chat log:</source>
@@ -3465,9 +3439,9 @@ størrelse</translation>
         <translation type="unfinished">Chatlog:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skjul suffiks efter nullsymbol</translation>
+        <translation type="unfinished">Skjul tekst efter et NUL-tegn</translation>
     </message>
 </context>
 <context>
@@ -3505,7 +3479,7 @@ størrelse</translation>
     </message>
     <message>
         <source>Filter...</source>
-        <translation type="unfinished">Filtrer</translation>
+        <translation type="unfinished">Filtrer...</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -3525,11 +3499,11 @@ størrelse</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation type="unfinished">Efter Navn</translation>
+        <translation type="unfinished">Efter navn</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation type="unfinished">Efter Aktivitet</translation>
+        <translation type="unfinished">Efter aktivitet</translation>
     </message>
     <message>
         <source>All</source>
@@ -3550,11 +3524,11 @@ størrelse</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupper</translation>
+        <translation type="unfinished">Konferencer</translation>
     </message>
     <message>
         <source>Search Contacts</source>
-        <translation>Søg i Kontakter</translation>
+        <translation>Søg i kontakter</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3565,7 +3539,7 @@ størrelse</translation>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vise</translation>
+        <translation type="unfinished">Vis</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -3576,7 +3550,7 @@ størrelse</translation>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Gruppeinvitationer</translation>
+        <translation type="unfinished">Konferenceinvitationer</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3613,22 +3587,22 @@ størrelse</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ny venneanmodning</numerusform>
+            <numerusform>%n nye venneanmodninger</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ny konferenceinvitation</numerusform>
+            <numerusform>%n nye konferenceinvitationer</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Udgang</translation>
+        <translation type="unfinished">Afslut</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3647,7 +3621,7 @@ størrelse</translation>
     <message>
         <source>Add contact...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tilføj kontaktperson...</translation>
+        <translation type="unfinished">Tilføj kontakt...</translation>
     </message>
     <message>
         <source>Next conversation</source>
@@ -3657,13 +3631,13 @@ størrelse</translation>
     <message>
         <source>Previous conversation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tidligere samtale</translation>
+        <translation type="unfinished">Forrige samtale</translation>
     </message>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debug</translation>
+        <translation type="unfinished">Fejlsøgning</translation>
     </message>
 </context>
 </TS>

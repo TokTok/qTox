@@ -57,7 +57,7 @@
           <item>
            <widget class="QCheckBox" name="cbMakeToxPortable">
             <property name="toolTip">
-             <string extracomment="describes makeToxPortable checkbox">Save settings to the working directory instead of the usual conf dir</string>
+             <string extracomment="describes makeToxPortable checkbox">Save settings to the working directory instead of the usual settings directory</string>
             </property>
             <property name="text">
              <string>Make Tox portable</string>

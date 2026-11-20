@@ -47,7 +47,7 @@ const QMap<IProfileInfo::SetAvatarResult, QString> SET_AVATAR_ERROR = {
         IProfileInfo::SetAvatarResult::TooLarge,
         ProfileForm::tr("The supplied image is too large.\nPlease use another image."),
     },
-    {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("Empty path is unavailable")},
+    {IProfileInfo::SetAvatarResult::EmptyPath, ProfileForm::tr("The path can't be empty.")},
 };
 
 const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
@@ -67,7 +67,7 @@ const QMap<IProfileInfo::RenameResult, QPair<QString, QString>> RENAME_ERROR = {
     },
     {
         IProfileInfo::RenameResult::EmptyName,
-        {ProfileForm::tr("Empty name"), ProfileForm::tr("Empty name is unavailable")},
+        {ProfileForm::tr("Empty name"), ProfileForm::tr("The name can't be empty.")},
     },
 };
 
@@ -87,14 +87,14 @@ const QMap<IProfileInfo::SaveResult, QPair<QString, QString>> SAVE_ERROR = {
     },
     {
         IProfileInfo::SaveResult::EmptyPath,
-        {ProfileForm::tr("Empty path"), ProfileForm::tr("Empty path is unavailable.")},
+        {ProfileForm::tr("Empty path"), ProfileForm::tr("The path can't be empty.")},
     },
 };
 
 const QPair<QString, QString> CAN_NOT_CHANGE_PASSWORD =
     {ProfileForm::tr("Couldn't change password"),
-     ProfileForm::tr("Couldn't change database password, "
-                     "it may be corrupted or use the old password.")};
+     ProfileForm::tr("Couldn't change the database password. The database may be "
+                     "corrupted or still use the old password.")};
 } // namespace
 
 ProfileForm::ProfileForm(IProfileInfo* profileInfo_, Settings& settings_, Style& style,
@@ -411,7 +411,7 @@ void ProfileForm::onSaveQrClicked()
     const QString current = profileInfo->getProfileName() + ".png";
     const QString path =
         QFileDialog::getSaveFileName(Q_NULLPTR, tr("Save", "save qr image"), current,
-                                     tr("Save QrCode (*.png)", "save dialog filter"));
+                                     tr("Save QR code (*.png)", "save dialog filter"));
     if (path.isEmpty()) {
         return;
     }

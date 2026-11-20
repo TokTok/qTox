@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation>اضافہ</translation>
+        <translation>گین</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Capture device</source>
-        <translation>ڈیوائس کیپچر کریں</translation>
+        <translation>ریکارڈنگ ڈیوائس</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -50,18 +50,6 @@
     <message>
         <source>Video device</source>
         <translation>ویڈیو آلہ</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>اپنے کیمرے کی ریزولوشن سیٹ کریں۔
-اعلیٰ معیار میں بہتر ویڈیو کوالیٹی آپ کے دوست پا سکتے ہیں۔
-نوٹ کریں کہ اگرچہ بہتر ویڈیو معیار کے ساتھ بہتر انٹرنیٹ کنکشن کی ضرورت ہے۔
-بعض اوقات آپ کا کنکشن اتنا اچھا نہیں ہوتا کہ اعلیٰ ویڈیو کوالٹی کو سنبھال سکے،
-جو کہ ویڈیو کال کے ساتھ مسائل کا باعث بن سکتا ہے۔</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -80,20 +68,20 @@ which may lead to problems with video calls.</source>
         <translation>آڈیو کا معیار</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>اعلیٰ (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>اعلیٰ (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>درمیانی (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>درمیانی (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>ادنیٰ (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>ادنیٰ (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>انتہائی ادنیٰ (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>انتہائی ادنیٰ (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -105,7 +93,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
-        <translation>منتقل شدہ آڈیو معیار۔ اگر آپ کی بینڈوتھ (ڈیٹا) کافی زیادہ نہیں ہے یا اگر آپ بینڈوتھ کا استعمال کم کرنا چاہتے ہیں تو اس ترتیب کو کم کریں۔</translation>
+        <translation>بھیجی جانے والی آڈیو کا معیار۔ اگر آپ کی بینڈوتھ کافی نہیں یا آپ بینڈوتھ کا استعمال کم کرنا چاہتے ہیں تو اس ترتیب کو کم کریں۔</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -114,10 +102,10 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>اپنے کیمرے کی ریزولوشن سیٹ کریں۔
-اعلیٰ معیار میں بہتر ویڈیو کوالیٹی آپ کے دوست پا سکتے ہیں۔
-نوٹ کریں کہ اگرچہ بہتر ویڈیو معیار کے ساتھ بہتر انٹرنیٹ کنکشن کی ضرورت ہے۔
-بعض اوقات آپ کا کنکشن اتنا اچھا نہیں ہوتا کہ اعلیٰ ویڈیو کوالٹی کو سنبھال سکے،
-جو کہ ویڈیو کال کے ساتھ مسائل کا باعث بن سکتا ہے۔</translation>
+قدر جتنی زیادہ ہو، آپ کے دوستوں کو ویڈیو کا معیار اتنا ہی بہتر مل سکتا ہے۔
+یاد رکھیں کہ بہتر ویڈیو معیار زیادہ بینڈوتھ استعمال کرتا ہے۔
+بعض اوقات آپ کا کنکشن اعلیٰ ویڈیو معیار کے لیے کافی اچھا نہیں ہوتا،
+جس سے ویڈیو کالز میں مسائل ہو سکتے ہیں۔</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -126,7 +114,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1dB سے لے کر %2dB تک اپنے ان پٹ ڈیوائس کا فائدہ سیٹ کرنے کے لیے سلائیڈر استعمال کریں۔</translation>
+        <translation type="unfinished">%1dB سے لے کر %2dB تک اپنے ان پٹ ڈیوائس کا گین سیٹ کرنے کے لیے سلائیڈر استعمال کریں۔</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -167,11 +155,11 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Qt ورژن: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تمام معلوم مسائل کی فہرست ہمارے %1 Github پر مل سکتی ہے۔ اگر آپ کو qTox کے اندر کوئی خرابی یا حفاظتی کمزوری معلوم ہوتی ہے، تو براہ کرم ہمارے %2 ویکی مضمون میں ہدایات کے مطابق اس کی اطلاع دیں۔</translation>
+        <translation type="unfinished">تمام معلوم مسائل کی فہرست GitHub پر ہمارے %1 میں مل سکتی ہے۔ اگر آپ کو qTox کے اندر کوئی خرابی یا حفاظتی کمزوری معلوم ہوتی ہے، تو براہ کرم ہمارے %2 ویکی مضمون میں ہدایات کے مطابق اس کی اطلاع دیں۔</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -179,13 +167,13 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">بگ کی اطلاع دینے کے لیے یہاں کلک کریں۔</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Github پر %1 کی مکمل فہرست دیکھیں</translation>
+        <translation type="unfinished">GitHub پر %1 کی مکمل فہرست دیکھیں</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">بگ ٹریکر</translation>
@@ -200,7 +188,7 @@ which may lead to problems with video calls.</source>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">شراکت دار</translation>
+        <translation type="unfinished">شراکت داروں</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -213,7 +201,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اگر سیٹ ہو تو رابطہ سے فائلوں کو خود بخود قبول کریں۔</translation>
+        <translation type="unfinished">اگر سیٹ ہو تو رابطہ سے فائلوں کو خود بخود قبول کریں</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -241,9 +229,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">اگر سیٹ ہو تو اس رابطہ سے کانفرنس کے دعوت نامے خود بخود قبول کریں۔</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تاریخ کو ہٹا دیں (آپریشن کو کالعدم نہیں کیا جا سکتا!)</translation>
+        <translation type="unfinished">سرگزشت ہٹائیں (یہ عمل واپس نہیں ہو سکتا!)</translation>
     </message>
     <message>
         <source>Notes</source>
@@ -258,17 +246,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>History removed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تاریخ ہٹا دی گئی۔</translation>
+        <translation type="unfinished">سرگزشت ہٹا دی گئی</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">یہ آپ کے دوست کی عوامی کلید ہے، اسے دوسرے چینل کے ذریعے ان کی شناخت کی تصدیق کے لیے استعمال کریں۔ آپ اسے دوسرے لوگوں کو نہیں بھیج سکتے تاکہ وہ اس رابطہ کو شامل کر سکیں۔</translation>
+        <translation type="unfinished">یہ آپ کے دوست کی عوامی کلید ہے؛ کسی دوسرے ذریعے سے اس کی شناخت کی تصدیق کے لیے اسے استعمال کریں۔ دوسرے لوگ اس سے یہ رابطہ شامل نہیں کر سکتے۔</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عوامی کلید (ToxID نہیں):</translation>
+        <translation type="unfinished">عوامی کلید (Tox ID نہیں):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -276,9 +264,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">تصدیق</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کیا آپ یقینی طور پر %1 چیٹ کی سرگزشت کو ہٹانا چاہتے ہیں؟</translation>
+        <translation type="unfinished">کیا آپ واقعی %1 کے ساتھ چیٹ کی سرگزشت ہٹانا چاہتے ہیں؟</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -288,12 +276,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Auto-accept files</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائلوں کو خود بخود قبول کریں۔</translation>
+        <translation type="unfinished">فائلوں کو خود بخود قبول کریں</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اس رابطے کے لیے خودکار قبول کرنا غیر فعال ہے۔</translation>
+        <translation type="unfinished">اس رابطے کے لیے خودکار قبول کرنا غیر فعال ہے</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -303,12 +291,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Auto-accept conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس کے دعوت نامے خود بخود قبول کریں۔</translation>
+        <translation type="unfinished">کانفرنس کے دعوت نامے خود بخود قبول کریں</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ اس رابطے کے بارے میں تبصرے یہاں محفوظ کر سکتے ہیں۔</translation>
+        <translation type="unfinished">آپ اس رابطے کے بارے میں نوٹس یہاں محفوظ کر سکتے ہیں۔</translation>
     </message>
 </context>
 <context>
@@ -336,12 +324,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Open update download link</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپ ڈیٹ ڈاؤن لوڈ لنک کھولیں۔</translation>
+        <translation type="unfinished">اپ ڈیٹ ڈاؤن لوڈ لنک کھولیں</translation>
     </message>
     <message>
         <source>Update available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپ ڈیٹ دستیاب ہے۔</translation>
+        <translation type="unfinished">اپ ڈیٹ دستیاب ہے</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
@@ -351,7 +339,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فی الحال qTox کا غیر ٹیسٹ شدہ/غیر مستحکم ورژن چل رہا ہے۔</translation>
+        <translation type="unfinished">فی الحال qTox کا غیر ٹیسٹ شدہ/غیر مستحکم ورژن چل رہا ہے</translation>
     </message>
 </context>
 <context>
@@ -359,7 +347,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Add Friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستوں کو شامل کریں۔</translation>
+        <translation type="unfinished">دوستوں کو شامل کریں</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
@@ -369,22 +357,22 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Send friend request</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستی کی درخواست بھیجیں۔</translation>
+        <translation type="unfinished">دوستی کی درخواست بھیجیں</translation>
     </message>
     <message>
         <source>Friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستی کی درخواست</translation>
+        <translation type="unfinished">دوستی کی درخواستیں</translation>
     </message>
     <message>
         <source>Accept</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قبول کریں۔</translation>
+        <translation type="unfinished">قبول کریں</translation>
     </message>
     <message>
         <source>Reject</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رد کرنا</translation>
+        <translation type="unfinished">مسترد کریں</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -392,9 +380,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">دوست کو شامل نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپنے دوست کی Tox ID ٹائپ کریں۔</translation>
+        <translation type="unfinished">اپنے دوست کی Tox ID ٹائپ کریں</translation>
     </message>
     <message>
         <source>Friend request message</source>
@@ -404,7 +392,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستی کی درخواست کے ساتھ بھیجنے کے لیے پیغام ٹائپ کریں یا پہلے سے طے شدہ پیغام بھیجنے کے لیے خالی چھوڑ دیں۔</translation>
+        <translation type="unfinished">دوستی کی درخواست کے ساتھ بھیجنے کے لیے پیغام ٹائپ کریں یا پہلے سے طے شدہ پیغام بھیجنے کے لیے خالی چھوڑ دیں</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -415,7 +403,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Open contact list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رابطے کی فہرست کھولیں۔</translation>
+        <translation type="unfinished">رابطے کی فہرست کھولیں</translation>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
@@ -442,7 +430,7 @@ which may lead to problems with video calls.</source>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹاکس آئی ڈی</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -454,18 +442,18 @@ which may lead to problems with video calls.</source>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کھولیں۔</translation>
+        <translation type="unfinished">کھولیں</translation>
     </message>
     <message>
         <source>Send friend requests</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستی کی درخواستیں بھیجیں۔</translation>
+        <translation type="unfinished">دوستی کی درخواستیں بھیجیں</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">یہاں %1! شاید مجھے ٹاکس؟</translation>
+        <translation type="unfinished">%1 یہاں! Tox پر بات کریں؟</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -475,14 +463,14 @@ which may lead to problems with video calls.</source>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n رابطہ درآمد کرنے کے لیے تیار، تصدیق کے لیے بھیجیں پر کلک کریں</numerusform>
+            <numerusform>%n رابطے درآمد کرنے کے لیے تیار، تصدیق کے لیے بھیجیں پر کلک کریں</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رابطے درآمد کریں۔</translation>
+        <translation type="unfinished">رابطے درآمد کریں</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
@@ -490,10 +478,10 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Tox ID، 76 ہیکسا ڈیسیمل حروف</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID غلط ہے۔</translation>
+        <translation type="unfinished">%1 درست Tox ID نہیں ہے</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -503,7 +491,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">دوست شامل کریں۔</translation>
+        <translation type="unfinished">دوست شامل کریں</translation>
     </message>
 </context>
 <context>
@@ -511,7 +499,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Advanced</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اعلی درجے کی</translation>
+        <translation type="unfinished">اعلیٰ</translation>
     </message>
     <message>
         <source>really</source>
@@ -521,7 +509,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نہیں</translation>
+        <translation type="unfinished">نہ</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -531,7 +519,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Reset settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ترتیبات کو دوبارہ ترتیب دیں۔</translation>
+        <translation type="unfinished">ترتیبات ری سیٹ کریں</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
@@ -556,7 +544,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جب تک آپ %1 کو نہیں جانتے کہ آپ کیا کر رہے ہیں، براہ کرم %2 یہاں کچھ بھی تبدیل کریں۔ یہاں کی جانے والی تبدیلیاں qTox کے ساتھ مسائل کا باعث بن سکتی ہیں، اور یہاں تک کہ آپ کے ڈیٹا کا نقصان بھی ہو سکتا ہے، جیسے تاریخ۔%3</translation>
+        <translation type="unfinished">جب تک آپ %1 نہ جانتے ہوں کہ آپ کیا کر رہے ہیں، براہ کرم یہاں کچھ بھی %2 بدلیں۔ یہاں کی گئی تبدیلیاں qTox میں مسائل اور یہاں تک کہ آپ کے ڈیٹا، مثلاً سرگزشت، کے ضائع ہونے کا باعث بن سکتی ہیں۔%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -566,7 +554,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Save file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل محفوظ کریں۔</translation>
+        <translation type="unfinished">فائل محفوظ کریں</translation>
     </message>
     <message>
         <source>Invalid proxy address</source>
@@ -582,20 +570,20 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عام conf dir کی بجائے ورکنگ ڈائرکٹری میں سیٹنگز کو محفوظ کریں۔</translation>
+        <translation type="unfinished">سیٹنگز کو عام سیٹنگز ڈائرکٹری کی بجائے ورکنگ ڈائرکٹری میں محفوظ کریں</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹاکس کو پورٹیبل بنائیں</translation>
+        <translation type="unfinished">Tox کو پورٹیبل بنائیں</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیفالٹ سیٹنگز پر ری سیٹ کریں۔</translation>
+        <translation type="unfinished">ڈیفالٹ سیٹنگز پر ری سیٹ کریں</translation>
     </message>
     <message>
         <source>Portable</source>
@@ -658,7 +646,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>None</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کوئی نہیں۔</translation>
+        <translation type="unfinished">کوئی نہیں</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -668,17 +656,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Export Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیبگ لاگ برآمد کریں۔</translation>
+        <translation type="unfinished">ڈیبگ لاگ برآمد کریں</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیبگ لاگ کاپی کریں۔</translation>
+        <translation type="unfinished">ڈیبگ لاگ کاپی کریں</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN دریافت کو فعال کریں۔</translation>
+        <translation type="unfinished">LAN دریافت کو فعال کریں</translation>
     </message>
     <message>
         <source>Connection settings</source>
@@ -689,7 +677,7 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اسے غیر فعال کرنے سے، مثال کے طور پر، Tox over Tor کی اجازت ملتی ہے۔ تاہم یہ ٹوکس نیٹ ورک پر بوجھ بڑھاتا ہے، اس لیے جب ضروری ہو تب ہی نشان ہٹا دیں۔</translation>
+        <translation type="unfinished">اسے غیر فعال کرنے سے، مثلاً، Tor کے ذریعے Tox استعمال کیا جا سکتا ہے۔ تاہم یہ Tox نیٹ ورک پر بوجھ بڑھاتا ہے، اس لیے صرف ضرورت کے وقت نشان ہٹائیں۔</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -702,12 +690,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox URI to parse</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تجزیہ کرنے کے لیے ٹوکس URI</translation>
+        <translation type="unfinished">Tox URI جس کا تجزیہ کرنا ہے</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئی مثال شروع کرتا ہے اور مخصوص پروفائل لوڈ کرتا ہے۔</translation>
+        <translation type="unfinished">نیا انسٹینس شروع کرتا ہے اور مخصوص پروفائل لوڈ کرتا ہے۔</translation>
     </message>
     <message>
         <source>profile</source>
@@ -717,31 +705,23 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئی مثال شروع کرتا ہے اور لاگ ان اسکرین کھولتا ہے۔</translation>
+        <translation type="unfinished">نیا انسٹینس شروع کرتا ہے اور لاگ ان اسکرین کھولتا ہے۔</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; سیٹ کرتا ہے۔ ڈیفالٹ آن ہے۔</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6 کو آن یا آف کرتا ہے: %1۔ ڈیفالٹ: %2۔</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP سیٹ کرتا ہے &lt;on&gt;/&lt;off&gt;۔ ڈیفالٹ آن ہے۔</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP کو آن یا آف کرتا ہے: %1۔ ڈیفالٹ: %2۔</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN دریافت سیٹ کرتا ہے &lt;on&gt;/&lt;off&gt;۔ UDP آف اوور رائیڈز۔ ڈیفالٹ آن ہے۔</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN دریافت کو آن یا آف کرتا ہے: %1۔ UDP آف ہو تو اس کا کوئی اثر نہیں۔ ڈیفالٹ: %2۔</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پراکسی سیٹنگز سیٹ کرتا ہے۔ ڈیفالٹ کوئی نہیں ہے۔</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">پراکسی سیٹ کرتا ہے۔ ڈیفالٹ: %1۔</translation>
     </message>
     <message>
         <source>Error</source>
@@ -775,12 +755,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Send a file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک فائل بھیجیں۔</translation>
+        <translation type="unfinished">ایک فائل بھیجیں</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox %1 کو کھولنے کے قابل نہیں تھا۔</translation>
+        <translation type="unfinished">qTox %1 کو کھولنے کے قابل نہیں تھا</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -801,12 +781,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox اسکرین شاٹ کو محفوظ کرنے کے قابل نہیں تھا۔</translation>
+        <translation type="unfinished">qTox اسکرین شاٹ کو محفوظ کرنے کے قابل نہیں تھا</translation>
     </message>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کال کا دورانیہ:</translation>
+        <translation type="unfinished">کال کا دورانیہ: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -816,19 +796,19 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ ایک ترتیب وار فائل بھیجنے کی کوشش کر رہے ہیں، جو کام نہیں کر رہی ہے!</translation>
+        <translation type="unfinished">آپ ایک ترتیب وار فائل بھیجنے کی کوشش کر رہے ہیں، جو کام نہیں کرے گی!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل کا نام غیر قانونی حروف پر مشتمل ہے۔</translation>
+        <translation type="unfinished">فائل کے نام میں غیر مجاز حروف تھے</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">غیر قانونی حروف کو _ میں تبدیل کر دیا گیا ہے
-تاکہ آپ فائل کو ونڈوز پر محفوظ کر سکیں۔</translation>
+        <translation type="unfinished">غیر مجاز حروف کو _ سے بدل دیا گیا ہے
+تاکہ آپ فائل کو Windows پر محفوظ کر سکیں۔</translation>
     </message>
 </context>
 <context>
@@ -841,22 +821,22 @@ so you can save the file on Windows.</source>
     <message>
         <source>Start audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آڈیو کال شروع کریں۔</translation>
+        <translation type="unfinished">آڈیو کال شروع کریں</translation>
     </message>
     <message>
         <source>End audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آڈیو کال ختم کریں۔</translation>
+        <translation type="unfinished">آڈیو کال ختم کریں</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آڈیو کال منسوخ کریں۔</translation>
+        <translation type="unfinished">آڈیو کال منسوخ کریں</translation>
     </message>
     <message>
         <source>Accept audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آڈیو کال قبول کریں۔</translation>
+        <translation type="unfinished">آڈیو کال قبول کریں</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
@@ -866,52 +846,52 @@ so you can save the file on Windows.</source>
     <message>
         <source>Start video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو کال شروع کریں۔</translation>
+        <translation type="unfinished">ویڈیو کال شروع کریں</translation>
     </message>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو کال ختم کریں۔</translation>
+        <translation type="unfinished">ویڈیو کال ختم کریں</translation>
     </message>
     <message>
         <source>Cancel video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو کال منسوخ کریں۔</translation>
+        <translation type="unfinished">ویڈیو کال منسوخ کریں</translation>
     </message>
     <message>
         <source>Accept video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو کال قبول کریں۔</translation>
+        <translation type="unfinished">ویڈیو کال قبول کریں</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آواز کو صرف کال کے دوران ہی غیر فعال کیا جا سکتا ہے۔</translation>
+        <translation type="unfinished">آواز کو صرف کال کے دوران ہی غیر فعال کیا جا سکتا ہے</translation>
     </message>
     <message>
         <source>Unmute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کال کو چالو کریں۔</translation>
+        <translation type="unfinished">کال کی آواز بحال کریں</translation>
     </message>
     <message>
         <source>Mute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کال خاموش کریں۔</translation>
+        <translation type="unfinished">کال خاموش کریں</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مائیکروفون کو صرف کال کے دوران خاموش کیا جا سکتا ہے۔</translation>
+        <translation type="unfinished">مائیکروفون کو صرف کال کے دوران خاموش کیا جا سکتا ہے</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مائیکروفون کو چالو کریں۔</translation>
+        <translation type="unfinished">مائیکروفون کو چالو کریں</translation>
     </message>
     <message>
         <source>Mute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مائیکروفون خاموش کریں۔</translation>
+        <translation type="unfinished">مائیکروفون خاموش کریں</translation>
     </message>
 </context>
 <context>
@@ -939,7 +919,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>%1 is typing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ٹائپ کر رہا ہے۔</translation>
+        <translation type="unfinished">%1 ٹائپ کر رہا ہے</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -949,7 +929,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Select all</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سبھی کو منتخب کریں۔</translation>
+        <translation type="unfinished">سبھی کو منتخب کریں</translation>
     </message>
 </context>
 <context>
@@ -958,18 +938,18 @@ so you can save the file on Windows.</source>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حلقہ کا نام تبدیل کریں۔</translation>
+        <translation type="unfinished">حلقہ کا نام تبدیل کریں</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دائرہ ہٹا دیں۔</translation>
+        <translation type="unfinished">حلقہ ہٹائیں</translation>
     </message>
     <message>
         <source>Open all in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سب کو نئی ونڈو میں کھولیں۔</translation>
+        <translation type="unfinished">سب کو نئی ونڈو میں کھولیں</translation>
     </message>
 </context>
 <context>
@@ -977,12 +957,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">مقام قابل تحریر نہیں ہے۔</translation>
+        <translation type="unfinished">مقام قابل تحریر نہیں ہے</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">آپ کو اس مقام پر لکھنے کی اجازت نہیں ہے۔ کوئی دوسرا منتخب کریں، یا محفوظ ڈائیلاگ کو منسوخ کریں۔</translation>
+        <translation type="unfinished">آپ کو اس مقام پر لکھنے کی اجازت نہیں ہے۔ کوئی اور مقام منتخب کریں یا محفوظ کرنا منسوخ کریں۔</translation>
     </message>
 </context>
 <context>
@@ -991,24 +971,24 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خاموش</translation>
+        <translation type="unfinished">خاموش کریں</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چالو</translation>
+        <translation type="unfinished">آواز چالو کریں</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ہم مرتبہ کی شناخت کاپی کریں۔</translation>
+        <translation type="unfinished">شریک کی ID کاپی کریں</translation>
     </message>
 </context>
 <context>
@@ -1026,7 +1006,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس کی دعوت</translation>
+        <translation type="unfinished">کانفرنس کے دعوت نامے</translation>
     </message>
 </context>
 <context>
@@ -1034,17 +1014,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 کی طرف سے %2 کو %3 پر مدعو کیا گیا۔</translation>
+        <translation type="unfinished">%1 نے %2 کو %3 بجے مدعو کیا۔</translation>
     </message>
     <message>
         <source>Join</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">شمولیت</translation>
+        <translation type="unfinished">شامل ہوں</translation>
     </message>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رد کرنا</translation>
+        <translation type="unfinished">مسترد کریں</translation>
     </message>
 </context>
 <context>
@@ -1057,25 +1037,25 @@ so you can save the file on Windows.</source>
     <message>
         <source>Open chat in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں۔</translation>
+        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں۔</translation>
+        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس چھوڑ دیں۔</translation>
+        <translation type="unfinished">کانفرنس چھوڑ دیں</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>چیٹ میں %n صارف</numerusform>
+            <numerusform>چیٹ میں %n صارفین</numerusform>
         </translation>
     </message>
     <message>
@@ -1094,7 +1074,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/میں دوستی کی پیشکش کرتا ہوں، &quot;%1&quot;</translation>
+        <translation type="unfinished">/me دوستی کی پیشکش کرتا ہے، &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -1111,7 +1091,7 @@ so you can save the file on Windows.</source>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کو اپنی درخواست کے ساتھ ایک پیغام لکھنے کی ضرورت ہے۔</translation>
+        <translation type="unfinished">آپ کو اپنی درخواست کے ساتھ ایک پیغام لکھنے کی ضرورت ہے</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -1123,7 +1103,7 @@ so you can save the file on Windows.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست پہلے ہی شامل ہو چکا ہے۔</translation>
+        <translation type="unfinished">دوست پہلے ہی شامل ہو چکا ہے</translation>
     </message>
 </context>
 <context>
@@ -1136,7 +1116,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto-reload</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خودکار دوبارہ لوڈ کریں۔</translation>
+        <translation type="unfinished">خودکار دوبارہ لوڈ کریں</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
@@ -1164,7 +1144,7 @@ so you can save the file on Windows.</source>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اس فائل کو وصول کرنا قبول کریں۔</translation>
+        <translation type="unfinished">اس فائل کو وصول کرنا قبول کریں</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1175,12 +1155,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Cancel transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتقلی منسوخ کریں۔</translation>
+        <translation type="unfinished">منتقلی منسوخ کریں</translation>
     </message>
     <message>
         <source>Pause transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتقلی روک دیں۔</translation>
+        <translation type="unfinished">منتقلی روک دیں</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1191,34 +1171,34 @@ so you can save the file on Windows.</source>
     <message>
         <source>Open file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل کھولیں۔</translation>
+        <translation type="unfinished">فائل کھولیں</translation>
     </message>
     <message>
         <source>Open file directory</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل ڈائرکٹری کھولیں۔</translation>
+        <translation type="unfinished">فائل ڈائرکٹری کھولیں</translation>
     </message>
     <message>
         <source>Resume transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتقلی دوبارہ شروع کریں۔</translation>
+        <translation type="unfinished">منتقلی دوبارہ شروع کریں</translation>
     </message>
     <message>
         <source>Accept transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتقلی قبول کریں۔</translation>
+        <translation type="unfinished">منتقلی قبول کریں</translation>
     </message>
     <message>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک فائل محفوظ کریں۔</translation>
+        <translation type="unfinished">ایک فائل محفوظ کریں</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ریموٹ موقوف ہے۔</translation>
+        <translation type="unfinished">دوسری طرف سے روکا گیا</translation>
     </message>
 </context>
 <context>
@@ -1237,7 +1217,7 @@ so you can save the file on Windows.</source>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتقل شدہ فائلیں۔</translation>
+        <translation type="unfinished">منتقل شدہ فائلیں</translation>
     </message>
 </context>
 <context>
@@ -1279,18 +1259,18 @@ so you can save the file on Windows.</source>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس میں مدعو کریں۔</translation>
+        <translation type="unfinished">کانفرنس میں مدعو کریں</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دائرے میں منتقل کریں...</translation>
+        <translation type="unfinished">حلقے میں منتقل کریں...</translation>
     </message>
     <message>
         <source>To new circle</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئے دائرے میں</translation>
+        <translation type="unfinished">نئے حلقے میں</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1300,17 +1280,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Open chat in new window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں۔</translation>
+        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں۔</translation>
+        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں</translation>
     </message>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نئی کانفرنس کے لیے</translation>
+        <translation type="unfinished">نئی کانفرنس میں</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1326,12 +1306,12 @@ so you can save the file on Windows.</source>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اس دوست سے فائلیں خود بخود قبول کریں۔</translation>
+        <translation type="unfinished">اس دوست سے فائلیں خود بخود قبول کریں</translation>
     </message>
     <message>
         <source>Show details</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تفصیلات دکھائیں۔</translation>
+        <translation type="unfinished">تفصیلات دکھائیں</translation>
     </message>
     <message>
         <source>New message</source>
@@ -1361,13 +1341,13 @@ so you can save the file on Windows.</source>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دائرہ &quot;%1&quot; میں جائیں</translation>
+        <translation type="unfinished">حلقہ &quot;%1&quot; میں منتقل کریں</translation>
     </message>
     <message>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست کو ہٹا دیں۔</translation>
+        <translation type="unfinished">دوست کو ہٹا دیں</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1380,7 +1360,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جنرل</translation>
+        <translation type="unfinished">عمومی</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1403,7 +1383,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>The translation may not load until qTox restarts.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox دوبارہ شروع ہونے تک ترجمہ لوڈ نہیں ہو سکتا۔</translation>
+        <translation type="unfinished">ہو سکتا ہے qTox دوبارہ شروع ہونے تک ترجمہ لوڈ نہ ہو۔</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1413,13 +1393,13 @@ so you can save the file on Windows.</source>
     <message>
         <source>Show system tray icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سسٹم ٹرے کا آئیکن دکھائیں۔</translation>
+        <translation type="unfinished">سسٹم ٹرے کا آئیکن دکھائیں</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لائٹ ٹرے آئیکن کو فعال کریں۔</translation>
+        <translation type="unfinished">ہلکے رنگ کا ٹرے آئیکن استعمال کریں۔</translation>
     </message>
     <message>
         <source>Light icon</source>
@@ -1430,22 +1410,22 @@ so you can save the file on Windows.</source>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox ٹرے میں کم سے کم ہونا شروع ہو جائے گا۔</translation>
+        <translation type="unfinished">qTox ٹرے میں چھوٹا ہو کر شروع ہوگا۔</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹرے میں شروع کریں۔</translation>
+        <translation type="unfinished">ٹرے میں شروع کریں</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹرے کے قریب</translation>
+        <translation type="unfinished">بند کرنے پر ٹرے میں جائیں</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹرے میں چھوٹا کریں۔</translation>
+        <translation type="unfinished">چھوٹا کرنے پر ٹرے میں جائیں</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1460,27 +1440,27 @@ so you can save the file on Windows.</source>
     <message>
         <source>Autoaccept files</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائلوں کو خود بخود قبول کریں۔</translation>
+        <translation type="unfinished">فائلوں کو خود بخود قبول کریں</translation>
     </message>
     <message>
         <source>Set to 0 to disable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">غیر فعال کرنے کے لیے 0 پر سیٹ کریں۔</translation>
+        <translation type="unfinished">غیر فعال کرنے کے لیے 0 پر سیٹ کریں</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">غیرفعالیت کی مقررہ مدت کے بعد آپ کی حیثیت Away میں تبدیل ہو جاتی ہے۔</translation>
+        <translation type="unfinished">مقررہ مدت تک غیرفعال رہنے پر آپ کی حیثیت دور ہو جاتی ہے۔</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کے بعد خود بخود دور (0 غیر فعال کرنے کے لیے):</translation>
+        <translation type="unfinished">اتنی دیر بعد خود بخود دور (0 غیر فعال):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رابطوں کی حالت میں تبدیلیاں دکھائیں۔</translation>
+        <translation type="unfinished">رابطوں کی حالت میں تبدیلیاں دکھائیں</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
@@ -1495,7 +1475,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Check for updates</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپ ڈیٹس کے لیے چیک کریں۔</translation>
+        <translation type="unfinished">اپ ڈیٹس کے لیے چیک کریں</translation>
     </message>
     <message>
         <source>Spell checking</source>
@@ -1517,27 +1497,27 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">minimize دبانے کے بعد (_) qTox ٹرے میں minimize ہو جائے گا،
-سسٹم ٹاسک بار کے بجائے۔</translation>
+        <translation type="unfinished">چھوٹا کریں (_) دبانے پر qTox ٹاسک بار کے بجائے
+ٹرے میں چلا جائے گا۔</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کلوز دبانے کے بعد (X) qTox ٹرے کے قریب ہو جائے گا،
-مکمل طور پر بند ہونے کے بجائے۔</translation>
+        <translation type="unfinished">بند کریں (X) دبانے پر qTox مکمل طور پر بند ہونے کے بجائے
+ٹرے میں چلا جائے گا۔</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ انفرادی دوستوں پر دائیں کلک کرکے اسے فی دوست کی بنیاد پر سیٹ کرسکتے ہیں۔</translation>
+        <translation type="unfinished">آپ ہر دوست پر دائیں کلک کرکے اسے الگ الگ سیٹ کر سکتے ہیں۔</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جب کوئی صارف کانفرنس میں شامل ہوتا ہے یا چھوڑتا ہے تو چیٹ کا پیغام شامل کریں۔</translation>
+        <translation type="unfinished">جب کوئی صارف کانفرنس میں شامل ہوتا ہے یا چھوڑتا ہے تو چیٹ کا پیغام شامل کریں</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1547,7 +1527,7 @@ instead of closing entirely.</source>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ترجمہ کرنے میں مدد کریں۔</translation>
+        <translation type="unfinished">ترجمہ کرنے میں مدد کریں</translation>
     </message>
     <message>
         <source> min</source>
@@ -1560,7 +1540,7 @@ instead of closing entirely.</source>
     <message>
         <source>Send message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پیغام بھیجیں۔</translation>
+        <translation type="unfinished">پیغام بھیجیں</translation>
     </message>
     <message>
         <source>Smileys</source>
@@ -1570,32 +1550,32 @@ instead of closing entirely.</source>
     <message>
         <source>Send file(s)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل بھیجیں</translation>
+        <translation type="unfinished">فائل(یں) بھیجیں</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اسکرین شاٹ بھیجیں۔</translation>
+        <translation type="unfinished">اسکرین شاٹ بھیجیں</translation>
     </message>
     <message>
         <source>Save chat log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چیٹ لاگ کو محفوظ کریں۔</translation>
+        <translation type="unfinished">چیٹ لاگ کو محفوظ کریں</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دکھائے گئے پیغامات کو صاف کریں۔</translation>
+        <translation type="unfinished">دکھائے گئے پیغامات کو صاف کریں</translation>
     </message>
     <message>
         <source>Quote selected text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتخب متن کا حوالہ دیں۔</translation>
+        <translation type="unfinished">منتخب متن کا حوالہ دیں</translation>
     </message>
     <message>
         <source>Copy link address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لنک ایڈریس کاپی کریں۔</translation>
+        <translation type="unfinished">لنک ایڈریس کاپی کریں</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -1605,12 +1585,12 @@ instead of closing entirely.</source>
     <message>
         <source>Search in text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">متن میں تلاش کریں۔</translation>
+        <translation type="unfinished">متن میں تلاش کریں</translation>
     </message>
     <message>
         <source>Go to current date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">موجودہ تاریخ پر جائیں۔</translation>
+        <translation type="unfinished">موجودہ تاریخ پر جائیں</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1620,7 +1600,7 @@ instead of closing entirely.</source>
     <message>
         <source>Export to file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل میں برآمد کریں۔</translation>
+        <translation type="unfinished">فائل میں برآمد کریں</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1633,12 +1613,12 @@ instead of closing entirely.</source>
     <message>
         <source>Public Information</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پبلک انفارمیشن</translation>
+        <translation type="unfinished">عوامی معلومات</translation>
     </message>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹاکس آئی ڈی</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1660,23 +1640,23 @@ instead of closing entirely.</source>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لاگ ان اسکرین پر واپس جائیں۔</translation>
+        <translation type="unfinished">لاگ ان اسکرین پر واپس جائیں</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">لاگ آؤٹ</translation>
     </message>
     <message>
         <source>Remove password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ ہٹا دیں۔</translation>
+        <translation type="unfinished">پاس ورڈ ہٹا دیں</translation>
     </message>
     <message>
         <source>Change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ تبدیل کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ تبدیل کریں</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
@@ -1686,18 +1666,18 @@ instead of closing entirely.</source>
     <message>
         <source>Save image</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تصویر محفوظ کریں۔</translation>
+        <translation type="unfinished">تصویر محفوظ کریں</translation>
     </message>
     <message>
         <source>Copy image</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تصویر کاپی کریں۔</translation>
+        <translation type="unfinished">تصویر کاپی کریں</translation>
     </message>
     <message>
         <source>Rename</source>
         <comment>rename profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نام تبدیل کریں۔</translation>
+        <translation type="unfinished">نام تبدیل کریں</translation>
     </message>
     <message>
         <source>Delete profile.</source>
@@ -1717,13 +1697,13 @@ Profile does not contain your history.</source>
         <source>Export</source>
         <comment>export profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">برآمد کریں۔</translation>
+        <translation type="unfinished">برآمد کریں</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حذف کریں۔</translation>
+        <translation type="unfinished">حذف کریں</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
@@ -1739,7 +1719,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Name visible to contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نام رابطوں کے لیے نظر آتا ہے۔</translation>
+        <translation type="unfinished">نام رابطوں کے لیے نظر آتا ہے</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1754,12 +1734,12 @@ Profile does not contain your history.</source>
     <message>
         <source>Save QR image as file</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QR تصویر کو فائل کے طور پر محفوظ کریں۔</translation>
+        <translation type="unfinished">QR تصویر کو فائل کے طور پر محفوظ کریں</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QR امیج کو کلپ بورڈ میں کاپی کریں۔</translation>
+        <translation type="unfinished">QR امیج کو کلپ بورڈ میں کاپی کریں</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1774,17 +1754,17 @@ Profile does not contain your history.</source>
     <message>
         <source>Export profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل برآمد کریں۔</translation>
+        <translation type="unfinished">پروفائل برآمد کریں</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل سے پاس ورڈ ہٹا دیں۔</translation>
+        <translation type="unfinished">پروفائل سے پاس ورڈ ہٹا دیں</translation>
     </message>
     <message>
         <source>Change profile password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل کا پاس ورڈ تبدیل کریں۔</translation>
+        <translation type="unfinished">پروفائل کا پاس ورڈ تبدیل کریں</translation>
     </message>
     <message>
         <source>My name:</source>
@@ -1794,7 +1774,7 @@ Profile does not contain your history.</source>
     <message>
         <source>My status:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">میری حیثیت:</translation>
+        <translation type="unfinished">میرا اسٹیٹس:</translation>
     </message>
     <message>
         <source>My profile</source>
@@ -1806,12 +1786,12 @@ Profile does not contain your history.</source>
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">یہ ID دوسرے Tox صارفین کو شامل کرنے اور آپ سے رابطہ کرنے کی اجازت دیتی ہے۔
+        <translation type="unfinished">اس ID سے دوسرے Tox صارفین آپ کو شامل کر کے آپ سے رابطہ کر سکتے ہیں۔
 چیٹنگ شروع کرنے کے لیے اسے اپنے دوستوں کے ساتھ شیئر کریں۔</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">اپنا اسٹیٹس میسج سیٹ کریں جو دوسروں کو دکھایا جائے گا۔</translation>
+        <translation type="unfinished">اپنا اسٹیٹس میسج سیٹ کریں جو دوسروں کو دکھایا جائے گا</translation>
     </message>
 </context>
 <context>
@@ -1819,12 +1799,12 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تاریخ کا ڈائیلاگ لوڈ کریں۔</translation>
+        <translation type="unfinished">سرگزشت لوڈ کرنے کا ڈائیلاگ</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سے تاریخ لوڈ کریں:</translation>
+        <translation type="unfinished">سرگزشت یہاں سے لوڈ کریں:</translation>
     </message>
 </context>
 <context>
@@ -1857,22 +1837,22 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اگر پروفائل میں پاس ورڈ نہیں ہے تو، qTox لاگ ان اسکرین کو چھوڑ سکتا ہے۔</translation>
+        <translation type="unfinished">اگر پروفائل میں پاس ورڈ نہیں ہے تو، qTox لاگ ان اسکرین کو چھوڑ سکتا ہے</translation>
     </message>
     <message>
         <source>Load automatically</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خود بخود لوڈ کریں۔</translation>
+        <translation type="unfinished">خود بخود لوڈ کریں</translation>
     </message>
     <message>
         <source>Load</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">لوڈ</translation>
+        <translation type="unfinished">لوڈ کریں</translation>
     </message>
     <message>
         <source>Load Profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل لوڈ کریں۔</translation>
+        <translation type="unfinished">پروفائل لوڈ کریں</translation>
     </message>
     <message>
         <source>New Profile</source>
@@ -1931,7 +1911,7 @@ You may want to create one.</source>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">درآمد کریں۔</translation>
+        <translation type="unfinished">درآمد کریں</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1941,7 +1921,7 @@ You may want to create one.</source>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ ان پٹ فیلڈ، آپ اسے خالی چھوڑ سکتے ہیں (کوئی پاس ورڈ نہیں)، یا کم از کم 6 حروف ٹائپ کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ ان پٹ فیلڈ، آپ اسے خالی چھوڑ سکتے ہیں (کوئی پاس ورڈ نہیں)، یا کم از کم 6 حروف ٹائپ کریں</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1951,7 +1931,7 @@ You may want to create one.</source>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک نیا پروفائل بٹن بنائیں</translation>
+        <translation type="unfinished">نیا پروفائل بنانے کا بٹن</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1971,27 +1951,27 @@ You may want to create one.</source>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خود بخود چیک باکس لوڈ کریں۔</translation>
+        <translation type="unfinished">خود بخود لوڈ کرنے کا چیک باکس</translation>
     </message>
     <message>
         <source>Import profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل درآمد کریں۔</translation>
+        <translation type="unfinished">پروفائل درآمد کریں</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منتخب پروفائل بٹن لوڈ کریں۔</translation>
+        <translation type="unfinished">منتخب پروفائل لوڈ کرنے کا بٹن</translation>
     </message>
     <message>
         <source>New profile creation page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نیا پروفائل تخلیق صفحہ</translation>
+        <translation type="unfinished">نیا پروفائل بنانے کا صفحہ</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">موجودہ پروفائل کا صفحہ لوڈ ہو رہا ہے۔</translation>
+        <translation type="unfinished">موجودہ پروفائل لوڈ کرنے کا صفحہ</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -2027,7 +2007,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کی حیثیت</translation>
+        <translation type="unfinished">آپ کا اسٹیٹس</translation>
     </message>
     <message>
         <source>Create a conference</source>
@@ -2042,22 +2022,22 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Change your settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپنی ترتیبات کو تبدیل کریں۔</translation>
+        <translation type="unfinished">اپنی ترتیبات کو تبدیل کریں</translation>
     </message>
     <message>
         <source>Close</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بند</translation>
+        <translation type="unfinished">بند کریں</translation>
     </message>
     <message>
         <source>Open profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل کھولیں۔</translation>
+        <translation type="unfinished">پروفائل کھولیں</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کلک کرنے پر پروفائل کا صفحہ کھولیں۔</translation>
+        <translation type="unfinished">کلک کرنے پر پروفائل کا صفحہ کھولیں</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -2067,27 +2047,27 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Set your status message that will be shown to others</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اپنا اسٹیٹس میسج سیٹ کریں جو دوسروں کو دکھایا جائے گا۔</translation>
+        <translation type="unfinished">اپنا اسٹیٹس میسج سیٹ کریں جو دوسروں کو دکھایا جائے گا</translation>
     </message>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حیثیت</translation>
+        <translation type="unfinished">اسٹیٹس</translation>
     </message>
     <message>
         <source>Set availability status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دستیابی کی حیثیت طے کریں۔</translation>
+        <translation type="unfinished">دستیابی کا اسٹیٹس سیٹ کریں</translation>
     </message>
     <message>
         <source>Contact search</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تلاش سے رابطہ کریں۔</translation>
+        <translation type="unfinished">رابطہ تلاش</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جاننے والے دوستوں کے لیے سرچ ان پٹ سے رابطہ کریں۔</translation>
+        <translation type="unfinished">معلوم دوستوں میں تلاش</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2097,12 +2077,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستوں کی چھانٹی اور مرئیت سیٹ کریں۔</translation>
+        <translation type="unfinished">دوستوں کی چھانٹی اور مرئیت سیٹ کریں</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستوں کو شامل کرنے کا صفحہ کھولیں۔</translation>
+        <translation type="unfinished">دوستوں کو شامل کرنے کا صفحہ کھولیں</translation>
     </message>
     <message>
         <source>Conference</source>
@@ -2112,17 +2092,17 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس مینجمنٹ کا صفحہ کھولیں۔</translation>
+        <translation type="unfinished">کانفرنس مینجمنٹ کا صفحہ کھولیں</translation>
     </message>
     <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل کی منتقلی کی تاریخ</translation>
+        <translation type="unfinished">فائل منتقلی کی سرگزشت</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل ٹرانسفر کی تاریخ کھولیں۔</translation>
+        <translation type="unfinished">فائل منتقلی کی سرگزشت کھولیں</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -2132,12 +2112,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ترتیبات کھولیں۔</translation>
+        <translation type="unfinished">ترتیبات کھولیں</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اندرونی ڈیبگنگ ٹولز کھولیں۔</translation>
+        <translation type="unfinished">اندرونی ڈیبگنگ ٹولز کھولیں</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -2147,11 +2127,11 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیبگر کھولیں۔</translation>
+        <translation type="unfinished">ڈیبگر کھولیں</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">دوست شامل کریں۔</translation>
+        <translation type="unfinished">دوست شامل کریں</translation>
     </message>
 </context>
 <context>
@@ -2163,7 +2143,7 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">قابل عمل فائل</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">آپ نے qTox سے ایک قابل عمل فائل کھولنے کو کہا ہے۔ قابل عمل فائلیں ممکنہ طور پر آپ کے کمپیوٹر کو نقصان پہنچا سکتی ہیں۔ کیا آپ واقعی اس فائل کو کھولنا چاہتے ہیں؟</translation>
@@ -2174,7 +2154,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹاکس ویڈیو</translation>
+        <translation type="unfinished">Tox ویڈیو</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2184,37 +2164,37 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو پیش نظارہ کو ٹوگل کریں۔</translation>
+        <translation type="unfinished">ویڈیو پیش نظارہ آن/آف کریں</translation>
     </message>
     <message>
         <source>Mute audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آڈیو خاموش کریں۔</translation>
+        <translation type="unfinished">آڈیو خاموش کریں</translation>
     </message>
     <message>
         <source>Mute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مائیکروفون خاموش کریں۔</translation>
+        <translation type="unfinished">مائیکروفون خاموش کریں</translation>
     </message>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ویڈیو کال ختم کریں۔</translation>
+        <translation type="unfinished">ویڈیو کال ختم کریں</translation>
     </message>
     <message>
         <source>Exit full screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پوری اسکرین سے باہر نکلیں۔</translation>
+        <translation type="unfinished">پوری اسکرین سے باہر نکلیں</translation>
     </message>
     <message>
         <source>Hide messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پیغامات چھپائیں۔</translation>
+        <translation type="unfinished">پیغامات چھپائیں</translation>
     </message>
     <message>
         <source>Show messages</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پیغامات دکھائیں۔</translation>
+        <translation type="unfinished">پیغامات دکھائیں</translation>
     </message>
 </context>
 <context>
@@ -2229,7 +2209,7 @@ Press Shift+F1 for more information.</source>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کھڑکی</translation>
+        <translation type="unfinished">ونڈو</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -2241,17 +2221,17 @@ Press Shift+F1 for more information.</source>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سب کو سامنے لاؤ</translation>
+        <translation type="unfinished">سب کو سامنے لائیں</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فل سکرین سے باہر نکلیں۔</translation>
+        <translation type="unfinished">فل سکرین سے باہر نکلیں</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فل سکرین درج کریں۔</translation>
+        <translation type="unfinished">فل سکرین</translation>
     </message>
 </context>
 <context>
@@ -2259,8 +2239,8 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>نہ پڑھا گیا پیغام</numerusform>
+            <numerusform>نہ پڑھے گئے پیغامات</numerusform>
         </translation>
     </message>
 </context>
@@ -2290,7 +2270,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس کا دعوت نامہ موصول ہوا۔</translation>
+        <translation type="unfinished">کانفرنس کا دعوت نامہ موصول ہوا</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2300,12 +2280,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستی کی درخواست موصول ہوئی۔</translation>
+        <translation type="unfinished">دوستی کی درخواست موصول ہوئی</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 سے دوستی کی درخواست موصول ہوئی۔</translation>
+        <translation type="unfinished">%1 سے دوستی کی درخواست موصول ہوئی</translation>
     </message>
     <message>
         <source>Incoming call</source>
@@ -2316,9 +2296,9 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کیپس لاک فعال ہے۔</translation>
+        <translation type="unfinished">Caps Lock آن ہے</translation>
     </message>
 </context>
 <context>
@@ -2350,12 +2330,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Send typing notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹائپنگ کی اطلاعات بھیجیں۔</translation>
+        <translation type="unfinished">ٹائپنگ کی اطلاعات بھیجیں</translation>
     </message>
     <message>
         <source>Keep chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چیٹ کی تاریخ رکھیں</translation>
+        <translation type="unfinished">چیٹ کی سرگزشت رکھیں</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
@@ -2382,7 +2362,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Generate random NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بے ترتیب NoSpam پیدا کریں۔</translation>
+        <translation type="unfinished">بے ترتیب NoSpam پیدا کریں</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
@@ -2390,7 +2370,7 @@ Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">چیٹ کی تاریخ کو برقرار رکھنا ابھی بھی ترقی میں ہے۔
-محفوظ کریں فارمیٹ میں تبدیلیاں ممکن ہیں، جس کے نتیجے میں ڈیٹا ضائع ہو سکتا ہے۔</translation>
+محفوظ کرنے کے فارمیٹ میں تبدیلیاں ممکن ہیں، جس کے نتیجے میں ڈیٹا ضائع ہو سکتا ہے۔</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2400,7 +2380,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس بلاک لسٹ</translation>
+        <translation type="unfinished">کانفرنس کی بلاک فہرست</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
@@ -2418,12 +2398,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox پر ٹاکسنگ</translation>
+        <translation type="unfinished">qTox پر Tox کر رہا ہوں</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیٹا بیس کا پاس ورڈ تبدیل نہیں کیا جا سکا، یہ کرپٹ ہو سکتا ہے یا پرانا پاس ورڈ استعمال کر سکتا ہے۔</translation>
+        <translation type="unfinished">ڈیٹا بیس کا پاس ورڈ تبدیل نہیں کیا جا سکا۔ ممکن ہے ڈیٹا بیس خراب ہو یا اب بھی پرانا پاس ورڈ استعمال کر رہا ہو۔</translation>
     </message>
 </context>
 <context>
@@ -2431,7 +2411,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Choose a profile picture</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل تصویر منتخب کریں۔</translation>
+        <translation type="unfinished">پروفائل تصویر منتخب کریں</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2452,12 +2432,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">موجودہ پروفائل:</translation>
+        <translation type="unfinished">موجودہ پروفائل: </translation>
     </message>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ہٹا دیں۔</translation>
+        <translation type="unfinished">ہٹا دیں</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2479,7 +2459,7 @@ Please use another image.</source>
     <message>
         <source>Nothing to remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ہٹانے کے لیے کچھ نہیں۔</translation>
+        <translation type="unfinished">ہٹانے کے لیے کچھ نہیں</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
@@ -2501,13 +2481,13 @@ Please use another image.</source>
         <source>Save</source>
         <comment>save qr image</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">محفوظ کریں۔</translation>
+        <translation type="unfinished">محفوظ کریں</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QrCode (*.png) محفوظ کریں</translation>
+        <translation type="unfinished">QR کوڈ محفوظ کریں (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2519,13 +2499,13 @@ Please use another image.</source>
         <source>Change password</source>
         <comment>button text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ تبدیل کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ تبدیل کریں</translation>
     </message>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل کا پاس ورڈ سیٹ کریں۔</translation>
+        <translation type="unfinished">پروفائل کا پاس ورڈ سیٹ کریں</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
@@ -2538,11 +2518,6 @@ Please use another image.</source>
         <translation type="unfinished">پاس ورڈ تبدیل نہیں کیا جا سکا</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خالی راستہ دستیاب نہیں ہے۔</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">نام تبدیل کرنے میں ناکام</translation>
@@ -2550,7 +2525,7 @@ Please use another image.</source>
     <message>
         <source>Profile already exists</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل پہلے سے موجود ہے۔</translation>
+        <translation type="unfinished">پروفائل پہلے سے موجود ہے</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
@@ -2563,9 +2538,9 @@ Please use another image.</source>
         <translation type="unfinished">خالی نام</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خالی نام دستیاب نہیں ہے۔</translation>
+        <translation type="unfinished">نام خالی نہیں ہو سکتا</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2576,13 +2551,13 @@ Please use another image.</source>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل برآمد کریں۔</translation>
+        <translation type="unfinished">پروفائل برآمد کریں</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox محفوظ فائل (*.tox)</translation>
+        <translation type="unfinished">Tox پروفائل فائل (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2613,14 +2588,14 @@ Please use another image.</source>
         <translation type="unfinished">آپ کی منتخب کردہ فائل کو محفوظ نہیں کیا جا سکا۔</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خالی راستہ دستیاب نہیں ہے۔</translation>
+        <translation type="unfinished">راستہ خالی نہیں ہو سکتا۔</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیٹا بیس کا پاس ورڈ تبدیل نہیں کیا جا سکا، یہ کرپٹ ہو سکتا ہے یا پرانا پاس ورڈ استعمال کر سکتا ہے۔</translation>
+        <translation type="unfinished">ڈیٹا بیس کا پاس ورڈ تبدیل نہیں کیا جا سکا۔ ممکن ہے ڈیٹا بیس خراب ہو یا اب بھی پرانا پاس ورڈ استعمال کر رہا ہو۔</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2631,13 +2606,13 @@ Please use another image.</source>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل حذف کریں۔</translation>
+        <translation type="unfinished">پروفائل حذف کریں</translation>
     </message>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ ہٹا دیں۔</translation>
+        <translation type="unfinished">پاس ورڈ ہٹا دیں</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2651,7 +2626,7 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">یہ ID دوسرے Tox صارفین کو شامل کرنے اور آپ سے رابطہ کرنے کی اجازت دیتی ہے۔
+        <translation type="unfinished">یہ ID دوسرے Tox صارفین کو آپ کو شامل کرنے اور آپ سے رابطہ کرنے دیتی ہے۔
 چیٹنگ شروع کرنے کے لیے اسے اپنے دوستوں کے ساتھ شیئر کریں۔
 
 اس ID میں NoSpam کوڈ (نیلے رنگ میں) اور چیکسم (گرے رنگ میں) شامل ہے۔</translation>
@@ -2663,70 +2638,70 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Import profile</source>
         <comment>import dialog title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل درآمد کریں۔</translation>
+        <translation type="unfinished">پروفائل درآمد کریں</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox محفوظ فائل (*.tox)</translation>
+        <translation type="unfinished">Tox پروفائل فائل (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نان ٹاکس فائل کو نظر انداز کرنا</translation>
+        <translation type="unfinished">غیر Tox فائل کو نظر انداز کیا جا رہا ہے</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">انتباہ: آپ نے ایک فائل کا انتخاب کیا ہے جو ٹوکس سیو فائل نہیں ہے۔ نظر انداز</translation>
+        <translation type="unfinished">انتباہ: آپ نے ایسی فائل منتخب کی ہے جو Tox سیو فائل نہیں ہے؛ نظر انداز کی جا رہی ہے۔</translation>
     </message>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل پہلے سے موجود ہے۔</translation>
+        <translation type="unfinished">پروفائل پہلے سے موجود ہے</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&quot;%1&quot; نامی پروفائل پہلے سے موجود ہے۔ کیا آپ اسے مٹانا چاہتے ہیں؟</translation>
+        <translation type="unfinished">&quot;%1&quot; نامی پروفائل پہلے سے موجود ہے۔ کیا آپ اسے تبدیل کرنا چاہتے ہیں؟</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فائل موجود نہیں ہے۔</translation>
+        <translation type="unfinished">فائل موجود نہیں ہے</translation>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل موجود نہیں ہے۔</translation>
+        <translation type="unfinished">پروفائل موجود نہیں ہے</translation>
     </message>
     <message>
         <source>Profile imported</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل درآمد کیا گیا۔</translation>
+        <translation type="unfinished">پروفائل درآمد کیا گیا</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1.tox کامیابی کے ساتھ درآمد کیا گیا۔</translation>
+        <translation type="unfinished">%1.tox کامیابی کے ساتھ درآمد کیا گیا</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ٹھیک ہے</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منسوخ کریں۔</translation>
+        <translation type="unfinished">منسوخ کریں</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2741,7 +2716,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>DO NOT TRANSLATE. Instead, set this string to &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout. This string should only ever be &apos;LTR&apos; or &apos;RTL&apos;.</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">RTL</translation>
     </message>
 </context>
 <context>
@@ -2749,7 +2724,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">ایک خودکار قبول ڈائریکٹری منتخب کریں۔</translation>
+        <translation type="unfinished">ایک خودکار قبول ڈائریکٹری منتخب کریں</translation>
     </message>
 </context>
 <context>
@@ -2768,7 +2743,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 درست ٹوکس ایڈریس نہیں ہے۔</translation>
+        <translation type="unfinished">%1 درست Tox ایڈریس نہیں ہے۔</translation>
     </message>
 </context>
 <context>
@@ -2786,7 +2761,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">زیتون</translation>
+        <translation type="unfinished">زیتونی</translation>
     </message>
     <message>
         <source>Red</source>
@@ -2796,7 +2771,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">وایلیٹ</translation>
+        <translation type="unfinished">بنفشی</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2807,13 +2782,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">یہاں %1! شاید مجھے ٹاکس؟</translation>
+        <translation type="unfinished">%1 یہاں! Tox پر بات کریں؟</translation>
     </message>
     <message>
         <source>None</source>
         <comment>No camera device set</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کوئی نہیں۔</translation>
+        <translation type="unfinished">کوئی نہیں</translation>
     </message>
     <message>
         <source>Desktop</source>
@@ -2834,7 +2809,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Dark</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اندھیرا</translation>
+        <translation type="unfinished">گہرا</translation>
     </message>
     <message>
         <source>Dark blue</source>
@@ -2844,7 +2819,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">گہرا زیتون</translation>
+        <translation type="unfinished">گہرا زیتونی</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2900,27 +2875,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 has joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 کانفرنس میں شامل ہوا ہے۔</translation>
+        <translation type="unfinished">%1 کانفرنس میں شامل ہوا ہے</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 کانفرنس چھوڑ چکا ہے۔</translation>
+        <translation type="unfinished">%1 کانفرنس چھوڑ چکا ہے</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 اب %2 کے نام سے جانا جاتا ہے۔</translation>
+        <translation type="unfinished">%1 اب %2 کے نام سے جانا جاتا ہے</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 نے ٹائٹل کو %2 پر سیٹ کیا ہے۔</translation>
+        <translation type="unfinished">%1 نے ٹائٹل کو %2 پر سیٹ کیا ہے</translation>
     </message>
     <message>
         <source>Cleared</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">صاف ہو گیا۔</translation>
+        <translation type="unfinished">صاف ہو گیا</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2936,17 +2911,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 اب %2 ہے۔</translation>
+        <translation type="unfinished">%1 اب %2 ہے</translation>
     </message>
     <message>
         <source>Calling %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کال کر رہا ہے %1</translation>
+        <translation type="unfinished">%1 کو کال کی جا رہی ہے</translation>
     </message>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 کالنگ</translation>
+        <translation type="unfinished">%1 کال کر رہا ہے</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2955,7 +2930,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 went offline during the call attempt</source>
-        <translation type="unfinished">کال کی کوشش کے دوران %1 آف لائن گیا&apos;</translation>
+        <translation type="unfinished">کال کی کوشش کے دوران %1 آف لائن ہو گیا</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
@@ -2965,12 +2940,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">شروع کر رہا ہے۔</translation>
+        <translation type="unfinished">شروع ہو رہا ہے</translation>
     </message>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ترسیل کرنا</translation>
+        <translation type="unfinished">بھیجا جا رہا ہے</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -2980,7 +2955,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ٹوٹا ہوا</translation>
+        <translation type="unfinished">منقطع</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2993,9 +2968,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">روک دیا گیا</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ریموٹ موقوف ہے۔</translation>
+        <translation type="unfinished">دوسری طرف سے روکا گیا</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3005,7 +2980,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رابطہ کریں۔</translation>
+        <translation type="unfinished">رابطہ</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -3025,7 +3000,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حیثیت</translation>
+        <translation type="unfinished">اسٹیٹس</translation>
     </message>
     <message>
         <source>Control</source>
@@ -3035,12 +3010,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کانفرنس میں شامل ہوئے ہیں۔</translation>
+        <translation type="unfinished">آپ کانفرنس میں شامل ہوئے ہیں</translation>
     </message>
     <message>
         <source>You have left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آپ کانفرنس چھوڑ چکے ہیں۔</translation>
+        <translation type="unfinished">آپ کانفرنس چھوڑ چکے ہیں</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -3058,17 +3033,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Remove friend</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست کو ہٹا دیں۔</translation>
+        <translation type="unfinished">دوست کو ہٹا دیں</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اگر سیٹ ہو تو دوست کے ساتھ چیٹ کی تمام سرگزشت ہٹا دیں۔</translation>
+        <translation type="unfinished">اگر سیٹ ہو تو دوست کے ساتھ چیٹ کی تمام سرگزشت ہٹا دیں</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چیٹ کی سرگزشت کو بھی ہٹا دیں۔</translation>
+        <translation type="unfinished">چیٹ کی سرگزشت کو بھی ہٹا دیں</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -3078,7 +3053,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ہٹا دیں۔</translation>
+        <translation type="unfinished">ہٹا دیں</translation>
     </message>
 </context>
 <context>
@@ -3093,13 +3068,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خلا</translation>
+        <translation type="unfinished">اسپیس</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فرار</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -3111,7 +3086,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">داخل کریں۔</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3124,7 +3099,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">شروع کریں۔</translation>
+        <translation type="unfinished">شروع کریں</translation>
     </message>
 </context>
 <context>
@@ -3157,7 +3132,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کیس حساس</translation>
+        <translation type="unfinished">حروف کی بڑائی چھوٹائی کا لحاظ</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -3167,17 +3142,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ریگولر ایکسپریشنز استعمال کریں۔</translation>
+        <translation type="unfinished">ریگولر ایکسپریشنز استعمال کریں</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تاریخ کا ڈائیلاگ منتخب کریں۔</translation>
+        <translation type="unfinished">تاریخ منتخب کرنے کا ڈائیلاگ</translation>
     </message>
     <message>
         <source>Select a date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایک تاریخ منتخب کریں۔</translation>
+        <translation type="unfinished">ایک تاریخ منتخب کریں</translation>
     </message>
 </context>
 <context>
@@ -3205,12 +3180,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Confirm password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ کی تصدیق کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ کی تصدیق کریں</translation>
     </message>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاس ورڈ ان پٹ کی تصدیق کریں۔</translation>
+        <translation type="unfinished">پاس ورڈ کی تصدیق کا ان پٹ</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -3229,7 +3204,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">پروفائل کا پاس ورڈ سیٹ کریں۔</translation>
+        <translation type="unfinished">پروفائل کا پاس ورڈ سیٹ کریں</translation>
     </message>
 </context>
 <context>
@@ -3252,7 +3227,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">عالمی ترتیبات لوڈ کرنے میں ناکام</translation>
+        <translation type="unfinished">عمومی ترتیبات لوڈ کرنے میں ناکام</translation>
     </message>
 </context>
 <context>
@@ -3276,18 +3251,18 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Send</source>
         <comment>Send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بھیجیں۔</translation>
+        <translation type="unfinished">بھیجیں</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">منسوخ کریں۔</translation>
+        <translation type="unfinished">منسوخ کریں</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">دوست شامل کریں۔</translation>
+        <translation type="unfinished">دوست شامل کریں</translation>
     </message>
 </context>
 <context>
@@ -3295,7 +3270,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>None</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کوئی نہیں۔</translation>
+        <translation type="unfinished">کوئی نہیں</translation>
     </message>
     <message>
         <source>User Interface</source>
@@ -3308,7 +3283,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Chat</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">گپ شپ</translation>
+        <translation type="unfinished">چیٹ</translation>
     </message>
     <message>
         <source>Base font:</source>
@@ -3318,7 +3293,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سائز:</translation>
+        <translation type="unfinished">سائز: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3342,10 +3317,10 @@ Hide formatting characters:
     جیسے &quot;**ٹیکسٹ**&quot; بطور &quot;**ٹیکسٹ**&quot; دکھائے گا، بولڈ نہیں۔
 فارمیٹنگ حروف دکھائیں:
     فارمیٹنگ کا اطلاق کریں اور حروف دکھائیں۔
-    جیسے &quot;**متن**&quot; بطور &quot;**ٹیکسٹ**&quot;، بولڈ ظاہر ہوگا۔
+    جیسے &quot;**ٹیکسٹ**&quot; بطور &quot;**ٹیکسٹ**&quot;، بولڈ ظاہر ہوگا۔
 فارمیٹنگ حروف کو چھپائیں:
     فارمیٹنگ کا اطلاق کریں اور حروف نہ دکھائیں۔
-    جیسے &quot;**متن**&quot; &quot;متن&quot; کے طور پر دکھائی دے گا، بولڈ۔</translation>
+    جیسے &quot;**ٹیکسٹ**&quot; &quot;ٹیکسٹ&quot; کے طور پر دکھائی دے گا، بولڈ۔</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3365,12 +3340,12 @@ Hide formatting characters:
     <message>
         <source>Show formatting characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فارمیٹنگ حروف دکھائیں۔</translation>
+        <translation type="unfinished">فارمیٹنگ حروف دکھائیں</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">فارمیٹنگ حروف کو چھپائیں۔</translation>
+        <translation type="unfinished">فارمیٹنگ حروف کو چھپائیں</translation>
     </message>
     <message>
         <source>New message</source>
@@ -3386,7 +3361,7 @@ Hide formatting characters:
     <message>
         <source>Open window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کھڑکی کھولیں۔</translation>
+        <translation type="unfinished">ونڈو کھولیں</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -3417,7 +3392,7 @@ Hide formatting characters:
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ہر چیٹ کو انفرادی ونڈو میں کھولیں۔</translation>
+        <translation type="unfinished">ہر چیٹ کو انفرادی ونڈو میں کھولیں</translation>
     </message>
     <message>
         <source>Emoticons</source>
@@ -3427,12 +3402,12 @@ Hide formatting characters:
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایموٹیکنز استعمال کریں۔</translation>
+        <translation type="unfinished">ایموٹیکنز استعمال کریں</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">جذباتی سائز:</translation>
+        <translation type="unfinished">ایموٹیکن کا سائز:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3467,7 +3442,7 @@ Hide formatting characters:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خالی اوتار کے بجائے شناختی نشانات استعمال کریں۔</translation>
+        <translation type="unfinished">خالی اوتار کے بجائے شناختی نشانات استعمال کریں</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3478,37 +3453,37 @@ Hide formatting characters:
     <message>
         <source>Notify</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اطلاع دیں۔</translation>
+        <translation type="unfinished">اطلاع دیں</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنسیں صرف اس وقت مطلع کرتی ہیں جب ذکر کیا جاتا ہے۔</translation>
+        <translation type="unfinished">کانفرنسیں صرف اس وقت مطلع کرتی ہیں جب ذکر کیا جاتا ہے</translation>
     </message>
     <message>
         <source>Play sound</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">آواز چلائیں۔</translation>
+        <translation type="unfinished">آواز چلائیں</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">مصروفیت کے دوران آواز چلائیں۔</translation>
+        <translation type="unfinished">مصروفیت کے دوران آواز چلائیں</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ڈیسک ٹاپ اطلاعات کے ذریعے مطلع کریں۔</translation>
+        <translation type="unfinished">ڈیسک ٹاپ اطلاعات کے ذریعے مطلع کریں</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پیغام بھیجنے والے اور مواد کو چھپائیں۔</translation>
+        <translation type="unfinished">پیغام بھیجنے والے اور مواد کو چھپائیں</translation>
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنسوں میں رنگین عرفی نام استعمال کریں۔</translation>
+        <translation type="unfinished">کانفرنسوں میں رنگین عرفی نام استعمال کریں</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
@@ -3550,19 +3525,19 @@ Hide formatting characters:
         <translation type="unfinished">ڈیسک ٹاپ اطلاعات میں ممکنہ طور پر خفیہ معلومات دکھائے بغیر صرف &quot;نیا پیغام&quot; دکھائیں۔</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">فرینڈ لسٹ اور چیٹ ونڈو کو الگ الگ حرکت پذیر ونڈوز میں تقسیم کریں۔</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">متنی ایموجیز کو متن کی بجائے رنگین تصویروں کے طور پر دکھائیں یا سیاہ/سفید فونٹ سے پیش کردہ ایموجیز۔</translation>
+        <translation type="unfinished">متنی ایموجیز کو متن یا سیاہ/سفید فونٹ والے ایموجیز کی بجائے رنگین تصویروں کے طور پر دکھائیں۔</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ایموجیز کو رینڈر کرتے وقت تصویروں کا کون سا سیٹ استعمال کرنا ہے۔</translation>
+        <translation type="unfinished">ایموجیز دکھاتے وقت تصویروں کا کون سا سیٹ استعمال کرنا ہے، منتخب کریں۔</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
@@ -3587,7 +3562,7 @@ Hide formatting characters:
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">اگر دستیاب ہو تو سسٹم کے لیے مخصوص نوٹیفکیشن بیک اینڈ استعمال کریں۔</translation>
+        <translation type="unfinished">اگر دستیاب ہو تو سسٹم کے لیے مخصوص نوٹیفکیشن بیک اینڈ استعمال کریں</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
@@ -3602,8 +3577,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پیغامات کی زیادہ سے زیادہ تعداد (فی گفتگو) چیٹ کی سرگزشت سے لوڈ کی گئی
 ہے۔ کارکردگی کو بہتر بنانے کے لیے اسے کم کریں۔ یہاں بہت کم تعداد اسکرول
@@ -3612,12 +3587,11 @@ scroll bar to disappear.</source>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">زیادہ سے زیادہ چیٹ لاگ
-دیکھنے کا سائز</translation>
+        <translation type="unfinished">چیٹ لاگ دکھانے کا زیادہ سے زیادہ سائز</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">اسکرول کرتے وقت چیٹ کی سرگزشت سے لوڈ ہونے والے پیغامات کی تعداد۔ یہاں بہت
 کم تعداد اسکرول بار کے غائب ہونے کا سبب بن سکتی ہے۔</translation>
@@ -3633,9 +3607,9 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">چیٹ لاگ:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کالعدم علامت کے بعد لاحقہ چھپائیں</translation>
+        <translation type="unfinished">NUL حرف کے بعد کا متن چھپائیں</translation>
     </message>
 </context>
 <context>
@@ -3666,7 +3640,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Edit</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ترمیم کریں۔</translation>
+        <translation type="unfinished">ترمیم کریں</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3687,7 +3661,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حیثیت</translation>
+        <translation type="unfinished">اسٹیٹس</translation>
     </message>
     <message>
         <source>Your name</source>
@@ -3712,7 +3686,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>By Activity</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بذریعہ سرگرمی</translation>
+        <translation type="unfinished">سرگرمی کے لحاظ سے</translation>
     </message>
     <message>
         <source>All</source>
@@ -3732,7 +3706,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوستو</translation>
+        <translation type="unfinished">دوست</translation>
     </message>
     <message>
         <source>Conferences</source>
@@ -3742,25 +3716,25 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">رابطے تلاش کریں۔</translation>
+        <translation type="unfinished">رابطے تلاش کریں</translation>
     </message>
     <message>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دکھائیں۔</translation>
+        <translation type="unfinished">دکھائیں</translation>
     </message>
     <message>
         <source>Add friend</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست شامل کریں۔</translation>
+        <translation type="unfinished">دوست شامل کریں</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">کانفرنس کی دعوت</translation>
+        <translation type="unfinished">کانفرنس کے دعوت نامے</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3799,32 +3773,32 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n نئی دوستی کی درخواست</numerusform>
+            <numerusform>%n نئی دوستی کی درخواستیں</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n نیا کانفرنس دعوت نامہ</numerusform>
+            <numerusform>%n نئے کانفرنس دعوت نامے</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">باہر نکلیں۔</translation>
+        <translation type="unfinished">باہر نکلیں</translation>
     </message>
     <message>
         <source>Change status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">حیثیت تبدیل کریں۔</translation>
+        <translation type="unfinished">اسٹیٹس تبدیل کریں</translation>
     </message>
     <message>
         <source>Edit profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پروفائل میں ترمیم کریں۔</translation>
+        <translation type="unfinished">پروفائل میں ترمیم کریں</translation>
     </message>
     <message>
         <source>Logout</source>

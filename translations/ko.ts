@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>사용안함</translation>
+        <translation>사용 안 함</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation>지역선택</translation>
+        <translation>영역 선택</translation>
     </message>
     <message>
         <source>Screen %1</source>
@@ -25,7 +25,7 @@
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation>오디오설정</translation>
+        <translation>오디오 설정</translation>
     </message>
     <message>
         <source>Gain</source>
@@ -37,7 +37,7 @@
     </message>
     <message>
         <source>Capture device</source>
-        <translation>캡쳐 장치</translation>
+        <translation>캡처 장치</translation>
     </message>
     <message>
         <source>Volume</source>
@@ -45,23 +45,11 @@
     </message>
     <message>
         <source>Video Settings</source>
-        <translation>비디오설정</translation>
+        <translation>비디오 설정</translation>
     </message>
     <message>
         <source>Video device</source>
         <translation>비디오 장치</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>카메라의 해상도를 설정합니다.
-값이 높을수록 친구가 얻을 수 있는 비디오 품질이 향상됩니다.
-더 나은 비디오 품질을 위해서는 더 나은 인터넷 연결이 필요합니다.
-때때로 연결 상태가 좋지 않아 더 높은 화질을 처리할 수 없어 화상 통화에
-문제가 발생할 수 있습니다.</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -73,31 +61,31 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation>사운드검사</translation>
+        <translation>소리 테스트</translation>
     </message>
     <message>
         <source>Audio quality</source>
-        <translation>오디오 음질</translation>
+        <translation>오디오 품질</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>높음(64kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>높음 (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>중간(32kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>중간 (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>낮음 (16kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>낮음 (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>아주 낮음 (8kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>아주 낮음 (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation>한계점</translation>
+        <translation>임계값</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
@@ -118,9 +106,9 @@ which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">카메라의 해상도를 설정하세요.
 값이 높을수록 친구들이 더 나은 비디오 품질을 얻을 수 있습니다.
-비디오 품질이 향상되면 더 많은 대역폭을 사용하게 됩니다.
-때때로 연결 상태가 더 높은 비디오 품질을 처리하기에 충분하지 않을 수 있습니다.
-화상 통화에 문제가 발생할 수 있습니다.</translation>
+비디오 품질이 높아지면 더 많은 대역폭을 사용하게 됩니다.
+때로는 연결 상태가 높은 비디오 품질을 감당하지 못해
+화상 통화에 문제가 생길 수 있습니다.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -149,11 +137,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
-        <translation>qTox 버젼 %1 사용중.</translation>
+        <translation>qTox 버전 %1을(를) 사용 중입니다.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>Commit hash: %1</translation>
+        <translation>커밋 해시: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -161,42 +149,42 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Qt version: %1</source>
-        <translation>Qt version: %1</translation>
+        <translation>Qt 버전: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>%1 에서 qTox의 알려진 문제들을 확인할 수 있습니다. 버그나 보안 취약점을 발견하면 %2 위키 가이드라인에 따라 %3.</translation>
+        <translation>알려진 모든 문제 목록은 GitHub의 %1에서 확인할 수 있습니다. qTox에서 버그나 보안 취약점을 발견하면 %2 위키 문서의 지침에 따라 보고해 주세요.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation>버그 제출하기.</translation>
+        <translation>버그를 신고하려면 여기를 클릭하세요.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation type="unfinished">%1의 전체 리스트 보기</translation>
+        <translation type="unfinished">GitHub에서 %1 전체 목록 보기</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">버그추적</translation>
+        <translation type="unfinished">버그 트래커</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">버그 리포트 작성</translation>
+        <translation type="unfinished">유용한 버그 보고서 작성법</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">contributors</translation>
+        <translation type="unfinished">기여자</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 버전의 qTox는 원래 qTox 프로젝트를 보관한 후 TokTok 팀에서 유지 관리하고 있습니다.</translation>
+        <translation type="unfinished">이 버전의 qTox는 원래 qTox 프로젝트가 보관된 후 TokTok 팀이 유지 관리하고 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -204,15 +192,15 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">설정된 경우 연락처의 파일을 자동으로 수락합니다.</translation>
+        <translation type="unfinished">설정하면 이 연락처의 파일을 자동으로 수락합니다</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
-        <translation type="unfinished">파일 저장 폴더:</translation>
+        <translation type="unfinished">파일을 저장할 기본 폴더:</translation>
     </message>
     <message>
         <source>Manual</source>
-        <translation type="unfinished">설명서</translation>
+        <translation type="unfinished">수동</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -225,10 +213,10 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">설정된 경우 이 연락처의 회의 초대를 자동으로 수락합니다.</translation>
+        <translation type="unfinished">설정하면 이 연락처의 회의 초대를 자동으로 수락합니다.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation type="unfinished">기록 삭제하기 (삭제된 기록은 복구할 수 없습니다!)</translation>
     </message>
     <message>
@@ -242,17 +230,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>History removed</source>
-        <translation>기록 삭제</translation>
+        <translation>기록이 삭제되었습니다</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이것은 친구의 공개 키입니다. 다른 채널을 통해 친구의 신원을 확인하는 데 사용하세요. 이 연락처를 추가할 수 있도록 다른 사람에게 보낼 수는 없습니다.</translation>
+        <translation type="unfinished">이것은 친구의 공개 키입니다. 다른 채널을 통해 친구의 신원을 확인하는 데 사용하세요. 이것을 다른 사람에게 보내도 그 사람이 이 연락처를 추가할 수는 없습니다.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">공개 키(ToxID 아님):</translation>
+        <translation type="unfinished">공개 키 (Tox ID 아님):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -260,9 +248,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">확인</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 채팅 기록을 삭제하시겠습니까?</translation>
+        <translation type="unfinished">%1님과의 채팅 기록을 삭제하시겠습니까?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -290,9 +278,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">회의 초대 자동 수락</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 연락처에 대한 의견을 여기에 저장할 수 있습니다.</translation>
+        <translation type="unfinished">이 연락처에 대한 메모를 여기에 저장할 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -308,7 +296,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Authors</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">저자</translation>
+        <translation type="unfinished">작성자</translation>
     </message>
     <message>
         <source>Known Issues</source>
@@ -322,7 +310,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Update available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">업데이트 가능</translation>
+        <translation type="unfinished">업데이트 있음</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
@@ -347,7 +335,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>친구 요청하기</translation>
+        <translation>친구 요청 보내기</translation>
     </message>
     <message>
         <source>Friend requests</source>
@@ -366,8 +354,8 @@ which may lead to problems with video calls.</source>
         <translation>친구를 추가할 수 없습니다</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
-        <translation>친구의 Tox 아이디를 입력</translation>
+        <source>Type in your friend&apos;s Tox ID</source>
+        <translation>친구의 Tox ID를 입력하세요</translation>
     </message>
     <message>
         <source>Friend request message</source>
@@ -375,7 +363,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation>친구요청 메시지를 입력하세요</translation>
+        <translation>친구 요청과 함께 보낼 메시지를 입력하거나, 기본 메시지를 보내려면 비워 두세요</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -424,13 +412,13 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>친구 요청을 보냄</translation>
+        <translation>친구 요청 보내기</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 여기요! 어쩌면 나에게 해를 끼치나요?</translation>
+        <translation type="unfinished">%1입니다! Tox에서 대화할까요?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -455,10 +443,10 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Tox ID, 76개의 16진수 문자</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID가잘못되었습니다</translation>
+        <translation type="unfinished">%1은(는) 잘못된 Tox ID입니다</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -476,17 +464,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Advanced</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">고급의</translation>
+        <translation type="unfinished">고급</translation>
     </message>
     <message>
         <source>really</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">정말</translation>
+        <translation type="unfinished">정말로</translation>
     </message>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">~ 아니다</translation>
+        <translation type="unfinished">않도록</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -495,11 +483,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation>설정초기화</translation>
+        <translation>설정 초기화</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation>모든 설정을 초기화 하시겠습니까?</translation>
+        <translation>모든 설정이 기본값으로 초기화됩니다. 계속하시겠습니까?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -516,7 +504,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 자신이 무엇을 하고 있는지 알지 못한다면 %2 여기에서 무엇이든 변경하십시오. 여기서 변경하면 qTox에 문제가 발생할 수 있으며 심지어 데이터가 손실될 수도 있습니다. 기록.%3</translation>
+        <translation type="unfinished">무엇을 하는지 %1 알고 있는 경우가 아니라면, 여기서는 아무것도 바꾸지 %2 해 주세요. 여기서 변경하면 qTox에 문제가 생기거나 기록 같은 데이터를 잃을 수도 있습니다.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -542,23 +530,23 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">일반적인 conf 디렉토리 대신 작업 디렉토리에 설정을 저장하십시오.</translation>
+        <translation type="unfinished">일반 설정 디렉터리 대신 작업 디렉터리에 설정을 저장합니다</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox를 휴대 가능하게 만드세요</translation>
+        <translation type="unfinished">Tox를 포터블로 사용</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
-        <translation>설정초기화</translation>
+        <translation>설정 초기화</translation>
     </message>
     <message>
         <source>Portable</source>
-        <translation>이동가능</translation>
+        <translation>포터블</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
@@ -587,16 +575,16 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Enable IPv6 (recommended)</source>
         <extracomment>Text on a checkbox to enable IPv6</extracomment>
-        <translation>IPv6사용 (권장)</translation>
+        <translation>IPv6 사용 (권장)</translation>
     </message>
     <message>
         <source>Enable UDP (recommended)</source>
         <extracomment>Text on checkbox to disable UDP</extracomment>
-        <translation>UDP사용 (권장)</translation>
+        <translation>UDP 사용 (권장)</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation>프록시 형태:</translation>
+        <translation>프록시 유형:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -638,7 +626,7 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이를 비활성화하면 예를 들어 Tox over Tor가 허용됩니다. 그러나 Tox 네트워크에 부하가 추가되므로 필요한 경우에만 선택을 취소하세요.</translation>
+        <translation type="unfinished">이 옵션을 끄면 예를 들어 Tor를 통한 Tox 사용이 가능합니다. 하지만 Tox 네트워크에 부하가 늘어나므로 필요할 때만 해제하세요.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -656,12 +644,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Starts new instance and loads specified profile.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">새 인스턴스를 시작하고 지정된 프로필을 로드합니다.</translation>
+        <translation type="unfinished">새 인스턴스를 시작하고 지정한 프로필을 불러옵니다.</translation>
     </message>
     <message>
         <source>profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">윤곽</translation>
+        <translation type="unfinished">프로필</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
@@ -669,28 +657,20 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">새 인스턴스를 시작하고 로그인 화면을 엽니다.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6를 &lt;on&gt;/&lt;off&gt;로 설정합니다. 기본값은 켜짐입니다.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6를 켜거나 끕니다: %1. 기본값: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP를 &lt;on&gt;/&lt;off&gt;로 설정합니다. 기본값은 켜짐입니다.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP를 켜거나 끕니다: %1. 기본값: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN 검색을 &lt;on&gt;/&lt;off&gt;로 설정합니다. UDP 꺼짐이 재정의됩니다. 기본값은 켜짐입니다.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN 검색을 켜거나 끕니다: %1. UDP가 꺼져 있으면 적용되지 않습니다. 기본값: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">프록시 설정을 설정합니다. 기본값은 없음입니다.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">프록시를 설정합니다. 기본값: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -699,7 +679,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Failed to load profile automatically.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">프로필을 자동으로 로드하지 못했습니다.</translation>
+        <translation type="unfinished">프로필을 자동으로 불러오지 못했습니다.</translation>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
@@ -709,7 +689,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">휴대용 모드에서 시작됩니다. 이 디렉터리에서 프로필을 로드합니다.</translation>
+        <translation type="unfinished">포터블 모드로 시작합니다. 이 디렉터리에서 프로필을 불러옵니다.</translation>
     </message>
     <message>
         <source>path</source>
@@ -726,7 +706,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation>%1을 열 수 없습니다</translation>
+        <translation>qTox가 %1을(를) 열 수 없습니다</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -734,12 +714,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Bad idea</source>
-        <translation>좋지않은 의견</translation>
+        <translation>좋지 않은 생각</translation>
     </message>
     <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
-        <translation>필요한 임시 파일을 만들 수 없습니다</translation>
+        <translation>임시 파일을 열 수 없습니다</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
@@ -749,7 +729,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">통화 시간:</translation>
+        <translation type="unfinished">통화 시간: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -758,7 +738,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">순차 파일을 보내려고 하는데 작동하지 않습니다!</translation>
+        <translation type="unfinished">순차 파일을 보내려고 하고 있습니다. 이는 작동하지 않습니다!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -769,8 +749,8 @@ which may lead to problems with video calls.</source>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">잘못된 문자는 _로 변경되었습니다.
-그러면 Windows에 파일을 저장할 수 있습니다.</translation>
+        <translation type="unfinished">Windows에서 파일을 저장할 수 있도록
+잘못된 문자를 _로 바꿨습니다.</translation>
     </message>
 </context>
 <context>
@@ -807,15 +787,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">비디오 통화 종료</translation>
+        <translation type="unfinished">영상 통화 종료</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">비디오 통화 취소</translation>
+        <translation type="unfinished">영상 통화 취소</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation type="unfinished">비디오 통화 수락</translation>
+        <translation type="unfinished">영상 통화 수락</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -829,7 +809,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>음소거 전화</translation>
+        <translation>통화 음소거</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -851,7 +831,7 @@ so you can save the file on Windows.</source>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">그룹채팅 #%1</translation>
+        <translation type="unfinished">회의 #%1</translation>
     </message>
 </context>
 <context>
@@ -907,12 +887,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">위치를 쓸 수 없음</translation>
+        <translation type="unfinished">쓸 수 없는 위치</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">해당 위치에 쓸 수 있는 권한이 없습니다. 다른 것을 선택하거나 저장 대화 상자를 취소하세요.</translation>
+        <translation type="unfinished">해당 위치에 쓸 권한이 없습니다. 다른 위치를 선택하거나 저장을 취소하세요.</translation>
     </message>
 </context>
 <context>
@@ -928,7 +908,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">무음</translation>
+        <translation type="unfinished">음소거</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -938,14 +918,14 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">피어 ID 복사</translation>
+        <translation type="unfinished">참가자 ID 복사</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">그룹</translation>
+        <translation type="unfinished">회의</translation>
     </message>
     <message>
         <source>Create new conference</source>
@@ -954,7 +934,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">그룹 초대</translation>
+        <translation type="unfinished">회의 초대</translation>
     </message>
 </context>
 <context>
@@ -962,17 +942,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1이(가) %2, %3에 초대했습니다.</translation>
+        <translation type="unfinished">%2 %3에 %1님이 초대했습니다.</translation>
     </message>
     <message>
         <source>Join</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">가입하다</translation>
+        <translation type="unfinished">참가</translation>
     </message>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">감소</translation>
+        <translation type="unfinished">거절</translation>
     </message>
 </context>
 <context>
@@ -990,13 +970,13 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 창에서 채팅 삭제</translation>
+        <translation type="unfinished">이 창에서 채팅 제거</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">회의 종료</translation>
+        <translation type="unfinished">회의 나가기</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -1021,12 +1001,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/나에게 우정을 제안합니다, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me 님의 친구 요청: &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">회의%1</translation>
+        <translation type="unfinished">회의 %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1061,7 +1041,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto-reload</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">자동 재장전</translation>
+        <translation type="unfinished">자동 새로고침</translation>
     </message>
     <message>
         <source>Auto-scroll</source>
@@ -1087,7 +1067,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation>수신수락</translation>
+        <translation>수락하여 이 파일 받기</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1131,13 +1111,13 @@ so you can save the file on Windows.</source>
     <message>
         <source>Save a file</source>
         <comment>Title of the file saving dialog</comment>
-        <translation>파일보관</translation>
+        <translation>파일 저장</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">원격 일시중지됨</translation>
+        <translation type="unfinished">상대방이 일시중지함</translation>
     </message>
 </context>
 <context>
@@ -1178,12 +1158,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Never</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">절대</translation>
+        <translation type="unfinished">없음</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">6개월 이상</translation>
+        <translation type="unfinished">6개월 이상 전</translation>
     </message>
 </context>
 <context>
@@ -1191,7 +1171,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>그룹 초대</translation>
+        <translation>회의에 초대</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1217,17 +1197,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove chat from this window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 창에서 채팅 삭제</translation>
+        <translation type="unfinished">이 창에서 채팅 제거</translation>
     </message>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">새로운 회의로</translation>
+        <translation type="unfinished">새 회의로</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&apos;%1&apos; 회의에 초대</translation>
+        <translation type="unfinished">&quot;%1&quot; 회의에 초대</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1238,7 +1218,7 @@ so you can save the file on Windows.</source>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 친구의 파일을 자동으로 수락합니다.</translation>
+        <translation type="unfinished">이 친구의 파일 자동 수락</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1257,12 +1237,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Away</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">떨어져 있는</translation>
+        <translation type="unfinished">자리 비움</translation>
     </message>
     <message>
         <source>Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">바쁘다</translation>
+        <translation type="unfinished">다른 용무 중</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1283,7 +1263,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">막힌</translation>
+        <translation type="unfinished">차단됨</translation>
     </message>
 </context>
 <context>
@@ -1316,7 +1296,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Language:</source>
-        <translation>현시언어:</translation>
+        <translation>언어:</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
@@ -1327,12 +1307,12 @@ so you can save the file on Windows.</source>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">라이트 트레이 아이콘을 활성화합니다.</translation>
+        <translation type="unfinished">밝은 트레이 아이콘을 사용합니다.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">조명 아이콘</translation>
+        <translation type="unfinished">밝은 아이콘</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
@@ -1348,7 +1328,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">트레이에 가깝습니다.</translation>
+        <translation type="unfinished">닫을 때 트레이로</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
@@ -1375,13 +1355,13 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">비활성화하려면 0으로 설정하세요.</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">일정 기간 동안 활동이 없으면 상태가 자리 비움으로 변경됩니다.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>이후 자동 자리비움 (비활성화: 0):</translation>
+        <translation>다음 시간 후 자동 자리 비움 (0은 사용 안 함):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1422,19 +1402,19 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">최소화(_)를 누르면 qTox가 트레이로 최소화되고,
-시스템 작업 표시줄 대신.</translation>
+        <translation type="unfinished">최소화(_)를 누르면 qTox가 작업 표시줄 대신
+트레이로 최소화됩니다.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">닫기(X)를 누르면 qTox가 트레이를 닫고,
-완전히 닫는 대신.</translation>
+        <translation type="unfinished">닫기(X)를 누르면 qTox가 완전히 종료되지 않고
+트레이로 최소화됩니다.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">개별 친구를 마우스 오른쪽 버튼으로 클릭하여 친구별로 설정할 수 있습니다.</translation>
@@ -1452,7 +1432,7 @@ instead of closing entirely.</source>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">번역을 도와주세요</translation>
+        <translation type="unfinished">번역 돕기</translation>
     </message>
     <message>
         <source> min</source>
@@ -1470,7 +1450,7 @@ instead of closing entirely.</source>
     <message>
         <source>Smileys</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">스마일</translation>
+        <translation type="unfinished">이모티콘</translation>
     </message>
     <message>
         <source>Send file(s)</source>
@@ -1484,7 +1464,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation type="unfinished">채팅 기록을 저장</translation>
+        <translation type="unfinished">채팅 기록 저장</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1509,7 +1489,7 @@ instead of closing entirely.</source>
     <message>
         <source>Search in text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">텍스트로 검색</translation>
+        <translation type="unfinished">텍스트에서 검색</translation>
     </message>
     <message>
         <source>Go to current date</source>
@@ -1518,7 +1498,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Load chat history...</source>
-        <translation type="unfinished">채팅 기록을 불러오는중...</translation>
+        <translation type="unfinished">채팅 기록 불러오기...</translation>
     </message>
     <message>
         <source>Export to file</source>
@@ -1562,16 +1542,16 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>로그아웃</translation>
     </message>
     <message>
         <source>Remove password</source>
-        <translation>계정 비밀번호 삭제</translation>
+        <translation>비밀번호 삭제</translation>
     </message>
     <message>
         <source>Change password</source>
-        <translation>계정 비밀번호 변경</translation>
+        <translation>비밀번호 변경</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
@@ -1638,7 +1618,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">귀하의 Tox ID</translation>
+        <translation type="unfinished">내 Tox ID</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1705,12 +1685,12 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">로드 기록 대화 상자</translation>
+        <translation type="unfinished">기록 불러오기 대화 상자</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">다음에서 기록 로드:</translation>
+        <translation type="unfinished">기록 불러오기 위치:</translation>
     </message>
 </context>
 <context>
@@ -1728,7 +1708,7 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">확인하다:</translation>
+        <translation type="unfinished">확인:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -1748,17 +1728,17 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load automatically</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">자동으로 로드</translation>
+        <translation type="unfinished">자동으로 불러오기</translation>
     </message>
     <message>
         <source>Load</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">짐</translation>
+        <translation type="unfinished">불러오기</translation>
     </message>
     <message>
         <source>Load Profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">프로필 로드</translation>
+        <translation type="unfinished">프로필 불러오기</translation>
     </message>
     <message>
         <source>New Profile</source>
@@ -1788,7 +1768,7 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비밀번호로 보호된 프로필은 자동으로 로드할 수 없습니다.</translation>
+        <translation type="unfinished">비밀번호로 보호된 프로필은 자동으로 불러올 수 없습니다.</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1797,12 +1777,12 @@ You may want to create one.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">선택한 프로필이 없습니다.
 
-하나를 만들고 싶을 수도 있습니다.</translation>
+새로 만들어 보세요.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">이 프로필을 로드할 수 없습니다.</translation>
+        <translation type="unfinished">이 프로필을 불러올 수 없습니다.</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
@@ -1817,7 +1797,7 @@ You may want to create one.</source>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">수입</translation>
+        <translation type="unfinished">가져오기</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1827,7 +1807,7 @@ You may want to create one.</source>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비밀번호 입력 필드는 비워두거나(비밀번호 없음) 6자 이상 입력할 수 있습니다.</translation>
+        <translation type="unfinished">비밀번호 입력 필드. 비워 두거나(비밀번호 없음) 6자 이상 입력하세요</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1837,7 +1817,7 @@ You may want to create one.</source>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">새 프로필 버튼 만들기</translation>
+        <translation type="unfinished">새 프로필 만들기 버튼</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1857,7 +1837,7 @@ You may want to create one.</source>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">자동으로 로드 확인란</translation>
+        <translation type="unfinished">자동으로 불러오기 확인란</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1867,7 +1847,7 @@ You may want to create one.</source>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">선택한 프로필 로드 버튼</translation>
+        <translation type="unfinished">선택한 프로필 불러오기 버튼</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1877,7 +1857,7 @@ You may want to create one.</source>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">기존 프로필 페이지 로드 중</translation>
+        <translation type="unfinished">기존 프로필 불러오기 페이지</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1896,7 +1876,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">여기에 입력하는 비밀번호는 선택사항이며 메시지 데이터와 Tox 비밀 키를 암호화합니다. 수신된 파일은 암호화하지 않습니다. 귀하의 프로필 데이터는 어떤 서버로도 전송되지 않습니다. 이것은 원격 로그인이 아니며, 귀하의 컴퓨터에만 로컬로 로그인됩니다. qTox 개발자는 비밀번호를 분실한 경우 복구할 수 없습니다.</translation>
+        <translation type="unfinished">여기에 입력하는 비밀번호는 선택 사항이며 메시지 데이터와 Tox 비밀 키를 암호화합니다. 받은 파일은 암호화하지 않습니다. 프로필 데이터는 어떤 서버로도 전송되지 않습니다. 원격 로그인이 아니며, 이 컴퓨터에서만 쓰입니다. 비밀번호를 잃어버리면 qTox 개발자도 복구할 수 없습니다.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1931,7 +1911,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Close</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">닫다</translation>
+        <translation type="unfinished">닫기</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -1960,7 +1940,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Set availability status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">가용성 상태 설정</translation>
+        <translation type="unfinished">상태 설정</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -1970,7 +1950,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">알려진 친구에 대한 연락처 검색 입력</translation>
+        <translation type="unfinished">친구 중에서 연락처 검색</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1980,7 +1960,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">친구 정렬 및 공개 설정</translation>
+        <translation type="unfinished">친구 정렬 및 표시 설정</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -1995,12 +1975,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">컨퍼런스 관리 페이지 열기</translation>
+        <translation type="unfinished">회의 관리 페이지 열기</translation>
     </message>
     <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">파일 전송 내역</translation>
+        <translation type="unfinished">파일 전송 기록</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
@@ -2040,12 +2020,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">실행파일</translation>
+        <translation type="unfinished">실행 파일</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">실행파일을 열기하는것은 위험할 수 있습니다. 파일을 열기하시겠습니까?</translation>
+        <translation type="unfinished">qTox에 실행 파일을 열도록 요청했습니다. 실행 파일은 컴퓨터에 해를 끼칠 수 있습니다. 이 파일을 여시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -2053,7 +2033,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">톡스 영상</translation>
+        <translation type="unfinished">Tox 영상</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2063,7 +2043,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비디오 미리보기 전환</translation>
+        <translation type="unfinished">비디오 미리보기 켜기/끄기</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -2077,7 +2057,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">비디오 통화 종료</translation>
+        <translation type="unfinished">영상 통화 종료</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -2101,13 +2081,13 @@ Press Shift+F1 for more information.</source>
         <source>View</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">보다</translation>
+        <translation type="unfinished">보기</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">창문</translation>
+        <translation type="unfinished">창</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -2157,7 +2137,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">수신 파일 전송</translation>
+        <translation type="unfinished">파일 전송 수신</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -2168,7 +2148,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">컨퍼런스 초대를 받았습니다</translation>
+        <translation type="unfinished">회의 초대를 받았습니다</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2178,25 +2158,25 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">친구 요청이 접수되었습니다</translation>
+        <translation type="unfinished">친구 요청을 받았습니다</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1로부터 친구 요청을 받았습니다</translation>
+        <translation type="unfinished">%1님에게서 친구 요청을 받았습니다</translation>
     </message>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">전화 수신</translation>
+        <translation type="unfinished">걸려 온 전화</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock 활성화됨</translation>
+        <translation type="unfinished">Caps Lock이 켜져 있습니다</translation>
     </message>
 </context>
 <context>
@@ -2204,7 +2184,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Privacy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">은둔</translation>
+        <translation type="unfinished">개인 정보</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -2223,7 +2203,7 @@ Press Shift+F1 for more information.</source>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">당신이 입력하는 것을 친구들이 볼 수 있습니다.</translation>
+        <translation type="unfinished">입력 중일 때 친구들이 알 수 있습니다.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
@@ -2241,13 +2221,13 @@ People will be unable to add you with your old ID, but you will keep your curren
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">NoSpam은 Tox ID의 일부입니다.
-친구 요청으로 스팸을 받고 있다면 NoSpam을 변경해야 합니다.
-사람들은 이전 ID로 귀하를 추가할 수 없지만 귀하는 현재 친구를 유지하게 됩니다.</translation>
+친구 요청 스팸을 받고 있다면 NoSpam을 변경하세요.
+이전 ID로는 나를 추가할 수 없게 되지만, 현재 친구는 그대로 유지됩니다.</translation>
     </message>
     <message>
         <source>NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">스팸 없음</translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
@@ -2259,7 +2239,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Generate random NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">무작위 NoSpam 생성</translation>
+        <translation type="unfinished">NoSpam 무작위 생성</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
@@ -2267,12 +2247,12 @@ Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">채팅 기록 보관은 아직 개발 중입니다.
-저장 형식을 변경할 수 있으며 이로 인해 데이터가 손실될 수 있습니다.</translation>
+저장 형식이 바뀔 수 있으며, 그러면 데이터가 손실될 수 있습니다.</translation>
     </message>
     <message>
         <source>Privacy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">은둔</translation>
+        <translation type="unfinished">개인 정보</translation>
     </message>
     <message>
         <source>Conference block list</source>
@@ -2295,12 +2275,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox에 중독</translation>
+        <translation type="unfinished">qTox로 Tox 하는 중</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">데이터베이스 비밀번호를 변경할 수 없습니다. 데이터베이스 비밀번호가 손상되었거나 이전 비밀번호를 사용하고 있을 수 있습니다.</translation>
+        <translation type="unfinished">데이터베이스 비밀번호를 변경할 수 없습니다. 데이터베이스가 손상되었거나 이전 비밀번호를 사용하고 있을 수 있습니다.</translation>
     </message>
 </context>
 <context>
@@ -2328,12 +2308,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">현재 프로필:</translation>
+        <translation type="unfinished">현재 프로필: </translation>
     </message>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">제거하다</translation>
+        <translation type="unfinished">제거</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2360,7 +2340,7 @@ Please use another image.</source>
     <message>
         <source>Your profile does not have a password!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">귀하의 프로필에는 비밀번호가 없습니다!</translation>
+        <translation type="unfinished">프로필에 비밀번호가 없습니다!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2377,13 +2357,13 @@ Please use another image.</source>
         <source>Save</source>
         <comment>save qr image</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">구하다</translation>
+        <translation type="unfinished">저장</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QrCode 저장(*.png)</translation>
+        <translation type="unfinished">QR 코드 저장 (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2394,7 +2374,7 @@ Please use another image.</source>
     <message>
         <source>Change password</source>
         <comment>button text</comment>
-        <translation type="unfinished">계정 비밀번호 변경</translation>
+        <translation type="unfinished">비밀번호 변경</translation>
     </message>
     <message>
         <source>Set profile password</source>
@@ -2411,11 +2391,6 @@ Please use another image.</source>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">비밀번호를 변경할 수 없습니다.</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">빈 경로를 사용할 수 없습니다.</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2438,9 +2413,9 @@ Please use another image.</source>
         <translation type="unfinished">빈 이름</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">빈 이름을 사용할 수 없습니다.</translation>
+        <translation type="unfinished">이름은 비워 둘 수 없습니다.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2457,7 +2432,7 @@ Please use another image.</source>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox 저장 파일(*.tox)</translation>
+        <translation type="unfinished">Tox 프로필 파일 (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2488,14 +2463,14 @@ Please use another image.</source>
         <translation type="unfinished">선택한 파일을 저장할 수 없습니다.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">빈 경로를 사용할 수 없습니다.</translation>
+        <translation type="unfinished">경로는 비워 둘 수 없습니다.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">데이터베이스 비밀번호를 변경할 수 없습니다. 데이터베이스 비밀번호가 손상되었거나 이전 비밀번호를 사용하고 있을 수 있습니다.</translation>
+        <translation type="unfinished">데이터베이스 비밀번호를 변경할 수 없습니다. 데이터베이스가 손상되었거나 이전 비밀번호를 사용하고 있을 수 있습니다.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2511,7 +2486,7 @@ Please use another image.</source>
     <message>
         <source>Remove password</source>
         <comment>deletion confirmation title</comment>
-        <translation type="unfinished">계정 비밀번호 삭제</translation>
+        <translation type="unfinished">비밀번호 삭제</translation>
     </message>
     <message>
         <source>Are you sure you want to remove your password?</source>
@@ -2543,7 +2518,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox 저장 파일(*.tox)</translation>
+        <translation type="unfinished">Tox 프로필 파일 (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
@@ -2555,7 +2530,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">경고: Tox 저장 파일이 아닌 파일을 선택했습니다. 묵살.</translation>
+        <translation type="unfinished">경고: Tox 프로필 파일이 아닌 파일을 선택했습니다. 무시합니다.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2564,10 +2539,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">프로필이 이미 존재합니다.</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&quot;%1&quot;이라는 프로필이 이미 존재합니다. 지우고 싶나요?</translation>
+        <translation type="unfinished">&quot;%1&quot;이라는 프로필이 이미 존재합니다. 덮어쓰시겠습니까?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2587,15 +2562,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1.tox was successfully imported</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1.tox를성공적으로가져왔습니다</translation>
+        <translation type="unfinished">%1.tox를 가져왔습니다</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">좋아요</translation>
+        <translation type="unfinished">확인</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2667,7 +2642,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">제비꽃</translation>
+        <translation type="unfinished">보라색</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2677,7 +2652,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 여기요! 어쩌면 나에게 해를 끼치나요?</translation>
+        <translation type="unfinished">%1입니다! Tox에서 대화할까요?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2696,12 +2671,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox가 귀하의 채팅 로그를 열 수 없습니다. 비활성화됩니다.</translation>
+        <translation type="unfinished">qTox가 채팅 로그를 열 수 없어 로그를 사용하지 않습니다.</translation>
     </message>
     <message>
         <source>Dark</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">어두운</translation>
+        <translation type="unfinished">다크</translation>
     </message>
     <message>
         <source>Dark blue</source>
@@ -2711,7 +2686,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">다크 올리브</translation>
+        <translation type="unfinished">진한 올리브</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2737,7 +2712,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>busy</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">바쁘다</translation>
+        <translation type="unfinished">다른 용무 중</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2748,7 +2723,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">막힌</translation>
+        <translation type="unfinished">차단됨</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -2773,7 +2748,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now known as %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1은(는) 이제 %2로 알려져 있습니다.</translation>
+        <translation type="unfinished">%1님의 이름이 %2(으)로 바뀌었습니다</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2798,17 +2773,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1님은 현재 %2</translation>
+        <translation type="unfinished">%1님은 이제 %2 상태입니다</translation>
     </message>
     <message>
         <source>Calling %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1에전화걸기</translation>
+        <translation type="unfinished">%1님에게 전화 거는 중</translation>
     </message>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 통화 중</translation>
+        <translation type="unfinished">%1님의 전화</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2837,17 +2812,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Finished</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">완성된</translation>
+        <translation type="unfinished">완료</translation>
     </message>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">고장난</translation>
+        <translation type="unfinished">중단됨</translation>
     </message>
     <message>
         <source>Canceled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">취소</translation>
+        <translation type="unfinished">취소됨</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2855,9 +2830,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">일시중지됨</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">원격 일시중지됨</translation>
+        <translation type="unfinished">상대방이 일시중지함</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2867,12 +2842,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">연락하다</translation>
+        <translation type="unfinished">연락처</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">진전</translation>
+        <translation type="unfinished">진행률</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2906,7 +2881,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Failed to load chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">채팅 기록을 로드하지 못했습니다.</translation>
+        <translation type="unfinished">채팅 기록을 불러오지 못했습니다.</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
@@ -2939,7 +2914,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">제거하다</translation>
+        <translation type="unfinished">제거</translation>
     </message>
 </context>
 <context>
@@ -2948,19 +2923,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">클릭하고 드래그하여 지역을 선택하세요. qTox 창을 숨기거나 표시하려면 %1을 누르고, 취소하려면 %2를 누르세요.</translation>
+        <translation type="unfinished">클릭하고 드래그하여 영역을 선택하세요. qTox 창을 숨기거나 표시하려면 %1을 누르고, 취소하려면 %2를 누르세요.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">공간</translation>
+        <translation type="unfinished">스페이스</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">탈출하다</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2972,7 +2947,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">입력하다</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3046,7 +3021,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">확인하다:</translation>
+        <translation type="unfinished">확인:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -3071,7 +3046,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비밀번호 입력 확인</translation>
+        <translation type="unfinished">비밀번호 확인 입력</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -3098,12 +3073,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Circle #%1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">원 #%1</translation>
+        <translation type="unfinished">서클 #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">개인 설정을 로드하지 못했습니다.</translation>
+        <translation type="unfinished">개인 설정을 불러오지 못했습니다.</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
@@ -3113,7 +3088,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">전역 설정을 로드하지 못했습니다.</translation>
+        <translation type="unfinished">전역 설정을 불러오지 못했습니다.</translation>
     </message>
 </context>
 <context>
@@ -3125,7 +3100,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>User ID:</source>
-        <translation type="unfinished">사용자 아이디:</translation>
+        <translation type="unfinished">사용자 ID:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
@@ -3135,7 +3110,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Send</source>
         <comment>Send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">보내다</translation>
+        <translation type="unfinished">보내기</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -3174,7 +3149,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">크기:</translation>
+        <translation type="unfinished">크기: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3252,7 +3227,7 @@ Hide formatting characters:
     <message>
         <source>Place conferences at top of friend list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">친구 목록 상단에 회의를 배치하세요.</translation>
+        <translation type="unfinished">친구 목록 상단에 회의 배치</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
@@ -3322,7 +3297,7 @@ Hide formatting characters:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">빈 아바타 대신 ID를 사용하세요</translation>
+        <translation type="unfinished">빈 아바타 대신 아이덴티콘 사용</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3347,7 +3322,7 @@ Hide formatting characters:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">통화 중일 때 소리 재생</translation>
+        <translation type="unfinished">다른 용무 중일 때 소리 재생</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3391,12 +3366,12 @@ Hide formatting characters:
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">비활성화된 경우 상태가 통화 중일 때 알림 소리가 음소거됩니다(그러나 알림은 계속 표시됨).</translation>
+        <translation type="unfinished">비활성화하면 상태가 다른 용무 중일 때 알림 소리를 끕니다(알림은 계속 표시됨).</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">데스크톱 알림을 사용하세요. 알림 센터나 시스템 트레이에 있습니다. 이것이 없으면 알림은 깜박이는 트레이 아이콘으로만 표시됩니다.</translation>
+        <translation type="unfinished">데스크톱 알림을 사용합니다(예: 알림 센터나 시스템 트레이). 사용하지 않으면 알림은 깜박이는 트레이 아이콘으로만 표시됩니다.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3404,14 +3379,14 @@ Hide formatting characters:
         <translation type="unfinished">데스크톱 알림에 잠재적인 비밀 정보를 표시하지 않고 &quot;새 메시지&quot;만 표시합니다.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">친구 목록과 채팅창을 별도의 이동 가능한 창으로 분할합니다.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">텍스트 또는 흑백 글꼴 렌더링 이모티콘 대신 텍스트 이모티콘을 다채로운 그림으로 표시합니다.</translation>
+        <translation type="unfinished">텍스트 이모지를 텍스트나 흑백 글꼴 이모지 대신 컬러 그림으로 표시합니다.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
@@ -3456,11 +3431,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">채팅 기록에서 로드된 최대 메시지 수(대화당)입니다. 성능을 향상시키려면 이 값을 줄이세요. 숫자가 너무 낮으면 스크롤 막대가
-사라질 수 있습니다.</translation>
+        <translation type="unfinished">채팅 기록에서 불러올 최대 메시지 수(대화별)입니다.
+줄이면 성능이 좋아집니다. 너무 낮으면
+스크롤 막대가 사라질 수 있습니다.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
@@ -3468,8 +3444,8 @@ scroll bar to disappear.</source>
         <translation type="unfinished">최대 채팅 로그 보기 크기</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">스크롤할 때 채팅 기록에서 로드할 메시지 수입니다. 숫자가 너무 낮으면 스크롤 막대가 사라질 수 있습니다.</translation>
     </message>
@@ -3484,9 +3460,9 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">채팅 로그:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">널 기호 후 접미사를 숨 깁니다</translation>
+        <translation type="unfinished">NUL 문자 뒤의 텍스트 숨기기</translation>
     </message>
 </context>
 <context>
@@ -3500,13 +3476,13 @@ number here may cause the scroll bar to disappear.</source>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">떨어져 있는</translation>
+        <translation type="unfinished">자리 비움</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">바쁘다</translation>
+        <translation type="unfinished">다른 용무 중</translation>
     </message>
     <message>
         <source>File</source>
@@ -3529,7 +3505,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">콘택트 렌즈</translation>
+        <translation type="unfinished">연락처</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3541,12 +3517,12 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">새 그룹 만들기...</translation>
+        <translation type="unfinished">새 회의 만들기...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">새 서클 추가...</translation>
+        <translation type="unfinished">새 서클 만들기...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3577,7 +3553,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">그룹</translation>
+        <translation type="unfinished">회의</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3597,12 +3573,12 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>그룹 초대</translation>
+        <translation>회의 초대</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation>파일 이동</translation>
+        <translation>파일 전송</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3646,9 +3622,9 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">출구</translation>
+        <translation type="unfinished">종료</translation>
     </message>
     <message>
         <source>Change status</source>

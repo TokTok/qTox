@@ -124,11 +124,11 @@ void AboutFriendForm::onAcceptedClicked()
 
 void AboutFriendForm::onRemoveHistoryClicked()
 {
-    const bool retYes =
-        messageBoxManager.askQuestion(tr("Confirmation"),
-                                      tr("Are you sure to remove %1 chat history?").arg(about->getName()),
-                                      /* defaultAns = */ false, /* warning = */ true,
-                                      /* yesno = */ true);
+    const bool retYes = messageBoxManager.askQuestion(
+        tr("Confirmation"),
+        tr("Are you sure you want to remove the chat history with %1?").arg(about->getName()),
+        /* defaultAns = */ false, /* warning = */ true,
+        /* yesno = */ true);
     if (!retYes) {
         return;
     }

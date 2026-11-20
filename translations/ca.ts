@@ -58,19 +58,6 @@
         <translation type="unfinished">Dispositiu de vídeo</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Establiu la resolució de la vostra càmera.
-Com més alts siguin els valors, millor qualitat de vídeo podran rebre els vostres amics.
-Tingueu en compte que amb una millor qualitat de vídeo es necessita una millor connexió a Internet.
-De vegades, la vostra connexió pot no ser prou bona per gestionar una qualitat de vídeo superior,
-cosa que pot provocar problemes amb les trucades de vídeo.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Resolució</translation>
@@ -91,24 +78,24 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Qualitat de l&apos;àudio</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Alta (64 kBps)</translation>
+        <translation type="unfinished">Alta (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mitjana (32 kBps)</translation>
+        <translation type="unfinished">Mitjana (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Baixa (16 kBps)</translation>
+        <translation type="unfinished">Baixa (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Molt baixa (8 kBps)</translation>
+        <translation type="unfinished">Molt baixa (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -187,7 +174,7 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Versió de Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
@@ -199,13 +186,13 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Feu clic aquí per informar d&apos;un error.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Vegeu una llista completa de %1 a GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">seguiment d&apos;errors</translation>
@@ -261,7 +248,7 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Accepta automàticament les invitacions a conferències d&apos;aquest contacte si està activat.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Elimina l&apos;historial (l&apos;operació no es pot desfer!)</translation>
     </message>
@@ -281,14 +268,14 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Historial eliminat</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aquesta és la clau pública del vostre amic, utilitzeu-la per verificar la seva identitat mitjançant un altre canal. No podeu enviar-ho a altres persones perquè puguin afegir aquest contacte.</translation>
+        <translation type="unfinished">Aquesta és la clau pública del vostre amic; utilitzeu-la per verificar la seva identitat mitjançant un altre canal. Els altres no la poden utilitzar per afegir aquest contacte.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Clau pública (no ToxID):</translation>
+        <translation type="unfinished">Clau pública (no és el Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -296,9 +283,9 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Confirmació</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Esteu segur d&apos;eliminar l&apos;historial de xat de %1?</translation>
+        <translation type="unfinished">Segur que voleu eliminar l&apos;historial de xat amb %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -326,9 +313,9 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Accepta invitacions a conferències automàticament</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Podeu desar comentaris sobre aquest contacte aquí.</translation>
+        <translation type="unfinished">Podeu desar notes sobre aquest contacte aquí.</translation>
     </message>
 </context>
 <context>
@@ -412,7 +399,7 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Rebutja</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Escriviu el Tox ID del vostre amic</translation>
     </message>
@@ -485,7 +472,7 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 és aquí! Em vols afegir a Tox?</translation>
+        <translation type="unfinished">Sóc %1! Parlem per Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -511,10 +498,10 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Tox ID, 76 caràcters hexadecimals</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">El Tox ID %1 no és vàlid</translation>
+        <translation type="unfinished">%1 no és un Tox ID vàlid</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -604,7 +591,7 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Desa la configuració al directori de treball en comptes del directori de configuració habitual</translation>
@@ -742,28 +729,20 @@ cosa que pot provocar problemes amb les trucades de vídeo.</translation>
         <translation type="unfinished">Inicia una instància nova i obre la pantalla d&apos;inici de sessió.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Activa o desactiva l&apos;IPv6 &lt;on&gt;/&lt;off&gt;. El valor predeterminat és ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Activa o desactiva l&apos;IPv6: %1. Valor predeterminat: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Activa o desactiva l&apos;UDP &lt;on&gt;/&lt;off&gt;. El valor predeterminat és ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Activa o desactiva l&apos;UDP: %1. Valor predeterminat: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Activa o desactiva el descobriment de LAN &lt;on&gt;/&lt;off&gt;. Si l&apos;UDP està desactivat, aquest paràmetre s&apos;ignora. El valor predeterminat és ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Activa o desactiva el descobriment de LAN: %1. No té efecte si l&apos;UDP està desactivat. Valor predeterminat: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Estableix la configuració del servidor intermediari. El valor predeterminat és NONE.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Estableix el servidor intermediari. Valor predeterminat: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1032,7 +1011,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">copia l&apos;ID del parell</translation>
+        <translation type="unfinished">copia l&apos;ID del participant</translation>
     </message>
 </context>
 <context>
@@ -1240,10 +1219,10 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">Desa un fitxer</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pausat remotament</translation>
+        <translation type="unfinished">En pausa per l&apos;altra part</translation>
     </message>
 </context>
 <context>
@@ -1483,7 +1462,7 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">Tanca a la safata</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">L&apos;estat canviarà a Absent després d&apos;un període determinat d&apos;inactivitat.</translation>
     </message>
@@ -1554,7 +1533,7 @@ instead of closing entirely.</source>
 en lloc de tancar-se completament.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Podeu configurar-ho per a cada amic fent clic amb el botó dret sobre amics individuals.</translation>
@@ -1736,7 +1715,7 @@ El perfil no conté el vostre historial.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Tanca la sessió</translation>
     </message>
@@ -2193,7 +2172,7 @@ Premeu Maj+F1 per a més informació.</translation>
         <translation type="unfinished">Fitxer executable</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Heu demanat a qTox que obri un fitxer executable. Els fitxers executables poden danyar el vostre ordinador. Esteu segur que voleu obrir aquest fitxer?</translation>
@@ -2347,7 +2326,7 @@ Premeu Maj+F1 per a més informació.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Bloq Maj activat</translation>
     </message>
@@ -2436,7 +2415,7 @@ Si esteu rebent brossa amb sol·licituds d&apos;amistat, canvieu el NoSpam.</tra
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filtra els missatges de la conferència per les claus públiques dels membres de la conferència. Posa les claus públiques aquí, una per línia.</translation>
+        <translation type="unfinished">Filtra els missatges de la conferència per les claus públiques dels membres. Poseu les claus públiques aquí, una per línia.</translation>
     </message>
 </context>
 <context>
@@ -2452,7 +2431,7 @@ Si esteu rebent brossa amb sol·licituds d&apos;amistat, canvieu el NoSpam.</tra
         <translation type="unfinished">Sóc a qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">No s&apos;ha pogut canviar la contrasenya de la base de dades, és possible que estigui malmesa o que s&apos;utilitzi la contrasenya antiga.</translation>
     </message>
@@ -2520,7 +2499,7 @@ Utilitzeu una altra imatge.</translation>
         <translation type="unfinished">Desa</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Desa el codi QR (*.png)</translation>
@@ -2569,11 +2548,6 @@ Utilitzeu una altra imatge.</translation>
         <translation type="unfinished">No s&apos;ha pogut canviar la contrasenya</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">El camí buit no està disponible</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">S&apos;ha produït un error en reanomenar</translation>
@@ -2594,9 +2568,9 @@ Utilitzeu una altra imatge.</translation>
         <translation type="unfinished">Nom buit</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">El nom buit no està disponible</translation>
+        <translation type="unfinished">El nom no pot estar buit.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2644,12 +2618,12 @@ Utilitzeu una altra imatge.</translation>
         <translation type="unfinished">El fitxer que heu triat no s&apos;ha pogut desar.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">El camí buit no està disponible.</translation>
+        <translation type="unfinished">El camí no pot estar buit.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">No s&apos;ha pogut canviar la contrasenya de la base de dades, és possible que estigui malmesa o que s&apos;utilitzi la contrasenya antiga.</translation>
     </message>
@@ -2721,10 +2695,10 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <translation type="unfinished">El perfil ja existeix</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ja existeix un perfil amb el nom &quot;%1&quot;. El voleu esborrar?</translation>
+        <translation type="unfinished">Ja existeix un perfil amb el nom &quot;%1&quot;. El voleu substituir?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2756,7 +2730,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <translation type="unfinished">LTR</translation>
     </message>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">D&apos;acord</translation>
     </message>
@@ -2810,7 +2784,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 és aquí! Em vols afegir a Tox?</translation>
+        <translation type="unfinished">Sóc %1! Parlem per Tox?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2923,7 +2897,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">S&apos;està reformant el text...</translation>
+        <translation type="unfinished">S&apos;està reformatant el text...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2993,7 +2967,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La trucada s&apos;ha interromput perquè %1 s&apos;ha desconnectat inesperadament. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -3013,7 +2987,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Trencat</translation>
+        <translation type="unfinished">Interromput</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -3026,9 +3000,9 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
         <translation type="unfinished">En pausa</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pausat remotament</translation>
+        <translation type="unfinished">En pausa per l&apos;altra part</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3195,7 +3169,7 @@ Aquest ID inclou el codi NoSpam (en blau) i la suma de verificació (en gris).</
     <message>
         <source>Whole words only</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Només paraules sencerer</translation>
+        <translation type="unfinished">Només paraules senceres</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
@@ -3369,17 +3343,17 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">És possible que la nova preferència d&apos;estil de text no es carregui a l&apos;historial del xat fins que es reiniciï qTox.
+        <translation type="unfinished">És possible que la nova preferència d&apos;estil de text no s&apos;apliqui a l&apos;historial del xat fins que es reiniciï qTox.
 Afectarà els missatges nous immediatament.
 
 Text sense format:
-    No apliquis cap format als missatges.
+    No s&apos;aplica cap format als missatges.
     Ex. &quot;**text**&quot; es mostrarà com a &quot;**text**&quot;, no en negreta.
 Mostra els caràcters de format:
-    Aplica el format i mostra els caràcters.
+    S&apos;aplica el format i es mostren els caràcters.
     Ex. &quot;**text**&quot; es mostrarà com a &quot;**text**&quot;, en negreta.
 Amaga els caràcters de format:
-    Aplica el format i no mostris els caràcters.
+    S&apos;aplica el format i no es mostren els caràcters.
     Ex. &quot;**text**&quot; es mostrarà com a &quot;text&quot;, en negreta.</translation>
     </message>
     <message>
@@ -3416,7 +3390,7 @@ Amaga els caràcters de format:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Obre la finestra de qTox quan rebis un missatge nou i encara no n&apos;hi hagi cap d&apos;oberta.</translation>
+        <translation type="unfinished">Obre la finestra de qTox quan rebeu un missatge nou i encara no n&apos;hi hagi cap d&apos;oberta.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -3518,7 +3492,7 @@ Amaga els caràcters de format:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Les conferències només notifiquen quan s&apos;esmenta</translation>
+        <translation type="unfinished">Les conferències només notifiquen quan us esmenten</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3528,7 +3502,7 @@ Amaga els caràcters de format:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Reprodueix un so mentre estigueu ocupat</translation>
+        <translation type="unfinished">Reprodueix un so en estat Ocupat</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3585,7 +3559,7 @@ Amaga els caràcters de format:
         <translation type="unfinished">Només mostra &quot;missatge nou&quot; sense mostrar informació potencialment secreta a les notificacions d&apos;escriptori.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Divideix la llista d&apos;amics i la finestra de xat en finestres que es puguin moure per separat.</translation>
     </message>
@@ -3637,8 +3611,8 @@ Amaga els caràcters de format:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nombre màxim de missatges (per conversa) carregats des de l&apos;historial del xat.
 Reduïu-lo per millorar el rendiment. Un nombre massa baix aquí pot fer que la
@@ -3650,8 +3624,8 @@ barra de desplaçament desaparegui.</translation>
         <translation type="unfinished">Mida màxima de la vista del registre del xat</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Nombre de missatges a carregar de l&apos;historial del xat en desplaçar-se. Un nombre massa baix
 aquí pot fer que la barra de desplaçament desaparegui.</translation>
@@ -3667,9 +3641,9 @@ aquí pot fer que la barra de desplaçament desaparegui.</translation>
         <translation type="unfinished">Registre del xat:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Amaga el sufix després del símbol NULL</translation>
+        <translation type="unfinished">Amaga el text després d&apos;un caràcter NUL</translation>
     </message>
 </context>
 <context>
@@ -3823,7 +3797,7 @@ aquí pot fer que la barra de desplaçament desaparegui.</translation>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore no s&apos;ha pogut iniciar amb la vostra configuració de servidor intermediari. qTox no es pot executar; modifiqueu la configuració i torneu-ho a provar.</translation>
+        <translation type="unfinished">Toxcore no s&apos;ha pogut iniciar amb la vostra configuració de servidor intermediari. qTox no es pot executar; modifiqueu la configuració i reinicieu-lo.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3842,13 +3816,13 @@ aquí pot fer que la barra de desplaçament desaparegui.</translation>
         <source>%n new conference invite(s)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">
-            <numerusform>%n invitació a conferència nova</numerusform>
-            <numerusform>%n invitacions a conferències noves</numerusform>
+            <numerusform>%n invitació nova a una conferència</numerusform>
+            <numerusform>%n invitacions noves a conferències</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Surt</translation>
     </message>

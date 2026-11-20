@@ -52,18 +52,6 @@
         <translation>ビデオデバイス</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>カメラの解像度を設定します。
-大きい値だと、友人が見るビデオの品質がよくなります。
-ただ、ビデオの品質をよくするには、高速なインターネット接続も必要です。
-ご自身のインターネット接続が低速な場合、高品質のビデオ映像を送ることができずに
-ビデオ通話に影響が出る可能性があります。</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>解像度</translation>
     </message>
@@ -80,20 +68,20 @@ which may lead to problems with video calls.</source>
         <translation>音質</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>高 (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>高 (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>中 (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>中 (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>低 (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>低 (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>非常に低い (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>非常に低い (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -159,22 +147,22 @@ which may lead to problems with video calls.</source>
         <translation>Qt バージョン: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>既知の問題の一覧が Github の %1 で見つかるかもしれません。qTox のバグやセキュリティの脆弱性を発見したら、ウィキの %2 の記事のガイドラインに沿って報告してください。</translation>
+        <translation>既知の問題の一覧は GitHub の %1 にあります。qTox のバグやセキュリティの脆弱性を発見したら、ウィキの %2 の記事のガイドラインに沿って報告してください。</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>バグを報告するにはここをクリックしてください。</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Github で %1 の完全な一覧を参照</translation>
+        <translation>GitHub で %1 の完全な一覧を参照</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation>バグトラッカー</translation>
     </message>
@@ -197,7 +185,7 @@ which may lead to problems with video calls.</source>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>設定した場合、連絡先からのファイルを自動的に承認します</translation>
+        <translation>有効にすると、この連絡先からのファイルを自動的に受け入れます</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -217,10 +205,10 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>設定した場合、この連絡先からのグループチャットの招待を自動的に承認します。</translation>
+        <translation>有効にすると、この連絡先からの会議への招待を自動的に受け入れます。</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>履歴を削除 (元に戻せません！)</translation>
     </message>
     <message>
@@ -236,19 +224,19 @@ which may lead to problems with video calls.</source>
         <translation>履歴を削除しました</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>これは友人の公開キーです。別のチャネルで友人の身元を確認するために使用します。これを他の人に送信して、他の人がこの連絡先を追加することはできません。</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>これは友達の公開鍵です。別の経路で相手の身元を確認するのに使ってください。他の人に送っても、その人がこの連絡先を追加することはできません。</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>公開キー (ToxID ではありません):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>公開鍵 (Tox ID ではありません):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>確認</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translation>%1 のチャット履歴を削除してもよろしいですか?</translation>
     </message>
     <message>
@@ -261,7 +249,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation>この連絡先の自動受信は無効になっています</translation>
+        <translation>この連絡先の自動受け入れは無効です</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -269,11 +257,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation>グループへの招待を自動承認する</translation>
+        <translation>会議への招待を自動で受け入れる</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>この連絡先に関するコメントをここに保存できます。</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>この連絡先に関するメモをここに保存できます。</translation>
     </message>
 </context>
 <context>
@@ -300,7 +288,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Update available</source>
-        <translation>利用可能なアップデート</translation>
+        <translation>アップデートがあります</translation>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
@@ -308,14 +296,14 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation>現在、テストされていないかもしくは不安定なバージョンの qTox を実行しています</translation>
+        <translation>テストされていない不安定なバージョンの qTox を実行中です</translation>
     </message>
 </context>
 <context>
     <name>AddFriendForm</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>友達を登録できない</translation>
+        <translation>友達を追加できませんでした</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
@@ -331,7 +319,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>友達の承認要求</translation>
+        <translation>友達リクエスト</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -342,7 +330,7 @@ which may lead to problems with video calls.</source>
         <translation>拒否</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>友達の Tox ID を入力してください</translation>
     </message>
     <message>
@@ -356,7 +344,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation>自分自身を友達として登録することはできません！</translation>
+        <translation>自分自身を友達として追加することはできません！</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -419,12 +407,12 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation>Tox ID、16 進数の76文字</translation>
+        <translation>Tox ID (16 進数 76 文字)</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 Tox ID が無効です</translation>
+        <translation>%1 は無効な Tox ID です</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -448,7 +436,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>not</source>
-        <translation>ない</translation>
+        <translation>しない</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -476,7 +464,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>%1 が何をしているのかわからない場合は、ここで何かを %2 変更してください。ここで行われた変更は、qTox に問題を引き起こす可能性があり、さらにはデータの損失につながる可能性があります。例えば履歴など.%3</translation>
+        <translation>何をしているのか%1理解している場合を除き、ここでは何も変更%2でください。ここでの変更は qTox の問題や、履歴などのデータの損失につながる可能性があります。%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -500,13 +488,13 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>通常の設定ディレクトリではなく、カレントディレクトリに設定を保存</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Tox をポータブルとして扱う</translation>
+        <translation>Tox をポータブルにする</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -614,27 +602,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation>新しいインスタンスを開始して、ログイン画面を開いてください。</translation>
+        <translation>新しいインスタンスを起動して、ログイン画面を開きます。</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>IPv6のオンオフを設定します。デフォルトはオンです。</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>IPv6 を %1 に設定します。デフォルトは %2 です。</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>UDPの&lt;オン&gt;/&lt;オフ&gt;を設定します。デフォルトはオンです。</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>UDP を %1 に設定します。デフォルトは %2 です。</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>LAN検出の&lt;on&gt;/&lt;off&gt;を設定します。 UDP オフのオーバーライド。デフォルトはオンです。</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>LAN 検出を %1 に設定します。UDP がオフの場合は無効になります。デフォルトは %2 です。</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>プロキシ設定を行います。デフォルトは「なし」です。</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>プロキシ設定を行います。デフォルトは %1 です。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -650,7 +634,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
-        <translation>ポータブル モードで起動します。このディレクトリからプロファイルをロードします。</translation>
+        <translation>ポータブルモードで起動します。このディレクトリからプロファイルを読み込みます。</translation>
     </message>
     <message>
         <source>path</source>
@@ -696,7 +680,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>シーケンシャル ファイルを送信しようとしていますが、うまくいきません。</translation>
+        <translation>シーケンシャルファイルを送信しようとしていますが、これは送信できません！</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -705,8 +689,8 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation>使用できない文字は _ に変更されました
-Windows にファイルを保存できるようになります。</translation>
+        <translation>Windows でファイルを保存できるように、
+使用できない文字を _ に置き換えました。</translation>
     </message>
 </context>
 <context>
@@ -780,7 +764,7 @@ Windows にファイルを保存できるようになります。</translation>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation>グループチャット #%1</translation>
+        <translation>会議 #%1</translation>
     </message>
 </context>
 <context>
@@ -798,7 +782,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>%1 is typing</source>
-        <translation>%1 が入力しています</translation>
+        <translation>%1 が入力中</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -832,7 +816,7 @@ Windows にファイルを保存できるようになります。</translation>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">場所は書かれていません</translation>
+        <translation type="unfinished">書き込みできない場所</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
@@ -860,29 +844,29 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ピアIDをコピーする</translation>
+        <translation type="unfinished">参加者 ID をコピー</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>グループ</translation>
+        <translation>会議</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>新しいグループを作成</translation>
+        <translation>新しい会議を作成</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>グループ招待</translation>
+        <translation>会議への招待</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>%2 %3 に %1 さんに招待されました。</translation>
+        <translation>%2 %3 に %1 さんから招待されました。</translation>
     </message>
     <message>
         <source>Join</source>
@@ -910,7 +894,7 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>グループを終了</translation>
+        <translation>会議から退出</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -932,11 +916,11 @@ Windows にファイルを保存できるようになります。</translation>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me 友達リクエスト、&quot;%1&quot;</translation>
+        <translation>/me から友達リクエスト: 「%1」</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>グループ %1</translation>
+        <translation>会議 %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -956,7 +940,7 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation>友達はすでに追加されています</translation>
+        <translation>この友達はすでに追加されています</translation>
     </message>
 </context>
 <context>
@@ -991,7 +975,7 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation>承認してファイルを受け取る</translation>
+        <translation>承認してこのファイルを受け取る</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1033,9 +1017,9 @@ Windows にファイルを保存できるようになります。</translation>
         <translation>ファイルを保存</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
-        <translation>リモート停止中</translation>
+        <translation>相手が一時停止中</translation>
     </message>
 </context>
 <context>
@@ -1074,11 +1058,11 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Never</source>
-        <translation>しない</translation>
+        <translation>なし</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation>6か月以上古い</translation>
+        <translation>6 か月以上前</translation>
     </message>
 </context>
 <context>
@@ -1094,15 +1078,15 @@ Windows にファイルを保存できるようになります。</translation>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>グループに招待</translation>
+        <translation>会議に招待</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>新しいグループへ</translation>
+        <translation>新しい会議へ</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>グループ &apos;%1&apos; に招待</translation>
+        <translation>会議「%1」に招待</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1115,7 +1099,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>サークル &apos;%1&apos; から削除</translation>
+        <translation>サークル「%1」から削除</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1144,7 +1128,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation>多忙</translation>
+        <translation>取り込み中</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1161,7 +1145,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Blocked</source>
-        <translation>ブロックされました</translation>
+        <translation>ブロック中</translation>
     </message>
 </context>
 <context>
@@ -1213,7 +1197,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation>タスクトレイにアイコンを表示</translation>
+        <translation>システムトレイにアイコンを表示</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
@@ -1222,7 +1206,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>起動時、最小化しておく</translation>
+        <translation>トレイで起動</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
@@ -1230,11 +1214,11 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>閉じた際、トレイに最小化</translation>
+        <translation>閉じるとトレイに格納</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>この時間退席すると、ステータスを退席中に変更します。</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>一定時間操作がないと、ステータスを退席中に変更します。</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
@@ -1262,7 +1246,7 @@ Windows にファイルを保存できるようになります。</translation>
     </message>
     <message>
         <source>Check for updates</source>
-        <translation>アップデートをチェックする</translation>
+        <translation>アップデートを確認</translation>
     </message>
     <message>
         <source>Spell checking</source>
@@ -1280,24 +1264,24 @@ Windows にファイルを保存できるようになります。</translation>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>最小化 (_) を押すと、qTox がトレイに最小化されます。
-システムタスクバーの代わりに。</translation>
+        <translation>最小化 (_) を押すと、qTox はタスクバーではなく
+トレイに最小化されます。</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>閉じる (X) を押すと、qTox がトレイに最小化されます。
-完全に閉じるのではなく。</translation>
+        <translation>閉じる (X) を押すと、qTox は完全に終了せず
+トレイに最小化されます。</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation>個々の友達を右クリックして、友達ごとにこれを設定できます。</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>ユーザーがグループに参加またはグループから退出したときにチャット メッセージを追加する</translation>
+        <translation>ユーザーが会議に参加・退出したときにチャットにメッセージを表示する</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1305,7 +1289,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Help translate</source>
-        <translation>翻訳を手伝ってください</translation>
+        <translation>翻訳に協力する</translation>
     </message>
     <message>
         <source> min</source>
@@ -1388,7 +1372,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>この QR コードには、あなたの Tox ID が含まれています。これも友達と共有しても構いません。</translation>
+        <translation>この QR コードにはあなたの Tox ID が含まれています。友達と共有することもできます。</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1426,7 +1410,8 @@ instead of closing entirely.</source>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>自分の Tox プロファイルをファイルにエクスポートできます。プロファイルに履歴は含まれません。</translation>
+        <translation>自分の Tox プロファイルをファイルにエクスポートできます。
+プロファイルに履歴は含まれません。</translation>
     </message>
     <message>
         <source>Export</source>
@@ -1440,7 +1425,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>ログアウト</translation>
     </message>
     <message>
@@ -1454,7 +1439,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation>プロファイルのパスワードを削除し、暗号化を解除してください。</translation>
+        <translation>プロファイルからパスワードと暗号化を削除します。</translation>
     </message>
     <message>
         <source>Name input</source>
@@ -1528,7 +1513,7 @@ Share it with your friends to begin chatting.</source>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation>履歴ダイアログの読み込み</translation>
+        <translation>履歴読み込みダイアログ</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1599,7 +1584,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation>パスワードで保護されたプロファイルを自動的に読み込めません。</translation>
+        <translation>パスワードで保護されたプロファイルは自動的に読み込めません。</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1607,7 +1592,7 @@ Share it with your friends to begin chatting.</source>
 You may want to create one.</source>
         <translation>プロファイルが選択されていません。
 
-新しく作成しましょう。</translation>
+新しく作成できます。</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1635,7 +1620,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>新しいプロファイルを作成ボタン</translation>
+        <translation>新規プロファイル作成ボタン</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1667,7 +1652,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>既存のプロファイルを読み込み中ページ</translation>
+        <translation>既存プロファイルの読み込みページ</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1685,7 +1670,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation>ここで入力するパスワードはオプションで、メッセージ データと Tox 秘密キーを暗号化します。受信したファイルは暗号化されません。あなたのプロフィール データがサーバーに送信されることはありません。これはリモート ログインではなく、お使いのコンピュータのローカルに対してのみです。 qTox 開発者は、パスワードを紛失した場合は回復できません。</translation>
+        <translation>ここで入力するパスワードは任意で、メッセージデータと Tox の秘密鍵を暗号化します。受信したファイルは暗号化されません。プロファイルのデータがサーバーに送信されることはありません。これはリモートログインではなく、お使いのコンピューター内だけで使われます。パスワードを紛失しても、qTox の開発者は回復できません。</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1704,7 +1689,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>グループチャットを作成</translation>
+        <translation>会議を作成</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1740,7 +1725,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Set availability status</source>
-        <translation>利用可能なステータスを設定</translation>
+        <translation>在席状態を設定</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -1748,7 +1733,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>既存の友達に対する連絡先検索入力</translation>
+        <translation>友達の連絡先を検索</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1760,15 +1745,15 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Add friends page</source>
-        <translation>友達を追加ページを開く</translation>
+        <translation>「友達を追加」ページを開く</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation>グループチャット</translation>
+        <translation>会議</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>グループチャットメッセージページを開く</translation>
+        <translation>会議の管理ページを開く</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1811,7 +1796,7 @@ Press Shift+F1 for more information.</source>
         <translation>実行可能なファイル</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translation>qTox で実行可能なファイルを開こうとしています。実行可能なファイルはお使いのコンピューターに損害を与える可能性があります。このファイルを開いてもよろしいですか？</translation>
     </message>
@@ -1903,7 +1888,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>New conference message</source>
-        <translation>新しいグループメッセージ</translation>
+        <translation>新しい会議メッセージ</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1916,15 +1901,15 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>グループの招待を受けました</translation>
+        <translation>会議への招待を受け取りました</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation>%1 があなたをグループに招待しています。</translation>
+        <translation>%1 さんが会議に招待しています。</translation>
     </message>
     <message>
         <source>Friend request received</source>
-        <translation>フレンドリクエストを受け取りました</translation>
+        <translation>友達リクエストを受け取りました</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
@@ -1939,7 +1924,7 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translation>Caps Lock が有効になっています</translation>
     </message>
 </context>
@@ -1963,7 +1948,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation>自分が入力している場合に、そのことを友達が分かるようになります。</translation>
+        <translation>入力中であることが友達に表示されます。</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
@@ -1985,9 +1970,9 @@ Save format changes are possible, which may result in data loss.</source>
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>NoSpam は、自分の Tox ID の一部です。
-もし、あなたが不特定多数から友達リクエストを受け取るというスパム攻撃を受けたら、NoSpam を変更すべきです。
-他の人が古い Tox ID であなたを友達として追加できなくなりますが、現在の友達には影響しません。</translation>
+        <translation>NoSpam は Tox ID の一部です。
+友達リクエストのスパムを受けている場合は、NoSpam を変更してください。
+古い ID では追加できなくなりますが、今の友達はそのままです。</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -1996,8 +1981,8 @@ People will be unable to add you with your old ID, but you will keep your curren
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>NoSpam は、自由に変更可能な、自分の Tox ID の一部です。
-もし、あなたが不特定多数から友達リクエストを受け取るというスパム攻撃を受けたら、NoSpam を変更してください。</translation>
+        <translation>NoSpam は Tox ID の一部で、いつでも変更できます。
+友達リクエストのスパムを受けている場合は、NoSpam を変更してください。</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2009,25 +1994,25 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>ブラックリスト</translation>
+        <translation>会議のブロックリスト</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>グループメンバーの公開鍵によってグループメッセージをフィルターで除外します。ここに公開キーを 1 行に 1 つずつ入力します。</translation>
+        <translation>会議メンバーの公開鍵でメッセージを除外します。公開鍵を 1 行に 1 つずつ入力してください。</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>パスワードからキーを作成できませんでした。プロファイルは新しいパスワードを使用しません。</translation>
+        <translation>パスワードから鍵を導出できませんでした。プロファイルは新しいパスワードを使用しません。</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translation>qTox で tox しています</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation>データベースのパスワードを変更できませんでした。破損しているか、古いパスワードが使用されている可能性があります。</translation>
     </message>
 </context>
@@ -2043,7 +2028,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     </message>
     <message>
         <source>Choose a profile picture</source>
-        <translation>プロファイルの写真を選択</translation>
+        <translation>プロフィール画像を選択</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2083,7 +2068,7 @@ Please use another image.</source>
         <translation>保存</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>QR コードを保存 (*.png)</translation>
     </message>
@@ -2123,10 +2108,6 @@ Please use another image.</source>
         <translation>パスワードを変更できませんでした</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>空のパスは利用できません</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>名前を変更できませんでした</translation>
     </message>
@@ -2143,8 +2124,8 @@ Please use another image.</source>
         <translation>空の名前</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>空の名前は利用できません</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>名前を空にすることはできません。</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2158,7 +2139,7 @@ Please use another image.</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>Tox 保存ファイル (*.tox)</translation>
+        <translation>Tox プロファイルファイル (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2184,11 +2165,11 @@ Please use another image.</source>
         <translation>選択したファイルは保存できませんでした。</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
-        <translation>空のパスは使用できません。</translation>
+        <source>The path can&apos;t be empty.</source>
+        <translation>パスを空にすることはできません。</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation>データベースのパスワードを変更できませんでした。破損しているか、古いパスワードが使用されている可能性があります。</translation>
     </message>
     <message>
@@ -2198,7 +2179,7 @@ Please use another image.</source>
     <message>
         <source>Delete profile</source>
         <comment>deletion confirmation title</comment>
-        <translation>プロフィールの削除</translation>
+        <translation>プロファイルの削除</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -2231,17 +2212,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Tox 保存ファイル (*.tox)</translation>
+        <translation>Tox プロファイルファイル (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Tox のファイルではないものを無視します</translation>
+        <translation>Tox ファイル以外を無視</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>警告: Tox の保存ファイルではないものが選択されました。無視します。</translation>
+        <translation>警告: Tox プロファイルではないファイルが選択されたため、無視します。</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2249,9 +2230,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>プロファイルはすでに存在します</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>&quot;%1&quot; という名前のプロファイルはすでに存在します。消去しますか？</translation>
+        <translation>&quot;%1&quot; という名前のプロファイルはすでに存在します。上書きしますか？</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2267,13 +2248,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation>%1.tox を正しくインポートしました</translation>
+        <translation>%1.tox をインポートしました</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
@@ -2299,7 +2280,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">自動承認ディレクトリを選択してください</translation>
+        <translation type="unfinished">自動受け入れ先のディレクトリを選択してください</translation>
     </message>
 </context>
 <context>
@@ -2361,11 +2342,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Violet</source>
-        <translation>すみれ</translation>
+        <translation>紫</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation>お電話です…</translation>
+        <translation>着信中…</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -2400,7 +2381,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
-        <translation>多忙</translation>
+        <translation>取り込み中</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2410,12 +2391,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
-        <translation>ブロックされています</translation>
+        <translation>ブロック中</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
-        <translation>テキストのフォーマットを再設定しています...</translation>
+        <translation>テキストを再整形しています...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2423,15 +2404,15 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 がグループに参加しました</translation>
+        <translation>%1 が会議に参加しました</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 がグループから離脱しました</translation>
+        <translation>%1 が会議から退出しました</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation>%1 は %2 として知られるようになりました</translation>
+        <translation>%1 は %2 に名前を変更しました</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2452,7 +2433,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 は現在 %2 です</translation>
+        <translation>%1 は %2 になりました</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2460,7 +2441,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation>%1 呼び出し中</translation>
+        <translation>%1 から着信中</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2474,7 +2455,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 が予期せずオフラインになったため、通話は終了しました。 %2</translation>
+        <translation type="unfinished">%1 が予期せずオフラインになったため、通話は終了しました。%2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2490,7 +2471,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Broken</source>
-        <translation>壊れた</translation>
+        <translation>中断</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2501,8 +2482,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>一時停止</translation>
     </message>
     <message>
-        <source>Remote paused</source>
-        <translation>リモート一時停止中</translation>
+        <source>Paused by the other side</source>
+        <translation>相手が一時停止中</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2510,7 +2491,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Contact</source>
-        <translation>コンタクト</translation>
+        <translation>連絡先</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -2534,11 +2515,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>グループに参加しました</translation>
+        <translation>会議に参加しました</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>グループから退席しました</translation>
+        <translation>会議から退出しました</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2667,7 +2648,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>パスワードの強度: %p%</translation>
+        <translation>パスワード強度: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -2706,7 +2687,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load personal settings</source>
-        <translation>個人設定のロードに失敗しました</translation>
+        <translation>個人設定の読み込みに失敗しました</translation>
     </message>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
@@ -2714,7 +2695,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Failed to load global settings</source>
-        <translation>グローバル設定のロードに失敗しました</translation>
+        <translation>グローバル設定の読み込みに失敗しました</translation>
     </message>
 </context>
 <context>
@@ -2785,21 +2766,22 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">qTox が再起動するまで、新しいテキストスタイル設定は読み込まれない可能性があります。
-これは即座に新しいメッセージに反映されます..
-Plaintext:
-    Don&apos;t apply any formatting to messages.
-    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, not bold.
-Show formatting characters:
-    Apply formatting and show characters.
-    E.g. &quot;**text**&quot; will show as &quot;**text**&quot;, bold.
-Hide formatting characters:
-    Apply formatting and don&apos;t show characters.
-    E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</translation>
+        <translation type="unfinished">新しいテキストスタイルの設定は、qTox を再起動するまでチャット履歴に反映されない場合があります。
+新しいメッセージにはすぐに反映されます。
+
+プレーンテキスト:
+    メッセージに書式を適用しません。
+    例: &quot;**テキスト**&quot; は太字ではなく &quot;**テキスト**&quot; と表示されます。
+書式記号を表示:
+    書式を適用し、記号も表示します。
+    例: &quot;**テキスト**&quot; は太字で &quot;**テキスト**&quot; と表示されます。
+書式記号を非表示:
+    書式を適用し、記号は表示しません。
+    例: &quot;**テキスト**&quot; は太字で &quot;テキスト&quot; と表示されます。</translation>
     </message>
     <message>
         <source>Text styling:</source>
-        <translation>テキストスタイルの書式:</translation>
+        <translation>テキストスタイル:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
@@ -2811,11 +2793,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation>書式付きの文字を表示</translation>
+        <translation>書式記号を表示</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation>書式付きの文字を表示しない</translation>
+        <translation>書式記号を非表示</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2836,12 +2818,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>友達リストの一番上にグループを表示</translation>
+        <translation>会議を友達リストの一番上に表示</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>連絡先リストがコンパクトに表示されます。</translation>
+        <translation>連絡先リストをコンパクトに表示します (小さいアバター、表形式)。</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2906,7 +2888,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>グループはメンションされた場合にのみ通知します</translation>
+        <translation>会議ではメンションされたときだけ通知</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2914,7 +2896,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>多忙の際に音声を再生</translation>
+        <translation>取り込み中でも音を鳴らす</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -2926,7 +2908,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation>グループでは色付きのニックネームを使用する</translation>
+        <translation>会議で色付きのニックネームを使う</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
@@ -2936,7 +2918,7 @@ Hide formatting characters:
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>オンにすると、グループは友達リストの一番上に配置され、そうでない場合は、オンラインの友達の下に配置されます。</translation>
+        <translation>オンにすると、会議は友達リストの一番上に、オフにするとオンラインの友達の下に表示されます。</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -2950,24 +2932,24 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
-        <translation>無効にすると、ステータスが多忙のときに通知音がミュートされます (ただし、通知は表示されます)</translation>
+        <translation>無効にすると、ステータスが取り込み中のときは通知音を鳴らしません (通知は表示されます)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation>デスクトップ通知を使用します。例:通知センターまたはシステム トレイで。これを行わないと、通知は点滅するトレイ アイコンとしてのみ表示されます。</translation>
+        <translation>デスクトップ通知を使用します (通知センターやシステムトレイなど)。使用しない場合、通知はトレイアイコンの点滅だけになります。</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">デスクトップ通知には機密情報の可能性は表示されず、「新しいメッセージ」のみが表示されます。</translation>
+        <translation type="unfinished">デスクトップ通知には「新しいメッセージ」とだけ表示し、秘密かもしれない情報は表示しません。</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation>フレンドリストとチャットウィンドウを別々に移動可能なウィンドウに分割します。</translation>
+        <source>Split friend list and chat window into separately movable windows.</source>
+        <translation>友達リストとチャットウィンドウを別々のウィンドウに分けます。</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
-        <translation>テキスト絵文字や白黒フォントでレンダリングされた絵文字の代わりに、テキスト絵文字をカラフルな画像として表示します。</translation>
+        <translation>テキストの絵文字を、テキストや白黒フォントの絵文字ではなくカラー画像で表示します。</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
@@ -2979,7 +2961,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation>UI に使用する基本スタイル。 qTox テーマと最適に機能するため Fusion が推奨されます。</translation>
+        <translation>UI に使用する基本スタイルです。qTox のテーマと最も相性が良いため、Fusion を推奨します。</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -2987,7 +2969,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation>無効にすると、基本的なシステム トレイ通知が使用されます。普通の場合は、デスクトップ通知を使用してみてください。デスクトップ通知に問題がある場合は、これを無効にしてください。</translation>
+        <translation>無効にすると、基本的なシステムトレイ通知を使用します。有効にすると、デスクトップ環境の通知バックエンドを使おうとします。デスクトップ通知に問題がある場合は無効にしてください。</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
@@ -3004,11 +2986,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">チャット履歴からロードされるメッセージ (会話あたり)
-の最大数。パフォーマンスを向上させるには、これを減らします。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
+        <translation type="unfinished">チャット履歴から読み込むメッセージの最大数 (会話ごと)。
+減らすとパフォーマンスが向上します。小さすぎると
+スクロールバーが消えることがあります。</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
@@ -3016,8 +2999,8 @@ scroll bar to disappear.</source>
         <translation type="unfinished">チャットログの最大表示サイズ</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">スクロール時にチャット履歴から読み込むメッセージの数。ここの数値が小さすぎると、スクロール バーが消えてしまう可能性があります。</translation>
     </message>
@@ -3032,9 +3015,9 @@ number here may cause the scroll bar to disappear.</source>
         <translation type="unfinished">チャットログ:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ヌル記号の後に接尾辞を非表示にします</translation>
+        <translation type="unfinished">NUL 文字以降のテキストを隠す</translation>
     </message>
 </context>
 <context>
@@ -3049,19 +3032,19 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>新しいグループを作成…</translation>
+        <translation>新しい会議を作成…</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>新しいサークルを追加…</translation>
+        <translation>新しいサークルを作成…</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation>名前</translation>
+        <translation>名前順</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation>アクティビティー</translation>
+        <translation>アクティビティ順</translation>
     </message>
     <message>
         <source>All</source>
@@ -3081,7 +3064,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>グループ</translation>
+        <translation>会議</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3100,7 +3083,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
-        <translation>多忙</translation>
+        <translation>取り込み中</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3136,7 +3119,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>グループ招待</translation>
+        <translation>会議への招待</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3175,12 +3158,12 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation>
-            <numerusform>%n 件の新しいグループへの招待</numerusform>
+            <numerusform>%n 件の新しい会議への招待</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>終了</translation>
     </message>
     <message>

@@ -19,7 +19,7 @@ PasswordEdit::PasswordEdit(QWidget* parent)
 
 #ifdef QTOX_PLATFORM_EXT
     action->setIcon(QIcon(":img/caps_lock.svg"));
-    action->setToolTip(tr("Caps-lock enabled"));
+    action->setToolTip(tr("Caps Lock is on"));
     addAction(action, QLineEdit::TrailingPosition);
 #endif
 }

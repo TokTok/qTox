@@ -13,11 +13,11 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Вимкнений</translation>
+        <translation>Вимкнено</translation>
     </message>
     <message>
         <source>Select region</source>
-        <translation>Виберіть регіон</translation>
+        <translation>Виберіть область</translation>
     </message>
     <message>
         <source>Screen %1</source>
@@ -49,19 +49,7 @@
     </message>
     <message>
         <source>Video device</source>
-        <translation>Відео пристрій</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Встановіть роздільну здатність вашої камери.
-Чим вище значення, тим кращу якість відео зможуть отримати ваші друзі.
-Зауважте, що з вищою якістю відео потрібен якісніший інтернет-зв&apos;язок.
-Іноді ваше з&apos;єднання може бути недостатньо хорошим, щоб передавати відео високої якості,
-що може призвести до проблем з відеодзвінками.</translation>
+        <translation>Відеопристрій</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -80,20 +68,20 @@ which may lead to problems with video calls.</source>
         <translation>Якість аудіо</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Висока (64 кБіт/с)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Висока (64 кбіт/с)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Середня (32 кБіт/с)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Середня (32 кбіт/с)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Низька (16 кБіт/с)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Низька (16 кбіт/с)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Дуже низька (8 кБіт/с)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Дуже низька (8 кбіт/с)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -121,11 +109,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation>Грати тестовий звук коли змінюється гучність виводу звуку.</translation>
+        <translation>Відтворювати тестовий звук під час зміни гучності.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
-        <translation>Використовуйте повзунок, щоб встановити коефіцієнт підсилення вашого вхідного пристрою в діапазоні від %1dB до %2dB.</translation>
+        <translation>Використовуйте повзунок, щоб встановити підсилення вашого вхідного пристрою в діапазоні від %1 дБ до %2 дБ.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -159,22 +147,22 @@ which may lead to problems with video calls.</source>
         <translation>Версія Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Список знаних проблем знаходиться на нашому %1 на GitHub. Якщо ви знайшли помилку або вразливість у qTox, будь ласка, повідомте про них згідно з інструкцією у нашій статті на вікі %2.</translation>
+        <translation>Список відомих проблем знаходиться на нашому %1 на GitHub. Якщо ви знайшли помилку або вразливість у qTox, будь ласка, повідомте про неї згідно з інструкцією у статті %2 на нашій вікі.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
-        <translation>Натисніть сюди, щоб повідомити про проблему з програмою.</translation>
+        <translation>Натисніть тут, щоб повідомити про помилку.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Переглянути повний список %1 на Github</translation>
+        <translation>Переглянути повний список %1 на GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation>баг-трекері</translation>
     </message>
@@ -197,7 +185,7 @@ which may lead to problems with video calls.</source>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Автоматично приймати файли від контакту, якщо встановлено</translation>
+        <translation>Автоматично приймати файли від цього контакту, якщо ввімкнено</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -220,7 +208,7 @@ which may lead to problems with video calls.</source>
         <translation>Автоматично приймати запрошення на конференції від цього контакту, якщо встановлено.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Видалити історію (операцію не можна скасувати!)</translation>
     </message>
     <message>
@@ -236,20 +224,20 @@ which may lead to problems with video calls.</source>
         <translation>Історія видалена</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Це відкритий (публічний) ключ вашого друга, використовуйте його, щоб підтвердити особистість друга через інший канал. Його не можна використовувати для надсилання іншим людям, щоб вони додали цей контакт.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>Це відкритий ключ вашого друга; використовуйте його, щоб перевірити особу друга через інший канал. Інші не зможуть за його допомогою додати цей контакт.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>Відкритий (публічний) ключ (не Tox ID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>Відкритий ключ (не Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>Підтвердження</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
-        <translation>Ви дійсно хочете видалити історію чату %1?</translation>
+        <source>Are you sure you want to remove the chat history with %1?</source>
+        <translation>Ви дійсно хочете видалити історію чату з %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -272,8 +260,8 @@ which may lead to problems with video calls.</source>
         <translation>Автоматичне прийняття запрошень на конференції</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>Ви можете зберігати коментарі про цей контакт тут.</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>Ви можете зберігати тут примітки про цей контакт.</translation>
     </message>
 </context>
 <context>
@@ -304,7 +292,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox is up to date ✓</source>
-        <translation>qTox оновлений ✓</translation>
+        <translation>У вас остання версія qTox ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
@@ -323,11 +311,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>Надіслати запит на дружбу</translation>
+        <translation>Надіслати запит на додавання в друзі</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Не можемо додати друга</translation>
+        <translation>Не вдалося додати друга</translation>
     </message>
     <message>
         <source>Friend requests</source>
@@ -342,8 +330,8 @@ which may lead to problems with video calls.</source>
         <translation>Відхилити</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
-        <translation>Впишіть Tox ID вашого друга</translation>
+        <source>Type in your friend&apos;s Tox ID</source>
+        <translation>Введіть Tox ID вашого друга</translation>
     </message>
     <message>
         <source>Friend request message</source>
@@ -364,16 +352,16 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Couldn&apos;t open file</source>
-        <translation>Помилка відкриття файлу</translation>
+        <translation>Не вдалося відкрити файл</translation>
     </message>
     <message>
         <source>Couldn&apos;t open the contact file</source>
         <extracomment>Error message when trying to open a contact list file to import</extracomment>
-        <translation>Помилка відкриття файлу контактів</translation>
+        <translation>Не вдалося відкрити файл контактів</translation>
     </message>
     <message>
         <source>Invalid file</source>
-        <translation>Неправильний файл</translation>
+        <translation>Недійсний файл</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
@@ -382,7 +370,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation>Ідентифікатор Tox</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -421,17 +409,17 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
-        <translation>Tox ID, 76 шестнадцатиричних (hex) символів</translation>
+        <translation>Tox ID, 76 шістнадцяткових символів</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 невірний Tox ID</translation>
+        <translation>%1 — неправильний Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
-        <translation>76 шестнадцатиричних (hex) символів</translation>
+        <translation>76 шістнадцяткових символів</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -442,11 +430,11 @@ which may lead to problems with video calls.</source>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation>Розширені</translation>
+        <translation>Додатково</translation>
     </message>
     <message>
         <source>really</source>
-        <translation>дійсно</translation>
+        <translation>не впевнені</translation>
     </message>
     <message>
         <source>not</source>
@@ -474,11 +462,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation>Логи (*.log)</translation>
+        <translation>Журнали (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>Якщо ви %1 що знаєте, що робите, будь ласка, %2 змінюйте тут щось. Зміни, зроблені тут, можуть призвести до проблем з qTox і навіть до втрати ваших даних, наприклад, історії чатів.%3</translation>
+        <translation>Якщо ви %1, що знаєте, що робите, будь ласка, %2 змінюйте тут нічого. Зміни, зроблені тут, можуть призвести до проблем з qTox і навіть до втрати ваших даних, наприклад історії чатів.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -486,7 +474,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Save file</source>
-        <translation>Файл збереження</translation>
+        <translation>Зберегти файл</translation>
     </message>
     <message>
         <source>Invalid proxy address</source>
@@ -500,13 +488,13 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>Зберігати налаштування в робочій теці замість звичайної теки конфігурацій</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Портативний запуск Tox</translation>
+        <translation>Портативний режим</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -570,19 +558,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation>Відладка</translation>
+        <translation>Налагодження</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
-        <translation>Експортувати логи відладки</translation>
+        <translation>Експортувати журнал налагодження</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
-        <translation>Скопіювати логи відладки</translation>
+        <translation>Скопіювати журнал налагодження</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation>Увімкнути виявлення локальної мережі (LAN)</translation>
+        <translation>Увімкнути виявлення в локальній мережі</translation>
     </message>
     <message>
         <source>Connection settings</source>
@@ -595,7 +583,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
-        <translation>Увімкнути Інструменти Відладки (тільки для розробників)</translation>
+        <translation>Увімкнути інструменти налагодження (лише для розробників)</translation>
     </message>
 </context>
 <context>
@@ -617,24 +605,20 @@ which may lead to problems with video calls.</source>
         <translation>Запускає новий екземпляр і відкриває екран входу.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює IPv6 &lt;on&gt;/&lt;off&gt;. За замовчуванням встановлено ON (УВІМКНУТО).</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>Вмикає або вимикає IPv6: %1. За замовчуванням: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює UDP &lt;on&gt;/&lt;off&gt;. За замовчуванням встановлено ON (УВІМКНУТО).</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>Вмикає або вимикає UDP: %1. За замовчуванням: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Встановлює виявлення локальної мережі (LAN) &lt;on&gt;/&lt;off&gt;. Перевизначає вимкнений UDP. За замовчуванням встановлено ON (УВІМКНЕНО).</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>Вмикає або вимикає виявлення в локальній мережі: %1. Не діє, якщо UDP вимкнено. За замовчуванням: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>Встановлює налаштування проксі-сервера. За замовчуванням встановлено NONE (НЕМАЄ).</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>Задає налаштування проксі. За замовчуванням: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -666,7 +650,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox wasn&apos;t able to open %1</source>
-        <translation>qTox не може відкрити файл %1</translation>
+        <translation>qTox не зміг відкрити %1</translation>
     </message>
     <message>
         <source>Unable to open</source>
@@ -683,7 +667,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
-        <translation>qTox не зміг зберегти скриншот</translation>
+        <translation>qTox не зміг зберегти знімок екрана</translation>
     </message>
     <message>
         <source>Call duration: </source>
@@ -704,7 +688,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation>Недозволені символи були змінені на _
+        <translation>Недозволені символи замінено на _,
 щоб ви могли зберегти файл у Windows.</translation>
     </message>
 </context>
@@ -752,7 +736,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
-        <translation>Звук можливо вимкнути лише під час дзвінка</translation>
+        <translation>Звук можна вимкнути лише під час дзвінка</translation>
     </message>
     <message>
         <source>Unmute call</source>
@@ -786,7 +770,7 @@ so you can save the file on Windows.</source>
     <name>ChatTextEdit</name>
     <message>
         <source>Type your message here...</source>
-        <translation>Наберіть Ваше повідомлення тут…</translation>
+        <translation>Введіть повідомлення тут…</translation>
     </message>
 </context>
 <context>
@@ -835,7 +819,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>У вас немає дозволу для запису в це місце. Виберіть інше, або скасуйте збереження діалогу.</translation>
+        <translation>У вас немає дозволу на запис у це місце. Виберіть інше або скасуйте збереження.</translation>
     </message>
 </context>
 <context>
@@ -845,7 +829,7 @@ so you can save the file on Windows.</source>
         <comment>Number of users in chat</comment>
         <translation>
             <numerusform>%n користувач у чаті</numerusform>
-            <numerusform>%n користувача в чаті</numerusform>
+            <numerusform>%n користувачі в чаті</numerusform>
             <numerusform>%n користувачів у чаті</numerusform>
         </translation>
     </message>
@@ -859,7 +843,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation>скопіювати ідентифікатор вузла</translation>
+        <translation>скопіювати ID учасника</translation>
     </message>
 </context>
 <context>
@@ -881,7 +865,7 @@ so you can save the file on Windows.</source>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Запрошений %1 на %2 в %3.</translation>
+        <translation>Запрошення від %1 надійшло %2 о %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -900,23 +884,23 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation>Видалити чат з цього вікна</translation>
+        <translation>Прибрати чат з цього вікна</translation>
     </message>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Вийти з групи</translation>
+        <translation>Вийти з конференції</translation>
     </message>
     <message>
         <source>Set title...</source>
-        <translation>Встановити заголовок…</translation>
+        <translation>Змінити назву…</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
             <numerusform>%n користувач у чаті</numerusform>
-            <numerusform>%n користувача в чаті</numerusform>
+            <numerusform>%n користувачі в чаті</numerusform>
             <numerusform>%n користувачів у чаті</numerusform>
         </translation>
     </message>
@@ -964,7 +948,7 @@ so you can save the file on Windows.</source>
     <name>DebugLog</name>
     <message>
         <source>Debug Log</source>
-        <translation>Лог налагодження</translation>
+        <translation>Журнал налагодження</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -979,7 +963,7 @@ so you can save the file on Windows.</source>
     <name>DebugLogForm</name>
     <message>
         <source>Debug Log</source>
-        <translation>Лог налагодження</translation>
+        <translation>Журнал налагодження</translation>
     </message>
 </context>
 <context>
@@ -987,12 +971,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation>Очікування передачі...</translation>
+        <translation>Очікування надсилання...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation>Підтвердіть щоб прийняти файл</translation>
+        <translation>Підтвердіть, щоб отримати цей файл</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1034,9 +1018,9 @@ so you can save the file on Windows.</source>
         <translation>Зберегти файл</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
-        <translation>Дистанційно призупинено</translation>
+        <translation>Призупинено співрозмовником</translation>
     </message>
 </context>
 <context>
@@ -1079,7 +1063,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation>Старше ніж 6 місяців</translation>
+        <translation>Старше 6 місяців</translation>
     </message>
 </context>
 <context>
@@ -1087,7 +1071,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Запросити до групи</translation>
+        <translation>Запросити на конференцію</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1095,7 +1079,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation>Видалити чат з цього вікна</translation>
+        <translation>Прибрати чат з цього вікна</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1108,7 +1092,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Видалити з кола &apos;%1&apos;</translation>
+        <translation>Видалити з кола &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1117,7 +1101,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation>Автоматично приймати файли від даного друга</translation>
+        <translation>Автоматично приймати файли від цього друга</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1149,7 +1133,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Запросити на конференцію &apos;%1&apos;</translation>
+        <translation>Запросити на конференцію &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1162,7 +1146,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation>Заблоковано</translation>
+        <translation>Заблокований</translation>
     </message>
 </context>
 <context>
@@ -1189,7 +1173,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation>Переклад буде застосовано після перезавантаження qTox.</translation>
+        <translation>Переклад може не завантажитися до перезапуску qTox.</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
@@ -1202,7 +1186,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Запускти qTox при завантаженні операційної системи (поточний профіль).</translation>
+        <translation>Запускати qTox під час завантаження операційної системи (поточний профіль).</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
@@ -1215,11 +1199,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>Закривати до лотку</translation>
+        <translation>Згортати в лоток при закритті</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>Мінімізувати до лотку</translation>
+        <translation>Згортати в лоток</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1230,8 +1214,8 @@ so you can save the file on Windows.</source>
         <translation>Вкажіть, куди саме зберігати файли.</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Ваш статус буде змінено на &quot;Відійшов/відійшла&quot; після вказаного проміжку часу.</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>Ваш статус буде змінено на &quot;Відійшов/відійшла&quot; після вказаного часу бездіяльності.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
@@ -1281,24 +1265,24 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>Після натиснення кнопки мінімізації (_) qTox буде мінімізовано до трею,
-замість системної панелі завдань.</translation>
+        <translation>Після натискання кнопки згортання (_) qTox буде згорнуто в лоток,
+а не на панель завдань.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>Після натискання закрити (X) qTox буде згорнуто до трею,
-замість того, щоб закритися повністю.</translation>
+        <translation>Після натискання кнопки закриття (X) qTox буде згорнуто в лоток,
+а не закрито повністю.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation>Ви можете встановити цей параметр для кожного друга, натискаючи правою кнопкою миші на окремих друзів.</translation>
+        <translation>Це можна налаштувати для кожного друга окремо, натиснувши на нього правою кнопкою миші.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation>Надсилати повідомлення в чат, коли користувач вступає в конференцію, або покидає її</translation>
+        <translation>Показувати повідомлення в чаті, коли користувач входить до конференції або виходить з неї</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1333,7 +1317,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Save chat log</source>
-        <translation>Зберегти чат</translation>
+        <translation>Зберегти журнал чату</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
@@ -1380,7 +1364,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation></translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1407,7 +1391,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Вийти</translation>
     </message>
     <message>
@@ -1438,7 +1422,7 @@ instead of closing entirely.</source>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation>Експортування</translation>
+        <translation>Експортувати</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
@@ -1455,11 +1439,11 @@ Profile does not contain your history.</source>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation>Прибрати Ваш пароль та шифрування з Вашого профілю.</translation>
+        <translation>Прибрати пароль і шифрування з вашого профілю.</translation>
     </message>
     <message>
         <source>Name input</source>
-        <translation>Поле вводу імені</translation>
+        <translation>Поле введення імені</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
@@ -1467,7 +1451,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Поле ввода статуса</translation>
+        <translation>Поле введення статусу</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
@@ -1522,14 +1506,14 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation>Встановити ваше повідомлення в статусі, яке буде показуватися іншим людям</translation>
+        <translation>Встановіть повідомлення статусу, яке бачитимуть інші</translation>
     </message>
 </context>
 <context>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation>Завантажити історію діалогу</translation>
+        <translation>Діалог завантаження історії</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1590,7 +1574,7 @@ So I think in this case more appropriate is &quot;Увійти&quot;, which mean
     </message>
     <message>
         <source>The username must not be empty.</source>
-        <translation>Ім&apos;я користувача не може бути пустим.</translation>
+        <translation>Ім&apos;я користувача не може бути порожнім.</translation>
     </message>
     <message>
         <source>The password must be at least 6 characters long.</source>
@@ -1606,11 +1590,11 @@ So I think in this case more appropriate is &quot;Увійти&quot;, which mean
 You may want to create one.</source>
         <translation>Не обрано жодного профілю.
 
-Можливо, Ви б хотіли створити його.</translation>
+Можливо, ви хочете створити новий.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation>Неможливо завантажити даний профіль</translation>
+        <translation>Не вдалося завантажити цей профіль</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
@@ -1622,7 +1606,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import</source>
-        <translation>Імпортування</translation>
+        <translation>Імпорт</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
@@ -1630,11 +1614,11 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Username input field</source>
-        <translation>Поле вводу для нікнейма</translation>
+        <translation>Поле введення імені користувача</translation>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation>Поле вводу пароля. Його можна залишити порожнім (без пароля) або встановити щонайменше 6 символів</translation>
+        <translation>Поле введення пароля. Його можна залишити порожнім (без пароля) або ввести щонайменше 6 символів</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1654,11 +1638,11 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Поле вводу пароля</translation>
+        <translation>Поле введення пароля</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation>Галочка для автоматичного завантаження</translation>
+        <translation>Прапорець автоматичного завантаження</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1666,15 +1650,15 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>Кнопка завантаження обраного профіля</translation>
+        <translation>Кнопка завантаження обраного профілю</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation>Сторінка створення нового профіля</translation>
+        <translation>Сторінка створення нового профілю</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>Сторінка завантаження існуючого профіля</translation>
+        <translation>Сторінка завантаження наявного профілю</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1692,7 +1676,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation>Пароль, який ви вводите тут, є необов&apos;язковим і шифрує дані повідомлень і ваш приватний (закритий) ключ Tox. Але він не шифрує отримані файли. Дані вашого профілю ніколи не надсилаються куди-небудь. І це не віддалений вхід у профіль, він відбувається лише локально, на вашому комп&apos;ютері. Розробники qTox не зможуть відновити ваш пароль, якщо він буде втрачений.</translation>
+        <translation>Пароль, який ви вводите тут, необов&apos;язковий і шифрує дані повідомлень та ваш секретний ключ Tox. Він не шифрує отримані файли. Дані вашого профілю ніколи не надсилаються на жодні сервери. Це не віддалений вхід: усе відбувається лише локально на вашому комп&apos;ютері. Розробники qTox не зможуть відновити ваш пароль, якщо ви його втратите.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1711,7 +1695,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Створіть конференцію</translation>
+        <translation>Створити конференцію</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1735,11 +1719,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Поле ввода статуса</translation>
+        <translation>Поле введення статусу</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation>Встановіть Ваш статус, який буде показано іншим</translation>
+        <translation>Встановіть повідомлення статусу, яке бачитимуть інші</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1755,7 +1739,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>Поле пошуку по друзям</translation>
+        <translation>Поле пошуку серед друзів</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1763,7 +1747,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation>Встановити сортування друзів та видимість</translation>
+        <translation>Налаштувати сортування та видимість друзів</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -1779,11 +1763,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>File transfers history</source>
-        <translation>Історія надісланих файлів</translation>
+        <translation>Історія передачі файлів</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
-        <translation>Відкрити історію надісланих файлів</translation>
+        <translation>Відкрити історію передачі файлів</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1795,15 +1779,15 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open internal debugging tools</source>
-        <translation>Відкриті внутрішні інструменти налагодження</translation>
+        <translation>Відкрити внутрішні інструменти налагодження</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation>Відладка</translation>
+        <translation>Налагодження</translation>
     </message>
     <message>
         <source>Open Debugger</source>
-        <translation>Відкрити Налагоджувач</translation>
+        <translation>Відкрити налагоджувач</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -1818,16 +1802,16 @@ Press Shift+F1 for more information.</source>
         <translation>Виконуваний файл</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation>Ви попросили qTox відкрити виконуваний файл. Виконавчі файли потенційно можуть завдати шкоди вашому комп&apos;ютеру. Ви впевнені, що хочете відкрити цей файл?</translation>
+        <translation>Ви попросили qTox відкрити виконуваний файл. Виконувані файли потенційно можуть завдати шкоди вашому комп&apos;ютеру. Ви впевнені, що хочете відкрити цей файл?</translation>
     </message>
 </context>
 <context>
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation>Tox відео</translation>
+        <translation>Відео Tox</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1835,7 +1819,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation>Переключити попередній перегляд відео</translation>
+        <translation>Показати/сховати попередній перегляд відео</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -1877,7 +1861,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
-        <translation>Мінімізувати</translation>
+        <translation>Згорнути</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
@@ -1899,7 +1883,7 @@ Press Shift+F1 for more information.</source>
         <source>Unread message(s)</source>
         <translation>
             <numerusform>%n непрочитане повідомлення</numerusform>
-            <numerusform>%n непрочитаних повідомлень</numerusform>
+            <numerusform>%n непрочитані повідомлення</numerusform>
             <numerusform>%n непрочитаних повідомлень</numerusform>
         </translation>
     </message>
@@ -1947,8 +1931,8 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>Сaps-lock увімкнений</translation>
+        <source>Caps Lock is on</source>
+        <translation>Caps Lock увімкнено</translation>
     </message>
 </context>
 <context>
@@ -1963,7 +1947,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation>Бажаєте назавжди видалити історію чату?</translation>
+        <translation>Бажаєте назавжди видалити всю історію чату?</translation>
     </message>
 </context>
 <context>
@@ -1975,7 +1959,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation>Надсилати сповіщення набирання повідомлення</translation>
+        <translation>Надсилати сповіщення про набір тексту</translation>
     </message>
     <message>
         <source>Keep chat history</source>
@@ -1986,9 +1970,9 @@ Press Shift+F1 for more information.</source>
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>АнтиСпам - це частина вашого Tox ID.
-Якщо ви отримуєте багато небажаних запитів дружби, то вам потрібно змінити АнтиСпам.
-Люди не зможуть додавати вас за вашим старим ID, але ваші поточні друзі збережуться.</translation>
+        <translation>АнтиСпам — це частина вашого Tox ID.
+Якщо вам надсилають спам у вигляді запитів на додавання в друзі, змініть АнтиСпам.
+Люди не зможуть додати вас за старим ID, але ваші поточні друзі залишаться.</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -1997,8 +1981,8 @@ People will be unable to add you with your old ID, but you will keep your curren
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>АнтиСпам - це частина вашого ID, що може бути змінена за бажанням.
-Якщо вас спамлять запитами дружби, змініть АнтиСпам.</translation>
+        <translation>АнтиСпам — це частина вашого ID, яку можна змінювати будь-коли.
+Якщо вам надсилають спам у вигляді запитів на додавання в друзі, змініть АнтиСпам.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2017,11 +2001,11 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Список блокування конференції</translation>
+        <translation>Список блокування конференцій</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation>Фільтруйте повідомлення в конференції через відкриті (публічні) ключі учасників конференції. Впишіть сюди відкриті (публічні) ключі, по одному на кожен рядок.</translation>
+        <translation>Приховувати повідомлення в конференціях за відкритими ключами учасників. Впишіть сюди відкриті ключі, по одному на рядок.</translation>
     </message>
 </context>
 <context>
@@ -2035,8 +2019,8 @@ Save format changes are possible, which may result in data loss.</source>
         <translation>Я використовую qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Не вдалося змінити пароль бази даних, вона може бути пошкоджена або використовується старий пароль.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Не вдалося змінити пароль бази даних: вона може бути пошкоджена або використовувати старий пароль.</translation>
     </message>
 </context>
 <context>
@@ -2078,15 +2062,15 @@ Please use another image.</source>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation>Неможливо перейменувати профіль в &quot;%1&quot;</translation>
+        <translation>Неможливо перейменувати профіль на &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
-        <translation>Немає що видаляти</translation>
+        <translation>Нічого видаляти</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>Ваш обліковий запис не захищений паролем!</translation>
+        <translation>Ваш профіль не захищений паролем!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2100,12 +2084,12 @@ Please use another image.</source>
     <message>
         <source>Save</source>
         <comment>save qr image</comment>
-        <translation>Збереження</translation>
+        <translation>Зберегти</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation>Зберегти Qr код (*.png)</translation>
+        <translation>Зберегти QR-код (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2120,7 +2104,7 @@ Please use another image.</source>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation>Встановити пароль</translation>
+        <translation>Встановити пароль профілю</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
@@ -2129,10 +2113,6 @@ Please use another image.</source>
     <message>
         <source>Couldn&apos;t change password</source>
         <translation>Не вдалося змінити пароль</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translation>Порожній шлях неприпустимий</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2144,14 +2124,14 @@ Please use another image.</source>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>Профіль з іменем користувача &quot;%1&quot; вже існує.</translation>
+        <translation>Профіль з іменем &quot;%1&quot; вже існує.</translation>
     </message>
     <message>
         <source>Empty name</source>
         <translation>Порожнє ім&apos;я</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translation>Порожнє ім&apos;я неприпустиме</translation>
     </message>
     <message>
@@ -2171,7 +2151,7 @@ Please use another image.</source>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation>Наступні файли не можуть бути видалені:</translation>
+        <translation>Не вдалося видалити такі файли:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
@@ -2185,23 +2165,23 @@ Please use another image.</source>
     </message>
     <message>
         <source>Failed to save file</source>
-        <translation>Збереження файлу не вдалося</translation>
+        <translation>Не вдалося зберегти файл</translation>
     </message>
     <message>
         <source>The file you chose could not be saved.</source>
-        <translation>Вибраний вами файл не може бути збережений.</translation>
+        <translation>Не вдалося зберегти вибраний вами файл.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translation>Порожній шлях неприпустимий.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Не вдалося змінити пароль бази даних, вона може бути пошкоджена або використовується старий пароль.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Не вдалося змінити пароль бази даних: вона може бути пошкоджена або використовувати старий пароль.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
-        <translation>Імена користувачів Tox не можуть містити більше %1 символів.</translation>
+        <translation>Імена користувачів Tox не можуть бути довшими за %1 символів.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2239,17 +2219,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Файл Tox (*.tox)</translation>
+        <translation>Файл профілю Tox (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Ігнорування не-Tox файлу</translation>
+        <translation>Пропуск файлу, що не є профілем Tox</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>Попередження: Ви вибрали файл, який не є файлом профілю Tox; ігнорування.</translation>
+        <translation>Попередження: вибраний файл не є профілем Tox; його пропущено.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2257,7 +2237,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Профіль вже існує</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translation>Профіль із назвою «%1» вже існує. Бажаєте перезаписати його?</translation>
     </message>
@@ -2281,8 +2261,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
-        <translation>Ок</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2323,14 +2303,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
-        <translation>%1 є неприпустимою Tox адресою.</translation>
+        <translation>%1 не є дійсною адресою Tox.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Default</source>
-        <translation>Типовий</translation>
+        <translation>За замовчуванням</translation>
     </message>
     <message>
         <source>Blue</source>
@@ -2357,7 +2337,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>That means &quot;Hi, I&apos;m %1! Please, add me to you contact list.
 It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian noun can&apos;t mean a verb (like &quot;call&quot; for noun and verb in English)</translatorcomment>
-        <translation>Привіт, я %1! Додай мене в свій список контактів, будь ласка?</translation>
+        <translation>Привіт, це %1! Додасте мене в друзі?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2365,7 +2345,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>qTox не може відкрити ваші чат логи, їх буде вимкнено.</translation>
+        <translation>qTox не може відкрити ваші журнали чату, їх буде вимкнено.</translation>
     </message>
     <message>
         <source>None</source>
@@ -2434,19 +2414,19 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 приєднався до конференції</translation>
+        <translation>%1 приєднався/приєдналася до конференції</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 покинув конференцію</translation>
+        <translation>%1 покинув/покинула конференцію</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation>%1 тепер відомий як %2</translation>
+        <translation>%1 тепер відомий/відома як %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation>%1 змінив заголовок на %2</translation>
+        <translation>%1 змінив/змінила назву на %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2467,7 +2447,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Calling %1</source>
-        <translation>Дзвінок %1</translation>
+        <translation>Виклик %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2479,12 +2459,12 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>%1 went offline during the call attempt</source>
-        <translation>%1 вийшов з мережі під час спроби дзвінка</translation>
+        <translation>%1 вийшов/вийшла з мережі під час спроби дзвінка</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Дзвінок був перерваний, оскільки %1 несподівано вийшов з мережі. %2</translation>
+        <translation>Дзвінок був перерваний, оскільки %1 несподівано вийшов/вийшла з мережі. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2500,7 +2480,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Broken</source>
-        <translation>Не вдалося</translation>
+        <translation>Перервано</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2511,8 +2491,8 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
         <translation>Призупинено</translation>
     </message>
     <message>
-        <source>Remote paused</source>
-        <translation>Дистанційно призупинено</translation>
+        <source>Paused by the other side</source>
+        <translation>Призупинено співрозмовником</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2540,7 +2520,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Control</source>
-        <translation>Управління</translation>
+        <translation>Керування</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
@@ -2567,7 +2547,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Коли встановлено, видаляти всю історію чату з другом</translation>
+        <translation>Видалити всю історію чату з другом, якщо позначено</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2602,7 +2582,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation>Натисніть %1, щоб надіслати скріншот вибраної області, %2, щоб приховати/показати вікно qTox, або %3, щоб скасувати.</translation>
+        <translation>Натисніть %1, щоб надіслати знімок вибраної області, %2, щоб приховати/показати вікно qTox, або %3, щоб скасувати.</translation>
     </message>
     <message>
         <source>Enter</source>
@@ -2680,7 +2660,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation>Паролі не співпадають.</translation>
+        <translation>Паролі не збігаються.</translation>
     </message>
     <message>
         <source>Confirm password</source>
@@ -2688,7 +2668,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation>Поле вводу підтвердження пароля</translation>
+        <translation>Поле введення підтвердження пароля</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -2764,7 +2744,7 @@ It&apos;s difficult to translate &quot;Tox me maybe&quot; because in Ukrainian n
     </message>
     <message>
         <source>User Interface</source>
-        <translation>Інтерфейс користувача</translation>
+        <translation>Інтерфейс</translation>
     </message>
 </context>
 <context>
@@ -2794,11 +2774,11 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation>Нові параметри стилю тексту можуть не завантажитися поки qTox не перезапуститься.
-Однак, це негайно вплине на нові повідомлення.
+        <translation>Нові параметри стилю тексту можуть не застосуватися до історії чату до перезапуску qTox.
+На нові повідомлення вони вплинуть одразу.
 
-Простий текст:
-    Не застосовувати будь-яке форматування до повідомлень.
+Звичайний текст:
+    Не застосовувати до повідомлень жодного форматування.
     Наприклад, &quot;**текст**&quot; відображатиметься як &quot;**текст**&quot;, не жирним шрифтом.
 Показувати символи форматування:
     Застосовувати форматування і показувати символи.
@@ -2809,7 +2789,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Text styling:</source>
-        <translation>Формат стилю тексту:</translation>
+        <translation>Стиль тексту:</translation>
     </message>
     <message>
         <source>Select text styling preference.</source>
@@ -2821,11 +2801,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation>Відображати символи форматування</translation>
+        <translation>Показувати символи форматування</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation>Не відображати символи форматування</translation>
+        <translation>Приховувати символи форматування</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2834,7 +2814,7 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation>Відкривати вікно qTox при отриманні нового повідомлення, якщо воно ще не було відкрито.</translation>
+        <translation>Відкривати вікно qTox при отриманні нового повідомлення, якщо жодне вікно ще не відкрито.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -2846,12 +2826,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Помістити конференції зверху списку друзів</translation>
+        <translation>Показувати конференції вгорі списку друзів</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>Ваш список контактів буде показано в компактному режимі.</translation>
+        <translation>Ваш список контактів буде показано в компактному режимі (маленькі аватари, табличний вигляд).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2867,7 +2847,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Emoticons</source>
-        <translation>Емоції</translation>
+        <translation>Смайлики</translation>
     </message>
     <message>
         <source>Use emoticons</source>
@@ -2903,12 +2883,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation>Використовувати картинки замість порожніх аватарів</translation>
+        <translation>Використовувати ідентикони замість порожніх аватарів</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>Показувати сповіщення при отриманні нового повідомлення, коли вікно не вибрано.</translation>
+        <translation>Показувати сповіщення при отриманні нового повідомлення, дзвінка або запиту на додавання в друзі, коли вікно не вибрано.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2924,11 +2904,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>Відтворювати звук якщо &quot;Зайнятий/зайнята&quot;</translation>
+        <translation>Відтворювати звук у статусі &quot;Зайнятий/зайнята&quot;</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
-        <translation>Повідомляти за допомогою повідомлень на робочому столі</translation>
+        <translation>Сповіщати за допомогою сповіщень на робочому столі</translation>
     </message>
     <message>
         <source>Hide message sender and contents</source>
@@ -2941,7 +2921,7 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>Сповіщати про нові повідомлення в конференціях тільки при згадках.</translation>
+        <translation>Сповіщати про нові повідомлення в конференціях лише тоді, коли згадують ваше ім&apos;я.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
@@ -2960,11 +2940,11 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation>Якщо вимкнено, використовуються базові повідомлення в системній панелі. В іншому випадку, робиться спроба використовувати бекенд повідомлень вашого середовища робочого столу. Вимкніть це, якщо ви спостерігаєте проблеми з повідомленнями на робочому столі.</translation>
+        <translation>Якщо вимкнено, використовуються базові сповіщення в системному лотку. Інакше qTox намагається використовувати бекенд сповіщень вашого середовища робочого столу. Вимкніть це, якщо помічаєте проблеми зі сповіщеннями на робочому столі.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
-        <translation>Використовувати визначений системою бекенд повідомлень, якщо він доступний</translation>
+        <translation>Використовувати системний бекенд сповіщень, якщо він доступний</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
@@ -2972,15 +2952,15 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
-        <translation>Використовувати сповіщення на робочому столі, наприклад, у центрі сповіщень на системній панелі. Без цього, сповіщення відображатимуться тільки як сяюча піктограма на панелі.</translation>
+        <translation>Використовувати сповіщення на робочому столі, наприклад у центрі сповіщень або в системному лотку. Без цього сповіщення буде видно лише як блимаючу піктограму в лотку.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
-        <translation>Показувати тільки текст &quot;нове повідомлення&quot; без відображення потенційно секретної інформації в повідомленнях на робочому столі.</translation>
+        <translation>Показувати тільки текст &quot;нове повідомлення&quot; без потенційно секретної інформації в сповіщеннях на робочому столі.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
-        <translation>Розділити список друзів і вікно чату на вікна, які окремо переміщуються одне від одного.</translation>
+        <source>Split friend list and chat window into separately movable windows.</source>
+        <translation>Розділити список друзів і вікно чату на окремі вікна, які можна переміщувати незалежно.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
@@ -3013,8 +2993,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translation>Максимальна кількість повідомлень (на діалог), завантажених з історії чату.
 Зменшіть це значення, щоб поліпшити продуктивність.
 Занадто низьке значення може призвести до зникнення смуги прокрутки.</translation>
@@ -3024,8 +3004,8 @@ scroll bar to disappear.</source>
         <translation>Максимальний розмір журналу чату</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translation>Кількість повідомлень для завантаження з історії чату під час гортання.
 Занадто низьке значення може призвести до зникнення смуги прокрутки.</translation>
     </message>
@@ -3038,8 +3018,8 @@ number here may cause the scroll bar to disappear.</source>
         <translation>Журнал чату:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
-        <translation>Сховати суфікс після нульового символу</translation>
+        <source>Hide text after a NUL character</source>
+        <translation>Сховати текст після символу NUL</translation>
     </message>
 </context>
 <context>
@@ -3077,7 +3057,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>All</source>
-        <translation>Всі контакти</translation>
+        <translation>Всі</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -3098,7 +3078,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>Вийти з акаунта</translation>
+        <translation>Вийти з профілю</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3110,7 +3090,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Edit</source>
-        <translation>Редагувати</translation>
+        <translation>Правка</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -3141,7 +3121,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Групові запрошення</translation>
+        <translation>Запрошення на конференції</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3182,14 +3162,14 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation>
-            <numerusform>%n нове запрошення в конференцію</numerusform>
-            <numerusform>%n нові запрошення в конференцію</numerusform>
-            <numerusform>%n нових запрошень в конференцію</numerusform>
+            <numerusform>%n нове запрошення на конференцію</numerusform>
+            <numerusform>%n нові запрошення на конференцію</numerusform>
+            <numerusform>%n нових запрошень на конференцію</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>Вихід</translation>
     </message>
     <message>
@@ -3219,7 +3199,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation>Відладка</translation>
+        <translation>Налагодження</translation>
     </message>
 </context>
 </TS>

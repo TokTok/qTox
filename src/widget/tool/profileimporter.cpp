@@ -97,7 +97,7 @@ bool ProfileImporter::importProfile(const QString& path)
     if (QFileInfo(profilePath).exists()) {
         const QString title = tr("Profile already exists", "import confirm title");
         const QString message = tr("A profile named \"%1\" already exists. "
-                                   "Do you want to erase it?",
+                                   "Do you want to replace it?",
                                    "import confirm text")
                                     .arg(profile);
         const bool erase = askQuestion(title, message);

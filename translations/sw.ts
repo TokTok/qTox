@@ -11,7 +11,7 @@
     <message>
         <source>Default resolution</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Azimio chaguomsingi</translation>
+        <translation type="unfinished">Ubora wa picha chaguomsingi</translation>
     </message>
     <message>
         <source>Disabled</source>
@@ -36,7 +36,7 @@
     <message>
         <source>Gain</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Faida</translation>
+        <translation type="unfinished">Ukuzaji wa sauti</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -46,12 +46,12 @@
     <message>
         <source>Capture device</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nasa kifaa</translation>
+        <translation type="unfinished">Kifaa cha kurekodi</translation>
     </message>
     <message>
         <source>Volume</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kiasi</translation>
+        <translation type="unfinished">Kiwango cha sauti</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -64,22 +64,9 @@
         <translation type="unfinished">Kifaa cha video</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Weka ubora wa kamera yako.
-Thamani za juu, ndivyo ubora wa video ambao marafiki wako wanaweza kupata.
-Kumbuka ingawa kwa ubora bora wa video unahitaji muunganisho bora wa intaneti.
-Wakati mwingine muunganisho wako hauwezi kutosha kushughulikia ubora wa juu wa video,
-ambayo inaweza kusababisha matatizo na simu za video.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Azimio</translation>
+        <translation type="unfinished">Ubora wa picha</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -89,7 +76,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Test Sound</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sauti ya Mtihani</translation>
+        <translation type="unfinished">Jaribu sauti</translation>
     </message>
     <message>
         <source>Audio quality</source>
@@ -97,24 +84,24 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Ubora wa sauti</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Juu (kBps 64)</translation>
+        <translation type="unfinished">Juu (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Wastani (kBps 32)</translation>
+        <translation type="unfinished">Wastani (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chini (kBps 16)</translation>
+        <translation type="unfinished">Chini (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chini sana (kBps 8)</translation>
+        <translation type="unfinished">Chini sana (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -129,7 +116,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ubora wa sauti unaotumwa. Punguza mpangilio huu ikiwa kipimo data chako si cha juu vya kutosha au ikiwa unataka kupunguza matumizi ya kipimo data.</translation>
+        <translation type="unfinished">Ubora wa sauti inayotumwa. Punguza mpangilio huu ikiwa kipimo data chako hakitoshi au ukitaka kutumia kipimo data kidogo.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -138,26 +125,26 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Weka ubora wa kamera yako.
-Thamani za juu, ndivyo ubora wa video ambao marafiki wako wanaweza kupata.
-Kumbuka kuwa kwa ubora bora wa video, unatumia kipimo data zaidi.
-Wakati mwingine muunganisho wako hauwezi kutosha kushughulikia ubora wa juu wa video,
-ambayo inaweza kusababisha matatizo na simu za video.</translation>
+        <translation type="unfinished">Weka ubora wa picha wa kamera yako.
+Kadiri thamani inavyokuwa kubwa, ndivyo marafiki zako wanavyoweza kupata video bora zaidi.
+Kumbuka kwamba video bora zaidi hutumia kipimo data zaidi.
+Wakati mwingine muunganisho wako huenda usitoshe kwa video ya ubora wa juu,
+jambo linaloweza kusababisha matatizo kwenye simu za video.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Cheza sauti ya jaribio huku ukibadilisha sauti ya pato.</translation>
+        <translation type="unfinished">Cheza sauti ya majaribio unapobadilisha kiwango cha sauti ya kutoka.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia kitelezi kuweka faida ya kifaa chako cha kuingiza data kuanzia %1dB hadi %2dB.</translation>
+        <translation type="unfinished">Tumia kitelezi kuweka ukuzaji wa sauti wa kifaa cha kuingiza kati ya %1dB na %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia kitelezi kuweka kiasi cha kuwezesha kifaa chako cha kuingiza sauti.</translation>
+        <translation type="unfinished">Tumia kitelezi kuweka kiwango cha sauti kinachowasha kifaa cha kuingiza.</translation>
     </message>
 </context>
 <context>
@@ -180,12 +167,12 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hashi ya ahadi: %1</translation>
+        <translation type="unfinished">Hashi ya commit: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">toleo la toxiccore: %1</translation>
+        <translation type="unfinished">Toleo la toxcore: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
@@ -193,11 +180,11 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Toleo la Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Orodha ya masuala yote yanayojulikana yanaweza kupatikana katika %1 yetu katika Github. Ukigundua kuathirika kwa hitilafu au kiusalama ndani ya qTox, tafadhali iripoti kulingana na miongozo katika makala yetu ya %2 ya wiki.</translation>
+        <translation type="unfinished">Orodha ya matatizo yote yanayojulikana inapatikana kwenye %1 yetu kwenye GitHub. Ukigundua hitilafu au udhaifu wa usalama katika qTox, tafadhali iripoti kwa kufuata miongozo iliyo katika makala yetu ya wiki %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -205,22 +192,22 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Bofya hapa ili kuripoti hitilafu.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tazama orodha kamili ya %1 kwenye Github</translation>
+        <translation type="unfinished">Tazama orodha kamili ya %1 kwenye GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">mfuatiliaji wa mdudu</translation>
+        <translation type="unfinished">mfumo wa kufuatilia hitilafu</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kuandika Ripoti Muhimu za Mdudu</translation>
+        <translation type="unfinished">Kuandika ripoti za hitilafu zenye manufaa</translation>
     </message>
     <message>
         <source>contributors</source>
@@ -231,7 +218,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toleo hili la qTox linadumishwa na timu ya TokTok kufuatia uhifadhi wa mradi asili wa qTox kwenye kumbukumbu.</translation>
+        <translation type="unfinished">Toleo hili la qTox linadumishwa na timu ya TokTok baada ya mradi asili wa qTox kuhifadhiwa kwenye kumbukumbu.</translation>
     </message>
 </context>
 <context>
@@ -239,7 +226,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kubali faili kiotomatiki kutoka kwa anwani ikiwa imewekwa</translation>
+        <translation type="unfinished">Kubali faili kiotomatiki kutoka kwa mwasiliani ikiwa imewekwa</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -249,7 +236,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Manual</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mwongozo</translation>
+        <translation type="unfinished">Kwa mkono</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -264,17 +251,17 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kubali mialiko ya mkutano kiotomatiki kutoka kwa mtu huyu ikiwa imewekwa.</translation>
+        <translation type="unfinished">Kubali kiotomatiki mialiko ya mkutano kutoka kwa mwasiliani huyu ikiwa imewekwa.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ondoa historia (operesheni haiwezi kutenduliwa!)</translation>
     </message>
     <message>
         <source>Notes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vidokezo</translation>
+        <translation type="unfinished">Maelezo</translation>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
@@ -287,14 +274,14 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Historia imeondolewa</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huu ni ufunguo wa umma wa rafiki yako, utumie kuthibitisha utambulisho wake kupitia kituo kingine. Huwezi kutuma hii kwa watu wengine ili waweze kuongeza anwani hii.</translation>
+        <translation type="unfinished">Huu ni ufunguo wa umma wa rafiki yako; utumie kuthibitisha utambulisho wake kupitia njia nyingine. Wengine hawawezi kuutumia kumwongeza mwasiliani huyu.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ufunguo wa umma (sio ToxID):</translation>
+        <translation type="unfinished">Ufunguo wa umma (si Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -302,9 +289,9 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Uthibitisho</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Je, una uhakika kwamba umeondoa historia ya gumzo %1?</translation>
+        <translation type="unfinished">Je, una uhakika unataka kuondoa historia ya gumzo na %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -332,9 +319,9 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Kubali mialiko ya mkutano kiotomatiki</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Unaweza kuhifadhi maoni kuhusu mtu huyu hapa.</translation>
+        <translation type="unfinished">Unaweza kuhifadhi maelezo kuhusu mwasiliani huyu hapa.</translation>
     </message>
 </context>
 <context>
@@ -357,7 +344,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Known Issues</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Masuala Yanayojulikana</translation>
+        <translation type="unfinished">Matatizo yanayojulikana</translation>
     </message>
     <message>
         <source>Open update download link</source>
@@ -377,7 +364,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kwa sasa inaendesha toleo lisilojaribiwa/ lisilo thabiti la qTox</translation>
+        <translation type="unfinished">Toleo la qTox ambalo halijajaribiwa au si thabiti linaendeshwa sasa</translation>
     </message>
 </context>
 <context>
@@ -385,12 +372,12 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Add Friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ongeza Marafiki</translation>
+        <translation type="unfinished">Ongeza marafiki</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Umbizo la ID ya Tox si sahihi</translation>
+        <translation type="unfinished">Muundo wa Tox ID si sahihi</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -418,7 +405,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Haikuweza kuongeza rafiki</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Andika Tox ID ya rafiki yako</translation>
     </message>
@@ -468,7 +455,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kitambulisho cha Tox</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -491,18 +478,18 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 hapa! Tox me labda?</translation>
+        <translation type="unfinished">%1 hapa! Tuzungumze kwenye Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ingiza orodha ya waasiliani, kitambulisho kimoja cha Tox kwa kila mstari</translation>
+        <translation type="unfinished">Ingiza orodha ya waasiliani, Tox ID moja kwa kila mstari</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Tayari kuingiza mwasiliani %n, bofya Tuma kuthibitisha</numerusform>
+            <numerusform>Tayari kuingiza waasiliani %n, bofya Tuma kuthibitisha</numerusform>
         </translation>
     </message>
     <message>
@@ -516,10 +503,10 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <translation type="unfinished">Tox ID, herufi 76 za heksadesimali</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID ni batili</translation>
+        <translation type="unfinished">%1 si Tox ID sahihi</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -537,7 +524,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Advanced</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Advanced</translation>
+        <translation type="unfinished">Ya kina</translation>
     </message>
     <message>
         <source>really</source>
@@ -547,12 +534,12 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">sivyo</translation>
+        <translation type="unfinished">usibadilishe</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">KUMBUKA MUHIMU</translation>
+        <translation type="unfinished">TAARIFA MUHIMU</translation>
     </message>
     <message>
         <source>Reset settings</source>
@@ -577,12 +564,12 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Logs (*.log)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kumbukumbu (*.logi)</translation>
+        <translation type="unfinished">Kumbukumbu (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Isipokuwa %1 unajua unachofanya, tafadhali %2 ubadilishe chochote hapa. Mabadiliko yaliyofanywa hapa yanaweza kusababisha matatizo na qTox, na hata kupoteza data yako, k.m. historia.%3</translation>
+        <translation type="unfinished">Isipokuwa %1 unajua unachofanya, tafadhali %2 chochote hapa. Mabadiliko hapa yanaweza kusababisha matatizo kwenye qTox, na hata kupoteza data yako, k.m. historia.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -597,21 +584,21 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Anwani ya wakala batili</translation>
+        <translation type="unfinished">Anwani ya seva mbadala si sahihi</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tafadhali ingiza anwani halali ya IP au jina la mwenyeji kwa mpangilio wa wakala.</translation>
+        <translation type="unfinished">Tafadhali weka anwani ya IP au jina la seva lililo sahihi kwa seva mbadala.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hifadhi mipangilio kwenye saraka ya kufanya kazi badala ya conf dir ya kawaida</translation>
+        <translation type="unfinished">Hifadhi mipangilio kwenye saraka ya kazi badala ya saraka ya kawaida ya mipangilio</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -667,7 +654,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Proxy type:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aina ya proksi:</translation>
+        <translation type="unfinished">Aina ya seva mbadala:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -679,7 +666,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bandari:</translation>
+        <translation type="unfinished">Mlango:</translation>
     </message>
     <message>
         <source>None</source>
@@ -689,7 +676,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tatua</translation>
+        <translation type="unfinished">Utatuzi</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -715,7 +702,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kuzima hii inaruhusu, k.m., Tox over Tor. Inaongeza mzigo kwenye mtandao wa Tox hata hivyo, kwa hivyo usifute uteuzi inapobidi tu.</translation>
+        <translation type="unfinished">Kuzima hii huruhusu, k.m., Tox kupitia Tor. Hata hivyo huongeza mzigo kwenye mtandao wa Tox, kwa hivyo ondoa alama tu inapohitajika.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -733,7 +720,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Starts new instance and loads specified profile.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huanzisha mfano mpya na kupakia wasifu maalum.</translation>
+        <translation type="unfinished">Huanzisha nakala mpya na kupakia wasifu uliobainishwa.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -743,31 +730,23 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huanzisha mfano mpya na kufungua skrini ya kuingia.</translation>
+        <translation type="unfinished">Huanzisha nakala mpya na kufungua skrini ya kuingia.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inaweka IPv6 &lt;on&gt;/&lt;off&gt;. Chaguomsingi IMEWASHWA.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Huwasha au kuzima IPv6: %1. Chaguomsingi: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inaweka UDP &lt;on&gt;/&lt;off&gt;. Chaguomsingi IMEWASHWA.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Huwasha au kuzima UDP: %1. Chaguomsingi: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Huweka ugunduzi wa LAN &lt;on&gt;/&lt;off&gt;. UDP imezimwa kubatilisha. Chaguomsingi IMEWASHWA.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Huwasha au kuzima ugunduzi wa LAN: %1. Haifanyi kazi UDP ikiwa imezimwa. Chaguomsingi: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inaweka mipangilio ya seva mbadala. Chaguomsingi ni HAKUNA.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Huweka seva mbadala. Chaguomsingi: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -832,7 +811,7 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Muda wa simu:</translation>
+        <translation type="unfinished">Muda wa simu: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -853,8 +832,8 @@ ambayo inaweza kusababisha matatizo na simu za video.</translation>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vibambo haramu vimebadilishwa kuwa _
-kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
+        <translation type="unfinished">Herufi zisizoruhusiwa zimebadilishwa kuwa _
+ili uweze kuhifadhi faili kwenye Windows.</translation>
     </message>
 </context>
 <context>
@@ -862,7 +841,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Can&apos;t start audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haiwezi kupiga simu ya sauti</translation>
+        <translation type="unfinished">Haiwezi kuanzisha simu ya sauti</translation>
     </message>
     <message>
         <source>Start audio call</source>
@@ -887,7 +866,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Can&apos;t start video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haiwezi kupiga simu ya video</translation>
+        <translation type="unfinished">Haiwezi kuanzisha simu ya video</translation>
     </message>
     <message>
         <source>Start video call</source>
@@ -897,17 +876,17 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maliza Hangout ya Video</translation>
+        <translation type="unfinished">Kata simu ya video</translation>
     </message>
     <message>
         <source>Cancel video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ghairi Hangout ya Video</translation>
+        <translation type="unfinished">Ghairi simu ya video</translation>
     </message>
     <message>
         <source>Accept video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kubali Hangout ya Video</translation>
+        <translation type="unfinished">Kubali simu ya video</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -922,7 +901,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Mute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zima simu</translation>
+        <translation type="unfinished">Zima sauti ya simu</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -1008,7 +987,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Huna ruhusa ya kuandikia eneo hilo. Chagua nyingine, au ghairi kidirisha cha kuhifadhi.</translation>
+        <translation type="unfinished">Huna ruhusa ya kuandika mahali hapo. Chagua mahali pengine au ghairi kuhifadhi.</translation>
     </message>
 </context>
 <context>
@@ -1017,24 +996,24 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">bubu</translation>
+        <translation type="unfinished">nyamazisha</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">acha kunyamazisha</translation>
+        <translation type="unfinished">rejesha sauti</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">nakala kitambulisho cha rika</translation>
+        <translation type="unfinished">nakili kitambulisho cha mshiriki</translation>
     </message>
 </context>
 <context>
@@ -1060,7 +1039,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Umealikwa na %1 kwenye %2 kwa %3.</translation>
+        <translation type="unfinished">Umealikwa na %1 tarehe %2 saa %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1094,14 +1073,14 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Acha mkutano</translation>
+        <translation type="unfinished">Ondoka kwenye mkutano</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mtumiaji %n kwenye gumzo</numerusform>
+            <numerusform>Watumiaji %n kwenye gumzo</numerusform>
         </translation>
     </message>
     <message>
@@ -1120,7 +1099,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/mimi inatoa urafiki, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me anatoa urafiki, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -1131,7 +1110,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kitambulisho batili cha Tox</translation>
+        <translation type="unfinished">Tox ID si sahihi</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1241,10 +1220,10 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <translation type="unfinished">Hifadhi faili</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kidhibiti cha mbali kimesitishwa</translation>
+        <translation type="unfinished">Upande mwingine umesitisha</translation>
     </message>
 </context>
 <context>
@@ -1296,7 +1275,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Older than 6 months</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mzee zaidi ya miezi 6</translation>
+        <translation type="unfinished">Zaidi ya miezi 6 iliyopita</translation>
     </message>
 </context>
 <context>
@@ -1311,12 +1290,12 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sogeza kwenye mduara...</translation>
+        <translation type="unfinished">Hamisha kwenye mduara...</translation>
     </message>
     <message>
         <source>To new circle</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kwa mduara mpya</translation>
+        <translation type="unfinished">Kwenye mduara mpya</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1336,7 +1315,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kwa mkutano mpya</translation>
+        <translation type="unfinished">Kwenye mkutano mpya</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1372,12 +1351,12 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Away</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mbali</translation>
+        <translation type="unfinished">Hayupo</translation>
     </message>
     <message>
         <source>Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shughuli</translation>
+        <translation type="unfinished">Ana shughuli</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1387,7 +1366,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nenda kwenye mduara &quot;%1&quot;</translation>
+        <translation type="unfinished">Hamisha kwenye mduara &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1406,7 +1385,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mkuu</translation>
+        <translation type="unfinished">Jumla</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1429,7 +1408,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>The translation may not load until qTox restarts.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tafsiri haiwezi kupakiwa hadi qTox ianze upya.</translation>
+        <translation type="unfinished">Tafsiri huenda isipakiwe hadi qTox ianzishwe upya.</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1445,33 +1424,33 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Washa aikoni ya trei nyepesi.</translation>
+        <translation type="unfinished">Tumia aikoni angavu kwenye trei.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aikoni nyepesi</translation>
+        <translation type="unfinished">Aikoni angavu</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox itaanza kupunguzwa kwenye trei.</translation>
+        <translation type="unfinished">qTox itaanza ikiwa imepunguzwa kwenye trei.</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Anza kwenye tray</translation>
+        <translation type="unfinished">Anza kwenye trei</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Karibu na tray</translation>
+        <translation type="unfinished">Funga kwenye trei</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Punguza kwa tray</translation>
+        <translation type="unfinished">Punguza kwenye trei</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1494,14 +1473,14 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
         <translation type="unfinished">Weka hadi 0 ili kuzima</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hali yako inabadilishwa kuwa Hapo baada ya muda uliowekwa wa kutofanya kazi.</translation>
+        <translation type="unfinished">Hali yako hubadilishwa kuwa Hayupo baada ya muda uliowekwa bila shughuli.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka kiotomatiki baada ya (0 kuzima):</translation>
+        <translation type="unfinished">Hayupo kiotomatiki baada ya (0 kuzima):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1531,7 +1510,7 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Saizi ya juu ya kukubali kiotomatiki (0 ili kuzima):</translation>
+        <translation type="unfinished">Ukubwa wa juu wa faili inayokubaliwa kiotomatiki (0 kuzima):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1543,22 +1522,22 @@ kwa hivyo unaweza kuhifadhi faili kwenye Windows.</translation>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Baada ya kubonyeza punguza (_) qTox itapunguza hadi tray,
-badala ya upau wa kazi wa mfumo.</translation>
+        <translation type="unfinished">Ukibonyeza punguza (_), qTox itapunguzwa kwenye trei
+badala ya upau wa kazi.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Baada ya kubonyeza funga (X) qTox itafunga tray,
-badala ya kufunga kabisa.</translation>
+        <translation type="unfinished">Ukibonyeza funga (X), qTox itapunguzwa kwenye trei
+badala ya kufungwa kabisa.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Unaweza kuweka hii kwa misingi ya kila rafiki kwa kubofya kulia marafiki binafsi.</translation>
+        <translation type="unfinished">Unaweza kuweka hili kwa kila rafiki peke yake kwa kubofya kulia juu yake.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
@@ -1568,7 +1547,7 @@ badala ya kufunga kabisa.</translation>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bofya hapa ukipata hitilafu katika tafsiri na ungependa kusaidia kurekebisha.</translation>
+        <translation type="unfinished">Bofya hapa ukipata makosa katika tafsiri na ungependa kusaidia kuyarekebisha.</translation>
     </message>
     <message>
         <source>Help translate</source>
@@ -1578,7 +1557,7 @@ badala ya kufunga kabisa.</translation>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> dakika</translation>
+        <translation type="unfinished"> dak</translation>
     </message>
 </context>
 <context>
@@ -1591,7 +1570,7 @@ badala ya kufunga kabisa.</translation>
     <message>
         <source>Smileys</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vitabasamu</translation>
+        <translation type="unfinished">Vikaragosi</translation>
     </message>
     <message>
         <source>Send file(s)</source>
@@ -1664,12 +1643,12 @@ badala ya kufunga kabisa.</translation>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kitambulisho cha Tox</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kitambulisho chako cha Tox (bofya ili kunakili)</translation>
+        <translation type="unfinished">Tox ID yako (bofya kunakili)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1690,9 +1669,9 @@ badala ya kufunga kabisa.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka</translation>
+        <translation type="unfinished">Toka</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -1707,7 +1686,7 @@ badala ya kufunga kabisa.</translation>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Msimbo huu wa QR una kitambulisho chako cha Tox. Unaweza kushiriki hii na marafiki zako pia.</translation>
+        <translation type="unfinished">Msimbo huu wa QR una Tox ID yako. Unaweza pia kuushiriki na marafiki zako.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1775,7 +1754,7 @@ Wasifu hauna historia yako.</translation>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kitambulisho chako cha Tox</translation>
+        <translation type="unfinished">Tox ID yako</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1833,7 +1812,7 @@ Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kitambulisho hiki huruhusu watumiaji wengine wa Tox kukuongeza na kuwasiliana nawe.
-Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
+Kishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1845,7 +1824,7 @@ Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pakia kidirisha cha historia</translation>
+        <translation type="unfinished">Kidirisha cha kupakia historia</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1873,7 +1852,7 @@ Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
     <message>
         <source>Password strength: %p%</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nguvu ya nenosiri: %p%</translation>
+        <translation type="unfinished">Uimara wa nenosiri: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
@@ -1893,7 +1872,7 @@ Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
     <message>
         <source>Load</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mzigo</translation>
+        <translation type="unfinished">Pakia</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1928,7 +1907,7 @@ Ishiriki na marafiki zako ili kuanza kupiga gumzo.</translation>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Profaili zilizolindwa na nenosiri haziwezi kupakiwa kiotomatiki.</translation>
+        <translation type="unfinished">Wasifu uliolindwa kwa nenosiri hauwezi kupakiwa kiotomatiki.</translation>
     </message>
     <message>
         <source>There is no selected profile.
@@ -1937,7 +1916,7 @@ You may want to create one.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hakuna wasifu uliochaguliwa.
 
-Unaweza kutaka kuunda moja.</translation>
+Unaweza kuunda mpya.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1967,7 +1946,7 @@ Unaweza kutaka kuunda moja.</translation>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sehemu ya kuingiza nenosiri, unaweza kuiacha tupu (hakuna nenosiri), au chapa angalau vibambo 6</translation>
+        <translation type="unfinished">Sehemu ya nenosiri; unaweza kuiacha tupu (bila nenosiri) au kuandika angalau vibambo 6</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1977,7 +1956,7 @@ Unaweza kutaka kuunda moja.</translation>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Unda kitufe kipya cha wasifu</translation>
+        <translation type="unfinished">Kitufe cha kuunda wasifu mpya</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1997,7 +1976,7 @@ Unaweza kutaka kuunda moja.</translation>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pakia kisanduku cha kuteua kiotomatiki</translation>
+        <translation type="unfinished">Kisanduku cha kupakia kiotomatiki</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -2007,36 +1986,36 @@ Unaweza kutaka kuunda moja.</translation>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pakia kitufe cha wasifu kilichochaguliwa</translation>
+        <translation type="unfinished">Kitufe cha kupakia wasifu uliochaguliwa</translation>
     </message>
     <message>
         <source>New profile creation page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ukurasa mpya wa kuunda wasifu</translation>
+        <translation type="unfinished">Ukurasa wa kuunda wasifu mpya</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inapakia ukurasa uliopo wa wasifu</translation>
+        <translation type="unfinished">Ukurasa wa kupakia wasifu uliopo</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Manenosiri uliyoweka ni tofauti.
-Tafadhali hakikisha umeingiza nenosiri sawa mara mbili.</translation>
+        <translation type="unfinished">Manenosiri uliyoweka hayalingani.
+Hakikisha unaweka nenosiri lilelile mara mbili.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">Nenosiri hili la hiari hutumika kusimba kwa njia fiche data ya ujumbe wa ndani na wasifu wako.
+        <translation type="unfinished">Nenosiri hili la hiari hutumika kusimba data ya ujumbe ya ndani na wasifu wako.
 Ukipoteza nenosiri hili, hakuna njia ya kulirejesha.
 Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Nenosiri unaloweka hapa ni la hiari na husimba kwa njia fiche data ya ujumbe na ufunguo wako wa siri wa Tox. Haisimbi kwa njia fiche faili zilizopokelewa. Data yako ya wasifu haitumwi kwa seva zozote. Huku si kuingia kwa mbali, ni kwa kompyuta yako pekee. Wasanidi wa qTox hawataweza kurejesha nenosiri lako likipotea.</translation>
+        <translation type="unfinished">Nenosiri unaloweka hapa ni la hiari na husimba data ya ujumbe na ufunguo wako wa siri wa Tox. Halisimbi faili zilizopokewa. Data ya wasifu wako haitumwi kamwe kwa seva yoyote. Huku si kuingia kwa mbali; inatumika kwenye kompyuta yako tu. Wasanidi wa qTox hawataweza kurejesha nenosiri lako ukilipoteza.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -2108,12 +2087,12 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>Contact search</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Utafutaji wa mawasiliano</translation>
+        <translation type="unfinished">Utafutaji wa waasiliani</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ingizo la utafutaji wa mawasiliano kwa marafiki wanaojulikana</translation>
+        <translation type="unfinished">Sehemu ya kutafuta marafiki wanaojulikana</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2123,7 +2102,7 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Weka marafiki kupanga na kujulikana</translation>
+        <translation type="unfinished">Weka upangaji na mwonekano wa marafiki</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -2168,7 +2147,7 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tatua</translation>
+        <translation type="unfinished">Utatuzi</translation>
     </message>
     <message>
         <source>Open Debugger</source>
@@ -2189,10 +2168,10 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <translation type="unfinished">Faili inayoweza kutekelezwa</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Umeuliza qTox kufungua faili inayoweza kutekelezwa. Faili zinazotekelezeka zinaweza kuharibu kompyuta yako. Je, una uhakika ungependa kufungua faili hii?</translation>
+        <translation type="unfinished">Umeiomba qTox ifungue faili inayoweza kuendeshwa. Faili kama hizo zinaweza kudhuru kompyuta yako. Je, una uhakika unataka kufungua faili hii?</translation>
     </message>
 </context>
 <context>
@@ -2210,7 +2189,7 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Geuza onyesho la kukagua video</translation>
+        <translation type="unfinished">Washa/zima onyesho la kukagua video</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -2225,12 +2204,12 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maliza Hangout ya Video</translation>
+        <translation type="unfinished">Kata simu ya video</translation>
     </message>
     <message>
         <source>Exit full screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka kwenye skrini nzima</translation>
+        <translation type="unfinished">Toka kwenye skrini nzima</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -2267,17 +2246,17 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Walete Wote Mbele</translation>
+        <translation type="unfinished">Leta zote mbele</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka kwenye Skrini Kamili</translation>
+        <translation type="unfinished">Toka kwenye skrini nzima</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ingiza Skrini Kamili</translation>
+        <translation type="unfinished">Skrini nzima</translation>
     </message>
 </context>
 <context>
@@ -2285,8 +2264,8 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ujumbe ambao haujasomwa</numerusform>
+            <numerusform>Jumbe ambazo hazijasomwa</numerusform>
         </translation>
     </message>
 </context>
@@ -2305,7 +2284,7 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Uhamisho wa faili unaoingia</translation>
+        <translation type="unfinished">Faili inayoingia</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -2342,9 +2321,9 @@ Bonyeza Shift+F1 kwa maelezo zaidi.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock imewashwa</translation>
+        <translation type="unfinished">Caps Lock imewashwa</translation>
     </message>
 </context>
 <context>
@@ -2389,34 +2368,34 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam ni sehemu ya Kitambulisho chako cha Tox.
-Ikiwa unatumiwa barua taka na maombi ya urafiki, unapaswa kubadilisha NoSpam yako.
-Watu hawataweza kukuongeza na kitambulisho chako cha zamani, lakini utahifadhi marafiki zako wa sasa.</translation>
+        <translation type="unfinished">NoSpam ni sehemu ya Tox ID yako.
+Ukipokea maombi mengi ya urafiki yasiyotakikana, badilisha NoSpam yako.
+Watu hawataweza kukuongeza kwa ID ya zamani, lakini utabaki na marafiki ulio nao.</translation>
     </message>
     <message>
         <source>NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hakuna Spam</translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam ni sehemu ya kitambulisho chako ambayo inaweza kubadilishwa upendavyo.
-Ikiwa unapokea barua taka kwa maombi ya urafiki, badilisha NoSpam.</translation>
+        <translation type="unfinished">NoSpam ni sehemu ya ID yako inayoweza kubadilishwa wakati wowote.
+Ukipokea maombi mengi ya urafiki yasiyotakikana, badilisha NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tengeneza NoSpam bila mpangilio</translation>
+        <translation type="unfinished">Tengeneza NoSpam nasibu</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Uhifadhi wa historia ya gumzo bado unaendelea kutengenezwa.
-Hifadhi mabadiliko ya umbizo yanawezekana, ambayo yanaweza kusababisha upotezaji wa data.</translation>
+        <translation type="unfinished">Uhifadhi wa historia ya gumzo bado unaendelezwa.
+Muundo wa kuhifadhi unaweza kubadilika, jambo linaloweza kusababisha upotevu wa data.</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2426,12 +2405,12 @@ Hifadhi mabadiliko ya umbizo yanawezekana, ambayo yanaweza kusababisha upotezaji
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Orodha ya kuzuia mkutano</translation>
+        <translation type="unfinished">Orodha ya waliozuiwa kwenye mikutano</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chuja ujumbe wa mkutano kwa funguo za umma za wanachama wa mkutano. Weka funguo za umma hapa, moja kwa kila mstari.</translation>
+        <translation type="unfinished">Chuja jumbe za mikutano kwa funguo za umma za washiriki. Weka funguo za umma hapa, moja kwa kila mstari.</translation>
     </message>
 </context>
 <context>
@@ -2439,17 +2418,17 @@ Hifadhi mabadiliko ya umbizo yanawezekana, ambayo yanaweza kusababisha upotezaji
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Imeshindwa kupata ufunguo kutoka kwa nenosiri, wasifu hautatumia nenosiri jipya.</translation>
+        <translation type="unfinished">Imeshindwa kutoa ufunguo kutoka kwa nenosiri; wasifu hautatumia nenosiri jipya.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kuweka sumu kwenye qTox</translation>
+        <translation type="unfinished">Napiga gumzo kwenye qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haikuweza kubadilisha nenosiri la hifadhidata, linaweza kuharibika au kutumia nenosiri la zamani.</translation>
+        <translation type="unfinished">Haikuweza kubadilisha nenosiri la hifadhidata; huenda imeharibika au inatumia nenosiri la zamani.</translation>
     </message>
 </context>
 <context>
@@ -2478,7 +2457,7 @@ Hifadhi mabadiliko ya umbizo yanawezekana, ambayo yanaweza kusababisha upotezaji
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Wasifu wa sasa:</translation>
+        <translation type="unfinished">Wasifu wa sasa: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2530,10 +2509,10 @@ Tafadhali tumia picha nyingine.</translation>
         <translation type="unfinished">Hifadhi</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hifadhi Msimbo wa Qr (*.png)</translation>
+        <translation type="unfinished">Hifadhi msimbo wa QR (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2564,11 +2543,6 @@ Tafadhali tumia picha nyingine.</translation>
         <translation type="unfinished">Haikuweza kubadilisha nenosiri</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Njia tupu haipatikani</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Imeshindwa kubadilisha jina</translation>
@@ -2589,9 +2563,9 @@ Tafadhali tumia picha nyingine.</translation>
         <translation type="unfinished">Jina tupu</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jina tupu halipatikani</translation>
+        <translation type="unfinished">Jina haliwezi kuwa tupu</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2608,7 +2582,7 @@ Tafadhali tumia picha nyingine.</translation>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox save faili (*.tox)</translation>
+        <translation type="unfinished">Faili ya wasifu wa Tox (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2639,14 +2613,14 @@ Tafadhali tumia picha nyingine.</translation>
         <translation type="unfinished">Faili uliyochagua haikuweza kuhifadhiwa.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Njia tupu haipatikani.</translation>
+        <translation type="unfinished">Njia haiwezi kuwa tupu.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Haikuweza kubadilisha nenosiri la hifadhidata, linaweza kuharibika au kutumia nenosiri la zamani.</translation>
+        <translation type="unfinished">Haikuweza kubadilisha nenosiri la hifadhidata; huenda imeharibika au inatumia nenosiri la zamani.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2678,9 +2652,9 @@ Share it with your friends to begin chatting.
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Kitambulisho hiki huruhusu watumiaji wengine wa Tox kukuongeza na kuwasiliana nawe.
-Ishiriki na marafiki zako ili kuanza kupiga gumzo.
+Kishiriki na marafiki zako ili kuanza kupiga gumzo.
 
-Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).</translation>
+Kitambulisho hiki kina msimbo wa NoSpam (bluu) na hesabu ya ukaguzi (kijivu).</translation>
     </message>
 </context>
 <context>
@@ -2695,7 +2669,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox save faili (*.tox)</translation>
+        <translation type="unfinished">Faili ya wasifu wa Tox (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
@@ -2707,7 +2681,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Onyo: Umechagua faili ambayo si faili ya Tox save; kupuuza.</translation>
+        <translation type="unfinished">Onyo: Umechagua faili ambayo si faili ya wasifu wa Tox; inapuuzwa.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2716,10 +2690,10 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <translation type="unfinished">Wasifu tayari upo</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Wasifu unaoitwa &quot;%1&quot; tayari upo. Je, ungependa kuifuta?</translation>
+        <translation type="unfinished">Wasifu unaoitwa &quot;%1&quot; tayari upo. Je, ungependa kuubadilisha?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2739,13 +2713,13 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>%1.tox was successfully imported</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1.tox ililetwa kwa ufanisi</translation>
+        <translation type="unfinished">%1.tox imeingizwa kwa mafanikio</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Sawa</translation>
     </message>
@@ -2822,7 +2796,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Violet</translation>
+        <translation type="unfinished">Zambarau</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2833,7 +2807,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 hapa! Tox me labda?</translation>
+        <translation type="unfinished">%1 hapa! Tuzungumze kwenye Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2870,7 +2844,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mizeituni ya giza</translation>
+        <translation type="unfinished">Mzeituni iliyokolea</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2880,7 +2854,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Dark violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Violet ya giza</translation>
+        <translation type="unfinished">Zambarau iliyokolea</translation>
     </message>
     <message>
         <source>online</source>
@@ -2892,13 +2866,13 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>away</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">mbali</translation>
+        <translation type="unfinished">hayupo</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">busy</translation>
+        <translation type="unfinished">ana shughuli</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2916,7 +2890,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inabadilisha maandishi...</translation>
+        <translation type="unfinished">Inapanga upya maandishi...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2936,12 +2910,12 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>%1 is now known as %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 sasa inajulikana kama %2</translation>
+        <translation type="unfinished">%1 sasa anajulikana kama %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 imeweka kichwa kuwa %2</translation>
+        <translation type="unfinished">%1 ameweka kichwa kuwa %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2951,12 +2925,12 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Simu iliyo na %1 iliisha bila kutarajiwa. %2</translation>
+        <translation type="unfinished">Simu na %1 iliisha bila kutarajiwa. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Simu iliyo na %1 imeisha. %2</translation>
+        <translation type="unfinished">Simu na %1 imeisha. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2967,12 +2941,12 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Calling %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inapiga %1</translation>
+        <translation type="unfinished">Inampigia %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 kupiga simu</translation>
+        <translation type="unfinished">%1 anapiga simu</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2982,22 +2956,22 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 aliondoka mtandaoni wakati wa jaribio la kupiga simu</translation>
+        <translation type="unfinished">%1 alitoka mtandaoni wakati wa kujaribu kupiga simu</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Simu ilikatishwa kwa sababu %1 aliondoka mtandaoni bila kutarajiwa. %2</translation>
+        <translation type="unfinished">Simu ilikatishwa kwa sababu %1 alitoka mtandaoni bila kutarajiwa. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kuanzisha</translation>
+        <translation type="unfinished">Inaanzisha</translation>
     </message>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kusambaza</translation>
+        <translation type="unfinished">Inatuma</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -3007,7 +2981,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Imevunjika</translation>
+        <translation type="unfinished">Imekatika</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -3020,9 +2994,9 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <translation type="unfinished">Imesitishwa</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kidhibiti cha mbali kimesitishwa</translation>
+        <translation type="unfinished">Upande mwingine umesitisha</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3032,7 +3006,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Wasiliana</translation>
+        <translation type="unfinished">Mwasiliani</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -3077,7 +3051,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toleo la hifadhidata (%1) ni jipya kuliko tunalotumia sasa (%2). Tafadhali pata toleo jipya la qTox.</translation>
+        <translation type="unfinished">Toleo la hifadhidata (%1) ni jipya kuliko tunalotumia kwa sasa (%2). Tafadhali sasisha qTox.</translation>
     </message>
 </context>
 <context>
@@ -3114,7 +3088,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bofya na uburute ili kuchagua eneo. Bonyeza %1 ili kuficha/kuonyesha dirisha la qTox, au %2 ili kughairi.</translation>
+        <translation type="unfinished">Bofya na uburute ili kuchagua eneo. Bonyeza %1 kuficha/kuonyesha dirisha la qTox, au %2 kughairi.</translation>
     </message>
     <message>
         <source>Space</source>
@@ -3126,19 +3100,19 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kutoroka</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bonyeza %1 kutuma picha ya skrini iliyochaguliwa, %2 kuficha/kuonyesha dirisha la qTox, au %3 ili kughairi.</translation>
+        <translation type="unfinished">Bonyeza %1 kutuma picha ya skrini ya eneo lililochaguliwa, %2 kuficha/kuonyesha dirisha la qTox, au %3 kughairi.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ingiza</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3184,22 +3158,22 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kesi nyeti</translation>
+        <translation type="unfinished">Zingatia herufi kubwa na ndogo</translation>
     </message>
     <message>
         <source>Whole words only</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maneno yote tu</translation>
+        <translation type="unfinished">Maneno kamili tu</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia misemo ya kawaida</translation>
+        <translation type="unfinished">Tumia regex</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua Kidirisha cha Tarehe</translation>
+        <translation type="unfinished">Kidirisha cha kuchagua tarehe</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3222,12 +3196,12 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Password strength: %p%</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nguvu ya nenosiri: %p%</translation>
+        <translation type="unfinished">Uimara wa nenosiri: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nenosiri halilingani.</translation>
+        <translation type="unfinished">Manenosiri hayalingani.</translation>
     </message>
     <message>
         <source>Confirm password</source>
@@ -3274,12 +3248,12 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Imeshindwa kuboresha mipangilio kutoka toleo la %1 hadi toleo la %2. Haiwezi kuanzisha qTox.</translation>
+        <translation type="unfinished">Imeshindwa kusasisha mipangilio kutoka toleo %1 hadi toleo %2. Haiwezi kuanzisha qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Imeshindwa kupakia mipangilio ya kimataifa</translation>
+        <translation type="unfinished">Imeshindwa kupakia mipangilio ya jumla</translation>
     </message>
 </context>
 <context>
@@ -3335,7 +3309,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Chat</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Soga</translation>
+        <translation type="unfinished">Gumzo</translation>
     </message>
     <message>
         <source>Base font:</source>
@@ -3345,7 +3319,7 @@ Kitambulisho hiki kinajumuisha msimbo wa NoSpam (wa bluu), na hundi (ya kijivu).
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ukubwa:</translation>
+        <translation type="unfinished">Ukubwa: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3361,18 +3335,18 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mapendeleo mapya ya mtindo wa maandishi yanaweza yasipakie kwenye historia ya gumzo hadi qTox iwashe upya.
-Itaathiri ujumbe mpya mara moja.
+        <translation type="unfinished">Mtindo mpya wa maandishi huenda usitumike kwenye historia ya gumzo hadi qTox ianzishwe upya.
+Utatumika kwenye jumbe mpya mara moja.
 
 Maandishi wazi:
-    Usitumie umbizo lolote kwenye ujumbe.
-    K.m. &quot;**text**&quot; itaonyeshwa kama &quot;**text**&quot;, sio nzito.
+    Jumbe hazipangwi kwa mtindo wowote.
+    K.m. &quot;**maandishi**&quot; yataonyeshwa kama &quot;**maandishi**&quot;, si kwa herufi nzito.
 Onyesha vibambo vya uumbizaji:
-    Tumia uumbizaji na uonyeshe wahusika.
-    K.m. &quot;**maandishi**&quot; yataonekana kama &quot;**maandishi**&quot;, yenye herufi nzito.
+    Uumbizaji unatumika na vibambo vinaonyeshwa.
+    K.m. &quot;**maandishi**&quot; yataonyeshwa kama &quot;**maandishi**&quot;, kwa herufi nzito.
 Ficha vibambo vya uumbizaji:
-    Tumia umbizo na usionyeshe vibambo.
-    K.m. &quot;**maandishi**&quot; yataonekana kama &quot;maandishi&quot;, yenye herufi nzito.</translation>
+    Uumbizaji unatumika lakini vibambo havionyeshwi.
+    K.m. &quot;**maandishi**&quot; yataonyeshwa kama &quot;maandishi&quot;, kwa herufi nzito.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3382,7 +3356,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Select text styling preference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua upendeleo wa uundaji wa maandishi.</translation>
+        <translation type="unfinished">Chagua mtindo wa maandishi.</translation>
     </message>
     <message>
         <source>Plaintext</source>
@@ -3397,7 +3371,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Hide formatting characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ficha herufi za uumbizaji</translation>
+        <translation type="unfinished">Ficha vibambo vya uumbizaji</translation>
     </message>
     <message>
         <source>New message</source>
@@ -3408,7 +3382,7 @@ Ficha vibambo vya uumbizaji:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fungua dirisha la qTox unapopokea ujumbe mpya na bado hakuna dirisha lililofunguliwa.</translation>
+        <translation type="unfinished">Fungua dirisha la qTox unapopokea ujumbe mpya na hakuna dirisha lililo wazi.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -3429,22 +3403,22 @@ Ficha vibambo vya uumbizaji:
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Orodha yako ya anwani itaonyeshwa katika hali ya kompakt (avatari ndogo, mwonekano wa jedwali).</translation>
+        <translation type="unfinished">Orodha yako ya waasiliani itaonyeshwa kwa mpangilio uliobanwa (avatari ndogo, mwonekano wa jedwali).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Orodha ya anwani iliyoshikamana</translation>
+        <translation type="unfinished">Orodha ya waasiliani iliyobanwa</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Njia nyingi za windows</translation>
+        <translation type="unfinished">Hali ya madirisha mengi</translation>
     </message>
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fungua kila gumzo kwenye dirisha la mtu binafsi</translation>
+        <translation type="unfinished">Fungua kila gumzo katika dirisha lake</translation>
     </message>
     <message>
         <source>Emoticons</source>
@@ -3454,12 +3428,12 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia hisia</translation>
+        <translation type="unfinished">Tumia vikaragosi</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ukubwa wa kihisia:</translation>
+        <translation type="unfinished">Ukubwa wa vikaragosi:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3494,7 +3468,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia vitambulisho badala ya avatari tupu</translation>
+        <translation type="unfinished">Tumia aikoni za utambulisho badala ya avatari tupu</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3510,7 +3484,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mikutano huarifu tu inapotajwa</translation>
+        <translation type="unfinished">Mikutano huarifu tu unapotajwa</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3520,7 +3494,7 @@ Ficha vibambo vya uumbizaji:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Cheza sauti ukiwa na Shughuli</translation>
+        <translation type="unfinished">Cheza sauti hata hali ikiwa Ana shughuli</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3541,35 +3515,35 @@ Ficha vibambo vya uumbizaji:
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Arifu tu kuhusu ujumbe mpya katika mikutano jina lako la utani linapotajwa.</translation>
+        <translation type="unfinished">Arifu kuhusu jumbe mpya katika mikutano tu jina lako la utani linapotajwa.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikichaguliwa, makongamano yatawekwa juu ya orodha ya marafiki, vinginevyo, yatawekwa chini ya marafiki wa mtandaoni.</translation>
+        <translation type="unfinished">Ikichaguliwa, mikutano itawekwa juu ya orodha ya marafiki; vinginevyo itawekwa chini ya marafiki walio mtandaoni.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikiwashwa, kila mwasiliani bila avatar atakuwa na aikoni iliyotolewa kulingana na Kitambulisho chake cha Tox badala ya picha chaguomsingi. Inahitaji kuanzisha upya ili kuomba.</translation>
+        <translation type="unfinished">Ikiwashwa, kila mwasiliani asiye na avatari atapata aikoni iliyotengenezwa kutokana na Tox ID yake badala ya picha chaguomsingi. Inahitaji kuanzisha upya.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kifurushi cha Smiley:</translation>
+        <translation type="unfinished">Kifurushi cha vikaragosi:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikiwa imezimwa, komesha arifa inasikika hali ikiwa na Shughuli (lakini bado onyesha arifa)</translation>
+        <translation type="unfinished">Ikizimwa, sauti za arifa hunyamazishwa hali ikiwa Ana shughuli (arifa bado inaonyeshwa)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia arifa za eneo-kazi, k.m. katika kituo cha arifa au kwenye tray ya mfumo. Bila hii, arifa itaonekana tu kama ikoni ya trei inayowaka.</translation>
+        <translation type="unfinished">Tumia arifa za eneo-kazi, k.m. kwenye kituo cha arifa au trei ya mfumo. Bila hii, arifa itaonekana tu kama aikoni inayomweka kwenye trei.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3577,50 +3551,50 @@ Ficha vibambo vya uumbizaji:
         <translation type="unfinished">Onyesha &quot;ujumbe mpya&quot; pekee bila kuonyesha maelezo yanayoweza kuwa ya siri katika arifa za eneo-kazi.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gawanya orodha ya marafiki na dirisha la gumzo kwenye madirisha yanayohamishika kando.</translation>
+        <translation type="unfinished">Tenganisha orodha ya marafiki na dirisha la gumzo kuwa madirisha yanayoweza kusogezwa kila moja.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Onyesha emoji za maandishi kama picha za rangi badala ya maandishi au emoji nyeusi/nyeupe zinazotolewa na fonti.</translation>
+        <translation type="unfinished">Onyesha emoji za maandishi kama picha za rangi badala ya maandishi au emoji nyeusi na nyeupe za fonti.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Chagua ni seti gani ya picha za kutumia wakati wa kutoa emoji.</translation>
+        <translation type="unfinished">Chagua seti ya picha ya kutumia kuonyesha emoji.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ukubwa katika pikseli za picha ya emoji. Chagua kitu sawa na saizi yako ya msingi ya fonti.</translation>
+        <translation type="unfinished">Ukubwa wa picha ya emoji kwa pikseli. Chagua kitu kinachokaribiana na ukubwa wa fonti ya msingi.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mtindo wa msingi wa kutumia kwa UI. Fusion inapendekezwa kwani inafanya kazi vyema na mandhari ya qTox.</translation>
+        <translation type="unfinished">Mtindo wa msingi wa kiolesura. Fusion inapendekezwa kwa kuwa inafanya kazi vizuri zaidi na mandhari za qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mandhari ya rangi ya UI. Tumia hii kuchagua hali ya giza.</translation>
+        <translation type="unfinished">Mandhari ya rangi ya kiolesura. Tumia hii kuchagua hali ya giza.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikiwa imezimwa, tumia arifa za msingi za trei ya mfumo. Vinginevyo, jaribu kutumia arifa ya mazingira ya eneo-kazi lako. Zima hii ikiwa unaona masuala na arifa za eneo-kazi.</translation>
+        <translation type="unfinished">Ikizimwa, arifa za kawaida za trei ya mfumo hutumika. Vinginevyo, qTox hujaribu kutumia mfumo wa arifa wa mazingira yako ya eneo-kazi. Zima hii ukiona matatizo na arifa za eneo-kazi.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tumia mandharinyuma ya arifa mahususi ya mfumo ikiwa inapatikana</translation>
+        <translation type="unfinished">Tumia mfumo wa arifa wa mfumo wa uendeshaji ikiwa unapatikana</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Onyesha muhtasari wa picha zilizotumwa na kupokewa kwenye gumzo. Elea juu ya onyesho la kuchungulia la ndani ili kuonyesha onyesho kubwa zaidi.</translation>
+        <translation type="unfinished">Onyesha onyesho la kukagua picha zilizotumwa na zilizopokewa kwenye gumzo. Weka kipanya juu ya onyesho ili kuona kubwa zaidi.</translation>
     </message>
     <message>
         <source>Image preview</source>
@@ -3629,43 +3603,39 @@ Ficha vibambo vya uumbizaji:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Idadi ya juu zaidi ya ujumbe (kwa kila mazungumzo) iliyopakiwa kutoka
-kwenye historia ya gumzo. Punguza hii ili kuboresha utendaji. Nambari ya
-chini sana hapa inaweza kusababisha upau wa kusogeza kutoweka.</translation>
+        <translation type="unfinished">Idadi ya juu ya jumbe (kwa kila mazungumzo) zinazopakiwa kutoka historia ya gumzo.
+Punguza hii kuboresha utendaji. Idadi ndogo mno inaweza kusababisha
+upau wa kusogeza kutoweka.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Upeo wa ukubwa wa
-mwonekano wa logi</translation>
+        <translation type="unfinished">Ukubwa wa juu wa mwonekano wa kumbukumbu ya gumzo</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Idadi ya ujumbe wa kupakia kutoka kwa historia ya gumzo wakati wa
-kusogeza. Nambari ya chini sana hapa inaweza kusababisha upau wa kusogeza
-kutoweka.</translation>
+        <translation type="unfinished">Idadi ya jumbe zinazopakiwa kutoka historia ya gumzo wakati wa kusogeza. Idadi ndogo
+mno inaweza kusababisha upau wa kusogeza kutoweka.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ukubwa wa logi ya
-gumzo</translation>
+        <translation type="unfinished">Ukubwa wa sehemu ya kumbukumbu ya gumzo</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">logi ya
-gumzo:</translation>
+        <translation type="unfinished">Kumbukumbu ya gumzo:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ficha kiambishi baada ya alama null</translation>
+        <translation type="unfinished">Ficha maandishi baada ya herufi ya NUL</translation>
     </message>
 </context>
 <context>
@@ -3680,13 +3650,13 @@ gumzo:</translation>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mbali</translation>
+        <translation type="unfinished">Hayupo</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shughuli</translation>
+        <translation type="unfinished">Ana shughuli</translation>
     </message>
     <message>
         <source>File</source>
@@ -3702,7 +3672,7 @@ gumzo:</translation>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka</translation>
+        <translation type="unfinished">Toka</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3737,12 +3707,12 @@ gumzo:</translation>
     <message>
         <source>By Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kwa Jina</translation>
+        <translation type="unfinished">Kwa jina</translation>
     </message>
     <message>
         <source>By Activity</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kwa Shughuli</translation>
+        <translation type="unfinished">Kwa shughuli</translation>
     </message>
     <message>
         <source>All</source>
@@ -3813,13 +3783,13 @@ gumzo:</translation>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore imeshindwa kuanza, programu itasitishwa baada ya kufunga ujumbe huu.</translation>
+        <translation type="unfinished">Toxcore imeshindwa kuanza; programu itafungwa utakapofunga ujumbe huu.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore imeshindwa kuanza na mipangilio yako ya seva mbadala. qTox haiwezi kukimbia; tafadhali rekebisha mipangilio yako na uanze upya.</translation>
+        <translation type="unfinished">Toxcore imeshindwa kuanza na mipangilio yako ya seva mbadala. qTox haiwezi kufanya kazi; tafadhali badilisha mipangilio na uanzishe upya.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3829,22 +3799,22 @@ gumzo:</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ombi %n jipya la urafiki</numerusform>
+            <numerusform>Maombi %n mapya ya urafiki</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mwaliko %n mpya wa mkutano</numerusform>
+            <numerusform>Mialiko %n mipya ya mkutano</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Utgång</translation>
+        <translation type="unfinished">Toka</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3859,7 +3829,7 @@ gumzo:</translation>
     <message>
         <source>Logout</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ondoka</translation>
+        <translation type="unfinished">Toka</translation>
     </message>
     <message>
         <source>Add contact...</source>
@@ -3880,7 +3850,7 @@ gumzo:</translation>
         <source>Debug</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tatua</translation>
+        <translation type="unfinished">Utatuzi</translation>
     </message>
 </context>
 </TS>

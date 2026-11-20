@@ -33,7 +33,7 @@
     </message>
     <message>
         <source>Playback device</source>
-        <translation>Hangeszköz</translation>
+        <translation>Lejátszóeszköz</translation>
     </message>
     <message>
         <source>Capture device</source>
@@ -52,18 +52,6 @@
         <translation>Videóeszköz</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Állítsa be a kamera felbontását.
-Minél magasabb értéket választ, annál jobb videóminőséget kaphatnak az ismerősei.
-Vegye figyelembe, hogy a jobb videóminőséghez erősebb internetkapcsolat szükséges.
-Előfordulhat, hogy a kapcsolata nem elég stabil a magasabb videóminőség kezeléséhez,
-ami problémákat okozhat a videóhívások során.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>Felbontás</translation>
     </message>
@@ -80,20 +68,20 @@ ami problémákat okozhat a videóhívások során.</translation>
         <translation>Hangminőség</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Magas (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Magas (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Közepes (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Közepes (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Alacsony (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Alacsony (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Nagyon alacsony (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Nagyon alacsony (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -117,7 +105,7 @@ Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Állítsa be a kamera felbontását.
-Minél magasabb az értékek, annál jobb videóminőséget érhetnek el ismerősei.
+Minél magasabbak az értékek, annál jobb videóminőséget érhetnek el ismerősei.
 Vegye figyelembe, hogy jobb videóminőséggel nagyobb sávszélességet használ.
 Előfordulhat, hogy a kapcsolat nem elég jó a jobb videóminőséghez,
 ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
@@ -154,7 +142,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>Véglegesítés azonosítója: %1</translation>
+        <translation>Commit-hash: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -165,24 +153,24 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Qt verzió: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>A qTox ismert hibáinak teljes listája megtalálható a GitHubon lévő %1 oldalon. Ha hibát vagy biztonsági sérülékenységet talál a qTox-ban, jelentse azt a %2 wiki cikkben található útmutatók szerint.</translation>
+        <translation>A qTox ismert hibáinak listája megtalálható a GitHubon, a(z) %1 oldalon. Ha hibát vagy biztonsági sérülékenységet talál a qToxban, jelentse azt a(z) %2 wikicikkben található útmutató szerint.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Kattintson ide egy hiba bejelentéséhez.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>A teljes %1 lista megtekinthető a GitHubon</translation>
+        <translation>A(z) %1 teljes listája megtekinthető a GitHubon</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation>hibakövetőben</translation>
+        <translation>hibakövető</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -204,7 +192,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Automatikusan elfogad fájlokat a partnertől, ha engedélyezve van</translation>
+        <translation>Fájlok automatikus elfogadása ettől a partnertől, ha be van kapcsolva</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -224,10 +212,10 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation>Automatikusan elfogadja a csoportmeghívásokat ettől a partnertől, ha be van állítva.</translation>
+        <translation>Automatikusan elfogadja a konferencia-meghívásokat ettől a partnertől, ha be van kapcsolva.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Előzmények törlése (ez a művelet nem visszavonható!)</translation>
     </message>
     <message>
@@ -243,11 +231,11 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Előzmények eltávolítva</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Ez a partnere nyilvános kulcsa, amelyet a személyazonosságának másik csatornán történő ellenőrzésére használhat. Ezt nem küldheti el másoknak, hogy ők is hozzáadhassák ezt a partnert.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>Ez a partnere nyilvános kulcsa, amelyet a személyazonosságának másik csatornán történő ellenőrzésére használhat. Mások nem tudják ezzel hozzáadni ezt a partnert.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translation>Publikus kulcs (nem Tox-azonosító):</translation>
     </message>
     <message>
@@ -255,12 +243,12 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Megerősítés</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
-        <translation>Biztosan törli a(z) %1 csevegés előzményeit?</translation>
+        <source>Are you sure you want to remove the chat history with %1?</source>
+        <translation>Biztosan törli a(z) %1 partnerrel folytatott csevegés előzményeit?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
-        <translation>Nem sikerült törölni a(z) %1 csevegés előzményeit!</translation>
+        <translation>Nem sikerült törölni a(z) %1 partnerrel folytatott csevegés előzményeit!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -270,7 +258,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Az automatikus elfogadás ennél a partnertől le van tiltva</translation>
+        <translation>Az automatikus elfogadás ennél a partnernél ki van kapcsolva</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -280,10 +268,10 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <message>
         <source>Auto-accept conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Csoportmeghívások automatikus elfogadása</translation>
+        <translation>Konferencia-meghívások automatikus elfogadása</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Itt mentheti a partnerrel kapcsolatos megjegyzéseit.</translation>
     </message>
@@ -328,7 +316,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <name>AddFriendForm</name>
     <message>
         <source>Add Friends</source>
-        <translation>Partner hozzáadása</translation>
+        <translation>Partnerek hozzáadása</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -355,7 +343,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Elutasítás</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Írja be a partnere Tox-azonosítóját</translation>
     </message>
     <message>
@@ -395,7 +383,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation>Tox-azonosító (Tox ID)</translation>
+        <translation>Tox-azonosító</translation>
     </message>
     <message>
         <source>Message</source>
@@ -423,7 +411,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>%n partner készen áll az importálásra, kattints a küldésre a megerősítéshez</numerusform>
+            <numerusform>%n partner importálásra kész, kattintson a küldésre a megerősítéshez</numerusform>
         </translation>
     </message>
     <message>
@@ -436,10 +424,10 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Tox-azonosító, 76 hexadecimális karakter</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>%1 Tox-azonosító érvénytelen</translation>
+        <translation>%1 nem érvényes Tox-azonosító</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -460,7 +448,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     </message>
     <message>
         <source>really</source>
-        <translation>teljesen</translation>
+        <translation>pontosan</translation>
     </message>
     <message>
         <source>not</source>
@@ -493,7 +481,7 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Hacsak nem %1 tudja, mit csinál, %2 módosítson itt bármit. Az itt végrehajtott változtatások problémákat okozhatnak a qTox-szal kapcsolatban, és akár adatvesztéshez is vezethetnek, pl. előzmények.%3</translation>
+        <translation>Hacsak nem tudja %1, mit csinál, kérjük, %2 módosítson itt semmit. Az itt végrehajtott változtatások problémákat okozhatnak a qTox működésében, és akár adatvesztéshez is vezethetnek (pl. az előzmények elvesztéséhez).%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -519,13 +507,13 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>A beállítások mentése a munkakönyvtárba a szokásos konfigurációs könyvtár helyett</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Hordozható Tox létrehozása</translation>
+        <translation>Tox hordozhatóvá tétele</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -639,28 +627,20 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <translation>Új példányt indít, és megnyitja a bejelentkezési képernyőt.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Az IPv6 &lt;be&gt;/&lt;ki&gt; kapcsolása. Az alapértelmezett érték: BE.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>Be- vagy kikapcsolja az IPv6-ot: %1. Alapértelmezett: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Az UDP &lt;be&gt;/&lt;ki&gt; kapcsolása. Az alapértelmezett érték: BE.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>Be- vagy kikapcsolja az UDP-t: %1. Alapértelmezett: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>LAN-felderítés &lt;be&gt;/&lt;ki&gt; kapcsolása. UDP off felülbírálása. Az alapértelmezett érték: BE.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>Be- vagy kikapcsolja a LAN-felderítést: %1. Kikapcsolt UDP mellett nem működik. Alapértelmezett: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Proxy beállítások megadása. Az alapértelmezett érték: NINCS.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>Proxybeállítások megadása. Alapértelmezett: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -734,8 +714,8 @@ ami problémákat okozhat a videohívásokkal kapcsolatban.</translation>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Az érvénytelen karakterek a következőre módosultak: _
-így mentheti a fájlt a Windows rendszeren.</translation>
+        <translation>Az érvénytelen karakterek _ karakterre módosultak,
+így mentheti a fájlt Windowson.</translation>
     </message>
 </context>
 <context>
@@ -778,7 +758,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation>Videóhívás elfogadása</translation>
+        <translation>Videóhívás fogadása</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -809,7 +789,7 @@ so you can save the file on Windows.</source>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation>#%1. csoport</translation>
+        <translation>#%1. konferencia</translation>
     </message>
 </context>
 <context>
@@ -860,12 +840,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation>A hely írásvédett</translation>
+        <translation>A hely nem írható</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation>Nincs jogosultsága az adott helyre írni. Válasszon másik helyet, vagy szakítsa meg a mentési párbeszédablakot.</translation>
+        <translation>Nincs jogosultsága az adott helyre írni. Válasszon másik helyet, vagy szakítsa meg a mentést.</translation>
     </message>
 </context>
 <context>
@@ -889,29 +869,29 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>társazonosító másolása</translation>
+        <translation>résztvevő azonosítójának másolása</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation>Csoportok</translation>
+        <translation>Konferenciák</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation>Új csoport létrehozása</translation>
+        <translation>Új konferencia létrehozása</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation>Csoportmeghívások</translation>
+        <translation>Konferencia-meghívások</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1 meghívta %2-n %3-kor.</translation>
+        <translation>%1 hívta meg (%2, %3).</translation>
     </message>
     <message>
         <source>Join</source>
@@ -931,7 +911,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Kilépés a csoportból</translation>
+        <translation>Kilépés a konferenciából</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -966,7 +946,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation>Csoportos csevegés %1</translation>
+        <translation>%1 konferencia</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1067,10 +1047,10 @@ so you can save the file on Windows.</source>
         <translation>Átvitel elfogadása</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Távoli szüneteltetés</translation>
+        <translation>A másik fél szüneteltette</translation>
     </message>
 </context>
 <context>
@@ -1087,7 +1067,7 @@ so you can save the file on Windows.</source>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Átküldött fájlok</translation>
+        <translation>Átvitt fájlok</translation>
     </message>
 </context>
 <context>
@@ -1123,7 +1103,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Meghívás csoportba</translation>
+        <translation>Meghívás konferenciába</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1144,11 +1124,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>Új csoportba</translation>
+        <translation>Új konferenciába</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation>Meghívás a(z) &apos;%1&apos; csoportba</translation>
+        <translation>Meghívás a(z) &quot;%1&quot; konferenciába</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1161,7 +1141,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Eltávolítás a(z) &apos;%1&apos; körből</translation>
+        <translation>Eltávolítás a(z) &quot;%1&quot; körből</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1200,7 +1180,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Letiltott</translation>
+        <translation>Letiltva</translation>
     </message>
 </context>
 <context>
@@ -1228,7 +1208,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation>A fordítás csak a qTox újraindítása után lesz betöltve.</translation>
+        <translation>Lehet, hogy a fordítás csak a qTox újraindítása után töltődik be.</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1241,28 +1221,28 @@ so you can save the file on Windows.</source>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Engedélyezi a világos tálcaikont.</translation>
+        <translation>Világos rendszertálca-ikon használata.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation>Világos tálcaikon</translation>
+        <translation>Világos ikon</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation>A qTox a tálcán minimalizálva fog elindulni.</translation>
+        <translation>A qTox a rendszertálcára kicsinyítve indul.</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>Indítás a tálcán</translation>
+        <translation>Indítás a rendszertálcán</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>Bezárás a tálcára</translation>
+        <translation>Bezáráskor a rendszertálcára</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>Minimalizálás a tálcára</translation>
+        <translation>Kicsinyítés a rendszertálcára</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1281,8 +1261,8 @@ so you can save the file on Windows.</source>
         <translation>Állítson be nullát a letiltáshoz</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Az állapota „Távol”-ra változik, miután beállítja a tétlenség időtartamát.</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>Az állapota „Távol”-ra változik a beállított idejű tétlenség után.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
@@ -1321,19 +1301,19 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>A kicsinyítés (_) megnyomása után a qTox a tálcára kicsinyíti,
-a rendszer tálca helyett.</translation>
+        <translation>A kis méret (_) gomb megnyomása után a qTox a rendszertálcára kerül
+a feladatsáv helyett.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>A bezárás (X) megnyomása után a qTox bezárja a tálcát,
-ahelyett, hogy teljesen bezárná.</translation>
+        <translation>A bezárás (X) gomb megnyomása után a qTox a rendszertálcára kerül
+ahelyett, hogy teljesen bezáródna.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Ezt minden partnerhez külön-külön beállíthatja, ha jobb gombbal kattint az adott partnerre.</translation>
@@ -1341,7 +1321,7 @@ ahelyett, hogy teljesen bezárná.</translation>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Üzenet hozzáadása a csevegéshez, amikor egy felhasználó belép vagy elhagy egy csoportot</translation>
+        <translation>Üzenet megjelenítése a csevegésben, amikor egy felhasználó belép egy konferenciába vagy kilép belőle</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1351,7 +1331,7 @@ ahelyett, hogy teljesen bezárná.</translation>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Segítsen fordítani</translation>
+        <translation>Segítség a fordításban</translation>
     </message>
     <message>
         <source> min</source>
@@ -1423,7 +1403,7 @@ ahelyett, hogy teljesen bezárná.</translation>
     <name>IdentitySettings</name>
     <message>
         <source>Public Information</source>
-        <translation>Publikus információ</translation>
+        <translation>Nyilvános információk</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -1447,8 +1427,8 @@ ahelyett, hogy teljesen bezárná.</translation>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>Engedélyezi a saját Tox-profiljának exportálását egy fájlba.
-A profil nem tartalmazza a saját előzményeit.</translation>
+        <translation>Lehetővé teszi Tox-profilja exportálását fájlba.
+A profil nem tartalmazza az előzményeit.</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1488,7 +1468,7 @@ A profil nem tartalmazza a saját előzményeit.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Kijelentkezés</translation>
     </message>
     <message>
@@ -1510,11 +1490,11 @@ A profil nem tartalmazza a saját előzményeit.</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation>Név látható a partnereknek</translation>
+        <translation>A partnerek által látható név</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Állapotüzenet bevitele</translation>
+        <translation>Állapotüzenet mezője</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
@@ -1570,7 +1550,7 @@ Ossza meg az ismerőseivel a csevegés megkezdéséhez.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation>Állítsa be állapotüzenetét, mely másoknak megjelenik</translation>
+        <translation>Állítsa be a másoknak megjelenő állapotüzenetét</translation>
     </message>
 </context>
 <context>
@@ -1658,7 +1638,7 @@ Ossza meg az ismerőseivel a csevegés megkezdéséhez.</translation>
 You may want to create one.</source>
         <translation>Nincs kiválasztott profil.
 
-Lehet, hogy új profilt kell létrehoznia.</translation>
+Létrehozhat egy újat.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1682,7 +1662,7 @@ Lehet, hogy új profilt kell létrehoznia.</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation>Jelszó megerősítő mező</translation>
+        <translation>Jelszó-megerősítő mező</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
@@ -1714,11 +1694,11 @@ Lehet, hogy új profilt kell létrehoznia.</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation>Új profil létrehozó oldal</translation>
+        <translation>Új profil létrehozása oldal</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>Meglévő profiloldal betöltése</translation>
+        <translation>Meglévő profil betöltése oldal</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1737,7 +1717,7 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation>A itt megadott jelszó opcionális, és titkosítja az üzenetadatokat és a Tox titkos kulcsát. Nem titkosítja a fogadott fájlokat. A profiladatai soha nem kerülnek elküldésre kiszolgálókra. Ez nem egy távoli bejelentkezés, kizárólag a számítógépére vonatkozik. A qTox fejlesztői nem lesznek képesek visszaállítani a jelszavát, ha azt elveszíti.</translation>
+        <translation>Az itt megadott jelszó nem kötelező, és titkosítja az üzenetadatokat és a Tox titkos kulcsát. A fogadott fájlokat nem titkosítja. A profiladatai soha nem kerülnek elküldésre semmilyen kiszolgálóra. Ez nem távoli bejelentkezés, minden csak az Ön számítógépén történik. A qTox fejlesztői nem tudják visszaállítani a jelszavát, ha elveszíti.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1752,11 +1732,11 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>Your status</source>
-        <translation>Az Ön állapotüzenete</translation>
+        <translation>Az Ön állapota</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation>Csoportos csevegés létrehozása</translation>
+        <translation>Konferencia létrehozása</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1816,11 +1796,11 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>Conference</source>
-        <translation>Csoport</translation>
+        <translation>Konferencia</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation>Csoportkezelési oldal megnyitása</translation>
+        <translation>Konferenciakezelési oldal megnyitása</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1865,9 +1845,9 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
         <translation>Végrehajtható fájl</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation>A qTox arra kérte, hogy nyisson meg egy végrehajtható fájlt. A végrehajtható fájlok potenciálisan károsíthatják a számítógépét. Biztosan meg szeretné nyitni ezt a fájlt?</translation>
+        <translation>Ön arra kérte a qToxot, hogy nyisson meg egy végrehajtható fájlt. A végrehajtható fájlok károsíthatják a számítógépét. Biztosan meg szeretné nyitni ezt a fájlt?</translation>
     </message>
 </context>
 <context>
@@ -1935,7 +1915,7 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>Exit Full Screen</source>
-        <translation>Teljes képernyő bezárása</translation>
+        <translation>Kilépés a teljes képernyőből</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
@@ -1959,7 +1939,7 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>New conference message</source>
-        <translation>Új csoportüzenet</translation>
+        <translation>Új konferenciaüzenet</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1973,12 +1953,12 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation>Csoportmeghívás érkezett</translation>
+        <translation>Konferencia-meghívás érkezett</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>%1 meghívja Önt egy csoportba.</translation>
+        <translation>%1 meghívja Önt egy konferenciába.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1998,7 +1978,7 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translation>A Caps Lock be van kapcsolva</translation>
     </message>
 </context>
@@ -2022,14 +2002,14 @@ További információért nyomja meg a Shift+F1 billentyűkombinációt.</transl
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation>A partnere látni fogja, amikor Ön gépel.</translation>
+        <translation>A partnerei látni fogják, amikor Ön gépel.</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translation>A csevegési előzmények megőrzése még fejlesztés alatt áll.
-A formátum módosításai lehetségesek, de azok adatvesztést okozhatnak.</translation>
+A mentési formátum megváltozhat, ami adatvesztést okozhat.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
@@ -2044,9 +2024,9 @@ A formátum módosításai lehetségesek, de azok adatvesztést okozhatnak.</tra
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>A NoSpam a Tox-azonosítójának (ToxID) a része.
-Ha kéretlen partnerfelkéréseket kap, változtassa meg a NoSpam azonosítóját.
-Az új azonosítóval mások nem tudják majd hozzáadni Önt, de a jelenlegi partnerei megmaradnak.</translation>
+        <translation>A NoSpam a Tox-azonosítójának része.
+Ha kéretlen partnerkérelmeket kap, változtassa meg a NoSpam-et.
+A régi azonosítójával mások nem tudják majd hozzáadni Önt, de a jelenlegi partnerei megmaradnak.</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -2055,8 +2035,8 @@ Az új azonosítóval mások nem tudják majd hozzáadni Önt, de a jelenlegi pa
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>A NoSpam a Tox-azonosítójának a része, és bármikor megváltoztatható.
-Ha kéretlen partnerfelkéréseket kap, változtassa meg a NoSpam azonosítóját.</translation>
+        <translation>A NoSpam a Tox-azonosítójának része, és bármikor megváltoztatható.
+Ha kéretlen partnerkérelmeket kap, változtassa meg a NoSpam-et.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2068,26 +2048,26 @@ Ha kéretlen partnerfelkéréseket kap, változtassa meg a NoSpam azonosítójá
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Csoport tiltólista</translation>
+        <translation>Konferencia-tiltólista</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Szűrje ki a csoportüzeneteket a csoport tagjainak nyilvános kulcsai alapján. Írja be a nyilvános kulcsokat ide, mindegyiket egy sorba.</translation>
+        <translation>Konferenciaüzenetek kiszűrése a tagok nyilvános kulcsai alapján. Írja ide a nyilvános kulcsokat, soronként egyet.</translation>
     </message>
 </context>
 <context>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>A jelszóból nem sikerült kulcsot generálni, a profil nem fogja használni az új jelszót.</translation>
+        <translation>A jelszóból nem sikerült kulcsot származtatni, a profil nem fogja használni az új jelszót.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translation>A qTox klienst használom</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Nem sikerült megváltoztatni az adatbázis jelszavát, előfordulhat, hogy az adatbázis sérült, vagy a régi jelszót használja.</translation>
     </message>
@@ -2149,7 +2129,7 @@ Válasszon egy másik képet.</translation>
         <translation>Mentés</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>QR-kód mentése (*.png)</translation>
     </message>
@@ -2159,7 +2139,7 @@ Válasszon egy másik képet.</translation>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>Az Ön profilja nem tartalmaz jelszót!</translation>
+        <translation>Az Ön profiljához nincs jelszó!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2184,10 +2164,6 @@ Válasszon egy másik képet.</translation>
         <translation>Jelszó módosítása sikertelen</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>Üres elérési út nem elérhető</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>Nem sikerült átnevezni</translation>
     </message>
@@ -2204,8 +2180,8 @@ Válasszon egy másik képet.</translation>
         <translation>Üres név</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>Üres név nem elérhető</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>A név nem lehet üres</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2219,7 +2195,7 @@ Válasszon egy másik képet.</translation>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>Tox mentési fájl (*.tox)</translation>
+        <translation>Tox-profilfájl (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2247,12 +2223,12 @@ Válasszon egy másik képet.</translation>
         <translation>A kiválasztott fájl nem menthető.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Üres elérési út nem elérhető.</translation>
+        <translation>Az elérési út nem lehet üres.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Nem sikerült megváltoztatni az adatbázis jelszavát, előfordulhat, hogy az adatbázis sérült, vagy a régi jelszót használja.</translation>
     </message>
@@ -2287,7 +2263,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>Ez az azonosító lehetővé teszi más Tox-felhasználók számára, hogy hozzáadjanak és kapcsolatba lépjenek Önnel.
 Ossza meg a barátaival, hogy elkezdhesse a csevegést.
 
-Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellenőrző kódot (szürkével).</translation>
+Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint az ellenőrzőösszeget (szürkével).</translation>
     </message>
 </context>
 <context>
@@ -2300,7 +2276,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Tox mentési fájl (*.tox)</translation>
+        <translation>Tox-profilfájl (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
@@ -2310,7 +2286,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>Figyelem: A kiválasztott fájl nem egy Tox mentési fájl; nem kerül feldolgozásra.</translation>
+        <translation>Figyelem: A kiválasztott fájl nem Tox-profilfájl, ezért figyelmen kívül marad.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2318,9 +2294,9 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
         <translation>A profil már létezik</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>A(z) &quot;%1&quot; nevű profil már létezik. Szeretné törölni?</translation>
+        <translation>A(z) &quot;%1&quot; nevű profil már létezik. Szeretné felülírni?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2342,7 +2318,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
@@ -2368,7 +2344,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation>Válasszon ki egy automatikus elfogadási könyvtárat</translation>
+        <translation>Válassza ki az automatikusan elfogadott fájlok könyvtárát</translation>
     </message>
 </context>
 <context>
@@ -2425,7 +2401,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>A qTox nem tudta megnyitni a csevegésnaplót, ezért le lett tiltva.</translation>
+        <translation>A qTox nem tudta megnyitni a csevegésnaplókat, ezért ki lesznek kapcsolva.</translation>
     </message>
     <message>
         <source>None</source>
@@ -2447,7 +2423,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Dark olive</source>
-        <translation>Sötétzöld</translation>
+        <translation>Sötét olajzöld</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2494,15 +2470,15 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation>%1 belépett a csoportba</translation>
+        <translation>%1 belépett a konferenciába</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation>%1 kilépett a csoportból</translation>
+        <translation>%1 kilépett a konferenciából</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation>%1 ezentúl %2-ként ismert</translation>
+        <translation>%1 új neve: %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2514,16 +2490,16 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation>A %1 hívás váratlanul véget ért. %2</translation>
+        <translation>A(z) %1 partnerrel folytatott hívás váratlanul véget ért. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation>%1 hívása befejeződött. %2</translation>
+        <translation>A(z) %1 partnerrel folytatott hívás befejeződött. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 most %2</translation>
+        <translation>%1 mostantól %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2560,26 +2536,26 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Finished</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Befejezett</translation>
+        <translation>Befejezve</translation>
     </message>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Sérült</translation>
+        <translation>Megszakadt</translation>
     </message>
     <message>
         <source>Canceled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Megszakított</translation>
+        <translation>Megszakítva</translation>
     </message>
     <message>
         <source>Paused</source>
         <translation>Szüneteltetve</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Távoli szüneteltetés</translation>
+        <translation>A másik fél szüneteltette</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2594,7 +2570,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Előrehaladás</translation>
+        <translation>Folyamat</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2613,17 +2589,17 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Ellenőrzés</translation>
+        <translation>Vezérlés</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Ön csatlakozott a csoporthoz</translation>
+        <translation>Ön csatlakozott a konferenciához</translation>
     </message>
     <message>
         <source>You have left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Ön elhagyta a csoportot</translation>
+        <translation>Ön kilépett a konferenciából</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2644,7 +2620,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Eltávolít minden csevegési előzményt a partnerével, ha ez be van állítva</translation>
+        <translation>Az összes csevegési előzmény eltávolítása a partnerrel, ha be van jelölve</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2664,7 +2640,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
-        <translation>Kattintson és húzza az egérrel a terület kijelöléséhez. Nyomja meg a %1-et a qTox-ablak elrejtéséhez/megjelenítéséhez, vagy a %2-t a művelet törléséhez.</translation>
+        <translation>Kattintson és húzza az egérrel a terület kijelöléséhez. Nyomja meg a(z) %1 billentyűt a qTox-ablak elrejtéséhez/megjelenítéséhez, vagy a(z) %2 billentyűt a megszakításhoz.</translation>
     </message>
     <message>
         <source>Space</source>
@@ -2674,12 +2650,12 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>Escape</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
-        <translation>Nyomja meg a %1-et a kijelölésről készült képernyőmentés elküldéséhez, a %2-t a qTox-ablak elrejtéséhez/megjelenítéséhez, vagy a %3-t a művelet törléséhez.</translation>
+        <translation>Nyomja meg a(z) %1 billentyűt a kijelölésről készült képernyőkép elküldéséhez, a(z) %2 billentyűt a qTox-ablak elrejtéséhez/megjelenítéséhez, vagy a(z) %3 billentyűt a megszakításhoz.</translation>
     </message>
     <message>
         <source>Enter</source>
@@ -2722,7 +2698,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Kis- és nagybetű</translation>
+        <translation>Kis- és nagybetűk megkülönböztetése</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -2730,12 +2706,12 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation>Pontos kifejezések használata</translation>
+        <translation>Reguláris kifejezések használata</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Válassza a Dátum párbeszédablakot</translation>
+        <translation>Dátumválasztó párbeszédablak</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2758,7 +2734,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
-        <translation>A jelszó nem egyezik.</translation>
+        <translation>A jelszavak nem egyeznek.</translation>
     </message>
     <message>
         <source>Confirm password</source>
@@ -2766,11 +2742,11 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Confirm password input</source>
-        <translation>Jelszó megerősítése bevitel</translation>
+        <translation>Jelszó megerősítésének mezője</translation>
     </message>
     <message>
         <source>Password input</source>
-        <translation>Jelszó bevitele</translation>
+        <translation>Jelszómező</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -2812,7 +2788,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     <name>ToxURIDialog</name>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation>Szeretné %1-et partnerként hozzáadni?</translation>
+        <translation>Szeretné partnerként hozzáadni: %1?</translation>
     </message>
     <message>
         <source>User ID:</source>
@@ -2857,7 +2833,7 @@ Ez az azonosító tartalmazza a NoSpam kódot (kék színnel), valamint a ellen�
     </message>
     <message>
         <source>Base font:</source>
-        <translation>Alap betűtípus:</translation>
+        <translation>Alapbetűtípus:</translation>
     </message>
     <message>
         <source>Size: </source>
@@ -2876,18 +2852,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation>Az új szövegformázási beállítások nem biztos, hogy betöltődnek a beszélgetési előzményekben, amíg a qTox újra nem indul.
-Az új üzeneteket azonnal érinti.
+        <translation>Az új szövegformázási beállítás a csevegési előzményekben lehet, hogy csak a qTox újraindítása után jelenik meg.
+Az új üzenetekre azonnal hatással van.
 
 Egyszerű szöveg:
-    Ne alkalmazzon semmilyen formázást az üzenetekre.
-    Például: &quot;szöveg&quot; úgy fog megjelenni, mint &quot;szöveg&quot;, nem félkövér..
+    Nem alkalmaz formázást az üzenetekre.
+    Pl. a &quot;**szöveg**&quot; így jelenik meg: &quot;**szöveg**&quot;, nem félkövéren.
 Formázási karakterek megjelenítése:
-    Alkalmazzon formázást, és mutassa a karaktereket.
-    Például: &quot;szöveg&quot; úgy fog megjelenni, mint &quot;szöveg&quot;, félkövér.
+    Alkalmazza a formázást, és megjeleníti a karaktereket.
+    Pl. a &quot;**szöveg**&quot; így jelenik meg: &quot;**szöveg**&quot;, félkövéren.
 Formázási karakterek elrejtése:
-    Alkalmazzon formázást, és ne mutassa a karaktereket.
-    Például: &quot;szöveg&quot; úgy fog megjelenni, mint &quot;szöveg&quot;, félkövér.</translation>
+    Alkalmazza a formázást, de nem jeleníti meg a karaktereket.
+    Pl. a &quot;**szöveg**&quot; így jelenik meg: &quot;szöveg&quot;, félkövéren.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2928,12 +2904,12 @@ Formázási karakterek elrejtése:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation>Csoportos beszélgetések elhelyezése a partnerlista tetejére</translation>
+        <translation>Konferenciák elhelyezése a partnerlista tetején</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation>Az Ön partnerlistája kompakt módban lesz megjelenítve.</translation>
+        <translation>Az Ön partnerlistája kompakt módban lesz megjelenítve (kis profilképek, táblázatos nézet).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2985,7 +2961,7 @@ Formázási karakterek elrejtése:
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
-        <translation>Személyre szabott ikonok használata az üres profilképek helyett</translation>
+        <translation>Identicon ikonok használata az üres profilképek helyett</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -2998,7 +2974,7 @@ Formázási karakterek elrejtése:
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation>A csoportbeszélgetésekről csak akkor értesít, ha Önt megemlítik</translation>
+        <translation>A konferenciákról csak akkor értesítsen, ha Önt megemlítik</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3006,7 +2982,7 @@ Formázási karakterek elrejtése:
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation>Hangjelzés, amíg Elfoglalt</translation>
+        <translation>Hang lejátszása Elfoglalt állapotban</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3019,19 +2995,19 @@ Formázási karakterek elrejtése:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Használjon színes beceneveket a csoportokban</translation>
+        <translation>Színes becenevek használata a konferenciákban</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Csak akkor értesítsen a csoportokba érkező új üzenetekről, ha a becenevét említik.</translation>
+        <translation>Csak akkor értesítsen a konferenciákba érkező új üzenetekről, ha a becenevét említik.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Ha be van jelölve, a csoportok a partnerlista tetejére kerülnek, egyébként az online partnerek alá.</translation>
+        <translation>Ha be van jelölve, a konferenciák a partnerlista tetejére kerülnek, egyébként az online partnerek alá.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -3053,7 +3029,7 @@ Formázási karakterek elrejtése:
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Használjon asztali értesítéseket, pl. értesítési központban vagy a tálcán. E nélkül az értesítés csak villogó tálcaikonként lesz látható.</translation>
+        <translation>Asztali értesítések használata, pl. egy értesítési központban vagy a rendszertálcán. Enélkül az értesítés csak villogó tálcaikonként jelenik meg.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3061,7 +3037,7 @@ Formázási karakterek elrejtése:
         <translation>Csak az „új üzenet” megjelenítése, potenciálisan titkos információk megjelenítése nélkül az asztali értesítésekben.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>Ossza fel a partnerlistát és a csevegőablakot külön mozgatható ablakokra.</translation>
     </message>
@@ -3093,7 +3069,7 @@ Formázási karakterek elrejtése:
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Ha le van tiltva, használja az alapvető rendszertálca-értesítéseket. Ellenkező esetben próbálja meg az asztali környezet értesítési hátterét használni. Tiltsa le ezt, ha problémákat észlel az asztali értesítésekkel kapcsolatban.</translation>
+        <translation>Ha ki van kapcsolva, alapvető rendszertálca-értesítések jelennek meg. Egyébként a qTox megpróbálja az asztali környezet értesítési rendszerét használni. Kapcsolja ki, ha problémát tapasztal az asztali értesítésekkel.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
@@ -3113,8 +3089,8 @@ Formázási karakterek elrejtése:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>A csevegési előzményekből betölthető üzenetek maximális száma
 (beszélgetésenként). Csökkentse ezt a teljesítmény javítása érdekében.
@@ -3126,8 +3102,8 @@ Túl alacsony szám esetén a görgetősáv eltűnhet.</translation>
         <translation>Maximális csevegésnapló megjelenítési mérete</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>A görgetéskor a csevegési előzményekből betöltendő üzenetek száma. Túl
 alacsony szám esetén a görgetősáv eltűnhet.</translation>
@@ -3143,9 +3119,9 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
         <translation>Csevegésnapló:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Rejtse el az utótagot null szimbólum után</translation>
+        <translation>Szöveg elrejtése a NUL karakter után</translation>
     </message>
 </context>
 <context>
@@ -3175,11 +3151,11 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation>Új csoport létrehozása...</translation>
+        <translation>Új konferencia létrehozása...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>Új kör hozzáadása...</translation>
+        <translation>Új kör létrehozása...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3207,7 +3183,7 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation>Csoportok</translation>
+        <translation>Konferenciák</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3247,12 +3223,12 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Csoportmeghívások</translation>
+        <translation>Konferencia-meghívások</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation>Fájl átvitelek</translation>
+        <translation>Fájlátvitelek</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3278,7 +3254,7 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
     <message>
         <source>Couldn&apos;t send friend request</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>Nem sikerült partnerfelkérést küldeni</translation>
+        <translation>Nem sikerült elküldeni a partnerkérelmet</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
@@ -3291,12 +3267,12 @@ alacsony szám esetén a görgetősáv eltűnhet.</translation>
         <source>%n new conference invite(s)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>
-            <numerusform>%n új csoportmeghívás</numerusform>
+            <numerusform>%n új konferencia-meghívás</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>Kilépés</translation>
     </message>
     <message>

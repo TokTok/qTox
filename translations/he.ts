@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>נכה</translation>
+        <translation>מושבת</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation>לקבל</translation>
+        <translation>הגברה</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -41,32 +41,19 @@
     </message>
     <message>
         <source>Volume</source>
-        <translation>כרך</translation>
+        <translation>עוצמת קול</translation>
     </message>
     <message>
         <source>Video Settings</source>
-        <translation>הגדרות וידיאו</translation>
+        <translation>הגדרות וידאו</translation>
     </message>
     <message>
         <source>Video device</source>
         <translation>מכשיר וידאו</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הגדר את הרזולוציה של המצלמה שלך.
-ככל שהערכים גבוהים יותר, כך החברים שלך עשויים לקבל איכות וידאו טובה יותר.
-שימו לב שעם איכות וידאו טובה יותר יש צורך בחיבור אינטרנט טוב יותר.
-לפעמים החיבור שלך לא יהיה מספיק טוב כדי להתמודד עם איכות וידאו גבוהה יותר,
-מה שעלול להוביל לבעיות בשיחות וידאו.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
-        <translation>פתרון הבעיה</translation>
+        <translation>רזולוציה</translation>
     </message>
     <message>
         <source>Rescan devices</source>
@@ -74,32 +61,32 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Test Sound</source>
-        <translation>בדיקת סאונד</translation>
+        <translation>בדיקת צליל</translation>
     </message>
     <message>
         <source>Audio quality</source>
         <translation>איכות שמע</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>גבוה (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>גבוה (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>בינוני (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>בינוני (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>נמוך (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>נמוך (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>נמוך מאוד (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>נמוך מאוד (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סַף</translation>
+        <translation type="unfinished">סף</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
@@ -145,7 +132,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>About</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אוֹדוֹת</translation>
+        <translation type="unfinished">אודות</translation>
     </message>
     <message>
         <source>Original author: %1</source>
@@ -160,7 +147,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בצע hash: %1</translation>
+        <translation type="unfinished">גיבוב commit: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -173,11 +160,11 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">גרסת Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ניתן למצוא רשימה של כל הבעיות הידועות ב-%1 שלנו ב-Github. אם אתה מגלה באג או פגיעות אבטחה בתוך qTox, אנא דווח על כך לפי ההנחיות במאמר ה-wiki%2 שלנו.</translation>
+        <translation type="unfinished">רשימה של כל הבעיות הידועות נמצאת ב%1 שלנו ב-GitHub. אם גילית באג או פרצת אבטחה ב-qTox, נא לדווח עליה לפי ההנחיות במאמר הוויקי שלנו %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -185,16 +172,16 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">לחץ כאן כדי לדווח על באג.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ראה רשימה מלאה של %1 ב-Github</translation>
+        <translation type="unfinished">ראה רשימה מלאה של %1 ב-GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">עוקב אחר באגים</translation>
+        <translation type="unfinished">מעקב הבאגים</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -219,35 +206,35 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Automatically accept files from contact if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קבל אוטומטית קבצים מאיש קשר אם מוגדר</translation>
+        <translation type="unfinished">קבל אוטומטית קבצים מאיש קשר זה אם מסומן</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ספריית ברירת מחדל לשמירת קבצים:</translation>
+        <translation type="unfinished">תיקיית ברירת מחדל לשמירת קבצים:</translation>
     </message>
     <message>
         <source>Manual</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יָדָנִי</translation>
+        <translation type="unfinished">ידני</translation>
     </message>
     <message>
         <source>Audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שֶׁמַע</translation>
+        <translation type="unfinished">שמע</translation>
     </message>
     <message>
         <source>Audio + Video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אודיו + וידאו</translation>
+        <translation type="unfinished">שמע + וידאו</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קבל באופן אוטומטי הזמנות לוועידה מאיש קשר זה אם מוגדר.</translation>
+        <translation type="unfinished">קבל אוטומטית הזמנות לוועידות מאיש קשר זה אם מסומן.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הסר היסטוריה (לא ניתן לבטל את הפעולה!)</translation>
     </message>
@@ -267,24 +254,24 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ההיסטוריה הוסרה</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">זהו המפתח הציבורי של חברך, השתמש בו כדי לאמת את זהותו דרך ערוץ אחר. אתה לא יכול לשלוח את זה לאנשים אחרים כדי שהם יוכלו להוסיף איש קשר זה.</translation>
+        <translation type="unfinished">זהו המפתח הציבורי של חברך, השתמש בו כדי לאמת את זהותו דרך ערוץ אחר. אחרים לא יכולים להשתמש בו כדי להוסיף איש קשר זה.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מפתח ציבורי (לא ToxID):</translation>
+        <translation type="unfinished">מפתח ציבורי (לא Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אִשׁוּר</translation>
+        <translation type="unfinished">אישור</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">האם אתה בטוח להסיר את%1 היסטוריית הצ&apos;אט?</translation>
+        <translation type="unfinished">האם למחוק את היסטוריית הצ&apos;אט עם %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -299,7 +286,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אישור אוטומטי של איש קשר זה מושבת</translation>
+        <translation type="unfinished">קבלה אוטומטית מושבתת עבור איש קשר זה</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -309,10 +296,10 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Auto-accept conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קבל אוטומטית הזמנות לוועידה</translation>
+        <translation type="unfinished">קבל אוטומטית הזמנות לוועידות</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">אתה יכול לשמור הערות על איש קשר זה כאן.</translation>
     </message>
@@ -322,12 +309,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Version</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גִרְסָה</translation>
+        <translation type="unfinished">גרסה</translation>
     </message>
     <message>
         <source>License</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רִשָׁיוֹן</translation>
+        <translation type="unfinished">רישיון</translation>
     </message>
     <message>
         <source>Authors</source>
@@ -370,7 +357,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid Tox ID format</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פורמט מזהה רעל לא חוקי</translation>
+        <translation type="unfinished">פורמט מזהה Tox לא תקין</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -390,15 +377,15 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Accept</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְקַבֵּל</translation>
+        <translation type="unfinished">קבל</translation>
     </message>
     <message>
         <source>Reject</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִדחוֹת</translation>
+        <translation type="unfinished">דחה</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">הקלד את ה-Tox ID של החבר שלך</translation>
     </message>
@@ -410,7 +397,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הקלד הודעה לשליחת עם בקשת החברות או השאר ריק כדי לשלוח הודעת ברירת מחדל</translation>
+        <translation type="unfinished">הקלד הודעה לשליחה עם בקשת החברות או השאר ריק כדי לשלוח הודעת ברירת מחדל</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
@@ -442,25 +429,25 @@ which may lead to problems with video calls.</source>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא מצאנו אנשי קשר לייבוא ​​בקובץ זה!</translation>
+        <translation type="unfinished">לא נמצאו אנשי קשר לייבוא בקובץ זה!</translation>
     </message>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה רעל</translation>
+        <translation type="unfinished">מזהה Tox</translation>
     </message>
     <message>
         <source>Message</source>
         <extracomment>The message you send in friend requests</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוֹדָעָה</translation>
+        <translation type="unfinished">הודעה</translation>
     </message>
     <message>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִפְתוֹחַ</translation>
+        <translation type="unfinished">פתח</translation>
     </message>
     <message>
         <source>Send friend requests</source>
@@ -471,35 +458,35 @@ which may lead to problems with video calls.</source>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 כאן! להרעיל לי אולי?</translation>
+        <translation type="unfinished">%1 כאן! נדבר ב-Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ייבא רשימה של אנשי קשר, מזהה טוקס אחד בכל שורה</translation>
+        <translation type="unfinished">ייבא רשימת אנשי קשר, מזהה Tox אחד בכל שורה</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>מוכן לייבא %n איש קשר, לחץ על שלח לאישור</numerusform>
+            <numerusform>מוכן לייבא %n אנשי קשר, לחץ על שלח לאישור</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ייבוא ​​אנשי קשר</translation>
+        <translation type="unfinished">ייבוא אנשי קשר</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה רעל, 76 תווים הקסדצימליים</translation>
+        <translation type="unfinished">מזהה Tox, 76 תווים הקסדצימליים</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 מזהה טוקס אינו חוקי</translation>
+        <translation type="unfinished">%1 אינו מזהה Tox תקין</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -517,17 +504,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Advanced</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מִתקַדֵם</translation>
+        <translation type="unfinished">מתקדם</translation>
     </message>
     <message>
         <source>really</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בֶּאֱמֶת</translation>
+        <translation type="unfinished">באמת</translation>
     </message>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לֹא</translation>
+        <translation type="unfinished">לא</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -547,12 +534,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Yes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כֵּן</translation>
+        <translation type="unfinished">כן</translation>
     </message>
     <message>
         <source>No</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לֹא</translation>
+        <translation type="unfinished">לא</translation>
     </message>
     <message>
         <source>Logs (*.log)</source>
@@ -562,7 +549,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אלא אם כן אתה %1 יודע מה אתה עושה, בבקשה %2 תשנה שום דבר כאן. שינויים שנעשו כאן עלולים להוביל לבעיות עם qTox, ואפילו לאובדן הנתונים שלך, למשל. היסטוריה.%3</translation>
+        <translation type="unfinished">אלא אם כן אתה %1 יודע מה אתה עושה, בבקשה %2 תשנה שום דבר כאן. שינויים כאן עלולים לגרום לבעיות ב-qTox ואפילו לאובדן הנתונים שלך, למשל ההיסטוריה.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -588,15 +575,15 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שמור את ההגדרות בספריית העבודה במקום ב-conf dir הרגיל</translation>
+        <translation type="unfinished">שמור את ההגדרות בתיקיית העבודה במקום בתיקיית ההגדרות הרגילה</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הפוך את טוקס לנייד</translation>
+        <translation type="unfinished">הפוך את Tox לנייד</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -653,13 +640,13 @@ which may lead to problems with video calls.</source>
         <source>Address:</source>
         <extracomment>Text on proxy addr label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כְּתוֹבֶת:</translation>
+        <translation type="unfinished">כתובת:</translation>
     </message>
     <message>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נָמָל:</translation>
+        <translation type="unfinished">פורט:</translation>
     </message>
     <message>
         <source>None</source>
@@ -668,7 +655,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְנַפּוֹת</translation>
+        <translation type="unfinished">ניפוי באגים</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -694,7 +681,7 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ביטול זה מאפשר, למשל, Tox over Tor. עם זאת, זה מוסיף עומס לרשת Tox, אז בטל את הסימון רק כאשר יש צורך.</translation>
+        <translation type="unfinished">ביטול זה מאפשר, למשל, Tox דרך Tor. עם זאת, זה מוסיף עומס לרשת Tox, אז בטל את הסימון רק כאשר יש צורך.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -707,7 +694,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox URI to parse</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רעל URI לניתוח</translation>
+        <translation type="unfinished">URI של Tox לניתוח</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
@@ -717,7 +704,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פּרוֹפִיל</translation>
+        <translation type="unfinished">פרופיל</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
@@ -725,38 +712,30 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">מתחיל מופע חדש ופותח את מסך הכניסה.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מגדיר את IPv6 &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">מפעיל או מכבה את IPv6: %1. ברירת מחדל: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מגדיר את UDP &lt;on&gt;/&lt;off&gt;. ברירת המחדל היא ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">מפעיל או מכבה את UDP: %1. ברירת מחדל: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מגדיר גילוי LAN &lt;on&gt;/&lt;off&gt;. ביטולי UDP. ברירת המחדל היא ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">מפעיל או מכבה גילוי ברשת המקומית: %1. אין השפעה כאשר UDP כבוי. ברירת מחדל: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מגדיר הגדרות פרוקסי. ברירת המחדל היא NONE.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">מגדיר פרוקסי. ברירת מחדל: %1.</translation>
     </message>
     <message>
         <source>Error</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שְׁגִיאָה</translation>
+        <translation type="unfinished">שגיאה</translation>
     </message>
     <message>
         <source>Failed to load profile automatically.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">טעינת הפרופיל נכשלה באופן אוטומטי.</translation>
+        <translation type="unfinished">טעינה אוטומטית של הפרופיל נכשלה.</translation>
     </message>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
@@ -790,7 +769,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unable to open</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא מצליח לפתוח</translation>
+        <translation type="unfinished">לא ניתן לפתוח</translation>
     </message>
     <message>
         <source>Bad idea</source>
@@ -811,17 +790,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">משך השיחה:</translation>
+        <translation type="unfinished">משך השיחה: </translation>
     </message>
     <message>
         <source>Copy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַעְתִיק</translation>
+        <translation type="unfinished">העתק</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אתה מנסה לשלוח קובץ רציף, וזה לא הולך לעבוד!</translation>
+        <translation type="unfinished">אתה מנסה לשלוח קובץ רציף, וזה לא יעבוד!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -832,8 +811,8 @@ which may lead to problems with video calls.</source>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">תווים לא חוקיים שונו ל-_
-כך שתוכל לשמור את הקובץ ב-Windows.</translation>
+        <translation type="unfinished">תווים לא חוקיים הוחלפו ב-_
+כדי שתוכל לשמור את הקובץ ב-Windows.</translation>
     </message>
 </context>
 <context>
@@ -939,7 +918,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>pending</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">תָלוּי וְעוֹמֵד</translation>
+        <translation type="unfinished">ממתין</translation>
     </message>
     <message>
         <source>%1 is typing</source>
@@ -949,7 +928,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Copy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַעְתִיק</translation>
+        <translation type="unfinished">העתק</translation>
     </message>
     <message>
         <source>Select all</source>
@@ -969,7 +948,7 @@ so you can save the file on Windows.</source>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסר עיגול</translation>
+        <translation type="unfinished">הסר מעגל</translation>
     </message>
     <message>
         <source>Open all in new window</source>
@@ -982,12 +961,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">מיקום לא ניתן לכתיבה</translation>
+        <translation type="unfinished">לא ניתן לכתוב למיקום</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">אין לך הרשאה לכתוב למיקום זה. בחר אחר, או בטל את תיבת הדו-שיח של השמירה.</translation>
+        <translation type="unfinished">אין לך הרשאה לכתוב למיקום זה. בחר מיקום אחר או בטל את השמירה.</translation>
     </message>
 </context>
 <context>
@@ -996,14 +975,14 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַשְׁתִיק</translation>
+        <translation type="unfinished">השתק</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1013,7 +992,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">העתק מזהה עמיתים</translation>
+        <translation type="unfinished">העתק מזהה משתתף</translation>
     </message>
 </context>
 <context>
@@ -1031,7 +1010,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הזמנות לכנס</translation>
+        <translation type="unfinished">הזמנות לוועידות</translation>
     </message>
 </context>
 <context>
@@ -1039,17 +1018,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוזמן על ידי %1 ב-%2 ב-%3.</translation>
+        <translation type="unfinished">הוזמנת על ידי %1 ב-%2 בשעה %3.</translation>
     </message>
     <message>
         <source>Join</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהִצְטַרֵף</translation>
+        <translation type="unfinished">הצטרף</translation>
     </message>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יְרִידָה</translation>
+        <translation type="unfinished">דחה</translation>
     </message>
 </context>
 <context>
@@ -1079,8 +1058,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n משתמש בצ&apos;אט</numerusform>
+            <numerusform>%n משתמשים בצ&apos;אט</numerusform>
         </translation>
     </message>
     <message>
@@ -1091,7 +1070,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
 </context>
 <context>
@@ -1104,13 +1083,13 @@ so you can save the file on Windows.</source>
     <message>
         <source>Conference %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ועידה%1</translation>
+        <translation type="unfinished">ועידה %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה רעל לא חוקי</translation>
+        <translation type="unfinished">מזהה Tox לא תקין</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1128,7 +1107,7 @@ so you can save the file on Windows.</source>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">חבר כבר נוסף</translation>
+        <translation type="unfinished">החבר כבר נוסף</translation>
     </message>
 </context>
 <context>
@@ -1163,19 +1142,19 @@ so you can save the file on Windows.</source>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מחכה לשלוח...</translation>
+        <translation type="unfinished">ממתין לשליחה...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קבל לקבלת קובץ זה</translation>
+        <translation type="unfinished">אשר כדי לקבל קובץ זה</translation>
     </message>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מתחדש...</translation>
+        <translation type="unfinished">ממשיך...</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1201,7 +1180,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Open file directory</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פתח את ספריית הקבצים</translation>
+        <translation type="unfinished">פתח את תיקיית הקובץ</translation>
     </message>
     <message>
         <source>Resume transfer</source>
@@ -1220,10 +1199,10 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">שמור קובץ</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השלט מושהה</translation>
+        <translation type="unfinished">מושהה על ידי הצד השני</translation>
     </message>
 </context>
 <context>
@@ -1242,7 +1221,7 @@ so you can save the file on Windows.</source>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">העבירו קבצים</translation>
+        <translation type="unfinished">קבצים שהועברו</translation>
     </message>
 </context>
 <context>
@@ -1250,12 +1229,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Today</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הַיוֹם</translation>
+        <translation type="unfinished">היום</translation>
     </message>
     <message>
         <source>Yesterday</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אֶתמוֹל</translation>
+        <translation type="unfinished">אתמול</translation>
     </message>
     <message>
         <source>Last 7 days</source>
@@ -1270,12 +1249,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Never</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְעוֹלָם לֹא</translation>
+        <translation type="unfinished">אף פעם</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מעל 6 חודשים</translation>
+        <translation type="unfinished">לפני יותר מ-6 חודשים</translation>
     </message>
 </context>
 <context>
@@ -1284,7 +1263,7 @@ so you can save the file on Windows.</source>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הזמנה לכנס</translation>
+        <translation type="unfinished">הזמן לוועידה</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1300,7 +1279,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסר מהמעגל &apos;%1&apos;</translation>
+        <translation type="unfinished">הסר מהמעגל &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1336,32 +1315,32 @@ so you can save the file on Windows.</source>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
     <message>
         <source>Away</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רָחוֹק</translation>
+        <translation type="unfinished">לא נמצא</translation>
     </message>
     <message>
         <source>Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">עָסוּק</translation>
+        <translation type="unfinished">עסוק</translation>
     </message>
     <message>
         <source>Offline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא מקוון</translation>
+        <translation type="unfinished">לא מחובר</translation>
     </message>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לכנס חדש</translation>
+        <translation type="unfinished">לוועידה חדשה</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הזמן לוועידה &apos;%1&apos;</translation>
+        <translation type="unfinished">הזמן לוועידה &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1377,7 +1356,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">חָסוּם</translation>
+        <translation type="unfinished">חסום</translation>
     </message>
 </context>
 <context>
@@ -1385,7 +1364,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כְּלָלִי</translation>
+        <translation type="unfinished">כללי</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1413,44 +1392,44 @@ so you can save the file on Windows.</source>
     <message>
         <source>Language:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שָׂפָה:</translation>
+        <translation type="unfinished">שפה:</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הצג את סמל מגש המערכת</translation>
+        <translation type="unfinished">הצג סמל במגש המערכת</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אפשר סמל מגש אור.</translation>
+        <translation type="unfinished">השתמש בסמל בהיר במגש.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סמל אור</translation>
+        <translation type="unfinished">סמל בהיר</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox יתחיל ממוזער במגש.</translation>
+        <translation type="unfinished">qTox יופעל ממוזער למגש.</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">התחל במגש</translation>
+        <translation type="unfinished">הפעל במגש</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קרוב למגש</translation>
+        <translation type="unfinished">סגור למגש</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">למזער למגש</translation>
+        <translation type="unfinished">מזער למגש</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1473,14 +1452,14 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">הגדר ל-0 כדי להשבית</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסטטוס שלך משתנה ל&apos;לא&apos; לאחר תקופה מוגדרת של חוסר פעילות.</translation>
+        <translation type="unfinished">הסטטוס שלך משתנה ל&apos;לא נמצא&apos; לאחר זמן חוסר פעילות מוגדר.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הרחקה אוטומטית לאחר (0 כדי להשבית):</translation>
+        <translation type="unfinished">&apos;לא נמצא&apos; אוטומטית לאחר (0 להשבתה):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1495,7 +1474,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Default directory to save files:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ספריית ברירת מחדל לשמירת קבצים:</translation>
+        <translation type="unfinished">תיקיית ברירת מחדל לשמירת קבצים:</translation>
     </message>
     <message>
         <source>Check for updates</source>
@@ -1510,7 +1489,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גודל קובץ קבלה אוטומטי מרבי (0 כדי להשבית):</translation>
+        <translation type="unfinished">גודל מרבי לקובץ בקבלה אוטומטית (0 להשבתה):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1522,27 +1501,27 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לאחר לחיצה על מזעור (_) qTox יצמצם למגש,
-במקום שורת המשימות של המערכת.</translation>
+        <translation type="unfinished">לאחר לחיצה על מזעור (_), qTox ימוזער למגש
+במקום לשורת המשימות.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לאחר לחיצה על סגור (X) qTox ייסגר למגש,
-במקום לסגור לגמרי.</translation>
+        <translation type="unfinished">לאחר לחיצה על סגירה (X), qTox ימוזער למגש
+במקום להיסגר לגמרי.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אתה יכול להגדיר זאת על בסיס חבר על ידי לחיצה ימנית על חברים בודדים.</translation>
+        <translation type="unfinished">ניתן להגדיר זאת לכל חבר בנפרד בלחיצה ימנית עליו.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוסף הודעת צ&apos;אט כאשר משתמש מצטרף או עוזב ועידה</translation>
+        <translation type="unfinished">הוסף הודעה לצ&apos;אט כאשר משתמש מצטרף לוועידה או עוזב אותה</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1570,7 +1549,7 @@ instead of closing entirely.</source>
     <message>
         <source>Smileys</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סמיילי</translation>
+        <translation type="unfinished">סמיילים</translation>
     </message>
     <message>
         <source>Send file(s)</source>
@@ -1595,7 +1574,7 @@ instead of closing entirely.</source>
     <message>
         <source>Quote selected text</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ציטוט טקסט נבחר</translation>
+        <translation type="unfinished">צטט טקסט נבחר</translation>
     </message>
     <message>
         <source>Copy link address</source>
@@ -1605,7 +1584,7 @@ instead of closing entirely.</source>
     <message>
         <source>Confirmation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אִשׁוּר</translation>
+        <translation type="unfinished">אישור</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1643,17 +1622,17 @@ instead of closing entirely.</source>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה רעל</translation>
+        <translation type="unfinished">מזהה Tox</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה הטוקס שלך (לחץ כדי להעתיק)</translation>
+        <translation type="unfinished">מזהה ה-Tox שלך (לחץ להעתקה)</translation>
     </message>
     <message>
         <source>Profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פּרוֹפִיל</translation>
+        <translation type="unfinished">פרופיל</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1669,7 +1648,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">התנתק</translation>
     </message>
@@ -1722,13 +1701,13 @@ Profile does not contain your history.</source>
         <source>Export</source>
         <comment>export profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יְצוּא</translation>
+        <translation type="unfinished">ייצוא</translation>
     </message>
     <message>
         <source>Delete</source>
         <comment>delete profile button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִמְחוֹק</translation>
+        <translation type="unfinished">מחק</translation>
     </message>
     <message>
         <source>Remove your password and encryption from your profile.</source>
@@ -1739,7 +1718,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Name input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קלט שם</translation>
+        <translation type="unfinished">שדה שם</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
@@ -1749,12 +1728,12 @@ Profile does not contain your history.</source>
     <message>
         <source>Status message input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קלט הודעת סטטוס</translation>
+        <translation type="unfinished">שדה הודעת סטטוס</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מזהה הטוקס שלך</translation>
+        <translation type="unfinished">מזהה ה-Tox שלך</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1829,7 +1808,7 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">טעינת היסטוריה מ:</translation>
+        <translation type="unfinished">טען היסטוריה מ:</translation>
     </message>
 </context>
 <context>
@@ -1842,12 +1821,12 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Password:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סִיסמָה:</translation>
+        <translation type="unfinished">סיסמה:</translation>
     </message>
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְאַשֵׁר:</translation>
+        <translation type="unfinished">אישור:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -1872,7 +1851,7 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִטעוֹן</translation>
+        <translation type="unfinished">טען</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1931,7 +1910,7 @@ You may want to create one.</source>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יְבוּא</translation>
+        <translation type="unfinished">ייבוא</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
@@ -1956,7 +1935,7 @@ You may want to create one.</source>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">צור כפתור פרופיל חדש</translation>
+        <translation type="unfinished">לחצן יצירת פרופיל חדש</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1981,12 +1960,12 @@ You may want to create one.</source>
     <message>
         <source>Import profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ייבוא ​​פרופיל</translation>
+        <translation type="unfinished">ייבוא פרופיל</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">טען את לחצן הפרופיל שנבחר</translation>
+        <translation type="unfinished">לחצן טעינת הפרופיל שנבחר</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1996,7 +1975,7 @@ You may want to create one.</source>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">טוען דף פרופיל קיים</translation>
+        <translation type="unfinished">דף טעינת פרופיל קיים</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -2052,7 +2031,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Close</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִסְגוֹר</translation>
+        <translation type="unfinished">סגור</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -2067,7 +2046,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Status message input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קלט הודעת סטטוס</translation>
+        <translation type="unfinished">שדה הודעת סטטוס</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -2077,7 +2056,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סטָטוּס</translation>
+        <translation type="unfinished">סטטוס</translation>
     </message>
     <message>
         <source>Set availability status</source>
@@ -2092,7 +2071,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קלט חיפוש צור קשר עבור חברים ידועים</translation>
+        <translation type="unfinished">חיפוש בין החברים</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2102,7 +2081,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הגדר מיון וחברים נראות</translation>
+        <translation type="unfinished">הגדר מיון ונראות של חברים</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -2112,12 +2091,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">וְעִידָה</translation>
+        <translation type="unfinished">ועידה</translation>
     </message>
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פתח את דף ניהול הכנס</translation>
+        <translation type="unfinished">פתח את דף ניהול הוועידה</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2147,12 +2126,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְנַפּוֹת</translation>
+        <translation type="unfinished">ניפוי באגים</translation>
     </message>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פתח את Debugger</translation>
+        <translation type="unfinished">פתח את מנפה הבאגים</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -2165,10 +2144,10 @@ Press Shift+F1 for more information.</source>
         <source>Executable file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קובץ בר הפעלה</translation>
+        <translation type="unfinished">קובץ הפעלה</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ביקשת מ-qTox לפתוח קובץ הפעלה. קבצי הפעלה עלולים לגרום נזק למחשב שלך. האם אתה בטוח שברצונך לפתוח את הקובץ הזה?</translation>
@@ -2179,7 +2158,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סרטון רעל</translation>
+        <translation type="unfinished">וידאו Tox</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2189,7 +2168,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">החלף את התצוגה המקדימה של הסרטון</translation>
+        <translation type="unfinished">הצג/הסתר תצוגה מקדימה של הווידאו</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -2228,25 +2207,25 @@ Press Shift+F1 for more information.</source>
         <source>View</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נוֹף</translation>
+        <translation type="unfinished">תצוגה</translation>
     </message>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">חַלוֹן</translation>
+        <translation type="unfinished">חלון</translation>
     </message>
     <message>
         <source>Minimize</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְצַמְצֵם</translation>
+        <translation type="unfinished">מזער</translation>
     </message>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הביאו את הכל לחזית</translation>
+        <translation type="unfinished">הבא הכל לחזית</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -2264,8 +2243,8 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>הודעה שלא נקראה</numerusform>
+            <numerusform>הודעות שלא נקראו</numerusform>
         </translation>
     </message>
 </context>
@@ -2295,7 +2274,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">התקבלה הזמנה לכנס</translation>
+        <translation type="unfinished">התקבלה הזמנה לוועידה</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2321,9 +2300,9 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock מופעל</translation>
+        <translation type="unfinished">Caps Lock מופעל</translation>
     </message>
 </context>
 <context>
@@ -2331,12 +2310,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Privacy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פְּרָטִיוּת</translation>
+        <translation type="unfinished">פרטיות</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אִשׁוּר</translation>
+        <translation type="unfinished">אישור</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
@@ -2368,21 +2347,21 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam הוא חלק ממזהה הטוקס שלך.
-אם אתה מקבל דואר זבל בבקשות חברים, עליך לשנות את ה-NoSpam שלך.
-אנשים לא יוכלו להוסיף אותך עם תעודת הזהות הישנה שלך, אבל אתה תשמור את החברים הנוכחיים שלך.</translation>
+        <translation type="unfinished">NoSpam הוא חלק ממזהה ה-Tox שלך.
+אם אתה מקבל ספאם של בקשות חברות, כדאי לשנות את ה-NoSpam.
+אנשים לא יוכלו להוסיף אותך עם המזהה הישן, אבל החברים הנוכחיים שלך יישארו.</translation>
     </message>
     <message>
         <source>NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ללא ספאם</translation>
+        <translation type="unfinished">NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam הוא חלק מזהה שלך שניתן לשנות כרצונך.
-אם אתה מקבל ספאם עם בקשות חברים, שנה את ה-NoSpam.</translation>
+        <translation type="unfinished">NoSpam הוא חלק מהמזהה שלך שניתן לשנות כרצונך.
+אם אתה מקבל ספאם של בקשות חברות, שנה את ה-NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2400,7 +2379,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Privacy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פְּרָטִיוּת</translation>
+        <translation type="unfinished">פרטיות</translation>
     </message>
     <message>
         <source>Conference block list</source>
@@ -2418,17 +2397,17 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נכשלו להפיק מפתח מהסיסמה, הפרופיל לא ישתמש בסיסמה החדשה.</translation>
+        <translation type="unfinished">גזירת מפתח מהסיסמה נכשלה, הפרופיל לא ישתמש בסיסמה החדשה.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רעל על qTox</translation>
+        <translation type="unfinished">משתמש ב-qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא ניתן לשנות את סיסמת מסד הנתונים, ייתכן שהוא פגום או השתמש בסיסמה הישנה.</translation>
+        <translation type="unfinished">לא ניתן לשנות את סיסמת מסד הנתונים; ייתכן שהוא פגום או משתמש בסיסמה הישנה.</translation>
     </message>
 </context>
 <context>
@@ -2441,7 +2420,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Error</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שְׁגִיאָה</translation>
+        <translation type="unfinished">שגיאה</translation>
     </message>
     <message>
         <source>Rename &quot;%1&quot;</source>
@@ -2457,12 +2436,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פרופיל נוכחי:</translation>
+        <translation type="unfinished">פרופיל נוכחי: </translation>
     </message>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַסִיר</translation>
+        <translation type="unfinished">הסר</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2506,13 +2485,13 @@ Please use another image.</source>
         <source>Save</source>
         <comment>save qr image</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַצִיל</translation>
+        <translation type="unfinished">שמור</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שמור QRCode (*.png)</translation>
+        <translation type="unfinished">שמור קוד QR (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2543,11 +2522,6 @@ Please use another image.</source>
         <translation type="unfinished">לא ניתן לשנות סיסמה</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נתיב ריק אינו זמין</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">שינוי השם נכשל</translation>
@@ -2568,14 +2542,14 @@ Please use another image.</source>
         <translation type="unfinished">שם ריק</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שם ריק אינו זמין</translation>
+        <translation type="unfinished">השם לא יכול להיות ריק</translation>
     </message>
     <message>
         <source>Empty path</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שביל ריק</translation>
+        <translation type="unfinished">נתיב ריק</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -2587,7 +2561,7 @@ Please use another image.</source>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קובץ שמירת רעלים (*.tox)</translation>
+        <translation type="unfinished">קובץ פרופיל Tox (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2618,14 +2592,14 @@ Please use another image.</source>
         <translation type="unfinished">לא ניתן היה לשמור את הקובץ שבחרת.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נתיב ריק אינו זמין.</translation>
+        <translation type="unfinished">הנתיב לא יכול להיות ריק.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא ניתן לשנות את סיסמת מסד הנתונים, ייתכן שהוא פגום או השתמש בסיסמה הישנה.</translation>
+        <translation type="unfinished">לא ניתן לשנות את סיסמת מסד הנתונים; ייתכן שהוא פגום או משתמש בסיסמה הישנה.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2668,25 +2642,25 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Import profile</source>
         <comment>import dialog title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ייבוא ​​פרופיל</translation>
+        <translation type="unfinished">ייבוא פרופיל</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קובץ שמירת רעלים (*.tox)</translation>
+        <translation type="unfinished">קובץ פרופיל Tox (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">התעלמות מקובץ שאינו טוקס</translation>
+        <translation type="unfinished">התעלמות מקובץ שאינו של Tox</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אזהרה: בחרת קובץ שאינו קובץ Tox save; מתעלמים.</translation>
+        <translation type="unfinished">אזהרה: הקובץ שבחרת אינו קובץ פרופיל של Tox; מתעלמים ממנו.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2695,10 +2669,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">הפרופיל כבר קיים</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פרופיל בשם &quot;%1&quot; כבר קיים. האם אתה רוצה למחוק אותו?</translation>
+        <translation type="unfinished">פרופיל בשם &quot;%1&quot; כבר קיים. האם לדרוס אותו?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2726,27 +2700,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>LTR</source>
         <comment>DO NOT TRANSLATE. Instead, set this string to &apos;RTL&apos; in right-to-left languages (for example Hebrew and Arabic) to get proper widget layout. This string should only ever be &apos;LTR&apos; or &apos;RTL&apos;.</comment>
-        <translation>LTR</translation>
+        <translation>RTL</translation>
     </message>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בְּסֵדֶר</translation>
+        <translation type="unfinished">אישור</translation>
     </message>
     <message>
         <source>Cancel</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְבַטֵל</translation>
+        <translation type="unfinished">ביטול</translation>
     </message>
     <message>
         <source>Yes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כֵּן</translation>
+        <translation type="unfinished">כן</translation>
     </message>
     <message>
         <source>No</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לֹא</translation>
+        <translation type="unfinished">לא</translation>
     </message>
 </context>
 <context>
@@ -2754,7 +2728,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">בחר ספריית קבלה אוטומטית</translation>
+        <translation type="unfinished">בחר תיקייה לקבלה אוטומטית</translation>
     </message>
 </context>
 <context>
@@ -2773,7 +2747,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 אינה כתובת Tox חוקית.</translation>
+        <translation type="unfinished">%1 אינה כתובת Tox תקינה.</translation>
     </message>
 </context>
 <context>
@@ -2781,27 +2755,27 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Default</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בְּרִירַת מֶחדָל</translation>
+        <translation type="unfinished">ברירת מחדל</translation>
     </message>
     <message>
         <source>Blue</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כְּחוֹל</translation>
+        <translation type="unfinished">כחול</translation>
     </message>
     <message>
         <source>Olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">זַיִת</translation>
+        <translation type="unfinished">זית</translation>
     </message>
     <message>
         <source>Red</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אָדוֹם</translation>
+        <translation type="unfinished">אדום</translation>
     </message>
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סָגוֹל</translation>
+        <translation type="unfinished">סגול</translation>
     </message>
     <message>
         <source>Incoming call...</source>
@@ -2812,7 +2786,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 כאן! להרעיל לי אולי?</translation>
+        <translation type="unfinished">%1 כאן! נדבר ב-Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2828,7 +2802,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Error</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שְׁגִיאָה</translation>
+        <translation type="unfinished">שגיאה</translation>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
@@ -2838,7 +2812,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Dark</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כֵּהֶה</translation>
+        <translation type="unfinished">כהה</translation>
     </message>
     <message>
         <source>Dark blue</source>
@@ -2864,37 +2838,37 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>online</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רָחוֹק</translation>
+        <translation type="unfinished">לא נמצא</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">עָסוּק</translation>
+        <translation type="unfinished">עסוק</translation>
     </message>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">במצב לא מקוון</translation>
+        <translation type="unfinished">לא מחובר</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">חָסוּם</translation>
+        <translation type="unfinished">חסום</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">פורמט מחדש את הטקסט...</translation>
+        <translation type="unfinished">מעצב מחדש את הטקסט...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2924,7 +2898,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Cleared</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מְבוּעָר</translation>
+        <translation type="unfinished">נוקה</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
@@ -2960,17 +2934,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 יצא למצב לא מקוון במהלך ניסיון השיחה</translation>
+        <translation type="unfinished">%1 התנתק במהלך ניסיון השיחה</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השיחה הופסקה מכיוון ש-%1 יצא באופן בלתי צפוי במצב לא מקוון. %2</translation>
+        <translation type="unfinished">השיחה הופסקה מכיוון ש-%1 התנתק במפתיע. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אתחול</translation>
+        <translation type="unfinished">מאתחל</translation>
     </message>
     <message>
         <source>Transmitting</source>
@@ -2980,17 +2954,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Finished</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גָמוּר</translation>
+        <translation type="unfinished">הושלם</translation>
     </message>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">שָׁבוּר</translation>
+        <translation type="unfinished">נקטע</translation>
     </message>
     <message>
         <source>Canceled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בּוּטלָה</translation>
+        <translation type="unfinished">בוטל</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -2998,9 +2972,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">מושהה</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השלט מושהה</translation>
+        <translation type="unfinished">מושהה על ידי הצד השני</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3010,37 +2984,37 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מַגָע</translation>
+        <translation type="unfinished">איש קשר</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הִתקַדְמוּת</translation>
+        <translation type="unfinished">התקדמות</translation>
     </message>
     <message>
         <source>Size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גוֹדֶל</translation>
+        <translation type="unfinished">גודל</translation>
     </message>
     <message>
         <source>Speed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מְהִירוּת</translation>
+        <translation type="unfinished">מהירות</translation>
     </message>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סטָטוּס</translation>
+        <translation type="unfinished">סטטוס</translation>
     </message>
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִשְׁלוֹט</translation>
+        <translation type="unfinished">שליטה</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הצטרפת לכנס</translation>
+        <translation type="unfinished">הצטרפת לוועידה</translation>
     </message>
     <message>
         <source>You have left the conference</source>
@@ -3068,7 +3042,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Remove all chat history with the friend if set</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסר את כל היסטוריית הצ&apos;אט עם החבר אם מוגדר</translation>
+        <translation type="unfinished">הסר את כל היסטוריית הצ&apos;אט עם החבר אם מסומן</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -3083,7 +3057,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Remove</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַסִיר</translation>
+        <translation type="unfinished">הסר</translation>
     </message>
 </context>
 <context>
@@ -3098,13 +3072,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מֶרחָב</translation>
+        <translation type="unfinished">רווח</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִברוֹחַ</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -3116,7 +3090,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַכנִיס</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3129,7 +3103,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הַתחָלָה</translation>
+        <translation type="unfinished">התחל</translation>
     </message>
 </context>
 <context>
@@ -3147,7 +3121,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>from the beginning</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">מִבְּרֵאשִׁית</translation>
+        <translation type="unfinished">מההתחלה</translation>
     </message>
     <message>
         <source>after date</source>
@@ -3177,7 +3151,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">בחר דו-שיח תאריך</translation>
+        <translation type="unfinished">תיבת דו-שיח לבחירת תאריך</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3190,12 +3164,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Confirm:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְאַשֵׁר:</translation>
+        <translation type="unfinished">אישור:</translation>
     </message>
     <message>
         <source>Password:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סִיסמָה:</translation>
+        <translation type="unfinished">סיסמה:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
@@ -3205,7 +3179,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The password doesn&apos;t match.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסיסמה לא תואמת.</translation>
+        <translation type="unfinished">הסיסמאות אינן תואמות.</translation>
     </message>
     <message>
         <source>Confirm password</source>
@@ -3215,7 +3189,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אשר את הזנת הסיסמה</translation>
+        <translation type="unfinished">שדה אישור סיסמה</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -3252,7 +3226,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא ניתן לשדרג הגדרות מגרסה%1 לגרסה%2. לא ניתן להפעיל את qTox.</translation>
+        <translation type="unfinished">לא ניתן לשדרג הגדרות מגרסה %1 לגרסה %2. לא ניתן להפעיל את qTox.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
@@ -3281,13 +3255,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Send</source>
         <comment>Send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לִשְׁלוֹחַ</translation>
+        <translation type="unfinished">שלח</translation>
     </message>
     <message>
         <source>Cancel</source>
         <comment>Don&apos;t send a friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְבַטֵל</translation>
+        <translation type="unfinished">ביטול</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -3312,7 +3286,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Chat</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְשׂוֹחֵחַ</translation>
+        <translation type="unfinished">צ&apos;אט</translation>
     </message>
     <message>
         <source>Base font:</source>
@@ -3322,7 +3296,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גוֹדֶל:</translation>
+        <translation type="unfinished">גודל: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3338,18 +3312,18 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ייתכן שהעדפת סגנון טקסט חדשה לא תיטען בהיסטוריית הצ&apos;אט עד ש-qTox יופעל מחדש.
-זה ישפיע על הודעות חדשות באופן מיידי.
+        <translation type="unfinished">ייתכן שהעדפת סגנון הטקסט החדשה לא תחול על היסטוריית הצ&apos;אט עד ש-qTox יופעל מחדש.
+היא תחול על הודעות חדשות מיד.
 
 טקסט פשוט:
     אל תחיל שום עיצוב על הודעות.
-    לְמָשָׁל. &quot;**טקסט**&quot; יוצג בתור &quot;**טקסט**&quot;, לא מודגש.
+    למשל &quot;**טקסט**&quot; יוצג כ-&quot;**טקסט**&quot;, לא מודגש.
 הצג תווי עיצוב:
-    החל עיצוב והצג תווים.
-    לְמָשָׁל. &quot;**טקסט**&quot; יוצג בתור &quot;**טקסט**&quot;, מודגש.
+    החל עיצוב והצג את התווים.
+    למשל &quot;**טקסט**&quot; יוצג כ-&quot;**טקסט**&quot;, מודגש.
 הסתר תווי עיצוב:
-    החל עיצוב ואל תציג תווים.
-    לְמָשָׁל. &quot;**טקסט**&quot; יוצג כ&quot;טקסט&quot;, מודגש.</translation>
+    החל עיצוב ואל תציג את התווים.
+    למשל &quot;**טקסט**&quot; יוצג כ-&quot;טקסט&quot;, מודגש.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3446,17 +3420,17 @@ Hide formatting characters:
     <message>
         <source>Theme</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">נוֹשֵׂא</translation>
+        <translation type="unfinished">ערכת נושא</translation>
     </message>
     <message>
         <source>Style:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סִגְנוֹן:</translation>
+        <translation type="unfinished">סגנון:</translation>
     </message>
     <message>
         <source>Theme color:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">צבע נושא:</translation>
+        <translation type="unfinished">צבע ערכת הנושא:</translation>
     </message>
     <message>
         <source>Timestamp format:</source>
@@ -3471,7 +3445,7 @@ Hide formatting characters:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השתמש בזיהויים במקום באווטרים ריקים</translation>
+        <translation type="unfinished">השתמש באייקונים מזהים (identicons) במקום אווטרים ריקים</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3482,12 +3456,12 @@ Hide formatting characters:
     <message>
         <source>Notify</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהוֹדִיעַ</translation>
+        <translation type="unfinished">הודע</translation>
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כנסים מודיעים רק כאשר מוזכרים</translation>
+        <translation type="unfinished">ועידות מודיעות רק כשמזכירים אותך</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3497,7 +3471,7 @@ Hide formatting characters:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השמע צליל בזמן תפוס</translation>
+        <translation type="unfinished">השמע צליל במצב עסוק</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3512,7 +3486,7 @@ Hide formatting characters:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השתמש בכינויים צבעוניים בכנסים</translation>
+        <translation type="unfinished">השתמש בכינויים צבעוניים בוועידות</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
@@ -3524,29 +3498,29 @@ Hide formatting characters:
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אם מסומן, ועידות ימוקם בראש רשימת החברים, אחרת, הם ימוקם מתחת לחברים מקוונים.</translation>
+        <translation type="unfinished">אם מסומן, הוועידות יוצגו בראש רשימת החברים; אחרת הן יוצגו מתחת לחברים המחוברים.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אם מופעל, לכל איש קשר ללא אווטאר יהיה סמל שנוצר על סמך מזהה ה-Tox שלו במקום תמונת ברירת המחדל. דורש הפעלה מחדש כדי להגיש בקשה.</translation>
+        <translation type="unfinished">אם מופעל, לכל איש קשר ללא אווטאר יהיה סמל שנוצר על סמך מזהה ה-Tox שלו במקום תמונת ברירת המחדל. דורש הפעלה מחדש.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">חבילת סמיילי:</translation>
+        <translation type="unfinished">חבילת סמיילים:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אם מושבת, הודעות השתקה נשמעות כשהסטטוס תפוס (אך עדיין הצג הודעה)</translation>
+        <translation type="unfinished">אם מושבת, צלילי ההתראות מושתקים במצב עסוק (ההתראה עדיין מוצגת)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">השתמש בהודעות שולחן העבודה, למשל. במרכז הודעות או במגש המערכת. בלי זה, ההודעה תהיה גלויה רק ​​כסמל מגש מהבהב.</translation>
+        <translation type="unfinished">השתמש בהתראות שולחן עבודה, למשל במרכז ההתראות או במגש המערכת. בלי זה ההתראה תופיע רק כסמל מהבהב במגש.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3554,7 +3528,7 @@ Hide formatting characters:
         <translation type="unfinished">הצג רק &quot;הודעה חדשה&quot; מבלי להציג מידע פוטנציאלי סודי בהודעות שולחן העבודה.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">פצל את רשימת החברים וחלון הצ&apos;אט לחלונות ניתנים להזזה בנפרד.</translation>
     </message>
@@ -3576,7 +3550,7 @@ Hide formatting characters:
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סגנון בסיס לשימוש עבור ממשק המשתמש. פיוז&apos;ן מומלץ מכיוון שהוא עובד הכי טוב עם עיצוב qTox.</translation>
+        <translation type="unfinished">סגנון בסיס לממשק המשתמש. Fusion מומלץ מכיוון שהוא עובד הכי טוב עם ערכות הנושא של qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -3586,7 +3560,7 @@ Hide formatting characters:
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">אם מושבת, השתמש בהודעות בסיסיות במגש המערכת. אחרת, נסה להשתמש בקצה האחורי של ההודעות של סביבת שולחן העבודה שלך. השבת זאת אם אתה מבחין בבעיות בהודעות שולחן העבודה.</translation>
+        <translation type="unfinished">אם מושבת, נעשה שימוש בהתראות בסיסיות במגש המערכת. אחרת qTox מנסה להשתמש במערכת ההתראות של סביבת שולחן העבודה שלך. השבת זאת אם יש בעיות בהתראות.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
@@ -3606,8 +3580,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מספר מקסימלי של הודעות (לכל שיחה) שנטענו מהיסטוריית הצ&apos;אט. הקטן את זה כדי
 לשפר את הביצועים. מספר נמוך מדי כאן עלול לגרום לפס הגלילה להיעלם.</translation>
@@ -3615,12 +3589,11 @@ scroll bar to disappear.</source>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">גודל תצוגת יומן צ&apos;אט
-מקסימלי</translation>
+        <translation type="unfinished">גודל תצוגת יומן צ&apos;אט מקסימלי</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">מספר ההודעות לטעינה מהיסטוריית הצ&apos;אט בעת גלילה. מספר נמוך מדי כאן עלול
 לגרום לפס הגלילה להיעלם.</translation>
@@ -3633,13 +3606,12 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יומן
-צ&apos;אט:</translation>
+        <translation type="unfinished">יומן צ&apos;אט:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הסתר סיומת אחרי סמל NULL</translation>
+        <translation type="unfinished">הסתר טקסט אחרי תו NUL</translation>
     </message>
 </context>
 <context>
@@ -3648,29 +3620,29 @@ number here may cause the scroll bar to disappear.</source>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">רָחוֹק</translation>
+        <translation type="unfinished">לא נמצא</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">עָסוּק</translation>
+        <translation type="unfinished">עסוק</translation>
     </message>
     <message>
         <source>File</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">קוֹבֶץ</translation>
+        <translation type="unfinished">קובץ</translation>
     </message>
     <message>
         <source>Edit</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לַעֲרוֹך</translation>
+        <translation type="unfinished">עריכה</translation>
     </message>
     <message>
         <source>Logout</source>
@@ -3681,7 +3653,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Filter...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְסַנֵן...</translation>
+        <translation type="unfinished">סנן...</translation>
     </message>
     <message>
         <source>Contacts</source>
@@ -3691,7 +3663,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">סטָטוּס</translation>
+        <translation type="unfinished">סטטוס</translation>
     </message>
     <message>
         <source>Your name</source>
@@ -3701,7 +3673,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הוסף מעגל חדש...</translation>
+        <translation type="unfinished">צור מעגל חדש...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3716,17 +3688,17 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>All</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">כֹּל</translation>
+        <translation type="unfinished">הכל</translation>
     </message>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
     <message>
         <source>Offline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לא מקוון</translation>
+        <translation type="unfinished">לא מחובר</translation>
     </message>
     <message>
         <source>Friends</source>
@@ -3752,7 +3724,7 @@ number here may cause the scroll bar to disappear.</source>
         <source>Show</source>
         <comment>Tray action menu to show qTox window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְהַצִיג</translation>
+        <translation type="unfinished">הצג</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -3764,7 +3736,7 @@ number here may cause the scroll bar to disappear.</source>
         <source>Conference invites</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">הזמנות לכנס</translation>
+        <translation type="unfinished">הזמנות לוועידות</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3787,7 +3759,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore לא הצליחה להפעיל, היישום יסתיים לאחר שתסגור הודעה זו.</translation>
+        <translation type="unfinished">Toxcore נכשל בהפעלה; היישום ייסגר לאחר שתסגור הודעה זו.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
@@ -3803,22 +3775,22 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n בקשת חברות חדשה</numerusform>
+            <numerusform>%n בקשות חברות חדשות</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n הזמנה חדשה לוועידה</numerusform>
+            <numerusform>%n הזמנות חדשות לוועידות</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">יְצִיאָה</translation>
+        <translation type="unfinished">יציאה</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3854,7 +3826,7 @@ number here may cause the scroll bar to disappear.</source>
         <source>Debug</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">לְנַפּוֹת</translation>
+        <translation type="unfinished">ניפוי באגים</translation>
     </message>
 </context>
 </TS>

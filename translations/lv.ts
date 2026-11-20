@@ -52,18 +52,6 @@
         <translation>Video ierīce</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Iestatiet kameras izšķirtspēju.
-Jo lielāka vērtība, jo augstākas kvalitātes video varēs redzēt Jūsu draugi.
-Ņemiet vērā, jo labāka ir video kvalitāte, jo labāks interneta pieslēgums ir nepieciešams.
-Dažreiz savienojums var nebūt pietiekami labs, lai varētu pārraidīt augstas kvalitātes video,
-kas var radīt videozvanu problēmas.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>Izšķirtspēja</translation>
     </message>
@@ -80,20 +68,20 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Audio kvalitāte</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Augsta (64 kBit/s)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Augsta (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Vidēja (32 kBit/s)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Vidēja (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Zema (16 kBit/s)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Zema (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Ļoti zema (8 kBit/s)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Ļoti zema (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -101,7 +89,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>Ar slīdni pielāgojiet skaļumu skaļrunī.</translation>
+        <translation>Ar slīdni iestatiet skaļruņu skaļumu.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
@@ -115,13 +103,13 @@ Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Iestatiet kameras izšķirtspēju.
 Jo lielāka vērtība, jo augstākas kvalitātes video varēs redzēt Jūsu draugi.
-Ņemiet vērā, jo labāka ir video kvalitāte, jo labāks interneta pieslēgums ir nepieciešams.
+Ņemiet vērā, ka labāka video kvalitāte patērē vairāk interneta joslas platuma.
 Dažreiz savienojums var nebūt pietiekami labs, lai varētu pārraidīt augstas kvalitātes video,
 kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
-        <translation type="unfinished">Pārbaudīt skaņas izvadi atskaņojot paraugskaņu.</translation>
+        <translation type="unfinished">Atskaņot paraugskaņu, mainot izvades skaļumu.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
@@ -161,7 +149,7 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Qt versija: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translation>Visu zināmo problēmu sarakstu Jūs varat atrast mūsu %1 GitHub vietnē. Ja Jūs atklājat kādu qTox kļūdu vai drošības problēmu, lūdzu ziņojiet par to saskaņā ar mūsu %2 wiki raksta vadlīnijām.</translation>
@@ -171,24 +159,24 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Noklikšķiniet šeit, lai ziņotu par kļūdu.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Pilnu sarakstu %1 skatiet Github vietnē</translation>
+        <translation>Pilnu sarakstu %1 skatiet GitHub vietnē</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">kļūdu sekotājs</translation>
+        <translation type="unfinished">kļūdu sekotājā</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Rakstīt lietderīgu kļūdu ziņojumu</translation>
+        <translation type="unfinished">Kā rakstīt noderīgus kļūdu ziņojumus</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>līdzautori</translation>
+        <translation>līdzautoru</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -200,7 +188,7 @@ kas var radīt videozvanu problēmas.</translation>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Automātiski pieņemt failus no izvēlētā kontakta</translation>
+        <translation>Automātiski pieņemt failus no šī kontakta, ja iestatīts</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -220,10 +208,10 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Automātiski pieņemt grupas tērzēšanas ielūgumus no šī kontakta.</translation>
+        <translation type="unfinished">Automātiski pieņemt konferenču ielūgumus no šī kontakta, ja iestatīts.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Dzēst vēsturi (darbību nevar atsaukt!)</translation>
     </message>
     <message>
@@ -239,20 +227,20 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Vēsture ir dzēsta</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Šī ir Jūsu drauga publiskā atslēga, pielietojiet to, lai pārbaudītu savu identitāti, izmantojot citu kanālu. To nevar nosūtīt citiem cilvēkiem, lai viņi varētu pievienot šo kontaktu.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>Šī ir Jūsu drauga publiskā atslēga; izmantojiet to, lai pārbaudītu drauga identitāti pa citu kanālu. Citi nevar ar to pievienot šo kontaktu.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>Publiskā atslēga (nevis ToxID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>Publiskā atslēga (nevis Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>Apstiprinājums</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
-        <translation>Vai tiešām vēlaties dzēst %1 tērzēšanas vēsturi?</translation>
+        <source>Are you sure you want to remove the chat history with %1?</source>
+        <translation>Vai tiešām vēlaties dzēst tērzēšanas vēsturi ar %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -264,7 +252,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Auto-accept for this contact is disabled</source>
-        <translation>Šajā kontaktā ir atspējota automātiskā pieņemšana</translation>
+        <translation>Šim kontaktam automātiskā pieņemšana ir atspējota</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
@@ -272,11 +260,11 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Automātiski pieņemt grupas ielūgumus</translation>
+        <translation type="unfinished">Automātiski pieņemt konferenču ielūgumus</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>Jūs varat saglabāt kontaktpersonas komentārus.</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>Šeit varat saglabāt piezīmes par šo kontaktu.</translation>
     </message>
 </context>
 <context>
@@ -311,7 +299,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
-        <translation>Šobrīd tiek palaista nestabila qTox versija</translation>
+        <translation>Šobrīd darbojas nepārbaudīta/nestabila qTox versija</translation>
     </message>
 </context>
 <context>
@@ -330,7 +318,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>Draudzības uzaicinājums</translation>
+        <translation>Draudzības pieprasījumi</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -345,7 +333,7 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Nevar pievienot draugu</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Ierakstiet sava drauga Tox ID</translation>
     </message>
     <message>
@@ -385,7 +373,7 @@ kas var radīt videozvanu problēmas.</translation>
     <message>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
-        <translation>Tox-ID</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -413,9 +401,9 @@ kas var radīt videozvanu problēmas.</translation>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform>Gatavs importēt %n kontaktpersonu, spied sūtīt lai apstiprinātu</numerusform>
-            <numerusform>Gatavs importēt %n kontaktpersonas, spied sūtīt lai apstiprinātu</numerusform>
-            <numerusform>Gatavs importēt %n kontaktpersonas, spied sūtīt lai apstiprinātu</numerusform>
+            <numerusform>Gatavs importēt %n kontaktpersonu, nospiediet &quot;Sūtīt&quot;, lai apstiprinātu</numerusform>
+            <numerusform>Gatavs importēt %n kontaktpersonas, nospiediet &quot;Sūtīt&quot;, lai apstiprinātu</numerusform>
+            <numerusform>Gatavs importēt %n kontaktpersonu, nospiediet &quot;Sūtīt&quot;, lai apstiprinātu</numerusform>
         </translation>
     </message>
     <message>
@@ -427,9 +415,9 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Tox ID, 76 heksadecimālas rakstzīmes</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>Šis Tox ID %1 ir nederīgs</translation>
+        <translation>%1 nav derīgs Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -438,14 +426,14 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Pievienojiet draugu</translation>
+        <translation type="unfinished">Pievienot draugu</translation>
     </message>
 </context>
 <context>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation>Papildus</translation>
+        <translation>Papildu</translation>
     </message>
     <message>
         <source>really</source>
@@ -453,7 +441,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>not</source>
-        <translation>nav</translation>
+        <translation>neko</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -461,7 +449,7 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Reset settings</source>
-        <translation>Sākotnējie iestatījumi</translation>
+        <translation>Atiestatīt iestatījumus</translation>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
@@ -481,11 +469,11 @@ kas var radīt videozvanu problēmas.</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>Ja vien %1 tiešām zinat, ko Jūs darat, šeit %2 neko nemainat. Izmaiņas šeit var rasties problēmas ar qTox un var zaudēt datus piem. sarunas vēsture.%3</translation>
+        <translation>Ja %1 nezināt, ko darāt, lūdzu, %2 šeit nemainiet. Izmaiņas šeit var radīt problēmas ar qTox un pat datu, piemēram, sarunu vēstures, zudumu.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
-        <translation>Izmaiņas tiks veiktas tikai pēc qTox restartēšanas.</translation>
+        <translation>Izmaiņas stāsies spēkā tikai pēc qTox restartēšanas.</translation>
     </message>
     <message>
         <source>Save file</source>
@@ -505,9 +493,9 @@ kas var radīt videozvanu problēmas.</translation>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>Saglabājiet iestatījumus darba direktorijā, nevis standarta iestatījumu mapē</translation>
+        <translation>Saglabāt iestatījumus darba direktorijā, nevis standarta iestatījumu mapē</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -596,7 +584,7 @@ kas var radīt videozvanu problēmas.</translation>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation type="unfinished">Atspējot šo ļaus savionot Tox ar Tor. Tā var noslogot Tox tīklu, tad atspējojiet ja nepieciešams.</translation>
+        <translation type="unfinished">Atspējojot šo, var, piemēram, izmantot Tox caur Tor. Tomēr tas papildus noslogo Tox tīklu, tāpēc atspējojiet tikai tad, ja nepieciešams.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -623,28 +611,20 @@ kas var radīt videozvanu problēmas.</translation>
         <translation>Uzsāk jaunu instanci un atver pieteikšanās logu.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Iestata IPv6 &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Ieslēdz vai izslēdz IPv6: %1. Noklusējums: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Iestata UDP &lt;ieslēgts&gt;/&lt;izslēgts&gt;. Noklusējums ir IESLĒGTS.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Ieslēdz vai izslēdz UDP: %1. Noklusējums: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Iestata LAN atklāšanu &lt;ieslēgts&gt;/&lt;izslēgts&gt;. UDP izslēgšanas ignorēšana. Noklusējums ir IESLĒGTS.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Ieslēdz vai izslēdz LAN noteikšanu: %1. Nedarbojas, ja UDP ir izslēgts. Noklusējums: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Iestata starpniekservera iestatījumus. Noklusējums ir NEVIENS.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Iestata starpniekserveri. Noklusējums: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -662,7 +642,7 @@ kas var radīt videozvanu problēmas.</translation>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sākas portatīvajā režīmā; ielādē profilu no šī direktorija.</translation>
+        <translation type="unfinished">Palaiž portatīvajā režīmā; ielādē profilu no šīs mapes.</translation>
     </message>
     <message>
         <source>path</source>
@@ -718,8 +698,8 @@ kas var radīt videozvanu problēmas.</translation>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
-        <translation>Nederīgas rakstzīmes tiks aizvietotas ar _
-lai varētu saglabāt failus Windows operētājsistēmā.</translation>
+        <translation>Nederīgās rakstzīmes tika aizvietotas ar _,
+lai failu varētu saglabāt Windows operētājsistēmā.</translation>
     </message>
 </context>
 <context>
@@ -762,7 +742,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Accept video call</source>
-        <translation>Atcelt videozvanu</translation>
+        <translation>Pieņemt videozvanu</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
@@ -770,11 +750,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation>Ieslēgt skaņu</translation>
+        <translation>Ieslēgt zvana skaņu</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>Izslēgt skaņu</translation>
+        <translation>Izslēgt zvana skaņu</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -836,7 +816,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Open all in new window</source>
-        <translation>Atveriet visu jaunā logā</translation>
+        <translation>Atvērt visu jaunā logā</translation>
     </message>
 </context>
 <context>
@@ -850,7 +830,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Jums nav atļaujas rakstīt uz šo vietu. Izvēlieties citu vai atceliet saglabāšanas dialoglodziņu.</translation>
+        <translation type="unfinished">Jums nav atļaujas rakstīt šajā vietā. Izvēlieties citu vai atceliet saglabāšanu.</translation>
     </message>
 </context>
 <context>
@@ -859,9 +839,9 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
-            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
-            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
-            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotājs tērzēšanā</numerusform>
+            <numerusform>%n lietotāji tērzēšanā</numerusform>
+            <numerusform>%n lietotāju tērzēšanā</numerusform>
         </translation>
     </message>
     <message>
@@ -875,29 +855,29 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kopēt vienaudžu&#xa0;ID</translation>
+        <translation type="unfinished">kopēt dalībnieka ID</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupas</translation>
+        <translation type="unfinished">Konferences</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Izveidot jaunu grupu</translation>
+        <translation type="unfinished">Izveidot jaunu konferenci</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Grupas uzaicinājums</translation>
+        <translation type="unfinished">Konferenču ielūgumi</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Uzaicinājis %1 ap %2 vietnē %3.</translation>
+        <translation>Uzaicināja %1 %2 plkst. %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -925,15 +905,15 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Iziet no grupas</translation>
+        <translation>Iziet no konferences</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation>
-            <numerusform>%n lietotājs čatā (tērzēšanā)</numerusform>
-            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
-            <numerusform>%n lietotāji čatā (tērzēšanā)</numerusform>
+            <numerusform>%n lietotājs tērzēšanā</numerusform>
+            <numerusform>%n lietotāji tērzēšanā</numerusform>
+            <numerusform>%n lietotāju tērzēšanā</numerusform>
         </translation>
     </message>
     <message>
@@ -949,11 +929,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me piedāvā draudzību, &apos;&apos;%1&apos;&apos;</translation>
+        <translation>/me piedāvā draudzību, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Grupu čats %1</translation>
+        <translation type="unfinished">Konference %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -963,12 +943,12 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Jums ir jāsagatavo ziņojums ar pieprasījuma tekstu</translation>
+        <translation type="unfinished">Pieprasījumam jāpievieno ziņojums</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Jūsu ziņojums ir pārāk liels!</translation>
+        <translation type="unfinished">Jūsu ziņojums ir pārāk garš!</translation>
     </message>
     <message>
         <source>Friend is already added</source>
@@ -1017,7 +997,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Resuming...</source>
         <comment>file transfer widget</comment>
-        <translation>Atsākt ...</translation>
+        <translation>Atsāk...</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1054,10 +1034,10 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <translation>Saglabāt failu</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tālvadības pults ir apturēta</translation>
+        <translation type="unfinished">Otra puse apturēja</translation>
     </message>
 </context>
 <context>
@@ -1073,7 +1053,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation>Nodoti faili</translation>
+        <translation>Pārsūtītie faili</translation>
     </message>
 </context>
 <context>
@@ -1100,7 +1080,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation>Vecāks par 6 mēnešiem</translation>
+        <translation>Vecāki par 6 mēnešiem</translation>
     </message>
 </context>
 <context>
@@ -1108,7 +1088,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Ielūgt pievienoties grupai</translation>
+        <translation>Uzaicināt uz konferenci</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1133,11 +1113,11 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Uz jaunu grupu</translation>
+        <translation type="unfinished">Uz jaunu konferenci</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Uzaicināt uz grupu &apos;%1&apos;</translation>
+        <translation type="unfinished">Uzaicināt uz konferenci &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1176,7 +1156,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pārvietot uz loku &quot;%1&quot;</translation>
+        <translation type="unfinished">Pārvietot uz sarakstu &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1213,7 +1193,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
-        <translation>Tulkojums neizmainīsies, kamēr no jauna neatvērsiet qTox.</translation>
+        <translation>Tulkojums var netikt ielādēts, kamēr qTox netiks restartēts.</translation>
     </message>
     <message>
         <source>Language:</source>
@@ -1266,12 +1246,12 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <translation>Iestatiet 0, lai atspējotu</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Jūsu statuss tiek mainīts uz &apos;&apos;Nav šeit&apos;&apos; pēc noteiktā bezdarbības perioda.</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>Jūsu statuss tiek mainīts uz &quot;Nav šeit&quot; pēc noteiktā bezdarbības perioda.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>Automātiski iestatīt &apos;&apos;Nav šeit&apos;&apos; pēc (0, lai atspējotu):</translation>
+        <translation>Automātiski iestatīt &quot;Nav šeit&quot; pēc (0, lai atspējotu):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1279,7 +1259,7 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Startēt qTox, kad ielādējas operētājsistēma (pašreizējo profilu).</translation>
+        <translation>Startēt qTox, kad ielādējas operētājsistēma (pašreizējais profils).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1305,18 +1285,18 @@ lai varētu saglabāt failus Windows operētājsistēmā.</translation>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>Spiežot loga minimizēšanas pogu, qTox samazināsies rīkjoslā
-vietā uzdevumjoslā.</translation>
+        <translation>Nospiežot minimizēšanas pogu (_), qTox minimizēsies sistēmas panelī,
+nevis uzdevumjoslā.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>Spiežot logu aizvēršanas pogu, qTox samazināsies rīkjoslā
-vietā pilnīgi aizveroties.</translation>
+        <translation>Nospiežot aizvēršanas pogu (X), qTox minimizēsies sistēmas panelī,
+nevis pilnībā aizvērsies.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Varat to iestatīt katram draugam, ar peles labo pogu noklikšķinot uz atsevišķiem draugiem.</translation>
@@ -1324,7 +1304,7 @@ vietā pilnīgi aizveroties.</translation>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pievienojiet tērzēšanas ziņojumu, kad lietotājs pievienojas konferencei vai atstāj to</translation>
+        <translation type="unfinished">Pievienot tērzēšanā ziņojumu, kad lietotājs pievienojas konferencei vai to atstāj</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1334,12 +1314,12 @@ vietā pilnīgi aizveroties.</translation>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Palīdziet tulkot</translation>
+        <translation type="unfinished">Palīdzēt tulkot</translation>
     </message>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> minūtes</translation>
+        <translation type="unfinished"> min</translation>
     </message>
 </context>
 <context>
@@ -1411,7 +1391,7 @@ vietā pilnīgi aizveroties.</translation>
     </message>
     <message>
         <source>Tox ID</source>
-        <translation>Tox-ID informācija</translation>
+        <translation>Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1429,11 +1409,11 @@ vietā pilnīgi aizveroties.</translation>
     <message>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
-        <translation>Atgriezieties pieteikšanās logā</translation>
+        <translation>Atgriezties pieteikšanās logā</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Iziet</translation>
     </message>
     <message>
@@ -1446,7 +1426,7 @@ vietā pilnīgi aizveroties.</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>Šis QR kods satur Jūsu Tox ID. Ar to Jūs varat dalīties starp saviem draugiem.</translation>
+        <translation>Šis QR kods satur Jūsu Tox ID. Ar to varat dalīties arī ar draugiem.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1506,11 +1486,11 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation>Saglabājiet QR attēlu kā failu</translation>
+        <translation>Saglabāt QR attēlu kā failu</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation>Kopējiet QR attēlu uz starpliktuvi</translation>
+        <translation>Kopēt QR attēlu starpliktuvē</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1526,7 +1506,7 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation>Dzēsr paroli no profila</translation>
+        <translation>Dzēst paroli no profila</translation>
     </message>
     <message>
         <source>Change profile password</source>
@@ -1562,7 +1542,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ielādes vēstures dialoglodziņš</translation>
+        <translation type="unfinished">Vēstures ielādes dialoglodziņš</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1669,7 +1649,7 @@ Jūs varat izveidot jaunu.</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>Izveidojiet jaunu profila pogu</translation>
+        <translation>Jauna profila izveides poga</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1685,7 +1665,7 @@ Jūs varat izveidot jaunu.</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation>Automātiski ielādēt izvēles rūtiņu</translation>
+        <translation>Automātiskās ielādes izvēles rūtiņa</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1693,7 +1673,7 @@ Jūs varat izveidot jaunu.</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>Ielādēt izvēlēto profila pogu</translation>
+        <translation>Izvēlētā profila ielādes poga</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1738,7 +1718,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Izveidot grupas tērzēšanu</translation>
+        <translation type="unfinished">Izveidot konferenci</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1798,11 +1778,11 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Grupas tērzēšana</translation>
+        <translation type="unfinished">Konference</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Atvērt grupas tērzēšanas iestatījumu lapu</translation>
+        <translation type="unfinished">Atvērt konferenču pārvaldības lapu</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1823,7 +1803,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atveriet iekšējos atkļūdošanas rīkus</translation>
+        <translation type="unfinished">Atvērt iekšējos atkļūdošanas rīkus</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1832,11 +1812,11 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atveriet atkļūdotāju</translation>
+        <translation type="unfinished">Atvērt atkļūdotāju</translation>
     </message>
     <message>
         <source>Add friend</source>
-        <translation type="unfinished">Pievienojiet draugu</translation>
+        <translation type="unfinished">Pievienot draugu</translation>
     </message>
 </context>
 <context>
@@ -1848,7 +1828,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
         <translation type="unfinished">Izpildāmais fails</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Jūs esat lūdzis qTox atvērt izpildāmo failu. Izpildāmie faili var sabojāt datoru. Vai tiešām vēlaties atvērt šo failu?</translation>
@@ -1858,7 +1838,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <name>NetCamView</name>
     <message>
         <source>Tox video</source>
-        <translation type="unfinished">Tox video konference</translation>
+        <translation type="unfinished">Tox video</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -1972,7 +1952,7 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Saņemts drauga pieprasījums</translation>
+        <translation type="unfinished">Saņemts draudzības pieprasījums</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
@@ -1988,8 +1968,8 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>Ir ieslēgts &apos;&apos;Caps Lock&apos;&apos;</translation>
+        <source>Caps Lock is on</source>
+        <translation>Ir ieslēgts &quot;Caps Lock&quot;</translation>
     </message>
 </context>
 <context>
@@ -2027,43 +2007,43 @@ Lai iegūtu papildinformāciju, nospiediet taustiņu kombināciju Shift+F1.</tra
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>Jūsu Tox ID kodā ietilpst AntiSpam daļa.
-Ja Jūs bieži saņemat kļūdainus draudzības pieprasījumus, Jūs varat mainīt AntiSpam daļu.
-Lietotāji vairs nespēs pievienot Jūs ar Jūsu veco ID, bet Jūsu pašreizējie draugi tiks saglabāti .</translation>
+        <translation>NoSpam ir daļa no Jūsu Tox ID.
+Ja saņemat daudz nevēlamu draudzības pieprasījumu, nomainiet NoSpam.
+Citi vairs nevarēs Jūs pievienot ar veco ID, bet esošie draugi saglabāsies.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation>AntiSpam</translation>
+        <translation>NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>AntiSpam ir daļa no Jūsu ID, kuru varat mainīt pēc vēlēšanās.
-Ja saņemat surogātpastu ar draudzības pieprasījumiem, nomainiet AntiSpam daļu.</translation>
+        <translation>NoSpam ir daļa no Jūsu ID, kuru varat mainīt pēc vēlēšanās.
+Ja saņemat daudz nevēlamu draudzības pieprasījumu, nomainiet NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation>Ģenerēt nejaušu AntiSpam vērtību</translation>
+        <translation>Ģenerēt nejaušu NoSpam</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation>Čata vēstures saglabāšana atrodas izstrādes procesā.
-Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšanas.</translation>
+        <translation>Tērzēšanas vēstures saglabāšana vēl tiek izstrādāta.
+Saglabāšanas formāts var mainīties, kas var izraisīt datu zudumu.</translation>
     </message>
     <message>
         <source>Privacy</source>
-        <translation>Konfidencialitātes politika</translation>
+        <translation>Konfidencialitāte</translation>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Melnais saraksts</translation>
+        <translation>Konferenču bloķēto saraksts</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filtrējiet konferences ziņojumus pēc konferences dalībnieku publiskajām atslēgām. Ievietojiet šeit publiskās atslēgas, pa vienai katrā rindā.</translation>
+        <translation type="unfinished">Filtrēt konferenču ziņojumus pēc dalībnieku publiskajām atslēgām. Ievietojiet šeit publiskās atslēgas, pa vienai katrā rindā.</translation>
     </message>
 </context>
 <context>
@@ -2074,12 +2054,12 @@ Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšan
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation>Tērzēt qTox</translation>
+        <translation>Tērzēju qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli, iespējams, tā ir bojāta vai izmanto veco paroli.</translation>
+        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli; iespējams, datu bāze ir bojāta vai izmanto veco paroli.</translation>
     </message>
 </context>
 <context>
@@ -2095,7 +2075,7 @@ Iespējama saglabāšanas formāta izmaiņas, kas var novest pie datu zaudēšan
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation>Pārdēvēt &apos;&apos;%1&apos;&apos;</translation>
+        <translation>Pārdēvēt &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
@@ -2146,7 +2126,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation>Saglabāt</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>Saglabāt QR kodu (*.png)</translation>
     </message>
@@ -2174,10 +2154,6 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation>Nesanāca nomainīt paroli</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>Norāde bez galamērķa nav pieļaujama</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>Neizdevās pārdēvēt</translation>
     </message>
@@ -2187,19 +2163,19 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>Profils ar nosaukumu &apos;&apos;%1&apos;&apos; jau pastāv.</translation>
+        <translation>Profils ar nosaukumu &quot;%1&quot; jau pastāv.</translation>
     </message>
     <message>
         <source>Empty name</source>
         <translation>Tukšs nosaukums</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>Tukšs nosaukums nav pieļaujams</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>Nosaukums nedrīkst būt tukšs</translation>
     </message>
     <message>
         <source>Empty path</source>
-        <translation>Norāde bez galamērķa</translation>
+        <translation>Tukšs ceļš</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -2209,7 +2185,7 @@ Lūdzu, izvēlieties citu attēlu.</translation>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>Saglabātais Tox fails (* .tox)</translation>
+        <translation>Saglabātais Tox fails (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2237,14 +2213,14 @@ Lūdzu, izvēlieties citu attēlu.</translation>
         <translation type="unfinished">Jūsu izvēlēto failu nevarēja saglabāt.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tukšs ceļš nav pieejams.</translation>
+        <translation type="unfinished">Ceļš nedrīkst būt tukšs.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli, iespējams, tā ir bojāta vai izmanto veco paroli.</translation>
+        <translation type="unfinished">Nevarēja mainīt datu bāzes paroli; iespējams, datu bāze ir bojāta vai izmanto veco paroli.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2274,10 +2250,10 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Šis ID ļauj citiem Tox lietotājiem pievienot un sazināties ar jums.
-Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
+        <translation type="unfinished">Šis ID ļauj citiem Tox lietotājiem Jūs pievienot un sazināties ar Jums.
+Kopīgojiet to ar draugiem, lai sāktu tērzēt.
 
-Šajā ID ir ietverts NoSpam kods (zilā krāsā) un kontrolsumma (pelēkā krāsā).</translation>
+Šis ID ietver NoSpam kodu (zilā krāsā) un kontrolsummu (pelēkā krāsā).</translation>
     </message>
 </context>
 <context>
@@ -2290,12 +2266,12 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Saglabātais Tox fails (* .tox)</translation>
+        <translation>Saglabātais Tox fails (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Ignorēt ne-Tox failus</translation>
+        <translation>Ignorē ne-Tox failu</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
@@ -2308,9 +2284,9 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <translation>Profils jau pastāv</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>Profils ar nosaukumu &apos;&apos;%1&apos;&apos; jau pastāv. Vai vēlaties to dzēst?</translation>
+        <translation>Profils ar nosaukumu &quot;%1&quot; jau pastāv. Vai vēlaties to aizstāt?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2332,7 +2308,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>Labi</translation>
     </message>
     <message>
@@ -2482,19 +2458,19 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
-        <translation type="unfinished">Neizdevās nosūtīt failu &apos;&apos;%1&apos;&apos;</translation>
+        <translation type="unfinished">Neizdevās nosūtīt failu &quot;%1&quot;</translation>
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 pievienojās grupai</translation>
+        <translation type="unfinished">%1 pievienojās konferencei</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 pameta grupu</translation>
+        <translation type="unfinished">%1 pameta konferenci</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
-        <translation type="unfinished">%1 tagad ir zināms kā %2]</translation>
+        <translation type="unfinished">%1 tagad ir zināms kā %2</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2519,7 +2495,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Zvans %1</translation>
+        <translation type="unfinished">Zvana %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2558,7 +2534,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Salauzts</translation>
+        <translation type="unfinished">Pārtraukts</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2570,9 +2546,9 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
         <translation type="unfinished">Apturēts</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tālvadības pults ir apturēta</translation>
+        <translation type="unfinished">Otra puse apturēja</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2582,12 +2558,12 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sazināties</translation>
+        <translation type="unfinished">Kontakts</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Progress</translation>
+        <translation type="unfinished">Gaita</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2606,7 +2582,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontrole</translation>
+        <translation type="unfinished">Vadība</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
@@ -2637,7 +2613,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Dzēš visu tērzēšanas vēsturi ar draugu, ja tiek iestatīts</translation>
+        <translation type="unfinished">Ja iestatīts, dzēš visu tērzēšanas vēsturi ar draugu</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2662,12 +2638,12 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation>Tukšzīme</translation>
+        <translation>Atstarpe</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>Atcelt</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2677,7 +2653,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
-        <translation>Ievadīt</translation>
+        <translation>Enter</translation>
     </message>
 </context>
 <context>
@@ -2715,7 +2691,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Ieskaitot reģistru</translation>
+        <translation>Reģistrjutīgs</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -2728,7 +2704,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izvēlieties datuma dialoglodziņu</translation>
+        <translation type="unfinished">Datuma izvēles dialoglodziņš</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2783,7 +2759,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Uz sarakstu #%1</translation>
+        <translation>Saraksts #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
@@ -2828,7 +2804,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     <message>
         <source>Add friend</source>
         <comment>Title of the window to add a friend through Tox URI</comment>
-        <translation type="unfinished">Pievienojiet draugu</translation>
+        <translation type="unfinished">Pievienot draugu</translation>
     </message>
 </context>
 <context>
@@ -2839,7 +2815,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>User Interface</source>
-        <translation>Lietotāja Interfeiss</translation>
+        <translation>Lietotāja saskarne</translation>
     </message>
 </context>
 <context>
@@ -2854,7 +2830,7 @@ Kopīgojiet to ar draugiem, lai sāktu tērzēšanu.
     </message>
     <message>
         <source>Size: </source>
-        <translation>Lielumu: </translation>
+        <translation>Lielums: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2869,7 +2845,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Teksta jaunais stils tiks pielietots pēc qTox atkārtotas palaišanas.</translation>
+        <translation type="unfinished">Jaunais teksta stils tērzēšanas vēsturei var netikt piemērots, kamēr qTox netiks restartēts.
+Jauniem ziņojumiem tas tiek piemērots uzreiz.
+
+Vienkāršs teksts:
+    Ziņojumi netiek formatēti.
+    Piem., &quot;**teksts**&quot; tiks rādīts kā &quot;**teksts**&quot;, nevis treknrakstā.
+Rādīt formatēšanas zīmes:
+    Formatējums tiek piemērots un zīmes tiek rādītas.
+    Piem., &quot;**teksts**&quot; tiks rādīts kā &quot;**teksts**&quot;, treknrakstā.
+Nerādīt formatēšanas zīmes:
+    Formatējums tiek piemērots, bet zīmes netiek rādītas.
+    Piem., &quot;**teksts**&quot; tiks rādīts kā &quot;teksts&quot;, treknrakstā.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2898,7 +2885,7 @@ Hide formatting characters:
     <message>
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
-        <translation>Atvērt qTox logu, kad Jūs esat saņēmis jaunu ziņu, ja līdz šim tā nav bijusi atvērta.</translation>
+        <translation>Atvērt qTox logu, kad saņemat jaunu ziņu un neviens logs vēl nav atvērts.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -2911,7 +2898,7 @@ Hide formatting characters:
     <message>
         <source>Place conferences at top of friend list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ievietojiet konferences draugu saraksta augšgalā</translation>
+        <translation type="unfinished">Novietot konferences draugu saraksta augšgalā</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
@@ -2932,22 +2919,22 @@ Hide formatting characters:
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atveriet katru tērzēšanu atsevišķā logā</translation>
+        <translation type="unfinished">Atvērt katru tērzēšanu atsevišķā logā</translation>
     </message>
     <message>
         <source>Emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emocijas</translation>
+        <translation type="unfinished">Emocijzīmes</translation>
     </message>
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izmantojiet emocijzīmes</translation>
+        <translation type="unfinished">Izmantot emocijzīmes</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emocijas izmērs:</translation>
+        <translation type="unfinished">Emocijzīmju izmērs:</translation>
     </message>
     <message>
         <source> px</source>
@@ -2982,7 +2969,7 @@ Hide formatting characters:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izmantojiet identifikatorus, nevis tukšus iemiesojumus</translation>
+        <translation type="unfinished">Izmantot identikonus tukšu iemiesojumu vietā</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -2998,7 +2985,7 @@ Hide formatting characters:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konferences paziņo tikai tad, ja tās ir minētas</translation>
+        <translation type="unfinished">Konferences paziņo tikai tad, ja Jūs piemin</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3008,7 +2995,7 @@ Hide formatting characters:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atskaņot skaņu, kamēr ir aizņemts</translation>
+        <translation type="unfinished">Atskaņot skaņu statusā &quot;Aizņemts&quot;</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3023,25 +3010,25 @@ Hide formatting characters:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konferencēs izmantojiet krāsainus segvārdus</translation>
+        <translation type="unfinished">Konferencēs izmantot krāsainus segvārdus</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paziņojiet par jauniem ziņojumiem konferencēs tikai tad, kad tiek minēts jūsu segvārds.</translation>
+        <translation type="unfinished">Paziņot par jauniem ziņojumiem konferencēs tikai tad, kad tiek minēts Jūsu segvārds.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ja ir atzīmēta izvēles rūtiņa, konferences tiks ievietotas draugu saraksta augšgalā, pretējā gadījumā tās tiks ievietotas zem tiešsaistes draugiem.</translation>
+        <translation type="unfinished">Ja atzīmēts, konferences tiks novietotas draugu saraksta augšgalā, pretējā gadījumā – zem tiešsaistē esošajiem draugiem.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ja tas ir iespējots, katrai kontaktpersonai bez iemiesojuma noklusējuma attēla vietā tiks izveidota ikona, kuras pamatā ir viņu Tox ID. Lai lietotu, ir nepieciešama restartēšana.</translation>
+        <translation type="unfinished">Ja iespējots, katram kontaktam bez iemiesojuma noklusējuma attēla vietā būs ikona, kas ģenerēta pēc tā Tox ID. Jāpārstartē, lai stātos spēkā.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
@@ -3052,12 +3039,12 @@ Hide formatting characters:
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ja tas ir atspējots, atskan paziņojuma skaņas, kad statuss ir Aizņemts (taču joprojām tiek rādīts paziņojums)</translation>
+        <translation type="unfinished">Ja atspējots, statusā &quot;Aizņemts&quot; paziņojumu skaņas tiek izslēgtas (paziņojums tomēr tiek rādīts)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izmantojiet darbvirsmas paziņojumus, piem. paziņojumu centrā vai sistēmas teknē. Bez tā paziņojums būs redzams tikai kā mirgojoša ikona.</translation>
+        <translation type="unfinished">Izmantot darbvirsmas paziņojumus, piem., paziņojumu centrā vai sistēmas panelī. Bez tā paziņojums būs redzams tikai kā mirgojoša ikona sistēmas panelī.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3065,19 +3052,19 @@ Hide formatting characters:
         <translation type="unfinished">Rādīt tikai &quot;jaunu ziņojumu&quot;, neparādot potenciāli slepenu informāciju darbvirsmas paziņojumos.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sadaliet draugu sarakstu un tērzēšanas logu atsevišķi pārvietojamos logos.</translation>
+        <translation type="unfinished">Sadalīt draugu sarakstu un tērzēšanas logu atsevišķi pārvietojamos logos.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Parādiet teksta emocijzīmes kā krāsainus attēlus, nevis tekstu vai melnbaltā fontā atveidotas emocijzīmes.</translation>
+        <translation type="unfinished">Rādīt teksta emocijzīmes kā krāsainus attēlus, nevis tekstu vai melnbaltas fonta emocijzīmes.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atlasiet, kuru attēlu kopu izmantot emocijzīmju renderēšanai.</translation>
+        <translation type="unfinished">Izvēlieties, kuru attēlu kopu izmantot emocijzīmju attēlošanai.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
@@ -3087,28 +3074,28 @@ Hide formatting characters:
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UI pamatstils. Fusion ir ieteicams, jo tas vislabāk darbojas ar qTox tēmu.</translation>
+        <translation type="unfinished">Saskarnes pamatstils. Ieteicams Fusion, jo tas vislabāk darbojas ar qTox motīviem.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UI krāsu motīvs. Izmantojiet šo, lai izvēlētos tumšo režīmu.</translation>
+        <translation type="unfinished">Saskarnes krāsu motīvs. Ar to var izvēlēties tumšo režīmu.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ja tas ir atspējots, izmantojiet pamata sistēmas teknes paziņojumus. Pretējā gadījumā mēģiniet izmantot savas darbvirsmas vides paziņojumu aizmugursistēmu. Atspējojiet šo, ja pamanāt problēmas ar darbvirsmas paziņojumiem.</translation>
+        <translation type="unfinished">Ja atspējots, tiek izmantoti vienkārši sistēmas paneļa paziņojumi. Pretējā gadījumā tiek mēģināts izmantot Jūsu darbvirsmas vides paziņojumu sistēmu. Atspējojiet šo, ja novērojat problēmas ar darbvirsmas paziņojumiem.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izmantojiet sistēmai raksturīgu paziņojumu aizmugursistēmu, ja tāda ir pieejama</translation>
+        <translation type="unfinished">Izmantot sistēmas paziņojumu mehānismu, ja tāds ir pieejams</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rādīt nosūtīto un saņemto attēlu priekšskatījumus tērzēšanas sarunās. Virziet kursoru virs iekļautā priekšskatījuma, lai parādītu lielāku priekšskatījumu.</translation>
+        <translation type="unfinished">Rādīt nosūtīto un saņemto attēlu priekšskatījumus tērzēšanā. Novietojiet kursoru virs priekšskatījuma, lai redzētu lielāku.</translation>
     </message>
     <message>
         <source>Image preview</source>
@@ -3117,20 +3104,20 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maksimālais ziņojumu skaits (vienā sarunā), kas ielādēts no tērzēšanas
-vēstures. Samaziniet to, lai uzlabotu veiktspēju. Pārāk mazs skaitlis var
-izraisīt ritjoslas pazušanu.</translation>
+        <translation type="unfinished">Maksimālais ziņojumu skaits (vienā sarunā), kas tiek ielādēts no tērzēšanas vēstures.
+Samaziniet to, lai uzlabotu veiktspēju. Pārāk mazs skaitlis var izraisīt
+ritjoslas pazušanu.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translation>Maksimālais tērzēšanas žurnāla lielums</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Ritināšanas laikā no tērzēšanas vēstures ielādējamo ziņojumu skaits. Pārāk
 mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
@@ -3138,16 +3125,16 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tērzēšanas žurnāla gabala (fragments) izmērs</translation>
+        <translation type="unfinished">Tērzēšanas žurnāla daļas lielums</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translation>Tērzēšanas žurnāls:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paslēpt piedēkli pēc nulles simbola</translation>
+        <translation type="unfinished">Paslēpt tekstu pēc NUL rakstzīmes</translation>
     </message>
 </context>
 <context>
@@ -3205,12 +3192,12 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     <message>
         <source>Create new circle...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pievienot jaunu loku...</translation>
+        <translation type="unfinished">Pievienot jaunu sarakstu...</translation>
     </message>
     <message>
         <source>By Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pēc Vārda</translation>
+        <translation type="unfinished">Pēc vārda</translation>
     </message>
     <message>
         <source>By Activity</source>
@@ -3236,7 +3223,7 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupas</translation>
+        <translation type="unfinished">Konferences</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3253,12 +3240,12 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
         <source>Add friend</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pievienojiet draugu</translation>
+        <translation type="unfinished">Pievienot draugu</translation>
     </message>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Grupas uzaicinājums</translation>
+        <translation type="unfinished">Konferenču ielūgumi</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3289,32 +3276,32 @@ mazs skaitlis var izraisīt ritjoslas pazušanu.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation>Nevarēja sūtīt draugam uzaicinājumu</translation>
+        <translation>Nevarēja nosūtīt draudzības pieprasījumu</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation>
             <numerusform>%n jauns draudzības pieprasījums</numerusform>
             <numerusform>%n jauni draudzības pieprasījumi</numerusform>
-            <numerusform>%n jauni draudzības pieprasījumi</numerusform>
+            <numerusform>%n jaunu draudzības pieprasījumu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n jauns konferences ielūgums</numerusform>
+            <numerusform>%n jauni konferenču ielūgumi</numerusform>
+            <numerusform>%n jaunu konferenču ielūgumu</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>Aizvērt</translation>
     </message>
     <message>
         <source>Change status</source>
-        <translation>Mainīt stāvokli</translation>
+        <translation>Mainīt statusu</translation>
     </message>
     <message>
         <source>Edit profile</source>

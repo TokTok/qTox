@@ -468,6 +468,9 @@ int AppManager::run()
     parser.addHelpOption();
     parser.addVersionOption();
     parser.addPositionalArgument("uri", tr("Tox URI to parse"));
+    // The values people type stay out of the translations, so no language changes them.
+    const QString onOff = QStringLiteral("<on>/<off>");
+    const QString on = QStringLiteral("on");
     parser.addOptions({
         {{"p", "profile"}, tr("Starts new instance and loads specified profile."), tr("profile")},
         {
@@ -478,26 +481,22 @@ int AppManager::run()
         {{"l", "login"}, tr("Starts new instance and opens the login screen.")},
         {
             {"I", "ipv6"},
-            tr("Sets IPv6 <on>/<off>. Default is ON.",
-               "'on' and 'off' should not be translated, they are flag values"),
+            tr("Sets IPv6 %1. Default is %2.").arg(onOff, on),
             "on/off",
         },
         {
             {"U", "udp"},
-            tr("Sets UDP <on>/<off>. Default is ON.",
-               "'on' and 'off' should not be translated, they are flag values"),
+            tr("Sets UDP %1. Default is %2.").arg(onOff, on),
             "on/off",
         },
         {
             {"L", "lan"},
-            tr("Sets LAN discovery <on>/<off>. UDP off overrides. Default is ON.",
-               "'on' and 'off' should not be translated, they are flag values"),
+            tr("Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.").arg(onOff, on),
             "on/off",
         },
         {
             {"P", "proxy"},
-            tr("Sets proxy settings. Default is NONE.",
-               "NONE should not be translated, it is a flag value"),
+            tr("Sets proxy settings. Default is %1.").arg(QStringLiteral("NONE")),
             "(SOCKS5/HTTP/NONE):(ADDRESS):(PORT)",
         },
 #ifdef UPDATE_CHECK_ENABLED

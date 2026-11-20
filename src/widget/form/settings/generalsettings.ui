@@ -249,7 +249,7 @@ instead of closing entirely.</string>
             <item>
              <widget class="QLabel" name="autoAwayLabel">
               <property name="toolTip">
-               <string>Your status is changed to Away after set period of inactivity.</string>
+               <string>Your status is changed to Away after a set period of inactivity.</string>
               </property>
               <property name="layoutDirection">
                <enum>Qt::LayoutDirection::LeftToRight</enum>
@@ -320,7 +320,7 @@ instead of closing entirely.</string>
                </sizepolicy>
               </property>
               <property name="toolTip">
-               <string comment="autoaccept cb tooltip">You can set this on a per-friend basis by right clicking individual friends.</string>
+               <string comment="autoaccept cb tooltip">You can set this on a per-friend basis by right-clicking individual friends.</string>
               </property>
               <property name="text">
                <string>Autoaccept files</string>

@@ -27,7 +27,7 @@ SetPasswordDialog::SetPasswordDialog(QString body_, QString extraButton, QWidget
     ui->body->setText(body_ + "\n\n");
     QPushButton* ok = ui->buttonBox->button(QDialogButtonBox::Ok);
     ok->setEnabled(false);
-    ok->setText(QApplication::tr("Ok"));
+    ok->setText(QApplication::tr("OK"));
     QPushButton* cancel = ui->buttonBox->button(QDialogButtonBox::Cancel);
     cancel->setText(QApplication::tr("Cancel"));
 

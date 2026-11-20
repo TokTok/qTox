@@ -125,7 +125,7 @@ void MessageBoxManager::confirmExecutableOpen(const QFileInfo& file)
         const bool answer = askQuestion(tr("Executable file", "popup title"),
                                         tr("You have asked qTox to open an executable file. "
                                            "Executable files can potentially damage your computer. "
-                                           "Are you sure want to open this file?",
+                                           "Are you sure you want to open this file?",
                                            "popup text"),
                                         false, true);
         if (!answer) {
@@ -161,7 +161,7 @@ void MessageBoxManager::_showError(const QString& title, const QString& msg)
 bool MessageBoxManager::_askQuestion(const QString& title, const QString& msg, bool defaultAns,
                                      bool warning, bool yesno)
 {
-    const QString positiveButton = yesno ? QApplication::tr("Yes") : QApplication::tr("Ok");
+    const QString positiveButton = yesno ? QApplication::tr("Yes") : QApplication::tr("OK");
     const QString negativeButton = yesno ? QApplication::tr("No") : QApplication::tr("Cancel");
 
     return _askQuestion(title, msg, positiveButton, negativeButton, defaultAns, warning);

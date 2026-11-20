@@ -52,18 +52,6 @@
         <translation type="unfinished">ⴰⵍⵍⴰⵍ ⵏ ⵓⴼⵉⴷⵢⵓ</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation type="unfinished">ⵙⴱⴷⴷ ⵜⴰⵙⵡⵍⴰ ⵏ ⵜⴽⴰⵎⵔⴰⵉⵏⴻⴽ.
-ⴰⴽⴽⴻⵏ ⵜⵜⵏⴻⵔⵏⵉⵏ ⵡⴰⵣⴰⵍⴻⵏ, ⵜⵜⵏⴻⵔⵏⵉⵏⵜ ⵜⵖⴰⵡⵙⵉⵡⵉⵏ ⵏ ⴰⴼⵉⴷⵢⵓ ⵉ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵜⵜⵉⴷⴰⴼⴻⵏ ⵢⵉⵎⴻⴷⴷⵓⴽⴰⵍⵉⴽ.
-ⴰⴽⴽⴻⵏ ⴰⴷ ⵏⵡⴰⵍⵉ ⴱⴻⵍⵍⵉ ⵙ ⵜⵖⴰⵔⴰ ⵏ ⴰⴼⵉⴷⵢⵓ ⵢⴻⵍⵀⴰⵏ ⵉⵍⴰⵇⴰⵙ ⵜⵓⵇⵇⵏⴰ ⵏ ⵉⵏⵜⴻⵔⵏⴻⵜ ⵢⴻⵍⵀⴰⵏ.
-ⵜⵉⴽⵡⴰⵍ, ⵜⵓⵇⵇⵏⴰⵉⵏⴻⴽ ⵜⴻⵣⵎⴻⵔ ⵓⵔ ⵜⴻⵍⵀⵉ ⴰⵔⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⵙⴻⵍⵃⵓ ⵜⴰⵖⴰⵔⴰ ⵏ ⴰⴼⵉⴷⵢⵓ ⵢⵓⴳⴰⵔⴻⵏ ⵜⴰⵢⴻⴹ,
-ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⴷⵢⴰⵡⵉ ⵓⴳⵓⵔⴻⵏ ⴷⴻⴳ ⵜⵎⴻⵙⵍⵉⵡⵜ ⵏ ⴰⴼⵉⴷⵢⵓ.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation type="unfinished">ⵜⴰⵙⵡⵍⴰ</translation>
     </message>
@@ -80,19 +68,19 @@ which may lead to problems with video calls.</source>
         <translation>ⵜⴰⵖⴰⵔⴰ ⵏ ⵓⵎⵙⵍⵉ</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translation>ⵜⴰⵎⴰⵜⵜⴰⵢⵜ (64 ⴽⴱⵉⵙⵏ)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translation>ⵜⴰⵏⴰⵎⵎⴰⵙⵜ (32 ⴽⴱⵉⵙⵏ)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translation>ⵜⴰⴷⵔⴰⵏⵜ (16 ⴽⴱⵉⵙⵏ)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translation>ⵜⴰⴷⵔⴰⵏⵜ ⵎⵍⵉⵃ (8 ⴽⴱⵉⵙⵏ)</translation>
     </message>
     <message>
@@ -140,7 +128,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation type="unfinished">ⴰⵎⵙⴽⴰⵔ ⴰⵥⴰⵕⴰⵏ: %1.</translation>
+        <translation type="unfinished">ⴰⵎⵙⴽⴰⵔ ⴰⵥⴰⵕⴰⵏ: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
@@ -159,22 +147,22 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵜⴰⵙⴽⴰⵏⵜ ⵏ Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation type="unfinished">ⵓⴹⵔⵉⵙ ⵏ ⵡⴰⴽⴽ ⵜⵉⵎⵙⴰⵍ ⵢⴻⵜⵜⵡⴰⵙⵙⵏⴻⵏ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵜⵜⵡⴰⴼ ⴷⴻⴳ %1nneɣ ⴷⴻⴳ ⴳⵉⵜⵀⵓⴱ. ⵎⴰ ⵜⵓⴼⵉⴹⴷ ⴰⵖⴱⴻⵍ ⵏⴻⵖ ⴰⵖⴱⴻⵍ ⵏ ⵜⵖⴻⵍⵍⵉⵙⵜ ⴷⴰⵅⴻⵍ ⵏ qTox, ⵜⵜⵅⵉⵍⴽ ⵙⵙⵉⵡⴹⵉⵜⵉⴷ ⵙ ⵍⵎⴻⵏⴷⴰⴷ ⵏ ⵜⵎⵓⵖⵍⵉⵡⵉⵏ ⵢⴻⵍⵍⴰⵏ ⴷⴻⴳ ⵓⴳⵉⵍⴰⵍⵔⴰⴷⵏⵏⴻⵖ ⵏ ⵡⵉⴽⵉ %2.</translation>
+        <translation type="unfinished">ⵓⴹⵔⵉⵙ ⵏ ⵡⴰⴽⴽ ⵜⵉⵎⵙⴰⵍ ⵢⴻⵜⵜⵡⴰⵙⵙⵏⴻⵏ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵜⵜⵡⴰⴼ ⴷⴻⴳ %1 ⵏⵏⴻⵖ ⴷⴻⴳ GitHub. ⵎⴰ ⵜⵓⴼⵉⴹⴷ ⴰⵖⴱⴻⵍ ⵏⴻⵖ ⴰⵖⴱⴻⵍ ⵏ ⵜⵖⴻⵍⵍⵉⵙⵜ ⴷⴰⵅⴻⵍ ⵏ qTox, ⵜⵜⵅⵉⵍⴽ ⵙⵙⵉⵡⴹⵉⵜⵉⴷ ⵙ ⵍⵎⴻⵏⴷⴰⴷ ⵏ ⵜⵎⵓⵖⵍⵉⵡⵉⵏ ⵢⴻⵍⵍⴰⵏ ⴷⴻⴳ ⵓⵎⴰⴳⵔⴰⴷ ⵏⵏⴻⵖ ⵏ ⵡⵉⴽⵉ %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>ⴽⵏⴻⴷ ⴷⴰ ⴰⴼⴰⴷ ⴰⴷ ⵜⵎⵍⵍⴷ ⵢⴰⵏ ⵓⵔⵎⵉⴷⵉ.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>ⵥⵕ ⵜⴰⵍⴳⴰⵎⵜ ⴰⴽⴽⵯ ⵏ %1 ⵉ Github</translation>
+        <translation>ⵥⵕ ⵜⴰⵍⴳⴰⵎⵜ ⴰⴽⴽⵯ ⵏ %1 ⵉ GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation type="unfinished">ⴰⵏⴹⴼⴰⵕ ⵏ ⵉⴱⵓⴳⴻⵏ</translation>
     </message>
@@ -220,7 +208,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵙⵔⴳ ⵙ ⵡⵓⴷⵎ ⴰⵡⵓⵔⵎⴰⵏ ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⵙⴰⵔⴰⴳ ⵙⴳ ⵓⵏⴻⵔⵎⵉⵙ ⴰ ⵎⴰ ⵢⴻⵜⵜⵡⴰⵙⴱⴷⴷ.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation type="unfinished">ⴽⴽⵙ ⴰⵎⵣⵔⵓⵢ (ⵜⴰⵎⵀⵍⵜ ⴰ ⵓⵔ ⵜⵜⵡⴰⵙⵙⵓⴼⵖ!)</translation>
     </message>
     <message>
@@ -236,19 +224,19 @@ which may lead to problems with video calls.</source>
         <translation>ⵉⵜⵜⵡⴰⴽⴽⵙ ⵓⵎⵣⵔⵓⵢ</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translation type="unfinished">ⵡⴰ ⴷ ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⵣⵜ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵉⵏⴽ, ⵙⵙⵎⵔⵙ ⵉⵜ ⴰⴽⴽⵏ ⴰⴷ ⵜⵙⵙⵏ ⵜⴰⴳⵉⵍⴰⵍⵉⵜ ⵏⵏⵙ ⵙ ⵓⴱⵔⵉⴷ ⵏⵉⴹⵏ. ⵓⵔ ⵜⵣⵎⵉⵔⴷ ⴰⴷ ⵜ ⵜⴰⵣⵏⴷ ⵉ ⵢⵉⵡⴷⴰⵏ ⵏⵉⴹⵏ ⴰⴽⴽⵏ ⴰⴷ ⵔⵏⵓⵏ ⴰⵏⴻⵔⵎⵉⵙ ⴰ.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation type="unfinished">ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⵣⵜ (ⵎⴰⵞⵞⵉ ⴷ ToxID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation type="unfinished">ⵜⴰⵙⴰⵔⵓⵜ ⵜⴰⵣⴰⵢⵣⵜ (ⵎⴰⵞⵞⵉ ⴷ Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation type="unfinished">ⴰⵙⴷⴷⵉⴷ</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translation type="unfinished">ⵉⵙ ⵜⴻⴱⵖⵉⴷ ⴰⴷ ⵜⴽⴽⵙⴷ ⴰⵎⵣⵔⵓⵢ ⵏ ⵓⵎⵙⴰⵡⴰⵍ ⴰⴽⴷ %1?</translation>
     </message>
     <message>
@@ -272,7 +260,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⴰⵙⵔⴳ ⴰⵡⵓⵔⵎⴰⵏ ⵏ ⵜⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⵙⴰⵔⴰⴳ</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translation type="unfinished">ⵜⵣⵎⵔⴷ ⴰⴷ ⵜⵃⵔⵣⴷ ⵉⵡⵏⵏⵉⵜⵏ ⵖⴼ ⵓⵏⴻⵔⵎⵉⵙ ⴰ ⴷⴰ.</translation>
     </message>
 </context>
@@ -342,7 +330,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵓⵔ ⵣⵎⵉⵔⴻⵖ ⴰⵔⴰ ⴰⴷ ⵔⵏⵓⵖ ⴰⵎⴷⴷⴰⴽⴽⵍ.</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation type="unfinished">ⴰⵔⵓⴷ Tox ID ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍⵉⴽ</translation>
     </message>
     <message>
@@ -377,7 +365,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation type="unfinished">ⵓⵔ ⵏⵓⴼⵉ ⴰⵔⴰ ⴽⵔⴰ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ ⴰⵔⴰ ⴷⵏⴻⵙⵙⴻⴽⵛⴻⵎ ⴷⴻⴳ ⵓⴼⴰⵢⵍⵓⴰ!</translation>
+        <translation type="unfinished">ⵓⵔ ⵏⵓⴼⵉ ⴰⵔⴰ ⴽⵔⴰ ⵏ ⵢⵉⵙⴰⵍⵍⴻⵏ ⴰⵔⴰ ⴷⵏⴻⵙⵙⴻⴽⵛⴻⵎ ⴷⴻⴳ ⵓⴼⴰⵢⵍⵓ ⴰ!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -401,7 +389,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">%1 ⴷⴰⴳⵉ! Tox ⵎⴻ ⴰⵀⴰⵜ?</translation>
+        <translation type="unfinished">%1 ⴷⴰⴳⵉ! ⴰⴷ ⵏⴻⵎⵙⴰⵡⴰⵍ ⵙ Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -411,7 +399,7 @@ which may lead to problems with video calls.</source>
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
             <numerusform>ⵀⴻⴳⴳⴰⴷ ⵉ ⵓⵙⴻⴽⵛⴻⵎ ⵏ %n ⵏ ⵢⵉⵎⴷⴰⵏⴻⵏ, ⵜⵜⴻⴽⵙⴻⴹ ⴰⵣⴻⵏ ⵉⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵜⴻⵙⵙⴻⴽⵏⴻⴹ</numerusform>
-            <numerusform></numerusform>
+            <numerusform>ⵀⴻⴳⴳⴰⴷ ⵉ ⵓⵙⴻⴽⵛⴻⵎ ⵏ %n ⵏ ⵢⵉⵎⴷⴰⵏⴻⵏ, ⵜⵜⴻⴽⵙⴻⴹ ⴰⵣⴻⵏ ⵉⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵜⵜⴻⵙⵙⴻⴽⵏⴻⴹ</numerusform>
         </translation>
     </message>
     <message>
@@ -423,7 +411,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Tox ID, 76 ⵏ ⵢⵉⵙⴽⴽⵉⵍⵏ ⵉⵙⴹⵉⵙⵎⵔⴰⵡⴰⵏⵏ</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translation type="unfinished">%1 Tox ID ⵓⵔ ⵢⵖⴱⵉⵍ</translation>
     </message>
@@ -477,7 +465,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⵔ ⵜⴻⵥⵔⵉⴹ ⴰⵔⴰ %1 ⴰⵢⴻⵏ ⵜⵅⴻⴷⵎⴻⴹ, ⵜⵜⵅⵉⵍⴽ %2 ⵜⵙⵏⴼⵍⴷ ⴽⵔⴰ ⴷⴰⴳⵉ. ⵉⴱⴻⴷⴷⴰⵍⴻⵏ ⵢⴻⵜⵜⵡⴰⵅⴻⴷⵎⴻⵏ ⴷⴰⴳⵉ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⴷⴰⵡⵉⵏ ⵓⴳⵓⵔⴻⵏ ⵙ qTox, ⵢⴻⵔⵏⴰ ⵓⵍⴰ ⴷ ⴰⵖⴻⵍⵍⵓⵢ ⵏ ⵢⵉⵙⴻⴼⴽⴰⵉⵏⴻⴽ, ⴰⵎⴻⴷⵢⴰ. ⴰⵎⴻⵣⵔⵓⵢ.%3.</translation>
+        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⵓⵔ ⵜⴻⵥⵔⵉⴹ ⴰⵔⴰ %1 ⴰⵢⴻⵏ ⵜⵅⴻⴷⵎⴻⴹ, ⵜⵜⵅⵉⵍⴽ %2 ⵜⵙⵏⴼⵍⴷ ⴽⵔⴰ ⴷⴰⴳⵉ. ⵉⴱⴻⴷⴷⴰⵍⴻⵏ ⵢⴻⵜⵜⵡⴰⵅⴻⴷⵎⴻⵏ ⴷⴰⴳⵉ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⴷⴰⵡⵉⵏ ⵓⴳⵓⵔⴻⵏ ⵙ qTox, ⵢⴻⵔⵏⴰ ⵓⵍⴰ ⴷ ⴰⵖⴻⵍⵍⵓⵢ ⵏ ⵢⵉⵙⴻⴼⴽⴰ ⵉⵏⴻⴽ, ⴰⵎⴻⴷⵢⴰ ⴰⵎⴻⵣⵔⵓⵢ.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -499,9 +487,9 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation type="unfinished">ⵃⵔⵣ ⵉⵙⵖⵡⴰⵕⵏ ⴷⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵓⵎⴰⵀⵉⵍ ⴳ ⵓⵎⴹⵉⵇ ⵏ ⵓⴽⴰⵔⴰⵎ ⵏ conf ⴰⴳⵉⵍⴰⵍⵏⵓ</translation>
+        <translation type="unfinished">ⵃⵔⵣ ⵉⵙⵖⵡⴰⵕⵏ ⴷⴳ ⵓⴽⴰⵔⴰⵎ ⵏ ⵓⵎⴰⵀⵉⵍ ⴳ ⵓⵎⴹⵉⵇ ⵏ ⵓⴽⴰⵔⴰⵎ ⵏ ⵉⵙⵖⵡⴰⵕⵏ ⴰⴳⵉⵍⴰⵍⵏⵓ</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -616,24 +604,20 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ⵢⴻⴱⴷⴰ ⵉⵏⵙⵜⴰⵏⵛⴻ ⴰⵎⴰⵢⵏⵓⵜ ⵢⴻⵔⵏⴰ ⵢⴻⵍⴷⵉ ⴰⴳⴷⵉⵍ ⵏ ⵓⵏⴻⴽⵛⵓⵎ.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ IPv6 &lt;on&gt;/&lt;off&gt;. ⴰⵎⴻⵏⵣⵓ ⴷ ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ IPv6 %1. ⴰⵎⴻⵏⵣⵓ ⴷ %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ UDP &lt;on&gt;/&lt;off&gt;. ⴰⵎⴻⵏⵣⵓ ⴷ ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ UDP %1. ⴰⵎⴻⵏⵣⵓ ⴷ %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ ⵜⵓⴼⴼⵖⴰ ⵏ LAN &lt;on&gt;/&lt;off&gt;. UDP off ⵉⵣⵔⵉ. ⴰⵎⴻⵏⵣⵓ ⴷ ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ ⵜⵓⴼⴼⵖⴰ ⵏ LAN %1. ⵓⵔ ⵜⵙⵄⵉ ⴰⵙⵖⵉⵡⵙ ⵎⴰ ⵢⴻⵏⵖⴰ UDP. ⴰⵎⴻⵏⵣⵓ ⴷ %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ ⵉⵙⵖⵡⴰⵕⵏ ⵏ proxy. ⵜⴰⵎⴻⵥⵍⴰ ⴷ NONE.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">ⵢⴻⵙⴱⴻⴷⴷ ⵉⵙⵖⵡⴰⵕⵏ ⵏ proxy. ⵜⴰⵎⴻⵥⵍⴰ ⴷ %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -686,7 +670,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Call duration: </source>
-        <translation type="unfinished">ⵜⴻⵖⵣⵉ ⵏ ⵓⵙⵉⵡⴻⵍ:</translation>
+        <translation type="unfinished">ⵜⴻⵖⵣⵉ ⵏ ⵓⵙⵉⵡⴻⵍ: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -778,7 +762,7 @@ so you can save the file on Windows.</source>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">ⴰⵙⴰⵔⴰⴳ #%1.</translation>
+        <translation type="unfinished">ⴰⵙⴰⵔⴰⴳ #%1</translation>
     </message>
 </context>
 <context>
@@ -843,7 +827,7 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n ⵓⵙⴻⵇⴷⴰⵛ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+            <numerusform>ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ: %n</numerusform>
             <numerusform>%n ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
         </translation>
     </message>
@@ -913,7 +897,7 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n ⵓⵙⴻⵇⴷⴰⵛ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
+            <numerusform>ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ: %n</numerusform>
             <numerusform>%n ⵢⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⴷⴻⴳ ⵓⵎⵙⵍⴰⵢ</numerusform>
         </translation>
     </message>
@@ -930,11 +914,11 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation type="unfinished">/ⵎⴻ ⵢⴻⵜⵜⴰⴽⴷ ⵜⴰⵎⴷⴰⴽⴻⵍⵜ, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me ⵢⴻⵜⵜⴰⴽⴷ ⵜⴰⵎⴷⴰⴽⴻⵍⵜ, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">ⴰⵙⴰⵔⴰⴳ %1.</translation>
+        <translation type="unfinished">ⴰⵙⴰⵔⴰⴳ %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -989,7 +973,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation type="unfinished">ⵙⵔⴳ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⴰⴼⴰⵢⵍⵓⴰ</translation>
+        <translation type="unfinished">ⵙⵔⴳ ⴰⴷ ⵜⴽⴻⵛⵎⴻⴹ ⴰⴼⴰⵢⵍⵓ ⴰ</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1031,7 +1015,7 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ⵃⵔⴻⵣ ⴰⴼⴰⵢⵍⵓ</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translation type="unfinished">ⵢⴻⵃⴱⴻⵙ ⵙⵖⵓⵔ ⵓⵏⴻⵔⵎⵉⵙ</translation>
     </message>
@@ -1097,7 +1081,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation type="unfinished">ⴽⴽⵙ ⵙⴳ ⵜⵔⴱⴰⵄⵜ &apos;%1&apos;.</translation>
+        <translation type="unfinished">ⴽⴽⵙ ⵙⴳ ⵜⵔⴱⴰⵄⵜ &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1113,7 +1097,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">ⴰⵙⵏⴻⴱⴳⵉ ⵖⴻⵔ ⵓⵙⴰⵔⴰⴳ &apos;%1&apos;.</translation>
+        <translation type="unfinished">ⴰⵙⵏⴻⴱⴳⵉ ⵖⴻⵔ ⵓⵙⴰⵔⴰⴳ &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1122,7 +1106,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation type="unfinished">ⵇⴱⴻⵍ ⵙ ⵜⵉⵎⴰⴷⵉⴽ ⵉⴼⵓⵢⵍⴰ ⵙⴻⴳ ⵓⵎⴷⴷⴰⴽⴽⵍⴰ</translation>
+        <translation type="unfinished">ⵇⴱⴻⵍ ⵙ ⵜⵉⵎⴰⴷⵉⴽ ⵉⴼⵓⵢⵍⴰ ⵙⴻⴳ ⵓⵎⴷⴷⴰⴽⴽⵍ ⴰ</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1238,7 +1222,7 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵖⴻⵔ 0 ⵉⵡⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⴼⴻⴹ</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation type="unfinished">ⴰⴷⴷⵓⴷⵉⴽ ⵢⴻⵜⵜⵡⴰⵙնⴼⵍ ⵖⴻⵔ ⵉⴱⵄⴷ ⴷⴻⴼⴼⵉⵔ ⵜⴰⵍⵍⵉⵜ ⵏ ⵓⵔ ⵏⵅⴻⴷⴷⴻⵎ ⴰⵔⴰ ⵢⴻⵜⵜⵡⴰⵙⴱⴻⴷⴷⴻⵏ.</translation>
     </message>
     <message>
@@ -1292,13 +1276,13 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⵔⵏⵓ ⵉⵣⴻⵏ ⵏ ⵓⵎⴻⵙⵍⴰⵢ ⵎⵉ ⴰⵔⴰ ⵢⴻⴽⵛⴻⵎ ⵓⵙⴻⵇⴷⴰⵛ ⵏⴻⵖ ⴰⴷ ⵢⴻⴼⴼⴻⵖ ⵙⴻⴳ ⵓⵙⴰⵔⴰⴳ</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation type="unfinished">ⵜⵣⴻⵎⵔⴻⴹ ⴰⴷ ⵜⴻⵙⴱⴻⴷⴷⴻⴹ ⴰⵢⴰ ⵙ ⵍⵙⴰⵙ ⵏ ⵢⴰⵍ ⴰⵎⴷⴷⴰⴽⴽⵍ ⵙ ⵜⵎⴻⵥⵥⵓⵖⵜ ⵏ ⵢⵉⴷⵉⵙ ⴰⵢⴻⴼⴼⵓⵙ ⵖⴻⴼ ⵢⵉⵎⴷⴷⵓⴽⴽⴰⵍ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ.</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
-        <translation type="unfinished">ⴽⵏⴻⴷ ⴷⴰⴳⵉ ⵎⴰ ⵢⴻⵍⵍⴰ ⵜⵓⴼⵉⴹ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ ⴷⴻⴳ ⵜⵙⵓⵇⵉⵍⵜ ⵢⴻⵔⵏⴰ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵄⵉⵡⵏⴻⴹ ⴰⴷ ⵜⵜⵜⴻⵙⵙⵉⵣⴻⴷⴳⴻⴹ.</translation>
+        <translation type="unfinished">ⴽⵏⴻⴷ ⴷⴰⴳⵉ ⵎⴰ ⵢⴻⵍⵍⴰ ⵜⵓⴼⵉⴹ ⵜⵓⵛⵛⴹⵉⵡⵉⵏ ⴷⴻⴳ ⵜⵙⵓⵇⵉⵍⵜ ⵢⴻⵔⵏⴰ ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⵄⵉⵡⵏⴻⴹ ⴰⴷ ⵜⴻⵙⵙⵉⵣⴻⴷⴳⴻⴹ.</translation>
     </message>
     <message>
         <source>Help translate</source>
@@ -1398,7 +1382,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation type="unfinished">ⵜⵓⴼⴼⵖⴰ</translation>
     </message>
     <message>
@@ -1556,7 +1540,7 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⴰⴳⵉⵍⴰⵍ ⵓⵔ ⵢⴻⵙⵄⵉ ⴰⵔⴰ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ, qTox ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵣⴳⴻⵔ ⴰⴳⴷⵉⵍ ⵏ ⵓⵏⴻⴽⵛⵓⵎ .</translation>
+        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⴰⴳⵉⵍⴰⵍ ⵓⵔ ⵢⴻⵙⵄⵉ ⴰⵔⴰ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ, qTox ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵣⴳⴻⵔ ⴰⴳⴷⵉⵍ ⵏ ⵓⵏⴻⴽⵛⵓⵎ.</translation>
     </message>
     <message>
         <source>Load automatically</source>
@@ -1808,9 +1792,9 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵢⴻⵜⵜⵡⴰⵅⴻⴷⵎⴻⵏ</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">ⵜⴻⵙⵙⵓⵜⴻⵔⴹ ⵙⴻⴳ qTox ⴰⴷ ⵢⴻⵍⴷⵉ ⴰⴼⴰⵢⵍⵓ ⵢⴻⵜⵜⵡⴰⵅⴻⴷⵎⴻⵏ. ⵉⴼⵓⵢⵍⴰ ⵢⴻⵜⵜⵡⴰⵅⴻⴷⵎⴻⵏ ⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵙⵅⴻⵚⵔⴻⵏ ⴰⵙⴻⵍⴽⵉⵎⵉⴽ. ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⴻⵍⴷⵉⴹ ⴰⴼⴰⵢⵍⵓⴰ?</translation>
+        <translation type="unfinished">popup text</translation>
     </message>
 </context>
 <context>
@@ -1888,7 +1872,7 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform>%n ⵢⵉⵣⴻⵏ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵖⵔⴻⵏ ⴰⵔⴰ</numerusform>
+            <numerusform>ⵉⵣⵏⴰⵏ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵖⵔⴻⵏ ⴰⵔⴰ: %n</numerusform>
             <numerusform>%n ⵢⵉⵣⵏⴰⵏ ⵓⵔ ⵢⴻⵜⵜⵡⴰⵖⵔⴻⵏ ⴰⵔⴰ</numerusform>
         </translation>
     </message>
@@ -1926,7 +1910,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Friend request received from %1</source>
-        <translation type="unfinished">ⴰⵙⵓⵜⴻⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵢⴻⵡⵡⴻⴹⴷ ⵙⴻⴳ %1.</translation>
+        <translation type="unfinished">ⴰⵙⵓⵜⴻⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵢⴻⵡⵡⴻⴹⴷ ⵙⴻⴳ %1</translation>
     </message>
     <message>
         <source>Incoming call</source>
@@ -1936,7 +1920,7 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translation type="unfinished">ⴰⵙⴻⴽⵛⴻⵎ ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ ⵉⵎⴻⵇⵇⵔⴰⵏⴻⵏ ⵢⴻⵜⵜⵡⴰⵙⴱⴻⴷⴷ</translation>
     </message>
 </context>
@@ -2024,7 +2008,7 @@ Save format changes are possible, which may result in data loss.</source>
         <translation type="unfinished">ⵜⵓⴽⵙⵉⵏⴳ ⵖⴻⴼ qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵉⵙⵏⴼⵍ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵜⴱⴰⴹⵏⵉⵜ, ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⵉⵍⵉ ⵢⴻⵖⵍⵉ ⵏⴻⵖ ⵢⴻⵙⵙⴻⵇⴷⴻⵛ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⴰⵇⴱⵓⵔ.</translation>
     </message>
 </context>
@@ -2092,9 +2076,9 @@ Please use another image.</source>
         <translation type="unfinished">ⵃⵔⵣ</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished">ⵃⵔⵣ QrCode (*.png)</translation>
+        <translation type="unfinished">ⵃⵔⵣ QR code (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2120,10 +2104,6 @@ Please use another image.</source>
         <translation type="unfinished">ⵓⵔ ⵉⵣⵎⵉⵔ ⴰⴷ ⵉⵙⵏⴼⵍ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation type="unfinished">ⴰⴱⵔⵉⴷ ⵉⵍⵎ ⵓⵔ ⵢⵍⵍⵉ</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation type="unfinished">ⴰⵔⵎⵎⵓⵙ ⵏ ⵓⵙⵏⴼⵍ ⵏ ⵢⵉⵙⵎ</translation>
     </message>
@@ -2140,7 +2120,7 @@ Please use another image.</source>
         <translation type="unfinished">ⵉⵙⵎ ⵉⵍⵎ</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translation type="unfinished">ⵉⵙⵎ ⵉⵍⵎ ⵓⵔ ⵢⵍⵍⵉ</translation>
     </message>
     <message>
@@ -2160,7 +2140,7 @@ Please use another image.</source>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰⴰ ⵓⵔ ⵣⵎⵉⵔⴻⵏ ⴰⵔⴰ ⴰⴷ ⵜⵜⵡⴰⴽⴽⵙⴻⵏ:</translation>
+        <translation type="unfinished">ⵉⴼⵓⵢⵍⴰ ⴰ ⵓⵔ ⵣⵎⵉⵔⴻⵏ ⴰⵔⴰ ⴰⴷ ⵜⵜⵡⴰⴽⴽⵙⴻⵏ:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
@@ -2181,11 +2161,11 @@ Please use another image.</source>
         <translation type="unfinished">ⴰⴼⴰⵢⵍⵓ ⵉ ⵜⴼⴻⵔⵏⴻⴹ ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴻⵜⵜⵡⴰⵃⵔⴻⵣ.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translation type="unfinished">ⴰⴱⵔⵉⴷ ⵉⵍⴻⵎ ⵓⵔ ⵢⴻⵍⵍⵉ ⴰⵔⴰ.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵉⵙⵏⴼⵍ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵜⴱⴰⴹⵏⵉⵜ, ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⵉⵍⵉ ⵢⴻⵖⵍⵉ ⵏⴻⵖ ⵢⴻⵙⵙⴻⵇⴷⴻⵛ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⴰⵇⴱⵓⵔ.</translation>
     </message>
     <message>
@@ -2212,10 +2192,10 @@ Please use another image.</source>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation type="unfinished">IDagi ⵢⴻⵜⵜⴰⴵⴵⴰ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵏⵏⵉⴹⴻⵏ ⵏ Tox ⴰⴷ ⵔⵏⵓⵏ ⵢⴻⵔⵏⴰ ⴰⴷ ⴽⵉⴷⵙⵙⵉⵡⴹⴻⵏ.
+        <translation type="unfinished">IDagi ⵢⴻⵜⵜⴰⴵⴵⴰ ⵉⵙⴻⵇⴷⴰⵛⴻⵏ ⵏⵏⵉⴹⴻⵏ ⵏ Tox ⴰⴷ ⴽⵉⴷ-ⵔⵏⵓⵏ ⵢⴻⵔⵏⴰ ⴰⴷ ⴽⵉⴷⵙⵙⵉⵡⴹⴻⵏ.
 ⴱⴹⵓⵜ ⴷ ⵉⵎⴷⵓⴽⴰⵍⵉⴽ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⴱⴷⵓⴹ ⴰⵎⴻⵙⵍⴰⵢ.
 
-IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), ⴷ ⵜⴼⴻⵍⵡⵉⵜ ⵏ ⵓⴹⴼⴰⵔ (ⵙ ⵜⴼⴻⵍⵡⵉⵜ).</translation>
+IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⴰⵥⵕⵡⴰⵍ) ⴷ checksum.</translation>
     </message>
 </context>
 <context>
@@ -2246,9 +2226,9 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translation type="unfinished">ⴰⴳⵉⵍⴰⵍ ⵢⵍⵍⴰ ⵢⴰⴽⴰⵏ</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished">ⴰⴳⵉⵍⴰⵍ ⵙ ⵢⵉⵙⴻⵎ &quot;%1&quot; ⵢⵍⵍⴰ ⵢⴰⴽⴰⵏ. ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜⴽⴽⵙⴷ?</translation>
+        <translation type="unfinished">ⴰⴳⵉⵍⴰⵍ ⵙ ⵢⵉⵙⴻⵎ &quot;%1&quot; ⵢⵍⵍⴰ ⵢⴰⴽⴰⵏ. ⵜⴻⴱⵖⵉⴹ ⴰⴷ ⵜ ⵜⵙⵏⴼⵍⴷ?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2270,7 +2250,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation type="unfinished">ⵡⴰⵅⵅⴰ</translation>
     </message>
     <message>
@@ -2344,7 +2324,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation type="unfinished">%1 ⴷⴰⴳⵉ! Tox ⵎⴻ ⴰⵀⴰⵜ?</translation>
+        <translation type="unfinished">%1 ⴷⴰⴳⵉ! ⴰⴷ ⵏⴻⵎⵙⴰⵡⴰⵍ ⵙ Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2432,7 +2412,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 ⵉⵙⵔⵙ ⴰⵣⵡⵍ ⵖⵔ %2.</translation>
+        <translation type="unfinished">%1 ⵉⵙⵔⵙ ⴰⵣⵡⵍ ⵖⵔ %2</translation>
     </message>
     <message>
         <source>Cleared</source>
@@ -2440,20 +2420,20 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵙ %1 ⵢⴻⴽⴼⴰ ⵙ ⵜⵖⴰⵡⵍⴰ. %2.</translation>
+        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵙ %1 ⵢⴻⴽⴼⴰ ⵙ ⵜⵖⴰⵡⵍⴰ. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵙ %1 ⵢⴻⴽⴼⴰ. %2.</translation>
+        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵙ %1 ⵢⴻⴽⴼⴰ. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation type="unfinished">%1 ⵜⵓⵔⴰ ⴷ %2.</translation>
+        <translation type="unfinished">%1 ⵜⵓⵔⴰ ⴷ %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵉ %1.</translation>
+        <translation type="unfinished">ⴰⵙⵉⵡⴻⵍ ⵉ %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2478,7 +2458,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ⵜⵉⵖⵔⵉ ⵜⴻⵜⵜⵡⴰⴽⴽⴻⵙ ⴰⵛⴽⵓ %1 ⵢⴻⴼⴼⴻⵖⴷ ⵙ ⵜⵖⴰⵡⵍⴰ. %2.</translation>
+        <translation type="unfinished">ⵜⵉⵖⵔⵉ ⵜⴻⵜⵜⵡⴰⴽⴽⴻⵙ ⴰⵛⴽⵓ %1 ⵢⴻⴼⴼⴻⵖⴷ ⵙ ⵜⵖⴰⵡⵍⴰ. %2</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2502,7 +2482,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
     </message>
     <message>
         <source>Broken</source>
-        <translation type="unfinished">ⵢⴻⴻⵥⴻⵏ</translation>
+        <translation type="unfinished">ⵢⴻⵔⵥⴰ</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2513,7 +2493,7 @@ IDa ⵢⴻⵙⵄⴰ ⴰⴽⴰⵔⴰⵎ ⵏ NoSpam (ⵙ ⵜⴼⴻⵍⵡⵉⵜ), �
         <translation type="unfinished">ⵢⴻⵃⴱⴻⵙ</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translation type="unfinished">ⵢⴻⵃⴱⴻⵙ ⵙⵖⵓⵔ ⵓⵏⴻⵔⵎⵉⵙ</translation>
     </message>
     <message>
@@ -2866,7 +2846,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished">ⵜⴰⵊⵓⵎⵎⴰ ⵏ ⵓⵙⵎⴻⴽⵜⵉ:</translation>
+        <translation type="unfinished">ⵜⴰⵊⵓⵎⵎⴰ ⵏ ⵉⵛⵎⵓⵎⵉⵢⴻⵏ:</translation>
     </message>
     <message>
         <source> px</source>
@@ -2944,7 +2924,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
-        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⴻⵜⵜⵡⴰⵙⴼⴻⴹ, ⵙⵙⴻⵇⴷⴻⵛ ⵉⵙⴰⵍⴰⵏ ⵏ ⵜⴼⴻⵍⵡⵉⵜ ⵏ ⵓⵏⴰⴳⵔⴰⵡ ⵏ ⵍⵍⵙⴰⵙ. ⵎⴰ ⵓⵍⴰⵛ, ⵄⵔⴻⴹ ⴰⴷ ⵜⴻⵙⵇⴻⴷⵛⴻⴹ ⴰⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ ⵏ ⵜⵡⴻⵏⵏⴰⴹⵜ ⵏ ⵓⵙⴻⵍⴽⵉⵎⵉⴽ. ⵙⵙⴻⵅⴷⴻⵎ ⴰⵢⴰ ⵎⴰ ⵜⵎⵓⵇⵍⴻⴹ ⵓⴳⵓⵔⴻⵏ ⵙ ⵜⵖⴻⵎⵎⴰⵔ ⵏ ⵓⴹⵔⵉⵙ.</translation>
+        <translation type="unfinished">ⵎⴰ ⵢⴻⵍⵍⴰ ⵢⴻⵜⵜⵡⴰⵙⴼⴻⴹ, ⵙⵙⴻⵇⴷⴻⵛ ⵉⵙⴰⵍⴰⵏ ⵏ ⵜⴼⴻⵍⵡⵉⵜ ⵏ ⵓⵏⴰⴳⵔⴰⵡ ⵏ ⵍⵍⵙⴰⵙ. ⵎⴰ ⵓⵍⴰⵛ, ⵄⵔⴻⴹ ⴰⴷ ⵜⴻⵙⵇⴻⴷⵛⴻⴹ ⴰⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ ⵏ ⵜⵡⴻⵏⵏⴰⴹⵜ ⵏ ⵓⵙⴻⵍⴽⵉⵎⵉⴽ. ⵙⴼⴻⴹ ⴰⵢⴰ ⵎⴰ ⵜⵎⵓⵇⵍⴻⴹ ⵓⴳⵓⵔⴻⵏ ⵙ ⵜⵖⴻⵎⵎⴰⵔ ⵏ ⵓⴹⵔⵉⵙ.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
@@ -2955,7 +2935,7 @@ Hide formatting characters:
         <translation type="unfinished">ⵙⵙⴻⴽⵏⴻⴹ ⴽⴰⵏ &quot;ⵉⵣⴻⵏ ⴰⵎⴰⵢⵏⵓⵜ&quot; ⵡⴰⵔ ⵎⴰ ⵜⴻⵙⵙⴻⴽⵏⴻⴹ ⵉⵙⴰⵍⴰⵏ ⵉⵣⴻⵎⵔⴻⵏ ⴰⴷ ⵉⵍⵉⵏ ⴷ ⵓⴼⵓⵔⴻⵏ ⴷⴻⴳ ⵢⵉⵙⴰⵍⴰⵏ ⵏ ⵓⵙⴻⵍⴽⵉⵎ.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translation type="unfinished">ⴱⴹⵓ ⵜⴰⵍⴳⴰⵎⵜ ⵏ ⵢⵉⵎⴷⴷⵓⴽⴽⴰⵍ ⴷ ⵟⵟⴰⵇ ⵏ ⵜⵎⴻⵙⵍⵉⵡⵜ ⵖⴻⴼ ⵟⵟⴰⵇ ⵢⴻⵜⵜⵡⴰⵙⵇⴻⴷⵛⴻⵏ ⵙ ⵜⴼⴻⵔⴽⵉⵜ ⵢⴻⵎⴳⴰⵔⴰⴷⴻⵏ.</translation>
     </message>
     <message>
@@ -2982,7 +2962,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
-        <translation type="unfinished">ⵙⵜⵢⵍⴻ ⵏ ⵍⵍⵙⴰⵙ ⴰⵔⴰ ⵜⴻⵙⵇⴻⴷⵛⴻⴹ ⵉ UI. Fusion ⵢⴻⵜⵜⵡⴰⵙⵙⵓⵎⵎⴻⵍ ⵉⵎⵉ ⵉⵅⴻⴷⴷⴻⵎ ⵎⵍⵉⵃ ⵙ qTox ⵜⵀⴻⵎⵉⵏⴳ.</translation>
+        <translation type="unfinished">ⴰⵖⴰⵏⵉⴱ ⵏ ⵍⵍⵙⴰⵙ ⵉ UI. Fusion ⵢⴻⵜⵜⵡⴰⵙⵙⵓⵎⵎⴻⵍ ⵉⵎⵉ ⵉⵅⴻⴷⴷⴻⵎ ⵎⵍⵉⵃ ⵙ ⵉⵙⵏⵜⵍⵏ ⵏ qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -2999,8 +2979,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translation type="unfinished">ⴰⵎⴹⴰⵏ ⴰⵄⵍⴰⵢⴰⵏ ⵏ ⵢⵉⵣⴻⵏ (ⵉ ⵢⴰⵍ ⴰⵎⵙⴰⵡⴰⵍ) ⵢⴻⵜⵜⵡⴰⵛⴰⵔⴳⴻⵏ ⵙⴻⴳ ⵓⵎⵣⵔⵓⵢ ⵏ
 ⵓⵎⵙⴰⵡⴰⵍ. ⵙⵏⴻⵇⵙ ⴰⵢⴰ ⴰⴽⴽⴻⵏ ⴰⴷ ⵜⴻⵙⵙⴻⵍⵀⵓⴹ ⴰⵅⴻⴷⴷⵉⵎ. ⴰⵎⴹⴰⵏ ⴷ ⴰⵎⴻⵥⵢⴰⵏ ⴰⵟⴰⵙ ⴷⴰⴳⵉ
 ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵙⵙⵉⵡⴻⴹ ⴰⴷ ⵢⴻⴼⴼⴻⵖ ⵓⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ.</translation>
@@ -3011,8 +2991,8 @@ scroll bar to disappear.</source>
 ⵏ ⵓⵖⵎⵉⵙ ⵏ ⵓⵎⵙⴰⵡⴰⵍ</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translation type="unfinished">ⴰⵎⴹⴰⵏ ⵏ ⵢⵉⵣⴻⵏ ⴰⵔⴰ ⵜⵉⴷⵜⴻⵙⵙⵓⴼⵖⴻⴹ ⵙⴻⴳ ⵓⵎⵣⵔⵓⵢ ⵏ ⵓⵎⵙⴰⵡⴰⵍ ⵎⵉ ⴰⵔⴰ ⵜⵉⴷⵜⴻⵙⵙⵓⴼⵖⴻⴹ.
 ⴰⵎⴹⴰⵏ ⴷ ⴰⵎⴻⵥⵢⴰⵏ ⴰⵟⴰⵙ ⴷⴰⴳⵉ ⵢⴻⵣⵎⴻⵔ ⴰⴷ ⵢⴻⵙⵙⵉⵡⴻⴹ ⴰⴷ ⵢⴻⴼⴼⴻⵖ ⵓⴹⵔⵉⵙ ⵏ ⵓⵙⵎⴻⵍ.</translation>
     </message>
@@ -3027,8 +3007,8 @@ number here may cause the scroll bar to disappear.</source>
 ⵓⵎⵙⴰⵡⴰⵍ:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
-        <translation type="unfinished">ⴼⴼⵔⵏ ⴷⴼⴼⵉⵔ ⵏ ⵓⵣⴰⵎⵓⵍ ⵏ NULL</translation>
+        <source>Hide text after a NUL character</source>
+        <translation type="unfinished">ⴼⴼⵔ ⴰⴹⵕⵉⵚ ⴷⴼⴼⵉⵔ ⵓⵙⴽⴽⵉⵍ NUL</translation>
     </message>
 </context>
 <context>
@@ -3158,7 +3138,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
-        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵣⴻⵏ ⴰⵙⵓⵜⴻⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ.</translation>
+        <translation type="unfinished">ⵓⵔ ⵢⴻⵣⵎⵉⵔ ⴰⵔⴰ ⴰⴷ ⵢⴰⵣⴻⵏ ⴰⵙⵓⵜⴻⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -3168,20 +3148,20 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform>%n ⵓⵙⵓⵜⴻⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⴰⵎⴰⵢⵏⵓⵜ</numerusform>
+            <numerusform>ⵉⵙⵓⵜⴰⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ: %n</numerusform>
             <numerusform>%n ⵢⵉⵙⵓⵜⴰⵔ ⵏ ⵓⵎⴷⴷⴰⴽⴽⵍ ⵉⵎⴰⵢⵏⵓⵜⴻⵏ</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform>%n ⵜⴰⵏⴱⴳⵉⵡⵜ ⵏ ⵓⵙⴰⵔⴰⴳ ⵜⴰⵎⴰⵢⵏⵓⵜ</numerusform>
+            <numerusform>ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⵙⴰⵔⴰⴳ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ: %n</numerusform>
             <numerusform>%n ⵜⵉⵏⴱⴳⵉⵡⵉⵏ ⵏ ⵓⵙⴰⵔⴰⴳ ⵜⵉⵎⴰⵢⵏⵓⵜⵉⵏ</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation type="unfinished">ⵜⵓⴼⴼⵖⴰ</translation>
     </message>
     <message>

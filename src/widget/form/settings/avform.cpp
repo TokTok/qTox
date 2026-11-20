@@ -361,10 +361,10 @@ void AVForm::fillAudioQualityComboBox()
 {
     const bool previouslyBlocked = audioQualityComboBox->blockSignals(true);
 
-    audioQualityComboBox->addItem(tr("High (64 kBps)"), 64);
-    audioQualityComboBox->addItem(tr("Medium (32 kBps)"), 32);
-    audioQualityComboBox->addItem(tr("Low (16 kBps)"), 16);
-    audioQualityComboBox->addItem(tr("Very low (8 kBps)"), 8);
+    audioQualityComboBox->addItem(tr("High (64 kbps)"), 64);
+    audioQualityComboBox->addItem(tr("Medium (32 kbps)"), 32);
+    audioQualityComboBox->addItem(tr("Low (16 kbps)"), 16);
+    audioQualityComboBox->addItem(tr("Very low (8 kbps)"), 8);
 
     const int currentBitrate = audioSettings->getAudioBitrate();
     const int index = audioQualityComboBox->findData(currentBitrate);

@@ -9,11 +9,11 @@
     </message>
     <message>
         <source>Default resolution</source>
-        <translation>ئىتىراپلىق ئېنىقلىقى</translation>
+        <translation>كۆڭۈلدىكى ئېنىقلىق</translation>
     </message>
     <message>
         <source>Disabled</source>
-        <translation>تاقاش</translation>
+        <translation>تاقاق</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -52,18 +52,6 @@
         <translation>سىن ئەسۋابى</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>سىنئالغۇ (كامېرا) ئېنىقلىق تەڭشىگى.
-قانچە چوڭ بولسا، دوستىڭىزغا كۆرۈنىدىغان سىن شۇنچە سۈپەتلىك بولىدۇ.
-لېكىن سۈپەتلىك سىن ئ‍ۈچۈن ياخشى تور ئۇلىنىشى زۆرۈر.
-تور ئۇلىنىشىڭىز ياخىشى بولمىسا ئېنىقلىقى يۇقىرى بولغان سىننى يوللىيالمايدۇ
-بۇنىڭ بىلەن سىنلىق پاراڭلىشىشىڭىز تەسىرگە ئۇچرىشى مۇمكىن.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>سۈزۈكلىكى</translation>
     </message>
@@ -80,20 +68,20 @@ which may lead to problems with video calls.</source>
         <translation>ئاۋاز سۈپىتى</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>يۇقىرى (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>يۇقىرى (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>ئوتتۇراھال (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>ئوتتۇراھال (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>تۆۋەن (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>تۆۋەن (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>بەك تۆۋەن (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>بەك تۆۋەن (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -107,7 +95,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يەتكۈزۈلگەن ئاۋاز سۈپىتى. ئەگەر كەڭ بەلۋاغ كەڭلىكىڭىز يۇقىرى بولمىسا ياكى كەڭ بەلۋاغنىڭ ئىشلىتىلىشىنى ئازايتماقچى بولسىڭىز ، بۇ تەڭشەكنى تۆۋەنلىتىڭ.</translation>
+        <translation type="unfinished">يوللىنىدىغان ئاۋاز سۈپىتى. تور كەڭلىكىڭىز يېتەرلىك بولمىسا ياكى ئاز ئىشلەتمەكچى بولسىڭىز، بۇ تەڭشەكنى تۆۋەنلىتىڭ.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -125,12 +113,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Play a test sound while changing the output volume.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چىقىرىش ئاۋازىنى ئۆزگەرتكەندە سىناق ئاۋازىنى ئويناڭ.</translation>
+        <translation type="unfinished">چىقىرىش ئاۋازىنى ئۆزگەرتكەندە سىناق ئاۋازى قويۇش.</translation>
     </message>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سىيرىلغۇچ ئىشلىتىپ كىرگۈزۈش ئۈسكۈنىڭىزنىڭ پايدىسىنى%1dB دىن%2dB غىچە تەڭشەڭ.</translation>
+        <translation type="unfinished">سىيرىلغۇچ ئارقىلىق كىرگۈزۈش ئۈسكۈنىسىنىڭ ئاشۇرۇشىنى %1dB دىن %2dB غىچە تەڭشەڭ.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -165,22 +153,22 @@ which may lead to problems with video calls.</source>
         <translation>Qt نەشىرى: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>بارلىق مەسلىلەرنى بىرنىڭ GitHub بېتىمىزدىن %1 تاپالايسىز. ئەگەر سىز qTox نىڭ خاتالىقىنى بايقىسىڭىز، بىزنىڭ %2 بېتىمىزدىكى ئۇسۇل بويىچە مەلۇم قىلسىڭىز بولىدۇ.</translation>
+        <translation>بارلىق مەلۇم مەسىلىلەرنىڭ تىزىملىكىنى GitHub دىكى %1 تىن تاپالايسىز. ئەگەر qTox دا خاتالىق ياكى بىخەتەرلىك يوچۇقى بايقىسىڭىز، ۋىكىدىكى %2 ماقالىسىدىكى كۆرسەتمە بويىچە مەلۇم قىلىڭ.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>بۇ يەرنى بېسىپ خاتالىقنى مەلۇم قىلىڭ.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>بارلىق تېزىملىكنى Github تىكى %1 دىن كۆرۈڭ</translation>
+        <translation>بارلىق تېزىملىكنى GitHub تىكى %1 دىن كۆرۈڭ</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation type="unfinished">خاتالىق خاتىرىسى</translation>
     </message>
@@ -192,12 +180,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">ھەمكارلاشقانلار</translation>
+        <translation type="unfinished">ھەمكارلاشقۇچىلار</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QTox نىڭ بۇ نۇسخىسى TokTok گۇرۇپپىسى تەرىپىدىن ئەسلىدىكى qTox تۈرىنىڭ ئارخىپىدىن كېيىن ساقلىنىۋاتىدۇ.</translation>
+        <translation type="unfinished">qTox نىڭ بۇ نەشرىنى ئەسلىدىكى qTox تۈرى ئارخىپلانغاندىن كېيىن TokTok گۇرۇپپىسى ئاسراۋاتىدۇ.</translation>
     </message>
 </context>
 <context>
@@ -224,10 +212,10 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">ئالاقىداشلارنىڭ توپ تەكلىپىنى ئاپتۇماتىك قۇبۇل قىلىش.</translation>
+        <translation type="unfinished">تەڭشەلسە، بۇ ئالاقىداشنىڭ يىغىن تەكلىپلىرىنى ئاپتوماتىك قوبۇل قىلىش.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>تارىخنى ئۆچۈرۈش (كېيىن ئەسلىگە كەلتۈرگىنى بولمايدۇ!)</translation>
     </message>
     <message>
@@ -236,30 +224,30 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Input field for notes about the contact</source>
-        <translation>ئالاقىداش ئىزاھاتى كىرگۈزۈش رامكىسى</translation>
+        <translation>ئالاقىداش ئەسكەرتمىسى كىرگۈزۈش رامكىسى</translation>
     </message>
     <message>
         <source>History removed</source>
-        <translation>خاتىرىلەرنى تازىلاش</translation>
+        <translation>تارىخ ئۆچۈرۈلدى</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ دوستىڭىزنىڭ ئاممىۋى ئاچقۇچى ، ئۇنى ئىشلىتىپ باشقا قانال ئارقىلىق ئۇلارنىڭ كىملىكىنى دەلىللەڭ. بۇنى باشقا كىشىلەرگە ئەۋەتەلمەيسىز ، شۇڭا ئۇلار بۇ ئالاقىنى قوشالايدۇ.</translation>
+        <translation type="unfinished">بۇ دوستىڭىزنىڭ ئاممىۋى ئاچقۇچى؛ ئۇنى ئىشلىتىپ باشقا يول ئارقىلىق ئۇنىڭ كىملىكىنى دەلىللەڭ. باشقىلار بۇ ئاچقۇچ بىلەن بۇ ئالاقىداشنى قوشالمايدۇ.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاممىۋى ئاچقۇچ (ToxID ئەمەس):</translation>
+        <translation type="unfinished">ئاممىۋى ئاچقۇچ (Tox ID ئەمەس):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">ئىسپاتلاش</translation>
+        <translation type="unfinished">جەزملەش</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 پاراڭلىشىش تارىخىنى ئۆچۈرەمسىز؟</translation>
+        <translation type="unfinished">%1 بىلەن بولغان پاراڭلىشىش تارىخىنى راستىنلا ئۆچۈرەمسىز؟</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -274,22 +262,22 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Auto-accept for this contact is disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ ئالاقىنى ئاپتوماتىك قوبۇل قىلىش چەكلەنگەن</translation>
+        <translation type="unfinished">بۇ ئالاقىداشنى ئاپتوماتىك قوبۇل قىلىش چەكلەنگەن</translation>
     </message>
     <message>
         <source>Auto-accept call:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاپتوماتىك قوبۇل قىلىش تېلېفونى:</translation>
+        <translation type="unfinished">چاقىرىقنى ئاپتوماتىك قوبۇل قىلىش:</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاپتوماتىك قوبۇل قىلىش يىغىنى تەكلىپ قىلىدۇ</translation>
+        <translation type="unfinished">يىغىن تەكلىپلىرىنى ئاپتوماتىك قوبۇل قىلىش</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ ئالاقىگە مۇناسىۋەتلىك باھالارنى بۇ يەردىن ساقلىۋالالايسىز.</translation>
+        <translation type="unfinished">بۇ ئالاقىداش ھەققىدىكى ئەسكەرتمىلەرنى بۇ يەردە ساقلىيالايسىز.</translation>
     </message>
 </context>
 <context>
@@ -323,7 +311,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>qTox is up to date ✓</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox ئەڭ يېڭى</translation>
+        <translation type="unfinished">qTox ئەڭ يېڭى ✓</translation>
     </message>
     <message>
         <source>Currently running an untested/unstable version of qTox</source>
@@ -343,11 +331,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>دوستلۇقنى ئىلتىماس قىلىش</translation>
+        <translation>دوستلۇق ئىلتىماسى ئەۋەتىش</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>دوستلۇقنى ئىلتىماس قىلىش</translation>
+        <translation>دوستلۇق ئىلتىماسلىرى</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -362,12 +350,12 @@ which may lead to problems with video calls.</source>
         <translation>دوست قوشۇلمىدى</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>دوستىڭىزنىڭ Tox ID سىنى كىرگۈزۈڭ</translation>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>دوست قوشۇش ئىلتىماسى</translation>
+        <translation>دوستلۇق ئىلتىماسى ئۇچۇرى</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
@@ -421,17 +409,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>مەن %1 ! بىر Tox تا پاراڭلاشساق بولامدۇ؟</translation>
+        <translation>مەن %1! Tox تا پاراڭلاشساق بولامدۇ؟</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>دوستلار تىزىملىكىنى كىرگۈزىش، ھەر بىر Tox ID بىر قۇر</translation>
+        <translation>دوستلار تىزىملىكىنى كىرگۈزۈش، ھەر بىر قۇرغا بىر Tox ID</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>%n كىشى كىرگۈشىزكە ھازىرلاندى، مۇقۇملاشتۇرامسىز</numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ئالاقىداش كىرگۈزۈشكە تەييار، جەزملەش ئۈچۈن يوللاشنى چېكىڭ</numerusform>
+            <numerusform>%n ئالاقىداش كىرگۈزۈشكە تەييار، جەزملەش ئۈچۈن يوللاشنى چېكىڭ</numerusform>
         </translation>
     </message>
     <message>
@@ -441,19 +429,19 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">زەھەرلىك كىملىك ​​، 76 ئالتە خانىلىق ھەرپ</translation>
+        <translation type="unfinished">Tox ID، 76 ئون ئالتىلىك ھەرپ</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 زەھەرلىك كىملىك ​​ئىناۋەتسىز</translation>
+        <translation type="unfinished">%1 ئىناۋەتلىك Tox ID ئەمەس</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">76 ئالتە خانىلىق ھەرپ</translation>
+        <translation type="unfinished">76 ئون ئالتىلىك ھەرپ</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -468,11 +456,11 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>really</source>
-        <translation>ھەئە</translation>
+        <translation>راستىنلا</translation>
     </message>
     <message>
         <source>not</source>
-        <translation>ياق</translation>
+        <translation>ھېچنېمىنى</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -484,7 +472,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
-        <translation>پۈتۈن تەڭشەلەرنى ئەسلى ھالىتىگە قايتۇرامسىز؟</translation>
+        <translation>پۈتۈن تەڭشەكلەرنى ئەسلى ھالىتىگە قايتۇرامسىز؟</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -501,7 +489,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">نېمە قىلىۋاتقانلىقىڭىزنى%1 بىلمىسىڭىز ،%2 نى بۇ يەردە ئۆزگەرتىڭ. بۇ يەردە ئېلىپ بېرىلغان ئۆزگىرىشلەر qTox دىكى مەسىلىلەرنى كەلتۈرۈپ چىقىرىشى مۇمكىن ، ھەتتا سانلىق مەلۇماتلىرىڭىزنىڭ يوقاپ كېتىشىمۇ مۇمكىن. تارىخ.%3</translation>
+        <translation type="unfinished">نېمە قىلىۋاتقانلىقىڭىزنى %1 بىلمىسىڭىز، بۇ يەردە %2 ئۆزگەرتمەڭ. بۇ يەردىكى ئۆزگەرتىشلەر qTox تا مەسىلە پەيدا قىلىشى، ھەتتا سانلىق مەلۇماتلىرىڭىز، مەسىلەن تارىخ، يوقاپ كېتىشى مۇمكىن.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -521,19 +509,19 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئىناۋەتلىك ICLY تەڭشىكى ئۈچۈن ئىناۋەتلىك IP ئادرېسى ياكى باش ئىسمى كىرگۈزۈڭ.</translation>
+        <translation type="unfinished">ۋاكالەتچى تەڭشىكى ئۈچۈن ئىناۋەتلىك IP ئادرېس ياكى ماشىنا نامىنى كىرگۈزۈڭ.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>خىزمەت مۇندەرجىسى، تەڭشەكلەر ساقلاش مۇندارجىسى ئەمەس</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Tox نى كۆچمە ئۈسكىنىلەردە ئىشلىتىش</translation>
+        <translation>Tox نى يۆتكەشچان قىلىش</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -541,7 +529,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Portable</source>
-        <translation>كۆچمە ئۈسكىنە</translation>
+        <translation>يۆتكەشچان</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
@@ -579,7 +567,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation>ۋەكىل تۈرى:</translation>
+        <translation>ۋاكالەتچى تۈرى:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -597,7 +585,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Debug</source>
-        <translation>چاتاقنى تاپماق</translation>
+        <translation>چاتاق تەكشۈرۈش</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -621,23 +609,23 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇنى چەكلىسىڭىز ، مەسىلەن ، تور ئۈستىدىكى توك. ئۇ Tox تورىغا يۈك قوشىدۇ ، ئەمما زۆرۈر تېپىلغاندا ئاندىن تاللاڭ.</translation>
+        <translation type="unfinished">بۇنى تاقىسىڭىز، مەسىلەن، Tox نى Tor ئارقىلىق ئىشلەتكىلى بولىدۇ. لېكىن بۇ Tox تورىغا يۈك قوشىدۇ، شۇڭا پەقەت زۆرۈر بولغاندىلا تاللاشنى بىكار قىلىڭ.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ھەل قىلىش قوراللىرىنى قوزغىتىڭ (ئاچقۇچىلارلا)</translation>
+        <translation type="unfinished">چاتاق تەكشۈرۈش قوراللىرىنى قوزغىتىش (پەقەت ئاچقۇچىلار ئۈچۈن)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>Tox ئۇلانما ئارېسى</translation>
+        <translation>تەھلىل قىلىنىدىغان Tox URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation>يېڭىدىن ئارخىپ قۇرۇپ بەلگىلەنگەن ھۆججەتنى كىرگۈزۈش.</translation>
+        <translation>يېڭى نۇسخىسىنى قوزغىتىپ بەلگىلەنگەن ئارخىپنى يۈكلەيدۇ.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -645,31 +633,23 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation>يېڭىدىن ئۆزنەك قۇرۇپ كىرىش كۆزنىكىنى ئېچىش.</translation>
+        <translation>يېڭى نۇسخىسىنى قوزغىتىپ كىرىش كۆزنىكىنى ئاچىدۇ.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6 &lt;on&gt; / &lt;off&gt; نى تەڭشەيدۇ. كۆڭۈلدىكىسى ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6 نى ئاچىدۇ ياكى تاقايدۇ: %1. كۆڭۈلدىكىسى: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP &lt;on&gt; / &lt;off&gt; نى تەڭشەيدۇ. كۆڭۈلدىكىسى ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP نى ئاچىدۇ ياكى تاقايدۇ: %1. كۆڭۈلدىكىسى: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN بايقاشنى &lt;on&gt; / &lt;off&gt; بەلگىلەيدۇ. UDP نى بېسىپ چۈشىدۇ. كۆڭۈلدىكىسى ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN بايقاشنى ئاچىدۇ ياكى تاقايدۇ: %1. UDP تاقاق بولسا ئۈنۈمى يوق. كۆڭۈلدىكىسى: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ۋاكالەتچى تەڭشىكىنى بەلگىلەيدۇ. سۈكۈتتىكىسى يوق.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">ۋاكالەتچىنى تەڭشەيدۇ. كۆڭۈلدىكىسى: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -683,12 +663,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Checks whether this program is running the latest qTox version.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ پروگراممىنىڭ ئەڭ يېڭى qTox نەشرىنى ئىجرا قىلىۋاتقان-ئىشلىمەيدىغانلىقىنى تەكشۈرۈڭ.</translation>
+        <translation type="unfinished">بۇ پروگراممىنىڭ ئەڭ يېڭى qTox نەشرى ياكى ئەمەسلىكىنى تەكشۈرىدۇ.</translation>
     </message>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئېلىپ يۈرۈشكە ئەپلىك ھالەتتە باشلىنىدۇ بۇ مۇندەرىجىدىن ئارخىپ يۈكلەيدۇ.</translation>
+        <translation type="unfinished">ئېلىپ يۈرۈشكە ئەپلىك ھالەتتە باشلىنىدۇ؛ بۇ مۇندەرىجىدىن ئارخىپ يۈكلەيدۇ.</translation>
     </message>
     <message>
         <source>path</source>
@@ -735,19 +715,19 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>بىردىن يوللاپ سىناپ بېقىڭ، بۇ مەشغۇلاتنى تاماملىيالمىدى!</translation>
+        <translation>سىز تەرتىپلىك ھۆججەت يوللىماقچى بولۇۋاتىسىز، بۇ ئىشلىمەيدۇ!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ھۆججەت نامىدا قانۇنسىز ھەرپلەر بار</translation>
+        <translation type="unfinished">ھۆججەت نامىدا رۇخسەتسىز ھەرپلەر بار</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قانۇنسىز ھەرپلەر _ گە ئۆزگەرتىلدى
-شۇڭا ھۆججەتنى Windows دا ساقلىۋالالايسىز.</translation>
+        <translation type="unfinished">رۇخسەتسىز ھەرپلەر _ غا ئالماشتۇرۇلدى،
+شۇنداق قىلىپ ھۆججەتنى Windows تا ساقلىيالايسىز.</translation>
     </message>
 </context>
 <context>
@@ -762,7 +742,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>End audio call</source>
-        <translation>ئاۋازلىق چاقىرىش ئاخىرلاشتى</translation>
+        <translation>ئاۋازلىق چاقىرىشنى ئاخىرلاشتۇرۇش</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
@@ -770,7 +750,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation>قۇبۇل قىلىش</translation>
+        <translation>ئاۋازلىق چاقىرىشنى قوبۇل قىلىش</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
@@ -778,7 +758,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start video call</source>
-        <translation>سىنلىق پاراڭ</translation>
+        <translation>سىنلىق پاراڭ باشلاش</translation>
     </message>
     <message>
         <source>End video call</source>
@@ -806,7 +786,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
-        <translation>پەقەت ئاۋازلىق پاراڭلاشقان ۋاقىتتا مىكروفۇن ئېتىۋىتىش مەشغۇلاتنى قىغىنى بولىدۇ</translation>
+        <translation>پەقەت ئاۋازلىق پاراڭلاشقان ۋاقىتتا مىكروفوننى ئېتىۋېتىشكە بولىدۇ</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
@@ -821,7 +801,7 @@ so you can save the file on Windows.</source>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">توپ سۆھبەت #%1</translation>
+        <translation type="unfinished">يىغىن #%1</translation>
     </message>
 </context>
 <context>
@@ -835,7 +815,7 @@ so you can save the file on Windows.</source>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">ساقلاش</translation>
+        <translation type="unfinished">كۈتۈۋاتىدۇ</translation>
     </message>
     <message>
         <source>%1 is typing</source>
@@ -855,7 +835,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation>چەمبىرەك ئىسمىنى كۆزگەرتىش</translation>
+        <translation>چەمبىرەك ئىسمىنى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>Remove circle</source>
@@ -878,7 +858,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">ئۇ ئورۇنغا خەت يېزىش ھوقۇقىڭىز يوق. باشقىسىنى تاللاڭ ياكى ساقلاش سۆزلىشىش رامكىسىنى بىكار قىلىڭ.</translation>
+        <translation type="unfinished">ئۇ ئورۇنغا يېزىش ھوقۇقىڭىز يوق. باشقا ئورۇن تاللاڭ ياكى ساقلاشنى بىكار قىلىڭ.</translation>
     </message>
 </context>
 <context>
@@ -887,46 +867,46 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>سۆھبەتتە %n ئىشلەتكۈچى</numerusform>
+            <numerusform>سۆھبەتتە %n ئىشلەتكۈچى</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">mute</translation>
+        <translation type="unfinished">ئاۋازنى تاقاش</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">unmute</translation>
+        <translation type="unfinished">ئاۋازنى ئېچىش</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تورداشلارنىڭ كىملىكىنى كۆپەيتىڭ</translation>
+        <translation type="unfinished">قاتناشقۇچىنىڭ كىملىكىنى كۆچۈرۈش</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">توپ</translation>
+        <translation type="unfinished">يىغىنلار</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">توپ قۇرۇش</translation>
+        <translation type="unfinished">يېڭى يىغىن قۇرۇش</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">توپ تەكلىپى</translation>
+        <translation type="unfinished">يىغىن تەكلىپلىرى</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>%1 %2 تەرىپىدىن %3 كە تەپلىپ قىلىندى.</translation>
+        <translation>%1 تەرىپىدىن %2 %3 دە تەكلىپ قىلىندى.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -954,14 +934,14 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>توپتىن چېكىنىش</translation>
+        <translation>يىغىندىن چېكىنىش</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>سۆھبەتتە %n ئىشلەتكۈچى</numerusform>
+            <numerusform>سۆھبەتتە %n ئىشلەتكۈچى</numerusform>
         </translation>
     </message>
     <message>
@@ -977,12 +957,12 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me ئالاقىداش تەمىنلىدى، &quot;%1&quot;</translation>
+        <translation>/me دوستلۇق تەكلىپ قىلدى، &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يىغىن%1</translation>
+        <translation type="unfinished">يىغىن %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -992,7 +972,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">بۇ ئىلتىماسقا بىر ئىزاھات بىرىشىڭىز كېرەك</translation>
+        <translation type="unfinished">ئىلتىماسىڭىزغا بىر ئۇچۇر يېزىشىڭىز كېرەك</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -1002,7 +982,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">ئالاقىداش قوشۇلدى</translation>
+        <translation type="unfinished">بۇ دوست ئاللىقاچان قوشۇلغان</translation>
     </message>
 </context>
 <context>
@@ -1010,7 +990,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خاتالىق خاتىرىسى</translation>
+        <translation type="unfinished">چاتاق خاتىرىسى</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -1028,7 +1008,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">خاتالىق خاتىرىسى</translation>
+        <translation type="unfinished">چاتاق خاتىرىسى</translation>
     </message>
 </context>
 <context>
@@ -1071,7 +1051,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation>يوللاش</translation>
+        <translation>يوللاشنى داۋاملاشتۇرۇش</translation>
     </message>
     <message>
         <source>Accept transfer</source>
@@ -1083,10 +1063,10 @@ so you can save the file on Windows.</source>
         <translation>ھۆججەت ساقلاش</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يىراقتىن توختاپ قالدى</translation>
+        <translation type="unfinished">قارشى تەرەپ توختاتتى</translation>
     </message>
 </context>
 <context>
@@ -1126,7 +1106,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Never</source>
-        <translation>ئەسلا</translation>
+        <translation>ھېچقاچان</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
@@ -1139,7 +1119,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>توپقا كىرىش</translation>
+        <translation>يىغىنغا تەكلىپ قىلىش</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1148,36 +1128,36 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>يېڭى چەمبىرەك قۇرۇش</translation>
+        <translation>يېڭى چەمبىرەككە</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>چەمبىرەكتىن &apos;%1&apos; ئۆچۈرۈلدى</translation>
+        <translation>&apos;%1&apos; چەمبىرىكىدىن چىقىرىش</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
-        <translation>يېڭى كۆزنەك ئېچىش</translation>
+        <translation>سۆھبەتنى يېڭى كۆزنەكتە ئېچىش</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation>بۇ كۆزنەكنى ئۆچۈرىۋىتىش</translation>
+        <translation>سۆھبەتنى بۇ كۆزنەكتىن چىقىرىش</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">يېڭى توپ</translation>
+        <translation type="unfinished">يېڭى يىغىنغا</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">&apos;%1&apos; توپقا تەكلىپ قىلىش</translation>
+        <translation type="unfinished">&apos;%1&apos; يىغىنىغا تەكلىپ قىلىش</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>ئىزاھات...</translation>
+        <translation>لەقەم قويۇش...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
         <comment>context menu entry</comment>
-        <translation>ئارقىداشلار ھۆججىتىنى ئاپتۇماتىك قۇبۇل قىلىش</translation>
+        <translation>بۇ ئالاقىداشنىڭ ھۆججىتىنى ئاپتوماتىك قوبۇل قىلىش</translation>
     </message>
     <message>
         <source>Show details</source>
@@ -1193,7 +1173,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation>ئايرىلىش</translation>
+        <translation>نېرىدا</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1271,15 +1251,15 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>پايدىن قوززۇتۇش</translation>
+        <translation>پايدا قوزغىتىش</translation>
     </message>
     <message>
         <source>Close to tray</source>
-        <translation>پاينى تاقاش</translation>
+        <translation>يېپىلغاندا پايغا كىرىش</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>پاي ھالەتكە چۈشۈرۈش</translation>
+        <translation>كىچىكلىتىلگەندە پايغا كىرىش</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1298,12 +1278,12 @@ so you can save the file on Windows.</source>
         <translation>0 قىلسىڭىز تاقىلىدۇ</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>بەلگىلەنگەن ۋاقىت ئىچىدە مەشغۇلات قىلمىسىڭىز ھالىتڭىز تورسىزغا ئۆزگىرىدۇ.</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>بەلگىلەنگەن ۋاقىت مەشغۇلات قىلمىسىڭىز ھالىتىڭىز «نېرىدا» غا ئۆزگىرىدۇ.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>قانچىلىك ۋاقىتتىن كېيىن توردىن چۈشۈش (0 چەكلەنمەيدۇ):</translation>
+        <translation>قانچىلىك ۋاقىتتىن كېيىن ئاپتوماتىك نېرىدا (0 تاقايدۇ):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1311,7 +1291,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>qTox نى ئپتۇماتىك قوزغىتىش (مۇشۇ ئىشكەتكۈچى).</translation>
+        <translation>مەشغۇلات سىستېمىسى قوزغالغاندا qTox نى قوزغىتىش (نۆۋەتتىكى ئارخىپ).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1330,7 +1310,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئەڭ چوڭ ئاپتوماتىك قوبۇل قىلىش ھۆججىتىنىڭ چوڭلۇقى (0 دىن چەكلىنىدۇ):</translation>
+        <translation type="unfinished">ئاپتوماتىك قوبۇل قىلىدىغان ئەڭ چوڭ ھۆججەت (0 بولسا چەكلىنىدۇ):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1342,32 +1322,32 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئەڭ كىچىك (_) نى باسقاندىن كېيىن qTox ئەڭ تۆۋەن چەككە چۈشۈپ قالىدۇ ،
-سىستېما ۋەزىپە بالدىقىنىڭ ئورنىغا.</translation>
+        <translation type="unfinished">كىچىكلىتىش (_) نى باسقاندا qTox ۋەزىپە بالدىقىغا ئەمەس،
+پايغا كىرىدۇ.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يېقىن (X) نى باسقاندىن كېيىن qTox تەخسىگە يېقىنلىشىدۇ ،
-پۈتۈنلەي تاقاشنىڭ ئورنىغا.</translation>
+        <translation type="unfinished">تاقاش (X) نى باسقاندا qTox پۈتۈنلەي تاقالماي،
+پايغا كىرىدۇ.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇنى ئايرىم دوستلارنى ئوڭ چېكىش ئارقىلىق ھەر بىر دوست ئاساسىدا تەڭشىيەلەيسىز.</translation>
+        <translation type="unfinished">بۇنى ھەر بىر دوست ئۈچۈن ئايرىم، دوستنى ئوڭ چېكىپ تەڭشىيەلەيسىز.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئىشلەتكۈچى يىغىنغا قاتناشقاندا ياكى ئايرىلغاندا پاراڭ ئۇچۇرى قوشۇڭ</translation>
+        <translation type="unfinished">ئىشلەتكۈچى يىغىنغا قاتناشقاندا ياكى ئايرىلغاندا سۆھبەتكە ئۇچۇر قوشۇش</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تەرجىمىدە خاتالىق بايقىسىڭىز ، ئۇنى ئوڭشاشقا ياردەم قىلماقچى بولسىڭىز بۇ يەرنى چېكىڭ.</translation>
+        <translation type="unfinished">تەرجىمىدە خاتالىق بايقىسىڭىز ۋە ئوڭشاشقا ياردەم قىلماقچى بولسىڭىز، بۇ يەرنى چېكىڭ.</translation>
     </message>
     <message>
         <source>Help translate</source>
@@ -1416,7 +1396,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation type="unfinished">ئىسپاتلاش</translation>
+        <translation type="unfinished">جەزملەش</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1458,12 +1438,12 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Profile</source>
-        <translation>خاسلىق</translation>
+        <translation>ئارخىپ</translation>
     </message>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation>ئىسمىنى ئۆزگەرتىش.</translation>
+        <translation>ئارخىپ ئىسمىنى ئۆزگەرتىش.</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
@@ -1472,7 +1452,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>چېكىنىش</translation>
     </message>
     <message>
@@ -1503,7 +1483,7 @@ instead of closing entirely.</source>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation>خاسلىقنى ئۆچۈرۈش.</translation>
+        <translation>ئارخىپنى ئۆچۈرۈش.</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
@@ -1525,7 +1505,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation>پارولىڭىزنى چىقىرىۋىتىڭ، ئاندىن ئارخىپىڭىزنى شىفىرلاشتۇرۇپ ساقلاڭ.</translation>
+        <translation>ئارخىپىڭىزدىن پارول ۋە شىفىرلاشنى چىقىرىۋېتىش.</translation>
     </message>
     <message>
         <source>Name input</source>
@@ -1533,11 +1513,11 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation>ئىسمنى ئالاقىداشلار قاتارىدا كۆرسىتىش</translation>
+        <translation>ئالاقىداشلارغا كۆرۈنىدىغان ئىسىم</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>ئۇچۇر كىرگۈزۈش ھالىتىدە</translation>
+        <translation>ھالەت ئۇچۇرى كىرگۈزۈش</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
@@ -1553,23 +1533,23 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation>خاسلىقنى ئۆزگەرتىش.</translation>
+        <translation>ئارخىپ ئىسمىنى ئۆزگەرتىش.</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation>خاسلىقنى ئۆچۈرۈش.</translation>
+        <translation>ئارخىپنى ئۆچۈرۈش.</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation>خاسلىقنى چىقىرىۋىلىش</translation>
+        <translation>ئارخىپنى چىقىرىۋىلىش</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation>خالىقتىن پارولنى ئۆچۈرۈش</translation>
+        <translation>ئارخىپتىن پارولنى ئۆچۈرۈش</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation>خاسلىق پارولىنى ئۆگەرتىش</translation>
+        <translation>ئارخىپ پارولىنى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>My name:</source>
@@ -1581,15 +1561,15 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>My profile</source>
-        <translation>خاسلىقىم</translation>
+        <translation>ئارخىپىم</translation>
     </message>
     <message>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ كىملىك ​​باشقا زەھەرلىك ئىشلەتكۈچىلەرنىڭ سىز بىلەن ئالاقىلىشىشى ۋە ئالاقىلىشىشىغا يول قويىدۇ.
-دوستلىرىڭىز بىلەن ھەمبەھىرلىنىپ پاراڭلىشىشنى باشلاڭ.</translation>
+        <translation type="unfinished">بۇ كىملىك باشقا Tox ئىشلەتكۈچىلىرىنىڭ سىزنى قوشۇشى ۋە سىز بىلەن ئالاقىلىشىشىغا يول قويىدۇ.
+پاراڭنى باشلاش ئۈچۈن ئۇنى دوستلىرىڭىز بىلەن ھەمبەھىرلەڭ.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1601,12 +1581,12 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تارىخ سۆزلىشىش رامكىسىنى يۈكلەڭ</translation>
+        <translation type="unfinished">تارىخ يۈكلەش سۆزلىشىش رامكىسى</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تارىختىن يۈكلەڭ:</translation>
+        <translation type="unfinished">تارىخنى مۇنۇ ۋاقىتتىن يۈكلەش:</translation>
     </message>
 </context>
 <context>
@@ -1617,19 +1597,19 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation>پاورل:</translation>
+        <translation>پارول:</translation>
     </message>
     <message>
         <source>Confirm:</source>
-        <translation>جەزىملەش:</translation>
+        <translation>جەزملەش:</translation>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>پارول ئۇزۇنلىقى: %p%</translation>
+        <translation>پارول كۈچلۈكلۈكى: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation>خاسلىق قۇرۇش</translation>
+        <translation>ئارخىپ قۇرۇش</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
@@ -1645,15 +1625,15 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation>خاسلىق يۈكلەش</translation>
+        <translation>ئارخىپ يۈكلەش</translation>
     </message>
     <message>
         <source>New Profile</source>
-        <translation>يېڭى خاسلىق</translation>
+        <translation>يېڭى ئارخىپ</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation>يېڭى خاسلىق قۇرۇلمىدى</translation>
+        <translation>يېڭى ئارخىپ قۇرۇلمىدى</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
@@ -1665,27 +1645,27 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation>بۇ خاسلىق بار.</translation>
+        <translation>بۇ نامدىكى ئارخىپ ئاللىقاچان بار.</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation>پاروللانغان خاسلىقنى ئۆزلىكىدىن يۈكلىيەلمەيدۇ.</translation>
+        <translation>پاروللانغان ئارخىپنى ئۆزلىكىدىن يۈكلىيەلمەيدۇ.</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation>خاسلىق تاللانمىدى.
+        <translation>ئارخىپ تاللانمىدى.
 
 يېڭىدىن قۇرسىڭىزمۇ بولىدۇ.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation>بۇ خاسلىق يۈكلەنمىدى</translation>
+        <translation>بۇ ئارخىپ يۈكلەنمىدى</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation>بۇ خاسلىق ئىشلىتىلىۋاتىدۇ.</translation>
+        <translation>بۇ ئارخىپ ئىشلىتىلىۋاتىدۇ.</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1701,23 +1681,23 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
-        <translation>پارول كىرگۈزىش كۆزنىكى، بوش قويسىڭىزمۇ ياكى ئاز بولغاندا 6 ھەرپ كىرگۈزمۇ بولىدۇ</translation>
+        <translation>پارول كىرگۈزۈش رامكىسى، بوش قويسىڭىزمۇ ياكى كەم دېگەندە 6 ھەرپ كىرگۈزسىڭىزمۇ بولىدۇ</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
-        <translation>جەزىملەش پاورل رامكىسى</translation>
+        <translation>پارولنى جەزملەش رامكىسى</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>يېڭى خاسلىق قۇرۇش كونۇپكىسى</translation>
+        <translation>يېڭى ئارخىپ قۇرۇش كونۇپكىسى</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation>خاسلىقلار قاتارى</translation>
+        <translation>ئارخىپلار تىزىملىكى</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation>بارلىق خاسلىقلار</translation>
+        <translation>ئارخىپلار تىزىملىكى</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -1729,19 +1709,19 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import profile</source>
-        <translation>خاسلىق كىرگۈزۈش</translation>
+        <translation>ئارخىپ كىرگۈزۈش</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>ئارخىپ تاللاش كونۇپكىسى</translation>
+        <translation>تاللانغان ئارخىپنى يۈكلەش كونۇپكىسى</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation>يېڭى خاسلىق قۇرۇش بېتى</translation>
+        <translation>يېڭى ئارخىپ قۇرۇش بېتى</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>خاسلىق يۈكلىنىش بېتى</translation>
+        <translation>ئارخىپ يۈكلىنىش بېتى</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1754,13 +1734,13 @@ Please make sure to enter the same password twice.</source>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">بۇ ئىختىيارى پارول يەرلىك ئۇچۇر سانلىق مەلۇماتلىرى ۋە ئارخىپىڭىزنى مەخپىيلەشتۈرۈش ئۈچۈن ئىشلىتىلىدۇ.
-ئەگەر بۇ پارولنى يوقىتىپ قويسىڭىز ، ئۇنى ئەسلىگە كەلتۈرۈشنىڭ ئامالى يوق.
-تېخىمۇ كۆپ ئۇچۇرغا ئېرىشىش ئۈچۈن Shift + F1 نى بېسىڭ.</translation>
+        <translation type="unfinished">بۇ ئىختىيارىي پارول يەرلىك ئۇچۇر سانلىق مەلۇماتلىرى ۋە ئارخىپىڭىزنى شىفىرلاش ئۈچۈن ئىشلىتىلىدۇ.
+بۇ پارولنى يوقىتىپ قويسىڭىز، ئەسلىگە كەلتۈرگىلى بولمايدۇ.
+تېخىمۇ كۆپ ئۇچۇر ئۈچۈن Shift+F1 نى بېسىڭ.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">بۇ يەرگە كىرگۈزگەن پارول ئىختىيارىي بولۇپ ، ئۇچۇر ئۇچۇرى ۋە زەھەرلىك مەخپى ئاچقۇچنى مەخپىيلەشتۈرىدۇ. ئۇ قوبۇل قىلىنغان ھۆججەتلەرنى مەخپىيلەشتۈرمەيدۇ. ئارخىپىڭىزنىڭ سانلىق مەلۇماتلىرى ھەرگىزمۇ ھېچقانداق مۇلازىمېتىرغا ئەۋەتىلمەيدۇ. بۇ يىراقتىن كىرىش ئەمەس ، ئۇ پەقەت كومپيۇتېرىڭىزغا يەرلىك. qTox ئاچقۇچىلار يوقاپ كەتسە پارولىڭىزنى ئەسلىگە كەلتۈرەلمەيدۇ.</translation>
+        <translation type="unfinished">بۇ يەرگە كىرگۈزگەن پارول ئىختىيارىي بولۇپ، ئۇچۇر سانلىق مەلۇماتلىرى ۋە Tox مەخپىي ئاچقۇچىڭىزنى شىفىرلايدۇ. تاپشۇرۇۋالغان ھۆججەتلەرنى شىفىرلىمايدۇ. ئارخىپ سانلىق مەلۇماتلىرىڭىز ھېچقاچان ھېچقانداق مۇلازىمېتىرغا ئەۋەتىلمەيدۇ. بۇ يىراقتىن كىرىش ئەمەس، پەقەت كومپيۇتېرىڭىزدىلا ئىشلەيدۇ. پارولىڭىزنى يوقىتىپ قويسىڭىز، qTox ئاچقۇچىلىرى ئۇنى ئەسلىگە كەلتۈرەلمەيدۇ.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1779,7 +1759,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">توپ قۇرۇش</translation>
+        <translation type="unfinished">يىغىن قۇرۇش</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1795,15 +1775,15 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open profile</source>
-        <translation>خاسلىق ئېچىش</translation>
+        <translation>ئارخىپ ئېچىش</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation>خاسلىق بېتى ئېچىش</translation>
+        <translation>ئارخىپ بېتى ئېچىش</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>ئۇچۇر كۈرگۈزۈش ھالىتى</translation>
+        <translation>ھالەت ئۇچۇرى كىرگۈزۈش</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1827,7 +1807,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Sorting and visibility</source>
-        <translation>تەرتىپلەش ۋە كۆرسۈتۈش</translation>
+        <translation>تەرتىپلەش ۋە كۆرۈنۈش</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
@@ -1839,11 +1819,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">توپ</translation>
+        <translation type="unfinished">يىغىن</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">توپ باشقۇرۇش بېتىنى ئېچىش</translation>
+        <translation type="unfinished">يىغىن باشقۇرۇش بېتىنى ئېچىش</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1859,21 +1839,21 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open Settings</source>
-        <translation>تەكشەلەرنى ئېچىش</translation>
+        <translation>تەڭشەكلەرنى ئېچىش</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئىچكى ھەل قىلىش قوراللىرىنى ئېچىڭ</translation>
+        <translation type="unfinished">ئىچكى چاتاق تەكشۈرۈش قوراللىرىنى ئېچىش</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished">چاتاقنى تاپماق</translation>
+        <translation type="unfinished">چاتاق تەكشۈرۈش</translation>
     </message>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Debugger نى ئېچىڭ</translation>
+        <translation type="unfinished">چاتاق تەكشۈرگۈچنى ئېچىش</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -1888,7 +1868,7 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">ئىجرا بولىدىغان ھۆججەت</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translation type="unfinished">سىز qTox ئارقىلىق ئىجرا بولىدىغان ھۆججەت ئاچماقچى، بۇ ھۆججەت بەلكىم كومپيۇتېرىڭىزغا زىيان يەتكۈزىشى مۇمكىن، راستىنلا بۇ ھۆججەتنى ئاچامسىز؟</translation>
     </message>
@@ -1907,12 +1887,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">سىن ئالدىن كۆرۈش</translation>
+        <translation type="unfinished">سىن ئالدىن كۆرۈشنى ئېچىش/تاقاش</translation>
     </message>
     <message>
         <source>Mute audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاۋازسىز</translation>
+        <translation type="unfinished">ئاۋازنى تاقاش</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1948,7 +1928,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation>چېسلا</translation>
+        <translation>كۆزنەك</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -1958,7 +1938,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation>ئەڭ ئۈستىگە يۆتكەش</translation>
+        <translation>ھەممىنى ئالدىغا ئېلىش</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -1975,7 +1955,7 @@ Press Shift+F1 for more information.</source>
         <source>Unread message(s)</source>
         <translation>
             <numerusform>ئوقۇلمىغان ئۇچۇر</numerusform>
-            <numerusform></numerusform>
+            <numerusform>ئوقۇلمىغان ئۇچۇرلار</numerusform>
         </translation>
     </message>
 </context>
@@ -2014,24 +1994,24 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Friend request received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست تەلىپى قوبۇل قىلىندى</translation>
+        <translation type="unfinished">دوستلۇق ئىلتىماسى كەلدى</translation>
     </message>
     <message>
         <source>Friend request received from %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دوست تەلىپى%1 دىن تاپشۇرۇۋېلىندى</translation>
+        <translation type="unfinished">%1 دىن دوستلۇق ئىلتىماسى كەلدى</translation>
     </message>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">كەلگەن تېلېفون</translation>
+        <translation type="unfinished">كەلگەن چاقىرىق</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>CAPS-LOCK قۇلۇپلاندى</translation>
+        <source>Caps Lock is on</source>
+        <translation>Caps Lock ئوچۇق</translation>
     </message>
 </context>
 <context>
@@ -2042,11 +2022,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>ئىسپاتلاش</translation>
+        <translation>جەزملەش</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
-        <translation>بارلىق سۆھبەت خاتىرىسنى مەڭگۈلۈك ئۆچۈرەمسىز؟</translation>
+        <translation>بارلىق سۆھبەت خاتىرىسىنى مەڭگۈلۈك ئۆچۈرەمسىز؟</translation>
     </message>
 </context>
 <context>
@@ -2069,23 +2049,23 @@ Press Shift+F1 for more information.</source>
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>بۇ Tox كىملىكىڭىزنىڭ بىرقىسىمى.
-ئەگەر ئەخلەت تەپلىكلەر ئاۋارە قىلسا بۇنى ئۆزگەرتسىڭىز بولىدۇ.
-كونا Tox كىملىكىڭىزدىن سىزنى قوشالمايدۇ، بىراق قوشۇلۇپ بولغان دوستلار ساقلىنىپ قالىدۇ.</translation>
+        <translation>NoSpam بولسا Tox كىملىكىڭىزنىڭ بىر قىسمى.
+ئەگەر نۇرغۇن كېرەكسىز دوستلۇق ئىلتىماسى كەلسە، NoSpam نى ئۆزگەرتىڭ.
+باشقىلار كونا كىملىكىڭىز ئارقىلىق سىزنى قوشالمايدۇ، لېكىن نۆۋەتتىكى دوستلىرىڭىز ساقلىنىپ قالىدۇ.</translation>
     </message>
     <message>
         <source>NoSpam</source>
-        <translation>ئىم</translation>
+        <translation>NoSpam</translation>
     </message>
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>بۇ Tox كىملىكىڭىزنىڭ بىرقىسىمى.
-ئەگەر ئەخلەت تەپلىكلەر ئاۋارە قىلسا بۇنى ئۆزگەرتسىڭىز بولىدۇ.</translation>
+        <translation>NoSpam كىملىكىڭىزنىڭ خالىغان ۋاقىتتا ئۆزگەرتكىلى بولىدىغان بىر قىسمى.
+ئەگەر نۇرغۇن كېرەكسىز دوستلۇق ئىلتىماسى كەلسە، NoSpam نى ئۆزگەرتىڭ.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
-        <translation>ئىختىيارى ئىم ھاسىل قىلىش</translation>
+        <translation>ئىختىيارىي NoSpam ھاسىل قىلىش</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
@@ -2100,7 +2080,7 @@ Save format changes are possible, which may result in data loss.</source>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>قارا تىزىملىك</translation>
+        <translation>يىغىن چەكلەش تىزىملىكى</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
@@ -2112,16 +2092,16 @@ Save format changes are possible, which may result in data loss.</source>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>پارولدىن ئاچقۇچنى تاپالمىى، خاسلىق بۇر پارولنى ئىشلىتەلمەيدۇ.</translation>
+        <translation>پارولدىن ئاچقۇچ ھاسىل قىلالمىدى، ئارخىپ يېڭى پارولنى ئىشلەتمەيدۇ.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translation type="unfinished">qTox ئارقىلىق سۆھبەتلىشىش</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ساندان مەخپىي نومۇرىنى ئۆزگەرتەلمىدى ، ئۇ بۇزۇلغان ياكى كونا پارولنى ئىشلىتىشى مۇمكىن.</translation>
+        <translation type="unfinished">ساندان پارولىنى ئۆزگەرتەلمىدى؛ ساندان بۇزۇلغان ياكى كونا پارولنى ئىشلىتىۋاتقان بولۇشى مۇمكىن.</translation>
     </message>
 </context>
 <context>
@@ -2137,7 +2117,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation>ئۆزگەرتىش &quot;%1&quot;</translation>
+        <translation>&quot;%1&quot; نى ئۆزگەرتىش</translation>
     </message>
     <message>
         <source>Unable to open this file.</source>
@@ -2171,7 +2151,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>ئارخىپىڭىزغا پارولانمىدى!</translation>
+        <translation>ئارخىپىڭىزدا پارول يوق!</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2188,7 +2168,7 @@ Please use another image.</source>
         <translation>ساقلاش</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>ئىككىلىك كودنى ساقلاش (*.png)</translation>
     </message>
@@ -2216,10 +2196,6 @@ Please use another image.</source>
         <translation>پارول ئۆزگەرتىلمىدى</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>بوش ئادرېسنى ئىشلەتكىنى بولمايدۇ</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>ئۆزگەرتەلمىدى</translation>
     </message>
@@ -2233,11 +2209,11 @@ Please use another image.</source>
     </message>
     <message>
         <source>Empty name</source>
-        <translation>بوش ئىشىم</translation>
+        <translation>بوش ئىسىم</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>بوش ئىشىم</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>ئىسىم بوش بولسا بولمايدۇ</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2256,7 +2232,7 @@ Please use another image.</source>
     <message>
         <source>The following files could not be deleted:</source>
         <extracomment>deletion failed text part 1</extracomment>
-        <translation>بۇ ھۆججەتلەنى ئۆچۈرەلمىدى:</translation>
+        <translation>بۇ ھۆججەتلەرنى ئۆچۈرەلمىدى:</translation>
     </message>
     <message>
         <source>Please manually remove them.</source>
@@ -2279,19 +2255,19 @@ Please use another image.</source>
         <translation type="unfinished">سىز تاللىغان ھۆججەتنى ساقلىغىلى بولمايدۇ.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">قۇرۇق يولنى ئىشلەتكىلى بولمايدۇ.</translation>
+        <translation type="unfinished">يول بوش بولسا بولمايدۇ.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ساندان مەخپىي نومۇرىنى ئۆزگەرتەلمىدى ، ئۇ بۇزۇلغان ياكى كونا پارولنى ئىشلىتىشى مۇمكىن.</translation>
+        <translation type="unfinished">ساندان پارولىنى ئۆزگەرتەلمىدى؛ ساندان بۇزۇلغان ياكى كونا پارولنى ئىشلىتىۋاتقان بولۇشى مۇمكىن.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">زەھەرلىك ئىشلەتكۈچى ئىسمى%1 ھەرپتىن ئېشىپ كەتسە بولمايدۇ.</translation>
+        <translation type="unfinished">Tox ئىشلەتكۈچى ئىسمى %1 ھەرپتىن ئېشىپ كەتمەسلىكى كېرەك.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2316,10 +2292,10 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇ كىملىك ​​باشقا زەھەرلىك ئىشلەتكۈچىلەرنىڭ سىز بىلەن ئالاقىلىشىشى ۋە ئالاقىلىشىشىغا يول قويىدۇ.
-دوستلىرىڭىز بىلەن ھەمبەھىرلىنىپ پاراڭلىشىشنى باشلاڭ.
+        <translation type="unfinished">بۇ كىملىك باشقا Tox ئىشلەتكۈچىلىرىنىڭ سىزنى قوشۇشى ۋە سىز بىلەن ئالاقىلىشىشىغا يول قويىدۇ.
+پاراڭنى باشلاش ئۈچۈن ئۇنى دوستلىرىڭىز بىلەن ھەمبەھىرلەڭ.
 
-بۇ كىملىك ​​NoSpam كودىنى (كۆك رەڭدە) ، تەكشۈرۈش جەدۋىلىنى (كۈلرەڭدە) ئۆز ئىچىگە ئالىدۇ.</translation>
+بۇ كىملىكتە NoSpam كودى (كۆك) ۋە تەكشۈرۈش يىغىندىسى (كۈلرەڭ) بار.</translation>
     </message>
 </context>
 <context>
@@ -2327,7 +2303,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation>ئارخىپ كىرگۈزىش</translation>
+        <translation>ئارخىپ كىرگۈزۈش</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2337,12 +2313,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Tox ھۆججىتى بولمىسا كارى بولماسلىق</translation>
+        <translation>Tox ھۆججىتى بولمىغان ھۆججەتكە پەرۋا قىلىنمىدى</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
-        <translation>ئاگاھلاندۇرۇش: سىز تاللىغان ھۆججەت Tox ئارخىپ ھۆججىتى ئەمەس؛ كارىم يوق.</translation>
+        <translation>ئاگاھلاندۇرۇش: سىز تاللىغان ھۆججەت Tox ئارخىپ ھۆججىتى ئەمەس؛ پەرۋا قىلىنمايدۇ.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2350,9 +2326,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>ئارخىپ بار</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>ئارخىپ ئىسمى &quot;%1&quot; بار، بۇنى ئۆچۈرۈۋىتەمسىز؟</translation>
+        <translation>ئارخىپ ئىسمى &quot;%1&quot; بار، بۇنى ئالماشتۇرامسىز؟</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2379,7 +2355,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>RTL</translation>
     </message>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>تامام</translation>
     </message>
     <message>
@@ -2417,14 +2393,14 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is not a valid Tox address.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ئىناۋەتلىك توك ئادرېسى ئەمەس.</translation>
+        <translation type="unfinished">%1 ئىناۋەتلىك Tox ئادرېسى ئەمەس.</translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
         <source>Default</source>
-        <translation>ئىتىراپلىق</translation>
+        <translation>كۆڭۈلدىكى</translation>
     </message>
     <message>
         <source>Blue</source>
@@ -2449,7 +2425,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>مەن %1! بىز Tox تا پاراڭلىشامدۇق ؟</translation>
+        <translation>مەن %1! Tox تا پاراڭلاشساق بولامدۇ؟</translation>
     </message>
     <message>
         <source>None</source>
@@ -2467,7 +2443,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>qTox couldn&apos;t open your chat logs, they will be disabled.</source>
-        <translation>سۆھبەت خاتىرىڭىز ئېچىلمىدى، ئۇلارنى چەكلىۋەتسىڭىز بولىدۇ.</translation>
+        <translation>qTox سۆھبەت خاتىرىڭىزنى ئاچالمىدى، ئۇلار چەكلىنىدۇ.</translation>
     </message>
     <message>
         <source>Dark</source>
@@ -2502,7 +2478,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>away</source>
         <comment>contact status</comment>
-        <translation type="unfinished">چىقىپ كىتىش</translation>
+        <translation type="unfinished">نېرىدا</translation>
     </message>
     <message>
         <source>busy</source>
@@ -2512,19 +2488,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>offline</source>
         <comment>contact status</comment>
-        <translation type="unfinished">توردا يوق</translation>
+        <translation type="unfinished">تورسىز</translation>
     </message>
     <message>
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">توسۇلۇپ قالدى</translation>
+        <translation type="unfinished">توسۇلغان</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
         <comment>Waiting for text to be reformatted</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تېكىستنى ئىسلاھ قىلىش ...</translation>
+        <translation type="unfinished">تېكىست قايتا فورماتلىنىۋاتىدۇ...</translation>
     </message>
     <message>
         <source>Failed to send file &quot;%1&quot;</source>
@@ -2543,7 +2519,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 is now known as %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ھازىر%2 دەپ ئاتالغان</translation>
+        <translation type="unfinished">%1 ھازىر %2 دەپ ئاتالغان</translation>
     </message>
     <message>
         <source>%1 has set the title to %2</source>
@@ -2555,11 +2531,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">%1 بىلەن بولغان ئالاقە ئۈزۈلۈپ قالدى. %2</translation>
+        <translation type="unfinished">%1 بىلەن بولغان پاراڭ تۇيۇقسىز ئۈزۈلدى. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">%1 بىلەن پاراڭ ئۈچۈلدى. %2</translation>
+        <translation type="unfinished">%1 بىلەن پاراڭ ئاخىرلاشتى. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2568,11 +2544,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">ھازىر %1 نى چاقىرىۋاتىدۇ</translation>
+        <translation type="unfinished">%1 غا چاقىرىۋاتىدۇ</translation>
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 نى چاقىرىش</translation>
+        <translation type="unfinished">%1 چاقىرىۋاتىدۇ</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2586,17 +2562,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئويلىمىغان يەردىن%1 تورسىز قالغانلىقتىن ، تېلېفون ئاخىرلاشقان. %2</translation>
+        <translation type="unfinished">ئويلىمىغان يەردىن %1 تورسىز قالغانلىقتىن، تېلېفون ئاخىرلاشتى. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Initializing</translation>
+        <translation type="unfinished">دەسلەپلەشتۈرۈۋاتىدۇ</translation>
     </message>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يوللاش</translation>
+        <translation type="unfinished">يوللاۋاتىدۇ</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -2606,7 +2582,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">بۇزۇلغان</translation>
+        <translation type="unfinished">ئۈزۈلدى</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2618,9 +2594,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">توختىدى</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يىراقتىن توختاپ قالدى</translation>
+        <translation type="unfinished">قارشى تەرەپ توختاتتى</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2630,7 +2606,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئالاقىلىشىڭ</translation>
+        <translation type="unfinished">ئالاقىداش</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -2674,7 +2650,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ساندان نەشرى (%1) بىز قوللىغاندىن يېڭى (%2). QTox نى يېڭىلاڭ.</translation>
+        <translation type="unfinished">ساندان نەشرى (%1) بىز قوللىغاندىن يېڭى (%2). qTox نى يېڭىلاڭ.</translation>
     </message>
 </context>
 <context>
@@ -2685,7 +2661,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">بۇنى تەڭشىسىڭىز بۇ دوستىڭىزنىڭ بارلىق سۆھبەت خاتىرىسىمۇ ئۆچۈپ كىتىدۇ</translation>
+        <translation type="unfinished">تەڭشەلسە، بۇ دوست بىلەن بولغان بارلىق سۆھبەت تارىخىنى ئۆچۈرىدۇ</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2715,7 +2691,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
-        <translation>Escape</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2751,17 +2727,17 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>from the end</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئاخىرغىچە</translation>
+        <translation type="unfinished">ئاخىرىدىن</translation>
     </message>
     <message>
         <source>from the beginning</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">باشتىن-ئاخىر</translation>
+        <translation type="unfinished">بېشىدىن</translation>
     </message>
     <message>
         <source>after date</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ۋاقىتتىن كېيىن</translation>
+        <translation type="unfinished">چېسلادىن كېيىن</translation>
     </message>
     <message>
         <source>before date</source>
@@ -2771,7 +2747,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دېلو سەزگۈر</translation>
+        <translation type="unfinished">چوڭ-كىچىك ھەرپنى پەرقلەندۈرۈش</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -2781,12 +2757,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">دائىملىق ئىپادىلەرنى ئىشلىتىڭ</translation>
+        <translation type="unfinished">مۇنتىزىم ئىپادىلەرنى ئىشلىتىش</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">چېسلا سۆزلىشىش رامكىسىنى تاللاڭ</translation>
+        <translation type="unfinished">چېسلا تاللاش سۆزلىشىش رامكىسى</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2798,7 +2774,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <name>SetPasswordDialog</name>
     <message>
         <source>Confirm:</source>
-        <translation>جەزىملەش:</translation>
+        <translation>جەزملەش:</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -2806,7 +2782,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>پارول ئۇزۇنلىقى: %p%</translation>
+        <translation>پارول كۈچلۈكلۈكى: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -2852,12 +2828,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تەڭشەكلەرنى%1 دىن%2 نەشرىگە يېڭىلاشقا ئامالسىز. QTox نى قوزغىتالمايدۇ.</translation>
+        <translation type="unfinished">تەڭشەكلەرنى %1 دىن %2 نەشرىگە يېڭىلاشقا ئامالسىز. qTox نى قوزغىتالمايدۇ.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يەرشارى تەڭشەكلىرىنى يۈكلىيەلمىدى</translation>
+        <translation type="unfinished">ئومۇمىي تەڭشەكلەرنى يۈكلىيەلمىدى</translation>
     </message>
 </context>
 <context>
@@ -2872,7 +2848,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation>دوست ئىستىكى ئۇچۇرى:</translation>
+        <translation>دوستلۇق ئىلتىماسى ئۇچۇرى:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -2913,7 +2889,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Size: </source>
-        <translation>ھەجىم </translation>
+        <translation>چوڭلۇقى: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -2928,7 +2904,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">qTox قايتا قوزغالغاندا بۇ يېزىق ئۇسلۇبى يۈكلەنمەسلىكى مۇمكىن.</translation>
+        <translation type="unfinished">يېڭى يېزىق ئۇسلۇبى qTox قايتا قوزغالغۇچە سۆھبەت تارىخىغا ئىشلىتىلمەسلىكى مۇمكىن.
+يېڭى ئۇچۇرلارغا دەرھال ئىشلىتىلىدۇ.
+
+ساپ تېكىست:
+    ئۇچۇرلارغا فورمات ئىشلىتىلمەيدۇ.
+    مەسىلەن &quot;**تېكىست**&quot; &quot;**تېكىست**&quot; بولۇپ كۆرۈنىدۇ، توم ئەمەس.
+فورمات بەلگىلىرىنى كۆرسىتىش:
+    فورمات ئىشلىتىلىدۇ ۋە بەلگىلەر كۆرسىتىلىدۇ.
+    مەسىلەن &quot;**تېكىست**&quot; &quot;**تېكىست**&quot; بولۇپ توم كۆرۈنىدۇ.
+فورمات بەلگىلىرىنى يوشۇرۇش:
+    فورمات ئىشلىتىلىدۇ، لېكىن بەلگىلەر كۆرسىتىلمەيدۇ.
+    مەسىلەن &quot;**تېكىست**&quot; &quot;تېكىست&quot; بولۇپ توم كۆرۈنىدۇ.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2940,15 +2927,15 @@ Hide formatting characters:
     </message>
     <message>
         <source>Plaintext</source>
-        <translation>ساپ تېسىت</translation>
+        <translation>ساپ تېكىست</translation>
     </message>
     <message>
         <source>Show formatting characters</source>
-        <translation>يېزىق فورماتىنى كۆرسىتىش</translation>
+        <translation>فورمات بەلگىلىرىنى كۆرسىتىش</translation>
     </message>
     <message>
         <source>Hide formatting characters</source>
-        <translation>يېزىق فورماتىنى كۆرسەتمەسلىك</translation>
+        <translation>فورمات بەلگىلىرىنى يوشۇرۇش</translation>
     </message>
     <message>
         <source>New message</source>
@@ -2969,7 +2956,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">توپنى چوقىلاش</translation>
+        <translation type="unfinished">يىغىنلارنى دوستلار تىزىملىكىنىڭ ئۈستىگە قويۇش</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
@@ -2978,7 +2965,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Compact contact list</source>
-        <translation>قىسقاتىلما ئالاقىداشلار قاتارى</translation>
+        <translation>قىسقارتىلما ئالاقىداشلار تىزىملىكى</translation>
     </message>
     <message>
         <source>Multiple windows mode</source>
@@ -2994,7 +2981,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation>ياز ئىپادىسى ئىشلىتىش</translation>
+        <translation>يۈز ئىپادىسى ئىشلىتىش</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
@@ -3022,7 +3009,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Date format:</source>
-        <translation>چىسلا فورماتى:</translation>
+        <translation>چېسلا فورماتى:</translation>
     </message>
     <message>
         <source>Use identicons instead of empty avatars</source>
@@ -3032,7 +3019,7 @@ Hide formatting characters:
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يېڭى ئۇچۇر ، تېلېفون ياكى دوست تەلىپىڭىزنى تاپشۇرۇۋالغاندا ئۇقتۇرۇشنى كۆرسىتىڭ ھەمدە كۆزنەك تاللانمىدى.</translation>
+        <translation type="unfinished">كۆزنەك تاللانمىغان ۋاقىتتا يېڭى ئۇچۇر، تېلېفون ياكى دوستلۇق ئىلتىماسى كەلسە ئۇقتۇرۇش كۆرسىتىش.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -3042,7 +3029,7 @@ Hide formatting characters:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">يىغىنلار تىلغا ئېلىنغاندىلا ئۇقتۇرۇش قىلىدۇ</translation>
+        <translation type="unfinished">يىغىنلار پەقەت سىزنى تىلغا ئالغاندىلا ئۇقتۇرىدۇ</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3077,24 +3064,24 @@ Hide formatting characters:
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تەكشۈرۈلسە ، يىغىن دوستلار تىزىملىكىنىڭ ئۈستىگە قويۇلىدۇ ، بولمىسا توردىكى دوستلارنىڭ ئاستىغا قويۇلىدۇ.</translation>
+        <translation type="unfinished">تاللانسا، يىغىنلار دوستلار تىزىملىكىنىڭ ئۈستىگە قويۇلىدۇ، بولمىسا توردىكى دوستلارنىڭ ئاستىغا قويۇلىدۇ.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئەگەر قوزغىتىلسا ، باش سۈرىتى بولمىغان ھەر بىر ئالاقىدە سۈكۈتتىكى رەسىمنىڭ ئورنىغا ئۇلارنىڭ زەھەرلىك كىملىكىگە ئاساسەن ھاسىل قىلىنغان سىنبەلگە بولىدۇ. ئىلتىماسنى قايتا قوزغىتىشنى تەلەپ قىلىدۇ.</translation>
+        <translation type="unfinished">ئەگەر قوزغىتىلسا ، باش سۈرىتى بولمىغان ھەر بىر ئالاقىدە سۈكۈتتىكى رەسىمنىڭ ئورنىغا ئۇلارنىڭ Tox كىملىكىگە ئاساسەن ھاسىل قىلىنغان سىنبەلگە بولىدۇ. قوللىنىش ئۈچۈن قايتا قوزغىتىش كېرەك.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">تەبەسسۇم بولىقى:</translation>
+        <translation type="unfinished">يۈز ئىپادىسى بولىقى:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئەگەر چەكلەنگەن بولسا ، ھالىتى ئالدىراش بولغاندا ئاۋازسىز ئۇقتۇرۇش ئاۋازى ئاڭلىنىدۇ (ئەمما يەنىلا ئۇقتۇرۇشنى كۆرسىتىدۇ)</translation>
+        <translation type="unfinished">چەكلەنسە، ھالەت ئالدىراش بولغاندا ئۇقتۇرۇش ئاۋازى چىقمايدۇ (ئەمما ئۇقتۇرۇش يەنىلا كۆرسىتىلىدۇ)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
@@ -3107,7 +3094,7 @@ Hide formatting characters:
         <translation type="unfinished">ئۈستەل يۈزى ئۇقتۇرۇشىدا يوشۇرۇن ئۇچۇرلارنى كۆرسەتمەيلا «يېڭى ئۇچۇر» نى كۆرسىتىڭ.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">دوستلار تىزىملىكى ۋە پاراڭلىشىش كۆزنىكىنى ئايرىم يۆتكىگىلى بولىدىغان كۆزنەككە بۆلۈڭ.</translation>
     </message>
@@ -3129,7 +3116,7 @@ Hide formatting characters:
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UI ئۈچۈن ئىشلىتىدىغان ئاساسى ئۇسلۇب. QTox باشتېمىسى بىلەن ياخشى ئىشلىگەچكە ، بىرىكىش تەۋسىيە قىلىنىدۇ.</translation>
+        <translation type="unfinished">UI ئۈچۈن ئاساسىي ئۇسلۇب. qTox باشتېمىسى بىلەن ئەڭ ياخشى ئىشلىگەچكە Fusion تەۋسىيە قىلىنىدۇ.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -3150,7 +3137,7 @@ Hide formatting characters:
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاراڭلاردا ئەۋەتىلگەن ۋە تاپشۇرۇۋالغان رەسىملەرنىڭ ئالدىن كۆزىتىشلىرىنى كۆرسىتىڭ. چوڭراق ئالدىن كۆرۈش ئۈچۈن ئىچكى كۆرۈنۈشنى بېسىپ ئۆتۈڭ.</translation>
+        <translation type="unfinished">پاراڭلاردا ئەۋەتىلگەن ۋە تاپشۇرۇۋالغان رەسىملەرنىڭ ئالدىن كۆزىتىشلىرىنى كۆرسىتىڭ. چوڭراق كۆرۈش ئۈچۈن چاشقىنەكنى ئالدىن كۆرۈش ئۈستىگە ئەكېلىڭ.</translation>
     </message>
     <message>
         <source>Image preview</source>
@@ -3159,8 +3146,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">پاراڭلىشىش تارىخىدىن يۈكلەنگەن ئەڭ كۆپ ئۇچۇر (ھەر بىر سۆھبەت). ئىقتىدارنى
 ياخشىلاش ئۈچۈن بۇنى ئازايتىڭ. بۇ يەردىكى بەك ئاز سان سىيرىلما تاياقچە
@@ -3169,12 +3156,11 @@ scroll bar to disappear.</source>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئەڭ چوڭ پاراڭ خاتىرىسىنى
-كۆرۈش چوڭلۇقى</translation>
+        <translation type="unfinished">پاراڭ خاتىرىسى كۆرۈنۈشىنىڭ ئەڭ چوڭ ھەجىمى</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">دومىلىغاندا پاراڭلىشىش تارىخىدىن يۈكلىنىدىغان ئۇچۇرلارنىڭ سانى. بۇ يەردىكى
 بەك ئاز سان سىيرىلما تاياقچە يوقاپ كېتىشى مۇمكىن.</translation>
@@ -3182,19 +3168,17 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاراڭ خاتىرىسىنىڭ
-چوڭ-كىچىكلىكى</translation>
+        <translation type="unfinished">پاراڭ خاتىرىسى پارچىسىنىڭ چوڭلۇقى</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">پاراڭ
-خاتىرىسى:</translation>
+        <translation type="unfinished">پاراڭ خاتىرىسى:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Null بەلگىسىدىن كېيىن قوشۇمچىنى يوشۇرۇڭ</translation>
+        <translation type="unfinished">NUL ھەرپىدىن كېيىنكى تېكىستنى يوشۇرۇش</translation>
     </message>
 </context>
 <context>
@@ -3207,7 +3191,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
-        <translation>ئايرىلىش</translation>
+        <translation>نېرىدا</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -3225,7 +3209,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
-        <translation>قۇلۇپلاش</translation>
+        <translation>چېكىنىش</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3245,11 +3229,11 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">توپ قۇرۇش...</translation>
+        <translation type="unfinished">يېڭى يىغىن قۇرۇش...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>چەمبىرەككە چىقىرىش...</translation>
+        <translation>يېڭى چەمبىرەك قوشۇش...</translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3270,7 +3254,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Offline</source>
         <translatorcomment>Ausgelassen</translatorcomment>
-        <translation>ئايرىلىش</translation>
+        <translation>تورسىز</translation>
     </message>
     <message>
         <source>Friends</source>
@@ -3278,7 +3262,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">توپلار</translation>
+        <translation type="unfinished">يىغىنلار</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3297,7 +3281,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>توپ تەكلىپى</translation>
+        <translation>يىغىن تەكلىپلىرى</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3312,7 +3296,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation>مېنىڭ</translation>
+        <translation>ئارخىپىم</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
@@ -3333,21 +3317,21 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n يېڭى دوستلۇق ئىلتىماسى</numerusform>
+            <numerusform>%n يېڭى دوستلۇق ئىلتىماسى</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n يېڭى يىغىن تەكلىپى</numerusform>
+            <numerusform>%n يېڭى يىغىن تەكلىپى</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
-        <translation type="unfinished">چېكىنىش</translation>
+        <comment>Tray action menu to exit qTox</comment>
+        <translation type="unfinished">چىقىش</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3362,12 +3346,12 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Logout</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Logout</translation>
+        <translation type="unfinished">چېكىنىش</translation>
     </message>
     <message>
         <source>Add contact...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ئالاقىلىشىش ...</translation>
+        <translation type="unfinished">ئالاقىداش قوشۇش...</translation>
     </message>
     <message>
         <source>Next conversation</source>
@@ -3382,7 +3366,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Debug</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">چاتاقنى تاپماق</translation>
+        <translation type="unfinished">چاتاق تەكشۈرۈش</translation>
     </message>
 </context>
 </TS>

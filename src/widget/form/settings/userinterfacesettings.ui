@@ -190,8 +190,8 @@ Hide formatting characters:
              <widget class="QLabel" name="chatLogMaxLbl">
               <property name="toolTip">
                <string>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</string>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</string>
               </property>
               <property name="text">
                <string>Maximum chat log view size</string>
@@ -211,8 +211,8 @@ scroll bar to disappear.</string>
             <item>
              <widget class="QLabel" name="chatLogChunkLbl">
               <property name="toolTip">
-               <string>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</string>
+               <string>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</string>
               </property>
               <property name="text">
                <string>Chat log chunk size</string>
@@ -234,7 +234,7 @@ number here may cause the scroll bar to disappear.</string>
           <item row="4" column="1">
            <widget class="QCheckBox" name="cbHidePostNullSuffix">
             <property name="text">
-             <string>Hide suffix after NULL symbol</string>
+             <string>Hide text after a NUL character</string>
             </property>
            </widget>
           </item>
@@ -380,7 +380,7 @@ number here may cause the scroll bar to disappear.</string>
           <item>
            <widget class="QCheckBox" name="cbSeparateWindow">
             <property name="toolTip">
-             <string>Split friend list and chat window into separately moveable windows.</string>
+             <string>Split friend list and chat window into separately movable windows.</string>
             </property>
             <property name="text">
              <string>Multiple windows mode</string>

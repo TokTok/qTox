@@ -29,7 +29,7 @@
     </message>
     <message>
         <source>Gain</source>
-        <translation>Tăng âm lượng</translation>
+        <translation>Độ khuếch đại</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -49,19 +49,7 @@
     </message>
     <message>
         <source>Video device</source>
-        <translation>CAMERA</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Đặt độ phân giải của máy ảnh của bạn.
-Giá trị cao hơn, chất lượng video tốt hơn mà bạn bè của bạn có thể nhận được.
-Lưu ý rằng với chất lượng video tốt hơn thì cần có kết nối internet tốt hơn.
-Đôi khi kết nối của bạn có thể không đủ tốt để xử lý chất lượng video cao hơn,
-có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
+        <translation>Thiết bị video</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -80,20 +68,20 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Chất lượng âm thanh</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Cao (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Cao (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Trung bình (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Trung bình (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Thấp (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Thấp (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Rất thấp (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Rất thấp (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -101,7 +89,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
-        <translation>Sử dụng thanh trượt để đặt âm lượng.</translation>
+        <translation>Sử dụng thanh trượt để đặt âm lượng loa.</translation>
     </message>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
@@ -114,10 +102,10 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translation>Đặt độ phân giải của máy ảnh của bạn.
-Giá trị cao hơn, chất lượng video tốt hơn mà bạn bè của bạn có thể nhận được.
-Lưu ý rằng với chất lượng video tốt hơn thì cần có kết nối internet tốt hơn.
+Giá trị càng cao, bạn bè của bạn càng có thể nhận được chất lượng video tốt hơn.
+Lưu ý rằng chất lượng video càng tốt thì càng tốn nhiều băng thông.
 Đôi khi kết nối của bạn có thể không đủ tốt để xử lý chất lượng video cao hơn,
-có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
+có thể dẫn đến sự cố với cuộc gọi video.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -140,7 +128,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Original author: %1</source>
-        <translation>Tác giả: %1</translation>
+        <translation>Tác giả gốc: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
@@ -159,34 +147,34 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Phiên bản Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Bạn có thể tìm thấy danh sách tất cả các vấn đề đã biết tại %1 của chúng tôi tại Github. Nếu bạn phát hiện ra lỗi hoặc lỗ hổng bảo mật trong qTox, vui lòng báo cáo lỗi đó theo hướng dẫn trong bài viết %2 wiki của chúng tôi.</translation>
+        <translation>Bạn có thể tìm thấy danh sách tất cả các vấn đề đã biết tại %1 của chúng tôi tại GitHub. Nếu bạn phát hiện ra lỗi hoặc lỗ hổng bảo mật trong qTox, vui lòng báo cáo lỗi đó theo hướng dẫn trong bài viết %2 wiki của chúng tôi.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Bấm vào đây để báo cáo lỗi.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Xem danh sách %1 đầy đủ trên Github</translation>
+        <translation>Xem danh sách %1 đầy đủ trên GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation>theo dõi lỗi</translation>
+        <translation>trình theo dõi lỗi</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation>Viết báo cáo lỗi</translation>
+        <translation>Viết báo cáo lỗi hữu ích</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation>đóng góp</translation>
+        <translation>người đóng góp</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -198,7 +186,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Tự động chấp nhận các tệp từ người khác nếu được đặt</translation>
+        <translation>Tự động chấp nhận tệp từ liên hệ này nếu được chọn</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -218,10 +206,10 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Tự động chấp nhận lời mời trò chuyện nhóm từ liên hệ này nếu được đặt.</translation>
+        <translation type="unfinished">Tự động chấp nhận lời mời hội nghị từ liên hệ này nếu được chọn.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Xóa lịch sử (không thể hoàn tác!)</translation>
     </message>
     <message>
@@ -237,20 +225,20 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Lịch sử đã bị xóa</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Đây là khóa công khai của bạn bè bạn, hãy sử dụng nó để xác minh danh tính của họ qua một kênh khác. Bạn không thể gửi thông tin này cho người khác để họ có thể thêm liên hệ này.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>Đây là khóa công khai của bạn bè bạn, hãy dùng nó để xác minh danh tính của họ qua một kênh khác. Người khác không thể dùng khóa này để thêm liên hệ này.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>Khóa công khai (không phải ToxID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>Khóa công khai (không phải Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>Xác thực</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
-        <translation>Bạn có chắc sẽ xóa %1 lịch sử chat?</translation>
+        <source>Are you sure you want to remove the chat history with %1?</source>
+        <translation>Bạn có chắc muốn xóa lịch sử trò chuyện với %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -270,11 +258,11 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Tự động chấp nhận lời mời nhóm</translation>
+        <translation type="unfinished">Tự động chấp nhận lời mời hội nghị</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>Bạn có thể lưu ý kiến về liên hệ này tại đây.</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>Bạn có thể lưu ghi chú về liên hệ này tại đây.</translation>
     </message>
 </context>
 <context>
@@ -343,7 +331,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <translation>Không thể thêm bạn</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Nhập Tox ID của bạn bè của bạn</translation>
     </message>
     <message>
@@ -378,7 +366,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Chúng tôi không thể tìm thấy bất kỳ địa chỉ liên hệ nào để tải lên từ tệp này!</translation>
+        <translation>Không tìm thấy liên hệ nào để nhập trong tệp này!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -402,30 +390,30 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation>%1 đây! Có thể Tox cho tôi?</translation>
+        <translation>%1 đây! Nhắn cho mình qua Tox nhé?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Tải lên danh sách các địa chỉ liên hệ, một Tox ID trên mỗi dòng</translation>
+        <translation>Nhập danh sách liên hệ, mỗi dòng một Tox ID</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>Sẵn sàng tải lên %n địa chỉ liên hệ, nhấp vào gửi để xác nhận</numerusform>
+            <numerusform>Sẵn sàng nhập %n liên hệ, nhấp vào gửi để xác nhận</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation>Tải lên liên hệ</translation>
+        <translation>Nhập liên hệ</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translation>Tox ID, 76 ký tự thập lục phân (HEX)</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 Tox ID không hợp lệ</translation>
+        <translation>%1 không phải là Tox ID hợp lệ</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -477,7 +465,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>Trừ khi bạn %1 biết bạn đang làm gì, hãy %2 thay đổi bất kỳ điều gì ở đây. Những thay đổi được thực hiện ở đây có thể dẫn đến sự cố với qTox và thậm chí làm mất dữ liệu của bạn, ví dụ: lịch sử.%3</translation>
+        <translation>Trừ khi bạn %1 biết mình đang làm gì, xin %2 thay đổi bất cứ điều gì ở đây. Những thay đổi ở đây có thể gây ra sự cố với qTox, thậm chí làm mất dữ liệu của bạn, ví dụ như lịch sử.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -501,13 +489,13 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>Lưu cài đặt vào thư mục cá nhân thay vì lưu trữ thông thường (conf dir)</translation>
+        <translation>Lưu cài đặt vào thư mục làm việc thay vì thư mục cấu hình thông thường</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
-        <translation>Làm Tox portable</translation>
+        <translation>Làm cho Tox di động (portable)</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -583,7 +571,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
-        <translation>Bật LAN discovery</translation>
+        <translation>Bật tìm kiếm trong mạng LAN</translation>
     </message>
     <message>
         <source>Connection settings</source>
@@ -592,7 +580,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     <message>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
-        <translation>Vô hiệu hóa quyền này, ví dụ: Tox qua Tor. Tuy nhiên, nó sẽ tải lên vào mạng Tox, vì vậy chỉ bỏ chọn khi cần thiết.</translation>
+        <translation>Tắt tùy chọn này cho phép, ví dụ, dùng Tox qua Tor. Tuy nhiên điều này làm tăng tải cho mạng Tox, vì vậy chỉ bỏ chọn khi cần thiết.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -608,7 +596,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation>Chạy mới và tải hồ sơ đã chọn.</translation>
+        <translation>Khởi chạy một phiên bản mới và tải hồ sơ đã chỉ định.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -616,27 +604,23 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
-        <translation>Chạy mới và vào màn hình đăng nhập.</translation>
+        <translation>Khởi chạy một phiên bản mới và mở màn hình đăng nhập.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Đặt IPv6 &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>Bật hoặc tắt IPv6: %1. Mặc định: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Đặt UDP &lt;bật&gt; / &lt;tắt&gt;. Mặc định là BẬT.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>Bật hoặc tắt UDP: %1. Mặc định: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Đặt LAN discovery &lt;bật&gt; / &lt;tắt&gt;. Ghi đè tắt UDP. Mặc định là BẬT.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>Bật hoặc tắt tìm kiếm trong mạng LAN: %1. Không có tác dụng khi UDP bị tắt. Mặc định: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>Đặt cài đặt proxy. Mặc định là KHÔNG.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>Đặt proxy. Mặc định: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -660,7 +644,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Đường dẫn</translation>
+        <translation type="unfinished">đường dẫn</translation>
     </message>
 </context>
 <context>
@@ -701,7 +685,7 @@ có thể dẫn đến sự cố với cuộc gọi điện video.</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>Bạn đang cố gắng gửi một tệp tuần tự, tệp này sẽ không hoạt động!</translation>
+        <translation>Bạn đang cố gửi một tệp tuần tự, việc này sẽ không thực hiện được!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -718,27 +702,27 @@ so you can save the file on Windows.</source>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation>Không thể bắt đầu cuộc gọi</translation>
+        <translation>Không thể bắt đầu cuộc gọi thoại</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation>Bắt đầu cuộc gọi</translation>
+        <translation>Bắt đầu cuộc gọi thoại</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation>Kết thúc cuộc gọi</translation>
+        <translation>Kết thúc cuộc gọi thoại</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation>Dừng cuộc gọi</translation>
+        <translation>Hủy cuộc gọi thoại</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation>Chấp nhận cuộc gọi</translation>
+        <translation>Chấp nhận cuộc gọi thoại</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation>Không thể bắt đầu cuộc gọi</translation>
+        <translation>Không thể bắt đầu cuộc gọi video</translation>
     </message>
     <message>
         <source>Start video call</source>
@@ -750,7 +734,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation>Dừng gọi video</translation>
+        <translation>Hủy cuộc gọi video</translation>
     </message>
     <message>
         <source>Accept video call</source>
@@ -778,14 +762,14 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Mute microphone</source>
-        <translation>Bật tiếng micrô</translation>
+        <translation>Tắt tiếng micrô</translation>
     </message>
 </context>
 <context>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Nhómchat #%1</translation>
+        <translation type="unfinished">Hội nghị #%1</translation>
     </message>
 </context>
 <context>
@@ -819,12 +803,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Rename circle</source>
         <comment>Menu for renaming a circle</comment>
-        <translation>Đổi tên kết nối</translation>
+        <translation>Đổi tên vòng kết nối</translation>
     </message>
     <message>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
-        <translation>Gỡ kết nối</translation>
+        <translation>Xóa vòng kết nối</translation>
     </message>
     <message>
         <source>Open all in new window</source>
@@ -841,7 +825,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Bạn không được phép ghi vào vị trí đó. Chọn khác hoặc hủy hộp thoại lưu.</translation>
+        <translation type="unfinished">Bạn không có quyền ghi vào vị trí đó. Hãy chọn vị trí khác hoặc hủy lưu.</translation>
     </message>
 </context>
 <context>
@@ -864,29 +848,29 @@ so you can save the file on Windows.</source>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">sao chép ID ngang hàng</translation>
+        <translation type="unfinished">sao chép ID thành viên</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Nhóm</translation>
+        <translation type="unfinished">Hội nghị</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Tạo nhóm mới</translation>
+        <translation type="unfinished">Tạo hội nghị mới</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Lời mời nhóm</translation>
+        <translation type="unfinished">Lời mời hội nghị</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Được %1 mời trên %2 tại %3.</translation>
+        <translation>Được %1 mời vào ngày %2 lúc %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -914,7 +898,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Rời nhóm</translation>
+        <translation>Rời hội nghị</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -936,11 +920,11 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/tôi yêu cầu bạn bè, &quot;%1&quot;</translation>
+        <translation>/me đề nghị kết bạn, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Nhómchat %1</translation>
+        <translation type="unfinished">Hội nghị %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -994,12 +978,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Waiting to send...</source>
         <comment>file transfer widget</comment>
-        <translation>Đang gửi...</translation>
+        <translation>Đang chờ gửi...</translation>
     </message>
     <message>
         <source>Accept to receive this file</source>
         <comment>file transfer widget</comment>
-        <translation>Chấp nhận tệp tin đến</translation>
+        <translation>Chấp nhận để nhận tệp này</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1008,16 +992,16 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Cancel transfer</source>
-        <translation>Hủy gửi</translation>
+        <translation>Hủy truyền tệp</translation>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation>Dừng gửi</translation>
+        <translation>Tạm dừng truyền tệp</translation>
     </message>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation>Đã dừng</translation>
+        <translation>Đã tạm dừng</translation>
     </message>
     <message>
         <source>Open file</source>
@@ -1029,11 +1013,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Resume transfer</source>
-        <translation>Tiếp tục gửi đi</translation>
+        <translation>Tiếp tục truyền tệp</translation>
     </message>
     <message>
         <source>Accept transfer</source>
-        <translation>Chấp nhận gửi</translation>
+        <translation>Chấp nhận truyền tệp</translation>
     </message>
     <message>
         <source>Save a file</source>
@@ -1041,9 +1025,9 @@ so you can save the file on Windows.</source>
         <translation>Lưu một tệp</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
-        <translation>Tạm dừng remote</translation>
+        <translation>Bên kia đã tạm dừng</translation>
     </message>
 </context>
 <context>
@@ -1059,7 +1043,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Transferred files</source>
         <comment>&quot;Headline&quot; of the window</comment>
-        <translation>Tệp đã gửi</translation>
+        <translation>Tệp đã truyền</translation>
     </message>
 </context>
 <context>
@@ -1074,7 +1058,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation>7 ngày trước</translation>
+        <translation>7 ngày qua</translation>
     </message>
     <message>
         <source>This month</source>
@@ -1086,7 +1070,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Older than 6 months</source>
-        <translation>6 tháng trước</translation>
+        <translation>Cũ hơn 6 tháng</translation>
     </message>
 </context>
 <context>
@@ -1094,20 +1078,20 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Mời vào nhóm</translation>
+        <translation>Mời vào hội nghị</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
-        <translation>Đưa đến kết nối...</translation>
+        <translation>Chuyển đến vòng kết nối...</translation>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>Đến kết nối mới</translation>
+        <translation>Đến vòng kết nối mới</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
-        <translation>Xóa khỏi kết nối &apos;%1&apos;</translation>
+        <translation>Xóa khỏi vòng kết nối &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -1119,11 +1103,11 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Đến nhóm mới</translation>
+        <translation type="unfinished">Đến hội nghị mới</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Mời vào nhóm &apos;%1&apos;</translation>
+        <translation type="unfinished">Mời vào hội nghị &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1161,7 +1145,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
-        <translation>Di chuyển đến kết nối &quot;%1&quot;</translation>
+        <translation>Chuyển đến vòng kết nối &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1211,20 +1195,20 @@ so you can save the file on Windows.</source>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Bật biểu tượng đèn.</translation>
+        <translation>Dùng biểu tượng khay màu sáng.</translation>
     </message>
     <message>
         <source>Light icon</source>
-        <translation>Biểu tượng nhỏ</translation>
+        <translation>Biểu tượng sáng</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation>qTox sẽ bắt đầu thu nhỏ trong khay.</translation>
+        <translation>qTox sẽ khởi động thu nhỏ trong khay hệ thống.</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>Khởi động trong khay</translation>
+        <translation>Khởi động trong khay hệ thống</translation>
     </message>
     <message>
         <source>Close to tray</source>
@@ -1251,7 +1235,7 @@ so you can save the file on Windows.</source>
         <translation>Đặt 0 để tắt</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation>Trạng thái của bạn được thay đổi thành Vắng mặt sau một khoảng thời gian không hoạt động đã đặt.</translation>
     </message>
     <message>
@@ -1264,7 +1248,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Khởi động qTox cùng hệ điều hành (người dùng hiện tại).</translation>
+        <translation>Khởi động qTox cùng hệ điều hành (hồ sơ hiện tại).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1290,24 +1274,24 @@ so you can save the file on Windows.</source>
         <source>After pressing minimize (_) qTox will minimize to tray,
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
-        <translation>Sau khi nhấn thu nhỏ (_) qTox sẽ thu nhỏ vào khay,
-thay vì thanh tác vụ hệ thống.</translation>
+        <translation>Khi nhấn thu nhỏ (_), qTox sẽ thu nhỏ vào khay hệ thống
+thay vì thanh tác vụ.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
-        <translation>Sau khi nhấn đóng (X) qTox sẽ đóng vào khay,
-thay vì đóng hoàn toàn.</translation>
+        <translation>Khi nhấn đóng (X), qTox sẽ thu nhỏ vào khay hệ thống
+thay vì thoát hẳn.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
-        <translation>Bạn có thể đặt điều này trên từng người bạn bằng cách nhấp chuột phải vào từng người bạn.</translation>
+        <translation>Bạn có thể đặt điều này cho từng người bạn bằng cách nhấp chuột phải vào người đó.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
-        <translation type="unfinished">Thêm tin nhắn trò chuyện khi người dùng tham gia hoặc rời khỏi nhóm</translation>
+        <translation type="unfinished">Thêm tin nhắn vào cuộc trò chuyện khi người dùng tham gia hoặc rời khỏi hội nghị</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1317,7 +1301,7 @@ thay vì đóng hoàn toàn.</translation>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Trợ giúp dịch</translation>
+        <translation type="unfinished">Giúp dịch</translation>
     </message>
     <message>
         <source> min</source>
@@ -1333,11 +1317,11 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Smileys</source>
-        <translation>Biểu tượng</translation>
+        <translation>Biểu tượng cảm xúc</translation>
     </message>
     <message>
         <source>Send file(s)</source>
-        <translation>Gửi nhiều tệp</translation>
+        <translation>Gửi tệp</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
@@ -1361,7 +1345,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>Xác thực</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <source>Search in text</source>
@@ -1369,7 +1353,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Go to current date</source>
-        <translation>Đi đến hiện tại</translation>
+        <translation>Đi đến ngày hiện tại</translation>
     </message>
     <message>
         <source>Load chat history...</source>
@@ -1396,7 +1380,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>Tox ID của bạn (kích đúp để sao chép)</translation>
+        <translation>Tox ID của bạn (nhấp để sao chép)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1414,7 +1398,7 @@ thay vì đóng hoàn toàn.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Đăng xuất</translation>
     </message>
     <message>
@@ -1541,7 +1525,7 @@ Chia sẻ nó với bạn bè của bạn để bắt đầu trò chuyện.</tra
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation>Tải lịch sử hộp thoại</translation>
+        <translation>Hộp thoại tải lịch sử</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1614,9 +1598,9 @@ Chia sẻ nó với bạn bè của bạn để bắt đầu trò chuyện.</tra
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation>Không có hồ sơ được chọn.
+        <translation>Chưa có hồ sơ nào được chọn.
 
-Bạn có thể muốn tạo một cái.</translation>
+Bạn có thể tạo một hồ sơ mới.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1632,7 +1616,7 @@ Bạn có thể muốn tạo một cái.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Tải lên</translation>
+        <translation>Nhập</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1664,15 +1648,15 @@ Bạn có thể muốn tạo một cái.</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation>Tải hộp kiểm tự động</translation>
+        <translation>Hộp kiểm tự động tải</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation>Tải lên hồ sơ</translation>
+        <translation>Nhập hồ sơ</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>Nút tải hồ sợ đã chọn</translation>
+        <translation>Nút tải hồ sơ đã chọn</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1680,7 +1664,7 @@ Bạn có thể muốn tạo một cái.</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>Đang tải trang hồ sơ hiện có</translation>
+        <translation>Trang tải hồ sơ hiện có</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1717,7 +1701,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Tạo cuộc trò chuyện nhóm</translation>
+        <translation type="unfinished">Tạo hội nghị</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1761,7 +1745,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
-        <translation>Liên hệ đầu vào tìm kiếm cho những người bạn đã biết</translation>
+        <translation>Ô tìm kiếm bạn bè</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1769,7 +1753,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>Set friends sorting and visibility</source>
-        <translation>Đặt phân loại bạn bè và mức độ hiển thị</translation>
+        <translation>Đặt cách sắp xếp và hiển thị bạn bè</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -1777,11 +1761,11 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Trò chuyện nhóm</translation>
+        <translation type="unfinished">Hội nghị</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Mở trang quản lý trò chuyện nhóm</translation>
+        <translation type="unfinished">Mở trang quản lý hội nghị</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1826,7 +1810,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <translation>Tệp thực thi</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translation>Bạn đã yêu cầu qTox mở một tệp thực thi. Các tệp thực thi có thể làm hỏng máy tính của bạn. Bạn có chắc chắn muốn mở tệp này không?</translation>
     </message>
@@ -1843,7 +1827,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>Toggle video preview</source>
-        <translation>Chế độ xem trước video</translation>
+        <translation>Bật/tắt xem trước video</translation>
     </message>
     <message>
         <source>Mute audio</source>
@@ -1875,7 +1859,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     <message>
         <source>View</source>
         <comment>macOS Menu bar</comment>
-        <translation>Hiện</translation>
+        <translation>Xem</translation>
     </message>
     <message>
         <source>Window</source>
@@ -1890,7 +1874,7 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation>Đưa tất cả lên đầu</translation>
+        <translation>Đưa tất cả lên trước</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -1918,24 +1902,24 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Tin nhắn nhóm mới</translation>
+        <translation type="unfinished">Tin nhắn hội nghị mới</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
-        <translation>Chuyển tệp đến</translation>
+        <translation>Có tệp gửi đến</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
-        <translation>%1 - tệp đang gửi</translation>
+        <translation>%1 - truyền tệp</translation>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Đã nhận được lời mời nhóm</translation>
+        <translation type="unfinished">Đã nhận được lời mời hội nghị</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 mời bạn tham gia một nhóm.</translation>
+        <translation type="unfinished">%1 mời bạn tham gia một hội nghị.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1954,19 +1938,19 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>CAPS-LOCK BẬT</translation>
+        <source>Caps Lock is on</source>
+        <translation>Caps Lock đang bật</translation>
     </message>
 </context>
 <context>
     <name>PrivacyForm</name>
     <message>
         <source>Privacy</source>
-        <translation>Bảo mật</translation>
+        <translation>Quyền riêng tư</translation>
     </message>
     <message>
         <source>Confirmation</source>
-        <translation>Xác thực</translation>
+        <translation>Xác nhận</translation>
     </message>
     <message>
         <source>Do you want to permanently delete all chat history?</source>
@@ -2004,8 +1988,8 @@ Mọi người sẽ không thể thêm bạn bằng ID cũ của bạn, nhưng b
     <message>
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
-        <translation>NoSpam là một phần ID của bạn có thể thay đổi theo ý muốn.
-Nếu bạn nhận được thư rác với các yêu cầu kết bạn, hãy thay đổi NoSpam.</translation>
+        <translation>NoSpam là một phần ID của bạn và có thể thay đổi bất cứ lúc nào.
+Nếu bạn bị spam yêu cầu kết bạn, hãy thay đổi NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2020,15 +2004,15 @@ Có thể thay đổi định dạng lưu, điều này có thể làm mất d�
     </message>
     <message>
         <source>Privacy</source>
-        <translation>Bảo mật</translation>
+        <translation>Quyền riêng tư</translation>
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Danh sách đen</translation>
+        <translation>Danh sách chặn trong hội nghị</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Lọc tin nhắn nhóm theo khóa công khai của thành viên nhóm. Đặt các khóa công khai ở đây, một khóa trên mỗi dòng.</translation>
+        <translation type="unfinished">Lọc tin nhắn hội nghị theo khóa công khai của thành viên. Đặt các khóa công khai ở đây, mỗi dòng một khóa.</translation>
     </message>
 </context>
 <context>
@@ -2039,11 +2023,11 @@ Có thể thay đổi định dạng lưu, điều này có thể làm mất d�
     </message>
     <message>
         <source>Toxing on qTox</source>
-        <translation>Quẩy trên qTox</translation>
+        <translation>Đang Tox trên qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Không thể thay đổi mật khẩu cơ sở dữ liệu, nó có thể bị hỏng hoặc sử dụng mật khẩu cũ.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Không thể thay đổi mật khẩu cơ sở dữ liệu. Cơ sở dữ liệu có thể bị hỏng hoặc vẫn đang dùng mật khẩu cũ.</translation>
     </message>
 </context>
 <context>
@@ -2110,7 +2094,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Lưu</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>Lưu mã QR (*.png)</translation>
     </message>
@@ -2138,10 +2122,6 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Không thể thay đổi mật khẩu</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>Không thể sử dụng đường dẫn trống</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>Không thể đổi tên</translation>
     </message>
@@ -2158,7 +2138,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Tên trống</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translation>Không được để tên trống</translation>
     </message>
     <message>
@@ -2173,7 +2153,7 @@ Vui lòng sử dụng hình ảnh khác.</translation>
     <message>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
-        <translation>Lưu tệp Tox (*.tox)</translation>
+        <translation>Tệp lưu Tox (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2199,12 +2179,12 @@ Vui lòng sử dụng hình ảnh khác.</translation>
         <translation>Tệp bạn đã chọn không thể lưu.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translation>Không được để trống đường dẫn.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Không thể thay đổi mật khẩu cơ sở dữ liệu, nó có thể bị hỏng hoặc sử dụng mật khẩu cũ.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Không thể thay đổi mật khẩu cơ sở dữ liệu. Cơ sở dữ liệu có thể bị hỏng hoặc vẫn đang dùng mật khẩu cũ.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2241,12 +2221,12 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation>Tải lên hồ sơ</translation>
+        <translation>Nhập hồ sơ</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
-        <translation>Lưu tệp Tox (*.tox)</translation>
+        <translation>Tệp lưu Tox (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
@@ -2264,9 +2244,9 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <translation>Hồ sơ đã tồn tại</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>Hồ sơ có tên &quot;%1&quot; đã tồn tại. Bạn có muốn xóa nó?</translation>
+        <translation>Hồ sơ có tên &quot;%1&quot; đã tồn tại. Bạn có muốn thay thế nó?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2278,18 +2258,18 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Profile imported</source>
-        <translation>Đã tải lên hồ sơ</translation>
+        <translation>Đã nhập hồ sơ</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation>%1.tox đã tải lên thành công</translation>
+        <translation>Đã nhập %1.tox thành công</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
-        <translation>Ok</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2345,7 +2325,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Olive</source>
-        <translation>Ôliu</translation>
+        <translation>Ô liu</translation>
     </message>
     <message>
         <source>Red</source>
@@ -2362,7 +2342,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>%1 đây! Tox tôi nhỉ?</translation>
+        <translation>%1 đây! Nhắn cho mình qua Tox nhé?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2438,11 +2418,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 đã tham gia nhóm</translation>
+        <translation type="unfinished">%1 đã tham gia hội nghị</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 đã rời khỏi nhóm</translation>
+        <translation type="unfinished">%1 đã rời khỏi hội nghị</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2467,7 +2447,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 giờ là %2</translation>
+        <translation>%1 hiện đang %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2493,7 +2473,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Initializing</source>
-        <translation>Khởi tạo</translation>
+        <translation>Đang khởi tạo</translation>
     </message>
     <message>
         <source>Transmitting</source>
@@ -2505,7 +2485,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Broken</source>
-        <translation>Hỏng</translation>
+        <translation>Bị lỗi</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2513,11 +2493,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Paused</source>
-        <translation>Đã dừng</translation>
+        <translation>Đã tạm dừng</translation>
     </message>
     <message>
-        <source>Remote paused</source>
-        <translation>Đã dừng remote</translation>
+        <source>Paused by the other side</source>
+        <translation>Bên kia đã tạm dừng</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2529,7 +2509,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Progress</source>
-        <translation>Quá trình</translation>
+        <translation>Tiến độ</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2549,11 +2529,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation type="unfinished">Bạn đã tham gia nhóm</translation>
+        <translation type="unfinished">Bạn đã tham gia hội nghị</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation type="unfinished">Bạn đã rời nhóm</translation>
+        <translation type="unfinished">Bạn đã rời hội nghị</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2574,7 +2554,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation>Xóa tất cả lịch sử trò chuyện với bạn bè nếu được đặt</translation>
+        <translation>Xóa tất cả lịch sử trò chuyện với người bạn này nếu được chọn</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
@@ -2599,7 +2579,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
-        <translation>Dấu cách</translation>
+        <translation>Phím cách</translation>
     </message>
     <message>
         <source>Escape</source>
@@ -2652,19 +2632,19 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>Phải nhập đúng kí tự viết hoa hay viết thường</translation>
+        <translation>Phân biệt chữ hoa/thường</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation>Toàn bộ chữ</translation>
+        <translation>Chỉ khớp toàn bộ từ</translation>
     </message>
     <message>
         <source>Use regular expressions</source>
-        <translation>Sử dụng biểu thức chính quy (Regrex)</translation>
+        <translation>Sử dụng biểu thức chính quy</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
-        <translation>Chọn Hộp thoại ngày</translation>
+        <translation>Hộp thoại chọn ngày</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2718,7 +2698,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     <name>Settings</name>
     <message>
         <source>Circle #%1</source>
-        <translation>Kết nối #%1</translation>
+        <translation>Vòng kết nối #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
@@ -2741,7 +2721,7 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
     </message>
     <message>
         <source>User ID:</source>
-        <translation>ID Người dùng:</translation>
+        <translation>ID người dùng:</translation>
     </message>
     <message>
         <source>Friend request message:</source>
@@ -2801,7 +2781,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Tùy chọn kiểu văn bản mới có thể không tải cho đến khi qTox khởi động lại.</translation>
+        <translation type="unfinished">Kiểu văn bản mới có thể chưa áp dụng cho lịch sử trò chuyện cho đến khi qTox khởi động lại.
+Tin nhắn mới sẽ được áp dụng ngay.
+
+Văn bản thuần túy:
+    Không định dạng tin nhắn.
+    Ví dụ: &quot;**văn bản**&quot; sẽ hiển thị là &quot;**văn bản**&quot;, không in đậm.
+Hiển thị các ký tự định dạng:
+    Định dạng và hiển thị các ký tự.
+    Ví dụ: &quot;**văn bản**&quot; sẽ hiển thị là &quot;**văn bản**&quot;, in đậm.
+Không hiển thị các ký tự định dạng:
+    Định dạng nhưng không hiển thị các ký tự.
+    Ví dụ: &quot;**văn bản**&quot; sẽ hiển thị là &quot;văn bản&quot;, in đậm.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2842,12 +2833,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Đặt các trò chuyện nhóm ở đầu danh sách bạn bè</translation>
+        <translation type="unfinished">Đặt các hội nghị ở đầu danh sách bạn bè</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Danh sách liên hệ của bạn sẽ được hiển thị ở chế độ nhỏ gọn.</translation>
+        <translation type="unfinished">Danh sách liên hệ của bạn sẽ được hiển thị ở chế độ gọn (ảnh đại diện nhỏ, dạng bảng).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2904,7 +2895,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Hiển thị thông báo khi bạn nhận được tin nhắn mới và cửa sổ không được chọn.</translation>
+        <translation type="unfinished">Hiển thị thông báo khi bạn nhận được tin nhắn mới, cuộc gọi hoặc lời mời kết bạn và cửa sổ không được chọn.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2912,7 +2903,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Trò chuyện nhóm chỉ thông báo khi được nhắc đến</translation>
+        <translation type="unfinished">Hội nghị chỉ thông báo khi được nhắc đến</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2932,17 +2923,17 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Sử dụng biệt hiệu màu trong các cuộc trò chuyện nhóm</translation>
+        <translation type="unfinished">Dùng biệt danh có màu trong hội nghị</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Chỉ thông báo về tin nhắn mới trong cuộc trò chuyện nhóm khi được nhắc đến.</translation>
+        <translation type="unfinished">Chỉ thông báo tin nhắn mới trong hội nghị khi biệt danh của bạn được nhắc đến.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>Nếu được chọn, các cuộc trò chuyện nhóm sẽ được đặt ở đầu danh sách bạn bè, nếu không, chúng sẽ được đặt bên dưới bạn bè trực tuyến.</translation>
+        <translation>Nếu được chọn, các hội nghị sẽ được đặt ở đầu danh sách bạn bè, nếu không, chúng sẽ được đặt bên dưới bạn bè trực tuyến.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -2952,12 +2943,12 @@ Hide formatting characters:
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
-        <translation>Gói biểu tượng:</translation>
+        <translation>Gói biểu tượng cảm xúc:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nếu bị tắt, âm thanh thông báo sẽ tắt khi trạng thái Bận (nhưng vẫn hiển thị thông báo)</translation>
+        <translation type="unfinished">Nếu tắt, âm thanh thông báo sẽ bị tắt khi ở trạng thái Bận (nhưng vẫn hiển thị thông báo)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
@@ -2970,7 +2961,7 @@ Hide formatting characters:
         <translation type="unfinished">Chỉ hiển thị &quot;tin nhắn mới&quot; mà không hiển thị thông tin có thể bí mật trong thông báo trên màn hình.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Chia danh sách bạn bè và cửa sổ trò chuyện thành các cửa sổ có thể di chuyển riêng biệt.</translation>
     </message>
@@ -3002,12 +2993,12 @@ Hide formatting characters:
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nếu bị tắt, hãy sử dụng thông báo khay hệ thống cơ bản. Nếu không, hãy thử sử dụng phần phụ trợ thông báo của môi trường máy tính để bàn của bạn. Tắt tính năng này nếu bạn quan sát thấy sự cố với thông báo trên màn hình.</translation>
+        <translation type="unfinished">Nếu tắt, qTox sẽ dùng thông báo cơ bản ở khay hệ thống. Nếu bật, qTox sẽ thử dùng hệ thống thông báo của môi trường desktop. Hãy tắt tùy chọn này nếu bạn gặp sự cố với thông báo trên màn hình.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sử dụng phụ trợ thông báo dành riêng cho hệ thống nếu có</translation>
+        <translation type="unfinished">Dùng hệ thống thông báo riêng của hệ điều hành nếu có</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
@@ -3022,8 +3013,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Số tin nhắn tối đa (mỗi cuộc hội thoại) được tải từ lịch sử trò chuyện.
 Giảm điều này để cải thiện hiệu suất. Con số quá thấp ở đây có thể khiến
@@ -3032,12 +3023,11 @@ thanh cuộn biến mất.</translation>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kích thước xem nhật ký trò
-chuyện tối đa</translation>
+        <translation type="unfinished">Kích thước tối đa khi xem nhật ký trò chuyện</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Số lượng tin nhắn cần tải từ lịch sử trò chuyện khi cuộn. Con số quá thấp
 ở đây có thể khiến thanh cuộn biến mất.</translation>
@@ -3045,20 +3035,17 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kích thước đoạn
-nhật ký trò chuyện</translation>
+        <translation type="unfinished">Kích thước đoạn nhật ký trò chuyện</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nhật ký
-trò
-chuyện:</translation>
+        <translation type="unfinished">Nhật ký trò chuyện:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ẩn hậu tố sau ký hiệu null</translation>
+        <translation type="unfinished">Ẩn văn bản sau ký tự NUL</translation>
     </message>
 </context>
 <context>
@@ -3109,19 +3096,19 @@ chuyện:</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Tạo nhóm mới...</translation>
+        <translation type="unfinished">Tạo hội nghị mới...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
-        <translation>Thêm kết nối...</translation>
+        <translation>Tạo vòng kết nối mới...</translation>
     </message>
     <message>
         <source>By Name</source>
-        <translation>Với Tên</translation>
+        <translation>Theo tên</translation>
     </message>
     <message>
         <source>By Activity</source>
-        <translation>Với Hoạt động</translation>
+        <translation>Theo hoạt động</translation>
     </message>
     <message>
         <source>All</source>
@@ -3142,7 +3129,7 @@ chuyện:</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Nhóm</translation>
+        <translation type="unfinished">Hội nghị</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3161,7 +3148,7 @@ chuyện:</translation>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Lời mời vào nhóm</translation>
+        <translation>Lời mời hội nghị</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3176,7 +3163,7 @@ chuyện:</translation>
     <message>
         <source>My profile</source>
         <comment>title of the window</comment>
-        <translation>Thông tin của tôi</translation>
+        <translation>Hồ sơ của tôi</translation>
     </message>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
@@ -3206,7 +3193,7 @@ chuyện:</translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>Thoát</translation>
     </message>
     <message>
@@ -3215,7 +3202,7 @@ chuyện:</translation>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>Chỉnh sửa thông tin</translation>
+        <translation>Chỉnh sửa hồ sơ</translation>
     </message>
     <message>
         <source>Logout</source>

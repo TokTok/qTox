@@ -21,15 +21,15 @@
     </message>
     <message>
         <source>Screen %1</source>
-        <translation>Pamja %1</translation>
+        <translation>Ekrani %1</translation>
     </message>
     <message>
         <source>Audio Settings</source>
-        <translation>Vetitë e Audio-s</translation>
+        <translation>Cilësimet e audios</translation>
     </message>
     <message>
         <source>Gain</source>
-        <translation>Fito</translation>
+        <translation>Përforcimi</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -44,7 +44,7 @@
     <message>
         <source>Volume</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vëllimi</translation>
+        <translation type="unfinished">Volumi</translation>
     </message>
     <message>
         <source>Video Settings</source>
@@ -55,19 +55,6 @@
         <source>Video device</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Pajisja video</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendosni rezolucionin e kamerës suaj.
-Sa më të larta të jenë vlerat, aq më mirë cilësia e videos mund të kenë miqtë tuaj.
-Megjithatë, vini re se me cilësi më të mirë të videos nevojitet një lidhje më e mirë në internet.
-Ndonjëherë lidhja juaj mund të mos jetë mjaft e mirë për të trajtuar cilësi më të lartë të videos,
-gjë që mund të çojë në probleme me video thirrjet.</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -82,7 +69,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Test Sound</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Test Tingulli</translation>
+        <translation type="unfinished">Provo tingullin</translation>
     </message>
     <message>
         <source>Audio quality</source>
@@ -90,24 +77,24 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Cilësia e audios</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lartë (64 kBps)</translation>
+        <translation type="unfinished">E lartë (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">E mesme (32 kBps)</translation>
+        <translation type="unfinished">E mesme (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">E ulët (16 kBps)</translation>
+        <translation type="unfinished">E ulët (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shumë e ulët (8 kBps)</translation>
+        <translation type="unfinished">Shumë e ulët (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -122,7 +109,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Transmitted audio quality. Lower this setting if your bandwidth is not high enough or if you want to reduce bandwidth usage.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Cilësia e transmetuar audio. Uleni këtë cilësim nëse gjerësia e brezit tuaj nuk është mjaft e lartë ose nëse dëshironi të reduktoni përdorimin e gjerësisë së brezit.</translation>
+        <translation type="unfinished">Cilësia e audios së transmetuar. Uleni këtë cilësim nëse gjerësia e brezit nuk mjafton ose nëse doni të përdorni më pak brez.</translation>
     </message>
     <message>
         <source>Set resolution of your camera.
@@ -131,11 +118,11 @@ Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendosni rezolucionin e kamerës suaj.
-Sa më të larta të jenë vlerat, aq më mirë cilësia e videos mund të kenë miqtë tuaj.
-Vini re se me cilësi më të mirë të videos, ju përdorni më shumë gjerësi bande.
-Ndonjëherë lidhja juaj mund të mos jetë mjaft e mirë për të trajtuar cilësi më të lartë të videos,
-gjë që mund të çojë në probleme me video thirrjet.</translation>
+        <translation type="unfinished">Caktoni rezolucionin e kamerës.
+Sa më të larta vlerat, aq më e mirë cilësia e videos që mund të marrin miqtë tuaj.
+Kini parasysh se me cilësi më të mirë videoje përdorni më shumë gjerësi brezi.
+Ndonjëherë lidhja juaj mund të mos jetë mjaft e mirë për cilësi më të lartë videoje,
+gjë që mund të shkaktojë probleme me thirrjet video.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -145,7 +132,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni rrëshqitësin për të vendosur fitimin e pajisjes suaj hyrëse që varion nga %1dB në %2dB.</translation>
+        <translation type="unfinished">Përdorni rrëshqitësin për të caktuar përforcimin e pajisjes hyrëse nga %1dB deri në %2dB.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -173,7 +160,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kryeni hash: %1</translation>
+        <translation type="unfinished">Hash-i i commit-it: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -186,11 +173,11 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Versioni Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Një listë e të gjitha çështjeve të njohura mund të gjendet në %1 tonë në Github. Nëse zbuloni një gabim ose dobësi sigurie brenda qTox, ju lutemi raportoni atë sipas udhëzimeve në artikullin tonë wiki %2.</translation>
+        <translation type="unfinished">Lista e të gjitha problemeve të njohura gjendet te %1 ynë në GitHub. Nëse zbuloni një gabim ose cenueshmëri sigurie në qTox, ju lutemi raportojeni sipas udhëzimeve në artikullin tonë wiki %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -198,16 +185,16 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Kliko këtu për të raportuar një gabim.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shihni një listë të plotë të %1 në Github</translation>
+        <translation type="unfinished">Shihni një listë të plotë të %1 në GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">gjurmues i gabimeve</translation>
+        <translation type="unfinished">gjurmuesi i gabimeve</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -224,7 +211,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ky version i qTox po mirëmbahet nga ekipi i TokTok pas arkivimit të projektit origjinal qTox.</translation>
+        <translation type="unfinished">Ky version i qTox mirëmbahet nga ekipi TokTok pas arkivimit të projektit origjinal qTox.</translation>
     </message>
 </context>
 <context>
@@ -242,7 +229,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Manual</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Manual</translation>
+        <translation type="unfinished">Me dorë</translation>
     </message>
     <message>
         <source>Audio</source>
@@ -260,7 +247,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Prano automatikisht ftesat e konferencës nga ky kontakt nëse është caktuar.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Hiq historikun (operacioni nuk mund të zhbëhet!)</translation>
     </message>
@@ -277,17 +264,17 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>History removed</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Historia u hoq</translation>
+        <translation type="unfinished">Historiku u hoq</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ky është çelësi publik i mikut tuaj, përdorni atë për të verifikuar identitetin e tij nëpërmjet një kanali tjetër. Nuk mund t&apos;ua dërgosh këtë njerëzve të tjerë që të mund ta shtojnë këtë kontakt.</translation>
+        <translation type="unfinished">Ky është çelësi publik i mikut tuaj; përdoreni për të verifikuar identitetin e tij përmes një kanali tjetër. Të tjerët nuk mund ta përdorin për të shtuar këtë kontakt.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Çelësi publik (jo ToxID):</translation>
+        <translation type="unfinished">Çelësi publik (jo Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -295,14 +282,14 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Konfirmimi</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jeni i sigurt për të hequr %1 historikun e bisedës?</translation>
+        <translation type="unfinished">Jeni të sigurt që doni të hiqni historikun e bisedës me %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Heqja e historisë së bisedës me %1 dështoi!</translation>
+        <translation type="unfinished">Heqja e historikut të bisedës me %1 dështoi!</translation>
     </message>
     <message>
         <source>Auto-accept files</source>
@@ -325,9 +312,9 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Prano automatikisht ftesat e konferencës</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju mund të ruani komentet rreth këtij kontakti këtu.</translation>
+        <translation type="unfinished">Këtu mund të ruani shënime për këtë kontakt.</translation>
     </message>
 </context>
 <context>
@@ -383,7 +370,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Invalid Tox ID format</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Format i pavlefshëm Tox ID</translation>
+        <translation type="unfinished">Format i pavlefshëm i Tox ID</translation>
     </message>
     <message>
         <source>Send friend request</source>
@@ -398,7 +385,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Accept</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pranoje</translation>
+        <translation type="unfinished">Prano</translation>
     </message>
     <message>
         <source>Reject</source>
@@ -411,14 +398,14 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <translation type="unfinished">Nuk mund të shtohej mik</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shkruani ID Tox të mikut tuaj</translation>
+        <translation type="unfinished">Shkruani Tox ID-në e mikut tuaj</translation>
     </message>
     <message>
         <source>Friend request message</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mesazhi i kërkesës për shoqëri</translation>
+        <translation type="unfinished">Mesazhi i kërkesës për miqësi</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
@@ -461,7 +448,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ID Tox</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -473,7 +460,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <source>Open</source>
         <extracomment>Button to choose a file with a list of contacts to import</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hapur</translation>
+        <translation type="unfinished">Hap</translation>
     </message>
     <message>
         <source>Send friend requests</source>
@@ -484,18 +471,18 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 këtu! Të më toksojë ndoshta?</translation>
+        <translation type="unfinished">%1 këtu! Flasim në Tox?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Importoni një listë kontaktesh, një ID Tox për rresht</translation>
+        <translation type="unfinished">Importo një listë kontaktesh, një Tox ID për rresht</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Gati për të importuar %n kontakt, klikoni Dërgo për ta konfirmuar</numerusform>
+            <numerusform>Gati për të importuar %n kontakte, klikoni Dërgo për ta konfirmuar</numerusform>
         </translation>
     </message>
     <message>
@@ -506,19 +493,19 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox ID, 76 karaktere heksadecimal</translation>
+        <translation type="unfinished">Tox ID, 76 karaktere heksadecimale</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ID Tox është e pavlefshme</translation>
+        <translation type="unfinished">%1 nuk është Tox ID i vlefshëm</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">76 karaktere heksadecimal</translation>
+        <translation type="unfinished">76 karaktere heksadecimale</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -540,7 +527,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">jo</translation>
+        <translation type="unfinished">mos</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -555,17 +542,17 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Të gjitha cilësimet do të rivendosen në parazgjedhje. je i sigurt?</translation>
+        <translation type="unfinished">Të gjitha cilësimet do të rivendosen në parazgjedhje. Jeni të sigurt?</translation>
     </message>
     <message>
         <source>Yes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">po</translation>
+        <translation type="unfinished">Po</translation>
     </message>
     <message>
         <source>No</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nr</translation>
+        <translation type="unfinished">Jo</translation>
     </message>
     <message>
         <source>Logs (*.log)</source>
@@ -575,7 +562,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nëse nuk e dini %1 se çfarë po bëni, ju lutemi bëni %2 të ndryshoni ndonjë gjë këtu. Ndryshimet e bëra këtu mund të çojnë në probleme me qTox, madje edhe në humbje të të dhënave tuaja, p.sh. historia.%3</translation>
+        <translation type="unfinished">Nëse nuk e dini %1 se çfarë po bëni, ju lutemi %2 ndryshoni asgjë këtu. Ndryshimet këtu mund të shkaktojnë probleme me qTox, madje edhe humbje të të dhënave tuaja, p.sh. të historikut.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -590,26 +577,26 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Adresa e pavlefshme e përfaqësuesit</translation>
+        <translation type="unfinished">Adresë e pavlefshme e proxy-t</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju lutemi shkruani një adresë IP të vlefshme ose emrin e hostit për cilësimin e përfaqësuesit.</translation>
+        <translation type="unfinished">Shkruani një adresë IP ose emër hosti të vlefshëm për proxy-t.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ruani cilësimet në direktorinë e punës në vend të konf dir</translation>
+        <translation type="unfinished">Ruaj cilësimet në dosjen e punës në vend të dosjes së zakonshme të konfigurimit</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Bëni Tox portativ</translation>
+        <translation type="unfinished">Bëje Tox portativ</translation>
     </message>
     <message>
         <source>Reset to default settings</source>
@@ -623,7 +610,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     </message>
     <message>
         <source>Write debug log to file</source>
-        <translation type="unfinished">Shkruaj regjistrin e diagnostikimit në skedar</translation>
+        <translation type="unfinished">Shkruaj regjistrin e korrigjimit në skedar</translation>
     </message>
     <message>
         <source>Toxcore log level:</source>
@@ -660,7 +647,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Proxy type:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lloji i përfaqësuesit:</translation>
+        <translation type="unfinished">Lloji i proxy-t:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -708,7 +695,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Çaktivizimi i kësaj lejon, p.sh., Tox mbi Tor. Megjithatë, ai shton ngarkesë në rrjetin Tox, kështu që zgjidhni vetëm kur është e nevojshme.</translation>
+        <translation type="unfinished">Çaktivizimi i kësaj lejon, p.sh., Tox përmes Tor. Megjithatë kjo e ngarkon më shumë rrjetin Tox, prandaj hiqeni shenjën vetëm kur është e nevojshme.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -726,7 +713,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Starts new instance and loads specified profile.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fillon shembullin e ri dhe ngarkon profilin e specifikuar.</translation>
+        <translation type="unfinished">Nis një instancë të re dhe ngarkon profilin e specifikuar.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -736,31 +723,23 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fillon shembullin e ri dhe hap ekranin e hyrjes.</translation>
+        <translation type="unfinished">Nis një instancë të re dhe hap ekranin e hyrjes.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendos IPv6 &lt;on&gt;/&lt;off&gt;. Parazgjedhja është AKTIV.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Aktivizon ose çaktivizon IPv6: %1. Parazgjedhja: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendos UDP &lt;on&gt;/&lt;off&gt;. Parazgjedhja është AKTIV.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Aktivizon ose çaktivizon UDP: %1. Parazgjedhja: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendos zbulimin LAN &lt;on&gt;/&lt;off&gt;. UDP e fikur kapërcen. Parazgjedhja është AKTIV.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Aktivizon ose çaktivizon zbulimin në LAN: %1. Nuk ka efekt nëse UDP është i çaktivizuar. Parazgjedhja: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendos cilësimet e përfaqësuesit. Parazgjedhja është ASNJË.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Cakton proxy-n. Parazgjedhja: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -780,13 +759,13 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fillon në modalitetin portativ; ngarkon profilin nga kjo direktori.</translation>
+        <translation type="unfinished">Niset në modalitetin portativ; ngarkon profilin nga kjo dosje.</translation>
     </message>
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rruga</translation>
+        <translation type="unfinished">shtegu</translation>
     </message>
 </context>
 <context>
@@ -825,7 +804,7 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kohëzgjatja e thirrjes:</translation>
+        <translation type="unfinished">Kohëzgjatja e thirrjes: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -840,14 +819,14 @@ gjë që mund të çojë në probleme me video thirrjet.</translation>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emri i skedarit përmbante karaktere të paligjshme</translation>
+        <translation type="unfinished">Emri i skedarit përmbante karaktere të palejuara</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Karakteret e paligjshme janë ndryshuar në _
-kështu që mund ta ruani skedarin në Windows.</translation>
+        <translation type="unfinished">Karakteret e palejuara u zëvendësuan me _
+që ta ruani dot skedarin në Windows.</translation>
     </message>
 </context>
 <context>
@@ -855,12 +834,12 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Can&apos;t start audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonata audio nuk mund të niset</translation>
+        <translation type="unfinished">Thirrja audio nuk mund të niset</translation>
     </message>
     <message>
         <source>Start audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filloni thirrjen audio</translation>
+        <translation type="unfinished">Nis thirrje audio</translation>
     </message>
     <message>
         <source>End audio call</source>
@@ -875,57 +854,57 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Accept audio call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prano thirrje audio</translation>
+        <translation type="unfinished">Prano thirrjen audio</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonata me video nuk mund të fillojë</translation>
+        <translation type="unfinished">Thirrja video nuk mund të niset</translation>
     </message>
     <message>
         <source>Start video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nis një videotelefonatë</translation>
+        <translation type="unfinished">Nis thirrje video</translation>
     </message>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përfundo telefonatën me video</translation>
+        <translation type="unfinished">Përfundo thirrjen video</translation>
     </message>
     <message>
         <source>Cancel video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Anulo telefonatën me video</translation>
+        <translation type="unfinished">Anulo thirrjen video</translation>
     </message>
     <message>
         <source>Accept video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prano thirrje video</translation>
+        <translation type="unfinished">Prano thirrjen video</translation>
     </message>
     <message>
         <source>Sound can be disabled only during a call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tingulli mund të çaktivizohet vetëm gjatë një telefonate</translation>
+        <translation type="unfinished">Tingulli mund të çaktivizohet vetëm gjatë një thirrjeje</translation>
     </message>
     <message>
         <source>Unmute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hiq zërin e telefonatës</translation>
+        <translation type="unfinished">Aktivizo zërin e thirrjes</translation>
     </message>
     <message>
         <source>Mute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Çaktivizo thirrjen</translation>
+        <translation type="unfinished">Çaktivizo zërin e thirrjes</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mikrofoni mund të çaktivizohet vetëm gjatë një telefonate</translation>
+        <translation type="unfinished">Mikrofoni mund të çaktivizohet vetëm gjatë një thirrjeje</translation>
     </message>
     <message>
         <source>Unmute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hiq zërin e mikrofonit</translation>
+        <translation type="unfinished">Aktivizo mikrofonin</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1001,7 +980,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Ju nuk keni leje për të shkruar në atë vend. Zgjidhni një tjetër ose anuloni dialogun e ruajtjes.</translation>
+        <translation type="unfinished">Nuk keni leje për të shkruar në atë vend. Zgjidhni një tjetër ose anuloni ruajtjen.</translation>
     </message>
 </context>
 <context>
@@ -1010,24 +989,24 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">memec</translation>
+        <translation type="unfinished">hiq zërin</translation>
     </message>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">anuloj zërin</translation>
+        <translation type="unfinished">aktivizo zërin</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kopjoni ID-në e kolegëve</translation>
+        <translation type="unfinished">kopjo ID-në e pjesëmarrësit</translation>
     </message>
 </context>
 <context>
@@ -1053,7 +1032,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ftuar nga %1 në %2 në %3.</translation>
+        <translation type="unfinished">Ftuar nga %1 më %2 në orën %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1063,7 +1042,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rënia</translation>
+        <translation type="unfinished">Refuzo</translation>
     </message>
 </context>
 <context>
@@ -1087,14 +1066,14 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hiq dorë nga konferenca</translation>
+        <translation type="unfinished">Largohu nga konferenca</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
+            <numerusform>%n përdorues në bisedë</numerusform>
         </translation>
     </message>
     <message>
@@ -1124,7 +1103,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ID e pavlefshme Tox</translation>
+        <translation type="unfinished">Tox ID i pavlefshëm</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
@@ -1142,7 +1121,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Friend is already added</source>
         <comment>Error while sending friend request</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shoku është shtuar tashmë</translation>
+        <translation type="unfinished">Miku është shtuar tashmë</translation>
     </message>
 </context>
 <context>
@@ -1199,7 +1178,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Pause transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ndalo transferimin</translation>
+        <translation type="unfinished">Pezullo transferimin</translation>
     </message>
     <message>
         <source>Paused</source>
@@ -1220,7 +1199,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Resume transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rifilloni transferimin</translation>
+        <translation type="unfinished">Rifillo transferimin</translation>
     </message>
     <message>
         <source>Accept transfer</source>
@@ -1234,10 +1213,10 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <translation type="unfinished">Ruani një skedar</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telekomanda u ndërpre</translation>
+        <translation type="unfinished">U pezullua nga pala tjetër</translation>
     </message>
 </context>
 <context>
@@ -1284,12 +1263,12 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Never</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kurrë</translation>
+        <translation type="unfinished">Kurrë</translation>
     </message>
     <message>
         <source>Older than 6 months</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Më i vjetër se 6 muaj</translation>
+        <translation type="unfinished">Më të vjetra se 6 muaj</translation>
     </message>
 </context>
 <context>
@@ -1298,7 +1277,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ftesë në konferencë</translation>
+        <translation type="unfinished">Fto në konferencë</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1386,7 +1365,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <source>Remove friend</source>
         <comment>Menu to remove the friend from the friend list</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hiq shokun</translation>
+        <translation type="unfinished">Hiq mikun</translation>
     </message>
     <message>
         <source>Blocked</source>
@@ -1399,7 +1378,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gjeneral</translation>
+        <translation type="unfinished">Të përgjithshme</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1432,39 +1411,39 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Show system tray icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shfaq ikonën e tabakasë së sistemit</translation>
+        <translation type="unfinished">Shfaq ikonën në shiritin e sistemit</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Aktivizo ikonën e tabakasë së dritës.</translation>
+        <translation type="unfinished">Përdor ikonë të çelët në shiritin e sistemit.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikona e dritës</translation>
+        <translation type="unfinished">Ikonë e çelët</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox do të fillojë të minimizohet në tabaka.</translation>
+        <translation type="unfinished">qTox do të niset i minimizuar në shiritin e sistemit.</translation>
     </message>
     <message>
         <source>Start in tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filloni në tabaka</translation>
+        <translation type="unfinished">Nis në shiritin e sistemit</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Afër tepsisë</translation>
+        <translation type="unfinished">Mbyll në shiritin e sistemit</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Minimizojeni në tabaka</translation>
+        <translation type="unfinished">Minimizo në shiritin e sistemit</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1487,9 +1466,9 @@ kështu që mund ta ruani skedarin në Windows.</translation>
         <translation type="unfinished">Vendoseni në 0 për ta çaktivizuar</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Statusi juaj është ndryshuar në Larg pas një periudhe të caktuar pasiviteti.</translation>
+        <translation type="unfinished">Statusi juaj ndryshohet në Larg pas një periudhe të caktuar pasiviteti.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
@@ -1504,7 +1483,7 @@ kështu që mund ta ruani skedarin në Windows.</translation>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filloni qTox në fillimin e sistemit operativ (profili aktual).</translation>
+        <translation type="unfinished">Nis qTox kur niset sistemi operativ (profili aktual).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1536,22 +1515,22 @@ kështu që mund ta ruani skedarin në Windows.</translation>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pasi të shtypni minimize (_) qTox do të minimizohet në tabaka,
-në vend të shiritit të detyrave të sistemit.</translation>
+        <translation type="unfinished">Pasi të shtypni minimizo (_), qTox do të minimizohet në shiritin e sistemit
+në vend të shiritit të detyrave.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pas shtypjes së mbylljes (X) qTox do të mbyllet në tabaka,
+        <translation type="unfinished">Pasi të shtypni mbyll (X), qTox do të minimizohet në shiritin e sistemit
 në vend që të mbyllet plotësisht.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju mund ta vendosni këtë në bazë të miqve duke klikuar me të djathtën tek miqtë individualë.</translation>
+        <translation type="unfinished">Këtë mund ta caktoni veçmas për çdo mik, duke klikuar me të djathtën mbi të.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
@@ -1561,12 +1540,12 @@ në vend që të mbyllet plotësisht.</translation>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Klikoni këtu nëse gjeni gabime në një përkthim dhe dëshironi të ndihmoni në rregullimin e tij.</translation>
+        <translation type="unfinished">Klikoni këtu nëse gjeni gabime në përkthim dhe doni të ndihmoni në ndreqjen e tyre.</translation>
     </message>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ndihmoni përkthimin</translation>
+        <translation type="unfinished">Ndihmo në përkthim</translation>
     </message>
     <message>
         <source> min</source>
@@ -1584,7 +1563,7 @@ në vend që të mbyllet plotësisht.</translation>
     <message>
         <source>Smileys</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Buzëqeshje</translation>
+        <translation type="unfinished">Emotikone</translation>
     </message>
     <message>
         <source>Send file(s)</source>
@@ -1657,12 +1636,12 @@ në vend që të mbyllet plotësisht.</translation>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ID Tox</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ID juaj Tox (kliko për të kopjuar)</translation>
+        <translation type="unfinished">Tox ID-ja juaj (kliko për ta kopjuar)</translation>
     </message>
     <message>
         <source>Profile</source>
@@ -1679,13 +1658,13 @@ në vend që të mbyllet plotësisht.</translation>
         <source>Go back to the login screen</source>
         <comment>tooltip for logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kthehuni në ekranin e hyrjes</translation>
+        <translation type="unfinished">Kthehu te ekrani i hyrjes</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dilni</translation>
+        <translation type="unfinished">Dil</translation>
     </message>
     <message>
         <source>Remove password</source>
@@ -1700,7 +1679,7 @@ në vend që të mbyllet plotësisht.</translation>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ky kod QR përmban ID-në tuaj Tox. Këtë mund ta ndani edhe me miqtë tuaj.</translation>
+        <translation type="unfinished">Ky kod QR përmban Tox ID-në tuaj. Mund ta ndani edhe me miqtë tuaj.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1753,7 +1732,7 @@ Profili nuk përmban historikun tuaj.</translation>
     <message>
         <source>Name input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hyrja e emrit</translation>
+        <translation type="unfinished">Fusha e emrit</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
@@ -1763,12 +1742,12 @@ Profili nuk përmban historikun tuaj.</translation>
     <message>
         <source>Status message input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hyrja e mesazhit të statusit</translation>
+        <translation type="unfinished">Fusha e mesazhit të statusit</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ID juaj Tox</translation>
+        <translation type="unfinished">Tox ID-ja juaj</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
@@ -1825,8 +1804,8 @@ Profili nuk përmban historikun tuaj.</translation>
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ky ID lejon përdoruesit e tjerë të Tox të shtojnë dhe t&apos;ju kontaktojnë.
-Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
+        <translation type="unfinished">Kjo ID u lejon përdoruesve të tjerë të Tox t&apos;ju shtojnë dhe t&apos;ju kontaktojnë.
+Ndajeni me miqtë tuaj për të filluar bisedën.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1838,12 +1817,12 @@ Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dialogu i ngarkimit të historisë</translation>
+        <translation type="unfinished">Dialogu i ngarkimit të historikut</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Historia e ngarkimit nga:</translation>
+        <translation type="unfinished">Ngarko historikun nga:</translation>
     </message>
 </context>
 <context>
@@ -1866,7 +1845,7 @@ Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
     <message>
         <source>Password strength: %p%</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fuqia e fjalëkalimit: %p%</translation>
+        <translation type="unfinished">Forca e fjalëkalimit: %p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
@@ -1886,7 +1865,7 @@ Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
     <message>
         <source>Load</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ngarkoni</translation>
+        <translation type="unfinished">Ngarko</translation>
     </message>
     <message>
         <source>Load Profile</source>
@@ -1928,9 +1907,9 @@ Ndani atë me miqtë tuaj për të filluar bisedën.</translation>
 
 You may want to create one.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nuk ka asnjë profil të zgjedhur.
+        <translation type="unfinished">Nuk është zgjedhur asnjë profil.
 
-Ju mund të dëshironi të krijoni një.</translation>
+Mund të krijoni një të ri.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
@@ -1950,7 +1929,7 @@ Ju mund të dëshironi të krijoni një.</translation>
     <message>
         <source>Import</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Importi</translation>
+        <translation type="unfinished">Importo</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1960,7 +1939,7 @@ Ju mund të dëshironi të krijoni një.</translation>
     <message>
         <source>Password input field, you can leave it empty (no password), or type at least 6 characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fushën e futjes së fjalëkalimit, mund ta lini bosh (pa fjalëkalim), ose të shkruani të paktën 6 karaktere</translation>
+        <translation type="unfinished">Fusha e fjalëkalimit; mund ta lini bosh (pa fjalëkalim) ose të shkruani të paktën 6 karaktere</translation>
     </message>
     <message>
         <source>Password confirmation field</source>
@@ -1970,7 +1949,7 @@ Ju mund të dëshironi të krijoni një.</translation>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Krijo një buton të ri të profilit</translation>
+        <translation type="unfinished">Butoni për krijimin e profilit të ri</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1985,12 +1964,12 @@ Ju mund të dëshironi të krijoni një.</translation>
     <message>
         <source>Password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Futja e fjalëkalimit</translation>
+        <translation type="unfinished">Fusha e fjalëkalimit</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ngarko automatikisht kutinë e kontrollit</translation>
+        <translation type="unfinished">Kutia e ngarkimit automatik</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -2000,40 +1979,40 @@ Ju mund të dëshironi të krijoni një.</translation>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ngarkoni butonin e profilit të zgjedhur</translation>
+        <translation type="unfinished">Butoni për ngarkimin e profilit të zgjedhur</translation>
     </message>
     <message>
         <source>New profile creation page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Faqja e re e krijimit të profilit</translation>
+        <translation type="unfinished">Faqja e krijimit të profilit të ri</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Faqja ekzistuese e profilit po ngarkohet</translation>
+        <translation type="unfinished">Faqja e ngarkimit të profilit ekzistues</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
 Please make sure to enter the same password twice.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Fjalëkalimet që keni futur janë të ndryshme.
-Sigurohuni që të vendosni dy herë të njëjtin fjalëkalim.</translation>
+Sigurohuni që të futni të njëjtin fjalëkalim dy herë.</translation>
     </message>
     <message>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation type="unfinished">Ky fjalëkalim opsional përdoret për të enkriptuar të dhënat e mesazheve lokale dhe profilin tuaj.
-Nëse e humbisni këtë fjalëkalim, nuk ka asnjë mënyrë për ta rikuperuar atë.
+        <translation type="unfinished">Ky fjalëkalim opsional përdoret për të enkriptuar të dhënat lokale të mesazheve dhe profilin tuaj.
+Nëse e humbni këtë fjalëkalim, nuk ka mënyrë për ta rikuperuar.
 Shtypni Shift+F1 për më shumë informacion.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Fjalëkalimi që futni këtu është opsional dhe kodon të dhënat e mesazhit dhe çelësin tuaj sekret Tox. Nuk i kodon skedarët e marrë. Të dhënat e profilit tuaj nuk dërgohen kurrë në asnjë server. Ky nuk është një hyrje në distancë, është vetëm lokal në kompjuterin tuaj. Zhvilluesit e qTox nuk do të jenë në gjendje të rikuperojnë fjalëkalimin tuaj nëse humbet.</translation>
+        <translation type="unfinished">Fjalëkalimi që shkruani këtu është opsional dhe enkripton të dhënat e mesazheve dhe çelësin tuaj sekret Tox. Nuk enkripton skedarët e marrë. Të dhënat e profilit tuaj nuk dërgohen kurrë në asnjë server. Ky nuk është hyrje në distancë, vlen vetëm në kompjuterin tuaj. Zhvilluesit e qTox nuk do të mund ta rikuperojnë fjalëkalimin tuaj nëse e humbni.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
-        <translation type="unfinished">Fusha e futjes së fjalëkalimit, të paktën 6 karaktere e gjatë</translation>
+        <translation type="unfinished">Fusha e fjalëkalimit, të paktën 6 karaktere</translation>
     </message>
 </context>
 <context>
@@ -2066,7 +2045,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Close</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mbylle</translation>
+        <translation type="unfinished">Mbyll</translation>
     </message>
     <message>
         <source>Open profile</source>
@@ -2081,7 +2060,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Status message input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hyrja e mesazhit të statusit</translation>
+        <translation type="unfinished">Fusha e mesazhit të statusit</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -2106,7 +2085,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontaktoni hyrjen e kërkimit për miqtë e njohur</translation>
+        <translation type="unfinished">Fusha e kërkimit të miqve të njohur</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2116,7 +2095,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vendosni klasifikimin dhe dukshmërinë e miqve</translation>
+        <translation type="unfinished">Cakto renditjen dhe dukshmërinë e miqve</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
@@ -2131,17 +2110,17 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hapni faqen e menaxhimit të konferencës</translation>
+        <translation type="unfinished">Hap faqen e menaxhimit të konferencave</translation>
     </message>
     <message>
         <source>File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Historia e transferimit të skedarëve</translation>
+        <translation type="unfinished">Historiku i transferimeve të skedarëve</translation>
     </message>
     <message>
         <source>Open File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hapni historinë e transferimeve të skedarëve</translation>
+        <translation type="unfinished">Hap historikun e transferimeve të skedarëve</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -2166,7 +2145,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hap Debugger</translation>
+        <translation type="unfinished">Hap korrigjuesin</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -2182,10 +2161,10 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <translation type="unfinished">Skedar i ekzekutueshëm</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ju keni kërkuar qTox të hapë një skedar të ekzekutueshëm. Skedarët e ekzekutueshëm mund të dëmtojnë kompjuterin tuaj. Jeni të sigurt që dëshironi ta hapni këtë skedar?</translation>
+        <translation type="unfinished">I keni kërkuar qTox të hapë një skedar të ekzekutueshëm. Skedarët e ekzekutueshëm mund të dëmtojnë kompjuterin tuaj. Jeni të sigurt që doni ta hapni këtë skedar?</translation>
     </message>
 </context>
 <context>
@@ -2193,7 +2172,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Video tox</translation>
+        <translation type="unfinished">Video Tox</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2203,12 +2182,12 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Toggle video preview</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ndrysho pamjen paraprake të videos</translation>
+        <translation type="unfinished">Shfaq/fshih pamjen paraprake të videos</translation>
     </message>
     <message>
         <source>Mute audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Çaktivizo audion</translation>
+        <translation type="unfinished">Çaktivizo zërin</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -2218,7 +2197,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>End video call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përfundo telefonatën me video</translation>
+        <translation type="unfinished">Përfundo thirrjen video</translation>
     </message>
     <message>
         <source>Exit full screen</source>
@@ -2260,7 +2239,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sillni të gjithë përpara</translation>
+        <translation type="unfinished">Sill të gjitha përpara</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -2278,8 +2257,8 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Mesazh i palexuar</numerusform>
+            <numerusform>Mesazhe të palexuara</numerusform>
         </translation>
     </message>
 </context>
@@ -2298,7 +2277,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Transferimi i skedarëve në hyrje</translation>
+        <translation type="unfinished">Skedar në ardhje</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
@@ -2309,7 +2288,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ftesa e konferencës u mor</translation>
+        <translation type="unfinished">U mor ftesë për konferencë</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2329,15 +2308,15 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonatë hyrëse</translation>
+        <translation type="unfinished">Thirrje hyrëse</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock u aktivizua</translation>
+        <translation type="unfinished">Caps Lock është aktiv</translation>
     </message>
 </context>
 <context>
@@ -2369,7 +2348,7 @@ Shtypni Shift+F1 për më shumë informacion.</translation>
     <message>
         <source>Send typing notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dërgo njoftime për shtypjen</translation>
+        <translation type="unfinished">Dërgo njoftime kur shkruaj</translation>
     </message>
     <message>
         <source>Keep chat history</source>
@@ -2382,9 +2361,9 @@ If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam është pjesë e ID-së tuaj Tox.
-Nëse jeni duke u postuar me kërkesa për miqësi, duhet të ndryshoni NoSpam-in tuaj.
-Njerëzit nuk do të jenë në gjendje t&apos;ju shtojnë me ID-në tuaj të vjetër, por ju do të mbani miqtë tuaj aktualë.</translation>
+        <translation type="unfinished">NoSpam është pjesë e Tox ID-së suaj.
+Nëse merrni shumë kërkesa të padëshiruara për miqësi, ndryshoni NoSpam.
+Njerëzit nuk do t&apos;ju shtojnë dot me ID-në e vjetër, por do t&apos;i mbani miqtë aktualë.</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -2395,8 +2374,8 @@ Njerëzit nuk do të jenë në gjendje t&apos;ju shtojnë me ID-në tuaj të vje
         <source>NoSpam is a part of your ID that can be changed at will.
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">NoSpam është një pjesë e ID-së tuaj që mund të ndryshohet sipas dëshirës.
-Nëse po dërgohen të padëshiruara me kërkesa për miqësi, ndryshoni NoSpam.</translation>
+        <translation type="unfinished">NoSpam është pjesë e ID-së suaj që mund ta ndryshoni kur të doni.
+Nëse merrni shumë kërkesa të padëshiruara për miqësi, ndryshoni NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
@@ -2408,8 +2387,8 @@ Nëse po dërgohen të padëshiruara me kërkesa për miqësi, ndryshoni NoSpam.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Mbajtja e historisë së bisedave është ende në zhvillim.
-Ndryshimet e formatit të ruajtjes janë të mundshme, të cilat mund të rezultojnë në humbje të të dhënave.</translation>
+        <translation type="unfinished">Ruajtja e historikut të bisedave është ende në zhvillim.
+Formati i ruajtjes mund të ndryshojë, gjë që mund të shkaktojë humbje të dhënash.</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2419,12 +2398,12 @@ Ndryshimet e formatit të ruajtjes janë të mundshme, të cilat mund të rezult
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lista e bllokut të konferencës</translation>
+        <translation type="unfinished">Lista e bllokimeve në konferenca</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filtro mesazhet e konferencës sipas çelësave publikë të anëtarëve të konferencës. Vendos çelësat publikë këtu, një për rresht.</translation>
+        <translation type="unfinished">Filtro mesazhet e konferencave sipas çelësave publikë të anëtarëve. Vendosni çelësat publikë këtu, një për rresht.</translation>
     </message>
 </context>
 <context>
@@ -2432,17 +2411,17 @@ Ndryshimet e formatit të ruajtjes janë të mundshme, të cilat mund të rezult
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dështoi në nxjerrjen e çelësit nga fjalëkalimi, profili nuk do të përdorë fjalëkalimin e ri.</translation>
+        <translation type="unfinished">Nxjerrja e çelësit nga fjalëkalimi dështoi; profili nuk do ta përdorë fjalëkalimin e ri.</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toksimi në qTox</translation>
+        <translation type="unfinished">Bisedoj në qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjalëkalimi i bazës së të dhënave nuk mund të ndryshohej, ai mund të jetë i dëmtuar ose të përdorë fjalëkalimin e vjetër.</translation>
+        <translation type="unfinished">Fjalëkalimi i bazës së të dhënave nuk mund të ndryshohej; baza mund të jetë e dëmtuar ose përdor fjalëkalimin e vjetër.</translation>
     </message>
 </context>
 <context>
@@ -2471,7 +2450,7 @@ Ndryshimet e formatit të ruajtjes janë të mundshme, të cilat mund të rezult
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Profili aktual:</translation>
+        <translation type="unfinished">Profili aktual: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2493,7 +2472,7 @@ Ju lutemi përdorni një imazh tjetër.</translation>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nuk mundi ta riemërtonte profilin në &quot;%1&quot;</translation>
+        <translation type="unfinished">Profili nuk mund të riemërtohej në &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2523,10 +2502,10 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <translation type="unfinished">Ruaj</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ruaj QrCode (*.png)</translation>
+        <translation type="unfinished">Ruaj kodin QR (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2557,11 +2536,6 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <translation type="unfinished">Fjalëkalimi nuk mund të ndryshohej</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shtegu bosh është i padisponueshëm</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Riemërtimi dështoi</translation>
@@ -2582,14 +2556,14 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <translation type="unfinished">Emër bosh</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emri bosh është i padisponueshëm</translation>
+        <translation type="unfinished">Emri nuk mund të jetë bosh</translation>
     </message>
     <message>
         <source>Empty path</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rrugë e zbrazët</translation>
+        <translation type="unfinished">Shteg bosh</translation>
     </message>
     <message>
         <source>Export profile</source>
@@ -2601,7 +2575,7 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <source>Tox save file (*.tox)</source>
         <extracomment>save dialog filter</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skedari i kursimit të toksit (*.tox)</translation>
+        <translation type="unfinished">Skedar profili Tox (*.tox)</translation>
     </message>
     <message>
         <source>The following files could not be deleted:</source>
@@ -2632,19 +2606,19 @@ Ju lutemi përdorni një imazh tjetër.</translation>
         <translation type="unfinished">Skedari që zgjodhe nuk mund të ruhet.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shtegu bosh është i padisponueshëm.</translation>
+        <translation type="unfinished">Shtegu nuk mund të jetë bosh.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fjalëkalimi i bazës së të dhënave nuk mund të ndryshohej, ai mund të jetë i dëmtuar ose të përdorë fjalëkalimin e vjetër.</translation>
+        <translation type="unfinished">Fjalëkalimi i bazës së të dhënave nuk mund të ndryshohej; baza mund të jetë e dëmtuar ose përdor fjalëkalimin e vjetër.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emrat e përdoruesve të dëmshëm nuk mund të kalojnë %1 karaktere.</translation>
+        <translation type="unfinished">Emrat e përdoruesve të Tox nuk mund të kalojnë %1 karaktere.</translation>
     </message>
     <message>
         <source>Delete profile</source>
@@ -2670,10 +2644,10 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ky ID lejon përdoruesit e tjerë të Tox të shtojnë dhe t&apos;ju kontaktojnë.
-Ndani atë me miqtë tuaj për të filluar bisedën.
+        <translation type="unfinished">Kjo ID u lejon përdoruesve të tjerë të Tox t&apos;ju shtojnë dhe t&apos;ju kontaktojnë.
+Ndajeni me miqtë tuaj për të filluar bisedën.
 
-Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
+Kjo ID përfshin kodin NoSpam (blu) dhe shumën e kontrollit (gri).</translation>
     </message>
 </context>
 <context>
@@ -2688,19 +2662,19 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <source>Tox save file (*.tox)</source>
         <comment>import dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skedari i kursimit të toksit (*.tox)</translation>
+        <translation type="unfinished">Skedar profili Tox (*.tox)</translation>
     </message>
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Injorimi i skedarit jo-Tox</translation>
+        <translation type="unfinished">Po shpërfillet skedar jo-Tox</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paralajmërim: Ju keni zgjedhur një skedar që nuk është skedar i ruajtjes së Tox; duke injoruar.</translation>
+        <translation type="unfinished">Paralajmërim: Keni zgjedhur një skedar që nuk është skedar profili Tox; po shpërfillet.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2709,10 +2683,10 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <translation type="unfinished">Profili ekziston tashmë</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Një profil me emrin &quot;%1&quot; ekziston tashmë. Dëshiron ta fshish?</translation>
+        <translation type="unfinished">Një profil me emrin &quot;%1&quot; ekziston tashmë. Dëshiron ta zëvendësosh?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2738,9 +2712,9 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ok</translation>
+        <translation type="unfinished">OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2750,12 +2724,12 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Yes</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">po</translation>
+        <translation type="unfinished">Po</translation>
     </message>
     <message>
         <source>No</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nr</translation>
+        <translation type="unfinished">Jo</translation>
     </message>
     <message>
         <source>LTR</source>
@@ -2768,7 +2742,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Zgjidhni një direktori të pranimit automatik</translation>
+        <translation type="unfinished">Zgjidhni dosjen e pranimit automatik</translation>
     </message>
 </context>
 <context>
@@ -2805,7 +2779,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ulliri</translation>
+        <translation type="unfinished">Ulli</translation>
     </message>
     <message>
         <source>Red</source>
@@ -2815,18 +2789,18 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Violet</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">vjollce</translation>
+        <translation type="unfinished">Vjollcë</translation>
     </message>
     <message>
         <source>Incoming call...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonatë hyrëse...</translation>
+        <translation type="unfinished">Thirrje hyrëse...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 këtu! Të më toksojë ndoshta?</translation>
+        <translation type="unfinished">%1 këtu! Flasim në Tox?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2863,7 +2837,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Dark olive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ulliri i errët</translation>
+        <translation type="unfinished">Ulli i errët</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2903,7 +2877,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <source>blocked</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">bllokuar</translation>
+        <translation type="unfinished">i bllokuar</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -2939,17 +2913,17 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Cleared</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">I pastruar</translation>
+        <translation type="unfinished">U pastrua</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonata me %1 përfundoi papritur. %2</translation>
+        <translation type="unfinished">Thirrja me %1 përfundoi papritur. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonata me %1 përfundoi. %2</translation>
+        <translation type="unfinished">Thirrja me %1 përfundoi. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2960,12 +2934,12 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Calling %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Po thërret %1</translation>
+        <translation type="unfinished">Po thirret %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 duke thirrur</translation>
+        <translation type="unfinished">%1 po thërret</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2975,12 +2949,12 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 doli jashtë linje gjatë përpjekjes së telefonatës</translation>
+        <translation type="unfinished">%1 doli jashtë linje gjatë përpjekjes për thirrje</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telefonata u ndërpre sepse %1 papritur doli jashtë linje. %2</translation>
+        <translation type="unfinished">Thirrja u ndërpre sepse %1 doli papritur jashtë linje. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -3000,7 +2974,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">E thyer</translation>
+        <translation type="unfinished">E ndërprerë</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -3013,9 +2987,9 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <translation type="unfinished">Në pauzë</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Telekomanda u ndërpre</translation>
+        <translation type="unfinished">U pezullua nga pala tjetër</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3025,12 +2999,12 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontaktoni</translation>
+        <translation type="unfinished">Kontakti</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përparim</translation>
+        <translation type="unfinished">Ecuria</translation>
     </message>
     <message>
         <source>Size</source>
@@ -3070,7 +3044,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Versioni i bazës së të dhënave (%1) është më i ri nga sa mbështesim aktualisht (%2). Ju lutemi përditësoni qTox.</translation>
+        <translation type="unfinished">Versioni i bazës së të dhënave (%1) është më i ri se ai që mbështesim aktualisht (%2). Ju lutemi përditësoni qTox.</translation>
     </message>
 </context>
 <context>
@@ -3078,7 +3052,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Remove friend</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hiq shokun</translation>
+        <translation type="unfinished">Hiq mikun</translation>
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
@@ -3107,31 +3081,31 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
         <source>Click and drag to select a region. Press %1 to hide/show qTox window, or %2 to cancel.</source>
         <comment>Help text shown when no region has been selected yet</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Klikoni dhe zvarriteni për të zgjedhur një rajon. Shtypni %1 për të fshehur/shfaqur dritaren qTox ose %2 për ta anuluar.</translation>
+        <translation type="unfinished">Klikoni dhe tërhiqni për të zgjedhur një zonë. Shtypni %1 për të fshehur/shfaqur dritaren e qTox ose %2 për të anuluar.</translation>
     </message>
     <message>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hapësirë</translation>
+        <translation type="unfinished">Hapësira</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ikja</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
         <comment>Help text shown when a region has been selected</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shtypni %1 për të dërguar një pamje ekrani të përzgjedhjes, %2 për të fshehur/shfaqur dritaren qTox ose %3 për ta anuluar.</translation>
+        <translation type="unfinished">Shtypni %1 për të dërguar pamjen e ekranit të zgjedhjes, %2 për të fshehur/shfaqur dritaren e qTox ose %3 për të anuluar.</translation>
     </message>
     <message>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hyni</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3144,7 +3118,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filloni</translation>
+        <translation type="unfinished">Fillo</translation>
     </message>
 </context>
 <context>
@@ -3152,7 +3126,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Start search:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Filloni kërkimin:</translation>
+        <translation type="unfinished">Fillo kërkimin:</translation>
     </message>
     <message>
         <source>from the end</source>
@@ -3177,7 +3151,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ndjeshme ndaj rasteve</translation>
+        <translation type="unfinished">Dallo shkronjat e mëdha</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -3187,12 +3161,12 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni shprehje të rregullta</translation>
+        <translation type="unfinished">Përdor shprehje të rregullta</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgjidhni Dialogun e datës</translation>
+        <translation type="unfinished">Dialogu i zgjedhjes së datës</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3215,7 +3189,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Password strength: %p%</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fuqia e fjalëkalimit: %p%</translation>
+        <translation type="unfinished">Forca e fjalëkalimit: %p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -3230,17 +3204,17 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konfirmo futjen e fjalëkalimit</translation>
+        <translation type="unfinished">Fusha e konfirmimit të fjalëkalimit</translation>
     </message>
     <message>
         <source>Password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Futja e fjalëkalimit</translation>
+        <translation type="unfinished">Fusha e fjalëkalimit</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fusha e futjes së fjalëkalimit, të paktën 6 karaktere e gjatë</translation>
+        <translation type="unfinished">Fusha e fjalëkalimit, të paktën 6 karaktere</translation>
     </message>
     <message>
         <source>The password is too short.</source>
@@ -3267,7 +3241,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nuk mund të përmirësohen cilësimet nga versioni %1 në versionin %2. QTox nuk mund të niset.</translation>
+        <translation type="unfinished">Cilësimet nuk mund të përditësohen nga versioni %1 në versionin %2. qTox nuk mund të niset.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
@@ -3338,7 +3312,7 @@ Ky ID përfshin kodin NoSpam (në blu) dhe kontrollin (në gri).</translation>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Madhësia:</translation>
+        <translation type="unfinished">Madhësia: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3354,18 +3328,18 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Preferenca e re e stilimit të tekstit mund të mos ngarkohet në historikun e bisedës derisa qTox të riniset.
-Do të ndikojë menjëherë në mesazhet e reja.
+        <translation type="unfinished">Stili i ri i tekstit mund të mos zbatohet në historikun e bisedës derisa të riniset qTox.
+Në mesazhet e reja zbatohet menjëherë.
 
 Tekst i thjeshtë:
-    Mos aplikoni asnjë formatim për mesazhet.
-    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;**tekst**&quot;, jo bold.
+    Mesazhet nuk formatohen.
+    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;**tekst**&quot;, jo i theksuar.
 Shfaq karakteret e formatimit:
-    Aplikoni formatimin dhe shfaqni karakteret.
-    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;**tekst**&quot;, bold.
+    Formatimi zbatohet dhe karakteret shfaqen.
+    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;**tekst**&quot;, i theksuar.
 Fshih karakteret e formatimit:
-    Aplikoni formatimin dhe mos shfaqni karaktere.
-    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;tekst&quot;, me shkronja të zeza.</translation>
+    Formatimi zbatohet, por karakteret nuk shfaqen.
+    P.sh. &quot;**tekst**&quot; do të shfaqet si &quot;tekst&quot;, i theksuar.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -3401,7 +3375,7 @@ Fshih karakteret e formatimit:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hapni dritaren e qTox kur merrni një mesazh të ri dhe asnjë dritare nuk është ende e hapur.</translation>
+        <translation type="unfinished">Hap dritaren e qTox kur merrni një mesazh të ri dhe nuk ka asnjë dritare të hapur.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -3422,7 +3396,7 @@ Fshih karakteret e formatimit:
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Lista juaj e kontakteve do të shfaqet në modalitetin kompakt (avatarë të vegjël, pamje tabelare).</translation>
+        <translation type="unfinished">Lista e kontakteve do të shfaqet në modalitetin kompakt (avatarë të vegjël, pamje tabelare).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -3442,17 +3416,17 @@ Fshih karakteret e formatimit:
     <message>
         <source>Emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">emoticons</translation>
+        <translation type="unfinished">Emotikone</translation>
     </message>
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni emoticon</translation>
+        <translation type="unfinished">Përdor emotikone</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Madhësia e emoticonit:</translation>
+        <translation type="unfinished">Madhësia e emotikoneve:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3487,13 +3461,13 @@ Fshih karakteret e formatimit:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni identikë në vend të avatarëve bosh</translation>
+        <translation type="unfinished">Përdor identikone në vend të avatarëve bosh</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shfaqni një njoftim kur merrni një mesazh të ri, telefonatë ose kërkesë miqësie dhe dritarja nuk është zgjedhur.</translation>
+        <translation type="unfinished">Shfaq një njoftim kur merrni mesazh të ri, thirrje ose kërkesë për miqësi dhe dritarja nuk është e zgjedhur.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -3503,17 +3477,17 @@ Fshih karakteret e formatimit:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konferencat njoftojnë vetëm kur përmenden</translation>
+        <translation type="unfinished">Konferencat njoftojnë vetëm kur përmendeni</translation>
     </message>
     <message>
         <source>Play sound</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Luaj zërin</translation>
+        <translation type="unfinished">Luaj tingull</translation>
     </message>
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Luaj zërin ndërsa është i zënë</translation>
+        <translation type="unfinished">Luaj tingull edhe në statusin I zënë</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3528,92 +3502,92 @@ Fshih karakteret e formatimit:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni pseudonime me ngjyra në konferenca</translation>
+        <translation type="unfinished">Përdor pseudonime me ngjyra në konferenca</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Njoftoni për mesazhe të reja në konferenca vetëm kur përmendet pseudonimi juaj.</translation>
+        <translation type="unfinished">Njofto për mesazhe të reja në konferenca vetëm kur përmendet pseudonimi juaj.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nëse zgjidhet, konferencat do të vendosen në krye të listës së miqve, përndryshe ato do të vendosen poshtë miqve online.</translation>
+        <translation type="unfinished">Nëse zgjidhet, konferencat vendosen në krye të listës së miqve; përndryshe vendosen poshtë miqve në linjë.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nëse aktivizohet, çdo kontakt pa avatar do të ketë një ikonë të krijuar bazuar në ID-në e tyre Tox në vend të figurës së parazgjedhur. Kërkon rinisje për të aplikuar.</translation>
+        <translation type="unfinished">Nëse aktivizohet, çdo kontakt pa avatar do të ketë një ikonë të krijuar nga Tox ID-ja e tij në vend të figurës së parazgjedhur. Kërkon rinisje.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paketa e buzëqeshjeve:</translation>
+        <translation type="unfinished">Paketa e emotikoneve:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nëse është i çaktivizuar, tingëllon heshtja e njoftimit kur statusi është i zënë (por gjithsesi shfaq një njoftim)</translation>
+        <translation type="unfinished">Nëse çaktivizohet, tingujt e njoftimeve heshtin në statusin I zënë (njoftimi shfaqet gjithsesi)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni njoftimet e desktopit, p.sh. në një qendër njoftimesh ose në tabaka e sistemit. Pa këtë, njoftimi do të jetë i dukshëm vetëm si një ikonë ndezëse e tabakasë.</translation>
+        <translation type="unfinished">Përdor njoftime të desktopit, p.sh. në qendrën e njoftimeve ose në shiritin e sistemit. Pa këtë, njoftimi do të duket vetëm si ikonë që pulson në shiritin e sistemit.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shfaq vetëm &quot;mesazh të ri&quot; pa shfaqur informacione potencialisht sekrete në njoftimet e desktopit.</translation>
+        <translation type="unfinished">Shfaq vetëm &quot;mesazh i ri&quot; pa shfaqur informacion potencialisht të fshehtë në njoftimet e desktopit.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ndani listën e miqve dhe dritaren e bisedës në dritare të lëvizshme veçmas.</translation>
+        <translation type="unfinished">Ndaj listën e miqve dhe dritaren e bisedës në dritare që lëvizen veçmas.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shfaqni emoji-t tekstualë si fotografi shumëngjyrëshe në vend të emoji-ve me tekst ose të zezë/bardhë të prodhuar me font.</translation>
+        <translation type="unfinished">Shfaq emoji-t tekstualë si figura me ngjyra në vend të tekstit ose emoji-ve bardh e zi të shkronjave.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgjidhni se cilin grup fotografish do të përdorni kur jepni emoji.</translation>
+        <translation type="unfinished">Zgjidhni grupin e figurave për shfaqjen e emoji-ve.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Madhësia në pixel e një fotografie emoji. Zgjidhni diçka të ngjashme me madhësinë e fontit tuaj bazë.</translation>
+        <translation type="unfinished">Madhësia në piksel e figurës emoji. Zgjidhni diçka të ngjashme me madhësinë e fontit bazë.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Stili bazë për t&apos;u përdorur për ndërfaqen e përdoruesit. Fusion rekomandohet pasi funksionon më mirë me tematikën qTox.</translation>
+        <translation type="unfinished">Stili bazë i ndërfaqes. Rekomandohet Fusion, sepse funksionon më mirë me temat e qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tema me ngjyra UI. Përdoreni këtë për të zgjedhur modalitetin e errët.</translation>
+        <translation type="unfinished">Tema e ngjyrave të ndërfaqes. Përdoreni për të zgjedhur modalitetin e errët.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nëse është i çaktivizuar, përdorni njoftimet bazë të tabakasë së sistemit. Përndryshe, përpiquni të përdorni bazën e njoftimeve të mjedisit të desktopit tuaj. Çaktivizoni këtë nëse vëreni probleme me njoftimet e desktopit.</translation>
+        <translation type="unfinished">Nëse çaktivizohet, përdoren njoftime të thjeshta të shiritit të sistemit. Përndryshe provohet sistemi i njoftimeve i mjedisit tuaj të desktopit. Çaktivizojeni nëse vini re probleme me njoftimet e desktopit.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Përdorni bazën e njoftimeve specifike për sistemin nëse është e disponueshme</translation>
+        <translation type="unfinished">Përdor sistemin e njoftimeve të sistemit operativ, nëse ka</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shfaq pamjet paraprake për imazhet e dërguara dhe të marra në biseda. Zhvendoseni mbi pamjen paraprake në linjë për të shfaqur një pamje paraprake më të madhe.</translation>
+        <translation type="unfinished">Shfaq pamje paraprake të imazheve të dërguara dhe të marra në biseda. Kaloni miun mbi pamjen paraprake për ta parë më të madhe.</translation>
     </message>
     <message>
         <source>Image preview</source>
@@ -3622,45 +3596,39 @@ Fshih karakteret e formatimit:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Numri maksimal i mesazheve (për bisedë) të ngarkuar nga historiku i
-bisedës. Uleni këtë për të përmirësuar performancën. Një numër shumë i
-ulët këtu mund të shkaktojë zhdukjen e shiritit të lëvizjes.</translation>
+        <translation type="unfinished">Numri maksimal i mesazheve (për bisedë) që ngarkohen nga historiku.
+Uleni për performancë më të mirë. Një numër shumë i ulët mund të bëjë
+që shiriti i rrëshqitjes të zhduket.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Madhësia maksimale e
-pamjes së regjistrit të
-bisedës</translation>
+        <translation type="unfinished">Madhësia maksimale e pamjes së regjistrit të bisedës</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Numri i mesazheve për t&apos;u ngarkuar nga historiku i bisedës gjatë lëvizjes.
-Një numër shumë i ulët këtu mund të shkaktojë zhdukjen e shiritit të
-lëvizjes.</translation>
+        <translation type="unfinished">Numri i mesazheve që ngarkohen nga historiku gjatë rrëshqitjes. Një numër shumë
+i ulët mund të bëjë që shiriti i rrëshqitjes të zhduket.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Madhësia e pjesës
-së regjistrit të
-bisedës</translation>
+        <translation type="unfinished">Madhësia e pjesës së regjistrit të bisedës</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ditari i
-bisedës:</translation>
+        <translation type="unfinished">Regjistri i bisedës:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Fshih prapashtesë pas simbolit të pavlefshëm</translation>
+        <translation type="unfinished">Fshih tekstin pas karakterit NUL</translation>
     </message>
 </context>
 <context>
@@ -3697,7 +3665,7 @@ bisedës:</translation>
         <source>Logout</source>
         <comment>Tray action menu to logout user</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dilni</translation>
+        <translation type="unfinished">Dil</translation>
     </message>
     <message>
         <source>Filter...</source>
@@ -3732,7 +3700,7 @@ bisedës:</translation>
     <message>
         <source>By Name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Me emër</translation>
+        <translation type="unfinished">Sipas emrit</translation>
     </message>
     <message>
         <source>By Activity</source>
@@ -3767,7 +3735,7 @@ bisedës:</translation>
     <message>
         <source>Search Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kërko Kontaktet</translation>
+        <translation type="unfinished">Kërko kontaktet</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3808,13 +3776,13 @@ bisedës:</translation>
     <message>
         <source>Toxcore failed to start, the application will terminate after you close this message.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore dështoi të fillonte, aplikacioni do të përfundojë pasi të mbyllni këtë mesazh.</translation>
+        <translation type="unfinished">Toxcore nuk u nis; aplikacioni do të mbyllet pasi të mbyllni këtë mesazh.</translation>
     </message>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Toxcore dështoi të fillonte me cilësimet e përfaqësuesit tuaj. qTox nuk mund të ekzekutohet; ju lutemi ndryshoni cilësimet tuaja dhe rinisni.</translation>
+        <translation type="unfinished">Toxcore nuk u nis me cilësimet tuaja të proxy-t. qTox nuk mund të punojë; ndryshoni cilësimet dhe rinisni.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3824,22 +3792,22 @@ bisedës:</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n kërkesë e re për miqësi</numerusform>
+            <numerusform>%n kërkesa të reja për miqësi</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n ftesë e re për konferencë</numerusform>
+            <numerusform>%n ftesa të reja për konferencë</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dilni</translation>
+        <translation type="unfinished">Dil</translation>
     </message>
     <message>
         <source>Change status</source>
@@ -3854,7 +3822,7 @@ bisedës:</translation>
     <message>
         <source>Logout</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dilni</translation>
+        <translation type="unfinished">Dil</translation>
     </message>
     <message>
         <source>Add contact...</source>

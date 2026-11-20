@@ -15,7 +15,7 @@
     <message>
         <source>Disabled</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ආබාධිතයි</translation>
+        <translation type="unfinished">අක්‍රියයි</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -25,17 +25,17 @@
     <message>
         <source>Screen %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">තිරය%1</translation>
+        <translation type="unfinished">තිරය %1</translation>
     </message>
     <message>
         <source>Audio Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ශ්රව්ය සැකසුම්</translation>
+        <translation type="unfinished">ශ්‍රව්‍ය සැකසුම්</translation>
     </message>
     <message>
         <source>Gain</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ලබාගන්න</translation>
+        <translation type="unfinished">වර්ධනය</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -63,19 +63,6 @@
         <translation type="unfinished">වීඩියෝ උපාංගය</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබගේ කැමරාවේ විභේදනය සකසන්න.
-ඉහළ අගයන්, වඩා හොඳ වීඩියෝ ගුණාත්මක භාවය ඔබේ මිතුරන් ලබා ගත හැක.
-වඩා හොඳ වීඩියෝ ගුණාත්මක භාවයක් සමඟ වඩා හොඳ අන්තර්ජාල සම්බන්ධතාවයක් අවශ්‍ය බව සලකන්න.
-සමහර විට ඔබේ සම්බන්ධතාවය ඉහළ වීඩියෝ ගුණත්වය හැසිරවීමට ප්‍රමාණවත් නොවිය හැක,
-වීඩියෝ ඇමතුම් සමඟ ගැටලු ඇති විය හැක.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">විභේදනය</translation>
@@ -93,27 +80,27 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Audio quality</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ශ්රව්ය ගුණාත්මකභාවය</translation>
+        <translation type="unfinished">ශ්‍රව්‍ය ගුණාත්මකභාවය</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
+        <source>High (64 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඉහළ (64 kBps)</translation>
+        <translation type="unfinished">ඉහළ (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
+        <source>Medium (32 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මධ්‍යම (32 kBps)</translation>
+        <translation type="unfinished">මධ්‍යම (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
+        <source>Low (16 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අඩු (16 kBps)</translation>
+        <translation type="unfinished">අඩු (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
+        <source>Very low (8 kbps)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඉතා අඩු (8 kBps)</translation>
+        <translation type="unfinished">ඉතා අඩු (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -151,7 +138,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Use slider to set the gain of your input device ranging from %1dB to %2dB.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1dB සිට %2dB දක්වා ඔබේ ආදාන උපාංගයේ ලාභය සැකසීමට ස්ලයිඩරය භාවිත කරන්න.</translation>
+        <translation type="unfinished">%1dB සිට %2dB දක්වා ඔබේ ආදාන උපාංගයේ වර්ධනය සැකසීමට ස්ලයිඩරය භාවිත කරන්න.</translation>
     </message>
     <message>
         <source>Use slider to set the activation volume for your input device.</source>
@@ -168,7 +155,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Original author: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මුල් කර්තෘ:%1</translation>
+        <translation type="unfinished">මුල් කර්තෘ: %1</translation>
     </message>
     <message>
         <source>You are using qTox version %1.</source>
@@ -178,12 +165,12 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">හැෂ් කැප කරන්න:%1</translation>
+        <translation type="unfinished">Commit හැෂ්: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">toxcore අනුවාදය:%1</translation>
+        <translation type="unfinished">toxcore අනුවාදය: %1</translation>
     </message>
     <message>
         <source>Qt version: %1</source>
@@ -191,11 +178,11 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">Qt අනුවාදය: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දන්නා සියලුම ගැටළු ලැයිස්තුවක් Github හි අපගේ %1 හි සොයා ගත හැක. ඔබ qTox තුළ දෝෂයක් හෝ ආරක්ෂක අවදානමක් සොයා ගන්නේ නම්, කරුණාකර අපගේ %2 විකි ලිපියේ ඇති මාර්ගෝපදේශ අනුව එය වාර්තා කරන්න.</translation>
+        <translation type="unfinished">දන්නා සියලුම ගැටළු ලැයිස්තුවක් GitHub හි අපගේ %1 හි සොයා ගත හැක. ඔබ qTox තුළ දෝෂයක් හෝ ආරක්ෂක අවදානමක් සොයා ගන්නේ නම්, කරුණාකර අපගේ %2 විකි ලිපියේ ඇති මාර්ගෝපදේශ අනුව එය වාර්තා කරන්න.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
@@ -203,16 +190,16 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">දෝෂයක් වාර්තා කිරීමට මෙතන ක්ලික් කරන්න.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Github හි %1 හි සම්පූර්ණ ලැයිස්තුවක් බලන්න</translation>
+        <translation type="unfinished">GitHub හි %1 හි සම්පූර්ණ ලැයිස්තුවක් බලන්න</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝෂ ට්රැකර්</translation>
+        <translation type="unfinished">දෝෂ ට්‍රැකර්</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
@@ -247,17 +234,17 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Manual</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අත්පොත</translation>
+        <translation type="unfinished">අතින්</translation>
     </message>
     <message>
         <source>Audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ශ්රව්ය උපකරණ</translation>
+        <translation type="unfinished">ශ්‍රව්‍ය</translation>
     </message>
     <message>
         <source>Audio + Video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ශ්රව්ය + වීඩියෝ</translation>
+        <translation type="unfinished">ශ්‍රව්‍ය + වීඩියෝ</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
@@ -265,7 +252,7 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">සකසා ඇත්නම් මෙම සම්බන්ධතාවෙන් සම්මන්ත්‍රණ ආරාධනා ස්වයංක්‍රීයව පිළිගන්න.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ඉතිහාසය ඉවත් කරන්න (මෙහෙයුම පසුගමනය කළ නොහැක!)</translation>
     </message>
@@ -285,14 +272,14 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">ඉතිහාසය ඉවත් කර ඇත</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මෙය ඔබේ මිතුරාගේ පොදු යතුරයි, වෙනත් නාලිකාවක් හරහා ඔවුන්ගේ අනන්‍යතාවය තහවුරු කිරීමට එය භාවිතා කරන්න. ඔබට මෙය වෙනත් පුද්ගලයින්ට යැවිය නොහැක, එවිට ඔවුන්ට මෙම සම්බන්ධතාව එක් කළ හැක.</translation>
+        <translation type="unfinished">මෙය ඔබේ මිතුරාගේ පොදු යතුරයි; වෙනත් නාලිකාවක් හරහා ඔවුන්ගේ අනන්‍යතාවය තහවුරු කිරීමට එය භාවිතා කරන්න. අනෙක් අයට එය භාවිතයෙන් මෙම සම්බන්ධතාව එක් කළ නොහැක.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පොදු යතුර (ToxID නොවේ):</translation>
+        <translation type="unfinished">පොදු යතුර (Tox ID නොවේ):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -300,9 +287,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">තහවුරු කිරීම</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 කතාබස් ඉතිහාසය ඉවත් කිරීමට ඔබට විශ්වාසද?</translation>
+        <translation type="unfinished">%1 සමඟ කතාබස් ඉතිහාසය ඉවත් කිරීමට ඔබට විශ්වාසද?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -330,9 +317,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">සම්මන්ත්‍රණ ආරාධනා ස්වයංක්‍රීයව පිළිගන්න</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබට මෙම සම්බන්ධතාවය පිළිබඳ අදහස් මෙහි සුරැකිය හැක.</translation>
+        <translation type="unfinished">ඔබට මෙම සම්බන්ධතාවය පිළිබඳ සටහන් මෙහි සුරැකිය හැක.</translation>
     </message>
 </context>
 <context>
@@ -345,7 +332,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>License</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">බලපත්රය</translation>
+        <translation type="unfinished">බලපත්‍රය</translation>
     </message>
     <message>
         <source>Authors</source>
@@ -408,7 +395,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Reject</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ප්රතික්ෂේප කරන්න</translation>
+        <translation type="unfinished">ප්‍රතික්ෂේප කරන්න</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
@@ -416,9 +403,9 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">මිතුරෙකු එක් කිරීමට නොහැකි විය</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබේ මිතුරාගේ ටොක්ස් හැඳුනුම්පත ටයිප් කරන්න</translation>
+        <translation type="unfinished">ඔබේ මිතුරාගේ Tox ID ඇතුළත් කරන්න</translation>
     </message>
     <message>
         <source>Friend request message</source>
@@ -466,7 +453,7 @@ which may lead to problems with video calls.</source>
         <source>Tox ID</source>
         <extracomment>Tox ID of the person you&apos;re sending a friend request to</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ටොක්ස් හැඳුනුම්පත</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Message</source>
@@ -489,7 +476,7 @@ which may lead to problems with video calls.</source>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 මෙතන! සමහර විට මට ටොක්ස්?</translation>
+        <translation type="unfinished">%1 මෙතන! Tox හරහා කතා කරමුද?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
@@ -499,8 +486,8 @@ which may lead to problems with video calls.</source>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>සම්බන්ධතා %n ආයාත කිරීමට සූදානම්, තහවුරු කිරීමට යවන්න ක්ලික් කරන්න</numerusform>
+            <numerusform>සම්බන්ධතා %n ආයාත කිරීමට සූදානම්, තහවුරු කිරීමට යවන්න ක්ලික් කරන්න</numerusform>
         </translation>
     </message>
     <message>
@@ -511,19 +498,19 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tox ID, ෂඩාස්රාකාර අක්ෂර 76</translation>
+        <translation type="unfinished">Tox ID, ෂඩාස්‍රාකාර අක්ෂර 76</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID වලංගු නොවේ</translation>
+        <translation type="unfinished">%1 වලංගු Tox ID එකක් නොවේ</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
         <extracomment>Tox ID format description</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ෂඩාස්රාකාර අක්ෂර 76 ක්</translation>
+        <translation type="unfinished">ෂඩාස්‍රාකාර අක්ෂර 76 ක්</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -545,7 +532,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>not</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නැත</translation>
+        <translation type="unfinished">කිසිවක්</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -560,7 +547,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>All settings will be reset to default. Are you sure?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සියලු සැකසුම් පෙරනිමියට නැවත සකසනු ඇත. ඔයාට විශ්වාස ද?</translation>
+        <translation type="unfinished">සියලු සැකසුම් පෙරනිමියට නැවත සකසනු ඇත. ඔබට විශ්වාසද?</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -580,7 +567,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබ %1 ඔබ කරන්නේ කුමක්දැයි නොදන්නේ නම්, කරුණාකර %2 මෙහි ඕනෑම දෙයක් වෙනස් කරන්න. මෙහි සිදු කරන ලද වෙනස්කම් qTox සමඟ ගැටලු ඇති කළ හැකි අතර, ඔබේ දත්ත නැති වීමට පවා හේතු විය හැක, උදා. ඉතිහාසය.%3</translation>
+        <translation type="unfinished">ඔබ කරන්නේ කුමක්දැයි %1 නොදන්නේ නම්, කරුණාකර මෙහි %2 වෙනස් නොකරන්න. මෙහි කරන වෙනස්කම් qTox හි ගැටලු ඇති කළ හැකි අතර ඔබේ දත්ත, උදා. ඉතිහාසය, නැති වීමටද හේතු විය හැක.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -595,21 +582,21 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Invalid proxy address</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අවලංගු ප්රොක්සි ලිපිනය</translation>
+        <translation type="unfinished">අවලංගු ප්‍රොක්සි ලිපිනය</translation>
     </message>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කරුණාකර ප්රොක්සි සැකසුම සඳහා වලංගු IP ලිපිනයක් හෝ ධාරක නාමයක් ඇතුළත් කරන්න.</translation>
+        <translation type="unfinished">කරුණාකර ප්‍රොක්සි සැකසුම සඳහා වලංගු IP ලිපිනයක් හෝ ධාරක නාමයක් ඇතුළත් කරන්න.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සුපුරුදු conf dir වෙනුවට වැඩ කරන බහලුම වෙත සැකසුම් සුරකින්න</translation>
+        <translation type="unfinished">සුපුරුදු සැකසුම් බහලුම වෙනුවට වැඩ කරන බහලුම වෙත සැකසුම් සුරකින්න</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -677,7 +664,7 @@ which may lead to problems with video calls.</source>
         <source>Port:</source>
         <extracomment>Text on proxy port label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">වරාය:</translation>
+        <translation type="unfinished">පෝට්:</translation>
     </message>
     <message>
         <source>None</source>
@@ -687,7 +674,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝෂහරණය කරන්න</translation>
+        <translation type="unfinished">නිදොස්කරණය</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
@@ -697,7 +684,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Copy Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝශ නිරාකරණ ලොගය පිටපත් කරන්න</translation>
+        <translation type="unfinished">නිදොස් කිරීමේ ලොගය පිටපත් කරන්න</translation>
     </message>
     <message>
         <source>Enable LAN discovery</source>
@@ -713,7 +700,7 @@ which may lead to problems with video calls.</source>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මෙය අක්‍රිය කිරීමෙන්, උදා: Tox over Tor. කෙසේ වෙතත් එය ටොක්ස් ජාලයට බරක් එක් කරයි, එබැවින් අවශ්‍ය විට පමණක් සලකුණු නොකරන්න.</translation>
+        <translation type="unfinished">මෙය අක්‍රිය කිරීමෙන් උදා. Tor හරහා Tox භාවිතා කළ හැක. කෙසේ වෙතත් එය Tox ජාලයට බරක් එක් කරන බැවින්, අවශ්‍ය විට පමණක් සලකුණ ඉවත් කරන්න.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
@@ -744,28 +731,20 @@ which may lead to problems with video calls.</source>
         <translation type="unfinished">නව අවස්ථාවක් ආරම්භ කර පිවිසුම් තිරය විවෘත කරයි.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">IPv6 &lt;on&gt;/&lt;off&gt; සකසයි. පෙරනිමිය ක්‍රියාත්මකයි.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">IPv6 සක්‍රිය හෝ අක්‍රිය කරයි: %1. පෙරනිමිය: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UDP &lt;on&gt;/&lt;off&gt; සකසයි. පෙරනිමිය ක්‍රියාත්මකයි.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">UDP සක්‍රිය හෝ අක්‍රිය කරයි: %1. පෙරනිමිය: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">LAN සොයාගැනීම &lt;on&gt;/&lt;off&gt; සකසයි. UDP ක්‍රියාවිරහිතයි. පෙරනිමිය ක්‍රියාත්මකයි.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">LAN සොයාගැනීම සක්‍රිය හෝ අක්‍රිය කරයි: %1. UDP අක්‍රිය නම් බලපෑමක් නැත. පෙරනිමිය: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ප්‍රොක්සි සැකසුම් සකසයි. පෙරනිමිය NONE වේ.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">ප්‍රොක්සිය සකසයි. පෙරනිමිය: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -830,7 +809,7 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Call duration: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඇමතුම් කාලය:</translation>
+        <translation type="unfinished">ඇමතුම් කාලය: </translation>
     </message>
     <message>
         <source>Copy</source>
@@ -845,14 +824,14 @@ which may lead to problems with video calls.</source>
     <message>
         <source>Filename contained illegal characters</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ගොනු නාමයේ නීති විරෝධී අක්ෂර අඩංගු විය</translation>
+        <translation type="unfinished">ගොනු නාමයේ අවලංගු අක්ෂර අඩංගු විය</translation>
     </message>
     <message>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නීති විරෝධී අක්ෂර _ ලෙස වෙනස් කර ඇත
-එබැවින් ඔබට වින්ඩෝස් හි ගොනුව සුරැකිය හැක.</translation>
+        <translation type="unfinished">අවලංගු අක්ෂර _ ලෙස වෙනස් කර ඇත
+එබැවින් ඔබට Windows හි ගොනුව සුරැකිය හැක.</translation>
     </message>
 </context>
 <context>
@@ -915,7 +894,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Unmute call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඇමතුම නිහඬ නොකරන්න</translation>
+        <translation type="unfinished">ඇමතුමේ ශබ්දය සක්‍රිය කරන්න</translation>
     </message>
     <message>
         <source>Mute call</source>
@@ -930,7 +909,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Unmute microphone</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මයික්‍රෆෝනය නිශ්ශබ්ද කරන්න</translation>
+        <translation type="unfinished">මයික්‍රෆෝනය සක්‍රිය කරන්න</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -988,7 +967,7 @@ so you can save the file on Windows.</source>
         <source>Remove circle</source>
         <comment>Menu for removing a circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">රවුම ඉවත් කරන්න</translation>
+        <translation type="unfinished">කවය ඉවත් කරන්න</translation>
     </message>
     <message>
         <source>Open all in new window</source>
@@ -1015,8 +994,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1027,12 +1006,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>unmute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නිහඬ නොකරන්න</translation>
+        <translation type="unfinished">ශබ්දය සක්‍රිය කරන්න</translation>
     </message>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">peer ID පිටපත් කරන්න</translation>
+        <translation type="unfinished">සහභාගිකයාගේ ID පිටපත් කරන්න</translation>
     </message>
 </context>
 <context>
@@ -1040,12 +1019,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්රණ</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණ</translation>
     </message>
     <message>
         <source>Create new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නව සමුළුවක් සාදන්න</translation>
+        <translation type="unfinished">නව සම්මන්ත්‍රණයක් සාදන්න</translation>
     </message>
     <message>
         <source>Conference invites</source>
@@ -1058,7 +1037,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%3 හිදී %2 මත %1 විසින් ආරාධනා කරන ලදී.</translation>
+        <translation type="unfinished">%1 විසින් %2 දින %3 ට ආරාධනා කරන ලදී.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1068,7 +1047,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Decline</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ප්රතික්ෂේප කරන්න</translation>
+        <translation type="unfinished">ප්‍රතික්ෂේප කරන්න</translation>
     </message>
 </context>
 <context>
@@ -1098,8 +1077,8 @@ so you can save the file on Windows.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1110,7 +1089,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
 </context>
 <context>
@@ -1118,12 +1097,12 @@ so you can save the file on Windows.</source>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">/මට මිත්‍රත්වය පිරිනමයි, &quot;%1&quot;</translation>
+        <translation type="unfinished">/me මිත්‍රත්වය පිරිනමයි, &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Conference %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්‍රණය%1</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණය %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1155,7 +1134,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝශ නිරාකරණ ලොගය</translation>
+        <translation type="unfinished">නිදොස් ලොගය</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -1173,7 +1152,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝශ නිරාකරණ ලොගය</translation>
+        <translation type="unfinished">නිදොස් ලොගය</translation>
     </message>
 </context>
 <context>
@@ -1239,10 +1218,10 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">ගොනුවක් සුරකින්න</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දුරස්ථ පාලකය විරාම කරන ලදී</translation>
+        <translation type="unfinished">අනෙක් පාර්ශ්වය විරාම කළා</translation>
     </message>
 </context>
 <context>
@@ -1303,13 +1282,13 @@ so you can save the file on Windows.</source>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සමුළුවට ආරාධනා කරන්න</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණයට ආරාධනා කරන්න</translation>
     </message>
     <message>
         <source>Move to circle...</source>
         <comment>Menu to move a friend into a different circle</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">රවුමට යන්න...</translation>
+        <translation type="unfinished">කවයට ගෙන යන්න...</translation>
     </message>
     <message>
         <source>To new circle</source>
@@ -1334,7 +1313,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>To new conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නව සමුළුවට</translation>
+        <translation type="unfinished">නව සම්මන්ත්‍රණයකට</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1365,17 +1344,17 @@ so you can save the file on Windows.</source>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
     <message>
         <source>Away</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඉවතට</translation>
+        <translation type="unfinished">බැහැරව</translation>
     </message>
     <message>
         <source>Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කාර්යබහුල</translation>
+        <translation type="unfinished">කාර්‍යබහුල</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -1404,7 +1383,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>General</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ජෙනරාල්</translation>
+        <translation type="unfinished">සාමාන්‍ය</translation>
     </message>
     <message>
         <source>%1 (no fonts)</source>
@@ -1422,7 +1401,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>General Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සාමාන්ය සැකසුම්</translation>
+        <translation type="unfinished">සාමාන්‍ය සැකසුම්</translation>
     </message>
     <message>
         <source>The translation may not load until qTox restarts.</source>
@@ -1443,18 +1422,18 @@ so you can save the file on Windows.</source>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සැහැල්ලු තැටි නිරූපකය සබල කරන්න.</translation>
+        <translation type="unfinished">ලා පැහැති තැටි නිරූපකය සබල කරන්න.</translation>
     </message>
     <message>
         <source>Light icon</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සැහැල්ලු නිරූපකය</translation>
+        <translation type="unfinished">ලා පැහැති නිරූපකය</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox තැටියේ අවම කිරීම ආරම්භ වේ.</translation>
+        <translation type="unfinished">qTox තැටියට අවම කර ආරම්භ වේ.</translation>
     </message>
     <message>
         <source>Start in tray</source>
@@ -1464,7 +1443,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">තැටියට ආසන්නයි</translation>
+        <translation type="unfinished">තැටියට වසන්න</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
@@ -1492,7 +1471,7 @@ so you can save the file on Windows.</source>
         <translation type="unfinished">අක්‍රිය කිරීමට 0 ලෙස සකසන්න</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">සකසන ලද අක්‍රිය කාලයෙන් පසු ඔබේ තත්ත්වය බැහැර ලෙස වෙනස් වේ.</translation>
     </message>
@@ -1541,19 +1520,19 @@ so you can save the file on Windows.</source>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">minimize (_) එබීමෙන් පසු qTox තැටියට අවම වේ,
-පද්ධති කාර්ය තීරුව වෙනුවට.</translation>
+        <translation type="unfinished">අවම කරන්න (_) එබූ විට qTox කාර්‍ය තීරුව වෙනුවට
+තැටියට අවම වේ.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Close (X) එබීමෙන් පසු qTox තැටියට වැසෙනු ඇත,
-සම්පූර්ණයෙන්ම වසා දැමීම වෙනුවට.</translation>
+        <translation type="unfinished">වසන්න (X) එබූ විට qTox සම්පූර්ණයෙන් වැසෙනවා වෙනුවට
+තැටියට අවම වේ.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">තනි මිතුරන් මත දකුණු ක්ලික් කිරීමෙන් ඔබට මෙය එක් මිතුරෙකුට පදනමක් මත සැකසිය හැක.</translation>
@@ -1576,7 +1555,7 @@ instead of closing entirely.</source>
     <message>
         <source> min</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished"> මිනිත්තු </translation>
+        <translation type="unfinished"> මිනිත්තු</translation>
     </message>
 </context>
 <context>
@@ -1662,7 +1641,7 @@ instead of closing entirely.</source>
     <message>
         <source>Tox ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ටොක්ස් හැඳුනුම්පත</translation>
+        <translation type="unfinished">Tox ID</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
@@ -1688,7 +1667,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පිටවීම</translation>
     </message>
@@ -1798,7 +1777,7 @@ Profile does not contain your history.</source>
     <message>
         <source>Export profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අපනයන පැතිකඩ</translation>
+        <translation type="unfinished">පැතිකඩ අපනයනය කරන්න</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
@@ -1843,12 +1822,12 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඉතිහාස සංවාදය පූරණය කරන්න</translation>
+        <translation type="unfinished">ඉතිහාසය පූරණය කිරීමේ සංවාදය</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පූරණ ඉතිහාසය මෙතැනින්:</translation>
+        <translation type="unfinished">ඉතිහාසය පූරණය කරන්නේ මෙතැන් සිට:</translation>
     </message>
 </context>
 <context>
@@ -1886,7 +1865,7 @@ Share it with your friends to begin chatting.</source>
     <message>
         <source>Load automatically</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ස්වයංක්රීයව පූරණය කරන්න</translation>
+        <translation type="unfinished">ස්වයංක්‍රීයව පූරණය කරන්න</translation>
     </message>
     <message>
         <source>Load</source>
@@ -1970,12 +1949,12 @@ You may want to create one.</source>
     <message>
         <source>Password confirmation field</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මුරපදය තහවුරු කිරීමේ ක්ෂේත්රය</translation>
+        <translation type="unfinished">මුරපදය තහවුරු කිරීමේ ක්ෂේත්‍රය</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නව පැතිකඩ බොත්තමක් සාදන්න</translation>
+        <translation type="unfinished">නව පැතිකඩ සෑදීමේ බොත්තම</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1995,17 +1974,17 @@ You may want to create one.</source>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ස්වයංක්‍රීයව පිරික්සුම් කොටුව පූරණය කරන්න</translation>
+        <translation type="unfinished">ස්වයංක්‍රීය පූරණ පිරික්සුම් කොටුව</translation>
     </message>
     <message>
         <source>Import profile</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ආයාත පැතිකඩ</translation>
+        <translation type="unfinished">පැතිකඩ ආයාත කරන්න</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">තෝරාගත් පැතිකඩ බොත්තම පූරණය කරන්න</translation>
+        <translation type="unfinished">තෝරාගත් පැතිකඩ පූරණය කිරීමේ බොත්තම</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -2015,7 +1994,7 @@ You may want to create one.</source>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පවතින පැතිකඩ පිටුව පූරණය කරමින්</translation>
+        <translation type="unfinished">පවතින පැතිකඩ පූරණය කිරීමේ පිටුව</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -2046,7 +2025,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Your name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔයාගේ නම</translation>
+        <translation type="unfinished">ඔබේ නම</translation>
     </message>
     <message>
         <source>Your status</source>
@@ -2056,7 +2035,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Create a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්රණයක් සාදන්න</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණයක් සාදන්න</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -2106,12 +2085,12 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Contact search</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සෙවීමට සම්බන්ධ වන්න</translation>
+        <translation type="unfinished">සම්බන්ධතා සෙවීම</translation>
     </message>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දන්නා මිතුරන් සඳහා සෙවුම් ආදානය අමතන්න</translation>
+        <translation type="unfinished">දන්නා මිතුරන් සඳහා සම්බන්ධතා සෙවුම් ආදානය</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -2131,7 +2110,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්රණය</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණය</translation>
     </message>
     <message>
         <source>Open conference management page</source>
@@ -2156,7 +2135,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Open Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">විවෘත සැකසුම්</translation>
+        <translation type="unfinished">සැකසුම් විවෘත කරන්න</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
@@ -2166,7 +2145,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Debug</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝෂහරණය කරන්න</translation>
+        <translation type="unfinished">නිදොස්කරණය</translation>
     </message>
     <message>
         <source>Open Debugger</source>
@@ -2187,7 +2166,7 @@ Press Shift+F1 for more information.</source>
         <translation type="unfinished">ක්‍රියාත්මක කළ හැකි ගොනුව</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">ක්‍රියාත්මක කළ හැකි ගොනුවක් විවෘත කිරීමට ඔබ qTox වෙතින් ඉල්ලා ඇත. ක්‍රියාත්මක කළ හැකි ගොනු ඔබේ පරිගණකයට හානි කළ හැකිය. ඔබට මෙම ගොනුව විවෘත කිරීමට අවශ්‍ය බව විශ්වාසද?</translation>
@@ -2198,7 +2177,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Tox video</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ටොක්ස් වීඩියෝව</translation>
+        <translation type="unfinished">Tox වීඩියෝව</translation>
     </message>
     <message>
         <source>Full Screen</source>
@@ -2275,7 +2254,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්පූර්ණ තිරය ඇතුළු කරන්න</translation>
+        <translation type="unfinished">සම්පූර්ණ තිරය</translation>
     </message>
 </context>
 <context>
@@ -2283,8 +2262,8 @@ Press Shift+F1 for more information.</source>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>නොකියවූ පණිවිඩය</numerusform>
+            <numerusform>නොකියවූ පණිවිඩ</numerusform>
         </translation>
     </message>
 </context>
@@ -2340,9 +2319,9 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock සබල කර ඇත</translation>
+        <translation type="unfinished">Caps Lock සක්‍රියයි</translation>
     </message>
 </context>
 <context>
@@ -2424,7 +2403,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්රණ වාරණ ලැයිස්තුව</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණ අවහිර ලැයිස්තුව</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
@@ -2442,12 +2421,12 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Toxing on qTox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">qTox මත විෂ වීම</translation>
+        <translation type="unfinished">qTox හරහා කතාබස් කරමින්</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දත්ත සමුදා මුරපදය වෙනස් කිරීමට නොහැකි විය, එය දූෂිත වී හෝ පැරණි මුරපදය භාවිතා කළ හැක.</translation>
+        <translation type="unfinished">දත්ත සමුදා මුරපදය වෙනස් කිරීමට නොහැකි විය. දත්ත සමුදාය දූෂිත වී තිබිය හැක, නැතහොත් තවමත් පැරණි මුරපදය භාවිතා කරනවා විය හැක.</translation>
     </message>
 </context>
 <context>
@@ -2476,7 +2455,7 @@ Save format changes are possible, which may result in data loss.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">වත්මන් පැතිකඩ:</translation>
+        <translation type="unfinished">වත්මන් පැතිකඩ: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2528,10 +2507,10 @@ Please use another image.</source>
         <translation type="unfinished">සුරකින්න</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">QrCode සුරකින්න (*.png)</translation>
+        <translation type="unfinished">QR code සුරකින්න (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2554,17 +2533,12 @@ Please use another image.</source>
     <message>
         <source>Current profile location: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">වත්මන් පැතිකඩ ස්ථානය:%1</translation>
+        <translation type="unfinished">වත්මන් පැතිකඩ ස්ථානය: %1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මුරපදය වෙනස් කිරීමට නොහැකි විය</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">හිස් මාර්ගය නොමැත</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2587,9 +2561,9 @@ Please use another image.</source>
         <translation type="unfinished">හිස් නම</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">හිස් නම නොමැත</translation>
+        <translation type="unfinished">නම හිස් විය නොහැක.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2600,7 +2574,7 @@ Please use another image.</source>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අපනයන පැතිකඩ</translation>
+        <translation type="unfinished">පැතිකඩ අපනයනය කරන්න</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2637,14 +2611,14 @@ Please use another image.</source>
         <translation type="unfinished">ඔබ තෝරාගත් ගොනුව සුරැකිය නොහැක.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">හිස් මාර්ගය නොමැත.</translation>
+        <translation type="unfinished">මාර්ගය හිස් විය නොහැක.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දත්ත සමුදා මුරපදය වෙනස් කිරීමට නොහැකි විය, එය දූෂිත වී හෝ පැරණි මුරපදය භාවිතා කළ හැක.</translation>
+        <translation type="unfinished">දත්ත සමුදා මුරපදය වෙනස් කිරීමට නොහැකි විය. දත්ත සමුදාය දූෂිත වී තිබිය හැක, නැතහොත් තවමත් පැරණි මුරපදය භාවිතා කරනවා විය හැක.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2675,7 +2649,7 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මෙම හැඳුනුම්පත වෙනත් ටොක්ස් පරිශීලකයින්ට එකතු කිරීමට සහ ඔබව සම්බන්ධ කර ගැනීමට ඉඩ සලසයි.
+        <translation type="unfinished">මෙම හැඳුනුම්පත වෙනත් Tox පරිශීලකයින්ට ඔබව එකතු කිරීමට සහ ඔබව සම්බන්ධ කර ගැනීමට ඉඩ සලසයි.
 කතාබස් කිරීම ආරම්භ කිරීමට එය ඔබේ මිතුරන් සමඟ බෙදා ගන්න.
 
 මෙම හැඳුනුම්පතට NoSpam කේතය (නිල් පැහැයෙන්) සහ චෙක්සම් (අළු පැහැයෙන්) ඇතුළත් වේ.</translation>
@@ -2687,7 +2661,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Import profile</source>
         <comment>import dialog title</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ආයාත පැතිකඩ</translation>
+        <translation type="unfinished">පැතිකඩ ආයාත කරන්න</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2714,10 +2688,10 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">පැතිකඩ දැනටමත් පවතී</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">&quot;%1&quot; නම් පැතිකඩක් දැනටමත් පවතී. ඔබට එය මැකීමට අවශ්‍යද?</translation>
+        <translation type="unfinished">&quot;%1&quot; නම් පැතිකඩක් දැනටමත් පවතී. ඔබට එය ප්‍රතිස්ථාපනය කිරීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2743,7 +2717,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">හරි</translation>
     </message>
@@ -2831,7 +2805,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 මෙතන! සමහර විට මට ටොක්ස්?</translation>
+        <translation type="unfinished">%1 මෙතන! Tox හරහා කතා කරමුද?</translation>
     </message>
     <message>
         <source>None</source>
@@ -2873,7 +2847,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Dark red</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">තද රතු පාටයි</translation>
+        <translation type="unfinished">තද රතු</translation>
     </message>
     <message>
         <source>Dark violet</source>
@@ -2884,19 +2858,19 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>online</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සමඟ අමුත්තන්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
     <message>
         <source>away</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දුරින්</translation>
+        <translation type="unfinished">බැහැරව</translation>
     </message>
     <message>
         <source>busy</source>
         <comment>contact status</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කාර්යබහුල</translation>
+        <translation type="unfinished">කාර්‍යබහුල</translation>
     </message>
     <message>
         <source>offline</source>
@@ -2970,7 +2944,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>%1 calling</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 ඇමතීම</translation>
+        <translation type="unfinished">%1 අමතයි</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2995,7 +2969,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Transmitting</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්ප්රේෂණය</translation>
+        <translation type="unfinished">සම්ප්‍රේෂණය</translation>
     </message>
     <message>
         <source>Finished</source>
@@ -3018,9 +2992,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation type="unfinished">විරාම කළා</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දුරස්ථ පාලකය විරාම කරන ලදී</translation>
+        <translation type="unfinished">අනෙක් පාර්ශ්වය විරාම කළා</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -3030,7 +3004,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අමතන්න</translation>
+        <translation type="unfinished">සම්බන්ධතාව</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -3040,7 +3014,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ප්රමාණය</translation>
+        <translation type="unfinished">ප්‍රමාණය</translation>
     </message>
     <message>
         <source>Speed</source>
@@ -3055,12 +3029,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පාලනය කරන්න</translation>
+        <translation type="unfinished">පාලනය</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබ සමුළුවට සම්බන්ධ වී ඇත</translation>
+        <translation type="unfinished">ඔබ සම්මන්ත්‍රණයට සම්බන්ධ විය</translation>
     </message>
     <message>
         <source>You have left the conference</source>
@@ -3118,13 +3092,13 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අවකාශය</translation>
+        <translation type="unfinished">Space</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ගැලවෙන්න</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -3136,7 +3110,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඇතුල් කරන්න</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -3182,7 +3156,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Case sensitive</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">විෂය සංවේදී</translation>
+        <translation type="unfinished">ලොකු/කුඩා අකුරු වෙන්කර සලකන්න</translation>
     </message>
     <message>
         <source>Whole words only</source>
@@ -3192,12 +3166,12 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">නිතිපතා ප්රකාශන භාවිතා කරන්න</translation>
+        <translation type="unfinished">regular expressions භාවිතා කරන්න</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දින සංවාදය තෝරන්න</translation>
+        <translation type="unfinished">දින තේරීමේ සංවාදය</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -3333,7 +3307,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Chat</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කතාබස් කරන්න</translation>
+        <translation type="unfinished">කතාබස්</translation>
     </message>
     <message>
         <source>Base font:</source>
@@ -3343,7 +3317,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ප්‍රමාණය:</translation>
+        <translation type="unfinished">ප්‍රමාණය: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3406,7 +3380,7 @@ Hide formatting characters:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබට නව පණිවිඩයක් ලැබුණු විට qTox හි කවුළුව විවෘත කරන්න සහ තවමත් කවුළුවක් විවෘත නොවේ.</translation>
+        <translation type="unfinished">නව පණිවිඩයක් ලැබුණු විට කිසිදු කවුළුවක් විවෘතව නොමැති නම් qTox කවුළුව විවෘත කරන්න.</translation>
     </message>
     <message>
         <source>Open window</source>
@@ -3421,13 +3395,13 @@ Hide formatting characters:
     <message>
         <source>Place conferences at top of friend list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">මිත්‍ර ලැයිස්තුවේ ඉහළින්ම සම්මන්ත්‍රණ තබන්න</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණ මිතුරු ලැයිස්තුවේ ඉහළින් තබන්න</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔබගේ සම්බන්ධතා ලැයිස්තුව සංයුක්ත ආකාරයෙන් පෙන්වනු ඇත (කුඩා avatars, tabular view).</translation>
+        <translation type="unfinished">ඔබගේ සම්බන්ධතා ලැයිස්තුව සංයුක්ත ආකාරයෙන් පෙන්වනු ඇත (කුඩා අවතාර, වගු දසුන).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -3447,17 +3421,17 @@ Hide formatting characters:
     <message>
         <source>Emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">චිත්තවේගයන්</translation>
+        <translation type="unfinished">ඉමෝටිකෝන</translation>
     </message>
     <message>
         <source>Use emoticons</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">චිත්තවේග භාවිතා කරන්න</translation>
+        <translation type="unfinished">ඉමෝටිකෝන භාවිතා කරන්න</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Emoticon ප්‍රමාණය:</translation>
+        <translation type="unfinished">ඉමෝටිකෝන ප්‍රමාණය:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3492,7 +3466,7 @@ Hide formatting characters:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">හිස් avatars වෙනුවට identicons භාවිතා කරන්න</translation>
+        <translation type="unfinished">හිස් අවතාර වෙනුවට identicon භාවිතා කරන්න</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
@@ -3518,7 +3492,7 @@ Hide formatting characters:
     <message>
         <source>Play sound while Busy</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කාර්යබහුල වන විට ශබ්දය වාදනය කරන්න</translation>
+        <translation type="unfinished">කාර්‍යබහුල වන විට ශබ්දය වාදනය කරන්න</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3545,29 +3519,29 @@ Hide formatting characters:
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">පරීක්ෂා කළහොත්, සම්මන්ත්‍රණ මිතුරන්ගේ ලැයිස්තුවේ ඉහළින්ම තබනු ඇත, එසේ නොමැති නම්, ඒවා සබැඳි මිතුරන්ට පහළින් තබනු ඇත.</translation>
+        <translation type="unfinished">තෝරා ඇත්නම්, සම්මන්ත්‍රණ මිතුරන්ගේ ලැයිස්තුවේ ඉහළින්ම තබනු ඇත, එසේ නොමැති නම්, ඒවා සබැඳි මිතුරන්ට පහළින් තබනු ඇත.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
         <comment>toolTip for show identicons</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සබල කර ඇත්නම්, අවතාරයක් නොමැති සෑම සම්බන්ධතාවක්ම පෙරනිමි පින්තූරය වෙනුවට ඔවුන්ගේ Tox ID මත පදනම්ව ජනනය කරන ලද නිරූපකයක් ඇත. අයදුම් කිරීමට නැවත ආරම්භ කිරීම අවශ්‍ය වේ.</translation>
+        <translation type="unfinished">සබල කර ඇත්නම්, අවතාරයක් නොමැති සෑම සම්බන්ධතාවක්ම පෙරනිමි පින්තූරය වෙනුවට ඔවුන්ගේ Tox ID මත පදනම්ව ජනනය කරන ලද නිරූපකයක් ඇත. යෙදීමට නැවත ආරම්භ කිරීම අවශ්‍ය වේ.</translation>
     </message>
     <message>
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Smiley pack:</translation>
+        <translation type="unfinished">ස්මයිලි පැකේජය:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">අබල කර ඇත්නම්, තත්ත්‍වය කාර්යබහුල වූ විට දැනුම්දීම නිශ්ශබ්ද කරයි (නමුත් තවමත් දැනුම්දීමක් පෙන්වන්න)</translation>
+        <translation type="unfinished">අබල කර ඇත්නම්, තත්ත්‍වය කාර්‍යබහුල වූ විට දැනුම්දීම නිශ්ශබ්ද කරයි (නමුත් තවමත් දැනුම්දීමක් පෙන්වන්න)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඩෙස්ක්ටොප් දැනුම්දීම් භාවිතා කරන්න, උදා. දැනුම්දීමේ මධ්යස්ථානයක හෝ පද්ධති තැටියේ. මෙය නොමැතිව, දැනුම්දීම දෘශ්‍යමාන වන්නේ දැල්වෙන තැටි නිරූපකයක් ලෙස පමණි.</translation>
+        <translation type="unfinished">ඩෙස්ක්ටොප් දැනුම්දීම් භාවිතා කරන්න, උදා. දැනුම්දීමේ මධ්‍යස්ථානයක හෝ පද්ධති තැටියේ. මෙය නොමැතිව, දැනුම්දීම දෘශ්‍යමාන වන්නේ දැල්වෙන තැටි නිරූපකයක් ලෙස පමණි.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3575,7 +3549,7 @@ Hide formatting characters:
         <translation type="unfinished">ඩෙස්ක්ටොප් දැනුම්දීම්වල රහස් තොරතුරු නොපෙන්වා &quot;නව පණිවිඩය&quot; පමණක් පෙන්වන්න.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">මිතුරු ලැයිස්තුව සහ කතාබස් කවුළුව වෙන වෙනම ගෙන යා හැකි කවුළුවලට බෙදන්න.</translation>
     </message>
@@ -3627,22 +3601,21 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කතාබස් ඉතිහාසයෙන් පූරණය කරන ලද උපරිම පණිවිඩ ගණන (සංවාදයකට) කාර්ය සාධනය
+        <translation type="unfinished">කතාබස් ඉතිහාසයෙන් පූරණය කරන ලද උපරිම පණිවිඩ ගණන (සංවාදයකට) කාර්‍ය සාධනය
 වැඩි දියුණු කිරීම සඳහා මෙය අඩු කරන්න. මෙහි ඉතා අඩු සංඛ්‍යාවක් අනුචලන
 තීරුව අතුරුදහන් වීමට හේතු විය හැක.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">උපරිම කතාබස් ලොග් දසුන්
-ප්‍රමාණය</translation>
+        <translation type="unfinished">උපරිම කතාබස් ලොග් දසුන් ප්‍රමාණය</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">අනුචලනය කිරීමේදී කතාබස් ඉතිහාසයෙන් පූරණය කළ යුතු පණිවිඩ ගණන. මෙහි ඉතා අඩු
 සංඛ්‍යාවක් අනුචලන තීරුව අතුරුදහන් වීමට හේතු විය හැක.</translation>
@@ -3650,19 +3623,17 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කතාබස් ලොග් කුට්ටි
-ප්‍රමාණය</translation>
+        <translation type="unfinished">කතාබස් ලොග් කුට්ටි ප්‍රමාණය</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කතාබස්
-ලොගය:</translation>
+        <translation type="unfinished">කතාබස් ලොගය:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ශුන්ය සංකේතයෙන් පසු උපසර්ගය සඟවන්න</translation>
+        <translation type="unfinished">NUL අක්ෂරයෙන් පසු පෙළ සඟවන්න</translation>
     </message>
 </context>
 <context>
@@ -3671,19 +3642,19 @@ number here may cause the scroll bar to disappear.</source>
         <source>Online</source>
         <comment>Button to set your status to &apos;Online&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
     <message>
         <source>Away</source>
         <comment>Button to set your status to &apos;Away&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඉවතට</translation>
+        <translation type="unfinished">බැහැරව</translation>
     </message>
     <message>
         <source>Busy</source>
         <comment>Button to set your status to &apos;Busy&apos;</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">කාර්යබහුල</translation>
+        <translation type="unfinished">කාර්‍යබහුල</translation>
     </message>
     <message>
         <source>File</source>
@@ -3719,7 +3690,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Your name</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔයාගේ නම</translation>
+        <translation type="unfinished">ඔබේ නම</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3749,7 +3720,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Online</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
     <message>
         <source>Offline</source>
@@ -3764,7 +3735,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">සම්මන්ත්රණ</translation>
+        <translation type="unfinished">සම්මන්ත්‍රණ</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3826,20 +3797,20 @@ number here may cause the scroll bar to disappear.</source>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>නව මිතුරු ඉල්ලීම් %n</numerusform>
+            <numerusform>නව මිතුරු ඉල්ලීම් %n</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>නව සම්මන්ත්‍රණ ආරාධනා %n</numerusform>
+            <numerusform>නව සම්මන්ත්‍රණ ආරාධනා %n</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">පිටවෙන්න</translation>
     </message>
@@ -3877,7 +3848,7 @@ number here may cause the scroll bar to disappear.</source>
         <source>Debug</source>
         <comment>title of the window</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">දෝෂහරණය කරන්න</translation>
+        <translation type="unfinished">නිදොස්කරණය</translation>
     </message>
 </context>
 </TS>

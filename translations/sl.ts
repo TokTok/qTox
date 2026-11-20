@@ -13,7 +13,7 @@
     </message>
     <message>
         <source>Disabled</source>
-        <translation>Dehabilitirano</translation>
+        <translation>Onemogočeno</translation>
     </message>
     <message>
         <source>Select region</source>
@@ -30,7 +30,7 @@
     <message>
         <source>Gain</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dobiček</translation>
+        <translation type="unfinished">Ojačanje</translation>
     </message>
     <message>
         <source>Playback device</source>
@@ -46,23 +46,11 @@
     </message>
     <message>
         <source>Video Settings</source>
-        <translation>Nastavitve video</translation>
+        <translation>Nastavitve videa</translation>
     </message>
     <message>
         <source>Video device</source>
-        <translation>Video naprave</translation>
-    </message>
-    <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Nastavi resolucijo tvoje kamere.
-Večja vrednost pomeni boljša kvaliteta slike.
-Vendar je za to potrebna hitrejša internetna povezava.
-Včasih se lahko zgodi da je tvoj internet prepočasen za visoko kvaliteto videa
-in zato lahko pride do problemov pri video pogovorih.</translation>
+        <translation>Video naprava</translation>
     </message>
     <message>
         <source>Resolution</source>
@@ -81,24 +69,24 @@ in zato lahko pride do problemov pri video pogovorih.</translation>
         <translation>Kakovost zvoka</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Visoka (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Visoka (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Srednja (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Srednja (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Nizka (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Nizka (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Zelo nizka (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Zelo nizka (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
-        <translation>Vhod</translation>
+        <translation>Prag</translation>
     </message>
     <message>
         <source>Use slider to set the volume of your speakers.</source>
@@ -156,7 +144,7 @@ kar lahko povzroči težave z video klici.</translation>
     <message>
         <source>Commit hash: %1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zgoščena vrednost potrdi: %1</translation>
+        <translation type="unfinished">Zgoščena vrednost uveljavitve: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -167,35 +155,35 @@ kar lahko povzroči težave z video klici.</translation>
         <translation>Različica Qt: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Seznam vseh znanih težav je na voljo na %1 na Githubu. Če v qToxu odkrijete napako ali varnostno ranljivost, jo prijavite v skladu s smernicami v našem %2 wiki članku.</translation>
+        <translation type="unfinished">Seznam vseh znanih težav je na voljo na %1 na GitHubu. Če v qToxu odkrijete napako ali varnostno ranljivost, jo prijavite v skladu s smernicami v našem %2 wiki članku.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Kliknite tukaj, če želite prijaviti napako.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Glej celoten seznam %1 na Github</translation>
+        <translation>Oglejte si celoten seznam %1 na GitHubu</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
-        <translation type="unfinished">bug-tracker</translation>
+        <translation type="unfinished">sledilniku napak</translation>
     </message>
     <message>
         <source>Writing Useful Bug Reports</source>
         <comment>Replaces `%2` in the `A list of all known…`</comment>
-        <translation type="unfinished">Pisanje poročil o napakah</translation>
+        <translation type="unfinished">Pisanje uporabnih poročil o napakah</translation>
     </message>
     <message>
         <source>contributors</source>
         <comment>Replaces `%1` in `See a full list of…`</comment>
-        <translation type="unfinished">sodelavci</translation>
+        <translation type="unfinished">sodelavcev</translation>
     </message>
     <message>
         <source>This version of qTox is being maintained by the TokTok team following the archiving of the original qTox project.</source>
@@ -207,7 +195,7 @@ kar lahko povzroči težave z video klici.</translation>
     <name>AboutFriendForm</name>
     <message>
         <source>Automatically accept files from contact if set</source>
-        <translation>Samodejno sprejemanje datotek iz kontakta (če nastavljen)</translation>
+        <translation>Samodejno sprejmi datoteke od stika, če je nastavljeno</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -227,10 +215,10 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Sprejmi samodejno skupinski klepet za ta kontakt (če nastavljen).</translation>
+        <translation type="unfinished">Samodejno sprejmi povabila na konference od tega stika, če je nastavljeno.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Izbriši zgodovino (operacije ni mogoče razveljaviti!)</translation>
     </message>
     <message>
@@ -246,14 +234,14 @@ kar lahko povzroči težave z video klici.</translation>
         <translation>Zgodovina izbrisana</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">To je javni ključ vašega prijatelja, uporabite ga za preverjanje njegove identitete prek drugega kanala. Tega ne morete poslati drugim osebam, da lahko dodajo ta stik.</translation>
+        <translation type="unfinished">To je javni ključ vašega prijatelja; uporabite ga za preverjanje njegove identitete prek drugega kanala. Drugi ga ne morejo uporabiti za dodajanje tega stika.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
+        <source>Public key (not Tox ID):</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Javni ključ (ne ToxID):</translation>
+        <translation type="unfinished">Javni ključ (ne Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
@@ -261,9 +249,9 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Potrditev</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ali ste prepričani, da želite odstraniti %1 zgodovino klepeta?</translation>
+        <translation type="unfinished">Ali res želite odstraniti zgodovino klepeta z osebo %1?</translation>
     </message>
     <message>
         <source>Failed to remove chat history with %1!</source>
@@ -291,9 +279,9 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Samodejno sprejemanje povabil na konference</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Tukaj lahko shranite komentarje o tem stiku.</translation>
+        <translation type="unfinished">Tukaj lahko shranite opombe o tem stiku.</translation>
     </message>
 </context>
 <context>
@@ -343,11 +331,11 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Send friend request</source>
-        <translation>Dodaj med stike</translation>
+        <translation>Pošlji prošnjo za prijateljstvo</translation>
     </message>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation>Nemogoče dodati kontakta</translation>
+        <translation>Stika ni bilo mogoče dodati</translation>
     </message>
     <message>
         <source>Invalid Tox ID format</source>
@@ -355,7 +343,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Friend requests</source>
-        <translation>Prošnje prijateljstva</translation>
+        <translation>Prošnje za prijateljstvo</translation>
     </message>
     <message>
         <source>Accept</source>
@@ -366,21 +354,21 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Zavrni</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Vnesite Tox ID vašega prijatelja</translation>
     </message>
     <message>
         <source>Friend request message</source>
-        <translation>Sporočilo o prošnji prijateljstva</translation>
+        <translation>Sporočilo prošnje za prijateljstvo</translation>
     </message>
     <message>
         <source>Type message to send with the friend request or leave empty to send a default message</source>
-        <translation>Vnesite sporočilo, ki želite poslati s prošnjo prijateljstva ali pustite prazno, če želite poslati privzeto sporočilo</translation>
+        <translation>Vnesite sporočilo, ki ga želite poslati s prošnjo za prijateljstvo, ali pustite prazno za privzeto sporočilo</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <extracomment>When trying to add your own Tox ID as friend</extracomment>
-        <translation type="unfinished">Samega sebe ne moreš dodati med stike!</translation>
+        <translation type="unfinished">Samega sebe ne morete dodati med stike!</translation>
     </message>
     <message>
         <source>Open contact list</source>
@@ -401,7 +389,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Ni nobenega kontakta v tej datoteki!</translation>
+        <translation>V tej datoteki ni stikov za uvoz!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -420,29 +408,29 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Send friend requests</source>
-        <translation>Pošlji prošnje prijateljstva</translation>
+        <translation>Pošlji prošnje za prijateljstvo</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <extracomment>Default message in friend requests if the field is left blank. Write something appropriate!</extracomment>
-        <translation type="unfinished">%1 tukaj. Tox me maybe?</translation>
+        <translation type="unfinished">%1 tukaj! Se slišiva na Toxu?</translation>
     </message>
     <message>
         <source>Import a list of contacts, one Tox ID per line</source>
-        <translation>Vnesite imenik, en Tox ID na linijo</translation>
+        <translation>Uvozite seznam stikov, en Tox ID na vrstico</translation>
     </message>
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation>
-            <numerusform>Pripravljen na vnos %n kontakta(-ov), kliknite pošlji za potrditi</numerusform>
-            <numerusform>Pripravljen na vnos %n kontaktov, kliknite pošlji za potrditi</numerusform>
-            <numerusform>Pripravljen na vnos %n kontaktov, kliknite pošlji za potrditi</numerusform>
-            <numerusform>Pripravljen na vnos %n kontaktov, kliknite pošlji za potrditi</numerusform>
+            <numerusform>Pripravljeno za uvoz %n stika, kliknite Pošlji za potrditev</numerusform>
+            <numerusform>Pripravljeno za uvoz %n stikov, kliknite Pošlji za potrditev</numerusform>
+            <numerusform>Pripravljeno za uvoz %n stikov, kliknite Pošlji za potrditev</numerusform>
+            <numerusform>Pripravljeno za uvoz %n stikov, kliknite Pošlji za potrditev</numerusform>
         </translation>
     </message>
     <message>
         <source>Import contacts</source>
-        <translation>Vnesi kontakte</translation>
+        <translation>Uvozi stike</translation>
     </message>
     <message>
         <source>Tox ID, 76 hexadecimal characters</source>
@@ -450,10 +438,10 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Tox ID, 76 šestnajstiških znakov</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 Tox ID ni veljaven</translation>
+        <translation type="unfinished">%1 ni veljaven Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -474,7 +462,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>really</source>
-        <translation>da</translation>
+        <translation>res</translation>
     </message>
     <message>
         <source>not</source>
@@ -502,12 +490,12 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Logs (*.log)</source>
-        <translation>Dnevniki (* .log)</translation>
+        <translation>Dnevniki (*.log)</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Razen če %1 veste, kaj počnete, prosim %2 spremenite karkoli tukaj. Tukaj opravljene spremembe lahko povzročijo težave s qToxom in celo izgubo vaših podatkov, npr. zgodovina.%3</translation>
+        <translation type="unfinished">Če %1 ne veste, kaj počnete, prosimo, %2 spreminjajte ničesar tukaj. Spremembe tukaj lahko povzročijo težave s qToxom in celo izgubo vaših podatkov, npr. zgodovine.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -533,9 +521,9 @@ kar lahko povzroči težave z video klici.</translation>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>Shrani nastavitve v trenutno mapo namesto običajno konfiguracijsko mapo</translation>
+        <translation>Shrani nastavitve v delovno mapo namesto v običajno mapo z nastavitvami</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -607,7 +595,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Export Debug Log</source>
-        <translation>Dnevnik razhroščevanja</translation>
+        <translation>Izvozi dnevnik razhroščevanja</translation>
     </message>
     <message>
         <source>Copy Debug Log</source>
@@ -627,23 +615,23 @@ kar lahko povzroči težave z video klici.</translation>
         <source>Disabling this allows, e.g., Tox over Tor. It adds load to the Tox network however, so uncheck only when necessary.</source>
         <extracomment>force tcp checkbox tooltip</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Če to onemogočite, omogočite npr. Tox prek Tor. Vendar pa dodatno obremeni omrežje Tox, zato počistite le, kadar je to potrebno.</translation>
+        <translation type="unfinished">Če to onemogočite, omogočite npr. Tox prek Tora. Vendar to dodatno obremeni omrežje Tox, zato to izklopite le, kadar je to potrebno.</translation>
     </message>
     <message>
         <source>Enable Debug Tools (developers only)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Omogoči orodja za odpravljanje napak (samo za razvijalce)</translation>
+        <translation type="unfinished">Omogoči orodja za razhroščevanje (samo za razvijalce)</translation>
     </message>
 </context>
 <context>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>Tox URI za interpretirati</translation>
+        <translation>Tox URI za razčlenitev</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation>Odpre novo okno z določenim profilom.</translation>
+        <translation>Zažene nov primerek in naloži določen profil.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -655,28 +643,20 @@ kar lahko povzroči težave z video klici.</translation>
         <translation type="unfinished">Zažene nov primerek in odpre prijavni zaslon.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavi IPv6 &lt;on&gt;/&lt;off&gt;. Privzeto je VKLOPLJENO.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Vklopi ali izklopi IPv6: %1. Privzeto: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavi UDP &lt;on&gt;/&lt;off&gt;. Privzeto je VKLOPLJENO.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Vklopi ali izklopi UDP: %1. Privzeto: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavi odkrivanje LAN &lt;on&gt;/&lt;off&gt;. UDP izklopi preglasitve. Privzeto je VKLOPLJENO.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Vklopi ali izklopi odkrivanje v LAN: %1. Nima učinka, če je UDP izklopljen. Privzeto: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavi nastavitve proxyja. Privzeto je NIČ.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Nastavi proxy. Privzeto: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -695,7 +675,7 @@ kar lahko povzroči težave z video klici.</translation>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zažene se v prenosnem načinu; naloži profil iz tega imenika.</translation>
+        <translation type="unfinished">Zažene se v prenosnem načinu; naloži profil iz te mape.</translation>
     </message>
     <message>
         <source>path</source>
@@ -720,7 +700,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>Unable to open</source>
-        <translation>Nemogoče odpreti</translation>
+        <translation>Ni mogoče odpreti</translation>
     </message>
     <message>
         <source>Bad idea</source>
@@ -729,11 +709,11 @@ kar lahko povzroči težave z video klici.</translation>
     <message>
         <source>Failed to open temporary file</source>
         <comment>Temporary file for screenshot</comment>
-        <translation>Ni uspelo odpreti začasne datoteke</translation>
+        <translation>Začasne datoteke ni bilo mogoče odpreti</translation>
     </message>
     <message>
         <source>qTox wasn&apos;t able to save the screenshot</source>
-        <translation>qTox ni uspel shraniti screenshot</translation>
+        <translation>qTox ni mogel shraniti posnetka zaslona</translation>
     </message>
     <message>
         <source>Copy</source>
@@ -741,7 +721,7 @@ kar lahko povzroči težave z video klici.</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>Skušate poslati zaporedno datoteko, ne bo delalo!</translation>
+        <translation>Poskušate poslati zaporedno datoteko, kar ne bo delovalo!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -752,8 +732,8 @@ kar lahko povzroči težave z video klici.</translation>
         <source>Illegal characters have been changed to _
 so you can save the file on Windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nedovoljeni znaki so bili spremenjeni v _
-tako da lahko datoteko shranite v sistem Windows.</translation>
+        <translation type="unfinished">Nedovoljeni znaki so bili spremenjeni v _,
+da lahko datoteko shranite v sistemu Windows.</translation>
     </message>
 </context>
 <context>
@@ -764,35 +744,35 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>Start audio call</source>
-        <translation type="unfinished">Začni glasovni pogovor</translation>
+        <translation type="unfinished">Začni zvočni klic</translation>
     </message>
     <message>
         <source>End audio call</source>
-        <translation type="unfinished">Končaj glasovni pogovor</translation>
+        <translation type="unfinished">Končaj zvočni klic</translation>
     </message>
     <message>
         <source>Cancel audio call</source>
-        <translation type="unfinished">Prekini glasovni klic</translation>
+        <translation type="unfinished">Prekliči zvočni klic</translation>
     </message>
     <message>
         <source>Accept audio call</source>
-        <translation type="unfinished">Sprejmi glasovni klic</translation>
+        <translation type="unfinished">Sprejmi zvočni klic</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation>Ni mogoče začeti video klic</translation>
+        <translation>Ni mogoče začeti video klica</translation>
     </message>
     <message>
         <source>Start video call</source>
-        <translation type="unfinished">Začni video pogovor</translation>
+        <translation type="unfinished">Začni video klic</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Končaj video pogovor</translation>
+        <translation type="unfinished">Končaj video klic</translation>
     </message>
     <message>
         <source>Cancel video call</source>
-        <translation type="unfinished">Prekini video klic</translation>
+        <translation type="unfinished">Prekliči video klic</translation>
     </message>
     <message>
         <source>Accept video call</source>
@@ -805,11 +785,11 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation type="unfinished">Vklopi zvok</translation>
+        <translation type="unfinished">Vklopi zvok klica</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation type="unfinished">Izklopi zvok</translation>
+        <translation type="unfinished">Izklopi zvok klica</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -842,7 +822,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <name>ChatWidget</name>
     <message>
         <source>pending</source>
-        <translation type="unfinished">čakanje</translation>
+        <translation type="unfinished">v čakanju</translation>
     </message>
     <message>
         <source>%1 is typing</source>
@@ -879,12 +859,12 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Location not writable</source>
         <comment>Title of permissions popup</comment>
-        <translation type="unfinished">Lokacija zaščitena</translation>
+        <translation type="unfinished">V to lokacijo ni mogoče pisati</translation>
     </message>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Nimate dovoljenja za pisanje na to lokacijo. Izberite drugega ali prekličite pogovorno okno za shranjevanje.</translation>
+        <translation type="unfinished">Nimate dovoljenja za pisanje v to lokacijo. Izberite drugo ali prekličite shranjevanje.</translation>
     </message>
 </context>
 <context>
@@ -893,16 +873,16 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">nemo</translation>
+        <translation type="unfinished">utišaj</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -912,29 +892,29 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">kopiraj ID vrstnika</translation>
+        <translation type="unfinished">kopiraj ID udeleženca</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Skupine</translation>
+        <translation type="unfinished">Konference</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Ustvari novo skupino</translation>
+        <translation type="unfinished">Ustvari novo konferenco</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Vabila na skupine</translation>
+        <translation type="unfinished">Povabila na konference</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteWidget</name>
     <message>
         <source>Invited by %1 on %2 at %3.</source>
-        <translation>Povabljen od %1 na %2 ob %3.</translation>
+        <translation>Povabil(a) %1 dne %2 ob %3.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -954,7 +934,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Zapusti skupino</translation>
+        <translation>Zapusti konferenco</translation>
     </message>
     <message>
         <source>Open chat in new window</source>
@@ -968,10 +948,10 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n uporabnik v klepetu</numerusform>
+            <numerusform>%n uporabnika v klepetu</numerusform>
+            <numerusform>%n uporabniki v klepetu</numerusform>
+            <numerusform>%n uporabnikov v klepetu</numerusform>
         </translation>
     </message>
     <message>
@@ -997,12 +977,12 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Invalid Tox ID</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Neveljaven ID Tox</translation>
+        <translation type="unfinished">Neveljaven Tox ID</translation>
     </message>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation type="unfinished">Morate napisati sporočilo z vašo prošnjo</translation>
+        <translation type="unfinished">Prošnji morate priložiti sporočilo</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -1020,7 +1000,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dnevnik odpravljanja napak</translation>
+        <translation type="unfinished">Dnevnik razhroščevanja</translation>
     </message>
     <message>
         <source>Auto-reload</source>
@@ -1038,7 +1018,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Debug Log</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dnevnik odpravljanja napak</translation>
+        <translation type="unfinished">Dnevnik razhroščevanja</translation>
     </message>
 </context>
 <context>
@@ -1061,7 +1041,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Paused</source>
         <comment>file transfer widget</comment>
-        <translation>Premor</translation>
+        <translation>Zaustavljeno</translation>
     </message>
     <message>
         <source>Resuming...</source>
@@ -1074,11 +1054,11 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>Open file directory</source>
-        <translation>Odprite mapo</translation>
+        <translation>Odpri mapo datoteke</translation>
     </message>
     <message>
         <source>Pause transfer</source>
-        <translation>Ustavite prenos</translation>
+        <translation>Zaustavi prenos</translation>
     </message>
     <message>
         <source>Cancel transfer</source>
@@ -1093,10 +1073,10 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <translation>Sprejmi prenos</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Daljinski upravljalnik zaustavljen</translation>
+        <translation type="unfinished">Druga stran je zaustavila</translation>
     </message>
 </context>
 <context>
@@ -1132,7 +1112,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>This month</source>
-        <translation>Zadnji mesec</translation>
+        <translation>Ta mesec</translation>
     </message>
     <message>
         <source>Never</source>
@@ -1149,7 +1129,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Povabi v skupino</translation>
+        <translation>Povabi na konferenco</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1170,11 +1150,11 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">V novi skupini</translation>
+        <translation type="unfinished">Na novo konferenco</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Povabi v skupino &apos;%1&apos;</translation>
+        <translation type="unfinished">Povabi na konferenco »%1«</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1216,7 +1196,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Premakni se v krog »%1«</translation>
+        <translation type="unfinished">Premakni v krog »%1«</translation>
     </message>
     <message>
         <source>Remove friend</source>
@@ -1226,7 +1206,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Blocked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">blokiran</translation>
+        <translation type="unfinished">Blokiran</translation>
     </message>
 </context>
 <context>
@@ -1262,12 +1242,12 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>Show system tray icon</source>
-        <translation>Pokaži ikono v orodni vrstici</translation>
+        <translation>Pokaži ikono v sistemski vrstici</translation>
     </message>
     <message>
         <source>Enable light tray icon.</source>
         <comment>toolTip for light icon setting</comment>
-        <translation>Omogoči svetlo ikono.</translation>
+        <translation>Uporabi svetlo ikono v sistemski vrstici.</translation>
     </message>
     <message>
         <source>Light icon</source>
@@ -1276,20 +1256,20 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>qTox will start minimized in tray.</source>
         <comment>toolTip for Start in tray setting</comment>
-        <translation>qTox se bo zagnal v orodni vrstici.</translation>
+        <translation>qTox se bo zagnal pomanjšan v sistemski vrstici.</translation>
     </message>
     <message>
         <source>Start in tray</source>
-        <translation>Zaženi v orodni vrstici</translation>
+        <translation>Zaženi v sistemski vrstici</translation>
     </message>
     <message>
         <source>Close to tray</source>
         <translatorcomment>Preveri</translatorcomment>
-        <translation>Zapri v ozadje</translation>
+        <translation>Zapri v sistemsko vrstico</translation>
     </message>
     <message>
         <source>Minimize to tray</source>
-        <translation>Pomanjšaj v ozadje</translation>
+        <translation>Pomanjšaj v sistemsko vrstico</translation>
     </message>
     <message>
         <source>Autostart</source>
@@ -1308,12 +1288,12 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
         <translation>Izberi 0 za izklop</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
-        <translation>Tvoje stanje bo spremenjeno na Odsotno ob neaktivnosti.</translation>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
+        <translation>Vaše stanje se po nastavljenem času nedejavnosti spremeni v Odsoten.</translation>
     </message>
     <message>
         <source>Auto away after (0 to disable):</source>
-        <translation>Odsoten po X minutah (0 za izklop):</translation>
+        <translation>Samodejno odsoten po (0 za izklop):</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1321,7 +1301,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Odpri qTox na zagon operacijskega sistema (sedanji profil).</translation>
+        <translation>Zaženi qTox ob zagonu operacijskega sistema (trenutni profil).</translation>
     </message>
     <message>
         <source>Default directory to save files:</source>
@@ -1330,7 +1310,7 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
     <message>
         <source>Check for updates</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Preverite posodobitve</translation>
+        <translation type="unfinished">Preveri posodobitve</translation>
     </message>
     <message>
         <source>Spell checking</source>
@@ -1352,27 +1332,27 @@ tako da lahko datoteko shranite v sistem Windows.</translation>
 instead of system taskbar.</source>
         <comment>toolTip for minimize to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Po pritisku minimize (_) se bo qTox minimiziral v pladenj,
-namesto sistemske opravilne vrstice.</translation>
+        <translation type="unfinished">Po pritisku gumba za pomanjšanje (_) se bo qTox pomanjšal v sistemsko vrstico
+namesto v opravilno vrstico.</translation>
     </message>
     <message>
         <source>After pressing close (X) qTox will close to tray,
 instead of closing entirely.</source>
         <comment>toolTip for close to tray setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Po pritisku na zapri (X) se bo qTox zaprl pladnju,
+        <translation type="unfinished">Po pritisku gumba za zapiranje (X) se bo qTox pomanjšal v sistemsko vrstico,
 namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">To lahko nastavite za vsakega prijatelja tako, da z desnim klikom kliknete posameznega prijatelja.</translation>
+        <translation type="unfinished">To lahko nastavite za vsakega prijatelja posebej z desnim klikom nanj.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dodajte sporočilo klepeta, ko se uporabnik pridruži konferenci ali jo zapusti</translation>
+        <translation type="unfinished">Dodaj sporočilo v klepet, ko se uporabnik pridruži konferenci ali jo zapusti</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1382,7 +1362,7 @@ namesto da bi se popolnoma zaprl.</translation>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pomagajte prevesti</translation>
+        <translation type="unfinished">Pomagajte pri prevajanju</translation>
     </message>
     <message>
         <source> min</source>
@@ -1410,7 +1390,7 @@ namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
         <source>Clear displayed messages</source>
-        <translation>Skrij prikazana sporočila</translation>
+        <translation>Počisti prikazana sporočila</translation>
     </message>
     <message>
         <source>Send a screenshot</source>
@@ -1445,7 +1425,7 @@ namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
         <source>Export to file</source>
-        <translation type="unfinished">Prenesi v datoteko</translation>
+        <translation type="unfinished">Izvozi v datoteko</translation>
     </message>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
@@ -1465,7 +1445,7 @@ namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
         <source>Your Tox ID (click to copy)</source>
-        <translation>Tvoj Tox ID (klikni za kopiranje)</translation>
+        <translation>Vaš Tox ID (kliknite za kopiranje)</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -1475,14 +1455,14 @@ namesto da bi se popolnoma zaprl.</translation>
     <message>
         <source>Export</source>
         <comment>export profile button</comment>
-        <translation>Shrani</translation>
+        <translation>Izvozi</translation>
     </message>
     <message>
         <source>Allows you to export your Tox profile to a file.
 Profile does not contain your history.</source>
         <comment>tooltip for profile exporting button</comment>
-        <translation>Omogoči ti da shraniš tvoj Tox profil v datoteko.
-Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
+        <translation>Omogoča izvoz vašega profila Tox v datoteko.
+Profil ne vsebuje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -1491,7 +1471,7 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>Ta QR koda vsebuje vaš Tox ID. Lahko jo delite s prijatelji namesto kode.</translation>
+        <translation>Ta koda QR vsebuje vaš Tox ID. Delite jo lahko tudi s prijatelji.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1522,7 +1502,7 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Odjava</translation>
     </message>
     <message>
@@ -1536,7 +1516,7 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     <message>
         <source>Remove your password and encryption from your profile.</source>
         <comment>Tooltip for the `Remove password` button.</comment>
-        <translation>Odstranjevanje gesla in šifriranja iz vašega profila.</translation>
+        <translation>Odstrani geslo in šifriranje iz vašega profila.</translation>
     </message>
     <message>
         <source>Name input</source>
@@ -1544,11 +1524,11 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Name visible to contacts</source>
-        <translation>Ime vidno v imenik</translation>
+        <translation>Ime, vidno stikom</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation>Sporočilo o stanju</translation>
+        <translation>Vnos sporočila o stanju</translation>
     </message>
     <message>
         <source>Your Tox ID</source>
@@ -1556,11 +1536,11 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Save QR image as file</source>
-        <translation>Shranite QR sliko kot datoteko</translation>
+        <translation>Shrani sliko QR kot datoteko</translation>
     </message>
     <message>
         <source>Copy QR image to clipboard</source>
-        <translation>Kopiranje QR slike v zapiskih</translation>
+        <translation>Kopiraj sliko QR v odložišče</translation>
     </message>
     <message>
         <source>Rename profile.</source>
@@ -1572,7 +1552,7 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation type="unfinished">Shrani profil</translation>
+        <translation type="unfinished">Izvozi profil</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
@@ -1580,7 +1560,7 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation>Spremenite geslo profila</translation>
+        <translation>Spremeni geslo profila</translation>
     </message>
     <message>
         <source>My name:</source>
@@ -1599,12 +1579,12 @@ Profil ne vsebuje tvoje zgodovine pogovorov.</translation>
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ta ID omogoča drugim uporabnikom Toxa, da dodajo in stopijo v stik z vami.
+        <translation type="unfinished">Ta ID omogoča drugim uporabnikom Toxa, da vas dodajo in stopijo v stik z vami.
 Delite ga s prijatelji, da začnete klepetati.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
-        <translation type="unfinished">Nastavite svoje statusno sporočilo, ki bo prikazano drugim</translation>
+        <translation type="unfinished">Nastavite sporočilo o stanju, ki bo prikazano drugim</translation>
     </message>
 </context>
 <context>
@@ -1612,7 +1592,7 @@ Delite ga s prijatelji, da začnete klepetati.</translation>
     <message>
         <source>Load history dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pogovorno okno za zgodovino nalaganja</translation>
+        <translation type="unfinished">Pogovorno okno za nalaganje zgodovine</translation>
     </message>
     <message>
         <source>Load history from:</source>
@@ -1640,11 +1620,11 @@ Delite ga s prijatelji, da začnete klepetati.</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation>Ustvarite Profil</translation>
+        <translation>Ustvari profil</translation>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation>Če profil nima gesla, qTox preskoči prijavni zaslon</translation>
+        <translation>Če profil nima gesla, lahko qTox preskoči prijavni zaslon</translation>
     </message>
     <message>
         <source>Load automatically</source>
@@ -1652,11 +1632,11 @@ Delite ga s prijatelji, da začnete klepetati.</translation>
     </message>
     <message>
         <source>Import</source>
-        <translation>Vstavi</translation>
+        <translation>Uvozi</translation>
     </message>
     <message>
         <source>Load</source>
-        <translation type="unfinished">Potrdi izbiro</translation>
+        <translation type="unfinished">Naloži</translation>
     </message>
     <message>
         <source>New Profile</source>
@@ -1664,7 +1644,7 @@ Delite ga s prijatelji, da začnete klepetati.</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation>Nalaganje profila</translation>
+        <translation>Naloži profil</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
@@ -1696,7 +1676,7 @@ Lahko ustvarite enega.</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation>Ni bilo mogoče naložiti ta profil</translation>
+        <translation>Tega profila ni bilo mogoče naložiti</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
@@ -1725,7 +1705,7 @@ Lahko ustvarite enega.</translation>
     <message>
         <source>Create a new profile button</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gumb Ustvari nov profil</translation>
+        <translation type="unfinished">Gumb za ustvarjanje novega profila</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1745,11 +1725,11 @@ Lahko ustvarite enega.</translation>
     <message>
         <source>Load automatically checkbox</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Samodejno naloži potrditveno polje</translation>
+        <translation type="unfinished">Potrditveno polje za samodejno nalaganje</translation>
     </message>
     <message>
         <source>Import profile</source>
-        <translation type="unfinished">Naloži profil</translation>
+        <translation type="unfinished">Uvozi profil</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
@@ -1764,7 +1744,7 @@ Lahko ustvarite enega.</translation>
     <message>
         <source>Loading existing profile page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nalaganje obstoječe strani profila</translation>
+        <translation type="unfinished">Stran za nalaganje obstoječega profila</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1794,15 +1774,15 @@ Za več informacij pritisnite Shift+F1.</translation>
     <name>MainWindow</name>
     <message>
         <source>Your name</source>
-        <translation>Tvoje ime</translation>
+        <translation>Vaše ime</translation>
     </message>
     <message>
         <source>Your status</source>
-        <translation>Tvoje stanje</translation>
+        <translation>Vaše stanje</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Ustvari skupen pogovor</translation>
+        <translation type="unfinished">Ustvari konferenco</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1824,16 +1804,16 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Open profile page when clicked</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ko kliknete, odprite stran profila</translation>
+        <translation type="unfinished">Ob kliku odpre stran profila</translation>
     </message>
     <message>
         <source>Status message input</source>
-        <translation type="unfinished">Sporočilo o stanju</translation>
+        <translation type="unfinished">Vnos sporočila o stanju</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavite svoje statusno sporočilo, ki bo prikazano drugim</translation>
+        <translation type="unfinished">Nastavite sporočilo o stanju, ki bo prikazano drugim</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1842,7 +1822,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Set availability status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavite status razpoložljivosti</translation>
+        <translation type="unfinished">Nastavite razpoložljivost</translation>
     </message>
     <message>
         <source>Contact search</source>
@@ -1852,7 +1832,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Contact search input for known friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vnos iskanja stikov za znane prijatelje</translation>
+        <translation type="unfinished">Iskanje med znanimi prijatelji</translation>
     </message>
     <message>
         <source>Sorting and visibility</source>
@@ -1862,12 +1842,12 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Set friends sorting and visibility</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavite razvrščanje in vidnost prijateljev</translation>
+        <translation type="unfinished">Nastavi razvrščanje in vidnost prijateljev</translation>
     </message>
     <message>
         <source>Open Add friends page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite stran Dodaj prijatelje</translation>
+        <translation type="unfinished">Odpri stran Dodaj prijatelje</translation>
     </message>
     <message>
         <source>Conference</source>
@@ -1877,7 +1857,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Open conference management page</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odpri stran za upravljanje konference</translation>
+        <translation type="unfinished">Odpri stran za upravljanje konferenc</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1887,7 +1867,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Open File transfers history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite zgodovino prenosov datotek</translation>
+        <translation type="unfinished">Odpri zgodovino prenosov datotek</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1896,12 +1876,12 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Open Settings</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite nastavitve</translation>
+        <translation type="unfinished">Odpri nastavitve</translation>
     </message>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite notranja orodja za odpravljanje napak</translation>
+        <translation type="unfinished">Odpri notranja orodja za razhroščevanje</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1910,7 +1890,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite program za odpravljanje napak</translation>
+        <translation type="unfinished">Odpri razhroščevalnik</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -1922,12 +1902,12 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Executable file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Zagonska datoteka</translation>
+        <translation type="unfinished">Izvršljiva datoteka</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Želiš odpreti zagonsko datoteko. Te datoteke so lahko nevarne in škodijo računalniku. Želiš vseeno odpreti?</translation>
+        <translation type="unfinished">Od qToxa ste zahtevali, da odpre izvršljivo datoteko. Izvršljive datoteke lahko poškodujejo vaš računalnik. Ali res želite odpreti to datoteko?</translation>
     </message>
 </context>
 <context>
@@ -1949,7 +1929,7 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Mute audio</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izklop zvoka</translation>
+        <translation type="unfinished">Izklopi zvok</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1957,12 +1937,12 @@ Za več informacij pritisnite Shift+F1.</translation>
     </message>
     <message>
         <source>End video call</source>
-        <translation type="unfinished">Končaj video pogovor</translation>
+        <translation type="unfinished">Končaj video klic</translation>
     </message>
     <message>
         <source>Exit full screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izhod iz celotnega zaslona</translation>
+        <translation type="unfinished">Izhod iz celozaslonskega načina</translation>
     </message>
     <message>
         <source>Hide messages</source>
@@ -2004,12 +1984,12 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Exit Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izhod iz celotnega zaslona</translation>
+        <translation type="unfinished">Izhod iz celozaslonskega načina</translation>
     </message>
     <message>
         <source>Enter Full Screen</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vnesite celozaslonski način</translation>
+        <translation type="unfinished">Celozaslonski način</translation>
     </message>
 </context>
 <context>
@@ -2017,10 +1997,10 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Neprebrano sporočilo</numerusform>
+            <numerusform>Neprebrani sporočili</numerusform>
+            <numerusform>Neprebrana sporočila</numerusform>
+            <numerusform>Neprebrana sporočila</numerusform>
         </translation>
     </message>
 </context>
@@ -2038,18 +2018,18 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Incoming file transfer</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dohodni prenos datotek</translation>
+        <translation type="unfinished">Dohodni prenos datoteke</translation>
     </message>
     <message>
         <source>%1 - file transfer</source>
         <extracomment>e.g. Bob - file transfer</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 - prenos datotek</translation>
+        <translation type="unfinished">%1 - prenos datoteke</translation>
     </message>
     <message>
         <source>Conference invite received</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vabilo na konferenco prejeto</translation>
+        <translation type="unfinished">Prejeto vabilo na konferenco</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
@@ -2075,9 +2055,9 @@ Za več informacij pritisnite Shift+F1.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Caps-lock omogočen</translation>
+        <translation type="unfinished">Caps Lock je vklopljen</translation>
     </message>
 </context>
 <context>
@@ -2102,24 +2082,24 @@ Za več informacij pritisnite Shift+F1.</translation>
     <message>
         <source>Your friends will be able to see when you are typing.</source>
         <comment>tooltip for typing notifications setting</comment>
-        <translation>Tvoji stiki bodo lahko videl kdaj tipkaš.</translation>
+        <translation>Vaši stiki bodo lahko videli, kdaj tipkate.</translation>
     </message>
     <message>
         <source>Chat history keeping is still in development.
 Save format changes are possible, which may result in data loss.</source>
         <comment>toolTip for Keep History setting</comment>
-        <translation>Zgodovina sporočil je še vedno v izdelavi.
-Vrsta datotek za shranjevanje se lahko spremeni in podatki se izgubijo.</translation>
+        <translation>Hranjenje zgodovine klepeta je še v razvoju.
+Oblika shranjevanja se lahko spremeni, kar lahko povzroči izgubo podatkov.</translation>
     </message>
     <message>
         <source>Send typing notifications</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pošiljanje obvestil o tipkanju</translation>
+        <translation type="unfinished">Pošiljaj obvestila o tipkanju</translation>
     </message>
     <message>
         <source>Keep chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Hranite zgodovino klepeta</translation>
+        <translation type="unfinished">Hrani zgodovino klepeta</translation>
     </message>
     <message>
         <source>NoSpam is part of your Tox ID.
@@ -2128,7 +2108,7 @@ People will be unable to add you with your old ID, but you will keep your curren
         <comment>toolTip for nospam</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">NoSpam je del vašega Tox ID-ja.
-Če prejemate neželeno pošto s prošnjami za prijateljstvo, morate spremeniti svoj NoSpam.
+Če vas zasipajo z neželenimi prošnjami za prijateljstvo, spremenite svoj NoSpam.
 Ljudje vas ne bodo mogli dodati s starim ID-jem, vendar boste obdržali trenutne prijatelje.</translation>
     </message>
     <message>
@@ -2141,12 +2121,12 @@ Ljudje vas ne bodo mogli dodati s starim ID-jem, vendar boste obdržali trenutne
 If you are getting spammed with friend requests, change the NoSpam.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">NoSpam je del vašega ID-ja, ki ga lahko poljubno spremenite.
-Če prejemate neželeno pošto s prošnjami za prijateljstvo, spremenite NoSpam.</translation>
+Če vas zasipajo z neželenimi prošnjami za prijateljstvo, spremenite NoSpam.</translation>
     </message>
     <message>
         <source>Generate random NoSpam</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ustvari naključno NoSpam</translation>
+        <translation type="unfinished">Ustvari naključen NoSpam</translation>
     </message>
     <message>
         <source>Privacy</source>
@@ -2155,7 +2135,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Conference block list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Seznam blokov konference</translation>
+        <translation type="unfinished">Seznam blokiranih v konferencah</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
@@ -2175,9 +2155,9 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
         <translation type="unfinished">Toxanje na qToxu</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gesla baze podatkov ni bilo mogoče spremeniti, morda je poškodovano ali uporabite staro geslo.</translation>
+        <translation type="unfinished">Gesla zbirke podatkov ni bilo mogoče spremeniti; zbirka je morda poškodovana ali uporablja staro geslo.</translation>
     </message>
 </context>
 <context>
@@ -2185,7 +2165,7 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <message>
         <source>Current profile: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Trenutni profil:</translation>
+        <translation type="unfinished">Trenutni profil: </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2220,7 +2200,7 @@ Uporabite drugo sliko.</translation>
     <message>
         <source>Rename &quot;%1&quot;</source>
         <comment>renaming a profile</comment>
-        <translation type="unfinished">Preimenuj &quot;%1&quot;</translation>
+        <translation type="unfinished">Preimenuj »%1«</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
@@ -2246,10 +2226,10 @@ Uporabite drugo sliko.</translation>
         <translation type="unfinished">Shrani</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Shrani QrCode (*.png)</translation>
+        <translation type="unfinished">Shrani kodo QR (*.png)</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2264,7 +2244,7 @@ Uporabite drugo sliko.</translation>
     <message>
         <source>Please enter a new password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prosim vnesite novo geslo.</translation>
+        <translation type="unfinished">Vnesite novo geslo.</translation>
     </message>
     <message>
         <source>Change password</source>
@@ -2275,7 +2255,7 @@ Uporabite drugo sliko.</translation>
         <source>Set profile password</source>
         <comment>button text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nastavite geslo za profil</translation>
+        <translation type="unfinished">Nastavi geslo profila</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
@@ -2286,11 +2266,6 @@ Uporabite drugo sliko.</translation>
         <source>Couldn&apos;t change password</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Gesla ni bilo mogoče spremeniti</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prazna pot ni na voljo</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2312,9 +2287,9 @@ Uporabite drugo sliko.</translation>
         <translation type="unfinished">Prazno ime</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
+        <source>The name can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prazno ime ni na voljo</translation>
+        <translation type="unfinished">Ime ne sme biti prazno</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2324,7 +2299,7 @@ Uporabite drugo sliko.</translation>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation type="unfinished">Shrani profil</translation>
+        <translation type="unfinished">Izvozi profil</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2359,14 +2334,14 @@ Uporabite drugo sliko.</translation>
         <translation type="unfinished">Datoteke, ki ste jo izbrali, ni bilo mogoče shraniti.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
+        <source>The path can&apos;t be empty.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prazna pot ni na voljo.</translation>
+        <translation type="unfinished">Pot ne sme biti prazna.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Gesla baze podatkov ni bilo mogoče spremeniti, morda je poškodovano ali uporabite staro geslo.</translation>
+        <translation type="unfinished">Gesla zbirke podatkov ni bilo mogoče spremeniti; zbirka je morda poškodovana ali uporablja staro geslo.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2396,7 +2371,7 @@ Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ta ID omogoča drugim uporabnikom Toxa, da dodajo in stopijo v stik z vami.
+        <translation type="unfinished">Ta ID omogoča drugim uporabnikom Toxa, da vas dodajo in stopijo v stik z vami.
 Delite ga s prijatelji, da začnete klepetati.
 
 Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).</translation>
@@ -2407,7 +2382,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation type="unfinished">Naloži profil</translation>
+        <translation type="unfinished">Uvozi profil</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2417,13 +2392,13 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Ignoriraj ne-Tox datoteke</translation>
+        <translation type="unfinished">Datoteka ni datoteka Tox</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
         <comment>popup text</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Opozorilo: izbrali ste datoteko, ki ni datoteka za shranjevanje Tox; ignoriranje.</translation>
+        <translation type="unfinished">Opozorilo: izbrali ste datoteko, ki ni datoteka profila Tox; ne bo upoštevana.</translation>
     </message>
     <message>
         <source>Profile already exists</source>
@@ -2431,9 +2406,9 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <translation type="unfinished">Profil že obstaja</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished">Profil z imenom &quot;%1&quot; že obstaja. Ga želiš izbrisati?</translation>
+        <translation type="unfinished">Profil z imenom »%1« že obstaja. Ga želite zamenjati?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2447,17 +2422,17 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>Profile imported</source>
-        <translation type="unfinished">Profil dodan</translation>
+        <translation type="unfinished">Profil uvožen</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
-        <translation type="unfinished">%1.tox je bila uspešno dodana</translation>
+        <translation type="unfinished">%1.tox je bil uspešno uvožen</translation>
     </message>
 </context>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">OK</translation>
     </message>
@@ -2484,19 +2459,19 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Choose an auto-accept directory</source>
         <comment>popup title</comment>
-        <translation type="unfinished">Izberite imenik za samodejno sprejemanje</translation>
+        <translation type="unfinished">Izberite mapo za samodejno sprejemanje</translation>
     </message>
 </context>
 <context>
     <name>QMessageBox</name>
     <message>
         <source>Couldn&apos;t add friend</source>
-        <translation type="unfinished">Nemogoče dodati kontakta</translation>
+        <translation type="unfinished">Stika ni bilo mogoče dodati</translation>
     </message>
     <message>
         <source>You can&apos;t add yourself as a friend!</source>
         <comment>When trying to add your own Tox ID as friend</comment>
-        <translation type="unfinished">Samega sebe ne moreš dodati med stike!</translation>
+        <translation type="unfinished">Samega sebe ne morete dodati med stike!</translation>
     </message>
     <message>
         <source>%1 is not a valid Tox address.</source>
@@ -2524,16 +2499,16 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>Violet</source>
-        <translation>Violično</translation>
+        <translation>Vijolično</translation>
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation>Prihajujoči klic...</translation>
+        <translation>Dohodni klic...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
         <comment>Default message in Tox URI friend requests. Write something appropriate!</comment>
-        <translation>%1 tukaj. Tox me maybe?</translation>
+        <translation>%1 tukaj! Se slišiva na Toxu?</translation>
     </message>
     <message>
         <source>Error</source>
@@ -2619,12 +2594,12 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>%1 has joined the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 se je pridružil konferenci</translation>
+        <translation type="unfinished">%1 se je pridružil(a) konferenci</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 je zapustil konferenco</translation>
+        <translation type="unfinished">%1 je zapustil(a) konferenco</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2633,19 +2608,19 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>%1 has set the title to %2</source>
-        <translation type="unfinished">%1 je spremenil naslov v %2</translation>
+        <translation type="unfinished">%1 je spremenil(a) naslov v %2</translation>
     </message>
     <message>
         <source>Cleared</source>
-        <translation type="unfinished">Skrito</translation>
+        <translation type="unfinished">Počiščeno</translation>
     </message>
     <message>
         <source>Call with %1 ended unexpectedly. %2</source>
-        <translation type="unfinished">Klic z %1 se je končal nepričakovano. %2</translation>
+        <translation type="unfinished">Klic z osebo %1 se je nepričakovano končal. %2</translation>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Klic s osebo %1 je končan. %2</translation>
+        <translation type="unfinished">Klic z osebo %1 je končan. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2658,7 +2633,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>%1 calling</source>
-        <translation type="unfinished">%1 te kliče</translation>
+        <translation type="unfinished">%1 kliče</translation>
     </message>
     <message>
         <source>Message failed to send</source>
@@ -2667,12 +2642,12 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>%1 went offline during the call attempt</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">%1 je bil med poskusom klica brez povezave</translation>
+        <translation type="unfinished">%1 je med poskusom klica prekinil(a) povezavo</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Klic je bil prekinjen, ker je %1 nepričakovano prekinil povezavo. %2</translation>
+        <translation type="unfinished">Klic je bil prekinjen, ker je %1 nepričakovano prekinil(a) povezavo. %2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2692,7 +2667,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Zlomljena</translation>
+        <translation type="unfinished">Prekinjeno</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2701,12 +2676,12 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>Paused</source>
-        <translation type="unfinished">Premor</translation>
+        <translation type="unfinished">Zaustavljeno</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Daljinski upravljalnik zaustavljen</translation>
+        <translation type="unfinished">Druga stran je zaustavila</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2716,7 +2691,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontakt</translation>
+        <translation type="unfinished">Stik</translation>
     </message>
     <message>
         <source>Progress</source>
@@ -2777,7 +2752,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Also remove chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odstranite tudi zgodovino klepeta</translation>
+        <translation type="unfinished">Odstrani tudi zgodovino klepeta</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -2802,13 +2777,13 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <source>Space</source>
         <comment>[Space] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vesolje</translation>
+        <translation type="unfinished">Preslednica</translation>
     </message>
     <message>
         <source>Escape</source>
         <comment>[Escape] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pobegniti</translation>
+        <translation type="unfinished">Esc</translation>
     </message>
     <message>
         <source>Press %1 to send a screenshot of the selection, %2 to hide/show qTox window, or %3 to cancel.</source>
@@ -2820,7 +2795,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
         <source>Enter</source>
         <comment>[Enter] key on the keyboard</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vnesite</translation>
+        <translation type="unfinished">Enter</translation>
     </message>
 </context>
 <context>
@@ -2833,7 +2808,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Start</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Začetek</translation>
+        <translation type="unfinished">Začni</translation>
     </message>
 </context>
 <context>
@@ -2876,12 +2851,12 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Use regular expressions</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Uporabite regularne izraze</translation>
+        <translation type="unfinished">Uporabi regularne izraze</translation>
     </message>
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izberite pogovorno okno Datum</translation>
+        <translation type="unfinished">Pogovorno okno za izbiro datuma</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2911,12 +2886,12 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Confirm password</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Potrdite geslo</translation>
+        <translation type="unfinished">Potrdi geslo</translation>
     </message>
     <message>
         <source>Confirm password input</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Potrdite vnos gesla</translation>
+        <translation type="unfinished">Vnos potrditve gesla</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -2935,7 +2910,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>Set profile password</source>
-        <translation type="unfinished">Nastavite geslo za profil</translation>
+        <translation type="unfinished">Nastavi geslo profila</translation>
     </message>
 </context>
 <context>
@@ -2943,7 +2918,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Circle #%1</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Obkrožite #%1</translation>
+        <translation type="unfinished">Krog #%1</translation>
     </message>
     <message>
         <source>Failed to load personal settings</source>
@@ -2953,7 +2928,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Unable to upgrade settings from version %1 to version %2. Cannot start qTox.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Ni mogoče nadgraditi nastavitev z različice %1 na različico %2. Ni mogoče zagnati qTox.</translation>
+        <translation type="unfinished">Nastavitev ni mogoče nadgraditi z različice %1 na različico %2. qToxa ni mogoče zagnati.</translation>
     </message>
     <message>
         <source>Failed to load global settings</source>
@@ -2965,7 +2940,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <name>ToxURIDialog</name>
     <message>
         <source>Do you want to add %1 as a friend?</source>
-        <translation>Želiš dodati %1 med stike?</translation>
+        <translation>Želite dodati %1 med stike?</translation>
     </message>
     <message>
         <source>User ID:</source>
@@ -2973,7 +2948,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     </message>
     <message>
         <source>Friend request message:</source>
-        <translation>Sporočilo:</translation>
+        <translation>Sporočilo prošnje za prijateljstvo:</translation>
     </message>
     <message>
         <source>Send</source>
@@ -3017,7 +2992,7 @@ Ta ID vključuje kodo NoSpam (v modri barvi) in kontrolno vsoto (v sivi barvi).<
     <message>
         <source>Size: </source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Velikost:</translation>
+        <translation type="unfinished">Velikost: </translation>
     </message>
     <message>
         <source>New text styling preference may not load on chat history until qTox restarts.
@@ -3033,17 +3008,17 @@ Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nova nastavitev sloga besedila se morda ne bo naložila v zgodovino klepeta, dokler se qTox znova ne zažene.
-To bo takoj vplivalo na nova sporočila.
+        <translation type="unfinished">Nova nastavitev sloga besedila se morda ne bo uveljavila v zgodovini klepeta, dokler se qTox znova ne zažene.
+Na nova sporočila vpliva takoj.
 
 Navadno besedilo:
-    Za sporočila ne uporabljajte nobenega oblikovanja.
+    Sporočila se ne oblikujejo.
     Npr. »**besedilo**« bo prikazano kot »**besedilo**«, ne krepko.
 Pokaži znake za oblikovanje:
-    Uporabi oblikovanje in prikaži znake.
+    Oblikovanje se uporabi in znaki se prikažejo.
     Npr. »**besedilo**« bo prikazano kot »**besedilo**«, krepko.
 Skrij znake za oblikovanje:
-    Uporabi oblikovanje in ne prikaži znakov.
+    Oblikovanje se uporabi, znaki pa se ne prikažejo.
     Npr. »**besedilo**« bo prikazano kot »besedilo«, krepko.</translation>
     </message>
     <message>
@@ -3079,12 +3054,12 @@ Skrij znake za oblikovanje:
         <source>Open qTox&apos;s window when you receive a new message and no window is open yet.</source>
         <comment>tooltip for Show window setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprite okno qTox, ko prejmete novo sporočilo in še ni odprto nobeno okno.</translation>
+        <translation type="unfinished">Odpri okno qTox, ko prejmete novo sporočilo in ni odprto še nobeno okno.</translation>
     </message>
     <message>
         <source>Open window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Odprto okno</translation>
+        <translation type="unfinished">Odpri okno</translation>
     </message>
     <message>
         <source>Contact list</source>
@@ -3094,12 +3069,12 @@ Skrij znake za oblikovanje:
     <message>
         <source>Place conferences at top of friend list</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Postavite konference na vrh seznama prijateljev</translation>
+        <translation type="unfinished">Postavi konference na vrh seznama prijateljev</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Tvoj seznam stiko bo prikazan zgoščeno.</translation>
+        <translation type="unfinished">Vaš seznam stikov bo prikazan zgoščeno (majhni avatarji, tabelarični pogled).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -3113,7 +3088,7 @@ Skrij znake za oblikovanje:
     <message>
         <source>Open each chat in an individual window</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Vsak klepet odprite v posameznem oknu</translation>
+        <translation type="unfinished">Vsak klepet odpri v ločenem oknu</translation>
     </message>
     <message>
         <source>Emoticons</source>
@@ -3122,11 +3097,11 @@ Skrij znake za oblikovanje:
     </message>
     <message>
         <source>Use emoticons</source>
-        <translation type="unfinished">Uporabi smajlije</translation>
+        <translation type="unfinished">Uporabi emotikone</translation>
     </message>
     <message>
         <source>Emoticon size:</source>
-        <translation type="unfinished">Velikost smajlijev:</translation>
+        <translation type="unfinished">Velikost emotikonov:</translation>
     </message>
     <message>
         <source> px</source>
@@ -3156,13 +3131,13 @@ Skrij znake za oblikovanje:
     <message>
         <source>Use identicons instead of empty avatars</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Namesto praznih avatarjev uporabljajte ikone</translation>
+        <translation type="unfinished">Namesto praznih avatarjev uporabi identikone</translation>
     </message>
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pokaži obvestilo, ko prejmeš novo sporočilo, klic ali prošnjo za prijateljstvo in okno ni izbrano.</translation>
+        <translation type="unfinished">Pokaži obvestilo, ko prejmete novo sporočilo, klic ali prošnjo za prijateljstvo in okno ni izbrano.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -3172,7 +3147,7 @@ Skrij znake za oblikovanje:
     <message>
         <source>Conferences only notify when mentioned</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Konference obvestijo le, ko so omenjene</translation>
+        <translation type="unfinished">Konference obveščajo le, ko ste omenjeni</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -3180,7 +3155,7 @@ Skrij znake za oblikovanje:
     </message>
     <message>
         <source>Play sound while Busy</source>
-        <translation type="unfinished">Predvajanje zvoka, ko si zaseden</translation>
+        <translation type="unfinished">Predvajaj zvok v stanju Zaseden</translation>
     </message>
     <message>
         <source>Notify via desktop notifications</source>
@@ -3195,7 +3170,7 @@ Skrij znake za oblikovanje:
     <message>
         <source>Use colored nicknames in conferences</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Na konferencah uporabljajte barvne vzdevke</translation>
+        <translation type="unfinished">Uporabi barvne vzdevke v konferencah</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
@@ -3207,7 +3182,7 @@ Skrij znake za oblikovanje:
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Če je označeno, bodo konference postavljene na vrh seznama prijateljev, sicer pa pod spletne prijatelje.</translation>
+        <translation type="unfinished">Če je označeno, bodo konference postavljene na vrh seznama prijateljev, sicer pa pod dosegljive prijatelje.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -3219,17 +3194,17 @@ Skrij znake za oblikovanje:
         <source>Smiley pack:</source>
         <extracomment>Text on smiley pack label</extracomment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paket smeškov:</translation>
+        <translation type="unfinished">Paket emotikonov:</translation>
     </message>
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Če je onemogočeno, izklop zvoka obvestila, ko je stanje Zaseden (vendar še vedno prikaže obvestilo)</translation>
+        <translation type="unfinished">Če je onemogočeno, se zvok obvestil v stanju Zaseden izklopi (obvestilo se še vedno prikaže)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Uporabite obvestila na namizju, npr. v centru za obvestila ali v sistemski vrstici. Brez tega bo obvestilo vidno le kot utripajoča ikona na pladnju.</translation>
+        <translation type="unfinished">Uporabi obvestila na namizju, npr. v centru za obvestila ali v sistemski vrstici. Brez tega bo obvestilo vidno le kot utripajoča ikona v sistemski vrstici.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -3237,19 +3212,19 @@ Skrij znake za oblikovanje:
         <translation type="unfinished">Pokaži samo &quot;novo sporočilo&quot; brez prikazovanja potencialno tajnih informacij v obvestilih na namizju.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Razdelite seznam prijateljev in okno za klepet v ločeno premična okna.</translation>
+        <translation type="unfinished">Razdeli seznam prijateljev in okno klepeta v ločeni premični okni.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Prikažite besedilne emojije kot barvite slike namesto besedila ali črno-belih emodžijev, upodobljenih s pisavo.</translation>
+        <translation type="unfinished">Prikaži besedilne emojije kot barvne slike namesto besedila ali črno-belih emojijev iz pisave.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Izberite, kateri niz slik želite uporabiti pri upodabljanju emojijev.</translation>
+        <translation type="unfinished">Izberite, kateri nabor slik naj se uporablja za prikaz emojijev.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
@@ -3259,7 +3234,7 @@ Skrij znake za oblikovanje:
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Osnovni slog za uporabniški vmesnik. Fusion je priporočljiv, saj najbolje deluje s tematiko qTox.</translation>
+        <translation type="unfinished">Osnovni slog uporabniškega vmesnika. Fusion je priporočen, ker najbolje deluje s temami qTox.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
@@ -3269,12 +3244,12 @@ Skrij znake za oblikovanje:
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Če je onemogočeno, uporabi osnovna obvestila v sistemski vrstici. V nasprotnem primeru poskusite uporabiti zaledje za obvestila namiznega okolja. Onemogočite to, če opazite težave z obvestili na namizju.</translation>
+        <translation type="unfinished">Če je onemogočeno, se uporabljajo osnovna obvestila v sistemski vrstici. Sicer se poskuša uporabiti sistem obvestil vašega namiznega okolja. To onemogočite, če opazite težave z obvestili na namizju.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Če je na voljo, uporabite zaledni sistem za obvestila</translation>
+        <translation type="unfinished">Uporabi sistemski mehanizem za obvestila, če je na voljo</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
@@ -3289,8 +3264,8 @@ Skrij znake za oblikovanje:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Največje število sporočil (na pogovor), naloženih iz zgodovine klepetov.
 Zmanjšajte to vrednost, da izboljšate delovanje. Prenizko število tukaj
@@ -3299,12 +3274,11 @@ lahko povzroči, da drsni trak izgine.</translation>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Največja velikost pogleda
-dnevnika klepeta</translation>
+        <translation type="unfinished">Največja velikost pogleda dnevnika klepeta</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Število sporočil, ki se naložijo iz zgodovine klepetov med premikanjem.
 Prenizko število tukaj lahko povzroči, da drsni trak izgine.</translation>
@@ -3312,19 +3286,17 @@ Prenizko število tukaj lahko povzroči, da drsni trak izgine.</translation>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Velikost kosa
-dnevnika klepeta</translation>
+        <translation type="unfinished">Velikost kosa dnevnika klepeta</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dnevnik
-klepeta:</translation>
+        <translation type="unfinished">Dnevnik klepeta:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Skrij pripono po ničelnem simbolu</translation>
+        <translation type="unfinished">Skrij besedilo za znakom NUL</translation>
     </message>
 </context>
 <context>
@@ -3350,7 +3322,7 @@ klepeta:</translation>
     </message>
     <message>
         <source>Your name</source>
-        <translation type="unfinished">Tvoje ime</translation>
+        <translation type="unfinished">Vaše ime</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3388,11 +3360,11 @@ klepeta:</translation>
     <message>
         <source>Friends</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">prijatelji</translation>
+        <translation type="unfinished">Prijatelji</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Skupine</translation>
+        <translation type="unfinished">Konference</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3422,7 +3394,7 @@ klepeta:</translation>
     <message>
         <source>Contacts</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontakti</translation>
+        <translation type="unfinished">Stiki</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3438,12 +3410,12 @@ klepeta:</translation>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Vabila na skupine</translation>
+        <translation type="unfinished">Vabila na konference</translation>
     </message>
     <message>
         <source>File transfers</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">Prenosti datotek</translation>
+        <translation type="unfinished">Prenosi datotek</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -3474,31 +3446,31 @@ klepeta:</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n nova prošnja za prijateljstvo</numerusform>
+            <numerusform>%n novi prošnji za prijateljstvo</numerusform>
+            <numerusform>%n nove prošnje za prijateljstvo</numerusform>
+            <numerusform>%n novih prošenj za prijateljstvo</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n novo vabilo na konferenco</numerusform>
+            <numerusform>%n novi vabili na konferenco</numerusform>
+            <numerusform>%n nova vabila na konferenco</numerusform>
+            <numerusform>%n novih vabil na konferenco</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation type="unfinished">Izhod</translation>
     </message>
     <message>
         <source>Change status</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Spremeni status</translation>
+        <translation type="unfinished">Spremeni stanje</translation>
     </message>
     <message>
         <source>Edit profile</source>
@@ -3512,7 +3484,7 @@ klepeta:</translation>
     <message>
         <source>Add contact...</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Dodaj kontakt ...</translation>
+        <translation type="unfinished">Dodaj stik ...</translation>
     </message>
     <message>
         <source>Next conversation</source>

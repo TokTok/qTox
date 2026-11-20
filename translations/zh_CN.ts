@@ -52,18 +52,6 @@
         <translation>视频设备</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>设置摄像头分辨率。
-此值越高，您的好友看到的视频质量就越好。
-请注意，更好的视频质量需要更好的网络连接来承载。
-有时您的网络连接并不足以承载如此高的视频质量，
-从而导致视频通话问题。</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>分辨率</translation>
     </message>
@@ -80,20 +68,20 @@ which may lead to problems with video calls.</source>
         <translation>音频质量</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>高 (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>高 (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>中 (32kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>中 (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>低 (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>低 (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>极低 (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>极低 (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -148,7 +136,7 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>此版本哈希值： %1</translation>
+        <translation>此版本哈希值：%1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -159,7 +147,7 @@ which may lead to problems with video calls.</source>
         <translation>Qt 版本：%1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
         <translation>所有已知问题的列表可以在 GitHub 上我们的 %1 里找到。如果您发现 qTox 的错误或者安全漏洞，请根据我们的维基文章 %2 提交报告。</translation>
@@ -169,12 +157,12 @@ which may lead to problems with video calls.</source>
         <translation>单击这里提交错误报告。</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>在 Github 上查看 %1 完整列表</translation>
+        <translation>在 GitHub 上查看 %1 完整列表</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation>bug 跟踪器</translation>
     </message>
@@ -220,7 +208,7 @@ which may lead to problems with video calls.</source>
         <translation>如果设置此项则自动接受来自该联系人的会议邀请。</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>删除历史记录（此操作无法撤消！）</translation>
     </message>
     <message>
@@ -236,19 +224,19 @@ which may lead to problems with video calls.</source>
         <translation>已删除历史记录</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>这是您朋友的公钥，使用它通过其它渠道来验证朋友的身份。您不能将该密钥发送给其他人以使他们可以添加该朋友为联系人。</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>这是您朋友的公钥，使用它通过其它渠道来验证朋友的身份。其他人无法用它添加此联系人。</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>公钥（不是 ToxID）：</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>公钥（不是 Tox ID）：</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>确认</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translation>您确定要移除与 %1 的聊天记录吗？</translation>
     </message>
     <message>
@@ -272,8 +260,8 @@ which may lead to problems with video calls.</source>
         <translation>自动接受会议邀请</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>您可以在此处保存有关此联系人的注释。</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>您可以在此处保存有关此联系人的附注。</translation>
     </message>
 </context>
 <context>
@@ -342,7 +330,7 @@ which may lead to problems with video calls.</source>
         <translation>无效的 Tox ID 格式</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>输入好友的 Tox ID</translation>
     </message>
     <message>
@@ -422,9 +410,9 @@ which may lead to problems with video calls.</source>
         <translation>Tox ID，76 个十六进制字符</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 Tox ID 无效</translation>
+        <translation>%1 不是有效的 Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -500,7 +488,7 @@ which may lead to problems with video calls.</source>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>保存设置到工作目录而不是通常的配置文件目录</translation>
     </message>
@@ -602,7 +590,7 @@ which may lead to problems with video calls.</source>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>Tox URI 解析</translation>
+        <translation>要解析的 Tox URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
@@ -610,31 +598,27 @@ which may lead to problems with video calls.</source>
     </message>
     <message>
         <source>profile</source>
-        <translation>用户配置文件</translation>
+        <translation>配置文件</translation>
     </message>
     <message>
         <source>Starts new instance and opens the login screen.</source>
         <translation>开启一个新进程并打开登录界面。</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置 IPv6 &lt;on&gt;/&lt;off&gt;。 默认为开。</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>设置 IPv6 %1。默认为 %2。</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置 UDP &lt;on&gt;/&lt;off&gt;。 默认为开。</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>设置 UDP %1。默认为 %2。</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>设置局域网发现 &lt;on&gt;/&lt;off&gt;。 UDP 关 重写。 默认为开。</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>设置局域网发现 %1。关闭 UDP 时此项无效。默认为 %2。</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>设置代理设置。默认值为 NONE。</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>设置代理设置。默认值为 %1。</translation>
     </message>
     <message>
         <source>Error</source>
@@ -933,7 +917,7 @@ so you can save the file on Windows.</source>
     <name>Core</name>
     <message>
         <source>/me offers friendship, &quot;%1&quot;</source>
-        <translation>/me 提供了好友关系,“%1”</translation>
+        <translation>/me 发来好友申请：“%1”</translation>
     </message>
     <message>
         <source>Conference %1</source>
@@ -947,7 +931,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>You need to write a message with your request</source>
         <comment>Error while sending friend request</comment>
-        <translation>你需要随请求撰写一条消息</translation>
+        <translation>您需要随申请附上一条消息</translation>
     </message>
     <message>
         <source>Your message is too long!</source>
@@ -1034,9 +1018,9 @@ so you can save the file on Windows.</source>
         <translation>保存文件</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
-        <translation>远程暂停</translation>
+        <translation>对方已暂停</translation>
     </message>
 </context>
 <context>
@@ -1128,7 +1112,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new conference</source>
-        <translation>前往新建会议</translation>
+        <translation>邀请加入新会议</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
@@ -1141,7 +1125,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>To new circle</source>
-        <translation>前往新建圈子</translation>
+        <translation>移到新圈子</translation>
     </message>
     <message>
         <source>Remove from circle &apos;%1&apos;</source>
@@ -1162,7 +1146,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Blocked</source>
-        <translation>阻止</translation>
+        <translation>已屏蔽</translation>
     </message>
 </context>
 <context>
@@ -1205,7 +1189,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>开机自动启动 qTox（当前账户）。</translation>
+        <translation>开机自动启动 qTox（当前配置文件）。</translation>
     </message>
     <message>
         <source>Show contacts&apos; status changes</source>
@@ -1242,7 +1226,7 @@ so you can save the file on Windows.</source>
         <translation>设置文件保存位置。</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation>您的状态将在给定的无活动分钟数后被修改为离开。</translation>
     </message>
     <message>
@@ -1292,7 +1276,7 @@ instead of closing entirely.</source>
 而不是完全关闭。</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation>您可以通过右键单击单个朋友来为每个朋友设置此设置。</translation>
     </message>
@@ -1387,7 +1371,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>登出</translation>
     </message>
     <message>
@@ -1443,12 +1427,12 @@ Profile does not contain your history.</source>
     <message>
         <source>Rename profile.</source>
         <comment>tooltip for renaming profile button</comment>
-        <translation>重命名账户。</translation>
+        <translation>重命名配置文件。</translation>
     </message>
     <message>
         <source>Delete profile.</source>
         <comment>delete profile button tooltip</comment>
-        <translation>删除帐户。</translation>
+        <translation>删除配置文件。</translation>
     </message>
     <message>
         <source>Go back to the login screen</source>
@@ -1486,23 +1470,23 @@ Profile does not contain your history.</source>
     </message>
     <message>
         <source>Rename profile.</source>
-        <translation>重命名账户。</translation>
+        <translation>重命名配置文件。</translation>
     </message>
     <message>
         <source>Delete profile.</source>
-        <translation>删除账户。</translation>
+        <translation>删除配置文件。</translation>
     </message>
     <message>
         <source>Export profile</source>
-        <translation>导出账户</translation>
+        <translation>导出配置文件</translation>
     </message>
     <message>
         <source>Remove password from profile</source>
-        <translation>从个人档案中移除密码</translation>
+        <translation>移除配置文件的密码</translation>
     </message>
     <message>
         <source>Change profile password</source>
-        <translation>更改个人资料密码</translation>
+        <translation>更改配置文件密码</translation>
     </message>
     <message>
         <source>My name:</source>
@@ -1555,11 +1539,11 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>密码长度：%p%</translation>
+        <translation>密码强度：%p%</translation>
     </message>
     <message>
         <source>Create Profile</source>
-        <translation>创建配置</translation>
+        <translation>创建配置文件</translation>
     </message>
     <message>
         <source>Load automatically</source>
@@ -1575,15 +1559,15 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>New Profile</source>
-        <translation>新建配置</translation>
+        <translation>新建配置文件</translation>
     </message>
     <message>
         <source>Load Profile</source>
-        <translation>加载配置</translation>
+        <translation>加载配置文件</translation>
     </message>
     <message>
         <source>Couldn&apos;t create a new profile</source>
-        <translation>无法创建新的配置</translation>
+        <translation>无法创建新的配置文件</translation>
     </message>
     <message>
         <source>The username must not be empty.</source>
@@ -1595,27 +1579,27 @@ Share it with your friends to begin chatting.</source>
     </message>
     <message>
         <source>A profile with this name already exists.</source>
-        <translation>该配置已经存在。</translation>
+        <translation>已存在同名的配置文件。</translation>
     </message>
     <message>
         <source>Password protected profiles can&apos;t be automatically loaded.</source>
-        <translation>不能自动加载密码保护的配置。</translation>
+        <translation>不能自动加载受密码保护的配置文件。</translation>
     </message>
     <message>
         <source>There is no selected profile.
 
 You may want to create one.</source>
-        <translation>没有选中的配置。
+        <translation>没有选中的配置文件。
 
-您也许想要创建一个配置。</translation>
+您可以创建一个。</translation>
     </message>
     <message>
         <source>Couldn&apos;t load this profile</source>
-        <translation>无法加载这个配置</translation>
+        <translation>无法加载此配置文件</translation>
     </message>
     <message>
         <source>This profile is already in use.</source>
-        <translation>该配置正在使用。</translation>
+        <translation>此配置文件正在使用中。</translation>
     </message>
     <message>
         <source>Wrong password.</source>
@@ -1623,7 +1607,7 @@ You may want to create one.</source>
     </message>
     <message>
         <source>If the profile does not have a password, qTox can skip the login screen</source>
-        <translation>如果账户没有密码，qTox 可以跳过登录界面</translation>
+        <translation>如果配置文件没有密码，qTox 可以跳过登录界面</translation>
     </message>
     <message>
         <source>Username input field</source>
@@ -1639,15 +1623,15 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>创建一个新的个人档案按钮</translation>
+        <translation>创建新配置文件按钮</translation>
     </message>
     <message>
         <source>Profile list</source>
-        <translation>帐户列表</translation>
+        <translation>配置文件列表</translation>
     </message>
     <message>
         <source>List of profiles</source>
-        <translation>所有个人档案的列表</translation>
+        <translation>配置文件列表</translation>
     </message>
     <message>
         <source>Password input</source>
@@ -1659,19 +1643,19 @@ You may want to create one.</source>
     </message>
     <message>
         <source>Import profile</source>
-        <translation>导入用户档案</translation>
+        <translation>导入配置文件</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>导入选择的个人档案按钮</translation>
+        <translation>加载所选配置文件按钮</translation>
     </message>
     <message>
         <source>New profile creation page</source>
-        <translation>新档案创建页面</translation>
+        <translation>新建配置文件页面</translation>
     </message>
     <message>
         <source>Loading existing profile page</source>
-        <translation>正在加载现有的个人档案页面</translation>
+        <translation>加载现有配置文件页面</translation>
     </message>
     <message>
         <source>The passwords you&apos;ve entered are different.
@@ -1683,13 +1667,13 @@ Please make sure to enter the same password twice.</source>
         <source>This optional password is used to encrypt local message data and your profile.
 If you lose this password, there is no way to recover it.
 Press Shift+F1 for more information.</source>
-        <translation>此可选密码用于加密本地消息数据和您的个人资料。
+        <translation>此可选密码用于加密本地消息数据和您的配置文件。
 如果您丢失该密码，则无法恢复。
 按 Shift+F1 了解更多信息。</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation>您在此处输入的密码是可选的，它会对消息数据和您的 Tox 密钥进行加密。它不会加密收到的文件。您的个人资料数据永远不会发送到任何服务器。这不是远程登录，它仅适用于您的计算机本地。如果您的密码丢失，qTox 开发人员将无法恢复。</translation>
+        <translation>您在此处输入的密码是可选的，它会对消息数据和您的 Tox 私钥进行加密。它不会加密收到的文件。您的配置文件数据永远不会发送到任何服务器。这不是远程登录，只保存在您的计算机本地。如果您丢失了密码，qTox 开发人员也无法为您恢复。</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1724,11 +1708,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Open profile</source>
-        <translation>打开个人档案</translation>
+        <translation>打开个人资料</translation>
     </message>
     <message>
         <source>Open profile page when clicked</source>
-        <translation>点击后打开个人档案页面</translation>
+        <translation>点击后打开个人资料页面</translation>
     </message>
     <message>
         <source>Status message input</source>
@@ -1815,9 +1799,9 @@ Press Shift+F1 for more information.</source>
         <translation>可执行文件</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation>你请求 qTox 打开一个可执行文件。可执行文件可能会破坏您的计算机。确定要打开此文件吗？</translation>
+        <translation>您请求 qTox 打开一个可执行文件。可执行文件可能会损害您的计算机。确定要打开此文件吗？</translation>
     </message>
 </context>
 <context>
@@ -1836,7 +1820,7 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Mute audio</source>
-        <translation>对视频静音</translation>
+        <translation>音频静音</translation>
     </message>
     <message>
         <source>Mute microphone</source>
@@ -1869,7 +1853,7 @@ Press Shift+F1 for more information.</source>
     <message>
         <source>Window</source>
         <comment>macOS Menu bar</comment>
-        <translation>日期</translation>
+        <translation>窗口</translation>
     </message>
     <message>
         <source>Minimize</source>
@@ -1943,7 +1927,7 @@ Press Shift+F1 for more information.</source>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
+        <source>Caps Lock is on</source>
         <translation>大写锁定已启用</translation>
     </message>
 </context>
@@ -2024,15 +2008,15 @@ If you are getting spammed with friend requests, change the NoSpam.</source>
     <name>Profile</name>
     <message>
         <source>Failed to derive key from password, the profile won&apos;t use the new password.</source>
-        <translation>从密码获取密钥失败，该帐户将不会使用新的密码。</translation>
+        <translation>从密码派生密钥失败，该配置文件将不会使用新的密码。</translation>
     </message>
     <message>
         <source>Toxing on qTox</source>
         <translation>使用 qTox 与他人交流</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>无法更改数据库密码，它可能已损坏或使用旧密码。</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>无法更改数据库密码，数据库可能已损坏或仍在使用旧密码。</translation>
     </message>
 </context>
 <context>
@@ -2054,7 +2038,7 @@ Please use another image.</source>
     <message>
         <source>Are you sure you want to delete this profile?</source>
         <comment>deletion confirmation text</comment>
-        <translation>您确定要删除这个用户配置文件吗？</translation>
+        <translation>您确定要删除这个配置文件吗？</translation>
     </message>
     <message>
         <source>Save</source>
@@ -2062,9 +2046,9 @@ Please use another image.</source>
         <translation>保存</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation>保存二维码图片 (* .png)</translation>
+        <translation>保存二维码图片 (*.png)</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2072,7 +2056,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Your profile does not have a password!</source>
-        <translation>您的账户没有设置密码 ！</translation>
+        <translation>您的配置文件没有设置密码！</translation>
     </message>
     <message>
         <source>Please enter a new password.</source>
@@ -2080,7 +2064,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Current profile: </source>
-        <translation>当前账户： </translation>
+        <translation>当前配置文件： </translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2088,7 +2072,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Unable to open this file.</source>
-        <translation>无法打开该文件 %s。</translation>
+        <translation>无法打开该文件。</translation>
     </message>
     <message>
         <source>Unable to read this image.</source>
@@ -2101,7 +2085,7 @@ Please use another image.</source>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation>无法重命名该账户为“%1”</translation>
+        <translation>无法将配置文件重命名为“%1”</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2116,19 +2100,15 @@ Please use another image.</source>
     <message>
         <source>Set profile password</source>
         <comment>button text</comment>
-        <translation>设置账户密码</translation>
+        <translation>设置配置文件密码</translation>
     </message>
     <message>
         <source>Current profile location: %1</source>
-        <translation>当前账户的位置: %1</translation>
+        <translation>当前配置文件的位置：%1</translation>
     </message>
     <message>
         <source>Couldn&apos;t change password</source>
         <translation>无法修改密码</translation>
-    </message>
-    <message>
-        <source>Empty path is unavailable</source>
-        <translation>空路径不可用</translation>
     </message>
     <message>
         <source>Failed to rename</source>
@@ -2136,19 +2116,19 @@ Please use another image.</source>
     </message>
     <message>
         <source>Profile already exists</source>
-        <translation>帐户已存在</translation>
+        <translation>配置文件已存在</translation>
     </message>
     <message>
         <source>A profile named &quot;%1&quot; already exists.</source>
-        <translation>名为&quot;%1&quot;的帐户已存在。</translation>
+        <translation>名为“%1”的配置文件已存在。</translation>
     </message>
     <message>
         <source>Empty name</source>
         <translation>空名称</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>空名称无效</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>名称不能为空。</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2157,7 +2137,7 @@ Please use another image.</source>
     <message>
         <source>Export profile</source>
         <extracomment>save dialog title</extracomment>
-        <translation>导出用户档案</translation>
+        <translation>导出配置文件</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2188,12 +2168,12 @@ Please use another image.</source>
         <translation>无法保存您选择的文件。</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
-        <translation>空路径不可用。</translation>
+        <source>The path can&apos;t be empty.</source>
+        <translation>路径不能为空。</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>无法更改数据库密码，它可能已损坏或使用旧密码。</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>无法更改数据库密码，数据库可能已损坏或仍在使用旧密码。</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2230,7 +2210,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Import profile</source>
         <comment>import dialog title</comment>
-        <translation>导入用户配置文件</translation>
+        <translation>导入配置文件</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
@@ -2238,9 +2218,9 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>警告：您选择的文件不是 Tox 档案文件；忽略。</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>一个叫“%1”的用户配置文件已经存在，您想要擦除它吗？</translation>
+        <translation>名为“%1”的配置文件已存在。您要替换它吗？</translation>
     </message>
     <message>
         <source>Tox save file (*.tox)</source>
@@ -2255,7 +2235,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>Profile already exists</source>
         <comment>import confirm title</comment>
-        <translation>账户已存在</translation>
+        <translation>配置文件已存在</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2263,11 +2243,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Profile doesn&apos;t exist</source>
-        <translation>账户不存在</translation>
+        <translation>配置文件不存在</translation>
     </message>
     <message>
         <source>Profile imported</source>
-        <translation>已导入用户配置文件</translation>
+        <translation>已导入配置文件</translation>
     </message>
     <message>
         <source>%1.tox was successfully imported</source>
@@ -2277,8 +2257,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
-        <translation>Ok</translation>
+        <source>OK</source>
+        <translation>OK</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -2381,7 +2361,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark olive</source>
-        <translation>橄榄绿</translation>
+        <translation>深橄榄绿</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2389,7 +2369,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Dark violet</source>
-        <translation>紫罗兰</translation>
+        <translation>深紫色</translation>
     </message>
     <message>
         <source>online</source>
@@ -2451,7 +2431,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation>与 %1 的通话结束. %2</translation>
+        <translation>与 %1 的通话结束。%2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2478,7 +2458,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">由于 %1 意外离线，呼叫被终止。 %2</translation>
+        <translation type="unfinished">由于 %1 意外离线，呼叫被终止。%2</translation>
     </message>
     <message>
         <source>Initializing</source>
@@ -2494,7 +2474,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Broken</source>
-        <translation>损坏</translation>
+        <translation>中断</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2505,8 +2485,8 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
         <translation>已暂停</translation>
     </message>
     <message>
-        <source>Remote paused</source>
-        <translation>远程暂停</translation>
+        <source>Paused by the other side</source>
+        <translation>对方已暂停</translation>
     </message>
     <message>
         <source>File Name</source>
@@ -2538,11 +2518,11 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>You have joined the conference</source>
-        <translation>你已加入会议</translation>
+        <translation>您已加入会议</translation>
     </message>
     <message>
         <source>You have left the conference</source>
-        <translation>你已离开会议</translation>
+        <translation>您已离开会议</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2550,7 +2530,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
-        <translation>数据库版本 (%1) 比我们当前支持的 (%2) 更新。请升级 qTox 。</translation>
+        <translation>数据库版本 (%1) 比我们当前支持的 (%2) 更新。请升级 qTox。</translation>
     </message>
 </context>
 <context>
@@ -2569,7 +2549,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
-        <translation>你确定想要从联系人名单中删除 %1 吗？</translation>
+        <translation>您确定要从联系人列表中删除 %1 吗？</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -2670,7 +2650,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Password strength: %p%</source>
-        <translation>密码长度：%p%</translation>
+        <translation>密码强度：%p%</translation>
     </message>
     <message>
         <source>The password doesn&apos;t match.</source>
@@ -2698,7 +2678,7 @@ This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
     </message>
     <message>
         <source>Set profile password</source>
-        <translation>设置账户密码</translation>
+        <translation>设置配置文件密码</translation>
     </message>
 </context>
 <context>
@@ -2881,7 +2861,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Style:</source>
-        <translation>风格:</translation>
+        <translation>风格：</translation>
     </message>
     <message>
         <source>Theme color:</source>
@@ -2902,7 +2882,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation>当窗口没有激活时如果收到新消息就显示提醒。</translation>
+        <translation>当窗口未被选中时，收到新消息、来电或好友申请就显示通知。</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2935,12 +2915,12 @@ Hide formatting characters:
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation>仅在提到时通知群组聊天中新消息。</translation>
+        <translation>仅在会议中有人提到您的昵称时通知新消息。</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>如果选中，群组聊天将放在好友列表的顶部，否则，它们将放在在线好友的下面。</translation>
+        <translation>如果选中，会议将放在好友列表顶部，否则放在在线好友下方。</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -2965,7 +2945,7 @@ Hide formatting characters:
         <translation>仅显示“新消息”而不在桌面通知中显示潜在的秘密信息。</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translation>好友列表和聊天窗口分成单独可移动的窗口。</translation>
     </message>
     <message>
@@ -2978,7 +2958,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
-        <translation>表情符号图片的像素大小。选择接近基本字体大小的字体。</translation>
+        <translation>表情符号图片的像素大小。请选择与基础字体大小相近的值。</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
@@ -3009,8 +2989,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>从聊天历史记录加载的最大消息数（每个对话）。减少此值以提高性能。这里的数字太低可能会导致滚动条消失。</translation>
     </message>
@@ -3020,8 +3000,8 @@ scroll bar to disappear.</source>
         <translation>最大聊天日志视图大小</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
         <translation>滚动时从聊天历史记录加载的消息数。这里的数字太低可能会导致滚动条消失。</translation>
     </message>
@@ -3036,9 +3016,9 @@ number here may cause the scroll bar to disappear.</source>
         <translation>聊天记录：</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation>在null符号之后隐藏后缀</translation>
+        <translation>隐藏 NUL 字符之后的文本</translation>
     </message>
 </context>
 <context>
@@ -3117,7 +3097,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>File</source>
-        <translation>文件名</translation>
+        <translation>文件</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -3140,7 +3120,7 @@ number here may cause the scroll bar to disappear.</source>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>群组邀请</translation>
+        <translation>会议邀请</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3184,7 +3164,7 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>退出</translation>
     </message>
     <message>
@@ -3193,11 +3173,11 @@ number here may cause the scroll bar to disappear.</source>
     </message>
     <message>
         <source>Edit profile</source>
-        <translation>编辑配置文件</translation>
+        <translation>编辑个人资料</translation>
     </message>
     <message>
         <source>Logout</source>
-        <translation>注销</translation>
+        <translation>登出</translation>
     </message>
     <message>
         <source>Add contact...</source>

@@ -957,8 +957,8 @@ QString Profile::setPassword(const QString& newPassword)
 
     QString error{};
     if (!dbSuccess) {
-        error = tr("Couldn't change database password, it may be corrupted or use the old "
-                   "password.");
+        error = tr("Couldn't change the database password. The database may be corrupted or "
+                   "still use the old password.");
     }
 
     const QByteArray avatar = loadAvatarData(core->getSelfPublicKey());

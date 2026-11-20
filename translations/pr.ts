@@ -52,18 +52,6 @@
         <translation>View fer sendin&apos;</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Command th&apos; quality o&apos; yer scryin.
-
-The higher th&apos; number, the better th&apos; view fer yer hearties.
-
-Take heed, fer higher qualities demand clearer skies.If yer seas are stormy, yer scryin&apos; will suffer.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>Quality</translation>
     </message>
@@ -80,20 +68,20 @@ Take heed, fer higher qualities demand clearer skies.If yer seas are stormy, yer
         <translation type="unfinished">Singin&apos; quality</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation type="unfinished">Aye-Aye (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation type="unfinished">Aye-Aye (64 kbps)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation type="unfinished">Aye (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation type="unfinished">Aye (32 kbps)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation type="unfinished">Nay (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation type="unfinished">Nay (16 kbps)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation type="unfinished">Shiver me timbers (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation type="unfinished">Shiver me timbers (8 kbps)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -159,22 +147,22 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Qt version: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>A big list o&apos; all th&apos; known problems is kept at tha %1 on Github. If ya discover any bilgerats, stowaways, or spies, haul yer keester over and report it in accordance wit&apos; %2.</translation>
+        <translation>A big list o&apos; all th&apos; known problems is kept at tha %1 on GitHub. If ya discover any bilgerats, stowaways, or spies, haul yer keester over and report it in accordance wit&apos; %2.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Click here ta report rats an&apos; their ilk.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Peer a full record o&apos; %1 at Github</translation>
+        <translation>Peer a full record o&apos; %1 at GitHub</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation type="unfinished">rat-tracker</translation>
     </message>
@@ -220,7 +208,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">Auto-accept invites from this matey.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation type="unfinished">Burn letters (what&apos;s fed to fire remains in ash)</translation>
     </message>
     <message>
@@ -236,19 +224,19 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">All messages burnt</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation type="unfinished">This be the public key o&apos; yer matey, use it ta verify their identity via another channel. Ye can&apos;t send this ta other people so they can add this contact.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation type="unfinished">This be the public key o&apos; yer matey, use it ta verify their identity via another channel. Other folk can&apos;t use it ta add this contact.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation type="unfinished">Key o&apos; th&apos; Seven Seas (not ToxID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation type="unfinished">Key o&apos; th&apos; Seven Seas (not Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation type="unfinished">Aye or Nay</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translation type="unfinished">Be ye sure ye want ta burn all yer letters with %1?</translation>
     </message>
     <message>
@@ -272,7 +260,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation type="unfinished">Auto-accept invites aboard</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
+        <source>You can save notes about this contact here.</source>
         <translation>Scrawl down any observations yer havin&apos; about this matey.</translation>
     </message>
 </context>
@@ -342,7 +330,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Failed ta add th&apos; hearty</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Scrawl in yer mate&apos;s Tox ID</translation>
     </message>
     <message>
@@ -410,8 +398,8 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     <message numerus="yes">
         <source>Ready to import %n contact(s), click send to confirm</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Ready ta haul in %n matey, hit send ta confirm</numerusform>
+            <numerusform>Ready ta haul in %n mateys, hit send ta confirm</numerusform>
         </translation>
     </message>
     <message>
@@ -423,9 +411,9 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Tox ID, either 76 hex-a-dessamull characters or Jack@ship.sea</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation type="unfinished">%1 Tox ID be invalid</translation>
+        <translation type="unfinished">%1 ain&apos;t a proper Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -499,9 +487,9 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
-        <translation>Save yer business to the working directory instead of the usual conf dir</translation>
+        <translation>Save yer business to the working directory instead of the usual settings directory</translation>
     </message>
     <message>
         <source>Make Tox portable</source>
@@ -616,24 +604,20 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
         <translation>Starts a new ship &apos;n takes ye to the login screen.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation type="unfinished">Turns IPv6 on or off: %1. Default be %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">Sets UDP &lt;on&gt;/&lt;off&gt;. Default be ON.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation type="unfinished">Turns UDP on or off: %1. Default be %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation type="unfinished">Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default be ON.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation type="unfinished">Turns findin&apos; ships nearby on or off: %1. Does naught when UDP be off. Default be %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation type="unfinished">Sets proxy settings. Default be NONE.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation type="unfinished">Sets th&apos; proxy. Default be %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -654,7 +638,7 @@ Take heed, fer higher qualities demand clearer skies and use more bandwidth. If 
     <message>
         <source>path</source>
         <comment>directory in file system</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">course</translation>
     </message>
 </context>
 <context>
@@ -844,8 +828,8 @@ so ye can stash th&apos; file on Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n swab aboard</numerusform>
+            <numerusform>%n swabs aboard</numerusform>
         </translation>
     </message>
     <message>
@@ -914,8 +898,8 @@ so ye can stash th&apos; file on Windows.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n swab aboard</numerusform>
+            <numerusform>%n swabs aboard</numerusform>
         </translation>
     </message>
     <message>
@@ -1032,7 +1016,7 @@ so ye can stash th&apos; file on Windows.</translation>
         <translation>Store a parcel</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translation type="unfinished">They put it on hold</translation>
     </message>
@@ -1176,7 +1160,7 @@ so ye can stash th&apos; file on Windows.</translation>
     </message>
     <message>
         <source>Auto select</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick fer me</translation>
     </message>
 </context>
 <context>
@@ -1240,7 +1224,7 @@ so ye can stash th&apos; file on Windows.</translation>
         <translation type="unfinished">Set ta 0 ta disable</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation type="unfinished">Yer status be changed ta Away after set period o&apos; inactivity.</translation>
     </message>
     <message>
@@ -1292,7 +1276,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Announce when a matey joins or leaves a gatherin&apos;</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation type="unfinished">Ye can set this fer each matey by right clickin&apos; &apos;em.</translation>
     </message>
@@ -1306,7 +1290,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source> min</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> min</translation>
     </message>
 </context>
 <context>
@@ -1398,7 +1382,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation type="unfinished">Abandon ship</translation>
     </message>
     <message>
@@ -1807,7 +1791,7 @@ Press Shift+F1 fer more information.</translation>
         <translation type="unfinished">File that does things</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
         <translation type="unfinished">Ye be tryin&apos; ta open a file that can do things. Be careful, it might mess with yer ship&apos;s computer. Be ye sure ye want ta open it?</translation>
     </message>
@@ -1887,8 +1871,8 @@ Press Shift+F1 fer more information.</translation>
     <message numerus="yes">
         <source>Unread message(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Unread message in a bottle</numerusform>
+            <numerusform>Unread messages in bottles</numerusform>
         </translation>
     </message>
 </context>
@@ -1935,8 +1919,8 @@ Press Shift+F1 fer more information.</translation>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation type="unfinished">Caps-lock be on</translation>
+        <source>Caps Lock is on</source>
+        <translation type="unfinished">Caps Lock be on</translation>
     </message>
 </context>
 <context>
@@ -2023,7 +2007,7 @@ Th&apos; way it be saved might change, &apos;n&apos; ye could lose some messages
         <translation type="unfinished">Toxin&apos; aboard qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation type="unfinished">Couldn&apos;t change th&apos; database password, it may be corrupted or usin&apos; th&apos; old password.</translation>
     </message>
 </context>
@@ -2090,9 +2074,9 @@ Please use another image.</source>
         <translation type="unfinished">Stash it away</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
-        <translation type="unfinished">Stash QrCode (*.png)</translation>
+        <translation type="unfinished">Stash QR code (*.png)</translation>
     </message>
     <message>
         <source>Files could not be deleted!</source>
@@ -2118,10 +2102,6 @@ Please use another image.</source>
         <translation type="unfinished">Couldn&apos;t change th&apos; combination</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation type="unfinished">Empty path be unavailable</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation type="unfinished">Couldn&apos;t rename</translation>
     </message>
@@ -2138,8 +2118,8 @@ Please use another image.</source>
         <translation type="unfinished">No name</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation type="unfinished">Empty name be unavailable</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation type="unfinished">Th&apos; name can&apos;t be empty.</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2179,11 +2159,11 @@ Please use another image.</source>
         <translation type="unfinished">Couldn&apos;t stash that file away.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
-        <translation type="unfinished">Empty path be unavailable.</translation>
+        <source>The path can&apos;t be empty.</source>
+        <translation type="unfinished">Th&apos; path can&apos;t be empty.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
         <translation type="unfinished">Couldn&apos;t change th&apos; database password, it may be corrupted or usin&apos; th&apos; old password.</translation>
     </message>
     <message>
@@ -2244,9 +2224,9 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <translation type="unfinished">That face be already taken</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation type="unfinished">A face by the name &quot;%1&quot; already be. Do ye want ta scrub it?</translation>
+        <translation type="unfinished">A face by the name &quot;%1&quot; already be. Do ye want ta swap it out?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2268,7 +2248,7 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation type="unfinished">Aye</translation>
     </message>
     <message>
@@ -2447,7 +2427,7 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     <message>
         <source>%1 is now %2</source>
         <comment>e.g. &quot;Dubslow is now online&quot;</comment>
-        <translation>%1 has %2</translation>
+        <translation>%1 be now %2</translation>
     </message>
     <message>
         <source>Calling %1</source>
@@ -2471,11 +2451,11 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     </message>
     <message>
         <source>%1 went offline during the call attempt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 sailed off while ye were hailin&apos;</translation>
     </message>
     <message>
         <source>The call was terminated because %1 unexpectedly went offline. %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; call be cut short &apos;cause %1 sailed off without warnin&apos;. %2</translation>
     </message>
     <message>
         <source>Failed to load chat history</source>
@@ -2510,7 +2490,7 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
         <translation type="unfinished">Awaitin&apos; yer word</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translation type="unfinished">They put it on hold</translation>
     </message>
     <message>
@@ -2896,7 +2876,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Give a shout when ye get a new message, call, or matey request, even if th&apos; window ain&apos;t in front.</translation>
+        <translation type="unfinished">Give a shout when ye get a new message, call, or matey request &apos;n&apos; th&apos; window ain&apos;t in front.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2952,7 +2932,7 @@ Hide formatting characters:
         <translation type="unfinished">Only show &quot;new message&quot; without showin&apos; any secrets in desktop notifications.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translation type="unfinished">Split th&apos; matey list &apos;n&apos; chat window into two windows ye can move about.</translation>
     </message>
     <message>
@@ -2996,8 +2976,8 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translation type="unfinished">Most messages (per chat) loaded from th&apos; chat history.
 Lower this ta make it faster. A number too low here may cause th&apos;
 scroll bar ta vanish.</translation>
@@ -3007,8 +2987,8 @@ scroll bar ta vanish.</translation>
         <translation type="unfinished">Biggest Message Log Size</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translation type="unfinished">Number o&apos; messages ta load from th&apos; chat history when scrollin&apos;. A number too low
 here may cause th&apos; scroll bar ta vanish.</translation>
     </message>
@@ -3021,8 +3001,8 @@ here may cause th&apos; scroll bar ta vanish.</translation>
         <translation type="unfinished">Th&apos; Message Log:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
-        <translation type="unfinished"></translation>
+        <source>Hide text after a NUL character</source>
+        <translation type="unfinished">Hide th&apos; words after th&apos; NUL mark</translation>
     </message>
 </context>
 <context>
@@ -3163,20 +3143,20 @@ here may cause th&apos; scroll bar ta vanish.</translation>
     <message numerus="yes">
         <source>%n new friend request(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n new matey request</numerusform>
+            <numerusform>%n new matey requests</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n new crew invite</numerusform>
+            <numerusform>%n new crew invites</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation type="unfinished">Walk th&apos; plank</translation>
     </message>
     <message>

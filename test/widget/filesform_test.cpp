@@ -136,7 +136,7 @@ void TestFileTransferList::testStatus()
     model->onFileUpdated(file);
     status = idx.data();
 
-    QCOMPARE(status.toString(), QString("Remote paused"));
+    QCOMPARE(status.toString(), QString("Paused by the other side"));
 
     file.status = ToxFile::PAUSED;
     file.pauseStatus.localPause();

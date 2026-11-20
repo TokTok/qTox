@@ -52,18 +52,6 @@
         <translation>Vaizdo įrenginys</translation>
     </message>
     <message>
-        <source>Set resolution of your camera.
-The higher values, the better video quality your friends may get.
-Note though that with better video quality there is needed better internet connection.
-Sometimes your connection may not be good enough to handle higher video quality,
-which may lead to problems with video calls.</source>
-        <translation>Nustatykite vaizdo kameros raišką.
-Kuo didesnė reikšmė, tuo geresnę vaizdo kokybę matys jūsų kontaktai.
-Geresnei vaizdo kokybei atitinkamai reikia geresnio interneto ryšio.
-Jeigu jūsų interneto ryšys yra per prastas, turėsite keblumų su aukštesnės kokybės
-vaizdo skambučiais.</translation>
-    </message>
-    <message>
         <source>Resolution</source>
         <translation>Raiška</translation>
     </message>
@@ -80,20 +68,20 @@ vaizdo skambučiais.</translation>
         <translation>Garso kokybė</translation>
     </message>
     <message>
-        <source>High (64 kBps)</source>
-        <translation>Aukšta (64 kBps)</translation>
+        <source>High (64 kbps)</source>
+        <translation>Aukšta (64 kbit/s)</translation>
     </message>
     <message>
-        <source>Medium (32 kBps)</source>
-        <translation>Vidutinė (32 kBps)</translation>
+        <source>Medium (32 kbps)</source>
+        <translation>Vidutinė (32 kbit/s)</translation>
     </message>
     <message>
-        <source>Low (16 kBps)</source>
-        <translation>Žema (16 kBps)</translation>
+        <source>Low (16 kbps)</source>
+        <translation>Žema (16 kbit/s)</translation>
     </message>
     <message>
-        <source>Very low (8 kBps)</source>
-        <translation>Labai žema (8 kBps)</translation>
+        <source>Very low (8 kbps)</source>
+        <translation>Labai žema (8 kbit/s)</translation>
     </message>
     <message>
         <source>Threshold</source>
@@ -113,11 +101,11 @@ The higher values, the better video quality your friends may get.
 Note that with better video quality, you use more bandwidth.
 Sometimes your connection may not be good enough to handle higher video quality,
 which may lead to problems with video calls.</source>
-        <translation>Nustatykite kameros skiriamąją gebą.
-Kuo didesnė vertė, tuo geresnę vaizdo kokybę gali gauti jūsų draugai.
-Atkreipkite dėmesį, kad naudodami geresnės kokybės vaizdo įrašus naudojate daugiau duomenų srauto.
-Kartais jūsų ryšys gali būti nepakankamai geras, kad galėtų apdoroti aukštesnės kokybės vaizdo įrašus,
-dėl to gali kilti vaizdo skambučių problemų.</translation>
+        <translation>Nustatykite vaizdo kameros raišką.
+Kuo didesnė reikšmė, tuo geresnę vaizdo kokybę matys jūsų kontaktai.
+Geresnės kokybės vaizdas naudoja daugiau duomenų srauto.
+Jeigu jūsų interneto ryšys yra per prastas, turėsite keblumų su aukštesnės kokybės
+vaizdo skambučiais.</translation>
     </message>
     <message>
         <source>Play a test sound while changing the output volume.</source>
@@ -148,7 +136,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Commit hash: %1</source>
-        <translation>Atnaujinimo maiša: %1</translation>
+        <translation>Įkėlimo maiša: %1</translation>
     </message>
     <message>
         <source>toxcore version: %1</source>
@@ -159,22 +147,22 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Qt versija: %1</translation>
     </message>
     <message>
-        <source>A list of all known issues may be found at our %1 at Github. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
+        <source>A list of all known issues may be found on our %1 on GitHub. If you discover a bug or security vulnerability within qTox, please report it according to the guidelines in our %2 wiki article.</source>
         <comment>`%1` is replaced by translation of `bug tracker`
 `%2` is replaced by translation of `Writing Useful Bug Reports`</comment>
-        <translation>Visų žinomų klaidų sąrašą galima rasti mūsų %1, Github puslapyje. Jeigu qTox programoje rasite klaidą ar saugumo spragą, prašome apie ją pranešti, kaip tai yra nurodyta mūsų gairėse, vikio straipsnyje, pavadinimu &quot;%2&quot;.</translation>
+        <translation>Visų žinomų klaidų sąrašą galima rasti mūsų %1, GitHub puslapyje. Jeigu qTox programoje rasite klaidą ar saugumo spragą, prašome apie ją pranešti, kaip tai yra nurodyta mūsų gairėse, vikio straipsnyje, pavadinimu &quot;%2&quot;.</translation>
     </message>
     <message>
         <source>Click here to report a bug.</source>
         <translation>Spustelėkite čia, kad praneštumėte apie klaidą.</translation>
     </message>
     <message>
-        <source>See a full list of %1 at Github</source>
+        <source>See a full list of %1 on GitHub</source>
         <comment>`%1` is replaced with translation of word `contributors`</comment>
-        <translation>Visą %1 rasite Github svetainėje</translation>
+        <translation>Visą %1 rasite GitHub svetainėje</translation>
     </message>
     <message>
-        <source>bug-tracker</source>
+        <source>bug tracker</source>
         <comment>Replaces `%1` in the `A list of all known…`</comment>
         <translation>klaidų seklyje</translation>
     </message>
@@ -218,10 +206,10 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Automatically accept conference invitations from this contact if set.</source>
-        <translation type="unfinished">Jei nustatyta, automatiškai priimti grupės pokalbio pakvietimus nuo šio kontakto.</translation>
+        <translation type="unfinished">Jei nustatyta, automatiškai priimti šio kontakto pakvietimus į konferencijas.</translation>
     </message>
     <message>
-        <source>Remove history (operation can not be undone!)</source>
+        <source>Remove history (operation cannot be undone!)</source>
         <translation>Išvalyti pokalbių žurnalą (operacija neatšaukiama!)</translation>
     </message>
     <message>
@@ -237,19 +225,19 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Žurnalas išvalytas</translation>
     </message>
     <message>
-        <source>This is the public key of your friend, use it to verify their identity via another channel. You can not send this to other people so they can add this contact.</source>
-        <translation>Tai yra jūsų draugo viešasis raktas, naudokite jį, norėdami patvirtinti draugo tapatybę kitu kanalu. Jūs negalite siųsti šio rakto kitiems asmenims, kad jie pridėtų šį kontaktą.</translation>
+        <source>This is your friend&apos;s public key. Use it to verify their identity through another channel. Others can&apos;t use it to add this contact.</source>
+        <translation>Tai yra jūsų draugo viešasis raktas, naudokite jį, norėdami patvirtinti draugo tapatybę kitu kanalu. Kiti asmenys negali juo pridėti šio kontakto.</translation>
     </message>
     <message>
-        <source>Public key (not ToxID):</source>
-        <translation>Viešasis raktas (ne ToxID):</translation>
+        <source>Public key (not Tox ID):</source>
+        <translation>Viešasis raktas (ne Tox ID):</translation>
     </message>
     <message>
         <source>Confirmation</source>
         <translation>Patvirtinimas</translation>
     </message>
     <message>
-        <source>Are you sure to remove %1 chat history?</source>
+        <source>Are you sure you want to remove the chat history with %1?</source>
         <translation>Ar tikrai norite pašalinti pokalbių su %1 žurnalą?</translation>
     </message>
     <message>
@@ -270,11 +258,11 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Auto-accept conference invites</source>
-        <translation type="unfinished">Automatiškai priimti grupių pakvietimus</translation>
+        <translation type="unfinished">Automatiškai priimti pakvietimus į konferencijas</translation>
     </message>
     <message>
-        <source>You can save comments about this contact here.</source>
-        <translation>Čia galite išsaugoti komentarus apie šį kontaktą.</translation>
+        <source>You can save notes about this contact here.</source>
+        <translation>Čia galite išsaugoti pastabas apie šį kontaktą.</translation>
     </message>
 </context>
 <context>
@@ -343,7 +331,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Atmesti</translation>
     </message>
     <message>
-        <source>Type in Tox ID of your friend</source>
+        <source>Type in your friend&apos;s Tox ID</source>
         <translation>Įrašykite kontakto Tox ID</translation>
     </message>
     <message>
@@ -378,7 +366,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>We couldn&apos;t find any contacts to import in this file!</source>
-        <translation>Nepavyko rasti jokių kontaktų, kuriuos importuoti į šį failą!</translation>
+        <translation>Šiame faile nepavyko rasti importuotinų kontaktų!</translation>
     </message>
     <message>
         <source>Tox ID</source>
@@ -425,9 +413,9 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Tox ID, 76 šešioliktainiai simboliai</translation>
     </message>
     <message>
-        <source>%1 Tox ID is invalid</source>
+        <source>%1 is not a valid Tox ID</source>
         <comment>Tox address error</comment>
-        <translation>%1 Tox ID negalioja</translation>
+        <translation>%1 nėra tinkamas Tox ID</translation>
     </message>
     <message>
         <source>76 hexadecimal characters</source>
@@ -443,7 +431,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     <name>AdvancedForm</name>
     <message>
         <source>Advanced</source>
-        <translation>Kita</translation>
+        <translation>Išplėstiniai</translation>
     </message>
     <message>
         <source>really</source>
@@ -451,7 +439,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>not</source>
-        <translation>Nieko</translation>
+        <translation>nieko</translation>
     </message>
     <message>
         <source>IMPORTANT NOTE</source>
@@ -479,7 +467,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Unless you %1 know what you are doing, please do %2 change anything here. Changes made here may lead to problems with qTox, and even to loss of your data, e.g. history.%3</source>
-        <translation>Jei %1 nežinote, ką darote, čia %2 nekeiskite.&quot; Čia atlikti pakeitimai gali sukelti problemų su „qTox“ ir net gali būti prarasti jūsų duomenis, pvz., istoriją.%3</translation>
+        <translation>Jei %1 nežinote, ką darote, čia %2 nekeiskite. Čia atlikti pakeitimai gali sukelti problemų su „qTox“ ir net jūsų duomenų, pvz., pokalbių žurnalo, praradimą.%3</translation>
     </message>
     <message>
         <source>Changes here are applied only after restarting qTox.</source>
@@ -497,13 +485,13 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     <message>
         <source>Please enter a valid IP address or hostname for the proxy setting.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Įveskite galiojantį įgaliotinio nustatymo IP adresą arba pagrindinio kompiuterio vardą.</translation>
+        <translation type="unfinished">Įveskite galiojantį tarpinio serverio IP adresą arba kompiuterio vardą.</translation>
     </message>
 </context>
 <context>
     <name>AdvancedSettings</name>
     <message>
-        <source>Save settings to the working directory instead of the usual conf dir</source>
+        <source>Save settings to the working directory instead of the usual settings directory</source>
         <extracomment>describes makeToxPortable checkbox</extracomment>
         <translation>Įrašyti nustatymus į darbinį katalogą, vietoj įprasto konfigūracijos katalogo</translation>
     </message>
@@ -555,7 +543,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>Proxy type:</source>
-        <translation>Įgaliotojo serverio tipas:</translation>
+        <translation>Tarpinio serverio tipas:</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -606,11 +594,11 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     <name>AppManager</name>
     <message>
         <source>Tox URI to parse</source>
-        <translation>analizuoti Tox URI</translation>
+        <translation>Apdorotinas Tox URI</translation>
     </message>
     <message>
         <source>Starts new instance and loads specified profile.</source>
-        <translation>Atidaro naują langą ir aktyvuoja nurodytą profilį.</translation>
+        <translation>Paleidžia naują egzempliorių ir įkelia nurodytą profilį.</translation>
     </message>
     <message>
         <source>profile</source>
@@ -621,24 +609,20 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
         <translation>Paleidžia naują egzempliorių ir atveria prisijungimo ekraną.</translation>
     </message>
     <message>
-        <source>Sets IPv6 &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Nustato IPv6 &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
+        <source>Sets IPv6 %1. Default is %2.</source>
+        <translation>Įjungia arba išjungia IPv6: %1. Numatyta: %2.</translation>
     </message>
     <message>
-        <source>Sets UDP &lt;on&gt;/&lt;off&gt;. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Nustato UDP &lt;įjungta&gt;/&lt;išjungta&gt;. Numatytoji reikšmė yra ĮJUNGTA.</translation>
+        <source>Sets UDP %1. Default is %2.</source>
+        <translation>Įjungia arba išjungia UDP: %1. Numatyta: %2.</translation>
     </message>
     <message>
-        <source>Sets LAN discovery &lt;on&gt;/&lt;off&gt;. UDP off overrides. Default is ON.</source>
-        <comment>&apos;on&apos; and &apos;off&apos; should not be translated, they are flag values</comment>
-        <translation>Nustato LAN aptikimą &lt;įjungta&gt;/&lt;išjungta&gt;. UDP išjungimas turi viršenybę. Numatytasis yra ĮJUNGTA.</translation>
+        <source>Sets LAN discovery %1. Has no effect when UDP is off. Default is %2.</source>
+        <translation>Įjungia arba išjungia LAN aptikimą: %1. Neveikia, jei UDP išjungtas. Numatyta: %2.</translation>
     </message>
     <message>
-        <source>Sets proxy settings. Default is NONE.</source>
-        <comment>NONE should not be translated, it is a flag value</comment>
-        <translation>Nustato įgaliotojo serverio nustatymus. Numatytoji reikšmė yra NĖRA.</translation>
+        <source>Sets proxy settings. Default is %1.</source>
+        <translation>Nustato tarpinį serverį. Numatyta: %1.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -656,7 +640,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     <message>
         <source>Starts in portable mode; loads profile from this directory.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paleidžiamas nešiojamuoju režimu; įkelia profilį iš šio katalogo.</translation>
+        <translation type="unfinished">Paleidžiama perkeliamuoju režimu; profilis įkeliamas iš šio katalogo.</translation>
     </message>
     <message>
         <source>path</source>
@@ -702,7 +686,7 @@ dėl to gali kilti vaizdo skambučių problemų.</translation>
     </message>
     <message>
         <source>You&apos;re trying to send a sequential file, which is not going to work!</source>
-        <translation>Jūs bandote išsiųsti nuoseklųjį failą, tai suveiks!</translation>
+        <translation>Bandote išsiųsti nuoseklųjį failą, tai nesuveiks!</translation>
     </message>
     <message>
         <source>Filename contained illegal characters</source>
@@ -719,7 +703,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>ChatFormHeader</name>
     <message>
         <source>Can&apos;t start audio call</source>
-        <translation>Nepavyksta pradėti garso skambutį</translation>
+        <translation>Nepavyksta pradėti garso skambučio</translation>
     </message>
     <message>
         <source>Start audio call</source>
@@ -739,7 +723,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Can&apos;t start video call</source>
-        <translation>Nepavyksta pradėti vaizdo skambutį</translation>
+        <translation>Nepavyksta pradėti vaizdo skambučio</translation>
     </message>
     <message>
         <source>Start video call</source>
@@ -763,11 +747,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Unmute call</source>
-        <translation>Įjungti garsą</translation>
+        <translation>Įjungti skambučio garsą</translation>
     </message>
     <message>
         <source>Mute call</source>
-        <translation>Išjungti garsą</translation>
+        <translation>Išjungti skambučio garsą</translation>
     </message>
     <message>
         <source>Microphone can be muted only during a call</source>
@@ -786,7 +770,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>ChatManager</name>
     <message>
         <source>Conference #%1</source>
-        <translation type="unfinished">Grupės pokalbis Nr. %1</translation>
+        <translation type="unfinished">Konferencija Nr. %1</translation>
     </message>
 </context>
 <context>
@@ -843,7 +827,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>You do not have permission to write to that location. Choose another, or cancel the save dialog.</source>
         <comment>text of permissions popup</comment>
-        <translation type="unfinished">Jūs neturite leidimo rašyti į tą vietą. Pasirinkite kitą arba atšaukite išsaugojimo dialogo langą.</translation>
+        <translation type="unfinished">Neturite leidimo rašyti į tą vietą. Pasirinkite kitą arba atšaukite išsaugojimą.</translation>
     </message>
 </context>
 <context>
@@ -868,22 +852,22 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>copy peer ID</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">nukopijuoti kolegos ID</translation>
+        <translation type="unfinished">kopijuoti dalyvio ID</translation>
     </message>
 </context>
 <context>
     <name>ConferenceInviteForm</name>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupės</translation>
+        <translation type="unfinished">Konferencijos</translation>
     </message>
     <message>
         <source>Create new conference</source>
-        <translation type="unfinished">Sukurti naują grupės pokalbį</translation>
+        <translation type="unfinished">Sukurti naują konferenciją</translation>
     </message>
     <message>
         <source>Conference invites</source>
-        <translation type="unfinished">Pakvietimai į grupes</translation>
+        <translation type="unfinished">Pakvietimai į konferencijas</translation>
     </message>
 </context>
 <context>
@@ -918,7 +902,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>Quit conference</source>
         <comment>Menu to quit a conference</comment>
-        <translation>Palikti grupės pokalbį</translation>
+        <translation>Palikti konferenciją</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
@@ -946,7 +930,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Conference %1</source>
-        <translation type="unfinished">Grupės pokalbis %1</translation>
+        <translation type="unfinished">Konferencija %1</translation>
     </message>
     <message>
         <source>Invalid Tox ID</source>
@@ -1047,7 +1031,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translation>Įrašyti failą</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <comment>file transfer widget</comment>
         <translation>Kita šalis pristabdė</translation>
     </message>
@@ -1056,11 +1040,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <name>FilesForm</name>
     <message>
         <source>Downloads</source>
-        <translation>Atsiųsti</translation>
+        <translation>Atsisiuntimai</translation>
     </message>
     <message>
         <source>Uploads</source>
-        <translation>Išsiųsti</translation>
+        <translation>Išsiuntimai</translation>
     </message>
     <message>
         <source>Transferred files</source>
@@ -1080,7 +1064,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Last 7 days</source>
-        <translation>Per paskutinias 7 dienas</translation>
+        <translation>Per paskutines 7 dienas</translation>
     </message>
     <message>
         <source>This month</source>
@@ -1100,7 +1084,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     <message>
         <source>Invite to conference</source>
         <comment>Menu to invite a friend to a conference</comment>
-        <translation>Pakviesti į grupės pokalbį</translation>
+        <translation>Pakviesti į konferenciją</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1158,11 +1142,11 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>To new conference</source>
-        <translation type="unfinished">Į naują grupės pokalbį</translation>
+        <translation type="unfinished">Į naują konferenciją</translation>
     </message>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
-        <translation type="unfinished">Pakviesti į grupės pokalbį „%1“</translation>
+        <translation type="unfinished">Pakviesti į konferenciją „%1“</translation>
     </message>
     <message>
         <source>Move to circle &quot;%1&quot;</source>
@@ -1216,7 +1200,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Start qTox on operating system startup (current profile).</source>
-        <translation>Paleisti qTox įjungus kompiuterį (prisijungus mano vardu).</translation>
+        <translation>Paleisti qTox įjungus kompiuterį (dabartinis profilis).</translation>
     </message>
     <message>
         <source>qTox will start minimized in tray.</source>
@@ -1252,7 +1236,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
         <translation>Nustatykite, kur išsaugoti gautus failus.</translation>
     </message>
     <message>
-        <source>Your status is changed to Away after set period of inactivity.</source>
+        <source>Your status is changed to Away after a set period of inactivity.</source>
         <translation>Jūsų būsena po nustatyto laiko automatiškai bus pakeista į „Pasišalinęs“.</translation>
     </message>
     <message>
@@ -1285,7 +1269,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Max autoaccept file size (0 to disable):</source>
-        <translation>Didžiausio automatiškai priimamo failo dydis (&quot;0&quot; išjungia):</translation>
+        <translation>Didžiausio automatiškai priimamo failo dydis („0“ išjungia):</translation>
     </message>
     <message>
         <source> MB</source>
@@ -1306,14 +1290,14 @@ instead of closing entirely.</source>
 vietoje to, kad būtų visiškai uždarytas.</translation>
     </message>
     <message>
-        <source>You can set this on a per-friend basis by right clicking individual friends.</source>
+        <source>You can set this on a per-friend basis by right-clicking individual friends.</source>
         <comment>autoaccept cb tooltip</comment>
         <translation>Galite nustatyti individualiai ant bet kurio kontakto spustelėję dešiniuoju pelės klavišu.</translation>
     </message>
     <message>
         <source>Add a chat message when a user joins or leaves a conference</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pridėkite pokalbio pranešimą, kai vartotojas prisijungia prie konferencijos arba iš jos išeina</translation>
+        <translation type="unfinished">Pridėti pokalbio pranešimą, kai naudotojas prisijungia prie konferencijos arba iš jos išeina</translation>
     </message>
     <message>
         <source>Click here if you find errors in a translation and would like to help fix it.</source>
@@ -1323,7 +1307,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     <message>
         <source>Help translate</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Padėkite išversti</translation>
+        <translation type="unfinished">Padėti išversti</translation>
     </message>
     <message>
         <source> min</source>
@@ -1425,7 +1409,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     </message>
     <message>
         <source>Logout</source>
-        <comment>import profile button</comment>
+        <comment>logout button</comment>
         <translation>Atsijungti</translation>
     </message>
     <message>
@@ -1438,7 +1422,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     </message>
     <message>
         <source>This QR code contains your Tox ID. You may share this with your friends as well.</source>
-        <translation>Šiame kode yra jūsų Tox ID. Pasidalykite juo su savo kontaktais.</translation>
+        <translation>Šiame QR kode yra jūsų Tox ID. Juo taip pat galite pasidalyti su kontaktais.</translation>
     </message>
     <message>
         <source>Save image</source>
@@ -1535,8 +1519,8 @@ Pokalbių žurnalas nebus išsaugotas.</translation>
         <source>This ID allows other Tox users to add and contact you.
 Share it with your friends to begin chatting.</source>
         <comment>Tox ID tooltip</comment>
-        <translation>Šis ID leidžia kitiems „Tox“ vartotojams pridėti jus ir susisiekti su jumis.
-Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.</translation>
+        <translation>Šis ID leidžia kitiems „Tox“ naudotojams pridėti jus ir susisiekti su jumis.
+Pasidalykite juo su draugais, kad pradėtumėte kalbėtis.</translation>
     </message>
     <message>
         <source>Set your status message that will be shown to others</source>
@@ -1547,12 +1531,12 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.</translation>
     <name>LoadHistoryDialog</name>
     <message>
         <source>Load history dialog</source>
-        <translation>Įkelti žurnalą</translation>
+        <translation>Žurnalo įkėlimo dialogas</translation>
     </message>
     <message>
         <source>Load history from:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Įkėlimo istorija iš:</translation>
+        <translation type="unfinished">Įkelti žurnalą nuo:</translation>
     </message>
 </context>
 <context>
@@ -1655,7 +1639,7 @@ Galite sukurti naują.</translation>
     </message>
     <message>
         <source>Create a new profile button</source>
-        <translation>Mygtukas sukurti naują profilį</translation>
+        <translation>Naujo profilio kūrimo mygtukas</translation>
     </message>
     <message>
         <source>Profile list</source>
@@ -1671,7 +1655,7 @@ Galite sukurti naują.</translation>
     </message>
     <message>
         <source>Load automatically checkbox</source>
-        <translation>Automatiškai įkelti žymimasis langelis</translation>
+        <translation>Automatinio įkėlimo žymimasis langelis</translation>
     </message>
     <message>
         <source>Import profile</source>
@@ -1679,7 +1663,7 @@ Galite sukurti naują.</translation>
     </message>
     <message>
         <source>Load selected profile button</source>
-        <translation>Mygtukas įkelti pasirinktą profilį</translation>
+        <translation>Pasirinkto profilio įkėlimo mygtukas</translation>
     </message>
     <message>
         <source>New profile creation page</source>
@@ -1705,7 +1689,7 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     </message>
     <message>
         <source>The password you enter here is optional and encrypts message data and your Tox secret key. It does not encrypt files received. Your profile data is never sent to any servers. This is not a remote login, it&apos;s local to your computer only. qTox developers won&apos;t be able to recover your password if lost.</source>
-        <translation type="unfinished">Čia įvestas slaptažodis yra neprivalomas ir užšifruoja pranešimo duomenis bei slaptąjį Tox raktą. Jis nešifruoja gautų failų. Jūsų profilio duomenys niekada nesiunčiami į jokius serverius. Tai nėra nuotolinis prisijungimas, jis yra vietinis tik jūsų kompiuteryje. „qTox“ kūrėjai negalės atkurti slaptažodžio, jei jį pametėte.</translation>
+        <translation type="unfinished">Čia įvestas slaptažodis yra neprivalomas ir užšifruoja žinučių duomenis bei slaptąjį Tox raktą. Jis nešifruoja gautų failų. Jūsų profilio duomenys niekada nesiunčiami į jokius serverius. Tai nėra nuotolinis prisijungimas, slaptažodis galioja tik jūsų kompiuteryje. „qTox“ kūrėjai negalės atkurti slaptažodžio, jei jį pamesite.</translation>
     </message>
     <message>
         <source>Password input field, minimum 6 characters long</source>
@@ -1724,7 +1708,7 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     </message>
     <message>
         <source>Create a conference</source>
-        <translation type="unfinished">Sukurti grupės pokalbį</translation>
+        <translation type="unfinished">Sukurti konferenciją</translation>
     </message>
     <message>
         <source>View completed file transfers</source>
@@ -1784,11 +1768,11 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     </message>
     <message>
         <source>Conference</source>
-        <translation type="unfinished">Grupės pokalbis</translation>
+        <translation type="unfinished">Konferencija</translation>
     </message>
     <message>
         <source>Open conference management page</source>
-        <translation type="unfinished">Atverti grupės pokalbio tvarkymo puslapį</translation>
+        <translation type="unfinished">Atverti konferencijų tvarkymo puslapį</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -1809,7 +1793,7 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     <message>
         <source>Open internal debugging tools</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atidarykite vidinius derinimo įrankius</translation>
+        <translation type="unfinished">Atverti vidinius derinimo įrankius</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -1818,7 +1802,7 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     <message>
         <source>Open Debugger</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Atidarykite Debugger</translation>
+        <translation type="unfinished">Atverti derintuvą</translation>
     </message>
     <message>
         <source>Add friend</source>
@@ -1833,9 +1817,9 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
         <translation type="unfinished">Vykdomasis failas</translation>
     </message>
     <message>
-        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure want to open this file?</source>
+        <source>You have asked qTox to open an executable file. Executable files can potentially damage your computer. Are you sure you want to open this file?</source>
         <comment>popup text</comment>
-        <translation type="unfinished">Nurodėte qTox atidaryti vykdomąjį failą (programą). Vykdomieji failai gali pakenkti Jūsų kompiuteriui. Ar norite tęsti?</translation>
+        <translation type="unfinished">Nurodėte qTox atidaryti vykdomąjį failą (programą). Vykdomieji failai gali pakenkti jūsų kompiuteriui. Ar tikrai norite atidaryti šį failą?</translation>
     </message>
 </context>
 <context>
@@ -1897,7 +1881,7 @@ Norėdami gauti daugiau informacijos, paspauskite Shift + F1.</translation>
     <message>
         <source>Bring All to Front</source>
         <comment>macOS Menu bar</comment>
-        <translation>Fokusuoti viską</translation>
+        <translation>Visus iškelti į priekį</translation>
     </message>
     <message>
         <source>Exit Full Screen</source>
@@ -1917,7 +1901,7 @@ Plural:10–20,30,40,..</translatorcomment>
         <translation>
             <numerusform>Neperskaityta žinutė</numerusform>
             <numerusform>Neperskaitytos žinutės</numerusform>
-            <numerusform>Neperskaitytų žinučių</numerusform>
+            <numerusform>Neperskaitytos žinutės</numerusform>
         </translation>
     </message>
 </context>
@@ -1929,7 +1913,7 @@ Plural:10–20,30,40,..</translatorcomment>
     </message>
     <message>
         <source>New conference message</source>
-        <translation type="unfinished">Nauja grupės žinutė</translation>
+        <translation type="unfinished">Nauja konferencijos žinutė</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -1942,11 +1926,11 @@ Plural:10–20,30,40,..</translatorcomment>
     </message>
     <message>
         <source>Conference invite received</source>
-        <translation type="unfinished">Gautas pakvietimas į grupę</translation>
+        <translation type="unfinished">Gautas pakvietimas į konferenciją</translation>
     </message>
     <message>
         <source>%1 invites you to join a conference.</source>
-        <translation type="unfinished">%1 kviečia jus prisijungti prie grupės.</translation>
+        <translation type="unfinished">%1 kviečia jus prisijungti prie konferencijos.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -1959,14 +1943,14 @@ Plural:10–20,30,40,..</translatorcomment>
     <message>
         <source>Incoming call</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Įeinantis skambutis</translation>
+        <translation type="unfinished">Gaunamas skambutis</translation>
     </message>
 </context>
 <context>
     <name>PasswordEdit</name>
     <message>
-        <source>Caps-lock enabled</source>
-        <translation>ĮJUNGTAS „CAPS LOCK“</translation>
+        <source>Caps Lock is on</source>
+        <translation>Įjungtas „Caps Lock“</translation>
     </message>
 </context>
 <context>
@@ -1993,7 +1977,7 @@ Plural:10–20,30,40,..</translatorcomment>
     </message>
     <message>
         <source>Send typing notifications</source>
-        <translation>Rodyti įvesties pranešimus</translation>
+        <translation>Siųsti rašymo pranešimus</translation>
     </message>
     <message>
         <source>Keep chat history</source>
@@ -2004,9 +1988,9 @@ Plural:10–20,30,40,..</translatorcomment>
 If you are being spammed with friend requests, you should change your NoSpam.
 People will be unable to add you with your old ID, but you will keep your current friends.</source>
         <comment>toolTip for nospam</comment>
-        <translation>„Nospam“ yra jūsų Tox ID dalis.
-Jį pakeitus nebegausite nepageidaujamų kontaktinių užklausų.
-Nauji kontaktai,nežinantys jūsų naujojo Tox ID, nebegalės atsiųsti jums užklausų.</translation>
+        <translation>„NoSpam“ yra jūsų Tox ID dalis.
+Jei gaunate daug nepageidaujamų kontaktų užklausų, pakeiskite „NoSpam“.
+Su senuoju ID jūsų nebebus galima pridėti, bet esamus kontaktus išsaugosite.</translation>
     </message>
     <message>
         <source>NoSpam</source>
@@ -2035,11 +2019,11 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
     </message>
     <message>
         <source>Conference block list</source>
-        <translation>Juodasis sąrašas</translation>
+        <translation>Konferencijų blokavimo sąrašas</translation>
     </message>
     <message>
         <source>Filter out conference messages by conference members&apos; public keys. Put public keys here, one per line.</source>
-        <translation type="unfinished">Filtruoti grupės pranešimus pagal grupės narių viešuosius raktus. Čia įrašykite viešuosius raktus, po vieną kiekvienoje eilutėje.</translation>
+        <translation type="unfinished">Filtruoti konferencijų žinutes pagal narių viešuosius raktus. Čia įrašykite viešuosius raktus, po vieną kiekvienoje eilutėje.</translation>
     </message>
 </context>
 <context>
@@ -2053,8 +2037,8 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
         <translation>Naudoju qTox</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Nepavyko pakeisti duomenų bazės slaptažodžio, jis gali būti sugadintas arba naudokite senąjį slaptažodį.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Nepavyko pakeisti duomenų bazės slaptažodžio; duomenų bazė gali būti sugadinta arba naudoti senąjį slaptažodį.</translation>
     </message>
 </context>
 <context>
@@ -2078,7 +2062,7 @@ Failo formatas dar gali pasikeisti, todėl galite prarasti sukauptus duomenis.</
         <translation>Išsaugoti</translation>
     </message>
     <message>
-        <source>Save QrCode (*.png)</source>
+        <source>Save QR code (*.png)</source>
         <comment>save dialog filter</comment>
         <translation>Išsaugoti QR kodą (*.png)</translation>
     </message>
@@ -2106,7 +2090,7 @@ Pasirinkite kitą.</translation>
     </message>
     <message>
         <source>Couldn&apos;t rename the profile to &quot;%1&quot;</source>
-        <translation>Nepavyko pervadinti profilį į „%1“</translation>
+        <translation>Nepavyko pervadinti profilio į „%1“</translation>
     </message>
     <message>
         <source>Nothing to remove</source>
@@ -2149,10 +2133,6 @@ Pasirinkite kitą.</translation>
         <translation>Nepavyko pakeisti slaptažodžio</translation>
     </message>
     <message>
-        <source>Empty path is unavailable</source>
-        <translation>Tuščias kelias yra neprieinamas</translation>
-    </message>
-    <message>
         <source>Failed to rename</source>
         <translation>Nepavyko pervadinti</translation>
     </message>
@@ -2169,8 +2149,8 @@ Pasirinkite kitą.</translation>
         <translation>Tuščias vardas</translation>
     </message>
     <message>
-        <source>Empty name is unavailable</source>
-        <translation>Tuščias vardas yra neprieinamas</translation>
+        <source>The name can&apos;t be empty.</source>
+        <translation>Vardas negali būti tuščias</translation>
     </message>
     <message>
         <source>Empty path</source>
@@ -2210,12 +2190,12 @@ Pasirinkite kitą.</translation>
         <translation>Pasirinkto failo nepavyko išsaugoti.</translation>
     </message>
     <message>
-        <source>Empty path is unavailable.</source>
-        <translation>Tuščias kelias yra neprieinamas.</translation>
+        <source>The path can&apos;t be empty.</source>
+        <translation>Kelias negali būti tuščias.</translation>
     </message>
     <message>
-        <source>Couldn&apos;t change database password, it may be corrupted or use the old password.</source>
-        <translation>Nepavyko pakeisti duomenų bazės slaptažodžio, jis gali būti sugadintas arba naudokite senąjį slaptažodį.</translation>
+        <source>Couldn&apos;t change the database password. The database may be corrupted or still use the old password.</source>
+        <translation>Nepavyko pakeisti duomenų bazės slaptažodžio; duomenų bazė gali būti sugadinta arba naudoti senąjį slaptažodį.</translation>
     </message>
     <message>
         <source>Tox user names cannot exceed %1 characters.</source>
@@ -2241,8 +2221,8 @@ Pasirinkite kitą.</translation>
 Share it with your friends to begin chatting.
 
 This ID includes the NoSpam code (in blue), and the checksum (in gray).</source>
-        <translation>Šis ID leidžia kitiems „Tox“ vartotojams jus pridėti ir susisiekti.
-Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
+        <translation>Šis ID leidžia kitiems „Tox“ naudotojams jus pridėti ir susisiekti.
+Pasidalykite juo su draugais, kad pradėtumėte kalbėtis.
 
 Šis ID apima „NoSpam“ kodą (mėlyna spalva) ir kontrolinę sumą (pilka spalva).</translation>
     </message>
@@ -2262,7 +2242,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Ignoring non-Tox file</source>
         <comment>popup title</comment>
-        <translation>Praleidžiamas failas</translation>
+        <translation>Praleidžiamas ne Tox failas</translation>
     </message>
     <message>
         <source>Warning: You have chosen a file that is not a Tox save file; ignoring.</source>
@@ -2275,9 +2255,9 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <translation>Toks profilis jau yra</translation>
     </message>
     <message>
-        <source>A profile named &quot;%1&quot; already exists. Do you want to erase it?</source>
+        <source>A profile named &quot;%1&quot; already exists. Do you want to replace it?</source>
         <comment>import confirm text</comment>
-        <translation>Profilis „%1“ jau yra. Ar norite jį ištrinti?</translation>
+        <translation>Profilis „%1“ jau yra. Ar norite jį pakeisti?</translation>
     </message>
     <message>
         <source>File doesn&apos;t exist</source>
@@ -2299,7 +2279,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
 <context>
     <name>QApplication</name>
     <message>
-        <source>Ok</source>
+        <source>OK</source>
         <translation>Gerai</translation>
     </message>
     <message>
@@ -2356,7 +2336,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Olive</source>
-        <translation>Alyvinė</translation>
+        <translation>Alyvuogių</translation>
     </message>
     <message>
         <source>Red</source>
@@ -2368,7 +2348,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Incoming call...</source>
-        <translation>Skambutis...</translation>
+        <translation>Gaunamas skambutis...</translation>
     </message>
     <message>
         <source>%1 here! Tox me maybe?</source>
@@ -2403,7 +2383,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Dark olive</source>
-        <translation>Tamsiai gelsva</translation>
+        <translation>Tamsi alyvuogių</translation>
     </message>
     <message>
         <source>Dark red</source>
@@ -2449,11 +2429,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>%1 has joined the conference</source>
-        <translation type="unfinished">%1 prisijungė prie grupės</translation>
+        <translation type="unfinished">%1 prisijungė prie konferencijos</translation>
     </message>
     <message>
         <source>%1 has left the conference</source>
-        <translation type="unfinished">%1 išėjo iš grupės</translation>
+        <translation type="unfinished">%1 išėjo iš konferencijos</translation>
     </message>
     <message>
         <source>%1 is now known as %2</source>
@@ -2473,7 +2453,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Call with %1 ended. %2</source>
-        <translation type="unfinished">Pokalbis su %1 baigėsi. %2</translation>
+        <translation type="unfinished">Skambutis su %1 baigėsi. %2</translation>
     </message>
     <message>
         <source>%1 is now %2</source>
@@ -2482,7 +2462,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Calling %1</source>
-        <translation type="unfinished">Skambiname %1</translation>
+        <translation type="unfinished">Skambinama %1</translation>
     </message>
     <message>
         <source>%1 calling</source>
@@ -2505,7 +2485,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Initializing</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Inicijuoja</translation>
+        <translation type="unfinished">Inicijuojama</translation>
     </message>
     <message>
         <source>Transmitting</source>
@@ -2520,7 +2500,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Broken</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Sulaužytas</translation>
+        <translation type="unfinished">Nutrūko</translation>
     </message>
     <message>
         <source>Canceled</source>
@@ -2532,7 +2512,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
         <translation type="unfinished">Pristabdyta</translation>
     </message>
     <message>
-        <source>Remote paused</source>
+        <source>Paused by the other side</source>
         <translation type="unfinished">Kita šalis pristabdė</translation>
     </message>
     <message>
@@ -2543,12 +2523,12 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Contact</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Susisiekite</translation>
+        <translation type="unfinished">Kontaktas</translation>
     </message>
     <message>
         <source>Progress</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pažanga</translation>
+        <translation type="unfinished">Eiga</translation>
     </message>
     <message>
         <source>Size</source>
@@ -2567,7 +2547,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Control</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Kontrolė</translation>
+        <translation type="unfinished">Valdymas</translation>
     </message>
     <message>
         <source>You have joined the conference</source>
@@ -2582,7 +2562,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Failed to load chat history</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Nepavyko įkelti pokalbių istorijos</translation>
+        <translation type="unfinished">Nepavyko įkelti pokalbių žurnalo</translation>
     </message>
     <message>
         <source>Database version (%1) is newer than we currently support (%2). Please upgrade qTox.</source>
@@ -2598,11 +2578,11 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     </message>
     <message>
         <source>Remove all chat history with the friend if set</source>
-        <translation type="unfinished">Jei nustatyta, šalinti visą pokalbių su kontaktu istoriją</translation>
+        <translation type="unfinished">Jei pažymėta, pašalinti visą pokalbių su kontaktu žurnalą</translation>
     </message>
     <message>
         <source>Also remove chat history</source>
-        <translation type="unfinished">Išvalyti pokalbių žurnalą</translation>
+        <translation type="unfinished">Taip pat išvalyti pokalbių žurnalą</translation>
     </message>
     <message>
         <source>Are you sure you want to remove %1 from your contacts list?</source>
@@ -2689,7 +2669,7 @@ Pasidalinkite ja su draugais, kad pradėtumėte kalbėtis.
     <message>
         <source>Select Date Dialog</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pasirinkite datos dialogo langą</translation>
+        <translation type="unfinished">Datos pasirinkimo dialogas</translation>
     </message>
     <message>
         <source>Select a date</source>
@@ -2829,7 +2809,18 @@ Show formatting characters:
 Hide formatting characters:
     Apply formatting and don&apos;t show characters.
     E.g. &quot;**text**&quot; will show as &quot;text&quot;, bold.</source>
-        <translation type="unfinished">Naujoji teksto stiliaus nuostata negali būti įkelta tol, kol qTox nebus paleista iš naujo.</translation>
+        <translation type="unfinished">Naujas teksto stilius pokalbių žurnale gali neįsigalioti, kol qTox nebus paleista iš naujo.
+Naujoms žinutėms jis taikomas iškart.
+
+Grynasis tekstas:
+    Žinutės neformatuojamos.
+    Pvz., „**tekstas**“ bus rodomas kaip „**tekstas**“, ne pusjuodžiu šriftu.
+Rodyti formatavimo simbolius:
+    Formatavimas taikomas ir simboliai rodomi.
+    Pvz., „**tekstas**“ bus rodomas kaip „**tekstas**“, pusjuodžiu šriftu.
+Nerodyti formatavimo simbolių:
+    Formatavimas taikomas, bet simboliai nerodomi.
+    Pvz., „**tekstas**“ bus rodomas kaip „tekstas“, pusjuodžiu šriftu.</translation>
     </message>
     <message>
         <source>Text styling:</source>
@@ -2870,12 +2861,12 @@ Hide formatting characters:
     </message>
     <message>
         <source>Place conferences at top of friend list</source>
-        <translation type="unfinished">Rodyti grupių pokalbius kontaktų sąrašo viršuje</translation>
+        <translation type="unfinished">Rodyti konferencijas kontaktų sąrašo viršuje</translation>
     </message>
     <message>
         <source>Your contact list will be shown in compact mode (small avatars, tabular view).</source>
         <comment>toolTip for compact layout setting</comment>
-        <translation type="unfinished">Jūsų kontaktų sąrašas bus rodomas glaustoje veiksenoje.</translation>
+        <translation type="unfinished">Jūsų kontaktų sąrašas bus rodomas glaustoje veiksenoje (maži avatarai, lentelės vaizdas).</translation>
     </message>
     <message>
         <source>Compact contact list</source>
@@ -2932,7 +2923,7 @@ Hide formatting characters:
     <message>
         <source>Show a notification when you receive a new message, call, or friend request and the window is not selected.</source>
         <comment>tooltip for Notify setting</comment>
-        <translation type="unfinished">Rodyti pranešimą, kai gaunate naują žinutę, o langas nėra pasirinktas.</translation>
+        <translation type="unfinished">Rodyti pranešimą, kai gaunate naują žinutę, skambutį ar kontakto užklausą, o langas nėra pasirinktas.</translation>
     </message>
     <message>
         <source>Notify</source>
@@ -2940,7 +2931,7 @@ Hide formatting characters:
     </message>
     <message>
         <source>Conferences only notify when mentioned</source>
-        <translation type="unfinished">Rodyti grupės pokalbio pranešimus tik tuomet, kai kas nors jus paminėjo</translation>
+        <translation type="unfinished">Konferencijų pranešimus rodyti tik tuomet, kai jus paminėjo</translation>
     </message>
     <message>
         <source>Play sound</source>
@@ -2960,17 +2951,17 @@ Hide formatting characters:
     </message>
     <message>
         <source>Use colored nicknames in conferences</source>
-        <translation type="unfinished">Grupės pokalbiuose naudoti spalvotus slapyvardžius</translation>
+        <translation type="unfinished">Konferencijose naudoti spalvotus slapyvardžius</translation>
     </message>
     <message>
         <source>Only notify about new messages in conferences when your nickname is mentioned.</source>
         <comment>toolTip for Conferences only notify when mentioned</comment>
-        <translation type="unfinished">Pranešti apie naujas žinutes grupės pokalbiuose tik tada, kai esate paminėti.</translation>
+        <translation type="unfinished">Pranešti apie naujas žinutes konferencijose tik tada, kai paminimas jūsų slapyvardis.</translation>
     </message>
     <message>
         <source>If checked, conferences will be placed at the top of the friends list, otherwise, they&apos;ll be placed below online friends.</source>
         <comment>toolTip for conference positioning</comment>
-        <translation>Jei pažymėta, grupiniai pokalbiai bus pateikiami draugų sąrašo viršuje, priešingu atveju jie bus pateikiami po šiuo metu prisijungusiais draugais.</translation>
+        <translation>Jei pažymėta, konferencijos bus rodomos kontaktų sąrašo viršuje, priešingu atveju – po prisijungusiais kontaktais.</translation>
     </message>
     <message>
         <source>If enabled, every contact without an avatar will have a generated icon based on their Tox ID instead of the default picture. Requires restart to apply.</source>
@@ -2985,12 +2976,12 @@ Hide formatting characters:
     <message>
         <source>If disabled, mute notification sounds when status is Busy (but still show a notification)</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jei išjungta, nutildyti pranešimo garsai, kai būsena yra Užimta (bet vis tiek rodomas pranešimas)</translation>
+        <translation type="unfinished">Jei išjungta, nutildyti pranešimų garsus, kai būsena „Užsiėmęs“ (pranešimas vis tiek rodomas)</translation>
     </message>
     <message>
         <source>Use desktop notifications, e.g. in a notification center or at the system tray. Without this, the notification will only be visible as a flashing tray icon.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Naudokite darbalaukio pranešimus, pvz. pranešimų centre arba sistemos dėkle. Be to pranešimas bus matomas tik kaip mirksinti dėklo piktograma.</translation>
+        <translation type="unfinished">Naudoti darbalaukio pranešimus, pvz., pranešimų centre arba sistemos juostelėje. Be to pranešimas bus matomas tik kaip mirksinti sistemos juostelės piktograma.</translation>
     </message>
     <message>
         <source>Only show &quot;new message&quot; without showing potentially secret information in desktop notifications.</source>
@@ -2998,50 +2989,50 @@ Hide formatting characters:
         <translation type="unfinished">Rodyti tik „naują žinutę“, nerodant galimai slaptos informacijos darbalaukio pranešimuose.</translation>
     </message>
     <message>
-        <source>Split friend list and chat window into separately moveable windows.</source>
+        <source>Split friend list and chat window into separately movable windows.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Padalinkite draugų sąrašą ir pokalbių langą į atskirus perkeliamus langus.</translation>
+        <translation type="unfinished">Padalinti kontaktų sąrašą ir pokalbių langą į atskirai perkeliamus langus.</translation>
     </message>
     <message>
         <source>Display textual emojis as colorful pictures instead of text or black/white font-rendered emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pateikite tekstinius jaustukus kaip spalvotus paveikslėlius, o ne tekstą arba juodu / baltu šriftu atvaizduotus jaustukus.</translation>
+        <translation type="unfinished">Rodyti tekstinius jaustukus kaip spalvotus paveikslėlius, o ne tekstą ar nespalvotus šrifto jaustukus.</translation>
     </message>
     <message>
         <source>Select which set of pictures to use when rendering emojis.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pasirinkite, kurį paveikslėlių rinkinį naudoti pateikiant jaustukus.</translation>
+        <translation type="unfinished">Pasirinkite, kurį paveikslėlių rinkinį naudoti jaustukams rodyti.</translation>
     </message>
     <message>
         <source>Size in pixels of an emoji picture. Select something similar to your base font size.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jaustuko paveikslėlio dydis pikseliais. Pasirinkite kažką panašaus į pagrindinį šrifto dydį.</translation>
+        <translation type="unfinished">Jaustuko paveikslėlio dydis pikseliais. Pasirinkite panašų į pagrindinio šrifto dydį.</translation>
     </message>
     <message>
         <source>Base style to use for the UI. Fusion is recommended as it works best with qTox theming.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pagrindinis stilius, naudojamas UI. Fusion rekomenduojama, nes ji geriausiai veikia su qTox temomis.</translation>
+        <translation type="unfinished">Pagrindinis sąsajos stilius. Rekomenduojamas „Fusion“, nes jis geriausiai veikia su qTox temomis.</translation>
     </message>
     <message>
         <source>UI color theme. Use this to select dark mode.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">UI spalvų tema. Naudokite tai norėdami pasirinkti tamsųjį režimą.</translation>
+        <translation type="unfinished">Sąsajos spalvų tema. Ja galite pasirinkti tamsųjį režimą.</translation>
     </message>
     <message>
         <source>If disabled, use basic system tray notifications. Otherwise, try to use the notification backend of your desktop environment. Disable this if you observe issues with desktop notifications.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jei išjungta, naudokite pagrindinius sistemos dėklo pranešimus. Kitu atveju pabandykite naudoti savo darbalaukio aplinkos pranešimų foną. Išjunkite šią funkciją, jei pastebėsite su darbalaukio pranešimais susijusių problemų.</translation>
+        <translation type="unfinished">Jei išjungta, naudojami paprasti sistemos juostelės pranešimai. Kitu atveju bandoma naudoti jūsų darbalaukio aplinkos pranešimų sistemą. Išjunkite, jei pastebite problemų su darbalaukio pranešimais.</translation>
     </message>
     <message>
         <source>Use system-specific notification backend if available</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Jei įmanoma, naudokite konkrečios sistemos pranešimų foną</translation>
+        <translation type="unfinished">Jei įmanoma, naudoti sistemos pranešimų mechanizmą</translation>
     </message>
     <message>
         <source>Show previews for sent and received images in chats. Hover over the inline preview to display a larger preview.</source>
         <comment>tooltip for Image preview setting</comment>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Rodyti išsiųstų ir gautų vaizdų peržiūras pokalbiuose. Užveskite pelės žymeklį virš tiesioginės peržiūros, kad būtų rodoma didesnė peržiūra.</translation>
+        <translation type="unfinished">Rodyti išsiųstų ir gautų paveikslėlių peržiūras pokalbiuose. Užveskite pelės žymeklį virš peržiūros, kad būtų rodoma didesnė.</translation>
     </message>
     <message>
         <source>Image preview</source>
@@ -3050,42 +3041,39 @@ Hide formatting characters:
     </message>
     <message>
         <source>Maximum number of messages (per conversation) loaded from chat history.
-Decrease this to improve performance. A too low number here may cause the
-scroll bar to disappear.</source>
+Decrease this to improve performance. A number that is too low may make the
+scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Didžiausias pranešimų skaičius (vienam pokalbiui), įkeltas iš pokalbių
-istorijos. Sumažinkite tai, kad pagerintumėte našumą. Dėl per mažo
-skaičiaus slinkties juosta gali išnykti.</translation>
+        <translation type="unfinished">Didžiausias žinučių skaičius (vienam pokalbiui), įkeliamas iš pokalbių žurnalo.
+Sumažinkite, kad pagerintumėte našumą. Per mažas skaičius gali lemti,
+kad slinkties juosta išnyks.</translation>
     </message>
     <message>
         <source>Maximum chat log view size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Maksimalus pokalbių
-žurnalo peržiūros dydis</translation>
+        <translation type="unfinished">Didžiausias pokalbių žurnalo rodinio dydis</translation>
     </message>
     <message>
-        <source>Number of messages to load from the chat history when scrolling. A too low
-number here may cause the scroll bar to disappear.</source>
+        <source>Number of messages to load from the chat history when scrolling. A number that
+is too low may make the scroll bar disappear.</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pranešimų, kuriuos reikia įkelti iš pokalbių istorijos slenkant, skaičius.
+        <translation type="unfinished">Žinučių, įkeliamų iš pokalbių žurnalo slenkant, skaičius.
 Dėl per mažo skaičiaus slinkties juosta gali išnykti.</translation>
     </message>
     <message>
         <source>Chat log chunk size</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pokalbių žurnalo
-gabalo dydis</translation>
+        <translation type="unfinished">Pokalbių žurnalo dalies dydis</translation>
     </message>
     <message>
         <source>Chat log:</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Pokalbių
-žurnalas:</translation>
+        <translation type="unfinished">Pokalbių žurnalas:</translation>
     </message>
     <message>
-        <source>Hide suffix after NULL symbol</source>
+        <source>Hide text after a NUL character</source>
         <translatorcomment>Automated translation.</translatorcomment>
-        <translation type="unfinished">Paslėpti priesagą po nulinio simbolio</translation>
+        <translation type="unfinished">Slėpti tekstą po NUL simbolio</translation>
     </message>
 </context>
 <context>
@@ -3120,7 +3108,7 @@ gabalo dydis</translation>
     </message>
     <message>
         <source>Conferences</source>
-        <translation type="unfinished">Grupės</translation>
+        <translation type="unfinished">Konferencijos</translation>
     </message>
     <message>
         <source>Search Contacts</source>
@@ -3172,7 +3160,7 @@ gabalo dydis</translation>
     </message>
     <message>
         <source>Create new conference...</source>
-        <translation type="unfinished">Sukurti naują grupę...</translation>
+        <translation type="unfinished">Sukurti naują konferenciją...</translation>
     </message>
     <message>
         <source>Show</source>
@@ -3187,7 +3175,7 @@ gabalo dydis</translation>
     <message>
         <source>Conference invites</source>
         <comment>title of the window</comment>
-        <translation>Pakvietimai į grupes</translation>
+        <translation>Pakvietimai į konferencijas</translation>
     </message>
     <message>
         <source>File transfers</source>
@@ -3211,7 +3199,7 @@ gabalo dydis</translation>
     <message>
         <source>Toxcore failed to start with your proxy settings. qTox cannot run; please modify your settings and restart.</source>
         <comment>popup text</comment>
-        <translation>Nepavyko paleisti „Toxcore“ pagal jūsų įgaliotojo serverio nustatymus. „qTox“ negali veikti; pakeiskite nustatymus ir paleiskite iš naujo.</translation>
+        <translation>Nepavyko paleisti „Toxcore“ su jūsų tarpinio serverio nustatymais. „qTox“ negali veikti; pakeiskite nustatymus ir paleiskite iš naujo.</translation>
     </message>
     <message>
         <source>Couldn&apos;t send friend request</source>
@@ -3228,14 +3216,14 @@ gabalo dydis</translation>
     <message numerus="yes">
         <source>%n new conference invite(s)</source>
         <translation type="unfinished">
-            <numerusform>%n naujas grupės kvietimas</numerusform>
-            <numerusform>%n nauji grupių kvietimai</numerusform>
-            <numerusform>%n naujų grupių kvietimų</numerusform>
+            <numerusform>%n naujas pakvietimas į konferenciją</numerusform>
+            <numerusform>%n nauji pakvietimai į konferenciją</numerusform>
+            <numerusform>%n naujų pakvietimų į konferenciją</numerusform>
         </translation>
     </message>
     <message>
         <source>Exit</source>
-        <comment>Tray action menu to exit Tox</comment>
+        <comment>Tray action menu to exit qTox</comment>
         <translation>Išeiti</translation>
     </message>
     <message>
