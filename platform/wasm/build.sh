@@ -23,14 +23,16 @@ cmake --build _build-wasm
 
 mkdir -p _site
 cp \
-  platform/wasm/_headers \
+  platform/wasm/cross-origin-isolation.js \
+  platform/wasm/tox-gateway.js \
   _build-wasm/qtloader.js \
   _build-wasm/qtlogo.svg \
   _build-wasm/qtox.js \
   _build-wasm/qtox.wasm \
   _site/
-cp \
-  _build-wasm/qtox.html \
-  _site/index.html
+sed \
+  -e 's|</head>|  <script src="cross-origin-isolation.js"></script>\n    <script src="tox-gateway.js"></script>\n  </head>|' \
+  _build-wasm/qtox.html >_site/index.html
+grep -q tox-gateway.js _site/index.html
 
 ccache --show-stats
