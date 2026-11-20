@@ -58,11 +58,11 @@ linked to the dev group chat with Chat ID
 
 ---
 
-| Windows                                          | Linux                                                                              | macOS (Apple silicon)                                     | macOS (Intel)                                             | FreeBSD              |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | -------------------- |
-| **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest ARM64 release 12+]**                            | **[Latest Intel release 12+]**                            | **[Package & Port]** |
-| [32 bit release]                                 | **[Flatpak (64 bit)]**                                                             | [Building instructions]                                   | [Building instructions]                                   |
-| [64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly (64 bit)]                                          | [Latest ARM64 nightly 12+], [Latest ARM64 nightly 10.15+] | [Latest Intel nightly 12+], [Latest Intel nightly 10.15+] |
+| Windows                                          | Linux                                                                              | macOS (Apple silicon)                                       | macOS (Intel)                                               | FreeBSD              |
+| ------------------------------------------------ | ---------------------------------------------------------------------------------- | ----------------------------------------------------------- | ----------------------------------------------------------- | -------------------- |
+| **[64 bit release]**                             | **[Arch]**, **[Debian]**, **[Fedora]**, **[Gentoo]**, **[openSUSE]**, **[Ubuntu]** | **[Latest ARM64 release 12+]**                              | **[Latest Intel release 12+]**                              | **[Package & Port]** |
+| [32 bit release]                                 | **[Flatpak (64 bit)]**                                                             | [Building instructions]                                     | [Building instructions]                                     |
+| [64 bit][64nightly], [32 bit][32nightly] nightly | [From Source], [Flatpak nightly (64 bit)]                                          | [Latest ARM64 nightly 14.4+], [Latest ARM64 nightly 10.15+] | [Latest Intel nightly 14.4+], [Latest Intel nightly 10.15+] |
 
 _**Bold** options are recommended._
 
@@ -111,7 +111,7 @@ idea of the general look and features.
 
 This screenshot is taken on every merged pull-request, so will be up-to-date, but less interesting:
 
-![Nightly screenshot](https://github.com/TokTok/qTox/releases/download/nightly/qTox-macos-arm64-12.0.png)
+![Nightly screenshot](https://github.com/TokTok/qTox/releases/download/nightly/qTox-macos-arm64-14.4.png)
 
 ### Features
 
@@ -184,8 +184,8 @@ AED3 1134 9C23 A123 E5C4  AA4B 139C A045 3DA2 D773
 [easy issues]: https://github.com/qTox/qTox/labels/E-easy
 [Latest ARM64 release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.6/qTox-v1.18.6.arm64-12.0.dmg
 [Latest Intel release 12+]: https://github.com/TokTok/qTox/releases/download/v1.18.6/qTox-v1.18.6.x86_64-12.0.dmg
-[Latest ARM64 nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-12.0.dmg
-[Latest Intel nightly 12+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-12.0.dmg
+[Latest ARM64 nightly 14.4+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-14.4.dmg
+[Latest Intel nightly 14.4+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-14.4.dmg
 [Latest ARM64 nightly 10.15+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-arm64-10.15.dmg
 [Latest Intel nightly 10.15+]: https://github.com/TokTok/qTox/releases/download/nightly/qTox-nightly-x86_64-10.15.dmg
 [Fedora]: /INSTALL.md#fedora
