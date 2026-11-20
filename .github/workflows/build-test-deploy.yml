@@ -32,7 +32,7 @@ jobs:
   translation-check:
     name: Check for translatable strings
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: Checkout ci-tools
@@ -54,7 +54,7 @@ jobs:
     name: Clang-Tidy
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - name: Cache compiler output
@@ -82,7 +82,7 @@ jobs:
     name: Alpine
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         features: [full]
@@ -105,7 +105,7 @@ jobs:
     name: Alpine (static)
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         build_type: [Release]
@@ -126,7 +126,7 @@ jobs:
     name: Debian
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         features: [minimal]
@@ -151,7 +151,7 @@ jobs:
     name: Fedora with ASAN
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         features: [full]
@@ -220,7 +220,7 @@ jobs:
     name: Ubuntu LTS
     needs: [prepare]
     if: github.event_name != 'push'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         features: [full]
@@ -252,6 +252,11 @@ jobs:
     name: WebAssembly
     needs: [prepare]
     runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && 'github-pages' || '' }}
+    permissions:
+      contents: read
+      id-token: write
+      pages: write
     steps:
       - uses: actions/checkout@v6
         with:
@@ -270,28 +275,15 @@ jobs:
           path: _site
       - name: Set-up Pages
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Upload Pages artifact
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
-  deploy-wasm:
-    name: Deploy WebAssembly
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    needs: [build-wasm]
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    permissions:
-      id-token: write
-      pages: write
-    steps:
-      - name: Deploy GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/deploy-pages@v5
 
   ###########################################################################
   # Deploy jobs (release artifacts)
@@ -355,7 +347,7 @@ jobs:
   build-docs:
     name: Docs
     needs: [prepare]
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     env:
       DOXYGEN_CONFIG_FILE: doxygen.conf
     steps:
