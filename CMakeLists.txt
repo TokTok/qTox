@@ -729,7 +729,13 @@ if(FULLY_STATIC)
 endif()
 
 if(EMSCRIPTEN)
-  target_link_options(${BINARY_NAME} PRIVATE -sASYNCIFY -lidbfs.js)
+  set(FD_SYNC_JS "${CMAKE_CURRENT_SOURCE_DIR}/platform/wasm/fd_sync.js")
+  target_link_options(${BINARY_NAME} PRIVATE -lidbfs.js
+                      "--js-library=${FD_SYNC_JS}")
+  set_property(
+    TARGET ${BINARY_NAME}
+    APPEND
+    PROPERTY LINK_DEPENDS "${FD_SYNC_JS}")
 
   # Turn off testing, because there's no offscreen plugin.
   message(STATUS "Disabling testing for Emscripten")
