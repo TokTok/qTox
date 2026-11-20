@@ -1,3 +1,0 @@
-[build]
-command = "platform/wasm/netlify.sh"
-publish = "_site"

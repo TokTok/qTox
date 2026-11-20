@@ -18,11 +18,3 @@ jobs:
 
   release-soon:
     uses: TokTok/ci-tools/.github/workflows/release-soon.yml@master
-
-  netlify:
-    uses: TokTok/ci-tools/.github/workflows/netlify.yml@master
-    with:
-      dockerfile: platform/wasm/Dockerfile
-      path: /
-    secrets:
-      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
