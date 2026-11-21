@@ -36,6 +36,7 @@
 
 #include <QApplication>
 #include <QClipboard>
+#include <QDir>
 #include <QDragEnterEvent>
 #include <QFileDialog>
 #include <QFileInfo>
@@ -45,6 +46,7 @@
 #include <QScrollBar>
 #include <QSplitter>
 #include <QStringBuilder>
+#include <QTemporaryDir>
 
 #include <cassert>
 #include <memory>
@@ -293,7 +295,21 @@ void ChatForm::onAttachClicked()
         }
 
         const qint64 filesize = file.size();
+#ifdef Q_OS_WASM
+        // Send a copy, because only the main thread can read browser files.
+        QTemporaryDir dir{QDir::temp().filePath(QStringLiteral("XXXXXX"))};
+        const QString copy = dir.filePath(fileName);
+        if (!QFile::copy(path, copy)) {
+            QMessageBox::warning(this, tr("Unable to open"),
+                                 tr("qTox wasn't able to open %1").arg(fileName));
+            continue;
+        }
+        // Keep the copy, because the chat shows a preview of it.
+        dir.setAutoRemove(false);
+        core.getCoreFile()->sendFile(f->getId(), fileName, copy, filesize);
+#else
         core.getCoreFile()->sendFile(f->getId(), fileName, path, filesize);
+#endif
     }
 }
 

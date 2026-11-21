@@ -448,6 +448,8 @@ set(${BINARY_NAME}_SOURCES
     src/platform/autorun_osx.cpp
     src/platform/autorun_win.cpp
     src/platform/autorun_xdg.cpp
+    src/platform/camera/browser.cpp
+    src/platform/camera/browser.h
     src/platform/camera/directshow.cpp
     src/platform/camera/directshow.h
     src/platform/camera/v4l2.cpp
@@ -730,12 +732,24 @@ endif()
 
 if(EMSCRIPTEN)
   set(FD_SYNC_JS "${CMAKE_CURRENT_SOURCE_DIR}/platform/wasm/fd_sync.js")
-  target_link_options(${BINARY_NAME} PRIVATE -lidbfs.js
-                      "--js-library=${FD_SYNC_JS}")
+  set(IDBFS_JS "${CMAKE_CURRENT_SOURCE_DIR}/platform/wasm/idbfs.js")
+  set(TCP_JS "${CMAKE_CURRENT_SOURCE_DIR}/platform/wasm/tcp.js")
+  set(CAMERA_JS "${CMAKE_CURRENT_SOURCE_DIR}/platform/wasm/camera.js")
+  target_link_options(
+    ${BINARY_NAME}
+    PRIVATE
+    -lidbfs.js
+    "--js-library=${FD_SYNC_JS}"
+    "--js-library=${CAMERA_JS}"
+    "--pre-js=${IDBFS_JS}"
+    "--pre-js=${TCP_JS}")
+  # Keep function names, because bug reports need readable stack traces.
+  target_link_options(${BINARY_NAME} PRIVATE --profiling-funcs)
   set_property(
     TARGET ${BINARY_NAME}
     APPEND
-    PROPERTY LINK_DEPENDS "${FD_SYNC_JS}")
+    PROPERTY LINK_DEPENDS "${FD_SYNC_JS}" "${CAMERA_JS}" "${IDBFS_JS}"
+             "${TCP_JS}")
 
   # Turn off testing, because there's no offscreen plugin.
   message(STATUS "Disabling testing for Emscripten")

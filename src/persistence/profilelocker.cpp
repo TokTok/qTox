@@ -27,7 +27,13 @@ QString ProfileLocker::curLockName;
 
 QString ProfileLocker::lockPathFromName(const QString& name, const Paths& paths)
 {
+#ifdef Q_OS_WASM
+    // Keep locks out of IndexedDB, because a reload ends the page that held them.
+    std::ignore = paths;
+    return QDir::tempPath() + '/' + name + ".lock";
+#else
     return paths.getSettingsDirPath() + '/' + name + ".lock";
+#endif
 }
 
 /**

@@ -9,6 +9,7 @@
 
 #include "src/persistence/settings.h"
 #include "src/platform/camera/avfoundation.h" // IWYU pragma: keep
+#include "src/platform/camera/browser.h"      // IWYU pragma: keep
 #include "src/platform/camera/directshow.h"   // IWYU pragma: keep
 #include "src/platform/camera/v4l2.h"         // IWYU pragma: keep
 
@@ -68,6 +69,15 @@ QDebug operator<<(QDebug dbg, const AVDictionary* const* dict)
     }
 
     return dbg << options.join(", ").toUtf8().constData();
+}
+
+void closeInput(AVFormatContext** context)
+{
+#ifdef Q_OS_WASM
+    browser::closeCamera(context);
+#else
+    avformat_close_input(context);
+#endif
 }
 
 #ifdef Q_OS_MACOS
@@ -130,10 +140,17 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 
     qDebug() << "Opening device" << devName << "with format" << format->name << "and options"
              << options;
+#ifdef Q_OS_WASM
+    AVFormatContext* fctx = browser::openCamera(options);
+    if (fctx == nullptr) {
+        return nullptr;
+    }
+#else
     AVFormatContext* fctx = nullptr;
     if (avformat_open_input(&fctx, devName.toStdString().c_str(), format, options) < 0) {
         return nullptr;
     }
+#endif
 
 // Fix avformat_find_stream_info hanging on garbage input
 #if defined FF_API_PROBESIZE_32 && FF_API_PROBESIZE_32
@@ -145,7 +162,7 @@ CameraDevice* CameraDevice::open(QString devName, AVDictionary** options)
 #endif
 
     if (avformat_find_stream_info(fctx, nullptr) < 0) {
-        avformat_close_input(&fctx);
+        closeInput(&fctx);
         return nullptr;
     }
 
@@ -183,7 +200,7 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         return nullptr;
     }
 
-#if defined(USING_V4L) || defined(Q_OS_WIN) || defined(Q_OS_MACOS)
+#if defined(USING_V4L) || defined(Q_OS_WIN) || defined(Q_OS_MACOS) || defined(Q_OS_WASM)
     float fps = 5;
     if (mode.fps > 0.0f) {
         fps = mode.fps;
@@ -265,6 +282,15 @@ CameraDevice* CameraDevice::open(QString devName, VideoMode mode)
         options["pixel_format"] = "uyvy422";
     }
 #endif
+#ifdef Q_OS_WASM
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("mjpeg")) {
+        options["video_size"] = videoSize;
+        options["framerate"] = framerate;
+        // Don't read frames to find the frame rate or timestamps, because we set the rate.
+        options["fpsprobesize"] = "0";
+        options["max_ts_probe"] = "0";
+    }
+#endif
     else if (!mode.isUnspecified()) {
         qWarning().nospace() << "No known options for " << iformat->name << ", using defaults.";
     }
@@ -294,7 +320,7 @@ bool CameraDevice::close()
     openDeviceLock.lock();
     openDevices.remove(devName);
     openDeviceLock.unlock();
-    avformat_close_input(&context);
+    closeInput(&context);
     delete this;
     return true;
 }
@@ -364,6 +390,10 @@ QVector<QPair<QString, QString>> CameraDevice::getDeviceList()
 #ifdef Q_OS_MACOS
     else if (QString::fromUtf8(iformat->name) == QStringLiteral("avfoundation"))
         devices += avfoundation::getDeviceList();
+#endif
+#ifdef Q_OS_WASM
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("mjpeg"))
+        devices += browser::getDeviceList();
 #endif
     else
         devices += getRawDeviceListGeneric();
@@ -470,6 +500,10 @@ QVector<VideoMode> CameraDevice::getVideoModes(QString devName)
     else if (QString::fromUtf8(iformat->name) == QStringLiteral("avfoundation"))
         return avfoundation::getDeviceModes(devName);
 #endif
+#ifdef Q_OS_WASM
+    else if (QString::fromUtf8(iformat->name) == QStringLiteral("mjpeg"))
+        return browser::getDeviceModes();
+#endif
     else
         qWarning() << "Video mode listing not implemented for input" << iformat->name;
 
@@ -547,6 +581,11 @@ bool CameraDevice::getDefaultInputFormat()
     if ((iformat = av_find_input_format("avfoundation")) != nullptr)
         return true;
     if ((iformat = av_find_input_format("qtkit")) != nullptr)
+        return true;
+#endif
+
+#ifdef Q_OS_WASM
+    if ((iformat = av_find_input_format("mjpeg")) != nullptr)
         return true;
 #endif
 

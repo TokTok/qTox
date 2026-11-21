@@ -12,7 +12,7 @@ ccache --show-config
 emcmake cmake \
   -DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
   -DCMAKE_FIND_ROOT_PATH="/opt/buildhome;/opt/buildhome/qt" \
-  -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+  -DCMAKE_BUILD_TYPE=Release \
   -DSTRICT_OPTIONS=ON \
   -DBUILD_TESTING=OFF \
   -GNinja \
