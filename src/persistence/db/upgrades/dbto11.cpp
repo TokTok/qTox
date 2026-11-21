@@ -10,7 +10,7 @@
 
 #include <QDebug>
 
-bool DbTo11::dbSchema10to11(RawDatabase& db)
+bool DbUpgrader::dbSchema10to11(RawDatabase& db)
 {
     std::vector<RawDatabase::Query> upgradeQueries;
     if (!appendDeduplicatePeersQueries(db, upgradeQueries)) {
@@ -32,8 +32,8 @@ bool DbTo11::dbSchema10to11(RawDatabase& db)
     return transactionPass;
 }
 
-bool DbTo11::appendDeduplicatePeersQueries(RawDatabase& db,
-                                           std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::appendDeduplicatePeersQueries(RawDatabase& db,
+                                               std::vector<RawDatabase::Query>& upgradeQueries)
 {
     std::vector<DbUpgrader::BadEntry> badPeers;
     if (!getInvalidPeers(db, badPeers)) {
@@ -43,7 +43,7 @@ bool DbTo11::appendDeduplicatePeersQueries(RawDatabase& db,
     return true;
 }
 
-bool DbTo11::getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>& badPeers)
+bool DbUpgrader::getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>& badPeers)
 {
     return db.execNow(
         RawDatabase::Query("SELECT id, public_key FROM peers WHERE CAST(public_key AS BLOB) != "
@@ -53,7 +53,7 @@ bool DbTo11::getInvalidPeers(RawDatabase& db, std::vector<DbUpgrader::BadEntry>&
                            }));
 }
 
-bool DbTo11::appendSplitPeersQueries(RawDatabase& db, std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::appendSplitPeersQueries(RawDatabase& db, std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // splitting peers table into separate chat and authors table.
     // peers had a dual-meaning of each friend having their own chat, but also each peer
@@ -72,8 +72,8 @@ bool DbTo11::appendSplitPeersQueries(RawDatabase& db, std::vector<RawDatabase::Q
     return true;
 }
 
-bool DbTo11::PeersToAuthors::appendPeersToAuthorsQueries(RawDatabase& db,
-                                                         std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToAuthors::appendPeersToAuthorsQueries(RawDatabase& db,
+                                                             std::vector<RawDatabase::Query>& upgradeQueries)
 {
     appendCreateNewTablesQueries(upgradeQueries);
     if (!appendPopulateAuthorQueries(db, upgradeQueries)) {
@@ -88,7 +88,7 @@ bool DbTo11::PeersToAuthors::appendPeersToAuthorsQueries(RawDatabase& db,
     return true;
 }
 
-void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToAuthors::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE authors (id INTEGER PRIMARY KEY, "
                                                "public_key BLOB NOT NULL UNIQUE);"));
@@ -122,8 +122,8 @@ void DbTo11::PeersToAuthors::appendCreateNewTablesQueries(std::vector<RawDatabas
                        "FOREIGN KEY (sender_alias) REFERENCES aliases_new(id));"));
 }
 
-bool DbTo11::PeersToAuthors::appendPopulateAuthorQueries(RawDatabase& db,
-                                                         std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToAuthors::appendPopulateAuthorQueries(RawDatabase& db,
+                                                             std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // don't copy over directly, so that we can convert from string to blob
     return db.execNow(RawDatabase::Query(
@@ -136,8 +136,8 @@ bool DbTo11::PeersToAuthors::appendPopulateAuthorQueries(RawDatabase& db,
         }));
 }
 
-bool DbTo11::PeersToAuthors::appendUpdateAliasesFkQueries(RawDatabase& db,
-                                                          std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToAuthors::appendUpdateAliasesFkQueries(RawDatabase& db,
+                                                              std::vector<RawDatabase::Query>& upgradeQueries)
 {
     return db.execNow(RawDatabase::Query(
         QStringLiteral("SELECT id, public_key FROM peers"), [&](const QVector<QVariant>& row) {
@@ -155,7 +155,7 @@ bool DbTo11::PeersToAuthors::appendUpdateAliasesFkQueries(RawDatabase& db,
         }));
 }
 
-void DbTo11::PeersToAuthors::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToAuthors::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(QStringLiteral("DROP TABLE text_messages;"));
     upgradeQueries.emplace_back(
@@ -167,8 +167,8 @@ void DbTo11::PeersToAuthors::appendReplaceOldTablesQueries(std::vector<RawDataba
     upgradeQueries.emplace_back(QStringLiteral("ALTER TABLE aliases_new RENAME TO aliases;"));
 }
 
-bool DbTo11::PeersToChats::appendPeersToChatsQueries(RawDatabase& db,
-                                                     std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToChats::appendPeersToChatsQueries(RawDatabase& db,
+                                                         std::vector<RawDatabase::Query>& upgradeQueries)
 {
     appendCreateNewTablesQueries(upgradeQueries);
     if (!appendPopulateChatsQueries(db, upgradeQueries)) {
@@ -186,7 +186,7 @@ bool DbTo11::PeersToChats::appendPeersToChatsQueries(RawDatabase& db,
     return true;
 }
 
-void DbTo11::PeersToChats::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToChats::appendCreateNewTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(QStringLiteral("CREATE TABLE chats (id INTEGER PRIMARY KEY, "
                                                "uuid BLOB NOT NULL UNIQUE);"));
@@ -240,8 +240,8 @@ void DbTo11::PeersToChats::appendCreateNewTablesQueries(std::vector<RawDatabase:
                        "FOREIGN KEY (id) REFERENCES history_new(id));"));
 }
 
-bool DbTo11::PeersToChats::appendPopulateChatsQueries(RawDatabase& db,
-                                                      std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToChats::appendPopulateChatsQueries(RawDatabase& db,
+                                                          std::vector<RawDatabase::Query>& upgradeQueries)
 {
     // don't copy over directly, so that we can convert from string to blob
     return db.execNow(RawDatabase::Query(
@@ -253,8 +253,8 @@ bool DbTo11::PeersToChats::appendPopulateChatsQueries(RawDatabase& db,
         }));
 }
 
-bool DbTo11::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
-                                                        std::vector<RawDatabase::Query>& upgradeQueries)
+bool DbUpgrader::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
+                                                            std::vector<RawDatabase::Query>& upgradeQueries)
 {
     return db.execNow(RawDatabase::Query(
         QStringLiteral("SELECT DISTINCT peers.id, peers.public_key FROM peers JOIN history ON "
@@ -274,7 +274,7 @@ bool DbTo11::PeersToChats::appendUpdateHistoryFkQueries(RawDatabase& db,
         }));
 }
 
-void DbTo11::PeersToChats::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToChats::appendReplaceOldTablesQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(QStringLiteral("DROP TABLE text_messages;"));
     upgradeQueries.emplace_back(
@@ -295,37 +295,38 @@ void DbTo11::PeersToChats::appendReplaceOldTablesQueries(std::vector<RawDatabase
     upgradeQueries.emplace_back(QStringLiteral("ALTER TABLE history_new RENAME TO history;"));
 }
 
-void DbTo11::appendUpdateTextMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::appendUpdateTextMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO text_messages_new SELECT * FROM text_messages"));
 }
 
-void DbTo11::appendUpdateFileTransfersFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::appendUpdateFileTransfersFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO file_transfers_new SELECT * FROM file_transfers"));
 }
 
-void DbTo11::PeersToChats::appendUpdateSystemMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToChats::appendUpdateSystemMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO system_messages_new SELECT * FROM system_messages"));
 }
 
-void DbTo11::PeersToChats::appendUpdateFauxOfflinePendingFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToChats::appendUpdateFauxOfflinePendingFkQueries(
+    std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO faux_offline_pending_new SELECT * FROM faux_offline_pending"));
 }
 
-void DbTo11::PeersToChats::appendUpdateBrokenMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::PeersToChats::appendUpdateBrokenMessagesFkQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(
         QStringLiteral("INSERT INTO broken_messages_new SELECT * FROM broken_messages"));
 }
 
-void DbTo11::appendDropPeersQueries(std::vector<RawDatabase::Query>& upgradeQueries)
+void DbUpgrader::appendDropPeersQueries(std::vector<RawDatabase::Query>& upgradeQueries)
 {
     upgradeQueries.emplace_back(QStringLiteral("DROP TABLE peers;"));
 }

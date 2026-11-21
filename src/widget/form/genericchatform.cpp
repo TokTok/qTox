@@ -11,8 +11,10 @@
 #include "src/conferencelist.h"
 #include "src/core/core.h"
 #include "src/friendlist.h"
+#include "src/grouplist.h"
 #include "src/model/conference.h"
 #include "src/model/friend.h"
+#include "src/model/group.h"
 #include "src/persistence/settings.h"
 #include "src/persistence/smileypack.h"
 #include "src/widget/chatformheader.h"
@@ -91,6 +93,13 @@ QString GenericChatForm::resolveToxPk(const ToxPk& pk)
         }
     }
 
+    for (Group* it : groupList.getAllGroups()) {
+        QString res = it->resolveToxPk(pk);
+        if (!res.isEmpty()) {
+            return res;
+        }
+    }
+
     return pk.toString();
 }
 
@@ -120,7 +129,8 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
                                  IMessageDispatcher& messageDispatcher_, DocumentCache& documentCache,
                                  SmileyPack& smileyPack_, Settings& settings_, Style& style_,
                                  IMessageBoxManager& messageBoxManager, FriendList& friendList_,
-                                 ConferenceList& conferenceList_, QWidget* parent_)
+                                 ConferenceList& conferenceList_, GroupList& groupList_,
+                                 QWidget* parent_)
     : QWidget(parent_, Qt::Window)
     , core{core_}
     , audioInputFlag(false)
@@ -132,6 +142,7 @@ GenericChatForm::GenericChatForm(const Core& core_, const Chat* chat, IChatLog& 
     , style{style_}
     , friendList{friendList_}
     , conferenceList{conferenceList_}
+    , groupList{groupList_}
 {
     curRow = 0;
     headWidget = new ChatFormHeader(settings, style);

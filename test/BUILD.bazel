@@ -68,11 +68,11 @@ cc_library(
 
 UI_TESTS = ["loginscreen_test"]
 
-MEDIUM_TESTS = [
-    "chatwidget_test",
-    "core_test",
-    "posixsignalnotifier_test",
-]
+TEST_SIZES = {
+    "chatwidget_test": "medium",
+    "core_test": "large",
+    "posixsignalnotifier_test": "medium",
+}
 
 TEST_DEPS = [
     ":dbutility",
@@ -90,7 +90,10 @@ TEST_DEPS = [
 
 [qt_test(
     name = src[src.rindex("/") + 1:-4],
-    size = "medium" if src[src.rindex("/") + 1:-4] in MEDIUM_TESTS else "small",
+    size = TEST_SIZES.get(
+        src[src.rindex("/") + 1:-4],
+        "small",
+    ),
     src = src,
     copts = COPTS,
     mocopts = ["-Iqtox"],
