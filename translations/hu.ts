@@ -2181,7 +2181,7 @@ Válasszon egy másik képet.</translation>
     </message>
     <message>
         <source>The name can&apos;t be empty.</source>
-        <translation>A név nem lehet üres</translation>
+        <translation>A név nem lehet üres.</translation>
     </message>
     <message>
         <source>Empty path</source>
