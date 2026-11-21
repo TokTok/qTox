@@ -11,6 +11,13 @@ class QFileInfo;
 class IMessageBoxManager
 {
 public:
+    enum class Answer
+    {
+        Accepted,
+        Rejected,
+        Cancelled,
+    };
+
     virtual ~IMessageBoxManager();
     virtual void showInfo(const QString& title, const QString& msg) = 0;
     virtual void showWarning(const QString& title, const QString& msg) = 0;
@@ -19,5 +26,8 @@ public:
                              bool warning = true, bool yesno = true) = 0;
     virtual bool askQuestion(const QString& title, const QString& msg, const QString& button1,
                              const QString& button2, bool defaultAns = false, bool warning = true) = 0;
+    virtual Answer askQuestion(const QString& title, const QString& msg, const QString& button1,
+                               const QString& button2, const QString& button3,
+                               bool defaultAns = false, bool warning = true) = 0;
     virtual void confirmExecutableOpen(const QFileInfo& file) = 0;
 };

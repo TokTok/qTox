@@ -251,7 +251,8 @@ void CoreFile::rejectFileRecvRequest(uint32_t friendId, uint32_t fileId)
     removeFile(friendId, fileId);
 }
 
-void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path)
+void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString path,
+                                     bool resume)
 {
     const QMutexLocker<QRecursiveMutex> locker{coreLoopLock};
 
@@ -261,10 +262,36 @@ void CoreFile::acceptFileRecvRequest(uint32_t friendId, uint32_t fileId, QString
         return;
     }
     file->setFilePath(path);
-    if (!file->open(true)) {
+
+    uint64_t partialSize = 0;
+    if (resume) {
+        partialSize = ToxFile::partialSizeOnDisk(path, file->progress.getFileSize());
+    }
+
+    if (!file->open(true, resume)) {
         qWarning() << "acceptFileRecvRequest: Unable to open file";
         return;
     }
+
+    if (partialSize > 0) {
+        Tox_Err_File_Seek seekErr;
+        tox_file_seek(tox, file->friendId, file->fileNum, partialSize, &seekErr);
+        if (!PARSE_ERR(seekErr)) {
+            qWarning() << "acceptFileRecvRequest: tox_file_seek failed";
+            file->file->close();
+            return;
+        }
+
+        // Hash the existing partial content so the final hash covers the whole file.
+        QFile partialFile(path);
+        if (partialFile.open(QIODevice::ReadOnly)) {
+            file->hashGenerator->addData(&partialFile);
+        }
+
+        file->progress.resetTo(partialSize);
+        qDebug() << "Resuming file transfer from" << partialSize << "bytes";
+    }
+
     Tox_Err_File_Control err;
     tox_file_control(tox, file->friendId, file->fileNum, TOX_FILE_CONTROL_RESUME, &err);
     if (!PARSE_ERR(err)) {

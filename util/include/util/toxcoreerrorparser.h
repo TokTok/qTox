@@ -40,6 +40,7 @@ bool parseErr(Tox_Err_Conference_Delete error, const char* file, int line, const
 bool parseErr(Tox_Err_Get_Port error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_File_Control error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_File_Get error, const char* file, int line, const char* func);
+bool parseErr(Tox_Err_File_Seek error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_File_Send error, const char* file, int line, const char* func);
 bool parseErr(Tox_Err_File_Send_Chunk error, const char* file, int line, const char* func);
 bool parseErr(Toxav_Err_Bit_Rate_Set error, const char* file, int line, const char* func);

@@ -131,15 +131,39 @@ void FileTransferWidget::acceptTransfer(const QString& filepath)
         return;
     }
 
+    const uint64_t fileSize = fileInfo.progress.getFileSize();
+    bool resume = false;
+    if (ToxFile::partialSizeOnDisk(filepath, fileSize) > 0) {
+        const IMessageBoxManager::Answer answer = messageBoxManager.askQuestion(
+            tr("Resume download?"),
+            tr("A smaller file with this name already exists. What would you like to do?"),
+            tr("Resume"), tr("Overwrite"), tr("Cancel"));
+        if (answer == IMessageBoxManager::Answer::Accepted) {
+            resume = true;
+        } else if (answer == IMessageBoxManager::Answer::Cancelled) {
+            return;
+        }
+    }
+
     // test if writable
-    if (!tryRemoveFile(filepath)) {
-        const auto text = CommonDialogs::NoWritePermission();
-        messageBoxManager.showWarning(text.first, text.second);
-        return;
+    if (!resume) {
+        if (!tryRemoveFile(filepath)) {
+            const auto text = CommonDialogs::NoWritePermission();
+            messageBoxManager.showWarning(text.first, text.second);
+            return;
+        }
+    } else {
+        // For resume, check that the partial file is writable.
+        const QFileInfo fi(filepath);
+        if (!fi.isWritable()) {
+            const auto text = CommonDialogs::NoWritePermission();
+            messageBoxManager.showWarning(text.first, text.second);
+            return;
+        }
     }
 
     // everything ok!
-    coreFile.acceptFileRecvRequest(fileInfo.friendId, fileInfo.fileNum, filepath);
+    coreFile.acceptFileRecvRequest(fileInfo.friendId, fileInfo.fileNum, filepath, resume);
 }
 
 void FileTransferWidget::setBackgroundColor(const QColor& c, bool whiteFont)
