@@ -18,6 +18,7 @@
 #include <QBuffer>
 #include <QDebug>
 #include <QDesktopServices>
+#include <QDir>
 #include <QFile>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -464,21 +465,43 @@ void FileTransferWidget::handleButton(QPushButton* btn)
         } else if (btn->objectName() == "resume") {
             coreFile.pauseResumeFile(fileInfo.friendId, fileInfo.fileNum);
         } else if (btn->objectName() == "accept") {
+#ifdef Q_OS_WASM
+            // Receive into memory, because clicking the finished file gives it to the browser.
+            QString path = QDir::temp().filePath(QString::fromLatin1(fileInfo.resumeFileId.toHex()));
+            // Keep the suffix, because previews need it, but not the name, because the friend chose it.
+            const QString suffix = QFileInfo(fileInfo.fileName).suffix();
+            if (!suffix.isEmpty()) {
+                path += '.' + suffix;
+            }
+            acceptTransfer(path);
+#else
             const QString path =
                 QFileDialog::getSaveFileName(Q_NULLPTR,
                                              tr("Save a file", "Title of the file saving dialog"),
                                              settings.getGlobalAutoAcceptDir() + "/"
                                                  + fileInfo.fileName);
             acceptTransfer(path);
+#endif
         }
     }
 
+#ifdef Q_OS_WASM
+    // Give the file to the browser, because a web page can't open files or folders.
+    if (btn->objectName() == "ok" || btn->objectName() == "previewButton"
+        || btn->objectName() == "dir") {
+        QFile file(fileInfo.filePath);
+        if (file.open(QIODevice::ReadOnly)) {
+            QFileDialog::saveFileContent(file.readAll(), fileInfo.fileName, this);
+        }
+    }
+#else
     if (btn->objectName() == "ok" || btn->objectName() == "previewButton") {
         messageBoxManager.confirmExecutableOpen(QFileInfo(fileInfo.filePath));
     } else if (btn->objectName() == "dir") {
         const QString dirPath = QFileInfo(fileInfo.filePath).dir().path();
         QDesktopServices::openUrl(QUrl::fromLocalFile(dirPath));
     }
+#endif
 }
 
 void FileTransferWidget::showPreview(const QString& filename)

@@ -293,6 +293,8 @@ void OpenAL::destroySink(AlSink& sink)
     const uint sid = sink.getSourceId();
 
     if (alIsSource(sid) != 0) {
+        // A looping source has no processed buffers, so stop looping first.
+        alSourcei(sid, AL_LOOPING, AL_FALSE);
         // stop playing, marks all buffers as processed
         alSourceStop(sid);
         cleanupBuffers(sid);
@@ -484,10 +486,11 @@ void OpenAL::playMono16Sound(AlSink& sink, const IAudioSink::Sound& sound)
 
     // interrupt possibly playing sound, we don't buffer here
     alSourceStop(sourceId);
+    // A looping source has no processed buffers, so stop looping first.
+    alSourcei(sourceId, AL_LOOPING, AL_FALSE);
 
     ALint processed = 0;
     alGetSourcei(sourceId, AL_BUFFERS_PROCESSED, &processed);
-    alSourcei(sourceId, AL_LOOPING, AL_FALSE);
 
     ALuint bufid;
     if (processed == 0) {

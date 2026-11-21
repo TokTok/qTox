@@ -32,34 +32,6 @@
 #include <ctime>
 #include <memory>
 
-#ifdef Q_OS_WASM
-#include <emscripten.h>
-
-namespace {
-const QString wasmConfigPath = QStringLiteral("/home/web_user/qTox");
-
-bool mountIndexedDbFilesystem()
-{
-    EM_ASM(console.log('Creating config directory: /home/web_user/qTox');
-           FS.mkdir('/home/web_user/qTox');
-           // TODO(iphydf): Figure out why this blocks profile creation.
-           // console.log('Mounting IndexedDB filesystem to /home/web_user/qTox');
-           // FS.mount(IDBFS, {}, '/home/web_user/qTox');
-           // console.log('Syncing filesystem');
-           // FS.syncfs(true, function(err) {
-           //     if (err) {
-           //         console.error('Failed to sync filesystem:', err);
-           //     } else {
-           //         console.log('Filesystem mounted');
-           //     }
-           // });
-    );
-
-    return true;
-}
-} // namespace
-#endif
-
 namespace {
 // logMessageHandler and associated data must be static due to qInstallMessageHandler's
 // inability to register a void* to get back to a class
@@ -302,10 +274,6 @@ int AppManager::startGui(QCommandLineParser& parser)
     connect(settings.get(), &Settings::logToFileChanged, this, applyLogToFile);
 #endif
 
-#ifdef Q_OS_WASM
-    mountIndexedDbFilesystem();
-#endif
-
     // Windows platform plugins DLL hell fix
     QCoreApplication::addLibraryPath(QCoreApplication::applicationDirPath());
     QApplication::addLibraryPath("platforms");
@@ -504,8 +472,8 @@ int AppManager::run()
 #endif // UPDATE_CHECK_ENABLED
     });
 #ifdef Q_OS_WASM
-    // Set to portable mode and TCP-only for WASM.
-    parser.process({"qtox", "-D", wasmConfigPath, "-U", "off", "-L", "off"});
+    // TCP only, because browsers can't send UDP.
+    parser.process({"qtox", "-U", "off", "-L", "off"});
 #else
     parser.process(*qapp);
 #endif

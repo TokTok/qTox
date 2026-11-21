@@ -374,31 +374,34 @@ bool CoreAV::sendCallAudio(uint32_t callId, const int16_t* pcm, size_t samples, 
 
 void CoreAV::sendCallVideo(uint32_t callId, std::shared_ptr<VideoFrame> vframe)
 {
-    const QWriteLocker locker{&callsLock};
+    // Encode outside the lock, because the GUI waits for it and browsers start threads on the GUI.
+    {
+        const QWriteLocker locker{&callsLock};
 
-    // We might be running in the FFmpeg thread and holding the CameraSource lock
-    // So be careful not to deadlock with anything while toxav locks in toxav_video_send_frame
-    auto it = calls.find(callId);
-    if (it == calls.end()) {
-        return;
-    }
-
-    ToxFriendCall& call = *it->second;
-
-    if (!call.getVideoEnabled() || !call.isActive()
-        || ((call.getState() & TOXAV_FRIEND_CALL_STATE_ACCEPTING_V) == 0)) {
-        return;
-    }
-
-    if (call.getNullVideoBitrate()) {
-        qDebug() << "Restarting video stream to friend" << callId;
-        const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
-        Toxav_Err_Bit_Rate_Set err;
-        toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
-        if (!PARSE_ERR(err)) {
+        // We might be running in the FFmpeg thread and holding the CameraSource lock
+        // So be careful not to deadlock with anything while toxav locks in toxav_video_send_frame
+        auto it = calls.find(callId);
+        if (it == calls.end()) {
             return;
         }
-        call.setNullVideoBitrate(false);
+
+        ToxFriendCall& call = *it->second;
+
+        if (!call.getVideoEnabled() || !call.isActive()
+            || ((call.getState() & TOXAV_FRIEND_CALL_STATE_ACCEPTING_V) == 0)) {
+            return;
+        }
+
+        if (call.getNullVideoBitrate()) {
+            qDebug() << "Restarting video stream to friend" << callId;
+            const QMutexLocker<QRecursiveMutex> coreLocker{&coreLock};
+            Toxav_Err_Bit_Rate_Set err;
+            toxav_video_set_bit_rate(toxav.get(), callId, VIDEO_DEFAULT_BITRATE, &err);
+            if (!PARSE_ERR(err)) {
+                return;
+            }
+            call.setNullVideoBitrate(false);
+        }
     }
 
     auto [frame, frameLocker] = vframe->toToxYUVFrame();
