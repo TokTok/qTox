@@ -1247,7 +1247,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">&apos;%1&apos; 그룹에 초대</translation>
+        <translation type="unfinished">&quot;%1&quot; 그룹에 초대</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1573,7 +1573,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">무음</translation>
+        <translation type="unfinished">음소거</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1581,7 +1581,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">피어 ID 복사</translation>
+        <translation type="unfinished">참가자 ID 복사</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1625,11 +1625,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">떨어져 있는</translation>
+        <translation type="unfinished">자리 비움</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">바쁘다</translation>
+        <translation type="unfinished">다른 용무 중</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1640,7 +1640,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">그룹 비밀번호 설정...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">인원 제한 설정...</translation>
     </message>
     <message>
@@ -1656,11 +1656,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">모두</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">모더레이터와 창설자</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">창설자만</translation>
     </message>
     <message>
@@ -1668,8 +1668,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">그룹 공개 범위</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">공개 (링크로 참여)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">공개 (ID로 참여)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1692,11 +1692,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">닉네임:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">인원 제한 설정</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">인원 제한:</translation>
     </message>
     <message>
@@ -1708,8 +1708,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">주제:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">비공개 메시지 받는 사람: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1에게 비공개 메시지</translation>
     </message>
 </context>
 <context>
@@ -1731,8 +1731,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ID로 그룹 참여</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">그룹 대화 ID를 입력하세요 (16진수 64자):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">그룹 ID를 입력하세요 (16진수 64자):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1771,11 +1771,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">가입하다</translation>
+        <translation type="unfinished">참가</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">감소</translation>
+        <translation type="unfinished">거절</translation>
     </message>
 </context>
 <context>
@@ -1786,11 +1786,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">이 창에서 채팅 삭제</translation>
+        <translation type="unfinished">이 창에서 채팅 제거</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">제목 설정...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">별칭 설정...</translation>
     </message>
     <message>
         <source>Quit group</source>

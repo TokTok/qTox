@@ -1329,7 +1329,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">הזמנה לקבוצה &apos;%1&apos;</translation>
+        <translation type="unfinished">הזמנה לקבוצה &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1675,7 +1675,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">לְהַשְׁתִיק</translation>
+        <translation type="unfinished">השתק</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1683,7 +1683,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">העתק מזהה עמיתים</translation>
+        <translation type="unfinished">העתק מזהה משתתף</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1723,15 +1723,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">רָחוֹק</translation>
+        <translation type="unfinished">לא נמצא</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">עָסוּק</translation>
+        <translation type="unfinished">עסוק</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1742,7 +1742,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">הגדרת סיסמת הקבוצה...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">הגדרת מגבלת חברים...</translation>
     </message>
     <message>
@@ -1758,11 +1758,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">כולם</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">מנחים ומייסד</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">המייסד בלבד</translation>
     </message>
     <message>
@@ -1770,8 +1770,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">נראות הקבוצה</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">ציבורית (הצטרפות בקישור)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">ציבורית (הצטרפות לפי מזהה)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1783,7 +1783,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">סִיסמָה:</translation>
+        <translation type="unfinished">סיסמה:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1794,11 +1794,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">כינוי:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">הגדרת מגבלת חברים</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">מגבלת חברים:</translation>
     </message>
     <message>
@@ -1810,8 +1810,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">נושא:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">הודעה פרטית אל: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">הודעה פרטית אל %1</translation>
     </message>
 </context>
 <context>
@@ -1833,8 +1833,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">הצטרפות לקבוצה לפי מזהה</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">נא להזין את מזהה הצ&apos;אט של הקבוצה (64 תווים הקסדצימליים):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">נא להזין את מזהה הקבוצה (64 תווים הקסדצימליים):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1846,7 +1846,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">סִיסמָה:</translation>
+        <translation type="unfinished">סיסמה:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1873,11 +1873,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">לְהִצְטַרֵף</translation>
+        <translation type="unfinished">הצטרף</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">יְרִידָה</translation>
+        <translation type="unfinished">דחה</translation>
     </message>
 </context>
 <context>
@@ -1891,8 +1891,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">הסר את הצ&apos;אט מחלון זה</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">הגדר כותרת...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">הגדר כינוי...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1913,7 +1913,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">באינטרנט</translation>
+        <translation type="unfinished">מחובר</translation>
     </message>
 </context>
 <context>
@@ -4116,7 +4116,7 @@ is too low may make the scroll bar disappear.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">סִיסמָה:</translation>
+        <translation type="unfinished">סיסמה:</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>

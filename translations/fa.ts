@@ -1472,7 +1472,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">شناسه همتا را کپی کنید</translation>
+        <translation type="unfinished">کپی شناسه شرکت‌کننده</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1516,11 +1516,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">پای سیستم نیست</translation>
+        <translation type="unfinished">دور از سیستم</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">سرش شلوغه</translation>
+        <translation type="unfinished">مشغول</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1531,7 +1531,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">تنظیم رمز عبور گروه...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">تنظیم حداکثر اعضا...</translation>
     </message>
     <message>
@@ -1547,11 +1547,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">همه</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">ناظران و بنیان‌گذار</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">فقط بنیان‌گذار</translation>
     </message>
     <message>
@@ -1559,8 +1559,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">نمایانی گروه</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">عمومی (پیوستن با پیوند)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">عمومی (پیوستن با شناسه)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1572,7 +1572,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">ورود رمز:</translation>
+        <translation type="unfinished">رمز عبور:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1583,11 +1583,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">نام مستعار:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">تنظیم حداکثر اعضا</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">حداکثر اعضا:</translation>
     </message>
     <message>
@@ -1599,8 +1599,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">موضوع:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">پیام خصوصی به: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">پیام خصوصی به %1</translation>
     </message>
 </context>
 <context>
@@ -1622,8 +1622,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">پیوستن به گروه با شناسه</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">شناسه گفتگوی گروه را وارد کنید (۶۴ نویسه هگزادسیمال):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">شناسه گروه را وارد کنید (۶۴ نویسه هگزادسیمال):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1635,7 +1635,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">ورود رمز:</translation>
+        <translation type="unfinished">رمز عبور:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1680,8 +1680,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">حذف چت از این پنجره</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">تخصیص عنوان...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">انتخاب نام مستعار...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -3515,7 +3515,7 @@ is too low may make the scroll bar disappear.</source>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">ورود رمز:</translation>
+        <translation type="unfinished">رمز عبور:</translation>
     </message>
     <message>
         <source>Create new conference...</source>

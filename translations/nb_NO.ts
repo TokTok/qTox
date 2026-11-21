@@ -1123,7 +1123,7 @@ slik at du kan lagre filen på Windows.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Inviter til gruppen &apos;%1&apos;</translation>
+        <translation type="unfinished">Inviter til gruppen &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1435,15 +1435,15 @@ i stedet for å avsluttes helt.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">forstum</translation>
+        <translation type="unfinished">demp</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">opphev forstumming</translation>
+        <translation type="unfinished">opphev demping</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopier peer-ID</translation>
+        <translation type="unfinished">kopier deltaker-ID</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1502,7 +1502,7 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Angi gruppepassord...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Angi medlemsgrense...</translation>
     </message>
     <message>
@@ -1518,11 +1518,11 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Alle</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorer og grunnlegger</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Bare grunnlegger</translation>
     </message>
     <message>
@@ -1530,8 +1530,8 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Gruppens synlighet</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Offentlig (bli med via lenke)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Offentlig (bli med via ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1554,11 +1554,11 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Kallenavn:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Angi medlemsgrense</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Medlemsgrense:</translation>
     </message>
     <message>
@@ -1570,8 +1570,8 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Emne:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privat melding til: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privat melding til %1</translation>
     </message>
 </context>
 <context>
@@ -1593,8 +1593,8 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Bli med i gruppe via ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Skriv inn gruppens samtale-ID (64 heksadesimale tegn):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Skriv inn gruppe-ID (64 heksadesimale tegn):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1633,7 +1633,7 @@ i stedet for å avsluttes helt.</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">Ta del</translation>
+        <translation type="unfinished">Bli med</translation>
     </message>
     <message>
         <source>Decline</source>
@@ -1651,8 +1651,8 @@ i stedet for å avsluttes helt.</translation>
         <translation type="unfinished">Fjern sludring fra dette vinduet</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Velg tittel...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Sett alias...</translation>
     </message>
     <message>
         <source>Quit group</source>

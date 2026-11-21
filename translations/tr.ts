@@ -1129,7 +1129,7 @@ geçersiz karakterler _ olarak değiştirildi.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">&apos;%1&apos; grubuna davet et</translation>
+        <translation type="unfinished">&quot;%1&quot; grubuna davet et</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1441,7 +1441,7 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">eş kimliğini kopyala</translation>
+        <translation type="unfinished">katılımcı kimliğini kopyala</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1500,7 +1500,7 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Grup parolası ayarla...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Üye sınırı ayarla...</translation>
     </message>
     <message>
@@ -1516,11 +1516,11 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Herkes</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatörler ve kurucu</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Yalnızca kurucu</translation>
     </message>
     <message>
@@ -1528,8 +1528,8 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Grup görünürlüğü</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Herkese açık (bağlantıyla katılım)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Herkese açık (kimlikle katılım)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1552,11 +1552,11 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Takma ad:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Üye sınırı ayarla</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Üye sınırı:</translation>
     </message>
     <message>
@@ -1568,8 +1568,8 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Konu:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Özel mesaj alıcısı: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1 kişisine özel mesaj</translation>
     </message>
 </context>
 <context>
@@ -1591,8 +1591,8 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Kimlikle gruba katıl</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Grubun sohbet kimliğini girin (64 onaltılık karakter):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Grup kimliğini girin (64 onaltılık karakter):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1649,8 +1649,8 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
         <translation type="unfinished">Sohbeti bu pencereden kaldır</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Başlık ayarla...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Rumuz ayarla...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1666,7 +1666,7 @@ tamamen kapanmak yerine tepsiye küçültülecek.</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Yeni İleti</translation>
+        <translation type="unfinished">Yeni ileti</translation>
     </message>
     <message>
         <source>Online</source>
@@ -2223,7 +2223,7 @@ Daha fazla bilgi için Shift+F1 tuşlarına basın.</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished">Yeni grup mesajı</translation>
+        <translation type="unfinished">Yeni grup iletisi</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>

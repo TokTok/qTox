@@ -1094,7 +1094,7 @@ so you can save the file on Windows.</source>
     <name>FriendChatroom</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished">%1. csoport</translation>
+        <translation type="unfinished">Csoport %1</translation>
     </message>
 </context>
 <context>
@@ -1168,7 +1168,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Meghívás a(z) &apos;%1&apos; csoportba</translation>
+        <translation type="unfinished">Meghívás a(z) &quot;%1&quot; csoportba</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1443,7 +1443,7 @@ ahelyett, hogy teljesen bezáródna.</translation>
     <name>Group</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished">%1. csoport</translation>
+        <translation type="unfinished">Csoport %1</translation>
     </message>
 </context>
 <context>
@@ -1469,7 +1469,7 @@ ahelyett, hogy teljesen bezáródna.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">társazonosító másolása</translation>
+        <translation type="unfinished">résztvevő azonosítójának másolása</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1528,7 +1528,7 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Csoportjelszó beállítása...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Taglétszám-korlát beállítása...</translation>
     </message>
     <message>
@@ -1544,11 +1544,11 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Mindenki</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderátorok és alapító</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Csak az alapító</translation>
     </message>
     <message>
@@ -1556,8 +1556,8 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Csoport láthatósága</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Nyilvános (csatlakozás hivatkozással)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Nyilvános (csatlakozás azonosítóval)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1580,11 +1580,11 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Becenév:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Taglétszám-korlát beállítása</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Taglétszám-korlát:</translation>
     </message>
     <message>
@@ -1596,7 +1596,7 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Téma:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
+        <source>Private message to %1</source>
         <translation type="unfinished">Privát üzenet neki: %1</translation>
     </message>
 </context>
@@ -1619,8 +1619,8 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Csatlakozás csoporthoz azonosítóval</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Adja meg a csoport csevegésazonosítóját (64 hexadecimális karakter):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Adja meg a csoport azonosítóját (64 hexadecimális karakter):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1677,8 +1677,8 @@ ahelyett, hogy teljesen bezáródna.</translation>
         <translation type="unfinished">Csevegés eltávolítása ebből az ablakból</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Cím beállítása...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Álnév beállítása...</translation>
     </message>
     <message>
         <source>Quit group</source>

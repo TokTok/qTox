@@ -1671,15 +1671,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">خاموش</translation>
+        <translation type="unfinished">خاموش کریں</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">چالو</translation>
+        <translation type="unfinished">آواز چالو کریں</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">ہم مرتبہ کی شناخت کاپی کریں۔</translation>
+        <translation type="unfinished">شریک کی ID کاپی کریں</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1738,7 +1738,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">گروپ کا پاس ورڈ مقرر کریں...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">اراکین کی حد مقرر کریں...</translation>
     </message>
     <message>
@@ -1754,11 +1754,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">سب</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">ماڈریٹرز اور بانی</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">صرف بانی</translation>
     </message>
     <message>
@@ -1766,8 +1766,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">گروپ کی مرئیت</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">عوامی (لنک کے ذریعے شمولیت)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">عوامی (ID کے ذریعے شمولیت)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1790,11 +1790,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">عرفیت:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">اراکین کی حد مقرر کریں</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">اراکین کی حد:</translation>
     </message>
     <message>
@@ -1806,8 +1806,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">موضوع:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">نجی پیغام برائے: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1 کے لیے نجی پیغام</translation>
     </message>
 </context>
 <context>
@@ -1829,8 +1829,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ID کے ذریعے گروپ میں شامل ہوں</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">گروپ کی چیٹ ID درج کریں (64 ہیکس حروف):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">گروپ ID درج کریں (64 ہیکس حروف):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1869,26 +1869,26 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">شمولیت</translation>
+        <translation type="unfinished">شامل ہوں</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">رد کرنا</translation>
+        <translation type="unfinished">مسترد کریں</translation>
     </message>
 </context>
 <context>
     <name>GroupWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں۔</translation>
+        <translation type="unfinished">نئی ونڈو میں چیٹ کھولیں</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں۔</translation>
+        <translation type="unfinished">اس ونڈو سے چیٹ کو ہٹا دیں</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">عنوان سیٹ کریں...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">عرف مقرر کریں...</translation>
     </message>
     <message>
         <source>Quit group</source>

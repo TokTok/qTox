@@ -1688,8 +1688,8 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
-            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1698,11 +1698,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">නිහඬ නොකරන්න</translation>
+        <translation type="unfinished">ශබ්දය සක්‍රිය කරන්න</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">peer ID පිටපත් කරන්න</translation>
+        <translation type="unfinished">සහභාගිකයාගේ ID පිටපත් කරන්න</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1742,15 +1742,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">ඉවතට</translation>
+        <translation type="unfinished">බැහැරව</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">කාර්යබහුල</translation>
+        <translation type="unfinished">කාර්‍යබහුල</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1761,7 +1761,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">කණ්ඩායම් මුරපදය සකසන්න...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">සාමාජික සීමාව සකසන්න...</translation>
     </message>
     <message>
@@ -1777,11 +1777,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">සියලු දෙනා</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">මධ්‍යස්ථකරුවන් සහ ආරම්භකයා</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">ආරම්භකයා පමණි</translation>
     </message>
     <message>
@@ -1789,8 +1789,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">කණ්ඩායමේ දෘශ්‍යතාව</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">පොදු (සබැඳිය හරහා එක්වන්න)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">පොදු (හැඳුනුම්පත හරහා එක්වන්න)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1813,11 +1813,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">අන්වර්ථ නාමය:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">සාමාජික සීමාව සකසන්න</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">සාමාජික සීමාව:</translation>
     </message>
     <message>
@@ -1829,8 +1829,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">මාතෘකාව:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">පෞද්ගලික පණිවිඩය වෙත: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1 වෙත පෞද්ගලික පණිවිඩය</translation>
     </message>
 </context>
 <context>
@@ -1852,8 +1852,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">හැඳුනුම්පත මඟින් කණ්ඩායමට එක්වන්න</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">කණ්ඩායමේ කතාබහ හැඳුනුම්පත ඇතුළත් කරන්න (ෂඩ් දශම අක්ෂර 64):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">කණ්ඩායම් හැඳුනුම්පත ඇතුළත් කරන්න (ෂඩ් දශම අක්ෂර 64):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1896,7 +1896,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">ප්රතික්ෂේප කරන්න</translation>
+        <translation type="unfinished">ප්‍රතික්ෂේප කරන්න</translation>
     </message>
 </context>
 <context>
@@ -1910,8 +1910,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">මෙම කවුළුවෙන් කතාබස් ඉවත් කරන්න</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">මාතෘකාව සකසන්න...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">අන්වර්ථ නාමයක් සකසන්න...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1922,8 +1922,8 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
-            <numerusform>කතාබහේ පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
+            <numerusform>කතාබසෙහි පරිශීලකයින් %n</numerusform>
         </translation>
     </message>
     <message>
@@ -1932,7 +1932,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Online</source>
-        <translation type="unfinished">ඔන්ලයින්</translation>
+        <translation type="unfinished">සබැඳි</translation>
     </message>
 </context>
 <context>

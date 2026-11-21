@@ -1119,7 +1119,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Запросити до групи &apos;%1&apos;</translation>
+        <translation type="unfinished">Запросити до групи &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1414,7 +1414,7 @@ instead of closing entirely.</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
             <numerusform>%n користувач у чаті</numerusform>
-            <numerusform>%n користувача в чаті</numerusform>
+            <numerusform>%n користувачі в чаті</numerusform>
             <numerusform>%n користувачів у чаті</numerusform>
         </translation>
     </message>
@@ -1428,7 +1428,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">скопіювати ідентифікатор вузла</translation>
+        <translation type="unfinished">скопіювати ID учасника</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1487,7 +1487,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Встановити пароль групи…</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Встановити ліміт учасників…</translation>
     </message>
     <message>
@@ -1503,11 +1503,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Усі</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Модератори та засновник</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Лише засновник</translation>
     </message>
     <message>
@@ -1515,8 +1515,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Видимість групи</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Публічна (вхід за посиланням)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Публічна (вхід за ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1539,11 +1539,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Нікнейм:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Встановити ліміт учасників</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Ліміт учасників:</translation>
     </message>
     <message>
@@ -1555,8 +1555,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Тема:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Приватне повідомлення для: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Приватне повідомлення для %1</translation>
     </message>
 </context>
 <context>
@@ -1578,8 +1578,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Приєднатися до групи за ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Введіть ID чату групи (64 шістнадцяткові символи):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Введіть ID групи (64 шістнадцяткові символи):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1614,7 +1614,7 @@ instead of closing entirely.</source>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 to %2 on %3 at %4.</source>
-        <translation type="unfinished">Запрошений %1 до %2 %3 о %4.</translation>
+        <translation type="unfinished">Запрошення від %1 до %2 надійшло %3 о %4.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1633,11 +1633,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">Видалити чат з цього вікна</translation>
+        <translation type="unfinished">Прибрати чат з цього вікна</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Встановити заголовок…</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Встановити псевдонім…</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1649,7 +1649,7 @@ instead of closing entirely.</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
             <numerusform>%n користувач у чаті</numerusform>
-            <numerusform>%n користувача в чаті</numerusform>
+            <numerusform>%n користувачі в чаті</numerusform>
             <numerusform>%n користувачів у чаті</numerusform>
         </translation>
     </message>

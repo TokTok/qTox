@@ -1473,7 +1473,7 @@ en lugar de pecharse por completo.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">copiar o ID do compañeiro</translation>
+        <translation type="unfinished">copiar o ID do participante</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1532,7 +1532,7 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Axustar o contrasinal do grupo...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Axustar o límite de membros...</translation>
     </message>
     <message>
@@ -1548,11 +1548,11 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Todos</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderadores e fundador</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Só o fundador</translation>
     </message>
     <message>
@@ -1560,8 +1560,8 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Visibilidade do grupo</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Público (unirse por ligazón)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Público (unirse por ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1584,11 +1584,11 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Alcume:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Axustar o límite de membros</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Límite de membros:</translation>
     </message>
     <message>
@@ -1600,8 +1600,8 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Tema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Mensaxe privada para: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Mensaxe privada para %1</translation>
     </message>
 </context>
 <context>
@@ -1623,8 +1623,8 @@ en lugar de pecharse por completo.</translation>
         <translation type="unfinished">Unirse a un grupo por ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Introduce o ID de conversa do grupo (64 caracteres hexadecimais):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Introduce o ID do grupo (64 caracteres hexadecimais):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1678,11 +1678,11 @@ en lugar de pecharse por completo.</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">Eliminar conversa de esta xanela</translation>
+        <translation type="unfinished">Eliminar conversa desta xanela</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Axustar título...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Elixir alcume...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1699,7 +1699,7 @@ en lugar de pecharse por completo.</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nova Mensaxe</translation>
+        <translation type="unfinished">Nova mensaxe</translation>
     </message>
     <message>
         <source>Online</source>

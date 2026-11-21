@@ -1422,11 +1422,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">ஊன்</translation>
+        <translation type="unfinished">ஒலியை இயக்கு</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">பியர் ஐடியை நகலெடுக்கவும்</translation>
+        <translation type="unfinished">பங்கேற்பாளர் ஐடியை நகலெடு</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1485,7 +1485,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">குழு கடவுச்சொல்லை அமை...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">உறுப்பினர் வரம்பை அமை...</translation>
     </message>
     <message>
@@ -1501,11 +1501,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">அனைவரும்</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">மட்டுறுத்துநர்களும் நிறுவனரும்</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">நிறுவனர் மட்டும்</translation>
     </message>
     <message>
@@ -1513,8 +1513,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">குழுவின் தெரிவுநிலை</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">பொது (இணைப்பு மூலம் சேரலாம்)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">பொது (ID மூலம் சேரலாம்)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1537,11 +1537,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">புனைப்பெயர்:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">உறுப்பினர் வரம்பை அமை</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">உறுப்பினர் வரம்பு:</translation>
     </message>
     <message>
@@ -1553,8 +1553,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">தலைப்பு:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">தனிப்பட்ட செய்தி பெறுநர்: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1-க்குத் தனிப்பட்ட செய்தி</translation>
     </message>
 </context>
 <context>
@@ -1576,8 +1576,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ID மூலம் குழுவில் சேர்</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">குழுவின் அரட்டை ID-ஐ உள்ளிடவும் (64 பதினறும எழுத்துகள்):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">குழு ID-ஐ உள்ளிடவும் (64 பதினறும எழுத்துகள்):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1634,8 +1634,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">அரட்டையை இச்சாளரத்திலிருந்து நீக்கு</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">தலைப்பு வை...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">மாற்றுப்பெயர் வை...</translation>
     </message>
     <message>
         <source>Quit group</source>

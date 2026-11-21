@@ -1420,11 +1420,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">премахване на зглушаването</translation>
+        <translation type="unfinished">премахване на заглушаването</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">копиране идентификатора на възела</translation>
+        <translation type="unfinished">копиране на идентификатора на участника</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1483,7 +1483,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Задаване на парола на групата…</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Задаване на ограничение на участниците…</translation>
     </message>
     <message>
@@ -1499,11 +1499,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Всички</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Модератори и основател</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Само основателят</translation>
     </message>
     <message>
@@ -1511,8 +1511,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Видимост на групата</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Публична (присъединяване чрез връзка)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Публична (присъединяване чрез ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1535,11 +1535,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Псевдоним:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Задаване на ограничение на участниците</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Ограничение на участниците:</translation>
     </message>
     <message>
@@ -1551,8 +1551,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Тема:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Лично съобщение до: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Лично съобщение до %1</translation>
     </message>
 </context>
 <context>
@@ -1574,7 +1574,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Присъединяване към група чрез ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
+        <source>Enter the group ID (64 hex characters):</source>
         <translation type="unfinished">Въведете ID на групата (64 шестнайсетични знака):</translation>
     </message>
     <message>
@@ -1632,8 +1632,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Връщане в главния прозорец</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Задаване на заглавие…</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Задаване на псевдоним…</translation>
     </message>
     <message>
         <source>Quit group</source>

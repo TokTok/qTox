@@ -1345,7 +1345,7 @@ që ta ruani dot skedarin në Windows.</translation>
     <message>
         <source>Invite to group</source>
         <comment>Menu to invite a friend to a group</comment>
-        <translation type="unfinished">Ftoje në grup</translation>
+        <translation type="unfinished">Fto në grup</translation>
     </message>
     <message>
         <source>To new group</source>
@@ -1353,7 +1353,7 @@ që ta ruani dot skedarin në Windows.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Ftoje në grupin &apos;%1&apos;</translation>
+        <translation type="unfinished">Fto në grupin &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1689,15 +1689,15 @@ në vend që të mbyllet plotësisht.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">memec</translation>
+        <translation type="unfinished">hiq zërin</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">anuloj zërin</translation>
+        <translation type="unfinished">aktivizo zërin</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopjoni ID-në e kolegëve</translation>
+        <translation type="unfinished">kopjo ID-në e pjesëmarrësit</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1756,7 +1756,7 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Cakto fjalëkalimin e grupit...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Cakto kufirin e anëtarëve...</translation>
     </message>
     <message>
@@ -1772,11 +1772,11 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Të gjithë</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorët dhe themeluesi</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Vetëm themeluesi</translation>
     </message>
     <message>
@@ -1784,8 +1784,8 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Dukshmëria e grupit</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Publik (hyrje me lidhje)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Publik (hyrje me ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1808,11 +1808,11 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Nofka:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Cakto kufirin e anëtarëve</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Kufiri i anëtarëve:</translation>
     </message>
     <message>
@@ -1824,8 +1824,8 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Tema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Mesazh privat për: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Mesazh privat për %1</translation>
     </message>
 </context>
 <context>
@@ -1847,8 +1847,8 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Bashkohu me grup sipas ID-së</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Jepni ID-në e bisedës së grupit (64 shenja heksadecimale):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Jepni ID-në e grupit (64 shenja heksadecimale):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1891,7 +1891,7 @@ në vend që të mbyllet plotësisht.</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">Rënia</translation>
+        <translation type="unfinished">Refuzo</translation>
     </message>
 </context>
 <context>
@@ -1905,8 +1905,8 @@ në vend që të mbyllet plotësisht.</translation>
         <translation type="unfinished">Hiq bisedën nga kjo dritare</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Cakto titullin...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Vendos pseudonimin...</translation>
     </message>
     <message>
         <source>Quit group</source>

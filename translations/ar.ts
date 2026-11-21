@@ -1200,7 +1200,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">دعوة إلى المجموعة &apos;%1&apos;</translation>
+        <translation type="unfinished">دعوة إلى المجموعة &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1514,7 +1514,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">
             <numerusform>%n مستخدم في الدردشة</numerusform>
             <numerusform>%n مستخدم في الدردشة</numerusform>
-            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>مستخدمان في الدردشة</numerusform>
             <numerusform>%n مستخدمين في الدردشة</numerusform>
             <numerusform>%n مستخدمًا في الدردشة</numerusform>
             <numerusform>%n مستخدم في الدردشة</numerusform>
@@ -1522,7 +1522,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">صامت</translation>
+        <translation type="unfinished">كتم</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1530,7 +1530,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">نسخ معرف النظير</translation>
+        <translation type="unfinished">نسخ معرف المشارك</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1574,7 +1574,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">في الخارج</translation>
+        <translation type="unfinished">غائب</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1589,7 +1589,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">تعيين كلمة مرور المجموعة...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">تعيين حد الأعضاء...</translation>
     </message>
     <message>
@@ -1605,11 +1605,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">الجميع</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">المشرفون والمؤسس</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">المؤسس فقط</translation>
     </message>
     <message>
@@ -1617,8 +1617,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ظهور المجموعة</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">عامة (الانضمام عبر رابط)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">عامة (الانضمام بالمعرّف)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1641,11 +1641,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">الاسم المستعار:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">تعيين حد الأعضاء</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">حد الأعضاء:</translation>
     </message>
     <message>
@@ -1657,8 +1657,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">الموضوع:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">رسالة خاصة إلى: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">رسالة خاصة إلى %1</translation>
     </message>
 </context>
 <context>
@@ -1680,8 +1680,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">الانضمام إلى مجموعة بالمعرّف</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">أدخل معرّف دردشة المجموعة (64 حرفًا ست عشريًا):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">أدخل معرّف المجموعة (64 حرفًا ست عشريًا):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1724,7 +1724,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">انخفاض</translation>
+        <translation type="unfinished">رفض</translation>
     </message>
 </context>
 <context>
@@ -1738,8 +1738,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ازالة المحادثة من هذه النافذة</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">ضع عنواناً...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">تعيين اسم مستعار...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1752,7 +1752,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">
             <numerusform>%n مستخدم في الدردشة</numerusform>
             <numerusform>%n مستخدم في الدردشة</numerusform>
-            <numerusform>%n مستخدمان في الدردشة</numerusform>
+            <numerusform>مستخدمان في الدردشة</numerusform>
             <numerusform>%n مستخدمين في الدردشة</numerusform>
             <numerusform>%n مستخدمًا في الدردشة</numerusform>
             <numerusform>%n مستخدم في الدردشة</numerusform>
@@ -3600,7 +3600,7 @@ is too low may make the scroll bar disappear.</source>
         <translation type="unfinished">
             <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
             <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
-            <numerusform>%n دعوتان جديدتان إلى مجموعة</numerusform>
+            <numerusform>دعوتان جديدتان إلى مجموعة</numerusform>
             <numerusform>%n دعوات جديدة إلى مجموعة</numerusform>
             <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>
             <numerusform>%n دعوة جديدة إلى مجموعة</numerusform>

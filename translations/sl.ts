@@ -1498,7 +1498,7 @@ namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">nemo</translation>
+        <translation type="unfinished">utišaj</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1506,7 +1506,7 @@ namesto da bi se popolnoma zaprl.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopiraj ID vrstnika</translation>
+        <translation type="unfinished">kopiraj ID udeleženca</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1565,7 +1565,7 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Nastavi geslo skupine...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Nastavi omejitev članov...</translation>
     </message>
     <message>
@@ -1581,11 +1581,11 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Vsi</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorji in ustanovitelj</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Samo ustanovitelj</translation>
     </message>
     <message>
@@ -1593,8 +1593,8 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Vidnost skupine</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Javna (pridružitev s povezavo)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Javna (pridružitev z ID-jem)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1617,11 +1617,11 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Vzdevek:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Nastavi omejitev članov</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Omejitev članov:</translation>
     </message>
     <message>
@@ -1633,8 +1633,8 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Tema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Zasebno sporočilo za: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Zasebno sporočilo za %1</translation>
     </message>
 </context>
 <context>
@@ -1656,8 +1656,8 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Pridruži se skupini z ID-jem</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Vnesite ID klepeta skupine (64 šestnajstiških znakov):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Vnesite ID skupine (64 šestnajstiških znakov):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1714,8 +1714,8 @@ namesto da bi se popolnoma zaprl.</translation>
         <translation type="unfinished">Zapri klepet v tem oknu</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Nastavi naslov...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Nastavi vzdevek...</translation>
     </message>
     <message>
         <source>Quit group</source>

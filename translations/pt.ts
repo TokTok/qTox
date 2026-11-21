@@ -1120,7 +1120,7 @@ para que possa guardar o ficheiro no Windows.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Convidar para o grupo &apos;%1&apos;</translation>
+        <translation type="unfinished">Convidar para o grupo &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1433,15 +1433,15 @@ em vez de fechar.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">sem som</translation>
+        <translation type="unfinished">silenciar</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">com som</translation>
+        <translation type="unfinished">ativar som</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">copiar ID do par</translation>
+        <translation type="unfinished">copiar ID do participante</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1500,7 +1500,7 @@ em vez de fechar.</translation>
         <translation type="unfinished">Definir a palavra-passe do grupo...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Definir o limite de membros...</translation>
     </message>
     <message>
@@ -1516,11 +1516,11 @@ em vez de fechar.</translation>
         <translation type="unfinished">Todos</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderadores e fundador</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Apenas o fundador</translation>
     </message>
     <message>
@@ -1528,8 +1528,8 @@ em vez de fechar.</translation>
         <translation type="unfinished">Visibilidade do grupo</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Público (entrada por ligação)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Público (entrada por ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1552,11 +1552,11 @@ em vez de fechar.</translation>
         <translation type="unfinished">Alcunha:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Definir o limite de membros</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Limite de membros:</translation>
     </message>
     <message>
@@ -1568,8 +1568,8 @@ em vez de fechar.</translation>
         <translation type="unfinished">Tópico:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Mensagem privada para: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Mensagem privada para %1</translation>
     </message>
 </context>
 <context>
@@ -1591,8 +1591,8 @@ em vez de fechar.</translation>
         <translation type="unfinished">Entrar num grupo por ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Introduza o ID de conversa do grupo (64 caracteres hexadecimais):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Introduza o ID do grupo (64 caracteres hexadecimais):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1631,7 +1631,7 @@ em vez de fechar.</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">Entrar na conversa</translation>
+        <translation type="unfinished">Entrar</translation>
     </message>
     <message>
         <source>Decline</source>
@@ -1649,8 +1649,8 @@ em vez de fechar.</translation>
         <translation type="unfinished">Remover conversa desta janela</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Definir o título...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Definir o apelido...</translation>
     </message>
     <message>
         <source>Quit group</source>

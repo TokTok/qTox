@@ -1141,7 +1141,7 @@ takže můžete soubor uložit i v systému Windows.</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>Nastavit přezdívku...</translation>
+        <translation>Nastavit alias...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1442,11 +1442,11 @@ nedojde k jeho úplnému ukončení.</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">nahlas</translation>
+        <translation type="unfinished">zrušit ztlumení</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">zkopírovat ID partnera</translation>
+        <translation type="unfinished">zkopírovat ID účastníka</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1505,7 +1505,7 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Nastavit heslo skupiny...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Nastavit limit členů...</translation>
     </message>
     <message>
@@ -1521,11 +1521,11 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Všichni</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderátoři a zakladatel</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Pouze zakladatel</translation>
     </message>
     <message>
@@ -1533,8 +1533,8 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Viditelnost skupiny</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Veřejná (připojení odkazem)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Veřejná (připojení podle ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1557,11 +1557,11 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Přezdívka:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Nastavit limit členů</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Limit členů:</translation>
     </message>
     <message>
@@ -1573,8 +1573,8 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Téma:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Soukromá zpráva pro: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Soukromá zpráva pro %1</translation>
     </message>
 </context>
 <context>
@@ -1596,8 +1596,8 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Připojit se ke skupině podle ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Zadejte ID chatu skupiny (64 hexadecimálních znaků):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Zadejte ID skupiny (64 hexadecimálních znaků):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1654,8 +1654,8 @@ nedojde k jeho úplnému ukončení.</translation>
         <translation type="unfinished">Odstranit konverzaci z tohoto okna</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Nastavit jméno...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Nastavit alias...</translation>
     </message>
     <message>
         <source>Quit group</source>

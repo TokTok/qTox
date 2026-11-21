@@ -1061,7 +1061,7 @@ so ye can stash th&apos; file on Windows.</translation>
     <name>FriendChatroom</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band %1</translation>
     </message>
 </context>
 <context>
@@ -1134,15 +1134,15 @@ so ye can stash th&apos; file on Windows.</translation>
     <message>
         <source>Invite to group</source>
         <comment>Menu to invite a friend to a group</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invite ta band</translation>
     </message>
     <message>
         <source>To new group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta new band</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invite ta band &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1396,21 +1396,21 @@ instead of closing entirely.</source>
     <name>Group</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band %1</translation>
     </message>
 </context>
 <context>
     <name>GroupForm</name>
     <message>
         <source>No topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">No yarn</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n swab aboard</numerusform>
+            <numerusform>%n swabs aboard</numerusform>
         </translation>
     </message>
     <message>
@@ -1427,39 +1427,39 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>promote to moderator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">promote ta quartermaster</translation>
     </message>
     <message>
         <source>demote to user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">demote ta swab</translation>
     </message>
     <message>
         <source>kick from group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">make walk th&apos; plank</translation>
     </message>
     <message>
         <source>private message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">whisper</translation>
     </message>
     <message>
         <source>Copy topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copy yarn</translation>
     </message>
     <message>
         <source>Copy group ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Copy band&apos;s ID</translation>
     </message>
     <message>
         <source>Set topic...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spin yarn...</translation>
     </message>
     <message>
         <source>Set nickname...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick yer name...</translation>
     </message>
     <message>
         <source>My status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Me status</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1475,51 +1475,51 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Remove group password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Scrap band&apos;s secret word</translation>
     </message>
     <message>
         <source>Set group password...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set band&apos;s secret word...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
-        <translation type="unfinished"></translation>
+        <source>Set member limit...</source>
+        <translation type="unfinished">Set head count...</translation>
     </message>
     <message>
         <source>Lock topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nail down yarn</translation>
     </message>
     <message>
         <source>Who can speak</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Who can holler</translation>
     </message>
     <message>
         <source>Everyone</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">All hands</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
-        <translation type="unfinished"></translation>
+        <source>Moderators and the founder</source>
+        <translation type="unfinished">Quartermasters an&apos; th&apos; captain</translation>
     </message>
     <message>
-        <source>Only Founder</source>
-        <translation type="unfinished"></translation>
+        <source>Only the founder</source>
+        <translation type="unfinished">Only th&apos; captain</translation>
     </message>
     <message>
         <source>Group visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Who can see th&apos; band</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished"></translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Open (join by ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Secret (invite only)</translation>
     </message>
     <message>
         <source>Set group password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Set band&apos;s secret word</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1527,62 +1527,62 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Set nickname</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pick yer name</translation>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yer name:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
-        <translation type="unfinished"></translation>
+        <source>Set member limit</source>
+        <translation type="unfinished">Set head count</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
-        <translation type="unfinished"></translation>
+        <source>Member limit:</source>
+        <translation type="unfinished">Head count:</translation>
     </message>
     <message>
         <source>Set group topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spin th&apos; band&apos;s yarn</translation>
     </message>
     <message>
         <source>Topic:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yarn:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Whisper ta %1</translation>
     </message>
 </context>
 <context>
     <name>GroupInviteForm</name>
     <message>
         <source>Create group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Form band</translation>
     </message>
     <message>
         <source>Enter a name for the group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Name yer band</translation>
     </message>
     <message>
         <source>Group name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; band needs a name.</translation>
     </message>
     <message>
         <source>Join group by ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Join band by ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished"></translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Enter th&apos; band&apos;s ID (64 hex characters):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">That band ID be wrong. Needs 64 hex characters.</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band&apos;s secret word (if ye like)</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1590,26 +1590,26 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Th&apos; band ID can&apos;t be empty.</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bands</translation>
     </message>
     <message>
         <source>Create new group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Form new band</translation>
     </message>
     <message>
         <source>Group invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band invites</translation>
     </message>
 </context>
 <context>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 to %2 on %3 at %4.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Invited by %1 ta %2 on th&apos; %3 at %4.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1631,20 +1631,20 @@ instead of closing entirely.</source>
         <translation type="unfinished">Remove chat from this port</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Name it...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Issue fittin&apos; nickname...</translation>
     </message>
     <message>
         <source>Quit group</source>
         <comment>Menu to quit a group</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Leave band</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n swab aboard</numerusform>
+            <numerusform>%n swabs aboard</numerusform>
         </translation>
     </message>
     <message>
@@ -2056,15 +2056,15 @@ Press Shift+F1 fer more information.</translation>
     </message>
     <message>
         <source>Create a group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Form a band</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band</translation>
     </message>
     <message>
         <source>Open group management page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Open band management page</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2204,7 +2204,7 @@ Press Shift+F1 fer more information.</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">New band message</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -2225,11 +2225,11 @@ Press Shift+F1 fer more information.</translation>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band invite received</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 be invitin&apos; ye ta a band.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2718,7 +2718,7 @@ This ID has th&apos; NoSpam code (in blue), &apos;n&apos; th&apos; checksum (in 
     <message>
         <source>private</source>
         <comment>Label for private group messages</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">whisper</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3387,11 +3387,11 @@ here may cause th&apos; scroll bar ta vanish.</translation>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band invites</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Band&apos;s secret word (if ye like)</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -3408,8 +3408,8 @@ here may cause th&apos; scroll bar ta vanish.</translation>
     <message numerus="yes">
         <source>%n new group invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n new band invite</numerusform>
+            <numerusform>%n new band invites</numerusform>
         </translation>
     </message>
     <message>
@@ -3443,7 +3443,7 @@ here may cause th&apos; scroll bar ta vanish.</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bands</translation>
     </message>
     <message>
         <source>Search Contacts</source>

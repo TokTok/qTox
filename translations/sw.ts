@@ -1696,15 +1696,15 @@ badala ya kufungwa kabisa.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">bubu</translation>
+        <translation type="unfinished">nyamazisha</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">acha kunyamazisha</translation>
+        <translation type="unfinished">rejesha sauti</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">nakala kitambulisho cha rika</translation>
+        <translation type="unfinished">nakili kitambulisho cha mshiriki</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1748,11 +1748,11 @@ badala ya kufungwa kabisa.</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">Mbali</translation>
+        <translation type="unfinished">Hayupo</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">Shughuli</translation>
+        <translation type="unfinished">Ana shughuli</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1763,7 +1763,7 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Weka nenosiri la kikundi...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Weka kikomo cha wanachama...</translation>
     </message>
     <message>
@@ -1779,11 +1779,11 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Kila mtu</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Wasimamizi na mwanzilishi</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Mwanzilishi pekee</translation>
     </message>
     <message>
@@ -1791,8 +1791,8 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Mwonekano wa kikundi</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Wazi (jiunge kwa kiungo)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Wazi (jiunge kwa kitambulisho)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1815,11 +1815,11 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Jina la utani:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Weka kikomo cha wanachama</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Kikomo cha wanachama:</translation>
     </message>
     <message>
@@ -1831,8 +1831,8 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Mada:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Ujumbe wa faragha kwa: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Ujumbe wa faragha kwa %1</translation>
     </message>
 </context>
 <context>
@@ -1854,8 +1854,8 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Jiunge na kikundi kwa kitambulisho</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Weka kitambulisho cha gumzo cha kikundi (herufi 64 za heksadesimali):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Weka kitambulisho cha kikundi (herufi 64 za heksadesimali):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1912,8 +1912,8 @@ badala ya kufungwa kabisa.</translation>
         <translation type="unfinished">Ondoa gumzo kwenye dirisha hili</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Weka kichwa...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Weka lakabu...</translation>
     </message>
     <message>
         <source>Quit group</source>

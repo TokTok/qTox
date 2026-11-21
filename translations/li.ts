@@ -1766,7 +1766,7 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Groepswachwoord insjtèlle...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Ledeliemiet insjtèlle...</translation>
     </message>
     <message>
@@ -1782,11 +1782,11 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Iederein</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderators en sjtiechter</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Allein de sjtiechter</translation>
     </message>
     <message>
@@ -1794,8 +1794,8 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Zichbaarheid vaan de groep</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Aopenbaar (deilnumme via link)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Aopenbaar (deilnumme via ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1807,7 +1807,7 @@ in plaats vaan gans te sjloete.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Wàgwoord:</translation>
+        <translation type="unfinished">Wachtwoord:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1818,11 +1818,11 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Bijnaam:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Ledeliemiet insjtèlle</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Ledeliemiet:</translation>
     </message>
     <message>
@@ -1834,8 +1834,8 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Óngerwerp:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privé-berich aan: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privé-berich aan %1</translation>
     </message>
 </context>
 <context>
@@ -1857,8 +1857,8 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Deilnumme aan groep via ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Gaef de chat-ID vaan de groep in (64 hexadecimaal teikes):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Gaef de groeps-ID in (64 hexadecimaal teikes):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1870,7 +1870,7 @@ in plaats vaan gans te sjloete.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Wàgwoord:</translation>
+        <translation type="unfinished">Wachtwoord:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1915,8 +1915,8 @@ in plaats vaan gans te sjloete.</translation>
         <translation type="unfinished">Verwijder chat oet dit venster</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Stel de titel in...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Stel alias in...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -4052,7 +4052,7 @@ scrolle. ‘n Te lieg getal hei kin de scrollbalk verdwijne.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Wàgwoord:</translation>
+        <translation type="unfinished">Wachtwoord:</translation>
     </message>
     <message>
         <source>Create new conference...</source>

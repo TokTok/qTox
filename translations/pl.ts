@@ -1158,7 +1158,7 @@ aby można było zapisać plik w systemie Windows.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Zaproś do grupy &apos;%1&apos;</translation>
+        <translation type="unfinished">Zaproś do grupy &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1440,7 +1440,7 @@ zamiast zostać całkowicie zamknięty.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">skopiuj identyfikator partnera</translation>
+        <translation type="unfinished">skopiuj ID uczestnika</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1499,7 +1499,7 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Ustaw hasło grupy...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Ustaw limit członków...</translation>
     </message>
     <message>
@@ -1515,11 +1515,11 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Wszyscy</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorzy i założyciel</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Tylko założyciel</translation>
     </message>
     <message>
@@ -1527,8 +1527,8 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Widoczność grupy</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Publiczna (dołączanie przez link)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Publiczna (dołączanie przez ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1551,11 +1551,11 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Pseudonim:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Ustaw limit członków</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Limit członków:</translation>
     </message>
     <message>
@@ -1567,8 +1567,8 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Temat:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Wiadomość prywatna do: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Wiadomość prywatna do %1</translation>
     </message>
 </context>
 <context>
@@ -1590,8 +1590,8 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Dołącz do grupy przez ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Wprowadź ID czatu grupy (64 znaki szesnastkowe):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Wprowadź ID grupy (64 znaki szesnastkowe):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1648,8 +1648,8 @@ zamiast zostać całkowicie zamknięty.</translation>
         <translation type="unfinished">Usuń rozmowę z tego okna</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Zmień nazwę...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Ustaw alias...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1667,7 +1667,7 @@ zamiast zostać całkowicie zamknięty.</translation>
     </message>
     <message>
         <source>New message</source>
-        <translation type="unfinished">Nowa Wiadomość</translation>
+        <translation type="unfinished">Nowa wiadomość</translation>
     </message>
     <message>
         <source>Online</source>

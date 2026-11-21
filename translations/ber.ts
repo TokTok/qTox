@@ -1482,7 +1482,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵡⴰⵍ ⵓⴼⴼⵉⵔ ⵏ ⵓⴳⵔⴰⵡ...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ...</translation>
     </message>
     <message>
@@ -1498,11 +1498,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⴽⵓⵍⵍⴻⵛ</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">ⵉⵎⵙⴻⵎⵖⴻⵔⵙⴻⵏ ⴷ ⵓⵎⵙⴻⵏⵍⴻⴼ</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">ⴰⵎⵙⴻⵏⵍⴻⴼ ⴽⴰⵏ</translation>
     </message>
     <message>
@@ -1510,8 +1510,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⵜⴰⵡⵍⴰⴼⵜ ⵏ ⵓⴳⵔⴰⵡ</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">ⴰⵎⴰⵜⴰⵢ (ⴰⴽⵛⴰⵎ ⵙ ⵓⵙⴻⵖⵡⴻⵏ)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">ⴰⵎⴰⵜⴰⵢ (ⴰⴽⵛⴰⵎ ⵙ ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1534,11 +1534,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⵉⵙⴻⵎ ⵏ ⵜⴻⵎⵖⴰⵔⵜ:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">ⵜⵉⵍⵉⵙⵜ ⵏ ⵢⵉⵄⴻⴳⴳⴰⵍⴻⵏ:</translation>
     </message>
     <message>
@@ -1550,8 +1550,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⴰⵙⴻⵏⵜⴻⵍ:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">ⵉⵣⴻⵏ ⵓⵙⵍⵉⴳ ⵉ: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">ⵉⵣⴻⵏ ⵓⵙⵍⵉⴳ ⵉ %1</translation>
     </message>
 </context>
 <context>
@@ -1573,8 +1573,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⵔⵏⵓ ⵖⴻⵔ ⵓⴳⵔⴰⵡ ⵙ ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">ⵙⴽⵛⴻⵎ ID ⵏ ⵓⵎⵙⵍⴰⵢ ⵏ ⵓⴳⵔⴰⵡ (64 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ hex):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">ⵙⴽⵛⴻⵎ ID ⵏ ⵓⴳⵔⴰⵡ (64 ⵏ ⵢⵉⵙⴻⴽⴽⵉⵍⴻⵏ hex):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1631,8 +1631,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ⴽⴽⵙ ⴰⵎⵙⴰⵡⴰⵍ ⵙⴳ ⵟⵟⴰⵇⴰ</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⴰⵣⵡⴻⵍ...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">ⵙⴱⴻⴷⴷ ⵉⵙⴻⵎ ⵏⵏⵉⴹⴻⵏ...</translation>
     </message>
     <message>
         <source>Quit group</source>

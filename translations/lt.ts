@@ -1149,7 +1149,7 @@ tad dabar galite įrašyti failą Windows sistemoje.</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>Nustatyti slapyvardį...</translation>
+        <translation>Nustatyti pseudonimą...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1446,7 +1446,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">nukopijuoti kolegos ID</translation>
+        <translation type="unfinished">kopijuoti dalyvio ID</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1505,7 +1505,7 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Nustatyti grupės slaptažodį...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Nustatyti narių limitą...</translation>
     </message>
     <message>
@@ -1521,11 +1521,11 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Visi</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatoriai ir įkūrėjas</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Tik įkūrėjas</translation>
     </message>
     <message>
@@ -1533,8 +1533,8 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Grupės matomumas</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Vieša (prisijungimas per nuorodą)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Vieša (prisijungimas pagal ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1557,11 +1557,11 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Slapyvardis:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Nustatyti narių limitą</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Narių limitas:</translation>
     </message>
     <message>
@@ -1573,8 +1573,8 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Tema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privati žinutė gavėjui: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privati žinutė gavėjui %1</translation>
     </message>
 </context>
 <context>
@@ -1596,8 +1596,8 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Prisijungti prie grupės pagal ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Įveskite grupės pokalbio ID (64 šešioliktainiai simboliai):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Įveskite grupės ID (64 šešioliktainiai simboliai):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1654,8 +1654,8 @@ vietoje to, kad būtų visiškai uždarytas.</translation>
         <translation type="unfinished">Pašalinti pokalbį iš šio lango</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Nustatyti pavadinimą...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Nustatyti pseudonimą...</translation>
     </message>
     <message>
         <source>Quit group</source>

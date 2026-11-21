@@ -1486,7 +1486,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">αντιγράψτε το peer ID</translation>
+        <translation type="unfinished">αντιγραφή ID συμμετέχοντα</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1545,7 +1545,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Ορισμός κωδικού ομάδας...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Ορισμός ορίου μελών...</translation>
     </message>
     <message>
@@ -1561,11 +1561,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Όλοι</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Συντονιστές και ιδρυτής</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Μόνο ο ιδρυτής</translation>
     </message>
     <message>
@@ -1573,8 +1573,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Ορατότητα ομάδας</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Δημόσια (συμμετοχή μέσω συνδέσμου)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Δημόσια (συμμετοχή μέσω ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1597,11 +1597,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Ψευδώνυμο:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Ορισμός ορίου μελών</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Όριο μελών:</translation>
     </message>
     <message>
@@ -1613,8 +1613,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Θέμα:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Ιδιωτικό μήνυμα προς: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Ιδιωτικό μήνυμα προς %1</translation>
     </message>
 </context>
 <context>
@@ -1636,8 +1636,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Συμμετοχή σε ομάδα μέσω ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Εισαγάγετε το ID συνομιλίας της ομάδας (64 δεκαεξαδικοί χαρακτήρες):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Εισαγάγετε το ID της ομάδας (64 δεκαεξαδικοί χαρακτήρες):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1694,8 +1694,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Αφαίρεση συνομιλίας απ&apos; αυτό το παράθυρο</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Ορίστε τίτλο...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Επιλογή ψευδωνύμου...</translation>
     </message>
     <message>
         <source>Quit group</source>

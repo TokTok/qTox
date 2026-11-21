@@ -1064,7 +1064,7 @@ da biste mogli da sačuvate fajl na Windowsu.</translation>
     <name>FriendChatroom</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grupa %1</translation>
     </message>
 </context>
 <context>
@@ -1133,15 +1133,15 @@ da biste mogli da sačuvate fajl na Windowsu.</translation>
     <message>
         <source>Invite to group</source>
         <comment>Menu to invite a friend to a group</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozovi u grupu</translation>
     </message>
     <message>
         <source>To new group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">U novu grupu</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozovi u grupu „%1“</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1401,71 +1401,71 @@ umesto da se potpuno zatvori.</translation>
     <name>Group</name>
     <message>
         <source>Group %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grupa %1</translation>
     </message>
 </context>
 <context>
     <name>GroupForm</name>
     <message>
         <source>No topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nema teme</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n korisnik u ćaskanju</numerusform>
+            <numerusform>%n korisnika u ćaskanju</numerusform>
+            <numerusform>%n korisnika u ćaskanju</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">utišaj</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">uključi zvuk</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">umnoži ID učesnika</translation>
     </message>
     <message>
         <source>promote to moderator</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">unapredi u moderatora</translation>
     </message>
     <message>
         <source>demote to user</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">vrati u korisnika</translation>
     </message>
     <message>
         <source>kick from group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">izbaci iz grupe</translation>
     </message>
     <message>
         <source>private message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">privatna poruka</translation>
     </message>
     <message>
         <source>Copy topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Umnoži temu</translation>
     </message>
     <message>
         <source>Copy group ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Umnoži ID grupe</translation>
     </message>
     <message>
         <source>Set topic...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi temu...</translation>
     </message>
     <message>
         <source>Set nickname...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi nadimak...</translation>
     </message>
     <message>
         <source>My status</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Moj status</translation>
     </message>
     <message>
         <source>Online</source>
@@ -1481,51 +1481,51 @@ umesto da se potpuno zatvori.</translation>
     </message>
     <message>
         <source>Remove group password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ukloni lozinku grupe</translation>
     </message>
     <message>
         <source>Set group password...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi lozinku grupe...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
-        <translation type="unfinished"></translation>
+        <source>Set member limit...</source>
+        <translation type="unfinished">Postavi ograničenje članova...</translation>
     </message>
     <message>
         <source>Lock topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zaključaj temu</translation>
     </message>
     <message>
         <source>Who can speak</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ko može da piše</translation>
     </message>
     <message>
         <source>Everyone</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Svi</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
-        <translation type="unfinished"></translation>
+        <source>Moderators and the founder</source>
+        <translation type="unfinished">Moderatori i osnivač</translation>
     </message>
     <message>
-        <source>Only Founder</source>
-        <translation type="unfinished"></translation>
+        <source>Only the founder</source>
+        <translation type="unfinished">Samo osnivač</translation>
     </message>
     <message>
         <source>Group visibility</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vidljivost grupe</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished"></translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Javna (pristup preko ID-a)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Privatna (samo uz pozivnicu)</translation>
     </message>
     <message>
         <source>Set group password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi lozinku grupe</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1533,62 +1533,62 @@ umesto da se potpuno zatvori.</translation>
     </message>
     <message>
         <source>Set nickname</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi nadimak</translation>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nadimak:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
-        <translation type="unfinished"></translation>
+        <source>Set member limit</source>
+        <translation type="unfinished">Postavi ograničenje članova</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
-        <translation type="unfinished"></translation>
+        <source>Member limit:</source>
+        <translation type="unfinished">Ograničenje članova:</translation>
     </message>
     <message>
         <source>Set group topic</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Postavi temu grupe</translation>
     </message>
     <message>
         <source>Topic:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished"></translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privatna poruka za %1</translation>
     </message>
 </context>
 <context>
     <name>GroupInviteForm</name>
     <message>
         <source>Create group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Napravi grupu</translation>
     </message>
     <message>
         <source>Enter a name for the group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Unesite ime grupe</translation>
     </message>
     <message>
         <source>Group name cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ime grupe ne može biti prazno.</translation>
     </message>
     <message>
         <source>Join group by ID</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pridruži se grupi preko ID-a</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished"></translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Unesite ID grupe (64 heksadecimalna znaka):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neispravan ID grupe. Očekuje se 64 heksadecimalna znaka.</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lozinka grupe (neobavezno)</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -1596,26 +1596,26 @@ umesto da se potpuno zatvori.</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ID grupe ne može biti prazan.</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grupe</translation>
     </message>
     <message>
         <source>Create new group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Napravi novu grupu</translation>
     </message>
     <message>
         <source>Group invites</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozivnice u grupe</translation>
     </message>
 </context>
 <context>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 to %2 on %3 at %4.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozvao vas je %1 u %2, %3 u %4.</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1630,28 +1630,28 @@ umesto da se potpuno zatvori.</translation>
     <name>GroupWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otvori ćaskanje u novom prozoru</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translation type="unfinished">Ukloni ćaskanje iz ovog prozora</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Postavi naslov...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Postavi alijas...</translation>
     </message>
     <message>
         <source>Quit group</source>
         <comment>Menu to quit a group</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Napusti grupu</translation>
     </message>
     <message numerus="yes">
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n korisnik u ćaskanju</numerusform>
+            <numerusform>%n korisnika u ćaskanju</numerusform>
+            <numerusform>%n korisnika u ćaskanju</numerusform>
         </translation>
     </message>
     <message>
@@ -2064,15 +2064,15 @@ Pritisnite Shift+F1 za više informacija.</translation>
     </message>
     <message>
         <source>Create a group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Napravi grupu</translation>
     </message>
     <message>
         <source>Group</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grupa</translation>
     </message>
     <message>
         <source>Open group management page</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otvori stranicu za upravljanje grupama</translation>
     </message>
     <message>
         <source>File transfers history</source>
@@ -2213,7 +2213,7 @@ Pritisnite Shift+F1 za više informacija.</translation>
     </message>
     <message>
         <source>New group message</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nova poruka u grupi</translation>
     </message>
     <message>
         <source>Incoming file transfer</source>
@@ -2234,11 +2234,11 @@ Pritisnite Shift+F1 za više informacija.</translation>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Primljena pozivnica u grupu</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 vas poziva da se pridružite grupi.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2728,7 +2728,7 @@ Ovaj ID sadrži „NoSpam“ kod (plavo) i kontrolni zbir (sivo).</translation>
     <message>
         <source>private</source>
         <comment>Label for private group messages</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">privatno</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3397,11 +3397,11 @@ broj ovde može dovesti do nestanka trake za pomeranje.</translation>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pozivnice u grupe</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lozinka grupe (neobavezno)</translation>
     </message>
     <message>
         <source>Password:</source>
@@ -3418,9 +3418,9 @@ broj ovde može dovesti do nestanka trake za pomeranje.</translation>
     <message numerus="yes">
         <source>%n new group invite(s)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>%n nova pozivnica u grupu</numerusform>
+            <numerusform>%n nove pozivnice u grupe</numerusform>
+            <numerusform>%n novih pozivnica u grupe</numerusform>
         </translation>
     </message>
     <message>
@@ -3454,7 +3454,7 @@ broj ovde može dovesti do nestanka trake za pomeranje.</translation>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Grupe</translation>
     </message>
     <message>
         <source>Search Contacts</source>

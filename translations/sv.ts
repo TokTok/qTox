@@ -1145,7 +1145,7 @@ så att du kan spara filen i Windows.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Bjud in till gruppen &apos;%1&apos;</translation>
+        <translation type="unfinished">Bjud in till gruppen &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1443,7 +1443,7 @@ i stället för att stängas helt.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopiera peer-ID</translation>
+        <translation type="unfinished">kopiera deltagar-ID</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1502,7 +1502,7 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Ange gruppens lösenord...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Ange medlemsgräns...</translation>
     </message>
     <message>
@@ -1518,11 +1518,11 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Alla</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorer och grundare</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Endast grundare</translation>
     </message>
     <message>
@@ -1530,8 +1530,8 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Gruppens synlighet</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Offentlig (gå med via länk)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Offentlig (gå med via ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1554,11 +1554,11 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Smeknamn:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Ange medlemsgräns</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Medlemsgräns:</translation>
     </message>
     <message>
@@ -1570,8 +1570,8 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Ämne:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privat meddelande till: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privat meddelande till %1</translation>
     </message>
 </context>
 <context>
@@ -1593,8 +1593,8 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Gå med i grupp via ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Ange gruppens chatt-ID (64 hexadecimala tecken):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Ange grupp-ID (64 hexadecimala tecken):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1651,8 +1651,8 @@ i stället för att stängas helt.</translation>
         <translation type="unfinished">Ta bort chatt från detta fönster</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Ange titel...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Ange alias...</translation>
     </message>
     <message>
         <source>Quit group</source>

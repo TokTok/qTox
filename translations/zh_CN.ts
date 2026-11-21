@@ -1488,7 +1488,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">设置群组密码...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">设置成员上限...</translation>
     </message>
     <message>
@@ -1504,11 +1504,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">所有人</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">管理员和创建者</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">仅创建者</translation>
     </message>
     <message>
@@ -1516,8 +1516,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">群组可见性</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">公开（通过链接加入）</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">公开（通过 ID 加入）</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1540,11 +1540,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">昵称：</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">设置成员上限</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">成员上限：</translation>
     </message>
     <message>
@@ -1556,8 +1556,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">主题：</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">私信给：%1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">私信给 %1</translation>
     </message>
 </context>
 <context>
@@ -1579,8 +1579,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">通过 ID 加入群组</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">请输入群组聊天 ID（64 个十六进制字符）：</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">请输入群组 ID（64 个十六进制字符）：</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1637,8 +1637,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">从这个窗口中删除会话</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">设置名称...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">添加备注名...</translation>
     </message>
     <message>
         <source>Quit group</source>

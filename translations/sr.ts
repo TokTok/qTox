@@ -1473,11 +1473,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">појачај</translation>
+        <translation type="unfinished">укључи звук</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">копија истоврсног ИД-а</translation>
+        <translation type="unfinished">умножи ИБ учесника</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1497,11 +1497,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Copy topic</source>
-        <translation type="unfinished">Копирај тему</translation>
+        <translation type="unfinished">Умножи тему</translation>
     </message>
     <message>
         <source>Copy group ID</source>
-        <translation type="unfinished">Копирај ID групе</translation>
+        <translation type="unfinished">Умножи ИБ групе</translation>
     </message>
     <message>
         <source>Set topic...</source>
@@ -1536,7 +1536,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Постави лозинку групе...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Постави ограничење чланова...</translation>
     </message>
     <message>
@@ -1552,11 +1552,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Сви</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Модератори и оснивач</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Само оснивач</translation>
     </message>
     <message>
@@ -1564,8 +1564,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Видљивост групе</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Јавна (приступ преко везе)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Јавна (приступ преко ИБ-а)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1588,11 +1588,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Надимак:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Постави ограничење чланова</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Ограничење чланова:</translation>
     </message>
     <message>
@@ -1604,8 +1604,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Тема:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Приватна порука за: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Приватна порука за %1</translation>
     </message>
 </context>
 <context>
@@ -1624,15 +1624,15 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Join group by ID</source>
-        <translation type="unfinished">Придружи се групи преко ID-а</translation>
+        <translation type="unfinished">Придружи се групи преко ИБ-а</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Унесите ID ћаскања групе (64 хексадецимална знака):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Унесите ИБ групе (64 хексадецимална знака):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
-        <translation type="unfinished">Неисправан ID групе. Очекује се 64 хексадецимална знака.</translation>
+        <translation type="unfinished">Неисправан ИБ групе. Очекује се 64 хексадецимална знака.</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
@@ -1644,7 +1644,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
-        <translation type="unfinished">ID групе не може бити празан.</translation>
+        <translation type="unfinished">ИБ групе не може бити празан.</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -1685,8 +1685,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Уклони ћаскање из овог прозора</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Постави наслов...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Постави алијас...</translation>
     </message>
     <message>
         <source>Quit group</source>

@@ -1126,7 +1126,7 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to group</source>
         <comment>Menu to invite a friend to a group</comment>
-        <translation type="unfinished">vitcpe fi lo girzu</translation>
+        <translation type="unfinished">vi&apos;ecpe fi lo girzu</translation>
     </message>
     <message>
         <source>To new group</source>
@@ -1134,7 +1134,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">vitcpe fi lo girzu be la&apos;oi &apos;%1&apos;</translation>
+        <translation type="unfinished">vi&apos;ecpe fi lo girzu no&apos;u la&apos;oi %1</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1406,20 +1406,20 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n pilno vi lo nu casnu</numerusform>
+            <numerusform>%n lo pilno cu zvati</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">smaji</translation>
+        <translation type="unfinished">smajygau</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">tolsmaji</translation>
+        <translation type="unfinished">xruti lo sance</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">fukpi lo judri be lo casnu cmima</translation>
+        <translation type="unfinished">fukra&apos;e lo judri be lo kansa</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1463,22 +1463,22 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">to&apos;o</translation>
+        <translation type="unfinished">darno</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">tolzi&apos;e</translation>
+        <translation type="unfinished">tolcando</translation>
     </message>
     <message>
         <source>Remove group password</source>
-        <translation type="unfinished">vimcu lo mipyvla be lo girzu</translation>
+        <translation type="unfinished">vimcu lo japyvla be lo girzu</translation>
     </message>
     <message>
         <source>Set group password...</source>
-        <translation type="unfinished">setca lo mipyvla be lo girzu...</translation>
+        <translation type="unfinished">setca lo japyvla be lo girzu...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">setca lo jimte be lo cmima...</translation>
     </message>
     <message>
@@ -1494,11 +1494,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ro da</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">loi jitro ku joi lo krasi</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">lo krasi po&apos;o</translation>
     </message>
     <message>
@@ -1506,20 +1506,20 @@ instead of closing entirely.</source>
         <translation type="unfinished">lo ka girzu viska</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">gubni (cmibi&apos;o fi lo judri)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">gubni to cmibi&apos;o fi lo judri toi</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
-        <translation type="unfinished">sivni (vitcpe po&apos;o)</translation>
+        <translation type="unfinished">sivni to vi&apos;ecpe po&apos;o toi</translation>
     </message>
     <message>
         <source>Set group password</source>
-        <translation type="unfinished">setca lo mipyvla be lo girzu</translation>
+        <translation type="unfinished">setca lo japyvla be lo girzu</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">lo mipyvla:</translation>
+        <translation type="unfinished">japyvla:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1530,11 +1530,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">cmene:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">setca lo jimte be lo cmima</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">jimte be lo cmima:</translation>
     </message>
     <message>
@@ -1546,7 +1546,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">preti:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
+        <source>Private message to %1</source>
         <translation type="unfinished">sivni notci fi la&apos;oi %1</translation>
     </message>
 </context>
@@ -1569,20 +1569,20 @@ instead of closing entirely.</source>
         <translation type="unfinished">cmibi&apos;o fi lo girzu fi lo judri</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">ko ciska lo judri be lo nu casnu be lo girzu (64 mulna&apos;u lerfu):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">ko ciska lo judri be lo girzu to xa vo lerfu be fi la&apos;oi hexadecimal toi:</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
-        <translation type="unfinished">naldra judri be lo girzu .i lo 64 mulna&apos;u lerfu cu nitcu</translation>
+        <translation type="unfinished">naldra judri be lo girzu .i xa vo lerfu be fi la&apos;oi hexadecimal cu nitcu</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished">mipyvla be lo girzu (na sarcu)</translation>
+        <translation type="unfinished">japyvla be lo girzu to na sarcu toi</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">lo mipyvla:</translation>
+        <translation type="unfinished">japyvla:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1598,14 +1598,14 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Group invites</source>
-        <translation type="unfinished">loi girzu vitcpe</translation>
+        <translation type="unfinished">loi girzu vi&apos;ecpe</translation>
     </message>
 </context>
 <context>
     <name>GroupInviteWidget</name>
     <message>
         <source>Invited by %1 to %2 on %3 at %4.</source>
-        <translation type="unfinished">la&apos;oi %1 cu vitcpe fi la&apos;oi %2 ca la&apos;oi %3 ti&apos;u la&apos;oi %4</translation>
+        <translation type="unfinished">la&apos;oi %1 cu vi&apos;ecpe fi la&apos;oi %2 ca la&apos;oi %3 ti&apos;u la&apos;oi %4</translation>
     </message>
     <message>
         <source>Join</source>
@@ -1613,22 +1613,22 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">tolzanru</translation>
+        <translation type="unfinished">cpapro</translation>
     </message>
 </context>
 <context>
     <name>GroupWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">kalri lo nu casnu vi lo cnino canko</translation>
+        <translation type="unfinished">kalri lo casnu lo cnino canko</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">vimcu lo nu casnu fi lo vi canko</translation>
+        <translation type="unfinished">vimcu lo casnu lo vi canko</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">setca lo cmene...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">galfi lo datcme...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1639,7 +1639,7 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n pilno vi lo nu casnu</numerusform>
+            <numerusform>%n lo pilno cu zvati</numerusform>
         </translation>
     </message>
     <message>
@@ -2220,11 +2220,11 @@ Press Shift+F1 for more information.</source>
     </message>
     <message>
         <source>Group invite received</source>
-        <translation type="unfinished">nu cpacu lo girzu vitcpe</translation>
+        <translation type="unfinished">do pu cpacu lo girzu vi&apos;ecpe</translation>
     </message>
     <message>
         <source>%1 invites you to join a group.</source>
-        <translation type="unfinished">la&apos;oi %1 cu vitcpe do lo nu cmibi&apos;o lo girzu</translation>
+        <translation type="unfinished">la&apos;oi %1 cu vi&apos;ecpe do lo girzu</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -3383,15 +3383,15 @@ lo ka cmalu cu ka&apos;e rinka lo nu lo muvdu batke cu canci</translation>
     <message>
         <source>Group invites</source>
         <comment>title of the window</comment>
-        <translation type="unfinished">loi girzu vitcpe</translation>
+        <translation type="unfinished">loi girzu vi&apos;ecpe</translation>
     </message>
     <message>
         <source>Group password (optional)</source>
-        <translation type="unfinished">mipyvla be lo girzu (na sarcu)</translation>
+        <translation type="unfinished">japyvla be lo girzu to na sarcu toi</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">lo mipyvla:</translation>
+        <translation type="unfinished">japyvla:</translation>
     </message>
     <message>
         <source>Create new conference...</source>
@@ -3404,7 +3404,7 @@ lo ka cmalu cu ka&apos;e rinka lo nu lo muvdu batke cu canci</translation>
     <message numerus="yes">
         <source>%n new group invite(s)</source>
         <translation type="unfinished">
-            <numerusform>%n cnino girzu vitcpe</numerusform>
+            <numerusform>%n lo cnino girzu vi&apos;ecpe</numerusform>
         </translation>
     </message>
     <message>

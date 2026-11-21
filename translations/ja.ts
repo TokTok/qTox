@@ -1126,7 +1126,7 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">グループ &apos;%1&apos; に招待</translation>
+        <translation type="unfinished">グループ「%1」に招待</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1426,7 +1426,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">ピアIDをコピーする</translation>
+        <translation type="unfinished">参加者 ID をコピー</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1474,7 +1474,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">多忙</translation>
+        <translation type="unfinished">取り込み中</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1485,7 +1485,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">グループのパスワードを設定…</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">メンバー上限を設定…</translation>
     </message>
     <message>
@@ -1501,11 +1501,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">全員</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">モデレーターと創設者</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">創設者のみ</translation>
     </message>
     <message>
@@ -1513,8 +1513,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">グループの公開範囲</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">公開（リンクで参加）</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">公開（ID で参加）</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1537,11 +1537,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ニックネーム:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">メンバー上限を設定</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">メンバー上限:</translation>
     </message>
     <message>
@@ -1553,8 +1553,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">トピック:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">プライベートメッセージの宛先: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1 へのプライベートメッセージ</translation>
     </message>
 </context>
 <context>
@@ -1576,8 +1576,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ID でグループに参加</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">グループのチャット ID を入力してください (16 進数 64 文字):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">グループ ID を入力してください (16 進数 64 文字):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1634,8 +1634,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">このウィンドウからチャットを削除</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">タイトルを設定…</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">エイリアスを設定…</translation>
     </message>
     <message>
         <source>Quit group</source>

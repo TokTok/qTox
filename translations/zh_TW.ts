@@ -1582,7 +1582,7 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n 個用戶正在聊天</numerusform>
+            <numerusform>聊天中有 %n 位使用者</numerusform>
         </translation>
     </message>
     <message>
@@ -1595,7 +1595,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">複製對等 ID</translation>
+        <translation type="unfinished">複製成員 ID</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1623,11 +1623,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Set topic...</source>
-        <translation type="unfinished">設定主題...</translation>
+        <translation type="unfinished">設定主題…</translation>
     </message>
     <message>
         <source>Set nickname...</source>
-        <translation type="unfinished">設定暱稱...</translation>
+        <translation type="unfinished">設定暱稱…</translation>
     </message>
     <message>
         <source>My status</source>
@@ -1651,11 +1651,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Set group password...</source>
-        <translation type="unfinished">設定群組密碼...</translation>
+        <translation type="unfinished">設定群組密碼…</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
-        <translation type="unfinished">設定成員上限...</translation>
+        <source>Set member limit...</source>
+        <translation type="unfinished">設定成員上限…</translation>
     </message>
     <message>
         <source>Lock topic</source>
@@ -1670,11 +1670,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">所有人</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">管理員與創建者</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">僅限創建者</translation>
     </message>
     <message>
@@ -1682,8 +1682,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">群組可見性</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">公開（透過連結加入）</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">公開（透過 ID 加入）</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1706,11 +1706,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">暱稱：</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">設定成員上限</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">成員上限：</translation>
     </message>
     <message>
@@ -1722,8 +1722,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">主題：</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">私訊給：%1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">私訊給 %1</translation>
     </message>
 </context>
 <context>
@@ -1745,8 +1745,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">透過 ID 加入群組</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">請輸入群組聊天 ID（64 個十六進位字元）：</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">請輸入群組 ID（64 個十六進位字元）：</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1800,11 +1800,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">從此視窗中刪除聊天</translation>
+        <translation type="unfinished">從此視窗移除聊天</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">設定標題...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">設定別名…</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1815,7 +1815,7 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n 個用戶正在聊天</numerusform>
+            <numerusform>聊天中有 %n 位使用者</numerusform>
         </translation>
     </message>
     <message>

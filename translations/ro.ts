@@ -1424,22 +1424,22 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n utilizator în chat</numerusform>
-            <numerusform>%n utilizatori în chat</numerusform>
-            <numerusform>%n de utilizatori în chat</numerusform>
+            <numerusform>%n utilizator în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+            <numerusform>%n de utilizatori în conversație</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">mut</translation>
+        <translation type="unfinished">dezactivează sunetul</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">cu sunet</translation>
+        <translation type="unfinished">activează sunetul</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">copiați ID-ul de peer</translation>
+        <translation type="unfinished">copiați ID-ul participantului</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1483,7 +1483,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">Departe</translation>
+        <translation type="unfinished">Plecat</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1498,7 +1498,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">Setați parola grupului...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Setați limita de membri...</translation>
     </message>
     <message>
@@ -1514,11 +1514,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Toată lumea</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatori și fondator</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Doar fondatorul</translation>
     </message>
     <message>
@@ -1526,8 +1526,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Vizibilitatea grupului</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Public (intrare prin link)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Public (intrare prin ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1550,11 +1550,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">Poreclă:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Setați limita de membri</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Limita de membri:</translation>
     </message>
     <message>
@@ -1566,8 +1566,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Subiect:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Mesaj privat către: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Mesaj privat către %1</translation>
     </message>
 </context>
 <context>
@@ -1589,8 +1589,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Alăturați-vă unui grup după ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Introduceți ID-ul de chat al grupului (64 de caractere hexazecimale):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Introduceți ID-ul grupului (64 de caractere hexazecimale):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1629,7 +1629,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">Aderă</translation>
+        <translation type="unfinished">Alăturați-vă</translation>
     </message>
     <message>
         <source>Decline</source>
@@ -1647,8 +1647,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">Eliminați discuția din această fereastră</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Setați titlul...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Setați un alias...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1659,9 +1659,9 @@ instead of closing entirely.</source>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%n utilizator în chat</numerusform>
-            <numerusform>%n utilizatori în chat</numerusform>
-            <numerusform>%n de utilizatori în chat</numerusform>
+            <numerusform>%n utilizator în conversație</numerusform>
+            <numerusform>%n utilizatori în conversație</numerusform>
+            <numerusform>%n de utilizatori în conversație</numerusform>
         </translation>
     </message>
     <message>

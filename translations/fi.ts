@@ -1128,7 +1128,7 @@ jotta voit tallentaa tiedoston Windowsissa.</translation>
     </message>
     <message>
         <source>Invite to group &apos;%1&apos;</source>
-        <translation type="unfinished">Kutsu ryhmään &apos;%1&apos;</translation>
+        <translation type="unfinished">Kutsu ryhmään &quot;%1&quot;</translation>
     </message>
     <message>
         <source>Move to circle...</source>
@@ -1441,7 +1441,7 @@ sulkeutumisen sijaan.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopioi vertaistunnus</translation>
+        <translation type="unfinished">kopioi osallistujan tunnus</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1500,7 +1500,7 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Aseta ryhmän salasana...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Aseta jäsenraja...</translation>
     </message>
     <message>
@@ -1516,11 +1516,11 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Kaikki</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderaattorit ja perustaja</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Vain perustaja</translation>
     </message>
     <message>
@@ -1528,8 +1528,8 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Ryhmän näkyvyys</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Julkinen (liittyminen linkillä)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Julkinen (liittyminen tunnisteella)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1552,11 +1552,11 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Lempinimi:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Aseta jäsenraja</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Jäsenraja:</translation>
     </message>
     <message>
@@ -1568,8 +1568,8 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Aihe:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Yksityisviesti vastaanottajalle: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Yksityisviesti vastaanottajalle %1</translation>
     </message>
 </context>
 <context>
@@ -1591,8 +1591,8 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Liity ryhmään tunnisteella</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Anna ryhmän keskustelutunniste (64 heksadesimaalimerkkiä):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Anna ryhmän tunniste (64 heksadesimaalimerkkiä):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1649,8 +1649,8 @@ sulkeutumisen sijaan.</translation>
         <translation type="unfinished">Poista keskustelu tästä ikkunasta</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Aseta otsikko...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Aseta kutsumanimi…</translation>
     </message>
     <message>
         <source>Quit group</source>

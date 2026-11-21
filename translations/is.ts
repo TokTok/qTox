@@ -1671,21 +1671,21 @@ en lokast ekki alveg.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%1 notandi í spjalli</numerusform>
-            <numerusform>%1 notendur í spjalli</numerusform>
+            <numerusform>%n notandi í spjalli</numerusform>
+            <numerusform>%n notendur í spjalli</numerusform>
         </translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">hljóðlaus</translation>
+        <translation type="unfinished">þagga</translation>
     </message>
     <message>
         <source>unmute</source>
-        <translation type="unfinished">slökkva á hljóði</translation>
+        <translation type="unfinished">kveikja á hljóði</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">afrita jafningjaauðkenni</translation>
+        <translation type="unfinished">afrita auðkenni þátttakanda</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1729,7 +1729,7 @@ en lokast ekki alveg.</translation>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">Burt</translation>
+        <translation type="unfinished">Fjarverandi</translation>
     </message>
     <message>
         <source>Busy</source>
@@ -1744,7 +1744,7 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Stilla lykilorð hóps...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Stilla hámarksfjölda meðlima...</translation>
     </message>
     <message>
@@ -1760,11 +1760,11 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Allir</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Stjórnendur og stofnandi</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Aðeins stofnandi</translation>
     </message>
     <message>
@@ -1772,8 +1772,8 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Sýnileiki hóps</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Opinn (aðild með tengli)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Opinn (aðild með auðkenni)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1785,7 +1785,7 @@ en lokast ekki alveg.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Aðgangsorð:</translation>
+        <translation type="unfinished">Lykilorð:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1796,11 +1796,11 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Gælunafn:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Stilla hámarksfjölda meðlima</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Hámarksfjöldi meðlima:</translation>
     </message>
     <message>
@@ -1812,8 +1812,8 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Umræðuefni:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Einkaskilaboð til: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Einkaskilaboð til %1</translation>
     </message>
 </context>
 <context>
@@ -1835,8 +1835,8 @@ en lokast ekki alveg.</translation>
         <translation type="unfinished">Ganga í hóp með auðkenni</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Sláðu inn spjallauðkenni hópsins (64 sextándakerfisstafir):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Sláðu inn auðkenni hópsins (64 sextándakerfisstafir):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1848,7 +1848,7 @@ en lokast ekki alveg.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Aðgangsorð:</translation>
+        <translation type="unfinished">Lykilorð:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1875,26 +1875,26 @@ en lokast ekki alveg.</translation>
     </message>
     <message>
         <source>Join</source>
-        <translation type="unfinished">Vertu með</translation>
+        <translation type="unfinished">Taka þátt</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">Afneita</translation>
+        <translation type="unfinished">Hafna</translation>
     </message>
 </context>
 <context>
     <name>GroupWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">Opnaðu spjall í nýjum glugga</translation>
+        <translation type="unfinished">Opna spjall í nýjum glugga</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
-        <translation type="unfinished">Fjarlægðu spjall úr þessum glugga</translation>
+        <translation type="unfinished">Fjarlægja spjall úr þessum glugga</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Stilla titil...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Setja gælunafn...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -1905,8 +1905,8 @@ en lokast ekki alveg.</translation>
         <source>%n user(s) in chat</source>
         <comment>Number of users in chat</comment>
         <translation type="unfinished">
-            <numerusform>%1 notandi í spjalli</numerusform>
-            <numerusform>%1 notendur í spjalli</numerusform>
+            <numerusform>%n notandi í spjalli</numerusform>
+            <numerusform>%n notendur í spjalli</numerusform>
         </translation>
     </message>
     <message>
@@ -4006,7 +4006,7 @@ tala getur valdið því að skrunstikan hverfi.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Aðgangsorð:</translation>
+        <translation type="unfinished">Lykilorð:</translation>
     </message>
     <message>
         <source>Create new conference...</source>

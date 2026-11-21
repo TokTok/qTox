@@ -443,7 +443,7 @@ void GroupForm::onMoreClicked()
         } else {
             setPasswordAction = contextMenu->addAction(tr("Set group password..."));
         }
-        setPeerLimitAction = contextMenu->addAction(tr("Set peer limit..."));
+        setPeerLimitAction = contextMenu->addAction(tr("Set member limit..."));
         setTopicLockAction = contextMenu->addAction(tr("Lock topic"));
         setTopicLockAction->setCheckable(true);
         setTopicLockAction->setChecked(group->getTopicLock() == GroupTopicLock::Enabled);
@@ -453,16 +453,16 @@ void GroupForm::onMoreClicked()
         voiceAllAction = voiceStateMenu->addAction(tr("Everyone"));
         voiceAllAction->setCheckable(true);
         voiceAllAction->setChecked(voiceState == GroupVoiceState::All);
-        voiceModeratorAction = voiceStateMenu->addAction(tr("Moderators and Founder"));
+        voiceModeratorAction = voiceStateMenu->addAction(tr("Moderators and the founder"));
         voiceModeratorAction->setCheckable(true);
         voiceModeratorAction->setChecked(voiceState == GroupVoiceState::Moderator);
-        voiceFounderAction = voiceStateMenu->addAction(tr("Only Founder"));
+        voiceFounderAction = voiceStateMenu->addAction(tr("Only the founder"));
         voiceFounderAction->setCheckable(true);
         voiceFounderAction->setChecked(voiceState == GroupVoiceState::Founder);
 
         privacyStateMenu = contextMenu->addMenu(tr("Group visibility"));
         const GroupPrivacyState privacyState = group->getPrivacyState();
-        privacyPublicAction = privacyStateMenu->addAction(tr("Public (join by link)"));
+        privacyPublicAction = privacyStateMenu->addAction(tr("Public (join by ID)"));
         privacyPublicAction->setCheckable(true);
         privacyPublicAction->setChecked(privacyState == GroupPrivacyState::Public);
         privacyPrivateAction = privacyStateMenu->addAction(tr("Private (invite only)"));
@@ -653,7 +653,7 @@ void GroupForm::setPeerLimit()
     bool ok = false;
     // The group can go while the dialog is open.
     const QPointer<GroupForm> self{this};
-    const int peerLimit = QInputDialog::getInt(this, tr("Set peer limit"), tr("Peer limit:"),
+    const int peerLimit = QInputDialog::getInt(this, tr("Set member limit"), tr("Member limit:"),
                                                group->getPeerLimit(), 0, 65535, 1, &ok);
     if (!self.isNull() && ok) {
         group->setGroupPeerLimit(static_cast<uint16_t>(peerLimit));
@@ -710,7 +710,7 @@ void GroupForm::updatePrivateMessageIndicator()
         privateMessageLabel->clear();
     } else {
         const QString peerName = group->getDisplayedName(privateMessageTarget);
-        privateMessageLabel->setText(tr("Private message to: %1").arg(peerName));
+        privateMessageLabel->setText(tr("Private message to %1").arg(peerName));
     }
 }
 

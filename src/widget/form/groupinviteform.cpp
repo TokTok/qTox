@@ -59,8 +59,8 @@ GroupInviteForm::GroupInviteForm(Settings& settings_, Core& core_)
         bool ok = false;
         const QString chatIdHex =
             QInputDialog::getText(this, tr("Join group by ID"),
-                                  tr("Enter the group Chat ID (64 hex characters):"),
-                                  QLineEdit::Normal, QString(), &ok);
+                                  tr("Enter the group ID (64 hex characters):"), QLineEdit::Normal,
+                                  QString(), &ok);
         if (ok) {
             if (!chatIdHex.isEmpty()) {
                 const QString clean = chatIdHex.trimmed();

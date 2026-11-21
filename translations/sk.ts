@@ -1158,7 +1158,7 @@ aby ste mohli súbor uložiť vo Windows.</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>Nastaviť prezývku...</translation>
+        <translation>Nastaviť alias...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1447,7 +1447,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopírovať ID partnera</translation>
+        <translation type="unfinished">kopírovať ID účastníka</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1506,7 +1506,7 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Nastaviť heslo skupiny...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Nastaviť limit členov...</translation>
     </message>
     <message>
@@ -1522,11 +1522,11 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Všetci</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderátori a zakladateľ</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Iba zakladateľ</translation>
     </message>
     <message>
@@ -1534,8 +1534,8 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Viditeľnosť skupiny</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Verejná (pripojenie odkazom)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Verejná (pripojenie podľa ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1558,11 +1558,11 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Prezývka:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Nastaviť limit členov</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Limit členov:</translation>
     </message>
     <message>
@@ -1574,8 +1574,8 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Téma:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Súkromná správa pre: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Súkromná správa pre %1</translation>
     </message>
 </context>
 <context>
@@ -1597,8 +1597,8 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Pripojiť sa ku skupine podľa ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Zadajte ID chatu skupiny (64 hexadecimálnych znakov):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Zadajte ID skupiny (64 hexadecimálnych znakov):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1655,8 +1655,8 @@ namiesto toho, že by sa zavrel úplne.</translation>
         <translation type="unfinished">Odstrániť chat z tohto okna</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Zmeniť názov...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Nastaviť alias...</translation>
     </message>
     <message>
         <source>Quit group</source>

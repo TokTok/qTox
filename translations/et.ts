@@ -1147,7 +1147,7 @@ ja sa saad seda faili nüüd Windowsis salvestada.</translation>
     </message>
     <message>
         <source>Set alias...</source>
-        <translation>Sea hüüdnimi...</translation>
+        <translation>Sea varjunimi...</translation>
     </message>
     <message>
         <source>Auto accept files from this friend</source>
@@ -1443,7 +1443,7 @@ jätab ta tööle teavituste alal.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopeeri partneri ID</translation>
+        <translation type="unfinished">kopeeri osaleja ID</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1502,7 +1502,7 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Sea grupi parool...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Sea liikmete piirang...</translation>
     </message>
     <message>
@@ -1518,11 +1518,11 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Kõik</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderaatorid ja asutaja</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Ainult asutaja</translation>
     </message>
     <message>
@@ -1530,8 +1530,8 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Grupi nähtavus</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Avalik (liitumine lingiga)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Avalik (liitumine ID järgi)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1554,11 +1554,11 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Hüüdnimi:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Sea liikmete piirang</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Liikmete piirang:</translation>
     </message>
     <message>
@@ -1570,8 +1570,8 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Teema:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privaatsõnum kasutajale: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privaatsõnum kasutajale %1</translation>
     </message>
 </context>
 <context>
@@ -1593,8 +1593,8 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Liitu grupiga ID järgi</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Sisesta grupi vestluse ID (64 kuueteistkümnendsümbolit):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Sisesta grupi ID (64 kuueteistkümnendsümbolit):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1651,8 +1651,8 @@ jätab ta tööle teavituste alal.</translation>
         <translation type="unfinished">Haagi vestlus sellest aknast lahti</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Sea pealkiri...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Sea varjunimi...</translation>
     </message>
     <message>
         <source>Quit group</source>

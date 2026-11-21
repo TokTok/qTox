@@ -1577,7 +1577,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>mute</source>
-        <translation type="unfinished">stum</translation>
+        <translation type="unfinished">slå lyd fra</translation>
     </message>
     <message>
         <source>unmute</source>
@@ -1585,7 +1585,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">kopier peer-id</translation>
+        <translation type="unfinished">kopier deltager-id</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1644,7 +1644,7 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Angiv gruppeadgangskode...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">Angiv medlemsgrænse...</translation>
     </message>
     <message>
@@ -1660,11 +1660,11 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Alle</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">Moderatorer og stifter</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">Kun stifter</translation>
     </message>
     <message>
@@ -1672,8 +1672,8 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Gruppens synlighed</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">Offentlig (tilmelding via link)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Offentlig (tilmelding via ID)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1685,7 +1685,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Kodeord:</translation>
+        <translation type="unfinished">Adgangskode:</translation>
     </message>
     <message>
         <source>Set nickname</source>
@@ -1696,11 +1696,11 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Kaldenavn:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">Angiv medlemsgrænse</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">Medlemsgrænse:</translation>
     </message>
     <message>
@@ -1712,8 +1712,8 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Emne:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">Privat besked til: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Privat besked til %1</translation>
     </message>
 </context>
 <context>
@@ -1735,8 +1735,8 @@ i stedet for at lukke helt.</translation>
         <translation type="unfinished">Deltag i gruppe via ID</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">Angiv gruppens chat-ID (64 hex-tegn):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Angiv gruppe-ID (64 hex-tegn):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1748,7 +1748,7 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Kodeord:</translation>
+        <translation type="unfinished">Adgangskode:</translation>
     </message>
     <message>
         <source>Group ID cannot be empty.</source>
@@ -1779,22 +1779,22 @@ i stedet for at lukke helt.</translation>
     </message>
     <message>
         <source>Decline</source>
-        <translation type="unfinished">Nedgang</translation>
+        <translation type="unfinished">Afvis</translation>
     </message>
 </context>
 <context>
     <name>GroupWidget</name>
     <message>
         <source>Open chat in new window</source>
-        <translation type="unfinished">Åben chat i nyt vindue</translation>
+        <translation type="unfinished">Åbn chat i nyt vindue</translation>
     </message>
     <message>
         <source>Remove chat from this window</source>
         <translation type="unfinished">Fjern chat fra dette vindue</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">Angiv titel...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">Indstil alias...</translation>
     </message>
     <message>
         <source>Quit group</source>
@@ -3928,7 +3928,7 @@ for lavt tal her kan få rullebjælken til at forsvinde.</translation>
     </message>
     <message>
         <source>Password:</source>
-        <translation type="unfinished">Kodeord:</translation>
+        <translation type="unfinished">Adgangskode:</translation>
     </message>
     <message numerus="yes">
         <source>%n new friend request(s)</source>

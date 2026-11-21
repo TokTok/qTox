@@ -78,7 +78,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
 
     menu.addSeparator();
 
-    QAction* setTitle = menu.addAction(tr("Set title..."));
+    QAction* setAlias = menu.addAction(tr("Set alias..."));
     auto* quitGroup = menu.addAction(tr("Quit group", "Menu to quit a group"));
     // Deleting the widget from inside the menu handler would destroy the
     // stack-allocated QMenu while it is still a child, so defer the removal.
@@ -105,7 +105,7 @@ void GroupWidget::contextMenuEvent(QContextMenuEvent* event)
         emit newWindowOpened(this);
     } else if (selectedItem == removeChatWindow) {
         chatroom->removeGroupFromDialogs();
-    } else if (selectedItem == setTitle) {
+    } else if (selectedItem == setAlias) {
         editName();
     }
 }

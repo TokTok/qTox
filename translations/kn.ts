@@ -1693,7 +1693,7 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>copy peer ID</source>
-        <translation type="unfinished">ಪೀರ್ ಐಡಿ ನಕಲಿಸಿ</translation>
+        <translation type="unfinished">ಭಾಗವಹಿಸುವವರ ID ನಕಲಿಸಿ</translation>
     </message>
     <message>
         <source>promote to moderator</source>
@@ -1737,11 +1737,11 @@ instead of closing entirely.</source>
     </message>
     <message>
         <source>Away</source>
-        <translation type="unfinished">ದೂರವಿರುವೆ</translation>
+        <translation type="unfinished">ದೂರ</translation>
     </message>
     <message>
         <source>Busy</source>
-        <translation type="unfinished">ನಿರತನಾಗಿರುವೆ</translation>
+        <translation type="unfinished">ನಿರತ</translation>
     </message>
     <message>
         <source>Remove group password</source>
@@ -1752,7 +1752,7 @@ instead of closing entirely.</source>
         <translation type="unfinished">ಗುಂಪಿನ ಪಾಸ್‌ವರ್ಡ್ ಹೊಂದಿಸಿ...</translation>
     </message>
     <message>
-        <source>Set peer limit...</source>
+        <source>Set member limit...</source>
         <translation type="unfinished">ಸದಸ್ಯರ ಮಿತಿ ಹೊಂದಿಸಿ...</translation>
     </message>
     <message>
@@ -1768,11 +1768,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ಎಲ್ಲರೂ</translation>
     </message>
     <message>
-        <source>Moderators and Founder</source>
+        <source>Moderators and the founder</source>
         <translation type="unfinished">ಮಾಡರೇಟರ್‌ಗಳು ಮತ್ತು ಸ್ಥಾಪಕರು</translation>
     </message>
     <message>
-        <source>Only Founder</source>
+        <source>Only the founder</source>
         <translation type="unfinished">ಸ್ಥಾಪಕರು ಮಾತ್ರ</translation>
     </message>
     <message>
@@ -1780,8 +1780,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ಗುಂಪಿನ ಗೋಚರತೆ</translation>
     </message>
     <message>
-        <source>Public (join by link)</source>
-        <translation type="unfinished">ಸಾರ್ವಜನಿಕ (ಲಿಂಕ್ ಮೂಲಕ ಸೇರಿ)</translation>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">ಸಾರ್ವಜನಿಕ (ID ಮೂಲಕ ಸೇರಿ)</translation>
     </message>
     <message>
         <source>Private (invite only)</source>
@@ -1804,11 +1804,11 @@ instead of closing entirely.</source>
         <translation type="unfinished">ಅಡ್ಡಹೆಸರು:</translation>
     </message>
     <message>
-        <source>Set peer limit</source>
+        <source>Set member limit</source>
         <translation type="unfinished">ಸದಸ್ಯರ ಮಿತಿ ಹೊಂದಿಸಿ</translation>
     </message>
     <message>
-        <source>Peer limit:</source>
+        <source>Member limit:</source>
         <translation type="unfinished">ಸದಸ್ಯರ ಮಿತಿ:</translation>
     </message>
     <message>
@@ -1820,8 +1820,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ವಿಷಯ:</translation>
     </message>
     <message>
-        <source>Private message to: %1</source>
-        <translation type="unfinished">ಖಾಸಗಿ ಸಂದೇಶ ಇವರಿಗೆ: %1</translation>
+        <source>Private message to %1</source>
+        <translation type="unfinished">%1 ಅವರಿಗೆ ಖಾಸಗಿ ಸಂದೇಶ</translation>
     </message>
 </context>
 <context>
@@ -1843,8 +1843,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ID ಮೂಲಕ ಗುಂಪಿಗೆ ಸೇರಿ</translation>
     </message>
     <message>
-        <source>Enter the group Chat ID (64 hex characters):</source>
-        <translation type="unfinished">ಗುಂಪಿನ ಚಾಟ್ ID ನಮೂದಿಸಿ (64 ಹೆಕ್ಸ್ ಅಕ್ಷರಗಳು):</translation>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">ಗುಂಪಿನ ID ನಮೂದಿಸಿ (64 ಹೆಕ್ಸ್ ಅಕ್ಷರಗಳು):</translation>
     </message>
     <message>
         <source>Invalid group ID. Expected 64 hex characters.</source>
@@ -1901,8 +1901,8 @@ instead of closing entirely.</source>
         <translation type="unfinished">ಈ ವಿಂಡೋದಿಂದ ಚಾಟ್ ತೆಗೆದುಹಾಕಿ</translation>
     </message>
     <message>
-        <source>Set title...</source>
-        <translation type="unfinished">ಶೀರ್ಷಿಕೆ ಹೊಂದಿಸಿ...</translation>
+        <source>Set alias...</source>
+        <translation type="unfinished">ಅಲಿಯಾಸ್ ಹೊಂದಿಸಿ...</translation>
     </message>
     <message>
         <source>Quit group</source>
