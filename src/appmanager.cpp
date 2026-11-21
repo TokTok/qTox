@@ -14,6 +14,7 @@
 #include "src/persistence/settings.h"
 #include "src/persistence/toxsave.h"
 #include "src/platform/posixsignalnotifier.h"
+#include "src/platform/stallwatchdog.h"
 #include "src/version.h"
 #include "src/video/camerasource.h"
 #include "src/widget/tool/messageboxmanager.h"
@@ -313,6 +314,11 @@ int AppManager::startGui(QCommandLineParser& parser)
     qDebug() << "Commit:" << VersionInfo::gitVersion();
     qDebug() << "Process ID:" << QCoreApplication::applicationPid();
 
+#ifndef Q_OS_WASM
+    // Other qTox processes take over IPC when we stall this long.
+    stallWatchdog = std::make_unique<StallWatchdog>(std::chrono::seconds(IPC::OWNERSHIP_TIMEOUT_S));
+#endif
+
     QString profileName;
     bool autoLogin = settings->getAutoLogin();
 
@@ -424,11 +430,19 @@ int AppManager::startGui(QCommandLineParser& parser)
     return 0;
 }
 
+void AppManager::terminate()
+{
+    // Close the windows and quit.
+    QApplication::quit();
+    // quit() does nothing before the main event loop runs (e.g. on the login screen), and a
+    // window can refuse it. exit() leaves whatever loops are running.
+    QApplication::exit();
+}
+
 int AppManager::run()
 {
-    // Terminating signals are connected directly to quit() without any filtering.
     connect(&PosixSignalNotifier::globalInstance(), &PosixSignalNotifier::terminatingSignal,
-            qapp.get(), &QApplication::quit);
+            qapp.get(), &AppManager::terminate);
     PosixSignalNotifier::watchCommonTerminatingSignals();
 
     // User signal 1 is used to screenshot the application.
