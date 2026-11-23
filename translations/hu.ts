@@ -1019,23 +1019,23 @@ so you can save the file on Windows.</source>
     </message>
     <message>
         <source>Resume download?</source>
-        <translation type="unfinished">Folytatja a letöltést?</translation>
+        <translation>Folytatja a letöltést?</translation>
     </message>
     <message>
         <source>A smaller file with this name already exists. What would you like to do?</source>
-        <translation type="unfinished">Már létezik egy kisebb fájl ezzel a névvel. Mit szeretne tenni?</translation>
+        <translation>Már létezik egy kisebb fájl ezzel a névvel. Mit szeretne tenni?</translation>
     </message>
     <message>
         <source>Resume</source>
-        <translation type="unfinished">Folytatás</translation>
+        <translation>Folytatás</translation>
     </message>
     <message>
         <source>Overwrite</source>
-        <translation type="unfinished">Felülírás</translation>
+        <translation>Felülírás</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation type="unfinished">Mégse</translation>
+        <translation>Mégse</translation>
     </message>
     <message>
         <source>Resuming...</source>
