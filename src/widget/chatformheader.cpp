@@ -106,6 +106,13 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     avatar = new MaskablePixmapWidget(this, AVATAR_SIZE, ":/img/avatar_mask.svg");
     avatar->setObjectName("avatar");
 
+    moreButton = new QToolButton(this);
+    moreButton->setText(QStringLiteral("\u22EE"));
+    moreButton->setAutoRaise(true);
+    moreButton->setFixedSize(20, 20);
+    moreButton->setVisible(false);
+    connect(moreButton, &QToolButton::clicked, this, &ChatFormHeader::moreClicked);
+
     nameLine = new QHBoxLayout();
     nameLine->setSpacing(3);
 
@@ -141,7 +148,13 @@ ChatFormHeader::ChatFormHeader(Settings& settings_, Style& style_, QWidget* pare
     buttonsLayout->setVerticalSpacing(0);
     buttonsLayout->setHorizontalSpacing(BUTTONS_LAYOUT_HOR_SPACING);
 
-    headLayout->addWidget(avatar);
+    auto* avatarLayout = new QVBoxLayout();
+    avatarLayout->setSpacing(2);
+    avatarLayout->setContentsMargins(0, 0, 0, 0);
+    avatarLayout->addWidget(avatar, 0, Qt::AlignHCenter);
+    avatarLayout->addWidget(moreButton, 0, Qt::AlignHCenter);
+
+    headLayout->addLayout(avatarLayout);
     headLayout->addSpacing(HEAD_LAYOUT_SPACING);
     headLayout->addLayout(headTextLayout);
     headLayout->addLayout(buttonsLayout);
@@ -286,6 +299,16 @@ void ChatFormHeader::reloadTheme()
     videoButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
     volButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
     micButton->setStyleSheet(style.getStylesheet(STYLE_PATH, settings));
+}
+
+void ChatFormHeader::setNameEditable(bool editable)
+{
+    nameLabel->setEditable(editable);
+}
+
+void ChatFormHeader::setMoreButtonVisible(bool visible)
+{
+    moreButton->setVisible(visible);
 }
 
 void ChatFormHeader::addWidget(QWidget* widget, int stretch, Qt::Alignment alignment)

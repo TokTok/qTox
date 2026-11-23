@@ -8,6 +8,7 @@
 #include "idialogs.h"
 
 class ConferenceId;
+class GroupId;
 class ToxPk;
 
 class IDialogsManager
@@ -22,4 +23,5 @@ public:
 
     virtual IDialogs* getFriendDialogs(const ToxPk& friendPk) const = 0;
     virtual IDialogs* getConferenceDialogs(const ConferenceId& conferenceId) const = 0;
+    virtual IDialogs* getGroupDialogs(const GroupId& groupId) const = 0;
 };

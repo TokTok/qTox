@@ -43,7 +43,7 @@
 | ------------- | --------- | ------------------------------------------------ |
 | [Qt]          | >= 6.2.0  | concurrent, core, gui, network, svg, widget, xml |
 | [GCC]/[MinGW] | >= 11     | C++17 enabled                                    |
-| [toxcore]     | >= 0.2.20 | core, av                                         |
+| [toxcore]     | >= 0.2.23 | core, av                                         |
 | [FFmpeg]      | >= 2.6.0  | avformat, avdevice, avcodec, avutil, swscale     |
 | [CMake]       | >= 3.10   |                                                  |
 | [OpenAL Soft] | >= 1.16.0 |                                                  |

@@ -33,6 +33,8 @@ public:
 
     QString getUsername() const override
     {
-        return "me";
+        return username;
     }
+
+    QString username{"me"};
 };

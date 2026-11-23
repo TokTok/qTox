@@ -1067,6 +1067,13 @@ so you can save the file on Windows.</source>
     </message>
 </context>
 <context>
+    <name>FriendChatroom</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Nhóm %1</translation>
+    </message>
+</context>
+<context>
     <name>FriendListWidget</name>
     <message>
         <source>Today</source>
@@ -1128,6 +1135,19 @@ so you can save the file on Windows.</source>
     <message>
         <source>Invite to conference &apos;%1&apos;</source>
         <translation type="unfinished">Mời vào hội nghị &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>Invite to group</source>
+        <comment>Menu to invite a friend to a group</comment>
+        <translation type="unfinished">Mời vào nhóm</translation>
+    </message>
+    <message>
+        <source>To new group</source>
+        <translation type="unfinished">Vào nhóm mới</translation>
+    </message>
+    <message>
+        <source>Invite to group &apos;%1&apos;</source>
+        <translation type="unfinished">Mời vào nhóm &apos;%1&apos;</translation>
     </message>
     <message>
         <source>Set alias...</source>
@@ -1386,6 +1406,268 @@ thay vì thoát hẳn.</translation>
     <message>
         <source>Are you sure that you want to clear all displayed messages?</source>
         <translation>Bạn có chắc chắn muốn xóa tất cả các tin nhắn được hiển thị không?</translation>
+    </message>
+</context>
+<context>
+    <name>Group</name>
+    <message>
+        <source>Group %1</source>
+        <translation type="unfinished">Nhóm %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupForm</name>
+    <message>
+        <source>No topic</source>
+        <translation type="unfinished">Không có chủ đề</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>mute</source>
+        <translation type="unfinished">tắt tiếng</translation>
+    </message>
+    <message>
+        <source>unmute</source>
+        <translation type="unfinished">bỏ tắt tiếng</translation>
+    </message>
+    <message>
+        <source>copy peer ID</source>
+        <translation type="unfinished">sao chép ID thành viên</translation>
+    </message>
+    <message>
+        <source>promote to moderator</source>
+        <translation type="unfinished">thăng làm điều hành viên</translation>
+    </message>
+    <message>
+        <source>demote to user</source>
+        <translation type="unfinished">hạ xuống người dùng</translation>
+    </message>
+    <message>
+        <source>kick from group</source>
+        <translation type="unfinished">đuổi khỏi nhóm</translation>
+    </message>
+    <message>
+        <source>private message</source>
+        <translation type="unfinished">tin nhắn riêng</translation>
+    </message>
+    <message>
+        <source>Copy topic</source>
+        <translation type="unfinished">Sao chép chủ đề</translation>
+    </message>
+    <message>
+        <source>Copy group ID</source>
+        <translation type="unfinished">Sao chép ID nhóm</translation>
+    </message>
+    <message>
+        <source>Set topic...</source>
+        <translation type="unfinished">Đặt chủ đề...</translation>
+    </message>
+    <message>
+        <source>Set nickname...</source>
+        <translation type="unfinished">Đặt biệt danh...</translation>
+    </message>
+    <message>
+        <source>My status</source>
+        <translation type="unfinished">Trạng thái của tôi</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Trực tuyến</translation>
+    </message>
+    <message>
+        <source>Away</source>
+        <translation type="unfinished">Vắng</translation>
+    </message>
+    <message>
+        <source>Busy</source>
+        <translation type="unfinished">Bận</translation>
+    </message>
+    <message>
+        <source>Remove group password</source>
+        <translation type="unfinished">Xóa mật khẩu nhóm</translation>
+    </message>
+    <message>
+        <source>Set group password...</source>
+        <translation type="unfinished">Đặt mật khẩu nhóm...</translation>
+    </message>
+    <message>
+        <source>Set member limit...</source>
+        <translation type="unfinished">Đặt giới hạn thành viên...</translation>
+    </message>
+    <message>
+        <source>Lock topic</source>
+        <translation type="unfinished">Khóa chủ đề</translation>
+    </message>
+    <message>
+        <source>Who can speak</source>
+        <translation type="unfinished">Ai được phép viết</translation>
+    </message>
+    <message>
+        <source>Everyone</source>
+        <translation type="unfinished">Mọi người</translation>
+    </message>
+    <message>
+        <source>Moderators and the founder</source>
+        <translation type="unfinished">Điều hành viên và người sáng lập</translation>
+    </message>
+    <message>
+        <source>Only the founder</source>
+        <translation type="unfinished">Chỉ người sáng lập</translation>
+    </message>
+    <message>
+        <source>Group visibility</source>
+        <translation type="unfinished">Chế độ hiển thị của nhóm</translation>
+    </message>
+    <message>
+        <source>Public (join by ID)</source>
+        <translation type="unfinished">Công khai (tham gia bằng ID)</translation>
+    </message>
+    <message>
+        <source>Private (invite only)</source>
+        <translation type="unfinished">Riêng tư (chỉ qua lời mời)</translation>
+    </message>
+    <message>
+        <source>Set group password</source>
+        <translation type="unfinished">Đặt mật khẩu nhóm</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Mật khẩu:</translation>
+    </message>
+    <message>
+        <source>Set nickname</source>
+        <translation type="unfinished">Đặt biệt danh</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">Biệt danh:</translation>
+    </message>
+    <message>
+        <source>Set member limit</source>
+        <translation type="unfinished">Đặt giới hạn thành viên</translation>
+    </message>
+    <message>
+        <source>Member limit:</source>
+        <translation type="unfinished">Giới hạn thành viên:</translation>
+    </message>
+    <message>
+        <source>Set group topic</source>
+        <translation type="unfinished">Đặt chủ đề nhóm</translation>
+    </message>
+    <message>
+        <source>Topic:</source>
+        <translation type="unfinished">Chủ đề:</translation>
+    </message>
+    <message>
+        <source>Private message to %1</source>
+        <translation type="unfinished">Tin nhắn riêng tới %1</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteForm</name>
+    <message>
+        <source>Create group</source>
+        <translation type="unfinished">Tạo nhóm</translation>
+    </message>
+    <message>
+        <source>Enter a name for the group</source>
+        <translation type="unfinished">Nhập tên cho nhóm</translation>
+    </message>
+    <message>
+        <source>Group name cannot be empty.</source>
+        <translation type="unfinished">Tên nhóm không được để trống.</translation>
+    </message>
+    <message>
+        <source>Join group by ID</source>
+        <translation type="unfinished">Tham gia nhóm bằng ID</translation>
+    </message>
+    <message>
+        <source>Enter the group ID (64 hex characters):</source>
+        <translation type="unfinished">Nhập ID nhóm (64 ký tự thập lục phân):</translation>
+    </message>
+    <message>
+        <source>Invalid group ID. Expected 64 hex characters.</source>
+        <translation type="unfinished">ID nhóm không hợp lệ. Cần 64 ký tự thập lục phân.</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Mật khẩu nhóm (tùy chọn)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Mật khẩu:</translation>
+    </message>
+    <message>
+        <source>Group ID cannot be empty.</source>
+        <translation type="unfinished">ID nhóm không được để trống.</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Nhóm</translation>
+    </message>
+    <message>
+        <source>Create new group</source>
+        <translation type="unfinished">Tạo nhóm mới</translation>
+    </message>
+    <message>
+        <source>Group invites</source>
+        <translation type="unfinished">Lời mời vào nhóm</translation>
+    </message>
+</context>
+<context>
+    <name>GroupInviteWidget</name>
+    <message>
+        <source>Invited by %1 to %2 on %3 at %4.</source>
+        <translation type="unfinished">Được %1 mời vào %2 ngày %3 lúc %4.</translation>
+    </message>
+    <message>
+        <source>Join</source>
+        <translation type="unfinished">Tham gia</translation>
+    </message>
+    <message>
+        <source>Decline</source>
+        <translation type="unfinished">Từ chối</translation>
+    </message>
+</context>
+<context>
+    <name>GroupWidget</name>
+    <message>
+        <source>Open chat in new window</source>
+        <translation type="unfinished">Mở trò chuyện trong cửa sổ mới</translation>
+    </message>
+    <message>
+        <source>Remove chat from this window</source>
+        <translation type="unfinished">Xóa trò chuyện khỏi cửa sổ này</translation>
+    </message>
+    <message>
+        <source>Set alias...</source>
+        <translation type="unfinished">Đặt bí danh...</translation>
+    </message>
+    <message>
+        <source>Quit group</source>
+        <comment>Menu to quit a group</comment>
+        <translation type="unfinished">Rời nhóm</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n user(s) in chat</source>
+        <comment>Number of users in chat</comment>
+        <translation type="unfinished">
+            <numerusform>%n người dùng trong cuộc trò chuyện</numerusform>
+        </translation>
+    </message>
+    <message>
+        <source>New message</source>
+        <translation type="unfinished">Tin nhắn mới</translation>
+    </message>
+    <message>
+        <source>Online</source>
+        <translation type="unfinished">Trực tuyến</translation>
     </message>
 </context>
 <context>
@@ -1788,6 +2070,18 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <translation type="unfinished">Mở trang quản lý hội nghị</translation>
     </message>
     <message>
+        <source>Create a group</source>
+        <translation type="unfinished">Tạo một nhóm</translation>
+    </message>
+    <message>
+        <source>Group</source>
+        <translation type="unfinished">Nhóm</translation>
+    </message>
+    <message>
+        <source>Open group management page</source>
+        <translation type="unfinished">Mở trang quản lý nhóm</translation>
+    </message>
+    <message>
         <source>File transfers history</source>
         <translation>Lịch sử gửi tệp</translation>
     </message>
@@ -1925,6 +2219,10 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
         <translation type="unfinished">Tin nhắn hội nghị mới</translation>
     </message>
     <message>
+        <source>New group message</source>
+        <translation type="unfinished">Tin nhắn nhóm mới</translation>
+    </message>
+    <message>
         <source>Incoming file transfer</source>
         <translation>Có tệp gửi đến</translation>
     </message>
@@ -1940,6 +2238,14 @@ Nhấn Shift+F1 để biết thêm thông tin.</translation>
     <message>
         <source>%1 invites you to join a conference.</source>
         <translation type="unfinished">%1 mời bạn tham gia một hội nghị.</translation>
+    </message>
+    <message>
+        <source>Group invite received</source>
+        <translation type="unfinished">Đã nhận lời mời vào nhóm</translation>
+    </message>
+    <message>
+        <source>%1 invites you to join a group.</source>
+        <translation type="unfinished">%1 mời bạn tham gia một nhóm.</translation>
     </message>
     <message>
         <source>Friend request received</source>
@@ -2426,6 +2732,11 @@ ID này bao gồm mã NoSpam (màu xanh lam) và checksum (màu xám).</translat
         <source>blocked</source>
         <comment>contact status</comment>
         <translation>đã chặn</translation>
+    </message>
+    <message>
+        <source>private</source>
+        <comment>Label for private group messages</comment>
+        <translation type="unfinished">riêng tư</translation>
     </message>
     <message>
         <source>Reformatting text...</source>
@@ -3115,12 +3426,31 @@ is too low may make the scroll bar disappear.</source>
         <translation>Tên của bạn</translation>
     </message>
     <message>
+        <source>Group invites</source>
+        <comment>title of the window</comment>
+        <translation type="unfinished">Lời mời vào nhóm</translation>
+    </message>
+    <message>
+        <source>Group password (optional)</source>
+        <translation type="unfinished">Mật khẩu nhóm (tùy chọn)</translation>
+    </message>
+    <message>
+        <source>Password:</source>
+        <translation type="unfinished">Mật khẩu:</translation>
+    </message>
+    <message>
         <source>Create new conference...</source>
         <translation type="unfinished">Tạo hội nghị mới...</translation>
     </message>
     <message>
         <source>Create new circle...</source>
         <translation>Tạo vòng kết nối mới...</translation>
+    </message>
+    <message numerus="yes">
+        <source>%n new group invite(s)</source>
+        <translation type="unfinished">
+            <numerusform>%n lời mời vào nhóm mới</numerusform>
+        </translation>
     </message>
     <message>
         <source>By Name</source>
@@ -3150,6 +3480,10 @@ is too low may make the scroll bar disappear.</source>
     <message>
         <source>Conferences</source>
         <translation type="unfinished">Hội nghị</translation>
+    </message>
+    <message>
+        <source>Groups</source>
+        <translation type="unfinished">Nhóm</translation>
     </message>
     <message>
         <source>Search Contacts</source>
