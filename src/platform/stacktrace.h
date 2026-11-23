@@ -42,6 +42,7 @@ namespace detail {
 using Callback = void(void* userdata, const Frame& frame);
 
 void process(Callback* callback, void* userdata);
+void processInterrupted(const void* context, Callback* callback, void* userdata);
 } // namespace detail
 
 template <typename F>
@@ -49,5 +50,20 @@ void process(F&& callback)
 {
     detail::process([](void* userdata, const Frame& frame) { (*static_cast<F*>(userdata))(frame); },
                     &callback);
+}
+
+/**
+ * @brief Like process(), for the code a signal interrupted.
+ *
+ * Call it in a signal handler installed with SA_SIGINFO, with the handler's
+ * third argument. The stack starts where the signal interrupted the thread,
+ * without the handler's own frames.
+ */
+template <typename F>
+void processInterrupted(const void* context, F&& callback)
+{
+    detail::processInterrupted(
+        context, [](void* userdata, const Frame& frame) { (*static_cast<F*>(userdata))(frame); },
+        &callback);
 }
 } // namespace Stacktrace
