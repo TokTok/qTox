@@ -8,7 +8,11 @@
 #include "chatid.h"
 
 #include <QByteArray>
+#include <QRegularExpression>
 #include <QString>
+
+const QRegularExpression
+    ToxPk::ToxPkRegEx(QString("(^|\\s)[A-Fa-f0-9]{%1}($|\\s)").arg(ToxPk::numHexChars));
 
 /**
  * @class ToxPk
