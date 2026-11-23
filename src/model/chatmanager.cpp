@@ -524,6 +524,9 @@ void ChatManager::onGroupSelfJoined(uint32_t groupNumber)
         const QString nickname = settings.getGroupNickname(g->getPersistentId().toString());
         if (!nickname.isEmpty()) {
             g->setGroupNickname(nickname);
+        } else {
+            // The profile name may have changed while the group kept the old one.
+            g->followProfileName();
         }
         const QString groupTopic = core->getGroupTopic(groupNumber);
         if (!groupTopic.isEmpty()) {
@@ -715,7 +718,7 @@ Group* ChatManager::createGroup(uint32_t groupNumber, const GroupId& groupId, co
         std::make_shared<ChatHistory>(*newGroup, history, *core, settings, *messageDispatcher,
                                       friendList, conferenceList, groupList);
 
-    connect(core, &Core::usernameSet, newGroup, &Group::setSelfName);
+    connect(core, &Core::usernameSet, newGroup, &Group::followProfileName);
 
     groupMessageDispatchers[groupId] = messageDispatcher;
     groupLogs[groupId] = chatHistory;

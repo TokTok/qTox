@@ -145,14 +145,15 @@ ToxPk Group::getSelfPeerPk() const
     return groupQuery.getGroupSelfPk(toxGroupNum);
 }
 
-void Group::setSelfName(const QString& name)
+/**
+ * @brief Uses the profile name in the group, unless the user gave the group a
+ * nickname of its own.
+ */
+void Group::followProfileName()
 {
-    selfName = name;
-}
-
-QString Group::getSelfName() const
-{
-    return selfName;
+    if (nickname.isEmpty()) {
+        setNameInGroup(idHandler.getUsername());
+    }
 }
 
 void Group::setTopic(const QString& author, const QString& newTopic)
@@ -261,17 +262,24 @@ bool Group::setGroupPrivacyState(GroupPrivacyState privacyState_)
 
 bool Group::setGroupNickname(const QString& nickname_)
 {
-    const QString nameToSet = nickname_.isEmpty() ? idHandler.getUsername() : nickname_;
-    if (groupQuery.setGroupSelfName(toxGroupNum, nameToSet)) {
-        nickname = nickname_;
-        emit nicknameChanged(nickname);
-        const ToxPk self = getSelfPeerPk();
-        if (!self.isEmpty()) {
-            onPeerNameChanged(self, nameToSet);
-        }
-        return true;
+    if (!setNameInGroup(nickname_.isEmpty() ? idHandler.getUsername() : nickname_)) {
+        return false;
     }
-    return false;
+    nickname = nickname_;
+    emit nicknameChanged(nickname);
+    return true;
+}
+
+bool Group::setNameInGroup(const QString& name)
+{
+    if (!groupQuery.setGroupSelfName(toxGroupNum, name)) {
+        return false;
+    }
+    const ToxPk self = getSelfPeerPk();
+    if (!self.isEmpty()) {
+        onPeerNameChanged(self, groupQuery.getGroupSelfName(toxGroupNum));
+    }
+    return true;
 }
 
 QString Group::getGroupNickname() const

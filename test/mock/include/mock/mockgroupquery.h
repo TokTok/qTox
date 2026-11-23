@@ -39,15 +39,18 @@ public:
     QString getGroupSelfName(int groupNumber) const override
     {
         std::ignore = groupNumber;
-        return {"self"};
+        return selfName;
     }
 
     bool setGroupSelfName(int groupNumber, const QString& name) override
     {
         std::ignore = groupNumber;
-        std::ignore = name;
+        selfName = name;
         return true;
     }
+
+    /** Our name in the group, as toxcore has it. */
+    QString selfName{"self"};
 
     Status::Status getGroupSelfStatus(int groupNumber) const override
     {

@@ -88,6 +88,8 @@ class TestGroup : public QObject
 
 private slots:
     void privateMessageGoesToTheMembersKey();
+    void groupWithoutNicknameFollowsProfileName();
+    void groupNicknameStaysOnRename();
 };
 
 /**
@@ -112,6 +114,39 @@ void TestGroup::privateMessageGoesToTheMembersKey()
     dispatcher.sendPrivateMessage(alice, false, QStringLiteral("psst"));
 
     QCOMPARE(sender.recipients, QList<ToxPk>{alice});
+}
+
+/**
+ * @brief Toxcore keeps our name per group, so renaming the profile has to set
+ * it in every group that uses the profile name.
+ */
+void TestGroup::groupWithoutNicknameFollowsProfileName()
+{
+    MockGroupQuery query;
+    MockCoreIdHandler idHandler;
+    FriendList friendList;
+    Group group(0, GroupId{}, QStringLiteral("group"), QStringLiteral("self"), query, idHandler,
+                friendList);
+
+    idHandler.username = QStringLiteral("renamed");
+    group.followProfileName();
+
+    QCOMPARE(query.selfName, QStringLiteral("renamed"));
+}
+
+void TestGroup::groupNicknameStaysOnRename()
+{
+    MockGroupQuery query;
+    MockCoreIdHandler idHandler;
+    FriendList friendList;
+    Group group(0, GroupId{}, QStringLiteral("group"), QStringLiteral("self"), query, idHandler,
+                friendList);
+    QVERIFY(group.setGroupNickname(QStringLiteral("nick")));
+
+    idHandler.username = QStringLiteral("renamed");
+    group.followProfileName();
+
+    QCOMPARE(query.selfName, QStringLiteral("nick"));
 }
 
 QTEST_GUILESS_MAIN(TestGroup)

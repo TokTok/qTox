@@ -46,8 +46,7 @@ public:
     QString getDisplayedName(const ToxPk& contact) const override;
     QString resolveToxPk(const ToxPk& id) const;
     ToxPk getSelfPeerPk() const;
-    void setSelfName(const QString& name);
-    QString getSelfName() const;
+    void followProfileName();
 
     void setTopic(const QString& author, const QString& newTopic);
     QString getTopic() const;
@@ -103,6 +102,7 @@ signals:
 
 private:
     QString displayName(const ToxPk& pk, const QString& peerName) const;
+    bool setNameInGroup(const QString& name);
 
 private:
     ICoreGroupQuery& groupQuery;

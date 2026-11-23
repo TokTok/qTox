@@ -1917,17 +1917,24 @@ QString Core::getGroupSelfName(int groupNumber) const
 }
 
 /**
- * @brief Set the self name in a group
+ * @brief Set the self name in a group, unless it already has it
  */
 bool Core::setGroupSelfName(int groupNumber, const QString& name)
 {
     const QMutexLocker<QRecursiveMutex> ml{&coreLoopLock};
 
     const ToxString toxName(name.isEmpty() ? groupSelfName() : name);
+    if (getGroupSelfName(groupNumber) == toxName.getQString()) {
+        return true;
+    }
     Tox_Err_Group_Self_Name_Set error;
-    const bool success =
-        tox_group_self_set_name(tox.get(), groupNumber, toxName.data(), toxName.size(), &error);
-    if (!success) {
+    tox_group_self_set_name(tox.get(), groupNumber, toxName.data(), toxName.size(), &error);
+    if (error == TOX_ERR_GROUP_SELF_NAME_SET_FAIL_SEND) {
+        // Toxcore keeps the name and gives it to peers when they connect.
+        qDebug() << "Group" << groupNumber << "has our new name, but no peer heard it yet";
+        return true;
+    }
+    if (error != TOX_ERR_GROUP_SELF_NAME_SET_OK) {
         qWarning() << "Failed to set group self name for group" << groupNumber << ":"
                    << static_cast<int>(error);
         return false;
